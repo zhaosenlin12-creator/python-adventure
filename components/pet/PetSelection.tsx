@@ -41,7 +41,7 @@ const STYLE_META: Record<'cute' | 'tech' | 'mythic', {
     icon: <Heart className="w-10 h-10 text-rose-300" />,
     shell: 'from-rose-100 via-orange-50 to-amber-100',
     border: 'border-rose-200',
-    copy: '灰塔猫、乐跑猎犬、团子熊猫',
+    copy: '英短蓝猫、垂耳兔、柴犬',
   },
   tech: {
     title: '灵感伙伴',
@@ -49,7 +49,7 @@ const STYLE_META: Record<'cute' | 'tech' | 'mythic', {
     icon: <Waves className="w-10 h-10 text-cyan-300" />,
     shell: 'from-cyan-950 via-sky-950 to-slate-900',
     border: 'border-cyan-400/40',
-    copy: '灵光金鱼、破冰企鹅、冲刺虎崽',
+    copy: '金渐层、边牧、雪豹',
   },
   mythic: {
     title: '传奇伙伴',
@@ -57,7 +57,7 @@ const STYLE_META: Record<'cute' | 'tech' | 'mythic', {
     icon: <Stars className="w-10 h-10 text-amber-300" />,
     shell: 'from-amber-950 via-orange-950 to-stone-950',
     border: 'border-amber-400/40',
-    copy: '狮王队长、长颈观察员、云团白猫',
+    copy: '火龙、应龙、白泽',
   },
 };
 
@@ -69,55 +69,55 @@ const TYPE_META: Record<string, {
 }> = {
   code_kitty: {
     chip: '观察系',
-    focus: '安静、稳定、很有陪伴感',
+    focus: '蓝灰层次沉稳，高阶后很有收藏感',
     shell: 'from-orange-900/40 to-slate-950/70',
     border: 'border-orange-300/40',
   },
   algo_bunny: {
     chip: '活力系',
-    focus: '更有冲劲，跟宠体态也更饱满',
+    focus: '耳朵和体态变化明显，幼态终态都很讨喜',
     shell: 'from-amber-900/40 to-stone-950/70',
     border: 'border-amber-300/40',
   },
   shiba_debugger: {
     chip: '治愈系',
-    focus: '进化前后都很讨喜，家园里存在感强',
+    focus: '表情灵动，家园和开放世界都很有陪伴感',
     shell: 'from-slate-800/80 to-zinc-950/80',
     border: 'border-slate-300/40',
   },
   bit_bot: {
     chip: '灵动系',
-    focus: '游动感强，开放世界跟随时更轻盈',
+    focus: '金色高光最吸睛，适合做主视觉展示',
     shell: 'from-orange-950/80 to-red-950/80',
     border: 'border-orange-300/40',
   },
   data_sprite: {
     chip: '社交系',
-    focus: '轮廓清晰，站在场景里识别度最高',
+    focus: '站姿挺拔、识别度高，做主力跟宠很稳',
     shell: 'from-sky-950/80 to-slate-950/80',
     border: 'border-sky-300/40',
   },
   ava_ai: {
     chip: '冲线系',
-    focus: '成长形态变化明显，适合做主力跟宠',
+    focus: '中后期爆发感很强，成长层次最明显',
     shell: 'from-rose-950/80 to-stone-950/80',
     border: 'border-rose-300/40',
   },
   code_dragon: {
     chip: '领袖系',
-    focus: '正面体量足，跟宠站位更压得住场',
+    focus: '火焰气质最强，进化时最有燃点',
     shell: 'from-amber-950/80 to-red-950/80',
     border: 'border-amber-300/40',
   },
   giraffe_oracle: {
     chip: '观察系',
-    focus: '高挑轮廓很特别，远景里也容易认出来',
+    focus: '天空系传说线，后期形态非常有仪式感',
     shell: 'from-yellow-950/80 to-stone-950/80',
     border: 'border-yellow-300/40',
   },
   snow_cat: {
     chip: '氛围系',
-    focus: '白底像云团，适合偏柔和的宠物风格',
+    focus: '白金神兽感最足，适合做图鉴压轴',
     shell: 'from-slate-100/10 to-slate-950/80',
     border: 'border-slate-200/40',
   },
@@ -146,7 +146,7 @@ function PetArtPreview({
         src={src}
         alt={PET_CONFIGS[petType].displayName}
         className="w-full h-full object-contain drop-shadow-[0_16px_28px_rgba(0,0,0,0.28)]"
-        style={{ imageRendering: 'pixelated', transform: `scale(${selectionScale})` }}
+        style={{ transform: `scale(${selectionScale})` }}
       />
     </div>
   );
@@ -223,7 +223,7 @@ export default function PetSelection({ isOpen, onClose, onSelect }: PetSelection
                   {step === 'name' && '给新伙伴起一个名字'}
                 </h2>
                 <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-300">
-                  当前宠物已替换为来自 `camp-pk-system` 的统一像素美术。选择卡会同时展示初始形态和高阶形态，所见即所得。
+                  当前宠物已切换为来自 `camp-pk-system` 的高质量成体系原画。选择卡会同时展示初始形态和高阶形态，所见即所得。
                 </p>
               </div>
 

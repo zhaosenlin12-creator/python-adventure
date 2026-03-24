@@ -15,6 +15,8 @@
 /.pytest_cache/
 /.hypothesis/
 backend/.hypothesis/
+test-results/
+playwright-report/
 
 # next.js
 /.next/
@@ -59,6 +61,8 @@ console.md
 .vscode/
 *.code-workspace
 uploads/
+backend/uploads/
+backend/logs/
 backend_deploy_tmp/
 
 # Database files (never commit to avoid overwriting server data)
@@ -67,6 +71,7 @@ backend_deploy_tmp/
 *.db-shm
 *.db-wal
 *.db.backup
+*.db.malformed-*.bak
 backend/test_backend.db
 backend/_archive_*/
 

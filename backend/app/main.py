@@ -30,8 +30,13 @@ app = FastAPI(
 
 # CORS配置 — 通过 CORS_ORIGINS 环境变量配置白名单
 _configured_origins = [o.strip() for o in settings.CORS_ORIGINS.split(",") if o.strip()]
+_dev_local_origins = ["http://localhost:3000", "http://127.0.0.1:3000"]
 if _configured_origins:
-    _cors_origins: list[str] = _configured_origins
+    _cors_origins: list[str] = list(
+        dict.fromkeys(
+            _configured_origins + ([] if IS_PRODUCTION else _dev_local_origins)
+        )
+    )
 else:
     # 仅开发环境允许所有来源；生产环境默认拒绝跨域，防止误暴露
     _cors_origins = ["*"] if not IS_PRODUCTION else []

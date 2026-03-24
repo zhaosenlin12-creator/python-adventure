@@ -1,13 +1,22 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import { X, Lock, Star, TrendingUp, Sparkles } from 'lucide-react';
-import { EVOLUTION_STAGES, type EvolutionStage, getEvolutionProgress, getNextStage, canEvolve, getStageAppearance } from '@/lib/petEvolution';
+import { Lock, Sparkles, Star, TrendingUp, X } from 'lucide-react';
+import {
+  EVOLUTION_STAGES,
+  type EvolutionStage,
+  canEvolve,
+  getEvolutionProgress,
+  getNextStage,
+  getStageAppearance,
+} from '@/lib/petEvolution';
 import { usePetStore } from '@/store/petStore';
 import PetEggDisplay from './PetEggDisplay';
 import { PET_CONFIGS, PetType } from '@/types/pet';
 import { getPetImageUrl } from '@/lib/config/petAssets';
+import { getPetVariantScale } from '@/lib/config/petArtworkProfiles';
+import { migratePetType } from '@/lib/pet/migration';
 
 interface EvolutionPokedexProps {
   isOpen: boolean;
@@ -24,16 +33,117 @@ interface EvolutionPokedexProps {
   };
 }
 
+const getStageBorder = (stageIndex: number) => {
+  const borderMap: Record<number, string> = {
+    0: 'border-slate-500/70',
+    1: 'border-amber-300/70',
+    2: 'border-emerald-300/70',
+    3: 'border-sky-300/70',
+    4: 'border-violet-300/70',
+    5: 'border-yellow-300/80',
+  };
+
+  return borderMap[stageIndex] ?? 'border-slate-500/70';
+};
+
+const getStageAccent = (stageIndex: number) => {
+  const accentMap: Record<number, string> = {
+    0: 'from-slate-300/16 via-slate-900/95 to-slate-950',
+    1: 'from-amber-200/16 via-slate-900/95 to-slate-950',
+    2: 'from-emerald-200/16 via-slate-900/95 to-slate-950',
+    3: 'from-sky-200/16 via-slate-900/95 to-slate-950',
+    4: 'from-violet-200/16 via-slate-900/95 to-slate-950',
+    5: 'from-yellow-100/18 via-slate-900/95 to-slate-950',
+  };
+
+  return accentMap[stageIndex] ?? accentMap[0];
+};
+
+function buildRequirementRows(stage: EvolutionStage, petData: EvolutionPokedexProps['petData']) {
+  const persistence = petData.persistence ?? petData.perseverance ?? 0;
+  const rows = [
+    {
+      label: '等级',
+      current: petData.level,
+      target: stage.minLevel,
+      met: petData.level >= stage.minLevel,
+    },
+  ];
+
+  if (stage.minIntimacy) {
+    rows.push({
+      label: '亲密度',
+      current: petData.intimacy,
+      target: stage.minIntimacy,
+      met: petData.intimacy >= stage.minIntimacy,
+    });
+  }
+
+  if (stage.minIntelligence) {
+    rows.push({
+      label: '智力',
+      current: petData.intelligence,
+      target: stage.minIntelligence,
+      met: petData.intelligence >= stage.minIntelligence,
+    });
+  }
+
+  if (stage.minCreativity) {
+    rows.push({
+      label: '创造力',
+      current: petData.creativity,
+      target: stage.minCreativity,
+      met: petData.creativity >= stage.minCreativity,
+    });
+  }
+
+  if (stage.minPerseverance) {
+    rows.push({
+      label: '毅力',
+      current: persistence,
+      target: stage.minPerseverance,
+      met: persistence >= stage.minPerseverance,
+    });
+  }
+
+  return rows;
+}
+
 export function EvolutionPokedex({
   isOpen,
   onClose,
   currentStage,
   petType,
-  petData
+  petData,
 }: EvolutionPokedexProps) {
   const { pets } = usePetStore();
   const [selectedStage, setSelectedStage] = useState<number>(currentStage);
   const [activeTab, setActiveTab] = useState<'evolution' | 'eggs'>('evolution');
+
+  const resolvedPetType = migratePetType(petType);
+  const petConfig = PET_CONFIGS[resolvedPetType] || PET_CONFIGS.code_kitty;
+  const persistence = petData.persistence ?? petData.perseverance ?? 0;
+  const selectionScale = getPetVariantScale(resolvedPetType, 'selection');
+  const nextStage = getNextStage(currentStage);
+  const eggPets = (pets || []).filter((pet) => pet.isEgg || pet.petType === 'egg');
+
+  const evolutionProgress = getEvolutionProgress({
+    level: petData.level,
+    evolution_stage: currentStage,
+    intimacy: petData.intimacy,
+    intelligence: petData.intelligence,
+    creativity: petData.creativity,
+    persistence,
+  });
+
+  const evolutionCheck = canEvolve({
+    level: petData.level,
+    evolution_stage: currentStage,
+    intimacy: petData.intimacy,
+    intelligence: petData.intelligence,
+    creativity: petData.creativity,
+    persistence,
+  });
 
   useEffect(() => {
     setSelectedStage(currentStage);
@@ -41,95 +151,84 @@ export function EvolutionPokedex({
 
   useEffect(() => {
     if (!isOpen || typeof document === 'undefined') return;
-    const original = document.body.style.overflow;
+
+    const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     return () => {
-      document.body.style.overflow = original;
+      document.body.style.overflow = originalOverflow;
     };
   }, [isOpen]);
 
-  if (!isOpen) return null;
-  const eggPets = (pets || []).filter(p => p.isEgg || p.petType === 'egg');
+  useEffect(() => {
+    if (!isOpen) return;
 
-  const selected = EVOLUTION_STAGES[selectedStage];
-  const isUnlocked = (stage: number) => stage <= currentStage;
-  const petConfig = PET_CONFIGS[petType] || PET_CONFIGS['dog_shiba'];
-  const petStyle = petConfig.style;
-  const persistence = petData.persistence ?? petData.perseverance ?? 0;
-  const nextStage = getNextStage(currentStage);
-  const evolutionProgress = getEvolutionProgress({
-    level: petData.level,
-    evolution_stage: currentStage,
-    intimacy: petData.intimacy,
-    intelligence: petData.intelligence,
-    creativity: petData.creativity,
-    persistence
-  });
-  const evolutionCheck = canEvolve({
-    level: petData.level,
-    evolution_stage: currentStage,
-    intimacy: petData.intimacy,
-    intelligence: petData.intelligence,
-    creativity: petData.creativity,
-    persistence
-  });
-
-  const meetsRequirements = (stage: EvolutionStage) => {
-    if (!stage.minLevel) return true;
-    
-    const checks = [
-      petData.level >= stage.minLevel,
-      !stage.minIntimacy || petData.intimacy >= stage.minIntimacy,
-      !stage.minIntelligence || petData.intelligence >= stage.minIntelligence,
-      !stage.minCreativity || petData.creativity >= stage.minCreativity,
-      !stage.minPerseverance || persistence >= stage.minPerseverance
-    ];
-
-    return checks.every(check => check);
-  };
-
-  const getStageRingClass = (stageIndex: number) => {
-    const stageRing: Record<number, string> = {
-      0: 'border-slate-500',
-      1: 'border-amber-400',
-      2: 'border-emerald-400',
-      3: 'border-sky-400',
-      4: 'border-purple-400',
-      5: 'border-yellow-300'
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
     };
-    const styleRing = petStyle === 'tech' ? 'shadow-[0_0_16px_rgba(56,189,248,0.35)]' : 'shadow-[0_0_16px_rgba(244,114,182,0.25)]';
-    return `${stageRing[stageIndex] || 'border-slate-500'} ${styleRing}`;
-  };
 
-  const renderPetPreview = (stageIndex: number) => {
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [isOpen, onClose]);
+
+  const stageCards = useMemo(
+    () =>
+      EVOLUTION_STAGES.map((stage) => ({
+        stage,
+        unlocked: stage.stage <= currentStage,
+        artUrl: stage.stage === 0 ? '/assets/pets/egg.svg' : getPetImageUrl(resolvedPetType, 'normal', stage.stage),
+      })),
+    [currentStage, resolvedPetType]
+  );
+
+  if (!isOpen) return null;
+
+  const selected = EVOLUTION_STAGES[selectedStage] ?? EVOLUTION_STAGES[0];
+  const selectedRequirementRows = buildRequirementRows(selected, petData);
+  const isSelectedUnlocked = selected.stage <= currentStage;
+  const selectedArtUrl =
+    selected.stage === 0 ? '/assets/pets/egg.svg' : getPetImageUrl(resolvedPetType, 'normal', selected.stage);
+  const detailScale = Math.min(selectionScale + 0.14, 1.42);
+
+  const renderArtFrame = (
+    stageIndex: number,
+    artUrl: string,
+    locked: boolean,
+    sizeClass: string,
+    scale: number,
+    emphasize = false
+  ) => {
     const appearance = getStageAppearance(stageIndex);
-    const size = Math.max(36, Math.min(72, (appearance.size || 48) + 8));
-    const boxSize = size + 12;
     const glowStyle = appearance.glowEffect
-      ? { filter: 'drop-shadow(0 0 10px rgba(255, 215, 0, 0.7))' }
+      ? { filter: 'drop-shadow(0 0 18px rgba(250, 204, 21, 0.36))' }
       : undefined;
 
     return (
       <div
-        className={`rounded-full border-2 flex items-center justify-center bg-slate-700 ${getStageRingClass(stageIndex)}`}
-        style={{ width: boxSize, height: boxSize }}
+        className={`relative overflow-hidden rounded-[28px] border bg-gradient-to-b ${getStageAccent(stageIndex)} ${getStageBorder(stageIndex)} ${sizeClass}`}
       >
-        {stageIndex === 0 ? (
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.18),transparent_46%)]" />
+        <div className="absolute inset-3 rounded-[22px] border border-white/8" />
+        {artUrl ? (
           <img
-            src="/assets/pets/egg.svg"
-            alt="神秘的蛋"
-            className="object-contain"
-            style={{ width: size, height: size }}
-          />
-        ) : getPetImageUrl(petType, 'normal', stageIndex) ? (
-          <img
-            src={getPetImageUrl(petType, 'normal', stageIndex)}
+            src={artUrl}
             alt={petConfig.displayName}
-            className="object-contain"
-            style={{ width: size, height: size, imageRendering: 'pixelated', ...glowStyle }}
+            className={`h-full w-full object-contain transition duration-300 ${locked ? 'opacity-40 blur-[1px] saturate-0' : ''}`}
+            style={{ ...glowStyle, transform: `scale(${scale})` }}
           />
         ) : (
-          <span style={{ fontSize: Math.max(24, size / 1.6), ...glowStyle }}>{petConfig.icon}</span>
+          <div className="flex h-full w-full items-center justify-center text-6xl">{petConfig.icon}</div>
+        )}
+        {emphasize && appearance.specialEffect === 'legendary' && (
+          <div className="absolute inset-0 rounded-[28px] border border-yellow-200/30 shadow-[0_0_32px_rgba(250,204,21,0.18)]" />
+        )}
+        {locked && (
+          <div className="absolute inset-0 flex items-center justify-center bg-slate-950/45">
+            <div className="rounded-full border border-white/10 bg-slate-950/80 p-3 text-white">
+              <Lock className="h-5 w-5" />
+            </div>
+          </div>
         )}
       </div>
     );
@@ -137,360 +236,285 @@ export function EvolutionPokedex({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4"
-      style={{ overscrollBehavior: 'contain' }}
-      onWheel={(e) => e.stopPropagation()}
+      className="fixed inset-0 z-[120] flex items-center justify-center bg-slate-950/70 px-4 py-6 backdrop-blur-md"
+      onClick={onClose}
     >
       <motion.div
-        initial={{ scale: 0.9, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.9, opacity: 0 }}
-        className="relative w-full max-w-4xl h-[90vh] pixel-panel bg-slate-800 border-2 border-slate-700 overflow-hidden shadow-xl flex flex-col min-h-0"
-        style={{ imageRendering: 'pixelated' }}
+        initial={{ scale: 0.96, opacity: 0, y: 14 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        exit={{ scale: 0.96, opacity: 0, y: 14 }}
+        className="relative flex h-[92vh] w-full max-w-[1180px] flex-col overflow-hidden rounded-[30px] border border-white/10 bg-[linear-gradient(180deg,#0f172a,#020617)] shadow-[0_36px_100px_rgba(2,6,23,0.62)]"
+        onClick={(event) => event.stopPropagation()}
       >
-        {/* 关闭按钮 */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 z-10 pixel-btn bg-red-600 hover:bg-red-900/300 p-2"
-        >
-          <X className="w-6 h-6 text-white" />
-        </button>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(148,163,184,0.12),transparent_34%),linear-gradient(135deg,rgba(59,130,246,0.08),transparent_40%)]" />
 
-        {/* 标题 */}
-        <div className="bg-gradient-to-r from-blue-600 to-teal-500 p-6 border-b border-slate-600">
-          <h2 className="text-3xl font-bold text-white text-center flex items-center justify-center gap-2 ">
-            <Star className="w-8 h-8" />
-            进化图鉴
-            <Star className="w-8 h-8" />
-          </h2>
-          <p className="text-center text-white/90 mt-2">
-            探索宠物的所有进化形态
-          </p>
-        </div>
+        <div className="relative border-b border-white/10 px-6 py-5 md:px-8">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <div className="mb-2 flex items-center gap-2 text-[11px] uppercase tracking-[0.28em] text-slate-400">
+                <Star className="h-4 w-4" />
+                Pet Atlas
+              </div>
+              <h2 className="text-2xl font-bold text-white md:text-3xl">进化图鉴</h2>
+              <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-300">
+                当前图鉴已对齐 `camp-pk-system` 的高质量演进素材，所有阶段展示、挂件渲染和跟随形态保持同源。
+              </p>
+            </div>
+            <button
+              onClick={onClose}
+              className="rounded-full border border-white/10 bg-white/5 p-2 text-slate-300 transition hover:bg-white/10 hover:text-white"
+              aria-label="关闭进化图鉴"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
 
-        {/* Tabs */}
-        <div className="flex items-center justify-center gap-3 bg-blue-900/30 border-b border-slate-700 p-3">
-          <button
-            onClick={() => setActiveTab('evolution')}
-            className={`pixel-btn text-sm px-4 py-2 ${activeTab === 'evolution' ? 'bg-blue-600 text-white' : 'bg-slate-700 text-slate-500 border border-slate-600'}`}
-          >
-            进化图鉴
-          </button>
-          <button
-            onClick={() => setActiveTab('eggs')}
-            className={`pixel-btn text-sm px-4 py-2 ${activeTab === 'eggs' ? 'bg-blue-600 text-white' : 'bg-slate-700 text-slate-500 border border-slate-600'}`}
-          >
-            蛋仓库
-          </button>
-        </div>
-
-        <div className="flex-1 overflow-hidden min-h-0">
-          {activeTab === 'evolution' ? (
-            <div className="flex flex-col md:flex-row h-full min-h-0">
-          {/* 左侧：进化阶段列表 */}
-          <div className="w-full md:w-1/3 bg-slate-800 p-4 overflow-y-auto border-r border-slate-700 min-h-0">
-            <div className="space-y-2">
-              {EVOLUTION_STAGES.map((stage, index) => {
-                const unlocked = isUnlocked(index);
-                const isCurrent = index === currentStage;
-                const isSelected = index === selectedStage;
-
-                return (
-                  <motion.button
-                    key={stage.stage}
-                    onClick={() => unlocked && setSelectedStage(index)}
-                    whileHover={{ scale: unlocked ? 1.02 : 1 }}
-                    whileTap={{ scale: unlocked ? 0.98 : 1 }}
-                    className={`
-                      w-full p-4 text-left transition-all pixel-panel
-                      ${isSelected ? 'bg-blue-900/30 border-2 border-emerald-400' : 'bg-slate-700 border border-slate-600 rounded-lg'}
-                      ${!unlocked && 'opacity-50 cursor-not-allowed'}
-                      ${isCurrent && 'ring-2 ring-blue-500'}
-                    `}
-                    disabled={!unlocked}
-                    style={{ imageRendering: 'pixelated' }}
-                  >
-                    <div className="flex items-center gap-3">
-                      {/* 图标 */}
-                      <div className={`
-                        w-12 h-12 flex items-center justify-center border-2
-                        ${unlocked ? 'bg-blue-900/20 border-slate-600' : 'bg-slate-700 border-slate-600'}
-                      `}>
-                        {unlocked ? renderPetPreview(index) : <Lock className="w-6 h-6 text-slate-400" />}
-                      </div>
-
-                      {/* 信息 */}
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2">
-                          <h3 className="text-white font-bold">
-                            {unlocked ? stage.name : '???'}
-                          </h3>
-                          {isCurrent && (
-                            <span className="px-2 py-0.5 bg-blue-600 text-white text-xs rounded">
-                              当前
-                            </span>
-                          )}
-                        </div>
-                        <p className="text-sm text-slate-500">
-                          {unlocked ? `Lv.${stage.minLevel}+` : '未解锁'}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.button>
-                );
-              })}
+          <div className="mt-5 flex flex-wrap items-center gap-3">
+            <button
+              onClick={() => setActiveTab('evolution')}
+              className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+                activeTab === 'evolution'
+                  ? 'bg-sky-500 text-slate-950 shadow-[0_10px_30px_rgba(56,189,248,0.22)]'
+                  : 'border border-white/10 bg-white/5 text-slate-300 hover:bg-white/10'
+              }`}
+            >
+              进化路线
+            </button>
+            <button
+              onClick={() => setActiveTab('eggs')}
+              className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+                activeTab === 'eggs'
+                  ? 'bg-sky-500 text-slate-950 shadow-[0_10px_30px_rgba(56,189,248,0.22)]'
+                  : 'border border-white/10 bg-white/5 text-slate-300 hover:bg-white/10'
+              }`}
+            >
+              蛋仓库
+            </button>
+            <div className="ml-auto rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-slate-300">
+              当前伙伴：{petConfig.displayName}
             </div>
           </div>
-
-          {/* 右侧：详细信息 */}
-          <div className="flex-1 p-6 overflow-y-auto bg-slate-700 min-h-0">
-            {isUnlocked(selectedStage) ? (
-              <motion.div
-                key={selectedStage}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="space-y-6"
-              >
-                {/* 成长路线提示 */}
-                <div className="pixel-panel bg-slate-700 border border-slate-600 rounded-xl p-4 text-sm text-slate-500">
-                  <div className="font-bold text-white mb-2">成长路线</div>
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>通过每日签到 / 成就领取获得宠物蛋</li>
-                    <li>在“蛋仓库”选择蛋，完成 3 个关卡即可孵化</li>
-                    <li>互动提升亲密度与属性，满足条件后点击“进化”</li>
-                  </ul>
-                </div>
-                {/* 形态展示 */}
-                <div className="pixel-panel bg-slate-700 border border-slate-600 rounded-xl p-6 text-center">
-                  <motion.div
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="mb-4"
-                  >
-                    <div className="w-32 h-32 mx-auto bg-blue-900/30 border-2 border-slate-600 rounded-xl flex items-center justify-center">
-                      {selectedStage === 0 ? (
-                        <img
-                          src="/assets/pets/egg.svg"
-                          alt="神秘的蛋"
-                          className="w-20 h-24 object-contain mx-auto"
-                        />
-                      ) : (
-                        renderPetPreview(selectedStage)
-                      )}
-                    </div>
-                  </motion.div>
-                  <h3 className="text-3xl font-bold text-white mb-2 ">
-                    {selected.name} · {petConfig.displayName}
-                  </h3>
-                  <p className="text-slate-500">
-                    {selected.description}
-                  </p>
-                </div>
-                {/* 下一阶段进化进度与条件 */}
-                {nextStage && (
-                  <div className="pixel-panel bg-slate-700 border border-slate-600 rounded-xl p-6">
-                    <h4 className="text-xl font-bold text-white mb-3 flex items-center gap-2 ">
-                      <Sparkles className="w-5 h-5" />
-                      下一阶段：{nextStage.name}
-                    </h4>
-                    <div className="text-xs text-slate-500 mb-3">
-                      进化进度：{evolutionProgress}% {evolutionCheck.canEvolve ? '✅ 可进化' : '⏳ 未满足'}
-                    </div>
-                    <div className="w-full bg-slate-800 border border-slate-600 rounded-lg h-3 mb-4">
-                      <div
-                        className="h-full bg-gradient-to-r from-green-500 to-emerald-400 transition-all"
-                        style={{ width: `${Math.min(100, Math.max(0, evolutionProgress))}%` }}
-                      />
-                    </div>
-                    <div className="space-y-2 text-sm">
-                      <div className="flex items-center justify-between p-2 bg-slate-800 border border-slate-600 rounded-lg">
-                        <span className="text-slate-500">等级</span>
-                        <span className={`font-bold ${petData.level >= nextStage.minLevel ? 'text-green-400' : 'text-red-400'}`}>
-                          {petData.level} / {nextStage.minLevel}
-                          {petData.level >= nextStage.minLevel && ' ✓'}
-                        </span>
-                      </div>
-                      {nextStage.minIntimacy && (
-                        <div className="flex items-center justify-between p-2 bg-slate-800 border border-slate-600 rounded-lg">
-                          <span className="text-slate-500">亲密度</span>
-                          <span className={`font-bold ${petData.intimacy >= nextStage.minIntimacy ? 'text-green-400' : 'text-red-400'}`}>
-                            {petData.intimacy} / {nextStage.minIntimacy}
-                            {petData.intimacy >= nextStage.minIntimacy && ' ✓'}
-                          </span>
-                        </div>
-                      )}
-                      {nextStage.minIntelligence && (
-                        <div className="flex items-center justify-between p-2 bg-slate-800 border border-slate-600 rounded-lg">
-                          <span className="text-slate-500">智力</span>
-                          <span className={`font-bold ${petData.intelligence >= nextStage.minIntelligence ? 'text-green-400' : 'text-red-400'}`}>
-                            {petData.intelligence} / {nextStage.minIntelligence}
-                            {petData.intelligence >= nextStage.minIntelligence && ' ✓'}
-                          </span>
-                        </div>
-                      )}
-                      {nextStage.minCreativity && (
-                        <div className="flex items-center justify-between p-2 bg-slate-800 border border-slate-600 rounded-lg">
-                          <span className="text-slate-500">创造力</span>
-                          <span className={`font-bold ${petData.creativity >= nextStage.minCreativity ? 'text-green-400' : 'text-red-400'}`}>
-                            {petData.creativity} / {nextStage.minCreativity}
-                            {petData.creativity >= nextStage.minCreativity && ' ✓'}
-                          </span>
-                        </div>
-                      )}
-                      {nextStage.minPerseverance && (
-                        <div className="flex items-center justify-between p-2 bg-slate-800 border border-slate-600 rounded-lg">
-                          <span className="text-slate-500">毅力</span>
-                          <span className={`font-bold ${(persistence) >= nextStage.minPerseverance ? 'text-green-400' : 'text-red-400'}`}>
-                            {persistence} / {nextStage.minPerseverance}
-                            {(persistence) >= nextStage.minPerseverance && ' ✓'}
-                          </span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                )}
-
-                {/* 进化条件 */}
-                {selectedStage > 0 && (
-                  <div className="pixel-panel bg-slate-700 border border-slate-600 rounded-xl p-6">
-                    <h4 className="text-xl font-bold text-white mb-4 flex items-center gap-2 ">
-                      <TrendingUp className="w-5 h-5" />
-                      进化条件
-                    </h4>
-                    <div className="space-y-3">
-                      {/* 等级 */}
-                      <div className="flex items-center justify-between p-2 bg-slate-800 border border-slate-600 rounded-lg">
-                        <span className="text-slate-500">等级</span>
-                        <span className={`font-bold ${
-                          petData.level >= selected.minLevel ? 'text-green-400' : 'text-red-400'
-                        }`}>
-                          {petData.level} / {selected.minLevel}
-                          {petData.level >= selected.minLevel && ' ✓'}
-                        </span>
-                      </div>
-
-                      {/* 亲密度 */}
-                      {selected.minIntimacy && (
-                        <div className="flex items-center justify-between p-2 bg-slate-800 border border-slate-600 rounded-lg">
-                          <span className="text-slate-500">亲密度</span>
-                          <span className={`font-bold ${
-                            petData.intimacy >= selected.minIntimacy ? 'text-green-400' : 'text-red-400'
-                          }`}>
-                            {petData.intimacy} / {selected.minIntimacy}
-                            {petData.intimacy >= selected.minIntimacy && ' ✓'}
-                          </span>
-                        </div>
-                      )}
-
-                      {/* 智力 */}
-                      {selected.minIntelligence && (
-                        <div className="flex items-center justify-between p-2 bg-slate-800 border border-slate-600 rounded-lg">
-                          <span className="text-slate-500">智力</span>
-                          <span className={`font-bold ${
-                            petData.intelligence >= selected.minIntelligence ? 'text-green-400' : 'text-red-400'
-                          }`}>
-                            {petData.intelligence} / {selected.minIntelligence}
-                            {petData.intelligence >= selected.minIntelligence && ' ✓'}
-                          </span>
-                        </div>
-                      )}
-
-                      {/* 创造力 */}
-                      {selected.minCreativity && (
-                        <div className="flex items-center justify-between p-2 bg-slate-800 border border-slate-600 rounded-lg">
-                          <span className="text-slate-500">创造力</span>
-                          <span className={`font-bold ${
-                            petData.creativity >= selected.minCreativity ? 'text-green-400' : 'text-red-400'
-                          }`}>
-                            {petData.creativity} / {selected.minCreativity}
-                            {petData.creativity >= selected.minCreativity && ' ✓'}
-                          </span>
-                        </div>
-                      )}
-
-                      {/* 毅力 */}
-                      {selected.minPerseverance && (
-                        <div className="flex items-center justify-between p-2 bg-slate-800 border border-slate-600 rounded-lg">
-                          <span className="text-slate-500">毅力</span>
-                          <span className={`font-bold ${
-                            (petData.persistence ?? petData.perseverance ?? 0) >= selected.minPerseverance ? 'text-green-400' : 'text-red-400'
-                          }`}>
-                            {petData.persistence ?? petData.perseverance ?? 0} / {selected.minPerseverance}
-                            {(petData.persistence ?? petData.perseverance ?? 0) >= selected.minPerseverance && ' ✓'}
-                          </span>
-                        </div>
-                      )}
-
-                      {/* 进化状态 */}
-                      {selectedStage === currentStage + 1 && (
-                        <div className="mt-4 p-3 bg-blue-900/30 border border-slate-600 rounded-lg">
-                          <p className="text-blue-400 text-center font-bold">
-                            {meetsRequirements(selected) ? '✨ 可以进化！' : '⏳ 继续努力...'}
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                )}
-
-                {/* 进化奖励 */}
-                {selectedStage > 1 && (
-                  <div className="pixel-panel bg-slate-700 border border-slate-600 rounded-xl p-6">
-                    <h4 className="text-xl font-bold text-white mb-4 ">
-                      🎁 进化奖励
-                    </h4>
-                    <div className="space-y-2 text-slate-500">
-                      <p className="p-2 bg-slate-800 border border-slate-600 rounded-lg">
-                        💰 金币 +{selected.rewards.coins}
-                      </p>
-                      <p className="p-2 bg-slate-800 border border-slate-600 rounded-lg">
-                        ⭐ 全属性 +{selected.rewards.attributeBonus}
-                      </p>
-                      {selected.rewards.food.map((food) => (
-                        <p key={food.id} className="p-2 bg-slate-800 border border-slate-600 rounded-lg">
-                          🎁 {food.id} x{food.quantity}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </motion.div>
-            ) : (
-              <div className="h-full flex items-center justify-center">
-                <div className="text-center pixel-panel bg-slate-700 border border-slate-600 rounded-xl p-8">
-                  <Lock className="w-20 h-20 text-slate-400 mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-slate-400 mb-2">
-                    未解锁
-                  </h3>
-                  <p className="text-slate-400">
-                    继续培养宠物以解锁此形态
-                  </p>
-                </div>
-              </div>
-            )}
-          </div>
         </div>
-          ) : (
-            <div className="h-full overflow-y-auto bg-slate-700 p-6 min-h-0">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-white ">我的宠物蛋</h3>
-                <span className="text-sm text-slate-400">共 {eggPets.length} 枚</span>
+
+        <div className="relative flex-1 overflow-hidden">
+          {activeTab === 'evolution' ? (
+            <div className="flex h-full flex-col overflow-hidden lg:flex-row">
+              <div className="w-full shrink-0 overflow-y-auto border-b border-white/10 bg-slate-950/35 px-4 py-4 lg:w-[360px] lg:border-b-0 lg:border-r lg:px-5">
+                <div className="space-y-3">
+                  {stageCards.map(({ stage, unlocked, artUrl }) => {
+                    const isCurrent = stage.stage === currentStage;
+                    const isSelected = stage.stage === selectedStage;
+
+                    return (
+                      <button
+                        key={stage.stage}
+                        onClick={() => setSelectedStage(stage.stage)}
+                        className={`w-full rounded-[24px] border p-3 text-left transition ${
+                          isSelected
+                            ? 'border-sky-300/60 bg-sky-400/10 shadow-[0_18px_40px_rgba(14,165,233,0.14)]'
+                            : 'border-white/10 bg-white/[0.03] hover:bg-white/[0.06]'
+                        }`}
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="h-20 w-20 shrink-0">
+                            {renderArtFrame(stage.stage, artUrl, !unlocked, 'h-20 w-20', Math.min(selectionScale + 0.08, 1.3))}
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <div className="flex items-center gap-2">
+                              <div className="truncate text-base font-semibold text-white">{stage.name}</div>
+                              {isCurrent && (
+                                <span className="rounded-full bg-emerald-400/15 px-2 py-0.5 text-[11px] font-medium text-emerald-200">
+                                  当前
+                                </span>
+                              )}
+                            </div>
+                            <div className="mt-1 text-sm text-slate-400">{stage.description}</div>
+                            <div className="mt-3 flex items-center justify-between text-xs">
+                              <span className={unlocked ? 'text-slate-300' : 'text-slate-500'}>
+                                {stage.stage === 0 ? '孵化前' : `Lv.${stage.minLevel}+`}
+                              </span>
+                              <span className={unlocked ? 'text-sky-300' : 'text-slate-500'}>
+                                {unlocked ? '已解锁' : '未解锁'}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
+
+              <div className="flex-1 overflow-y-auto px-4 py-5 md:px-6 lg:px-8">
+                <motion.div
+                  key={`${activeTab}-${selectedStage}`}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="space-y-6"
+                >
+                  <div className="grid gap-6 xl:grid-cols-[1.08fr,0.92fr]">
+                    <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-5">
+                      <div className="mb-4 flex flex-wrap items-center gap-3">
+                        <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
+                          {selected.stage === 0 ? '孵化阶段' : `第 ${selected.stage} 阶`}
+                        </span>
+                        <span className={`rounded-full px-3 py-1 text-xs ${isSelectedUnlocked ? 'bg-emerald-400/15 text-emerald-200' : 'bg-slate-700/70 text-slate-300'}`}>
+                          {isSelectedUnlocked ? '已解锁形态' : '待解锁形态'}
+                        </span>
+                      </div>
+
+                      <div className="grid gap-5 lg:grid-cols-[320px,1fr]">
+                        <div className="mx-auto h-[320px] w-full max-w-[320px]">
+                          {renderArtFrame(
+                            selected.stage,
+                            selectedArtUrl,
+                            !isSelectedUnlocked,
+                            'h-[320px] w-full',
+                            detailScale,
+                            true
+                          )}
+                        </div>
+
+                        <div className="flex flex-col justify-center">
+                          <div className="text-sm uppercase tracking-[0.22em] text-slate-400">{petConfig.displayName}</div>
+                          <h3 className="mt-2 text-3xl font-bold text-white">{selected.name}</h3>
+                          <p className="mt-3 text-sm leading-7 text-slate-300">{selected.description}</p>
+
+                          <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                            <div className="rounded-2xl border border-white/10 bg-slate-950/40 p-4">
+                              <div className="text-xs text-slate-400">当前等级</div>
+                              <div className="mt-2 text-2xl font-semibold text-white">Lv.{petData.level}</div>
+                            </div>
+                            <div className="rounded-2xl border border-white/10 bg-slate-950/40 p-4">
+                              <div className="text-xs text-slate-400">亲密度</div>
+                              <div className="mt-2 text-2xl font-semibold text-white">{petData.intimacy}</div>
+                            </div>
+                            <div className="rounded-2xl border border-white/10 bg-slate-950/40 p-4">
+                              <div className="text-xs text-slate-400">毅力</div>
+                              <div className="mt-2 text-2xl font-semibold text-white">{persistence}</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-6">
+                      <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-5">
+                        <div className="mb-4 flex items-center gap-2 text-white">
+                          <TrendingUp className="h-5 w-5 text-sky-300" />
+                          <h4 className="text-lg font-semibold">解锁条件</h4>
+                        </div>
+                        <div className="space-y-3">
+                          {selectedRequirementRows.map((row) => (
+                            <div
+                              key={row.label}
+                              className="flex items-center justify-between rounded-2xl border border-white/8 bg-slate-950/45 px-4 py-3"
+                            >
+                              <span className="text-sm text-slate-300">{row.label}</span>
+                              <span className={`text-sm font-semibold ${row.met ? 'text-emerald-300' : 'text-rose-300'}`}>
+                                {row.current} / {row.target}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+
+                        {selected.stage === currentStage + 1 && (
+                          <div
+                            className={`mt-4 rounded-2xl border px-4 py-3 text-sm ${
+                              evolutionCheck.canEvolve
+                                ? 'border-emerald-400/30 bg-emerald-400/12 text-emerald-200'
+                                : 'border-amber-300/20 bg-amber-400/10 text-amber-100'
+                            }`}
+                          >
+                            {evolutionCheck.canEvolve
+                              ? '当前条件已满足，可以直接进行下一次进化。'
+                              : evolutionCheck.reason || '继续培养当前伙伴，满足条件后可进化。'}
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-5">
+                        <div className="mb-4 flex items-center gap-2 text-white">
+                          <Sparkles className="h-5 w-5 text-violet-300" />
+                          <h4 className="text-lg font-semibold">成长进度</h4>
+                        </div>
+                        <div className="rounded-2xl border border-white/8 bg-slate-950/40 p-4">
+                          <div className="mb-2 flex items-center justify-between text-sm text-slate-300">
+                            <span>下一阶段目标</span>
+                            <span>
+                              {nextStage ? `${evolutionProgress}%` : '已满阶'}
+                            </span>
+                          </div>
+                          <div className="h-3 overflow-hidden rounded-full bg-slate-800">
+                            <div
+                              className="h-full rounded-full bg-gradient-to-r from-sky-400 via-cyan-300 to-emerald-300 transition-all"
+                              style={{ width: `${Math.min(100, Math.max(0, evolutionProgress))}%` }}
+                            />
+                          </div>
+                          <div className="mt-3 text-sm text-slate-400">
+                            {nextStage
+                              ? `距离 ${nextStage.name} 还差最后一段养成进度。`
+                              : '当前已经达到最高进化阶段。'}
+                          </div>
+                        </div>
+                      </div>
+
+                      {selected.stage > 1 && (
+                        <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-5">
+                          <div className="mb-4 flex items-center gap-2 text-white">
+                            <Star className="h-5 w-5 text-amber-300" />
+                            <h4 className="text-lg font-semibold">阶段奖励</h4>
+                          </div>
+                          <div className="space-y-3 text-sm">
+                            <div className="rounded-2xl border border-white/8 bg-slate-950/45 px-4 py-3 text-slate-200">
+                              金币 +{selected.rewards.coins}
+                            </div>
+                            <div className="rounded-2xl border border-white/8 bg-slate-950/45 px-4 py-3 text-slate-200">
+                              全属性 +{selected.rewards.attributeBonus}
+                            </div>
+                            {selected.rewards.food.map((food) => (
+                              <div
+                                key={food.id}
+                                className="rounded-2xl border border-white/8 bg-slate-950/45 px-4 py-3 text-slate-200"
+                              >
+                                {food.id} x{food.quantity}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          ) : (
+            <div className="h-full overflow-y-auto px-4 py-5 md:px-6 lg:px-8">
+              <div className="mb-4 flex items-center justify-between">
+                <div>
+                  <h3 className="text-2xl font-semibold text-white">宠物蛋仓库</h3>
+                  <p className="mt-1 text-sm text-slate-400">这里保留尚未孵化的蛋，方便你统一查看成长起点。</p>
+                </div>
+                <div className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300">
+                  共 {eggPets.length} 枚
+                </div>
+              </div>
+
               {eggPets.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid gap-4 lg:grid-cols-2">
                   {eggPets.map((egg) => (
                     <PetEggDisplay key={egg.id} pet={egg} />
                   ))}
                 </div>
               ) : (
-                <div className="text-center pixel-panel bg-slate-700 border border-slate-600 rounded-xl p-8">
+                <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-8 text-center">
                   <img
                     src="/assets/pets/egg.svg"
                     alt="神秘的蛋"
-                    className="w-16 h-20 object-contain mx-auto mb-3"
+                    className="mx-auto h-24 w-20 object-contain"
                   />
-                  <h3 className="text-xl font-bold text-slate-500 mb-2">暂无宠物蛋</h3>
-                  <p className="text-slate-400 text-sm">完成签到或成就可获得新蛋</p>
+                  <h3 className="mt-4 text-xl font-semibold text-white">暂无宠物蛋</h3>
+                  <p className="mt-2 text-sm text-slate-400">完成签到、成就或后续活动奖励后，新蛋会自动出现在这里。</p>
                 </div>
               )}
             </div>

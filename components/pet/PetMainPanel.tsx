@@ -343,7 +343,7 @@ export default function PetMainPanel() {
             }}
           >
             <div className="flex items-center gap-2">
-              <div className="relative w-10 h-10 flex items-center justify-center overflow-hidden bg-slate-700 border-2 border-slate-600">
+              <div className="relative w-12 h-12 flex items-center justify-center overflow-hidden rounded-[16px] border-2 border-slate-600 bg-[radial-gradient(circle_at_top,#172554,#020617)] shadow-[0_12px_24px_rgba(15,23,42,0.32)]">
                 {currentTechAccent && (
                   <>
                     <div className={`absolute inset-0 ${currentTechAccent.frame} ${currentTechAccent.glow}`} />
@@ -358,7 +358,7 @@ export default function PetMainPanel() {
                     src={currentImageUrl} 
                     alt={petConfig.displayName}
                     className="w-full h-full object-contain"
-                    style={{ imageRendering: 'pixelated', transform: `scale(${panelScale})` }}
+                    style={{ transform: `scale(${panelScale})` }}
                   />
                 ) : (
                   <span className="text-xl">{petConfig.icon}</span>
@@ -373,7 +373,7 @@ export default function PetMainPanel() {
         
         {/* 展开状态 */}
         {isExpanded && (
-          <div className="pixel-panel p-4 w-72 border-2 border-slate-700">
+          <div className="pixel-panel w-80 border-2 border-slate-700 p-4 shadow-[0_26px_48px_rgba(15,23,42,0.36)]">
             {/* 头部 */}
             <div className="flex justify-between items-center mb-3">
               <h3 className="font-bold text-lg text-white">我的伙伴</h3>
@@ -389,7 +389,7 @@ export default function PetMainPanel() {
             <div className="space-y-3">
               {/* 头像和基本信息 */}
               <div className="flex items-center gap-3">
-                <div className="relative w-16 h-16 flex items-center justify-center overflow-hidden bg-blue-900/30 border-2 border-slate-700 rounded-lg">
+                <div className="relative flex h-20 w-20 items-center justify-center overflow-hidden rounded-[22px] border-2 border-slate-700 bg-[radial-gradient(circle_at_top,#1d4ed8,#020617)] shadow-[0_16px_32px_rgba(15,23,42,0.3)]">
                   {currentTechAccent && (
                     <>
                       <div className={`absolute inset-0 ${currentTechAccent.frame} ${currentTechAccent.glow}`} />
@@ -405,7 +405,7 @@ export default function PetMainPanel() {
                       src={currentImageUrl} 
                       alt={petConfig.displayName}
                       className="w-full h-full object-contain"
-                      style={{ imageRendering: 'pixelated', transform: `scale(${panelScale})` }}
+                      style={{ transform: `scale(${panelScale})` }}
                     />
                   ) : (
                     <span className="text-3xl">{petConfig.icon}</span>
@@ -425,7 +425,6 @@ export default function PetMainPanel() {
                         className="w-full px-2 py-1 bg-slate-700 border border-slate-600 text-white text-sm rounded"
                         maxLength={12}
                         autoFocus
-                        style={{ imageRendering: 'pixelated' }}
                       />
                     </div>
                   ) : (
@@ -460,7 +459,7 @@ export default function PetMainPanel() {
                 <div className="w-full bg-slate-700 h-2 rounded-full">
                   <div
                     className="bg-blue-600 h-full transition-all rounded-full"
-                    style={{ width: `${expPercentage}%`, imageRendering: 'pixelated' }}
+                    style={{ width: `${expPercentage}%` }}
                   />
                 </div>
               </div>
@@ -572,6 +571,7 @@ export default function PetMainPanel() {
           isOpen={showFoodSelector}
           onClose={() => setShowFoodSelector(false)}
           petId={currentPet.id}
+          petName={currentPet.name}
         />
       )}
       
@@ -582,7 +582,8 @@ export default function PetMainPanel() {
           petName={currentPet.name}
           oldStage={evolutionData.oldStage}
           newStage={evolutionData.newStage}
-          petImageUrl={currentImageUrl}
+          oldImageUrl={getPetImageUrl(resolvedPetType, 'normal', evolutionData.oldStage.stage)}
+          newImageUrl={getPetImageUrl(resolvedPetType, 'normal', evolutionData.newStage.stage)}
           onComplete={handleEvolutionComplete}
         />
       )}
@@ -593,7 +594,7 @@ export default function PetMainPanel() {
           isOpen={showPokedex}
           onClose={() => setShowPokedex(false)}
           currentStage={currentPet.evolution_stage ?? (currentPet.isEgg ? 0 : 1)}
-          petType={currentPet.petType}
+          petType={resolvedPetType}
           petData={{
             level: currentPet.level,
             intimacy: currentPet.intimacy || 0,

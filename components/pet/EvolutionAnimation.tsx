@@ -10,7 +10,8 @@ interface EvolutionAnimationProps {
   petName: string;
   oldStage: EvolutionStage;
   newStage: EvolutionStage;
-  petImageUrl: string;
+  oldImageUrl: string;
+  newImageUrl: string;
   onComplete: () => void;
 }
 
@@ -19,10 +20,13 @@ export function EvolutionAnimation({
   petName,
   oldStage,
   newStage,
-  petImageUrl,
+  oldImageUrl,
+  newImageUrl,
   onComplete
 }: EvolutionAnimationProps) {
   const [phase, setPhase] = useState<'glow' | 'transform' | 'reveal' | 'complete'>('glow');
+  const displayOldImage = oldImageUrl || newImageUrl;
+  const displayNewImage = newImageUrl || oldImageUrl;
 
   useEffect(() => {
     if (!isOpen) return;
@@ -49,7 +53,6 @@ export function EvolutionAnimation({
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         className="fixed inset-0 z-[9999] flex items-center justify-center bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900"
-        style={{ imageRendering: 'pixelated' }}
       >
         {/* 像素风格背景粒子 */}
         <div className="absolute inset-0 overflow-hidden">
@@ -57,7 +60,6 @@ export function EvolutionAnimation({
             <motion.div
               key={i}
               className="absolute w-2 h-2 bg-game-accent"
-              style={{ imageRendering: 'pixelated' }}
               initial={{
                 x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
                 y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
@@ -87,10 +89,9 @@ export function EvolutionAnimation({
             >
               <div className="pixel-panel p-6 bg-white/10 border-2 border-blue-500 backdrop-blur-sm rounded-xl">
                 <img
-                  src={petImageUrl}
+                  src={displayOldImage}
                   alt={petName}
-                  className="w-32 h-32 object-contain"
-                  style={{ imageRendering: 'pixelated' }}
+                  className="h-32 w-32 object-contain drop-shadow-[0_20px_28px_rgba(34,211,238,0.25)]"
                 />
               <motion.div
                   className="absolute inset-0 bg-blue-500/20 pointer-events-none"
@@ -103,7 +104,7 @@ export function EvolutionAnimation({
                 animate={{ opacity: 1, y: 0 }}
                 className="mt-8 text-2xl text-white font-bold text-center"
               >
-                {petName} 开始发光了！
+                {petName} 正在从 {oldStage.name} 迈向 {newStage.name}
               </motion.p>
             </motion.div>
           )}
@@ -124,7 +125,27 @@ export function EvolutionAnimation({
                 <Sparkles className="w-24 h-24 text-blue-400" />
               </motion.div>
 
-              <div className="w-32 h-32" />
+              <div className="relative flex h-40 w-56 items-center justify-center">
+                {displayOldImage && (
+                  <motion.img
+                    src={displayOldImage}
+                    alt={`${petName} 进化前`}
+                    className="absolute h-28 w-28 object-contain opacity-60"
+                    animate={{ opacity: [0.7, 0.1, 0], scale: [1, 1.16, 0.84], rotate: [0, -8, -18] }}
+                    transition={{ duration: 2.4, ease: 'easeInOut' }}
+                  />
+                )}
+                {displayNewImage && (
+                  <motion.img
+                    src={displayNewImage}
+                    alt={`${petName} 进化后`}
+                    className="absolute h-36 w-36 object-contain"
+                    initial={{ opacity: 0, scale: 0.66, rotate: 10 }}
+                    animate={{ opacity: [0.1, 0.45, 0.95], scale: [0.66, 0.92, 1.02], rotate: [10, 4, 0] }}
+                    transition={{ duration: 2.4, ease: 'easeOut' }}
+                  />
+                )}
+              </div>
 
               <motion.p
                 initial={{ opacity: 0 }}
@@ -150,10 +171,9 @@ export function EvolutionAnimation({
                 className="pixel-panel p-6 bg-white/10 border-2 border-blue-500 backdrop-blur-sm rounded-xl"
               >
                 <img
-                  src={petImageUrl}
+                  src={displayNewImage}
                   alt={petName}
-                  className="w-40 h-40 object-contain"
-                  style={{ imageRendering: 'pixelated' }}
+                  className="h-40 w-40 object-contain drop-shadow-[0_24px_36px_rgba(59,130,246,0.28)]"
                 />
               </motion.div>
 
@@ -170,7 +190,7 @@ export function EvolutionAnimation({
                   transition={{ duration: 1.5, delay: i * 0.1 }}
                   className="absolute"
                 >
-                  <div className="w-4 h-4 bg-blue-500" style={{ imageRendering: 'pixelated' }} />
+                  <div className="w-4 h-4 bg-blue-500" />
                 </motion.div>
               ))}
 

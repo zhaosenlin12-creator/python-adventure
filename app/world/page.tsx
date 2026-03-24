@@ -81,7 +81,7 @@ export default function WorldPage() {
     const [isLoadingEditor, setIsLoadingEditor] = useState(false);
 
     const { unlockSkill, level: userLevel } = useGameStore();
-    const { user } = useAuthStore();
+    const { user, token, isAuthenticated } = useAuthStore();
 
     const getCurrentPetSyncPayload = useCallback(() => {
         const currentPet = usePetStore.getState().currentPet;
@@ -115,7 +115,9 @@ export default function WorldPage() {
     }, []);
 
     // 更新玩家位置到后端 - 使用 useCallback 避免重复创建
-    const updatePlayerLocation = useCallback(async (userId: number, x: number, y: number, mapArea: string) => {
+    const updatePlayerLocation = useCallback(async (x: number, y: number, mapArea: string) => {
+        if (!token) return;
+
         try {
             const apiUrl = `${getBackendUrl()}/api/v1/world/update-location`;
             
@@ -123,9 +125,9 @@ export default function WorldPage() {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`,
                 },
                 body: JSON.stringify({
-                    user_id: userId,
                     x,
                     y,
                     map_area: mapArea
@@ -135,7 +137,7 @@ export default function WorldPage() {
             // 静默处理，不阻塞游戏
             console.debug('[WorldPage] Failed to update location (non-blocking):', error);
         }
-    }, [getBackendUrl]);
+    }, [getBackendUrl, token]);
 
     useEffect(() => {
         // 输出版本号，用于验证部署
@@ -169,12 +171,12 @@ export default function WorldPage() {
 
     // 单独的 useEffect 处理 WebSocket
     useEffect(() => {
-        if (!user?.id) return;
+        if (!user?.id || !isAuthenticated || !token) return;
         
         console.log('[WorldPage] Initializing WebSocket for user:', user.id, user.username);
         
         // 先更新玩家位置到后端
-        updatePlayerLocation(user.id, 100, 100, "开放世界");
+        updatePlayerLocation(100, 100, "开放世界");
         
         const sync = new WorldSyncService(user.id, "开放世界");
         
@@ -220,7 +222,7 @@ export default function WorldPage() {
         return () => {
             sync.disconnect();
         };
-    }, [user?.id]);
+    }, [user?.id, isAuthenticated, token, updatePlayerLocation]);
 
     // 单独的 useEffect 处理事件监听
     useEffect(() => {

@@ -357,12 +357,13 @@ export class WorldSyncService {
             
             // 🔒 获取认证Token
             const token = getAuthToken();
+            if (!token) {
+                return;
+            }
             const headers: Record<string, string> = {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`,
             };
-            if (token) {
-                headers['Authorization'] = `Bearer ${token}`;
-            }
             
             await fetch(apiUrl, {
                 method: 'POST',

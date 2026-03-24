@@ -567,7 +567,12 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
       
       {/* Right Sidebar - Food Backpack */}
       <button
-        onClick={() => setShowFoodSelector(!showFoodSelector)}
+        onClick={() => {
+          setShowWardrobe(false);
+          setShowPetList(false);
+          setShowFoodShop(false);
+          setShowFoodSelector(true);
+        }}
         className="absolute right-4 top-1/2 transform -translate-y-1/2 z-40 bg-slate-700 hover:bg-slate-600 text-white px-3 py-6 rounded-l-xl shadow-2xl transition-all hover:scale-105 border-r-0 border-2 border-slate-500"
         title="食物背包"
       >
@@ -617,7 +622,7 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
                   title={`设为跟随：${pet.name}`}
                 >
                   <div className="relative group">
-                    <div className="relative w-16 h-16 flex items-center justify-center" style={{ transform: `scale(${scale})` }}>
+                    <div className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-[18px] bg-slate-950/20" style={{ transform: `scale(${scale})` }}>
                       {techAccent && (
                         <>
                           <div className={`absolute inset-0 ${techAccent.frame} ${techAccent.glow}`} />
@@ -626,12 +631,12 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
                           </div>
                         </>
                       )}
+                      <div className={`absolute inset-1 rounded-[16px] border-2 ${ringClass}`} />
                       {hasAsset ? (
                         <img
                           src={petImgUrl}
                           alt={pet.name}
                           className="w-full h-full object-contain drop-shadow-lg"
-                          style={{ imageRendering: 'pixelated' }}
                         />
                       ) : (
                         <span className="text-5xl drop-shadow-lg">{config.icon}</span>
@@ -697,7 +702,7 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
               
               {/* Pet Body (with breathing animation) */}
               <motion.div 
-                className="relative w-32 h-32 flex items-center justify-center"
+                className="relative flex h-32 w-32 items-center justify-center overflow-hidden rounded-[32px]"
                 animate={{
                   scale: [currentScale, currentScale * 1.05, currentScale],
                   y: [0, -5, 0]
@@ -720,6 +725,7 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
                     </div>
                   </>
                 )}
+                <div className={`absolute inset-2 rounded-[26px] border-2 ${getStageRingClass(currentStageIndex, currentPet.petStyle)}`} />
                 {currentAppearance?.specialEffect && (
                   <div className="absolute inset-0 -z-10">
                     {currentAppearance.specialEffect === 'aura' && (
@@ -738,7 +744,6 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
                     src={currentImageUrl} 
                     alt={currentPet.name}
                     className="w-full h-full object-contain drop-shadow-2xl"
-                    style={{ imageRendering: 'pixelated' }}
                   />
                 ) : (
                   <span className="text-8xl drop-shadow-2xl">{petConfig.icon}</span>
@@ -946,7 +951,7 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
                               src={petImgUrl}
                               alt={pet.name}
                               className="w-full h-full object-contain drop-shadow"
-                              style={{ imageRendering: 'pixelated', transform: `scale(${listScale})` }}
+                              style={{ transform: `scale(${listScale})` }}
                             />
                           ) : (
                             <span className="text-2xl">{config.icon}</span>
@@ -996,6 +1001,7 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
       <FoodSelector
         isOpen={showFoodSelector}
         petId={currentPet.id}
+        petName={currentPet.name}
         onClose={() => setShowFoodSelector(false)}
       />
       

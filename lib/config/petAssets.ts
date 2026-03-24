@@ -1,4 +1,4 @@
-import { PetType, PetStatus } from '@/types/pet';
+import { PET_CONFIGS, PetType, PetStatus } from '@/types/pet';
 import { getPetArtworkProfile, resolvePetStageArtwork } from '@/lib/config/petArtworkProfiles';
 
 export interface PetAnimation {
@@ -42,11 +42,11 @@ const buildStaticAnimationSet = (src: string): PetAnimation => ({
   walking: src,
 });
 
-const buildProfileAsset = (type: PetType, name: string): PetAssetConfig => {
+const buildProfileAsset = (type: PetType): PetAssetConfig => {
   const preview = getPetArtworkProfile(type)?.preview ?? resolvePetStageArtwork(type, 1) ?? '';
   return {
     type,
-    name,
+    name: PET_CONFIGS[type]?.displayName ?? type,
     isAnimated: false,
     useLottie: false,
     previewSvg: preview,
@@ -84,15 +84,15 @@ export const PET_ASSETS: Record<PetType, PetAssetConfig> = {
     animations: buildStaticAnimationSet('/assets/pets/egg.svg'),
   },
 
-  code_kitty: buildProfileAsset('code_kitty', '灰塔猫'),
-  algo_bunny: buildProfileAsset('algo_bunny', '乐跑猎犬'),
-  shiba_debugger: buildProfileAsset('shiba_debugger', '团子熊猫'),
-  bit_bot: buildProfileAsset('bit_bot', '灵光金鱼'),
-  data_sprite: buildProfileAsset('data_sprite', '破冰企鹅'),
-  ava_ai: buildProfileAsset('ava_ai', '冲刺虎崽'),
-  code_dragon: buildProfileAsset('code_dragon', '狮王队长'),
-  giraffe_oracle: buildProfileAsset('giraffe_oracle', '长颈观察员'),
-  snow_cat: buildProfileAsset('snow_cat', '云团白猫'),
+  code_kitty: buildProfileAsset('code_kitty'),
+  algo_bunny: buildProfileAsset('algo_bunny'),
+  shiba_debugger: buildProfileAsset('shiba_debugger'),
+  bit_bot: buildProfileAsset('bit_bot'),
+  data_sprite: buildProfileAsset('data_sprite'),
+  ava_ai: buildProfileAsset('ava_ai'),
+  code_dragon: buildProfileAsset('code_dragon'),
+  giraffe_oracle: buildProfileAsset('giraffe_oracle'),
+  snow_cat: buildProfileAsset('snow_cat'),
 
   dog_shiba: SHIBA_INU_ASSETS,
 

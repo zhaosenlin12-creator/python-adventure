@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, memo, useCallback, useEffect, useRef } from 'react';
+import { useState, memo, useCallback, useEffect } from 'react';
 import { useFoodStore } from '@/store/foodStore';
 import { useAuthStore } from '@/store/authStore';
 import { usePetStore } from '@/store/petStore';
@@ -14,8 +14,10 @@ interface FoodSelectorProps {
   isOpen: boolean;
   onClose: () => void;
   petId: number;
+  petName?: string;
 }
 const FEED_TIMEOUT_MS = 12000;
+type FeedbackTone = 'success' | 'error' | null;
 
 function withTimeout<T>(promise: Promise<T>, ms: number, message: string): Promise<T> {
   return new Promise((resolve, reject) => {
@@ -182,42 +184,60 @@ FoodPreview.displayName = 'FoodPreview';
  * - 使用useCallback优化回调函数
  * - 移除未使用的变量
  */
-function FoodSelector({ isOpen, onClose, petId }: FoodSelectorProps) {
+function FoodSelector({ isOpen, onClose, petId, petName }: FoodSelectorProps) {
   const [selectedFoodId, setSelectedFoodId] = useState<string | null>(null);
   const [isFeeding, setIsFeeding] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState<string | null>(null);
+  const [feedbackTone, setFeedbackTone] = useState<FeedbackTone>(null);
   
   const { inventory, loadInventory } = useFoodStore();
   const { token } = useAuthStore();
   const { feedPet, loadPets } = usePetStore();
   
-  // 仅在打开面板时加载一次，避免死循环
-  const hasLoadedRef = useRef(false);
-  
+  const handleClose = useCallback(() => {
+    onClose();
+    setSelectedFoodId(null);
+    setFeedbackMessage(null);
+    setFeedbackTone(null);
+  }, [onClose]);
+
   useEffect(() => {
-    if (isOpen && token) {
-      // 如果刚打开面板，或者之前没有加载过
-      if (!hasLoadedRef.current) {
-        // 使用缓存策略，避免重复请求导致卡顿
-        loadInventory(token);
-        hasLoadedRef.current = true;
-      }
-    } else {
-      // 关闭时重置加载标记，以便下次打开时重新加载
-      hasLoadedRef.current = false;
-    }
+    if (!isOpen || !token) return;
+
+    setFeedbackMessage(null);
+    setFeedbackTone(null);
+    loadInventory(token, true).catch(() => {});
   }, [isOpen, token, loadInventory]);
+
+  useEffect(() => {
+    if (!isOpen) {
+      setSelectedFoodId(null);
+      return;
+    }
+
+    const selectedStillExists = selectedFoodId ? inventory.some((item) => item.food_id === selectedFoodId) : false;
+    if ((!selectedFoodId || !selectedStillExists) && inventory.length > 0) {
+      setSelectedFoodId(inventory[0].food_id);
+    }
+  }, [isOpen, inventory, selectedFoodId]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && !isFeeding) {
+        handleClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, isFeeding, handleClose]);
   
   // 使用useCallback优化回调函数
   const handleSelectFood = useCallback((foodId: string) => {
     setSelectedFoodId(foodId);
   }, []);
-  
-  const handleClose = useCallback(() => {
-    onClose();
-    setSelectedFoodId(null);
-    setFeedbackMessage(null);
-  }, [onClose]);
   
   const handleFeed = useCallback(async () => {
     if (!selectedFoodId || !token) return;
@@ -225,7 +245,8 @@ function FoodSelector({ isOpen, onClose, petId }: FoodSelectorProps) {
     // 找到选中的食物获取效果
     const selectedFood = inventory.find(item => item.food_id === selectedFoodId);
     if (!selectedFood) {
-      setFeedbackMessage('❌ 食物不存在，请重新选择');
+      setFeedbackTone('error');
+      setFeedbackMessage('当前食物不存在或库存已变化，请重新选择。');
       return;
     }
     
@@ -244,7 +265,8 @@ function FoodSelector({ isOpen, onClose, petId }: FoodSelectorProps) {
       playSound('pet_eat');
       
       // 4. 显示成功反馈
-      setFeedbackMessage('✅ 喂食成功！你的伙伴很开心！');
+      setFeedbackTone('success');
+      setFeedbackMessage(`喂食成功，${petName || '你的伙伴'}现在状态更好了。`);
       
       // 5. 后台刷新宠物数据
       loadPets().catch(() => {});
@@ -260,18 +282,19 @@ function FoodSelector({ isOpen, onClose, petId }: FoodSelectorProps) {
     } catch (error) {
       console.error('Failed to feed pet:', error);
       const errorMsg = error instanceof Error ? error.message : '未知错误';
+      setFeedbackTone('error');
       
       // 友好的错误提示
       if (errorMsg.includes('Not enough') || errorMsg.includes('库存不足')) {
-        setFeedbackMessage('❌ 这个食物已经用完了，请选择其他食物');
+        setFeedbackMessage('这份食物已经用完了，请换一个继续喂养。');
         // 刷新库存
-        loadInventory(token, true);
+        loadInventory(token, true).catch(() => {});
       } else if (errorMsg.includes('网络') || errorMsg.includes('Failed to fetch') || errorMsg.includes('NetworkError')) {
-        setFeedbackMessage('❌ 网络异常，请稍后重试');
+        setFeedbackMessage('网络异常，暂时无法完成喂食，请稍后重试。');
       } else if (errorMsg.includes('timeout') || errorMsg.includes('aborted') || errorMsg.includes('超时')) {
-        setFeedbackMessage('❌ 网络超时，请稍后重试');
+        setFeedbackMessage('请求超时了，请稍后重新尝试。');
       } else {
-        setFeedbackMessage(`❌ 喂食失败：${errorMsg}`);
+        setFeedbackMessage(`喂食失败：${errorMsg}`);
       }
     } finally {
       setIsFeeding(false);
@@ -283,19 +306,33 @@ function FoodSelector({ isOpen, onClose, petId }: FoodSelectorProps) {
   const selectedFood = inventory.find(item => item.food_id === selectedFoodId);
   
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
-      <div className="pixel-panel w-full max-w-md max-h-[80vh] overflow-y-auto">
+    <div
+      className="fixed inset-0 z-[140] flex items-center justify-center bg-slate-950/80 px-4 py-6 backdrop-blur-sm"
+      onClick={handleClose}
+    >
+      <div
+        className="pixel-panel w-full max-w-2xl max-h-[86vh] overflow-y-auto rounded-[28px] border-2 border-slate-700 bg-[linear-gradient(180deg,rgba(15,23,42,0.98),rgba(2,6,23,0.96))] shadow-[0_30px_80px_rgba(2,6,23,0.55)]"
+        onClick={(event) => event.stopPropagation()}
+      >
         {/* 头部 */}
-        <div className="flex justify-between items-center p-4 border-b border-slate-700">
-          <h2 className="text-xl font-bold text-white">
-            🍖 选择食物
-          </h2>
-          <button
-            onClick={handleClose}
-            className="text-slate-400 hover:text-white text-2xl"
-          >
-            ×
-          </button>
+        <div className="border-b border-slate-700 px-5 py-4">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <h2 className="text-xl font-bold text-white">
+                🍖 喂养 {petName || '当前伙伴'}
+              </h2>
+              <p className="mt-1 text-sm text-slate-400">
+                选择一份库存中的食物，立即同步刷新宠物状态和背包库存。
+              </p>
+            </div>
+            <button
+              onClick={handleClose}
+              className="text-slate-400 hover:text-white text-2xl"
+              aria-label="关闭喂养弹窗"
+            >
+              ×
+            </button>
+          </div>
         </div>
         
         {/* 食物背包 */}
@@ -307,8 +344,8 @@ function FoodSelector({ isOpen, onClose, petId }: FoodSelectorProps) {
         {/* 反馈消息 */}
         {feedbackMessage && (
           <div className={`
-            mx-4 mt-4 p-3 text-sm border rounded-lg animate-pulse
-            ${feedbackMessage.startsWith('✅') 
+            mx-4 mt-4 rounded-xl border p-3 text-sm
+            ${feedbackTone === 'success'
               ? 'bg-emerald-900/20 border-emerald-500/30 text-emerald-300'
               : 'bg-red-950/30 border-red-500/40 text-red-300'
             }

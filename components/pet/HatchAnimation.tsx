@@ -65,7 +65,6 @@ export function HatchAnimation({ isOpen, onComplete, revealIcon }: HatchAnimatio
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         className="fixed inset-0 z-[9999] flex items-center justify-center bg-gradient-to-br from-slate-950 via-slate-900 to-amber-900/60"
-        style={{ imageRendering: 'pixelated' }}
       >
         {/* 跳过按钮 */}
         <button
@@ -81,7 +80,6 @@ export function HatchAnimation({ isOpen, onComplete, revealIcon }: HatchAnimatio
             <motion.div
               key={i}
               className="absolute"
-              style={{ imageRendering: 'pixelated' }}
               initial={{
                 x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
                 y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
@@ -325,7 +323,6 @@ export function HatchAnimation({ isOpen, onComplete, revealIcon }: HatchAnimatio
                     src={revealIcon}
                     alt="即将孵化"
                     className="w-32 h-32 object-contain"
-                    style={{ imageRendering: 'pixelated' }}
                   />
                 ) : (
                   <HelpCircle className="w-28 h-28 text-slate-200" />

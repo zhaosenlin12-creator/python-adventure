@@ -265,34 +265,45 @@ async def feed_pet(
             """))
 
             # 查询库存
-            row = db.execute(
+            now_iso = datetime.utcnow().isoformat()
+            update_result = db.execute(
+                text("""
+                    UPDATE food_inventory
+                    SET quantity = quantity - :quantity,
+                        updated_at = :updated_at
+                    WHERE user_id = :user_id
+                      AND food_id = :food_id
+                      AND quantity >= :quantity
+                """),
+                {
+                    "quantity": quantity,
+                    "updated_at": now_iso,
+                    "user_id": current_user.id,
+                    "food_id": food_id
+                }
+            )
+
+            if update_result.rowcount == 0:
+                row = db.execute(
+                    text("""
+                        SELECT quantity FROM food_inventory
+                        WHERE user_id = :user_id AND food_id = :food_id
+                    """),
+                    {"user_id": current_user.id, "food_id": food_id}
+                ).fetchone()
+                raise HTTPException(
+                    status_code=400,
+                    detail=f"Not enough {food_type.name}. Available: {row[0] if row else 0}, Required: {quantity}"
+                )
+
+            remaining_row = db.execute(
                 text("""
                     SELECT quantity FROM food_inventory
                     WHERE user_id = :user_id AND food_id = :food_id
                 """),
                 {"user_id": current_user.id, "food_id": food_id}
             ).fetchone()
-
-            if not row or row[0] < quantity:
-                raise HTTPException(
-                    status_code=400,
-                    detail=f"Not enough {food_type.name}. Available: {row[0] if row else 0}, Required: {quantity}"
-                )
-
-            new_quantity = row[0] - quantity
-            db.execute(
-                text("""
-                    UPDATE food_inventory
-                    SET quantity = :quantity, updated_at = :updated_at
-                    WHERE user_id = :user_id AND food_id = :food_id
-                """),
-                {
-                    "quantity": new_quantity,
-                    "updated_at": datetime.utcnow().isoformat(),
-                    "user_id": current_user.id,
-                    "food_id": food_id
-                }
-            )
+            new_quantity = remaining_row[0] if remaining_row else 0
         else:
             effects = request.get('effects', {}) or {}
             new_quantity = None

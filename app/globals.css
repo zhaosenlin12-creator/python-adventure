@@ -21,7 +21,6 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    image-rendering: pixelated;
     font-family: var(--font-pixel);
     min-height: 100vh;
     background-image:

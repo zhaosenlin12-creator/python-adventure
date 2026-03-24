@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import sqlite3
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -43,6 +44,37 @@ def _query_one(sql: str, params: tuple = ()):
     row = cursor.fetchone()
     conn.close()
     return row
+
+
+def _set_food_inventory(username: str, food_id: str, quantity: int) -> None:
+    user_row = _query_one("SELECT id FROM users WHERE username = ?", (username,))
+    assert user_row is not None
+    user_id = user_row[0]
+    now = datetime.utcnow().isoformat()
+
+    _exec_sql(
+        """
+        CREATE TABLE IF NOT EXISTS food_inventory (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            food_id TEXT NOT NULL,
+            quantity INTEGER NOT NULL DEFAULT 0,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE(user_id, food_id)
+        )
+        """
+    )
+    _exec_sql(
+        """
+        INSERT INTO food_inventory (user_id, food_id, quantity, created_at, updated_at)
+        VALUES (?, ?, ?, ?, ?)
+        ON CONFLICT(user_id, food_id) DO UPDATE
+        SET quantity = excluded.quantity,
+            updated_at = excluded.updated_at
+        """,
+        (user_id, food_id, quantity, now, now),
+    )
 
 
 def _create_pet(
@@ -200,6 +232,36 @@ class TestPetFeeding:
         assert r1.status_code == 200
         assert r2.status_code == 200
         assert r2.json()["pet"]["exp"] == r1.json()["pet"]["exp"] + 10
+
+    def test_feed_food_inventory_is_atomic_under_concurrency(self, auth_token, clean_pets):
+        create_response = _create_pet(auth_token)
+        pet_id = create_response.json()["pet"]["id"]
+        _set_food_inventory(TEST_USER["username"], "apple", 1)
+
+        def _feed_once():
+            with TestClient(app) as thread_client:
+                return thread_client.put(
+                    f"/api/v1/pets/{pet_id}/feed",
+                    headers=_headers(auth_token),
+                    json={"food_id": "apple", "quantity": 1},
+                )
+
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            responses = [future.result() for future in [executor.submit(_feed_once), executor.submit(_feed_once)]]
+
+        assert sorted(response.status_code for response in responses) == [200, 400]
+
+        remaining = _query_one(
+            "SELECT quantity FROM food_inventory WHERE user_id IN (SELECT id FROM users WHERE username = ?) AND food_id = ?",
+            (TEST_USER["username"], "apple"),
+        )
+        assert remaining is not None
+        assert remaining[0] == 0
+
+        pet_state = _query_one("SELECT exp, intimacy FROM pets WHERE id = ?", (pet_id,))
+        assert pet_state is not None
+        assert pet_state[0] == 10
+        assert pet_state[1] == 1
 
 
 class TestPetStatus:
