@@ -1,77 +1,62 @@
 """
-🔧 缓存服务 - Redis缓存层（带内存降级）
-支持热点数据缓存，减少数据库查询压力
-
-特性：
-- 有Redis时使用Redis缓存
-- 无Redis时自动降级到内存缓存
-- 支持TTL过期
-- 线程安全
+Cache helpers with Redis support and an in-memory fallback.
 """
-from typing import Optional, Any, Dict
+
 from datetime import datetime, timedelta
+import fnmatch
 import json
 import threading
+from typing import Any, Optional
 
 from app.core.config import settings
 
-# Redis客户端（可选）
+
 _redis_client = None
 _redis_available = False
 
-# 内存缓存（降级方案）
-_memory_cache: Dict[str, tuple] = {}  # {key: (value, expire_time)}
+_memory_cache: dict[str, tuple[Any, datetime | None]] = {}
 _cache_lock = threading.Lock()
 
-# 缓存配置
-CACHE_TTL_USER = 300  # 用户信息缓存5分钟
-CACHE_TTL_LEADERBOARD = 60  # 排行榜缓存1分钟
-CACHE_TTL_SHORT = 30  # 短期缓存30秒
+CACHE_TTL_USER = 300
+CACHE_TTL_LEADERBOARD = 60
+CACHE_TTL_SHORT = 30
 
 
-def init_redis():
+def init_redis() -> None:
     """
-    初始化Redis连接
-    如果Redis不可用，自动降级到内存缓存
+    Initialize the Redis client.
+    If Redis is unavailable, automatically fall back to in-memory cache.
     """
     global _redis_client, _redis_available
-    
+
     try:
         import redis
+
         _redis_client = redis.from_url(
             settings.REDIS_URL,
             decode_responses=True,
             socket_connect_timeout=2,
-            socket_timeout=2
+            socket_timeout=2,
         )
-        # 测试连接
         _redis_client.ping()
         _redis_available = True
-        print("[Cache] ✅ Redis连接成功")
+        print("[Cache] redis connected")
     except Exception as e:
         _redis_available = False
         _redis_client = None
-        print(f"[Cache] ⚠️ Redis不可用，降级到内存缓存: {e}")
+        print(f"[Cache] redis unavailable, falling back to memory cache: {e}")
 
 
-def _cleanup_memory_cache():
-    """清理过期的内存缓存（内部调用，已持有锁）"""
+def _cleanup_memory_cache() -> None:
+    """Remove expired entries while holding the cache lock."""
     now = datetime.utcnow()
-    expired = [k for k, (_, exp) in _memory_cache.items() if exp and exp < now]
-    for k in expired:
-        del _memory_cache[k]
+    expired_keys = [key for key, (_, expiry) in _memory_cache.items() if expiry and expiry < now]
+    for key in expired_keys:
+        del _memory_cache[key]
 
 
 def cache_get(key: str) -> Optional[Any]:
-    """
-    获取缓存值
-    
-    Args:
-        key: 缓存键
-        
-    Returns:
-        缓存值，不存在或过期返回None
-    """
+    """Get a cached value, returning None when missing or expired."""
     if _redis_available and _redis_client:
         try:
             value = _redis_client.get(key)
@@ -79,138 +64,103 @@ def cache_get(key: str) -> Optional[Any]:
                 return json.loads(value)
             return None
         except Exception as e:
-            print(f"[Cache] Redis读取失败: {e}")
-            # 降级到内存缓存
-    
-    # 内存缓存
+            print(f"[Cache] redis read failed: {e}")
+
     with _cache_lock:
         _cleanup_memory_cache()
-        if key in _memory_cache:
-            value, expire_time = _memory_cache[key]
-            if expire_time is None or expire_time > datetime.utcnow():
-                return value
-            else:
-                del _memory_cache[key]
+        if key not in _memory_cache:
+            return None
+
+        value, expiry = _memory_cache[key]
+        if expiry is None or expiry > datetime.utcnow():
+            return value
+
+        del _memory_cache[key]
         return None
 
 
 def cache_set(key: str, value: Any, ttl: int = CACHE_TTL_SHORT) -> bool:
-    """
-    设置缓存值
-    
-    Args:
-        key: 缓存键
-        value: 缓存值（会被JSON序列化）
-        ttl: 过期时间（秒）
-        
-    Returns:
-        是否成功
-    """
+    """Set a cached value using Redis or the in-memory fallback."""
     if _redis_available and _redis_client:
         try:
             _redis_client.setex(key, ttl, json.dumps(value, ensure_ascii=False, default=str))
             return True
         except Exception as e:
-            print(f"[Cache] Redis写入失败: {e}")
-            # 降级到内存缓存
-    
-    # 内存缓存
+            print(f"[Cache] redis write failed: {e}")
+
     with _cache_lock:
         _cleanup_memory_cache()
-        expire_time = datetime.utcnow() + timedelta(seconds=ttl) if ttl > 0 else None
-        _memory_cache[key] = (value, expire_time)
+        expiry = datetime.utcnow() + timedelta(seconds=ttl) if ttl > 0 else None
+        _memory_cache[key] = (value, expiry)
         return True
 
 
 def cache_delete(key: str) -> bool:
-    """
-    删除缓存
-    
-    Args:
-        key: 缓存键
-        
-    Returns:
-        是否成功
-    """
+    """Delete a cache key from both Redis and the fallback store."""
     if _redis_available and _redis_client:
         try:
             _redis_client.delete(key)
         except Exception as e:
-            print(f"[Cache] Redis删除失败: {e}")
-    
-    # 同时清理内存缓存
+            print(f"[Cache] redis delete failed: {e}")
+
     with _cache_lock:
-        if key in _memory_cache:
-            del _memory_cache[key]
-    
+        _memory_cache.pop(key, None)
+
     return True
 
 
 def cache_delete_pattern(pattern: str) -> int:
-    """
-    按模式删除缓存（如 user:* 删除所有用户缓存）
-    
-    Args:
-        pattern: 键模式（支持*通配符）
-        
-    Returns:
-        删除的键数量
-    """
-    count = 0
-    
+    """Delete cache keys that match a wildcard pattern."""
+    deleted_count = 0
+
     if _redis_available and _redis_client:
         try:
             keys = _redis_client.keys(pattern)
             if keys:
-                count = _redis_client.delete(*keys)
+                deleted_count = _redis_client.delete(*keys)
         except Exception as e:
-            print(f"[Cache] Redis批量删除失败: {e}")
-    
-    # 同时清理内存缓存
+            print(f"[Cache] redis bulk delete failed: {e}")
+
     with _cache_lock:
-        import fnmatch
-        to_delete = [k for k in _memory_cache.keys() if fnmatch.fnmatch(k, pattern)]
-        for k in to_delete:
-            del _memory_cache[k]
-            count += 1
-    
-    return count
+        matching_keys = [key for key in _memory_cache.keys() if fnmatch.fnmatch(key, pattern)]
+        for key in matching_keys:
+            del _memory_cache[key]
+            deleted_count += 1
 
+    return deleted_count
 
-# ==================== 便捷缓存函数 ====================
 
 def cache_user(user_id: int, user_data: dict) -> bool:
-    """缓存用户信息"""
+    """Cache user data."""
     return cache_set(f"user:{user_id}", user_data, CACHE_TTL_USER)
 
 
 def get_cached_user(user_id: int) -> Optional[dict]:
-    """获取缓存的用户信息"""
+    """Read cached user data."""
     return cache_get(f"user:{user_id}")
 
 
 def invalidate_user_cache(user_id: int) -> bool:
-    """使用户缓存失效"""
+    """Invalidate cached user data."""
     return cache_delete(f"user:{user_id}")
 
 
 def cache_leaderboard(board_type: str, data: list) -> bool:
-    """缓存排行榜"""
+    """Cache leaderboard data."""
     return cache_set(f"leaderboard:{board_type}", data, CACHE_TTL_LEADERBOARD)
 
 
 def get_cached_leaderboard(board_type: str) -> Optional[list]:
-    """获取缓存的排行榜"""
+    """Read cached leaderboard data."""
     return cache_get(f"leaderboard:{board_type}")
 
 
-def invalidate_leaderboard_cache(board_type: str = None) -> int:
-    """使排行榜缓存失效"""
+def invalidate_leaderboard_cache(board_type: str | None = None) -> int:
+    """Invalidate leaderboard cache for one board or all boards."""
     if board_type:
         cache_delete(f"leaderboard:{board_type}")
         return 1
     return cache_delete_pattern("leaderboard:*")
 
 
-# 启动时初始化Redis
 init_redis()
