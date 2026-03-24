@@ -1,0 +1,72 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'>
+  <defs>
+    <radialGradient id='sd_body' cx='45%' cy='35%' r='55%'>
+      <stop offset='0%' stop-color='#FFD699'/><stop offset='50%' stop-color='#FFB74D'/><stop offset='100%' stop-color='#F5A623'/>
+    </radialGradient>
+    <radialGradient id='sd_face' cx='50%' cy='45%' r='50%'>
+      <stop offset='0%' stop-color='#FFFBF2'/><stop offset='100%' stop-color='#FFECB3'/>
+    </radialGradient>
+    <linearGradient id='sd_goggle' x1='0%' y1='0%' x2='0%' y2='100%'>
+      <stop offset='0%' stop-color='#4FC3F7'/><stop offset='50%' stop-color='#29B6F6'/><stop offset='100%' stop-color='#0288D1'/>
+    </linearGradient>
+    <linearGradient id='sd_lens' x1='20%' y1='0%' x2='80%' y2='100%'>
+      <stop offset='0%' stop-color='#E1F5FE' stop-opacity='0.7'/><stop offset='50%' stop-color='#B3E5FC' stop-opacity='0.3'/><stop offset='100%' stop-color='#81D4FA' stop-opacity='0.1'/>
+    </linearGradient>
+    <filter id='sd_sh'><feDropShadow dx='0' dy='2' stdDeviation='1.5' flood-color='#5D4037' flood-opacity='0.18'/></filter>
+  </defs>
+  <g filter='url(#sd_sh)'>
+  <g stroke='#5D4037' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <!-- Curl tail -->
+    <path d='M68 68 Q82 60 80 48 Q78 38 72 40 Q66 42 70 50' stroke='#F5A623' stroke-width='6' fill='none'/>
+    <path d='M68 68 Q82 60 80 48 Q78 38 72 40 Q66 42 70 50' stroke='#5D4037' stroke-width='2' fill='none'/>
+    <path d='M78 50 Q76 42 72 42' stroke='#FFD699' stroke-width='3' fill='none' opacity='0.4'/>
+    <!-- Ears -->
+    <path d='M24 34 L13 12 L37 26 Z' fill='#FFB74D'/><path d='M72 34 L59 26 L83 12 Z' fill='#FFB74D'/>
+    <path d='M26 32 L17 16 L35 28 Z' fill='#FFE0B2' opacity='0.65'/><path d='M70 32 L61 28 L79 16 Z' fill='#FFE0B2' opacity='0.65'/>
+    <!-- Body -->
+    <ellipse cx='48' cy='74' rx='22' ry='15' fill='url(#sd_body)'/>
+    <ellipse cx='48' cy='76' rx='14' ry='9' fill='url(#sd_face)'/>
+    <!-- Paws -->
+    <ellipse cx='32' cy='86' rx='8' ry='5' fill='#FFB74D'/><ellipse cx='64' cy='86' rx='8' ry='5' fill='#FFB74D'/>
+    <ellipse cx='32' cy='87' rx='5' ry='3' fill='#FFFBF2'/><ellipse cx='64' cy='87' rx='5' ry='3' fill='#FFFBF2'/>
+    <!-- Head -->
+    <circle cx='48' cy='48' r='27' fill='url(#sd_body)'/>
+    <ellipse cx='40' cy='36' rx='12' ry='8' fill='#FFD699' opacity='0.3'/>
+    <!-- Face white marking -->
+    <path d='M48 30 Q31 43 33 58 Q35 65 48 67 Q61 65 63 58 Q65 43 48 30' fill='url(#sd_face)'/>
+    <!-- Cheek blush -->
+    <ellipse cx='28' cy='55' rx='6' ry='4' fill='#FFAB91' opacity='0.45'/>
+    <ellipse cx='68' cy='55' rx='6' ry='4' fill='#FFAB91' opacity='0.45'/>
+    <!-- Goggles strap -->
+    <path d='M18 36 Q48 27 78 36' stroke='#546E7A' stroke-width='3.5' fill='none'/>
+    <path d='M18 36 Q48 27 78 36' stroke='#78909C' stroke-width='2' fill='none' opacity='0.5'/>
+    <!-- Goggles L -->
+    <ellipse cx='36' cy='40' rx='12' ry='11' fill='url(#sd_goggle)' stroke='#37474F' stroke-width='2.5'/>
+    <ellipse cx='36' cy='40' rx='9' ry='8' fill='#E1F5FE' stroke='none'/>
+    <ellipse cx='36' cy='40' rx='9' ry='8' fill='url(#sd_lens)' stroke='none'/>
+    <ellipse cx='34' cy='37' rx='5' ry='3.5' fill='#fff' opacity='0.35'/>
+    <!-- Goggles R -->
+    <ellipse cx='60' cy='40' rx='12' ry='11' fill='url(#sd_goggle)' stroke='#37474F' stroke-width='2.5'/>
+    <ellipse cx='60' cy='40' rx='9' ry='8' fill='#E1F5FE' stroke='none'/>
+    <ellipse cx='60' cy='40' rx='9' ry='8' fill='url(#sd_lens)' stroke='none'/>
+    <ellipse cx='58' cy='37' rx='5' ry='3.5' fill='#fff' opacity='0.35'/>
+    <!-- Goggle bridge -->
+    <rect x='44' y='38' width='8' height='5' rx='1.5' fill='#455A64' stroke='#37474F' stroke-width='1.5'/>
+    <rect x='45' y='39' width='6' height='2' rx='0.5' fill='#607D8B' opacity='0.5'/>
+    <!-- Eyes behind goggles -->
+    <circle cx='36' cy='42' r='4' fill='#3E2723'/><circle cx='60' cy='42' r='4' fill='#3E2723'/>
+    <circle cx='34' cy='40' r='1.8' fill='#fff' opacity='0.85'/><circle cx='58' cy='40' r='1.8' fill='#fff' opacity='0.85'/>
+    <circle cx='37' cy='43' r='0.8' fill='#fff' opacity='0.4'/><circle cx='61' cy='43' r='0.8' fill='#fff' opacity='0.4'/>
+    <!-- Nose -->
+    <ellipse cx='48' cy='55' rx='5.5' ry='4' fill='#3E2723' stroke='#2C1B0E' stroke-width='0.8'/>
+    <ellipse cx='46.5' cy='53.5' rx='2.5' ry='1.5' fill='#5D4037' opacity='0.5'/>
+    <!-- Mouth -->
+    <path d='M48 58 Q41 65 37 61' stroke='#5D4037' stroke-width='2' fill='none'/>
+    <path d='M48 58 Q55 65 59 61' stroke='#5D4037' stroke-width='2' fill='none'/>
+    <!-- Tongue -->
+    <ellipse cx='48' cy='63' rx='5' ry='3.5' fill='#FF8A80' stroke='#D3675A' stroke-width='0.8'/>
+    <ellipse cx='48' cy='62' rx='3' ry='1.5' fill='#FFAB91' opacity='0.5'/>
+    <line x1='48' y1='60' x2='48' y2='65' stroke='#D3675A' stroke-width='0.6' opacity='0.4'/>
+  </g>
+  </g>
+</svg>

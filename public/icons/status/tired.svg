@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
+  <!-- 脸部圆圈 - 蓝灰色 -->
+  <circle cx="10" cy="10" r="8" fill="#e0f2fe" stroke="#60a5fa" stroke-width="1.5"/>
+  <!-- 疲惫的眼睛 (横线) -->
+  <line x1="6" y1="8" x2="8" y2="8" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="12" y1="8" x2="14" y2="8" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- 疲惫的嘴 -->
+  <path d="M7 13c1-0.5 2-0.5 3-0.5s2 0 3 0.5" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Z字符表示睡眠 -->
+  <path d="M14 3h2l-2 2h2" stroke="#60a5fa" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15 6h1.5l-1.5 1.5h1.5" stroke="#60a5fa" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

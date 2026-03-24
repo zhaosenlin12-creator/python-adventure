@@ -1,0 +1,70 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'>
+  <defs>
+    <linearGradient id='bb_body' x1='0%' y1='0%' x2='0%' y2='100%'>
+      <stop offset='0%' stop-color='#B3E5FC'/><stop offset='50%' stop-color='#81D4FA'/><stop offset='100%' stop-color='#4FC3F7'/>
+    </linearGradient>
+    <linearGradient id='bb_screen' x1='0%' y1='0%' x2='0%' y2='100%'>
+      <stop offset='0%' stop-color='#0D47A1'/><stop offset='100%' stop-color='#1A237E'/>
+    </linearGradient>
+    <linearGradient id='bb_metal' x1='0%' y1='0%' x2='0%' y2='100%'>
+      <stop offset='0%' stop-color='#B0BEC5'/><stop offset='50%' stop-color='#90A4AE'/><stop offset='100%' stop-color='#607D8B'/>
+    </linearGradient>
+    <radialGradient id='bb_led' cx='50%' cy='30%' r='60%'>
+      <stop offset='0%' stop-color='#80DEEA'/><stop offset='100%' stop-color='#00E5FF'/>
+    </radialGradient>
+    <radialGradient id='bb_ant' cx='50%' cy='50%' r='50%'>
+      <stop offset='0%' stop-color='#B2EBF2' stop-opacity='0.6'/><stop offset='100%' stop-color='#00E5FF' stop-opacity='0'/>
+    </radialGradient>
+    <filter id='bb_sh'><feDropShadow dx='0' dy='2' stdDeviation='1.5' flood-color='#263238' flood-opacity='0.2'/></filter>
+    <filter id='bb_glow'><feGaussianBlur stdDeviation='1.5'/></filter>
+  </defs>
+  <g filter='url(#bb_sh)'>
+  <g stroke='#263238' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <!-- Antenna -->
+    <line x1='48' y1='16' x2='48' y2='4' stroke='#78909C' stroke-width='3'/>
+    <circle cx='48' cy='3' r='5' fill='url(#bb_ant)'/><circle cx='48' cy='3' r='3.5' fill='#00E5FF' stroke='#263238' stroke-width='1.5'/>
+    <circle cx='47' cy='2' r='1.5' fill='#fff' opacity='0.6'/>
+    <!-- Head -->
+    <rect x='22' y='16' width='52' height='48' rx='10' fill='url(#bb_body)'/>
+    <!-- Head highlight -->
+    <rect x='26' y='18' width='20' height='8' rx='4' fill='#E1F5FE' opacity='0.3'/>
+    <!-- Screen face -->
+    <rect x='27' y='21' width='42' height='34' rx='7' fill='url(#bb_screen)' stroke='#0D47A1' stroke-width='1'/>
+    <!-- Screen edge glow -->
+    <rect x='29' y='23' width='38' height='30' rx='6' fill='none' stroke='#00E5FF' stroke-width='1' opacity='0.35'/>
+    <!-- LED Eyes -->
+    <rect x='33' y='29' width='12' height='10' rx='3' fill='url(#bb_led)'/><rect x='51' y='29' width='12' height='10' rx='3' fill='url(#bb_led)'/>
+    <rect x='34' y='30' width='5' height='4' rx='1.5' fill='#fff' opacity='0.45'/><rect x='52' y='30' width='5' height='4' rx='1.5' fill='#fff' opacity='0.45'/>
+    <!-- Pupil dots -->
+    <circle cx='39' cy='34' r='1.5' fill='#0D47A1' opacity='0.6'/><circle cx='57' cy='34' r='1.5' fill='#0D47A1' opacity='0.6'/>
+    <!-- LED Smile (pixel style) -->
+    <rect x='37' y='44' width='3.5' height='3.5' rx='0.5' fill='#00E5FF'/><rect x='41' y='47.5' width='3.5' height='3.5' rx='0.5' fill='#00E5FF'/><rect x='45' y='47.5' width='3.5' height='3.5' rx='0.5' fill='#00E5FF'/><rect x='49' y='47.5' width='3.5' height='3.5' rx='0.5' fill='#00E5FF'/><rect x='53' y='44' width='3.5' height='3.5' rx='0.5' fill='#00E5FF'/>
+    <!-- Ear panels -->
+    <rect x='13' y='27' width='11' height='18' rx='4' fill='url(#bb_metal)' stroke='#455A64' stroke-width='1.5'/>
+    <rect x='72' y='27' width='11' height='18' rx='4' fill='url(#bb_metal)' stroke='#455A64' stroke-width='1.5'/>
+    <rect x='15' y='30' width='7' height='3' rx='1' fill='#CFD8DC'/><rect x='15' y='35' width='7' height='3' rx='1' fill='#CFD8DC'/>
+    <rect x='74' y='30' width='7' height='3' rx='1' fill='#CFD8DC'/><rect x='74' y='35' width='7' height='3' rx='1' fill='#CFD8DC'/>
+    <!-- Neck joint -->
+    <rect x='42' y='62' width='12' height='4' rx='2' fill='#78909C'/>
+    <!-- Body -->
+    <rect x='29' y='64' width='38' height='22' rx='7' fill='url(#bb_body)'/>
+    <rect x='33' y='66' width='14' height='4' rx='2' fill='#E1F5FE' opacity='0.25'/>
+    <!-- Chest panel -->
+    <rect x='37' y='68' width='22' height='14' rx='4' fill='url(#bb_metal)' stroke='#455A64' stroke-width='1'/>
+    <!-- Chest LEDs -->
+    <circle cx='42' cy='75' r='3' fill='#FF5252' stroke='#B71C1C' stroke-width='0.5'/><circle cx='41' cy='74' r='1.2' fill='#FF8A80' opacity='0.6'/>
+    <circle cx='48' cy='75' r='3' fill='#FFEB3B' stroke='#F57F17' stroke-width='0.5'/><circle cx='47' cy='74' r='1.2' fill='#FFF9C4' opacity='0.6'/>
+    <circle cx='54' cy='75' r='3' fill='#69F0AE' stroke='#1B5E20' stroke-width='0.5'/><circle cx='53' cy='74' r='1.2' fill='#B9F6CA' opacity='0.6'/>
+    <!-- Arms -->
+    <rect x='17' y='66' width='14' height='6' rx='3' fill='url(#bb_metal)'/><rect x='65' y='66' width='14' height='6' rx='3' fill='url(#bb_metal)'/>
+    <circle cx='17' cy='69' r='5' fill='#B0BEC5' stroke='#607D8B' stroke-width='1'/><circle cx='79' cy='69' r='5' fill='#B0BEC5' stroke='#607D8B' stroke-width='1'/>
+    <circle cx='16' cy='68' r='2' fill='#CFD8DC' opacity='0.5'/><circle cx='78' cy='68' r='2' fill='#CFD8DC' opacity='0.5'/>
+    <!-- Feet -->
+    <rect x='31' y='84' width='13' height='8' rx='4' fill='url(#bb_metal)'/><rect x='52' y='84' width='13' height='8' rx='4' fill='url(#bb_metal)'/>
+    <rect x='33' y='88' width='9' height='3' rx='1' fill='#CFD8DC'/><rect x='54' y='88' width='9' height='3' rx='1' fill='#CFD8DC'/>
+    <!-- Screws -->
+    <circle cx='26' cy='20' r='2.5' fill='#90A4AE' stroke='#455A64' stroke-width='1'/><line x1='25' y1='20' x2='27' y2='20' stroke='#455A64' stroke-width='1.2'/>
+    <circle cx='70' cy='20' r='2.5' fill='#90A4AE' stroke='#455A64' stroke-width='1'/><line x1='69' y1='20' x2='71' y2='20' stroke='#455A64' stroke-width='1.2'/>
+  </g>
+  </g>
+</svg>

@@ -1,0 +1,287 @@
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
+import { useAuthStore } from './authStore';
+import * as progressAPI from '@/lib/api/progress';
+import { getApiBaseUrl } from '@/lib/config/api';
+
+export interface GameState {
+    xp: number;
+    level: number;
+    coins: number;
+    inventory: string[];
+    completedLevels: string[];
+
+    // Actions
+    addXp: (amount: number) => void;
+    addCoins: (amount: number) => void;
+    unlockLevel: (levelId: string) => void;
+    addToInventory: (item: string) => void;
+
+    // Key
+    hasKey: boolean;
+    setHasKey: (hasKey: boolean) => void;
+
+    // Skills
+    skills: string[];
+    unlockSkill: (skillId: string) => void;
+
+    // Arena
+    arenaScore: number;
+    arenaHighScore: number;
+    completedChallenges: string[];
+    addArenaScore: (points: number) => void;
+    completeChallenge: (challengeId: string) => void;
+    submitScore: (data: { challengeId: string; score: number; timeUsed: number; codeLength: number }) => Promise<void>;
+
+    // Campaigns
+    completedCampaigns: string[];
+    completedCampaignLevels: string[];
+    campaignProgress: { [campaignId: string]: number }; // 每个战役的进度
+    completeCampaign: (campaignId: string) => void;
+    completeCampaignLevel: (levelId: string) => void;
+    setCampaignProgress: (campaignId: string, progress: number) => void;
+
+    // Cloud Sync
+    loadFromCloud: () => Promise<void>;
+    saveToCloud: () => Promise<void>;
+    isSyncing: boolean;
+    lastSyncTime: number | null;
+}
+
+export const useGameStore = create<GameState>()(
+    persist(
+        (set, get) => ({
+            xp: 0,
+            level: 1,
+            coins: 0,
+            inventory: [],
+            completedLevels: [],
+
+            addXp: (amount) => {
+                set((state) => {
+                    const newXp = state.xp + amount;
+                    const xpToNextLevel = state.level * 100;
+                    let newLevel = state.level;
+
+                    if (newXp >= xpToNextLevel) {
+                        newLevel += 1;
+                    }
+
+                    return { xp: newXp, level: newLevel };
+                });
+                // Auto-save to cloud after XP change
+                get().saveToCloud();
+            },
+
+            addCoins: (amount) => {
+                set((state) => ({ coins: state.coins + amount }));
+                get().saveToCloud();
+            },
+
+            unlockLevel: (levelId) => {
+                set((state) => ({
+                    completedLevels: [...state.completedLevels, levelId]
+                }));
+                get().saveToCloud();
+            },
+
+            addToInventory: (item) => {
+                set((state) => ({
+                    inventory: [...state.inventory, item]
+                }));
+                get().saveToCloud();
+            },
+
+            // Key
+            hasKey: false,
+            setHasKey: (hasKey) => {
+                set({ hasKey });
+                get().saveToCloud();
+            },
+
+            skills: [],
+            unlockSkill: (skillId) => {
+                set((state) => {
+                    if (state.skills.includes(skillId)) return state;
+                    return { skills: [...state.skills, skillId] };
+                });
+                get().saveToCloud();
+            },
+
+            // Arena state
+            arenaScore: 0,
+            arenaHighScore: 0,
+            completedChallenges: [],
+
+            // Campaign state
+            completedCampaigns: [],
+            completedCampaignLevels: [],
+            campaignProgress: {},
+
+            addArenaScore: (points) => {
+                set((state) => {
+                    const newScore = state.arenaScore + points;
+                    const newHighScore = Math.max(newScore, state.arenaHighScore);
+                    return {
+                        arenaScore: newScore,
+                        arenaHighScore: newHighScore
+                    };
+                });
+                get().saveToCloud();
+            },
+
+            completeChallenge: (challengeId) => {
+                set((state) => {
+                    if (state.completedChallenges.includes(challengeId)) return state;
+                    return {
+                        completedChallenges: [...state.completedChallenges, challengeId]
+                    };
+                });
+                get().saveToCloud();
+            },
+
+            submitScore: async (data) => {
+                try {
+                    const { user } = useAuthStore.getState();
+                    if (!user) return;
+
+                    await fetch(`${getApiBaseUrl()}/leaderboard/submit`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            user_id: user.id,
+                            username: user.username,
+                            challenge_id: data.challengeId,
+                            score: data.score,
+                            time_used: data.timeUsed,
+                            code_length: data.codeLength
+                        })
+                    });
+                } catch (error) {
+                    console.error('Failed to submit score:', error);
+                }
+            },
+
+            // Campaign methods
+            completeCampaign: (campaignId) => {
+                set((state) => {
+                    if (state.completedCampaigns.includes(campaignId)) return state;
+                    return {
+                        completedCampaigns: [...state.completedCampaigns, campaignId]
+                    };
+                });
+                get().saveToCloud();
+            },
+
+            completeCampaignLevel: (levelId) => {
+                set((state) => {
+                    if (state.completedCampaignLevels.includes(levelId)) return state;
+                    return {
+                        completedCampaignLevels: [...state.completedCampaignLevels, levelId]
+                    };
+                });
+                get().saveToCloud();
+            },
+
+            setCampaignProgress: (campaignId, progress) => {
+                set((state) => ({
+                    campaignProgress: {
+                        ...state.campaignProgress,
+                        [campaignId]: progress
+                    }
+                }));
+                get().saveToCloud();
+            },
+
+            // Cloud Sync
+            isSyncing: false,
+            lastSyncTime: null,
+
+            loadFromCloud: async () => {
+                try {
+                    const { token, isAuthenticated } = useAuthStore.getState();
+                    if (!isAuthenticated || !token) {
+                        console.log('[GameStore] Not authenticated, skipping cloud load');
+                        return;
+                    }
+
+                    console.log('[GameStore] Loading progress from cloud...');
+                    set({ isSyncing: true });
+
+                    const progress = await progressAPI.loadProgress(token);
+
+                    set({
+                        level: progress.level,
+                        xp: progress.experience,
+                        coins: progress.coins,
+                        completedLevels: progress.completed_levels,
+                        skills: progress.skills,
+                        inventory: progress.inventory,
+                        hasKey: progress.has_key,
+                        arenaScore: progress.arena_score,
+                        arenaHighScore: progress.arena_high_score,
+                        completedChallenges: progress.completed_challenges,
+                        isSyncing: false,
+                        lastSyncTime: Date.now()
+                    });
+
+                    console.log('[GameStore] Progress loaded from cloud successfully');
+                } catch (error) {
+                    console.error('[GameStore] Failed to load progress from cloud:', error);
+                    set({ isSyncing: false });
+                }
+            },
+
+            saveToCloud: async () => {
+                try {
+                    const { token, isAuthenticated } = useAuthStore.getState();
+                    if (!isAuthenticated || !token) {
+                        return;
+                    }
+
+                    const state = get();
+                    if (state.isSyncing) {
+                        return; // Skip if already syncing
+                    }
+
+                    const progress: progressAPI.GameProgress = {
+                        level: state.level,
+                        experience: state.xp,
+                        coins: state.coins,
+                        completed_levels: state.completedLevels,
+                        skills: state.skills,
+                        inventory: state.inventory,
+                        has_key: state.hasKey,
+                        arena_score: state.arenaScore,
+                        arena_high_score: state.arenaHighScore,
+                        completed_challenges: state.completedChallenges
+                    };
+
+                    await progressAPI.saveProgress(progress, token);
+                    set({ lastSyncTime: Date.now() });
+                    console.log('[GameStore] Progress saved to cloud');
+                } catch (error) {
+                    console.error('[GameStore] Failed to save progress to cloud:', error);
+                }
+            }
+        }),
+        {
+            name: 'game-storage',
+            partialize: (state) => ({
+                arenaScore: state.arenaScore,
+                skills: state.skills,
+                arenaHighScore: state.arenaHighScore,
+                completedChallenges: state.completedChallenges,
+                hasKey: state.hasKey,
+                xp: state.xp,
+                level: state.level,
+                coins: state.coins,
+                inventory: state.inventory,
+                completedLevels: state.completedLevels,
+                completedCampaigns: state.completedCampaigns,
+                completedCampaignLevels: state.completedCampaignLevels,
+                campaignProgress: state.campaignProgress
+            }),
+        }
+    )
+);

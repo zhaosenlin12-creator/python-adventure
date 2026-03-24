@@ -1,0 +1,37 @@
+<svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="vg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#CE93D8"/><stop offset="100%" stop-color="#7B1FA2"/></linearGradient>
+    <filter id="vf"><feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#000" flood-opacity=".18"/></filter>
+  </defs>
+  <g filter="url(#vf)">
+    <!-- 花瓶 -->
+    <path d="M48 50 Q36 70 38 100 C38 112 50 116 64 116 C78 116 90 112 90 100 Q92 70 80 50 Z" fill="url(#vg)"/>
+    <path d="M48 50 Q54 46 64 44 Q74 46 80 50" fill="#BA68C8"/>
+    <ellipse cx="64" cy="48" rx="16" ry="4" fill="#AB47BC"/>
+    <!-- 花瓶装饰纹 -->
+    <ellipse cx="64" cy="82" rx="22" ry="3" fill="#fff" opacity=".1"/>
+    <ellipse cx="64" cy="72" rx="18" ry="2" fill="#fff" opacity=".08"/>
+    <!-- 花瓶高光 -->
+    <ellipse cx="52" cy="74" rx="4" ry="16" fill="#fff" opacity=".12"/>
+    <!-- 花束 -->
+    <path d="M64 44 Q60 30 56 18" stroke="#4CAF50" stroke-width="2" fill="none"/>
+    <path d="M64 44 Q68 28 72 16" stroke="#4CAF50" stroke-width="2" fill="none"/>
+    <path d="M64 44 Q64 28 64 14" stroke="#388E3C" stroke-width="2" fill="none"/>
+    <path d="M64 44 Q56 32 48 22" stroke="#66BB6A" stroke-width="1.5" fill="none"/>
+    <path d="M64 44 Q72 32 80 22" stroke="#66BB6A" stroke-width="1.5" fill="none"/>
+    <!-- 花朵 -->
+    <circle cx="56" cy="16" r="6" fill="#E91E63" opacity=".8"/>
+    <circle cx="56" cy="16" r="3" fill="#F48FB1"/>
+    <circle cx="72" cy="14" r="5" fill="#FFA726" opacity=".8"/>
+    <circle cx="72" cy="14" r="2.5" fill="#FFD54F"/>
+    <circle cx="64" cy="12" r="6" fill="#AB47BC" opacity=".7"/>
+    <circle cx="64" cy="12" r="3" fill="#CE93D8"/>
+    <circle cx="48" cy="20" r="5" fill="#42A5F5" opacity=".7"/>
+    <circle cx="48" cy="20" r="2.5" fill="#90CAF9"/>
+    <circle cx="80" cy="20" r="5" fill="#EF5350" opacity=".7"/>
+    <circle cx="80" cy="20" r="2.5" fill="#FFCDD2"/>
+    <!-- 叶子 -->
+    <ellipse cx="52" cy="30" rx="6" ry="3" fill="#4CAF50" transform="rotate(-30 52 30)"/>
+    <ellipse cx="76" cy="28" rx="6" ry="3" fill="#4CAF50" transform="rotate(30 76 28)"/>
+  </g>
+</svg>

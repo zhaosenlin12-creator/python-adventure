@@ -1,0 +1,548 @@
+"use client";
+
+import React, { useState, useEffect } from 'react';
+import { Question } from '@/lib/campaigns';
+import { playSound } from '@/lib/soundEffects';
+
+interface QuestionModalProps {
+  isOpen: boolean;
+  question: Question;
+  onCorrect: () => void;
+  onWrong: () => void;
+  onClose: () => void;
+  currentIndex?: number;  // 当前题目索引
+  totalQuestions?: number;  // 总题目数
+  timeLimit?: number;  // 答题时间限制（秒）
+}
+
+export default function QuestionModal({ 
+  isOpen, 
+  question, 
+  onCorrect, 
+  onWrong, 
+  onClose,
+  currentIndex = 0,
+  totalQuestions = 1,
+  timeLimit = 60
+}: QuestionModalProps) {
+  const [selectedAnswer, setSelectedAnswer] = useState<string>('');
+  const [userInput, setUserInput] = useState<string>('');
+  const [showResult, setShowResult] = useState<boolean>(false);
+  const [isCorrect, setIsCorrect] = useState<boolean>(false);
+  const [timeLeft, setTimeLeft] = useState<number>(timeLimit);
+
+  useEffect(() => {
+    if (isOpen) {
+      setSelectedAnswer('');
+      setUserInput('');
+      setShowResult(false);
+      setIsCorrect(false);
+      setTimeLeft(timeLimit);
+      
+      // 播放显示题目音效
+      playSound('question_show');
+      
+      // 禁用游戏按键
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new CustomEvent('modal-opened'));
+      }
+    }
+    
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new CustomEvent('modal-closed'));
+      }
+    };
+  }, [isOpen, timeLimit]);
+
+  // 倒计时
+  useEffect(() => {
+    if (!isOpen || showResult) return;
+
+    const timer = setInterval(() => {
+      setTimeLeft(prev => {
+        if (prev <= 1) {
+          // 超时，自动提交错误答案
+          handleTimeout();
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [isOpen, showResult]);
+
+  const handleTimeout = () => {
+    setIsCorrect(false);
+    setShowResult(true);
+    playSound('answer_wrong');
+
+    setTimeout(() => {
+      onWrong();
+    }, 2000);
+  };
+
+  if (!isOpen) return null;
+
+  const handleSubmit = () => {
+    let userAnswer = '';
+    
+    if (question.type === 'choice') {
+      userAnswer = selectedAnswer;
+    } else {
+      userAnswer = userInput.trim();
+    }
+
+    const correct = checkAnswer(userAnswer);
+    setIsCorrect(correct);
+    setShowResult(true);
+
+    // 播放音效
+    if (correct) {
+      playSound('answer_correct');
+    } else {
+      playSound('answer_wrong');
+    }
+
+    setTimeout(() => {
+      if (correct) {
+        onCorrect();
+      } else {
+        onWrong();
+      }
+    }, 2000);
+  };
+
+  const checkAnswer = (userAnswer: string): boolean => {
+    if (!question) return false;
+    
+    const correctAnswer = Array.isArray(question.answer) ? question.answer[0] : question.answer;
+    const correctAnswerStr = typeof correctAnswer === 'string' ? correctAnswer.trim() : String(correctAnswer);
+    
+    let isCorrect = false;
+    
+    if (question.type === 'code') {
+      // 代码题使用智能判断（基于输出）
+      isCorrect = checkCodeAnswer(userAnswer, correctAnswerStr);
+    } else {
+      // 其他题目使用标准化比较
+      const normalizedUser = userAnswer.toLowerCase().replace(/\s+/g, '');
+      const normalizedCorrect = correctAnswerStr.toLowerCase().replace(/\s+/g, '');
+      isCorrect = normalizedUser === normalizedCorrect;
+    }
+    
+    return isCorrect;
+  };
+
+  const checkCodeAnswer = (userAnswer: string, correctAnswer: string): boolean => {
+    try {
+      // 方法1：直接比较标准化后的代码（快速检查）
+      const normalizedUser = userAnswer.toLowerCase().replace(/\s+/g, '');
+      const normalizedCorrect = correctAnswer.toLowerCase().replace(/\s+/g, '');
+      
+      if (normalizedUser === normalizedCorrect) {
+        return true;
+      }
+      
+      // 方法2：提取并比较代码的输出值
+      const userOutput = extractCodeOutput(userAnswer);
+      const correctOutput = extractCodeOutput(correctAnswer);
+      
+      console.log('[代码判断] 用户代码:', userAnswer);
+      console.log('[代码判断] 标准代码:', correctAnswer);
+      console.log('[代码判断] 用户输出:', userOutput);
+      console.log('[代码判断] 标准输出:', correctOutput);
+      
+      // 比较输出结果
+      if (userOutput && correctOutput && userOutput === correctOutput) {
+        console.log('[代码判断] ✅ 输出匹配！');
+        return true;
+      }
+      
+      // 方法3：语义等价判断（兜底）
+      return isEquivalentCode(normalizedUser, normalizedCorrect);
+    } catch (error) {
+      console.error('[代码判断] 执行出错:', error);
+      // 出错时使用语义判断
+      const normalizedUser = userAnswer.toLowerCase().replace(/\s+/g, '');
+      const normalizedCorrect = correctAnswer.toLowerCase().replace(/\s+/g, '');
+      return isEquivalentCode(normalizedUser, normalizedCorrect);
+    }
+  };
+  
+  // 提取代码的输出值（数组、对象、字符串等）
+  const extractCodeOutput = (code: string): string | null => {
+    try {
+      // Python数组：a=[10, 20, 30] 或 data = [10, 20, 30]
+      const pythonArrayMatch = code.match(/=\s*\[([^\]]+)\]/);
+      if (pythonArrayMatch) {
+        const values = pythonArrayMatch[1].trim();
+        return `[${values}]`;
+      }
+      
+      // JavaScript数组：let data = [10, 20, 30]
+      const jsArrayMatch = code.match(/(?:let|const|var)\s+\w+\s*=\s*\[([^\]]+)\]/);
+      if (jsArrayMatch) {
+        const values = jsArrayMatch[1].trim();
+        return `[${values}]`;
+      }
+      
+      // Python对象/字典
+      const pythonDictMatch = code.match(/=\s*\{([^}]+)\}/);
+      if (pythonDictMatch) {
+        const values = pythonDictMatch[1].trim();
+        return `{${values}}`;
+      }
+      
+      // for循环输出
+      if (code.includes('for') && code.includes('print')) {
+        return extractForLoopOutput(code);
+      }
+      
+      return null;
+    } catch (error) {
+      console.error('[提取输出] 出错:', error);
+      return null;
+    }
+  };
+  
+  // 提取for循环的输出
+  const extractForLoopOutput = (code: string): string | null => {
+    try {
+      // 匹配 for i in range(...): print(...)
+      const forMatch = code.match(/for\s+\w+\s+in\s+range\(([^)]+)\)/);
+      const printMatch = code.match(/print\(([^)]+)\)/);
+      
+      if (!forMatch) return null;
+      
+      const rangeArgs = forMatch[1].split(',').map(s => parseInt(s.trim()));
+      let start = 0, end = 0;
+      
+      if (rangeArgs.length === 1) {
+        end = rangeArgs[0];
+      } else if (rangeArgs.length === 2) {
+        start = rangeArgs[0];
+        end = rangeArgs[1];
+      }
+      
+      // 检查print中是否有偏移
+      let offset = 0;
+      if (printMatch) {
+        const offsetMatch = printMatch[1].match(/([+\-])(\d+)/);
+        if (offsetMatch) {
+          offset = offsetMatch[1] === '+' ? parseInt(offsetMatch[2]) : -parseInt(offsetMatch[2]);
+        }
+      }
+      
+      // 生成输出序列
+      const output = [];
+      for (let i = start; i < end; i++) {
+        output.push(i + offset);
+      }
+      
+      return output.join(',');
+    } catch (error) {
+      return null;
+    }
+  };
+
+  const isEquivalentCode = (code1: string, code2: string): boolean => {
+    // 检查是否都是for循环
+    const isForLoop1 = code1.includes('for') && code1.includes('range') && code1.includes('print');
+    const isForLoop2 = code2.includes('for') && code2.includes('range') && code2.includes('print');
+    
+    if (isForLoop1 && isForLoop2) {
+      // 提取循环的关键信息（更宽松的匹配）
+      const extractLoopInfo = (code: string) => {
+        // 匹配 range(start, end)
+        const rangeMatch1 = code.match(/range\((\d+),\s*(\d+)\)/);
+        if (rangeMatch1) {
+          const start = parseInt(rangeMatch1[1]);
+          const end = parseInt(rangeMatch1[2]);
+          
+          // 检查是否有 print(i+offset) 或 print(i-offset)
+          const printMatch = code.match(/print\(\w+([+\-])(\d+)\)/);
+          if (printMatch) {
+            const op = printMatch[1];
+            const offset = parseInt(printMatch[2]);
+            if (op === '+') {
+              return { start: start + offset, end: end - 1 + offset };
+            } else {
+              return { start: start - offset, end: end - 1 - offset };
+            }
+          }
+          
+          // 没有偏移，直接返回
+          return { start, end: end - 1 };
+        }
+        
+        // 匹配 range(end)
+        const rangeMatch2 = code.match(/range\((\d+)\)/);
+        if (rangeMatch2) {
+          const end = parseInt(rangeMatch2[1]);
+          
+          // 检查是否有 print(i+offset) 或 print(i-offset)
+          const printMatch = code.match(/print\(\w+([+\-])(\d+)\)/);
+          if (printMatch) {
+            const op = printMatch[1];
+            const offset = parseInt(printMatch[2]);
+            if (op === '+') {
+              return { start: 0 + offset, end: end - 1 + offset };
+            } else {
+              return { start: 0 - offset, end: end - 1 - offset };
+            }
+          }
+          
+          // 没有偏移，从0开始
+          return { start: 0, end: end - 1 };
+        }
+        
+        return null;
+      };
+
+      const info1 = extractLoopInfo(code1);
+      const info2 = extractLoopInfo(code2);
+      
+      console.log('[代码判断] code1:', code1);
+      console.log('[代码判断] code2:', code2);
+      console.log('[代码判断] info1:', info1);
+      console.log('[代码判断] info2:', info2);
+      
+      // 如果两个循环输出相同的数字序列，则认为等价
+      if (info1 && info2) {
+        const isEqual = info1.start === info2.start && info1.end === info2.end;
+        console.log('[代码判断] 是否等价:', isEqual);
+        return isEqual;
+      }
+    }
+
+    // print语句的等价判断
+    if (code1.includes('print') && code2.includes('print')) {
+      // 提取print的内容（支持单引号和双引号）
+      const extractPrintContent = (code: string) => {
+        const match = code.match(/print\(['"](.*?)['"]\)/);
+        return match ? match[1] : null;
+      };
+      
+      const content1 = extractPrintContent(code1);
+      const content2 = extractPrintContent(code2);
+      
+      if (content1 && content2 && content1 === content2) {
+        return true;
+      }
+    }
+
+    return false;
+  };
+
+  const getDifficultyColor = (difficulty: number) => {
+    switch (difficulty) {
+      case 1: return 'text-green-500';
+      case 2: return 'text-yellow-500';
+      case 3: return 'text-red-500';
+      default: return 'text-gray-500';
+    }
+  };
+
+  const getDifficultyText = (difficulty: number) => {
+    switch (difficulty) {
+      case 1: return '简单';
+      case 2: return '中等';
+      case 3: return '困难';
+      default: return '未知';
+    }
+  };
+
+  const getSubjectEmoji = (subject: string) => {
+    switch (subject) {
+      case 'math': return '🔢';
+      case 'programming': return '💻';
+      case 'logic': return '🧠';
+      default: return '📚';
+    }
+  };
+
+  // 获取倒计时颜色（适配60秒）
+  const getTimeColor = () => {
+    if (timeLeft <= 10) return 'text-red-500';      // 最后10秒红色
+    if (timeLeft <= 20) return 'text-yellow-500';   // 20秒内黄色
+    return 'text-green-500';                         // 其他时间绿色
+  };
+
+  return (
+    <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 animate-fadeIn">
+      <div className="bg-slate-900 rounded-xl p-8 max-w-2xl w-full mx-4 border-2 border-slate-700 shadow-2xl animate-slideIn">
+        {!showResult ? (
+          <>
+            {/* 进度条和倒计时 */}
+            {totalQuestions > 1 && (
+              <div className="mb-4">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-sm text-gray-400">
+                    第 {currentIndex + 1} 题 / 共 {totalQuestions} 题
+                  </span>
+                  <span className={`text-sm font-bold ${getTimeColor()}`}>
+                    ⏱️ {timeLeft}秒
+                  </span>
+                </div>
+                <div className="w-full bg-gray-700 rounded-full h-2">
+                  <div 
+                    className="bg-blue-500 h-2 rounded-full transition-all duration-300"
+                    style={{ width: `${((currentIndex + 1) / totalQuestions) * 100}%` }}
+                  />
+                </div>
+              </div>
+            )}
+
+            {/* 单题倒计时 */}
+            {totalQuestions === 1 && (
+              <div className="mb-4 flex justify-end">
+                <span className={`text-lg font-bold ${getTimeColor()}`}>
+                  ⏱️ {timeLeft}秒
+                </span>
+              </div>
+            )}
+
+            {/* 题目头部 */}
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-3">
+                <span className="text-3xl">{getSubjectEmoji(question.subject)}</span>
+                <div>
+                  <h2 className="text-2xl font-bold text-white">挑战题目</h2>
+                  <div className="flex items-center gap-2 mt-1">
+                    <span className={`text-sm font-medium ${getDifficultyColor(question.difficulty)}`}>
+                      {getDifficultyText(question.difficulty)}
+                    </span>
+                    <span className="text-gray-300 text-sm">
+                      {question.subject === 'math' ? '数学' : 
+                       question.subject === 'programming' ? '编程' : '逻辑'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={onClose}
+                className="text-gray-400 hover:text-white text-2xl font-bold"
+              >
+                ×
+              </button>
+            </div>
+
+            {/* 题目内容 */}
+            <div className="mb-8">
+              <p className="text-xl text-white mb-6 leading-relaxed">
+                {question.question}
+              </p>
+
+              {/* 选择题 */}
+              {question.type === 'choice' && question.options && (
+                <div className="space-y-3">
+                  {question.options.map((option, index) => (
+                    <label
+                      key={index}
+                      className={`flex items-center p-4 rounded-lg border-2 cursor-pointer transition-all ${
+                        selectedAnswer === option
+                          ? 'border-blue-400 bg-blue-800 bg-opacity-50'
+                          : 'border-gray-600 hover:border-blue-500 bg-gray-800 bg-opacity-50'
+                      }`}
+                    >
+                      <input
+                        type="radio"
+                        name="answer"
+                        value={option}
+                        checked={selectedAnswer === option}
+                        onChange={(e) => setSelectedAnswer(e.target.value)}
+                        className="mr-3 w-4 h-4"
+                      />
+                      <span className="text-white text-lg">{option}</span>
+                    </label>
+                  ))}
+                </div>
+              )}
+
+              {/* 填空题 */}
+              {(question.type === 'fill' || question.type === 'math') && (
+                <input
+                  type="text"
+                  value={userInput}
+                  onChange={(e) => setUserInput(e.target.value)}
+                  placeholder="请输入答案..."
+                  className="w-full p-4 text-lg bg-gray-800 border-2 border-gray-600 rounded-lg text-white focus:border-blue-400 focus:outline-none"
+                  autoFocus
+                />
+              )}
+
+              {/* 编程题 - 使用代码编辑器或textarea */}
+              {question.type === 'code' && (
+                <div className="mb-4">
+                  <textarea
+                    value={userInput}
+                    onChange={(e) => setUserInput(e.target.value)}
+                    placeholder="请输入代码..."
+                    className="w-full h-64 p-4 text-lg bg-gray-900 border-2 border-gray-600 rounded-lg text-green-400 focus:border-blue-400 focus:outline-none font-mono"
+                    autoFocus
+                    spellCheck={false}
+                  />
+                </div>
+              )}
+            </div>
+
+            {/* 提交按钮 */}
+            <div className="flex justify-end">
+              <button
+                onClick={handleSubmit}
+                disabled={
+                  (question.type === 'choice' && !selectedAnswer) ||
+                  (question.type !== 'choice' && !userInput.trim())
+                }
+                className="px-8 py-3 bg-yellow-600 hover:bg-yellow-500 text-black font-bold rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+              >
+                提交答案
+              </button>
+            </div>
+          </>
+        ) : (
+          /* 结果显示 */
+          <div className="text-center bg-slate-800 p-8 rounded-lg">
+            <div className="mb-6">
+              {isCorrect ? (
+                <div className="animate-bounce">
+                  <div className="text-8xl mb-4 animate-pulse">✓</div>
+                  <h3 className="text-4xl font-bold mb-3 text-green-400">答对了！</h3>
+                  <p className="text-xl text-gray-300">太棒了，继续加油！</p>
+                </div>
+              ) : (
+                <div className="animate-shake">
+                  <div className="text-8xl mb-4 text-red-500">✗</div>
+                  <h3 className="text-4xl font-bold mb-3 text-red-400">
+                    {timeLeft === 0 ? '超时了' : '答错了'}
+                  </h3>
+                  <p className="text-xl mb-4 text-gray-300">
+                    {timeLeft === 0 ? '时间到了，再快一点！' : '不要气馁，再试一次！'}
+                  </p>
+                  <div className="bg-slate-700 p-4 rounded-lg text-left">
+                    <p className="text-white text-lg">
+                      <strong className="text-yellow-400">正确答案：</strong>
+                      <span className="ml-2">
+                        {Array.isArray(question.answer) 
+                          ? question.answer.join(' 或 ') 
+                          : question.answer}
+                      </span>
+                    </p>
+                    {question.explanation && (
+                      <p className="text-gray-300 mt-3 text-base">
+                        <strong className="text-blue-400">解释：</strong>
+                        <span className="ml-2">{question.explanation}</span>
+                      </p>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}

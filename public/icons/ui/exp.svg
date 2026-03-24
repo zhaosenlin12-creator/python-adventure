@@ -1,0 +1,16 @@
+<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 经验值图标 - 星星 -->
+  <!-- 主星星 -->
+  <path d="M 12 2 L 14.5 9 L 22 9.5 L 16.5 14.5 L 18 22 L 12 18 L 6 22 L 7.5 14.5 L 2 9.5 L 9.5 9 Z" fill="#4169E1"/>
+  <!-- 内层星星 -->
+  <path d="M 12 5 L 13.5 10 L 18.5 10.5 L 14.5 13.5 L 15.5 18.5 L 12 16 L 8.5 18.5 L 9.5 13.5 L 5.5 10.5 L 10.5 10 Z" fill="#6495ED"/>
+  <!-- 中心点 -->
+  <circle cx="12" cy="12" r="2" fill="#87CEEB"/>
+  <!-- 高光 -->
+  <circle cx="10" cy="10" r="1.5" fill="#FFFFFF" opacity="0.6"/>
+  <!-- 光芒 -->
+  <line x1="12" y1="1" x2="12" y2="3" stroke="#87CEEB" stroke-width="1" opacity="0.6"/>
+  <line x1="12" y1="21" x2="12" y2="23" stroke="#87CEEB" stroke-width="1" opacity="0.6"/>
+  <line x1="1" y1="12" x2="3" y2="12" stroke="#87CEEB" stroke-width="1" opacity="0.6"/>
+  <line x1="21" y1="12" x2="23" y2="12" stroke="#87CEEB" stroke-width="1" opacity="0.6"/>
+</svg>

@@ -1,0 +1,22 @@
+<svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="tt" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#C48A54"/><stop offset="100%" stop-color="#8B5E34"/></linearGradient>
+    <filter id="tf"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity=".2"/></filter>
+  </defs>
+  <g filter="url(#tf)">
+    <rect x="20" y="96" width="10" height="24" rx="3" fill="#6B3A20"/>
+    <rect x="98" y="96" width="10" height="24" rx="3" fill="#6B3A20"/>
+    <rect x="14" y="52" width="100" height="12" rx="3" fill="url(#tt)"/>
+    <rect x="18" y="56" width="92" height="4" rx="1" fill="#fff" opacity=".08"/>
+    <rect x="14" y="50" width="100" height="6" rx="2" fill="#D4A06A"/>
+    <ellipse cx="64" cy="52" rx="36" ry="2" fill="#fff" opacity=".1"/>
+    <rect x="24" y="64" width="6" height="32" rx="2" fill="#7B4A28"/>
+    <rect x="98" y="64" width="6" height="32" rx="2" fill="#7B4A28"/>
+    <rect x="26" y="80" width="76" height="5" rx="2" fill="#8B5E34" opacity=".7"/>
+    <!-- 桌上小物 -->
+    <rect x="38" y="36" width="16" height="16" rx="2" fill="#4A90D9" opacity=".7"/>
+    <rect x="40" y="38" width="12" height="10" rx="1" fill="#fff" opacity=".3"/>
+    <circle cx="82" cy="44" r="7" fill="#E8B04A" opacity=".6"/>
+    <ellipse cx="82" cy="42" rx="3" ry="2" fill="#fff" opacity=".2"/>
+  </g>
+</svg>

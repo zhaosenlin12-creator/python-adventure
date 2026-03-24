@@ -1,0 +1,15 @@
+<svg width="128" height="160" viewBox="0 0 128 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="eggFill" x1="64" y1="8" x2="64" y2="152" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF8E7"/>
+      <stop offset="1" stop-color="#EAD9B8"/>
+    </linearGradient>
+    <radialGradient id="eggGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(50 40) rotate(30) scale(36 48)">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <path d="M64 8C41 8 24 36 24 74C24 112 43 148 64 148C85 148 104 112 104 74C104 36 87 8 64 8Z" fill="url(#eggFill)" stroke="#C8B68B" stroke-width="4"/>
+  <ellipse cx="52" cy="48" rx="20" ry="28" fill="url(#eggGlow)"/>
+  <path d="M40 86C46 96 58 104 64 104C70 104 82 96 88 86" stroke="#D6C7A3" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+</svg>

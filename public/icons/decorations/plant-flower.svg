@@ -1,0 +1,38 @@
+<svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="fp" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#B3584A"/><stop offset="100%" stop-color="#7A3428"/></linearGradient>
+    <filter id="ff"><feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#000" flood-opacity=".18"/></filter>
+  </defs>
+  <g filter="url(#ff)">
+    <!-- 花盆 -->
+    <path d="M40 82 L35 112 C35 118 48 122 64 122 C80 122 93 118 93 112 L88 82 Z" fill="url(#fp)"/>
+    <ellipse cx="64" cy="82" rx="24" ry="5" fill="#B3584A"/>
+    <ellipse cx="64" cy="82" rx="20" ry="3.5" fill="#5C2E1A"/>
+    <!-- 茎 -->
+    <path d="M64 82 Q62 60 60 38" stroke="#388E3C" stroke-width="3" fill="none"/>
+    <path d="M64 82 Q68 65 72 48" stroke="#388E3C" stroke-width="2.5" fill="none"/>
+    <path d="M64 82 Q58 68 50 55" stroke="#388E3C" stroke-width="2" fill="none"/>
+    <!-- 叶子 -->
+    <ellipse cx="52" cy="66" rx="10" ry="5" fill="#43A047" transform="rotate(-40 52 66)"/>
+    <ellipse cx="76" cy="60" rx="10" ry="5" fill="#43A047" transform="rotate(35 76 60)"/>
+    <!-- 花朵1 - 大 -->
+    <circle cx="60" cy="32" r="5" fill="#F48FB1" transform="rotate(0 60 32)"/>
+    <circle cx="60" cy="32" r="5" fill="#F48FB1" transform="rotate(72 60 32)"/>
+    <circle cx="60" cy="32" r="5" fill="#F48FB1" transform="rotate(144 60 32)"/>
+    <circle cx="60" cy="32" r="5" fill="#F48FB1" transform="rotate(216 60 32)"/>
+    <circle cx="60" cy="32" r="5" fill="#F48FB1" transform="rotate(288 60 32)"/>
+    <circle cx="56" cy="28" r="6" fill="#EC407A"/><circle cx="64" cy="28" r="6" fill="#EC407A"/>
+    <circle cx="55" cy="35" r="6" fill="#EC407A"/><circle cx="65" cy="35" r="6" fill="#EC407A"/>
+    <circle cx="60" cy="24" r="5" fill="#F06292"/>
+    <circle cx="60" cy="31" r="4" fill="#FFD54F"/>
+    <ellipse cx="59" cy="30" rx="1.5" ry="1" fill="#fff" opacity=".3"/>
+    <!-- 花朵2 - 小 -->
+    <circle cx="72" cy="42" r="4" fill="#CE93D8"/>
+    <circle cx="76" cy="44" r="4" fill="#CE93D8"/>
+    <circle cx="74" cy="39" r="4" fill="#CE93D8"/>
+    <circle cx="74" cy="42" r="3" fill="#FFD54F"/>
+    <!-- 花苞 -->
+    <ellipse cx="48" cy="50" rx="4" ry="6" fill="#81C784"/>
+    <ellipse cx="48" cy="48" rx="3" ry="3" fill="#F48FB1" opacity=".7"/>
+  </g>
+</svg>

@@ -1,0 +1,404 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { usePetStore } from '@/store/petStore';
+import { useDecorationStore } from '@/store/decorationStore';
+import { PET_CONFIGS } from '@/types/pet';
+import { DECORATIONS } from '@/types/decoration';
+import { getPetAnimation, getPetConfig } from '@/lib/config/petAssets';
+import { playBGM, stopBGM } from '@/lib/utils/soundManager';
+import './pet-home-animations.css';
+import InteractionButton from './InteractionButton';
+import DecorationShop from './DecorationShop';
+import DecorationPlacement from './DecorationPlacement';
+
+interface PetHomeSceneProps {
+  isOpen?: boolean;
+  onClose?: () => void;
+  petId?: number;
+}
+
+/**
+ * 🏠 宠物家园场景 - 温馨小屋
+ * 参考摩尔庄园和旅行青蛙的家园设计
+ * 
+ * 支持两种使用方式：
+ * 1. 作为独立弹窗：传入 isOpen 和 onClose
+ * 2. 嵌入在其他组件中：传入 petId（可选）
+ */
+export default function PetHomeScene({ isOpen, onClose, petId }: PetHomeSceneProps) {
+  const { currentPet } = usePetStore();
+  const { placedDecorations, loadDecorations } = useDecorationStore();
+  const [currentScene, setCurrentScene] = useState<'living' | 'garden'>('living');
+  const [interactionMessage, setInteractionMessage] = useState<string>('');
+  const [sceneTransitioning, setSceneTransitioning] = useState(false);
+  const [showShop, setShowShop] = useState(false);
+  const [showPlacement, setShowPlacement] = useState(false);
+  
+  // 加载装饰品数据
+  useEffect(() => {
+    if (isOpen !== false && currentPet) {
+      loadDecorations();
+    }
+  }, [isOpen, currentPet, loadDecorations]);
+  
+  // 播放背景音乐
+  useEffect(() => {
+    if (isOpen !== false) {
+      // 打开家园时播放背景音乐（淡入）
+      playBGM('home_bgm', { volume: 0.2, fadeIn: true });
+    }
+    
+    return () => {
+      // 关闭家园时停止背景音乐（淡出）
+      stopBGM(true);
+    };
+  }, [isOpen]);
+  
+  // 如果作为弹窗使用，检查 isOpen
+  if (isOpen === false) return null;
+  
+  // 如果没有宠物，不显示
+  if (!currentPet) return null;
+  
+  const petConfig = PET_CONFIGS[currentPet.petType];
+  const petAssetConfig = getPetConfig(currentPet.petType);
+  const currentAnimation = getPetAnimation(currentPet.petType, currentPet.status);
+  
+  const showMessage = (message: string) => {
+    setInteractionMessage(message);
+    setTimeout(() => setInteractionMessage(''), 3000);
+  };
+  
+  const handleSceneChange = (scene: 'living' | 'garden') => {
+    if (scene === currentScene) return;
+    
+    setSceneTransitioning(true);
+    setTimeout(() => {
+      setCurrentScene(scene);
+      setSceneTransitioning(false);
+    }, 300);
+  };
+  
+  return (
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 backdrop-blur-sm animate-fadeIn">
+      <div className="w-full h-full max-w-7xl flex flex-col bg-slate-900 mx-auto relative">
+        {/* 顶部导航栏 - 紧凑设计 */}
+        <div className="absolute top-0 left-0 right-0 z-30 bg-slate-800/95 backdrop-blur-sm border-b-2 border-slate-950 p-2 flex justify-between items-center">
+          <div className="flex items-center gap-2">
+            <h2 className="text-lg font-bold text-game-light pixel-text-shadow">
+              🏠 {currentPet.name}的小屋
+            </h2>
+            
+            {/* 场景切换 - 紧凑按钮 */}
+            <div className="flex gap-1">
+              <button
+                onClick={() => handleSceneChange('living')}
+                className={`pixel-btn text-xs px-2 py-1 transition-all ${
+                  currentScene === 'living'
+                    ? 'bg-game-accent text-white shadow-lg'
+                    : 'bg-slate-700 text-gray-300 hover:bg-slate-600'
+                }`}
+              >
+                🛋️ 客厅
+              </button>
+              <button
+                onClick={() => handleSceneChange('garden')}
+                className={`pixel-btn text-xs px-2 py-1 transition-all ${
+                  currentScene === 'garden'
+                    ? 'bg-game-accent text-white shadow-lg'
+                    : 'bg-slate-700 text-gray-300 hover:bg-slate-600'
+                }`}
+              >
+                🌳 庭院
+              </button>
+            </div>
+            
+            {/* 装饰系统按钮 - 紧凑设计 */}
+            <div className="flex gap-1 ml-2">
+              <button
+                onClick={() => setShowShop(true)}
+                className="pixel-btn pixel-btn-success text-xs px-2 py-1"
+              >
+                🏪 商店
+              </button>
+              <button
+                onClick={() => setShowPlacement(true)}
+                className="pixel-btn pixel-btn-primary text-xs px-2 py-1"
+              >
+                🎨 布置
+              </button>
+            </div>
+          </div>
+          
+          <button
+            onClick={onClose}
+            className="text-gray-400 hover:text-game-light text-xl leading-none px-2"
+            style={{ display: onClose ? 'block' : 'none' }}
+          >
+            ×
+          </button>
+        </div>
+        
+        {/* 主场景区域 - 全屏显示，宠物居中 */}
+        <div className={`w-full h-full relative overflow-hidden scene-transition ${sceneTransitioning ? 'opacity-0' : 'opacity-100'} pt-12`}>
+          {/* 互动消息提示 */}
+          {interactionMessage && (
+            <div className="absolute top-6 left-1/2 transform -translate-x-1/2 z-20 bg-game-accent text-white px-4 py-2 text-base font-bold animate-bounce-in pixel-text-shadow rounded-lg border-2 border-white/30">
+              {interactionMessage}
+            </div>
+          )}
+          
+          {/* 客厅场景 - 优化布局和美术 */}
+          {currentScene === 'living' && (
+            <div className="w-full h-full relative bg-gradient-to-b from-sky-300 to-amber-100">
+              {/* 天空背景 - 增强视觉效果 */}
+              <div className="absolute top-0 left-0 right-0 h-2/5 bg-gradient-to-b from-sky-400 via-sky-300 to-sky-200">
+                {/* 太阳 - 添加光晕效果 */}
+                <div className="absolute top-6 right-12">
+                  <div className="relative">
+                    <div className="absolute inset-0 text-5xl animate-pulse-slow blur-sm opacity-50">☀️</div>
+                    <div className="relative text-5xl animate-pulse">☀️</div>
+                  </div>
+                </div>
+                
+                {/* 云朵 - 添加漂浮动画 */}
+                <div className="absolute top-10 left-16 text-3xl opacity-70 animate-float">☁️</div>
+                <div className="absolute top-16 right-32 text-2xl opacity-50 animate-float-delayed">☁️</div>
+                <div className="absolute top-20 left-1/3 text-xl opacity-40 animate-float">☁️</div>
+              </div>
+              
+              {/* 房屋和家具 */}
+              <div className="absolute bottom-0 left-0 right-0 h-3/5 bg-gradient-to-b from-amber-50 to-amber-100">
+                {/* 墙壁装饰 */}
+                <div className="absolute top-8 left-12 text-4xl">🖼️</div>
+                <div className="absolute top-8 right-12 text-4xl">🖼️</div>
+                
+                {/* 家具 - 左侧 */}
+                <div className="absolute bottom-28 left-16">
+                  <div className="text-5xl">🪴</div>
+                  <div className="text-xs text-center text-amber-800 font-bold mt-1">盆栽</div>
+                </div>
+                
+                {/* 家具 - 右侧 */}
+                <div className="absolute bottom-28 right-16">
+                  <div className="text-5xl">📚</div>
+                  <div className="text-xs text-center text-amber-800 font-bold mt-1">书架</div>
+                </div>
+                
+                {/* 地毯 - 中央装饰 */}
+                <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 w-48 h-32 bg-red-700/30 border-4 border-red-800/50 rounded-lg"></div>
+                
+                {/* 宠物位置 - 居中显示，可以自由走动 */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                  <div className="w-32 h-32 flex items-center justify-center animate-float">
+                    {petAssetConfig?.isAnimated ? (
+                      <img 
+                        src={currentAnimation} 
+                        alt={currentPet.name}
+                        className="w-full h-full object-contain drop-shadow-2xl"
+                        style={{ imageRendering: 'pixelated' }}
+                      />
+                    ) : (
+                      <span className="text-8xl drop-shadow-2xl">{petConfig.icon}</span>
+                    )}
+                  </div>
+                  <div className="text-center mt-2 bg-slate-800/90 px-4 py-1 rounded-full text-white font-bold text-sm pixel-text-shadow border-2 border-slate-600">
+                    {currentPet.name}
+                  </div>
+                </div>
+                
+                {/* 用户放置的装饰品 - 客厅 */}
+                {placedDecorations
+                  .filter(p => p.scene === 'living')
+                  .map(placed => {
+                    const decoration = DECORATIONS[placed.decorationId];
+                    if (!decoration) return null;
+                    
+                    return (
+                      <div
+                        key={placed.id}
+                        className="absolute z-5"
+                        style={{
+                          left: `${placed.x}%`,
+                          top: `${placed.y}%`,
+                          transform: 'translate(-50%, -50%)'
+                        }}
+                      >
+                        <div className="text-4xl drop-shadow-lg animate-float-slow">
+                          {decoration.icon}
+                        </div>
+                      </div>
+                    );
+                  })}
+                
+                {/* 地板 - 增强纹理 */}
+                <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-b from-amber-700 to-amber-800 border-t-4 border-amber-900">
+                  {/* 地板纹理 */}
+                  <div className="absolute inset-0 opacity-20">
+                    <div className="grid grid-cols-8 h-full">
+                      {[...Array(8)].map((_, i) => (
+                        <div key={i} className="border-r border-amber-900"></div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+          
+          {/* 庭院场景 - 优化布局和美术 */}
+          {currentScene === 'garden' && (
+            <div className="w-full h-full relative bg-gradient-to-b from-sky-400 to-green-300">
+              {/* 天空 - 增强视觉效果 */}
+              <div className="absolute top-0 left-0 right-0 h-2/5 bg-gradient-to-b from-sky-500 via-sky-400 to-sky-300">
+                {/* 太阳 - 添加光晕效果 */}
+                <div className="absolute top-6 right-16">
+                  <div className="relative">
+                    <div className="absolute inset-0 text-5xl animate-pulse-slow blur-sm opacity-50">☀️</div>
+                    <div className="relative text-5xl animate-pulse">☀️</div>
+                  </div>
+                </div>
+                
+                {/* 云朵 - 添加漂浮动画 */}
+                <div className="absolute top-12 left-20 text-3xl opacity-60 animate-float">☁️</div>
+                <div className="absolute top-8 right-40 text-2xl opacity-50 animate-float-delayed">☁️</div>
+                
+                {/* 飞鸟 */}
+                <div className="absolute top-16 left-1/3 text-xl opacity-70 animate-float-delayed">🐦</div>
+              </div>
+              
+              {/* 草地 - 增强细节 */}
+              <div className="absolute bottom-0 left-0 right-0 h-3/5 bg-gradient-to-b from-green-400 to-green-600">
+                {/* 草地纹理 */}
+                <div className="absolute inset-0 opacity-30">
+                  <div className="absolute top-4 left-8 text-2xl">🌿</div>
+                  <div className="absolute top-8 right-12 text-2xl">🌿</div>
+                  <div className="absolute top-12 left-1/4 text-xl">🌿</div>
+                  <div className="absolute top-16 right-1/4 text-xl">🌿</div>
+                </div>
+                
+                {/* 花朵装饰 */}
+                <div className="absolute bottom-32 left-12">
+                  <div className="text-4xl animate-float">🌸</div>
+                  <div className="text-xs text-center text-green-900 font-bold mt-1">樱花</div>
+                </div>
+                
+                <div className="absolute bottom-36 right-16">
+                  <div className="text-4xl animate-float-delayed">🌻</div>
+                  <div className="text-xs text-center text-green-900 font-bold mt-1">向日葵</div>
+                </div>
+                
+                <div className="absolute bottom-40 left-1/4">
+                  <div className="text-3xl animate-float">🌺</div>
+                </div>
+                
+                <div className="absolute bottom-44 right-1/3">
+                  <div className="text-3xl animate-float-delayed">🌼</div>
+                </div>
+                
+                {/* 树木 */}
+                <div className="absolute bottom-20 left-8 text-6xl">🌳</div>
+                <div className="absolute bottom-24 right-8 text-5xl">🌲</div>
+                
+                {/* 蝴蝶 */}
+                <div className="absolute top-20 left-1/2 text-2xl animate-float opacity-80">🦋</div>
+                
+                {/* 宠物位置 - 居中显示，可以自由走动 */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                  <div className="w-32 h-32 flex items-center justify-center animate-float">
+                    {petAssetConfig?.isAnimated ? (
+                      <img 
+                        src={currentAnimation} 
+                        alt={currentPet.name}
+                        className="w-full h-full object-contain drop-shadow-2xl"
+                        style={{ imageRendering: 'pixelated' }}
+                      />
+                    ) : (
+                      <span className="text-8xl drop-shadow-2xl">{petConfig.icon}</span>
+                    )}
+                  </div>
+                  <div className="text-center mt-2 bg-slate-800/90 px-4 py-1 rounded-full text-white font-bold text-sm pixel-text-shadow border-2 border-slate-600">
+                    {currentPet.name}
+                  </div>
+                </div>
+                
+                {/* 用户放置的装饰品 - 庭院 */}
+                {placedDecorations
+                  .filter(p => p.scene === 'garden')
+                  .map(placed => {
+                    const decoration = DECORATIONS[placed.decorationId];
+                    if (!decoration) return null;
+                    
+                    return (
+                      <div
+                        key={placed.id}
+                        className="absolute z-5"
+                        style={{
+                          left: `${placed.x}%`,
+                          top: `${placed.y}%`,
+                          transform: 'translate(-50%, -50%)'
+                        }}
+                      >
+                        <div className="text-4xl drop-shadow-lg animate-float-slow">
+                          {decoration.icon}
+                        </div>
+                      </div>
+                    );
+                  })}
+                
+                {/* 草地边缘 - 增强纹理 */}
+                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-green-700 to-green-800 border-t-4 border-green-900">
+                  {/* 草地纹理 */}
+                  <div className="absolute inset-0 opacity-40">
+                    <div className="flex justify-around items-end h-full pb-2">
+                      <span className="text-green-900 text-sm">🌱</span>
+                      <span className="text-green-900 text-sm">🌱</span>
+                      <span className="text-green-900 text-sm">🌱</span>
+                      <span className="text-green-900 text-sm">🌱</span>
+                      <span className="text-green-900 text-sm">🌱</span>
+                      <span className="text-green-900 text-sm">🌱</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+        
+        {/* 右侧互动栏 - 悬浮设计，不占用主场景空间 */}
+        <div className="absolute right-4 top-20 bottom-4 z-20 w-16 flex flex-col gap-2">
+          <InteractionButton
+            interactionType="pat"
+            petId={currentPet.id}
+          />
+          <InteractionButton
+            interactionType="play"
+            petId={currentPet.id}
+          />
+          <InteractionButton
+            interactionType="talk"
+            petId={currentPet.id}
+          />
+          <InteractionButton
+            interactionType="train"
+            petId={currentPet.id}
+          />
+        </div>
+      </div>
+      
+      {/* 装饰品商店弹窗 */}
+      <DecorationShop
+        isOpen={showShop}
+        onClose={() => setShowShop(false)}
+      />
+      
+      {/* 装饰品布置弹窗 */}
+      <DecorationPlacement
+        scene={currentScene}
+        isOpen={showPlacement}
+        onClose={() => setShowPlacement(false)}
+      />
+    </div>
+  );
+}

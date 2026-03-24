@@ -1,0 +1,37 @@
+<svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E3F2FD" stop-opacity=".4"/><stop offset="100%" stop-color="#42A5F5" stop-opacity=".6"/></linearGradient>
+    <filter id="ftf"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity=".18"/></filter>
+  </defs>
+  <g filter="url(#ftf)">
+    <!-- 鱼缸框 -->
+    <rect x="16" y="16" width="96" height="88" rx="8" fill="#B3E5FC" opacity=".3" stroke="#81D4FA" stroke-width="2"/>
+    <!-- 水 -->
+    <rect x="18" y="24" width="92" height="76" rx="6" fill="url(#wg)"/>
+    <!-- 沙子 -->
+    <ellipse cx="64" cy="96" rx="44" ry="6" fill="#FFE082" opacity=".5"/>
+    <!-- 水草 -->
+    <path d="M32 96 Q28 76 34 60 Q38 50 32 40" stroke="#4CAF50" stroke-width="3" fill="none"/>
+    <path d="M40 96 Q36 72 42 56 Q46 44 40 34" stroke="#66BB6A" stroke-width="2.5" fill="none"/>
+    <path d="M88 96 Q92 74 86 58 Q82 46 88 36" stroke="#4CAF50" stroke-width="3" fill="none"/>
+    <!-- 鱼1 - 橙色 -->
+    <ellipse cx="62" cy="52" rx="10" ry="6" fill="#FF7043"/>
+    <polygon points="50,52 42,46 42,58" fill="#FF7043"/>
+    <circle cx="68" cy="50" r="2" fill="#fff"/><circle cx="69" cy="50" r="1" fill="#333"/>
+    <path d="M60 48 Q62 46 64 48" stroke="#E64A19" stroke-width=".5" fill="none"/>
+    <!-- 鱼2 - 蓝色 -->
+    <ellipse cx="78" cy="72" rx="8" ry="5" fill="#42A5F5"/>
+    <polygon points="68,72 62,67 62,77" fill="#42A5F5"/>
+    <circle cx="83" cy="70" r="1.5" fill="#fff"/><circle cx="83.5" cy="70" r=".8" fill="#333"/>
+    <!-- 泡泡 -->
+    <circle cx="56" cy="36" r="3" fill="#fff" opacity=".3" stroke="#fff" stroke-width=".5" opacity=".2"/>
+    <circle cx="50" cy="28" r="2" fill="#fff" opacity=".25"/>
+    <circle cx="80" cy="32" r="2.5" fill="#fff" opacity=".3"/>
+    <!-- 石头 -->
+    <ellipse cx="54" cy="94" rx="6" ry="4" fill="#90A4AE" opacity=".5"/>
+    <ellipse cx="74" cy="92" rx="8" ry="5" fill="#78909C" opacity=".5"/>
+    <!-- 盖子 -->
+    <rect x="14" y="14" width="100" height="8" rx="4" fill="#455A64"/>
+    <rect x="16" y="16" width="96" height="4" rx="2" fill="#607D8B"/>
+  </g>
+</svg>

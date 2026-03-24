@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <radialGradient id="sparkleGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#fcd34d" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#fef3c7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="16" cy="16" r="12" fill="url(#sparkleGlow)"/>
+  <path d="M16 4 L17.5 13 L16 10 L14.5 13 Z" fill="#fbbf24" opacity="0.9"/>
+  <path d="M16 28 L17.5 19 L16 22 L14.5 19 Z" fill="#fbbf24" opacity="0.9"/>
+  <path d="M4 16 L13 14.5 L10 16 L13 17.5 Z" fill="#fbbf24" opacity="0.9"/>
+  <path d="M28 16 L19 14.5 L22 16 L19 17.5 Z" fill="#fbbf24" opacity="0.9"/>
+  <circle cx="16" cy="16" r="3" fill="#ffffff" opacity="0.95"/>
+  <circle cx="16" cy="16" r="1.5" fill="#fbbf24"/>
+</svg>

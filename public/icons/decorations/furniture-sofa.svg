@@ -1,0 +1,29 @@
+<svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ss" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E04040"/><stop offset="100%" stop-color="#B52020"/></linearGradient>
+    <linearGradient id="sb" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#C42020"/><stop offset="100%" stop-color="#901818"/></linearGradient>
+    <filter id="sf"><feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000" flood-opacity=".22"/></filter>
+  </defs>
+  <g filter="url(#sf)">
+    <rect x="22" y="98" width="8" height="14" rx="3" fill="#5C3317"/>
+    <rect x="44" y="98" width="8" height="14" rx="3" fill="#5C3317"/>
+    <rect x="76" y="98" width="8" height="14" rx="3" fill="#5C3317"/>
+    <rect x="98" y="98" width="8" height="14" rx="3" fill="#5C3317"/>
+    <rect x="16" y="82" width="96" height="20" rx="4" fill="#7B3F00"/>
+    <rect x="20" y="32" width="88" height="28" rx="8" fill="url(#sb)"/>
+    <line x1="42" y1="36" x2="42" y2="56" stroke="#fff" stroke-width=".7" opacity=".15"/>
+    <line x1="64" y1="36" x2="64" y2="56" stroke="#fff" stroke-width=".7" opacity=".15"/>
+    <line x1="86" y1="36" x2="86" y2="56" stroke="#fff" stroke-width=".7" opacity=".15"/>
+    <ellipse cx="64" cy="40" rx="30" ry="8" fill="#fff" opacity=".12"/>
+    <rect x="8" y="40" width="18" height="44" rx="8" fill="url(#sb)"/>
+    <rect x="102" y="40" width="18" height="44" rx="8" fill="url(#sb)"/>
+    <rect x="20" y="56" width="88" height="28" rx="6" fill="url(#ss)"/>
+    <line x1="42" y1="60" x2="42" y2="80" stroke="#fff" stroke-width=".8" opacity=".18"/>
+    <line x1="64" y1="60" x2="64" y2="80" stroke="#fff" stroke-width=".8" opacity=".18"/>
+    <line x1="86" y1="60" x2="86" y2="80" stroke="#fff" stroke-width=".8" opacity=".18"/>
+    <ellipse cx="42" cy="64" rx="12" ry="4" fill="#fff" opacity=".12"/>
+    <ellipse cx="86" cy="64" rx="12" ry="4" fill="#fff" opacity=".12"/>
+    <ellipse cx="34" cy="52" rx="10" ry="12" fill="#FFD700" opacity=".55" transform="rotate(-10 34 52)"/>
+    <ellipse cx="94" cy="52" rx="10" ry="12" fill="#FFD700" opacity=".55" transform="rotate(10 94 52)"/>
+  </g>
+</svg>

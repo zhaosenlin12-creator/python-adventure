@@ -1,0 +1,42 @@
+<svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="rb" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#78909C"/><stop offset="100%" stop-color="#455A64"/></linearGradient>
+    <filter id="rf"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity=".2"/></filter>
+  </defs>
+  <g filter="url(#rf)">
+    <!-- 天线 -->
+    <line x1="64" y1="6" x2="64" y2="22" stroke="#90A4AE" stroke-width="3"/>
+    <circle cx="64" cy="6" r="5" fill="#F44336"/>
+    <ellipse cx="63" cy="5" rx="2" ry="1.5" fill="#fff" opacity=".3"/>
+    <!-- 头 -->
+    <rect x="36" y="22" width="56" height="36" rx="8" fill="url(#rb)"/>
+    <rect x="38" y="24" width="52" height="32" rx="6" fill="#546E7A"/>
+    <!-- 眼 LED -->
+    <rect x="44" y="32" width="16" height="12" rx="3" fill="#0D47A1"/>
+    <rect x="46" y="34" width="12" height="8" rx="2" fill="#42A5F5"/>
+    <circle cx="50" cy="38" r="2" fill="#fff" opacity=".6"/>
+    <rect x="68" y="32" width="16" height="12" rx="3" fill="#0D47A1"/>
+    <rect x="70" y="34" width="12" height="8" rx="2" fill="#42A5F5"/>
+    <circle cx="74" cy="38" r="2" fill="#fff" opacity=".6"/>
+    <!-- 嘴 -->
+    <rect x="50" y="48" width="28" height="4" rx="2" fill="#37474F"/>
+    <rect x="54" y="49" width="4" height="2" fill="#4CAF50"/><rect x="62" y="49" width="4" height="2" fill="#4CAF50"/><rect x="70" y="49" width="4" height="2" fill="#4CAF50"/>
+    <!-- 身体 -->
+    <rect x="32" y="60" width="64" height="40" rx="6" fill="url(#rb)"/>
+    <rect x="34" y="62" width="60" height="36" rx="4" fill="#546E7A"/>
+    <!-- 胸部仪表 -->
+    <circle cx="54" cy="76" r="6" fill="#1B5E20"/><circle cx="54" cy="76" r="4" fill="#4CAF50"/><ellipse cx="53" cy="75" rx="1.5" ry="1" fill="#fff" opacity=".3"/>
+    <circle cx="74" cy="76" r="6" fill="#B71C1C"/><circle cx="74" cy="76" r="4" fill="#EF5350"/><ellipse cx="73" cy="75" rx="1.5" ry="1" fill="#fff" opacity=".3"/>
+    <rect x="46" y="86" width="36" height="6" rx="2" fill="#37474F"/>
+    <!-- 手臂 -->
+    <rect x="18" y="64" width="14" height="28" rx="6" fill="#607D8B"/>
+    <circle cx="25" cy="96" r="6" fill="#78909C"/>
+    <rect x="96" y="64" width="14" height="28" rx="6" fill="#607D8B"/>
+    <circle cx="103" cy="96" r="6" fill="#78909C"/>
+    <!-- 腿 -->
+    <rect x="42" y="100" width="14" height="18" rx="4" fill="#607D8B"/>
+    <rect x="72" y="100" width="14" height="18" rx="4" fill="#607D8B"/>
+    <rect x="38" y="116" width="22" height="6" rx="3" fill="#455A64"/>
+    <rect x="68" y="116" width="22" height="6" rx="3" fill="#455A64"/>
+  </g>
+</svg>

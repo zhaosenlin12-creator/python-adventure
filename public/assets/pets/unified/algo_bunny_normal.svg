@@ -1,0 +1,69 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'>
+  <defs>
+    <radialGradient id='ab_body' cx='45%' cy='35%' r='55%'>
+      <stop offset='0%' stop-color='#FFF9C4'/><stop offset='50%' stop-color='#FFE082'/><stop offset='100%' stop-color='#FFD93D'/>
+    </radialGradient>
+    <radialGradient id='ab_belly' cx='50%' cy='40%' r='50%'>
+      <stop offset='0%' stop-color='#FFFEF5'/><stop offset='100%' stop-color='#FFF9C4'/>
+    </radialGradient>
+    <radialGradient id='ab_iris' cx='40%' cy='35%' r='55%'>
+      <stop offset='0%' stop-color='#42A5F5'/><stop offset='60%' stop-color='#1565C0'/><stop offset='100%' stop-color='#0D47A1'/>
+    </radialGradient>
+    <radialGradient id='ab_glow' cx='50%' cy='50%' r='50%'>
+      <stop offset='0%' stop-color='#FFF176' stop-opacity='0.5'/><stop offset='100%' stop-color='#FFF176' stop-opacity='0'/>
+    </radialGradient>
+    <filter id='ab_sh'><feDropShadow dx='0' dy='2' stdDeviation='1.5' flood-color='#6D4C41' flood-opacity='0.18'/></filter>
+  </defs>
+  <g filter='url(#ab_sh)'>
+  <g stroke='#6D4C41' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+    <!-- Backpack -->
+    <rect x='56' y='55' width='17' height='22' rx='5' fill='#FF7043' stroke='#BF360C' stroke-width='1.5'/>
+    <rect x='58' y='57' width='13' height='7' rx='2.5' fill='#FF8A65'/>
+    <rect x='60' y='66' width='9' height='5' rx='1.5' fill='#D84315'/><line x1='64.5' y1='66' x2='64.5' y2='71' stroke='#BF360C' stroke-width='1'/>
+    <rect x='59' y='73' width='11' height='2' rx='1' fill='#FFAB91' opacity='0.5'/>
+    <!-- Antenna ears -->
+    <path d='M36 32 Q29 2 26 -4' fill='none' stroke='#FFD93D' stroke-width='4'/>
+    <path d='M60 32 Q67 2 70 -4' fill='none' stroke='#FFD93D' stroke-width='4'/>
+    <path d='M36 32 Q29 2 26 -4' fill='none' stroke='#6D4C41' stroke-width='1.5'/>
+    <path d='M60 32 Q67 2 70 -4' fill='none' stroke='#6D4C41' stroke-width='1.5'/>
+    <!-- Ear inner pink -->
+    <path d='M35 30 Q30 6 27 -1' fill='none' stroke='#FFB4B4' stroke-width='2' opacity='0.6'/>
+    <path d='M61 30 Q66 6 69 -1' fill='none' stroke='#FFB4B4' stroke-width='2' opacity='0.6'/>
+    <!-- Antenna glow tips -->
+    <circle cx='26' cy='-3' r='4' fill='url(#ab_glow)'/><circle cx='26' cy='-3' r='2.5' fill='#FFF176' opacity='0.8'/>
+    <circle cx='70' cy='-3' r='4' fill='url(#ab_glow)'/><circle cx='70' cy='-3' r='2.5' fill='#FFF176' opacity='0.8'/>
+    <!-- Fluffy tail -->
+    <circle cx='26' cy='78' r='8' fill='#FFFEF5' stroke='#6D4C41' stroke-width='2'/>
+    <circle cx='24' cy='76' r='3.5' fill='#fff' stroke='none' opacity='0.5'/>
+    <!-- Body -->
+    <ellipse cx='48' cy='72' rx='21' ry='16' fill='url(#ab_body)'/>
+    <ellipse cx='48' cy='74' rx='13' ry='10' fill='url(#ab_belly)'/>
+    <!-- Paws -->
+    <ellipse cx='36' cy='86' rx='8' ry='4.5' fill='#FFE082'/><ellipse cx='60' cy='86' rx='8' ry='4.5' fill='#FFE082'/>
+    <ellipse cx='36' cy='87' rx='5' ry='2.5' fill='#FFFEF5'/><ellipse cx='60' cy='87' rx='5' ry='2.5' fill='#FFFEF5'/>
+    <!-- Head -->
+    <circle cx='48' cy='48' r='25' fill='url(#ab_body)'/>
+    <ellipse cx='40' cy='36' rx='11' ry='7' fill='#FFF9C4' opacity='0.35'/>
+    <!-- Cheek blush -->
+    <ellipse cx='30' cy='54' rx='6' ry='4' fill='#FFB4B4' opacity='0.45'/>
+    <ellipse cx='66' cy='54' rx='6' ry='4' fill='#FFB4B4' opacity='0.45'/>
+    <!-- Eyes -->
+    <ellipse cx='38' cy='46' rx='7.5' ry='8.5' fill='#fff' stroke='#6D4C41' stroke-width='1.5'/>
+    <ellipse cx='58' cy='46' rx='7.5' ry='8.5' fill='#fff' stroke='#6D4C41' stroke-width='1.5'/>
+    <ellipse cx='39' cy='46' rx='4.5' ry='6' fill='url(#ab_iris)'/><ellipse cx='59' cy='46' rx='4.5' ry='6' fill='url(#ab_iris)'/>
+    <ellipse cx='39' cy='46' rx='2.5' ry='4' fill='#0D47A1'/><ellipse cx='59' cy='46' rx='2.5' ry='4' fill='#0D47A1'/>
+    <circle cx='36' cy='43' r='2.5' fill='#fff' opacity='0.9'/><circle cx='56' cy='43' r='2.5' fill='#fff' opacity='0.9'/>
+    <circle cx='41' cy='48' r='1.2' fill='#fff' opacity='0.45'/><circle cx='61' cy='48' r='1.2' fill='#fff' opacity='0.45'/>
+    <!-- Nose -->
+    <ellipse cx='48' cy='53' rx='3.5' ry='2.5' fill='#FF8A80' stroke='#D3675A' stroke-width='0.6'/>
+    <!-- Mouth + teeth -->
+    <path d='M48 55.5 Q43.5 60 41.5 57.5' stroke='#6D4C41' stroke-width='1.5' fill='none'/>
+    <path d='M48 55.5 Q52.5 60 54.5 57.5' stroke='#6D4C41' stroke-width='1.5' fill='none'/>
+    <rect x='45' y='55.5' width='3.2' height='4' rx='1' fill='#fff' stroke='#6D4C41' stroke-width='0.8'/>
+    <rect x='48.2' y='55.5' width='3.2' height='4' rx='1' fill='#fff' stroke='#6D4C41' stroke-width='0.8'/>
+    <!-- Sparkle -->
+    <path d='M80 24 L81.5 21 L83 24 L81.5 27 Z' fill='#FFD93D' opacity='0.5'/>
+    <path d='M12 42 L13.5 39 L15 42 L13.5 45 Z' fill='#FFD93D' opacity='0.4'/>
+  </g>
+  </g>
+</svg>

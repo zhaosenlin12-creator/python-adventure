@@ -1,0 +1,568 @@
+"use client";
+
+import { useEffect, useRef, useState } from 'react';
+import Phaser from 'phaser';
+import type { PlatformLevel } from '@/lib/platformLevels';
+import { getAllPlatformLevels } from '@/lib/platformLevels';
+import type { Campaign, CampaignLevel, Question } from '@/lib/campaigns';
+import QuizModal from './QuizModal';
+import LevelCompleteModal from './LevelCompleteModal';
+import CampaignSelector from './CampaignSelector';
+import QuestionModal from './QuestionModal';
+import { useGameStore } from '@/store/gameStore';
+
+interface PlatformGameProps {
+    onExit: () => void;
+}
+
+export default function PlatformGame({ onExit }: PlatformGameProps) {
+    const gameRef = useRef<Phaser.Game | null>(null);
+    const parentRef = useRef<HTMLDivElement>(null);
+    
+    // 战役系统状态
+    const [selectedCampaign, setSelectedCampaign] = useState<Campaign | null>(null);
+    const [currentCampaignLevel, setCurrentCampaignLevel] = useState<CampaignLevel | null>(null);
+    const [currentLevelIndex, setCurrentLevelIndex] = useState(0);
+    const [showCampaignSelector, setShowCampaignSelector] = useState(true);
+    
+    // 题目系统状态
+    const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
+    const [questionIndex, setQuestionIndex] = useState(0);
+    const [showQuestion, setShowQuestion] = useState(false);
+    const [isLevelFailed, setIsLevelFailed] = useState(false); // 标记关卡是否失败
+    
+    // 原有状态（保持兼容）
+    const [currentLevel, setCurrentLevel] = useState<PlatformLevel | null>(null);
+    const [showLevelSelect, setShowLevelSelect] = useState(false);
+    const [showQuiz, setShowQuiz] = useState(false);
+    const [showLevelComplete, setShowLevelComplete] = useState(false);
+    const [levelCompleteData, setLevelCompleteData] = useState<any>(null);
+    
+    const { 
+        addXp, 
+        addCoins, 
+        completedCampaigns,
+        campaignProgress,
+        completeCampaignLevel,
+        completeCampaign
+    } = useGameStore();
+    const allLevels = getAllPlatformLevels();
+
+    useEffect(() => {
+        // 监听关卡内答题触发事件
+        const handleShowQuestion = (event: any) => {
+            const { question, onAnswer } = event.detail;
+            console.log('[PlatformGame] 收到答题触发事件:', question);
+            
+            // 保存答题回调
+            (window as any).__questionCallback = onAnswer;
+            
+            // 显示题目
+            setCurrentQuestion(question);
+            setShowQuestion(true);
+        };
+        
+        window.addEventListener('showQuestion', handleShowQuestion);
+        
+        // 监听关卡完成事件
+        const handleLevelComplete = (event: any) => {
+            const data = event.detail;
+            
+            // 销毁游戏实例
+            if (gameRef.current) {
+                gameRef.current.destroy(true);
+                gameRef.current = null;
+            }
+            
+            if (currentCampaignLevel) {
+                // 战役模式
+                if (data.success) {
+                    // 成功：显示题目挑战
+                    setIsLevelFailed(false); // 重置失败标记
+                    if (currentCampaignLevel.questions.length > 0) {
+                        setCurrentQuestion(currentCampaignLevel.questions[0]);
+                        setQuestionIndex(0);
+                        setShowQuestion(true);
+                    } else {
+                        // 没有题目，直接完成关卡
+                        handleCampaignLevelComplete();
+                    }
+                } else {
+                    // 失败：弹出题目，答对才能重生
+                    console.log('[PlatformGame] 关卡失败，弹出重生题目');
+                    setIsLevelFailed(true); // 标记为失败
+                    if (currentCampaignLevel.questions.length > 0) {
+                        setCurrentQuestion(currentCampaignLevel.questions[0]);
+                        setQuestionIndex(0);
+                        setShowQuestion(true);
+                    } else {
+                        // 没有题目，直接显示失败界面
+                        setLevelCompleteData({
+                            success: false,
+                            title: currentCampaignLevel.name,
+                            score: data.score,
+                            timeElapsed: data.timeElapsed,
+                            objectives: [],
+                            rewards: { exp: 0, coins: 0 }
+                        });
+                        setShowLevelComplete(true);
+                    }
+                }
+            } else {
+                // 非战役模式：设置关卡完成数据
+                setLevelCompleteData({
+                    success: data.success,
+                    title: data.levelTitle,
+                    score: data.score,
+                    timeElapsed: data.timeElapsed,
+                    objectives: data.objectives,
+                    rewards: data.rewards
+                });
+                
+                setShowLevelComplete(true);
+            }
+        };
+
+        window.addEventListener('platformLevelComplete', handleLevelComplete);
+
+        return () => {
+            window.removeEventListener('showQuestion', handleShowQuestion);
+            window.removeEventListener('platformLevelComplete', handleLevelComplete);
+            if (gameRef.current) {
+                gameRef.current.destroy(true);
+                gameRef.current = null;
+            }
+        };
+    }, [currentCampaignLevel]);
+
+    // 战役选择处理
+    const handleSelectCampaign = (campaign: Campaign) => {
+        setSelectedCampaign(campaign);
+        setCurrentLevelIndex(0);
+        setShowCampaignSelector(false);
+        startCampaignLevel(campaign.levels[0]);
+    };
+
+    // 开始战役关卡
+    const startCampaignLevel = (campaignLevel: CampaignLevel) => {
+        setCurrentCampaignLevel(campaignLevel);
+        
+        // 使用现有关卡数据（临时方案）
+        const levelData = allLevels[currentLevelIndex % allLevels.length];
+        setCurrentLevel(levelData);
+        startLevel(levelData);
+    };
+
+    // 题目回答正确
+    const handleQuestionCorrect = () => {
+        console.log('[PlatformGame] handleQuestionCorrect 被调用');
+        
+        setShowQuestion(false);
+        
+        // 检查是否是关卡内答题触发点
+        const questionCallback = (window as any).__questionCallback;
+        if (questionCallback) {
+            console.log('[PlatformGame] 调用关卡内答题回调（答对）');
+            questionCallback(true, '');
+            (window as any).__questionCallback = null;
+            return;
+        }
+        
+        // 否则是关卡结束答题
+        console.log('[PlatformGame] isLevelFailed:', isLevelFailed);
+        console.log('[PlatformGame] currentCampaignLevel:', currentCampaignLevel);
+        
+        if (!currentCampaignLevel) {
+            console.log('[PlatformGame] 错误：currentCampaignLevel 为空！');
+            return;
+        }
+        
+        // 检查是失败重生还是成功通关
+        if (isLevelFailed) {
+            // 失败后答对题目：重新开始当前关卡
+            console.log('[PlatformGame] 失败重生：答对题目，重新开始当前关卡');
+            setIsLevelFailed(false); // 重置失败标记
+            setTimeout(() => {
+                startCampaignLevelWithIndex(currentCampaignLevel, currentLevelIndex);
+            }, 500);
+        } else {
+            // 成功后答对题目：进入下一关
+            console.log('[PlatformGame] 成功通关：答对题目，进入下一关');
+            handleCampaignLevelComplete();
+        }
+    };
+
+    // 题目回答错误
+    const handleQuestionWrong = () => {
+        console.log('[PlatformGame] 答题错误');
+        setShowQuestion(false);
+        
+        // 检查是否是关卡内答题触发点
+        const questionCallback = (window as any).__questionCallback;
+        if (questionCallback) {
+            console.log('[PlatformGame] 调用关卡内答题回调（答错）');
+            questionCallback(false, '');
+            (window as any).__questionCallback = null;
+            return;
+        }
+        
+        // 否则是关卡结束答题，重新开始关卡
+        console.log('[PlatformGame] 关卡结束答题错误，重新开始关卡');
+        if (currentCampaignLevel) {
+            // 延迟一下再重启，让用户看到错误提示
+            setTimeout(() => {
+                startCampaignLevelWithIndex(currentCampaignLevel, currentLevelIndex);
+            }, 500);
+        }
+    };
+
+    // 完成战役关卡
+    const handleCampaignLevelComplete = () => {
+        if (!selectedCampaign || !currentCampaignLevel) return;
+        
+        console.log('[PlatformGame] 完成关卡:', currentCampaignLevel.name, '当前索引:', currentLevelIndex);
+        
+        // 添加奖励
+        addXp(currentCampaignLevel.rewards.xp);
+        addCoins(currentCampaignLevel.rewards.coins);
+        
+        // 标记关卡完成
+        completeCampaignLevel(currentCampaignLevel.id);
+        
+        const nextLevelIndex = currentLevelIndex + 1;
+        console.log('[PlatformGame] 下一关索引:', nextLevelIndex, '总关卡数:', selectedCampaign.levels.length);
+        
+        if (nextLevelIndex < selectedCampaign.levels.length) {
+            // 进入下一关
+            console.log('[PlatformGame] 进入下一关:', selectedCampaign.levels[nextLevelIndex].name);
+            setCurrentLevelIndex(nextLevelIndex);
+            // 直接传递nextLevelIndex而不是依赖状态更新
+            startCampaignLevelWithIndex(selectedCampaign.levels[nextLevelIndex], nextLevelIndex);
+        } else {
+            // 战役完成
+            console.log('[PlatformGame] 战役完成!');
+            completeCampaign(selectedCampaign.id);
+            setShowCampaignSelector(true);
+            setSelectedCampaign(null);
+            setCurrentCampaignLevel(null);
+        }
+    };
+
+    // 开始战役关卡（带索引）
+    const startCampaignLevelWithIndex = (campaignLevel: CampaignLevel, levelIndex: number) => {
+        console.log('[PlatformGame] startCampaignLevelWithIndex 被调用');
+        console.log('[PlatformGame] campaignLevel:', campaignLevel.name);
+        console.log('[PlatformGame] levelIndex:', levelIndex);
+        console.log('[PlatformGame] mapData:', campaignLevel.mapData);
+        
+        setCurrentCampaignLevel(campaignLevel);
+        
+        // 重置题目状态
+        setCurrentQuestion(null);
+        setQuestionIndex(0);
+        setShowQuestion(false);
+        
+        // 如果战役关卡有自定义地图数据，使用它；否则使用默认关卡
+        let levelData: any;
+        if (campaignLevel.mapData) {
+            // 将战役地图数据转换为关卡数据格式
+            levelData = {
+                id: levelIndex,
+                title: campaignLevel.name,
+                description: campaignLevel.description,
+                story: campaignLevel.description,
+                difficulty: 'medium',
+                objectives: [{ type: 'reach' as const, description: '到达终点' }],
+                rewards: { exp: campaignLevel.rewards.xp, coins: campaignLevel.rewards.coins },
+                campaignMapData: campaignLevel.mapData // 使用新的字段名避免冲突
+            };
+        } else {
+            // 使用默认关卡数据
+            levelData = allLevels[levelIndex % allLevels.length];
+        }
+        
+        console.log('[PlatformGame] 使用的关卡数据:', levelData.title);
+        setCurrentLevel(levelData as PlatformLevel);
+        startLevel(levelData as PlatformLevel);
+    };
+
+    const startLevel = async (level: PlatformLevel) => {
+        setCurrentLevel(level);
+        setShowLevelSelect(false);
+        setShowLevelComplete(false);
+        setShowQuiz(false);
+
+        // 等待DOM更新
+        await new Promise(resolve => setTimeout(resolve, 100));
+
+        if (!parentRef.current || gameRef.current) return;
+
+        // 动态加载Phaser和场景
+        const Phaser = await import('phaser');
+        const { default: PlatformGameScene } = await import('@/components/world/scenes/PlatformGameScene');
+
+        const config: Phaser.Types.Core.GameConfig = {
+            type: Phaser.AUTO,
+            width: 800,
+            height: 600,
+            parent: parentRef.current,
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: { x: 0, y: 500 },
+                    debug: false
+                }
+            },
+            scene: [PlatformGameScene],
+            backgroundColor: '#1a1a2e'
+        };
+
+        gameRef.current = new Phaser.Game(config);
+        
+        // 启动场景并传递关卡数据
+        gameRef.current.scene.start('PlatformGameScene', { level });
+    };
+
+    const restartLevel = () => {
+        if (currentLevel) {
+            if (gameRef.current) {
+                gameRef.current.destroy(true);
+                gameRef.current = null;
+            }
+            startLevel(currentLevel);
+        }
+    };
+
+    const handleQuizCorrect = () => {
+        if (!currentLevel) return;
+
+        // 给予奖励
+        addXp(currentLevel.rewards.exp);
+        addCoins(currentLevel.rewards.coins);
+
+        setShowQuiz(false);
+        
+        // 显示完成界面
+        setTimeout(() => {
+            alert(`恭喜通关！\n获得经验: ${currentLevel.rewards.exp}\n获得金币: ${currentLevel.rewards.coins}`);
+            setShowLevelSelect(true);
+            setCurrentLevel(null);
+        }, 500);
+    };
+
+    const handleQuizWrong = () => {
+        setShowQuiz(false);
+        alert('答题错误！重新挑战关卡');
+        restartLevel();
+    };
+
+    const handleQuizClose = () => {
+        setShowQuiz(false);
+        setShowLevelSelect(true);
+        setCurrentLevel(null);
+    };
+
+    // 显示战役选择器
+    if (showCampaignSelector) {
+        return (
+            <CampaignSelector
+                onSelectCampaign={handleSelectCampaign}
+                onClose={onExit}
+            />
+        );
+    }
+
+    if (showLevelSelect) {
+        return (
+            <div className="fixed inset-0 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 z-50 overflow-auto">
+                {/* 头部 */}
+                <div className="sticky top-0 bg-black/50 backdrop-blur-sm border-b border-white/10 p-4 z-10">
+                    <div className="max-w-6xl mx-auto flex justify-between items-center">
+                        <h1 className="text-3xl font-bold text-white flex items-center gap-3">
+                            <span className="text-4xl">🎮</span>
+                            冒险闯关
+                        </h1>
+                        <button
+                            onClick={onExit}
+                            className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-lg transition-colors"
+                        >
+                            ← 返回世界
+                        </button>
+                    </div>
+                </div>
+
+                {/* 关卡列表 */}
+                <div className="max-w-6xl mx-auto p-8">
+                    <div className="mb-8">
+                        <h2 className="text-2xl font-bold text-white mb-2">选择关卡</h2>
+                        <p className="text-gray-300">
+                            通过平台跳跃、躲避障碍、击败敌人，完成目标后回答问题即可通关！
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {allLevels.map((level) => (
+                            <div
+                                key={level.id}
+                                className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border-2 border-gray-700 hover:border-blue-500 transition-all cursor-pointer group"
+                                onClick={() => startLevel(level)}
+                            >
+                                {/* 关卡标题 */}
+                                <div className="flex items-center justify-between mb-4">
+                                    <h3 className="text-xl font-bold text-white">
+                                        关卡 {level.id}: {level.title}
+                                    </h3>
+                                    <span className={`px-3 py-1 rounded-full text-sm font-bold ${
+                                        level.difficulty === 'easy' ? 'bg-green-500' :
+                                        level.difficulty === 'medium' ? 'bg-yellow-500' :
+                                        'bg-red-500'
+                                    } text-white`}>
+                                        {level.difficulty === 'easy' ? '简单' :
+                                         level.difficulty === 'medium' ? '中等' : '困难'}
+                                    </span>
+                                </div>
+
+                                {/* 描述 */}
+                                <p className="text-gray-300 mb-4 text-sm">
+                                    {level.description}
+                                </p>
+
+                                {/* 目标 */}
+                                <div className="mb-4">
+                                    <p className="text-blue-400 text-sm font-bold mb-2">目标：</p>
+                                    <ul className="space-y-1">
+                                        {level.objectives.map((obj, idx) => (
+                                            <li key={idx} className="text-gray-400 text-sm flex items-center gap-2">
+                                                <span className="text-yellow-400">▸</span>
+                                                {obj.description}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                {/* 奖励 */}
+                                <div className="flex items-center gap-4 text-sm">
+                                    <span className="text-green-400">
+                                        ⭐ {level.rewards.exp} EXP
+                                    </span>
+                                    <span className="text-yellow-400">
+                                        💰 {level.rewards.coins} 金币
+                                    </span>
+                                </div>
+
+                                {/* 开始按钮 */}
+                                <button className="w-full mt-4 bg-blue-500 group-hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition-colors">
+                                    开始挑战 →
+                                </button>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
+    return (
+        <div className="fixed inset-0 bg-black z-50 flex flex-col">
+            {/* 游戏头部 */}
+            <div className="bg-gray-900 border-b border-gray-700 p-4 flex justify-between items-center">
+                <div className="text-white">
+                    <h2 className="text-xl font-bold">
+                        {selectedCampaign ? `${selectedCampaign.name} - 第${currentLevelIndex + 1}关` : currentLevel?.title}
+                    </h2>
+                    <p className="text-sm text-gray-400">
+                        {currentCampaignLevel ? currentCampaignLevel.description : currentLevel?.description}
+                    </p>
+                </div>
+                <div className="flex gap-4">
+                    <button
+                        onClick={restartLevel}
+                        className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-lg transition-colors"
+                    >
+                        🔄 重新开始
+                    </button>
+                    <button
+                        onClick={() => {
+                            if (gameRef.current) {
+                                gameRef.current.destroy(true);
+                                gameRef.current = null;
+                            }
+                            setShowCampaignSelector(true);
+                            setSelectedCampaign(null);
+                            setCurrentCampaignLevel(null);
+                            setCurrentLevel(null);
+                        }}
+                        className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors"
+                    >
+                        ← 返回战役选择
+                    </button>
+                </div>
+            </div>
+
+            {/* 游戏容器 */}
+            <div className="flex-1 flex items-center justify-center bg-gradient-to-br from-gray-900 to-black">
+                <div ref={parentRef} className="shadow-2xl" />
+            </div>
+
+            {/* 操作提示 */}
+            <div className="bg-gray-900 border-t border-gray-700 p-4">
+                <div className="max-w-4xl mx-auto flex justify-center gap-8 text-white text-sm">
+                    <span>⬅️ ➡️ 移动</span>
+                    <span>⬆️ 跳跃</span>
+                    <span>SPACE 冲刺</span>
+                    <span>X 攻击</span>
+                    <span>到达🏁完成目标即可通关</span>
+                </div>
+            </div>
+
+            {/* 关卡完成模态框 */}
+            {showLevelComplete && levelCompleteData && (
+                <LevelCompleteModal
+                    isOpen={showLevelComplete}
+                    success={levelCompleteData.success}
+                    levelData={levelCompleteData}
+                    onClose={() => {
+                        setShowLevelComplete(false);
+                        setLevelCompleteData(null);
+                        setShowCampaignSelector(true);
+                        setSelectedCampaign(null);
+                        setCurrentCampaignLevel(null);
+                        setCurrentLevel(null);
+                    }}
+                    onNextLevel={() => {
+                        setShowLevelComplete(false);
+                        setLevelCompleteData(null);
+                        // 进入下一关逻辑
+                    }}
+                    onRetry={() => {
+                        setShowLevelComplete(false);
+                        setLevelCompleteData(null);
+                        restartLevel();
+                    }}
+                />
+            )}
+
+            {/* 题目挑战模态框 */}
+            {showQuestion && currentQuestion && (
+                <QuestionModal
+                    isOpen={showQuestion}
+                    question={currentQuestion}
+                    onCorrect={handleQuestionCorrect}
+                    onWrong={handleQuestionWrong}
+                    onClose={() => setShowQuestion(false)}
+                />
+            )}
+
+            {/* 答题模态框 */}
+            {showQuiz && currentLevel && (
+                <QuizModal
+                    isOpen={showQuiz}
+                    quiz={currentLevel.quiz}
+                    onCorrect={handleQuizCorrect}
+                    onWrong={handleQuizWrong}
+                    onClose={handleQuizClose}
+                />
+            )}
+        </div>
+    );
+}

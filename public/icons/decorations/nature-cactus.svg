@@ -1,0 +1,38 @@
+<svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cac" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#2E7D32"/><stop offset="50%" stop-color="#43A047"/><stop offset="100%" stop-color="#2E7D32"/></linearGradient>
+    <filter id="caf"><feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#000" flood-opacity=".18"/></filter>
+  </defs>
+  <g filter="url(#caf)">
+    <!-- 花盆 -->
+    <path d="M38 88 L34 114 C34 118 46 122 64 122 C82 122 94 118 94 114 L90 88 Z" fill="#D4835A"/>
+    <ellipse cx="64" cy="88" rx="26" ry="5" fill="#C47A50"/>
+    <ellipse cx="64" cy="88" rx="22" ry="3.5" fill="#8B5230"/>
+    <path d="M42 100 Q64 104 86 100" stroke="#A0603A" stroke-width="1.5" fill="none" opacity=".4"/>
+    <!-- 主干 -->
+    <rect x="52" y="28" width="24" height="62" rx="12" fill="url(#cac)"/>
+    <!-- 主干纹理 -->
+    <line x1="58" y1="32" x2="58" y2="86" stroke="#1B5E20" stroke-width=".5" opacity=".3"/>
+    <line x1="64" y1="28" x2="64" y2="88" stroke="#1B5E20" stroke-width=".5" opacity=".3"/>
+    <line x1="70" y1="32" x2="70" y2="86" stroke="#1B5E20" stroke-width=".5" opacity=".3"/>
+    <!-- 左臂 -->
+    <rect x="28" y="46" width="16" height="28" rx="8" fill="#388E3C"/>
+    <rect x="36" y="32" width="16" height="20" rx="8" fill="#43A047"/>
+    <line x1="38" y1="36" x2="38" y2="50" stroke="#1B5E20" stroke-width=".4" opacity=".3"/>
+    <!-- 右臂 -->
+    <rect x="76" y="38" width="16" height="32" rx="8" fill="#388E3C"/>
+    <rect x="80" y="24" width="16" height="20" rx="8" fill="#43A047"/>
+    <line x1="90" y1="28" x2="90" y2="42" stroke="#1B5E20" stroke-width=".4" opacity=".3"/>
+    <!-- 刺 -->
+    <line x1="52" y1="40" x2="46" y2="37" stroke="#A5D6A7" stroke-width="1" stroke-linecap="round"/>
+    <line x1="76" y1="36" x2="82" y2="33" stroke="#A5D6A7" stroke-width="1" stroke-linecap="round"/>
+    <line x1="52" y1="56" x2="46" y2="55" stroke="#A5D6A7" stroke-width="1" stroke-linecap="round"/>
+    <line x1="76" y1="52" x2="82" y2="51" stroke="#A5D6A7" stroke-width="1" stroke-linecap="round"/>
+    <line x1="52" y1="72" x2="46" y2="73" stroke="#A5D6A7" stroke-width="1" stroke-linecap="round"/>
+    <line x1="76" y1="68" x2="82" y2="69" stroke="#A5D6A7" stroke-width="1" stroke-linecap="round"/>
+    <!-- 小花 -->
+    <circle cx="64" cy="26" r="5" fill="#EC407A" opacity=".8"/>
+    <circle cx="64" cy="26" r="2.5" fill="#F48FB1"/>
+    <circle cx="64" cy="26" r="1.5" fill="#FFD54F"/>
+  </g>
+</svg>

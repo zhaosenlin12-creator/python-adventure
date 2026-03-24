@@ -1,0 +1,81 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+/.pytest_cache/
+/.hypothesis/
+backend/.hypothesis/
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+!.env.example
+!**/.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# backup files
+/.backup/
+
+# archived files
+/_archived/
+public/assets/pets/Cooking with Cat/
+
+# local development
+stash.patch
+console.md
+/.venv/
+.vscode/
+*.code-workspace
+uploads/
+backend_deploy_tmp/
+
+# Database files (never commit to avoid overwriting server data)
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+*.db.backup
+backend/test_backend.db
+backend/_archive_*/
+
+# Backend virtual environment
+backend/venv/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/*.pyc
+*.pyc
+
+# Deployment packages
+*.zip

@@ -1,0 +1,35 @@
+<svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8B04A"/><stop offset="100%" stop-color="#C47A30"/></linearGradient>
+    <filter id="mbf"><feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#000" flood-opacity=".18"/></filter>
+  </defs>
+  <g filter="url(#mbf)">
+    <!-- 盒子 -->
+    <rect x="20" y="52" width="88" height="56" rx="6" fill="url(#mbg)"/>
+    <rect x="22" y="54" width="84" height="52" rx="4" fill="#D4A040"/>
+    <!-- 盖子 (打开状态) -->
+    <path d="M20 52 L24 22 Q64 16 104 22 L108 52 Z" fill="#E8B04A"/>
+    <path d="M22 50 L26 24 Q64 18 102 24 L106 50 Z" fill="#D4A040"/>
+    <!-- 铰链 -->
+    <rect x="56" y="48" width="16" height="6" rx="2" fill="#8D6E63"/>
+    <!-- 内部 -->
+    <rect x="26" y="56" width="76" height="44" rx="3" fill="#FFF8E1"/>
+    <!-- 音乐装置 -->
+    <circle cx="64" cy="78" r="14" fill="#F5E6C8" stroke="#D4A040" stroke-width="1"/>
+    <circle cx="64" cy="78" r="10" fill="#FFF8E1" stroke="#E8B04A" stroke-width=".5"/>
+    <!-- 小突起 -->
+    <circle cx="64" cy="68" r="1.5" fill="#8D6E63"/>
+    <circle cx="74" cy="74" r="1.5" fill="#8D6E63"/>
+    <circle cx="74" cy="82" r="1.5" fill="#8D6E63"/>
+    <circle cx="64" cy="88" r="1.5" fill="#8D6E63"/>
+    <circle cx="54" cy="82" r="1.5" fill="#8D6E63"/>
+    <circle cx="54" cy="74" r="1.5" fill="#8D6E63"/>
+    <!-- 音符 -->
+    <text x="78" y="42" font-size="18" fill="#E91E63" opacity=".7">♪</text>
+    <text x="90" y="34" font-size="14" fill="#E91E63" opacity=".5">♫</text>
+    <text x="34" y="38" font-size="16" fill="#E91E63" opacity=".6">♩</text>
+    <!-- 装饰 -->
+    <rect x="36" y="60" width="52" height="2" rx="1" fill="#E8B04A" opacity=".3"/>
+    <rect x="26" y="92" width="76" height="2" rx="1" fill="#C47A30" opacity=".3"/>
+  </g>
+</svg>

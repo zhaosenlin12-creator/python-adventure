@@ -1,0 +1,11 @@
+﻿<svg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'>
+  <g stroke='#2B2B2B' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'>
+    <circle cx='48' cy='10' r='12' fill='none' stroke='#34D399' stroke-width='3'/><ellipse cx='48' cy='16' rx='18' ry='6' fill='none' stroke='#60A5FA' stroke-width='2'/><circle cx='72' cy='20' r='3' fill='#34D399'/><circle cx='24' cy='20' r='3' fill='#34D399'/>
+    <ellipse cx='48' cy='76' rx='16' ry='10' fill='#A7F3D0'/><ellipse cx='48' cy='76' rx='22' ry='4' fill='none' stroke='#60A5FA' stroke-width='2'/><circle cx='48' cy='76' r='2' fill='#60A5FA'/>
+    <circle cx='48' cy='52' r='28' fill='#A7F3D0'/>
+    <path d='M36 44 Q48 36 60 44' stroke='#60A5FA' stroke-width='3' fill='none'/>
+    <path d='M32 42 L44 50 M44 42 L32 50' stroke='#0B1020' stroke-width='3' fill='none'/><path d='M52 42 L64 50 M64 42 L52 50' stroke='#0B1020' stroke-width='3' fill='none'/>
+    <path d='M40 68 Q48 62 56 68' stroke='#2B2B2B' stroke-width='3' fill='none'/>
+    
+  </g>
+</svg>

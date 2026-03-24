@@ -1,0 +1,15 @@
+<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 等级图标 - 盾牌 -->
+  <!-- 盾牌主体 -->
+  <path d="M 12 2 L 20 6 L 20 12 Q 20 18 12 22 Q 4 18 4 12 L 4 6 Z" fill="#9370DB"/>
+  <!-- 盾牌内层 -->
+  <path d="M 12 4 L 18 7 L 18 12 Q 18 16.5 12 20 Q 6 16.5 6 12 L 6 7 Z" fill="#BA55D3"/>
+  <!-- 中心装饰 -->
+  <circle cx="12" cy="12" r="4" fill="#DDA0DD"/>
+  <!-- 等级文字 -->
+  <text x="12" y="14.5" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="#FFFFFF" text-anchor="middle">LV</text>
+  <!-- 高光 -->
+  <ellipse cx="10" cy="8" rx="2" ry="3" fill="#FFFFFF" opacity="0.3"/>
+  <!-- 边框 -->
+  <path d="M 12 2 L 20 6 L 20 12 Q 20 18 12 22 Q 4 18 4 12 L 4 6 Z" fill="none" stroke="#8B008B" stroke-width="0.5"/>
+</svg>

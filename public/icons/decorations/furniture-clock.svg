@@ -1,0 +1,37 @@
+<svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="cg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#FFF8E1"/><stop offset="100%" stop-color="#F5E6C8"/></radialGradient>
+    <filter id="cf"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity=".15"/></filter>
+  </defs>
+  <g filter="url(#cf)">
+    <!-- 外框 -->
+    <circle cx="64" cy="64" r="48" fill="#5D4037"/>
+    <circle cx="64" cy="64" r="44" fill="#795548"/>
+    <circle cx="64" cy="64" r="40" fill="url(#cg)"/>
+    <!-- 刻度 -->
+    <line x1="64" y1="28" x2="64" y2="34" stroke="#5D4037" stroke-width="2.5"/>
+    <line x1="64" y1="94" x2="64" y2="100" stroke="#5D4037" stroke-width="2.5"/>
+    <line x1="28" y1="64" x2="34" y2="64" stroke="#5D4037" stroke-width="2.5"/>
+    <line x1="94" y1="64" x2="100" y2="64" stroke="#5D4037" stroke-width="2.5"/>
+    <!-- 小刻度 -->
+    <line x1="84" y1="30" x2="82" y2="34" stroke="#8D6E63" stroke-width="1.5"/>
+    <line x1="98" y1="44" x2="94" y2="46" stroke="#8D6E63" stroke-width="1.5"/>
+    <line x1="44" y1="30" x2="46" y2="34" stroke="#8D6E63" stroke-width="1.5"/>
+    <line x1="30" y1="44" x2="34" y2="46" stroke="#8D6E63" stroke-width="1.5"/>
+    <line x1="84" y1="98" x2="82" y2="94" stroke="#8D6E63" stroke-width="1.5"/>
+    <line x1="98" y1="84" x2="94" y2="82" stroke="#8D6E63" stroke-width="1.5"/>
+    <line x1="44" y1="98" x2="46" y2="94" stroke="#8D6E63" stroke-width="1.5"/>
+    <line x1="30" y1="84" x2="34" y2="82" stroke="#8D6E63" stroke-width="1.5"/>
+    <!-- 时针 -->
+    <line x1="64" y1="64" x2="64" y2="40" stroke="#3E2723" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- 分针 -->
+    <line x1="64" y1="64" x2="82" y2="52" stroke="#3E2723" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- 秒针 -->
+    <line x1="64" y1="64" x2="48" y2="86" stroke="#E53935" stroke-width="1" stroke-linecap="round"/>
+    <!-- 中心点 -->
+    <circle cx="64" cy="64" r="3.5" fill="#3E2723"/>
+    <circle cx="64" cy="64" r="2" fill="#8D6E63"/>
+    <!-- 玻璃高光 -->
+    <ellipse cx="52" cy="48" rx="12" ry="8" fill="#fff" opacity=".15"/>
+  </g>
+</svg>

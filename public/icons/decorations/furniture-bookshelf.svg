@@ -1,0 +1,41 @@
+<svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bs" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#A0652A"/><stop offset="100%" stop-color="#6B3A1A"/></linearGradient>
+    <filter id="bf"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity=".2"/></filter>
+  </defs>
+  <g filter="url(#bf)">
+    <!-- 外框 -->
+    <rect x="16" y="8" width="96" height="112" rx="4" fill="url(#bs)"/>
+    <rect x="18" y="10" width="92" height="108" rx="3" fill="#8B5430"/>
+    <!-- 隔板 -->
+    <rect x="18" y="40" width="92" height="4" rx="1" fill="#6B3A1A"/>
+    <rect x="18" y="72" width="92" height="4" rx="1" fill="#6B3A1A"/>
+    <!-- 第1层书 -->
+    <rect x="24" y="14" width="8" height="24" rx="1" fill="#E74C3C"/><rect x="24" y="14" width="8" height="3" rx="1" fill="#fff" opacity=".15"/>
+    <rect x="34" y="16" width="10" height="22" rx="1" fill="#3498DB"/><rect x="34" y="16" width="10" height="3" rx="1" fill="#fff" opacity=".15"/>
+    <rect x="46" y="12" width="7" height="26" rx="1" fill="#2ECC71"/>
+    <rect x="55" y="18" width="12" height="20" rx="1" fill="#F39C12"/>
+    <rect x="69" y="14" width="9" height="24" rx="1" fill="#9B59B6"/>
+    <rect x="80" y="16" width="10" height="22" rx="1" fill="#1ABC9C"/>
+    <rect x="92" y="13" width="14" height="25" rx="1" fill="#E67E22"/>
+    <!-- 第2层书 -->
+    <rect x="24" y="46" width="12" height="24" rx="1" fill="#5DADE2"/>
+    <rect x="38" y="48" width="8" height="22" rx="1" fill="#EC7063"/>
+    <rect x="48" y="44" width="10" height="26" rx="1" fill="#58D68D"/>
+    <rect x="60" y="48" width="14" height="22" rx="1" fill="#AF7AC5"/>
+    <rect x="76" y="46" width="10" height="24" rx="1" fill="#F4D03F"/>
+    <rect x="88" y="47" width="16" height="23" rx="1" fill="#EB984E"/>
+    <!-- 第3层: 装饰品 -->
+    <circle cx="36" cy="90" r="10" fill="#D4A06A" opacity=".6"/>
+    <ellipse cx="36" cy="88" rx="4" ry="3" fill="#fff" opacity=".15"/>
+    <rect x="56" y="80" width="16" height="20" rx="2" fill="#85C1E9" opacity=".5"/>
+    <rect x="58" y="82" width="12" height="14" rx="1" fill="#fff" opacity=".2"/>
+    <rect x="80" y="82" width="6" height="18" rx="1" fill="#27AE60"/>
+    <circle cx="83" cy="80" r="5" fill="#2ECC71"/>
+    <ellipse cx="83" cy="79" rx="2" ry="1.5" fill="#fff" opacity=".15"/>
+    <!-- 木纹 -->
+    <line x1="20" y1="20" x2="108" y2="20" stroke="#5C2E0E" stroke-width=".3" opacity=".2"/>
+    <line x1="20" y1="55" x2="108" y2="55" stroke="#5C2E0E" stroke-width=".3" opacity=".2"/>
+    <line x1="20" y1="90" x2="108" y2="90" stroke="#5C2E0E" stroke-width=".3" opacity=".2"/>
+  </g>
+</svg>

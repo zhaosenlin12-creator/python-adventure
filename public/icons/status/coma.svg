@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
+  <!-- 脸部圆圈 - 深灰色 -->
+  <circle cx="10" cy="10" r="8" fill="#f1f5f9" stroke="#64748b" stroke-width="1.5"/>
+  <!-- 闭着的眼睛 (螺旋) -->
+  <path d="M6 8c0.5-0.5 1-0.5 1.5 0" stroke="#475569" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M12 8c0.5-0.5 1-0.5 1.5 0" stroke="#475569" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- 张开的嘴 (O形) -->
+  <circle cx="10" cy="13" r="1.5" fill="none" stroke="#475569" stroke-width="1.5"/>
+  <!-- 星星表示昏迷 -->
+  <path d="M3 3l0.5 1.5L5 5l-1.5 0.5L3 7l-0.5-1.5L1 5l1.5-0.5z" fill="#fbbf24"/>
+  <path d="M16 2l0.3 1L17 3.3l-0.7 0.3L16 5l-0.3-1L15 3.3l0.7-0.3z" fill="#fbbf24"/>
+  <path d="M17 15l0.3 1L18 16.3l-0.7 0.3L17 18l-0.3-1L16 16.3l0.7-0.3z" fill="#fbbf24"/>
+</svg>

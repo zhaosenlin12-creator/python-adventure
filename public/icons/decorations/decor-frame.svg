@@ -1,0 +1,32 @@
+<svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="frf"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity=".18"/></filter>
+  </defs>
+  <g filter="url(#frf)">
+    <!-- 画框 -->
+    <rect x="16" y="12" width="96" height="88" rx="4" fill="#8D6E63"/>
+    <rect x="18" y="14" width="92" height="84" rx="3" fill="#A1887F"/>
+    <rect x="22" y="18" width="84" height="76" rx="2" fill="#795548"/>
+    <!-- 画布 -->
+    <rect x="26" y="22" width="76" height="68" rx="1" fill="#E3F2FD"/>
+    <!-- 简笔山水画 -->
+    <ellipse cx="64" cy="70" rx="36" ry="18" fill="#81C784" opacity=".4"/>
+    <path d="M30 62 L48 36 L60 50 L72 30 L90 56 L98 62" fill="#66BB6A" opacity=".5"/>
+    <path d="M26 62 L38 44 L50 56 L64 38 L80 54 L98 62 L98 90 L26 90 Z" fill="#43A047" opacity=".4"/>
+    <!-- 太阳 -->
+    <circle cx="82" cy="34" r="8" fill="#FFD54F" opacity=".6"/>
+    <circle cx="82" cy="34" r="5" fill="#FFF9C4" opacity=".4"/>
+    <!-- 云 -->
+    <ellipse cx="44" cy="32" rx="10" ry="5" fill="#fff" opacity=".5"/>
+    <ellipse cx="50" cy="30" rx="8" ry="5" fill="#fff" opacity=".5"/>
+    <!-- 水面 -->
+    <rect x="26" y="74" width="76" height="16" fill="#64B5F6" opacity=".3"/>
+    <line x1="30" y1="78" x2="50" y2="78" stroke="#fff" stroke-width=".5" opacity=".3"/>
+    <line x1="60" y1="82" x2="80" y2="82" stroke="#fff" stroke-width=".5" opacity=".3"/>
+    <!-- 框高光 -->
+    <rect x="22" y="18" width="84" height="3" rx="1" fill="#fff" opacity=".08"/>
+    <!-- 挂钩 -->
+    <circle cx="64" cy="8" r="4" fill="#6D4C41" stroke="#5D4037" stroke-width="1"/>
+    <circle cx="64" cy="8" r="2" fill="#8D6E63"/>
+  </g>
+</svg>

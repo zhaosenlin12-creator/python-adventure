@@ -1,0 +1,25 @@
+<svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="lg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#FFF9C4" stop-opacity=".7"/><stop offset="100%" stop-color="#FFF9C4" stop-opacity="0"/></radialGradient>
+    <filter id="lf"><feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#000" flood-opacity=".15"/></filter>
+  </defs>
+  <g filter="url(#lf)">
+    <!-- 光晕 -->
+    <ellipse cx="64" cy="36" rx="40" ry="30" fill="url(#lg)"/>
+    <!-- 灯罩 -->
+    <path d="M40 18 L30 52 C30 56 44 58 64 58 C84 58 98 56 98 52 L88 18 C88 14 76 12 64 12 C52 12 40 14 40 18Z" fill="#FFF8E1"/>
+    <path d="M40 18 L30 52 C30 56 44 58 64 58 C84 58 98 56 98 52 L88 18" stroke="#FFE082" stroke-width="1" fill="none"/>
+    <ellipse cx="64" cy="18" rx="24" ry="6" fill="#FFF8E1" stroke="#FFE082" stroke-width=".5"/>
+    <!-- 灯罩纹理 -->
+    <line x1="48" y1="16" x2="40" y2="54" stroke="#FFD54F" stroke-width=".5" opacity=".3"/>
+    <line x1="64" y1="14" x2="64" y2="56" stroke="#FFD54F" stroke-width=".5" opacity=".3"/>
+    <line x1="80" y1="16" x2="88" y2="54" stroke="#FFD54F" stroke-width=".5" opacity=".3"/>
+    <!-- 杆 -->
+    <rect x="62" y="56" width="4" height="50" fill="#8D6E63"/>
+    <rect x="63" y="56" width="2" height="50" fill="#A1887F" opacity=".5"/>
+    <!-- 底座 -->
+    <ellipse cx="64" cy="108" rx="22" ry="6" fill="#795548"/>
+    <ellipse cx="64" cy="106" rx="18" ry="4" fill="#8D6E63"/>
+    <ellipse cx="64" cy="106" rx="12" ry="2.5" fill="#A1887F" opacity=".4"/>
+  </g>
+</svg>

@@ -1,0 +1,534 @@
+8|game     |  ✓ Starting...
+8|game     | 
+8|game     | > game-google@2.3.0 start
+8|game     | > next start -p 3003
+8|game     | 
+8|game     |    ▲ Next.js 16.0.10
+8|game     |    - Local:         http://localhost:3003
+8|game     |    - Network:       http://172.26.30.47:3003
+8|game     | 
+8|game     |  ✓ Starting...
+8|game     | 
+8|game     | > game-google@2.3.0 start
+8|game     | > next start -p 3003
+8|game     | 
+8|game     |    ▲ Next.js 16.0.10
+8|game     |    - Local:         http://localhost:3003
+8|game     |    - Network:       http://172.26.30.47:3003
+8|game     | 
+8|game     |  ✓ Starting...
+8|game     | 
+8|game     | > game-google@2.3.0 start
+8|game     | > next start -p 3003
+8|game     | 
+8|game     |    ▲ Next.js 16.0.10
+8|game     |    - Local:         http://localhost:3003
+8|game     |    - Network:       http://172.26.30.47:3003
+8|game     | 
+8|game     |  ✓ Starting...
+8|game     | 
+8|game     | > game-google@2.3.0 start
+8|game     | > next start -p 3003
+8|game     | 
+8|game     |    ▲ Next.js 16.0.10
+8|game     |    - Local:         http://localhost:3003
+8|game     |    - Network:       http://172.26.30.47:3003
+8|game     | 
+8|game     |  ✓ Starting...
+8|game     |  ✓ Ready in 1057ms
+
+/home/game/.pm2/logs/game-error.log last 120 lines:
+8|game     | npm error code ENOENT
+8|game     | npm error syscall open
+8|game     | npm error path /home/game/package.json
+8|game     | npm error errno -2
+8|game     | npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/home/game/package.json'
+8|game     | npm error enoent This is related to npm not being able to find a file.
+8|game     | npm error enoent
+8|game     | npm error A complete log of this run can be found in: /www/server/nodejs/cache/_logs/2026-02-22T07_29_58_872Z-debug-0.log
+8|game     | npm error code ENOENT
+8|game     | npm error syscall open
+8|game     | npm error path /home/game/package.json
+8|game     | npm error errno -2
+8|game     | npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/home/game/package.json'
+8|game     | npm error enoent This is related to npm not being able to find a file.
+8|game     | npm error enoent
+8|game     | npm error A complete log of this run can be found in: /www/server/nodejs/cache/_logs/2026-02-22T07_29_59_407Z-debug-0.log
+8|game     | npm error code ENOENT
+8|game     | npm error syscall open
+8|game     | npm error path /home/game/package.json
+8|game     | npm error errno -2
+8|game     | npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/home/game/package.json'
+8|game     | npm error enoent This is related to npm not being able to find a file.
+8|game     | npm error enoent
+8|game     | npm error A complete log of this run can be found in: /www/server/nodejs/cache/_logs/2026-02-22T07_29_59_863Z-debug-0.log
+8|game     | npm error code ENOENT
+8|game     | npm error syscall open
+8|game     | npm error path /home/game/package.json
+8|game     | npm error errno -2
+8|game     | npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/home/game/package.json'
+8|game     | npm error enoent This is related to npm not being able to find a file.
+8|game     | npm error enoent
+8|game     | npm error A complete log of this run can be found in: /www/server/nodejs/cache/_logs/2026-02-22T07_30_00_217Z-debug-0.log
+8|game     | npm error code ENOENT
+8|game     | npm error syscall open
+8|game     | npm error path /home/game/package.json
+8|game     | npm error errno -2
+8|game     | npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/home/game/package.json'
+8|game     | npm error enoent This is related to npm not being able to find a file.
+8|game     | npm error enoent
+8|game     | npm error A complete log of this run can be found in: /www/server/nodejs/cache/_logs/2026-02-22T07_30_00_755Z-debug-0.log
+8|game     | npm error code ENOENT
+8|game     | npm error syscall open
+8|game     | npm error path /home/game/package.json
+8|game     | npm error errno -2
+8|game     | npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/home/game/package.json'
+8|game     | npm error enoent This is related to npm not being able to find a file.
+8|game     | npm error enoent
+8|game     | npm error A complete log of this run can be found in: /www/server/nodejs/cache/_logs/2026-02-22T07_30_01_287Z-debug-0.log
+8|game     | npm error code ENOENT
+8|game     | npm error syscall open
+8|game     | npm error path /home/game/package.json
+8|game     | npm error errno -2
+8|game     | npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/home/game/package.json'
+8|game     | npm error enoent This is related to npm not being able to find a file.
+8|game     | npm error enoent
+8|game     | npm error A complete log of this run can be found in: /www/server/nodejs/cache/_logs/2026-02-22T07_30_01_816Z-debug-0.log
+8|game     | npm error code ENOENT
+8|game     | npm error syscall open
+8|game     | npm error path /home/game/package.json
+8|game     | npm error errno -2
+8|game     | npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/home/game/package.json'
+8|game     | npm error enoent This is related to npm not being able to find a file.
+8|game     | npm error enoent
+8|game     | npm error A complete log of this run can be found in: /www/server/nodejs/cache/_logs/2026-02-22T07_30_02_406Z-debug-0.log
+8|game     | npm error code ENOENT
+8|game     | npm error syscall open
+8|game     | npm error path /home/game/package.json
+8|game     | npm error errno -2
+8|game     | npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/home/game/package.json'
+8|game     | npm error enoent This is related to npm not being able to find a file.
+8|game     | npm error enoent
+8|game     | npm error A complete log of this run can be found in: /www/server/nodejs/cache/_logs/2026-02-22T07_30_02_959Z-debug-0.log
+8|game     | npm error code ENOENT
+8|game     | npm error syscall open
+8|game     | npm error path /home/game/package.json
+8|game     | npm error errno -2
+8|game     | npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/home/game/package.json'
+8|game     | npm error enoent This is related to npm not being able to find a file.
+8|game     | npm error enoent
+8|game     | npm error A complete log of this run can be found in: /www/server/nodejs/cache/_logs/2026-02-22T07_30_03_512Z-debug-0.log
+8|game     | npm error code ENOENT
+8|game     | npm error syscall open
+8|game     | npm error path /home/game/package.json
+8|game     | npm error errno -2
+8|game     | npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/home/game/package.json'
+8|game     | npm error enoent This is related to npm not being able to find a file.
+8|game     | npm error enoent
+8|game     | npm error A complete log of this run can be found in: /www/server/nodejs/cache/_logs/2026-02-22T07_30_03_921Z-debug-0.log
+8|game     | npm error code ENOENT
+8|game     | npm error syscall open
+8|game     | npm error path /home/game/package.json
+8|game     | npm error errno -2
+8|game     | npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/home/game/package.json'
+8|game     | npm error enoent This is related to npm not being able to find a file.
+8|game     | npm error enoent
+8|game     | npm error A complete log of this run can be found in: /www/server/nodejs/cache/_logs/2026-02-22T07_30_04_242Z-debug-0.log
+8|game     | npm error code ENOENT
+8|game     | npm error syscall open
+8|game     | npm error path /home/game/package.json
+8|game     | npm error errno -2
+8|game     | npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/home/game/package.json'
+8|game     | npm error enoent This is related to npm not being able to find a file.
+8|game     | npm error enoent
+8|game     | npm error A complete log of this run can be found in: /www/server/nodejs/cache/_logs/2026-02-22T07_30_04_551Z-debug-0.log
+8|game     | npm error code ENOENT
+8|game     | npm error syscall open
+8|game     | npm error path /home/game/package.json
+8|game     | npm error errno -2
+8|game     | npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/home/game/package.json'
+8|game     | npm error enoent This is related to npm not being able to find a file.
+8|game     | npm error enoent
+8|game     | npm error A complete log of this run can be found in: /www/server/nodejs/cache/_logs/2026-02-22T07_30_04_857Z-debug-0.log
+8|game     | npm error code ENOENT
+8|game     | npm error syscall open
+8|game     | npm error path /home/game/package.json
+8|game     | npm error errno -2
+8|game     | npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/home/game/package.json'
+8|game     | npm error enoent This is related to npm not being able to find a file.
+8|game     | npm error enoent
+8|game     | npm error A complete log of this run can be found in: /www/server/nodejs/cache/_logs/2026-02-22T07_30_05_169Z-debug-0.log
+
+[root@iZbp14rulo7k13lo6afwbnZ game-backend]# su - game -c "export PATH=/www/server/nodejs/v20.19.6/bin:\$PATH && pm2 logs game-backend --lines 120 --nostream"
+[TAILING] Tailing last 120 lines for [game-backend] process (change the value with --lines option)
+/home/game/.pm2/logs/game-backend-error.log last 120 lines:
+0|game-bac | 2026-02-21 18:03:49,863 - app.main - INFO - GET /api/v1/coins/balance - 200 - 1f29b824-c2e2-4d2e-812b-21256ef1ffb3
+0|game-bac | 2026-02-21 18:03:49,865 - app.main - INFO - GET /api/v1/food/inventory - 200 - 6ac1227b-953d-4790-a860-f03d6bbcf5dd
+0|game-bac | 2026-02-21 18:03:49,866 - app.main - INFO - GET /api/v1/daily/status - 200 - 43c2e819-d6a8-42fb-b0c5-a36d383328df
+0|game-bac | 2026-02-21 18:04:02,534 - app.main - INFO - GET /api/v1/decorations/placed - 200 - 7ee06b4d-561e-4257-b0f3-ef5501b023e6
+0|game-bac | 2026-02-21 18:04:02,545 - app.main - INFO - GET /api/v1/decorations/my - 200 - b40ab80a-bb4b-4ab0-8f1e-7808e61e0a97
+0|game-bac | 2026-02-21 18:04:02,546 - app.main - INFO - GET /api/v1/coins/balance - 200 - a4a0e198-2614-4d08-9478-08d5b7959160
+0|game-bac | 2026-02-21 18:04:08,156 - app.main - INFO - PUT /api/v1/pets/1/feed - 200 - 9011fdaa-fbef-4057-ac1b-3996cf4d6dba
+0|game-bac | 2026-02-21 18:04:08,217 - app.main - INFO - GET /api/v1/decorations/placed - 200 - e372a83c-c5b4-4103-92bd-33d9ccb6afd1
+0|game-bac | 2026-02-21 18:04:08,218 - app.main - INFO - GET /api/v1/decorations/my - 200 - 1b5523dd-5b96-41a8-a3c4-9ebe8223675a
+0|game-bac | 2026-02-21 18:04:08,219 - app.main - INFO - GET /api/v1/coins/balance - 200 - cc933f46-0c65-4598-9216-c75d451a0a70
+0|game-bac | 2026-02-21 18:04:08,235 - app.main - INFO - GET /api/v1/pets/my - 200 - 1d3ff18d-236d-4df6-98dc-9ca214b87751
+0|game-bac | 2026-02-21 18:04:08,235 - app.main - INFO - GET /api/v1/food/inventory - 200 - 3c4df6b4-75a9-4f7d-a839-b7047e0ac900
+0|game-bac | 2026-02-21 18:04:08,285 - app.main - INFO - GET /api/v1/decorations/placed - 200 - cfce5a89-7682-47f5-a8e5-f3edfc5ba862
+0|game-bac | 2026-02-21 18:04:08,286 - app.main - INFO - GET /api/v1/decorations/my - 200 - acd0ef3a-f85f-4cef-8e22-3743feca2e0d
+0|game-bac | 2026-02-21 18:04:08,287 - app.main - INFO - GET /api/v1/coins/balance - 200 - 04610dc8-dd39-47b6-b7c5-026d5701cb0a
+0|game-bac | 2026-02-21 18:04:08,996 - app.main - INFO - PUT /api/v1/pets/1/feed - 200 - 9ffc836e-a285-4cdc-aede-fc54630c0302
+0|game-bac | 2026-02-21 18:04:09,045 - app.main - INFO - GET /api/v1/decorations/my - 200 - b2a8608e-0dae-44d8-a005-a9bd816ce7a5
+0|game-bac | 2026-02-21 18:04:09,046 - app.main - INFO - GET /api/v1/decorations/placed - 200 - 64a5594b-db8b-4d32-9639-25aa6cf69bed
+0|game-bac | 2026-02-21 18:04:09,048 - app.main - INFO - GET /api/v1/coins/balance - 200 - 2ce85fc9-8e0a-4850-9e22-78c70238d75d
+0|game-bac | 2026-02-21 18:04:09,061 - app.main - INFO - GET /api/v1/food/inventory - 200 - 4fa93cf7-3060-4269-9a72-d497ff75783a
+0|game-bac | 2026-02-21 18:04:09,064 - app.main - INFO - GET /api/v1/pets/my - 200 - e66babc4-1c80-4e30-8d91-bc4a4e2d1437
+0|game-bac | 2026-02-21 18:04:09,113 - app.main - INFO - GET /api/v1/coins/balance - 200 - 164d969c-1a86-4245-90c5-6995583ff8ae
+0|game-bac | 2026-02-21 18:04:09,114 - app.main - INFO - GET /api/v1/decorations/my - 200 - 6c580380-8cf3-42d2-bea4-e9cfd783e2bb
+0|game-bac | 2026-02-21 18:04:09,115 - app.main - INFO - GET /api/v1/decorations/placed - 200 - 88bdb929-9996-4d26-bb32-455e311f4441
+0|game-bac | 2026-02-21 18:04:11,534 - app.main - INFO - PUT /api/v1/pets/1/feed - 200 - a955f22d-0ae7-42d6-90b4-13c11756caa8
+0|game-bac | 2026-02-21 18:04:11,583 - app.main - INFO - GET /api/v1/decorations/my - 200 - 4e26a813-37e4-4930-aba0-93ddf59b2846
+0|game-bac | 2026-02-21 18:04:11,585 - app.main - INFO - GET /api/v1/decorations/placed - 200 - 8e2da040-4992-42f9-a05e-dd728ea9e72b
+0|game-bac | 2026-02-21 18:04:11,586 - app.main - INFO - GET /api/v1/coins/balance - 200 - 8cd4bb5b-571b-48df-9a25-6503f59fc022
+0|game-bac | 2026-02-21 18:04:11,599 - app.main - INFO - GET /api/v1/food/inventory - 200 - 53e2a687-ea85-4fb4-b0be-5735619fbae9
+0|game-bac | 2026-02-21 18:04:11,600 - app.main - INFO - GET /api/v1/pets/my - 200 - c7bdd96d-5f1c-4748-8205-374cf28e22c5
+0|game-bac | 2026-02-21 18:04:11,648 - app.main - INFO - GET /api/v1/decorations/my - 200 - 213cccca-c81c-4810-913b-633d328d91c6
+0|game-bac | 2026-02-21 18:04:11,649 - app.main - INFO - GET /api/v1/decorations/placed - 200 - d6e5f3ea-377f-4c26-abd8-3ac6c52c4dc1
+0|game-bac | 2026-02-21 18:04:11,652 - app.main - INFO - GET /api/v1/coins/balance - 200 - fbb21ecb-9123-48dc-9783-d2e8451393c1
+0|game-bac | 2026-02-21 18:04:14,271 - app.main - INFO - GET /api/v1/decorations/my - 200 - 3bb099c2-5758-418f-93da-6231f4e133dc
+0|game-bac | 2026-02-21 18:04:14,274 - app.main - INFO - GET /api/v1/coins/balance - 200 - 54a734c2-a21e-4812-9855-028c63804805
+0|game-bac | 2026-02-21 18:04:14,275 - app.main - INFO - GET /api/v1/decorations/placed - 200 - f6b5c9b4-7276-4d98-92dc-21f7623dc6ad
+0|game-bac | 2026-02-21 18:04:17,513 - app.main - INFO - PUT /api/v1/pets/25/feed - 200 - 99574462-fe1f-4216-8365-3dac42dcc73b
+0|game-bac | 2026-02-21 18:04:17,584 - app.main - INFO - GET /api/v1/decorations/placed - 200 - 377ef6b1-d36f-4145-93c2-f5ff4b77e1d2
+0|game-bac | 2026-02-21 18:04:17,585 - app.main - INFO - GET /api/v1/coins/balance - 200 - 4a7139e0-865f-4e8c-98e1-9a4d2bb5b356
+0|game-bac | 2026-02-21 18:04:17,586 - app.main - INFO - GET /api/v1/pets/my - 200 - cdce87d0-b69b-42f5-9792-6fe515b93312
+0|game-bac | 2026-02-21 18:04:17,591 - app.main - INFO - GET /api/v1/decorations/my - 200 - ba94ebd1-3a4c-4188-a672-6ee85967125a
+0|game-bac | 2026-02-21 18:04:17,591 - app.main - INFO - GET /api/v1/food/inventory - 200 - 732e7d24-e230-4689-8634-02dd82b244f9
+0|game-bac | 2026-02-21 18:04:17,647 - app.main - INFO - GET /api/v1/coins/balance - 200 - 0b72b57b-ad0a-4a7f-8c91-f09eb3b2b0e0
+0|game-bac | 2026-02-21 18:04:17,648 - app.main - INFO - GET /api/v1/decorations/my - 200 - e7d1fb68-ceb6-4fe6-b9f8-34dbd507d379
+0|game-bac | 2026-02-21 18:04:17,651 - app.main - INFO - GET /api/v1/decorations/placed - 200 - 14ddcb07-2934-4a7b-a006-1b0fc85ba760
+0|game-bac | 2026-02-21 18:04:18,594 - app.main - INFO - PUT /api/v1/pets/25/feed - 200 - 62a2e683-ed7f-43ac-ab5e-1dc0dc2e4676
+0|game-bac | 2026-02-21 18:04:18,650 - app.main - INFO - GET /api/v1/food/inventory - 200 - 270c4466-cd3f-4ad2-b1f3-f93248df9b0d
+0|game-bac | 2026-02-21 18:04:18,652 - app.main - INFO - GET /api/v1/pets/my - 200 - 45d11533-2bed-4df8-95ac-d7c22d45f5f3
+0|game-bac | 2026-02-21 18:04:18,653 - app.main - INFO - GET /api/v1/decorations/my - 200 - b8b5b772-ec12-4ce8-a2c8-8f280724a52a
+0|game-bac | 2026-02-21 18:04:18,654 - app.main - INFO - GET /api/v1/coins/balance - 200 - f1f987dd-f5ad-4b92-b0a0-1e3aa4a30bf0
+0|game-bac | 2026-02-21 18:04:18,655 - app.main - INFO - GET /api/v1/decorations/placed - 200 - f7f0a846-270f-4353-9977-56417454daae
+0|game-bac | 2026-02-21 18:04:18,705 - app.main - INFO - GET /api/v1/decorations/placed - 200 - 29df706e-814d-4e2a-80d7-6f8edb03b986
+0|game-bac | 2026-02-21 18:04:18,706 - app.main - INFO - GET /api/v1/decorations/my - 200 - 1fa0b6e8-1225-46f4-b860-c3cd785d25f9
+0|game-bac | 2026-02-21 18:04:18,707 - app.main - INFO - GET /api/v1/coins/balance - 200 - c6e7f763-d6eb-46ab-9ea2-3b726daeb28b
+0|game-bac | 2026-02-21 18:04:21,173 - app.main - INFO - GET /api/v1/decorations/my - 200 - c6efa926-b591-45a7-a02c-f36956758494
+0|game-bac | 2026-02-21 18:04:21,174 - app.main - INFO - GET /api/v1/coins/balance - 200 - 3cea51b5-8ec4-4125-bce9-664a58a8878d
+0|game-bac | 2026-02-21 18:04:21,178 - app.main - INFO - GET /api/v1/decorations/placed - 200 - 2d064bfd-f6d0-4c9b-b494-1d8f10d41f80
+0|game-bac | 2026-02-21 18:04:22,222 - app.main - INFO - GET /api/v1/decorations/my - 200 - 0175793c-2bd3-4ea0-ab4b-a49e0c574f1b
+0|game-bac | 2026-02-21 18:04:22,222 - app.main - INFO - GET /api/v1/decorations/placed - 200 - a38c253b-c61a-40dd-8bd8-3e10ebfc4a2b
+0|game-bac | 2026-02-21 18:04:22,225 - app.main - INFO - GET /api/v1/coins/balance - 200 - 8f512f15-2e8f-4ab1-bc88-2f8575358903
+0|game-bac | INFO:     connection closed
+0|game-bac | 2026-02-22 00:33:06,867 - app.main - INFO - POST /api/v1/auth/register - 201 - e927ca04-d3f0-4f00-b2e1-9b5acb442751
+0|game-bac | 2026-02-22 00:33:06,942 - app.main - INFO - POST /api/v1/auth/login - 200 - 52dc2736-1675-4d10-b1bf-260409a0663e
+0|game-bac | 2026-02-22 00:33:07,027 - app.main - INFO - GET /api/v1/users/profile - 200 - e3ba2e56-759b-44a4-b237-10885a9f6e0a
+0|game-bac | 2026-02-22 00:33:07,028 - app.main - INFO - GET /api/v1/coins/balance - 200 - c9465355-5097-48e0-95ed-9d63b4c8522b
+0|game-bac | 2026-02-22 00:33:07,043 - app.main - INFO - GET /api/v1/pets/my - 200 - 58a48691-9dda-445a-8109-6167ad9ed577
+0|game-bac | 2026-02-22 00:33:07,052 - app.main - INFO - GET /api/v1/daily/status - 200 - 0b089bab-43f1-41fb-9cc3-b59ecef7ca95
+0|game-bac | 2026-02-22 00:33:07,056 - app.main - INFO - GET /api/v1/achievements/list - 200 - 31231d91-9b26-4314-8abe-ce2a2a875d1b
+0|game-bac | 2026-02-22 00:33:07,059 - app.main - INFO - GET /api/v1/progress/load - 200 - 5a41f483-9bd4-469a-92be-817481838483
+0|game-bac | INFO:     ('113.118.4.41', 0) - "WebSocket /api/v1/chat/ws/97" [accepted]
+0|game-bac | INFO:     connection open
+0|game-bac | 2026-02-22 00:33:07,110 - app.main - INFO - GET /api/v1/pets/my - 200 - 644c739c-4140-4e70-990e-a86f4a4a2c87
+0|game-bac | 2026-02-22 00:34:04,852 - app.main - INFO - POST /api/v1/progress/save - 200 - 117dbb6e-54b8-489b-9edb-e169e3e68254
+0|game-bac | 2026-02-22 00:34:04,853 - app.main - INFO - POST /api/v1/coins/add - 200 - 9bc3367e-1809-4abd-ab6f-483fd57e2d26
+0|game-bac | 2026-02-22 00:34:04,923 - app.main - INFO - POST /api/v1/pets/37/hatch-progress - 200 - 277c5b51-2c9f-4207-92fa-b458c2426c6a
+0|game-bac | 2026-02-22 00:34:04,925 - app.main - INFO - GET /api/v1/coins/balance - 200 - 41a10c2d-4c51-4bc0-8949-fc79f95c5a5f
+0|game-bac | 2026-02-22 00:34:06,840 - app.main - INFO - POST /api/v1/progress/save - 200 - 30e3526e-320f-47ba-a5cc-ed041c09c6a1
+0|game-bac | INFO:     connection closed
+0|game-bac | 2026-02-22 05:08:18,340 - app.main - INFO - POST /api - 404 - 96966ec4-5f16-4316-8455-45a4566c03a3
+0|game-bac | 2026-02-22 05:08:19,003 - app.main - INFO - POST /api/graphql - 404 - adaebcb0-d4ff-4c9a-9b24-0f3a3efec3c0
+0|game-bac | 2026-02-22 05:08:20,325 - app.main - INFO - POST /api/gql - 404 - ec8ddcb2-68f5-434c-9210-4ddb60435d57
+0|game-bac | 2026-02-22 05:08:42,106 - app.main - INFO - GET /api-docs/swagger.json - 404 - 3f92df58-50a8-4c4d-a3a2-9147a8609a14
+0|game-bac | 2026-02-22 05:08:43,104 - app.main - INFO - GET /api/swagger.json - 404 - fb52ec2b-37d3-40a4-a166-3e3f630a03d7
+0|game-bac | 2026-02-22 12:23:49,432 - app.main - INFO - GET /api/.env - 404 - 773e5cd0-a3ff-4b48-a8bc-e0fd4659995f
+0|game-bac | 2026-02-22 14:59:54,282 - app.main - INFO - GET /api/v1/users/profile - 200 - 8a9e9291-a6b5-47ad-8116-0e3f5904556e
+0|game-bac | 2026-02-22 14:59:54,308 - app.main - INFO - GET /api/v1/coins/balance - 200 - 6edefb75-fe50-474d-8d9b-86b52a0a5b7e
+0|game-bac | 2026-02-22 14:59:54,311 - app.main - INFO - GET /api/v1/pets/my - 200 - 0d772fea-49a3-4f6c-b997-e96adcea6aaf
+0|game-bac | 2026-02-22 14:59:54,312 - app.main - INFO - GET /api/v1/daily/status - 200 - 43421fbb-9ee5-4e7e-b814-2a0389859c40
+0|game-bac | 2026-02-22 14:59:54,314 - app.main - INFO - GET /api/v1/achievements/list - 200 - db5a3be5-ce20-4857-93d8-69c2f1ae5843
+0|game-bac | INFO:     ('223.77.131.107', 0) - "WebSocket /api/v1/chat/ws/1" [accepted]
+0|game-bac | INFO:     connection open
+0|game-bac | 2026-02-22 14:59:56,853 - app.main - INFO - POST /api/v1/daily/check-in - 200 - c562893e-74a6-46c2-ab22-68ab053b2b28
+0|game-bac | 2026-02-22 14:59:56,896 - app.main - INFO - GET /api/v1/daily/status - 200 - 2927211f-d8e9-44de-b7e9-0a2af20731e1
+0|game-bac | 2026-02-22 14:59:56,897 - app.main - INFO - GET /api/v1/coins/balance - 200 - 01f87109-fbfe-441e-afe8-d09755401c3b
+0|game-bac | 2026-02-22 14:59:56,898 - app.main - INFO - GET /api/v1/food/inventory - 200 - 46778f06-cfc0-4eb5-9b52-f0872a226588
+0|game-bac | 2026-02-22 15:00:02,079 - app.main - INFO - GET /api/v1/leaderboard/global - 200 - 3b0045eb-0f1c-4925-b8b3-ded893f56921
+0|game-bac | INFO:     connection closed
+0|game-bac | INFO:     Shutting down
+0|game-bac | INFO:     Waiting for application shutdown.
+0|game-bac | INFO:     Application shutdown complete.
+0|game-bac | INFO:     Finished server process [3913549]
+0|game-bac | /www/wwwroot/game-backend/app/core/config.py:48: RuntimeWarning: 
+0|game-bac | ⚠️  [SECURITY] 正在使用默认 JWT SECRET_KEY，已自动生成仅本进程有效的临时密钥。
+0|game-bac |    请在 backend/.env 中设置: SECRET_KEY=<随机强密钥>
+0|game-bac |    生成命令: python -c "import secrets; print(secrets.token_urlsafe(32))"
+0|game-bac |   warnings.warn(
+0|game-bac | INFO:     Started server process [748630]
+0|game-bac | INFO:     Waiting for application startup.
+0|game-bac | INFO:     Application startup complete.
+0|game-bac | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+0|game-bac | 2026-02-22 15:22:31,540 - app.main - INFO - GET /health - 200 - 9c702829-d73d-4f52-8463-21321ead1f81
+0|game-bac | 2026-02-22 15:24:44,329 - app.main - INFO - GET /health - 200 - a23fbc88-3087-4400-92f6-19b55e9b954d
+0|game-bac | INFO:     Shutting down
+0|game-bac | INFO:     Waiting for application shutdown.
+0|game-bac | INFO:     Application shutdown complete.
+0|game-bac | INFO:     Finished server process [748630]
+0|game-bac | INFO:     Started server process [753274]
+0|game-bac | INFO:     Waiting for application startup.
+0|game-bac | INFO:     Application startup complete.
+0|game-bac | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+
+/home/game/.pm2/logs/game-backend-out.log last 120 lines:
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/achievements/list HTTP/1.1" 401 Unauthorized
+0|game-bac | INFO:     223.77.131.107:0 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/pets/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/daily/status HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/coins/balance HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/achievements/list HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/progress/load HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/pets/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "POST /api/v1/daily/check-in HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/coins/balance HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/food/inventory HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/daily/status HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/placed HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/coins/balance HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "PUT /api/v1/pets/1/feed HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/placed HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/coins/balance HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/pets/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/food/inventory HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/placed HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/coins/balance HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "PUT /api/v1/pets/1/feed HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/placed HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/coins/balance HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/food/inventory HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/pets/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/coins/balance HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/placed HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "PUT /api/v1/pets/1/feed HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/placed HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/coins/balance HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/food/inventory HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/pets/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/placed HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/coins/balance HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/coins/balance HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/placed HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "PUT /api/v1/pets/25/feed HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/placed HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/coins/balance HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/pets/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/food/inventory HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/coins/balance HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/placed HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "PUT /api/v1/pets/25/feed HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/food/inventory HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/pets/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/coins/balance HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/placed HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/placed HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/coins/balance HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/coins/balance HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/placed HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/decorations/placed HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/coins/balance HTTP/1.1" 200 OK
+0|game-bac | INFO:     113.118.4.41:0 - "POST /api/v1/auth/register HTTP/1.1" 201 Created
+0|game-bac | INFO:     113.118.4.41:0 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+0|game-bac | INFO:     113.118.4.41:0 - "GET /api/v1/users/profile HTTP/1.1" 200 OK
+0|game-bac | INFO:     113.118.4.41:0 - "GET /api/v1/coins/balance HTTP/1.1" 200 OK
+0|game-bac | INFO:     113.118.4.41:0 - "GET /api/v1/pets/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     113.118.4.41:0 - "GET /api/v1/daily/status HTTP/1.1" 200 OK
+0|game-bac | INFO:     113.118.4.41:0 - "GET /api/v1/achievements/list HTTP/1.1" 200 OK
+0|game-bac | INFO:     113.118.4.41:0 - "GET /api/v1/progress/load HTTP/1.1" 200 OK
+0|game-bac | INFO:     113.118.4.41:0 - "GET /api/v1/pets/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     113.118.4.41:0 - "POST /api/v1/progress/save HTTP/1.1" 200 OK
+0|game-bac | INFO:     113.118.4.41:0 - "POST /api/v1/coins/add HTTP/1.1" 200 OK
+0|game-bac | INFO:     113.118.4.41:0 - "POST /api/v1/pets/37/hatch-progress HTTP/1.1" 200 OK
+0|game-bac | INFO:     113.118.4.41:0 - "GET /api/v1/coins/balance HTTP/1.1" 200 OK
+0|game-bac | INFO:     113.118.4.41:0 - "POST /api/v1/progress/save HTTP/1.1" 200 OK
+0|game-bac | INFO:     206.81.12.187:0 - "POST /api HTTP/1.1" 404 Not Found
+0|game-bac | INFO:     206.81.12.187:0 - "POST /api/graphql HTTP/1.1" 404 Not Found
+0|game-bac | INFO:     206.81.12.187:0 - "POST /api/gql HTTP/1.1" 404 Not Found
+0|game-bac | INFO:     206.81.12.187:0 - "GET /api-docs/swagger.json HTTP/1.1" 404 Not Found
+0|game-bac | INFO:     206.81.12.187:0 - "GET /api/swagger.json HTTP/1.1" 404 Not Found
+0|game-bac | INFO:     45.148.10.64:0 - "GET /api/.env HTTP/1.1" 404 Not Found
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/users/profile HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/coins/balance HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/pets/my HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/daily/status HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/achievements/list HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "POST /api/v1/daily/check-in HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/daily/status HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/coins/balance HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/food/inventory HTTP/1.1" 200 OK
+0|game-bac | INFO:     223.77.131.107:0 - "GET /api/v1/leaderboard/global?sort_by=experience HTTP/1.1" 200 OK
+0|game-bac | ============================================================
+0|game-bac |    启动编程冒险岛后端服务 (生产模式)
+0|game-bac | ============================================================
+0|game-bac | 
+0|game-bac | [启动] 正在启动服务器（无热重载）...
+0|game-bac | 
+0|game-bac | [Security] ✅ bcrypt库可用
+0|game-bac | [Security] 使用pbkdf2_sha256作为新密码哈希算法
+0|game-bac | [Cache] ⚠️ Redis不可用，降级到内存缓存: Error 111 connecting to localhost:6379. Connection refused.
+0|game-bac | INFO:     127.0.0.1:52938 - "GET /health HTTP/1.1" 200 OK
+0|game-bac | INFO:     127.0.0.1:32878 - "GET /health HTTP/1.1" 200 OK
+0|game-bac | ============================================================
+0|game-bac |    启动编程冒险岛后端服务 (生产模式)
+0|game-bac | ============================================================
+0|game-bac | 
+0|game-bac | [启动] 正在启动务器（无热重载）...
+0|game-bac | 
+0|game-bac | [Security] ✅ bcrypt库可用
+0|game-bac | [Security] 使用pbkdf2_sha256作为新密码哈希算法
+0|game-bac | [Cache] ⚠️ Redis不可用，降级到内存缓存: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+0|game-bac | INFO:     127.0.0.1:58668 - "GET /health HTTP/1.1" 200 OK
+
+[root@iZbp14rulo7k13lo6afwbnZ game-backend]# tail -n 120 /www/wwwlogs/game.codebn.cn.error.log
+2026/02/06 20:57:49 [error] 509707#0: *101644 upstream prematurely closed connection while reading response header from upstream, client: 34.23.172.94, server: game.codebn.cn, request: "GET //media/wp-includes/wlwmanifest.xml HTTP/1.1", upstream: "http://127.0.0.1:3003//media/wp-includes/wlwmanifest.xml", host: "game.codebn.cn"
+2026/02/06 20:57:49 [error] 509707#0: *101644 connect() failed (111: Connection refused) while connecting to upstream, client: 34.23.172.94, server: game.codebn.cn, request: "GET //wp2/wp-includes/wlwmanifest.xml HTTP/1.1", upstream: "http://127.0.0.1:3003//wp2/wp-includes/wlwmanifest.xml", host: "game.codebn.cn"
+2026/02/06 20:57:49 [error] 509707#0: *101644 connect() failed (111: Connection refused) while connecting to upstream, client: 34.23.172.94, server: game.codebn.cn, request: "GET //site/wp-includes/wlwmanifest.xml HTTP/1.1", upstream: "http://127.0.0.1:3003//site/wp-includes/wlwmanifest.xml", host: "game.codebn.cn"
+2026/02/06 20:57:52 [error] 509707#0: *101644 upstream prematurely closed connection while reading response header from upstream, client: 34.23.172.94, server: game.codebn.cn, request: "GET //cms/wp-includes/wlwmanifest.xml HTTP/1.1", upstream: "http://127.0.0.1:3003//cms/wp-includes/wlwmanifest.xml", host: "game.codebn.cn"
+2026/02/06 20:57:53 [error] 509707#0: *101644 connect() failed (111: Connection refused) while connecting to upstream, client: 34.23.172.94, server: game.codebn.cn, request: "GET //sito/wp-includes/wlwmanifest.xml HTTP/1.1", upstream: "http://127.0.0.1:3003//sito/wp-includes/wlwmanifest.xml", host: "game.codebn.cn"
+2026/02/06 21:07:12 [error] 509707#0: *101668 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 61.242.132.65, server: game.codebn.cn, request: "GET /icons/ui/coin.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/icons/ui/coin.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 21:07:12 [error] 509707#0: *101668 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 61.242.132.65, server: game.codebn.cn, request: "GET /assets/pets/unified/tech_bot_normal.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/assets/pets/unified/tech_bot_normal.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 21:07:12 [error] 509707#0: *101668 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 61.242.132.65, server: game.codebn.cn, request: "GET /sounds/bgm_main.mp3 HTTP/2.0", upstream: "http://127.0.0.1:3003/sounds/bgm_main.mp3", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 21:07:15 [error] 509707#0: *101668 upstream prematurely closed connection while reading response header from upstream, client: 61.242.132.65, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/06 21:20:23 [error] 509707#0: *101682 connect() failed (111: Connection refused) while connecting to upstream, client: 61.242.132.65, server: game.codebn.cn, request: "GET /icons/ui/coin.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/icons/ui/coin.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 21:20:23 [error] 509707#0: *101682 connect() failed (111: Connection refused) while connecting to upstream, client: 61.242.132.65, server: game.codebn.cn, request: "GET /assets/pets/unified/tech_bot_normal.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/assets/pets/unified/tech_bot_normal.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 21:20:23 [error] 509707#0: *101682 connect() failed (111: Connection refused) while connecting to upstream, client: 61.242.132.65, server: game.codebn.cn, request: "GET /sounds/bgm_main.mp3 HTTP/2.0", upstream: "http://127.0.0.1:3003/sounds/bgm_main.mp3", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 21:20:27 [error] 509707#0: *101682 upstream prematurely closed connection while reading response header from upstream, client: 61.242.132.65, server: game.codebn.cn, request: "GET /icons/status/happy.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/icons/status/happy.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 21:20:27 [error] 509707#0: *101682 upstream prematurely closed connection while reading response header from upstream, client: 61.242.132.65, server: game.codebn.cn, request: "GET /assets/pets/unified/tech_bot_normal.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/assets/pets/unified/tech_bot_normal.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 21:20:27 [error] 509707#0: *101682 upstream prematurely closed connection while reading response header from upstream, client: 61.242.132.65, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/06 21:20:31 [error] 509707#0: *101682 upstream prematurely closed connection while reading response header from upstream, client: 61.242.132.65, server: game.codebn.cn, request: "GET /assets/pets/unified/tech_bot_normal.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/assets/pets/unified/tech_bot_normal.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 22:56:39 [error] 103436#0: *101784 upstream prematurely closed connection while reading response header from upstream, client: 61.242.132.65, server: game.codebn.cn, request: "GET /sounds/bgm_main.mp3 HTTP/2.0", upstream: "http://127.0.0.1:3003/sounds/bgm_main.mp3", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 22:56:39 [error] 103436#0: *101784 upstream prematurely closed connection while reading response header from upstream, client: 61.242.132.65, server: game.codebn.cn, request: "GET /assets/pets/unified/tech_bot_normal.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/assets/pets/unified/tech_bot_normal.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 22:56:39 [error] 103436#0: *101784 upstream prematurely closed connection while reading response header from upstream, client: 61.242.132.65, server: game.codebn.cn, request: "GET /icons/ui/coin.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/icons/ui/coin.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 22:56:41 [error] 103436#0: *101784 connect() failed (111: Connection refused) while connecting to upstream, client: 61.242.132.65, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/06 23:02:02 [error] 103436#0: *101802 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 61.242.132.65, server: game.codebn.cn, request: "GET /sounds/bgm_main.mp3 HTTP/2.0", upstream: "http://127.0.0.1:3003/sounds/bgm_main.mp3", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:02:02 [error] 103436#0: *101802 upstream prematurely closed connection while reading response header from upstream, client: 61.242.132.65, server: game.codebn.cn, request: "GET /assets/pets/unified/tech_bot_normal.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/assets/pets/unified/tech_bot_normal.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:02:02 [error] 103436#0: *101802 upstream prematurely closed connection while reading response header from upstream, client: 61.242.132.65, server: game.codebn.cn, request: "GET /icons/ui/coin.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/icons/ui/coin.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:02:02 [error] 103436#0: *101802 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 61.242.132.65, server: game.codebn.cn, request: "GET /favicon.ico?favicon.0b3bf435.ico HTTP/2.0", upstream: "http://127.0.0.1:3003/favicon.ico?favicon.0b3bf435.ico", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:02:04 [error] 103436#0: *101802 upstream prematurely closed connection while reading response header from upstream, client: 61.242.132.65, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/06 23:10:55 [error] 103436#0: *101819 upstream prematurely closed connection while reading response header from upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /icons/ui/coin.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/icons/ui/coin.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:10:55 [error] 103436#0: *101819 upstream prematurely closed connection while reading response header from upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /favicon.ico?favicon.0b3bf435.ico HTTP/2.0", upstream: "http://127.0.0.1:3003/favicon.ico?favicon.0b3bf435.ico", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:10:55 [error] 103436#0: *101819 upstream prematurely closed connection while reading response header from upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /assets/pets/unified/tech_bot_normal.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/assets/pets/unified/tech_bot_normal.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:10:55 [error] 103436#0: *101819 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sounds/bgm_main.mp3 HTTP/2.0", upstream: "http://127.0.0.1:3003/sounds/bgm_main.mp3", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:10:57 [error] 103436#0: *101819 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/06 23:10:58 [error] 103436#0: *101819 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /favicon.ico?favicon.0b3bf435.ico HTTP/2.0", upstream: "http://127.0.0.1:3003/favicon.ico?favicon.0b3bf435.ico", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:10:58 [error] 103436#0: *101819 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sounds/bgm_main.mp3 HTTP/2.0", upstream: "http://127.0.0.1:3003/sounds/bgm_main.mp3", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:11:00 [error] 103436#0: *101819 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/06 23:11:00 [error] 103436#0: *101819 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /assets/pets/unified/tech_bot_normal.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/assets/pets/unified/tech_bot_normal.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:11:00 [error] 103436#0: *101819 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /icons/ui/coin.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/icons/ui/coin.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:19:04 [error] 103436#0: *101851 upstream prematurely closed connection while reading response header from upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /favicon.ico?favicon.0b3bf435.ico HTTP/2.0", upstream: "http://127.0.0.1:3003/favicon.ico?favicon.0b3bf435.ico", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:19:04 [error] 103436#0: *101851 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /icons/ui/coin.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/icons/ui/coin.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:19:04 [error] 103436#0: *101851 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /assets/pets/unified/tech_bot_normal.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/assets/pets/unified/tech_bot_normal.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:19:04 [error] 103436#0: *101851 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sounds/bgm_main.mp3 HTTP/2.0", upstream: "http://127.0.0.1:3003/sounds/bgm_main.mp3", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:19:05 [error] 103436#0: *101851 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/06 23:19:10 [error] 103436#0: *101851 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /icons/ui/coin.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/icons/ui/coin.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:19:10 [error] 103436#0: *101851 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /assets/pets/unified/tech_bot_normal.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/assets/pets/unified/tech_bot_normal.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:19:10 [error] 103436#0: *101851 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sounds/bgm_main.mp3 HTTP/2.0", upstream: "http://127.0.0.1:3003/sounds/bgm_main.mp3", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:19:10 [error] 103436#0: *101851 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /favicon.ico?favicon.0b3bf435.ico HTTP/2.0", upstream: "http://127.0.0.1:3003/favicon.ico?favicon.0b3bf435.ico", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:19:12 [error] 103436#0: *101851 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/06 23:21:01 [error] 103436#0: *101876 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /icons/ui/coin.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/icons/ui/coin.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:21:01 [error] 103436#0: *101876 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /assets/pets/unified/tech_bot_normal.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/assets/pets/unified/tech_bot_normal.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:21:01 [error] 103436#0: *101876 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /favicon.ico?favicon.0b3bf435.ico HTTP/2.0", upstream: "http://127.0.0.1:3003/favicon.ico?favicon.0b3bf435.ico", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:21:01 [error] 103436#0: *101876 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sounds/bgm_main.mp3 HTTP/2.0", upstream: "http://127.0.0.1:3003/sounds/bgm_main.mp3", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:21:02 [error] 103436#0: *101876 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/06 23:21:04 [error] 103436#0: *101876 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /assets/pets/unified/tech_bot_normal.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/assets/pets/unified/tech_bot_normal.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:21:04 [error] 103436#0: *101876 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /icons/ui/coin.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/icons/ui/coin.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:21:04 [error] 103436#0: *101876 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /favicon.ico?favicon.0b3bf435.ico HTTP/2.0", upstream: "http://127.0.0.1:3003/favicon.ico?favicon.0b3bf435.ico", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:21:04 [error] 103436#0: *101876 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sounds/bgm_main.mp3 HTTP/2.0", upstream: "http://127.0.0.1:3003/sounds/bgm_main.mp3", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:21:05 [error] 103436#0: *101876 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/06 23:21:06 [error] 103436#0: *101876 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /favicon.ico?favicon.0b3bf435.ico HTTP/2.0", upstream: "http://127.0.0.1:3003/favicon.ico?favicon.0b3bf435.ico", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:21:06 [error] 103436#0: *101876 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sounds/bgm_main.mp3 HTTP/2.0", upstream: "http://127.0.0.1:3003/sounds/bgm_main.mp3", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:21:07 [error] 103436#0: *101876 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/06 23:21:08 [error] 103436#0: *101876 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /assets/pets/unified/tech_bot_normal.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/assets/pets/unified/tech_bot_normal.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:21:08 [error] 103436#0: *101876 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /icons/ui/coin.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/icons/ui/coin.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:24:36 [error] 103436#0: *101917 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /icons/ui/coin.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/icons/ui/coin.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:24:36 [error] 103436#0: *101917 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /assets/pets/unified/tech_bot_normal.svg HTTP/2.0", upstream: "http://127.0.0.1:3003/assets/pets/unified/tech_bot_normal.svg", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:24:36 [error] 103436#0: *101917 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /favicon.ico?favicon.0b3bf435.ico HTTP/2.0", upstream: "http://127.0.0.1:3003/favicon.ico?favicon.0b3bf435.ico", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:24:36 [error] 103436#0: *101917 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sounds/bgm_main.mp3 HTTP/2.0", upstream: "http://127.0.0.1:3003/sounds/bgm_main.mp3", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:24:38 [error] 103436#0: *101917 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/06 23:27:35 [error] 308488#0: *101930 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET / HTTP/2.0", upstream: "http://127.0.0.1:3003/", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:27:35 [error] 308488#0: *101930 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /favicon.ico HTTP/2.0", upstream: "http://127.0.0.1:3003/favicon.ico", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:27:37 [error] 308488#0: *101930 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/06 23:32:00 [error] 308488#0: *101934 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET / HTTP/2.0", upstream: "http://127.0.0.1:3003/", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:32:01 [error] 308488#0: *101934 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /favicon.ico HTTP/2.0", upstream: "http://127.0.0.1:3003/favicon.ico", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:32:03 [error] 308488#0: *101934 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/06 23:33:16 [error] 318137#0: *101942 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET / HTTP/2.0", upstream: "http://127.0.0.1:3003/", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:33:16 [error] 318137#0: *101942 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /favicon.ico HTTP/2.0", upstream: "http://127.0.0.1:3003/favicon.ico", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:33:18 [error] 318137#0: *101942 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/06 23:38:22 [error] 318137#0: *101953 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET / HTTP/2.0", upstream: "http://127.0.0.1:3003/", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:38:23 [error] 318137#0: *101953 upstream prematurely closed connection while reading response header from upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /favicon.ico HTTP/2.0", upstream: "http://127.0.0.1:3003/favicon.ico", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:38:24 [error] 318137#0: *101953 upstream prematurely closed connection while reading response header from upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/06 23:38:49 [error] 318137#0: *101953 upstream prematurely closed connection while reading response header from upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET / HTTP/2.0", upstream: "http://127.0.0.1:3003/", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:38:49 [error] 318137#0: *101953 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /favicon.ico HTTP/2.0", upstream: "http://127.0.0.1:3003/favicon.ico", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:38:51 [error] 318137#0: *101953 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/06 23:42:24 [error] 318137#0: *101961 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET / HTTP/2.0", upstream: "http://127.0.0.1:3003/", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:42:24 [error] 318137#0: *101961 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /favicon.ico HTTP/2.0", upstream: "http://127.0.0.1:3003/favicon.ico", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:42:26 [error] 318137#0: *101961 upstream prematurely closed connection while reading response header from upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/06 23:42:29 [error] 318137#0: *101961 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET / HTTP/2.0", upstream: "http://127.0.0.1:3003/", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:42:29 [error] 318137#0: *101961 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /favicon.ico HTTP/2.0", upstream: "http://127.0.0.1:3003/favicon.ico", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:42:31 [error] 318137#0: *101961 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/06 23:44:53 [error] 318137#0: *101968 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET / HTTP/2.0", upstream: "http://127.0.0.1:3003/", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:44:53 [error] 318137#0: *101968 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /favicon.ico HTTP/2.0", upstream: "http://127.0.0.1:3003/favicon.ico", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:44:55 [error] 318137#0: *101968 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/06 23:51:59 [error] 318137#0: *101978 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET / HTTP/2.0", upstream: "http://127.0.0.1:3003/", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:51:59 [error] 318137#0: *101978 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /favicon.ico HTTP/2.0", upstream: "http://127.0.0.1:3003/favicon.ico", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/06 23:52:01 [error] 318137#0: *101978 connect() failed (111: Connection refused) while connecting to upstream, client: 111.181.130.105, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/10 05:40:11 [error] 318137#0: *107534 open() "/www/wwwroot/game/.well-known/security.txt" failed (2: No such file or directory), client: 209.38.208.202, server: game.codebn.cn, request: "GET /.well-known/security.txt HTTP/1.1", host: "game.codebn.cn"
+2026/02/12 05:11:08 [error] 318137#0: *112359 open() "/www/wwwroot/game/.well-known/security.txt" failed (2: No such file or directory), client: 138.68.86.32, server: game.codebn.cn, request: "GET /.well-known/security.txt HTTP/1.1", host: "game.codebn.cn"
+2026/02/13 05:12:53 [error] 318137#0: *114911 open() "/www/wwwroot/game/.well-known/security.txt" failed (2: No such file or directory), client: 138.68.86.32, server: game.codebn.cn, request: "GET /.well-known/security.txt HTTP/1.1", host: "game.codebn.cn"
+2026/02/14 05:10:54 [error] 318137#0: *117929 open() "/www/wwwroot/game/.well-known/security.txt" failed (2: No such file or directory), client: 134.209.25.199, server: game.codebn.cn, request: "GET /.well-known/security.txt HTTP/1.1", host: "game.codebn.cn"
+2026/02/15 05:06:35 [error] 318137#0: *119429 open() "/www/wwwroot/game/.well-known/security.txt" failed (2: No such file or directory), client: 143.244.168.161, server: game.codebn.cn, request: "GET /.well-known/security.txt HTTP/1.1", host: "game.codebn.cn"
+2026/02/16 05:16:23 [error] 318137#0: *122731 open() "/www/wwwroot/game/.well-known/security.txt" failed (2: No such file or directory), client: 159.65.18.197, server: game.codebn.cn, request: "GET /.well-known/security.txt HTTP/1.1", host: "game.codebn.cn"
+2026/02/17 05:12:37 [error] 318137#0: *124671 open() "/www/wwwroot/game/.well-known/security.txt" failed (2: No such file or directory), client: 159.89.127.165, server: game.codebn.cn, request: "GET /.well-known/security.txt HTTP/1.1", host: "game.codebn.cn"
+2026/02/18 05:21:03 [error] 318137#0: *129950 open() "/www/wwwroot/game/.well-known/security.txt" failed (2: No such file or directory), client: 138.68.82.23, server: game.codebn.cn, request: "GET /.well-known/security.txt HTTP/1.1", host: "game.codebn.cn"
+2026/02/19 05:07:33 [error] 318137#0: *131076 open() "/www/wwwroot/game/.well-known/security.txt" failed (2: No such file or directory), client: 46.101.111.185, server: game.codebn.cn, request: "GET /.well-known/security.txt HTTP/1.1", host: "game.codebn.cn"
+2026/02/20 05:11:44 [error] 318137#0: *133989 open() "/www/wwwroot/game/.well-known/security.txt" failed (2: No such file or directory), client: 64.225.75.246, server: game.codebn.cn, request: "GET /.well-known/security.txt HTTP/1.1", host: "game.codebn.cn"
+2026/02/21 05:09:59 [error] 318137#0: *135250 open() "/www/wwwroot/game/.well-known/security.txt" failed (2: No such file or directory), client: 146.190.242.161, server: game.codebn.cn, request: "GET /.well-known/security.txt HTTP/1.1", host: "game.codebn.cn"
+2026/02/22 05:08:31 [error] 318137#0: *137136 open() "/www/wwwroot/game/.well-known/security.txt" failed (2: No such file or directory), client: 206.81.12.187, server: game.codebn.cn, request: "GET /.well-known/security.txt HTTP/1.1", host: "game.codebn.cn"
+2026/02/22 15:25:25 [error] 752798#0: *138065 connect() failed (111: Connection refused) while connecting to upstream, client: 223.77.131.107, server: game.codebn.cn, request: "GET / HTTP/2.0", upstream: "http://127.0.0.1:3003/", host: "game.codebn.cn"
+2026/02/22 15:25:26 [error] 752798#0: *138065 connect() failed (111: Connection refused) while connecting to upstream, client: 223.77.131.107, server: game.codebn.cn, request: "GET / HTTP/2.0", upstream: "http://127.0.0.1:3003/", host: "game.codebn.cn"
+2026/02/22 15:25:26 [error] 752798#0: *138065 connect() failed (111: Connection refused) while connecting to upstream, client: 223.77.131.107, server: game.codebn.cn, request: "GET /favicon.ico HTTP/2.0", upstream: "http://127.0.0.1:3003/favicon.ico", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/22 15:25:26 [error] 752798#0: *138065 connect() failed (111: Connection refused) while connecting to upstream, client: 223.77.131.107, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/22 15:25:28 [error] 752798#0: *138065 connect() failed (111: Connection refused) while connecting to upstream, client: 223.77.131.107, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/22 15:25:29 [error] 752798#0: *138065 connect() failed (111: Connection refused) while connecting to upstream, client: 223.77.131.107, server: game.codebn.cn, request: "GET / HTTP/2.0", upstream: "http://127.0.0.1:3003/", host: "game.codebn.cn"
+2026/02/22 15:25:29 [error] 752798#0: *138065 connect() failed (111: Connection refused) while connecting to upstream, client: 223.77.131.107, server: game.codebn.cn, request: "GET /favicon.ico HTTP/2.0", upstream: "http://127.0.0.1:3003/favicon.ico", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/22 15:25:31 [error] 752798#0: *138065 connect() failed (111: Connection refused) while connecting to upstream, client: 223.77.131.107, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/22 15:26:32 [error] 752798#0: *138074 connect() failed (111: Connection refused) while connecting to upstream, client: 223.77.131.107, server: game.codebn.cn, request: "GET / HTTP/2.0", upstream: "http://127.0.0.1:3003/", host: "game.codebn.cn"
+2026/02/22 15:26:32 [error] 752798#0: *138074 connect() failed (111: Connection refused) while connecting to upstream, client: 223.77.131.107, server: game.codebn.cn, request: "GET /favicon.ico HTTP/2.0", upstream: "http://127.0.0.1:3003/favicon.ico", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/22 15:26:33 [error] 752798#0: *138074 connect() failed (111: Connection refused) while connecting to upstream, client: 223.77.131.107, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/22 15:26:33 [error] 752798#0: *138074 connect() failed (111: Connection refused) while connecting to upstream, client: 223.77.131.107, server: game.codebn.cn, request: "GET / HTTP/2.0", upstream: "http://127.0.0.1:3003/", host: "game.codebn.cn"
+2026/02/22 15:27:03 [error] 752798#0: *138079 connect() failed (111: Connection refused) while connecting to upstream, client: 223.77.131.107, server: game.codebn.cn, request: "GET / HTTP/2.0", upstream: "http://127.0.0.1:3003/", host: "game.codebn.cn"
+2026/02/22 15:27:03 [error] 752798#0: *138079 connect() failed (111: Connection refused) while connecting to upstream, client: 223.77.131.107, server: game.codebn.cn, request: "GET /favicon.ico HTTP/2.0", upstream: "http://127.0.0.1:3003/favicon.ico", host: "game.codebn.cn", referrer: "https://game.codebn.cn/"
+2026/02/22 15:27:05 [error] 752798#0: *138079 connect() failed (111: Connection refused) while connecting to upstream, client: 223.77.131.107, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+2026/02/22 15:27:34 [error] 752798#0: *138079 connect() failed (111: Connection refused) while connecting to upstream, client: 223.77.131.107, server: game.codebn.cn, request: "GET /sw.js HTTP/2.0", upstream: "http://127.0.0.1:3003/sw.js", host: "game.codebn.cn", referrer: "https://game.codebn.cn/sw.js"
+[root@iZbp14rulo7k13lo6afwbnZ game-backend]# netstat -tlnp | grep -E "3003|8000"
+tcp        0      0 0.0.0.0:8000            0.0.0.0:*               LISTEN      753274/python       
+[root@iZbp14rulo7k13lo6afwbnZ game-backend]# nginx -t
+nginx: the configuration file /www/server/nginx/conf/nginx.conf syntax is ok
+nginx: configuration file /www/server/nginx/conf/nginx.conf test is successful
+[root@iZbp14rulo7k13lo6afwbnZ game-backend]# 
