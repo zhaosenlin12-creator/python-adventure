@@ -220,20 +220,6 @@ export default function PetMainPanel() {
   const stageIndex = currentPet.evolution_stage ?? (currentPet.isEgg ? 0 : 1);
   const currentImageUrl = getPetImageUrl(resolvedPetType, currentPet.status, stageIndex);
   const panelScale = getPetVariantScale(resolvedPetType, 'panel');
-  const getStageRingClass = (stage: number, style?: string) => {
-    const stageRing: Record<number, string> = {
-      0: 'border-slate-500',
-      1: 'border-amber-400',
-      2: 'border-emerald-400',
-      3: 'border-sky-400',
-      4: 'border-purple-400',
-      5: 'border-yellow-300'
-    };
-    const styleGlow = style === 'tech'
-      ? 'shadow-[0_0_14px_rgba(56,189,248,0.35)]'
-      : 'shadow-[0_0_14px_rgba(59,130,246,0.24)]';
-    return `${stageRing[stage] || 'border-slate-500'} ${styleGlow}`;
-  };
   const getTechAccent = (petType?: string) => {
     switch (petType) {
       case 'bit_bot':
@@ -343,21 +329,19 @@ export default function PetMainPanel() {
             }}
           >
             <div className="flex items-center gap-2">
-              <div className="relative w-12 h-12 flex items-center justify-center overflow-hidden rounded-[16px] border-2 border-slate-600 bg-[radial-gradient(circle_at_top,#172554,#020617)] shadow-[0_12px_24px_rgba(15,23,42,0.32)]">
+              <div className="relative flex h-12 w-12 items-center justify-center">
+                <div className="absolute inset-1.5 rounded-full bg-slate-200/8 blur-md" />
+                <div className="absolute inset-x-2 bottom-1 h-2.5 rounded-full bg-slate-950/20 blur-md" />
                 {currentTechAccent && (
-                  <>
-                    <div className={`absolute inset-0 ${currentTechAccent.frame} ${currentTechAccent.glow}`} />
-                    <div className={`absolute bottom-0 right-0 w-4 h-4 rounded-full flex items-center justify-center ${currentTechAccent.badge}`}>
-                      {currentTechAccent.icon}
-                    </div>
-                  </>
+                  <div className={`absolute -bottom-1 -right-1 z-10 flex h-4 w-4 items-center justify-center rounded-full ${currentTechAccent.badge}`}>
+                    {currentTechAccent.icon}
+                  </div>
                 )}
-                <div className={`absolute inset-0 rounded-full border-2 ${getStageRingClass(stageIndex, currentPet.petStyle)}`} />
                 {currentImageUrl ? (
                   <img 
                     src={currentImageUrl} 
                     alt={petConfig.displayName}
-                    className="w-full h-full object-contain"
+                    className="pet-sprite pet-sprite-panel w-full h-full object-contain"
                     style={{ transform: `scale(${panelScale})` }}
                   />
                 ) : (
@@ -389,22 +373,20 @@ export default function PetMainPanel() {
             <div className="space-y-3">
               {/* 头像和基本信息 */}
               <div className="flex items-center gap-3">
-                <div className="relative flex h-20 w-20 items-center justify-center overflow-hidden rounded-[22px] border-2 border-slate-700 bg-[radial-gradient(circle_at_top,#1d4ed8,#020617)] shadow-[0_16px_32px_rgba(15,23,42,0.3)]">
+                <div className="relative flex h-20 w-20 items-center justify-center">
+                  <div className="absolute inset-3 rounded-full bg-slate-200/8 blur-xl" />
+                  <div className="absolute inset-x-3 bottom-2 h-4 rounded-full bg-slate-950/30 blur-lg" />
                   {currentTechAccent && (
-                    <>
-                      <div className={`absolute inset-0 ${currentTechAccent.frame} ${currentTechAccent.glow}`} />
-                      <div className={`absolute bottom-0 right-0 px-1.5 py-0.5 text-[9px] rounded-full flex items-center gap-1 ${currentTechAccent.badge}`}>
-                        {currentTechAccent.icon}
-                        <span>{currentTechAccent.label}</span>
-                      </div>
-                    </>
+                    <div className={`absolute -bottom-1 -right-1 z-10 px-1.5 py-0.5 text-[9px] rounded-full flex items-center gap-1 ${currentTechAccent.badge}`}>
+                      {currentTechAccent.icon}
+                      <span>{currentTechAccent.label}</span>
+                    </div>
                   )}
-                  <div className={`absolute inset-0 rounded-full border-2 ${getStageRingClass(stageIndex, currentPet.petStyle)}`} />
                   {currentImageUrl ? (
                     <img 
                       src={currentImageUrl} 
                       alt={petConfig.displayName}
-                      className="w-full h-full object-contain"
+                      className="pet-sprite pet-sprite-panel w-full h-full object-contain"
                       style={{ transform: `scale(${panelScale})` }}
                     />
                   ) : (

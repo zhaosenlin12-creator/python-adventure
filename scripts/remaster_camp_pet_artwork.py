@@ -120,32 +120,13 @@ def flood_fill_background(image: Image.Image) -> List[List[bool]]:
     return visited
 
 
-def soften_edge_alpha(image: Image.Image, background_mask: List[List[bool]]) -> Image.Image:
+def apply_background_mask(image: Image.Image, background_mask: List[List[bool]]) -> Image.Image:
     rgba = image.convert("RGBA")
     pixels = rgba.load()
-    width, height = rgba.size
-
-    boundary_pixels: set[tuple[int, int]] = set()
-    for y in range(height):
-        for x in range(width):
-            if not background_mask[y][x]:
-                continue
-            for nx, ny in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)):
-                if 0 <= nx < width and 0 <= ny < height and not background_mask[ny][nx]:
-                    boundary_pixels.add((nx, ny))
-
-    for y in range(height):
-        for x in range(width):
-            if background_mask[y][x]:
+    for y, row in enumerate(background_mask):
+        for x, is_background in enumerate(row):
+            if is_background:
                 pixels[x, y] = (255, 255, 255, 0)
-
-    for x, y in boundary_pixels:
-        r, g, b, a = pixels[x, y]
-        luminance = (0.2126 * r) + (0.7152 * g) + (0.0722 * b)
-        chroma = max((r, g, b)) - min((r, g, b))
-        if luminance >= 236 and chroma <= 36:
-            softened_alpha = max(0, min(255, int((255 - luminance) * 6.5)))
-            pixels[x, y] = (r, g, b, max(softened_alpha, 36))
 
     return rgba
 
@@ -198,7 +179,7 @@ def build_assets() -> None:
         print(f"[{current:02d}/{total:02d}] {pet_key} stage-{stage_index}: downloading")
         source = download_image(url)
         background_mask = flood_fill_background(source)
-        transparent = soften_edge_alpha(source, background_mask)
+        transparent = apply_background_mask(source, background_mask)
         normalized = normalize_canvas(transparent)
 
         pet_output_dir = OUTPUT_ROOT / pet_key

@@ -12,6 +12,13 @@ export interface PetArtworkProfile {
 }
 
 const STAGE_SNAPSHOTS = [0, 2, 4, 7, 9] as const;
+const UI_VARIANT_SCALE_BOOST: Record<PetRenderVariant, number> = {
+  selection: 1.14,
+  panel: 1.18,
+  home: 1.28,
+  world: 1,
+  list: 1.14,
+};
 
 const buildLocalStageChain = (slug: string): string[] => [
   `/assets/pets/camp-remaster/${slug}/stage-1.png`,
@@ -56,7 +63,13 @@ function createProfile(
   return {
     preview: stages[0] ?? '',
     stages: buildStageMap(stages),
-    renderScale,
+    renderScale: {
+      selection: renderScale.selection * UI_VARIANT_SCALE_BOOST.selection,
+      panel: renderScale.panel * UI_VARIANT_SCALE_BOOST.panel,
+      home: renderScale.home * UI_VARIANT_SCALE_BOOST.home,
+      world: renderScale.world * UI_VARIANT_SCALE_BOOST.world,
+      list: renderScale.list * UI_VARIANT_SCALE_BOOST.list,
+    },
     worldYOffset,
   };
 }
@@ -70,11 +83,11 @@ export const PET_ARTWORK_PROFILES: Partial<Record<PetType, PetArtworkProfile>> =
     list: 1.12,
   }, -4),
   algo_bunny: createProfile(CAMP_REMASTER_STAGE_CHAINS.lop_rabbit, {
-    selection: 1.16,
-    panel: 1.18,
-    home: 1.28,
+    selection: 1.22,
+    panel: 1.26,
+    home: 1.42,
     world: 1.12,
-    list: 1.1,
+    list: 1.16,
   }, -3),
   shiba_debugger: createProfile(CAMP_REMASTER_STAGE_CHAINS.shiba_inu, {
     selection: 1.16,

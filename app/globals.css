@@ -111,6 +111,49 @@
   .pixel-text-shadow {
     text-shadow: 4px 4px 0px #000;
   }
+
+  .pet-sprite {
+    user-select: none;
+    -webkit-user-drag: none;
+    image-rendering: auto;
+    transform-origin: center;
+  }
+
+  .pet-sprite-panel {
+    filter:
+      drop-shadow(1px 0 0 rgba(71, 85, 105, 0.34))
+      drop-shadow(-1px 0 0 rgba(71, 85, 105, 0.34))
+      drop-shadow(0 1px 0 rgba(71, 85, 105, 0.34))
+      drop-shadow(0 -1px 0 rgba(255, 255, 255, 0.24))
+      drop-shadow(0 10px 18px rgba(15, 23, 42, 0.26));
+  }
+
+  .pet-sprite-chip {
+    filter:
+      drop-shadow(1px 0 0 rgba(94, 109, 136, 0.34))
+      drop-shadow(-1px 0 0 rgba(94, 109, 136, 0.34))
+      drop-shadow(0 1px 0 rgba(94, 109, 136, 0.34))
+      drop-shadow(0 -1px 0 rgba(255, 255, 255, 0.2))
+      drop-shadow(0 8px 14px rgba(15, 23, 42, 0.18));
+  }
+
+  .pet-sprite-home {
+    filter:
+      drop-shadow(2px 0 0 rgba(71, 85, 105, 0.44))
+      drop-shadow(-2px 0 0 rgba(71, 85, 105, 0.44))
+      drop-shadow(0 2px 0 rgba(71, 85, 105, 0.44))
+      drop-shadow(0 -1px 0 rgba(255, 255, 255, 0.36))
+      drop-shadow(0 18px 22px rgba(71, 85, 105, 0.22));
+  }
+
+  .pet-sprite-catalog {
+    filter:
+      drop-shadow(1.2px 0 0 rgba(71, 85, 105, 0.34))
+      drop-shadow(-1.2px 0 0 rgba(71, 85, 105, 0.34))
+      drop-shadow(0 1.2px 0 rgba(71, 85, 105, 0.34))
+      drop-shadow(0 -1px 0 rgba(255, 255, 255, 0.22))
+      drop-shadow(0 14px 28px rgba(2, 6, 23, 0.24));
+  }
 }
 
 /* Scrollbar */

@@ -145,7 +145,7 @@ function PetArtPreview({
       <img
         src={src}
         alt={PET_CONFIGS[petType].displayName}
-        className="w-full h-full object-contain drop-shadow-[0_16px_28px_rgba(0,0,0,0.28)]"
+        className="pet-sprite pet-sprite-catalog w-full h-full object-contain"
         style={{ transform: `scale(${selectionScale})` }}
       />
     </div>

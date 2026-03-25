@@ -194,13 +194,10 @@ async def create_pet(
     )
     
     db.add(new_pet)
-    db.commit()
-    db.refresh(new_pet)
+    db.flush()
 
     if current_user.current_pet_id is None:
         current_user.current_pet_id = new_pet.id
-        db.commit()
-        db.refresh(current_user)
     
     # 记录成长日志
     log = PetGrowthLog(
@@ -210,6 +207,7 @@ async def create_pet(
     )
     db.add(log)
     db.commit()
+    db.refresh(new_pet)
     
     return {
         "success": True,

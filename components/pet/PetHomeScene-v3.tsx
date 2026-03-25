@@ -62,19 +62,20 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
   const currentRenderScale = currentPet ? getPetVariantScale(migratePetType(currentPet.petType), 'home') : 1;
   const currentScale = currentAppearance ? ((currentAppearance.size || 48) / 48) * currentRenderScale : 1;
   const currentStageInfo = currentPet ? getCurrentStage(currentPet.evolution_stage ?? (currentPet.isEgg ? 0 : 1)) : null;
-  const getStageRingClass = (stage: number, style?: string) => {
-    const stageRing: Record<number, string> = {
-      0: 'border-slate-500',
-      1: 'border-amber-400',
-      2: 'border-emerald-400',
-      3: 'border-sky-400',
-      4: 'border-purple-400',
-      5: 'border-yellow-300'
+  const getPetAuraClass = (stage: number, style?: string) => {
+    if (style === 'tech') return 'bg-cyan-300/14';
+    if (style === 'mythic') return 'bg-yellow-200/14';
+
+    const auraMap: Record<number, string> = {
+      0: 'bg-slate-200/10',
+      1: 'bg-amber-200/14',
+      2: 'bg-emerald-200/14',
+      3: 'bg-sky-200/14',
+      4: 'bg-violet-200/16',
+      5: 'bg-yellow-100/18',
     };
-    const styleGlow = style === 'tech'
-      ? 'shadow-[0_0_18px_rgba(56,189,248,0.35)]'
-      : 'shadow-[0_0_18px_rgba(59,130,246,0.26)]';
-    return `${stageRing[stage] || 'border-slate-500'} ${styleGlow}`;
+
+    return auraMap[stage] || auraMap[0];
   };
 
   const getTechAccent = (petType?: string) => {
@@ -606,7 +607,6 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
               const hasAsset = !!petImgUrl;
               const appearance = getStageAppearance(stageIndex);
               const scale = ((appearance.size || 48) / 48) * getPetVariantScale(resolvedType, 'list');
-              const ringClass = getStageRingClass(stageIndex, pet.petStyle);
               const techAccent = getTechAccent(resolvedType);
               const x = 12 + (index % 4) * 15;
               const y = 72 + Math.floor(index / 4) * 10;
@@ -622,21 +622,19 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
                   title={`设为跟随：${pet.name}`}
                 >
                   <div className="relative group">
-                    <div className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-[18px] bg-slate-950/20" style={{ transform: `scale(${scale})` }}>
+                    <div className="relative flex h-16 w-16 items-center justify-center" style={{ transform: `scale(${scale})` }}>
+                      <div className={`absolute inset-2 rounded-full blur-lg ${getPetAuraClass(stageIndex, pet.petStyle)}`} />
+                      <div className="absolute inset-x-2 bottom-2 h-3 rounded-full bg-slate-950/16 blur-md" />
                       {techAccent && (
-                        <>
-                          <div className={`absolute inset-0 ${techAccent.frame} ${techAccent.glow}`} />
-                          <div className={`absolute -bottom-1 -right-1 px-1 py-0.5 text-[9px] rounded-full flex items-center gap-1 ${techAccent.badge}`}>
-                            {techAccent.icon}
-                          </div>
-                        </>
+                        <div className={`absolute -bottom-1 -right-1 z-10 px-1 py-0.5 text-[9px] rounded-full flex items-center gap-1 ${techAccent.badge}`}>
+                          {techAccent.icon}
+                        </div>
                       )}
-                      <div className={`absolute inset-1 rounded-[16px] border-2 ${ringClass}`} />
                       {hasAsset ? (
                         <img
                           src={petImgUrl}
                           alt={pet.name}
-                          className="w-full h-full object-contain drop-shadow-lg"
+                          className="pet-sprite pet-sprite-chip w-full h-full object-contain"
                         />
                       ) : (
                         <span className="text-5xl drop-shadow-lg">{config.icon}</span>
@@ -702,7 +700,7 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
               
               {/* Pet Body (with breathing animation) */}
               <motion.div 
-                className="relative flex h-32 w-32 items-center justify-center overflow-hidden rounded-[32px]"
+                className="relative flex h-32 w-32 items-center justify-center"
                 animate={{
                   scale: [currentScale, currentScale * 1.05, currentScale],
                   y: [0, -5, 0]
@@ -716,16 +714,14 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
                 whileTap={{ scale: currentScale * 0.9 }}
                 style={currentAppearance?.glowEffect ? { filter: 'drop-shadow(0 0 18px rgba(255, 215, 0, 0.6))' } : undefined}
               >
+                <div className={`absolute inset-4 rounded-full blur-2xl ${getPetAuraClass(currentStageIndex, currentPet.petStyle)}`} />
+                <div className="absolute inset-x-5 bottom-3 h-5 rounded-full bg-slate-950/16 blur-xl" />
                 {currentTechAccent && (
-                  <>
-                    <div className={`absolute inset-0 ${currentTechAccent.frame} ${currentTechAccent.glow}`} />
-                    <div className={`absolute -bottom-2 -right-2 px-2 py-1 text-[10px] rounded-full flex items-center gap-1 ${currentTechAccent.badge}`}>
-                      {currentTechAccent.icon}
-                      <span>{currentTechAccent.label}</span>
-                    </div>
-                  </>
+                  <div className={`absolute -bottom-2 -right-2 z-10 px-2 py-1 text-[10px] rounded-full flex items-center gap-1 ${currentTechAccent.badge}`}>
+                    {currentTechAccent.icon}
+                    <span>{currentTechAccent.label}</span>
+                  </div>
                 )}
-                <div className={`absolute inset-2 rounded-[26px] border-2 ${getStageRingClass(currentStageIndex, currentPet.petStyle)}`} />
                 {currentAppearance?.specialEffect && (
                   <div className="absolute inset-0 -z-10">
                     {currentAppearance.specialEffect === 'aura' && (
@@ -734,7 +730,7 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
                     {currentAppearance.specialEffect === 'legendary' && (
                       <>
                         <div className="absolute inset-0 rounded-full blur-2xl bg-fuchsia-400/30 animate-pulse" />
-                        <div className="absolute inset-0 rounded-full border-2 border-yellow-300/60 animate-spin" />
+                        <div className="absolute inset-3 rounded-full bg-yellow-200/12 blur-xl animate-pulse" />
                       </>
                     )}
                   </div>
@@ -743,7 +739,7 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
                   <img 
                     src={currentImageUrl} 
                     alt={currentPet.name}
-                    className="w-full h-full object-contain drop-shadow-2xl"
+                    className="pet-sprite pet-sprite-home w-full h-full object-contain"
                   />
                 ) : (
                   <span className="text-8xl drop-shadow-2xl">{petConfig.icon}</span>
@@ -923,7 +919,6 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
                   const petImgUrl = getPetImageUrl(resolvedType, pet.status, pet.evolution_stage ?? (pet.isEgg ? 0 : 1));
                   const hasAsset = !!petImgUrl;
                   const stageIndex = pet.evolution_stage ?? (pet.isEgg ? 0 : 1);
-                  const ringClass = getStageRingClass(stageIndex, pet.petStyle);
                   const techAccent = getTechAccent(resolvedType);
                   const listScale = getPetVariantScale(resolvedType, 'list');
                   return (
@@ -937,20 +932,17 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
                     >
                       <div className="flex items-center gap-3">
                         <div className="relative w-12 h-12 flex items-center justify-center">
+                          <div className={`absolute inset-1 rounded-full blur-md ${getPetAuraClass(stageIndex, pet.petStyle)}`} />
                           {techAccent && (
-                            <>
-                              <div className={`absolute inset-0 ${techAccent.frame} ${techAccent.glow}`} />
-                              <div className={`absolute -bottom-1 -right-1 px-1 py-0.5 text-[9px] rounded-full flex items-center gap-1 ${techAccent.badge}`}>
-                                {techAccent.icon}
-                              </div>
-                            </>
+                            <div className={`absolute -bottom-1 -right-1 z-10 px-1 py-0.5 text-[9px] rounded-full flex items-center gap-1 ${techAccent.badge}`}>
+                              {techAccent.icon}
+                            </div>
                           )}
-                          <div className={`absolute inset-0 rounded-full border-2 ${ringClass}`} />
                           {hasAsset ? (
                             <img
                               src={petImgUrl}
                               alt={pet.name}
-                              className="w-full h-full object-contain drop-shadow"
+                              className="pet-sprite pet-sprite-chip w-full h-full object-contain"
                               style={{ transform: `scale(${listScale})` }}
                             />
                           ) : (

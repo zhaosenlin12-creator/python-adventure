@@ -214,7 +214,7 @@ export function EvolutionPokedex({
           <img
             src={artUrl}
             alt={petConfig.displayName}
-            className={`h-full w-full object-contain transition duration-300 ${locked ? 'opacity-40 blur-[1px] saturate-0' : ''}`}
+            className={`pet-sprite pet-sprite-catalog h-full w-full object-contain transition duration-300 ${locked ? 'opacity-40 blur-[1px] saturate-0' : ''}`}
             style={{ ...glowStyle, transform: `scale(${scale})` }}
           />
         ) : (
