@@ -13,70 +13,24 @@ export interface PetArtworkProfile {
 
 const STAGE_SNAPSHOTS = [0, 2, 4, 7, 9] as const;
 
+const buildLocalStageChain = (slug: string): string[] => [
+  `/assets/pets/camp-remaster/${slug}/stage-1.png`,
+  `/assets/pets/camp-remaster/${slug}/stage-2.png`,
+  `/assets/pets/camp-remaster/${slug}/stage-3.png`,
+  `/assets/pets/camp-remaster/${slug}/stage-4.png`,
+  `/assets/pets/camp-remaster/${slug}/stage-5.png`,
+];
+
 const CAMP_REMASTER_STAGE_CHAINS = {
-  british_shorthair: [
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/yingduan/1200000151.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/yingduan/12000001959.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/yingduan/12000001975.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/yingduan/12000001999.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/yingduan/12000002015.jpg',
-  ],
-  lop_rabbit: [
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/chuietu/12000000255.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/chuietu/12000000264.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/chuietu/12000000280.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/chuietu/12000000304.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/chuietu/12000000320.jpg',
-  ],
-  shiba_inu: [
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/caiquan/12000000030.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/caiquan/12000000046.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/caiquan/12000000062.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/caiquan/12000000086.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/caiquan/CQ.jpg',
-  ],
-  golden_cat: [
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/glodcat/100000231.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/glodcat/10500000038.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/glodcat/10500000054.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/glodcat/10500000078.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/glodcat/10500000094.jpg',
-  ],
-  border_collie: [
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/bianmu/100000396.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/bianmu/10500000829.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/bianmu/10500000845.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/bianmu/10500000869.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/bianmu/10500000885.jpg',
-  ],
-  snow_leopard: [
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/xuebao/01.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/xuebao/03.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/xuebao/05.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/xuebao/8.2.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/xuebao/x.jpg',
-  ],
-  blazing_dragon: [
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/huolong/01.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/huolong/03.1.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/huolong/04.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/huolong/08.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/huolong/10.jpg',
-  ],
-  yinglong: [
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/yinglong/01.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/yinglong/03.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/yinglong/05.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/yinglong/08.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/yinglong/10.jpg',
-  ],
-  baize: [
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/baize/01.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/baize/03.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/baize/05.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/baize/09.jpg',
-    'https://brvjqiusgeqeyfadfwga.supabase.co/storage/v1/object/public/cwk/baize/11.jpg',
-  ],
+  british_shorthair: buildLocalStageChain('british-shorthair'),
+  lop_rabbit: buildLocalStageChain('lop-rabbit'),
+  shiba_inu: buildLocalStageChain('shiba-inu'),
+  golden_cat: buildLocalStageChain('golden-cat'),
+  border_collie: buildLocalStageChain('border-collie'),
+  snow_leopard: buildLocalStageChain('snow-leopard'),
+  blazing_dragon: buildLocalStageChain('blazing-dragon'),
+  yinglong: buildLocalStageChain('yinglong'),
+  baize: buildLocalStageChain('baize'),
 } satisfies Record<string, string[]>;
 
 function buildStageMap(stages: string[]): PetStageMap {

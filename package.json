@@ -8,6 +8,7 @@
     "build": "node scripts/build.js",
     "start": "next start",
     "lint": "eslint",
+    "pet:artwork:refresh": "python scripts/remaster_camp_pet_artwork.py",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
