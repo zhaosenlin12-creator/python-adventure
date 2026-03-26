@@ -44,9 +44,20 @@ const initialState = {
   error: null as string | null,
 };
 
-function translateBattleRoyaleError(message: string): string {
-  const normalized = message.toLowerCase();
+const NETWORK_ERROR_PATTERNS = [
+  'failed to fetch',
+  'networkerror',
+  'network request failed',
+  'load failed',
+  'fetch failed',
+];
 
+function translateBattleRoyaleError(message: string): string {
+  const normalized = message.toLowerCase().trim();
+
+  if (NETWORK_ERROR_PATTERNS.some((pattern) => normalized.includes(pattern))) {
+    return '无法连接乱斗服务器，请确认后端已启动，并检查当前设备能访问局域网地址后再刷新重试。';
+  }
   if (normalized.includes('room is full')) {
     return '房间人数已满，请刷新列表或选择其他房间。';
   }
@@ -81,6 +92,13 @@ function translateBattleRoyaleError(message: string): string {
   return message;
 }
 
+function toBattleRoyaleUiError(error: unknown, fallback: string): string {
+  if (error instanceof Error && error.message.trim()) {
+    return translateBattleRoyaleError(error.message.trim());
+  }
+  return fallback;
+}
+
 function requireToken(): string {
   const token = useAuthStore.getState().token;
   if (!token) {
@@ -108,18 +126,28 @@ function buildParticipantPayload(): BattleRoyaleParticipantPayload {
 
 async function apiRequest<T>(path: string, options?: RequestInit): Promise<T> {
   const token = requireToken();
-  const response = await fetch(`${getApiBaseUrl()}${path}`, {
-    ...options,
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`,
-      ...(options?.headers ?? {}),
-    },
-  });
+  let response: Response;
+
+  try {
+    response = await fetch(`${getApiBaseUrl()}${path}`, {
+      ...options,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+        ...(options?.headers ?? {}),
+      },
+    });
+  } catch (error) {
+    throw new Error(
+      toBattleRoyaleUiError(error, '无法连接乱斗服务器，请确认后端已启动后再重试。'),
+    );
+  }
 
   const data = await response.json().catch(() => ({}));
   if (!response.ok) {
-    throw new Error(translateBattleRoyaleError(data.detail || data.message || 'Battle Royale request failed'));
+    throw new Error(
+      translateBattleRoyaleError(String(data.detail || data.message || 'Battle Royale request failed')),
+    );
   }
   return data as T;
 }
@@ -134,7 +162,7 @@ export const usePvpBattleRoyaleStore = create<BattleRoyaleState>()((set, get) =>
       set({ rooms: data.rooms, cap: data.cap, isLoading: false });
     } catch (error) {
       set({
-        error: error instanceof Error ? error.message : '无法获取乱斗房间列表',
+        error: toBattleRoyaleUiError(error, '无法获取乱斗房间列表，请稍后刷新重试。'),
         isLoading: false,
       });
     }
@@ -159,9 +187,9 @@ export const usePvpBattleRoyaleStore = create<BattleRoyaleState>()((set, get) =>
       }));
       return data.room;
     } catch (error) {
-      const message = error instanceof Error ? error.message : '创建乱斗房间失败';
+      const message = toBattleRoyaleUiError(error, '创建乱斗房间失败，请稍后重试。');
       set({ error: message, isLoading: false });
-      throw error;
+      throw new Error(message);
     }
   },
 
@@ -175,9 +203,9 @@ export const usePvpBattleRoyaleStore = create<BattleRoyaleState>()((set, get) =>
       set({ currentRoom: data.room, isLoading: false });
       return data.room;
     } catch (error) {
-      const message = error instanceof Error ? error.message : '加入乱斗房间失败';
+      const message = toBattleRoyaleUiError(error, '加入乱斗房间失败，请稍后重试。');
       set({ error: message, isLoading: false });
-      throw error;
+      throw new Error(message);
     }
   },
 
@@ -190,9 +218,9 @@ export const usePvpBattleRoyaleStore = create<BattleRoyaleState>()((set, get) =>
       set({ currentRoom: data.room, error: null });
       return data.room;
     } catch (error) {
-      const message = error instanceof Error ? error.message : '刷新乱斗房间失败';
+      const message = toBattleRoyaleUiError(error, '刷新乱斗房间失败，请稍后重试。');
       set({ error: message });
-      if (message.toLowerCase().includes('not found')) {
+      if (message.includes('房间不存在')) {
         set({ currentRoom: null });
       }
       return null;
@@ -216,7 +244,7 @@ export const usePvpBattleRoyaleStore = create<BattleRoyaleState>()((set, get) =>
   addBot: async (difficulty: BattleRoyaleDifficulty) => {
     const roomId = get().currentRoom?.id;
     if (!roomId) {
-      throw new Error('当前没有可编辑的乱斗房间');
+      throw new Error('当前没有可编辑的乱斗房间。');
     }
 
     const data = await apiRequest<BattleRoyaleRoomResponse>(`/pvp-br/rooms/${roomId}/bots`, {
@@ -230,7 +258,7 @@ export const usePvpBattleRoyaleStore = create<BattleRoyaleState>()((set, get) =>
   removeBot: async (botId: string) => {
     const roomId = get().currentRoom?.id;
     if (!roomId) {
-      throw new Error('当前没有可编辑的乱斗房间');
+      throw new Error('当前没有可编辑的乱斗房间。');
     }
 
     const data = await apiRequest<BattleRoyaleRoomResponse>(`/pvp-br/rooms/${roomId}/bots/${botId}`, {
@@ -243,7 +271,7 @@ export const usePvpBattleRoyaleStore = create<BattleRoyaleState>()((set, get) =>
   startCurrentRoom: async () => {
     const roomId = get().currentRoom?.id;
     if (!roomId) {
-      throw new Error('当前没有可开始的乱斗房间');
+      throw new Error('当前没有可开始的乱斗房间。');
     }
 
     const data = await apiRequest<BattleRoyaleRoomResponse>(`/pvp-br/rooms/${roomId}/start`, {

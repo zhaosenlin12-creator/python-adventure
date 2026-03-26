@@ -145,7 +145,7 @@ test('battle royale world entry and room flow smoke', async ({ browser }) => {
     {
       storedAuth: authStorageValue(token, user),
       storedGame: gameStorageValue(['double_jump', 'dash']),
-    }
+    },
   );
 
   const page = await context.newPage();
@@ -156,7 +156,7 @@ test('battle royale world entry and room flow smoke', async ({ browser }) => {
     window.dispatchEvent(
       new CustomEvent('stationInteraction', {
         detail: { stationId: 'battle_royale' },
-      })
+      }),
     );
   });
 
@@ -209,7 +209,9 @@ test('battle royale world entry and room flow smoke', async ({ browser }) => {
   const laterBot = laterSnapshot.fighters.find((fighter: any) => fighter.id === earlyBot?.id);
   expect(earlyBot).toBeTruthy();
   expect(laterBot).toBeTruthy();
-  const movementDelta = Math.abs((laterBot?.x ?? 0) - (earlyBot?.x ?? 0)) + Math.abs((laterBot?.y ?? 0) - (earlyBot?.y ?? 0));
+  const movementDelta =
+    Math.abs((laterBot?.x ?? 0) - (earlyBot?.x ?? 0)) +
+    Math.abs((laterBot?.y ?? 0) - (earlyBot?.y ?? 0));
   expect(movementDelta).toBeGreaterThan(40);
 
   await page.evaluate(() => {
@@ -224,7 +226,10 @@ test('battle royale world entry and room flow smoke', async ({ browser }) => {
   });
   const swingFighter = swingSnapshot.fighters.find((fighter: any) => !fighter.isBot);
   expect(swingFighter).toBeTruthy();
-  expect((swingFighter?.swingMs ?? 0) > 0 || swingSnapshot.effects.some((effect: any) => effect.kind === 'slash')).toBeTruthy();
+  expect(
+    (swingFighter?.swingMs ?? 0) > 0 ||
+      swingSnapshot.effects.some((effect: any) => effect.kind === 'slash'),
+  ).toBeTruthy();
 
   await page.evaluate(() => {
     window.dispatchEvent(new KeyboardEvent('keydown', { key: ' ' }));

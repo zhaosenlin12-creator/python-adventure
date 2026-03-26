@@ -18,7 +18,7 @@ MAX_FILL_RATIO_DROP = 0.18
 
 MAPPED_SLUGS: Dict[str, str] = {
     "code_kitty": "british-shorthair",
-    "algo_bunny": "lop-rabbit",
+    "algo_bunny": "silver-lynx",
     "shiba_debugger": "shiba-inu",
     "bit_bot": "golden-cat",
     "data_sprite": "border-collie",

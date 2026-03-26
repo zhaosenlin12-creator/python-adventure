@@ -534,13 +534,13 @@ export default function PetMainPanel() {
               {/* 鐘舵€佹彁绀?*/}
               {currentPet.status === 'tired' && (
                 <div className="bg-amber-900/30 border border-amber-500/30 rounded-lg p-2 text-xs text-amber-400">
-                  鈿狅笍 浣犵殑浼欎即鏈夌偣绱簡锛岃寰楀闄櫔瀹冨摝锛?
+                  提示：你的伙伴有点累了，记得多陪陪它，或者带它去小屋休息一下。
                 </div>
               )}
               
               {currentPet.status === 'coma' && (
                 <div className="bg-red-950/30 border border-red-500/40 rounded-lg p-2 text-xs text-red-300">
-                  馃毃 浣犵殑浼欎即闄峰叆鏄忚糠锛佸揩鍘荤瓟棰樿惀鏁戝畠锛?
+                  警告：你的伙伴陷入昏迷了，快去答题营救它。
                 </div>
               )}
             </div>

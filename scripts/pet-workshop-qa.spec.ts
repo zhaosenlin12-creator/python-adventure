@@ -17,10 +17,10 @@ const PET_PANEL_MOJIBAKE_STRINGS = [
   '鎴愰暱璇存槑',
   '杩涘叆灏忓眿',
 ];
+const REMOVED_PET_LABELS = ['垂耳兔', '算法兔兔'];
 
 const PET_FIXTURES = [
   { pet_type: 'code_kitty', pet_style: 'cute', name: 'kitty-qa' },
-  { pet_type: 'algo_bunny', pet_style: 'cute', name: 'bunny-qa' },
   { pet_type: 'shiba_debugger', pet_style: 'cute', name: 'shiba-qa' },
   { pet_type: 'silver_lynx', pet_style: 'cute', name: 'lynx-qa' },
   { pet_type: 'forest_maine', pet_style: 'cute', name: 'forest-qa' },
@@ -217,6 +217,9 @@ async function expectNoPetPanelMojibake(page: Page) {
   const bodyText = await page.locator('body').innerText();
   for (const brokenText of PET_PANEL_MOJIBAKE_STRINGS) {
     expect(bodyText).not.toContain(brokenText);
+  }
+  for (const removedLabel of REMOVED_PET_LABELS) {
+    expect(bodyText).not.toContain(removedLabel);
   }
 }
 

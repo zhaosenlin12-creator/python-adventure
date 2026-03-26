@@ -8,9 +8,10 @@
 import { PetType, getPetStyleForType } from '@/types/pet';
 
 export const PET_MIGRATION_MAP: Record<string, PetType> = {
+  algo_bunny: 'silver_lynx',
   dog_shiba: 'shiba_debugger',
   cute_cat: 'code_kitty',
-  cute_rabbit: 'algo_bunny',
+  cute_rabbit: 'silver_lynx',
   cute_dog: 'shiba_debugger',
   tech_bot: 'bit_bot',
   tech_drone: 'data_sprite',
@@ -21,7 +22,6 @@ export const PET_MIGRATION_MAP: Record<string, PetType> = {
 const NEW_PET_TYPES = new Set<string>([
   'egg',
   'code_kitty',
-  'algo_bunny',
   'shiba_debugger',
   'bit_bot',
   'data_sprite',

@@ -106,10 +106,10 @@ const PET_CATALOG: Record<Exclude<PetType, 'egg'>, PetCatalogEntry> = {
   },
   algo_bunny: {
     style: 'cute',
-    displayName: '垂耳兔',
-    description: '耳朵轮廓柔和、主体完整，挂件、小屋和图鉴里都更稳定耐看。',
-    icon: '🐇',
-    color: 0xf59fc3,
+    displayName: '银霜灵猫',
+    description: '旧版兔系宠物会自动兼容到银霜灵猫素材，保留原有数据但不再展示兔系外观。',
+    icon: '🐈',
+    color: 0x94a3b8,
   },
   shiba_debugger: {
     style: 'cute',
@@ -253,10 +253,10 @@ const PET_CATALOG: Record<Exclude<PetType, 'egg'>, PetCatalogEntry> = {
   },
   cute_rabbit: {
     style: 'cute',
-    displayName: '算法兔兔',
+    displayName: '银霜灵猫',
     description: '旧版兼容宠物，读取时会自动迁移到新的素材体系。',
-    icon: '🐇',
-    color: 0xfacc15,
+    icon: '🐈',
+    color: 0x94a3b8,
   },
   cute_dog: {
     style: 'cute',
@@ -303,7 +303,6 @@ function buildPetConfig(type: Exclude<PetType, 'egg'>): PetConfig {
 
 export const NEW_CUTE_PETS: PetType[] = [
   'code_kitty',
-  'algo_bunny',
   'shiba_debugger',
   'silver_lynx',
   'forest_maine',
@@ -331,6 +330,7 @@ export const NEW_MYTHIC_PETS: PetType[] = [
 ];
 
 export const LEGACY_PET_TYPES: PetType[] = [
+  'algo_bunny',
   'dog_shiba',
   'cute_cat',
   'cute_rabbit',
@@ -395,7 +395,7 @@ export function getPetStyleForType(type: PetType): PetStyle {
   if (PET_STYLE_GROUPS.cute.includes(type)) return 'cute';
   if (PET_STYLE_GROUPS.tech.includes(type)) return 'tech';
   if (PET_STYLE_GROUPS.mythic.includes(type)) return 'mythic';
-  if (['dog_shiba', 'cute_cat', 'cute_rabbit', 'cute_dog'].includes(type)) return 'cute';
+  if (['algo_bunny', 'dog_shiba', 'cute_cat', 'cute_rabbit', 'cute_dog'].includes(type)) return 'cute';
   if (['tech_bot', 'tech_drone', 'tech_ai'].includes(type)) return 'tech';
   return 'unknown';
 }

@@ -40,7 +40,6 @@ AI_NAME_POOL = [
 
 AI_PET_POOL = [
     "code_kitty",
-    "algo_bunny",
     "shiba_debugger",
     "silver_lynx",
     "forest_maine",
@@ -61,6 +60,11 @@ AI_PET_POOL = [
     "golden_roc",
 ]
 
+LEGACY_PET_TYPE_ALIASES = {
+    "algo_bunny": "silver_lynx",
+    "cute_rabbit": "silver_lynx",
+}
+
 room_lock = asyncio.Lock()
 active_rooms: Dict[str, Dict[str, Any]] = {}
 ws_connections: Dict[str, WebSocket] = {}
@@ -80,6 +84,11 @@ def normalize_text(value: str, *, fallback: str, max_length: int) -> str:
     if not normalized:
         normalized = fallback
     return normalized[:max_length]
+
+
+def normalize_pet_type(value: str) -> str:
+    normalized = normalize_text(value, fallback="code_kitty", max_length=64)
+    return LEGACY_PET_TYPE_ALIASES.get(normalized, normalized)
 
 
 def generate_room_id() -> str:
@@ -156,7 +165,7 @@ def build_human_entry(user: User, payload: "RoomParticipantPayload", *, is_host:
     return {
         "user_id": user.id,
         "username": normalize_text(payload.username or user.username or "Player", fallback="Player", max_length=24),
-        "pet_type": normalize_text(payload.pet_type, fallback="code_kitty", max_length=64),
+        "pet_type": normalize_pet_type(payload.pet_type),
         "pet_name": normalize_text(payload.pet_name, fallback="Pet", max_length=24),
         "pet_stage": payload.pet_stage,
         "movement_skills": [skill for skill in payload.movement_skills if skill in allowed_movement_skills],

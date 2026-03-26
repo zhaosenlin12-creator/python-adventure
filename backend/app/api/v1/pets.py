@@ -32,7 +32,6 @@ class PetCreateRequest(BaseModel):
 PET_TYPES_BY_STYLE = {
     "cute": {
         "code_kitty",
-        "algo_bunny",
         "shiba_debugger",
         "silver_lynx",
         "forest_maine",
@@ -43,7 +42,6 @@ PET_TYPES_BY_STYLE = {
         "dutch_whisker",
         "dog_shiba",
         "cute_cat",
-        "cute_rabbit",
         "cute_dog",
     },
     "tech": {
@@ -65,17 +63,26 @@ PET_TYPES_BY_STYLE = {
     },
 }
 
+LEGACY_PET_TYPE_ALIASES = {
+    "algo_bunny": "silver_lynx",
+    "cute_rabbit": "silver_lynx",
+}
+
 PET_TYPE_TO_STYLE = {
     pet_type: pet_style
     for pet_style, pet_types in PET_TYPES_BY_STYLE.items()
     for pet_type in pet_types
 }
 
-VALID_PET_TYPES = set(PET_TYPE_TO_STYLE.keys())
+VALID_PET_TYPES = set(PET_TYPE_TO_STYLE.keys()) | set(LEGACY_PET_TYPE_ALIASES.keys())
 VALID_PET_STYLES = set(PET_TYPES_BY_STYLE.keys())
 
 
-def validate_pet_selection(pet_type: Optional[str], pet_style: Optional[str]) -> str:
+def normalize_pet_type(pet_type: str) -> str:
+    return LEGACY_PET_TYPE_ALIASES.get(pet_type, pet_type)
+
+
+def validate_pet_selection(pet_type: Optional[str], pet_style: Optional[str]) -> tuple[str, str]:
     if not pet_type:
         raise HTTPException(status_code=400, detail="pet_type is required")
     if not pet_style:
@@ -85,14 +92,15 @@ def validate_pet_selection(pet_type: Optional[str], pet_style: Optional[str]) ->
     if pet_style not in VALID_PET_STYLES:
         raise HTTPException(status_code=400, detail="Invalid pet style")
 
-    expected_style = PET_TYPE_TO_STYLE[pet_type]
+    normalized_pet_type = normalize_pet_type(pet_type)
+    expected_style = PET_TYPE_TO_STYLE[normalized_pet_type]
     if pet_style != expected_style:
         raise HTTPException(
             status_code=400,
-            detail=f"Pet type {pet_type} must use style {expected_style}",
+            detail=f"Pet type {normalized_pet_type} must use style {expected_style}",
         )
 
-    return expected_style
+    return normalized_pet_type, expected_style
 
 
 @router.get("/my")
@@ -183,7 +191,7 @@ async def create_pet(
     if not pet_type or not pet_style:
         raise HTTPException(status_code=400, detail="pet_type and pet_style are required")
     # 楠岃瘉瀹犵墿绫诲瀷
-    pet_style = validate_pet_selection(pet_type, pet_style)
+    pet_type, pet_style = validate_pet_selection(pet_type, pet_style)
     
     # 鍒涘缓瀹犵墿
     new_pet = Pet(
@@ -785,7 +793,7 @@ async def hatch_pet(
     pet_type = request.get('petType')
     pet_style = request.get('petStyle')
     pet_name = request.get('name', '')
-    pet_style = validate_pet_selection(pet_type, pet_style)
+    pet_type, pet_style = validate_pet_selection(pet_type, pet_style)
     
     if pet_type not in VALID_PET_TYPES:
         raise HTTPException(status_code=400, detail="Invalid pet type")

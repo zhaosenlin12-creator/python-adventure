@@ -33,12 +33,12 @@ const PET_DESIGNS = {
     accentColor: [1, 0.85, 0.4],       // 浅黄
   },
   algo_bunny: {
-    name: '算法兔兔',
-    bodyColor: [1, 0.85, 0.23],        // 金黄
-    bodySize: [80, 85],
-    eyeColor: [0.8, 0.2, 0.4],         // 粉红瞳
-    features: 'bunny',
-    accentColor: [1, 0.95, 0.7],       // 奶白
+    name: '银霜灵猫',
+    bodyColor: [0.73, 0.78, 0.86],     // 银灰
+    bodySize: [86, 82],
+    eyeColor: [0.38, 0.64, 0.92],      // 冰蓝瞳
+    features: 'cat',
+    accentColor: [0.9, 0.95, 1],       // 亮银白
   },
   shiba_debugger: {
     name: '忠犬柴柴',

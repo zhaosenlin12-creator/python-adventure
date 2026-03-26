@@ -15,6 +15,7 @@ import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import Lottie, { LottieRefCurrentProps } from 'lottie-react';
 import { PetType, PetMood, PET_CONFIGS } from '@/types/pet';
 import { getPetConfig } from '@/lib/config/petAssets';
+import { migratePetType } from '@/lib/pet/migration';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface LottiePetProps {
@@ -166,7 +167,8 @@ export default function LottiePet({
   const [hasError, setHasError] = useState(false);
   const lottieRef = useRef<LottieRefCurrentProps>(null);
 
-  const config = PET_CONFIGS[petType];
+  const resolvedPetType = useMemo(() => migratePetType(petType), [petType]);
+  const config = PET_CONFIGS[resolvedPetType] ?? PET_CONFIGS.code_kitty;
   const visuals = useMemo(() => getEvolutionVisuals(evolutionStage), [evolutionStage]);
 
   // 加载动画
@@ -175,7 +177,7 @@ export default function LottiePet({
     setIsLoading(true);
     setHasError(false);
 
-    loadAnimation(petType, animationState).then(data => {
+    loadAnimation(resolvedPetType, animationState).then(data => {
       if (cancelled) return;
       if (data) {
         setAnimationData(data);
@@ -183,7 +185,7 @@ export default function LottiePet({
       } else {
         // 尝试降级到 normal 状态
         if (animationState !== 'normal') {
-          loadAnimation(petType, 'normal').then(fallback => {
+          loadAnimation(resolvedPetType, 'normal').then(fallback => {
             if (cancelled) return;
             if (fallback) {
               setAnimationData(fallback);
@@ -201,7 +203,7 @@ export default function LottiePet({
     });
 
     return () => { cancelled = true; };
-  }, [petType, animationState]);
+  }, [resolvedPetType, animationState]);
 
   // 当动画数据变化时重新播放
   useEffect(() => {
@@ -229,7 +231,7 @@ export default function LottiePet({
 
   // 降级：优先使用 SVG 预览图，再降级为 emoji
   if (hasError || !animationData) {
-    const assetCfg = getPetConfig(petType);
+    const assetCfg = getPetConfig(resolvedPetType);
     if (assetCfg?.previewSvg) {
       return (
         <motion.div
@@ -350,7 +352,8 @@ export default function LottiePet({
  * 预加载指定宠物的常用动画
  */
 export function preloadPetAnimations(petType: string, states: string[] = ['normal', 'happy', 'sad']) {
-  states.forEach(state => loadAnimation(petType, state));
+  const resolvedPetType = migratePetType(petType);
+  states.forEach(state => loadAnimation(resolvedPetType, state));
 }
 
 /**
