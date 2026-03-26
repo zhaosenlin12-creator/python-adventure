@@ -2,16 +2,33 @@ import { test, expect, request as playwrightRequest, type Browser, type BrowserC
 import fs from 'node:fs';
 import path from 'node:path';
 
-const FRONTEND_ORIGIN = 'http://127.0.0.1:3000';
+const FRONTEND_ORIGIN = process.env.FRONTEND_ORIGIN || 'http://127.0.0.1:3003';
 const API_BASE = 'http://127.0.0.1:8000/api/v1';
 const ARTIFACT_DIR = path.join(process.env.TEMP || process.cwd(), 'game-google-pet-workshop-qa');
+const PET_PANEL_MOJIBAKE_STRINGS = [
+  '鎴戠殑浼欎即',
+  '鏅哄姏',
+  '鍒涢€犲姏',
+  '姣呭姏',
+  '鍠傞',
+  '灏忓眿',
+  '杩涘寲',
+  '鍥鹃壌',
+  '鎴愰暱璇存槑',
+  '杩涘叆灏忓眿',
+];
 
 const PET_FIXTURES = [
   { pet_type: 'code_kitty', pet_style: 'cute', name: 'kitty-qa' },
   { pet_type: 'algo_bunny', pet_style: 'cute', name: 'bunny-qa' },
   { pet_type: 'shiba_debugger', pet_style: 'cute', name: 'shiba-qa' },
   { pet_type: 'silver_lynx', pet_style: 'cute', name: 'lynx-qa' },
+  { pet_type: 'forest_maine', pet_style: 'cute', name: 'forest-qa' },
   { pet_type: 'coffee_shadow', pet_style: 'cute', name: 'coffee-qa' },
+  { pet_type: 'husky_rider', pet_style: 'cute', name: 'husky-qa' },
+  { pet_type: 'pom_angel', pet_style: 'cute', name: 'pom-qa' },
+  { pet_type: 'mini_civet', pet_style: 'cute', name: 'mini-qa' },
+  { pet_type: 'dutch_whisker', pet_style: 'cute', name: 'dutch-qa' },
   { pet_type: 'bit_bot', pet_style: 'tech', name: 'goldcat-qa' },
   { pet_type: 'data_sprite', pet_style: 'tech', name: 'collie-qa' },
   { pet_type: 'ava_ai', pet_style: 'tech', name: 'snowleopard-qa' },
@@ -20,6 +37,8 @@ const PET_FIXTURES = [
   { pet_type: 'giraffe_oracle', pet_style: 'mythic', name: 'yinglong-qa' },
   { pet_type: 'snow_cat', pet_style: 'mythic', name: 'baize-qa' },
   { pet_type: 'qiongqi_howl', pet_style: 'mythic', name: 'qiongqi-qa' },
+  { pet_type: 'taowu_flare', pet_style: 'mythic', name: 'taowu-qa' },
+  { pet_type: 'golden_roc', pet_style: 'mythic', name: 'roc-qa' },
 ] as const;
 
 const FOOD_FIXTURES = [
@@ -49,6 +68,16 @@ type QaSession = {
     petType: string;
   };
   worldPet: {
+    id: number;
+    name: string;
+    petType: string;
+  };
+  showcasePet: {
+    id: number;
+    name: string;
+    petType: string;
+  };
+  secondaryShowcasePet: {
     id: number;
     name: string;
     petType: string;
@@ -119,8 +148,12 @@ async function seedQaSession(): Promise<QaSession> {
   }
 
   const primaryPet = createdPets.find((pet) => pet.petType === 'code_kitty');
+  const showcasePet = createdPets.find((pet) => pet.petType === 'pom_angel') || createdPets[0];
+  const secondaryShowcasePet = createdPets.find((pet) => pet.petType === 'silver_lynx') || createdPets[0];
   const worldPet = createdPets.find((pet) => pet.petType === 'code_dragon') || createdPets[0];
   expect(primaryPet).toBeTruthy();
+  expect(showcasePet).toBeTruthy();
+  expect(secondaryShowcasePet).toBeTruthy();
   expect(worldPet).toBeTruthy();
 
   const setPrimaryResponse = await api.post(`${API_BASE}/pets/${primaryPet!.id}/set-active`, {
@@ -135,6 +168,8 @@ async function seedQaSession(): Promise<QaSession> {
     user,
     pets: createdPets,
     primaryPet: primaryPet!,
+    showcasePet: showcasePet!,
+    secondaryShowcasePet: secondaryShowcasePet!,
     worldPet: worldPet!,
   };
 }
@@ -176,6 +211,13 @@ async function openRootPanel(page: Page) {
     }
   }
   expect(panelOpened).toBeTruthy();
+}
+
+async function expectNoPetPanelMojibake(page: Page) {
+  const bodyText = await page.locator('body').innerText();
+  for (const brokenText of PET_PANEL_MOJIBAKE_STRINGS) {
+    expect(bodyText).not.toContain(brokenText);
+  }
 }
 
 async function setServerActivePet(session: QaSession, petId: number) {
@@ -233,6 +275,7 @@ async function desktopAudit(browser: Browser, session: QaSession) {
 
   const page = await context.newPage();
   await openRootPanel(page);
+  await expectNoPetPanelMojibake(page);
   await screenshot(page, '01-root-panel-desktop.png');
 
   const pokedexButton = page.locator('button:has(svg.lucide-book-open)').last();
@@ -241,11 +284,28 @@ async function desktopAudit(browser: Browser, session: QaSession) {
   await screenshot(page, '02-pokedex-desktop.png');
   await page.keyboard.press('Escape');
 
+  await setServerActivePet(session, session.showcasePet.id);
+  await page.reload({ waitUntil: 'domcontentloaded' });
+  await openRootPanel(page);
+  await page.locator('button:has(svg.lucide-book-open)').last().click();
+  await expect(page.getByTestId('pet-pokedex')).toBeVisible({ timeout: 10000 });
+  await screenshot(page, '02b-pokedex-showcase-desktop.png');
+  await page.keyboard.press('Escape');
+
+  await setServerActivePet(session, session.secondaryShowcasePet.id);
+  await page.reload({ waitUntil: 'domcontentloaded' });
+  await openRootPanel(page);
+  await page.locator('button:has(svg.lucide-book-open)').last().click();
+  await expect(page.getByTestId('pet-pokedex')).toBeVisible({ timeout: 10000 });
+  await screenshot(page, '02c-pokedex-lynx-desktop.png');
+  await page.keyboard.press('Escape');
+
   const beforeFeedInventory = await fetchInventory(session);
   const feedButton = page.locator('button:has(svg.lucide-apple)').last();
   await feedButton.click();
   const useButton = page.locator('button.pixel-btn.text-lg.py-3').first();
   await expect(useButton).toBeVisible({ timeout: 10000 });
+  await expectNoPetPanelMojibake(page);
   await screenshot(page, '03-feed-modal-desktop.png');
   await useButton.click();
   await waitForInventoryConsumption(session, beforeFeedInventory);

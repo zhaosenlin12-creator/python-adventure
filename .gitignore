@@ -34,6 +34,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+frontend-dev.log
+backend/backend-dev.log
+backend/backend-dev.log.*
 
 # env files (can opt-in for committing if needed)
 .env*
@@ -58,6 +61,8 @@ public/assets/pets/Cooking with Cat/
 stash.patch
 console.md
 /.venv/
+.tmp/
+.git.opencode-backup/
 .vscode/
 *.code-workspace
 uploads/

@@ -18,6 +18,26 @@ interface User {
     coins: number; // 💰 金币余额
 }
 
+interface PasswordResetResponse {
+    message: string;
+    default_password: string;
+}
+
+async function readErrorMessage(response: Response, fallback: string): Promise<string> {
+    try {
+        const error = await response.json();
+        if (typeof error.detail === 'string' && error.detail.trim()) {
+            return error.detail;
+        }
+        if (typeof error.message === 'string' && error.message.trim()) {
+            return error.message;
+        }
+        return JSON.stringify(error.detail || error);
+    } catch {
+        return fallback || `HTTP ${response.status}`;
+    }
+}
+
 interface AuthState {
     user: User | null;
     token: string | null;
@@ -31,6 +51,7 @@ interface AuthState {
     // Actions
     login: (username: string, password: string) => Promise<void>;
     register: (username: string, email: string, password: string) => Promise<void>;
+    resetPassword: (username: string) => Promise<PasswordResetResponse>;
     logout: () => void;
     loadUserProfile: () => Promise<void>;
     clearError: () => void;
@@ -185,19 +206,7 @@ export const useAuthStore = create<AuthState>()(
 
                     if (!response.ok) {
                         let errorMessage = 'Registration failed';
-                        try {
-                            const error = await response.json();
-                            console.error('[AuthStore] Error response:', error);
-                            if (typeof error.detail === 'string') {
-                                errorMessage = error.detail;
-                            } else {
-                                errorMessage = JSON.stringify(error.detail || error);
-                            }
-                        } catch {
-                            const text = await response.text();
-                            console.error('[AuthStore] Error text:', text);
-                            errorMessage = text || `HTTP ${response.status}`;
-                        }
+                        errorMessage = await readErrorMessage(response, errorMessage);
                         throw new Error(errorMessage);
                     }
 
@@ -215,6 +224,43 @@ export const useAuthStore = create<AuthState>()(
                     console.error('[AuthStore] Error message:', error instanceof Error ? error.message : String(error));
                     set({
                         error: error instanceof Error ? error.message : String(error),
+                        isLoading: false,
+                    });
+                    throw error;
+                }
+            },
+
+            resetPassword: async (username: string) => {
+                const normalizedUsername = username.trim();
+                if (!normalizedUsername) {
+                    const message = '请先输入用户名，再重置密码。';
+                    set({ error: message });
+                    throw new Error(message);
+                }
+
+                set({ isLoading: true, error: null });
+
+                try {
+                    const response = await fetch(`${getApiUrl()}/auth/reset-password`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ username: normalizedUsername }),
+                    });
+
+                    if (!response.ok) {
+                        const errorMessage = await readErrorMessage(response, '重置密码失败');
+                        throw new Error(errorMessage);
+                    }
+
+                    const payload = (await response.json()) as PasswordResetResponse;
+                    set({ isLoading: false, error: null });
+                    return payload;
+                } catch (error: unknown) {
+                    const message = error instanceof Error ? error.message : String(error);
+                    set({
+                        error: message,
                         isLoading: false,
                     });
                     throw error;

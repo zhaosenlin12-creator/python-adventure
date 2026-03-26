@@ -297,7 +297,7 @@ export default function PetMainPanel() {
       setEvolutionData(null);
       // 鏄剧ず閿欒鎻愮ず
       const { showErrorToast } = await import('@/components/ui/ErrorToast');
-      const errorMessage = error instanceof Error ? error.message : '杩涘寲澶辫触锛岃绋嶅悗閲嶈瘯';
+      const errorMessage = error instanceof Error ? error.message : '进化失败，请稍后重试';
       showErrorToast(errorMessage, 'error');
     }
   };
@@ -361,12 +361,12 @@ export default function PetMainPanel() {
           <div className="pixel-panel w-80 border-2 border-slate-700 p-4 shadow-[0_26px_48px_rgba(15,23,42,0.36)]">
             {/* 澶撮儴 */}
             <div className="flex justify-between items-center mb-3">
-              <h3 className="font-bold text-lg text-white">鎴戠殑浼欎即</h3>
+              <h3 className="font-bold text-lg text-white">我的伙伴</h3>
               <button
                 onClick={() => setIsExpanded(false)}
                 className="text-slate-400 hover:text-white text-xl w-6 h-6 flex items-center justify-center"
               >
-                脳
+                ×
               </button>
             </div>
             
@@ -452,21 +452,21 @@ export default function PetMainPanel() {
                 {/* 鏅哄姏 - 绱壊锛屽ぇ鑴戝浘鏍?*/}
                 <AnimatedStatusValue
                   value={currentPet.attributes.intelligence}
-                  label="鏅哄姏"
+                  label="智力"
                   color="bg-sky-500"
                   icon="🧠"
                 />
                 {/* 鍒涢€犲姏 - 绮夎壊锛屾槦鏄熷浘鏍?*/}
                 <AnimatedStatusValue
                   value={currentPet.attributes.creativity}
-                  label="鍒涢€犲姏"
+                  label="创造力"
                   color="bg-indigo-500"
                   icon="✨"
                 />
                 {/* 姣呭姏 - 钃濊壊锛岃倢鑲夊浘鏍?*/}
                 <AnimatedStatusValue
                   value={currentPet.attributes.persistence}
-                  label="姣呭姏"
+                  label="毅力"
                   color="bg-cyan-500"
                   icon="💪"
                 />
@@ -481,7 +481,7 @@ export default function PetMainPanel() {
                     className="pixel-btn pixel-btn-success text-xs flex items-center justify-center gap-1 h-10"
                   >
                     <Apple className="w-4 h-4" />
-                    鍠傞
+                    喂养
                   </button>
                   
                   <button
@@ -489,7 +489,7 @@ export default function PetMainPanel() {
                     className="pixel-btn bg-sky-700 text-white hover:bg-sky-600 text-xs flex items-center justify-center gap-1 h-10"
                   >
                     <Home className="w-4 h-4" />
-                    灏忓眿
+                    小屋
                   </button>
                   <button
                     onClick={handleEvolve}
@@ -501,7 +501,7 @@ export default function PetMainPanel() {
                     }`}
                   >
                     <Sparkles className="w-4 h-4" />
-                    {canEvolveNow ? '杩涘寲' : '杩涘寲'}
+                    {canEvolveNow ? '进化' : '进化'}
                   </button>
                   
                   <button
@@ -509,17 +509,17 @@ export default function PetMainPanel() {
                     className="pixel-btn bg-slate-700 text-white hover:bg-slate-600 text-xs flex items-center justify-center gap-1 h-10"
                   >
                     <BookOpen className="w-4 h-4" />
-                    鍥鹃壌
+                    图鉴
                   </button>
                   <button
                     onClick={() => setShowGrowthGuide(true)}
                     className="pixel-btn bg-slate-700 text-white hover:bg-slate-600 text-xs flex items-center justify-center gap-1 h-10 col-span-2"
                   >
-                    馃摌 鎴愰暱璇存槑
+                    成长说明
                   </button>
                 </div>
                 <div className="text-[10px] text-slate-400 text-center">
-                  杩涘叆灏忓眿鍙繘琛屼簰鍔紝鎻愬崌浜插瘑搴︿笌灞炴€?
+                  进入小屋可以互动、喂养和观察宠物状态，持续提升亲密度与成长属性。
                 </div>
                 {pendingEggCount > 0 && (
                   <button

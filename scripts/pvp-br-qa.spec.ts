@@ -2,7 +2,7 @@ import { test, expect, request as playwrightRequest } from '@playwright/test';
 import path from 'node:path';
 import fs from 'node:fs';
 
-const FRONTEND_ORIGIN = 'http://127.0.0.1:3000';
+const FRONTEND_ORIGIN = process.env.FRONTEND_ORIGIN || 'http://127.0.0.1:3003';
 const API_BASE = 'http://127.0.0.1:8000/api/v1';
 const ARTIFACT_DIR = path.join(process.env.TEMP || process.cwd(), 'game-google-br-qa');
 
@@ -45,6 +45,62 @@ test('battle royale world entry and room flow smoke', async ({ browser }) => {
   const loginPayload = await loginResponse.json();
   const token = loginPayload.access_token as string;
   const user = loginPayload.user;
+
+  const fullHostName = `brfull_${seed}`;
+  const fullGuestName = `brguest_${seed}`;
+  const fullHostEmail = `${fullHostName}@example.com`;
+  const fullGuestEmail = `${fullGuestName}@example.com`;
+
+  const fullHostRegister = await api.post(`${API_BASE}/auth/register`, {
+    data: { username: fullHostName, email: fullHostEmail, password },
+  });
+  expect(fullHostRegister.ok(), await fullHostRegister.text()).toBeTruthy();
+
+  const fullGuestRegister = await api.post(`${API_BASE}/auth/register`, {
+    data: { username: fullGuestName, email: fullGuestEmail, password },
+  });
+  expect(fullGuestRegister.ok(), await fullGuestRegister.text()).toBeTruthy();
+
+  const fullHostLogin = await api.post(`${API_BASE}/auth/login`, {
+    data: { username: fullHostName, password },
+  });
+  expect(fullHostLogin.ok(), await fullHostLogin.text()).toBeTruthy();
+  const fullHostToken = (await fullHostLogin.json()).access_token as string;
+
+  const fullGuestLogin = await api.post(`${API_BASE}/auth/login`, {
+    data: { username: fullGuestName, password },
+  });
+  expect(fullGuestLogin.ok(), await fullGuestLogin.text()).toBeTruthy();
+  const fullGuestToken = (await fullGuestLogin.json()).access_token as string;
+
+  const fullRoomCreate = await api.post(`${API_BASE}/pvp-br/rooms/create`, {
+    headers: { Authorization: `Bearer ${fullHostToken}` },
+    data: {
+      username: fullHostName,
+      pet_type: 'code_kitty',
+      pet_name: 'host-cat',
+      pet_stage: 3,
+      movement_skills: ['double_jump'],
+      age_group: 'primary-upper',
+      room_name: '满员测试房',
+      max_players: 2,
+    },
+  });
+  expect(fullRoomCreate.ok(), await fullRoomCreate.text()).toBeTruthy();
+  const fullRoomPayload = await fullRoomCreate.json();
+
+  const fullRoomJoin = await api.post(`${API_BASE}/pvp-br/rooms/${fullRoomPayload.room.id}/join`, {
+    headers: { Authorization: `Bearer ${fullGuestToken}` },
+    data: {
+      username: fullGuestName,
+      pet_type: 'silver_lynx',
+      pet_name: 'guest-lynx',
+      pet_stage: 3,
+      movement_skills: ['double_jump'],
+      age_group: 'primary-upper',
+    },
+  });
+  expect(fullRoomJoin.ok(), await fullRoomJoin.text()).toBeTruthy();
 
   const createPetResponse = await api.post(`${API_BASE}/pets/create`, {
     headers: { Authorization: `Bearer ${token}` },
@@ -92,6 +148,9 @@ test('battle royale world entry and room flow smoke', async ({ browser }) => {
   });
 
   await expect(page.getByTestId('br-lobby')).toBeVisible({ timeout: 15000 });
+  const fullRoomButton = page.getByRole('button', { name: '房间已满' }).first();
+  await expect(fullRoomButton).toBeVisible({ timeout: 15000 });
+  await expect(fullRoomButton).toBeDisabled();
   ensureArtifactDir();
   await page.screenshot({
     path: path.join(ARTIFACT_DIR, '01-br-lobby.png'),
@@ -110,8 +169,31 @@ test('battle royale world entry and room flow smoke', async ({ browser }) => {
 
   await page.getByTestId('br-start-match').click();
   await expect(page.getByTestId('br-arena')).toBeVisible({ timeout: 15000 });
-  await page.waitForTimeout(2500);
+  await page.waitForTimeout(1500);
+  const earlySnapshot = await page.evaluate(() => {
+    return (window as any).__brSnapshot ?? null;
+  });
+
+  await page.waitForTimeout(6000);
   await expect(page.getByTestId('br-arena-status')).toBeVisible({ timeout: 10000 });
+  const laterSnapshot = await page.evaluate(() => {
+    return (window as any).__brSnapshot ?? null;
+  });
+  const arenaStatusText = await page.getByTestId('br-arena-status').textContent();
+
+  expect(earlySnapshot).toBeTruthy();
+  expect(laterSnapshot).toBeTruthy();
+  expect(laterSnapshot.elapsedMs).toBeGreaterThan(4000);
+  expect(laterSnapshot.platforms.length).toBeGreaterThan(20);
+  expect(arenaStatusText).not.toContain('战斗即将开始');
+
+  const earlyBot = earlySnapshot.fighters.find((fighter: any) => fighter.isBot);
+  const laterBot = laterSnapshot.fighters.find((fighter: any) => fighter.id === earlyBot?.id);
+  expect(earlyBot).toBeTruthy();
+  expect(laterBot).toBeTruthy();
+  const movementDelta = Math.abs((laterBot?.x ?? 0) - (earlyBot?.x ?? 0)) + Math.abs((laterBot?.y ?? 0) - (earlyBot?.y ?? 0));
+  expect(movementDelta).toBeGreaterThan(40);
+
   await page.screenshot({
     path: path.join(ARTIFACT_DIR, '03-br-arena.png'),
     fullPage: true,

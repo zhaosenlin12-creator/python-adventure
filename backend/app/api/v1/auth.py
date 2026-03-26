@@ -1,12 +1,31 @@
+import time
+
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from app.core.database import get_db
-from app.core.security import verify_password, get_password_hash, create_access_token
+from app.core.security import (
+    build_password_token_version,
+    create_access_token,
+    get_password_hash,
+    verify_password,
+)
 from app.models.user import User
-from app.schemas.user import UserRegister, UserLogin, Token, TokenWithUser, UserResponse
+from app.schemas.user import (
+    PasswordResetRequest,
+    PasswordResetResponse,
+    Token,
+    TokenWithUser,
+    UserLogin,
+    UserRegister,
+    UserResponse,
+)
 from app.api.dependencies import oauth2_scheme
 
 router = APIRouter()
+
+DEFAULT_RESET_PASSWORD = "123456"
+PASSWORD_RESET_COOLDOWN_SECONDS = 30
+_password_reset_cooldowns: dict[str, float] = {}
 
 @router.post("/register", response_model=UserResponse, status_code=status.HTTP_201_CREATED)
 async def register(user_data: UserRegister, db: Session = Depends(get_db)):
@@ -89,7 +108,12 @@ async def login(user_data: UserLogin, db: Session = Depends(get_db)):
             )
         
         # 创建访问令牌（sub 必须是字符串）
-        access_token = create_access_token(data={"sub": str(user.id)})
+        access_token = create_access_token(
+            data={
+                "sub": str(user.id),
+                "pwdv": build_password_token_version(user.password_hash),
+            }
+        )
         
         # 🔥 缓存用户信息，减少数据库查询
         user_response = UserResponse(
@@ -132,4 +156,46 @@ async def logout(token: str = Depends(oauth2_scheme)):
 
     add_token_to_blacklist(token, expiry)
     return {"message": "登出成功"}
+
+
+@router.post("/reset-password", response_model=PasswordResetResponse)
+async def reset_password(payload: PasswordResetRequest, db: Session = Depends(get_db)):
+    """按用户名将密码重置为学生默认密码。"""
+    normalized_username = payload.username.strip()
+    cooldown_key = normalized_username.lower()
+    now = time.monotonic()
+
+    expired_keys = [
+        key
+        for key, last_reset in _password_reset_cooldowns.items()
+        if now - last_reset >= PASSWORD_RESET_COOLDOWN_SECONDS
+    ]
+    for key in expired_keys:
+        _password_reset_cooldowns.pop(key, None)
+
+    last_reset = _password_reset_cooldowns.get(cooldown_key)
+    if last_reset is not None and now - last_reset < PASSWORD_RESET_COOLDOWN_SECONDS:
+        wait_seconds = max(1, int(PASSWORD_RESET_COOLDOWN_SECONDS - (now - last_reset)))
+        raise HTTPException(
+            status_code=status.HTTP_429_TOO_MANY_REQUESTS,
+            detail=f"刚刚已经重置过一次，请 {wait_seconds} 秒后再试",
+        )
+
+    user = db.query(User).filter(User.username == normalized_username).first()
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="未找到这个用户名，请检查后重试",
+        )
+
+    user.password_hash = get_password_hash(DEFAULT_RESET_PASSWORD)
+    db.add(user)
+    db.commit()
+
+    _password_reset_cooldowns[cooldown_key] = now
+
+    return PasswordResetResponse(
+        message="密码已重置为 123456，请登录后尽快修改。",
+        default_password=DEFAULT_RESET_PASSWORD,
+    )
 

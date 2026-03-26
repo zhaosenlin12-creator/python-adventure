@@ -46,6 +46,8 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
   const effectiveRoom = currentRoom ?? room;
   const isHost = effectiveRoom.host_user_id === currentUserId;
   const canStart = effectiveRoom.participant_count >= 2 && effectiveRoom.status === 'waiting';
+  const isFull = effectiveRoom.participant_count >= effectiveRoom.max_players;
+  const remainingSlots = Math.max(0, effectiveRoom.max_players - effectiveRoom.participant_count);
 
   const humanCards = useMemo(() => effectiveRoom.humans, [effectiveRoom.humans]);
   const botCards = useMemo(() => effectiveRoom.bots, [effectiveRoom.bots]);
@@ -267,6 +269,10 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
                   <li>复活成功后会丢失上一条命拾到的护盾、护甲和武器增益。</li>
                   <li>开放世界里已经解锁的机动能力会在乱斗里继续生效。</li>
                 </ul>
+                <div className="mt-4 rounded-2xl border border-cyan-300/15 bg-cyan-500/10 px-4 py-3 text-sm leading-6 text-cyan-50">
+                  当前还剩 <span className="font-bold">{remainingSlots}</span> 个空位。
+                  {isFull ? ' 房间已满，不能继续加人或加 AI。' : ' 如果人数不足 2，需要先添加玩家或 AI 才能开战。'}
+                </div>
               </section>
 
               <section className="rounded-[28px] border border-white/10 bg-white/[0.04] p-5">
@@ -291,14 +297,23 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
 
                 <button
                   type="button"
-                  disabled={!isHost || busyAction === 'bot' || effectiveRoom.status !== 'waiting'}
+                  disabled={!isHost || busyAction === 'bot' || effectiveRoom.status !== 'waiting' || isFull}
                   onClick={handleAddBot}
                   data-testid="br-add-bot"
                   className="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#14b8a6,#2563eb)] px-6 py-3 text-sm font-bold text-white transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   <Bot className="h-4 w-4" />
-                  {busyAction === 'bot' ? '添加中...' : `添加${difficultyOptions.find((item) => item.value === selectedDifficulty)?.label ?? '简单'}人机`}
+                  {busyAction === 'bot'
+                    ? '添加中...'
+                    : isFull
+                      ? '房间已满，无法添加人机'
+                      : `添加${difficultyOptions.find((item) => item.value === selectedDifficulty)?.label ?? '简单'}人机`}
                 </button>
+                {isFull && (
+                  <div className="mt-3 rounded-2xl border border-amber-300/20 bg-amber-500/10 px-4 py-3 text-sm text-amber-100">
+                    当前房间人数已到上限。为了避免静默失败，这里已直接锁定添加按钮。
+                  </div>
+                )}
               </section>
 
               {error && (
@@ -308,6 +323,13 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
               )}
 
               <div className="flex flex-col gap-3">
+                {!canStart && (
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-slate-300">
+                    {effectiveRoom.participant_count < 2
+                      ? '还不能开始：至少需要 2 名参战者。你可以邀请玩家或先添加一个简单 AI。'
+                      : '房间当前不是可开战状态，请等待同步完成。'}
+                  </div>
+                )}
                 <button
                   type="button"
                   disabled={!isHost || !canStart || busyAction === 'start'}

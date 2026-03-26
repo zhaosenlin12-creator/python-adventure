@@ -42,6 +42,10 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
     () => getPetImageUrl(currentPet?.petType ?? 'code_kitty', currentPet?.status ?? 'normal', currentPet?.evolution_stage),
     [currentPet],
   );
+  const availableRoomCount = useMemo(
+    () => rooms.filter((room) => room.participant_count < room.max_players && room.status === 'waiting').length,
+    [rooms],
+  );
 
   useEffect(() => {
     fetchRooms().catch(() => {});
@@ -210,6 +214,7 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
                     className="mt-5 rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-4 text-sm leading-6 text-slate-300"
                   >
                     点击右侧任意等待中的房间即可加入。进入后你会带着当前主宠直接加入候场名单。
+                    {availableRoomCount === 0 ? ' 当前列表里的房间都已满员，请刷新或自己创建房间。' : ''}
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -225,7 +230,9 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
               <div className="mb-5 flex items-center justify-between gap-3">
                 <div>
                   <div className="text-lg font-bold text-white">等待中的乱斗房间</div>
-                  <div className="text-sm text-slate-400">加入后在候场室里等待房主开战</div>
+                  <div className="text-sm text-slate-400">
+                    加入后在候场室里等待房主开战，已满房间会直接显示为不可加入。
+                  </div>
                 </div>
                 <button
                   type="button"
@@ -255,13 +262,23 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
                       key={room.id}
                       className="rounded-[24px] border border-white/10 bg-slate-950/65 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]"
                     >
-                      <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                      {(() => {
+                        const isFull = room.participant_count >= room.max_players;
+                        const canJoin = room.status === 'waiting' && !isFull;
+
+                        return (
+                          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
                         <div className="space-y-2">
                           <div className="flex items-center gap-2">
                             <div className="text-lg font-bold text-white">{room.room_name}</div>
                             <span className="rounded-full border border-cyan-300/20 bg-cyan-500/10 px-2 py-1 text-xs font-semibold text-cyan-100">
                               {room.id}
                             </span>
+                            {isFull && (
+                              <span className="rounded-full border border-amber-300/20 bg-amber-500/10 px-2 py-1 text-xs font-semibold text-amber-100">
+                                已满
+                              </span>
+                            )}
                           </div>
                           <div className="flex flex-wrap items-center gap-3 text-sm text-slate-400">
                             <span className="inline-flex items-center gap-1">
@@ -274,17 +291,25 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
                             </span>
                             <span>{room.bot_count} 个 AI 人机</span>
                           </div>
+                          {isFull && (
+                            <div className="rounded-2xl border border-amber-300/15 bg-amber-500/10 px-3 py-2 text-sm text-amber-100">
+                              当前人数已达到上限，无法再加入，请刷新或选择其他房间。
+                            </div>
+                          )}
                         </div>
 
                         <button
                           type="button"
                           onClick={() => handleJoin(room)}
-                          className="inline-flex items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#0ea5e9,#2563eb)] px-5 py-3 text-sm font-bold text-white transition hover:brightness-110"
+                          disabled={!canJoin || isLoading}
+                          className="inline-flex items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#0ea5e9,#2563eb)] px-5 py-3 text-sm font-bold text-white transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-55"
                         >
                           <LogIn className="h-4 w-4" />
-                          加入候场室
+                          {isFull ? '房间已满' : '加入候场室'}
                         </button>
                       </div>
+                        );
+                      })()}
                     </div>
                   ))
                 )}

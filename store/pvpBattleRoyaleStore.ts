@@ -44,6 +44,43 @@ const initialState = {
   error: null as string | null,
 };
 
+function translateBattleRoyaleError(message: string): string {
+  const normalized = message.toLowerCase();
+
+  if (normalized.includes('room is full')) {
+    return '房间人数已满，请刷新列表或选择其他房间。';
+  }
+  if (normalized.includes('room not found')) {
+    return '房间不存在或已经关闭，请返回大厅刷新后重试。';
+  }
+  if (normalized.includes('room already started')) {
+    return '这个房间已经开始战斗，不能再加入或修改配置。';
+  }
+  if (normalized.includes('you are already in another active room')) {
+    return '你已经在另一个进行中的房间里了，请先退出当前房间。';
+  }
+  if (normalized.includes('cannot modify bots after the match starts')) {
+    return '战斗已经开始，不能再增删 AI 人机。';
+  }
+  if (normalized.includes('only the host can manage bots')) {
+    return '只有房主可以添加或移除 AI 人机。';
+  }
+  if (normalized.includes('only the host can start the room')) {
+    return '只有房主可以开始这一局战斗。';
+  }
+  if (normalized.includes('at least two fighters are required')) {
+    return '至少需要 2 名参战者才能开始，请先邀请玩家或添加 AI。';
+  }
+  if (normalized.includes('you are not in this room')) {
+    return '你已经不在这个房间里了，请返回大厅重新进入。';
+  }
+  if (normalized.includes('battle royale request failed')) {
+    return '乱斗请求失败，请稍后重试。';
+  }
+
+  return message;
+}
+
 function requireToken(): string {
   const token = useAuthStore.getState().token;
   if (!token) {
@@ -82,7 +119,7 @@ async function apiRequest<T>(path: string, options?: RequestInit): Promise<T> {
 
   const data = await response.json().catch(() => ({}));
   if (!response.ok) {
-    throw new Error(data.detail || data.message || 'Battle Royale request failed');
+    throw new Error(translateBattleRoyaleError(data.detail || data.message || 'Battle Royale request failed'));
   }
   return data as T;
 }

@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+import hashlib
 import threading
 from typing import Optional, Set
 
@@ -90,6 +91,11 @@ def needs_password_rehash(hashed_password: str) -> bool:
 def get_password_hash(password: str) -> str:
     """Hash a plaintext password using the current scheme."""
     return pwd_context.hash(password)
+
+
+def build_password_token_version(hashed_password: str) -> str:
+    """Build a compact password version fingerprint for token invalidation."""
+    return hashlib.sha256(hashed_password.encode("utf-8")).hexdigest()[:16]
 
 
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -> str:

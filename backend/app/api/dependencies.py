@@ -3,7 +3,7 @@ from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
 from app.core.database import get_db
-from app.core.security import decode_access_token
+from app.core.security import build_password_token_version, decode_access_token
 from app.models.user import User
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/auth/login")
@@ -38,6 +38,10 @@ async def get_current_user(
     user = db.query(User).filter(User.id == user_id).first()
     if user is None:
         raise credentials_exception
+
+    token_password_version = payload.get("pwdv")
+    if token_password_version != build_password_token_version(user.password_hash):
+        raise credentials_exception
     
     return user
 
@@ -67,4 +71,11 @@ async def get_optional_current_user(
             return None
     
     user = db.query(User).filter(User.id == user_id).first()
+    if user is None:
+        return None
+
+    token_password_version = payload.get("pwdv")
+    if token_password_version != build_password_token_version(user.password_hash):
+        return None
+
     return user

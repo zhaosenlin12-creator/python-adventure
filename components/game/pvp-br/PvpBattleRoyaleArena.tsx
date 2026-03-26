@@ -6,8 +6,10 @@ import { AlertTriangle, Shield, Swords, Trophy, Users, Wind } from 'lucide-react
 import MobileGameWrapper from '@/components/game/MobileGameWrapper';
 import BattleRoyaleQuizModal from '@/components/game/pvp-br/BattleRoyaleQuizModal';
 import { musicManager } from '@/lib/audio/musicManager';
+import { getPetVariantScale, getPetWorldYOffset } from '@/lib/config/petArtworkProfiles';
 import { getPetImageUrl } from '@/lib/config/petAssets';
 import { touchInputManager } from '@/lib/input/TouchInputManager';
+import { migratePetType } from '@/lib/pet/migration';
 import { buildBattleRoyaleQuiz, evaluateBattleRoyaleQuiz } from '@/lib/pvpBrQuestions';
 import { BattleRoyaleWebSocketClient } from '@/lib/services/pvpBattleRoyaleWebSocket';
 import { useAuthStore } from '@/store/authStore';
@@ -28,17 +30,17 @@ import type {
 
 const VIEW_WIDTH = 1280;
 const VIEW_HEIGHT = 720;
-const MAP_WIDTH = 4200;
-const MAP_HEIGHT = 1800;
-const FLOOR_Y = 1600;
+const MAP_WIDTH = 8600;
+const MAP_HEIGHT = 3200;
+const FLOOR_Y = 2860;
 const FIGHTER_WIDTH = 68;
 const FIGHTER_HEIGHT = 78;
 const FIGHTER_HP = 120;
 const GRAVITY = 2400;
-const MOVE_SPEED = 360;
-const JUMP_FORCE = 860;
-const DOUBLE_JUMP_FORCE = 820;
-const DASH_SPEED = 920;
+const MOVE_SPEED = 410;
+const JUMP_FORCE = 900;
+const DOUBLE_JUMP_FORCE = 860;
+const DASH_SPEED = 980;
 const DASH_DURATION_MS = 130;
 const DASH_COOLDOWN_MS = 1200;
 const ATTACK_RANGE = 96;
@@ -46,52 +48,118 @@ const ATTACK_DAMAGE = 16;
 const ATTACK_COOLDOWN_MS = 540;
 const ATTACK_ACTIVE_MS = 150;
 const SAFE_ZONE_DAMAGE = 13;
-const MATCH_MAX_MS = 300000;
+const MATCH_MAX_MS = 360000;
 const PICKUP_RESPAWN_MS = 14000;
 const SNAPSHOT_INTERVAL_MS = 90;
 const UI_SYNC_INTERVAL_MS = 120;
 
 const ZONE_PHASES = [
-  { until: 35000, radius: 1800 },
-  { until: 80000, radius: 1400 },
-  { until: 125000, radius: 1050 },
-  { until: 170000, radius: 760 },
-  { until: 220000, radius: 520 },
-  { until: 260000, radius: 340 },
-  { until: MATCH_MAX_MS, radius: 220 },
+  { until: 45000, radius: 3400 },
+  { until: 100000, radius: 2860 },
+  { until: 155000, radius: 2280 },
+  { until: 220000, radius: 1700 },
+  { until: 280000, radius: 1180 },
+  { until: 330000, radius: 760 },
+  { until: MATCH_MAX_MS, radius: 360 },
 ] as const;
 
-const SPAWN_POINTS = [
-  { x: 220, y: 1320 },
-  { x: 520, y: 1080 },
-  { x: 860, y: 1380 },
-  { x: 1120, y: 980 },
-  { x: 1500, y: 1220 },
-  { x: 1820, y: 860 },
-  { x: 2180, y: 1340 },
-  { x: 2520, y: 1080 },
-  { x: 2860, y: 780 },
-  { x: 3240, y: 1220 },
-  { x: 3520, y: 980 },
-  { x: 3880, y: 1360 },
-] as const;
+const PLATFORM_LAYOUT: BattleRoyalePlatform[] = [
+  { x: 220, y: 2570, width: 560, height: 28 },
+  { x: 920, y: 2350, width: 420, height: 28 },
+  { x: 1500, y: 2130, width: 360, height: 28 },
+  { x: 1960, y: 2490, width: 520, height: 28 },
+  { x: 2580, y: 2240, width: 420, height: 28 },
+  { x: 3100, y: 1820, width: 340, height: 28 },
+  { x: 3560, y: 1570, width: 300, height: 28 },
+  { x: 3950, y: 2350, width: 560, height: 28 },
+  { x: 4600, y: 2080, width: 360, height: 28 },
+  { x: 5030, y: 1830, width: 320, height: 28 },
+  { x: 5480, y: 2490, width: 520, height: 28 },
+  { x: 6120, y: 2250, width: 420, height: 28 },
+  { x: 6600, y: 1930, width: 360, height: 28 },
+  { x: 7050, y: 1660, width: 320, height: 28 },
+  { x: 7480, y: 2400, width: 520, height: 28 },
+  { x: 8060, y: 2140, width: 360, height: 28 },
+  { x: 1120, y: 1870, width: 280, height: 28 },
+  { x: 1670, y: 1610, width: 260, height: 28 },
+  { x: 2260, y: 1410, width: 260, height: 28 },
+  { x: 2820, y: 1180, width: 240, height: 28 },
+  { x: 4700, y: 1390, width: 280, height: 28 },
+  { x: 5280, y: 1180, width: 240, height: 28 },
+  { x: 5860, y: 1490, width: 280, height: 28 },
+  { x: 6880, y: 1320, width: 300, height: 28 },
+  { x: 7520, y: 1020, width: 240, height: 28 },
+];
+
+const PLATFORM_SPAWN_INDICES = [0, 1, 3, 4, 6, 7, 8, 10, 11, 13, 14, 15, 16, 17, 18, 20, 21, 23, 24];
+const PICKUP_PLATFORM_INDICES = [0, 2, 4, 5, 7, 8, 10, 11, 12, 14, 16, 18, 19, 20, 22, 24];
+
+const PRIMARY_SPAWN_POINTS = PLATFORM_SPAWN_INDICES.map((index) => {
+  const platform = PLATFORM_LAYOUT[index];
+  return {
+    x: platform.x + platform.width / 2 - FIGHTER_WIDTH / 2,
+    y: platform.y - 94,
+  };
+});
+
+const SECONDARY_SPAWN_POINTS = [
+  { x: 180, y: FLOOR_Y - 96 },
+  { x: 1630, y: FLOOR_Y - 96 },
+  { x: 3300, y: FLOOR_Y - 96 },
+  { x: 5000, y: FLOOR_Y - 96 },
+  { x: 6750, y: FLOOR_Y - 96 },
+  { x: 8220, y: FLOOR_Y - 96 },
+];
+
+const SPAWN_POINTS = [...PRIMARY_SPAWN_POINTS, ...SECONDARY_SPAWN_POINTS];
 
 const PICKUP_SPAWNS = [
-  { x: 320, y: 1440 },
-  { x: 650, y: 1320 },
-  { x: 980, y: 1220 },
-  { x: 1220, y: 920 },
-  { x: 1540, y: 1440 },
-  { x: 1800, y: 1120 },
-  { x: 2050, y: 770 },
-  { x: 2310, y: 1450 },
-  { x: 2590, y: 1210 },
-  { x: 2860, y: 880 },
-  { x: 3140, y: 1400 },
-  { x: 3400, y: 1100 },
-  { x: 3720, y: 1450 },
-  { x: 3960, y: 1200 },
-] as const;
+  ...PICKUP_PLATFORM_INDICES.map((index) => {
+    const platform = PLATFORM_LAYOUT[index];
+    return {
+      x: platform.x + platform.width / 2,
+      y: platform.y - 34,
+    };
+  }),
+  { x: 640, y: FLOOR_Y - 44 },
+  { x: 2410, y: FLOOR_Y - 44 },
+  { x: 4300, y: FLOOR_Y - 44 },
+  { x: 6210, y: FLOOR_Y - 44 },
+  { x: 8010, y: FLOOR_Y - 44 },
+];
+
+const BACKGROUND_ORBS = [
+  { x: 520, y: 260, radius: 130, color: 'rgba(103, 232, 249, 0.08)' },
+  { x: 1680, y: 420, radius: 190, color: 'rgba(251, 191, 36, 0.07)' },
+  { x: 3020, y: 300, radius: 160, color: 'rgba(45, 212, 191, 0.07)' },
+  { x: 4460, y: 360, radius: 210, color: 'rgba(125, 211, 252, 0.07)' },
+  { x: 5930, y: 280, radius: 170, color: 'rgba(244, 114, 182, 0.06)' },
+  { x: 7440, y: 340, radius: 190, color: 'rgba(165, 180, 252, 0.06)' },
+];
+
+const FLOATING_CLOUDS = [
+  { x: 420, y: 280, width: 220, height: 72 },
+  { x: 1360, y: 460, width: 260, height: 86 },
+  { x: 2660, y: 240, width: 210, height: 68 },
+  { x: 4210, y: 430, width: 280, height: 92 },
+  { x: 5660, y: 250, width: 240, height: 80 },
+  { x: 7080, y: 400, width: 260, height: 86 },
+  { x: 8120, y: 300, width: 220, height: 72 },
+];
+
+const GROUND_PROPS = [
+  { x: 380, stem: '#94d2bd', cap: '#fda4af', size: 22 },
+  { x: 940, stem: '#93c5fd', cap: '#fcd34d', size: 18 },
+  { x: 1710, stem: '#86efac', cap: '#f9a8d4', size: 24 },
+  { x: 2480, stem: '#a7f3d0', cap: '#fdba74', size: 20 },
+  { x: 3370, stem: '#93c5fd', cap: '#c4b5fd', size: 22 },
+  { x: 4230, stem: '#86efac', cap: '#fcd34d', size: 18 },
+  { x: 5010, stem: '#67e8f9', cap: '#fda4af', size: 24 },
+  { x: 5820, stem: '#a7f3d0', cap: '#fdba74', size: 20 },
+  { x: 6620, stem: '#93c5fd', cap: '#c4b5fd', size: 22 },
+  { x: 7390, stem: '#86efac', cap: '#fcd34d', size: 18 },
+  { x: 8140, stem: '#67e8f9', cap: '#f9a8d4', size: 24 },
+];
 
 const PICKUP_ROTATION: BrPickupType[] = [
   'med_kit',
@@ -156,19 +224,7 @@ function canDrawImage(image: HTMLImageElement | undefined): image is HTMLImageEl
 function createPlatforms(): BattleRoyalePlatform[] {
   return [
     { x: 0, y: FLOOR_Y, width: MAP_WIDTH, height: MAP_HEIGHT - FLOOR_Y },
-    { x: 180, y: 1410, width: 420, height: 22 },
-    { x: 620, y: 1300, width: 360, height: 22 },
-    { x: 990, y: 1180, width: 280, height: 22 },
-    { x: 1280, y: 960, width: 260, height: 22 },
-    { x: 1530, y: 1420, width: 460, height: 22 },
-    { x: 1910, y: 1120, width: 300, height: 22 },
-    { x: 2110, y: 780, width: 250, height: 22 },
-    { x: 2360, y: 1420, width: 440, height: 22 },
-    { x: 2670, y: 1210, width: 320, height: 22 },
-    { x: 2900, y: 900, width: 280, height: 22 },
-    { x: 3180, y: 1420, width: 420, height: 22 },
-    { x: 3480, y: 1110, width: 300, height: 22 },
-    { x: 3740, y: 1260, width: 280, height: 22 },
+    ...PLATFORM_LAYOUT,
   ];
 }
 
@@ -220,6 +276,19 @@ function fighterIdForUser(userId: number): string {
   return `human-${userId}`;
 }
 
+function buildSpawnQueue() {
+  const shuffle = (points: Array<{ x: number; y: number }>) => {
+    const queue = [...points];
+    for (let index = queue.length - 1; index > 0; index -= 1) {
+      const swapIndex = Math.floor(Math.random() * (index + 1));
+      [queue[index], queue[swapIndex]] = [queue[swapIndex], queue[index]];
+    }
+    return queue;
+  };
+
+  return [...shuffle(PRIMARY_SPAWN_POINTS), ...shuffle(SECONDARY_SPAWN_POINTS)];
+}
+
 function pickBotSkills(difficulty: BattleRoyaleDifficulty): string[] {
   if (difficulty === 'hard') return ['double_jump', 'dash', 'glide', 'wall_jump'];
   if (difficulty === 'medium') return ['double_jump', 'dash', 'glide'];
@@ -228,10 +297,11 @@ function pickBotSkills(difficulty: BattleRoyaleDifficulty): string[] {
 
 function createInitialFighters(room: BattleRoyaleRoom): Map<string, InternalFighter> {
   const fighters = new Map<string, InternalFighter>();
+  const spawnQueue = buildSpawnQueue();
   let spawnIndex = 0;
 
   room.humans.forEach((human) => {
-    const spawn = SPAWN_POINTS[spawnIndex % SPAWN_POINTS.length];
+    const spawn = spawnQueue[spawnIndex % spawnQueue.length];
     spawnIndex += 1;
     fighters.set(fighterIdForUser(human.user_id), {
       id: fighterIdForUser(human.user_id),
@@ -279,7 +349,7 @@ function createInitialFighters(room: BattleRoyaleRoom): Map<string, InternalFigh
   });
 
   room.bots.forEach((bot) => {
-    const spawn = SPAWN_POINTS[spawnIndex % SPAWN_POINTS.length];
+    const spawn = spawnQueue[spawnIndex % spawnQueue.length];
     spawnIndex += 1;
     fighters.set(bot.id, {
       id: bot.id,
@@ -346,7 +416,9 @@ function distanceToZone(fighter: InternalFighter, zone: ReturnType<typeof getZon
 }
 
 function spawnPositionForRevive(zone: ReturnType<typeof getZoneState>): { x: number; y: number } {
-  const safeSpawn = SPAWN_POINTS.find((point) => Math.hypot(point.x - zone.centerX, point.y - zone.centerY) < zone.radius - 120);
+  const safeSpawn = SPAWN_POINTS.find(
+    (point) => Math.hypot(point.x - zone.centerX, point.y - zone.centerY) < zone.radius - 160,
+  );
   return safeSpawn ?? SPAWN_POINTS[0];
 }
 
@@ -419,6 +491,63 @@ function pickupLabel(type: BrPickupType): string {
   }
 }
 
+function selectZoneReturnPoint(zone: ReturnType<typeof getZoneState>) {
+  const inZonePoints = SPAWN_POINTS.filter(
+    (point) => Math.hypot(point.x - zone.centerX, point.y - zone.centerY) < zone.radius - 180,
+  );
+  if (inZonePoints.length > 0) {
+    return inZonePoints.sort(
+      (left, right) =>
+        Math.hypot(left.x - zone.centerX, left.y - zone.centerY) -
+        Math.hypot(right.x - zone.centerX, right.y - zone.centerY),
+    )[0];
+  }
+
+  return {
+    x: zone.centerX - FIGHTER_WIDTH / 2,
+    y: zone.centerY - 120,
+  };
+}
+
+function deriveAmbientRoomNotice(snapshot: BattleRoyaleSnapshot, localFighterId: string): string {
+  const localFighter = snapshot.fighters.find((fighter) => fighter.id === localFighterId) ?? null;
+  const aliveCount = snapshot.fighters.filter((fighter) => fighter.alive).length;
+  const shrinkSeconds = Math.max(0, Math.ceil((snapshot.zone.nextShrinkAtMs - snapshot.elapsedMs) / 1000));
+
+  if (snapshot.elapsedMs < 5000) {
+    return '已投放大地图，先搜防具和伤害增益，再找近处对手。';
+  }
+
+  if (localFighter && !localFighter.alive && !localFighter.hasRevived) {
+    return '你已倒下，答对三题后可以半血复活一次。';
+  }
+
+  if (localFighter) {
+    const localDistanceToZone = Math.hypot(
+      localFighter.x + FIGHTER_WIDTH / 2 - snapshot.zone.centerX,
+      localFighter.y + FIGHTER_HEIGHT / 2 - snapshot.zone.centerY,
+    );
+
+    if (localDistanceToZone > snapshot.zone.radius + 120) {
+      return '你已经在安全圈外，正在持续掉血，立刻回圈。';
+    }
+
+    if (localFighter.hp < localFighter.maxHp * 0.35) {
+      return '血量偏低，优先寻找医疗包、护盾核或防弹衣。';
+    }
+  }
+
+  if (aliveCount <= 3) {
+    return '决赛圈已形成，注意高台落点和冲击波先手。';
+  }
+
+  if (snapshot.zone.phase >= 5) {
+    return `第 ${snapshot.zone.phase} 次缩圈中，${shrinkSeconds}s 后会继续收缩。`;
+  }
+
+  return `战场仍在扩散混战，${shrinkSeconds}s 后缩圈，尽量先占据更高的平台。`;
+}
+
 function aiInputForFighter(
   fighter: InternalFighter,
   fighters: Map<string, InternalFighter>,
@@ -426,43 +555,90 @@ function aiInputForFighter(
   zone: ReturnType<typeof getZoneState>,
 ): BattleRoyaleInputPayload {
   const candidates = Array.from(fighters.values()).filter((target) => target.id !== fighter.id && target.alive);
-  const nearestEnemy = candidates.sort(
-    (left, right) =>
-      Math.hypot(left.x - fighter.x, left.y - fighter.y) - Math.hypot(right.x - fighter.x, right.y - fighter.y),
-  )[0];
+  const nearestEnemy = candidates
+    .sort((left, right) => {
+      const leftDistance = Math.hypot(left.x - fighter.x, left.y - fighter.y);
+      const rightDistance = Math.hypot(right.x - fighter.x, right.y - fighter.y);
+      const leftScore = leftDistance - left.hp * 0.8;
+      const rightScore = rightDistance - right.hp * 0.8;
+      return leftScore - rightScore;
+    })[0];
 
   const activePickup = pickups
     .filter((pickup) => pickup.active)
-    .sort(
-      (left, right) =>
-        Math.hypot(left.x - fighter.x, left.y - fighter.y) - Math.hypot(right.x - fighter.x, right.y - fighter.y),
-    )[0];
+    .map((pickup) => {
+      const distance = Math.hypot(pickup.x - fighter.x, pickup.y - fighter.y);
+      let score = 0;
 
-  const prefersLoot =
-    fighter.difficulty !== 'easy' &&
+      if (pickup.type === 'med_kit') score = fighter.hp < 70 ? 1.5 : 0.45;
+      if (pickup.type === 'shield_core') score = fighter.shield < 22 ? 1.2 : 0.55;
+      if (pickup.type === 'armor_vest') score = fighter.armor < 18 ? 1.05 : 0.42;
+      if (pickup.type === 'damage_claw') score = 0.85;
+      if (pickup.type === 'wind_boost') score = fighter.difficulty === 'easy' ? 0.4 : 0.95;
+      if (pickup.type === 'shockwave_charge') score = fighter.specialCharges <= 0 ? 1.1 : 0.35;
+
+      return {
+        pickup,
+        score: score - distance / 820,
+      };
+    })
+    .sort((left, right) => right.score - left.score)[0];
+
+  const isOutsideZone = distanceToZone(fighter, zone) > zone.radius - 120;
+  const recoveryTarget = selectZoneReturnPoint(zone);
+  const wantsLoot = Boolean(
     activePickup &&
-    Math.hypot(activePickup.x - fighter.x, activePickup.y - fighter.y) < 320 &&
-    fighter.hp > 28;
+      fighter.difficulty !== 'easy' &&
+      activePickup.score > 0.18 &&
+      Math.hypot(activePickup.pickup.x - fighter.x, activePickup.pickup.y - fighter.y) < 520 &&
+      fighter.hp > 20,
+  );
 
-  const targetX = prefersLoot ? activePickup.x : nearestEnemy?.x ?? zone.centerX;
-  const targetY = prefersLoot ? activePickup.y : nearestEnemy?.y ?? zone.centerY;
+  const targetX = isOutsideZone
+    ? recoveryTarget.x
+    : wantsLoot
+      ? activePickup!.pickup.x
+      : nearestEnemy?.x ?? zone.centerX;
+  const targetY = isOutsideZone
+    ? recoveryTarget.y
+    : wantsLoot
+      ? activePickup!.pickup.y
+      : nearestEnemy?.y ?? zone.centerY;
+
   const dx = targetX - fighter.x;
   const dy = targetY - fighter.y;
-  const jump = dy < -80 && (fighter.onGround || fighter.movementSkills.includes('double_jump'));
+  const canSecondJump = fighter.movementSkills.includes('double_jump') && fighter.jumpsUsed < 1;
+  const shouldClimb = dy < -72 && (fighter.onGround || canSecondJump);
+  const shouldHopForward =
+    fighter.onGround &&
+    Math.abs(dx) > 140 &&
+    Math.abs(dx) < 420 &&
+    (dy < 120 || (isOutsideZone && Math.abs(dx) > 220));
+  const aggressiveRange = fighter.difficulty === 'hard' ? ATTACK_RANGE + 16 : ATTACK_RANGE;
+  const shouldDash =
+    fighter.movementSkills.includes('dash') &&
+    fighter.dashCooldownMs <= 0 &&
+    fighter.onGround &&
+    Math.abs(dx) > (fighter.difficulty === 'easy' ? 360 : 220) &&
+    Math.abs(dx) < 760;
 
   return {
-    left: dx < -18,
-    right: dx > 18,
-    jump,
-    dash:
-      fighter.difficulty !== 'easy' &&
-      fighter.onGround &&
-      Math.abs(dx) > 220 &&
-      Math.abs(dx) < 500 &&
-      fighter.movementSkills.includes('dash'),
-    attack: !!nearestEnemy && Math.abs(nearestEnemy.x - fighter.x) < ATTACK_RANGE && Math.abs(nearestEnemy.y - fighter.y) < 90,
-    skill: fighter.specialCharges > 0 && !!nearestEnemy && Math.abs(nearestEnemy.x - fighter.x) < 170,
-    guard: fighter.hp < 35 || (distanceToZone(fighter, zone) > zone.radius + 80 && fighter.shield <= 0),
+    left: dx < -24,
+    right: dx > 24,
+    jump: shouldClimb || shouldHopForward,
+    dash: shouldDash,
+    attack:
+      !!nearestEnemy &&
+      Math.abs(nearestEnemy.x - fighter.x) < aggressiveRange &&
+      Math.abs(nearestEnemy.y - fighter.y) < 118,
+    skill:
+      fighter.specialCharges > 0 &&
+      !!nearestEnemy &&
+      Math.abs(nearestEnemy.x - fighter.x) < 240 &&
+      Math.abs(nearestEnemy.y - fighter.y) < 140,
+    guard:
+      (!!nearestEnemy && fighter.hp < (fighter.difficulty === 'hard' ? 48 : 36) && Math.abs(nearestEnemy.x - fighter.x) < 150) ||
+      (isOutsideZone && fighter.shield <= 0),
   };
 }
 
@@ -488,6 +664,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   const imageCacheRef = useRef<Record<string, HTMLImageElement>>({});
   const matchEndedRef = useRef(false);
   const finishReportedRef = useRef(false);
+  const roomNoticeLockUntilRef = useRef(0);
 
   const [snapshot, setSnapshot] = useState<BattleRoyaleSnapshot>(snapshotRef.current);
   const [quizOffer, setQuizOffer] = useState<BattleRoyaleQuizOffer | null>(null);
@@ -503,10 +680,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   const resetBattleRoyaleStore = usePvpBattleRoyaleStore((state) => state.reset);
   const platforms = useMemo(() => createPlatforms(), []);
 
-  const liveSnapshot = snapshotRef.current;
-  const localFighterView = snapshot.fighters.find((fighter) => fighter.id === localFighterId) ?? null;
-  const aliveCount = snapshot.fighters.filter((fighter) => fighter.alive).length;
-  const elapsedSeconds = Math.floor(snapshot.elapsedMs / 1000);
+  const liveSnapshot = snapshot;
 
   useEffect(() => {
     musicManager.switchBGM('pvp');
@@ -598,7 +772,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         if (message.type === 'br_quiz_result' && message.payload) {
           const payload = message.payload as { fighterId: string; success: boolean };
           resolveReviveOutcome(payload.fighterId, payload.success);
-          setRoomNotice(payload.success ? '答题成功，半血复活' : '答题失败，本局出局');
+          pushRoomNotice(payload.success ? '答题成功，半血复活' : '答题失败，本局出局', 4200);
           return;
         }
 
@@ -628,7 +802,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         }
 
         if (message.type === 'br_room_closed') {
-          setRoomNotice(message.reason || '房间已关闭');
+          pushRoomNotice(message.reason || '房间已关闭', 5000);
           setTimeout(() => {
             resetBattleRoyaleStore();
             onExit();
@@ -646,6 +820,24 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       setWsConnected(false);
     };
   }, [currentUserId, isHost, localFighterId, onExit, resetBattleRoyaleStore, room.id, setWsConnected]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const debugWindow = window as Window & {
+        __brSnapshot?: BattleRoyaleSnapshot;
+        __brRoomNotice?: string;
+      };
+      debugWindow.__brSnapshot = snapshot;
+      debugWindow.__brRoomNotice = roomNotice;
+    }
+
+    if (result || quizOffer || Date.now() < roomNoticeLockUntilRef.current) {
+      return;
+    }
+
+    const nextNotice = deriveAmbientRoomNotice(snapshot, localFighterId);
+    setRoomNotice((current) => (current === nextNotice ? current : nextNotice));
+  }, [localFighterId, quizOffer, result, roomNotice, snapshot]);
 
   const readLocalInput = (): BattleRoyaleInputPayload => {
     const touchState = touchInputManager.getState();
@@ -670,6 +862,11 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         createdAt: Date.now(),
       },
     ].slice(-8);
+  };
+
+  const pushRoomNotice = (message: string, lockMs = 2600) => {
+    roomNoticeLockUntilRef.current = Date.now() + lockMs;
+    setRoomNotice(message);
   };
 
   const reviveFighter = (fighterId: string) => {
@@ -990,7 +1187,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       revived: Boolean(local?.hasRevived),
       survivedMs: snapshotRef.current.elapsedMs,
     });
-    setRoomNotice('本局已结算');
+    pushRoomNotice('本局已结算', 120000);
   };
 
   const maybeEndMatch = async () => {
@@ -1042,42 +1239,138 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
 
     ctx.clearRect(0, 0, VIEW_WIDTH, VIEW_HEIGHT);
 
-    const localView = snapshotRef.current.fighters.find((fighter) => fighter.id === localFighterId);
-    const cameraX = clamp((localView?.x ?? zoneCenter.x) - VIEW_WIDTH / 2, 0, MAP_WIDTH - VIEW_WIDTH);
-    const cameraY = clamp((localView?.y ?? zoneCenter.y) - VIEW_HEIGHT / 2, 0, MAP_HEIGHT - VIEW_HEIGHT);
+    const currentSnapshot = snapshotRef.current;
+    const currentLocalView = currentSnapshot.fighters.find((fighter) => fighter.id === localFighterId);
+    const currentAliveCount = currentSnapshot.fighters.filter((fighter) => fighter.alive).length;
+    const currentElapsedSeconds = Math.floor(currentSnapshot.elapsedMs / 1000);
+    const cameraX = clamp((currentLocalView?.x ?? zoneCenter.x) - VIEW_WIDTH / 2, 0, MAP_WIDTH - VIEW_WIDTH);
+    const cameraY = clamp((currentLocalView?.y ?? zoneCenter.y) - VIEW_HEIGHT / 2, 0, MAP_HEIGHT - VIEW_HEIGHT);
 
     const gradient = ctx.createLinearGradient(0, 0, 0, VIEW_HEIGHT);
-    gradient.addColorStop(0, '#071228');
-    gradient.addColorStop(1, '#02111f');
+    gradient.addColorStop(0, '#102041');
+    gradient.addColorStop(0.55, '#163459');
+    gradient.addColorStop(1, '#1d3752');
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, VIEW_WIDTH, VIEW_HEIGHT);
+
+    BACKGROUND_ORBS.forEach((orb) => {
+      const screenX = orb.x - cameraX * 0.22;
+      const screenY = orb.y - cameraY * 0.08;
+      if (screenX < -orb.radius || screenX > VIEW_WIDTH + orb.radius) return;
+
+      ctx.fillStyle = orb.color;
+      ctx.beginPath();
+      ctx.arc(screenX, screenY, orb.radius, 0, Math.PI * 2);
+      ctx.fill();
+    });
+
+    FLOATING_CLOUDS.forEach((cloud) => {
+      const screenX = cloud.x - cameraX * 0.34;
+      const screenY = cloud.y - cameraY * 0.05;
+      if (screenX < -cloud.width || screenX > VIEW_WIDTH + cloud.width) return;
+
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+      ctx.beginPath();
+      ctx.ellipse(screenX, screenY, cloud.width * 0.3, cloud.height * 0.46, 0, 0, Math.PI * 2);
+      ctx.ellipse(screenX + cloud.width * 0.18, screenY - cloud.height * 0.08, cloud.width * 0.24, cloud.height * 0.34, 0, 0, Math.PI * 2);
+      ctx.ellipse(screenX - cloud.width * 0.18, screenY - cloud.height * 0.02, cloud.width * 0.22, cloud.height * 0.3, 0, 0, Math.PI * 2);
+      ctx.fill();
+    });
 
     ctx.save();
     ctx.translate(-cameraX, -cameraY);
 
-    ctx.fillStyle = '#17364d';
-    ctx.fillRect(0, FLOOR_Y, MAP_WIDTH, MAP_HEIGHT - FLOOR_Y);
-
-    platforms.forEach((platform, index) => {
-      ctx.fillStyle = index % 2 === 0 ? '#24566e' : '#1a485f';
-      ctx.fillRect(platform.x, platform.y, platform.width, platform.height);
-      ctx.fillStyle = 'rgba(148, 163, 184, 0.16)';
-      ctx.fillRect(platform.x, platform.y, platform.width, 8);
+    [
+      { baseY: FLOOR_Y - 360, amplitude: 90, color: 'rgba(29, 78, 80, 0.26)', phase: 0.2 },
+      { baseY: FLOOR_Y - 250, amplitude: 74, color: 'rgba(45, 95, 105, 0.28)', phase: 1.4 },
+      { baseY: FLOOR_Y - 150, amplitude: 58, color: 'rgba(58, 112, 112, 0.24)', phase: 2.1 },
+    ].forEach((band) => {
+      ctx.beginPath();
+      ctx.moveTo(0, MAP_HEIGHT);
+      ctx.lineTo(0, band.baseY);
+      for (let x = 0; x <= MAP_WIDTH; x += 720) {
+        const y = band.baseY + Math.sin(x / 640 + band.phase) * band.amplitude;
+        ctx.lineTo(x, y);
+      }
+      ctx.lineTo(MAP_WIDTH, MAP_HEIGHT);
+      ctx.closePath();
+      ctx.fillStyle = band.color;
+      ctx.fill();
     });
 
-    const zone = snapshotRef.current.zone;
+    ctx.fillStyle = '#385d6f';
+    ctx.fillRect(0, FLOOR_Y, MAP_WIDTH, MAP_HEIGHT - FLOOR_Y);
+    ctx.fillStyle = '#7bd8b0';
+    ctx.fillRect(0, FLOOR_Y, MAP_WIDTH, 24);
+    ctx.fillStyle = 'rgba(255,255,255,0.12)';
+    ctx.fillRect(0, FLOOR_Y + 6, MAP_WIDTH, 6);
+
+    GROUND_PROPS.forEach((prop) => {
+      if (prop.x < cameraX - 80 || prop.x > cameraX + VIEW_WIDTH + 80) {
+        return;
+      }
+
+      const baseY = FLOOR_Y - 4;
+      ctx.strokeStyle = prop.stem;
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.moveTo(prop.x, baseY);
+      ctx.lineTo(prop.x, baseY - prop.size);
+      ctx.stroke();
+
+      ctx.fillStyle = prop.cap;
+      ctx.beginPath();
+      ctx.ellipse(prop.x, baseY - prop.size - 4, prop.size * 0.55, prop.size * 0.34, 0, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = 'rgba(255,255,255,0.25)';
+      ctx.beginPath();
+      ctx.arc(prop.x - 4, baseY - prop.size - 8, 3, 0, Math.PI * 2);
+      ctx.arc(prop.x + 5, baseY - prop.size - 5, 2.5, 0, Math.PI * 2);
+      ctx.fill();
+    });
+
+    PLATFORM_LAYOUT.forEach((platform, index) => {
+      if (platform.x + platform.width < cameraX - 120 || platform.x > cameraX + VIEW_WIDTH + 120) {
+        return;
+      }
+
+      ctx.beginPath();
+      ctx.roundRect(platform.x, platform.y, platform.width, platform.height, 14);
+      ctx.fillStyle = index % 2 === 0 ? '#4b7d88' : '#436f82';
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.roundRect(platform.x, platform.y - 6, platform.width, 12, 10);
+      ctx.fillStyle = index % 3 === 0 ? '#8fe3bf' : '#7dd7b1';
+      ctx.fill();
+
+      ctx.fillStyle = 'rgba(255,255,255,0.12)';
+      ctx.fillRect(platform.x + 12, platform.y + 6, platform.width - 24, 4);
+
+      if (index % 4 === 0) {
+        ctx.strokeStyle = 'rgba(110, 231, 183, 0.18)';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(platform.x + platform.width * 0.32, platform.y + platform.height);
+        ctx.lineTo(platform.x + platform.width * 0.32, platform.y + platform.height + 24);
+        ctx.stroke();
+      }
+    });
+
+    const zone = currentSnapshot.zone;
     ctx.save();
-    ctx.fillStyle = 'rgba(29, 78, 216, 0.12)';
+    ctx.fillStyle = 'rgba(56, 189, 248, 0.1)';
     ctx.beginPath();
     ctx.arc(zone.centerX, zone.centerY, zone.radius, 0, Math.PI * 2);
     ctx.fill();
-    ctx.strokeStyle = 'rgba(96, 165, 250, 0.65)';
+    ctx.strokeStyle = 'rgba(147, 197, 253, 0.72)';
     ctx.lineWidth = 6;
     ctx.beginPath();
     ctx.arc(zone.centerX, zone.centerY, zone.radius, 0, Math.PI * 2);
     ctx.stroke();
 
-    ctx.fillStyle = 'rgba(239, 68, 68, 0.16)';
+    ctx.fillStyle = 'rgba(248, 113, 113, 0.14)';
     ctx.fillRect(0, 0, MAP_WIDTH, MAP_HEIGHT);
     ctx.globalCompositeOperation = 'destination-out';
     ctx.beginPath();
@@ -1085,7 +1378,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     ctx.fill();
     ctx.restore();
 
-    snapshotRef.current.pickups.forEach((pickup) => {
+    currentSnapshot.pickups.forEach((pickup) => {
       if (!pickup.active) return;
       const colors: Record<BrPickupType, string> = {
         med_kit: '#10b981',
@@ -1095,6 +1388,20 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         wind_boost: '#22d3ee',
         shockwave_charge: '#a855f7',
       };
+
+      const symbols: Record<BrPickupType, string> = {
+        med_kit: '补',
+        armor_vest: '甲',
+        shield_core: '盾',
+        damage_claw: '爪',
+        wind_boost: '速',
+        shockwave_charge: '波',
+      };
+
+      ctx.beginPath();
+      ctx.arc(pickup.x, pickup.y, 18, 0, Math.PI * 2);
+      ctx.fillStyle = `${colors[pickup.type]}33`;
+      ctx.fill();
       ctx.fillStyle = colors[pickup.type];
       ctx.beginPath();
       ctx.arc(pickup.x, pickup.y, 14, 0, Math.PI * 2);
@@ -1102,18 +1409,31 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       ctx.fillStyle = 'rgba(255,255,255,0.9)';
       ctx.font = '12px sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText(pickupLabel(pickup.type).slice(0, 2), pickup.x, pickup.y + 4);
+      ctx.fillText(symbols[pickup.type], pickup.x, pickup.y + 4);
     });
 
-    snapshotRef.current.fighters.forEach((fighter) => {
+    currentSnapshot.fighters.forEach((fighter) => {
       const cacheKey = `${fighter.petType}-${fighter.petStage}`;
       const image = imageCacheRef.current[cacheKey];
-      const width = FIGHTER_WIDTH + 16;
-      const height = FIGHTER_HEIGHT + 18;
+      const resolvedType = migratePetType(fighter.petType as any);
+      const fighterScale = Math.min(getPetVariantScale(resolvedType, 'world') * 1.08, 1.42);
+      const width = Math.round((FIGHTER_WIDTH + 18) * fighterScale);
+      const height = Math.round((FIGHTER_HEIGHT + 18) * fighterScale);
+      const yOffset = getPetWorldYOffset(resolvedType);
+      const spriteX = fighter.x + FIGHTER_WIDTH / 2 - width / 2;
+      const spriteY = fighter.y + yOffset - (height - FIGHTER_HEIGHT) / 2 - 6;
 
       ctx.fillStyle = 'rgba(15, 23, 42, 0.38)';
       ctx.beginPath();
-      ctx.ellipse(fighter.x + FIGHTER_WIDTH / 2, fighter.y + FIGHTER_HEIGHT + 10, 26, 12, 0, 0, Math.PI * 2);
+      ctx.ellipse(
+        fighter.x + FIGHTER_WIDTH / 2,
+        fighter.y + FIGHTER_HEIGHT + 10,
+        Math.max(24, width * 0.32),
+        Math.max(11, height * 0.12),
+        0,
+        0,
+        Math.PI * 2,
+      );
       ctx.fill();
 
       if (!fighter.alive) {
@@ -1123,11 +1443,11 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       if (canDrawImage(image)) {
         ctx.save();
         if (fighter.facing === -1) {
-          ctx.translate(fighter.x + width / 2, fighter.y + height / 2);
+          ctx.translate(fighter.x + FIGHTER_WIDTH / 2, spriteY + height / 2);
           ctx.scale(-1, 1);
           ctx.drawImage(image, -width / 2, -height / 2, width, height);
         } else {
-          ctx.drawImage(image, fighter.x - 8, fighter.y - 8, width, height);
+          ctx.drawImage(image, spriteX, spriteY, width, height);
         }
         ctx.restore();
       } else {
@@ -1162,6 +1482,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
 
     ctx.restore();
 
+    ctx.textAlign = 'left';
     ctx.fillStyle = 'rgba(2, 6, 23, 0.66)';
     ctx.strokeStyle = 'rgba(148, 163, 184, 0.16)';
     ctx.lineWidth = 1;
@@ -1174,11 +1495,11 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     ctx.fillText('宠物生存乱斗', 38, 48);
     ctx.font = '13px sans-serif';
     ctx.fillStyle = '#cbd5e1';
-    ctx.fillText(`剩余 ${aliveCount} / ${snapshotRef.current.fighters.length}`, 38, 76);
-    ctx.fillText(`缩圈阶段 ${snapshotRef.current.zone.phase}`, 38, 98);
-    ctx.fillText(`用时 ${elapsedSeconds}s`, 38, 120);
+    ctx.fillText(`剩余 ${currentAliveCount} / ${currentSnapshot.fighters.length}`, 38, 76);
+    ctx.fillText(`缩圈阶段 ${currentSnapshot.zone.phase}`, 38, 98);
+    ctx.fillText(`用时 ${currentElapsedSeconds}s`, 38, 120);
 
-    if (localFighterView) {
+    if (currentLocalView) {
       ctx.beginPath();
       ctx.roundRect(VIEW_WIDTH - 300, 18, 280, 132, 20);
       ctx.fillStyle = 'rgba(2, 6, 23, 0.66)';
@@ -1187,12 +1508,12 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       ctx.stroke();
       ctx.fillStyle = '#f8fafc';
       ctx.font = 'bold 18px sans-serif';
-      ctx.fillText(localFighterView.name, VIEW_WIDTH - 280, 46);
+      ctx.fillText(currentLocalView.name, VIEW_WIDTH - 280, 46);
       ctx.font = '13px sans-serif';
       ctx.fillStyle = '#cbd5e1';
-      ctx.fillText(`HP ${Math.round(localFighterView.hp)}/${localFighterView.maxHp}`, VIEW_WIDTH - 280, 72);
-      ctx.fillText(`护盾 ${Math.round(localFighterView.shield)}  护甲 ${Math.round(localFighterView.armor)}`, VIEW_WIDTH - 280, 94);
-      ctx.fillText(`击败 ${localFighterView.kills}  冲击波 ${localFighterView.specialCharges}`, VIEW_WIDTH - 280, 116);
+      ctx.fillText(`HP ${Math.round(currentLocalView.hp)}/${currentLocalView.maxHp}`, VIEW_WIDTH - 280, 72);
+      ctx.fillText(`护盾 ${Math.round(currentLocalView.shield)}  护甲 ${Math.round(currentLocalView.armor)}`, VIEW_WIDTH - 280, 94);
+      ctx.fillText(`击败 ${currentLocalView.kills}  冲击波 ${currentLocalView.specialCharges}`, VIEW_WIDTH - 280, 116);
     }
   };
 
@@ -1201,12 +1522,11 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       try {
         if (matchEndedRef.current) {
           drawFrame();
-          animationRef.current = requestAnimationFrame(loop);
           return;
         }
 
         const previous = lastFrameTimeRef.current || time;
-        const deltaMs = Math.min(time - previous, 32);
+        const deltaMs = Math.min(time - previous, 100);
         const deltaSeconds = deltaMs / 1000;
         lastFrameTimeRef.current = time;
         elapsedMsRef.current += deltaMs;
@@ -1272,7 +1592,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         drawFrame();
       } catch (error) {
         console.error('[PvpBattleRoyaleArena] Frame loop failed:', error);
-        setRoomNotice('战场渲染出现波动，系统正在自动恢复。');
+        pushRoomNotice('战场渲染出现波动，系统正在自动恢复。', 4200);
       } finally {
         animationRef.current = requestAnimationFrame(loop);
       }

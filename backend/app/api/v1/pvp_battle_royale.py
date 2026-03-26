@@ -173,7 +173,7 @@ def build_bot_entry(difficulty: Difficulty) -> Dict[str, Any]:
         "difficulty": difficulty,
         "pet_type": random.choice(AI_PET_POOL),
         "pet_name": random.choice(["Blitz", "Miso", "Rex", "Nova", "Rune", "Puff", "Gale", "Quartz"]),
-        "pet_stage": random.choice([3, 5, 7]),
+        "pet_stage": random.choice([2, 3, 4]),
         "joined_at": iso_now(),
     }
 

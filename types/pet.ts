@@ -106,8 +106,8 @@ const PET_CATALOG: Record<Exclude<PetType, 'egg'>, PetCatalogEntry> = {
   },
   algo_bunny: {
     style: 'cute',
-    displayName: '垂耳兔',
-    description: '软萌轻盈，幼态和高阶形态都很讨喜，陪伴感很强。',
+    displayName: '云团灰兔',
+    description: '灰白毛团层次更清晰，轮廓不发虚，挂件、小屋和图鉴里都更耐看。',
     icon: '🐇',
     color: 0xf59fc3,
   },
@@ -169,8 +169,8 @@ const PET_CATALOG: Record<Exclude<PetType, 'egg'>, PetCatalogEntry> = {
   },
   forest_maine: {
     style: 'cute',
-    displayName: '森语缅因',
-    description: '毛量饱满、轮廓大气，适合喜欢厚重气质的玩家。',
+    displayName: '琥斑团猫',
+    description: '虎斑卷团的轮廓更稳定，色块对比清楚，适合做高辨识度陪伴宠物。',
     icon: '🐈',
     color: 0x8b5e3c,
   },

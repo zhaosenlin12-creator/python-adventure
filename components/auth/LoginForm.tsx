@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useAuthStore } from '@/store/authStore';
-import { User, Lock } from 'lucide-react';
+import { Lock, RefreshCcw, Sparkles, User } from 'lucide-react';
 
 interface LoginFormProps {
     onSwitchToRegister: () => void;
@@ -12,14 +12,31 @@ interface LoginFormProps {
 export default function LoginForm({ onSwitchToRegister }: LoginFormProps) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const { login, isLoading, error, clearError } = useAuthStore();
+    const [showResetPanel, setShowResetPanel] = useState(false);
+    const [resetMessage, setResetMessage] = useState<string | null>(null);
+    const { login, resetPassword, isLoading, error, clearError } = useAuthStore();
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         clearError();
+        setResetMessage(null);
 
         try {
             await login(username, password);
+        } catch {
+            // Error is handled in the store
+        }
+    };
+
+    const handleResetPassword = async () => {
+        clearError();
+        setResetMessage(null);
+
+        try {
+            const payload = await resetPassword(username);
+            setPassword(payload.default_password);
+            setResetMessage(`${payload.message} 默认密码：${payload.default_password}`);
+            setShowResetPanel(true);
         } catch {
             // Error is handled in the store
         }
@@ -89,6 +106,62 @@ export default function LoginForm({ onSwitchToRegister }: LoginFormProps) {
                             disabled={isLoading}
                         />
                     </div>
+
+                    <div className="flex items-center justify-between gap-3">
+                        <button
+                            type="button"
+                            onClick={() => {
+                                clearError();
+                                setResetMessage(null);
+                                setShowResetPanel((value) => !value);
+                            }}
+                            className="inline-flex items-center gap-2 text-sm text-slate-300 transition hover:text-blue-300"
+                        >
+                            <RefreshCcw className="h-4 w-4" />
+                            忘记密码
+                        </button>
+                        <span className="text-xs text-slate-500">支持按用户名重置为 123456</span>
+                    </div>
+
+                    {showResetPanel && (
+                        <motion.div
+                            initial={{ opacity: 0, y: -8 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="rounded-xl border border-blue-400/20 bg-slate-900/70 p-4"
+                        >
+                            <div className="flex items-start gap-3">
+                                <div className="mt-0.5 rounded-full bg-blue-500/15 p-2 text-blue-300">
+                                    <Sparkles className="h-4 w-4" />
+                                </div>
+                                <div className="flex-1">
+                                    <div className="text-sm font-pixel text-white">学生账号快速重置</div>
+                                    <p className="mt-1 text-xs leading-5 text-slate-400">
+                                        输入用户名后即可一键把密码重置为 <span className="font-semibold text-blue-300">123456</span>。
+                                        为防误触，同一用户名 30 秒内只能重置一次。
+                                    </p>
+                                    <button
+                                        type="button"
+                                        onClick={handleResetPassword}
+                                        disabled={isLoading || !username.trim()}
+                                        className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-sm font-pixel text-white transition hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-50"
+                                    >
+                                        <RefreshCcw className="h-4 w-4" />
+                                        {isLoading ? '重置中...' : '重置为 123456'}
+                                    </button>
+                                </div>
+                            </div>
+                        </motion.div>
+                    )}
+
+                    {resetMessage && (
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.96 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            className="rounded-xl border border-emerald-400/20 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-100"
+                        >
+                            {resetMessage}
+                        </motion.div>
+                    )}
 
                     {/* Submit Button */}
                     <button

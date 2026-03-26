@@ -30,6 +30,25 @@ class UserLogin(BaseModel):
     username: str
     password: str
 
+
+class PasswordResetRequest(BaseModel):
+    username: str
+
+    @field_validator('username')
+    @classmethod
+    def validate_username(cls, v: str) -> str:
+        normalized = v.strip()
+        if len(normalized) < 2 or len(normalized) > 50:
+            raise ValueError('用户名长度需要2-50个字符')
+        if not re.match(r'^[\w\u4e00-\u9fff]+$', normalized):
+            raise ValueError('用户名只能包含字母、数字、下划线或中文')
+        return normalized
+
+
+class PasswordResetResponse(BaseModel):
+    message: str
+    default_password: str
+
 class UserResponse(BaseModel):
     id: int
     username: str
@@ -63,4 +82,3 @@ class TokenWithUser(BaseModel):
 
 class TokenData(BaseModel):
     user_id: Optional[int] = None
-
