@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, Float, String, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
-from datetime import datetime
+from app.core.time import utc_now
 from app.core.database import Base
 
 class UserLocation(Base):
@@ -13,7 +13,7 @@ class UserLocation(Base):
     x = Column(Float, nullable=False, default=100.0)  # X坐标
     y = Column(Float, nullable=False, default=100.0)  # Y坐标
     direction = Column(String(10), default="down")  # 面朝方向: up, down, left, right
-    last_move = Column(DateTime, default=datetime.utcnow)  # 最后移动时间
+    last_move = Column(DateTime, default=utc_now)  # 最后移动时间
     
     # 关系
     user = relationship("User", backref="location")

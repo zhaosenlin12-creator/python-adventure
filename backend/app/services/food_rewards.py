@@ -1,10 +1,10 @@
 """
 食物奖励发放工具
 """
-from datetime import datetime
 from typing import Dict, List, Any
 from sqlalchemy import text
 
+from app.core.time import utc_now_iso
 from app.models.food import get_food_type
 
 
@@ -37,7 +37,7 @@ def grant_food_items(db, user_id: int, food_rewards: Dict[str, int]) -> List[Dic
     """))
 
     granted_items: List[Dict[str, Any]] = []
-    now = datetime.utcnow().isoformat()
+    now = utc_now_iso()
 
     for food_id, qty in food_rewards.items():
         try:

@@ -5,6 +5,7 @@ from datetime import datetime
 import os
 import shutil
 from app.core.database import get_db
+from app.core.time import utc_now
 from app.api.dependencies import get_current_user
 from app.models.user import User
 from app.models.task import Task
@@ -146,7 +147,7 @@ async def submit_task(
     # 如果全部通过，标记为完成并发放奖励
     if success and score == 100:
         user_task.status = "completed"
-        user_task.completed_at = datetime.utcnow()
+        user_task.completed_at = utc_now()
         
         # 简化版：直接给经验，不调用复杂的reward服务
         exp_reward = task.rewards.get("experience", 50) if task.rewards else 50
@@ -339,4 +340,3 @@ async def get_task_submissions(
             for sub in submissions
         ]
     }
-

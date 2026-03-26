@@ -38,6 +38,11 @@ const FoodItem = memo(({ item, isSelected, onSelect, isFocused }: FoodItemProps)
   const rarityColor = RARITY_COLORS[item.food_type.rarity];
   const rarityBg = RARITY_BG_COLORS[item.food_type.rarity];
   const rarityBorder = RARITY_BORDER_COLORS[item.food_type.rarity];
+  const highlightClass = isSelected
+    ? 'border-cyan-300/85 ring-2 ring-cyan-300/40 shadow-[0_18px_34px_rgba(34,211,238,0.2)] scale-[1.03]'
+    : isFocused
+      ? 'border-sky-300/55 ring-2 ring-sky-300/25'
+      : `${rarityBorder} hover:border-slate-400/70 hover:-translate-y-0.5 hover:scale-[1.02]`;
   
   const handleClick = useCallback(() => {
     onSelect(item.food_id);
@@ -46,23 +51,19 @@ const FoodItem = memo(({ item, isSelected, onSelect, isFocused }: FoodItemProps)
   return (
     <button
       onClick={handleClick}
+      aria-pressed={isSelected}
       className={`
-        ${rarityBg} ${rarityBorder}
-        border-2 p-3 text-center
-        relative
+        ${rarityBg}
+        ${highlightClass}
+        relative overflow-hidden rounded-2xl border-2 p-3 text-center
         transition-all duration-200
-        ${isSelected 
-          ? 'scale-105 ring-2 ring-blue-500 border-blue-500 shadow-lg shadow-blue-500/50' 
-          : 'hover:scale-105'
-        }
-        ${isFocused ? 'ring-2 ring-yellow-400' : ''}
       `}
     >
       {/* 选中复选标记 */}
       {isSelected && (
-        <div className="absolute top-1 right-1 bg-blue-500 rounded-full w-6 h-6 flex items-center justify-center animate-scale-in">
+        <div className="absolute top-1 right-1 flex h-6 w-6 items-center justify-center rounded-full bg-cyan-400 text-slate-950 animate-scale-in">
           <svg 
-            className="w-4 h-4 text-white" 
+            className="w-4 h-4" 
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24"

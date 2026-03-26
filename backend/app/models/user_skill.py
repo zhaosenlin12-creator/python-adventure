@@ -3,7 +3,7 @@
 """
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Boolean
 from sqlalchemy.orm import relationship
-from datetime import datetime
+from app.core.time import utc_now
 from app.core.database import Base
 
 class UserSkill(Base):
@@ -16,7 +16,7 @@ class UserSkill(Base):
     skill_level = Column(Integer, default=1)  # 技能等级
     experience = Column(Integer, default=0)  # 技能经验
     is_equipped = Column(Boolean, default=False)  # 是否装备
-    learned_at = Column(DateTime, default=datetime.utcnow)
+    learned_at = Column(DateTime, default=utc_now)
     last_used = Column(DateTime, nullable=True)
     
     # 关系

@@ -3,7 +3,7 @@
 """
 from sqlalchemy import Column, Integer, String, JSON, Boolean, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
-from datetime import datetime
+from app.core.time import utc_now
 from app.core.database import Base
 
 class Item(Base):
@@ -22,7 +22,7 @@ class Item(Base):
     can_trade = Column(Boolean, default=True)
     can_sell = Column(Boolean, default=True)
     sell_price = Column(Integer, default=0)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=utc_now)
 
 class UserInventory(Base):
     """用户背包"""
@@ -33,7 +33,7 @@ class UserInventory(Base):
     item_id = Column(Integer, ForeignKey("items.id"), nullable=False)
     quantity = Column(Integer, default=1)
     is_equipped = Column(Boolean, default=False)
-    acquired_at = Column(DateTime, default=datetime.utcnow)
+    acquired_at = Column(DateTime, default=utc_now)
     
     # 关系
     user = relationship("User", back_populates="inventory")

@@ -4,6 +4,7 @@
 from typing import Dict, Optional
 from sqlalchemy.orm import Session
 from datetime import datetime, timedelta
+from app.core.time import utc_now
 from app.models.user import User
 from app.models.map_object import MapObject, UserMapProgress
 from app.services.reward import reward_service
@@ -98,12 +99,12 @@ class WorldPVPManager:
                     user_id=challenger.id,
                     map_object_id=resource_object_id,
                     status="collected",
-                    collected_at=datetime.utcnow()
+                    collected_at=utc_now()
                 )
                 db.add(progress)
             else:
                 progress.status = "collected"
-                progress.collected_at = datetime.utcnow()
+                progress.collected_at = utc_now()
             
             db.commit()
         

@@ -7,6 +7,7 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 
 from app.core.config import settings
+from app.core.time import utc_now
 
 
 _bcrypt_available = False
@@ -48,7 +49,7 @@ def is_token_blacklisted(token: str) -> bool:
 
 def _cleanup_expired_tokens() -> None:
     """Remove expired blacklist entries while holding the lock."""
-    now = datetime.utcnow()
+    now = utc_now()
     expired_tokens = [token for token, expiry in _blacklist_expiry.items() if expiry < now]
     for token in expired_tokens:
         _token_blacklist.discard(token)
@@ -95,9 +96,9 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -
     """Create a JWT access token."""
     to_encode = data.copy()
     if expires_delta:
-        expire = datetime.utcnow() + expires_delta
+        expire = utc_now() + expires_delta
     else:
-        expire = datetime.utcnow() + timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)
+        expire = utc_now() + timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)
 
     to_encode.update({"exp": expire})
     return jwt.encode(to_encode, settings.SECRET_KEY, algorithm=settings.ALGORITHM)

@@ -12,6 +12,7 @@ import pytest
 from fastapi.testclient import TestClient
 
 from app.core.database import get_sqlite_db_path
+from app.core.time import utc_now
 from app.main import app
 
 client = TestClient(app)
@@ -50,7 +51,7 @@ def _set_food_inventory(username: str, food_id: str, quantity: int) -> None:
     user_row = _query_one("SELECT id FROM users WHERE username = ?", (username,))
     assert user_row is not None
     user_id = user_row[0]
-    now = datetime.utcnow().isoformat()
+    now = utc_now().isoformat()
 
     _exec_sql(
         """
@@ -277,7 +278,7 @@ class TestPetStatus:
         create_response = _create_pet(auth_token)
         pet_id = create_response.json()["pet"]["id"]
 
-        three_days_ago = (datetime.utcnow() - timedelta(days=3)).isoformat()
+        three_days_ago = (utc_now() - timedelta(days=3)).isoformat()
         _set_pet_fields(pet_id, last_feed_time=three_days_ago)
 
         response = client.get(f"/api/v1/pets/{pet_id}/status", headers=_headers(auth_token))
@@ -288,7 +289,7 @@ class TestPetStatus:
         create_response = _create_pet(auth_token)
         pet_id = create_response.json()["pet"]["id"]
 
-        seven_days_ago = (datetime.utcnow() - timedelta(days=7)).isoformat()
+        seven_days_ago = (utc_now() - timedelta(days=7)).isoformat()
         _set_pet_fields(pet_id, last_feed_time=seven_days_ago)
 
         response = client.get(f"/api/v1/pets/{pet_id}/status", headers=_headers(auth_token))

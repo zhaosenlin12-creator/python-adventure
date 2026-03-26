@@ -14,4 +14,6 @@ def _delete_sqlite_sidecars(db_path: Path) -> None:
 
 # Point the FastAPI app at a clean test database before test modules import it.
 os.environ["DATABASE_URL"] = f"sqlite:///{TEST_DB_PATH.as_posix()}"
+os.environ.setdefault("ENVIRONMENT", "test")
+os.environ.setdefault("SECRET_KEY", "test-secret-key-for-backend-suite-0123456789")
 _delete_sqlite_sidecars(TEST_DB_PATH)

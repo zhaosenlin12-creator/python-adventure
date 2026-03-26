@@ -8,6 +8,7 @@ from app.models.user import User
 from app.models.quiz_battle import QuizQuestion
 from app.services.reward import reward_service
 from datetime import datetime, timedelta
+from app.core.time import utc_now
 
 class QuizBattleManager:
     def __init__(self):
@@ -55,7 +56,7 @@ class QuizBattleManager:
         question = random.choice(questions)
         
         # 创建对战数据
-        battle_id = f"{challenger.id}_{target.id}_{int(datetime.utcnow().timestamp())}"
+        battle_id = f"{challenger.id}_{target.id}_{int(utc_now().timestamp())}"
         battle_data = {
             "battle_id": battle_id,
             "challenger_id": challenger.id,
@@ -69,7 +70,7 @@ class QuizBattleManager:
             "difficulty": question.difficulty,
             "challenger_answer": None,
             "target_answer": None,
-            "start_time": datetime.utcnow(),
+            "start_time": utc_now(),
             "timeout_seconds": 60,
             "status": "waiting"
         }
@@ -120,7 +121,7 @@ class QuizBattleManager:
             }
         
         # 检查是否超时
-        elapsed = (datetime.utcnow() - battle["start_time"]).total_seconds()
+        elapsed = (utc_now() - battle["start_time"]).total_seconds()
         if elapsed > battle["timeout_seconds"]:
             return self._timeout_battle(db, battle)
         
@@ -246,7 +247,7 @@ class QuizBattleManager:
         battle = self.active_battles[user_id]
         
         # 检查是否超时
-        elapsed = (datetime.utcnow() - battle["start_time"]).total_seconds()
+        elapsed = (utc_now() - battle["start_time"]).total_seconds()
         if elapsed > battle["timeout_seconds"]:
             return None
         

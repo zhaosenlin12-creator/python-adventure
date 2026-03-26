@@ -9,6 +9,7 @@ from datetime import datetime, timedelta
 import json
 
 from app.core.database import get_db
+from app.core.time import utc_now
 from app.models.pet import Pet, PetGrowthLog
 from app.api.dependencies import get_current_user
 from app.models.user import User
@@ -105,7 +106,7 @@ DAILY_CAPS = {
 }
 
 def _get_today_totals(db: Session, pet_id: int) -> Dict[str, int]:
-    start = datetime.utcnow().replace(hour=0, minute=0, second=0, microsecond=0)
+    start = utc_now().replace(hour=0, minute=0, second=0, microsecond=0)
     logs = db.query(PetGrowthLog).filter(
         PetGrowthLog.pet_id == pet_id,
         PetGrowthLog.event_type == 'interaction',

@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, WebSocket, WebSocketDisco
 from sqlalchemy.orm import Session
 from typing import Optional
 from datetime import datetime
+from app.core.time import utc_now
 from app.core.database import get_db, SessionLocal
 from app.core.security import decode_access_token
 from app.api.dependencies import get_current_user
@@ -521,14 +522,14 @@ async def update_player_location(
             location.x = x
             location.y = y
             location.map_area = map_area
-            location.last_move = datetime.utcnow()
+            location.last_move = utc_now()
         else:
             location = UserLocation(
                 user_id=user_id,
                 x=x,
                 y=y,
                 map_area=map_area,
-                last_move=datetime.utcnow()
+                last_move=utc_now()
             )
             db.add(location)
         
@@ -635,7 +636,7 @@ async def websocket_world(
             # 并更新 last_move 时间，确保玩家被视为"活跃"
             if location.map_area != "开放世界":
                 location.map_area = "开放世界"
-            location.last_move = datetime.utcnow()
+            location.last_move = utc_now()
             db.commit()
             db.refresh(location)
         
@@ -700,7 +701,7 @@ async def websocket_world(
                         location.y = float(move_data["y"])
                     if isinstance(move_data.get("direction"), str) and move_data["direction"]:
                         location.direction = move_data["direction"]
-                    location.last_move = datetime.utcnow()
+                    location.last_move = utc_now()
                 
                 # 若客户端显式上报 pet_id，则先做归属校验再更新权威 current_pet_id
                 selected_pet_id_raw = move_data.get("pet_id")
@@ -778,5 +779,4 @@ async def websocket_world(
                 pass
         
         db.close()
-
 

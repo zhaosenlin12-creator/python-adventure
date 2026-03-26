@@ -9,7 +9,7 @@ from app.core.security import get_current_user
 from app.models.user import User
 from app.models.skill import Skill
 from app.models.user_skill import UserSkill
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 router = APIRouter()
 
@@ -29,8 +29,7 @@ class SkillInfo(BaseModel):
     speed_boost: float
     cooldown: int
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class EquipSkillRequest(BaseModel):
     """装备技能请求"""

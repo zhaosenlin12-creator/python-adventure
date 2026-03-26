@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, JSON, DateTime, ForeignKey, Boolean
-from datetime import datetime
+from app.core.time import utc_now
 from app.core.database import Base
 
 class QuizQuestion(Base):
@@ -42,7 +42,7 @@ class QuizBattle(Base):
     battle_log = Column(JSON)  # 每轮的答题情况
     
     # 时间
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=utc_now)
     started_at = Column(DateTime)
     finished_at = Column(DateTime)
     
@@ -64,7 +64,7 @@ class QuizAnswer(Base):
     answer_time = Column(Integer)  # 答题用时（毫秒）
     points_earned = Column(Integer, default=0)  # 获得分数
     
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=utc_now)
 
 
 

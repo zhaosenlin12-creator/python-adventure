@@ -9,7 +9,7 @@ from app.models.progress import UserProgress
 from app.services.achievement_checker import achievement_checker
 from app.services.achievement_seed import ensure_evolution_achievements
 from app.services.pet_eggs import grant_pet_eggs
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from datetime import datetime
 
 router = APIRouter()
@@ -27,8 +27,7 @@ class AchievementResponse(BaseModel):
     unlocked_at: datetime | None = None
     is_claimed: bool = False
     
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 @router.get("/list", response_model=List[AchievementResponse])
 async def get_achievements(

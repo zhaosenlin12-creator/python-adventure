@@ -3,6 +3,7 @@
 """
 from sqlalchemy import Column, Integer, String, Text, JSON, Boolean, DateTime, ForeignKey
 from datetime import datetime
+from app.core.time import utc_now
 from app.core.database import Base
 
 class DynamicTask(Base):
@@ -41,7 +42,7 @@ class DynamicTask(Base):
     
     # 状态
     is_active = Column(Boolean, default=True)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=utc_now)
     published_at = Column(DateTime)  # 发布时间
     
     # 统计
@@ -72,7 +73,7 @@ class DynamicTaskSubmission(Base):
     coins_earned = Column(Integer, default=0)
     
     # 时间
-    submitted_at = Column(DateTime, default=datetime.utcnow)
+    submitted_at = Column(DateTime, default=utc_now)
     judged_at = Column(DateTime)
 
 

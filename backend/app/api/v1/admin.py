@@ -5,6 +5,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from typing import List
 from datetime import datetime
+from app.core.time import utc_now
 
 from app.core.database import get_db
 from app.api.dependencies import get_current_user
@@ -225,7 +226,7 @@ async def publish_task(
         raise HTTPException(status_code=404, detail="任务不存在")
     
     task.is_published = True
-    task.published_at = datetime.utcnow()
+    task.published_at = utc_now()
     
     db.commit()
     

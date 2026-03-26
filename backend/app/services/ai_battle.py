@@ -9,6 +9,7 @@ from app.models.ai_robot import AIRobot
 from app.models.quiz_battle import QuizQuestion
 from app.services.reward import reward_service
 from datetime import datetime
+from app.core.time import utc_now
 
 class AIBattleManager:
     def __init__(self):
@@ -95,7 +96,7 @@ class AIBattleManager:
         question = random.choice(questions)
         
         # 创建对战数据
-        battle_id = f"ai_{user.id}_{robot.id}_{int(datetime.utcnow().timestamp())}"
+        battle_id = f"ai_{user.id}_{robot.id}_{int(utc_now().timestamp())}"
         battle_data = {
             "battle_id": battle_id,
             "user_id": user.id,
@@ -117,7 +118,7 @@ class AIBattleManager:
             "difficulty": question.difficulty,
             "user_answer": None,
             "robot_answer": None,
-            "start_time": datetime.utcnow(),
+            "start_time": utc_now(),
             "timeout_seconds": 60,
             "robot_win_rate": robot.win_rate
         }
@@ -188,7 +189,7 @@ class AIBattleManager:
             }
         
         # 检查是否超时
-        elapsed = (datetime.utcnow() - battle["start_time"]).total_seconds()
+        elapsed = (utc_now() - battle["start_time"]).total_seconds()
         if elapsed > battle["timeout_seconds"]:
             del self.active_ai_battles[user_id]
             return {

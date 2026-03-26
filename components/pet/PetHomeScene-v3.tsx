@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { usePetStore } from '@/store/petStore';
 import { useDecorationStore } from '@/store/decorationStore';
 import { useCoinStore } from '@/store/coinStore';
@@ -41,6 +41,99 @@ import { DecorationIcon } from '@/components/ui/DecorationIcon';
 interface PetHomeSceneProps {
   isOpen?: boolean;
   onClose?: () => void;
+}
+
+type HomeSceneKey = 'living' | 'garden';
+
+interface HomeLane {
+  minX: number;
+  maxX: number;
+  y: number;
+}
+
+interface PetActorState {
+  x: number;
+  y: number;
+  laneIndex: number;
+  direction: 'left' | 'right';
+  isWalking: boolean;
+  moveDurationMs: number;
+}
+
+const SCENE_LANES: Record<HomeSceneKey, HomeLane[]> = {
+  living: [
+    { minX: 10, maxX: 34, y: 63 },
+    { minX: 24, maxX: 52, y: 70 },
+    { minX: 46, maxX: 72, y: 77 },
+    { minX: 68, maxX: 90, y: 83 },
+  ],
+  garden: [
+    { minX: 12, maxX: 36, y: 62 },
+    { minX: 26, maxX: 54, y: 69 },
+    { minX: 50, maxX: 76, y: 76 },
+    { minX: 70, maxX: 90, y: 82 },
+  ],
+};
+
+const LANE_DEPTH_SCALE = [0.82, 0.9, 1, 1.08];
+const GOLDEN_DISTRIBUTION = 0.61803398875;
+
+function clampToRange(value: number, min: number, max: number) {
+  return Math.max(min, Math.min(max, value));
+}
+
+function randomBetween(min: number, max: number) {
+  return min + Math.random() * (max - min);
+}
+
+function pickInitialActor(scene: HomeSceneKey, slot: number, total: number, preferredLane = 1): PetActorState {
+  const lanes = SCENE_LANES[scene];
+  const laneIndex = clampToRange((slot + preferredLane) % lanes.length, 0, lanes.length - 1);
+  const lane = lanes[laneIndex];
+  const travelWidth = Math.max(12, lane.maxX - lane.minX);
+  const seed = (slot * GOLDEN_DISTRIBUTION + total * 0.11 + preferredLane * 0.17) % 1;
+  const padding = Math.min(4.5, travelWidth * 0.12);
+  const x = lane.minX + padding + seed * Math.max(6, travelWidth - padding * 2);
+
+  return {
+    x,
+    y: lane.y + randomBetween(-0.9, 0.9),
+    laneIndex,
+    direction: seed > 0.5 ? 'left' : 'right',
+    isWalking: false,
+    moveDurationMs: 5200,
+  };
+}
+
+function pickRoamingActorTarget(
+  scene: HomeSceneKey,
+  actor: Pick<PetActorState, 'x' | 'laneIndex'>,
+  occupiedActors: Array<Pick<PetActorState, 'x' | 'laneIndex'>>
+): PetActorState {
+  const lanes = SCENE_LANES[scene];
+  const laneShift = Math.random() < 0.18 ? (Math.random() < 0.5 ? -1 : 1) : 0;
+  const laneIndex = clampToRange(actor.laneIndex + laneShift, 0, lanes.length - 1);
+  const lane = lanes[laneIndex];
+
+  let x = clampToRange(actor.x + randomBetween(-14, 14), lane.minX, lane.maxX);
+  for (let attempt = 0; attempt < 6; attempt += 1) {
+    const conflict = occupiedActors.some(
+      (occupied) => occupied.laneIndex === laneIndex && Math.abs(occupied.x - x) < 10
+    );
+    if (!conflict) {
+      break;
+    }
+    x = clampToRange(randomBetween(lane.minX, lane.maxX), lane.minX, lane.maxX);
+  }
+
+  return {
+    x,
+    y: lane.y + randomBetween(-1.1, 1.1),
+    laneIndex,
+    direction: x >= actor.x ? 'right' : 'left',
+    isWalking: true,
+    moveDurationMs: Math.round(randomBetween(5400, 8600)),
+  };
 }
 
 /**
@@ -112,7 +205,7 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
     }
   };
 
-  const [currentScene, setCurrentScene] = useState<'living' | 'garden'>('living');
+  const [currentScene, setCurrentScene] = useState<HomeSceneKey>('living');
   const [showShop, setShowShop] = useState(false);
   const [showFoodShop, setShowFoodShop] = useState(false);
   const [showFoodSelector, setShowFoodSelector] = useState(false);
@@ -138,16 +231,26 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
   const [isRemoving, setIsRemoving] = useState(false);
   
   // Pet Position and Movement
-  const [petPosition, setPetPosition] = useState({ x: 50, y: 50 }); // Percentage position
+  const [petPosition, setPetPosition] = useState({ x: 50, y: 76 });
+  const [petLaneIndex, setPetLaneIndex] = useState(1);
   const [petDirection, setPetDirection] = useState<'left' | 'right'>('right');
   const [isWalking, setIsWalking] = useState(false);
+  const [petMoveDurationMs, setPetMoveDurationMs] = useState(4600);
+  const [otherPetActors, setOtherPetActors] = useState<Record<number, PetActorState>>({});
   const walkIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const walkStopTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const otherPetWalkIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const otherPetStopTimeoutsRef = useRef<Record<number, NodeJS.Timeout>>({});
   const [interactionType, setInteractionType] = useState<InteractionType | null>(null);
   const [interactionPlaying, setInteractionPlaying] = useState(false);
   const [interactionPosition, setInteractionPosition] = useState({ x: 0, y: 0 });
   const [interactionFollowPet, setInteractionFollowPet] = useState(true);
   const [interactionSpeech, setInteractionSpeech] = useState<string | null>(null);
   const petRef = useRef<HTMLDivElement | null>(null);
+  const petPositionRef = useRef(petPosition);
+  const petLaneIndexRef = useRef(petLaneIndex);
+  const otherPetActorsRef = useRef(otherPetActors);
+  const otherPets = useMemo(() => (pets || []).filter((pet) => pet.id !== currentPet?.id), [pets, currentPet?.id]);
   
   // Load Data
   useEffect(() => {
@@ -226,43 +329,153 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
     rafId = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(rafId);
   }, [interactionPlaying, interactionFollowPet, getPetScreenPosition]);
-  
-  // Pet Random Walk
+
+  useEffect(() => {
+    petPositionRef.current = petPosition;
+  }, [petPosition]);
+
+  useEffect(() => {
+    petLaneIndexRef.current = petLaneIndex;
+  }, [petLaneIndex]);
+
+  useEffect(() => {
+    otherPetActorsRef.current = otherPetActors;
+  }, [otherPetActors]);
+
   useEffect(() => {
     if (isOpen === false || !currentPet) return;
-    
-    const startRandomWalk = () => {
-      walkIntervalRef.current = setInterval(() => {
-        // 30% chance to start walking
-        if (Math.random() < 0.3) {
-          setIsWalking(true);
-          
-          // Random target position (within safe area)
-          const targetX = 20 + Math.random() * 60; // 20%-80%
-          const targetY = 30 + Math.random() * 50; // 30%-80%
-          
-          // Determine direction
-          setPetDirection(targetX > petPosition.x ? 'right' : 'left');
-          
-          // Move to target
-          setPetPosition({ x: targetX, y: targetY });
-          
-          // Stop walking after 2-4 seconds
-          setTimeout(() => {
-            setIsWalking(false);
-          }, 2000 + Math.random() * 2000);
-        }
-      }, 5000); // Check every 5 seconds
+
+    const livingPets = otherPets.filter((pet) => !pet.isEgg && pet.petType !== 'egg');
+    const leadActor = pickInitialActor(currentScene, 1, Math.max(2, livingPets.length + 1));
+    setPetPosition({ x: leadActor.x, y: leadActor.y });
+    setPetLaneIndex(leadActor.laneIndex);
+    setPetDirection(leadActor.direction);
+    setPetMoveDurationMs(leadActor.moveDurationMs);
+    setIsWalking(false);
+
+    const actorMap = livingPets.reduce<Record<number, PetActorState>>((result, pet, index) => {
+      result[pet.id] = pickInitialActor(currentScene, index, Math.max(1, livingPets.length), index % 2 === 0 ? 0 : 2);
+      return result;
+    }, {});
+    setOtherPetActors(actorMap);
+  }, [isOpen, currentPet?.id, currentScene, otherPets]);
+
+  useEffect(() => {
+    if (isOpen === false || !currentPet) return;
+
+    const clearWalkStop = () => {
+      if (walkStopTimeoutRef.current) {
+        clearTimeout(walkStopTimeoutRef.current);
+        walkStopTimeoutRef.current = null;
+      }
     };
-    
-    startRandomWalk();
-    
+
+    walkIntervalRef.current = setInterval(() => {
+      if (Math.random() < 0.42) {
+        return;
+      }
+
+      const occupiedActors = Object.values(otherPetActorsRef.current);
+      const targetActor = pickRoamingActorTarget(
+        currentScene,
+        {
+          x: petPositionRef.current.x,
+          laneIndex: petLaneIndexRef.current,
+        },
+        occupiedActors
+      );
+
+      setPetDirection(targetActor.direction);
+      setPetLaneIndex(targetActor.laneIndex);
+      setPetMoveDurationMs(targetActor.moveDurationMs);
+      setPetPosition({ x: targetActor.x, y: targetActor.y });
+      setIsWalking(true);
+
+      clearWalkStop();
+      walkStopTimeoutRef.current = setTimeout(() => {
+        setIsWalking(false);
+      }, Math.max(1800, targetActor.moveDurationMs - 680));
+    }, 5600);
+
     return () => {
       if (walkIntervalRef.current) {
         clearInterval(walkIntervalRef.current);
+        walkIntervalRef.current = null;
       }
+      clearWalkStop();
     };
-  }, [isOpen, currentPet, petPosition.x]);
+  }, [isOpen, currentPet?.id, currentScene]);
+
+  useEffect(() => {
+    const livingPets = otherPets.filter((pet) => !pet.isEgg && pet.petType !== 'egg');
+    if (isOpen === false || livingPets.length === 0) {
+      return;
+    }
+
+    otherPetWalkIntervalRef.current = setInterval(() => {
+      setOtherPetActors((previousActors) => {
+        const actorIds = Object.keys(previousActors).map((value) => Number(value));
+        if (actorIds.length === 0) {
+          return previousActors;
+        }
+
+        const shuffledIds = [...actorIds].sort(() => Math.random() - 0.5);
+        const movingIds = shuffledIds.slice(0, actorIds.length > 7 ? 2 : 1);
+        const nextActors = { ...previousActors };
+
+        movingIds.forEach((actorId) => {
+          const currentActor = previousActors[actorId];
+          if (!currentActor) {
+            return;
+          }
+
+          const occupiedActors = Object.entries(previousActors)
+            .filter(([id]) => Number(id) !== actorId)
+            .map(([, actor]) => ({
+              x: actor.x,
+              laneIndex: actor.laneIndex,
+            }));
+
+          const targetActor = pickRoamingActorTarget(currentScene, currentActor, occupiedActors);
+          nextActors[actorId] = {
+            ...currentActor,
+            ...targetActor,
+          };
+
+          const pendingTimeout = otherPetStopTimeoutsRef.current[actorId];
+          if (pendingTimeout) {
+            clearTimeout(pendingTimeout);
+          }
+          otherPetStopTimeoutsRef.current[actorId] = setTimeout(() => {
+            setOtherPetActors((latestActors) => {
+              const latestActor = latestActors[actorId];
+              if (!latestActor) {
+                return latestActors;
+              }
+              return {
+                ...latestActors,
+                [actorId]: {
+                  ...latestActor,
+                  isWalking: false,
+                },
+              };
+            });
+          }, Math.max(1800, targetActor.moveDurationMs - 720));
+        });
+
+        return nextActors;
+      });
+    }, 3100);
+
+    return () => {
+      if (otherPetWalkIntervalRef.current) {
+        clearInterval(otherPetWalkIntervalRef.current);
+        otherPetWalkIntervalRef.current = null;
+      }
+      Object.values(otherPetStopTimeoutsRef.current).forEach((timeoutId) => clearTimeout(timeoutId));
+      otherPetStopTimeoutsRef.current = {};
+    };
+  }, [isOpen, currentScene, otherPets]);
   
   // Handle decoration drop (New placement)
   const handleDecorationDrop = async (e: React.MouseEvent) => {
@@ -431,7 +644,7 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
   const currentStageIndex = currentPet.evolution_stage ?? (currentPet.isEgg ? 0 : 1);
   const currentImageUrl = getPetImageUrl(resolvedPetType, isWalking ? 'normal' : currentPet.status, currentStageIndex);
   const currentTechAccent = getTechAccent(resolvedPetType);
-  const otherPets = (pets || []).filter(p => p.id !== currentPet.id);
+  const roamingOtherPets = otherPets.filter((pet) => !pet.isEgg && pet.petType !== 'egg');
 
   const interactionMotion = (() => {
     if (!interactionPlaying || !interactionType) {
@@ -596,67 +809,96 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
             .filter(p => p.scene === currentScene)
             .map(placed => renderPlacedDecoration(placed))}
 
+          <div className="pointer-events-none absolute left-5 top-24 z-30 max-w-sm rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 shadow-xl backdrop-blur-sm">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-sky-300">孵化提醒</div>
+            <p className="mt-2 text-sm leading-6 text-slate-200">
+              点击小屋里的其他宠物就能直接切换当前跟随。宠物蛋会在首次通关新关卡时自动推进孵化进度，不需要先手动设置跟随。
+            </p>
+          </div>
+
           {/* Other Pets Render */}
-          {otherPets
-            .filter(p => !p.isEgg && p.petType !== 'egg')
-            .map((pet, index) => {
-              const resolvedType = migratePetType(pet.petType);
-              const config = PET_CONFIGS[resolvedType];
-              const stageIndex = pet.evolution_stage ?? (pet.isEgg ? 0 : 1);
-              const petImgUrl = getPetImageUrl(resolvedType, pet.status, stageIndex);
-              const hasAsset = !!petImgUrl;
-              const appearance = getStageAppearance(stageIndex);
-              const scale = ((appearance.size || 48) / 48) * getPetVariantScale(resolvedType, 'list');
-              const techAccent = getTechAccent(resolvedType);
-              const x = 12 + (index % 4) * 15;
-              const y = 72 + Math.floor(index / 4) * 10;
-              return (
-                <div
-                  key={pet.id}
-                  className="absolute z-20 cursor-pointer"
-                  style={{ left: `${x}%`, top: `${y}%`, transform: 'translate(-50%, -50%)' }}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setCurrentPet(pet);
+          {roamingOtherPets.map((pet) => {
+            const actor = otherPetActors[pet.id];
+            if (!actor) {
+              return null;
+            }
+
+            const resolvedType = migratePetType(pet.petType);
+            const config = PET_CONFIGS[resolvedType];
+            const stageIndex = pet.evolution_stage ?? (pet.isEgg ? 0 : 1);
+            const petImgUrl = getPetImageUrl(resolvedType, pet.status, stageIndex);
+            const hasAsset = !!petImgUrl;
+            const appearance = getStageAppearance(stageIndex);
+            const depthScale = LANE_DEPTH_SCALE[actor.laneIndex] ?? 1;
+            const scale = ((appearance.size || 48) / 48) * Math.min(getPetVariantScale(resolvedType, 'home') * 0.68, 1.36) * depthScale;
+            const techAccent = getTechAccent(resolvedType);
+
+            return (
+              <div
+                key={pet.id}
+                className="absolute cursor-pointer"
+                style={{
+                  left: `${actor.x}%`,
+                  top: `${actor.y}%`,
+                  transform: `translate(-50%, -50%) scaleX(${actor.direction === 'left' ? -1 : 1})`,
+                  transition: `left ${actor.moveDurationMs}ms cubic-bezier(0.22, 1, 0.36, 1), top ${actor.moveDurationMs}ms cubic-bezier(0.22, 1, 0.36, 1)`,
+                  zIndex: 18 + actor.laneIndex * 4,
+                  opacity: Math.min(1, 0.82 + actor.laneIndex * 0.05),
+                }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrentPet(pet);
+                }}
+                title={`切换 ${pet.name} 为当前跟随`}
+              >
+                <motion.div
+                  className="relative group"
+                  animate={{
+                    y: actor.isWalking ? [0, -1.8, 0] : [0, -0.7, 0],
+                    scale: actor.isWalking ? [1, 1.012, 1] : [1, 1.006, 1],
                   }}
-                  title={`设为跟随：${pet.name}`}
+                  transition={{
+                    duration: actor.isWalking ? 2.4 : 3.8,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
                 >
-                  <div className="relative group">
-                    <div className="relative flex h-16 w-16 items-center justify-center" style={{ transform: `scale(${scale})` }}>
-                      <div className={`absolute inset-2 rounded-full blur-lg ${getPetAuraClass(stageIndex, pet.petStyle)}`} />
-                      <div className="absolute inset-x-2 bottom-2 h-3 rounded-full bg-slate-950/16 blur-md" />
-                      {techAccent && (
-                        <div className={`absolute -bottom-1 -right-1 z-10 px-1 py-0.5 text-[9px] rounded-full flex items-center gap-1 ${techAccent.badge}`}>
-                          {techAccent.icon}
-                        </div>
-                      )}
-                      {hasAsset ? (
-                        <img
-                          src={petImgUrl}
-                          alt={pet.name}
-                          className="pet-sprite pet-sprite-chip w-full h-full object-contain"
-                        />
-                      ) : (
-                        <span className="text-5xl drop-shadow-lg">{config.icon}</span>
-                      )}
-                    </div>
-                    <div className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                      <div className="bg-slate-800/90 px-2 py-0.5 rounded-full text-white text-xs border border-slate-600">
-                        {pet.name}
+                  <div className="relative flex h-20 w-20 items-center justify-center" style={{ transform: `scale(${scale})` }}>
+                    <div className={`absolute inset-2 rounded-full blur-lg ${getPetAuraClass(stageIndex, pet.petStyle)}`} />
+                    <div className="absolute inset-x-2 bottom-2 h-3 rounded-full bg-slate-950/16 blur-md" />
+                    {techAccent && (
+                      <div className={`absolute -bottom-1 -right-1 z-10 px-1 py-0.5 text-[9px] rounded-full flex items-center gap-1 ${techAccent.badge}`}>
+                        {techAccent.icon}
                       </div>
+                    )}
+                    {hasAsset ? (
+                      <img
+                        src={petImgUrl}
+                        alt={pet.name}
+                        className="pet-sprite pet-sprite-chip h-full w-full object-contain"
+                      />
+                    ) : (
+                      <span className="text-5xl drop-shadow-lg">{config.icon}</span>
+                    )}
+                  </div>
+                  <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                    <div className="rounded-full border border-slate-600 bg-slate-800/90 px-2 py-0.5 text-xs text-white">
+                      {pet.name}
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                </motion.div>
+              </div>
+            );
+          })}
 
           {/* Pet Render */}
           <div 
-            className="absolute z-30 transition-all duration-2000 ease-in-out cursor-pointer"
+            className="absolute z-30 cursor-pointer"
             style={{
               left: `${petPosition.x}%`,
               top: `${petPosition.y}%`,
-              transform: `translate(-50%, -50%) scaleX(${petDirection === 'left' ? -1 : 1})`
+              transform: `translate(-50%, -50%) scaleX(${petDirection === 'left' ? -1 : 1})`,
+              transition: `left ${petMoveDurationMs}ms cubic-bezier(0.22, 1, 0.36, 1), top ${petMoveDurationMs}ms cubic-bezier(0.22, 1, 0.36, 1)`
             }}
             onClick={() => burstHearts()}
             ref={petRef}
@@ -702,15 +944,15 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
               <motion.div 
                 className="relative flex h-32 w-32 items-center justify-center"
                 animate={{
-                  scale: [currentScale, currentScale * 1.05, currentScale],
-                  y: [0, -5, 0]
+                  scale: isWalking ? [currentScale, currentScale * 1.018, currentScale] : [currentScale, currentScale * 1.008, currentScale],
+                  y: isWalking ? [0, -2.4, 0] : [0, -0.8, 0]
                 }}
                 transition={{
-                  duration: 3,
+                  duration: isWalking ? 2.6 : 4.2,
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
-                whileHover={{ scale: currentScale * 1.15 }}
+                whileHover={{ scale: currentScale * 1.08 }}
                 whileTap={{ scale: currentScale * 0.9 }}
                 style={currentAppearance?.glowEffect ? { filter: 'drop-shadow(0 0 18px rgba(255, 215, 0, 0.6))' } : undefined}
               >

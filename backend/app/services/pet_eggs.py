@@ -1,7 +1,7 @@
 from typing import List
-from datetime import datetime
 from sqlalchemy.orm import Session
 
+from app.core.time import utc_now
 from app.models.pet import Pet
 
 
@@ -36,7 +36,7 @@ def grant_pet_eggs(
             hatch_progress=0,
             intimacy=0,
             evolution_stage=0,
-            last_feed_time=datetime.utcnow()
+            last_feed_time=utc_now()
         )
         db.add(egg)
         eggs.append(egg)

@@ -74,7 +74,7 @@ const SPEECHES: Record<string, string[]> = {
     '嗯嗯！😊',
   ],
   greeting: [
-    'What\'s up ?',
+    '今天想一起做点什么呀？',
     '嗨～你来啦！',
     '欢迎回来！🏠',
     '见到你真高兴！',
@@ -148,15 +148,15 @@ export default function PetSpeechBubble({ petName, mood = 'normal', onInteractio
 function SpeechBubble({ text }: { text: string }) {
   return (
     <div className="relative">
-      <div className="bg-white rounded-2xl px-4 py-2 shadow-lg border-2 border-slate-200 min-w-[120px] max-w-[200px]">
-        <p className="text-sm text-slate-700 font-medium text-center whitespace-nowrap">
+      <div className="min-w-[120px] max-w-[200px] rounded-2xl border border-cyan-400/35 bg-slate-950/92 px-4 py-2 shadow-[0_18px_34px_rgba(15,23,42,0.32)] backdrop-blur-sm">
+        <p className="text-center text-sm font-medium whitespace-nowrap text-slate-100">
           {text}
         </p>
       </div>
       {/* 气泡尾巴 */}
       <div className="absolute -bottom-2 left-1/2 -translate-x-1/2">
         <svg width="20" height="10" viewBox="0 0 20 10">
-          <path d="M0 0 L10 10 L20 0" fill="white" stroke="#e2e8f0" strokeWidth="2" />
+          <path d="M0 0 L10 10 L20 0" fill="rgba(2,6,23,0.92)" stroke="rgba(34,211,238,0.35)" strokeWidth="2" />
         </svg>
       </div>
     </div>
@@ -167,15 +167,15 @@ function SpeechBubble({ text }: { text: string }) {
 function ThoughtBubble({ text }: { text: string }) {
   return (
     <div className="relative">
-      <div className="bg-white rounded-full px-4 py-2 shadow-lg border-2 border-slate-200 min-w-[100px]">
-        <p className="text-sm text-slate-600 italic text-center">
+      <div className="min-w-[100px] rounded-full border border-cyan-400/30 bg-slate-950/92 px-4 py-2 shadow-[0_18px_34px_rgba(15,23,42,0.32)] backdrop-blur-sm">
+        <p className="text-center text-sm italic text-slate-200">
           {text}
         </p>
       </div>
       {/* 思考泡泡 */}
       <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 flex gap-1">
-        <div className="w-3 h-3 bg-white rounded-full border border-slate-200" />
-        <div className="w-2 h-2 bg-white rounded-full border border-slate-200 mt-1" />
+        <div className="h-3 w-3 rounded-full border border-cyan-400/30 bg-slate-950/92" />
+        <div className="mt-1 h-2 w-2 rounded-full border border-cyan-400/30 bg-slate-950/92" />
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ import threading
 from typing import Any, Optional
 
 from app.core.config import settings
+from app.core.time import utc_now
 
 
 _redis_client = None
@@ -49,7 +50,7 @@ def init_redis() -> None:
 
 def _cleanup_memory_cache() -> None:
     """Remove expired entries while holding the cache lock."""
-    now = datetime.utcnow()
+    now = utc_now()
     expired_keys = [key for key, (_, expiry) in _memory_cache.items() if expiry and expiry < now]
     for key in expired_keys:
         del _memory_cache[key]
@@ -72,7 +73,7 @@ def cache_get(key: str) -> Optional[Any]:
             return None
 
         value, expiry = _memory_cache[key]
-        if expiry is None or expiry > datetime.utcnow():
+        if expiry is None or expiry > utc_now():
             return value
 
         del _memory_cache[key]
@@ -90,7 +91,7 @@ def cache_set(key: str, value: Any, ttl: int = CACHE_TTL_SHORT) -> bool:
 
     with _cache_lock:
         _cleanup_memory_cache()
-        expiry = datetime.utcnow() + timedelta(seconds=ttl) if ttl > 0 else None
+        expiry = utc_now() + timedelta(seconds=ttl) if ttl > 0 else None
         _memory_cache[key] = (value, expiry)
         return True
 

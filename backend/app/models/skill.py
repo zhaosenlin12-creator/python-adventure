@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Text, JSON, ForeignKey, Float, DateTime
 from sqlalchemy.orm import relationship
-from datetime import datetime
+from app.core.time import utc_now
 from app.core.database import Base
 
 class Skill(Base):
@@ -25,8 +25,7 @@ class Skill(Base):
     # 额外效果
     effects = Column(JSON, default={})  # 其他效果
     
-    created_at = Column(DateTime, default=datetime.utcnow)
-
+    created_at = Column(DateTime, default=utc_now)
 
 
 

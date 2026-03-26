@@ -2,8 +2,8 @@
 修复玩家位置数据 - 更新所有玩家的 last_move 时间
 """
 from app.core.database import SessionLocal
+from app.core.time import utc_now
 from app.models.user_location import UserLocation
-from datetime import datetime
 
 def fix_locations():
     db = SessionLocal()
@@ -16,7 +16,7 @@ def fix_locations():
         updated = 0
         for location in locations:
             # 更新 last_move 时间为当前时间
-            location.last_move = datetime.utcnow()
+            location.last_move = utc_now()
             updated += 1
         
         db.commit()

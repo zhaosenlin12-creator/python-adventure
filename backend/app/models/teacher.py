@@ -2,7 +2,7 @@
 教师模型
 """
 from sqlalchemy import Column, Integer, String, Boolean, DateTime
-from datetime import datetime
+from app.core.time import utc_now
 from app.core.database import Base
 
 class Teacher(Base):
@@ -22,7 +22,7 @@ class Teacher(Base):
     # 所教班级/学生组
     class_name = Column(String)
     
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=utc_now)
 
 
 

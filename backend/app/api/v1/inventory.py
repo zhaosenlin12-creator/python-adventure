@@ -8,7 +8,7 @@ from app.core.database import get_db
 from app.core.security import get_current_user
 from app.models.user import User
 from app.models.inventory import Item, UserInventory
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 router = APIRouter()
 
@@ -24,8 +24,7 @@ class ItemInfo(BaseModel):
     quantity: int
     is_equipped: bool
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class UseItemRequest(BaseModel):
     """使用物品请求"""

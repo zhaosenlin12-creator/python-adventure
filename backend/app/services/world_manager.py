@@ -4,6 +4,7 @@
 from typing import Any, Dict, List, Optional, Set
 from sqlalchemy.orm import Session
 from datetime import datetime, timedelta
+from app.core.time import utc_now
 from app.models.user_location import UserLocation
 from app.models.map_object import MapObject, UserMapProgress
 from app.models.user import User
@@ -46,7 +47,7 @@ class WorldManager:
         
         location.x = x
         location.y = y
-        location.last_move = datetime.utcnow()
+        location.last_move = utc_now()
         
         if direction:
             location.direction = direction
@@ -188,7 +189,7 @@ class WorldManager:
         
         # 🔥 优化：放宽时间限制到30分钟，确保能找到更多玩家
         # 同时也查询当前有 WebSocket 连接的玩家
-        time_threshold = datetime.utcnow() - timedelta(minutes=30)
+        time_threshold = utc_now() - timedelta(minutes=30)
         
         # 🔥 方案1：基于数据库查询（时间阈值）
         nearby = db.query(UserLocation, User).join(User).filter(
@@ -348,7 +349,7 @@ class WorldManager:
         if action == "collect" and map_object.interaction_type == "collect":
             # 收集类型（宝箱、资源等）
             progress.status = "collected"
-            progress.collected_at = datetime.utcnow()
+            progress.collected_at = utc_now()
             
             # 发放奖励
             if map_object.rewards:
@@ -378,7 +379,7 @@ class WorldManager:
             
             if user_answer.lower().strip() == correct_answer.lower().strip():
                 progress.status = "completed"
-                progress.collected_at = datetime.utcnow()
+                progress.collected_at = utc_now()
                 progress.data = {"answer": user_answer}
                 
                 if map_object.rewards:
@@ -401,7 +402,7 @@ class WorldManager:
         elif action == "talk" and map_object.interaction_type == "talk":
             # 对话类型（NPC）
             progress.status = "completed"
-            progress.collected_at = datetime.utcnow()
+            progress.collected_at = utc_now()
             
             if map_object.rewards:
                 reward_service.grant_rewards(db, user, map_object.rewards)
@@ -438,7 +439,6 @@ class WorldManager:
 
 # 全局实例
 world_manager = WorldManager()
-
 
 
 

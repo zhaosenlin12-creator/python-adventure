@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, Text, JSON, Boolean, DateTime, ForeignKey
-from datetime import datetime
+from app.core.time import utc_now
 from app.core.database import Base
 
 class MapObject(Base):
@@ -25,7 +25,7 @@ class MapObject(Base):
     # 状态
     is_active = Column(Boolean, default=True)  # 是否激活
     respawn_time = Column(Integer)  # 重生时间（秒），为空表示不重生
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=utc_now)
 
 
 class UserMapProgress(Base):

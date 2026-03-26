@@ -5,7 +5,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import List
-from pydantic import BaseModel, field_validator
+from pydantic import BaseModel, ConfigDict, field_validator
 import re
 import time
 import logging
@@ -293,8 +293,7 @@ class UserDecorationResponse(BaseModel):
     quantity: int
     purchased_at: str
     
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class PlacedDecorationResponse(BaseModel):
@@ -306,8 +305,7 @@ class PlacedDecorationResponse(BaseModel):
     rotation: float
     placed_at: str
     
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 # ==================== API 端点 ====================

@@ -230,8 +230,8 @@ export default function TutorialOverlay({ onComplete }: TutorialOverlayProps) {
       {/* Tutorial dialog */}
       <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] w-full max-w-lg px-4">
         <div
-          className={`bg-gradient-to-br from-amber-900/95 via-yellow-900/95 to-orange-900/95 
-            rounded-xl shadow-2xl border-2 border-yellow-500/50 backdrop-blur-sm
+          className={`bg-gradient-to-br from-slate-900/96 via-sky-950/96 to-cyan-950/96 
+            rounded-xl shadow-2xl border-2 border-cyan-400/35 backdrop-blur-sm
             transform transition-all duration-300 ${
               isAnimating ? "scale-95 opacity-80" : "scale-100 opacity-100"
             }`}
@@ -239,7 +239,7 @@ export default function TutorialOverlay({ onComplete }: TutorialOverlayProps) {
           {/* Progress bar */}
           <div className="h-1 bg-black/30 rounded-t-xl overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-yellow-400 to-orange-400 transition-all duration-500"
+              className="h-full bg-gradient-to-r from-sky-400 to-cyan-400 transition-all duration-500"
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -248,7 +248,7 @@ export default function TutorialOverlay({ onComplete }: TutorialOverlayProps) {
           <div className="flex items-center justify-between px-4 pt-3">
             <div className="flex items-center gap-2">
               <span className="text-2xl">{currentStep.icon}</span>
-              <h3 className="text-lg font-bold text-yellow-100">
+              <h3 className="text-lg font-bold text-slate-100">
                 {currentStep.title}
               </h3>
             </div>
@@ -257,13 +257,13 @@ export default function TutorialOverlay({ onComplete }: TutorialOverlayProps) {
               className="p-1.5 hover:bg-white/10 rounded-lg transition-colors"
               title="跳过教程"
             >
-              <X className="w-5 h-5 text-yellow-200/60 hover:text-yellow-200" />
+              <X className="w-5 h-5 text-slate-300/60 hover:text-slate-100" />
             </button>
           </div>
 
           {/* Content */}
           <div className="px-4 py-3">
-            <p className="text-yellow-200/90 text-sm leading-relaxed">
+            <p className="text-slate-200/90 text-sm leading-relaxed">
               {currentStep.description}
             </p>
 
@@ -271,7 +271,7 @@ export default function TutorialOverlay({ onComplete }: TutorialOverlayProps) {
             {currentStep.action && (
               <div
                 className={`mt-3 flex items-center gap-2 text-sm ${
-                  isStepActionCompleted ? "text-green-400" : "text-yellow-400"
+                  isStepActionCompleted ? "text-green-400" : "text-cyan-300"
                 }`}
               >
                 {isStepActionCompleted ? (
@@ -298,10 +298,10 @@ export default function TutorialOverlay({ onComplete }: TutorialOverlayProps) {
                   key={index}
                   className={`w-2 h-2 rounded-full transition-colors ${
                     index === tutorialStep
-                      ? "bg-yellow-400"
+                      ? "bg-cyan-400"
                       : index < tutorialStep
-                      ? "bg-yellow-600"
-                      : "bg-yellow-900"
+                      ? "bg-sky-500"
+                      : "bg-slate-700"
                   }`}
                 />
               ))}
@@ -326,7 +326,7 @@ export default function TutorialOverlay({ onComplete }: TutorialOverlayProps) {
                   ${
                     currentStep.action && !isStepActionCompleted
                       ? "bg-gray-600/50 text-gray-400 cursor-not-allowed"
-                      : "bg-yellow-600 hover:bg-yellow-500 text-white"
+                      : "bg-cyan-500 hover:bg-cyan-400 text-slate-950"
                   }`}
               >
                 {tutorialStep >= TUTORIAL_STEPS.length - 1 ? (
@@ -414,10 +414,10 @@ function TutorialHighlight({ targetArea }: TutorialHighlightProps) {
 
       {/* Highlight cutout */}
       <div
-        className="fixed z-[56] pointer-events-none border-2 border-yellow-400 rounded-lg animate-pulse"
+        className="fixed z-[56] pointer-events-none border-2 border-cyan-400 rounded-lg animate-pulse"
         style={{
           ...highlightStyle,
-          boxShadow: "0 0 0 9999px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.5)",
+          boxShadow: "0 0 0 9999px rgba(0, 0, 0, 0.5), 0 0 20px rgba(34, 211, 238, 0.4)",
         }}
       />
 
@@ -477,7 +477,7 @@ function TutorialArrow({ targetArea }: TutorialArrowProps) {
 
   return (
     <div
-      className="z-[57] text-yellow-400 animate-bounce"
+      className="z-[57] text-cyan-300 animate-bounce"
       style={arrowPosition}
     >
       <svg

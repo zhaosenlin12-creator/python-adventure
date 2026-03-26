@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 import pytest
 
 from app.core.database import Base, SessionLocal, engine
+from app.core.time import utc_now
 from app.core.security import get_password_hash
 from app.models.coin import CoinTransaction, WorkshopEarning
 from app.models.user import User
@@ -112,7 +113,7 @@ def test_daily_limit_caps_last_reward_and_blocks_follow_up(db):
 def test_daily_limit_resets_on_new_day(db):
     earning = WorkshopEarningsService.get_or_create_earning(db, "level-004", creator_id=1)
     earning.daily_coins = WorkshopEarningsService.DAILY_LIMIT
-    earning.last_reset_date = datetime.utcnow() - timedelta(days=1)
+    earning.last_reset_date = utc_now() - timedelta(days=1)
     db.commit()
 
     result = WorkshopEarningsService.record_play(db, "level-004", creator_id=1, player_id=2)

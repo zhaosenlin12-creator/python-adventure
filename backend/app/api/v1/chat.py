@@ -231,16 +231,16 @@ async def chat_websocket(websocket: WebSocket, user_id: int, db: Session = Depen
         "level": user.level,
         "rank_title": user.get_rank_title()
     }
-    
-    await manager.connect(websocket, user_id, user_info)
+
+    try:
+        await manager.connect(websocket, user_id, user_info)
     
     # 发送在线用户列表
-    await websocket.send_json({
-        "type": "online_users",
-        "data": {"users": manager.get_online_users()}
-    })
+        await websocket.send_json({
+            "type": "online_users",
+            "data": {"users": manager.get_online_users()}
+        })
     
-    try:
         while True:
             data = await websocket.receive_json()
             await handle_chat_message(websocket, user_id, user_info, data, db)

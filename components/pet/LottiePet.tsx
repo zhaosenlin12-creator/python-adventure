@@ -34,8 +34,27 @@ interface LottiePetProps {
 
 // 🔒 安全白名单 - 防止路径遍历攻击
 const VALID_PET_TYPES = new Set([
-  'egg', 'code_kitty', 'algo_bunny', 'shiba_debugger',
-  'bit_bot', 'data_sprite', 'ava_ai', 'code_dragon',
+  'egg',
+  'code_kitty',
+  'algo_bunny',
+  'shiba_debugger',
+  'bit_bot',
+  'data_sprite',
+  'ava_ai',
+  'code_dragon',
+  'giraffe_oracle',
+  'snow_cat',
+  'silver_lynx',
+  'forest_maine',
+  'coffee_shadow',
+  'husky_rider',
+  'pom_angel',
+  'mini_civet',
+  'dutch_whisker',
+  'neon_hound',
+  'qiongqi_howl',
+  'taowu_flare',
+  'golden_roc',
 ]);
 const VALID_ANIMATION_STATES = new Set([
   'normal', 'happy', 'excited', 'sad', 'tired', 'curious',

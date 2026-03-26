@@ -35,25 +35,25 @@ interface EvolutionPokedexProps {
 
 const getStageBorder = (stageIndex: number) => {
   const borderMap: Record<number, string> = {
-    0: 'border-slate-500/70',
-    1: 'border-amber-300/70',
-    2: 'border-emerald-300/70',
-    3: 'border-sky-300/70',
-    4: 'border-violet-300/70',
-    5: 'border-yellow-300/80',
+    0: 'border-slate-500/60',
+    1: 'border-sky-300/55',
+    2: 'border-emerald-300/55',
+    3: 'border-cyan-300/60',
+    4: 'border-fuchsia-300/60',
+    5: 'border-amber-200/55',
   };
 
-  return borderMap[stageIndex] ?? 'border-slate-500/70';
+  return borderMap[stageIndex] ?? 'border-slate-500/60';
 };
 
 const getStageAccent = (stageIndex: number) => {
   const accentMap: Record<number, string> = {
     0: 'from-slate-300/16 via-slate-900/95 to-slate-950',
-    1: 'from-amber-200/16 via-slate-900/95 to-slate-950',
+    1: 'from-sky-200/16 via-slate-900/95 to-slate-950',
     2: 'from-emerald-200/16 via-slate-900/95 to-slate-950',
-    3: 'from-sky-200/16 via-slate-900/95 to-slate-950',
-    4: 'from-violet-200/16 via-slate-900/95 to-slate-950',
-    5: 'from-yellow-100/18 via-slate-900/95 to-slate-950',
+    3: 'from-cyan-200/16 via-slate-900/95 to-slate-950',
+    4: 'from-fuchsia-200/16 via-slate-900/95 to-slate-950',
+    5: 'from-amber-100/14 via-slate-900/95 to-slate-950',
   };
 
   return accentMap[stageIndex] ?? accentMap[0];
@@ -201,7 +201,7 @@ export function EvolutionPokedex({
   ) => {
     const appearance = getStageAppearance(stageIndex);
     const glowStyle = appearance.glowEffect
-      ? { filter: 'drop-shadow(0 0 18px rgba(250, 204, 21, 0.36))' }
+      ? { filter: 'drop-shadow(0 0 16px rgba(125, 211, 252, 0.24))' }
       : undefined;
 
     return (
@@ -221,7 +221,7 @@ export function EvolutionPokedex({
           <div className="flex h-full w-full items-center justify-center text-6xl">{petConfig.icon}</div>
         )}
         {emphasize && appearance.specialEffect === 'legendary' && (
-          <div className="absolute inset-0 rounded-[28px] border border-yellow-200/30 shadow-[0_0_32px_rgba(250,204,21,0.18)]" />
+          <div className="pointer-events-none absolute inset-0 rounded-[28px] bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.12),transparent_55%)]" />
         )}
         {locked && (
           <div className="absolute inset-0 flex items-center justify-center bg-slate-950/45">
@@ -243,6 +243,7 @@ export function EvolutionPokedex({
         initial={{ scale: 0.96, opacity: 0, y: 14 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}
         exit={{ scale: 0.96, opacity: 0, y: 14 }}
+        data-testid="pet-pokedex"
         className="relative flex h-[92vh] w-full max-w-[1180px] flex-col overflow-hidden rounded-[30px] border border-white/10 bg-[linear-gradient(180deg,#0f172a,#020617)] shadow-[0_36px_100px_rgba(2,6,23,0.62)]"
         onClick={(event) => event.stopPropagation()}
       >
@@ -253,7 +254,7 @@ export function EvolutionPokedex({
             <div>
               <div className="mb-2 flex items-center gap-2 text-[11px] uppercase tracking-[0.28em] text-slate-400">
                 <Star className="h-4 w-4" />
-                Pet Atlas
+                宠物图鉴
               </div>
               <h2 className="text-2xl font-bold text-white md:text-3xl">进化图鉴</h2>
               <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-300">

@@ -6,6 +6,7 @@ from typing import Dict, List, Optional
 from datetime import datetime
 import asyncio
 import json
+from app.core.time import utc_now
 
 class BattleRoom:
     """对战房间"""
@@ -48,7 +49,7 @@ class BattleRoom:
         
         self.task_id = task_id
         self.status = "in_progress"
-        self.start_time = datetime.utcnow()
+        self.start_time = utc_now()
         return True
     
     def submit_code(self, user_id: int, code: str, score: int):
@@ -56,7 +57,7 @@ class BattleRoom:
         self.submissions[user_id] = {
             "code": code,
             "score": score,
-            "time": datetime.utcnow()
+            "time": utc_now()
         }
         
         # 如果有玩家获得满分，结束对战
@@ -126,7 +127,7 @@ class BattleService:
             "user_id": user_id,
             "username": username,
             "level": level,
-            "join_time": datetime.utcnow()
+            "join_time": utc_now()
         }
         self.waiting_queue.append(player)
         
@@ -151,7 +152,7 @@ class BattleService:
         player2 = self.waiting_queue.pop(0)
         
         # 创建房间
-        room_id = f"room_{datetime.utcnow().timestamp()}"
+        room_id = f"room_{utc_now().timestamp()}"
         room = BattleRoom(room_id)
         
         room.add_player(player1["user_id"], player1["username"], player1["level"])

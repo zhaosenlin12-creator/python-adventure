@@ -10,12 +10,16 @@ const PET_FIXTURES = [
   { pet_type: 'code_kitty', pet_style: 'cute', name: 'kitty-qa' },
   { pet_type: 'algo_bunny', pet_style: 'cute', name: 'bunny-qa' },
   { pet_type: 'shiba_debugger', pet_style: 'cute', name: 'shiba-qa' },
+  { pet_type: 'silver_lynx', pet_style: 'cute', name: 'lynx-qa' },
+  { pet_type: 'coffee_shadow', pet_style: 'cute', name: 'coffee-qa' },
   { pet_type: 'bit_bot', pet_style: 'tech', name: 'goldcat-qa' },
   { pet_type: 'data_sprite', pet_style: 'tech', name: 'collie-qa' },
   { pet_type: 'ava_ai', pet_style: 'tech', name: 'snowleopard-qa' },
+  { pet_type: 'neon_hound', pet_style: 'tech', name: 'neon-qa' },
   { pet_type: 'code_dragon', pet_style: 'mythic', name: 'dragon-qa' },
   { pet_type: 'giraffe_oracle', pet_style: 'mythic', name: 'yinglong-qa' },
   { pet_type: 'snow_cat', pet_style: 'mythic', name: 'baize-qa' },
+  { pet_type: 'qiongqi_howl', pet_style: 'mythic', name: 'qiongqi-qa' },
 ] as const;
 
 const FOOD_FIXTURES = [
@@ -166,19 +170,12 @@ async function openRootPanel(page: Page) {
   for (let attempt = 0; attempt < 6; attempt += 1) {
     await page.waitForTimeout(800);
     await page.mouse.click(68, 106);
-    if (await page.locator('button').filter({ hasText: '喂食' }).first().isVisible().catch(() => false)) {
+    if (await page.locator('button:has(svg.lucide-apple)').first().isVisible().catch(() => false)) {
       panelOpened = true;
       break;
     }
   }
   expect(panelOpened).toBeTruthy();
-}
-
-async function closeModalByLabel(page: Page, label: string) {
-  const closeButton = page.getByLabel(label);
-  if (await closeButton.count()) {
-    await closeButton.first().click();
-  }
 }
 
 async function setServerActivePet(session: QaSession, petId: number) {
@@ -238,14 +235,14 @@ async function desktopAudit(browser: Browser, session: QaSession) {
   await openRootPanel(page);
   await screenshot(page, '01-root-panel-desktop.png');
 
-  const pokedexButton = page.locator('button').filter({ hasText: '图鉴' }).first();
+  const pokedexButton = page.locator('button:has(svg.lucide-book-open)').last();
   await pokedexButton.click();
-  await expect(page.getByLabel('关闭进化图鉴')).toBeVisible({ timeout: 10000 });
+  await expect(page.getByTestId('pet-pokedex')).toBeVisible({ timeout: 10000 });
   await screenshot(page, '02-pokedex-desktop.png');
-  await closeModalByLabel(page, '关闭进化图鉴');
+  await page.keyboard.press('Escape');
 
   const beforeFeedInventory = await fetchInventory(session);
-  const feedButton = page.locator('button:has(svg.lucide-apple)').first();
+  const feedButton = page.locator('button:has(svg.lucide-apple)').last();
   await feedButton.click();
   const useButton = page.locator('button.pixel-btn.text-lg.py-3').first();
   await expect(useButton).toBeVisible({ timeout: 10000 });
@@ -259,7 +256,7 @@ async function desktopAudit(browser: Browser, session: QaSession) {
   await page.reload({ waitUntil: 'domcontentloaded' });
   await openRootPanel(page);
 
-  const homeButton = page.locator('button').filter({ hasText: '小屋' }).first();
+  const homeButton = page.locator('button:has(svg.lucide-house), button:has(svg.lucide-home)').last();
   await homeButton.click();
   const homeBackpackButton = page.locator('button.absolute.right-4.top-1\\/2.z-40.bg-slate-700').first();
   await expect(homeBackpackButton).toBeVisible({ timeout: 10000 });

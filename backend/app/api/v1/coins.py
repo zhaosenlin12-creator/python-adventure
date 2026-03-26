@@ -4,7 +4,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status, Header
 from sqlalchemy.orm import Session
 from typing import List
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from datetime import datetime
 
 from app.core.database import get_db
@@ -32,8 +32,7 @@ class CoinBalanceResponse(BaseModel):
     username: str
     coins: int
     
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class CoinTransactionResponse(BaseModel):
@@ -45,8 +44,7 @@ class CoinTransactionResponse(BaseModel):
     description: str | None
     created_at: datetime
     
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class CoinHistoryResponse(BaseModel):

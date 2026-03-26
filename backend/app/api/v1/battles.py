@@ -16,6 +16,7 @@ from app.services.sandbox import sandbox_service
 import random
 import time
 from datetime import datetime
+from app.core.time import utc_now
 
 router = APIRouter()
 
@@ -159,7 +160,7 @@ async def submit_battle_code(
         
         db_room.status = 'finished'
         db_room.winner_id = winner_id
-        db_room.finished_at = datetime.utcnow()
+        db_room.finished_at = utc_now()
         
         # 更新段位
         if winner_id:

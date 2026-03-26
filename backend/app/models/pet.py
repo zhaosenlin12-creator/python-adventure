@@ -4,6 +4,7 @@
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from datetime import datetime
+from app.core.time import utc_now
 from app.core.database import Base
 
 class Pet(Base):
@@ -34,7 +35,7 @@ class Pet(Base):
     
     # 状态
     status = Column(String(20), default='normal')  # 'normal', 'tired', 'coma', 'egg'
-    last_feed_time = Column(DateTime, default=datetime.utcnow)
+    last_feed_time = Column(DateTime, default=utc_now)
     coma_start_time = Column(DateTime, nullable=True)
     
     # 孵化系统
@@ -42,8 +43,8 @@ class Pet(Base):
     hatch_progress = Column(Integer, default=0)  # 孵化进度 (0-3, 完成3个关卡后孵化)
     
     # 时间戳
-    created_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    created_at = Column(DateTime, default=utc_now)
+    updated_at = Column(DateTime, default=utc_now, onupdate=utc_now)
     
     # 关系
     user = relationship("User", back_populates="pets")
@@ -76,7 +77,7 @@ class Pet(Base):
         if not self.last_feed_time:
             return 'normal'
         
-        days_since_feed = (datetime.utcnow() - self.last_feed_time).days
+        days_since_feed = (utc_now() - self.last_feed_time).days
         
         if days_since_feed >= 7:
             return 'coma'
@@ -125,7 +126,7 @@ class PetSkin(Base):
     id = Column(Integer, primary_key=True, index=True)
     pet_id = Column(Integer, ForeignKey("pets.id"), nullable=False)
     skin_id = Column(String(50), nullable=False)
-    unlocked_at = Column(DateTime, default=datetime.utcnow)
+    unlocked_at = Column(DateTime, default=utc_now)
     
     pet = relationship("Pet", back_populates="skins")
 
@@ -137,6 +138,6 @@ class PetGrowthLog(Base):
     pet_id = Column(Integer, ForeignKey("pets.id"), nullable=False)
     event_type = Column(String(50), nullable=False)  # 'level_up', 'evolve', 'rescue', etc.
     event_data = Column(String)  # JSON格式
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=utc_now)
     
     pet = relationship("Pet", back_populates="growth_logs")

@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation';
 
 const PhaserGame = dynamicImport(() => import('@/components/world/PhaserGame'), {
     ssr: false,
-    loading: () => <div className="w-full h-screen bg-gradient-to-b from-[#0a0e27] via-[#1a1e3e] to-[#0a0e27] flex items-center justify-center text-blue-400 font-pixel">Loading World...</div>
+    loading: () => <div className="w-full h-screen bg-gradient-to-b from-[#0a0e27] via-[#1a1e3e] to-[#0a0e27] flex items-center justify-center text-blue-400 font-pixel">开放世界加载中...</div>
 });
 import SkillChallengeModal from "@/components/game/SkillChallengeModal";
 import DoorChallengeModal from "@/components/game/DoorChallengeModal";
@@ -24,6 +24,10 @@ import BattleRoom from "@/components/game/BattleRoom";
 import dynamicPvp from 'next/dynamic';
 
 const PvpBattleSystem = dynamicPvp(() => import('@/components/game/pvp/PvpBattleSystem'), {
+    ssr: false,
+    loading: () => null
+});
+const PvpBattleRoyaleSystem = dynamicPvp(() => import('@/components/game/pvp-br/PvpBattleRoyaleSystem'), {
     ssr: false,
     loading: () => null
 });
@@ -68,6 +72,7 @@ export default function WorldPage() {
     
     // 新 PVP 三轮制系统
     const [showNewPvp, setShowNewPvp] = useState(false);
+    const [showBattleRoyale, setShowBattleRoyale] = useState(false);
     
     // 结果弹窗状态
     const [showResultModal, setShowResultModal] = useState(false);
@@ -269,6 +274,9 @@ export default function WorldPage() {
                 case 'pvp':
                     // 使用新的三轮制 PVP 系统（PVP组件内部会切换BGM）
                     setShowNewPvp(true);
+                    break;
+                case 'battle_royale':
+                    setShowBattleRoyale(true);
                     break;
                 case 'secret':
                     console.log('[WorldPage] 打开密码门挑战');
@@ -625,6 +633,11 @@ export default function WorldPage() {
             <PvpBattleSystem
                 isOpen={showNewPvp}
                 onClose={() => setShowNewPvp(false)}
+            />
+
+            <PvpBattleRoyaleSystem
+                isOpen={showBattleRoyale}
+                onClose={() => setShowBattleRoyale(false)}
             />
 
             {/* 底部备案信息 */}

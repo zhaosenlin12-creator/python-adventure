@@ -1,5 +1,5 @@
-"""
-宠物系统API接口
+﻿"""
+瀹犵墿绯荤粺API鎺ュ彛
 """
 from fastapi import APIRouter, Depends, HTTPException, Body
 from sqlalchemy.orm import Session
@@ -10,6 +10,7 @@ import json
 from pydantic import BaseModel
 
 from app.core.database import get_db
+from app.core.time import utc_now, utc_now_iso
 from app.models.pet import Pet, PetGrowthLog
 from app.models.food import get_food_type
 from app.api.dependencies import get_current_user
@@ -33,6 +34,13 @@ PET_TYPES_BY_STYLE = {
         "code_kitty",
         "algo_bunny",
         "shiba_debugger",
+        "silver_lynx",
+        "forest_maine",
+        "coffee_shadow",
+        "husky_rider",
+        "pom_angel",
+        "mini_civet",
+        "dutch_whisker",
         "dog_shiba",
         "cute_cat",
         "cute_rabbit",
@@ -42,6 +50,7 @@ PET_TYPES_BY_STYLE = {
         "bit_bot",
         "data_sprite",
         "ava_ai",
+        "neon_hound",
         "tech_bot",
         "tech_drone",
         "tech_ai",
@@ -50,6 +59,9 @@ PET_TYPES_BY_STYLE = {
         "code_dragon",
         "giraffe_oracle",
         "snow_cat",
+        "qiongqi_howl",
+        "taowu_flare",
+        "golden_roc",
     },
 }
 
@@ -88,23 +100,23 @@ async def get_my_pet(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
-    """获取当前用户的宠物列表"""
+    """鑾峰彇褰撳墠鐢ㄦ埛鐨勫疇鐗╁垪"""
     pets = db.query(Pet).filter(Pet.user_id == current_user.id).all()
     
     if not pets:
-        # 🔥 自动发放宠物蛋，保证孵化仪式流程
+        # 馃敟 鑷姩鍙戞斁瀹犵墿铔嬶紝淇濊瘉瀛靛寲浠紡娴佺▼
         eggs = grant_pet_eggs(db, current_user.id, count=1)
         db.commit()
         pets = eggs
     
-    # 检查并更新每只宠物状态
+    # 妫€鏌ュ苟鏇存柊姣忓彧瀹犵墿鐘??
     changed = False
     for pet in pets:
         current_status = pet.check_status()
         if current_status != pet.status:
             pet.status = current_status
             if current_status == 'coma' and not pet.coma_start_time:
-                pet.coma_start_time = datetime.utcnow()
+                pet.coma_start_time = utc_now()
             changed = True
     if changed:
         db.commit()
@@ -123,7 +135,7 @@ async def get_my_pet(
         "success": True,
         "pets": pet_dicts,
         "current_pet_id": current_pet_id,
-        # 兼容旧前端：提供 pet 字段
+        # 鍏煎鏃у墠绔細鎻愪緵 pet 瀛楁
         "pet": active_pet_dict
     }
 
@@ -134,7 +146,7 @@ async def set_active_pet(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
-    """设置当前跟随宠物（服务端权威）"""
+    """璁剧疆褰撳墠璺熼殢瀹犵墿锛堟湇鍔＄鏉冨▉"""
     active_snapshot = world_manager.set_active_pet_for_user(db, current_user.id, pet_id)
     if not active_snapshot:
         raise HTTPException(status_code=404, detail="Pet not found")
@@ -162,7 +174,7 @@ async def create_pet(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
-    """创建宠物"""
+    """鍒涘缓瀹犵墿"""
     if request:
         pet_type = request.pet_type
         pet_style = request.pet_style
@@ -170,10 +182,10 @@ async def create_pet(
 
     if not pet_type or not pet_style:
         raise HTTPException(status_code=400, detail="pet_type and pet_style are required")
-    # 验证宠物类型
+    # 楠岃瘉瀹犵墿绫诲瀷
     pet_style = validate_pet_selection(pet_type, pet_style)
     
-    # 创建宠物
+    # 鍒涘缓瀹犵墿
     new_pet = Pet(
         user_id=current_user.id,
         pet_type=pet_type,
@@ -188,7 +200,7 @@ async def create_pet(
         intimacy=0,
         evolution_stage=1,
         status='normal',
-        last_feed_time=datetime.utcnow(),
+        last_feed_time=utc_now(),
         is_egg=0,
         hatch_progress=0
     )
@@ -199,7 +211,7 @@ async def create_pet(
     if current_user.current_pet_id is None:
         current_user.current_pet_id = new_pet.id
     
-    # 记录成长日志
+    # 璁板綍鎴愰暱鏃ュ織
     log = PetGrowthLog(
         pet_id=new_pet.id,
         event_type='created',
@@ -223,7 +235,7 @@ async def feed_pet(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
-    """喂食宠物（使用食物时调用）"""
+    """鍠傞瀹犵墿锛堜娇鐢ㄩ鐗╂椂璋冪敤"""
     pet = db.query(Pet).filter(
         Pet.id == pet_id,
         Pet.user_id == current_user.id
@@ -233,9 +245,9 @@ async def feed_pet(
         raise HTTPException(status_code=404, detail="Pet not found")
 
     try:
-        # 支持两种喂食方式：
-        # 1) 前端传 food_id/quantity：后端原子性扣减库存并计算效果
-        # 2) 兼容旧逻辑：前端直接传 effects
+        # 鏀寔涓ょ鍠傞鏂瑰紡??
+        # 1) 鍓嶇??food_id/quantity锛氬悗绔師瀛愭€ф墸鍑忓簱瀛樺苟璁＄畻鏁堟灉
+        # 2) 鍏煎鏃ч€昏緫锛氬墠绔洿鎺ヤ紶 effects
         food_id = request.get('food_id')
         quantity = int(request.get('quantity', 1) or 1)
 
@@ -249,7 +261,7 @@ async def feed_pet(
 
             effects = food_type.effects or {}
 
-            # 确保背包表存在
+            # 纭繚鑳屽寘琛ㄥ瓨??
             db.execute(text("""
                 CREATE TABLE IF NOT EXISTS food_inventory (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -262,8 +274,8 @@ async def feed_pet(
                 )
             """))
 
-            # 查询库存
-            now_iso = datetime.utcnow().isoformat()
+            # 鏌ヨ搴撳瓨
+            now_iso = utc_now_iso()
             update_result = db.execute(
                 text("""
                     UPDATE food_inventory
@@ -306,25 +318,25 @@ async def feed_pet(
             effects = request.get('effects', {}) or {}
             new_quantity = None
 
-        # 更新喂食时间
-        pet.last_feed_time = datetime.utcnow()
+        # 鏇存柊鍠傞鏃堕棿
+        pet.last_feed_time = utc_now()
 
-        # 如果宠物昏迷，恢复为疲惫状态
+        # 濡傛灉瀹犵墿鏄忚糠锛屾仮澶嶄负鐤叉儷鐘??
         if pet.status == 'coma':
             pet.status = 'tired'
             pet.coma_start_time = None
         elif pet.status == 'tired':
             pet.status = 'normal'
 
-        # 应用食物效果
-        exp_gain = effects.get('hunger', 10)  # 饱食度转换为经验值
+        # 搴旂敤椋熺墿鏁堟灉
+        exp_gain = effects.get('hunger', 10)  # 楗遍搴﹁浆鎹负缁忛獙??
         happiness_gain = effects.get('happiness', 0)
         intimacy_gain = max(1, int(happiness_gain / 5)) if (food_id or effects) else 0
 
-        # 增加经验值
+        # 澧炲姞缁忛獙??
         pet.exp += exp_gain
 
-        # 增加属性（如果食物有属性加成）
+        # 澧炲姞灞炴€э紙濡傛灉椋熺墿鏈夊睘鎬у姞鎴愶級
         if 'intelligence' in effects:
             pet.intelligence = min(100, pet.intelligence + effects['intelligence'])
         if 'creativity' in effects:
@@ -332,24 +344,24 @@ async def feed_pet(
         if 'persistence' in effects:
             pet.persistence = min(100, pet.persistence + effects['persistence'])
 
-        # 增加亲密度（喂食基础收益）
+        # 澧炲姞浜插瘑搴︼紙鍠傞鍩虹鏀剁泭??
         if intimacy_gain > 0:
             pet.intimacy = min(999, (pet.intimacy or 0) + intimacy_gain)
 
-        # 检查是否升级（每100经验升1级）
+        # 妫€鏌ユ槸鍚﹀崌绾э紙??00缁忛獙??绾э級
         level_up = False
         while pet.exp >= 100:
-            pet.exp -= 100  # 扣除升级所需经验
+            pet.exp -= 100  # 鎵ｉ櫎鍗囩骇鎵€闇€缁忛獙
             pet.level += 1
             level_up = True
 
-        # 更新战斗力
+        # 鏇存柊鎴樻枟??
         pet.battle_power = pet.calculate_battle_power()
 
         db.commit()
         db.refresh(pet)
 
-        # 记录成长日志
+        # 璁板綍鎴愰暱鏃ュ織
         if level_up:
             log = PetGrowthLog(
                 pet_id=pet.id,
@@ -381,7 +393,7 @@ async def rescue_pet(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
-    """营救昏迷的宠物"""
+    """钀ユ晳鏄忚糠鐨勫疇"""
     pet = db.query(Pet).filter(
         Pet.id == pet_id,
         Pet.user_id == current_user.id
@@ -393,23 +405,23 @@ async def rescue_pet(
     if pet.status != 'coma':
         raise HTTPException(status_code=400, detail="Pet is not in coma")
     
-    # 检查答题数量（至少答对3道）
+    # 妫€鏌ョ瓟棰樻暟閲忥紙鑷冲皯绛斿3閬擄級
     if answers_correct < 3:
         return {
             "success": False,
             "message": "Need to answer at least 3 questions correctly"
         }
     
-    # 营救成功
+    # 钀ユ晳鎴愬姛
     pet.status = 'normal'
-    pet.last_feed_time = datetime.utcnow()
+    pet.last_feed_time = utc_now()
     pet.coma_start_time = None
-    pet.exp += 50  # 营救奖励
+    pet.exp += 50  # 钀ユ晳濂栧姳
     
     db.commit()
     db.refresh(pet)
     
-    # 记录成长日志
+    # 璁板綍鎴愰暱鏃ュ織
     log = PetGrowthLog(
         pet_id=pet.id,
         event_type='rescued',
@@ -431,7 +443,7 @@ async def check_pet_status(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
-    """检查宠物状态"""
+    """妫€鏌ュ疇鐗╃姸"""
     pet = db.query(Pet).filter(
         Pet.id == pet_id,
         Pet.user_id == current_user.id
@@ -459,7 +471,7 @@ async def update_pet_attributes(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
-    """更新宠物属性（游戏行为触发）"""
+    """鏇存柊瀹犵墿灞炴€э紙娓告垙琛屼负瑙﹀彂"""
     pet = db.query(Pet).filter(
         Pet.id == pet_id,
         Pet.user_id == current_user.id
@@ -493,7 +505,7 @@ async def update_pet_name(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
-    """更新宠物名字"""
+    """鏇存柊瀹犵墿鍚嶅瓧"""
     pet = db.query(Pet).filter(
         Pet.id == pet_id,
         Pet.user_id == current_user.id
@@ -516,7 +528,7 @@ async def update_pet_name(
     db.commit()
     db.refresh(pet)
     
-    # 记录成长日志
+    # 璁板綍鎴愰暱鏃ュ織
     log = PetGrowthLog(
         pet_id=pet.id,
         event_type='renamed',
@@ -538,7 +550,7 @@ async def evolve_pet(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
-    """进化宠物"""
+    """杩涘寲瀹犵墿"""
     pet = db.query(Pet).filter(
         Pet.id == pet_id,
         Pet.user_id == current_user.id
@@ -547,10 +559,10 @@ async def evolve_pet(
     if not pet:
         raise HTTPException(status_code=404, detail="Pet not found")
     
-    # 获取当前进化阶段
+    # 鑾峰彇褰撳墠杩涘寲闃舵
     current_stage = pet.evolution_stage or 0
     
-    # 定义进化条件（与前端阶段保持一致：2=少年期、3=成年期、4=完全体、5=传说）
+    # 瀹氫箟杩涘寲鏉′欢锛堜笌鍓嶇闃舵淇濇寔涓€鑷达細2=灏戝勾鏈??=鎴愬勾鏈??=瀹屽叏浣??=浼犺??
     evolution_requirements = {
         2: {'level': 5, 'intimacy': 30},
         3: {'level': 15, 'intimacy': 80, 'intelligence': 20},
@@ -560,11 +572,11 @@ async def evolve_pet(
     
     next_stage = current_stage + 1
     
-    # 检查是否已达到最高阶段
+    # 妫€鏌ユ槸鍚﹀凡杈惧埌鏈€楂橀樁??
     if next_stage > 5:
         raise HTTPException(status_code=400, detail="Already at maximum evolution stage")
     
-    # 检查进化条件
+    # 妫€鏌ヨ繘鍖栨潯??
     if next_stage in evolution_requirements:
         req = evolution_requirements[next_stage]
         
@@ -583,7 +595,7 @@ async def evolve_pet(
         if 'persistence' in req and pet.persistence < req['persistence']:
             raise HTTPException(status_code=400, detail=f"Need perseverance {req['persistence']}")
     
-    # 进化奖励（对齐阶段）
+    # 杩涘寲濂栧姳锛堝榻愰樁娈碉級
     evolution_rewards = {
         2: {'coins': 100, 'attribute_bonus': 5, 'food_rewards': {'cake': 2}},
         3: {'coins': 300, 'attribute_bonus': 10, 'food_rewards': {'star_cookie': 3}},
@@ -595,20 +607,20 @@ async def evolve_pet(
     reward = {'coins': reward_config.get('coins', 0), 'attribute_bonus': reward_config.get('attribute_bonus', 0)}
     food_rewards = reward_config.get('food_rewards', {}) or {}
     
-    # 执行进化
+    # 鎵ц杩涘寲
     pet.evolution_stage = next_stage
     pet.intelligence += reward['attribute_bonus']
     pet.creativity += reward['attribute_bonus']
     pet.persistence += reward['attribute_bonus']
     
-    # 给用户加金币
+    # 缁欑敤鎴峰姞閲戝竵
     if reward.get('coins'):
         current_user.coins = (current_user.coins or 0) + reward['coins']
 
-    # 发放食物奖励
+    # 鍙戞斁椋熺墿濂栧姳
     granted_food = grant_food_items(db, current_user.id, food_rewards)
 
-    # 记录成长日志
+    # 璁板綍鎴愰暱鏃ュ織
     log = PetGrowthLog(
         pet_id=pet.id,
         event_type='evolved',
@@ -622,7 +634,7 @@ async def evolve_pet(
     db.commit()
     
 
-    # 进化后检查成就
+    # 杩涘寲鍚庢鏌ユ垚??
     newly_unlocked = achievement_checker.check_and_unlock(
         db, current_user, event_type="pet_evolve", event_data={"stage": next_stage}
     )
@@ -651,7 +663,7 @@ async def update_pet_name_legacy(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
-    """更新宠物名字"""
+    """鏇存柊瀹犵墿鍚嶅瓧"""
     pet = db.query(Pet).filter(
         Pet.id == pet_id,
         Pet.user_id == current_user.id
@@ -668,13 +680,13 @@ async def update_pet_name_legacy(
     if len(new_name) > 12:
         raise HTTPException(status_code=400, detail="Name too long (max 12 characters)")
     
-    # 更新名字
+    # 鏇存柊鍚嶅瓧
     pet.name = new_name
     
     db.commit()
     db.refresh(pet)
     
-    # 记录成长日志
+    # 璁板綍鎴愰暱鏃ュ織
     log = PetGrowthLog(
         pet_id=pet.id,
         event_type='renamed',
@@ -696,7 +708,7 @@ async def update_hatch_progress(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
-    """更新孵化进度（完成关卡时调用）"""
+    """鏇存柊瀛靛寲杩涘害锛堝畬鎴愬叧鍗℃椂璋冪敤"""
     pet = db.query(Pet).filter(
         Pet.id == pet_id,
         Pet.user_id == current_user.id
@@ -705,23 +717,23 @@ async def update_hatch_progress(
     if not pet:
         raise HTTPException(status_code=404, detail="Pet not found")
     
-    # 检查是否是蛋状态
+    # 妫€鏌ユ槸鍚︽槸铔嬬姸??
     if not pet.is_egg:
         return {
             "success": False,
             "message": "Pet is already hatched"
         }
     
-    # 增加孵化进度
+    # 澧炲姞瀛靛寲杩涘害
     pet.hatch_progress += 1
     
-    # 检查是否可以孵化（完成3个关卡）
+    # 妫€鏌ユ槸鍚﹀彲浠ュ鍖栵紙瀹屾垚3涓叧鍗★級
     ready_to_hatch = pet.hatch_progress >= 3
     
     db.commit()
     db.refresh(pet)
     
-    # 记录成长日志
+    # 璁板綍鎴愰暱鏃ュ織
     log = PetGrowthLog(
         pet_id=pet.id,
         event_type='hatch_progress',
@@ -749,7 +761,7 @@ async def hatch_pet(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
-    """孵化宠物（选择宠物类型）"""
+    """瀛靛寲瀹犵墿锛堥€夋嫨瀹犵墿绫诲瀷"""
     pet = db.query(Pet).filter(
         Pet.id == pet_id,
         Pet.user_id == current_user.id
@@ -758,55 +770,43 @@ async def hatch_pet(
     if not pet:
         raise HTTPException(status_code=404, detail="Pet not found")
     
-    # 检查是否是蛋状态
+    # 妫€鏌ユ槸鍚︽槸铔嬬姸??
     if not pet.is_egg:
         raise HTTPException(status_code=400, detail="Pet is already hatched")
     
-    # 检查孵化进度
+    # 妫€鏌ュ鍖栬繘??
     if pet.hatch_progress < 3:
         raise HTTPException(
             status_code=400, 
             detail=f"Need to complete {3 - pet.hatch_progress} more levels to hatch"
         )
     
-    # 获取选择的宠物类型和风格
+    # 鑾峰彇閫夋嫨鐨勫疇鐗╃被鍨嬪拰椋庢牸
     pet_type = request.get('petType')
     pet_style = request.get('petStyle')
     pet_name = request.get('name', '')
     pet_style = validate_pet_selection(pet_type, pet_style)
     
-    # 验证宠物类型
-    valid_types = [
-        # 新版宠物
-        'code_kitty', 'algo_bunny', 'shiba_debugger',
-        'bit_bot', 'data_sprite', 'ava_ai',
-        'code_dragon', 'giraffe_oracle', 'snow_cat',
-        # 旧版兼容
-        'dog_shiba', 'cute_cat', 'cute_rabbit', 'cute_dog',
-        'tech_bot', 'tech_drone', 'tech_ai'
-    ]
-    if pet_type not in valid_types:
+    if pet_type not in VALID_PET_TYPES:
         raise HTTPException(status_code=400, detail="Invalid pet type")
     
-    # 验证宠物风格
-    valid_styles = ['cute', 'tech', 'mythic']
-    if pet_style not in valid_styles:
+    if pet_style not in VALID_PET_STYLES:
         raise HTTPException(status_code=400, detail="Invalid pet style")
     
-    # 孵化宠物
+    # 瀛靛寲瀹犵墿
     pet.is_egg = 0
     pet.pet_type = pet_type
     pet.pet_style = pet_style
     pet.name = pet_name or f"{pet_type.replace('_', ' ').title()}"
     pet.status = 'normal'
-    pet.last_feed_time = datetime.utcnow()
+    pet.last_feed_time = utc_now()
     pet.intimacy = 0
     pet.evolution_stage = 1
     
     db.commit()
     db.refresh(pet)
     
-    # 记录成长日志
+    # 璁板綍鎴愰暱鏃ュ織
     log = PetGrowthLog(
         pet_id=pet.id,
         event_type='hatched',
@@ -819,7 +819,7 @@ async def hatch_pet(
     db.add(log)
     db.commit()
 
-    # 孵化后检查成就
+    # 瀛靛寲鍚庢鏌ユ垚??
     newly_unlocked = achievement_checker.check_and_unlock(
         db, current_user, event_type="pet_hatch", event_data={"pet_id": pet.id}
     )
@@ -838,4 +838,5 @@ async def hatch_pet(
             } for a in (newly_unlocked or [])
         ]
     }
+
 

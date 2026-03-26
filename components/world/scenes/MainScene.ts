@@ -55,7 +55,7 @@ export class MainScene extends Phaser.Scene {
     private positionUpdateThrottle = 100; // 100ms发送一次位置
     
     // 地图配置
-    private readonly WORLD_WIDTH = 3000;
+    private readonly WORLD_WIDTH = 3500;
     private readonly WORLD_HEIGHT = 720;
     
     // 玩家技能状态（从游戏状态获取）
@@ -442,6 +442,7 @@ export class MainScene extends Phaser.Scene {
         this.createPlatform(1800, groundY - 150, 6);
         this.createPlatform(2200, groundY - 150, 4);
         this.createPlatform(2600, groundY - 150, 5);
+        this.createPlatform(3040, groundY - 150, 4);
         
         // 中层平台 (y=250) - 降低高度，玩家可以跳上去
         this.createPlatform(450, groundY - 250, 3, 0x4444ff);
@@ -450,6 +451,7 @@ export class MainScene extends Phaser.Scene {
         this.createPlatform(1650, groundY - 250, 5, 0x4444ff);
         this.createPlatform(2050, groundY - 250, 3, 0x4444ff);
         this.createPlatform(2450, groundY - 250, 4, 0x4444ff);
+        this.createPlatform(2860, groundY - 250, 4, 0x4444ff);
         
         // 高层平台 (y=200) - 需要滑翔
         this.createPlatform(700, groundY - 400, 3, 0xff44ff);
@@ -457,6 +459,7 @@ export class MainScene extends Phaser.Scene {
         this.createPlatform(1500, groundY - 400, 4, 0xff44ff);
         this.createPlatform(1900, groundY - 420, 3, 0xff44ff);
         this.createPlatform(2300, groundY - 400, 3, 0xff44ff);
+        this.createPlatform(3150, groundY - 400, 4, 0xff44ff);
         
         // 连接平台 - 帮助玩家在不同层级间移动
         this.createPlatform(200, groundY - 80, 2);
@@ -464,6 +467,7 @@ export class MainScene extends Phaser.Scene {
         this.createPlatform(1300, groundY - 200, 2);
         this.createPlatform(1500, groundY - 180, 4); // 技能树下方平台 - 降低高度
         this.createPlatform(2100, groundY - 200, 2);
+        this.createPlatform(2750, groundY - 200, 2);
     }
     
     private createPlatform(x: number, y: number, scale: number, tint?: number) {
@@ -537,10 +541,19 @@ export class MainScene extends Phaser.Scene {
                 requiredSkills: ['double_jump'] // 需要基础技能
             },
             {
-                id: 'pvp',
+                id: 'battle_royale',
                 x: 2700,
+                y: groundY - 250,
+                title: '生存乱斗',
+                color: 0x4f7dff,
+                emoji: '🐾',
+                requiredSkills: ['double_jump', 'glide'] // 开放大厅进阶模式
+            },
+            {
+                id: 'pvp',
+                x: 3150,
                 y: groundY - 400,
-                title: 'PvP对战',
+                title: '决斗场',
                 color: 0xff6b9d,
                 emoji: '⚔️',
                 requiredSkills: ['double_jump', 'glide'] // 高级PvP

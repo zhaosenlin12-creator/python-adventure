@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import { Level } from "@/lib/levels";
@@ -36,7 +36,7 @@ export default function LevelView({ level, onBack }: { level: Level; onBack: () 
     const { addXp, unlockLevel, completedLevels } = useGameStore();
     const { t, language } = useI18n();
     const { play, stop } = useSound();
-    const { currentPet, updateHatchProgress } = usePetStore();
+    const { pets, updateHatchProgress } = usePetStore();
     const { token } = useAuthStore();
     const { loadBalance } = useCoinStore();
 
@@ -49,7 +49,7 @@ export default function LevelView({ level, onBack }: { level: Level; onBack: () 
             setEnemyHealth(level.battle.enemyHp);
             setTurn('player');
             setBattleLog([t('battle.start')]);
-            // 注意：背景音乐由 musicManager 统一管理，不在这里播放
+            // 娉ㄦ剰锛氳儗鏅煶涔愮敱 musicManager 缁熶竴绠＄悊锛屼笉鍦ㄨ繖閲屾挱鏀?
         }
     }, [level, t]);
 
@@ -63,17 +63,16 @@ export default function LevelView({ level, onBack }: { level: Level; onBack: () 
 
         // Validation Logic
         let isSuccess = false;
-        // 过滤UI提示，只保留Python输出
-        const filteredOutput = output.map(line => {
-            // 移除每行中的UI提示文字，保留数字和英文
-            let cleaned = line;
-            // 移除中文提示
-            cleaned = cleaned.replace(/代码已修改.*?✓/g, '');
-            cleaned = cleaned.replace(/正在执行\.{3}/g, '');
-            cleaned = cleaned.replace(/验证通过！/g, '');
-            cleaned = cleaned.replace(/验证失败！/g, '');
-            return cleaned.trim();
-        }).filter(line => line !== ''); // 过滤空行
+        const filteredOutput = output
+            .map((line) => {
+                let cleaned = line;
+                cleaned = cleaned.replace(/Code updated.*$/i, "");
+                cleaned = cleaned.replace(/Executing\.{3}$/i, "");
+                cleaned = cleaned.replace(/Validation passed.*$/i, "");
+                cleaned = cleaned.replace(/Validation failed.*$/i, "");
+                return cleaned.trim();
+            })
+            .filter((line) => line !== "");
         
         const outputStr = filteredOutput.join('\n').trim();
         console.log("Filtered Output:", outputStr);
@@ -87,54 +86,43 @@ export default function LevelView({ level, onBack }: { level: Level; onBack: () 
         console.log("Has Placeholder:", code.includes('____'));
 
         if (!hasError) {
-            // 🎯 超级宽松验证逻辑 - 优先输出，再看关键字
-            
-            console.log("=== 验证详情 ===");
-            console.log("expectedOutput:", level.expectedOutput);
-            console.log("outputStr:", outputStr);
-            console.log("validationKeyword:", level.validationKeyword);
-            
+            console.log("[LevelView] Validation details", {
+                expectedOutput: level.expectedOutput,
+                outputStr,
+                validationKeyword: level.validationKeyword,
+            });
+
             if (level.expectedOutput) {
-                // 策略1: 有期望输出 - 输出对就直接通过！
                 const outputMatches = outputStr.includes(level.expectedOutput);
-                
+
                 if (outputMatches) {
-                    // ✅ 输出正确，直接通过！
                     isSuccess = true;
-                    console.log("✅ 输出匹配，通过！");
+                    console.log("[LevelView] Output matched expected output");
                 } else if (level.validationKeyword) {
-                    // 输出不对，检查关键字（70%匹配）
-                    const keywords = level.validationKeyword.split(',').map(k => k.trim());
-                    const matchedCount = keywords.filter(keyword => code.includes(keyword)).length;
+                    const keywords = level.validationKeyword.split(',').map((keyword) => keyword.trim());
+                    const matchedCount = keywords.filter((keyword) => code.includes(keyword)).length;
                     const matchRate = matchedCount / keywords.length;
-                    
+
                     if (matchRate >= 0.7) {
                         isSuccess = true;
-                        console.log(`✅ 关键字匹配率 ${(matchRate * 100).toFixed(0)}%，通过！`);
-                    } else {
-                        console.log(`❌ 关键字匹配率 ${(matchRate * 100).toFixed(0)}%，不通过`);
                     }
+
+                    console.log(`[LevelView] Keyword match rate ${Math.round(matchRate * 100)}%`);
                 }
             } else if (level.validationKeyword) {
-                // 策略2: 无期望输出，检查关键字（70%匹配）
-                const keywords = level.validationKeyword.split(',').map(k => k.trim());
-                const matchedCount = keywords.filter(keyword => code.includes(keyword)).length;
+                const keywords = level.validationKeyword.split(',').map((keyword) => keyword.trim());
+                const matchedCount = keywords.filter((keyword) => code.includes(keyword)).length;
                 const matchRate = matchedCount / keywords.length;
                 const hasOutput = outputStr.length > 0;
-                
+
                 if (matchRate >= 0.7 && hasOutput) {
                     isSuccess = true;
-                    console.log(`✅ 关键字匹配率 ${(matchRate * 100).toFixed(0)}% + 有输出，通过！`);
-                } else {
-                    console.log(`❌ 关键字匹配率 ${(matchRate * 100).toFixed(0)}%，或无输出`);
                 }
-            } else {
-                // 策略3: 无期望输出也无关键字 - 只要有输出就通过
-                const hasOutput = outputStr.length > 0;
-                if (hasOutput) {
-                    isSuccess = true;
-                    console.log("✅ 有输出，通过！");
-                }
+
+                console.log(`[LevelView] Keyword-only validation ${Math.round(matchRate * 100)}%, output=${hasOutput}`);
+            } else if (outputStr.length > 0) {
+                isSuccess = true;
+                console.log("[LevelView] Output produced with no extra validation");
             }
         }
 
@@ -221,29 +209,28 @@ export default function LevelView({ level, onBack }: { level: Level; onBack: () 
         setBattleLog(prev => [...prev, `> ${t('battle.victory')}`]);
 
         if (!completedLevels.includes(level.id)) {
-            // 🔥 v2.1.10: 无论是普通关卡还是BOSS，都要记录完成状态
+            // 馃敟 v2.1.10: 鏃犺鏄櫘閫氬叧鍗¤繕鏄疊OSS锛岄兘瑕佽褰曞畬鎴愮姸鎬?
             unlockLevel(level.id);
             
-            // 🪙 金币奖励：BOSS关卡50金币，普通关卡10金币
+            // 馃獧 閲戝竵濂栧姳锛欱OSS鍏冲崱50閲戝竵锛屾櫘閫氬叧鍗?0閲戝竵
             const coinsEarned = isBoss ? 50 : 10;
             
-            // 发送金币到服务器
+            // 鍙戦€侀噾甯佸埌鏈嶅姟鍣?
             if (token) {
                 try {
-                    await addCoinsToServer(coinsEarned, 'level_complete', `完成关卡: ${level.title}`, token);
-                    showCoinRewardToast(coinsEarned, `完成关卡: ${language === 'cn' ? (level.titleCN || level.title) : level.title}`, 'reward');
-                    // 刷新金币余额
+                    await addCoinsToServer(coinsEarned, 'level_complete', `瀹屾垚鍏冲崱: ${level.title}`, token);
+                    showCoinRewardToast(coinsEarned, `瀹屾垚鍏冲崱: ${language === 'cn' ? (level.titleCN || level.title) : level.title}`, 'reward');
+                    // 鍒锋柊閲戝竵浣欓
                     loadBalance(token).catch(() => {});
                 } catch (error) {
                     console.error('[LevelView] Failed to add coins:', error);
                 }
             }
-            
-            // 🥚 更新宠物孵化进度（如果当前宠物是蛋）
-            if (currentPet && currentPet.isEgg && currentPet.petType === 'egg') {
+            const incubatingEggs = (pets || []).filter((pet) => pet.isEgg || pet.petType === 'egg');
+            if (incubatingEggs.length > 0) {
                 try {
-                    await updateHatchProgress(currentPet.id);
-                    console.log('[LevelView] Hatch progress updated for pet:', currentPet.id);
+                    await Promise.all(incubatingEggs.map((pet) => updateHatchProgress(pet.id)));
+                    console.log('[LevelView] Hatch progress updated for eggs:', incubatingEggs.map((pet) => pet.id));
                 } catch (error) {
                     console.error('[LevelView] Failed to update hatch progress:', error);
                 }
@@ -271,7 +258,7 @@ export default function LevelView({ level, onBack }: { level: Level; onBack: () 
                 type={fateType}
             />
 
-            {/* Header - 紧凑版 */}
+            {/* Header - 绱у噾鐗?*/}
             <div className={`flex justify-between items-center px-4 py-2 rounded-none ${isBoss ? 'pixel-panel-accent' : 'pixel-panel'}`}>
                 <div className="flex items-center gap-3">
                     <button onClick={onBack} className="hover:bg-white/10 p-1.5 rounded transition-colors">
@@ -296,7 +283,7 @@ export default function LevelView({ level, onBack }: { level: Level; onBack: () 
                 </button>
             </div>
 
-            {/* Battle Arena - 适中大小 */}
+            {/* Battle Arena - 閫備腑澶у皬 */}
             {level.battle && (
                 <div className="h-40">
                     <BattleArena
@@ -311,7 +298,7 @@ export default function LevelView({ level, onBack }: { level: Level; onBack: () 
                 </div>
             )}
 
-            {/* Main Workspace - 更大的代码区 */}
+            {/* Main Workspace - 鏇村ぇ鐨勪唬鐮佸尯 */}
             <div className="flex-1 grid grid-cols-2 gap-3 min-h-0 pb-2">
                 <div className="flex flex-col h-full">
                     <div className="bg-slate-900 px-4 py-2 border-x-4 border-t-4 border-slate-950 font-pixel text-xs text-blue-400 flex justify-between items-center tracking-widest">

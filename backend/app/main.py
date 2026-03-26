@@ -5,7 +5,7 @@ from fastapi.exceptions import RequestValidationError
 from contextlib import asynccontextmanager
 from app.core.config import settings
 from app.core.database import ensure_database_ready
-from app.api.v1 import auth, users, tasks, battles, leaderboard, achievements, world, admin, progress, battle_ws, pvp, chat, pets, food, interactions, decorations, coins, workshop, daily, custom_levels, community, pet_chat, user_questions, ai_questions
+from app.api.v1 import auth, users, tasks, battles, leaderboard, achievements, world, admin, progress, battle_ws, pvp, pvp_battle_royale, chat, pets, food, interactions, decorations, coins, workshop, daily, custom_levels, community, pet_chat, user_questions, ai_questions
 # 临时禁用新API以修复导入错误
 # from app.api.v1 import inventory, skills
 
@@ -147,6 +147,7 @@ app.include_router(world.router, prefix="/api/v1/world", tags=["开放世界"])
 app.include_router(admin.router, prefix="/api/v1/admin", tags=["后台管理"])
 app.include_router(progress.router, prefix="/api/v1/progress", tags=["游戏进度"])
 app.include_router(pvp.router, prefix="/api/v1/pvp", tags=["PVP三轮制对战"])
+app.include_router(pvp_battle_royale.router, prefix="/api/v1/pvp-br", tags=["PVP Battle Royale"])
 app.include_router(chat.router, prefix="/api/v1/chat", tags=["聊天系统"])
 app.include_router(pets.router, prefix="/api/v1/pets", tags=["宠物系统"])
 app.include_router(interactions.router, prefix="/api/v1/pets", tags=["宠物互动"])

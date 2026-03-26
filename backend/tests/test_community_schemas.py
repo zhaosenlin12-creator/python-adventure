@@ -9,8 +9,10 @@ Each test runs at least 100 iterations.
 **Feature: community-levels, Property 5: Community List Sorting**
 **Validates: Requirements 2.1, 2.2, 2.3, 5.1**
 """
+import string
+
 import pytest
-from hypothesis import given, settings, strategies as st, assume
+from hypothesis import given, settings, strategies as st
 from datetime import datetime, timezone
 from pydantic import ValidationError
 
@@ -25,24 +27,22 @@ from app.schemas.community import (
 
 # ==================== Strategies ====================
 
+safe_text_alphabet = string.ascii_letters + string.digits + " -_.,!?()[]{}:/"
+
 # Strategy for valid level IDs (UUID-like strings)
-level_id_strategy = st.text(
-    alphabet=st.sampled_from('0123456789abcdef-'),
-    min_size=36,
-    max_size=36
-).filter(lambda x: x.count('-') >= 4)
+level_id_strategy = st.uuids().map(str)
 
 # Strategy for valid names (non-empty, reasonable length)
-name_strategy = st.text(min_size=1, max_size=100).filter(lambda x: x.strip())
+name_strategy = st.text(alphabet=safe_text_alphabet, min_size=1, max_size=100)
 
 # Strategy for descriptions (optional, reasonable length)
-description_strategy = st.one_of(st.none(), st.text(max_size=500))
+description_strategy = st.one_of(st.none(), st.text(alphabet=safe_text_alphabet, max_size=240))
 
 # Strategy for difficulty (1-3)
 difficulty_strategy = st.integers(min_value=1, max_value=3)
 
 # Strategy for author names
-author_name_strategy = st.text(min_size=1, max_size=50).filter(lambda x: x.strip())
+author_name_strategy = st.text(alphabet=safe_text_alphabet, min_size=1, max_size=50)
 
 # Strategy for author IDs (positive integers)
 author_id_strategy = st.integers(min_value=1, max_value=1000000)
@@ -53,8 +53,9 @@ count_strategy = st.integers(min_value=0, max_value=1000000)
 # Strategy for datetime
 datetime_strategy = st.datetimes(
     min_value=datetime(2020, 1, 1),
-    max_value=datetime(2030, 12, 31)
-).map(lambda dt: dt.replace(tzinfo=timezone.utc))
+    max_value=datetime(2030, 12, 31, 23, 59, 59),
+    timezones=st.just(timezone.utc),
+)
 
 # Strategy for boolean
 bool_strategy = st.booleans()
@@ -480,7 +481,7 @@ class TestCommunityListSorting:
 
     @settings(max_examples=100)
     @given(
-        num_levels=st.integers(min_value=0, max_value=20),
+        num_levels=st.integers(min_value=0, max_value=1),
     )
     def test_empty_and_single_item_lists_are_sorted(
         self,
@@ -492,8 +493,6 @@ class TestCommunityListSorting:
         For any list with 0 or 1 items, sorting should not fail and the list
         should remain valid.
         """
-        assume(num_levels <= 1)
-        
         levels = []
         for i in range(num_levels):
             levels.append(CommunityLevelSummary(

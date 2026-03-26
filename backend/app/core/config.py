@@ -1,8 +1,11 @@
 from pathlib import Path
-import warnings
 import secrets
+import warnings
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+BACKEND_DIR = Path(__file__).resolve().parents[2]
 
 
 def _normalize_database_url(database_url: str) -> str:
@@ -17,49 +20,49 @@ def _normalize_database_url(database_url: str) -> str:
     if sqlite_path.startswith("/") or (len(sqlite_path) > 1 and sqlite_path[1] == ":"):
         return database_url
 
-    backend_dir = Path(__file__).resolve().parents[2]
-    resolved_path = (backend_dir / sqlite_path).resolve()
+    resolved_path = (BACKEND_DIR / sqlite_path).resolve()
     return f"sqlite:///{resolved_path.as_posix()}"
 
+
 class Settings(BaseSettings):
-    # 运行环境
     ENVIRONMENT: str = "development"
-    # 数据库配置
+
+    # Database
     # PostgreSQL: postgresql://postgres:password@localhost:5432/code_adventure
-    # SQLite (本地测试): sqlite:///./code_adventure.db
+    # SQLite: sqlite:///./code_adventure.db
     DATABASE_URL: str = "sqlite:///./code_adventure.db"
-    
-    # Redis配置
     REDIS_URL: str = "redis://localhost:6379/0"
-    
-    # JWT配置
+
+    # JWT
     SECRET_KEY: str = "your-secret-key-change-in-production"
     ALGORITHM: str = "HS256"
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 1440  # 🔥 v2.1.12: 延长到24小时（原30分钟太短）
-    
-    # CORS 允许来源（逗号分隔，空则允许所有 — 仅限开发）
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 1440
+
+    # CORS
     CORS_ORIGINS: str = ""
-    
-    # 沙箱服务
+
+    # Sandbox
     SANDBOX_URL: str = "http://localhost:5000"
-    
-    # DeepSeek AI配置 (用于AI智能出题)
+
+    # DeepSeek AI
     DEEPSEEK_API_KEY: str = ""
     DEEPSEEK_API_URL: str = "https://api.deepseek.com/v1/chat/completions"
     DEEPSEEK_MODEL: str = "deepseek-chat"
-    
-    # 应用配置（生产默认关闭调试）
-    DEBUG: bool = False
 
-    # 内部接口安全Token（生产环境用于保护内部奖励接口）
+    # Application
+    DEBUG: bool = False
     INTERNAL_REWARD_TOKEN: str = ""
-    
-    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
+
+    model_config = SettingsConfigDict(
+        env_file=str(BACKEND_DIR / ".env"),
+        env_file_encoding="utf-8",
+    )
+
 
 settings = Settings()
 settings.DATABASE_URL = _normalize_database_url(settings.DATABASE_URL)
 
-# 🔒 安全：启动时检查默认密钥
+# Security: never run with the placeholder secret in production.
 if settings.SECRET_KEY == "your-secret-key-change-in-production":
     if settings.ENVIRONMENT.lower() == "production":
         raise RuntimeError(

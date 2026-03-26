@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useState } from 'react';
 import { usePetStore } from '@/store/petStore';
@@ -32,7 +32,7 @@ export default function PetMainPanel() {
   const [isEditingName, setIsEditingName] = useState(false);
   const [petName, setPetName] = useState('');
   
-  // 拖动相关状态
+  // 鎷栧姩鐩稿叧鐘舵€?
   const [position, setPosition] = useState({ x: 16, y: 80 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
@@ -68,7 +68,7 @@ export default function PetMainPanel() {
     }
   }, [currentPet?.id, currentPet?.isEgg, isExpanded, user?.id]);
   
-  // 拖动处理
+  // 鎷栧姩澶勭悊
   const handleMouseDown = (e: React.MouseEvent) => {
     if (isExpanded) return;
     e.preventDefault();
@@ -104,12 +104,12 @@ export default function PetMainPanel() {
     };
   }, [isDragging, dragStart]);
   
-  // 🔒 未登录时不显示宠物面板
+  // 馃敀 鏈櫥褰曟椂涓嶆樉绀哄疇鐗╅潰鏉?
   if (!isAuthenticated || !token) {
     return null;
   }
   
-  // 没有宠物时不显示
+  // 娌℃湁瀹犵墿鏃朵笉鏄剧ず
   if (!currentPet) {
 
     return (
@@ -135,7 +135,7 @@ export default function PetMainPanel() {
               <div className="w-8 h-10">
                 <img
                   src="/assets/pets/egg.svg"
-                  alt="宠物蛋"
+                  alt="pet egg"
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -143,7 +143,7 @@ export default function PetMainPanel() {
                 {isLoading ? '加载宠物中...' : '领取宠物蛋'}
               </div>
               {pets.length === 0 && !isLoading && (
-                <span className="text-[10px] text-amber-500 font-bold">NEW</span>
+                <span className="text-[10px] text-amber-500 font-bold">新</span>
               )}
             </div>
           </div>
@@ -152,7 +152,7 @@ export default function PetMainPanel() {
     );
   }
   
-  // 🥚 如果是蛋状态，显示蛋界面
+  // 馃 濡傛灉鏄泲鐘舵€侊紝鏄剧ず铔嬬晫闈?
   if (currentPet.isEgg) {
     return (
       <div 
@@ -163,7 +163,7 @@ export default function PetMainPanel() {
           cursor: isDragging ? 'grabbing' : (isExpanded ? 'default' : 'grab')
         }}
       >
-        {/* 折叠状态 - 蛋图标 */}
+        {/* 鎶樺彔鐘舵€?- 铔嬪浘鏍?*/}
         {!isExpanded && (
           <div
             className="pixel-panel p-2 cursor-grab active:cursor-grabbing hover:border-sky-400 transition-all"
@@ -178,7 +178,7 @@ export default function PetMainPanel() {
               <div className="w-10 h-12 animate-bounce">
                 <img
                   src="/assets/pets/egg.svg"
-                  alt="宠物蛋"
+                  alt="pet egg"
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -191,16 +191,16 @@ export default function PetMainPanel() {
           </div>
         )}
         
-        {/* 展开状态 - 蛋详情 */}
+        {/* 灞曞紑鐘舵€?- 铔嬭鎯?*/}
         {isExpanded && (
           <div className="pixel-panel p-4 w-72 border-2 border-slate-700">
             <div className="flex justify-between items-center mb-3">
-              <h3 className="font-bold text-lg text-white">神秘的蛋</h3>
+              <h3 className="font-bold text-lg text-white">绁炵鐨勮泲</h3>
               <button
                 onClick={() => setIsExpanded(false)}
                 className="text-slate-400 hover:text-white text-xl w-6 h-6 flex items-center justify-center"
               >
-                ×
+                脳
               </button>
             </div>
             
@@ -229,7 +229,7 @@ export default function PetMainPanel() {
           glow: 'shadow-[0_0_14px_rgba(251,146,60,0.24)]',
           badge: 'bg-orange-900 text-orange-100 border border-orange-400/50',
           icon: <Cpu className="w-3 h-3" />,
-          label: '灵光'
+          label: '鐏靛厜'
         };
       case 'data_sprite':
       case 'tech_drone':
@@ -238,7 +238,7 @@ export default function PetMainPanel() {
           glow: 'shadow-[0_0_14px_rgba(56,189,248,0.28)]',
           badge: 'bg-sky-900 text-sky-100 border border-sky-400/50',
           icon: <Zap className="w-3 h-3" />,
-          label: '巡游'
+          label: '宸℃父'
         };
       case 'ava_ai':
       case 'tech_ai':
@@ -247,7 +247,7 @@ export default function PetMainPanel() {
           glow: 'shadow-[0_0_14px_rgba(244,63,94,0.24)]',
           badge: 'bg-rose-900 text-rose-100 border border-rose-400/50',
           icon: <Sparkles className="w-3 h-3" />,
-          label: '冲刺'
+          label: '鍐插埡'
         };
       default:
         return null;
@@ -256,6 +256,7 @@ export default function PetMainPanel() {
   const currentTechAccent = getTechAccent(resolvedPetType);
   
   const canEvolveNow = currentPet ? checkEvolution(currentPet.id) : false;
+  const pendingEggCount = (pets || []).filter((pet) => pet.isEgg || pet.petType === 'egg').length;
   
   const handleSaveName = async () => {
     if (petName.trim() && petName !== currentPet.name) {
@@ -294,9 +295,9 @@ export default function PetMainPanel() {
       console.error('Evolution failed:', error);
       setShowEvolutionAnimation(false);
       setEvolutionData(null);
-      // 显示错误提示
+      // 鏄剧ず閿欒鎻愮ず
       const { showErrorToast } = await import('@/components/ui/ErrorToast');
-      const errorMessage = error instanceof Error ? error.message : '进化失败，请稍后重试';
+      const errorMessage = error instanceof Error ? error.message : '杩涘寲澶辫触锛岃绋嶅悗閲嶈瘯';
       showErrorToast(errorMessage, 'error');
     }
   };
@@ -317,7 +318,7 @@ export default function PetMainPanel() {
           cursor: isDragging ? 'grabbing' : (isExpanded ? 'default' : 'grab')
         }}
       >
-        {/* 折叠状态 - 缩小版 */}
+        {/* 鎶樺彔鐘舵€?- 缂╁皬鐗?*/}
         {!isExpanded && (
           <div
             className="pixel-panel p-2 cursor-grab active:cursor-grabbing hover:border-game-accent transition-all"
@@ -355,23 +356,23 @@ export default function PetMainPanel() {
           </div>
         )}
         
-        {/* 展开状态 */}
+        {/* 灞曞紑鐘舵€?*/}
         {isExpanded && (
           <div className="pixel-panel w-80 border-2 border-slate-700 p-4 shadow-[0_26px_48px_rgba(15,23,42,0.36)]">
-            {/* 头部 */}
+            {/* 澶撮儴 */}
             <div className="flex justify-between items-center mb-3">
-              <h3 className="font-bold text-lg text-white">我的伙伴</h3>
+              <h3 className="font-bold text-lg text-white">鎴戠殑浼欎即</h3>
               <button
                 onClick={() => setIsExpanded(false)}
                 className="text-slate-400 hover:text-white text-xl w-6 h-6 flex items-center justify-center"
               >
-                ×
+                脳
               </button>
             </div>
             
-            {/* 宠物信息 */}
+            {/* 瀹犵墿淇℃伅 */}
             <div className="space-y-3">
-              {/* 头像和基本信息 */}
+              {/* 澶村儚鍜屽熀鏈俊鎭?*/}
               <div className="flex items-center gap-3">
                 <div className="relative flex h-20 w-20 items-center justify-center">
                   <div className="absolute inset-3 rounded-full bg-slate-200/8 blur-xl" />
@@ -395,7 +396,7 @@ export default function PetMainPanel() {
                 </div>
                 
                 <div className="flex-1">
-                  {/* 名字编辑 */}
+                  {/* 鍚嶅瓧缂栬緫 */}
                   {isEditingName ? (
                     <div className="flex items-center gap-1">
                       <input
@@ -432,7 +433,7 @@ export default function PetMainPanel() {
                 </div>
               </div>
               
-              {/* 等级和经验 */}
+              {/* 绛夌骇鍜岀粡楠?*/}
               <div>
                 <div className="flex justify-between text-xs mb-1 text-white">
                   <span className="font-medium">Lv.{currentPet.level}</span>
@@ -446,32 +447,32 @@ export default function PetMainPanel() {
                 </div>
               </div>
               
-              {/* 属性 - 使用动画状态条，带图标和颜色区分 */}
+              {/* 灞炴€?- 浣跨敤鍔ㄧ敾鐘舵€佹潯锛屽甫鍥炬爣鍜岄鑹插尯鍒?*/}
               <div className="space-y-2">
-                {/* 智力 - 紫色，大脑图标 */}
+                {/* 鏅哄姏 - 绱壊锛屽ぇ鑴戝浘鏍?*/}
                 <AnimatedStatusValue
                   value={currentPet.attributes.intelligence}
-                  label="智力"
+                  label="鏅哄姏"
                   color="bg-sky-500"
                   icon="🧠"
                 />
-                {/* 创造力 - 粉色，星星图标 */}
+                {/* 鍒涢€犲姏 - 绮夎壊锛屾槦鏄熷浘鏍?*/}
                 <AnimatedStatusValue
                   value={currentPet.attributes.creativity}
-                  label="创造力"
+                  label="鍒涢€犲姏"
                   color="bg-indigo-500"
                   icon="✨"
                 />
-                {/* 毅力 - 蓝色，肌肉图标 */}
+                {/* 姣呭姏 - 钃濊壊锛岃倢鑲夊浘鏍?*/}
                 <AnimatedStatusValue
                   value={currentPet.attributes.persistence}
-                  label="毅力"
+                  label="姣呭姏"
                   color="bg-cyan-500"
                   icon="💪"
                 />
               </div>
               
-              {/* 操作按钮 */}
+              {/* 鎿嶄綔鎸夐挳 */}
               <div className="space-y-2">
                 <div className="grid grid-cols-2 gap-2">
                   <button
@@ -480,7 +481,7 @@ export default function PetMainPanel() {
                     className="pixel-btn pixel-btn-success text-xs flex items-center justify-center gap-1 h-10"
                   >
                     <Apple className="w-4 h-4" />
-                    喂食
+                    鍠傞
                   </button>
                   
                   <button
@@ -488,7 +489,7 @@ export default function PetMainPanel() {
                     className="pixel-btn bg-sky-700 text-white hover:bg-sky-600 text-xs flex items-center justify-center gap-1 h-10"
                   >
                     <Home className="w-4 h-4" />
-                    小屋
+                    灏忓眿
                   </button>
                   <button
                     onClick={handleEvolve}
@@ -500,7 +501,7 @@ export default function PetMainPanel() {
                     }`}
                   >
                     <Sparkles className="w-4 h-4" />
-                    {canEvolveNow ? '进化' : '进化'}
+                    {canEvolveNow ? '杩涘寲' : '杩涘寲'}
                   </button>
                   
                   <button
@@ -508,30 +509,38 @@ export default function PetMainPanel() {
                     className="pixel-btn bg-slate-700 text-white hover:bg-slate-600 text-xs flex items-center justify-center gap-1 h-10"
                   >
                     <BookOpen className="w-4 h-4" />
-                    图鉴
+                    鍥鹃壌
                   </button>
                   <button
                     onClick={() => setShowGrowthGuide(true)}
                     className="pixel-btn bg-slate-700 text-white hover:bg-slate-600 text-xs flex items-center justify-center gap-1 h-10 col-span-2"
                   >
-                    📘 成长说明
+                    馃摌 鎴愰暱璇存槑
                   </button>
                 </div>
                 <div className="text-[10px] text-slate-400 text-center">
-                  进入小屋可进行互动，提升亲密度与属性
+                  杩涘叆灏忓眿鍙繘琛屼簰鍔紝鎻愬崌浜插瘑搴︿笌灞炴€?
                 </div>
+                {pendingEggCount > 0 && (
+                  <button
+                    onClick={() => setShowPokedex(true)}
+                    className="w-full rounded-lg border border-amber-400/30 bg-amber-500/10 px-3 py-2 text-left text-xs text-amber-100 transition hover:bg-amber-500/15"
+                  >
+                    还有 {pendingEggCount} 枚宠物蛋在孵化中。现在首次通关新关卡会自动推进所有宠物蛋，无需设为跟随。可进入图鉴蛋仓统一查看进度。
+                  </button>
+                )}
               </div>
               
-              {/* 状态提示 */}
+              {/* 鐘舵€佹彁绀?*/}
               {currentPet.status === 'tired' && (
                 <div className="bg-amber-900/30 border border-amber-500/30 rounded-lg p-2 text-xs text-amber-400">
-                  ⚠️ 你的伙伴有点累了，记得多陪陪它哦！
+                  鈿狅笍 浣犵殑浼欎即鏈夌偣绱簡锛岃寰楀闄櫔瀹冨摝锛?
                 </div>
               )}
               
               {currentPet.status === 'coma' && (
                 <div className="bg-red-950/30 border border-red-500/40 rounded-lg p-2 text-xs text-red-300">
-                  🚨 你的伙伴陷入昏迷！快去答题营救它！
+                  馃毃 浣犵殑浼欎即闄峰叆鏄忚糠锛佸揩鍘荤瓟棰樿惀鏁戝畠锛?
                 </div>
               )}
             </div>
@@ -539,7 +548,7 @@ export default function PetMainPanel() {
         )}
       </div>
       
-      {/* 宠物小屋 - V3全屏版本 */}
+      {/* 瀹犵墿灏忓眿 - V3鍏ㄥ睆鐗堟湰 */}
       {showPetHome && (
         <PetHomeSceneV3 
           isOpen={showPetHome} 
@@ -547,7 +556,7 @@ export default function PetMainPanel() {
         />
       )}
       
-      {/* 食物选择器 */}
+      {/* 椋熺墿閫夋嫨鍣?*/}
       {currentPet && (
         <FoodSelector
           isOpen={showFoodSelector}
@@ -557,7 +566,7 @@ export default function PetMainPanel() {
         />
       )}
       
-      {/* 进化动画 */}
+      {/* 杩涘寲鍔ㄧ敾 */}
       {showEvolutionAnimation && evolutionData && currentPet && (
         <EvolutionAnimation
           isOpen={showEvolutionAnimation}
@@ -570,7 +579,7 @@ export default function PetMainPanel() {
         />
       )}
       
-      {/* 进化图鉴 */}
+      {/* 杩涘寲鍥鹃壌 */}
       {currentPet && (
         <EvolutionPokedex
           isOpen={showPokedex}

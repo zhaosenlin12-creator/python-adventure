@@ -3,9 +3,9 @@
 创建 pets 表和相关表
 """
 import sqlite3
-from datetime import datetime
 import os
 import json
+from app.core.time import utc_now_iso
 
 def migrate_pet_system():
     """创建宠物系统所需的数据库表"""
@@ -153,7 +153,7 @@ def migrate_pet_system():
                     (
                         user_id, mapped_type, pet_style, pet_name, lvl, exp, 100,
                         max(0, min(100, intelligence)), max(0, min(100, creativity)), max(0, min(100, persistence)),
-                        max(0, intimacy), 1, "normal", last_fed or datetime.utcnow().isoformat(), 0, 0
+                        max(0, intimacy), 1, "normal", last_fed or utc_now_iso(), 0, 0
                     )
                 )
 

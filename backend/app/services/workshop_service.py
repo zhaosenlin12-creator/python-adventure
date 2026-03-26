@@ -6,6 +6,7 @@
 from datetime import datetime, timedelta
 from sqlalchemy.orm import Session
 from sqlalchemy import and_
+from app.core.time import utc_now
 from app.models.coin import WorkshopEarning, CoinTransaction
 from app.models.user import User
 from app.services.coin_service import CoinService
@@ -48,7 +49,7 @@ class WorkshopEarningsService:
                 like_count=0,
                 total_coins=0,
                 daily_coins=0,
-                last_reset_date=datetime.utcnow()
+                last_reset_date=utc_now()
             )
             db.add(earning)
             db.commit()
@@ -65,7 +66,7 @@ class WorkshopEarningsService:
             earning: 收益记录
             db: 数据库会话
         """
-        now = datetime.utcnow()
+        now = utc_now()
         last_reset = earning.last_reset_date
         
         # 如果是新的一天，重置每日金币
@@ -138,7 +139,7 @@ class WorkshopEarningsService:
         
         # 生成唯一交易ID（基于日期和玩家ID，确保同一天同一玩家只能触发一次）
         # 不使用时间戳哈希，确保相同输入产生相同ID
-        today = datetime.utcnow().strftime('%Y-%m-%d')
+        today = utc_now().strftime('%Y-%m-%d')
         transaction_id = f"workshop_earning_{creator_id}_level_{level_id}_play_{today}_{player_id}"
         
         # 发放金币
@@ -225,7 +226,7 @@ class WorkshopEarningsService:
         
         # 生成唯一交易ID（基于日期和玩家ID，确保同一天同一玩家只能触发一次）
         # 不使用时间戳哈希，确保相同输入产生相同ID
-        today = datetime.utcnow().strftime('%Y-%m-%d')
+        today = utc_now().strftime('%Y-%m-%d')
         transaction_id = f"workshop_earning_{creator_id}_level_{level_id}_like_{today}_{player_id}"
         
         # 发放金币

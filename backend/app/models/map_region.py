@@ -2,7 +2,7 @@
 地图区域和区块模型
 """
 from sqlalchemy import Column, Integer, String, Text, JSON, Boolean, DateTime, Float, UniqueConstraint
-from datetime import datetime
+from app.core.time import utc_now
 from app.core.database import Base
 
 class MapRegion(Base):
@@ -32,7 +32,7 @@ class MapRegion(Base):
     
     # 状态
     is_active = Column(Boolean, default=True)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=utc_now)
 
 
 class MapChunk(Base):
@@ -52,10 +52,9 @@ class MapChunk(Base):
     object_ids = Column(JSON)  # 此区块中的对象ID列表
     
     # 元数据
-    last_updated = Column(DateTime, default=datetime.utcnow)
+    last_updated = Column(DateTime, default=utc_now)
     
     # 唯一约束：同一区域同一坐标只能有一个区块
     __table_args__ = (
         UniqueConstraint('region_id', 'chunk_x', 'chunk_y', name='uq_region_chunk'),
     )
-

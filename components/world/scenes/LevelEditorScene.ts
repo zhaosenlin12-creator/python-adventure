@@ -460,7 +460,7 @@ export class LevelEditorScene extends Phaser.Scene {
     }
 
     graphics.clear();
-    graphics.lineStyle(1, 0xFFD700, 0.15);
+    graphics.lineStyle(1, 0x38BDF8, 0.12);
 
     // 对齐到网格
     const alignedStartX = Math.floor(startX / this.gridSize) * this.gridSize;
@@ -529,12 +529,12 @@ export class LevelEditorScene extends Phaser.Scene {
     this.backgroundGraphics = this.add.graphics();
 
     // 深红色渐变背景 - 新年主题
-    this.backgroundGraphics.fillGradientStyle(0x2D0A0A, 0x2D0A0A, 0x1A0505, 0x1A0505, 1);
+    this.backgroundGraphics.fillGradientStyle(0x160709, 0x160709, 0x0B1120, 0x0B1120, 1);
     this.backgroundGraphics.fillRect(0, 0, this.mapWidth, this.mapHeight);
     this.backgroundGraphics.setDepth(-100);
 
     // 边界框
-    this.backgroundGraphics.lineStyle(4, 0xFFD700, 1);
+    this.backgroundGraphics.lineStyle(4, 0x22D3EE, 0.9);
     this.backgroundGraphics.strokeRect(0, 0, this.mapWidth, this.mapHeight);
 
     debugLog('[LevelEditorScene] Background created for map size:', this.mapWidth, 'x', this.mapHeight);
@@ -586,7 +586,7 @@ export class LevelEditorScene extends Phaser.Scene {
     if (!this.gridVisible) return;
 
     // 网格线颜色
-    this.gridGraphics.lineStyle(1, 0xFFD700, 0.15);
+    this.gridGraphics.lineStyle(1, 0x38BDF8, 0.12);
 
     // 垂直线
     for (let x = 0; x <= this.mapWidth; x += this.gridSize) {
