@@ -21,6 +21,8 @@ TARGET_FILL = 0.78
 GROUND_MARGIN = 34
 REQUEST_TIMEOUT = 45
 DEFAULT_STAGE_PICK = (1, 3, 5, 7, 9)
+ALPHA_SOLID_THRESHOLD = 32
+ALPHA_FILL_MIN = ALPHA_SOLID_THRESHOLD
 
 
 class SnapshotPet(TypedDict, total=False):
@@ -216,6 +218,44 @@ def build_alpha_mask(image: Image.Image, background_mask: List[List[bool]]) -> I
     return softened.point(lambda value: 0 if value < 22 else min(255, int(value * 1.12)))
 
 
+def fill_enclosed_transparency(alpha_mask: Image.Image) -> Image.Image:
+    width, height = alpha_mask.size
+    source = alpha_mask.load()
+    visited = [[False] * width for _ in range(height)]
+    queue: deque[tuple[int, int]] = deque()
+
+    def is_transparent(x: int, y: int) -> bool:
+        return source[x, y] < ALPHA_SOLID_THRESHOLD
+
+    def enqueue_if_transparent(x: int, y: int) -> None:
+        if visited[y][x] or not is_transparent(x, y):
+            return
+        visited[y][x] = True
+        queue.append((x, y))
+
+    for x in range(width):
+        enqueue_if_transparent(x, 0)
+        enqueue_if_transparent(x, height - 1)
+    for y in range(height):
+        enqueue_if_transparent(0, y)
+        enqueue_if_transparent(width - 1, y)
+
+    while queue:
+        x, y = queue.popleft()
+        for nx, ny in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)):
+            if 0 <= nx < width and 0 <= ny < height:
+                enqueue_if_transparent(nx, ny)
+
+    filled = alpha_mask.copy()
+    pixels = filled.load()
+    for y in range(height):
+        for x in range(width):
+            if not visited[y][x] and pixels[x, y] < ALPHA_FILL_MIN:
+                pixels[x, y] = 255
+
+    return filled
+
+
 def apply_alpha_mask(image: Image.Image, alpha_mask: Image.Image) -> Image.Image:
     rgba = image.convert("RGBA")
     rgba.putalpha(alpha_mask)
@@ -254,6 +294,13 @@ def normalize_canvas(image: Image.Image) -> Image.Image:
     return canvas
 
 
+def seal_output_alpha(image: Image.Image) -> Image.Image:
+    alpha = fill_enclosed_transparency(image.getchannel("A"))
+    sealed = image.copy()
+    sealed.putalpha(alpha)
+    return sealed
+
+
 def build_assets() -> None:
     snapshot_catalog = load_snapshot_catalog()
     OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
@@ -265,8 +312,9 @@ def build_assets() -> None:
         source = download_image(url)
         background_mask = flood_fill_background(source)
         alpha_mask = build_alpha_mask(source, background_mask)
+        alpha_mask = fill_enclosed_transparency(alpha_mask)
         transparent = apply_alpha_mask(source, alpha_mask)
-        normalized = normalize_canvas(transparent)
+        normalized = seal_output_alpha(normalize_canvas(transparent))
 
         pet_output_dir = OUTPUT_ROOT / slug
         pet_output_dir.mkdir(parents=True, exist_ok=True)

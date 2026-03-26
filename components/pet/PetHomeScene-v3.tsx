@@ -77,6 +77,7 @@ const SCENE_LANES: Record<HomeSceneKey, HomeLane[]> = {
 
 const LANE_DEPTH_SCALE = [0.82, 0.9, 1, 1.08];
 const GOLDEN_DISTRIBUTION = 0.61803398875;
+const HATCH_HINT_AUTO_COLLAPSE_MS = 5600;
 
 function clampToRange(value: number, min: number, max: number) {
   return Math.max(min, Math.min(max, value));
@@ -97,11 +98,11 @@ function pickInitialActor(scene: HomeSceneKey, slot: number, total: number, pref
 
   return {
     x,
-    y: lane.y + randomBetween(-0.9, 0.9),
+    y: lane.y + randomBetween(-0.45, 0.45),
     laneIndex,
     direction: seed > 0.5 ? 'left' : 'right',
     isWalking: false,
-    moveDurationMs: 5200,
+    moveDurationMs: 6400,
   };
 }
 
@@ -111,14 +112,14 @@ function pickRoamingActorTarget(
   occupiedActors: Array<Pick<PetActorState, 'x' | 'laneIndex'>>
 ): PetActorState {
   const lanes = SCENE_LANES[scene];
-  const laneShift = Math.random() < 0.18 ? (Math.random() < 0.5 ? -1 : 1) : 0;
+  const laneShift = Math.random() < 0.12 ? (Math.random() < 0.5 ? -1 : 1) : 0;
   const laneIndex = clampToRange(actor.laneIndex + laneShift, 0, lanes.length - 1);
   const lane = lanes[laneIndex];
 
-  let x = clampToRange(actor.x + randomBetween(-14, 14), lane.minX, lane.maxX);
+  let x = clampToRange(actor.x + randomBetween(-10, 10), lane.minX, lane.maxX);
   for (let attempt = 0; attempt < 6; attempt += 1) {
     const conflict = occupiedActors.some(
-      (occupied) => occupied.laneIndex === laneIndex && Math.abs(occupied.x - x) < 10
+      (occupied) => occupied.laneIndex === laneIndex && Math.abs(occupied.x - x) < 12
     );
     if (!conflict) {
       break;
@@ -128,11 +129,11 @@ function pickRoamingActorTarget(
 
   return {
     x,
-    y: lane.y + randomBetween(-1.1, 1.1),
+    y: lane.y + randomBetween(-0.65, 0.65),
     laneIndex,
     direction: x >= actor.x ? 'right' : 'left',
     isWalking: true,
-    moveDurationMs: Math.round(randomBetween(5400, 8600)),
+    moveDurationMs: Math.round(randomBetween(7000, 10800)),
   };
 }
 
@@ -213,6 +214,7 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
   const [showWardrobe, setShowWardrobe] = useState(false);
   const [showPetList, setShowPetList] = useState(false);
   const [showInteractionPanel, setShowInteractionPanel] = useState(true);
+  const [isHatchHintCollapsed, setIsHatchHintCollapsed] = useState(false);
   const [draggingDecoration, setDraggingDecoration] = useState<string | null>(null);
   const sceneRef = useRef<HTMLDivElement | null>(null);
   
@@ -241,6 +243,7 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
   const walkStopTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const otherPetWalkIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const otherPetStopTimeoutsRef = useRef<Record<number, NodeJS.Timeout>>({});
+  const hatchHintTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [interactionType, setInteractionType] = useState<InteractionType | null>(null);
   const [interactionPlaying, setInteractionPlaying] = useState(false);
   const [interactionPosition, setInteractionPosition] = useState({ x: 0, y: 0 });
@@ -272,6 +275,30 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
       console.log('[PetHome] Switching back to main BGM');
       musicManager.unlockBGM('home');
       musicManager.switchBGM('main');
+    };
+  }, [isOpen, currentPet?.id]);
+
+  useEffect(() => {
+    if (hatchHintTimeoutRef.current) {
+      clearTimeout(hatchHintTimeoutRef.current);
+      hatchHintTimeoutRef.current = null;
+    }
+
+    if (isOpen === false || !currentPet) {
+      return;
+    }
+
+    setIsHatchHintCollapsed(false);
+    hatchHintTimeoutRef.current = setTimeout(() => {
+      setIsHatchHintCollapsed(true);
+      hatchHintTimeoutRef.current = null;
+    }, HATCH_HINT_AUTO_COLLAPSE_MS);
+
+    return () => {
+      if (hatchHintTimeoutRef.current) {
+        clearTimeout(hatchHintTimeoutRef.current);
+        hatchHintTimeoutRef.current = null;
+      }
     };
   }, [isOpen, currentPet?.id]);
 
@@ -394,8 +421,8 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
       clearWalkStop();
       walkStopTimeoutRef.current = setTimeout(() => {
         setIsWalking(false);
-      }, Math.max(1800, targetActor.moveDurationMs - 680));
-    }, 5600);
+      }, Math.max(2400, targetActor.moveDurationMs - 900));
+    }, 7200);
 
     return () => {
       if (walkIntervalRef.current) {
@@ -460,12 +487,12 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
                 },
               };
             });
-          }, Math.max(1800, targetActor.moveDurationMs - 720));
+          }, Math.max(2400, targetActor.moveDurationMs - 960));
         });
 
         return nextActors;
       });
-    }, 3100);
+    }, 4200);
 
     return () => {
       if (otherPetWalkIntervalRef.current) {
@@ -682,7 +709,7 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-3">
             <h2 className="text-lg font-bold text-white pixel-text-shadow flex items-center gap-2">
-              🏠 {currentPet.name}的家
+              🏠 {currentPet.name}的小屋
               {currentStageInfo && (
                 <span className="text-xs px-2 py-0.5 rounded-full bg-slate-800/80 border border-slate-600 text-slate-200">
                   {currentStageInfo.name}
@@ -809,12 +836,47 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
             .filter(p => p.scene === currentScene)
             .map(placed => renderPlacedDecoration(placed))}
 
-          <div className="pointer-events-none absolute left-5 top-24 z-30 max-w-sm rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 shadow-xl backdrop-blur-sm">
-            <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-sky-300">孵化提醒</div>
-            <p className="mt-2 text-sm leading-6 text-slate-200">
-              点击小屋里的其他宠物就能直接切换当前跟随。宠物蛋会在首次通关新关卡时自动推进孵化进度，不需要先手动设置跟随。
-            </p>
-          </div>
+          <AnimatePresence initial={false}>
+            {isHatchHintCollapsed ? (
+              <motion.button
+                key="hatch-hint-chip"
+                type="button"
+                initial={{ opacity: 0, y: -8, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -8, scale: 0.96 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
+                onClick={() => setIsHatchHintCollapsed(false)}
+                className="absolute left-5 top-24 z-30 rounded-full border border-sky-300/30 bg-slate-950/78 px-3 py-1.5 text-xs font-semibold text-sky-100 shadow-lg backdrop-blur-md"
+              >
+                孵化提示
+              </motion.button>
+            ) : (
+              <motion.div
+                key="hatch-hint-card"
+                initial={{ opacity: 0, y: -10, scale: 0.98 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -10, scale: 0.98 }}
+                transition={{ duration: 0.22, ease: 'easeOut' }}
+                className="absolute left-5 top-24 z-30 max-w-sm rounded-2xl border border-white/10 bg-slate-950/72 px-4 py-3 shadow-xl backdrop-blur-sm"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-sky-300">孵化提示</div>
+                    <p className="mt-2 text-sm leading-6 text-slate-200">
+                      点击小屋里的其他宠物就能直接切换当前跟随。想推进宠物蛋孵化进度时，只要去挑战一个此前没有通关过的新关卡，首次通关后会自动推进进度，不需要先手动设置跟随。
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setIsHatchHintCollapsed(true)}
+                    className="shrink-0 rounded-full border border-slate-700 bg-slate-900/70 px-2.5 py-1 text-[11px] font-semibold text-slate-200 transition hover:border-sky-300/40 hover:text-white"
+                  >
+                    收起
+                  </button>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {/* Other Pets Render */}
           {roamingOtherPets.map((pet) => {
@@ -854,11 +916,11 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
                 <motion.div
                   className="relative group"
                   animate={{
-                    y: actor.isWalking ? [0, -1.8, 0] : [0, -0.7, 0],
-                    scale: actor.isWalking ? [1, 1.012, 1] : [1, 1.006, 1],
+                    y: actor.isWalking ? [0, -1.1, 0] : [0, -0.35, 0],
+                    scale: actor.isWalking ? [1, 1.008, 1] : [1, 1.003, 1],
                   }}
                   transition={{
-                    duration: actor.isWalking ? 2.4 : 3.8,
+                    duration: actor.isWalking ? 2.8 : 4.2,
                     repeat: Infinity,
                     ease: 'easeInOut',
                   }}

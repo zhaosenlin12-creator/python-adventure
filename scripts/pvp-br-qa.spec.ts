@@ -22,6 +22,7 @@ function authStorageValue(token: string, user: any) {
 }
 
 test('battle royale world entry and room flow smoke', async ({ browser }) => {
+  test.setTimeout(120000);
   const api = await playwrightRequest.newContext({
     extraHTTPHeaders: {
       'Content-Type': 'application/json',
@@ -170,6 +171,7 @@ test('battle royale world entry and room flow smoke', async ({ browser }) => {
   await page.getByTestId('br-start-match').click();
   await expect(page.getByTestId('br-arena')).toBeVisible({ timeout: 15000 });
   await page.waitForTimeout(1500);
+  await page.getByTestId('br-arena').click({ position: { x: 240, y: 240 } });
   const earlySnapshot = await page.evaluate(() => {
     return (window as any).__brSnapshot ?? null;
   });
@@ -185,7 +187,11 @@ test('battle royale world entry and room flow smoke', async ({ browser }) => {
   expect(laterSnapshot).toBeTruthy();
   expect(laterSnapshot.elapsedMs).toBeGreaterThan(4000);
   expect(laterSnapshot.platforms.length).toBeGreaterThan(20);
+  expect(laterSnapshot.platforms.some((platform: any) => platform.kind === 'moving')).toBeTruthy();
+  expect(laterSnapshot.platforms.some((platform: any) => platform.kind === 'bounce')).toBeTruthy();
   expect(arenaStatusText).not.toContain('战斗即将开始');
+  const spawnXs = earlySnapshot.fighters.map((fighter: any) => fighter.x);
+  expect(Math.max(...spawnXs) - Math.min(...spawnXs)).toBeGreaterThan(1800);
 
   const earlyBot = earlySnapshot.fighters.find((fighter: any) => fighter.isBot);
   const laterBot = laterSnapshot.fighters.find((fighter: any) => fighter.id === earlyBot?.id);
@@ -193,6 +199,35 @@ test('battle royale world entry and room flow smoke', async ({ browser }) => {
   expect(laterBot).toBeTruthy();
   const movementDelta = Math.abs((laterBot?.x ?? 0) - (earlyBot?.x ?? 0)) + Math.abs((laterBot?.y ?? 0) - (earlyBot?.y ?? 0));
   expect(movementDelta).toBeGreaterThan(40);
+
+  await page.evaluate(() => {
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'j' }));
+  });
+  await page.waitForTimeout(120);
+  await page.evaluate(() => {
+    window.dispatchEvent(new KeyboardEvent('keyup', { key: 'j' }));
+  });
+  const swingSnapshot = await page.evaluate(() => {
+    return (window as any).__brSnapshot ?? null;
+  });
+  const swingFighter = swingSnapshot.fighters.find((fighter: any) => !fighter.isBot);
+  expect(swingFighter).toBeTruthy();
+  expect((swingFighter?.swingMs ?? 0) > 0 || swingSnapshot.effects.some((effect: any) => effect.kind === 'slash')).toBeTruthy();
+
+  await page.evaluate(() => {
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'f' }));
+  });
+  await page.waitForTimeout(280);
+  await page.evaluate(() => {
+    window.dispatchEvent(new KeyboardEvent('keyup', { key: 'f' }));
+  });
+  const throwSnapshot = await page.evaluate(() => {
+    return (window as any).__brSnapshot ?? null;
+  });
+  const localFighter = throwSnapshot.fighters.find((fighter: any) => !fighter.isBot);
+  expect(localFighter).toBeTruthy();
+  expect(localFighter.weaponReady).toBeFalsy();
+  expect((throwSnapshot.projectiles?.length ?? 0) + (throwSnapshot.weapons?.length ?? 0)).toBeGreaterThan(0);
 
   await page.screenshot({
     path: path.join(ARTIFACT_DIR, '03-br-arena.png'),

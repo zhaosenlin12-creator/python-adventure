@@ -106,8 +106,8 @@ const PET_CATALOG: Record<Exclude<PetType, 'egg'>, PetCatalogEntry> = {
   },
   algo_bunny: {
     style: 'cute',
-    displayName: '云团灰兔',
-    description: '灰白毛团层次更清晰，轮廓不发虚，挂件、小屋和图鉴里都更耐看。',
+    displayName: '垂耳兔',
+    description: '耳朵轮廓柔和、主体完整，挂件、小屋和图鉴里都更稳定耐看。',
     icon: '🐇',
     color: 0xf59fc3,
   },

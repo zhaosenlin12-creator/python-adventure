@@ -72,7 +72,7 @@ const buildRemasterStageChain = (slug: string, stageIndexes: number[] = [1, 2, 3
 
 const ARTWORK_SOURCES: Partial<Record<PetType, ArtworkSourceConfig>> = {
   code_kitty: { slug: 'british-shorthair', renderScale: CUTE_SCALE, worldYOffset: -4 },
-  algo_bunny: { slug: 'cloud-rabbit', renderScale: CUTE_SCALE, worldYOffset: -3 },
+  algo_bunny: { slug: 'lop-rabbit', renderScale: CUTE_TALL_SCALE, worldYOffset: -3 },
   shiba_debugger: {
     stages: buildRemasterStageChain('shiba-inu', [1, 2, 3, 4, 4]),
     renderScale: CUTE_SCALE,

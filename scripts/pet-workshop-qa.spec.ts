@@ -320,6 +320,10 @@ async function desktopAudit(browser: Browser, session: QaSession) {
   await homeButton.click();
   const homeBackpackButton = page.locator('button.absolute.right-4.top-1\\/2.z-40.bg-slate-700').first();
   await expect(homeBackpackButton).toBeVisible({ timeout: 10000 });
+  await expect(page.getByText('想推进宠物蛋孵化进度时').first()).toBeVisible({ timeout: 10000 });
+  await page.waitForTimeout(6200);
+  await expect(page.getByRole('button', { name: '孵化提示' })).toBeVisible({ timeout: 10000 });
+  await expect(page.getByText('想推进宠物蛋孵化进度时')).toHaveCount(0);
   await page.waitForTimeout(1200);
   await screenshot(page, '05-pet-home-desktop.png');
 

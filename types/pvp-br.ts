@@ -113,6 +113,9 @@ export interface BattleRoyaleFighterView {
   hasRevived: boolean;
   specialCharges: number;
   buffs: Partial<Record<BrPickupType, number>>;
+  weaponReady: boolean;
+  swingMs: number;
+  hitFlashMs: number;
 }
 
 export interface BattleRoyalePickupView {
@@ -124,10 +127,44 @@ export interface BattleRoyalePickupView {
 }
 
 export interface BattleRoyalePlatform {
+  id: string;
   x: number;
   y: number;
   width: number;
   height: number;
+  kind?: 'static' | 'moving' | 'bounce';
+  axis?: 'x' | 'y';
+  travel?: number;
+  speed?: number;
+  phase?: number;
+  bounceBoost?: number;
+}
+
+export interface BattleRoyaleProjectileView {
+  id: string;
+  ownerId: string;
+  x: number;
+  y: number;
+  rotation: number;
+  active: boolean;
+}
+
+export interface BattleRoyaleWeaponPickupView {
+  id: string;
+  ownerId: string;
+  x: number;
+  y: number;
+  active: boolean;
+}
+
+export interface BattleRoyaleEffectView {
+  id: string;
+  kind: 'slash' | 'hit' | 'shockwave';
+  x: number;
+  y: number;
+  radius: number;
+  facing?: 1 | -1;
+  ttlMs: number;
 }
 
 export interface BattleRoyaleSnapshot {
@@ -149,6 +186,9 @@ export interface BattleRoyaleSnapshot {
   }>;
   winnerId: string | null;
   platforms: BattleRoyalePlatform[];
+  projectiles: BattleRoyaleProjectileView[];
+  weapons: BattleRoyaleWeaponPickupView[];
+  effects: BattleRoyaleEffectView[];
 }
 
 export interface BattleRoyaleInputPayload {
@@ -157,6 +197,7 @@ export interface BattleRoyaleInputPayload {
   jump: boolean;
   dash: boolean;
   attack: boolean;
+  throwWeapon: boolean;
   skill: boolean;
   guard: boolean;
 }
