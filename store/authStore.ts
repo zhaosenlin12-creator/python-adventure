@@ -38,6 +38,26 @@ async function readErrorMessage(response: Response, fallback: string): Promise<s
     }
 }
 
+function normalizeFriendlyAuthError(error: unknown, fallback: string): string {
+    const rawMessage = error instanceof Error ? error.message : String(error || fallback);
+    const normalized = rawMessage.trim();
+    const lower = normalized.toLowerCase();
+
+    if (!normalized) {
+        return fallback;
+    }
+
+    if (lower.includes('failed to fetch') || lower.includes('networkerror') || lower.includes('load failed')) {
+        return '现在连不上服务器，请检查网络后刷新页面重试；如果刚更新服务器，也可以稍后再试。';
+    }
+
+    if (/http 5\d\d/i.test(normalized)) {
+        return `${fallback}，服务器刚刚开小差了，请稍后再试。`;
+    }
+
+    return normalized;
+}
+
 interface AuthState {
     user: User | null;
     token: string | null;
@@ -112,7 +132,7 @@ export const useAuthStore = create<AuthState>()(
                     debugLog('[AuthStore] Login response status:', response.status);
 
                     if (!response.ok) {
-                        let errorMessage = 'Login failed';
+                        let errorMessage = '登录失败，请检查用户名和密码后重试';
                         try {
                             const error = await response.json();
                             console.error('[AuthStore] Login error:', error);
@@ -174,7 +194,7 @@ export const useAuthStore = create<AuthState>()(
                 } catch (error: unknown) {
                     console.error('[AuthStore] Login error:', error);
                     set({
-                        error: error instanceof Error ? error.message : String(error),
+                        error: normalizeFriendlyAuthError(error, '登录失败，请稍后重试'),
                         isLoading: false,
                         isAuthenticated: false,
                     });
@@ -205,7 +225,7 @@ export const useAuthStore = create<AuthState>()(
                     debugLog('[AuthStore] Response ok:', response.ok);
 
                     if (!response.ok) {
-                        let errorMessage = 'Registration failed';
+                        let errorMessage = '注册失败，请检查输入信息后重试';
                         errorMessage = await readErrorMessage(response, errorMessage);
                         throw new Error(errorMessage);
                     }
@@ -223,7 +243,7 @@ export const useAuthStore = create<AuthState>()(
                     console.error('[AuthStore] Registration error:', error);
                     console.error('[AuthStore] Error message:', error instanceof Error ? error.message : String(error));
                     set({
-                        error: error instanceof Error ? error.message : String(error),
+                        error: normalizeFriendlyAuthError(error, '注册失败，请稍后重试'),
                         isLoading: false,
                     });
                     throw error;
@@ -233,7 +253,7 @@ export const useAuthStore = create<AuthState>()(
             resetPassword: async (username: string) => {
                 const normalizedUsername = username.trim();
                 if (!normalizedUsername) {
-                    const message = '请先输入用户名，再重置密码。';
+                    const message = '请先输入用户名，再点击“忘记密码”里的重置按钮。';
                     set({ error: message });
                     throw new Error(message);
                 }
@@ -258,7 +278,7 @@ export const useAuthStore = create<AuthState>()(
                     set({ isLoading: false, error: null });
                     return payload;
                 } catch (error: unknown) {
-                    const message = error instanceof Error ? error.message : String(error);
+                    const message = normalizeFriendlyAuthError(error, '重置密码失败，请稍后重试');
                     set({
                         error: message,
                         isLoading: false,

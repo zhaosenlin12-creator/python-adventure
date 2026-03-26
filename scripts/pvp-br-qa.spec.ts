@@ -21,6 +21,16 @@ function authStorageValue(token: string, user: any) {
   });
 }
 
+function gameStorageValue(skills: string[]) {
+  return JSON.stringify({
+    state: {
+      skills,
+      selectedAgeGroup: 'primary-upper',
+    },
+    version: 0,
+  });
+}
+
 test('battle royale world entry and room flow smoke', async ({ browser }) => {
   test.setTimeout(120000);
   const api = await playwrightRequest.newContext({
@@ -125,14 +135,16 @@ test('battle royale world entry and room flow smoke', async ({ browser }) => {
   });
 
   await context.addInitScript(
-    ({ storedAuth }) => {
+    ({ storedAuth, storedGame }) => {
       window.localStorage.setItem('auth-storage', storedAuth);
+      window.localStorage.setItem('game-storage', storedGame);
       window.localStorage.setItem('editor-tutorial-completed', 'true');
       window.localStorage.setItem('newUserGuideCompleted', 'true');
       window.localStorage.setItem('pet-home-guide-completed', 'true');
     },
     {
       storedAuth: authStorageValue(token, user),
+      storedGame: gameStorageValue(['double_jump', 'dash']),
     }
   );
 
@@ -215,11 +227,23 @@ test('battle royale world entry and room flow smoke', async ({ browser }) => {
   expect((swingFighter?.swingMs ?? 0) > 0 || swingSnapshot.effects.some((effect: any) => effect.kind === 'slash')).toBeTruthy();
 
   await page.evaluate(() => {
-    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'f' }));
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: ' ' }));
+  });
+  await page.waitForTimeout(140);
+  await page.evaluate(() => {
+    window.dispatchEvent(new KeyboardEvent('keyup', { key: ' ' }));
+  });
+  const dashSnapshot = await page.evaluate(() => {
+    return (window as any).__brSnapshot ?? null;
+  });
+  expect(dashSnapshot.effects.some((effect: any) => effect.kind === 'dash')).toBeTruthy();
+
+  await page.evaluate(() => {
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k' }));
   });
   await page.waitForTimeout(280);
   await page.evaluate(() => {
-    window.dispatchEvent(new KeyboardEvent('keyup', { key: 'f' }));
+    window.dispatchEvent(new KeyboardEvent('keyup', { key: 'k' }));
   });
   const throwSnapshot = await page.evaluate(() => {
     return (window as any).__brSnapshot ?? null;

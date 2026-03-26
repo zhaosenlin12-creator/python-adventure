@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from collections import deque
 from pathlib import Path
+from statistics import median
 from typing import Dict
 
 from PIL import Image
@@ -12,6 +13,8 @@ PET_ROOT = ROOT / "public" / "assets" / "pets" / "camp-remaster"
 ALPHA_SOLID_THRESHOLD = 32
 MIN_HOLE_AREA = 20
 MAX_ALLOWED_RATIO = 0.0015
+MIN_FILL_RATIO_FRACTION = 0.58
+MAX_FILL_RATIO_DROP = 0.18
 
 MAPPED_SLUGS: Dict[str, str] = {
     "code_kitty": "british-shorthair",
@@ -37,12 +40,12 @@ MAPPED_SLUGS: Dict[str, str] = {
 }
 
 
-def audit_image(path: Path) -> tuple[float, int, int, int]:
+def audit_image(path: Path) -> tuple[float, int, int, int, float]:
     image = Image.open(path).convert("RGBA")
     alpha = image.getchannel("A")
     bbox = alpha.getbbox()
     if not bbox:
-        return 0.0, 0, 0, 0
+        return 0.0, 0, 0, 0, 0.0
 
     cropped = alpha.crop(bbox)
     width, height = cropped.size
@@ -97,17 +100,20 @@ def audit_image(path: Path) -> tuple[float, int, int, int]:
                 largest_hole = max(largest_hole, area)
 
     ratio = hole_area / solid_area if solid_area else 0.0
-    return ratio, hole_count, largest_hole, solid_area
+    fill_ratio = solid_area / (width * height) if width and height else 0.0
+    return ratio, hole_count, largest_hole, solid_area, fill_ratio
 
 
 def main() -> int:
     failed = False
     for pet_type, slug in MAPPED_SLUGS.items():
         stage_paths = sorted((PET_ROOT / slug).glob("stage-*.png"))
-        worst: tuple[float, int, int, str, int] | None = None
+        metrics: list[tuple[Path, float, int, int, int, float]] = []
+        worst: tuple[float, int, int, str, int, float] | None = None
         for stage_path in stage_paths:
-            ratio, hole_count, largest_hole, solid_area = audit_image(stage_path)
-            candidate = (ratio, hole_count, largest_hole, stage_path.name, solid_area)
+            ratio, hole_count, largest_hole, solid_area, fill_ratio = audit_image(stage_path)
+            metrics.append((stage_path, ratio, hole_count, largest_hole, solid_area, fill_ratio))
+            candidate = (ratio, hole_count, largest_hole, stage_path.name, solid_area, fill_ratio)
             if worst is None or candidate > worst:
                 worst = candidate
 
@@ -116,15 +122,25 @@ def main() -> int:
             failed = True
             continue
 
-        ratio, hole_count, largest_hole, stage_name, solid_area = worst
+        ratio, hole_count, largest_hole, stage_name, solid_area, fill_ratio = worst
+        fill_median = median(metric[5] for metric in metrics)
+        weak_stages = [
+            stage_path.name
+            for stage_path, _, _, _, _, stage_fill_ratio in metrics
+            if stage_fill_ratio < fill_median * MIN_FILL_RATIO_FRACTION
+            and (fill_median - stage_fill_ratio) > MAX_FILL_RATIO_DROP
+        ]
         status = "OK"
-        if ratio > MAX_ALLOWED_RATIO:
+        if ratio > MAX_ALLOWED_RATIO or weak_stages:
             status = "FAIL"
             failed = True
         print(
             f"[{status}] {pet_type:<16} slug={slug:<18} ratio={ratio:.4f} "
-            f"holes={hole_count:<2} largest={largest_hole:<5} stage={stage_name:<10} solid={solid_area}"
+            f"holes={hole_count:<2} largest={largest_hole:<5} stage={stage_name:<10} "
+            f"solid={solid_area} fill={fill_ratio:.3f}/{fill_median:.3f}"
         )
+        if weak_stages:
+            print(f"       suspicious low-fill stages: {', '.join(weak_stages)}")
 
     return 1 if failed else 0
 

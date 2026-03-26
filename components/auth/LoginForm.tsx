@@ -35,7 +35,7 @@ export default function LoginForm({ onSwitchToRegister }: LoginFormProps) {
         try {
             const payload = await resetPassword(username);
             setPassword(payload.default_password);
-            setResetMessage(`${payload.message} 默认密码：${payload.default_password}`);
+            setResetMessage(payload.message);
             setShowResetPanel(true);
         } catch {
             // Error is handled in the store
@@ -120,7 +120,6 @@ export default function LoginForm({ onSwitchToRegister }: LoginFormProps) {
                             <RefreshCcw className="h-4 w-4" />
                             忘记密码
                         </button>
-                        <span className="text-xs text-slate-500">支持按用户名重置为 123456</span>
                     </div>
 
                     {showResetPanel && (

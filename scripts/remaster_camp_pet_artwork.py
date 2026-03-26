@@ -21,6 +21,9 @@ TARGET_FILL = 0.78
 GROUND_MARGIN = 34
 REQUEST_TIMEOUT = 45
 DEFAULT_STAGE_PICK = (1, 3, 5, 7, 9)
+# Some white-dominant source frames collapse after background removal. Keep a
+# safe progression chain instead of shipping hollow mid-stage silhouettes.
+SAFE_LOP_RABBIT_STAGE_PICK = (1, 5, 5, 9, 9)
 ALPHA_SOLID_THRESHOLD = 32
 ALPHA_FILL_MIN = ALPHA_SOLID_THRESHOLD
 
@@ -37,7 +40,7 @@ class PetSourceConfig(TypedDict):
 
 PET_SOURCES: Dict[str, PetSourceConfig] = {
     "british-shorthair": {"asset_key": "yingduan", "stage_pick": DEFAULT_STAGE_PICK},
-    "lop-rabbit": {"asset_key": "chuietu", "stage_pick": DEFAULT_STAGE_PICK},
+    "lop-rabbit": {"asset_key": "chuietu", "stage_pick": SAFE_LOP_RABBIT_STAGE_PICK},
     "cloud-rabbit": {"asset_key": "zhuruotu", "stage_pick": DEFAULT_STAGE_PICK},
     "shiba-inu": {"asset_key": "caiquan", "stage_pick": DEFAULT_STAGE_PICK},
     "golden-cat": {"asset_key": "glodcat", "stage_pick": DEFAULT_STAGE_PICK},

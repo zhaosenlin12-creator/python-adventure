@@ -159,7 +159,7 @@ export interface BattleRoyaleWeaponPickupView {
 
 export interface BattleRoyaleEffectView {
   id: string;
-  kind: 'slash' | 'hit' | 'shockwave';
+  kind: 'slash' | 'hit' | 'shockwave' | 'dash';
   x: number;
   y: number;
   radius: number;
