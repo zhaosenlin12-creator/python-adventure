@@ -72,7 +72,8 @@ export default function AuthModal() {
     }, []);
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-hidden">
+        <div className="fixed inset-0 z-50 overflow-y-auto">
+            <div className="relative flex min-h-full items-start justify-center p-4 sm:items-center">
             {/* 暗蓝渐变背景 */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#0a0e27] via-[#1a1e3e] to-[#0a0e27]" />
             
@@ -163,7 +164,7 @@ export default function AuthModal() {
             
             {/* 登录/注册表单 - 统一宽度控制 */}
             <motion.div 
-                className="relative z-10 w-[480px] max-w-[calc(100vw-2rem)]"
+                className="relative z-10 my-6 w-[480px] max-w-[calc(100vw-2rem)]"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
@@ -174,6 +175,7 @@ export default function AuthModal() {
                     <RegisterForm onSwitchToLogin={() => setIsLogin(true)} />
                 )}
             </motion.div>
+            </div>
         </div>
     );
 }
