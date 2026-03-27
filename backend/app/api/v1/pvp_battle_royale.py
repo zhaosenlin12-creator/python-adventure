@@ -4,6 +4,7 @@ import asyncio
 import json
 import random
 import string
+import time
 from datetime import datetime, timedelta, timezone
 from typing import Any, Dict, Literal, Optional
 
@@ -20,10 +21,17 @@ router = APIRouter()
 Difficulty = Literal["easy", "medium", "hard"]
 RoomStatus = Literal["waiting", "in_progress", "finished"]
 
-MAX_ROOM_CAPACITY = 25
+MAX_ROOM_CAPACITY = 20
 ROOM_EXPIRY_MINUTES = 30
 FINISHED_ROOM_TTL_MINUTES = 5
 DISCONNECT_GRACE_SECONDS = 12.0
+ROOM_RUNTIME_TICK_SECONDS = 0.02
+SERVER_SNAPSHOT_INTERVAL_SECONDS = 0.08
+SERVER_INPUT_BATCH_INTERVAL_SECONDS = 0.04
+HOST_SNAPSHOT_STALE_SECONDS = 1.2
+INPUT_FORWARD_MIN_INTERVAL_SECONDS = 0.03
+INPUT_DUPLICATE_INTERVAL_SECONDS = 0.05
+SEND_JSON_TIMEOUT_SECONDS = 0.35
 
 AI_NAME_POOL = [
     "Scout Byte",
@@ -68,7 +76,9 @@ LEGACY_PET_TYPE_ALIASES = {
 room_lock = asyncio.Lock()
 active_rooms: Dict[str, Dict[str, Any]] = {}
 ws_connections: Dict[str, WebSocket] = {}
+ws_connection_locks: Dict[str, asyncio.Lock] = {}
 disconnect_cleanup_tasks: Dict[str, asyncio.Task] = {}
+room_runtime_tasks: Dict[str, asyncio.Task] = {}
 
 
 def now_utc() -> datetime:
@@ -77,6 +87,10 @@ def now_utc() -> datetime:
 
 def iso_now() -> str:
     return now_utc().isoformat()
+
+
+def monotonic_time() -> float:
+    return time.perf_counter()
 
 
 def normalize_text(value: str, *, fallback: str, max_length: int) -> str:
@@ -105,6 +119,20 @@ def connection_key(room_id: str, user_id: int) -> str:
 
 def room_participant_count(room: Dict[str, Any]) -> int:
     return len(room["humans"]) + len(room["bots"])
+
+
+def build_sync_state() -> Dict[str, Any]:
+    return {
+        "pending_snapshot": None,
+        "pending_snapshot_version": 0,
+        "broadcast_snapshot_version": 0,
+        "last_snapshot_broadcast_monotonic": 0.0,
+        "last_host_snapshot_monotonic": 0.0,
+        "host_stale": False,
+        "input_state": {},
+        "pending_guest_inputs": {},
+        "last_input_batch_monotonic": 0.0,
+    }
 
 
 def sorted_humans(room: Dict[str, Any]) -> list[Dict[str, Any]]:
@@ -207,32 +235,47 @@ def verify_ws_token(token: Optional[str], expected_user_id: int) -> None:
         raise HTTPException(status_code=403, detail="Websocket token does not match user")
 
 
-async def send_to_user(room_id: str, user_id: int, message: Dict[str, Any]) -> None:
+def drop_ws_connection(key: str) -> None:
+    ws_connections.pop(key, None)
+    ws_connection_locks.pop(key, None)
+
+
+async def send_json_to_connection(key: str, websocket: WebSocket, message: Dict[str, Any]) -> bool:
+    lock = ws_connection_locks.setdefault(key, asyncio.Lock())
+    try:
+        async with lock:
+            await asyncio.wait_for(websocket.send_json(message), timeout=SEND_JSON_TIMEOUT_SECONDS)
+        return True
+    except Exception:
+        drop_ws_connection(key)
+        return False
+
+
+async def send_to_user(room_id: str, user_id: int, message: Dict[str, Any]) -> bool:
     key = connection_key(room_id, user_id)
     ws = ws_connections.get(key)
     if not ws:
-        return
-    try:
-        await ws.send_json(message)
-    except Exception:
-        ws_connections.pop(key, None)
+        return False
+    return await send_json_to_connection(key, ws, message)
 
 
 async def broadcast_to_room(room_id: str, message: Dict[str, Any], exclude_user: Optional[int] = None) -> None:
-    stale_keys: list[str] = []
-    for key, websocket in ws_connections.items():
+    targets: list[tuple[str, WebSocket]] = []
+    for key, websocket in list(ws_connections.items()):
         current_room_id, _, current_user_id = key.partition(":")
         if current_room_id != room_id:
             continue
         if exclude_user is not None and int(current_user_id) == exclude_user:
             continue
-        try:
-            await websocket.send_json(message)
-        except Exception:
-            stale_keys.append(key)
+        targets.append((key, websocket))
 
-    for key in stale_keys:
-        ws_connections.pop(key, None)
+    if not targets:
+        return
+
+    await asyncio.gather(
+        *(send_json_to_connection(key, websocket, message) for key, websocket in targets),
+        return_exceptions=True,
+    )
 
 
 async def broadcast_room_snapshot(room: Dict[str, Any]) -> None:
@@ -246,7 +289,118 @@ async def broadcast_room_snapshot(room: Dict[str, Any]) -> None:
     )
 
 
+def cancel_room_runtime(room_id: str) -> None:
+    task = room_runtime_tasks.pop(room_id, None)
+    if task and not task.done():
+        task.cancel()
+
+
+async def run_room_runtime(room_id: str) -> None:
+    try:
+        while True:
+            await asyncio.sleep(ROOM_RUNTIME_TICK_SECONDS)
+
+            room = active_rooms.get(room_id)
+            if not room or room.get("status") != "in_progress":
+                return
+
+            sync_state = room.setdefault("sync_state", build_sync_state())
+            now_monotonic = monotonic_time()
+
+            pending_guest_inputs = sync_state.setdefault("pending_guest_inputs", {})
+            if (
+                pending_guest_inputs
+                and now_monotonic - sync_state.get("last_input_batch_monotonic", 0.0)
+                >= SERVER_INPUT_BATCH_INTERVAL_SECONDS
+            ):
+                input_batch = [
+                    {
+                        "user_id": queued_user_id,
+                        "payload": queued_entry["payload"],
+                    }
+                    for queued_user_id, queued_entry in sorted(pending_guest_inputs.items(), key=lambda item: item[0])
+                ]
+                if await send_to_user(
+                    room_id,
+                    room["host_user_id"],
+                    {
+                        "type": "br_input_batch",
+                        "inputs": input_batch,
+                        "timestamp": now_utc().timestamp(),
+                    },
+                ):
+                    sync_state["pending_guest_inputs"] = {}
+                    sync_state["last_input_batch_monotonic"] = now_monotonic
+
+            pending_version = sync_state.get("pending_snapshot_version", 0)
+            should_broadcast_snapshot = (
+                pending_version
+                and pending_version != sync_state.get("broadcast_snapshot_version", 0)
+                and now_monotonic - sync_state.get("last_snapshot_broadcast_monotonic", 0.0)
+                >= SERVER_SNAPSHOT_INTERVAL_SECONDS
+            )
+            if should_broadcast_snapshot:
+                snapshot_payload = sync_state.get("pending_snapshot")
+                if snapshot_payload is not None:
+                    room["latest_snapshot"] = snapshot_payload
+                    sync_state["broadcast_snapshot_version"] = pending_version
+                    sync_state["last_snapshot_broadcast_monotonic"] = now_monotonic
+                    await broadcast_to_room(
+                        room_id,
+                        {
+                            "type": "br_snapshot",
+                            "payload": snapshot_payload,
+                            "server_seq": pending_version,
+                            "timestamp": now_utc().timestamp(),
+                        },
+                        exclude_user=room["host_user_id"],
+                    )
+
+            last_host_snapshot = sync_state.get("last_host_snapshot_monotonic", 0.0)
+            host_snapshot_stale = bool(last_host_snapshot) and (now_monotonic - last_host_snapshot > HOST_SNAPSHOT_STALE_SECONDS)
+            was_host_stale = bool(sync_state.get("host_stale"))
+
+            if host_snapshot_stale and not was_host_stale:
+                sync_state["host_stale"] = True
+                await broadcast_to_room(
+                    room_id,
+                    {
+                        "type": "br_room_notice",
+                        "payload": {
+                            "kind": "sync_warning",
+                            "message": "战场同步出现波动，服务器正在等待最新状态，请稍候。",
+                            "lock_ms": 3600,
+                        },
+                        "timestamp": now_utc().timestamp(),
+                    },
+                )
+            elif not host_snapshot_stale and was_host_stale:
+                sync_state["host_stale"] = False
+                await broadcast_to_room(
+                    room_id,
+                    {
+                        "type": "br_room_notice",
+                        "payload": {
+                            "kind": "sync_restored",
+                            "message": "战场同步已恢复，可以继续战斗。",
+                            "lock_ms": 2200,
+                        },
+                        "timestamp": now_utc().timestamp(),
+                    },
+                )
+    except asyncio.CancelledError:
+        return
+
+
+def ensure_room_runtime(room_id: str) -> None:
+    existing = room_runtime_tasks.get(room_id)
+    if existing and not existing.done():
+        return
+    room_runtime_tasks[room_id] = asyncio.create_task(run_room_runtime(room_id))
+
+
 async def close_room(room_id: str, *, reason: str) -> None:
+    cancel_room_runtime(room_id)
     room = active_rooms.pop(room_id, None)
     if not room:
         return
@@ -371,6 +525,7 @@ async def create_room(payload: CreateRoomPayload, current_user: User = Depends(g
             "bots": [],
             "latest_snapshot": None,
             "latest_match_payload": None,
+            "sync_state": build_sync_state(),
         }
         active_rooms[room_id] = room
 
@@ -504,6 +659,9 @@ async def start_room(room_id: str, current_user: User = Depends(get_current_user
         room["started_at"] = iso_now()
         room["latest_snapshot"] = None
         room["latest_match_payload"] = None
+        room["sync_state"] = build_sync_state()
+
+    ensure_room_runtime(room_id)
 
     await broadcast_to_room(
         room_id,
@@ -532,6 +690,8 @@ async def finish_room(
         room["status"] = "finished"
         if room["started_at"] is None:
             room["started_at"] = iso_now()
+
+    cancel_room_runtime(room_id)
 
     await broadcast_to_room(
         room_id,
@@ -569,8 +729,11 @@ async def battle_royale_ws(
     room["humans"][user_id]["connected"] = True
     room["humans"][user_id]["disconnected_at"] = None
     cancel_disconnect_cleanup(key)
+    if room.get("status") == "in_progress":
+        ensure_room_runtime(room_id)
     previous_websocket = ws_connections.get(key)
     ws_connections[key] = websocket
+    ws_connection_locks.setdefault(key, asyncio.Lock())
     if previous_websocket and previous_websocket is not websocket:
         try:
             await previous_websocket.close(code=4001, reason="Superseded by a newer session")
@@ -604,29 +767,36 @@ async def battle_royale_ws(
                 continue
 
             if message_type == "br_input":
-                await send_to_user(
-                    room_id,
-                    current_room["host_user_id"],
-                    {
-                        "type": "br_input",
-                        "user_id": user_id,
-                        "payload": message.get("payload", {}),
-                        "timestamp": now_utc().timestamp(),
-                    },
-                )
+                sync_state = current_room.setdefault("sync_state", build_sync_state())
+                input_state = sync_state.setdefault("input_state", {})
+                pending_guest_inputs = sync_state.setdefault("pending_guest_inputs", {})
+                payload = message.get("payload", {})
+                payload_signature = json.dumps(payload, ensure_ascii=False, separators=(",", ":"), sort_keys=True)
+                previous_input_state = input_state.get(user_id, {})
+                now_monotonic = monotonic_time()
+                if (
+                    payload_signature == previous_input_state.get("signature")
+                    and now_monotonic - previous_input_state.get("forwarded_at", 0.0) < INPUT_DUPLICATE_INTERVAL_SECONDS
+                ):
+                    continue
+                if now_monotonic - previous_input_state.get("forwarded_at", 0.0) < INPUT_FORWARD_MIN_INTERVAL_SECONDS:
+                    continue
+                input_state[user_id] = {
+                    "signature": payload_signature,
+                    "forwarded_at": now_monotonic,
+                }
+                pending_guest_inputs[user_id] = {
+                    "payload": payload,
+                    "queued_at": now_monotonic,
+                }
             elif message_type == "br_snapshot":
                 if current_room["host_user_id"] != user_id:
                     continue
-                current_room["latest_snapshot"] = message.get("payload", {})
-                await broadcast_to_room(
-                    room_id,
-                    {
-                        "type": "br_snapshot",
-                        "payload": message.get("payload", {}),
-                        "timestamp": now_utc().timestamp(),
-                    },
-                    exclude_user=user_id,
-                )
+                sync_state = current_room.setdefault("sync_state", build_sync_state())
+                sync_state["pending_snapshot"] = message.get("payload", {})
+                sync_state["pending_snapshot_version"] = sync_state.get("pending_snapshot_version", 0) + 1
+                sync_state["last_host_snapshot_monotonic"] = monotonic_time()
+                sync_state["host_stale"] = False
             elif message_type == "br_quiz_offer":
                 if current_room["host_user_id"] != user_id:
                     continue
@@ -691,7 +861,7 @@ async def battle_royale_ws(
         if ws_connections.get(key) is not websocket:
             return
 
-        ws_connections.pop(key, None)
+        drop_ws_connection(key)
         cancel_disconnect_cleanup(key)
         room = active_rooms.get(room_id)
         if room and user_id in room["humans"]:

@@ -16,6 +16,9 @@ interface BattleRoyaleWebSocketConfig {
   reconnectMaxDelayMs?: number;
 }
 
+const SNAPSHOT_BUFFER_LIMIT_BYTES = 256_000;
+const INPUT_BUFFER_LIMIT_BYTES = 128_000;
+
 export class BattleRoyaleWebSocketClient {
   private ws: WebSocket | null = null;
   private reconnectTimer: ReturnType<typeof setTimeout> | null = null;
@@ -154,38 +157,42 @@ export class BattleRoyaleWebSocketClient {
     }
   }
 
-  private sendRaw(payload: Record<string, unknown>) {
+  private sendRaw(payload: Record<string, unknown>, maxBufferedAmount?: number): boolean {
     if (!this.ws || this.ws.readyState !== WebSocket.OPEN) {
-      return;
+      return false;
+    }
+    if (typeof maxBufferedAmount === 'number' && this.ws.bufferedAmount > maxBufferedAmount) {
+      return false;
     }
     this.ws.send(JSON.stringify(payload));
+    return true;
   }
 
   sendInput(payload: Record<string, unknown>) {
-    this.sendRaw({ type: 'br_input', payload });
+    return this.sendRaw({ type: 'br_input', payload }, INPUT_BUFFER_LIMIT_BYTES);
   }
 
   sendSnapshot(payload: Record<string, unknown>) {
-    this.sendRaw({ type: 'br_snapshot', payload });
+    return this.sendRaw({ type: 'br_snapshot', payload }, SNAPSHOT_BUFFER_LIMIT_BYTES);
   }
 
   sendQuizOffer(targetUserId: number, payload: Record<string, unknown>) {
-    this.sendRaw({ type: 'br_quiz_offer', target_user_id: targetUserId, payload });
+    return this.sendRaw({ type: 'br_quiz_offer', target_user_id: targetUserId, payload });
   }
 
   sendQuizResult(targetUserId: number, payload: Record<string, unknown>) {
-    this.sendRaw({ type: 'br_quiz_result', target_user_id: targetUserId, payload });
+    return this.sendRaw({ type: 'br_quiz_result', target_user_id: targetUserId, payload });
   }
 
   sendQuizSubmit(payload: Record<string, unknown>) {
-    this.sendRaw({ type: 'br_quiz_submit', payload });
+    return this.sendRaw({ type: 'br_quiz_submit', payload });
   }
 
   sendNotice(payload: Record<string, unknown>) {
-    this.sendRaw({ type: 'br_room_notice', payload });
+    return this.sendRaw({ type: 'br_room_notice', payload });
   }
 
   sendMatchEnd(payload: Record<string, unknown>) {
-    this.sendRaw({ type: 'br_match_end', payload });
+    return this.sendRaw({ type: 'br_match_end', payload });
   }
 }

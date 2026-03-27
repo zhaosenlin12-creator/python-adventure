@@ -107,7 +107,7 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
                 <h2 className="text-3xl font-black tracking-tight text-white sm:text-4xl">宠物生存乱斗</h2>
                 <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">
                   带着当前跟随宠物进入大地图乱斗。随着毒圈推进搜集护甲、护盾、武器和技能，活到最后赢下比赛。
-                  单房建议上限不超过 25 人，兼顾玩法密度与服务器稳定性。
+                  这一版已经按 20 真人专项优化，单房建议上限控制在 20 人以内，兼顾玩法密度与服务器稳定性。
                 </p>
               </div>
               <button
@@ -206,7 +206,7 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
                     </label>
 
                     <div className="rounded-2xl border border-amber-400/20 bg-amber-500/10 px-4 py-3 text-sm leading-6 text-amber-100">
-                      房主可以在等待室逐个添加不同难度的人机。为了保证这台服务器的在线稳定性，建议单房不要超过 25 人。
+                      房主可以在等待室逐个添加不同难度的人机。为了保证这台服务器的在线稳定性，建议单房不要超过 20 人。
                     </div>
 
                     <button

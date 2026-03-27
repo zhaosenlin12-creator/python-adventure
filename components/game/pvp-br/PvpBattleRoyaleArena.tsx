@@ -71,7 +71,7 @@ const PICKUP_RESPAWN_MS = 12000;
 const QUIZ_PENDING_TIMEOUT_MS = 15000;
 const SNAPSHOT_INTERVAL_MS = 80;
 const UI_SYNC_INTERVAL_MS = 80;
-const INPUT_SEND_INTERVAL_MS = 34;
+const INPUT_SEND_INTERVAL_MS = 48;
 const MAX_RENDER_EXTRAPOLATION_MS = 120;
 const LOCAL_INPUT_LEAD_MS = 46;
 const LOCAL_FIGHTER_SMOOTHING_RATE = 18;
@@ -1292,6 +1292,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   const matchEndedRef = useRef(false);
   const finishReportedRef = useRef(false);
   const roomNoticeLockUntilRef = useRef(0);
+  const lastRoomNoticeRef = useRef<{ message: string; at: number }>({ message: '', at: 0 });
   const localEliminationHandledRef = useRef(false);
   const lastInputSentRef = useRef(0);
   const lastInputSignatureRef = useRef('');
@@ -1302,6 +1303,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     lastFullSnapshotBytes: 0,
     platformsStripped: false,
     inputMessagesSent: 0,
+    droppedSnapshots: 0,
   });
 
   const [snapshot, setSnapshot] = useState<BattleRoyaleSnapshot>(snapshotRef.current);
@@ -1393,12 +1395,10 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       onConnect: () => {
         setWsConnected(true);
         pushRoomNotice('连接已恢复，正在继续同步战场状态。', 2600);
-        pushRoomNotice('连接已恢复，继续搜装备并向安全区推进。', 2600);
       },
       onDisconnect: () => {
         setWsConnected(false);
         pushRoomNotice('网络连接暂时中断，系统会自动重连。如超过 5 秒未恢复，请退出房间后重新进入。', 5200);
-        pushRoomNotice('网络连接暂时断开，系统会自动重连；如果 5 秒后还没恢复，请退出房间重新进入。', 5200);
       },
       onMessage: (message) => {
         if (message.type === 'connected') {
@@ -1414,6 +1414,20 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
           if (message.latest_match_payload) {
             finalizeMatch(message.latest_match_payload);
           }
+          return;
+        }
+
+        if (message.type === 'br_input_batch' && isHost && Array.isArray(message.inputs)) {
+          message.inputs.forEach((entry: { user_id?: number; payload?: { input?: Partial<BattleRoyaleInputPayload> } }) => {
+            if (typeof entry.user_id !== 'number') {
+              return;
+            }
+            const fighterId = fighterIdForUser(entry.user_id);
+            remoteInputsRef.current[fighterId] = {
+              ...createDefaultInput(),
+              ...(entry.payload?.input ?? {}),
+            };
+          });
           return;
         }
 
@@ -1471,10 +1485,14 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
           return;
         }
 
+        if (message.type === 'br_room_notice' && message.payload?.message) {
+          pushRoomNotice(String(message.payload.message), Number(message.payload.lock_ms ?? 2600));
+          return;
+        }
+
         if (message.type === 'br_room_closed') {
           setCurrentRoom(null);
           pushRoomNotice(message.reason || '房间已关闭，即将返回大厅。', 5000);
-          pushRoomNotice(message.reason || '房间已关闭', 5000);
           setTimeout(() => {
             resetBattleRoyaleStore();
             onExit();
@@ -1560,7 +1578,12 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   };
 
   const pushRoomNotice = (message: string, lockMs = 2600) => {
-    roomNoticeLockUntilRef.current = Date.now() + lockMs;
+    const now = Date.now();
+    if (lastRoomNoticeRef.current.message === message && now - lastRoomNoticeRef.current.at < 1200) {
+      return;
+    }
+    lastRoomNoticeRef.current = { message, at: now };
+    roomNoticeLockUntilRef.current = now + lockMs;
     setRoomNotice(message);
   };
 
@@ -2948,7 +2971,10 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
               transportSnapshot,
               'platforms',
             );
-            wsRef.current?.sendSnapshot(transportSnapshot);
+            const snapshotSent = wsRef.current?.sendSnapshot(transportSnapshot) ?? false;
+            if (!snapshotSent) {
+              syncStatsRef.current.droppedSnapshots += 1;
+            }
           }
 
           if (time - lastUiSyncRef.current > UI_SYNC_INTERVAL_MS) {
@@ -2998,7 +3024,6 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       } catch (error) {
         console.error('[PvpBattleRoyaleArena] Frame loop failed:', error);
         pushRoomNotice('战场画面出现波动，系统正在尝试自动恢复；如果几秒后仍未恢复，请退出房间重新进入。', 5200);
-          pushRoomNotice('战场画面出现波动，系统正在自动恢复；如果几秒后还没恢复，请退出房间重新进入。', 5200);
       } finally {
         animationRef.current = requestAnimationFrame(loop);
       }

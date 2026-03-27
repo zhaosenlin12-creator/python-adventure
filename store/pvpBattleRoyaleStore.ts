@@ -37,7 +37,7 @@ interface BattleRoyaleState {
 }
 
 const initialState = {
-  cap: 25,
+  cap: 20,
   rooms: [] as BattleRoyaleRoom[],
   currentRoom: null as BattleRoyaleRoom | null,
   isLoading: false,
