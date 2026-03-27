@@ -1,4 +1,4 @@
-import { test, expect, request as playwrightRequest } from '@playwright/test';
+import { test, expect, request as playwrightRequest, type APIRequestContext, type BrowserContext, type Page } from '@playwright/test';
 import path from 'node:path';
 import fs from 'node:fs';
 
@@ -29,6 +29,55 @@ function gameStorageValue(skills: string[]) {
     },
     version: 0,
   });
+}
+
+async function registerAndLogin(api: APIRequestContext, username: string, password: string) {
+  const email = `${username}@example.com`;
+
+  const registerResponse = await api.post(`${API_BASE}/auth/register`, {
+    data: { username, email, password },
+  });
+  expect(registerResponse.ok(), await registerResponse.text()).toBeTruthy();
+
+  const loginResponse = await api.post(`${API_BASE}/auth/login`, {
+    data: { username, password },
+  });
+  expect(loginResponse.ok(), await loginResponse.text()).toBeTruthy();
+  const loginPayload = await loginResponse.json();
+
+  return {
+    token: loginPayload.access_token as string,
+    user: loginPayload.user,
+  };
+}
+
+async function seedBrowserAuth(context: BrowserContext, token: string, user: any) {
+  await context.addInitScript(
+    ({ storedAuth, storedGame }) => {
+      window.localStorage.setItem('auth-storage', storedAuth);
+      window.localStorage.setItem('game-storage', storedGame);
+      window.localStorage.setItem('editor-tutorial-completed', 'true');
+      window.localStorage.setItem('newUserGuideCompleted', 'true');
+      window.localStorage.setItem('pet-home-guide-completed', 'true');
+    },
+    {
+      storedAuth: authStorageValue(token, user),
+      storedGame: gameStorageValue(['double_jump', 'dash']),
+    },
+  );
+}
+
+async function openBattleRoyaleLobby(page: Page) {
+  await page.goto(`${FRONTEND_ORIGIN}/world`, { waitUntil: 'domcontentloaded' });
+  await page.waitForTimeout(2500);
+  await page.evaluate(() => {
+    window.dispatchEvent(
+      new CustomEvent('stationInteraction', {
+        detail: { stationId: 'battle_royale' },
+      }),
+    );
+  });
+  await expect(page.getByTestId('br-lobby')).toBeVisible({ timeout: 15000 });
 }
 
 test('battle royale world entry and room flow smoke', async ({ browser }) => {
@@ -264,4 +313,75 @@ test('battle royale world entry and room flow smoke', async ({ browser }) => {
   });
 
   await context.close();
+});
+
+test('battle royale host start syncs guest and guest can recover after reload', async ({ browser }) => {
+  test.setTimeout(180000);
+
+  const api = await playwrightRequest.newContext({
+    extraHTTPHeaders: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  const seed = Date.now();
+  const password = 'QaPass123!';
+  const host = await registerAndLogin(api, `brsync_host_${seed}`, password);
+  const guest = await registerAndLogin(api, `brsync_guest_${seed}`, password);
+
+  const hostContext = await browser.newContext({ viewport: { width: 1440, height: 960 } });
+  const guestContext = await browser.newContext({ viewport: { width: 1440, height: 960 } });
+  await seedBrowserAuth(hostContext, host.token, host.user);
+  await seedBrowserAuth(guestContext, guest.token, guest.user);
+
+  const hostPage = await hostContext.newPage();
+  const guestPage = await guestContext.newPage();
+  const roomName = `同步房${seed}`;
+
+  await Promise.all([openBattleRoyaleLobby(hostPage), openBattleRoyaleLobby(guestPage)]);
+
+  await hostPage.getByRole('textbox', { name: '房间名称' }).fill(roomName);
+  await hostPage.getByTestId('br-create-room').click();
+  await expect
+    .poll(async () => hostPage.locator('body').innerText(), { timeout: 15000 })
+    .toContain('WAITING ROOM');
+
+  await expect
+    .poll(async () => guestPage.locator('body').innerText(), { timeout: 20000 })
+    .toContain(roomName);
+  await guestPage
+    .locator('div')
+    .filter({ hasText: roomName })
+    .getByRole('button', { name: '加入房间' })
+    .last()
+    .click();
+  await expect
+    .poll(async () => guestPage.locator('body').innerText(), { timeout: 15000 })
+    .toContain('WAITING ROOM');
+
+  await hostPage.getByTestId('br-start-match').click();
+  await expect
+    .poll(async () => hostPage.locator('body').innerText(), { timeout: 15000 })
+    .toContain('Space');
+  await expect
+    .poll(async () => guestPage.locator('body').innerText(), { timeout: 15000 })
+    .toContain('Space');
+
+  await guestPage.goto(`${FRONTEND_ORIGIN}/world`, { waitUntil: 'domcontentloaded' });
+  await guestPage.waitForTimeout(2500);
+  await guestPage.evaluate(() => {
+    window.dispatchEvent(
+      new CustomEvent('stationInteraction', {
+        detail: { stationId: 'battle_royale' },
+      }),
+    );
+  });
+
+  await expect
+    .poll(async () => guestPage.locator('body').innerText(), { timeout: 15000 })
+    .toContain('Space');
+
+  await guestContext.close();
+  await hostContext.close();
+  await api.dispose();
 });

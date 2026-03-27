@@ -49,21 +49,25 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
   );
 
   const availableRoomCount = useMemo(
-    () =>
-      rooms.filter(
-        (room) => room.participant_count < room.max_players && room.status === 'waiting',
-      ).length,
+    () => rooms.filter((room) => room.participant_count < room.max_players && room.status === 'waiting').length,
     [rooms],
   );
 
   useEffect(() => {
-    fetchRooms().catch(() => {});
+    void fetchRooms();
+    const interval = setInterval(() => {
+      void fetchRooms();
+    }, 3000);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, [fetchRooms]);
 
   const handleCreate = async () => {
     try {
-      const room = await createRoom(roomName.trim() || '宠物生存乱斗', maxPlayers);
-      onEnterRoom(room);
+      const createdRoom = await createRoom(roomName.trim() || '宠物生存乱斗', maxPlayers);
+      onEnterRoom(createdRoom);
     } catch {
       return;
     }
@@ -100,12 +104,10 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
                   <Shield className="h-3.5 w-3.5" />
                   Battle Royale
                 </div>
-                <h2 className="text-3xl font-black tracking-tight text-white sm:text-4xl">
-                  宠物生存乱斗
-                </h2>
+                <h2 className="text-3xl font-black tracking-tight text-white sm:text-4xl">宠物生存乱斗</h2>
                 <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">
-                  在更大的平台战场里携带主宠作战，随着毒圈推进搜集护甲、护盾和掉落武器。
-                  单房建议上限为 25 人，兼顾玩法密度与服务器稳定性。
+                  带着当前跟随宠物进入大地图乱斗。随着毒圈推进搜集护甲、护盾、武器和技能，活到最后赢下比赛。
+                  单房建议上限不超过 25 人，兼顾玩法密度与服务器稳定性。
                 </p>
               </div>
               <button
@@ -129,16 +131,12 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
                   />
                 </div>
                 <div>
-                  <div className="text-xs uppercase tracking-[0.25em] text-cyan-200/70">
-                    当前出战主宠
-                  </div>
-                  <div className="mt-1 text-xl font-bold text-white">
-                    {currentPet?.name ?? 'Battle Pet'}
-                  </div>
+                  <div className="text-xs uppercase tracking-[0.25em] text-cyan-200/70">当前出战主宠</div>
+                  <div className="mt-1 text-xl font-bold text-white">{currentPet?.name ?? 'Battle Pet'}</div>
                   <div className="text-sm text-slate-400">
                     {currentPet
-                      ? '当前跟随宠物会自动作为你的乱斗外观和近战模型。'
-                      : '未设置主宠时将默认使用 code_kitty 出战。'}
+                      ? '当前跟随宠物会直接作为你的乱斗外观和战斗形象。'
+                      : '如果还没有设置主宠，系统会默认使用 code_kitty 出战。'}
                   </div>
                 </div>
               </div>
@@ -208,18 +206,18 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
                     </label>
 
                     <div className="rounded-2xl border border-amber-400/20 bg-amber-500/10 px-4 py-3 text-sm leading-6 text-amber-100">
-                      房主可以在等待室逐个添加不同难度的 AI 人机。为了保证这台服务器的在线稳定性，建议单房不要超过 25 人。
+                      房主可以在等待室逐个添加不同难度的人机。为了保证这台服务器的在线稳定性，建议单房不要超过 25 人。
                     </div>
 
                     <button
                       type="button"
                       disabled={isLoading}
-                      onClick={handleCreate}
+                      onClick={() => void handleCreate()}
                       data-testid="br-create-room"
                       className="flex w-full items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#14b8a6,#2563eb)] px-6 py-3 text-sm font-bold text-white shadow-[0_18px_40px_rgba(37,99,235,0.28)] transition hover:brightness-110 disabled:opacity-60"
                     >
                       <Plus className="h-4 w-4" />
-                      {isLoading ? '创建中...' : '创建生存乱斗房间'}
+                      {isLoading ? '正在创建...' : '创建生存乱斗房间'}
                     </button>
                   </motion.div>
                 ) : (
@@ -230,10 +228,8 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
                     exit={{ opacity: 0, y: -10 }}
                     className="mt-5 rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-4 text-sm leading-6 text-slate-300"
                   >
-                    点击右侧任意等待中的房间即可加入。进入后会携带当前主宠直接进入候场名单。
-                    {availableRoomCount === 0
-                      ? ' 当前列表里的房间都已满员，请刷新或自己创建房间。'
-                      : ''}
+                    点击右侧任意等待中的房间即可加入。进入后会自动带上当前主宠，并实时同步房主的开战状态。
+                    {availableRoomCount === 0 ? ' 当前没有可加入的空房间，你可以先创建一个。' : ''}
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -250,14 +246,14 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
                 <div>
                   <div className="text-lg font-bold text-white">等待中的乱斗房间</div>
                   <div className="text-sm text-slate-400">
-                    加入后会在候场室里等待房主开战，满员房间会直接显示为不可加入。
+                    加入后会在等待室里同步成员变化和开战状态。满员房间会直接显示为不可加入。
                   </div>
                 </div>
                 <button
                   type="button"
                   onClick={() => {
                     setError(null);
-                    fetchRooms().catch(() => {});
+                    void fetchRooms();
                   }}
                   className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:border-cyan-300/40 hover:text-white"
                 >
@@ -273,9 +269,7 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
                       <Sword className="h-7 w-7" />
                     </div>
                     <div className="text-lg font-bold text-white">当前没有等待中的房间</div>
-                    <div className="mt-2 text-sm text-slate-400">
-                      直接创建一个房间，或者稍后刷新列表。
-                    </div>
+                    <div className="mt-2 text-sm text-slate-400">直接创建一个房间，或者稍后刷新列表。</div>
                   </div>
                 ) : (
                   rooms.map((room) => {
@@ -289,14 +283,14 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
                       >
                         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
                           <div className="space-y-2">
-                            <div className="flex items-center gap-2">
+                            <div className="flex flex-wrap items-center gap-2">
                               <div className="text-lg font-bold text-white">{room.room_name}</div>
                               <span className="rounded-full border border-cyan-300/20 bg-cyan-500/10 px-2 py-1 text-xs font-semibold text-cyan-100">
                                 {room.id}
                               </span>
                               {isFull && (
                                 <span className="rounded-full border border-amber-300/20 bg-amber-500/10 px-2 py-1 text-xs font-semibold text-amber-100">
-                                  已满
+                                  房间已满
                                 </span>
                               )}
                             </div>
@@ -315,19 +309,19 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
 
                             {isFull && (
                               <div className="rounded-2xl border border-amber-300/15 bg-amber-500/10 px-3 py-2 text-sm text-amber-100">
-                                当前人数已达到上限，无法再加入。请刷新列表或选择其他房间。
+                                当前人数已经达到上限，无法继续加入。请刷新列表或选择其他房间。
                               </div>
                             )}
                           </div>
 
                           <button
                             type="button"
-                            onClick={() => handleJoin(room)}
+                            onClick={() => void handleJoin(room)}
                             disabled={!canJoin || isLoading}
                             className="inline-flex items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#0ea5e9,#2563eb)] px-5 py-3 text-sm font-bold text-white transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-55"
                           >
                             <LogIn className="h-4 w-4" />
-                            {isFull ? '房间已满' : '加入候场'}
+                            {isFull ? '房间已满' : '加入房间'}
                           </button>
                         </div>
                       </div>

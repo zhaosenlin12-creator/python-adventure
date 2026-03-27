@@ -13,6 +13,8 @@ export interface BattleRoyaleHuman {
   movement_skills?: string[];
   age_group: AgeGroup | string;
   is_host: boolean;
+  connected?: boolean;
+  disconnected_at?: string | null;
   joined_at: string;
 }
 
@@ -53,6 +55,7 @@ export interface BattleRoyaleRoomResponse {
   reused?: boolean;
   joined?: boolean;
   started?: boolean;
+  recoverable?: boolean;
 }
 
 export interface BattleRoyaleParticipantPayload {
@@ -111,6 +114,8 @@ export interface BattleRoyaleFighterView {
   isBot: boolean;
   difficulty?: BattleRoyaleDifficulty;
   hasRevived: boolean;
+  reviveUsed?: boolean;
+  quizPending?: boolean;
   specialCharges: number;
   buffs: Partial<Record<BrPickupType, number>>;
   weaponReady: boolean;

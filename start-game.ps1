@@ -1,105 +1,112 @@
-# Python 冒险岛 - 一键启动脚本
-# 使用方法: .\start-game.ps1
+$ErrorActionPreference = "Stop"
 
-Write-Host "=====================================" -ForegroundColor Cyan
-Write-Host "   Python 冒险岛 - 启动中..." -ForegroundColor Cyan
-Write-Host "=====================================" -ForegroundColor Cyan
-Write-Host ""
+$frontendPort = 3003
+$backendPort = 8000
 
-# 获取本机IP地址
-try {
-    $ipAddress = (Get-NetIPAddress -AddressFamily IPv4 | 
-        Where-Object { 
-            $_.InterfaceAlias -notlike "*Loopback*" -and 
-            $_.IPAddress -notlike "169.254.*" 
-        } | 
-        Select-Object -First 1).IPAddress
-    
-    if ($ipAddress) {
-        Write-Host "📡 本机IP地址: $ipAddress" -ForegroundColor Green
-    } else {
-        $ipAddress = "localhost"
-        Write-Host "⚠️  未检测到网络IP，使用localhost" -ForegroundColor Yellow
+function Get-PrimaryLanIp {
+    $defaultRoute = Get-NetRoute -DestinationPrefix "0.0.0.0/0" -ErrorAction SilentlyContinue |
+        Where-Object { $_.NextHop -ne "0.0.0.0" } |
+        Sort-Object RouteMetric, InterfaceMetric |
+        Select-Object -First 1
+
+    if ($defaultRoute) {
+        $primaryIp = Get-NetIPAddress -InterfaceIndex $defaultRoute.InterfaceIndex -AddressFamily IPv4 -ErrorAction SilentlyContinue |
+            Where-Object {
+                $_.IPAddress -notlike "127.*" -and
+                $_.IPAddress -notlike "169.254.*" -and
+                $_.AddressState -eq "Preferred"
+            } |
+            Select-Object -First 1 -ExpandProperty IPAddress
+
+        if ($primaryIp) {
+            return $primaryIp
+        }
     }
-} catch {
-    $ipAddress = "localhost"
-    Write-Host "⚠️  IP检测失败，使用localhost" -ForegroundColor Yellow
+
+    return (
+        Get-NetIPAddress -AddressFamily IPv4 -ErrorAction SilentlyContinue |
+        Where-Object {
+            $_.IPAddress -notlike "127.*" -and
+            $_.IPAddress -notlike "169.254.*" -and
+            $_.AddressState -eq "Preferred" -and
+            $_.InterfaceAlias -notmatch "VMware|VirtualBox|Hyper-V|vEthernet|WSL|Loopback|Bluetooth|Tailscale"
+        } |
+        Sort-Object InterfaceMetric |
+        Select-Object -First 1 -ExpandProperty IPAddress
+    )
 }
+
+function Ensure-FirewallRule {
+    param(
+        [string]$Name,
+        [int]$Port
+    )
+
+    $rule = Get-NetFirewallRule -DisplayName $Name -ErrorAction SilentlyContinue
+    if (-not $rule) {
+        New-NetFirewallRule -DisplayName $Name -Direction Inbound -Action Allow -Profile Any -Protocol TCP -LocalPort $Port | Out-Null
+    }
+    else {
+        Set-NetFirewallRule -DisplayName $Name -Enabled True -Profile Any -Action Allow | Out-Null
+    }
+}
+
+Write-Host "=====================================" -ForegroundColor Cyan
+Write-Host " Python Adventure LAN Launcher " -ForegroundColor Cyan
+Write-Host "=====================================" -ForegroundColor Cyan
 Write-Host ""
 
-# 检查是否已经有进程在运行
-$frontendRunning = Get-NetTCPConnection -LocalPort 3000 -ErrorAction SilentlyContinue
-$backendRunning = Get-NetTCPConnection -LocalPort 8000 -ErrorAction SilentlyContinue
+$ipAddress = Get-PrimaryLanIp
+if (-not $ipAddress) {
+    $ipAddress = "localhost"
+}
+
+Write-Host "Detected LAN IP: $ipAddress" -ForegroundColor Green
+Write-Host "Frontend Port : $frontendPort" -ForegroundColor Green
+Write-Host "Backend Port  : $backendPort" -ForegroundColor Green
+Write-Host ""
+
+Ensure-FirewallRule -Name "game-google-frontend-3000" -Port 3000
+Ensure-FirewallRule -Name "game-google-frontend-3003" -Port $frontendPort
+Ensure-FirewallRule -Name "game-google-backend-8000" -Port $backendPort
+
+$frontendRunning = Get-NetTCPConnection -State Listen -LocalPort $frontendPort -ErrorAction SilentlyContinue
+$backendRunning = Get-NetTCPConnection -State Listen -LocalPort $backendPort -ErrorAction SilentlyContinue
 
 if ($frontendRunning) {
-    Write-Host "⚠️  前端已在运行 (端口3000)" -ForegroundColor Yellow
+    Write-Host "Frontend already listening on $frontendPort" -ForegroundColor Yellow
 }
 
 if ($backendRunning) {
-    Write-Host "⚠️  后端已在运行 (端口8000)" -ForegroundColor Yellow
+    Write-Host "Backend already listening on $backendPort" -ForegroundColor Yellow
 }
 
-if ($frontendRunning -and $backendRunning) {
-    Write-Host ""
-    Write-Host "游戏已经在运行！" -ForegroundColor Green
-    Write-Host "访问: http://localhost:3000" -ForegroundColor Cyan
-    Write-Host ""
-    $openBrowser = Read-Host "是否打开浏览器？(Y/N)"
-    if ($openBrowser -eq "Y" -or $openBrowser -eq "y") {
-        Start-Process "http://localhost:3000"
-    }
-    exit
-}
-
-# 启动后端
 if (-not $backendRunning) {
-    Write-Host "🚀 启动后端服务器..." -ForegroundColor Green
     $backendPath = Join-Path $PSScriptRoot "backend"
-    Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$backendPath'; Write-Host '后端服务器启动中...' -ForegroundColor Cyan; python run.py"
-    Write-Host "✓ 后端服务器已启动" -ForegroundColor Green
+    Write-Host "Starting backend..." -ForegroundColor Cyan
+    Start-Process powershell -ArgumentList "-NoExit", "-Command", "Set-Location '$backendPath'; python run.py" | Out-Null
     Start-Sleep -Seconds 3
 }
 
-# 启动前端
 if (-not $frontendRunning) {
-    Write-Host "🚀 启动前端服务器 (监听所有网络接口)..." -ForegroundColor Green
-    Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$PSScriptRoot'; Write-Host '前端服务器启动中...' -ForegroundColor Cyan; npm run dev -- -H 0.0.0.0"
-    Write-Host "✓ 前端服务器已启动" -ForegroundColor Green
+    Write-Host "Starting frontend..." -ForegroundColor Cyan
+    Start-Process powershell -ArgumentList "-NoExit", "-Command", "Set-Location '$PSScriptRoot'; npm run dev -- -p $frontendPort -H 0.0.0.0" | Out-Null
     Start-Sleep -Seconds 5
 }
 
-# 等待服务启动
 Write-Host ""
-Write-Host "⏳ 等待服务启动..." -ForegroundColor Yellow
-Start-Sleep -Seconds 3
-
-# 打开浏览器
+Write-Host "Local URLs" -ForegroundColor White
+Write-Host "  Frontend : http://localhost:$frontendPort" -ForegroundColor Cyan
+Write-Host "  Backend  : http://localhost:$backendPort" -ForegroundColor Cyan
+Write-Host "  Docs     : http://localhost:$backendPort/docs" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "=====================================" -ForegroundColor Cyan
-Write-Host "   游戏启动成功！" -ForegroundColor Green
-Write-Host "=====================================" -ForegroundColor Cyan
+Write-Host "LAN URLs" -ForegroundColor White
+Write-Host "  Frontend : http://${ipAddress}:$frontendPort" -ForegroundColor Green
+Write-Host "  Backend  : http://${ipAddress}:$backendPort" -ForegroundColor Green
+Write-Host "  Docs     : http://${ipAddress}:$backendPort/docs" -ForegroundColor Green
 Write-Host ""
-Write-Host "访问地址:" -ForegroundColor White
-Write-Host "  本机访问:" -ForegroundColor Yellow
-Write-Host "    游戏主页: http://localhost:3000" -ForegroundColor Cyan
-Write-Host "    后端API: http://localhost:8000" -ForegroundColor Cyan
-Write-Host "    API文档: http://localhost:8000/docs" -ForegroundColor Cyan
-Write-Host ""
-Write-Host "  局域网访问:" -ForegroundColor Yellow
-Write-Host "    游戏主页: http://${ipAddress}:3000" -ForegroundColor Green
-Write-Host "    后端API: http://${ipAddress}:8000" -ForegroundColor Green
-Write-Host "    API文档: http://${ipAddress}:8000/docs" -ForegroundColor Green
-Write-Host ""
-Write-Host "  💡 提示: 其他设备可通过局域网地址访问" -ForegroundColor Gray
-Write-Host ""
-Write-Host "提示: 使用 .\stop-game.ps1 停止游戏" -ForegroundColor Gray
+Write-Host "Tip: if other devices still cannot connect, verify they are on the same subnet as $ipAddress." -ForegroundColor Gray
+Write-Host "Tip: use .\stop-game.ps1 to stop local services." -ForegroundColor Gray
 Write-Host ""
 
-# 自动打开浏览器
-Write-Host "🌐 正在打开浏览器..." -ForegroundColor Green
-Start-Sleep -Seconds 2
-Start-Process "http://localhost:3000"
-
-Write-Host ""
-Write-Host "✓ 完成！开始游戏吧！" -ForegroundColor Green
-Write-Host ""
+Start-Process "http://localhost:$frontendPort" | Out-Null

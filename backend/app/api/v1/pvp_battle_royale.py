@@ -23,7 +23,7 @@ RoomStatus = Literal["waiting", "in_progress", "finished"]
 MAX_ROOM_CAPACITY = 25
 ROOM_EXPIRY_MINUTES = 30
 FINISHED_ROOM_TTL_MINUTES = 5
-DISCONNECT_GRACE_SECONDS = 2.0
+DISCONNECT_GRACE_SECONDS = 12.0
 
 AI_NAME_POOL = [
     "Scout Byte",
@@ -171,6 +171,8 @@ def build_human_entry(user: User, payload: "RoomParticipantPayload", *, is_host:
         "movement_skills": [skill for skill in payload.movement_skills if skill in allowed_movement_skills],
         "age_group": payload.age_group,
         "is_host": is_host,
+        "connected": True,
+        "disconnected_at": None,
         "joined_at": iso_now(),
     }
 
@@ -273,6 +275,7 @@ async def finalize_disconnect_after_grace(room_id: str, user_id: int, key: str) 
     room: Optional[Dict[str, Any]] = None
     should_close_room = False
     close_reason = ""
+    should_emit_disconnect = False
 
     async with room_lock:
         if ws_connections.get(key):
@@ -282,18 +285,24 @@ async def finalize_disconnect_after_grace(room_id: str, user_id: int, key: str) 
         if not room or user_id not in room["humans"]:
             return
 
+        human = room["humans"][user_id]
+        human["connected"] = False
+        human["disconnected_at"] = human.get("disconnected_at") or iso_now()
         is_host = room["host_user_id"] == user_id
-        room["humans"].pop(user_id, None)
+        if room["status"] == "waiting":
+            room["humans"].pop(user_id, None)
 
-        if is_host or not room["humans"]:
-            should_close_room = True
-            close_reason = "Host disconnected" if is_host else "All players disconnected"
+            if is_host or not room["humans"]:
+                should_close_room = True
+                close_reason = "Host disconnected" if is_host else "All players disconnected"
+        else:
+            should_emit_disconnect = True
 
     if should_close_room:
         await close_room(room_id, reason=close_reason)
         return
 
-    if room:
+    if room and should_emit_disconnect:
         await broadcast_to_room(
             room_id,
             {
@@ -302,6 +311,8 @@ async def finalize_disconnect_after_grace(room_id: str, user_id: int, key: str) 
                 "timestamp": now_utc().timestamp(),
             },
         )
+
+    if room:
         await broadcast_room_snapshot(room)
 
 
@@ -358,10 +369,25 @@ async def create_room(payload: CreateRoomPayload, current_user: User = Depends(g
             "started_at": None,
             "humans": {current_user.id: host_entry},
             "bots": [],
+            "latest_snapshot": None,
+            "latest_match_payload": None,
         }
         active_rooms[room_id] = room
 
     return {"room": serialize_room(room), "reused": False, "cap": MAX_ROOM_CAPACITY}
+
+
+@router.get("/rooms/my-active")
+async def get_my_active_room(current_user: User = Depends(get_current_user)):
+    room = find_user_room(current_user.id)
+    if not room or room["status"] == "finished":
+        raise HTTPException(status_code=404, detail="No active room")
+
+    human = room["humans"].get(current_user.id) or {}
+    recoverable = room["status"] in {"waiting", "in_progress"} and (
+        human.get("connected", True) or human.get("disconnected_at") is not None
+    )
+    return {"room": serialize_room(room), "cap": MAX_ROOM_CAPACITY, "recoverable": recoverable}
 
 
 @router.get("/rooms/{room_id}")
@@ -409,6 +435,7 @@ async def leave_room(room_id: str, current_user: User = Depends(get_current_user
         if current_user.id not in room["humans"]:
             return {"success": True}
 
+        cancel_disconnect_cleanup(connection_key(room_id, current_user.id))
         is_host = room["host_user_id"] == current_user.id
         room["humans"].pop(current_user.id, None)
 
@@ -475,6 +502,8 @@ async def start_room(room_id: str, current_user: User = Depends(get_current_user
 
         room["status"] = "in_progress"
         room["started_at"] = iso_now()
+        room["latest_snapshot"] = None
+        room["latest_match_payload"] = None
 
     await broadcast_to_room(
         room_id,
@@ -497,8 +526,8 @@ async def finish_room(
         room = active_rooms.get(room_id)
         if not room:
             return {"success": True}
-        if current_user.id not in room["humans"]:
-            raise HTTPException(status_code=403, detail="You are not in this room")
+        if room["host_user_id"] != current_user.id:
+            raise HTTPException(status_code=403, detail="Only the host can finish the room")
 
         room["status"] = "finished"
         if room["started_at"] is None:
@@ -537,6 +566,8 @@ async def battle_royale_ws(
         await websocket.close(code=4404, reason="Room not found")
         return
 
+    room["humans"][user_id]["connected"] = True
+    room["humans"][user_id]["disconnected_at"] = None
     cancel_disconnect_cleanup(key)
     previous_websocket = ws_connections.get(key)
     ws_connections[key] = websocket
@@ -550,6 +581,9 @@ async def battle_royale_ws(
         {
             "type": "connected",
             "room": serialize_room(room),
+            "latest_snapshot": room.get("latest_snapshot"),
+            "latest_match_payload": room.get("latest_match_payload"),
+            "recoverable": room["status"] in {"waiting", "in_progress"},
             "timestamp": now_utc().timestamp(),
         }
     )
@@ -583,6 +617,7 @@ async def battle_royale_ws(
             elif message_type == "br_snapshot":
                 if current_room["host_user_id"] != user_id:
                     continue
+                current_room["latest_snapshot"] = message.get("payload", {})
                 await broadcast_to_room(
                     room_id,
                     {
@@ -642,6 +677,7 @@ async def battle_royale_ws(
             elif message_type == "br_match_end":
                 if current_room["host_user_id"] != user_id:
                     continue
+                current_room["latest_match_payload"] = message.get("payload", {})
                 await broadcast_to_room(
                     room_id,
                     {
@@ -657,6 +693,11 @@ async def battle_royale_ws(
 
         ws_connections.pop(key, None)
         cancel_disconnect_cleanup(key)
+        room = active_rooms.get(room_id)
+        if room and user_id in room["humans"]:
+            room["humans"][user_id]["connected"] = False
+            room["humans"][user_id]["disconnected_at"] = iso_now()
+            await broadcast_room_snapshot(room)
         disconnect_cleanup_tasks[key] = asyncio.create_task(
             finalize_disconnect_after_grace(room_id, user_id, key)
         )

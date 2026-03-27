@@ -68,6 +68,7 @@ const EFFECT_TTL_DASH_MS = 220;
 const SAFE_ZONE_DAMAGE_BY_PHASE = [10, 14, 20, 30, 42, 58, 78] as const;
 const MATCH_MAX_MS = 360000;
 const PICKUP_RESPAWN_MS = 12000;
+const QUIZ_PENDING_TIMEOUT_MS = 15000;
 const SNAPSHOT_INTERVAL_MS = 90;
 const UI_SYNC_INTERVAL_MS = 120;
 const CANVAS_FONT_FAMILY = '"Microsoft YaHei", "Noto Sans SC", "PingFang SC", sans-serif';
@@ -789,6 +790,8 @@ function buildSnapshot(
       isBot: fighter.isBot,
       difficulty: fighter.difficulty,
       hasRevived: fighter.hasRevived,
+      reviveUsed: fighter.reviveUsed,
+      quizPending: fighter.quizPending,
       specialCharges: fighter.specialCharges,
       buffs: fighter.buffs,
       weaponReady: fighter.weaponReady,
@@ -836,6 +839,77 @@ function buildSnapshot(
     winnerId,
     platforms,
   };
+}
+
+function hydrateFightersFromSnapshot(room: BattleRoyaleRoom, snapshot: BattleRoyaleSnapshot): Map<string, InternalFighter> {
+  const fighters = createInitialFighters(room);
+
+  snapshot.fighters.forEach((view) => {
+    const existing = fighters.get(view.id);
+    if (!existing) {
+      return;
+    }
+
+    existing.x = view.x;
+    existing.y = view.y;
+    existing.vx = view.vx;
+    existing.vy = view.vy;
+    existing.hp = view.hp;
+    existing.maxHp = view.maxHp;
+    existing.shield = view.shield;
+    existing.armor = view.armor;
+    existing.kills = view.kills;
+    existing.alive = view.alive;
+    existing.facing = view.facing;
+    existing.hasRevived = view.hasRevived;
+    existing.reviveUsed = view.reviveUsed ?? existing.reviveUsed;
+    existing.quizPending = view.quizPending ?? false;
+    existing.specialCharges = view.specialCharges;
+    existing.buffs = { ...view.buffs };
+    existing.weaponReady = view.weaponReady;
+    existing.swingMs = view.swingMs;
+    existing.hitFlashMs = view.hitFlashMs;
+    existing.eliminatedAtMs = view.alive ? null : snapshot.elapsedMs;
+    existing.attackTimerMs = view.swingMs;
+    existing.weaponCooldownMs = view.weaponReady ? 0 : WEAPON_THROW_COOLDOWN_MS;
+    existing.onGround = false;
+    existing.jumpHeld = false;
+    existing.attackHeld = false;
+    existing.skillHeld = false;
+    existing.dashHeld = false;
+    existing.throwHeld = false;
+    existing.lastAttackerId = null;
+    existing.roamTargetX = view.x;
+    existing.roamTargetY = view.y;
+    existing.roamExpireAtMs = snapshot.elapsedMs;
+    existing.stuckMs = 0;
+    existing.lastSampleX = view.x;
+    existing.lastSampleY = view.y;
+  });
+
+  return fighters;
+}
+
+function hydratePickupsFromSnapshot(snapshot: BattleRoyaleSnapshot): InternalPickup[] {
+  return snapshot.pickups.map((pickup) => ({
+    ...pickup,
+    respawnAtMs: pickup.active ? 0 : snapshot.elapsedMs + PICKUP_RESPAWN_MS,
+  }));
+}
+
+function hydrateWeaponsFromSnapshot(snapshot: BattleRoyaleSnapshot): InternalWeaponPickup[] {
+  return snapshot.weapons.map((weapon) => ({
+    ...weapon,
+    active: weapon.active,
+    ttlMs: Math.max(12000, MATCH_MAX_MS - snapshot.elapsedMs),
+  }));
+}
+
+function hydrateEffectsFromSnapshot(snapshot: BattleRoyaleSnapshot): InternalEffect[] {
+  return snapshot.effects.map((effect) => ({
+    ...effect,
+    ttlMs: effect.ttlMs,
+  }));
 }
 
 function pickupLabel(type: BrPickupType): string {
@@ -1172,17 +1246,21 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   const matchEndedRef = useRef(false);
   const finishReportedRef = useRef(false);
   const roomNoticeLockUntilRef = useRef(0);
+  const localEliminationHandledRef = useRef(false);
 
   const [snapshot, setSnapshot] = useState<BattleRoyaleSnapshot>(snapshotRef.current);
   const [quizOffer, setQuizOffer] = useState<BattleRoyaleQuizOffer | null>(null);
   const [submittingQuiz, setSubmittingQuiz] = useState(false);
   const [result, setResult] = useState<BattleRoyaleResult | null>(null);
+  const [showEliminationPrompt, setShowEliminationPrompt] = useState(false);
   const [roomNotice, setRoomNotice] = useState<string>('战场部署完成，先分散搜甲，再抢高台和地面掉落武器。');
 
   const currentUserId = useAuthStore((state) => state.user?.id ?? null);
   const localFighterId = currentUserId ? fighterIdForUser(currentUserId) : '';
   const isHost = room.host_user_id === currentUserId;
   const finishCurrentRoom = usePvpBattleRoyaleStore((state) => state.finishCurrentRoom);
+  const setCurrentRoom = usePvpBattleRoyaleStore((state) => state.setCurrentRoom);
+  const leaveCurrentRoom = usePvpBattleRoyaleStore((state) => state.leaveCurrentRoom);
   const setWsConnected = usePvpBattleRoyaleStore((state) => state.setWsConnected);
   const resetBattleRoyaleStore = usePvpBattleRoyaleStore((state) => state.reset);
   const audioContextRef = useRef<AudioContext | null>(null);
@@ -1194,6 +1272,10 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     return () => {
       musicManager.switchBGM('main');
     };
+  }, []);
+
+  useEffect(() => {
+    setRoomNotice('战场部署完成，先分散搜护甲，再争夺高台与武器。');
   }, []);
 
   useEffect(() => {
@@ -1248,13 +1330,31 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       userId: currentUserId,
       onConnect: () => {
         setWsConnected(true);
+        pushRoomNotice('连接已恢复，正在继续同步战场状态。', 2600);
         pushRoomNotice('连接已恢复，继续搜装备并向安全区推进。', 2600);
       },
       onDisconnect: () => {
         setWsConnected(false);
+        pushRoomNotice('网络连接暂时中断，系统会自动重连。如超过 5 秒未恢复，请退出房间后重新进入。', 5200);
         pushRoomNotice('网络连接暂时断开，系统会自动重连；如果 5 秒后还没恢复，请退出房间重新进入。', 5200);
       },
       onMessage: (message) => {
+        if (message.type === 'connected') {
+          if (message.room) {
+            setCurrentRoom(message.room as BattleRoyaleRoom);
+          }
+
+          if (message.latest_snapshot) {
+            applyRecoveredSnapshot(message.latest_snapshot as BattleRoyaleSnapshot);
+            pushRoomNotice('已恢复到当前战场，可以继续操作。', 2600);
+          }
+
+          if (message.latest_match_payload) {
+            finalizeMatch(message.latest_match_payload);
+          }
+          return;
+        }
+
         if (message.type === 'br_input' && isHost) {
           const fighterId = fighterIdForUser(message.user_id);
           remoteInputsRef.current[fighterId] = {
@@ -1265,8 +1365,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         }
 
         if (message.type === 'br_snapshot' && !isHost && message.payload) {
-          snapshotRef.current = message.payload as BattleRoyaleSnapshot;
-          setSnapshot(message.payload as BattleRoyaleSnapshot);
+          applyRecoveredSnapshot(message.payload as BattleRoyaleSnapshot);
           return;
         }
 
@@ -1311,6 +1410,8 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         }
 
         if (message.type === 'br_room_closed') {
+          setCurrentRoom(null);
+          pushRoomNotice(message.reason || '房间已关闭，即将返回大厅。', 5000);
           pushRoomNotice(message.reason || '房间已关闭', 5000);
           setTimeout(() => {
             resetBattleRoyaleStore();
@@ -1328,7 +1429,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       wsRef.current = null;
       setWsConnected(false);
     };
-  }, [currentUserId, isHost, localFighterId, onExit, resetBattleRoyaleStore, room.id, setWsConnected]);
+  }, [currentUserId, isHost, localFighterId, onExit, resetBattleRoyaleStore, room.id, setCurrentRoom, setWsConnected]);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -1347,6 +1448,26 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     const nextNotice = deriveAmbientRoomNotice(snapshot, localFighterId);
     setRoomNotice((current) => (current === nextNotice ? current : nextNotice));
   }, [localFighterId, quizOffer, result, roomNotice, snapshot]);
+
+  useEffect(() => {
+    const localFighter = snapshot.fighters.find((fighter) => fighter.id === localFighterId);
+    if (!localFighter || result) {
+      return;
+    }
+
+    if (localFighter.alive || localFighter.quizPending) {
+      localEliminationHandledRef.current = false;
+      if (localFighter.alive) {
+        setShowEliminationPrompt(false);
+      }
+      return;
+    }
+
+    if (!localEliminationHandledRef.current) {
+      localEliminationHandledRef.current = true;
+      setShowEliminationPrompt(true);
+    }
+  }, [localFighterId, result, snapshot]);
 
   const readLocalInput = (): BattleRoyaleInputPayload => {
     const touchState = touchInputManager.getState();
@@ -1377,6 +1498,57 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   const pushRoomNotice = (message: string, lockMs = 2600) => {
     roomNoticeLockUntilRef.current = Date.now() + lockMs;
     setRoomNotice(message);
+  };
+
+  const applyRecoveredSnapshot = (incoming: BattleRoyaleSnapshot) => {
+    tickRef.current = incoming.tick;
+    elapsedMsRef.current = incoming.elapsedMs;
+    winnerIdRef.current = incoming.winnerId;
+    previousPlatformsRef.current = incoming.platforms;
+    platformsRef.current = incoming.platforms;
+    fightersRef.current = hydrateFightersFromSnapshot(room, incoming);
+    pickupsRef.current = hydratePickupsFromSnapshot(incoming);
+    projectilesRef.current = [];
+    weaponPickupsRef.current = hydrateWeaponsFromSnapshot(incoming);
+    effectsRef.current = hydrateEffectsFromSnapshot(incoming);
+    killFeedRef.current = incoming.killFeed.map((item) => ({ ...item }));
+    snapshotRef.current = incoming;
+    setSnapshot(incoming);
+  };
+
+  const expirePendingRevive = (fighter: InternalFighter, reason: string) => {
+    fighter.quizPending = false;
+    pendingQuizzesRef.current[fighter.id] = [];
+    addKillFeed(`${fighter.name}${reason}`);
+
+    if (fighter.id === localFighterId) {
+      setQuizOffer(null);
+      setSubmittingQuiz(false);
+      setShowEliminationPrompt(true);
+      localEliminationHandledRef.current = true;
+    }
+
+    if (isHost && fighter.userId && fighter.id !== localFighterId) {
+      wsRef.current?.sendQuizResult(fighter.userId, {
+        fighterId: fighter.id,
+        success: false,
+      });
+    }
+  };
+
+  const clearExpiredPendingRevives = () => {
+    fightersRef.current.forEach((fighter) => {
+      if (!fighter.quizPending) {
+        return;
+      }
+
+      const elapsedSinceElimination =
+        fighter.eliminatedAtMs === null ? 0 : elapsedMsRef.current - fighter.eliminatedAtMs;
+
+      if (elapsedSinceElimination >= QUIZ_PENDING_TIMEOUT_MS) {
+        expirePendingRevive(fighter, '答题超时，正式出局');
+      }
+    });
   };
 
   const playArenaCue = (kind: 'swing' | 'throw' | 'hit' | 'pickup' | 'shockwave' | 'bounce' | 'dash') => {
@@ -1524,6 +1696,10 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     fighter.swingMs = 0;
     fighter.hitFlashMs = 0;
     fighter.throwHeld = false;
+    if (fighterId === localFighterId) {
+      localEliminationHandledRef.current = false;
+      setShowEliminationPrompt(false);
+    }
     weaponPickupsRef.current.forEach((weapon) => {
       if (weapon.ownerId === fighter.id) {
         weapon.active = false;
@@ -1558,6 +1734,10 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     if (fighterId === localFighterId) {
       setQuizOffer(null);
       setSubmittingQuiz(false);
+      if (!success) {
+        setShowEliminationPrompt(true);
+        localEliminationHandledRef.current = true;
+      }
     }
   };
 
@@ -1572,6 +1752,8 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     pendingQuizzesRef.current[fighter.id] = questions;
 
     if (fighter.id === localFighterId) {
+      setShowEliminationPrompt(false);
+      localEliminationHandledRef.current = false;
       setQuizOffer({ fighterId: fighter.id, questions });
       return;
     }
@@ -2009,6 +2191,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       return;
     }
     matchEndedRef.current = true;
+    setShowEliminationPrompt(false);
     const placements = (payload?.fighters as BattleRoyaleFighterView[] | undefined) ?? snapshotRef.current.fighters;
     const sorted = [...placements].sort((left, right) => {
       if (left.alive !== right.alive) return left.alive ? -1 : 1;
@@ -2034,6 +2217,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     if (matchEndedRef.current) {
       return;
     }
+    clearExpiredPendingRevives();
     const fighters = Array.from(fightersRef.current.values());
     const alive = fighters.filter((fighter) => fighter.alive);
     const pendingRevives = fighters.filter((fighter) => fighter.quizPending);
@@ -2599,6 +2783,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         drawFrame();
       } catch (error) {
         console.error('[PvpBattleRoyaleArena] Frame loop failed:', error);
+        pushRoomNotice('战场画面出现波动，系统正在尝试自动恢复；如果几秒后仍未恢复，请退出房间重新进入。', 5200);
           pushRoomNotice('战场画面出现波动，系统正在自动恢复；如果几秒后还没恢复，请退出房间重新进入。', 5200);
       } finally {
         animationRef.current = requestAnimationFrame(loop);
@@ -2631,9 +2816,14 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     });
   };
 
-  const handleExit = () => {
+  const handleExit = async () => {
+    await leaveCurrentRoom();
     resetBattleRoyaleStore();
     onExit();
+  };
+
+  const handleSpectate = () => {
+    setShowEliminationPrompt(false);
   };
 
   return (
@@ -2684,6 +2874,33 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
               </div>
             )}
           </div>
+
+          {showEliminationPrompt && !result && (
+            <div className="absolute inset-0 flex items-center justify-center bg-slate-950/60 p-4 backdrop-blur-sm">
+              <div className="w-full max-w-lg rounded-[28px] border border-white/10 bg-slate-950/90 p-6 shadow-[0_26px_90px_rgba(2,6,23,0.58)]">
+                <div className="text-2xl font-black text-white">你已被淘汰</div>
+                <div className="mt-3 text-sm leading-6 text-slate-300">
+                  你可以继续观战等待最终结果，也可以现在退出房间返回大厅。
+                </div>
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end">
+                  <button
+                    type="button"
+                    onClick={handleSpectate}
+                    className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-bold text-white transition hover:border-white/20 hover:bg-white/10"
+                  >
+                    继续观战
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => void handleExit()}
+                    className="rounded-full bg-[linear-gradient(135deg,#f97316,#dc2626)] px-5 py-3 text-sm font-bold text-white transition hover:brightness-110"
+                  >
+                    退出房间
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
 
           {result && (
             <div className="absolute inset-0 flex items-center justify-center bg-slate-950/80 p-4 backdrop-blur-md">
