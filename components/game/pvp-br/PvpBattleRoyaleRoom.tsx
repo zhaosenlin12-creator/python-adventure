@@ -37,6 +37,16 @@ const ROOM_READY_NOTICE = '房间同步已就绪，房主开始后所有玩家�
 const ROOM_RECOVERED_NOTICE = '连接已恢复，可以继续等待房主开战。';
 const ROOM_RECONNECTING_NOTICE = '连接波动，系统正在自动重连。';
 
+function connectionLabel(wsConnected: boolean, latencyMs: number) {
+  if (!wsConnected) {
+    return '重连中';
+  }
+  if (latencyMs >= 140) {
+    return '连接波动';
+  }
+  return '连接稳定';
+}
+
 export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattleRoyaleRoomProps) {
   const [selectedDifficulty, setSelectedDifficulty] = useState<BattleRoyaleDifficulty>('easy');
   const [busyAction, setBusyAction] = useState<'leave' | 'start' | 'bot' | null>(null);
@@ -50,10 +60,12 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
   const currentUserId = useAuthStore((state) => state.user?.id ?? null);
   const currentRoom = usePvpBattleRoyaleStore((state) => state.currentRoom);
   const wsConnected = usePvpBattleRoyaleStore((state) => state.wsConnected);
+  const latencyMs = usePvpBattleRoyaleStore((state) => state.latencyMs);
   const error = usePvpBattleRoyaleStore((state) => state.error);
   const refreshCurrentRoom = usePvpBattleRoyaleStore((state) => state.refreshCurrentRoom);
   const setCurrentRoom = usePvpBattleRoyaleStore((state) => state.setCurrentRoom);
   const setWsConnected = usePvpBattleRoyaleStore((state) => state.setWsConnected);
+  const setLatencyMs = usePvpBattleRoyaleStore((state) => state.setLatencyMs);
   const leaveCurrentRoom = usePvpBattleRoyaleStore((state) => state.leaveCurrentRoom);
   const addBot = usePvpBattleRoyaleStore((state) => state.addBot);
   const removeBot = usePvpBattleRoyaleStore((state) => state.removeBot);
@@ -87,8 +99,9 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
   useEffect(() => {
     return () => {
       setWsConnected(false);
+      setLatencyMs(0);
     };
-  }, [setWsConnected]);
+  }, [setLatencyMs, setWsConnected]);
 
   useEffect(() => {
     if (!currentUserId) {
@@ -117,8 +130,12 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
       },
       onDisconnect: () => {
         setWsConnected(false);
+        setLatencyMs(0);
         reconnectNoticeVisibleRef.current = true;
         setRoomNotice((current) => (current === ROOM_RECONNECTING_NOTICE ? current : ROOM_RECONNECTING_NOTICE));
+      },
+      onLatencyUpdate: (nextLatencyMs) => {
+        setLatencyMs(Math.round(nextLatencyMs));
       },
       onMessage: (message) => {
         if (message.type === 'connected' && message.room) {
@@ -163,7 +180,7 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
     return () => {
       client.disconnect();
     };
-  }, [currentUserId, effectiveRoom.id, setCurrentRoom, setWsConnected]);
+  }, [currentUserId, effectiveRoom.id, setCurrentRoom, setLatencyMs, setWsConnected]);
 
   useEffect(() => {
     let cancelled = false;
@@ -255,7 +272,8 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
                     className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs text-slate-200"
                   >
                     {wsConnected ? <Wifi className="h-3.5 w-3.5 text-emerald-300" /> : <WifiOff className="h-3.5 w-3.5 text-amber-300" />}
-                    {wsConnected ? '连接稳定' : '重连中'}
+                    {connectionLabel(wsConnected, latencyMs)}
+                    {wsConnected && latencyMs > 0 ? <span className="text-[10px] text-slate-400">{latencyMs}ms</span> : null}
                   </span>
                 </div>
                 <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300">

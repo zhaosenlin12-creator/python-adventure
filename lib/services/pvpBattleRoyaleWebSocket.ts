@@ -10,6 +10,7 @@ interface BattleRoyaleWebSocketConfig {
   onConnect?: () => void;
   onDisconnect?: () => void;
   onReconnectAttempt?: (attempt: number, delayMs: number) => void;
+  onLatencyUpdate?: (latencyMs: number) => void;
   onError?: (event: Event) => void;
   disconnectGraceMs?: number;
   reconnectBaseDelayMs?: number;
@@ -18,6 +19,7 @@ interface BattleRoyaleWebSocketConfig {
 
 const SNAPSHOT_BUFFER_LIMIT_BYTES = 256_000;
 const INPUT_BUFFER_LIMIT_BYTES = 128_000;
+const HEARTBEAT_INTERVAL_MS = 4000;
 
 export class BattleRoyaleWebSocketClient {
   private ws: WebSocket | null = null;
@@ -27,6 +29,7 @@ export class BattleRoyaleWebSocketClient {
   private readonly config: BattleRoyaleWebSocketConfig;
   private manualClose = false;
   private reconnectAttempts = 0;
+  private lastPingAt = 0;
 
   constructor(config: BattleRoyaleWebSocketConfig) {
     this.config = config;
@@ -59,12 +62,16 @@ export class BattleRoyaleWebSocketClient {
       this.clearReconnectTimer();
       this.reconnectAttempts = 0;
       this.startHeartbeat();
+      this.sendPing();
       this.config.onConnect?.();
     };
 
     socket.onmessage = (event) => {
       try {
         const message = JSON.parse(event.data);
+        if (message?.type === 'pong') {
+          this.handlePong();
+        }
         this.config.onMessage?.(message);
       } catch (error) {
         console.error('[BattleRoyaleWebSocket] Failed to parse message:', error);
@@ -105,8 +112,8 @@ export class BattleRoyaleWebSocketClient {
   private startHeartbeat() {
     this.stopHeartbeat();
     this.heartbeatTimer = setInterval(() => {
-      this.sendRaw({ type: 'ping' });
-    }, 15000);
+      this.sendPing();
+    }, HEARTBEAT_INTERVAL_MS);
   }
 
   private stopHeartbeat() {
@@ -166,6 +173,19 @@ export class BattleRoyaleWebSocketClient {
     }
     this.ws.send(JSON.stringify(payload));
     return true;
+  }
+
+  private sendPing() {
+    this.lastPingAt = Date.now();
+    this.sendRaw({ type: 'ping' });
+  }
+
+  private handlePong() {
+    if (!this.lastPingAt) {
+      return;
+    }
+    const latencyMs = Math.max(0, Date.now() - this.lastPingAt);
+    this.config.onLatencyUpdate?.(latencyMs);
   }
 
   sendInput(payload: Record<string, unknown>) {

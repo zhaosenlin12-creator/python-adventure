@@ -74,6 +74,7 @@ const UI_SYNC_INTERVAL_MS = 48;
 const INPUT_SEND_INTERVAL_MS = 20;
 const MAX_RENDER_EXTRAPOLATION_MS = 140;
 const LOCAL_INPUT_LEAD_MS = 68;
+const MAX_LOCAL_INPUT_LEAD_MS = 120;
 const LOCAL_FIGHTER_SMOOTHING_RATE = 22;
 const REMOTE_FIGHTER_SMOOTHING_RATE = 14;
 const PROJECTILE_SMOOTHING_RATE = 16;
@@ -1128,6 +1129,16 @@ function deriveAmbientRoomNotice(snapshot: BattleRoyaleSnapshot, localFighterId:
   return '战场仍在收缩，先靠近安全区，再找机会用 J/K/L 连招。';
 }
 
+function connectionLabel(wsConnected: boolean, latencyMs: number) {
+  if (!wsConnected) {
+    return '重连中';
+  }
+  if (latencyMs >= 140) {
+    return '连接波动';
+  }
+  return '连接稳定';
+}
+
 function pickBotRoamPoint(
   fighter: InternalFighter,
   fighters: Map<string, InternalFighter>,
@@ -1418,6 +1429,8 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   const leaveCurrentRoom = usePvpBattleRoyaleStore((state) => state.leaveCurrentRoom);
   const setWsConnected = usePvpBattleRoyaleStore((state) => state.setWsConnected);
   const wsConnected = usePvpBattleRoyaleStore((state) => state.wsConnected);
+  const latencyMs = usePvpBattleRoyaleStore((state) => state.latencyMs);
+  const setLatencyMs = usePvpBattleRoyaleStore((state) => state.setLatencyMs);
   const resetBattleRoyaleStore = usePvpBattleRoyaleStore((state) => state.reset);
   const audioContextRef = useRef<AudioContext | null>(null);
 
@@ -1479,8 +1492,9 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   useEffect(() => {
     return () => {
       setWsConnected(false);
+      setLatencyMs(0);
     };
-  }, [setWsConnected]);
+  }, [setLatencyMs, setWsConnected]);
 
   useEffect(() => {
     if (!currentUserId) {
@@ -1501,8 +1515,12 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       },
       onDisconnect: () => {
         setWsConnected(false);
+        setLatencyMs(0);
         reconnectNoticeVisibleRef.current = true;
         pushRoomNotice('连接波动，系统正在重连。', 2800);
+      },
+      onLatencyUpdate: (nextLatencyMs) => {
+        setLatencyMs(Math.round(nextLatencyMs));
       },
       onMessage: (message) => {
         if (message.type === 'connected') {
@@ -1626,7 +1644,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       client.disconnect();
       wsRef.current = null;
     };
-  }, [currentUserId, isHost, localFighterId, onExit, resetBattleRoyaleStore, room.id, setCurrentRoom, setWsConnected]);
+  }, [currentUserId, isHost, localFighterId, onExit, resetBattleRoyaleStore, room.id, setCurrentRoom, setLatencyMs, setWsConnected]);
 
   useEffect(() => {
     previousFrameInputRef.current = createDefaultInput();
@@ -1634,7 +1652,8 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     predictedLocalFighterRef.current = null;
     hasConnectedOnceRef.current = false;
     reconnectNoticeVisibleRef.current = false;
-  }, [localFighterId, room.id]);
+    setLatencyMs(0);
+  }, [localFighterId, room.id, setLatencyMs]);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -1713,6 +1732,13 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     setRoomNotice(message);
   };
 
+  const currentPredictionLeadMs = (snapshotAgeMs: number) =>
+    clamp(
+      LOCAL_INPUT_LEAD_MS + latencyMs * 0.45 + Math.min(snapshotAgeMs * 0.22, 18),
+      LOCAL_INPUT_LEAD_MS,
+      MAX_LOCAL_INPUT_LEAD_MS,
+    );
+
   const buildOutgoingInputPayload = (input: BattleRoyaleInputPayload): BattleRoyaleInputPayload => ({
     ...input,
     ...(pendingInputPulseRef.current.jumpPressed ? { jumpPressed: true } : {}),
@@ -1753,7 +1779,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
           hitFlashMs: Math.max(predictedLocalFighter.hitFlashMs, fighter.hitFlashMs),
         };
       }
-      const movementLeadMs = isLocalFighter ? LOCAL_INPUT_LEAD_MS : 0;
+      const movementLeadMs = isLocalFighter ? currentPredictionLeadMs(snapshotAgeMs) : 0;
       const predictedX = clamp(
         fighter.x +
           fighter.vx * (snapshotAgeMs / 1000) +
@@ -1778,7 +1804,9 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
 
       const alpha = smoothingFactor(
         deltaSeconds,
-        isLocalFighter ? LOCAL_FIGHTER_SMOOTHING_RATE : REMOTE_FIGHTER_SMOOTHING_RATE,
+        isLocalFighter
+          ? LOCAL_FIGHTER_SMOOTHING_RATE + Math.min(latencyMs / 35, 4)
+          : REMOTE_FIGHTER_SMOOTHING_RATE,
       );
 
       return {
@@ -3462,7 +3490,12 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
           ]
             .map((value) => (value ? '1' : '0'))
             .join('');
-          if (inputSignature !== lastInputSignatureRef.current || time - lastInputSentRef.current > INPUT_SEND_INTERVAL_MS) {
+          const hasPendingPulse = Object.values(pendingInputPulseRef.current).some(Boolean);
+          if (
+            hasPendingPulse ||
+            inputSignature !== lastInputSignatureRef.current ||
+            time - lastInputSentRef.current > INPUT_SEND_INTERVAL_MS
+          ) {
             const inputSent =
               wsRef.current?.sendInput({
                 fighterId: localFighterId,
@@ -3558,7 +3591,8 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
                 ) : (
                   <WifiOff className="h-3.5 w-3.5 text-amber-300" />
                 )}
-                {wsConnected ? '连接稳定' : '重连中'}
+                {connectionLabel(wsConnected, latencyMs)}
+                {wsConnected && latencyMs > 0 ? <span className="text-[10px] text-slate-400">{latencyMs}ms</span> : null}
               </div>
             </div>
 

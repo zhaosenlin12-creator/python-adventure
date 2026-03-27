@@ -19,6 +19,7 @@ interface BattleRoyaleState {
   currentRoom: BattleRoyaleRoom | null;
   isLoading: boolean;
   wsConnected: boolean;
+  latencyMs: number;
   error: string | null;
   fetchRooms: () => Promise<void>;
   createRoom: (roomName: string, maxPlayers: number) => Promise<BattleRoyaleRoom>;
@@ -32,6 +33,7 @@ interface BattleRoyaleState {
   finishCurrentRoom: (winnerUserId?: number | null) => Promise<void>;
   setCurrentRoom: (room: BattleRoyaleRoom | null) => void;
   setWsConnected: (connected: boolean) => void;
+  setLatencyMs: (latencyMs: number) => void;
   setError: (error: string | null) => void;
   reset: () => void;
 }
@@ -42,6 +44,7 @@ const initialState = {
   currentRoom: null as BattleRoyaleRoom | null,
   isLoading: false,
   wsConnected: false,
+  latencyMs: 0,
   error: null as string | null,
 };
 
@@ -275,7 +278,7 @@ export const usePvpBattleRoyaleStore = create<BattleRoyaleState>()((set, get) =>
     try {
       await apiRequest(`/pvp-br/rooms/${roomId}/leave`, { method: 'POST' });
     } finally {
-      set({ currentRoom: null, wsConnected: false });
+      set({ currentRoom: null, wsConnected: false, latencyMs: 0 });
     }
   },
 
@@ -332,6 +335,7 @@ export const usePvpBattleRoyaleStore = create<BattleRoyaleState>()((set, get) =>
 
   setCurrentRoom: (room) => set({ currentRoom: room }),
   setWsConnected: (connected) => set({ wsConnected: connected }),
+  setLatencyMs: (latencyMs) => set({ latencyMs }),
   setError: (error) => set({ error }),
   reset: () => set(initialState),
 }));
