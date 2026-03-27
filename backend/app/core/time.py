@@ -1,11 +1,11 @@
 """UTC time helpers shared across the backend."""
 
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 
 
 def utc_now() -> datetime:
     """Return a naive UTC datetime for storage and comparisons."""
-    return datetime.now(UTC).replace(tzinfo=None)
+    return datetime.now(timezone.utc).replace(tzinfo=None)
 
 
 def utc_now_iso() -> str:
