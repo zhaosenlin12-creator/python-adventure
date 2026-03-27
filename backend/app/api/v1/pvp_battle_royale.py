@@ -26,11 +26,11 @@ ROOM_EXPIRY_MINUTES = 30
 FINISHED_ROOM_TTL_MINUTES = 5
 DISCONNECT_GRACE_SECONDS = 12.0
 ROOM_RUNTIME_TICK_SECONDS = 0.02
-SERVER_SNAPSHOT_INTERVAL_SECONDS = 0.08
-SERVER_INPUT_BATCH_INTERVAL_SECONDS = 0.04
+SERVER_SNAPSHOT_INTERVAL_SECONDS = 0.06
+SERVER_INPUT_BATCH_INTERVAL_SECONDS = 0.025
 HOST_SNAPSHOT_STALE_SECONDS = 1.2
-INPUT_FORWARD_MIN_INTERVAL_SECONDS = 0.03
-INPUT_DUPLICATE_INTERVAL_SECONDS = 0.05
+INPUT_FORWARD_MIN_INTERVAL_SECONDS = 0.018
+INPUT_DUPLICATE_INTERVAL_SECONDS = 0.03
 SEND_JSON_TIMEOUT_SECONDS = 0.35
 
 AI_NAME_POOL = [
@@ -79,6 +79,14 @@ ws_connections: Dict[str, WebSocket] = {}
 ws_connection_locks: Dict[str, asyncio.Lock] = {}
 disconnect_cleanup_tasks: Dict[str, asyncio.Task] = {}
 room_runtime_tasks: Dict[str, asyncio.Task] = {}
+
+INPUT_EDGE_FIELDS = (
+    "jumpPressed",
+    "dashPressed",
+    "attackPressed",
+    "throwPressed",
+    "skillPressed",
+)
 
 
 def now_utc() -> datetime:
@@ -133,6 +141,28 @@ def build_sync_state() -> Dict[str, Any]:
         "pending_guest_inputs": {},
         "last_input_batch_monotonic": 0.0,
     }
+
+
+def merge_input_payload(previous_payload: Dict[str, Any], incoming_payload: Dict[str, Any]) -> Dict[str, Any]:
+    previous_input = previous_payload.get("input", {}) if isinstance(previous_payload, dict) else {}
+    incoming_input = incoming_payload.get("input", {}) if isinstance(incoming_payload, dict) else {}
+
+    merged_input = {
+        **previous_input,
+        **incoming_input,
+    }
+    for field in INPUT_EDGE_FIELDS:
+        if bool(previous_input.get(field)) or bool(incoming_input.get(field)):
+            merged_input[field] = True
+        else:
+            merged_input.pop(field, None)
+
+    merged_payload = {
+        **previous_payload,
+        **incoming_payload,
+    }
+    merged_payload["input"] = merged_input
+    return merged_payload
 
 
 def sorted_humans(room: Dict[str, Any]) -> list[Dict[str, Any]]:
@@ -486,7 +516,7 @@ class RoomParticipantPayload(BaseModel):
 
 
 class CreateRoomPayload(RoomParticipantPayload):
-    room_name: str = Field(default="Pet Battle Royale", min_length=1, max_length=48)
+    room_name: str = Field(default="宠物生存乱斗", min_length=1, max_length=48)
     max_players: int = Field(default=12, ge=2, le=MAX_ROOM_CAPACITY)
 
 
@@ -514,7 +544,7 @@ async def create_room(payload: CreateRoomPayload, current_user: User = Depends(g
         host_entry = build_human_entry(current_user, payload, is_host=True)
         room = {
             "id": room_id,
-            "room_name": normalize_text(payload.room_name, fallback="Pet Battle Royale", max_length=48),
+            "room_name": normalize_text(payload.room_name, fallback="宠物生存乱斗", max_length=48),
             "status": "waiting",
             "host_user_id": current_user.id,
             "host_username": host_entry["username"],
@@ -785,8 +815,9 @@ async def battle_royale_ws(
                     "signature": payload_signature,
                     "forwarded_at": now_monotonic,
                 }
+                previous_pending_payload = pending_guest_inputs.get(user_id, {}).get("payload", {})
                 pending_guest_inputs[user_id] = {
-                    "payload": payload,
+                    "payload": merge_input_payload(previous_pending_payload, payload),
                     "queued_at": now_monotonic,
                 }
             elif message_type == "br_snapshot":

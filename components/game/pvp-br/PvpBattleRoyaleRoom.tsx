@@ -240,7 +240,7 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
               <div>
                 <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.26em] text-cyan-100">
                   <Shield className="h-3.5 w-3.5" />
-                  Waiting Room
+                  房间准备中
                 </div>
                 <div className="flex flex-wrap items-center gap-3">
                   <h2 className="text-3xl font-black text-white">{effectiveRoom.room_name}</h2>

@@ -205,6 +205,11 @@ export interface BattleRoyaleInputPayload {
   throwWeapon: boolean;
   skill: boolean;
   guard: boolean;
+  jumpPressed?: boolean;
+  dashPressed?: boolean;
+  attackPressed?: boolean;
+  throwPressed?: boolean;
+  skillPressed?: boolean;
 }
 
 export interface BattleRoyaleResult {

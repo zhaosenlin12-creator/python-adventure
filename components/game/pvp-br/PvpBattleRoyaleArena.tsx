@@ -69,9 +69,9 @@ const SAFE_ZONE_DAMAGE_BY_PHASE = [10, 14, 20, 30, 42, 58, 78] as const;
 const MATCH_MAX_MS = 360000;
 const PICKUP_RESPAWN_MS = 12000;
 const QUIZ_PENDING_TIMEOUT_MS = 15000;
-const SNAPSHOT_INTERVAL_MS = 80;
-const UI_SYNC_INTERVAL_MS = 80;
-const INPUT_SEND_INTERVAL_MS = 48;
+const SNAPSHOT_INTERVAL_MS = 64;
+const UI_SYNC_INTERVAL_MS = 64;
+const INPUT_SEND_INTERVAL_MS = 28;
 const MAX_RENDER_EXTRAPOLATION_MS = 120;
 const LOCAL_INPUT_LEAD_MS = 46;
 const LOCAL_FIGHTER_SMOOTHING_RATE = 18;
@@ -534,6 +534,24 @@ function createDefaultInput(): BattleRoyaleInputPayload {
     throwWeapon: false,
     skill: false,
     guard: false,
+    jumpPressed: false,
+    dashPressed: false,
+    attackPressed: false,
+    throwPressed: false,
+    skillPressed: false,
+  };
+}
+
+function createInputPulseState(): Required<Pick<
+  BattleRoyaleInputPayload,
+  'jumpPressed' | 'dashPressed' | 'attackPressed' | 'throwPressed' | 'skillPressed'
+>> {
+  return {
+    jumpPressed: false,
+    dashPressed: false,
+    attackPressed: false,
+    throwPressed: false,
+    skillPressed: false,
   };
 }
 
@@ -882,7 +900,70 @@ function normalizeIncomingSnapshot(incoming: IncomingBattleRoyaleSnapshot): Batt
 
 function createTransportSnapshot(snapshot: BattleRoyaleSnapshot): Record<string, unknown> {
   const { platforms: _platforms, ...transportSnapshot } = snapshot;
-  return transportSnapshot as unknown as Record<string, unknown>;
+  return {
+    ...transportSnapshot,
+    elapsedMs: Math.round(snapshot.elapsedMs),
+    zone: {
+      ...snapshot.zone,
+      centerX: Math.round(snapshot.zone.centerX),
+      centerY: Math.round(snapshot.zone.centerY),
+      radius: Math.round(snapshot.zone.radius),
+      nextShrinkAtMs: Math.round(snapshot.zone.nextShrinkAtMs),
+    },
+    fighters: snapshot.fighters.map((fighter) => ({
+      ...fighter,
+      x: Math.round(fighter.x),
+      y: Math.round(fighter.y),
+      vx: Math.round(fighter.vx),
+      vy: Math.round(fighter.vy),
+      hp: Math.round(fighter.hp),
+      shield: Math.round(fighter.shield),
+      armor: Math.round(fighter.armor),
+      swingMs: Math.round(fighter.swingMs),
+      hitFlashMs: Math.round(fighter.hitFlashMs),
+    })),
+    pickups: snapshot.pickups.map((pickup) => ({
+      ...pickup,
+      x: Math.round(pickup.x),
+      y: Math.round(pickup.y),
+    })),
+    killFeed: snapshot.killFeed.slice(-4),
+    projectiles: snapshot.projectiles.slice(-12).map((projectile) => ({
+      ...projectile,
+      x: Math.round(projectile.x),
+      y: Math.round(projectile.y),
+      rotation: Math.round(projectile.rotation * 100) / 100,
+    })),
+    weapons: snapshot.weapons.slice(-12).map((weapon) => ({
+      ...weapon,
+      x: Math.round(weapon.x),
+      y: Math.round(weapon.y),
+    })),
+    effects: snapshot.effects.slice(-10).map((effect) => ({
+      ...effect,
+      x: Math.round(effect.x),
+      y: Math.round(effect.y),
+      radius: Math.round(effect.radius),
+      ttlMs: Math.round(effect.ttlMs),
+    })),
+  } as Record<string, unknown>;
+}
+
+function cloneInternalFighter(fighter: InternalFighter): InternalFighter {
+  return {
+    ...fighter,
+    input: { ...fighter.input },
+    movementSkills: [...fighter.movementSkills],
+    buffs: { ...fighter.buffs },
+  };
+}
+
+function deriveDamageBonusFromBuffs(buffs: Partial<Record<BrPickupType, number>>): number {
+  return clamp((buffs.damage_claw ?? 0) * 5, 0, 18);
+}
+
+function deriveSpeedMultiplierFromBuffs(buffs: Partial<Record<BrPickupType, number>>): number {
+  return clamp(1 + (buffs.wind_boost ?? 0) * 0.12, 1, 1.45);
 }
 
 function hydrateFightersFromSnapshot(room: BattleRoyaleRoom, snapshot: BattleRoyaleSnapshot): Map<string, InternalFighter> {
@@ -910,6 +991,10 @@ function hydrateFightersFromSnapshot(room: BattleRoyaleRoom, snapshot: BattleRoy
     existing.quizPending = view.quizPending ?? false;
     existing.specialCharges = view.specialCharges;
     existing.buffs = { ...view.buffs };
+    existing.damageBonus = deriveDamageBonusFromBuffs(view.buffs);
+    existing.speedMultiplier = existing.isBot
+      ? AI_TUNING[existing.difficulty ?? 'medium'].speedMultiplier
+      : deriveSpeedMultiplierFromBuffs(view.buffs);
     existing.weaponReady = view.weaponReady;
     existing.swingMs = view.swingMs;
     existing.hitFlashMs = view.hitFlashMs;
@@ -1296,6 +1381,9 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   const localEliminationHandledRef = useRef(false);
   const lastInputSentRef = useRef(0);
   const lastInputSignatureRef = useRef('');
+  const previousFrameInputRef = useRef<BattleRoyaleInputPayload>(createDefaultInput());
+  const pendingInputPulseRef = useRef(createInputPulseState());
+  const predictedLocalFighterRef = useRef<InternalFighter | null>(null);
   const syncStatsRef = useRef({
     authoritativeSnapshots: 0,
     guestRenderFrames: 0,
@@ -1304,6 +1392,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     platformsStripped: false,
     inputMessagesSent: 0,
     droppedSnapshots: 0,
+    localPredictionFrames: 0,
   });
 
   const [snapshot, setSnapshot] = useState<BattleRoyaleSnapshot>(snapshotRef.current);
@@ -1511,6 +1600,12 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   }, [currentUserId, isHost, localFighterId, onExit, resetBattleRoyaleStore, room.id, setCurrentRoom, setWsConnected]);
 
   useEffect(() => {
+    previousFrameInputRef.current = createDefaultInput();
+    pendingInputPulseRef.current = createInputPulseState();
+    predictedLocalFighterRef.current = null;
+  }, [localFighterId, room.id]);
+
+  useEffect(() => {
     if (typeof window !== 'undefined') {
       const debugWindow = window as Window & {
         __brSnapshot?: BattleRoyaleSnapshot;
@@ -1587,12 +1682,22 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     setRoomNotice(message);
   };
 
+  const buildOutgoingInputPayload = (input: BattleRoyaleInputPayload): BattleRoyaleInputPayload => ({
+    ...input,
+    ...(pendingInputPulseRef.current.jumpPressed ? { jumpPressed: true } : {}),
+    ...(pendingInputPulseRef.current.dashPressed ? { dashPressed: true } : {}),
+    ...(pendingInputPulseRef.current.attackPressed ? { attackPressed: true } : {}),
+    ...(pendingInputPulseRef.current.throwPressed ? { throwPressed: true } : {}),
+    ...(pendingInputPulseRef.current.skillPressed ? { skillPressed: true } : {}),
+  });
+
   const buildGuestRenderSnapshot = (
     authoritative: BattleRoyaleSnapshot,
     current: BattleRoyaleSnapshot,
     localInput: BattleRoyaleInputPayload,
     frameTime: number,
     deltaSeconds: number,
+    predictedLocalFighter: InternalFighter | null,
   ): BattleRoyaleSnapshot => {
     syncStatsRef.current.guestRenderFrames += 1;
     const snapshotAgeMs = clamp(frameTime - lastAuthoritativeSnapshotAtRef.current, 0, MAX_RENDER_EXTRAPOLATION_MS);
@@ -1604,6 +1709,19 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     const nextFighters = authoritative.fighters.map((fighter) => {
       const previous = currentFighters.get(fighter.id) ?? fighter;
       const isLocalFighter = fighter.id === localFighterId;
+      if (isLocalFighter && predictedLocalFighter?.id === fighter.id) {
+        return {
+          ...fighter,
+          buffs: { ...predictedLocalFighter.buffs },
+          x: predictedLocalFighter.x,
+          y: predictedLocalFighter.y,
+          vx: predictedLocalFighter.vx,
+          vy: predictedLocalFighter.vy,
+          facing: predictedLocalFighter.facing,
+          swingMs: Math.max(predictedLocalFighter.swingMs, fighter.swingMs),
+          hitFlashMs: Math.max(predictedLocalFighter.hitFlashMs, fighter.hitFlashMs),
+        };
+      }
       const movementLeadMs = isLocalFighter ? LOCAL_INPUT_LEAD_MS : 0;
       const predictedX = clamp(
         fighter.x +
@@ -1690,6 +1808,10 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     effectsRef.current = hydrateEffectsFromSnapshot(normalized);
     killFeedRef.current = normalized.killFeed.map((item) => ({ ...item }));
     authoritativeSnapshotRef.current = normalized;
+    if (!isHost) {
+      const authoritativeLocalFighter = fightersRef.current.get(localFighterId) ?? null;
+      mergeAuthoritativeIntoPredictedLocalFighter(authoritativeLocalFighter);
+    }
 
     const shouldResetRenderSnapshot =
       lastAuthoritativeSnapshotAtRef.current === 0 ||
@@ -1811,6 +1933,219 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       facing,
       ttlMs,
     });
+  };
+
+  const mergeAuthoritativeIntoPredictedLocalFighter = (authoritative: InternalFighter | null) => {
+    if (!authoritative) {
+      predictedLocalFighterRef.current = null;
+      return null;
+    }
+
+    const previousPredicted = predictedLocalFighterRef.current;
+    if (!previousPredicted) {
+      const cloned = cloneInternalFighter(authoritative);
+      predictedLocalFighterRef.current = cloned;
+      return cloned;
+    }
+
+    const requiresReset =
+      previousPredicted.id !== authoritative.id ||
+      previousPredicted.alive !== authoritative.alive ||
+      previousPredicted.quizPending !== authoritative.quizPending ||
+      previousPredicted.hasRevived !== authoritative.hasRevived ||
+      Math.abs(previousPredicted.x - authoritative.x) > 260 ||
+      Math.abs(previousPredicted.y - authoritative.y) > 260;
+
+    if (requiresReset) {
+      const cloned = cloneInternalFighter(authoritative);
+      predictedLocalFighterRef.current = cloned;
+      return cloned;
+    }
+
+    const merged = cloneInternalFighter(previousPredicted);
+    merged.userId = authoritative.userId;
+    merged.name = authoritative.name;
+    merged.petType = authoritative.petType;
+    merged.petStage = authoritative.petStage;
+    merged.hp = authoritative.hp;
+    merged.maxHp = authoritative.maxHp;
+    merged.shield = authoritative.shield;
+    merged.armor = authoritative.armor;
+    merged.kills = authoritative.kills;
+    merged.alive = authoritative.alive;
+    merged.isBot = authoritative.isBot;
+    merged.difficulty = authoritative.difficulty;
+    merged.hasRevived = authoritative.hasRevived;
+    merged.reviveUsed = authoritative.reviveUsed;
+    merged.quizPending = authoritative.quizPending;
+    merged.specialCharges = authoritative.specialCharges;
+    merged.buffs = { ...authoritative.buffs };
+    merged.damageBonus = authoritative.damageBonus;
+    merged.speedMultiplier = authoritative.speedMultiplier;
+    merged.weaponReady = authoritative.weaponReady;
+    merged.swingMs = Math.max(previousPredicted.swingMs, authoritative.swingMs);
+    merged.hitFlashMs = Math.max(previousPredicted.hitFlashMs, authoritative.hitFlashMs);
+    merged.x = lerpValue(previousPredicted.x, authoritative.x, 0.18);
+    merged.y = lerpValue(previousPredicted.y, authoritative.y, 0.18);
+    merged.vx = lerpValue(previousPredicted.vx, authoritative.vx, 0.24);
+    merged.vy = lerpValue(previousPredicted.vy, authoritative.vy, 0.24);
+    predictedLocalFighterRef.current = merged;
+    return merged;
+  };
+
+  const predictGuestLocalFighter = (
+    authoritative: InternalFighter | null,
+    input: BattleRoyaleInputPayload,
+    deltaSeconds: number,
+    previousPlatforms: BattleRoyalePlatform[],
+    nextPlatforms: BattleRoyalePlatform[],
+  ) => {
+    const merged = mergeAuthoritativeIntoPredictedLocalFighter(authoritative);
+    if (!merged || !merged.alive || merged.quizPending) {
+      return merged;
+    }
+
+    syncStatsRef.current.localPredictionFrames += 1;
+    const fighter = cloneInternalFighter(merged);
+    const canDoubleJump = fighter.movementSkills.includes('double_jump');
+    const canDash = fighter.movementSkills.includes('dash');
+    const canGlide = fighter.movementSkills.includes('glide');
+    const canWallJump = fighter.movementSkills.includes('wall_jump');
+    const justJump = Boolean(input.jumpPressed) || (input.jump && !fighter.jumpHeld);
+    const justDash = Boolean(input.dashPressed) || (input.dash && !fighter.dashHeld);
+    const justAttack = Boolean(input.attackPressed) || (input.attack && !fighter.attackHeld);
+    const justThrow = Boolean(input.throwPressed) || (input.throwWeapon && !fighter.throwHeld);
+    const justSkill = Boolean(input.skillPressed) || (input.skill && !fighter.skillHeld);
+
+    fighter.attackCooldownMs = Math.max(0, fighter.attackCooldownMs - deltaSeconds * 1000);
+    fighter.attackTimerMs = Math.max(0, fighter.attackTimerMs - deltaSeconds * 1000);
+    fighter.dashCooldownMs = Math.max(0, fighter.dashCooldownMs - deltaSeconds * 1000);
+    fighter.dashTimerMs = Math.max(0, fighter.dashTimerMs - deltaSeconds * 1000);
+    fighter.weaponCooldownMs = Math.max(0, fighter.weaponCooldownMs - deltaSeconds * 1000);
+    fighter.swingMs = Math.max(0, fighter.swingMs - deltaSeconds * 1000);
+    fighter.hitFlashMs = Math.max(0, fighter.hitFlashMs - deltaSeconds * 1000);
+
+    if (input.left) {
+      fighter.facing = -1;
+    } else if (input.right) {
+      fighter.facing = 1;
+    }
+
+    if (canDash && justDash && fighter.dashCooldownMs <= 0) {
+      fighter.dashCooldownMs = DASH_COOLDOWN_MS;
+      fighter.dashTimerMs = DASH_DURATION_MS;
+      fighter.vx = fighter.facing * DASH_SPEED;
+      fighter.vy = Math.min(fighter.vy, 140);
+      playArenaCue('dash');
+    }
+
+    const moveAxis = (input.left ? -1 : 0) + (input.right ? 1 : 0);
+    const baseSpeed = MOVE_SPEED * fighter.speedMultiplier;
+    if (fighter.dashTimerMs > 0) {
+      fighter.vx = fighter.facing * DASH_SPEED;
+      fighter.vy = Math.min(fighter.vy, 180);
+    } else {
+      fighter.vx = moveAxis * baseSpeed;
+    }
+
+    const touchedWall = fighter.x <= 0.5 || fighter.x >= MAP_WIDTH - FIGHTER_WIDTH - 0.5;
+    const canUseExtraJump = canDoubleJump && fighter.jumpsUsed < 1;
+    if (justJump) {
+      if (fighter.onGround) {
+        fighter.vy = -JUMP_FORCE;
+        fighter.onGround = false;
+        fighter.jumpsUsed = 0;
+      } else if (canUseExtraJump) {
+        fighter.vy = -DOUBLE_JUMP_FORCE;
+        fighter.jumpsUsed += 1;
+      } else if (canWallJump && touchedWall) {
+        fighter.vy = -DOUBLE_JUMP_FORCE;
+        fighter.vx = fighter.x <= 0 ? 420 : -420;
+      }
+    }
+
+    fighter.vy += GRAVITY * deltaSeconds;
+    if (canGlide && input.jump && fighter.vy > 220) {
+      fighter.vy = Math.min(fighter.vy, 230);
+    }
+
+    let platformCarryX = 0;
+    let platformCarryY = 0;
+    const supportPlatform = previousPlatforms.find((platform) => {
+      if (platform.id === STATIC_GROUND_PLATFORM.id) return false;
+      const horizontalMatch = fighter.x + FIGHTER_WIDTH > platform.x && fighter.x < platform.x + platform.width;
+      const bottom = fighter.y + FIGHTER_HEIGHT;
+      return horizontalMatch && Math.abs(bottom - platform.y) < 10;
+    });
+    if (supportPlatform) {
+      const movedPlatform = nextPlatforms.find((platform) => platform.id === supportPlatform.id);
+      if (movedPlatform) {
+        platformCarryX = movedPlatform.x - supportPlatform.x;
+        platformCarryY = movedPlatform.y - supportPlatform.y;
+      }
+    }
+
+    const nextX = clamp(fighter.x + platformCarryX + fighter.vx * deltaSeconds, 0, MAP_WIDTH - FIGHTER_WIDTH);
+    const previousBottom = fighter.y + FIGHTER_HEIGHT;
+    let nextY = fighter.y + platformCarryY + fighter.vy * deltaSeconds;
+    let landed = false;
+
+    const floorY = FLOOR_Y - FIGHTER_HEIGHT;
+    if (nextY >= floorY) {
+      nextY = floorY;
+      fighter.vy = 0;
+      landed = true;
+    }
+
+    for (const platform of nextPlatforms) {
+      if (platform.id === STATIC_GROUND_PLATFORM.id) continue;
+      const withinHorizontal = nextX + FIGHTER_WIDTH > platform.x && nextX < platform.x + platform.width;
+      const landingFromAbove = previousBottom <= platform.y + 8 && nextY + FIGHTER_HEIGHT >= platform.y && fighter.vy >= 0;
+      if (withinHorizontal && landingFromAbove) {
+        if (platform.kind === 'bounce') {
+          nextY = platform.y - FIGHTER_HEIGHT - 2;
+          fighter.vy = -(platform.bounceBoost ?? 1120);
+          landed = false;
+          playArenaCue('bounce');
+        } else {
+          nextY = platform.y - FIGHTER_HEIGHT;
+          fighter.vy = 0;
+          landed = true;
+        }
+        break;
+      }
+    }
+
+    fighter.x = nextX;
+    fighter.y = nextY;
+    fighter.onGround = landed;
+    if (landed) {
+      fighter.jumpsUsed = 0;
+    }
+
+    if (justAttack && fighter.attackCooldownMs <= 0 && fighter.weaponReady) {
+      fighter.attackCooldownMs = ATTACK_COOLDOWN_MS;
+      fighter.attackTimerMs = ATTACK_ACTIVE_MS;
+      fighter.swingMs = SWING_MS;
+      playArenaCue('swing');
+    }
+
+    if (justThrow && fighter.weaponReady && fighter.weaponCooldownMs <= 0) {
+      fighter.weaponCooldownMs = WEAPON_THROW_COOLDOWN_MS;
+      playArenaCue('throw');
+    }
+
+    if (justSkill && fighter.specialCharges > 0) {
+      playArenaCue('shockwave');
+    }
+
+    fighter.jumpHeld = input.jump;
+    fighter.attackHeld = input.attack;
+    fighter.throwHeld = input.throwWeapon;
+    fighter.skillHeld = input.skill;
+    fighter.dashHeld = input.dash;
+    predictedLocalFighterRef.current = fighter;
+    return fighter;
   };
 
   const settleWeaponY = (x: number, y: number) => {
@@ -2206,11 +2541,11 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     const canDash = fighter.movementSkills.includes('dash');
     const canGlide = fighter.movementSkills.includes('glide');
     const canWallJump = fighter.movementSkills.includes('wall_jump');
-    const justJump = input.jump && !fighter.jumpHeld;
-    const justDash = input.dash && !fighter.dashHeld;
-    const justAttack = input.attack && !fighter.attackHeld;
-    const justThrow = input.throwWeapon && !fighter.throwHeld;
-    const justSkill = input.skill && !fighter.skillHeld;
+    const justJump = Boolean(input.jumpPressed) || (input.jump && !fighter.jumpHeld);
+    const justDash = Boolean(input.dashPressed) || (input.dash && !fighter.dashHeld);
+    const justAttack = Boolean(input.attackPressed) || (input.attack && !fighter.attackHeld);
+    const justThrow = Boolean(input.throwPressed) || (input.throwWeapon && !fighter.throwHeld);
+    const justSkill = Boolean(input.skillPressed) || (input.skill && !fighter.skillHeld);
 
     fighter.attackCooldownMs = Math.max(0, fighter.attackCooldownMs - deltaSeconds * 1000);
     fighter.attackTimerMs = Math.max(0, fighter.attackTimerMs - deltaSeconds * 1000);
@@ -2374,6 +2709,11 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     fighter.throwHeld = input.throwWeapon;
     fighter.skillHeld = input.skill;
     fighter.dashHeld = input.dash;
+    input.jumpPressed = false;
+    input.dashPressed = false;
+    input.attackPressed = false;
+    input.throwPressed = false;
+    input.skillPressed = false;
   };
 
   const finalizeMatch = (payload?: any) => {
@@ -2414,7 +2754,9 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     if (alive.length > 1 && elapsedMsRef.current < MATCH_MAX_MS) {
       return;
     }
-    if (alive.length <= 1 && pendingRevives.length > 0 && elapsedMsRef.current < MATCH_MAX_MS) {
+    if (alive.length === 1) {
+      winnerIdRef.current = alive[0].id;
+    } else if (alive.length === 0 && pendingRevives.length > 0 && elapsedMsRef.current < MATCH_MAX_MS) {
       return;
     }
 
@@ -2984,12 +3326,44 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
 
           await maybeEndMatch();
         } else {
+          const previousFrameInput = previousFrameInputRef.current;
+          pendingInputPulseRef.current.jumpPressed =
+            pendingInputPulseRef.current.jumpPressed || (localInput.jump && !previousFrameInput.jump);
+          pendingInputPulseRef.current.dashPressed =
+            pendingInputPulseRef.current.dashPressed || (localInput.dash && !previousFrameInput.dash);
+          pendingInputPulseRef.current.attackPressed =
+            pendingInputPulseRef.current.attackPressed || (localInput.attack && !previousFrameInput.attack);
+          pendingInputPulseRef.current.throwPressed =
+            pendingInputPulseRef.current.throwPressed || (localInput.throwWeapon && !previousFrameInput.throwWeapon);
+          pendingInputPulseRef.current.skillPressed =
+            pendingInputPulseRef.current.skillPressed || (localInput.skill && !previousFrameInput.skill);
+          previousFrameInputRef.current = {
+            ...createDefaultInput(),
+            ...localInput,
+          };
+
+          const snapshotAgeMs = clamp(time - lastAuthoritativeSnapshotAtRef.current, 0, MAX_RENDER_EXTRAPOLATION_MS);
+          const predictedElapsedMs = Math.max(
+            snapshotRef.current.elapsedMs + deltaSeconds * 1000,
+            authoritativeSnapshotRef.current.elapsedMs + snapshotAgeMs,
+          );
+          const predictedPlatforms = createPlatforms(predictedElapsedMs);
+          const outgoingInputPayload = buildOutgoingInputPayload(localInput);
+          const predictedLocalFighter = predictGuestLocalFighter(
+            fightersRef.current.get(localFighterId) ?? null,
+            outgoingInputPayload,
+            deltaSeconds,
+            snapshotRef.current.platforms,
+            predictedPlatforms,
+          );
+
           snapshotRef.current = buildGuestRenderSnapshot(
             authoritativeSnapshotRef.current,
             snapshotRef.current,
             localInput,
             time,
             deltaSeconds,
+            predictedLocalFighter,
           );
           elapsedMsRef.current = snapshotRef.current.elapsedMs;
           previousPlatformsRef.current = platformsRef.current;
@@ -3008,10 +3382,17 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
             .map((value) => (value ? '1' : '0'))
             .join('');
           if (inputSignature !== lastInputSignatureRef.current || time - lastInputSentRef.current > INPUT_SEND_INTERVAL_MS) {
-            lastInputSignatureRef.current = inputSignature;
-            lastInputSentRef.current = time;
-            syncStatsRef.current.inputMessagesSent += 1;
-            wsRef.current?.sendInput({ fighterId: localFighterId, input: localInput });
+            const inputSent =
+              wsRef.current?.sendInput({
+                fighterId: localFighterId,
+                input: outgoingInputPayload,
+              }) ?? false;
+            if (inputSent) {
+              lastInputSignatureRef.current = inputSignature;
+              lastInputSentRef.current = time;
+              syncStatsRef.current.inputMessagesSent += 1;
+              pendingInputPulseRef.current = createInputPulseState();
+            }
           }
 
           if (time - lastUiSyncRef.current > UI_SYNC_INTERVAL_MS) {

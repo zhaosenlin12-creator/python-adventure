@@ -688,9 +688,9 @@ def test_guest_inputs_are_batched_before_forwarding_to_host(monkeypatch: pytest.
         with client.websocket_connect(guest_ws_url) as guest_socket:
             assert guest_socket.receive_json()["type"] == "connected"
 
-            guest_socket.send_json({"type": "br_input", "payload": {"input": {"left": True}}})
             guest_socket.send_json({"type": "br_input", "payload": {"input": {"right": True}}})
-            guest_socket.send_json({"type": "br_input", "payload": {"input": {"attack": True}}})
+            guest_socket.send_json({"type": "br_input", "payload": {"input": {"attack": True, "attackPressed": True}}})
+            guest_socket.send_json({"type": "br_input", "payload": {"input": {"attack": False}}})
 
             time.sleep(0.08)
             batch_message = host_socket.receive_json()
@@ -698,6 +698,6 @@ def test_guest_inputs_are_batched_before_forwarding_to_host(monkeypatch: pytest.
             assert batch_message["inputs"] == [
                 {
                     "user_id": guest_user_id,
-                    "payload": {"input": {"attack": True}},
+                    "payload": {"input": {"right": True, "attack": False, "attackPressed": True}},
                 }
             ]

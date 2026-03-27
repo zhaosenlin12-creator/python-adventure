@@ -342,9 +342,10 @@ test('battle royale host start syncs guest and guest can recover after reload', 
 
   await hostPage.getByRole('textbox', { name: '房间名称' }).fill(roomName);
   await hostPage.getByTestId('br-create-room').click();
+  await expect(hostPage.getByTestId('br-room')).toBeVisible({ timeout: 15000 });
   await expect
-    .poll(async () => hostPage.locator('body').innerText(), { timeout: 15000 })
-    .toContain('WAITING ROOM');
+    .poll(async () => hostPage.getByTestId('br-room').innerText(), { timeout: 15000 })
+    .toContain('房间准备中');
 
   await expect
     .poll(async () => guestPage.locator('body').innerText(), { timeout: 20000 })
@@ -355,9 +356,10 @@ test('battle royale host start syncs guest and guest can recover after reload', 
     .getByRole('button', { name: '加入房间' })
     .last()
     .click();
+  await expect(guestPage.getByTestId('br-room')).toBeVisible({ timeout: 15000 });
   await expect
-    .poll(async () => guestPage.locator('body').innerText(), { timeout: 15000 })
-    .toContain('WAITING ROOM');
+    .poll(async () => guestPage.getByTestId('br-room').innerText(), { timeout: 15000 })
+    .toContain('房间准备中');
 
   await hostPage.getByTestId('br-start-match').click();
   await expect
