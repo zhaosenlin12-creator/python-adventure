@@ -229,7 +229,7 @@ export default function PetMainPanel() {
           glow: 'shadow-[0_0_14px_rgba(251,146,60,0.24)]',
           badge: 'bg-orange-900 text-orange-100 border border-orange-400/50',
           icon: <Cpu className="w-3 h-3" />,
-          label: '鐏靛厜'
+          label: '算力'
         };
       case 'data_sprite':
       case 'tech_drone':
@@ -238,7 +238,7 @@ export default function PetMainPanel() {
           glow: 'shadow-[0_0_14px_rgba(56,189,248,0.28)]',
           badge: 'bg-sky-900 text-sky-100 border border-sky-400/50',
           icon: <Zap className="w-3 h-3" />,
-          label: '宸℃父'
+          label: '巡航'
         };
       case 'ava_ai':
       case 'tech_ai':
@@ -247,7 +247,7 @@ export default function PetMainPanel() {
           glow: 'shadow-[0_0_14px_rgba(244,63,94,0.24)]',
           badge: 'bg-rose-900 text-rose-100 border border-rose-400/50',
           icon: <Sparkles className="w-3 h-3" />,
-          label: '鍐插埡'
+          label: '灵感'
         };
       default:
         return null;
