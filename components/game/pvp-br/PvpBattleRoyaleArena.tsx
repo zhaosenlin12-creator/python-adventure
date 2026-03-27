@@ -57,6 +57,7 @@ const WEAPON_THROW_MAX_DISTANCE = 560;
 const WEAPON_THROW_COOLDOWN_MS = 360;
 const WEAPON_PROJECTILE_DAMAGE = 24;
 const WEAPON_PICKUP_RADIUS = 58;
+const WEAPON_PICKUP_GRACE_MS = 650;
 const WEAPON_MODEL_LENGTH = 42;
 const WEAPON_HOLD_OFFSET_X = 30;
 const HIT_FLASH_MS = 220;
@@ -294,6 +295,9 @@ interface InternalFighter extends BattleRoyaleFighterView {
   roamTargetX: number;
   roamTargetY: number;
   roamExpireAtMs: number;
+  combatAnchorX: number;
+  combatAnchorExpireAtMs: number;
+  combatTargetId: string | null;
   stuckMs: number;
   lastSampleX: number;
   lastSampleY: number;
@@ -314,6 +318,7 @@ interface InternalProjectile extends BattleRoyaleProjectileView {
 interface InternalWeaponPickup extends BattleRoyaleWeaponPickupView {
   active: boolean;
   ttlMs: number;
+  pickupReadyAtMs: number;
 }
 
 interface InternalEffect extends BattleRoyaleEffectView {
@@ -698,6 +703,9 @@ function createInitialFighters(room: BattleRoyaleRoom): Map<string, InternalFigh
       roamTargetX: spawn.x,
       roamTargetY: spawn.y,
       roamExpireAtMs: 0,
+      combatAnchorX: spawn.x,
+      combatAnchorExpireAtMs: 0,
+      combatTargetId: null,
       stuckMs: 0,
       lastSampleX: spawn.x,
       lastSampleY: spawn.y,
@@ -757,6 +765,9 @@ function createInitialFighters(room: BattleRoyaleRoom): Map<string, InternalFigh
       roamTargetX: spawn.x,
       roamTargetY: spawn.y,
       roamExpireAtMs: 0,
+      combatAnchorX: spawn.x,
+      combatAnchorExpireAtMs: 0,
+      combatTargetId: null,
       stuckMs: 0,
       lastSampleX: spawn.x,
       lastSampleY: spawn.y,
@@ -1020,6 +1031,9 @@ function hydrateFightersFromSnapshot(room: BattleRoyaleRoom, snapshot: BattleRoy
     existing.roamTargetX = view.x;
     existing.roamTargetY = view.y;
     existing.roamExpireAtMs = snapshot.elapsedMs;
+    existing.combatAnchorX = view.x;
+    existing.combatAnchorExpireAtMs = snapshot.elapsedMs;
+    existing.combatTargetId = null;
     existing.stuckMs = 0;
     existing.lastSampleX = view.x;
     existing.lastSampleY = view.y;
@@ -1040,6 +1054,7 @@ function hydrateWeaponsFromSnapshot(snapshot: BattleRoyaleSnapshot): InternalWea
     ...weapon,
     active: weapon.active,
     ttlMs: Math.max(12000, MATCH_MAX_MS - snapshot.elapsedMs),
+    pickupReadyAtMs: snapshot.elapsedMs,
   }));
 }
 
@@ -1182,6 +1197,16 @@ function pickBotRoamPoint(
   return (preferred ?? scoredCandidates[0]).point;
 }
 
+function combatAnchorSpacingRange(difficulty: BattleRoyaleDifficulty | undefined) {
+  if (difficulty === 'easy') {
+    return { min: 150, max: 230, holdMinMs: 850, holdMaxMs: 1300 };
+  }
+  if (difficulty === 'hard') {
+    return { min: 110, max: 190, holdMinMs: 650, holdMaxMs: 1050 };
+  }
+  return { min: 130, max: 210, holdMinMs: 720, holdMaxMs: 1180 };
+}
+
 function aiInputForFighter(
   fighter: InternalFighter,
   fighters: Map<string, InternalFighter>,
@@ -1248,6 +1273,33 @@ function aiInputForFighter(
       enemyDistance < tuning.engageDistance
     );
   const combatTarget = shouldSkirmish ? nearestEnemy : null;
+  const strikeGap = combatTarget ? fighterHorizontalGap(fighter, combatTarget) : Number.POSITIVE_INFINITY;
+  const strikeVerticalGap = combatTarget ? fighterVerticalGap(fighter, combatTarget) : Number.POSITIVE_INFINITY;
+
+  if (combatTarget) {
+    const { min, max, holdMinMs, holdMaxMs } = combatAnchorSpacingRange(fighter.difficulty);
+    const targetChanged = fighter.combatTargetId !== combatTarget.id;
+    const reachedAnchor = Math.abs(fighter.combatAnchorX - fighter.x) < 34;
+    const closeQuarterPivot = strikeGap < ATTACK_RANGE + 24 && strikeVerticalGap < 120;
+    if (targetChanged || elapsedMs >= fighter.combatAnchorExpireAtMs || reachedAnchor || closeQuarterPivot) {
+      const previousSign = fighter.combatAnchorX <= combatTarget.x ? -1 : 1;
+      const fallbackSign = fighter.x <= combatTarget.x ? -1 : 1;
+      let anchorSign = targetChanged ? fallbackSign : -previousSign;
+      if ((fighter.hp < fighter.maxHp * 0.32 || !fighter.weaponReady) && strikeGap < 138) {
+        anchorSign = fallbackSign;
+      }
+      fighter.combatTargetId = combatTarget.id;
+      fighter.combatAnchorX = clamp(
+        combatTarget.x + anchorSign * randomBetween(min, max),
+        0,
+        MAP_WIDTH - FIGHTER_WIDTH,
+      );
+      fighter.combatAnchorExpireAtMs = elapsedMs + randomBetween(holdMinMs, holdMaxMs);
+    }
+  } else {
+    fighter.combatTargetId = null;
+    fighter.combatAnchorExpireAtMs = 0;
+  }
 
   const shouldRefreshRoamTarget =
     elapsedMs >= fighter.roamExpireAtMs ||
@@ -1280,7 +1332,9 @@ function aiInputForFighter(
       ? availableWeapon!.x
       : wantsLoot
       ? activePickup!.pickup.x
-      : combatTarget?.x ?? fighter.roamTargetX) + clamp(crowdOffset, -220, 220);
+      : combatTarget
+        ? fighter.combatAnchorX
+        : fighter.roamTargetX) + clamp(crowdOffset, -220, 220);
   const targetY = isOutsideZone
     ? recoveryTarget.y
     : shouldRecoverWeapon
@@ -1292,8 +1346,6 @@ function aiInputForFighter(
   const dx = targetX - fighter.x;
   const dy = targetY - fighter.y;
   const canSecondJump = fighter.movementSkills.includes('double_jump') && fighter.jumpsUsed < 1;
-  const strikeGap = combatTarget ? fighterHorizontalGap(fighter, combatTarget) : Number.POSITIVE_INFINITY;
-  const strikeVerticalGap = combatTarget ? fighterVerticalGap(fighter, combatTarget) : Number.POSITIVE_INFINITY;
   const shouldEscapeJump = fighter.stuckMs > (fighter.difficulty === 'easy' ? 320 : 250) && (fighter.onGround || canSecondJump);
   const shouldClimb = dy < -88 && (fighter.onGround || canSecondJump || fighter.stuckMs > 280);
   const shouldHopForward =
@@ -1301,6 +1353,10 @@ function aiInputForFighter(
     Math.abs(dx) > 110 &&
     Math.abs(dx) < 620 &&
     (dy < 220 || (isOutsideZone && Math.abs(dx) > 220) || strikeVerticalGap > 62 || fighter.stuckMs > 240);
+  const jumpIntent = shouldEscapeJump || shouldClimb || shouldHopForward;
+  const shouldPulseJump =
+    jumpIntent &&
+    (!fighter.jumpHeld || fighter.onGround || canSecondJump || (fighter.movementSkills.includes('wall_jump') && Math.abs(dx) > 40));
   const aggressiveRange = fighter.difficulty === 'hard' ? ATTACK_RANGE + 10 : ATTACK_RANGE;
   const shouldDash =
     fighter.movementSkills.includes('dash') &&
@@ -1324,10 +1380,10 @@ function aiInputForFighter(
     strikeVerticalGap < 118 &&
     Math.random() < tuning.throwChance;
 
-  return {
+  const nextInput: BattleRoyaleInputPayload = {
     left: dx < -18,
     right: dx > 18,
-    jump: shouldEscapeJump || shouldClimb || shouldHopForward,
+    jump: shouldPulseJump,
     dash: shouldDash,
     attack:
       fighter.weaponReady &&
@@ -1350,6 +1406,30 @@ function aiInputForFighter(
         )) ||
       (isOutsideZone && fighter.shield <= 0 && enemyDistance < 240),
   };
+
+  const isCompletelyIdle =
+    !nextInput.left &&
+    !nextInput.right &&
+    !nextInput.jump &&
+    !nextInput.dash &&
+    !nextInput.attack &&
+    !nextInput.throwWeapon &&
+    !nextInput.skill &&
+    !nextInput.guard;
+
+  if (isCompletelyIdle && (!combatTarget || enemyDistance > tuning.engageDistance * 0.72 || strikeVerticalGap > 160)) {
+    const fallbackRoamPoint = pickBotRoamPoint(fighter, fighters, pickups, zone);
+    fighter.roamTargetX = fallbackRoamPoint.x;
+    fighter.roamTargetY = fallbackRoamPoint.y;
+    fighter.roamExpireAtMs = elapsedMs + randomBetween(Math.max(860, tuning.roamMinMs * 0.55), Math.max(1280, tuning.roamMaxMs * 0.82));
+    const fallbackDx = fallbackRoamPoint.x - fighter.x;
+    const fallbackDy = fallbackRoamPoint.y - fighter.y;
+    nextInput.left = fallbackDx < -24;
+    nextInput.right = fallbackDx > 24;
+    nextInput.jump = fallbackDy < -96 && (!fighter.jumpHeld || fighter.onGround || canSecondJump);
+  }
+
+  return nextInput;
 }
 
 export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleArenaProps) {
@@ -1397,6 +1477,9 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   const lastRoomNoticeRef = useRef<{ message: string; at: number }>({ message: '', at: 0 });
   const hasConnectedOnceRef = useRef(false);
   const reconnectNoticeVisibleRef = useRef(false);
+  const quizSubmitTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const quizOfferRef = useRef<BattleRoyaleQuizOffer | null>(null);
+  const submittingQuizRef = useRef(false);
   const localEliminationHandledRef = useRef(false);
   const lastInputSentRef = useRef(0);
   const lastInputSignatureRef = useRef('');
@@ -1417,6 +1500,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   const [snapshot, setSnapshot] = useState<BattleRoyaleSnapshot>(snapshotRef.current);
   const [quizOffer, setQuizOffer] = useState<BattleRoyaleQuizOffer | null>(null);
   const [submittingQuiz, setSubmittingQuiz] = useState(false);
+  const [quizSubmitError, setQuizSubmitError] = useState<string | null>(null);
   const [result, setResult] = useState<BattleRoyaleResult | null>(null);
   const [showEliminationPrompt, setShowEliminationPrompt] = useState(false);
   const [roomNotice, setRoomNotice] = useState<string>('战场部署完成，先分散搜甲，再抢高台和地面掉落武器。');
@@ -1437,6 +1521,22 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   const liveSnapshot = snapshot;
 
   useEffect(() => {
+    quizOfferRef.current = quizOffer;
+  }, [quizOffer]);
+
+  useEffect(() => {
+    submittingQuizRef.current = submittingQuiz;
+  }, [submittingQuiz]);
+
+  useEffect(() => {
+    return () => {
+      if (quizSubmitTimeoutRef.current) {
+        clearTimeout(quizSubmitTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
     musicManager.switchBGM('pvp');
     return () => {
       musicManager.switchBGM('main');
@@ -1446,6 +1546,16 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   useEffect(() => {
     setRoomNotice('战场部署完成，先分散搜护甲，再争夺高台与武器。');
   }, []);
+
+  useEffect(() => {
+    if (!quizOffer) {
+      clearQuizSubmitTimeout();
+      setSubmittingQuiz(false);
+      setQuizSubmitError(null);
+      return;
+    }
+    setQuizSubmitError(null);
+  }, [quizOffer]);
 
   useEffect(() => {
     const keydown = (event: KeyboardEvent) => {
@@ -1517,6 +1627,11 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         setWsConnected(false);
         setLatencyMs(0);
         reconnectNoticeVisibleRef.current = true;
+        if (quizOfferRef.current && submittingQuizRef.current) {
+          clearQuizSubmitTimeout();
+          setSubmittingQuiz(false);
+          setQuizSubmitError('连接波动，答题结果还未确认。连接恢复后请重新提交当前答卷。');
+        }
         pushRoomNotice('连接波动，系统正在重连。', 2800);
       },
       onLatencyUpdate: (nextLatencyMs) => {
@@ -1539,6 +1654,12 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
           if (reconnectNoticeVisibleRef.current && !message.latest_snapshot) {
             reconnectNoticeVisibleRef.current = false;
             pushRoomNotice('连接已恢复。', 1800);
+          }
+
+          if (quizOfferRef.current && submittingQuizRef.current) {
+            clearQuizSubmitTimeout();
+            setSubmittingQuiz(false);
+            setQuizSubmitError('连接已恢复，请重新提交当前答卷。');
           }
 
           if (message.latest_match_payload) {
@@ -1581,6 +1702,9 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
           }
           const payload = message.payload as BattleRoyaleQuizOffer;
           if (payload.fighterId === localFighterId) {
+            clearQuizSubmitTimeout();
+            setSubmittingQuiz(false);
+            setQuizSubmitError(null);
             setQuizOffer(payload);
           }
           return;
@@ -1591,6 +1715,10 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
             return;
           }
           const payload = message.payload as { fighterId: string; success: boolean };
+          if (payload.fighterId === localFighterId) {
+            clearQuizSubmitTimeout();
+            setQuizSubmitError(null);
+          }
           resolveReviveOutcome(payload.fighterId, payload.success);
           pushRoomNotice(payload.success ? '答题成功，半血复活' : '答题失败，本局出局', 4200);
           return;
@@ -1730,6 +1858,13 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     lastRoomNoticeRef.current = { message, at: now };
     roomNoticeLockUntilRef.current = now + lockMs;
     setRoomNotice(message);
+  };
+
+  const clearQuizSubmitTimeout = () => {
+    if (quizSubmitTimeoutRef.current) {
+      clearTimeout(quizSubmitTimeoutRef.current);
+      quizSubmitTimeoutRef.current = null;
+    }
   };
 
   const currentPredictionLeadMs = (snapshotAgeMs: number) =>
@@ -1893,8 +2028,10 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     addKillFeed(`${fighter.name}${reason}`);
 
     if (fighter.id === localFighterId) {
+      clearQuizSubmitTimeout();
       setQuizOffer(null);
       setSubmittingQuiz(false);
+      setQuizSubmitError(null);
       setShowEliminationPrompt(true);
       localEliminationHandledRef.current = true;
     }
@@ -1923,12 +2060,14 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   };
 
   const clearPendingRevivesForMatchEnd = () => {
+    clearQuizSubmitTimeout();
     pendingQuizzesRef.current = {};
     fightersRef.current.forEach((fighter) => {
       fighter.quizPending = false;
     });
     setQuizOffer(null);
     setSubmittingQuiz(false);
+    setQuizSubmitError(null);
     setShowEliminationPrompt(false);
   };
 
@@ -2241,6 +2380,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       existing.y = settledY;
       existing.active = true;
       existing.ttlMs = MATCH_MAX_MS;
+      existing.pickupReadyAtMs = elapsedMsRef.current + WEAPON_PICKUP_GRACE_MS;
       return;
     }
 
@@ -2251,6 +2391,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       y: settledY,
       active: true,
       ttlMs: MATCH_MAX_MS,
+      pickupReadyAtMs: elapsedMsRef.current + WEAPON_PICKUP_GRACE_MS,
     });
   };
 
@@ -2296,7 +2437,9 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     fighter.hitFlashMs = 0;
     fighter.throwHeld = false;
     if (fighterId === localFighterId) {
+      clearQuizSubmitTimeout();
       localEliminationHandledRef.current = false;
+      setQuizSubmitError(null);
       setShowEliminationPrompt(false);
     }
     weaponPickupsRef.current.forEach((weapon) => {
@@ -2335,8 +2478,10 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     }
 
     if (fighterId === localFighterId) {
+      clearQuizSubmitTimeout();
       setQuizOffer(null);
       setSubmittingQuiz(false);
+      setQuizSubmitError(null);
       if (!success) {
         setShowEliminationPrompt(true);
         localEliminationHandledRef.current = true;
@@ -2363,6 +2508,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     if (fighter.id === localFighterId) {
       setShowEliminationPrompt(false);
       localEliminationHandledRef.current = false;
+      setQuizSubmitError(null);
       setQuizOffer({ fighterId: fighter.id, questions });
       return;
     }
@@ -2797,7 +2943,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     });
 
     weaponPickupsRef.current.forEach((weapon) => {
-      if (!weapon.active || fighter.weaponReady) return;
+      if (!weapon.active || fighter.weaponReady || weapon.pickupReadyAtMs > elapsedMsRef.current) return;
       const distance = Math.hypot(weapon.x - fighterCenterX(fighter), weapon.y - fighterCenterY(fighter));
       if (distance < WEAPON_PICKUP_RADIUS) {
         recoverWeapon(fighter, weapon);
@@ -3534,20 +3680,41 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
 
   const handleSubmitQuiz = async (answers: string[]) => {
     if (!quizOffer) return;
+    const fighterId = quizOffer.fighterId;
+    clearQuizSubmitTimeout();
+    setQuizSubmitError(null);
     setSubmittingQuiz(true);
 
     if (isHost) {
-      const questions = pendingQuizzesRef.current[quizOffer.fighterId] ?? quizOffer.questions;
+      const questions = pendingQuizzesRef.current[fighterId] ?? quizOffer.questions;
       const success = evaluateBattleRoyaleQuiz(questions, answers);
-      pendingQuizzesRef.current[quizOffer.fighterId] = [];
-      resolveReviveOutcome(quizOffer.fighterId, success);
+      pendingQuizzesRef.current[fighterId] = [];
+      resolveReviveOutcome(fighterId, success);
       return;
     }
 
-    wsRef.current?.sendQuizSubmit({
-      fighterId: quizOffer.fighterId,
-      answers,
-    });
+    const sent =
+      wsRef.current?.sendQuizSubmit({
+        fighterId,
+        answers,
+      }) ?? false;
+
+    if (!sent) {
+      setSubmittingQuiz(false);
+      setQuizSubmitError('当前连接不可用，答卷还没有发出去。请等待连接恢复后重新提交。');
+      pushRoomNotice('答题提交失败，请等待连接恢复后重新提交。', 3600);
+      return;
+    }
+
+    quizSubmitTimeoutRef.current = setTimeout(() => {
+      quizSubmitTimeoutRef.current = null;
+      if (!quizOfferRef.current || quizOfferRef.current.fighterId !== fighterId || matchEndedRef.current) {
+        return;
+      }
+      setSubmittingQuiz(false);
+      setQuizSubmitError('答题结果同步超时，请重新提交当前答卷。');
+      pushRoomNotice('答题结果同步超时，请重新提交当前答卷。', 3600);
+    }, 6500);
   };
 
   const handleExit = async () => {
@@ -3625,77 +3792,81 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
           </div>
 
           {showEliminationPrompt && !result && (
-            <div className="absolute inset-0 flex items-center justify-center bg-slate-950/60 p-4 backdrop-blur-sm">
-              <div className="w-full max-w-lg rounded-[28px] border border-white/10 bg-slate-950/90 p-6 shadow-[0_26px_90px_rgba(2,6,23,0.58)]">
-                <div className="text-2xl font-black text-white">你已被淘汰</div>
-                <div className="mt-3 text-sm leading-6 text-slate-300">
-                  你可以继续观战等待最终结果，也可以现在退出房间返回大厅。
-                </div>
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end">
-                  <button
-                    type="button"
-                    onClick={handleSpectate}
-                    className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-bold text-white transition hover:border-white/20 hover:bg-white/10"
-                  >
-                    继续观战
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => void handleExit()}
-                    className="rounded-full bg-[linear-gradient(135deg,#f97316,#dc2626)] px-5 py-3 text-sm font-bold text-white transition hover:brightness-110"
-                  >
-                    退出房间
-                  </button>
+            <div className="absolute inset-0 overflow-y-auto bg-slate-950/60 p-4 backdrop-blur-sm">
+              <div className="flex min-h-full items-start justify-center py-4 sm:items-center">
+                <div className="my-auto w-full max-w-lg rounded-[28px] border border-white/10 bg-slate-950/90 p-6 shadow-[0_26px_90px_rgba(2,6,23,0.58)]">
+                  <div className="text-2xl font-black text-white">你已被淘汰</div>
+                  <div className="mt-3 text-sm leading-6 text-slate-300">
+                    你可以继续观战等待最终结果，也可以现在退出房间返回大厅。
+                  </div>
+                  <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end">
+                    <button
+                      type="button"
+                      onClick={handleSpectate}
+                      className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-bold text-white transition hover:border-white/20 hover:bg-white/10"
+                    >
+                      继续观战
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => void handleExit()}
+                      className="rounded-full bg-[linear-gradient(135deg,#f97316,#dc2626)] px-5 py-3 text-sm font-bold text-white transition hover:brightness-110"
+                    >
+                      退出房间
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           )}
 
           {result && (
-            <div className="absolute inset-0 flex items-center justify-center bg-slate-950/80 p-4 backdrop-blur-md">
-              <div className="w-full max-w-2xl rounded-[32px] border border-amber-300/20 bg-[linear-gradient(145deg,rgba(15,23,42,0.98),rgba(10,15,30,0.98))] p-8 shadow-[0_26px_90px_rgba(2,6,23,0.58)]">
-                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-amber-300/20 bg-amber-500/10 px-3 py-1 text-xs font-semibold tracking-[0.22em] text-amber-100">
-                  <Trophy className="h-3.5 w-3.5" />
-                  本局结算
-                </div>
-                <h2 className="text-3xl font-black text-white">战斗结果</h2>
-                <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                  <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
-                    <div className="text-sm text-slate-400">冠军</div>
-                    <div className="mt-1 text-2xl font-bold text-white">{result.winnerName}</div>
+            <div className="absolute inset-0 overflow-y-auto bg-slate-950/80 p-4 backdrop-blur-md">
+              <div className="flex min-h-full items-start justify-center py-4 sm:items-center">
+                <div className="my-auto w-full max-w-2xl rounded-[32px] border border-amber-300/20 bg-[linear-gradient(145deg,rgba(15,23,42,0.98),rgba(10,15,30,0.98))] p-8 shadow-[0_26px_90px_rgba(2,6,23,0.58)]">
+                  <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-amber-300/20 bg-amber-500/10 px-3 py-1 text-xs font-semibold tracking-[0.22em] text-amber-100">
+                    <Trophy className="h-3.5 w-3.5" />
+                    本局结算
                   </div>
-                  <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
-                    <div className="text-sm text-slate-400">你的名次</div>
-                    <div className="mt-1 text-2xl font-bold text-white">第 {result.placement} 名</div>
+                  <h2 className="text-3xl font-black text-white">战斗结果</h2>
+                  <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
+                      <div className="text-sm text-slate-400">冠军</div>
+                      <div className="mt-1 text-2xl font-bold text-white">{result.winnerName}</div>
+                    </div>
+                    <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
+                      <div className="text-sm text-slate-400">你的名次</div>
+                      <div className="mt-1 text-2xl font-bold text-white">第 {result.placement} 名</div>
+                    </div>
+                    <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
+                      <div className="text-sm text-slate-400">淘汰数</div>
+                      <div className="mt-1 text-2xl font-bold text-white">{result.kills}</div>
+                    </div>
+                    <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
+                      <div className="text-sm text-slate-400">造成伤害</div>
+                      <div className="mt-1 text-2xl font-bold text-white">{result.damageDealt}</div>
+                    </div>
+                    <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
+                      <div className="text-sm text-slate-400">生存时间</div>
+                      <div className="mt-1 text-2xl font-bold text-white">{(result.survivedMs / 1000).toFixed(1)} 秒</div>
+                    </div>
+                    <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
+                      <div className="text-sm text-slate-400">是否复活过</div>
+                      <div className="mt-1 text-2xl font-bold text-white">{result.revived ? '是' : '否'}</div>
+                    </div>
                   </div>
-                  <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
-                    <div className="text-sm text-slate-400">淘汰数</div>
-                    <div className="mt-1 text-2xl font-bold text-white">{result.kills}</div>
+                  <div className="mt-6 text-sm leading-6 text-slate-300">
+                    建议下一局继续优先补防弹衣、护盾核和冲击波，缩圈后近战与投掷连招收益更高。
                   </div>
-                  <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
-                    <div className="text-sm text-slate-400">造成伤害</div>
-                    <div className="mt-1 text-2xl font-bold text-white">{result.damageDealt}</div>
+                  <div className="mt-8 flex justify-end">
+                    <button
+                      type="button"
+                      onClick={handleExit}
+                      className="rounded-full bg-[linear-gradient(135deg,#14b8a6,#2563eb)] px-6 py-3 text-sm font-bold text-white transition hover:brightness-110"
+                    >
+                      返回开放大厅
+                    </button>
                   </div>
-                  <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
-                    <div className="text-sm text-slate-400">生存时间</div>
-                    <div className="mt-1 text-2xl font-bold text-white">{(result.survivedMs / 1000).toFixed(1)} 秒</div>
-                  </div>
-                  <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
-                    <div className="text-sm text-slate-400">是否复活过</div>
-                    <div className="mt-1 text-2xl font-bold text-white">{result.revived ? '是' : '否'}</div>
-                  </div>
-                </div>
-                <div className="mt-6 text-sm leading-6 text-slate-300">
-                  建议下一局继续优先补防弹衣、护盾核和冲击波，缩圈后近战与投掷连招收益更高。
-                </div>
-                <div className="mt-8 flex justify-end">
-                  <button
-                    type="button"
-                    onClick={handleExit}
-                    className="rounded-full bg-[linear-gradient(135deg,#14b8a6,#2563eb)] px-6 py-3 text-sm font-bold text-white transition hover:brightness-110"
-                  >
-                    返回开放大厅
-                  </button>
                 </div>
               </div>
             </div>
@@ -3705,6 +3876,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
             isOpen={Boolean(quizOffer)}
             questions={quizOffer?.questions ?? []}
             submitting={submittingQuiz}
+            submitError={quizSubmitError}
             onSubmit={handleSubmitQuiz}
           />
         </div>

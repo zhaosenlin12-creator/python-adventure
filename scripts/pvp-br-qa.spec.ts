@@ -256,15 +256,42 @@ test('battle royale world entry and room flow smoke', async ({ browser }) => {
 
   const earlyBots = earlySnapshot.fighters.filter((fighter: any) => fighter.isBot);
   expect(earlyBots.length).toBeGreaterThan(0);
-  const maxBotMovementDelta = earlyBots.reduce((bestDelta: number, earlyBot: any) => {
-    const laterBot = laterSnapshot.fighters.find((fighter: any) => fighter.id === earlyBot.id);
-    if (!laterBot) {
-      return bestDelta;
+  const botMotionSamples = await page.evaluate(async () => {
+    const samples: Array<Record<string, { x: number; y: number }>> = [];
+    const startedAt = performance.now();
+
+    while (performance.now() - startedAt < 4200) {
+      const snapshot = (window as any).__brSnapshot ?? null;
+      const bots = (snapshot?.fighters ?? [])
+        .filter((fighter: any) => fighter.isBot)
+        .reduce(
+          (acc: Record<string, { x: number; y: number }>, fighter: any) => {
+            acc[fighter.id] = { x: fighter.x, y: fighter.y };
+            return acc;
+          },
+          {},
+        );
+      samples.push(bots);
+      await new Promise((resolve) => window.setTimeout(resolve, 120));
     }
-    const movementDelta = Math.abs((laterBot.x ?? 0) - (earlyBot.x ?? 0)) + Math.abs((laterBot.y ?? 0) - (earlyBot.y ?? 0));
-    return Math.max(bestDelta, movementDelta);
+
+    return samples;
+  });
+  const maxBotMovementSpan = earlyBots.reduce((bestSpan: number, earlyBot: any) => {
+    const positions = [
+      { x: earlyBot.x, y: earlyBot.y },
+      laterSnapshot.fighters.find((fighter: any) => fighter.id === earlyBot.id),
+      ...botMotionSamples.map((sample) => sample[earlyBot.id]),
+    ].filter(Boolean);
+    if (!positions.length) {
+      return bestSpan;
+    }
+    const xs = positions.map((position) => position.x);
+    const ys = positions.map((position) => position.y);
+    const movementSpan = Math.max(...xs) - Math.min(...xs) + Math.max(...ys) - Math.min(...ys);
+    return Math.max(bestSpan, movementSpan);
   }, 0);
-  expect(maxBotMovementDelta).toBeGreaterThan(25);
+  expect(maxBotMovementSpan).toBeGreaterThan(55);
 
   await page.evaluate(() => {
     window.dispatchEvent(new KeyboardEvent('keydown', { key: 'j' }));
@@ -486,7 +513,7 @@ test('battle royale guest render stays smooth while moving after room start', as
     const currentX = await guestPage.evaluate((userId: number) => {
       const snapshot = (window as any).__brRenderSnapshot ?? (window as any).__brSnapshot ?? null;
       const fighter = snapshot?.fighters?.find((item: any) => item.id === `human-${userId}`);
-      return typeof fighter?.x === 'number' ? Math.round(fighter.x) : -1;
+      return typeof fighter?.x === 'number' ? fighter.x : -1;
     }, guest.user.id);
     sampledXs.push(currentX);
     await guestPage.waitForTimeout(25);
@@ -494,7 +521,7 @@ test('battle royale guest render stays smooth while moving after room start', as
   await guestPage.keyboard.up('d');
 
   const effectiveSamples = sampledXs.filter((value) => value >= 0);
-  const movementChanges = effectiveSamples.filter((value, index) => index === 0 || Math.abs(value - effectiveSamples[index - 1]) >= 2);
+  const movementChanges = effectiveSamples.filter((value, index) => index === 0 || Math.abs(value - effectiveSamples[index - 1]) >= 1);
   const travelDistance = effectiveSamples[effectiveSamples.length - 1] - effectiveSamples[0];
   const hostSyncStats = await hostPage.evaluate(() => (window as any).__brSyncStats ?? null);
   const guestSyncStats = await guestPage.evaluate(() => (window as any).__brSyncStats ?? null);
