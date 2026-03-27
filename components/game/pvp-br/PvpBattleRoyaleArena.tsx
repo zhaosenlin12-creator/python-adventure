@@ -298,6 +298,7 @@ interface InternalFighter extends BattleRoyaleFighterView {
   combatAnchorX: number;
   combatAnchorExpireAtMs: number;
   combatTargetId: string | null;
+  nextJumpPulseAtMs: number;
   stuckMs: number;
   lastSampleX: number;
   lastSampleY: number;
@@ -706,6 +707,7 @@ function createInitialFighters(room: BattleRoyaleRoom): Map<string, InternalFigh
       combatAnchorX: spawn.x,
       combatAnchorExpireAtMs: 0,
       combatTargetId: null,
+      nextJumpPulseAtMs: 0,
       stuckMs: 0,
       lastSampleX: spawn.x,
       lastSampleY: spawn.y,
@@ -768,6 +770,7 @@ function createInitialFighters(room: BattleRoyaleRoom): Map<string, InternalFigh
       combatAnchorX: spawn.x,
       combatAnchorExpireAtMs: 0,
       combatTargetId: null,
+      nextJumpPulseAtMs: 0,
       stuckMs: 0,
       lastSampleX: spawn.x,
       lastSampleY: spawn.y,
@@ -1034,6 +1037,7 @@ function hydrateFightersFromSnapshot(room: BattleRoyaleRoom, snapshot: BattleRoy
     existing.combatAnchorX = view.x;
     existing.combatAnchorExpireAtMs = snapshot.elapsedMs;
     existing.combatTargetId = null;
+    existing.nextJumpPulseAtMs = snapshot.elapsedMs;
     existing.stuckMs = 0;
     existing.lastSampleX = view.x;
     existing.lastSampleY = view.y;
@@ -1354,9 +1358,16 @@ function aiInputForFighter(
     Math.abs(dx) < 620 &&
     (dy < 220 || (isOutsideZone && Math.abs(dx) > 220) || strikeVerticalGap > 62 || fighter.stuckMs > 240);
   const jumpIntent = shouldEscapeJump || shouldClimb || shouldHopForward;
-  const shouldPulseJump =
-    jumpIntent &&
+  const canTriggerJumpPulse =
+    elapsedMs >= fighter.nextJumpPulseAtMs &&
     (!fighter.jumpHeld || fighter.onGround || canSecondJump || (fighter.movementSkills.includes('wall_jump') && Math.abs(dx) > 40));
+  const shouldPulseJump = jumpIntent && canTriggerJumpPulse;
+  if (shouldPulseJump) {
+    fighter.nextJumpPulseAtMs = elapsedMs + (fighter.onGround ? 140 : 220);
+  } else if (!jumpIntent && fighter.nextJumpPulseAtMs > elapsedMs + 420) {
+    fighter.nextJumpPulseAtMs = elapsedMs;
+  }
+  const shouldGlideHold = fighter.movementSkills.includes('glide') && !fighter.onGround && dy < -24 && fighter.vy > 220;
   const aggressiveRange = fighter.difficulty === 'hard' ? ATTACK_RANGE + 10 : ATTACK_RANGE;
   const shouldDash =
     fighter.movementSkills.includes('dash') &&
@@ -1383,7 +1394,7 @@ function aiInputForFighter(
   const nextInput: BattleRoyaleInputPayload = {
     left: dx < -18,
     right: dx > 18,
-    jump: shouldPulseJump,
+    jump: shouldPulseJump || shouldGlideHold,
     dash: shouldDash,
     attack:
       fighter.weaponReady &&
@@ -1405,6 +1416,7 @@ function aiInputForFighter(
           (!fighter.weaponReady && enemyDistance < 150 && strikeVerticalGap < 120)
         )) ||
       (isOutsideZone && fighter.shield <= 0 && enemyDistance < 240),
+    jumpPressed: shouldPulseJump,
   };
 
   const isCompletelyIdle =
@@ -2435,6 +2447,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     fighter.weaponCooldownMs = 0;
     fighter.swingMs = 0;
     fighter.hitFlashMs = 0;
+    fighter.nextJumpPulseAtMs = elapsedMsRef.current;
     fighter.throwHeld = false;
     if (fighterId === localFighterId) {
       clearQuizSubmitTimeout();

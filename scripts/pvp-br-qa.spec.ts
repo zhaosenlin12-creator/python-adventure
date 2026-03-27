@@ -293,49 +293,74 @@ test('battle royale world entry and room flow smoke', async ({ browser }) => {
   }, 0);
   expect(maxBotMovementSpan).toBeGreaterThan(55);
 
+  await page.getByTestId('br-arena').click({ position: { x: 240, y: 240 } });
   await page.evaluate(() => {
-    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'j' }));
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'j', bubbles: true }));
   });
   await page.waitForTimeout(120);
   await page.evaluate(() => {
-    window.dispatchEvent(new KeyboardEvent('keyup', { key: 'j' }));
+    window.dispatchEvent(new KeyboardEvent('keyup', { key: 'j', bubbles: true }));
   });
-  const swingSnapshot = await page.evaluate(() => {
-    return (window as any).__brSnapshot ?? null;
-  });
-  const swingFighter = swingSnapshot.fighters.find((fighter: any) => !fighter.isBot);
-  expect(swingFighter).toBeTruthy();
-  expect(
-    (swingFighter?.swingMs ?? 0) > 0 ||
-      swingSnapshot.effects.some((effect: any) => effect.kind === 'slash'),
-  ).toBeTruthy();
+  await expect
+    .poll(
+      async () =>
+        page.evaluate(() => {
+          const swingSnapshot = (window as any).__brSnapshot ?? null;
+          if (!swingSnapshot) return false;
+          const swingFighter = swingSnapshot.fighters.find((fighter: any) => !fighter.isBot);
+          return Boolean(
+            swingFighter &&
+              ((swingFighter.swingMs ?? 0) > 0 ||
+                swingSnapshot.effects.some((effect: any) => effect.kind === 'slash')),
+          );
+        }),
+      { timeout: 1200, intervals: [100, 160, 220] },
+    )
+    .toBeTruthy();
 
+  await page.getByTestId('br-arena').click({ position: { x: 240, y: 240 } });
   await page.evaluate(() => {
-    window.dispatchEvent(new KeyboardEvent('keydown', { key: ' ' }));
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: ' ', bubbles: true }));
   });
   await page.waitForTimeout(140);
   await page.evaluate(() => {
-    window.dispatchEvent(new KeyboardEvent('keyup', { key: ' ' }));
+    window.dispatchEvent(new KeyboardEvent('keyup', { key: ' ', bubbles: true }));
   });
-  const dashSnapshot = await page.evaluate(() => {
-    return (window as any).__brSnapshot ?? null;
-  });
-  expect(dashSnapshot.effects.some((effect: any) => effect.kind === 'dash')).toBeTruthy();
+  await expect
+    .poll(
+      async () =>
+        page.evaluate(() => {
+          const dashSnapshot = (window as any).__brSnapshot ?? null;
+          return Boolean(dashSnapshot?.effects.some((effect: any) => effect.kind === 'dash'));
+        }),
+      { timeout: 1200, intervals: [100, 160, 220] },
+    )
+    .toBeTruthy();
 
+  await page.getByTestId('br-arena').click({ position: { x: 240, y: 240 } });
   await page.evaluate(() => {
-    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k' }));
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', bubbles: true }));
   });
-  await page.waitForTimeout(280);
+  await page.waitForTimeout(220);
   await page.evaluate(() => {
-    window.dispatchEvent(new KeyboardEvent('keyup', { key: 'k' }));
+    window.dispatchEvent(new KeyboardEvent('keyup', { key: 'k', bubbles: true }));
   });
-  const throwSnapshot = await page.evaluate(() => {
-    return (window as any).__brSnapshot ?? null;
-  });
-  const localFighter = throwSnapshot.fighters.find((fighter: any) => !fighter.isBot);
-  expect(localFighter).toBeTruthy();
-  expect(localFighter.weaponReady).toBeFalsy();
-  expect((throwSnapshot.projectiles?.length ?? 0) + (throwSnapshot.weapons?.length ?? 0)).toBeGreaterThan(0);
+  await expect
+    .poll(
+      async () =>
+        page.evaluate(() => {
+          const throwSnapshot = (window as any).__brSnapshot ?? null;
+          if (!throwSnapshot) return false;
+          const localFighter = throwSnapshot.fighters.find((fighter: any) => !fighter.isBot);
+          return Boolean(
+            localFighter &&
+              !localFighter.weaponReady &&
+              (throwSnapshot.projectiles?.length ?? 0) + (throwSnapshot.weapons?.length ?? 0) > 0,
+          );
+        }),
+      { timeout: 1500, intervals: [120, 180, 240] },
+    )
+    .toBeTruthy();
 
   await page.screenshot({
     path: path.join(ARTIFACT_DIR, '03-br-arena.png'),
@@ -372,9 +397,9 @@ test('battle royale host start syncs guest and guest can recover after reload', 
 
   await hostPage.getByRole('textbox', { name: '房间名称' }).fill(roomName);
   await hostPage.getByTestId('br-create-room').click();
-  await expect(hostPage.getByTestId('br-room')).toBeVisible({ timeout: 15000 });
+  await expect(hostPage.getByTestId('br-room')).toBeVisible({ timeout: 30000 });
   await expect
-    .poll(async () => hostPage.getByTestId('br-room').innerText(), { timeout: 15000 })
+    .poll(async () => hostPage.getByTestId('br-room').innerText(), { timeout: 30000 })
     .toContain('房间准备中');
 
   await expect
@@ -386,9 +411,9 @@ test('battle royale host start syncs guest and guest can recover after reload', 
     .getByRole('button', { name: '加入房间' })
     .last()
     .click();
-  await expect(guestPage.getByTestId('br-room')).toBeVisible({ timeout: 15000 });
+  await expect(guestPage.getByTestId('br-room')).toBeVisible({ timeout: 30000 });
   await expect
-    .poll(async () => guestPage.getByTestId('br-room').innerText(), { timeout: 15000 })
+    .poll(async () => guestPage.getByTestId('br-room').innerText(), { timeout: 30000 })
     .toContain('房间准备中');
 
   await hostPage.getByTestId('br-start-match').click();

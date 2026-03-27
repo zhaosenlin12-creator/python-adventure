@@ -18,6 +18,7 @@ import AnimatedStatusValue from './AnimatedStatusValue';
 import StatusIcon from '@/components/ui/StatusIcon';
 import PetGrowthGuide from './PetGrowthGuide';
 import PetWelcomeGuide from './PetWelcomeGuide';
+import { toFriendlyMessage } from '@/lib/utils/friendlyError';
 
 export default function PetMainPanel() {
   const { currentPet, pets, loadPets, isLoading, evolvePet, checkEvolution, updatePetName } = usePetStore();
@@ -195,12 +196,12 @@ export default function PetMainPanel() {
         {isExpanded && (
           <div className="pixel-panel p-4 w-72 border-2 border-slate-700">
             <div className="flex justify-between items-center mb-3">
-              <h3 className="font-bold text-lg text-white">绁炵鐨勮泲</h3>
+              <h3 className="font-bold text-lg text-white">神秘的蛋</h3>
               <button
                 onClick={() => setIsExpanded(false)}
                 className="text-slate-400 hover:text-white text-xl w-6 h-6 flex items-center justify-center"
               >
-                脳
+                ×
               </button>
             </div>
             
@@ -259,12 +260,26 @@ export default function PetMainPanel() {
   const pendingEggCount = (pets || []).filter((pet) => pet.isEgg || pet.petType === 'egg').length;
   
   const handleSaveName = async () => {
-    if (petName.trim() && petName !== currentPet.name) {
+    const nextName = petName.trim();
+
+    if (!nextName) {
+      setPetName(currentPet.name);
+      setIsEditingName(false);
+      const { showErrorToast } = await import('@/components/ui/ErrorToast');
+      showErrorToast('昵称不能为空，请输入 1 到 12 个字符。', 'warning');
+      return;
+    }
+
+    if (nextName !== currentPet.name) {
       try {
-        await updatePetName(currentPet.id, petName.trim());
+        await updatePetName(currentPet.id, nextName);
+        const { showErrorToast } = await import('@/components/ui/ErrorToast');
+        showErrorToast('伙伴昵称已更新。', 'info');
       } catch (error) {
         console.error('Failed to update pet name:', error);
         setPetName(currentPet.name);
+        const { showErrorToast } = await import('@/components/ui/ErrorToast');
+        showErrorToast(toFriendlyMessage(error, '昵称保存失败，请稍后重试'), 'error');
       }
     }
     setIsEditingName(false);
@@ -295,9 +310,8 @@ export default function PetMainPanel() {
       console.error('Evolution failed:', error);
       setShowEvolutionAnimation(false);
       setEvolutionData(null);
-      // 鏄剧ず閿欒鎻愮ず
       const { showErrorToast } = await import('@/components/ui/ErrorToast');
-      const errorMessage = error instanceof Error ? error.message : '进化失败，请稍后重试';
+      const errorMessage = toFriendlyMessage(error, '进化失败，请稍后重试');
       showErrorToast(errorMessage, 'error');
     }
   };

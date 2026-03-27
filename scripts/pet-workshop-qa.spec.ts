@@ -17,6 +17,7 @@ const PET_PANEL_MOJIBAKE_STRINGS = [
   '鎴愰暱璇存槑',
   '杩涘叆灏忓眿',
 ];
+const EGG_PANEL_MOJIBAKE_STRINGS = ['绁炵鐨勮泲', '脳'];
 const REMOVED_PET_LABELS = ['垂耳兔', '算法兔兔'];
 
 const PET_FIXTURES = [
@@ -83,6 +84,8 @@ type QaSession = {
     petType: string;
   };
 };
+
+type AuthSession = Pick<QaSession, 'token' | 'user'>;
 
 function ensureArtifactDir() {
   fs.mkdirSync(ARTIFACT_DIR, { recursive: true });
@@ -174,7 +177,38 @@ async function seedQaSession(): Promise<QaSession> {
   };
 }
 
-async function prepareContext(context: BrowserContext, session: QaSession) {
+async function seedEggOnlySession(): Promise<AuthSession> {
+  const api = await playwrightRequest.newContext({
+    extraHTTPHeaders: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  const seed = Date.now();
+  const username = `petegg_${seed}`;
+  const email = `${username}@example.com`;
+  const password = 'QaPass123!';
+
+  const registerResponse = await api.post(`${API_BASE}/auth/register`, {
+    data: { username, email, password },
+  });
+  expect(registerResponse.ok(), await registerResponse.text()).toBeTruthy();
+
+  const loginResponse = await api.post(`${API_BASE}/auth/login`, {
+    data: { username, password },
+  });
+  expect(loginResponse.ok(), await loginResponse.text()).toBeTruthy();
+
+  const loginPayload = await loginResponse.json();
+  await api.dispose();
+
+  return {
+    token: loginPayload.access_token as string,
+    user: loginPayload.user as QaSession['user'],
+  };
+}
+
+async function prepareContext(context: BrowserContext, session: AuthSession) {
   await context.addInitScript(
     ({ storedAuth, userId }) => {
       window.localStorage.setItem('auth-storage', storedAuth);
@@ -220,6 +254,13 @@ async function expectNoPetPanelMojibake(page: Page) {
   }
   for (const removedLabel of REMOVED_PET_LABELS) {
     expect(bodyText).not.toContain(removedLabel);
+  }
+}
+
+async function expectNoEggPanelMojibake(page: Page) {
+  const bodyText = await page.locator('body').innerText();
+  for (const brokenText of EGG_PANEL_MOJIBAKE_STRINGS) {
+    expect(bodyText).not.toContain(brokenText);
   }
 }
 
@@ -391,6 +432,56 @@ async function mobileAudit(browser: Browser, session: QaSession) {
   await context.close();
 }
 
+async function eggPanelAudit(browser: Browser, session: AuthSession) {
+  const context = await browser.newContext({
+    viewport: { width: 1280, height: 900 },
+  });
+  await prepareContext(context, session);
+
+  const page = await context.newPage();
+  await page.goto(FRONTEND_ORIGIN, { waitUntil: 'domcontentloaded' });
+  await page.waitForTimeout(1200);
+
+  let eggPanelOpened = false;
+  for (let attempt = 0; attempt < 6; attempt += 1) {
+    await page.mouse.click(68, 106);
+    if (await page.getByText('神秘的蛋').first().isVisible().catch(() => false)) {
+      eggPanelOpened = true;
+      break;
+    }
+    await page.waitForTimeout(600);
+  }
+
+  expect(eggPanelOpened).toBeTruthy();
+  await expect(page.getByText('神秘的蛋').first()).toBeVisible({ timeout: 10000 });
+  await expectNoEggPanelMojibake(page);
+  await screenshot(page, '14-egg-panel-desktop.png');
+  await context.close();
+}
+
+async function authModalSmallViewportAudit(browser: Browser) {
+  const context = await browser.newContext({
+    viewport: { width: 390, height: 560 },
+    isMobile: true,
+    hasTouch: true,
+    userAgent:
+      'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1',
+  });
+
+  const page = await context.newPage();
+  await page.goto(FRONTEND_ORIGIN, { waitUntil: 'domcontentloaded' });
+
+  const forgotPasswordButton = page.getByRole('button', { name: '忘记密码' });
+  await expect(forgotPasswordButton).toBeVisible({ timeout: 15000 });
+  await forgotPasswordButton.click();
+
+  const resetButton = page.getByRole('button', { name: /重置为 123456|重置中/ });
+  await expect(resetButton).toBeVisible({ timeout: 10000 });
+  await expect(resetButton).toBeInViewport();
+  await screenshot(page, '15-auth-modal-mobile.png');
+  await context.close();
+}
+
 test.describe.configure({ mode: 'serial' });
 
 test('pet system and workshop qa', async ({ browser }) => {
@@ -398,9 +489,12 @@ test('pet system and workshop qa', async ({ browser }) => {
   ensureArtifactDir();
 
   const session = await seedQaSession();
+  const eggSession = await seedEggOnlySession();
   await desktopAudit(browser, session);
   await mobileAudit(browser, session);
+  await eggPanelAudit(browser, eggSession);
+  await authModalSmallViewportAudit(browser);
 
   const artifactFiles = fs.readdirSync(ARTIFACT_DIR).filter((file) => file.endsWith('.png'));
-  expect(artifactFiles.length).toBeGreaterThanOrEqual(10);
+  expect(artifactFiles.length).toBeGreaterThanOrEqual(12);
 });
