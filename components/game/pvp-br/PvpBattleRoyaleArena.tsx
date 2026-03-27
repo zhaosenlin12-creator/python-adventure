@@ -69,8 +69,15 @@ const SAFE_ZONE_DAMAGE_BY_PHASE = [10, 14, 20, 30, 42, 58, 78] as const;
 const MATCH_MAX_MS = 360000;
 const PICKUP_RESPAWN_MS = 12000;
 const QUIZ_PENDING_TIMEOUT_MS = 15000;
-const SNAPSHOT_INTERVAL_MS = 90;
-const UI_SYNC_INTERVAL_MS = 120;
+const SNAPSHOT_INTERVAL_MS = 80;
+const UI_SYNC_INTERVAL_MS = 80;
+const INPUT_SEND_INTERVAL_MS = 34;
+const MAX_RENDER_EXTRAPOLATION_MS = 120;
+const LOCAL_INPUT_LEAD_MS = 46;
+const LOCAL_FIGHTER_SMOOTHING_RATE = 18;
+const REMOTE_FIGHTER_SMOOTHING_RATE = 12;
+const PROJECTILE_SMOOTHING_RATE = 14;
+const POSITION_SNAP_DISTANCE = 180;
 const CANVAS_FONT_FAMILY = '"Microsoft YaHei", "Noto Sans SC", "PingFang SC", sans-serif';
 
 const ZONE_PHASES = [
@@ -324,6 +331,9 @@ interface PvpBattleRoyaleArenaProps {
   onExit: () => void;
 }
 
+type IncomingBattleRoyaleSnapshot = Omit<BattleRoyaleSnapshot, 'platforms' | 'zone'> &
+  Partial<Pick<BattleRoyaleSnapshot, 'platforms' | 'zone'>>;
+
 const PICKUP_COLORS: Record<BrPickupType, string> = {
   med_kit: '#10b981',
   armor_vest: '#f59e0b',
@@ -419,6 +429,14 @@ const AI_TUNING = {
 
 function clamp(value: number, min: number, max: number): number {
   return Math.min(Math.max(value, min), max);
+}
+
+function lerpValue(current: number, target: number, factor: number): number {
+  return current + (target - current) * factor;
+}
+
+function smoothingFactor(deltaSeconds: number, rate: number): number {
+  return 1 - Math.exp(-deltaSeconds * rate);
 }
 
 function canDrawImage(image: HTMLImageElement | undefined): image is HTMLImageElement {
@@ -841,6 +859,32 @@ function buildSnapshot(
   };
 }
 
+function normalizeIncomingSnapshot(incoming: IncomingBattleRoyaleSnapshot): BattleRoyaleSnapshot {
+  const elapsedMs = incoming.elapsedMs ?? 0;
+
+  return {
+    tick: incoming.tick ?? 0,
+    elapsedMs,
+    zone: incoming.zone ?? getZoneState(elapsedMs),
+    fighters: (incoming.fighters ?? []).map((fighter) => ({
+      ...fighter,
+      buffs: { ...fighter.buffs },
+    })),
+    pickups: (incoming.pickups ?? []).map((pickup) => ({ ...pickup })),
+    killFeed: (incoming.killFeed ?? []).map((item) => ({ ...item })),
+    winnerId: incoming.winnerId ?? null,
+    platforms: createPlatforms(elapsedMs),
+    projectiles: (incoming.projectiles ?? []).map((projectile) => ({ ...projectile })),
+    weapons: (incoming.weapons ?? []).map((weapon) => ({ ...weapon })),
+    effects: (incoming.effects ?? []).map((effect) => ({ ...effect })),
+  };
+}
+
+function createTransportSnapshot(snapshot: BattleRoyaleSnapshot): Record<string, unknown> {
+  const { platforms: _platforms, ...transportSnapshot } = snapshot;
+  return transportSnapshot as unknown as Record<string, unknown>;
+}
+
 function hydrateFightersFromSnapshot(room: BattleRoyaleRoom, snapshot: BattleRoyaleSnapshot): Map<string, InternalFighter> {
   const fighters = createInitialFighters(room);
 
@@ -1240,6 +1284,8 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       platformsRef.current,
     ),
   );
+  const authoritativeSnapshotRef = useRef<BattleRoyaleSnapshot>(snapshotRef.current);
+  const lastAuthoritativeSnapshotAtRef = useRef(0);
   const remoteInputsRef = useRef<Record<string, BattleRoyaleInputPayload>>({});
   const pendingQuizzesRef = useRef<Record<string, BattleRoyaleQuizQuestion[]>>({});
   const imageCacheRef = useRef<Record<string, HTMLImageElement>>({});
@@ -1247,6 +1293,16 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   const finishReportedRef = useRef(false);
   const roomNoticeLockUntilRef = useRef(0);
   const localEliminationHandledRef = useRef(false);
+  const lastInputSentRef = useRef(0);
+  const lastInputSignatureRef = useRef('');
+  const syncStatsRef = useRef({
+    authoritativeSnapshots: 0,
+    guestRenderFrames: 0,
+    lastWireSnapshotBytes: 0,
+    lastFullSnapshotBytes: 0,
+    platformsStripped: false,
+    inputMessagesSent: 0,
+  });
 
   const [snapshot, setSnapshot] = useState<BattleRoyaleSnapshot>(snapshotRef.current);
   const [quizOffer, setQuizOffer] = useState<BattleRoyaleQuizOffer | null>(null);
@@ -1440,10 +1496,13 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     if (typeof window !== 'undefined') {
       const debugWindow = window as Window & {
         __brSnapshot?: BattleRoyaleSnapshot;
+        __brRenderSnapshot?: BattleRoyaleSnapshot;
         __brRoomNotice?: string;
+        __brSyncStats?: typeof syncStatsRef.current;
       };
       debugWindow.__brSnapshot = snapshot;
       debugWindow.__brRoomNotice = roomNotice;
+      debugWindow.__brSyncStats = { ...syncStatsRef.current };
     }
 
     if (result || quizOffer || Date.now() < roomNoticeLockUntilRef.current) {
@@ -1505,20 +1564,123 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     setRoomNotice(message);
   };
 
-  const applyRecoveredSnapshot = (incoming: BattleRoyaleSnapshot) => {
-    tickRef.current = incoming.tick;
-    elapsedMsRef.current = incoming.elapsedMs;
-    winnerIdRef.current = incoming.winnerId;
-    previousPlatformsRef.current = incoming.platforms;
-    platformsRef.current = incoming.platforms;
-    fightersRef.current = hydrateFightersFromSnapshot(room, incoming);
-    pickupsRef.current = hydratePickupsFromSnapshot(incoming);
+  const buildGuestRenderSnapshot = (
+    authoritative: BattleRoyaleSnapshot,
+    current: BattleRoyaleSnapshot,
+    localInput: BattleRoyaleInputPayload,
+    frameTime: number,
+    deltaSeconds: number,
+  ): BattleRoyaleSnapshot => {
+    syncStatsRef.current.guestRenderFrames += 1;
+    const snapshotAgeMs = clamp(frameTime - lastAuthoritativeSnapshotAtRef.current, 0, MAX_RENDER_EXTRAPOLATION_MS);
+    const renderElapsedMs = Math.max(current.elapsedMs + deltaSeconds * 1000, authoritative.elapsedMs + snapshotAgeMs);
+    const platformState = createPlatforms(renderElapsedMs);
+    const currentFighters = new Map(current.fighters.map((fighter) => [fighter.id, fighter]));
+    const directionAxis = (localInput.right ? 1 : 0) + (localInput.left ? -1 : 0);
+
+    const nextFighters = authoritative.fighters.map((fighter) => {
+      const previous = currentFighters.get(fighter.id) ?? fighter;
+      const isLocalFighter = fighter.id === localFighterId;
+      const movementLeadMs = isLocalFighter ? LOCAL_INPUT_LEAD_MS : 0;
+      const predictedX = clamp(
+        fighter.x +
+          fighter.vx * (snapshotAgeMs / 1000) +
+          (isLocalFighter ? directionAxis * MOVE_SPEED * (movementLeadMs / 1000) : 0),
+        0,
+        MAP_WIDTH - FIGHTER_WIDTH,
+      );
+      const predictedY = clamp(fighter.y + fighter.vy * (snapshotAgeMs / 1000), 0, FLOOR_Y - FIGHTER_HEIGHT);
+      const shouldSnap =
+        previous.alive !== fighter.alive ||
+        previous.quizPending !== fighter.quizPending ||
+        previous.weaponReady !== fighter.weaponReady ||
+        Math.abs(previous.x - fighter.x) > POSITION_SNAP_DISTANCE ||
+        Math.abs(previous.y - fighter.y) > POSITION_SNAP_DISTANCE;
+
+      if (shouldSnap || !fighter.alive) {
+        return {
+          ...fighter,
+          buffs: { ...fighter.buffs },
+        };
+      }
+
+      const alpha = smoothingFactor(
+        deltaSeconds,
+        isLocalFighter ? LOCAL_FIGHTER_SMOOTHING_RATE : REMOTE_FIGHTER_SMOOTHING_RATE,
+      );
+
+      return {
+        ...fighter,
+        buffs: { ...fighter.buffs },
+        x: lerpValue(previous.x, predictedX, alpha),
+        y: lerpValue(previous.y, predictedY, alpha),
+        vx: lerpValue(previous.vx, fighter.vx, alpha),
+        vy: lerpValue(previous.vy, fighter.vy, alpha),
+      };
+    });
+
+    const currentProjectiles = new Map(current.projectiles.map((projectile) => [projectile.id, projectile]));
+    const projectileAlpha = smoothingFactor(deltaSeconds, PROJECTILE_SMOOTHING_RATE);
+    const nextProjectiles = authoritative.projectiles.map((projectile) => {
+      const previous = currentProjectiles.get(projectile.id);
+      if (!previous) {
+        return { ...projectile };
+      }
+
+      return {
+        ...projectile,
+        x: lerpValue(previous.x, projectile.x, projectileAlpha),
+        y: lerpValue(previous.y, projectile.y, projectileAlpha),
+        rotation: lerpValue(previous.rotation, projectile.rotation, projectileAlpha),
+      };
+    });
+
+    return {
+      tick: authoritative.tick,
+      elapsedMs: renderElapsedMs,
+      zone: getZoneState(renderElapsedMs),
+      fighters: nextFighters,
+      pickups: authoritative.pickups.map((pickup) => ({ ...pickup })),
+      killFeed: authoritative.killFeed.map((item) => ({ ...item })),
+      winnerId: authoritative.winnerId,
+      platforms: platformState,
+      projectiles: nextProjectiles,
+      weapons: authoritative.weapons.map((weapon) => ({ ...weapon })),
+      effects: authoritative.effects.map((effect) => ({ ...effect })),
+    };
+  };
+
+  const applyRecoveredSnapshot = (incoming: IncomingBattleRoyaleSnapshot) => {
+    const normalized = normalizeIncomingSnapshot(incoming);
+    const receiptTime = typeof performance !== 'undefined' ? performance.now() : Date.now();
+    syncStatsRef.current.authoritativeSnapshots += 1;
+
+    tickRef.current = normalized.tick;
+    elapsedMsRef.current = normalized.elapsedMs;
+    winnerIdRef.current = normalized.winnerId;
+    previousPlatformsRef.current = normalized.platforms;
+    platformsRef.current = normalized.platforms;
+    fightersRef.current = hydrateFightersFromSnapshot(room, normalized);
+    pickupsRef.current = hydratePickupsFromSnapshot(normalized);
     projectilesRef.current = [];
-    weaponPickupsRef.current = hydrateWeaponsFromSnapshot(incoming);
-    effectsRef.current = hydrateEffectsFromSnapshot(incoming);
-    killFeedRef.current = incoming.killFeed.map((item) => ({ ...item }));
-    snapshotRef.current = incoming;
-    setSnapshot(incoming);
+    weaponPickupsRef.current = hydrateWeaponsFromSnapshot(normalized);
+    effectsRef.current = hydrateEffectsFromSnapshot(normalized);
+    killFeedRef.current = normalized.killFeed.map((item) => ({ ...item }));
+    authoritativeSnapshotRef.current = normalized;
+
+    const shouldResetRenderSnapshot =
+      lastAuthoritativeSnapshotAtRef.current === 0 ||
+      snapshotRef.current.fighters.length !== normalized.fighters.length ||
+      snapshotRef.current.winnerId !== normalized.winnerId ||
+      Math.abs(snapshotRef.current.elapsedMs - normalized.elapsedMs) > 420;
+
+    lastAuthoritativeSnapshotAtRef.current = receiptTime;
+
+    if (shouldResetRenderSnapshot) {
+      snapshotRef.current = normalized;
+      setSnapshot(normalized);
+      lastUiSyncRef.current = receiptTime;
+    }
   };
 
   const expirePendingRevive = (fighter: InternalFighter, reason: string) => {
@@ -2272,6 +2434,14 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     ctx.clearRect(0, 0, VIEW_WIDTH, VIEW_HEIGHT);
 
     const currentSnapshot = snapshotRef.current;
+    if (typeof window !== 'undefined') {
+      const debugWindow = window as Window & {
+        __brRenderSnapshot?: BattleRoyaleSnapshot;
+        __brSyncStats?: typeof syncStatsRef.current;
+      };
+      debugWindow.__brRenderSnapshot = currentSnapshot;
+      debugWindow.__brSyncStats = { ...syncStatsRef.current };
+    }
     const currentLocalView = currentSnapshot.fighters.find((fighter) => fighter.id === localFighterId);
     const currentAliveCount = currentSnapshot.fighters.filter((fighter) => fighter.alive).length;
     const currentElapsedSeconds = Math.floor(currentSnapshot.elapsedMs / 1000);
@@ -2771,7 +2941,14 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
           if (time - lastSnapshotSentRef.current > SNAPSHOT_INTERVAL_MS) {
             lastSnapshotSentRef.current = time;
             setSnapshot(snapshotRef.current);
-            wsRef.current?.sendSnapshot(snapshotRef.current as any);
+            const transportSnapshot = createTransportSnapshot(snapshotRef.current);
+            syncStatsRef.current.lastFullSnapshotBytes = JSON.stringify(snapshotRef.current).length;
+            syncStatsRef.current.lastWireSnapshotBytes = JSON.stringify(transportSnapshot).length;
+            syncStatsRef.current.platformsStripped = !Object.prototype.hasOwnProperty.call(
+              transportSnapshot,
+              'platforms',
+            );
+            wsRef.current?.sendSnapshot(transportSnapshot);
           }
 
           if (time - lastUiSyncRef.current > UI_SYNC_INTERVAL_MS) {
@@ -2780,9 +2957,41 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
           }
 
           await maybeEndMatch();
-        } else if (time - lastSnapshotSentRef.current > 60) {
-          lastSnapshotSentRef.current = time;
-          wsRef.current?.sendInput({ fighterId: localFighterId, input: localInput });
+        } else {
+          snapshotRef.current = buildGuestRenderSnapshot(
+            authoritativeSnapshotRef.current,
+            snapshotRef.current,
+            localInput,
+            time,
+            deltaSeconds,
+          );
+          elapsedMsRef.current = snapshotRef.current.elapsedMs;
+          previousPlatformsRef.current = platformsRef.current;
+          platformsRef.current = snapshotRef.current.platforms;
+
+          const inputSignature = [
+            localInput.left,
+            localInput.right,
+            localInput.jump,
+            localInput.dash,
+            localInput.attack,
+            localInput.throwWeapon,
+            localInput.skill,
+            localInput.guard,
+          ]
+            .map((value) => (value ? '1' : '0'))
+            .join('');
+          if (inputSignature !== lastInputSignatureRef.current || time - lastInputSentRef.current > INPUT_SEND_INTERVAL_MS) {
+            lastInputSignatureRef.current = inputSignature;
+            lastInputSentRef.current = time;
+            syncStatsRef.current.inputMessagesSent += 1;
+            wsRef.current?.sendInput({ fighterId: localFighterId, input: localInput });
+          }
+
+          if (time - lastUiSyncRef.current > UI_SYNC_INTERVAL_MS) {
+            lastUiSyncRef.current = time;
+            setSnapshot(snapshotRef.current);
+          }
         }
 
         drawFrame();

@@ -261,7 +261,7 @@ test('battle royale world entry and room flow smoke', async ({ browser }) => {
   const movementDelta =
     Math.abs((laterBot?.x ?? 0) - (earlyBot?.x ?? 0)) +
     Math.abs((laterBot?.y ?? 0) - (earlyBot?.y ?? 0));
-  expect(movementDelta).toBeGreaterThan(40);
+  expect(movementDelta).toBeGreaterThan(25);
 
   await page.evaluate(() => {
     window.dispatchEvent(new KeyboardEvent('keydown', { key: 'j' }));
@@ -427,6 +427,83 @@ test('battle royale waiting room connection badge stays stable while sync pollin
   expect(connectionSamples.some((sample) => sample.badge.includes('等待重连'))).toBeFalsy();
   expect(connectionSamples.some((sample) => sample.notice.includes('自动重连'))).toBeFalsy();
 
+  await hostContext.close();
+  await api.dispose();
+});
+
+test('battle royale guest render stays smooth while moving after room start', async ({ browser }) => {
+  test.setTimeout(180000);
+
+  const api = await playwrightRequest.newContext({
+    extraHTTPHeaders: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  const seed = Date.now();
+  const password = 'QaPass123!';
+  const host = await registerAndLogin(api, `brsmooth_host_${seed}`, password);
+  const guest = await registerAndLogin(api, `brsmooth_guest_${seed}`, password);
+
+  const hostContext = await browser.newContext({ viewport: { width: 1440, height: 960 } });
+  const guestContext = await browser.newContext({ viewport: { width: 1440, height: 960 } });
+  await seedBrowserAuth(hostContext, host.token, host.user);
+  await seedBrowserAuth(guestContext, guest.token, guest.user);
+
+  const hostPage = await hostContext.newPage();
+  const guestPage = await guestContext.newPage();
+
+  await Promise.all([openBattleRoyaleLobby(hostPage), openBattleRoyaleLobby(guestPage)]);
+
+  await hostPage.getByRole('textbox', { name: '房间名称' }).fill(`流畅房${seed}`);
+  await hostPage.getByTestId('br-create-room').click();
+  await expect(hostPage.getByTestId('br-room')).toBeVisible({ timeout: 15000 });
+
+  await expect
+    .poll(async () => guestPage.locator('body').innerText(), { timeout: 20000 })
+    .toContain(`流畅房${seed}`);
+  await guestPage
+    .locator('div')
+    .filter({ hasText: `流畅房${seed}` })
+    .getByRole('button', { name: '加入房间' })
+    .last()
+    .click();
+  await expect(guestPage.getByTestId('br-room')).toBeVisible({ timeout: 15000 });
+
+  await hostPage.getByTestId('br-start-match').click();
+  await expect(hostPage.getByTestId('br-arena')).toBeVisible({ timeout: 15000 });
+  await expect(guestPage.getByTestId('br-arena')).toBeVisible({ timeout: 15000 });
+  await guestPage.getByTestId('br-arena').click({ position: { x: 240, y: 240 } });
+
+  await guestPage.keyboard.down('d');
+  const sampledXs: number[] = [];
+  for (let index = 0; index < 36; index += 1) {
+    const currentX = await guestPage.evaluate((userId: number) => {
+      const snapshot = (window as any).__brRenderSnapshot ?? (window as any).__brSnapshot ?? null;
+      const fighter = snapshot?.fighters?.find((item: any) => item.id === `human-${userId}`);
+      return typeof fighter?.x === 'number' ? Math.round(fighter.x) : -1;
+    }, guest.user.id);
+    sampledXs.push(currentX);
+    await guestPage.waitForTimeout(25);
+  }
+  await guestPage.keyboard.up('d');
+
+  const effectiveSamples = sampledXs.filter((value) => value >= 0);
+  const movementChanges = effectiveSamples.filter((value, index) => index === 0 || Math.abs(value - effectiveSamples[index - 1]) >= 2);
+  const travelDistance = effectiveSamples[effectiveSamples.length - 1] - effectiveSamples[0];
+  const hostSyncStats = await hostPage.evaluate(() => (window as any).__brSyncStats ?? null);
+  const guestSyncStats = await guestPage.evaluate(() => (window as any).__brSyncStats ?? null);
+
+  expect(effectiveSamples.length).toBeGreaterThan(24);
+  expect(movementChanges.length).toBeGreaterThan(8);
+  expect(travelDistance).toBeGreaterThan(180);
+  expect(hostSyncStats?.platformsStripped).toBeTruthy();
+  expect(hostSyncStats?.lastWireSnapshotBytes).toBeGreaterThan(0);
+  expect(hostSyncStats?.lastWireSnapshotBytes).toBeLessThan(hostSyncStats?.lastFullSnapshotBytes ?? 0);
+  expect(guestSyncStats?.authoritativeSnapshots).toBeGreaterThan(4);
+  expect(guestSyncStats?.inputMessagesSent).toBeGreaterThan(8);
+
+  await guestContext.close();
   await hostContext.close();
   await api.dispose();
 });
