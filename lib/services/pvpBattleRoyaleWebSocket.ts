@@ -9,15 +9,21 @@ interface BattleRoyaleWebSocketConfig {
   onMessage?: RoyaleMessageHandler;
   onConnect?: () => void;
   onDisconnect?: () => void;
+  onReconnectAttempt?: (attempt: number, delayMs: number) => void;
   onError?: (event: Event) => void;
+  disconnectGraceMs?: number;
+  reconnectBaseDelayMs?: number;
+  reconnectMaxDelayMs?: number;
 }
 
 export class BattleRoyaleWebSocketClient {
   private ws: WebSocket | null = null;
   private reconnectTimer: ReturnType<typeof setTimeout> | null = null;
   private heartbeatTimer: ReturnType<typeof setInterval> | null = null;
+  private disconnectTimer: ReturnType<typeof setTimeout> | null = null;
   private readonly config: BattleRoyaleWebSocketConfig;
   private manualClose = false;
+  private reconnectAttempts = 0;
 
   constructor(config: BattleRoyaleWebSocketConfig) {
     this.config = config;
@@ -27,6 +33,7 @@ export class BattleRoyaleWebSocketClient {
     if (this.ws && (this.ws.readyState === WebSocket.OPEN || this.ws.readyState === WebSocket.CONNECTING)) {
       return;
     }
+    this.clearReconnectTimer();
 
     const token = useAuthStore.getState().token;
     if (!token) {
@@ -38,14 +45,21 @@ export class BattleRoyaleWebSocketClient {
     )}?token=${encodeURIComponent(token)}`;
 
     this.manualClose = false;
-    this.ws = new WebSocket(wsUrl);
+    const socket = new WebSocket(wsUrl);
+    this.ws = socket;
 
-    this.ws.onopen = () => {
+    socket.onopen = () => {
+      if (this.ws !== socket) {
+        return;
+      }
+      this.clearDisconnectTimer();
+      this.clearReconnectTimer();
+      this.reconnectAttempts = 0;
       this.startHeartbeat();
       this.config.onConnect?.();
     };
 
-    this.ws.onmessage = (event) => {
+    socket.onmessage = (event) => {
       try {
         const message = JSON.parse(event.data);
         this.config.onMessage?.(message);
@@ -54,31 +68,34 @@ export class BattleRoyaleWebSocketClient {
       }
     };
 
-    this.ws.onerror = (event) => {
+    socket.onerror = (event) => {
       this.config.onError?.(event);
     };
 
-    this.ws.onclose = () => {
+    socket.onclose = () => {
+      if (this.ws !== socket) {
+        return;
+      }
       this.stopHeartbeat();
       this.ws = null;
-      this.config.onDisconnect?.();
 
-      if (!this.manualClose) {
-        this.reconnectTimer = setTimeout(() => this.connect(), 2000);
+      if (this.manualClose) {
+        this.clearDisconnectTimer();
+        return;
       }
+
+      this.scheduleDisconnectNotice();
+      this.scheduleReconnect();
     };
   }
 
   disconnect() {
     this.manualClose = true;
     this.stopHeartbeat();
-    if (this.reconnectTimer) {
-      clearTimeout(this.reconnectTimer);
-      this.reconnectTimer = null;
-    }
+    this.clearDisconnectTimer();
+    this.clearReconnectTimer();
     if (this.ws) {
       this.ws.close();
-      this.ws = null;
     }
   }
 
@@ -93,6 +110,47 @@ export class BattleRoyaleWebSocketClient {
     if (this.heartbeatTimer) {
       clearInterval(this.heartbeatTimer);
       this.heartbeatTimer = null;
+    }
+  }
+
+  private scheduleReconnect() {
+    this.clearReconnectTimer();
+    const attempt = this.reconnectAttempts + 1;
+    const baseDelay = this.config.reconnectBaseDelayMs ?? 900;
+    const maxDelay = this.config.reconnectMaxDelayMs ?? 8000;
+    const delayMs = Math.min(Math.round(baseDelay * Math.pow(1.8, this.reconnectAttempts)), maxDelay);
+    this.reconnectAttempts = attempt;
+    this.config.onReconnectAttempt?.(attempt, delayMs);
+    this.reconnectTimer = setTimeout(() => {
+      this.reconnectTimer = null;
+      this.connect();
+    }, delayMs);
+  }
+
+  private scheduleDisconnectNotice() {
+    if (this.disconnectTimer) {
+      return;
+    }
+    const delayMs = this.config.disconnectGraceMs ?? 1800;
+    this.disconnectTimer = setTimeout(() => {
+      this.disconnectTimer = null;
+      if (!this.manualClose && !this.ws) {
+        this.config.onDisconnect?.();
+      }
+    }, delayMs);
+  }
+
+  private clearReconnectTimer() {
+    if (this.reconnectTimer) {
+      clearTimeout(this.reconnectTimer);
+      this.reconnectTimer = null;
+    }
+  }
+
+  private clearDisconnectTimer() {
+    if (this.disconnectTimer) {
+      clearTimeout(this.disconnectTimer);
+      this.disconnectTimer = null;
     }
   }
 

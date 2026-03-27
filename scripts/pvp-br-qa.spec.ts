@@ -385,3 +385,48 @@ test('battle royale host start syncs guest and guest can recover after reload', 
   await hostContext.close();
   await api.dispose();
 });
+
+test('battle royale waiting room connection badge stays stable while sync polling runs', async ({ browser }) => {
+  test.setTimeout(120000);
+
+  const api = await playwrightRequest.newContext({
+    extraHTTPHeaders: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  const seed = Date.now();
+  const password = 'QaPass123!';
+  const host = await registerAndLogin(api, `brstable_host_${seed}`, password);
+
+  const hostContext = await browser.newContext({ viewport: { width: 1440, height: 960 } });
+  await seedBrowserAuth(hostContext, host.token, host.user);
+
+  const hostPage = await hostContext.newPage();
+  await openBattleRoyaleLobby(hostPage);
+
+  await hostPage.getByRole('textbox', { name: '房间名称' }).fill(`稳定等待房${seed}`);
+  await hostPage.getByTestId('br-create-room').click();
+  await expect(hostPage.getByTestId('br-room')).toBeVisible({ timeout: 15000 });
+  await expect(hostPage.getByTestId('br-room-connection-badge')).toContainText('实时同步中', { timeout: 15000 });
+
+  const connectionSamples = await hostPage.evaluate(async () => {
+    const samples: Array<{ badge: string; notice: string }> = [];
+    const startedAt = performance.now();
+
+    while (performance.now() - startedAt < 9800) {
+      const badge = document.querySelector('[data-testid="br-room-connection-badge"]')?.textContent?.trim() ?? '';
+      const notice = document.querySelector('[data-testid="br-room-notice"]')?.textContent?.trim() ?? '';
+      samples.push({ badge, notice });
+      await new Promise((resolve) => window.setTimeout(resolve, 50));
+    }
+
+    return samples;
+  });
+
+  expect(connectionSamples.some((sample) => sample.badge.includes('等待重连'))).toBeFalsy();
+  expect(connectionSamples.some((sample) => sample.notice.includes('自动重连'))).toBeFalsy();
+
+  await hostContext.close();
+  await api.dispose();
+});

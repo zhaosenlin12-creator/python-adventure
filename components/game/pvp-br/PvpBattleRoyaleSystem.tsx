@@ -91,6 +91,11 @@ export default function PvpBattleRoyaleSystem({ isOpen, onClose }: PvpBattleRoya
     window.dispatchEvent(new Event('modal-closed'));
   }, [onClose, reset]);
 
+  const handleRoomStart = useCallback((room: BattleRoyaleRoom) => {
+    setCurrentRoom(room);
+    setPhase('arena');
+  }, [setCurrentRoom]);
+
   if (!isOpen) return null;
 
   if (isRecovering && !currentRoom) {
@@ -106,10 +111,7 @@ export default function PvpBattleRoyaleSystem({ isOpen, onClose }: PvpBattleRoya
       <PvpBattleRoyaleRoom
         room={currentRoom}
         onLeave={handleClose}
-        onStart={(room) => {
-          setCurrentRoom(room);
-          setPhase('arena');
-        }}
+        onStart={handleRoomStart}
       />
     );
   }

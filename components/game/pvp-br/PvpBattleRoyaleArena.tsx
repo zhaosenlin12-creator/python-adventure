@@ -1321,6 +1321,12 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   }, [room]);
 
   useEffect(() => {
+    return () => {
+      setWsConnected(false);
+    };
+  }, [setWsConnected]);
+
+  useEffect(() => {
     if (!currentUserId) {
       return;
     }
@@ -1427,7 +1433,6 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     return () => {
       client.disconnect();
       wsRef.current = null;
-      setWsConnected(false);
     };
   }, [currentUserId, isHost, localFighterId, onExit, resetBattleRoyaleStore, room.id, setCurrentRoom, setWsConnected]);
 

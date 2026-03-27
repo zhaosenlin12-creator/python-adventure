@@ -33,11 +33,19 @@ const difficultyOptions: Array<{ value: BattleRoyaleDifficulty; label: string; d
   { value: 'hard', label: '困难', description: '压迫更强，出手更频繁。' },
 ];
 
+const ROOM_READY_NOTICE = '房间同步已就绪，房主开始后所有玩家会自动进入战场。';
+const ROOM_RECOVERED_NOTICE = '房间实时同步已恢复，可以继续等待房主开战。';
+const ROOM_RECONNECTING_NOTICE = '房间连接暂时中断，系统正在自动重连。如超过几秒仍未恢复，请退出后重新进入。';
+
 export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattleRoyaleRoomProps) {
   const [selectedDifficulty, setSelectedDifficulty] = useState<BattleRoyaleDifficulty>('easy');
   const [busyAction, setBusyAction] = useState<'leave' | 'start' | 'bot' | null>(null);
-  const [roomNotice, setRoomNotice] = useState('房间同步已就绪，房主开始后所有玩家会自动进入战场。');
+  const [roomNotice, setRoomNotice] = useState(ROOM_READY_NOTICE);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const onLeaveRef = useRef(onLeave);
+  const onStartRef = useRef(onStart);
+  const hasConnectedOnceRef = useRef(false);
+  const reconnectNoticeVisibleRef = useRef(false);
 
   const currentUserId = useAuthStore((state) => state.user?.id ?? null);
   const currentRoom = usePvpBattleRoyaleStore((state) => state.currentRoom);
@@ -61,12 +69,26 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
   const botCards = useMemo(() => effectiveRoom.bots, [effectiveRoom.bots]);
 
   useEffect(() => {
+    onLeaveRef.current = onLeave;
+  }, [onLeave]);
+
+  useEffect(() => {
+    onStartRef.current = onStart;
+  }, [onStart]);
+
+  useEffect(() => {
     return () => {
       if (closeTimerRef.current) {
         clearTimeout(closeTimerRef.current);
       }
     };
   }, []);
+
+  useEffect(() => {
+    return () => {
+      setWsConnected(false);
+    };
+  }, [setWsConnected]);
 
   useEffect(() => {
     if (!currentUserId) {
@@ -78,18 +100,29 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
       userId: currentUserId,
       onConnect: () => {
         setWsConnected(true);
-        setRoomNotice('房间同步已连接，房主开始后会自动跳转到战场。');
+        if (!hasConnectedOnceRef.current) {
+          hasConnectedOnceRef.current = true;
+          if (!reconnectNoticeVisibleRef.current) {
+            return;
+          }
+        }
+        if (!reconnectNoticeVisibleRef.current) {
+          return;
+        }
+        reconnectNoticeVisibleRef.current = false;
+        setRoomNotice((current) => (current === ROOM_RECOVERED_NOTICE ? current : ROOM_RECOVERED_NOTICE));
       },
       onDisconnect: () => {
         setWsConnected(false);
-        setRoomNotice('房间连接暂时中断，系统正在自动重连。如长时间未恢复，请退出后重新进入。');
+        reconnectNoticeVisibleRef.current = true;
+        setRoomNotice((current) => (current === ROOM_RECONNECTING_NOTICE ? current : ROOM_RECONNECTING_NOTICE));
       },
       onMessage: (message) => {
         if (message.type === 'connected' && message.room) {
           const nextRoom = message.room as BattleRoyaleRoom;
           setCurrentRoom(nextRoom);
           if (nextRoom.status === 'in_progress') {
-            onStart(nextRoom);
+            onStartRef.current(nextRoom);
           }
           return;
         }
@@ -102,19 +135,21 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
         if (message.type === 'br_room_started' && message.room) {
           const startedRoom = message.room as BattleRoyaleRoom;
           setCurrentRoom(startedRoom);
+          reconnectNoticeVisibleRef.current = false;
           setRoomNotice('战斗已开始，正在进入战场...');
-          onStart(startedRoom);
+          onStartRef.current(startedRoom);
           return;
         }
 
         if (message.type === 'br_room_closed') {
+          reconnectNoticeVisibleRef.current = false;
           setRoomNotice(message.reason || '房间已关闭，正在返回大厅。');
           setCurrentRoom(null);
           if (closeTimerRef.current) {
             clearTimeout(closeTimerRef.current);
           }
           closeTimerRef.current = setTimeout(() => {
-            onLeave();
+            onLeaveRef.current();
           }, 1200);
         }
       },
@@ -124,9 +159,8 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
 
     return () => {
       client.disconnect();
-      setWsConnected(false);
     };
-  }, [currentUserId, effectiveRoom.id, onLeave, onStart, setCurrentRoom, setWsConnected]);
+  }, [currentUserId, effectiveRoom.id, setCurrentRoom, setWsConnected]);
 
   useEffect(() => {
     let cancelled = false;
@@ -137,25 +171,25 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
         return;
       }
       if (nextRoom.status === 'in_progress') {
-        onStart(nextRoom);
+        onStartRef.current(nextRoom);
       }
     };
 
     const interval = setInterval(() => {
       void poll();
-    }, 2800);
+    }, wsConnected ? 9000 : 2800);
 
     return () => {
       cancelled = true;
       clearInterval(interval);
     };
-  }, [onStart, refreshCurrentRoom]);
+  }, [refreshCurrentRoom, wsConnected]);
 
   const handleLeave = async () => {
     setBusyAction('leave');
     try {
       await leaveCurrentRoom();
-      onLeave();
+      onLeaveRef.current();
     } finally {
       setBusyAction(null);
     }
@@ -183,8 +217,9 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
     setBusyAction('start');
     try {
       const startedRoom = await startCurrentRoom();
+      reconnectNoticeVisibleRef.current = false;
       setRoomNotice('战斗已开始，正在进入战场...');
-      onStart(startedRoom);
+      onStartRef.current(startedRoom);
     } finally {
       setBusyAction(null);
     }
@@ -212,7 +247,10 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
                   <span className="rounded-full border border-cyan-300/20 bg-cyan-500/10 px-3 py-1 text-sm font-semibold text-cyan-100">
                     房号 {effectiveRoom.id}
                   </span>
-                  <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-sm text-slate-200">
+                  <span
+                    data-testid="br-room-connection-badge"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-sm text-slate-200"
+                  >
                     {wsConnected ? <Wifi className="h-4 w-4 text-emerald-300" /> : <WifiOff className="h-4 w-4 text-amber-300" />}
                     {wsConnected ? '实时同步中' : '等待重连'}
                   </span>
@@ -370,7 +408,10 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
             <aside className="space-y-6">
               <section className="rounded-[28px] border border-white/10 bg-white/[0.04] p-5">
                 <div className="text-lg font-bold text-white">等待室提醒</div>
-                <div className="mt-4 rounded-2xl border border-cyan-300/15 bg-cyan-500/10 px-4 py-3 text-sm leading-6 text-cyan-50">
+                <div
+                  data-testid="br-room-notice"
+                  className="mt-4 rounded-2xl border border-cyan-300/15 bg-cyan-500/10 px-4 py-3 text-sm leading-6 text-cyan-50"
+                >
                   {roomNotice}
                 </div>
                 <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-300">
