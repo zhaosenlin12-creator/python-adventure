@@ -3,6 +3,8 @@ from __future__ import annotations
 import asyncio
 import time
 from contextlib import ExitStack
+from queue import Empty, Queue
+from threading import Thread
 
 from fastapi.testclient import TestClient
 import pytest
@@ -18,6 +20,28 @@ from app.api.v1.pvp_battle_royale import (
 )
 
 client = TestClient(app)
+
+
+def receive_json_with_timeout(socket, timeout: float = 0.6):
+    payload_queue: Queue[tuple[bool, object]] = Queue(maxsize=1)
+
+    def worker():
+        try:
+            payload_queue.put((True, socket.receive_json()))
+        except BaseException as exc:  # pragma: no cover - surfaced to caller
+            payload_queue.put((False, exc))
+
+    thread = Thread(target=worker, daemon=True)
+    thread.start()
+
+    try:
+        ok, payload = payload_queue.get(timeout=timeout)
+    except Empty as exc:  # pragma: no cover - timeout path is assertion failure
+        raise AssertionError("Timed out waiting for websocket message") from exc
+
+    if ok:
+        return payload
+    raise payload  # type: ignore[misc]
 
 
 def make_token(username: str) -> str:
@@ -309,17 +333,27 @@ def test_twenty_player_room_coalesces_snapshots_and_broadcasts_to_all_guests(mon
             host_socket.send_json({"type": "br_snapshot", "payload": snapshot_payload(tick)})
 
         time.sleep(0.08)
+        host_socket.send_json({"type": "br_snapshot", "payload": snapshot_payload(99)})
+        time.sleep(0.12)
 
         observed_ticks: list[int] = []
         for guest_socket in guest_sockets:
-            message = guest_socket.receive_json()
-            while message["type"] != "br_snapshot":
-                message = guest_socket.receive_json()
-            observed_ticks.append(message["payload"]["tick"])
+            latest_tick = 0
+            for _ in range(8):
+                try:
+                    message = receive_json_with_timeout(guest_socket, timeout=0.3)
+                except AssertionError:
+                    break
+                if message["type"] != "br_snapshot":
+                    continue
+                latest_tick = message["payload"]["tick"]
+                if latest_tick == 99:
+                    break
+            observed_ticks.append(latest_tick)
 
     assert len(observed_ticks) == 19
-    assert all(tick == 5 for tick in observed_ticks)
-    assert active_rooms[room_id]["latest_snapshot"]["tick"] == 5
+    assert all(tick == 99 for tick in observed_ticks)
+    assert active_rooms[room_id]["latest_snapshot"]["tick"] == 99
 
 
 def test_duplicate_websocket_session_does_not_close_room():

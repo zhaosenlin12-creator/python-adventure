@@ -34,8 +34,8 @@ const difficultyOptions: Array<{ value: BattleRoyaleDifficulty; label: string; d
 ];
 
 const ROOM_READY_NOTICE = '房间同步已就绪，房主开始后所有玩家会自动进入战场。';
-const ROOM_RECOVERED_NOTICE = '房间实时同步已恢复，可以继续等待房主开战。';
-const ROOM_RECONNECTING_NOTICE = '房间连接暂时中断，系统正在自动重连。如超过几秒仍未恢复，请退出后重新进入。';
+const ROOM_RECOVERED_NOTICE = '连接已恢复，可以继续等待房主开战。';
+const ROOM_RECONNECTING_NOTICE = '连接波动，系统正在自动重连。';
 
 export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattleRoyaleRoomProps) {
   const [selectedDifficulty, setSelectedDifficulty] = useState<BattleRoyaleDifficulty>('easy');
@@ -98,6 +98,9 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
     const client = new BattleRoyaleWebSocketClient({
       roomId: effectiveRoom.id,
       userId: currentUserId,
+      disconnectGraceMs: 2400,
+      reconnectBaseDelayMs: 650,
+      reconnectMaxDelayMs: 2800,
       onConnect: () => {
         setWsConnected(true);
         if (!hasConnectedOnceRef.current) {
@@ -249,10 +252,10 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
                   </span>
                   <span
                     data-testid="br-room-connection-badge"
-                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-sm text-slate-200"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs text-slate-200"
                   >
-                    {wsConnected ? <Wifi className="h-4 w-4 text-emerald-300" /> : <WifiOff className="h-4 w-4 text-amber-300" />}
-                    {wsConnected ? '实时同步中' : '等待重连'}
+                    {wsConnected ? <Wifi className="h-3.5 w-3.5 text-emerald-300" /> : <WifiOff className="h-3.5 w-3.5 text-amber-300" />}
+                    {wsConnected ? '连接稳定' : '重连中'}
                   </span>
                 </div>
                 <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300">

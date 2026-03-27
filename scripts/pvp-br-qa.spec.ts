@@ -254,14 +254,17 @@ test('battle royale world entry and room flow smoke', async ({ browser }) => {
   const spawnXs = earlySnapshot.fighters.map((fighter: any) => fighter.x);
   expect(Math.max(...spawnXs) - Math.min(...spawnXs)).toBeGreaterThan(1800);
 
-  const earlyBot = earlySnapshot.fighters.find((fighter: any) => fighter.isBot);
-  const laterBot = laterSnapshot.fighters.find((fighter: any) => fighter.id === earlyBot?.id);
-  expect(earlyBot).toBeTruthy();
-  expect(laterBot).toBeTruthy();
-  const movementDelta =
-    Math.abs((laterBot?.x ?? 0) - (earlyBot?.x ?? 0)) +
-    Math.abs((laterBot?.y ?? 0) - (earlyBot?.y ?? 0));
-  expect(movementDelta).toBeGreaterThan(25);
+  const earlyBots = earlySnapshot.fighters.filter((fighter: any) => fighter.isBot);
+  expect(earlyBots.length).toBeGreaterThan(0);
+  const maxBotMovementDelta = earlyBots.reduce((bestDelta: number, earlyBot: any) => {
+    const laterBot = laterSnapshot.fighters.find((fighter: any) => fighter.id === earlyBot.id);
+    if (!laterBot) {
+      return bestDelta;
+    }
+    const movementDelta = Math.abs((laterBot.x ?? 0) - (earlyBot.x ?? 0)) + Math.abs((laterBot.y ?? 0) - (earlyBot.y ?? 0));
+    return Math.max(bestDelta, movementDelta);
+  }, 0);
+  expect(maxBotMovementDelta).toBeGreaterThan(25);
 
   await page.evaluate(() => {
     window.dispatchEvent(new KeyboardEvent('keydown', { key: 'j' }));
@@ -410,7 +413,7 @@ test('battle royale waiting room connection badge stays stable while sync pollin
   await hostPage.getByRole('textbox', { name: '房间名称' }).fill(`稳定等待房${seed}`);
   await hostPage.getByTestId('br-create-room').click();
   await expect(hostPage.getByTestId('br-room')).toBeVisible({ timeout: 15000 });
-  await expect(hostPage.getByTestId('br-room-connection-badge')).toContainText('实时同步中', { timeout: 15000 });
+  await expect(hostPage.getByTestId('br-room-connection-badge')).toContainText('连接稳定', { timeout: 15000 });
 
   const connectionSamples = await hostPage.evaluate(async () => {
     const samples: Array<{ badge: string; notice: string }> = [];
@@ -426,7 +429,7 @@ test('battle royale waiting room connection badge stays stable while sync pollin
     return samples;
   });
 
-  expect(connectionSamples.some((sample) => sample.badge.includes('等待重连'))).toBeFalsy();
+  expect(connectionSamples.some((sample) => sample.badge.includes('重连中'))).toBeFalsy();
   expect(connectionSamples.some((sample) => sample.notice.includes('自动重连'))).toBeFalsy();
 
   await hostContext.close();

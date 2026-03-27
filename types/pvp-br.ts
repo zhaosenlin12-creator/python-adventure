@@ -116,6 +116,8 @@ export interface BattleRoyaleFighterView {
   hasRevived: boolean;
   reviveUsed?: boolean;
   quizPending?: boolean;
+  damageDealt?: number;
+  survivedMs?: number;
   specialCharges: number;
   buffs: Partial<Record<BrPickupType, number>>;
   weaponReady: boolean;
@@ -217,6 +219,7 @@ export interface BattleRoyaleResult {
   winnerName: string;
   placement: number;
   kills: number;
+  damageDealt: number;
   revived: boolean;
   survivedMs: number;
 }
