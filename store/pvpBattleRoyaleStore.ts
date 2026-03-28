@@ -39,7 +39,7 @@ interface BattleRoyaleState {
 }
 
 const initialState = {
-  cap: 20,
+  cap: 8,
   rooms: [] as BattleRoyaleRoom[],
   currentRoom: null as BattleRoyaleRoom | null,
   isLoading: false,
@@ -97,6 +97,12 @@ function translateBattleRoyaleError(message: string): string {
   }
   if (normalized.includes('battle royale request failed')) {
     return '生存乱斗请求失败，请稍后重试。';
+  }
+  if (normalized.includes('battle royale server is busy')) {
+    return '当前服务器正在处理另一场生存乱斗，请稍候几分钟后再开始新对局。';
+  }
+  if (normalized.includes('battle royale waiting room limit reached')) {
+    return '当前等待中的乱斗房间已经较多，请先加入现有房间，或稍后再创建新房间。';
   }
 
   return message;

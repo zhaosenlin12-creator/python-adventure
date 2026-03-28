@@ -26,7 +26,7 @@ interface PvpBattleRoyaleLobbyProps {
 export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattleRoyaleLobbyProps) {
   const [tab, setTab] = useState<'create' | 'join'>('create');
   const [roomName, setRoomName] = useState('宠物生存乱斗');
-  const [maxPlayers, setMaxPlayers] = useState(12);
+  const [maxPlayers, setMaxPlayers] = useState(6);
 
   const currentPet = usePetStore((state) => state.currentPet);
   const cap = usePvpBattleRoyaleStore((state) => state.cap);
@@ -57,7 +57,7 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
     void fetchRooms();
     const interval = setInterval(() => {
       void fetchRooms();
-    }, 3000);
+    }, 8000);
 
     return () => {
       clearInterval(interval);
@@ -107,7 +107,7 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
                 <h2 className="text-3xl font-black tracking-tight text-white sm:text-4xl">宠物生存乱斗</h2>
                 <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">
                   带着当前跟随宠物进入大地图乱斗。随着毒圈推进搜集护甲、护盾、武器和技能，活到最后赢下比赛。
-                  当前玩法支持最多 20 人同场对战。房间人数越高，对房主设备和局域网环境要求越高，建议根据现场设备状态灵活控制人数。
+                  当前服务器已切换到稳定上线模式，单房最多支持 8 人同场。为了保证整台服务器和其他站点稳定，建议优先控制在 4 到 6 人。
                 </p>
               </div>
               <button
@@ -206,7 +206,7 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
                     </label>
 
                     <div className="rounded-2xl border border-amber-400/20 bg-amber-500/10 px-4 py-3 text-sm leading-6 text-amber-100">
-                      房主可以在等待室逐个添加不同难度的人机。为了保证这台服务器的在线稳定性，建议单房不要超过 20 人。
+                      房主可以在等待室逐个添加不同难度的人机。为了保证当前服务器稳定，建议单房控制在 4 到 6 人；系统硬上限为 8 人。
                     </div>
 
                     <button

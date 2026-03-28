@@ -119,7 +119,7 @@ def test_create_and_list_battle_royale_room():
         json={
             **participant_payload("host-a"),
             "room_name": "twilight-den",
-            "max_players": 12,
+            "max_players": 8,
         },
     )
     assert create.status_code == 200, create.text
@@ -134,7 +134,7 @@ def test_create_and_list_battle_royale_room():
     rooms = listing.json()["rooms"]
     assert len(rooms) == 1
     assert rooms[0]["id"] == room["id"]
-    assert listing.json()["cap"] == 20
+    assert listing.json()["cap"] == 8
 
 
 def test_join_add_bot_remove_bot_and_start():
@@ -184,7 +184,7 @@ def test_join_add_bot_remove_bot_and_start():
     assert start.json()["room"]["status"] == "in_progress"
 
 
-def test_room_capacity_is_limited_to_20():
+def test_room_capacity_is_limited_to_8():
     host_token = make_token("br_host_c")
 
     response = client.post(
@@ -193,16 +193,97 @@ def test_room_capacity_is_limited_to_20():
         json={
             **participant_payload("host-c"),
             "room_name": "too-big",
-            "max_players": 30,
+            "max_players": 9,
         },
     )
     assert response.status_code == 422
 
 
-def test_twenty_player_room_coalesces_snapshots_and_broadcasts_to_all_guests(monkeypatch: pytest.MonkeyPatch):
+def test_waiting_room_count_is_capped():
+    for index in range(4):
+        host_token = make_token(f"br_waiting_host_{index}")
+        create = client.post(
+            "/api/v1/pvp-br/rooms/create",
+            headers=auth_headers(host_token),
+            json={
+                **participant_payload(f"waiting-host-{index}"),
+                "room_name": f"waiting-{index}",
+                "max_players": 4,
+            },
+        )
+        assert create.status_code == 200, create.text
+
+    overflow_host = make_token("br_waiting_host_overflow")
+    overflow = client.post(
+        "/api/v1/pvp-br/rooms/create",
+        headers=auth_headers(overflow_host),
+        json={
+            **participant_payload("waiting-over"),
+            "room_name": "waiting-overflow",
+            "max_players": 4,
+        },
+    )
+    assert overflow.status_code == 503
+    assert overflow.json()["detail"] == "Battle Royale waiting room limit reached"
+
+
+def test_only_one_room_can_be_in_progress_at_a_time():
+    first_host = make_token("br_progress_host_a")
+    first_guest = make_token("br_progress_guest_a")
+    second_host = make_token("br_progress_host_b")
+    second_guest = make_token("br_progress_guest_b")
+
+    first_create = client.post(
+        "/api/v1/pvp-br/rooms/create",
+        headers=auth_headers(first_host),
+        json={
+            **participant_payload("progress-host-a"),
+            "room_name": "progress-a",
+            "max_players": 4,
+        },
+    )
+    first_room_id = first_create.json()["room"]["id"]
+    first_join = client.post(
+        f"/api/v1/pvp-br/rooms/{first_room_id}/join",
+        headers=auth_headers(first_guest),
+        json=participant_payload("progress-guest-a"),
+    )
+    assert first_join.status_code == 200, first_join.text
+    first_start = client.post(
+        f"/api/v1/pvp-br/rooms/{first_room_id}/start",
+        headers=auth_headers(first_host),
+    )
+    assert first_start.status_code == 200, first_start.text
+
+    second_create = client.post(
+        "/api/v1/pvp-br/rooms/create",
+        headers=auth_headers(second_host),
+        json={
+            **participant_payload("progress-host-b"),
+            "room_name": "progress-b",
+            "max_players": 4,
+        },
+    )
+    second_room_id = second_create.json()["room"]["id"]
+    second_join = client.post(
+        f"/api/v1/pvp-br/rooms/{second_room_id}/join",
+        headers=auth_headers(second_guest),
+        json=participant_payload("progress-guest-b"),
+    )
+    assert second_join.status_code == 200, second_join.text
+
+    second_start = client.post(
+        f"/api/v1/pvp-br/rooms/{second_room_id}/start",
+        headers=auth_headers(second_host),
+    )
+    assert second_start.status_code == 503
+    assert second_start.json()["detail"] == "Battle Royale server is busy"
+
+
+def test_eight_player_room_coalesces_snapshots_and_broadcasts_to_all_guests(monkeypatch: pytest.MonkeyPatch):
     monkeypatch.setattr(br_api, "SERVER_SNAPSHOT_INTERVAL_SECONDS", 0.02)
 
-    player_tokens = [make_token(f"br_load_{index}") for index in range(20)]
+    player_tokens = [make_token(f"br_load_{index}") for index in range(8)]
     host_token = player_tokens[0]
 
     create = client.post(
@@ -211,7 +292,7 @@ def test_twenty_player_room_coalesces_snapshots_and_broadcasts_to_all_guests(mon
         json={
             **participant_payload("load-host"),
             "room_name": "load-room",
-            "max_players": 20,
+            "max_players": 8,
         },
     )
     assert create.status_code == 200, create.text
@@ -351,7 +432,7 @@ def test_twenty_player_room_coalesces_snapshots_and_broadcasts_to_all_guests(mon
                     break
             observed_ticks.append(latest_tick)
 
-    assert len(observed_ticks) == 19
+    assert len(observed_ticks) == 7
     assert all(tick == 99 for tick in observed_ticks)
     assert active_rooms[room_id]["latest_snapshot"]["tick"] == 99
 

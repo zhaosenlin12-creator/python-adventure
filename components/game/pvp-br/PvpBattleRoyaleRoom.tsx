@@ -197,7 +197,7 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
 
     const interval = setInterval(() => {
       void poll();
-    }, wsConnected ? 9000 : 2800);
+    }, wsConnected ? 12000 : 5000);
 
     return () => {
       cancelled = true;

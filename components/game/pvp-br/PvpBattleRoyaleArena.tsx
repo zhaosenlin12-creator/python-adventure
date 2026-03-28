@@ -70,10 +70,10 @@ const SAFE_ZONE_DAMAGE_BY_PHASE = [10, 14, 20, 30, 42, 58, 78] as const;
 const MATCH_MAX_MS = 360000;
 const PICKUP_RESPAWN_MS = 12000;
 const QUIZ_PENDING_TIMEOUT_MS = 15000;
-const SNAPSHOT_INTERVAL_MS = 48;
-const UI_SYNC_INTERVAL_MS = 48;
-const INPUT_SEND_INTERVAL_MS = 20;
-const MAX_RENDER_EXTRAPOLATION_MS = 140;
+const SNAPSHOT_INTERVAL_MS = 120;
+const UI_SYNC_INTERVAL_MS = 80;
+const INPUT_SEND_INTERVAL_MS = 66;
+const MAX_RENDER_EXTRAPOLATION_MS = 220;
 const LOCAL_INPUT_LEAD_MS = 68;
 const MAX_LOCAL_INPUT_LEAD_MS = 120;
 const LOCAL_FIGHTER_SMOOTHING_RATE = 22;
@@ -81,6 +81,7 @@ const REMOTE_FIGHTER_SMOOTHING_RATE = 14;
 const PROJECTILE_SMOOTHING_RATE = 16;
 const POSITION_SNAP_DISTANCE = 220;
 const CANVAS_FONT_FAMILY = '"Microsoft YaHei", "Noto Sans SC", "PingFang SC", sans-serif';
+const MAX_ACTIVE_PICKUPS = 18;
 
 const ZONE_PHASES = [
   { until: 45000, radius: 3400 },
@@ -781,7 +782,7 @@ function createInitialFighters(room: BattleRoyaleRoom): Map<string, InternalFigh
 }
 
 function createInitialPickups(): InternalPickup[] {
-  return shuffleList(PICKUP_SPAWNS).map((spawnZone, index) => {
+  return shuffleList(PICKUP_SPAWNS).slice(0, MAX_ACTIVE_PICKUPS).map((spawnZone, index) => {
     const rolled = rollPickupSpawn(spawnZone);
     return {
       id: `pickup-${index}`,
@@ -945,23 +946,25 @@ function createTransportSnapshot(snapshot: BattleRoyaleSnapshot): Record<string,
       hitFlashMs: Math.round(fighter.hitFlashMs),
     })),
     pickups: snapshot.pickups.map((pickup) => ({
-      ...pickup,
+      id: pickup.id,
+      type: pickup.type,
       x: Math.round(pickup.x),
       y: Math.round(pickup.y),
-    })),
-    killFeed: snapshot.killFeed.slice(-4),
-    projectiles: snapshot.projectiles.slice(-12).map((projectile) => ({
+      active: pickup.active,
+    })).filter((pickup) => pickup.active),
+    killFeed: snapshot.killFeed.slice(-3),
+    projectiles: snapshot.projectiles.slice(-8).map((projectile) => ({
       ...projectile,
       x: Math.round(projectile.x),
       y: Math.round(projectile.y),
       rotation: Math.round(projectile.rotation * 100) / 100,
     })),
-    weapons: snapshot.weapons.slice(-12).map((weapon) => ({
+    weapons: snapshot.weapons.slice(-8).map((weapon) => ({
       ...weapon,
       x: Math.round(weapon.x),
       y: Math.round(weapon.y),
     })),
-    effects: snapshot.effects.slice(-10).map((effect) => ({
+    effects: snapshot.effects.slice(-6).map((effect) => ({
       ...effect,
       x: Math.round(effect.x),
       y: Math.round(effect.y),

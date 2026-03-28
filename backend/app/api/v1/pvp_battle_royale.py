@@ -21,17 +21,19 @@ router = APIRouter()
 Difficulty = Literal["easy", "medium", "hard"]
 RoomStatus = Literal["waiting", "in_progress", "finished"]
 
-MAX_ROOM_CAPACITY = 20
+MAX_ROOM_CAPACITY = 8
+MAX_WAITING_ROOM_COUNT = 4
+MAX_IN_PROGRESS_ROOM_COUNT = 1
 ROOM_EXPIRY_MINUTES = 30
 FINISHED_ROOM_TTL_MINUTES = 5
 DISCONNECT_GRACE_SECONDS = 12.0
-ROOM_RUNTIME_TICK_SECONDS = 0.02
-SERVER_SNAPSHOT_INTERVAL_SECONDS = 0.05
-SERVER_INPUT_BATCH_INTERVAL_SECONDS = 0.018
-HOST_SNAPSHOT_STALE_SECONDS = 1.2
-INPUT_FORWARD_MIN_INTERVAL_SECONDS = 0.012
-INPUT_DUPLICATE_INTERVAL_SECONDS = 0.022
-SEND_JSON_TIMEOUT_SECONDS = 0.35
+ROOM_RUNTIME_TICK_SECONDS = 0.05
+SERVER_SNAPSHOT_INTERVAL_SECONDS = 0.12
+SERVER_INPUT_BATCH_INTERVAL_SECONDS = 0.05
+HOST_SNAPSHOT_STALE_SECONDS = 1.8
+INPUT_FORWARD_MIN_INTERVAL_SECONDS = 0.05
+INPUT_DUPLICATE_INTERVAL_SECONDS = 0.08
+SEND_JSON_TIMEOUT_SECONDS = 0.2
 
 AI_NAME_POOL = [
     "Scout Byte",
@@ -208,6 +210,10 @@ def cleanup_rooms() -> None:
 
     for room_id in stale_ids:
         active_rooms.pop(room_id, None)
+
+
+def count_rooms_with_status(status: RoomStatus) -> int:
+    return sum(1 for room in active_rooms.values() if room["status"] == status)
 
 
 def find_user_room(user_id: int) -> Optional[Dict[str, Any]]:
@@ -536,9 +542,15 @@ async def list_rooms(current_user: User = Depends(get_current_user)):
 @router.post("/rooms/create")
 async def create_room(payload: CreateRoomPayload, current_user: User = Depends(get_current_user)):
     async with room_lock:
+        cleanup_rooms()
         existing = find_user_room(current_user.id)
         if existing and existing["status"] != "finished":
             return {"room": serialize_room(existing), "reused": True, "cap": MAX_ROOM_CAPACITY}
+        if count_rooms_with_status("waiting") >= MAX_WAITING_ROOM_COUNT:
+            raise HTTPException(
+                status_code=503,
+                detail="Battle Royale waiting room limit reached",
+            )
 
         room_id = generate_room_id()
         host_entry = build_human_entry(current_user, payload, is_host=True)
@@ -675,6 +687,7 @@ async def remove_bot(room_id: str, bot_id: str, current_user: User = Depends(get
 @router.post("/rooms/{room_id}/start")
 async def start_room(room_id: str, current_user: User = Depends(get_current_user)):
     async with room_lock:
+        cleanup_rooms()
         room = active_rooms.get(room_id)
         if not room:
             raise HTTPException(status_code=404, detail="Room not found")
@@ -684,6 +697,16 @@ async def start_room(room_id: str, current_user: User = Depends(get_current_user
             raise HTTPException(status_code=400, detail="Room already started")
         if room_participant_count(room) < 2:
             raise HTTPException(status_code=400, detail="At least two fighters are required")
+        active_in_progress_rooms = sum(
+            1
+            for active_room in active_rooms.values()
+            if active_room["status"] == "in_progress" and active_room["id"] != room_id
+        )
+        if active_in_progress_rooms >= MAX_IN_PROGRESS_ROOM_COUNT:
+            raise HTTPException(
+                status_code=503,
+                detail="Battle Royale server is busy",
+            )
 
         room["status"] = "in_progress"
         room["started_at"] = iso_now()
