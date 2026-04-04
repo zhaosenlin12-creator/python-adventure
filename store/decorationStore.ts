@@ -60,7 +60,6 @@ export const useDecorationStore = create<DecorationState>((set, get) => ({
       const token = getAuthToken();
       if (!token) {
         // 无token时不抛出错误，只是跳过加载
-        console.log('[DecorationStore] No token, skipping load');
         set({ isLoading: false });
         return;
       }

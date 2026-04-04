@@ -21,12 +21,18 @@ import type { BattleRoyaleRoom } from '@/types/pvp-br';
 interface PvpBattleRoyaleLobbyProps {
   onClose: () => void;
   onEnterRoom: (room: BattleRoyaleRoom) => void;
+  onResumeActiveRoom?: () => void;
+  isRecovering?: boolean;
 }
 
-export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattleRoyaleLobbyProps) {
+export default function PvpBattleRoyaleLobby({
+  onClose,
+  onEnterRoom,
+  onResumeActiveRoom,
+  isRecovering = false,
+}: PvpBattleRoyaleLobbyProps) {
   const [tab, setTab] = useState<'create' | 'join'>('create');
   const [roomName, setRoomName] = useState('宠物生存乱斗');
-  const [maxPlayers, setMaxPlayers] = useState(6);
 
   const currentPet = usePetStore((state) => state.currentPet);
   const cap = usePvpBattleRoyaleStore((state) => state.cap);
@@ -48,25 +54,44 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
     [currentPet],
   );
 
-  const availableRoomCount = useMemo(
-    () => rooms.filter((room) => room.participant_count < room.max_players && room.status === 'waiting').length,
+  const waitingRooms = useMemo(
+    () => rooms.filter((room) => room.status === 'waiting'),
     [rooms],
   );
+  const waitingRoom = waitingRooms[0] ?? null;
+  const hasOpenWaitingRoom = Boolean(waitingRoom);
+  const stableRoomCapacity = Math.min(Math.max(cap, 2), 6);
 
   useEffect(() => {
     void fetchRooms();
-    const interval = setInterval(() => {
+
+    const refreshIfVisible = () => {
+      if (typeof document !== 'undefined' && document.visibilityState === 'hidden') {
+        return;
+      }
       void fetchRooms();
-    }, 8000);
+    };
+
+    const interval = setInterval(() => {
+      refreshIfVisible();
+    }, 5000);
+    document.addEventListener('visibilitychange', refreshIfVisible);
 
     return () => {
       clearInterval(interval);
+      document.removeEventListener('visibilitychange', refreshIfVisible);
     };
   }, [fetchRooms]);
 
+  useEffect(() => {
+    if (hasOpenWaitingRoom && tab === 'create') {
+      setTab('join');
+    }
+  }, [hasOpenWaitingRoom, tab]);
+
   const handleCreate = async () => {
     try {
-      const createdRoom = await createRoom(roomName.trim() || '宠物生存乱斗', maxPlayers);
+      const createdRoom = await createRoom(roomName.trim() || '宠物生存乱斗', stableRoomCapacity);
       onEnterRoom(createdRoom);
     } catch {
       return;
@@ -102,12 +127,12 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
               <div className="max-w-3xl">
                 <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-100">
                   <Shield className="h-3.5 w-3.5" />
-                  生存乱斗入口
+                  稳定 6 人模式
                 </div>
                 <h2 className="text-3xl font-black tracking-tight text-white sm:text-4xl">宠物生存乱斗</h2>
                 <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">
-                  带着当前跟随宠物进入大地图乱斗。随着毒圈推进搜集护甲、护盾、武器和技能，活到最后赢下比赛。
-                  当前服务器已切换到稳定上线模式，单房最多支持 8 人同场。为了保证整台服务器和其他站点稳定，建议优先控制在 4 到 6 人。
+                  带着当前跟随宠物进入大地图乱斗。随时间推进会持续缩圈，玩家需要争夺武器、护盾与回血道具，
+                  活到最后即可获胜。当前服务器已切换到稳定上线模式，同一时间只开放一个房间，单房固定 6 人。
                 </p>
               </div>
               <button
@@ -188,36 +213,47 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
                       />
                     </label>
 
-                    <label className="block">
-                      <div className="mb-2 flex items-center justify-between text-sm font-semibold text-white">
-                        <span>人数上限</span>
-                        <span className="rounded-full border border-cyan-300/20 bg-cyan-500/10 px-2 py-1 text-xs text-cyan-100">
-                          {maxPlayers}/{cap}
+                    <div className="rounded-2xl border border-cyan-300/15 bg-cyan-500/10 px-4 py-3">
+                      <div className="flex items-center justify-between gap-3">
+                        <div>
+                          <div className="text-sm font-semibold text-white">房间人数</div>
+                          <div className="mt-1 text-xs leading-5 text-slate-300">
+                            当前稳定版本固定为 6 人总房间，默认不再需要手动调人数。
+                          </div>
+                        </div>
+                        <span className="rounded-full border border-cyan-300/20 bg-cyan-400/10 px-3 py-1 text-sm font-bold text-cyan-100">
+                          {stableRoomCapacity}/{stableRoomCapacity}
                         </span>
                       </div>
-                      <input
-                        type="range"
-                        min={2}
-                        max={cap}
-                        value={maxPlayers}
-                        onChange={(event) => setMaxPlayers(Number(event.target.value))}
-                        className="w-full accent-cyan-400"
-                      />
-                    </label>
+                    </div>
 
                     <div className="rounded-2xl border border-amber-400/20 bg-amber-500/10 px-4 py-3 text-sm leading-6 text-amber-100">
-                      房主可以在等待室逐个添加不同难度的人机。为了保证当前服务器稳定，建议单房控制在 4 到 6 人；系统硬上限为 8 人。
+                      房主可以在等待室逐个添加不同难度的人机。为了保证上线稳定性，建议优先控制在 4 到 5 名真人，
+                      总参战人数不要超过 6 人。
                     </div>
+
+                    {hasOpenWaitingRoom && waitingRoom && (
+                      <div className="rounded-2xl border border-cyan-300/20 bg-cyan-500/10 px-4 py-3 text-sm leading-6 text-cyan-50">
+                        当前已经有一个等待中的房间：
+                        <span className="font-semibold text-white"> {waitingRoom.room_name}</span>
+                        （{waitingRoom.id}）。
+                        为了保证服务器稳定，同一时间不会再开放第二个房间，请直接加入右侧现有房间。
+                      </div>
+                    )}
 
                     <button
                       type="button"
-                      disabled={isLoading}
+                      disabled={isLoading || hasOpenWaitingRoom}
                       onClick={() => void handleCreate()}
                       data-testid="br-create-room"
                       className="flex w-full items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#14b8a6,#2563eb)] px-6 py-3 text-sm font-bold text-white shadow-[0_18px_40px_rgba(37,99,235,0.28)] transition hover:brightness-110 disabled:opacity-60"
                     >
                       <Plus className="h-4 w-4" />
-                      {isLoading ? '正在创建...' : '创建生存乱斗房间'}
+                      {isLoading
+                        ? '正在创建...'
+                        : hasOpenWaitingRoom
+                          ? '已有房间开放，请先加入'
+                          : '创建生存乱斗房间'}
                     </button>
                   </motion.div>
                 ) : (
@@ -229,7 +265,7 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
                     className="mt-5 rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-4 text-sm leading-6 text-slate-300"
                   >
                     点击右侧任意等待中的房间即可加入。进入后会自动带上当前主宠，并实时同步房主的开战状态。
-                    {availableRoomCount === 0 ? ' 当前没有可加入的空房间，你可以先创建一个。' : ''}
+                    {waitingRooms.length === 0 ? ' 当前没有可加入的空房间；如果服务器空闲，你可以先创建一个。' : ''}
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -239,6 +275,18 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
                   {error}
                 </div>
               )}
+
+              {onResumeActiveRoom && (
+                <button
+                  type="button"
+                  onClick={onResumeActiveRoom}
+                  disabled={isRecovering}
+                  className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-3 text-sm font-semibold text-slate-100 transition hover:bg-white/[0.1] disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  <RefreshCw className={`h-4 w-4 ${isRecovering ? 'animate-spin' : ''}`} />
+                  {isRecovering ? '正在检查可恢复房间...' : '恢复未结束的乱斗房间'}
+                </button>
+              )}
             </div>
 
             <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-5">
@@ -246,7 +294,7 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
                 <div>
                   <div className="text-lg font-bold text-white">等待中的乱斗房间</div>
                   <div className="text-sm text-slate-400">
-                    加入后会在等待室里同步成员变化和开战状态。满员房间会直接显示为不可加入。
+                    加入后会在等待室同步成员变化和开战状态。满员房间会直接显示为不可加入。
                   </div>
                 </div>
                 <button
@@ -269,7 +317,9 @@ export default function PvpBattleRoyaleLobby({ onClose, onEnterRoom }: PvpBattle
                       <Sword className="h-7 w-7" />
                     </div>
                     <div className="text-lg font-bold text-white">当前没有等待中的房间</div>
-                    <div className="mt-2 text-sm text-slate-400">直接创建一个房间，或者稍后刷新列表。</div>
+                    <div className="mt-2 text-sm text-slate-400">
+                      服务器同一时间只开放一个房间；当前空闲时可以直接创建。
+                    </div>
                   </div>
                 ) : (
                   rooms.map((room) => {

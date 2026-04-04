@@ -19,7 +19,7 @@ interface BattleRoyaleWebSocketConfig {
 
 const SNAPSHOT_BUFFER_LIMIT_BYTES = 256_000;
 const INPUT_BUFFER_LIMIT_BYTES = 128_000;
-const HEARTBEAT_INTERVAL_MS = 8000;
+const HEARTBEAT_INTERVAL_MS = 12000;
 
 export class BattleRoyaleWebSocketClient {
   private ws: WebSocket | null = null;

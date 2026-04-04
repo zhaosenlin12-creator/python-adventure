@@ -10,14 +10,18 @@ from typing import Dict, List, Optional
 from datetime import datetime
 import json
 import asyncio
+import logging
 
 from app.core.database import get_db, SessionLocal
+from app.core.config import settings
 from app.core.security import decode_access_token
 from app.models.user import User
 from app.services.coin_service import CoinService, CoinRewardCalculator
 from app.utils.transaction_id import generate_pvp_transaction_id
 
 router = APIRouter()
+logger = logging.getLogger(__name__)
+IS_PRODUCTION = settings.ENVIRONMENT.lower() == "production"
 
 # 🔥 添加异步锁，防止并发问题
 room_lock = asyncio.Lock()
@@ -35,8 +39,8 @@ def verify_ws_token(token: Optional[str], expected_user_id: int) -> tuple[bool, 
     - 如果没有token，记录警告但允许连接（兼容旧客户端）
     """
     if not token:
-        # 没有token - 开发环境或旧客户端，允许但记录警告
-        print(f"[PVP WS] ⚠️ 警告：用户 {expected_user_id} 未提供Token连接")
+        if not IS_PRODUCTION:
+            logger.info("PVP websocket connected without token for user %s", expected_user_id)
         return True, expected_user_id, None
     
     # 验证token
@@ -65,12 +69,26 @@ def verify_ws_token(token: Optional[str], expected_user_id: int) -> tuple[bool, 
 
 class PvpRoom:
     """PVP 房间"""
-    def __init__(self, room_id: str, host_id: int, host_name: str):
+    def __init__(
+        self,
+        room_id: str,
+        host_id: int,
+        host_name: str,
+        host_pet_type: str = "code_kitty",
+        host_pet_stage: int = 3,
+        host_pet_name: str = "伙伴",
+    ):
         self.id = room_id
         self.host_id = host_id
         self.host_name = host_name
+        self.host_pet_type = host_pet_type
+        self.host_pet_stage = host_pet_stage
+        self.host_pet_name = host_pet_name
         self.guest_id: Optional[int] = None
         self.guest_name: Optional[str] = None
+        self.guest_pet_type: Optional[str] = None
+        self.guest_pet_stage: Optional[int] = None
+        self.guest_pet_name: Optional[str] = None
         self.status = "waiting"  # waiting, ready, in_progress, finished
         self.created_at = datetime.now()
         self.finished_at: Optional[datetime] = None  # 🔧 新增：游戏结束时间
@@ -172,7 +190,13 @@ async def get_available_rooms():
     return {"rooms": rooms}
 
 @router.post("/rooms/create")
-async def create_room(user_id: int, username: str):
+async def create_room(
+    user_id: int,
+    username: str,
+    pet_type: str = "code_kitty",
+    pet_stage: int = 3,
+    pet_name: str = "伙伴",
+):
     """创建新房间"""
     import random
     import string
@@ -223,7 +247,7 @@ async def create_room(user_id: int, username: str):
             room_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
             attempts += 1
         
-        room = PvpRoom(room_id, user_id, username)
+        room = PvpRoom(room_id, user_id, username, pet_type, pet_stage, pet_name)
         active_rooms[room_id] = room
         
         # 🔒 安全：记录创建时间用于速率限制
@@ -236,7 +260,14 @@ async def create_room(user_id: int, username: str):
     }
 
 @router.post("/rooms/{room_id}/join")
-async def join_room(room_id: str, user_id: int, username: str):
+async def join_room(
+    room_id: str,
+    user_id: int,
+    username: str,
+    pet_type: str = "code_kitty",
+    pet_stage: int = 3,
+    pet_name: str = "伙伴",
+):
     """加入房间"""
     # 🔥 减少日志输出，提高性能
     # print(f"[PVP API] 加入房间: room_id={room_id}, user_id={user_id}")
@@ -263,6 +294,9 @@ async def join_room(room_id: str, user_id: int, username: str):
         
         room.guest_id = user_id
         room.guest_name = username
+        room.guest_pet_type = pet_type
+        room.guest_pet_stage = pet_stage
+        room.guest_pet_name = pet_name
         room.status = "ready"
     
     # 🔥 减少日志输出
@@ -272,7 +306,10 @@ async def join_room(room_id: str, user_id: int, username: str):
         "type": "player_joined",
         "payload": {
             "user_id": user_id,
-            "username": username
+            "username": username,
+            "pet_type": pet_type,
+            "pet_stage": pet_stage,
+            "pet_name": pet_name,
         }
     })
     
@@ -280,7 +317,10 @@ async def join_room(room_id: str, user_id: int, username: str):
         "success": True,
         "message": f"成功加入房间 {room_id}",
         "host_id": room.host_id,
-        "host_name": room.host_name
+        "host_name": room.host_name,
+        "host_pet_type": room.host_pet_type,
+        "host_pet_stage": room.host_pet_stage,
+        "host_pet_name": room.host_pet_name,
     }
 
 @router.post("/rooms/{room_id}/leave")
@@ -302,6 +342,9 @@ async def leave_room(room_id: str, user_id: int):
         # 客人离开
         room.guest_id = None
         room.guest_name = None
+        room.guest_pet_type = None
+        room.guest_pet_stage = None
+        room.guest_pet_name = None
         room.status = "waiting"
         room.guest_ready = False
         
@@ -324,8 +367,14 @@ async def get_room_info(room_id: str):
         "id": room.id,
         "host_id": room.host_id,
         "host_name": room.host_name,
+        "host_pet_type": room.host_pet_type,
+        "host_pet_stage": room.host_pet_stage,
+        "host_pet_name": room.host_pet_name,
         "guest_id": room.guest_id,
         "guest_name": room.guest_name,
+        "guest_pet_type": room.guest_pet_type,
+        "guest_pet_stage": room.guest_pet_stage,
+        "guest_pet_name": room.guest_pet_name,
         "status": room.status,
         "current_round": room.current_round,
         "scores": room.scores,
@@ -436,7 +485,7 @@ async def complete_pvp_battle(
         
     except Exception as e:
         db.rollback()
-        print(f"[PVP] 发放金币错误: {e}")
+        logger.exception("PVP coin reward failed: %s", e)
         return {
             "success": False,
             "message": str(e),
@@ -486,8 +535,14 @@ async def get_my_room(user_id: int):
             "current_round": room.current_round,
             "host_id": room.host_id,
             "host_name": room.host_name,
+            "host_pet_type": room.host_pet_type,
+            "host_pet_stage": room.host_pet_stage,
+            "host_pet_name": room.host_pet_name,
             "guest_id": room.guest_id,
             "guest_name": room.guest_name,
+            "guest_pet_type": room.guest_pet_type,
+            "guest_pet_stage": room.guest_pet_stage,
+            "guest_pet_name": room.guest_pet_name,
             "scores": room.scores,
             "role": role,
             "ai_controlled": room.ai_controlled,  # 🤖 告知前端是否有AI接管
@@ -558,7 +613,7 @@ async def pvp_websocket(
     
     if not is_valid:
         # Token验证失败，拒绝连接
-        print(f"[PVP WS] 🔒 拒绝连接: room={room_id}, user={user_id}, 原因={error_msg}")
+        logger.warning("PVP websocket rejected for room %s user %s: %s", room_id, user_id, error_msg)
         await websocket.close(code=4001, reason=error_msg or "认证失败")
         return
     
@@ -570,7 +625,8 @@ async def pvp_websocket(
         room = active_rooms[room_id]
         if room.disconnected_player_id == user_id:
             # 断线玩家不能重连，直接关闭连接
-            print(f"[PVP WS] 🚫 拒绝断线玩家重连: room={room_id}, user={user_id}")
+            if not IS_PRODUCTION:
+                logger.info("Rejected reconnect for disconnected PVP player room=%s user=%s", room_id, user_id)
             await websocket.send_json({
                 "type": "reconnect_rejected",
                 "reason": "您已断线，本局对战由AI接管。请创建新房间开始新对战。",
@@ -700,7 +756,8 @@ async def pvp_websocket(
                 online_player_name = room.guest_name if is_host else room.host_name
                 disconnected_name = room.host_name if is_host else room.guest_name
                 
-                print(f"[PVP] 🤖 房间 {room_id}: {disconnected_name} 断线，AI接管继续对战")
+                if not IS_PRODUCTION:
+                    logger.info("PVP room %s switched %s to AI takeover after disconnect", room_id, disconnected_name)
                 
                 # 通知在线玩家：对方断线，AI接管
                 await broadcast_to_room(room_id, {
@@ -738,7 +795,7 @@ async def pvp_websocket(
     
     except Exception as e:
         # 🔥 只记录错误日志
-        print(f"[PVP WS] 连接错误: room={room_id}, user={user_id}, error={e}")
+        logger.error("PVP websocket error for room %s user %s: %s", room_id, user_id, e)
         if connection_key in ws_connections:
             del ws_connections[connection_key]
 
@@ -850,7 +907,8 @@ async def handle_game_end(room_id: str, user_id: int, message: dict):
     room.status = "finished"
     room.finished_at = datetime.now()
     
-    print(f"[PVP] 🏁 房间 {room_id} 游戏结束，由用户 {user_id} 触发")
+    if not IS_PRODUCTION:
+        logger.info("PVP room %s ended by user %s", room_id, user_id)
     
     # 广播游戏结束给双方
     await broadcast_to_room(room_id, {
@@ -878,7 +936,8 @@ async def broadcast_to_room(room_id: str, message: dict, exclude_user: int = Non
                     await ws.send_json(message)
                 except Exception as e:
                     if not is_high_freq:
-                        print(f"[PVP] 发送失败: {e}")
+                        if not IS_PRODUCTION:
+                            logger.warning("PVP room broadcast send failed: %s", e)
                     disconnected.append(key)
     
     for key in disconnected:

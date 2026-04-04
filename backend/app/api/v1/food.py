@@ -2,6 +2,8 @@
 🍖 食物系统API - 修复版
 """
 
+import logging
+
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from typing import List, Dict
@@ -19,6 +21,7 @@ from app.api.dependencies import get_current_user
 from app.core.database import ensure_database_ready, get_sqlite_db_path
 
 router = APIRouter(tags=["food"])
+logger = logging.getLogger(__name__)
 
 
 def get_db():
@@ -121,9 +124,7 @@ async def get_food_inventory(current_user = Depends(get_current_user)):
         }
         
     except Exception as e:
-        print(f"❌ Error in get_food_inventory: {str(e)}")
-        import traceback
-        traceback.print_exc()
+        logger.exception("Failed to get food inventory")
         raise HTTPException(status_code=500, detail=f"Failed to get inventory: {str(e)}")
 
 
@@ -147,7 +148,6 @@ async def purchase_food(
         food_id = request.food_id
         quantity = request.quantity
         
-        print(f"\n[FoodPurchase] 🛒 User {user_id} purchasing {food_id} x{quantity}")
         
         # 验证食物类型
         food_type = get_food_type(food_id)
@@ -159,11 +159,9 @@ async def purchase_food(
         
         # 计算总价
         total_price = food_type.price * quantity
-        print(f"[FoodPurchase] 💰 Total price: {total_price}")
         
         # 检查用户金币是否足够
         user_balance = CoinService.get_balance(db, user_id)
-        print(f"[FoodPurchase] 💵 User balance: {user_balance}")
         
         if user_balance < total_price:
             raise HTTPException(
@@ -188,7 +186,6 @@ async def purchase_food(
             """))
             
             # 1. 扣除金币
-            print(f"[FoodPurchase] 💸 Deducting {total_price} coins...")
             success = CoinService.add_coins(
                 db=db,
                 user_id=user_id,
@@ -202,7 +199,6 @@ async def purchase_food(
                 raise HTTPException(status_code=500, detail="金币扣除失败")
             
             coin_deducted = True
-            print(f"[FoodPurchase] ✅ Coins deducted successfully")
             
             # 2. 查询现有食物（使用SQLAlchemy）
             result = db.execute(text("""
@@ -229,7 +225,6 @@ async def purchase_food(
                 """), {"user_id": user_id, "food_id": food_id, "quantity": quantity, "created_at": now, "updated_at": now})
             
             db.commit()
-            print(f"[FoodPurchase] ✅ Food added to inventory")
             
             # 3. 获取更新后的数量
             result = db.execute(text("""
@@ -241,7 +236,6 @@ async def purchase_food(
             
             # 4. 获取最新金币余额
             final_balance = CoinService.get_balance(db, user_id)
-            print(f"[FoodPurchase] ✅ Purchase complete! New balance: {final_balance}")
             
             return {
                 'success': True,
@@ -259,7 +253,6 @@ async def purchase_food(
             
             # 如果金币已扣除，回滚
             if coin_deducted:
-                print(f"[FoodPurchase] 🔄 Rolling back coin deduction...")
                 try:
                     CoinService.add_coins(
                         db=db,
@@ -269,9 +262,9 @@ async def purchase_food(
                         source="food_shop",
                         description=f"购买失败退款: {food_type.name} x{quantity}"
                     )
-                    print(f"[FoodPurchase] ✅ Coin refund successful")
+                    logger.warning("Rolled back food purchase coin deduction for user %s", user_id)
                 except Exception as refund_error:
-                    print(f"[FoodPurchase] ❌ Refund failed: {str(refund_error)}")
+                    logger.exception("Food purchase refund failed for user %s", user_id)
             
             raise
             
@@ -280,7 +273,6 @@ async def purchase_food(
             
             # 如果金币已扣除，回滚
             if coin_deducted:
-                print(f"[FoodPurchase] 🔄 Rolling back coin deduction...")
                 try:
                     CoinService.add_coins(
                         db=db,
@@ -290,13 +282,11 @@ async def purchase_food(
                         source="food_shop",
                         description=f"购买失败退款: {food_type.name} x{quantity}"
                     )
-                    print(f"[FoodPurchase] ✅ Coin refund successful")
+                    logger.warning("Rolled back food purchase coin deduction after exception for user %s", user_id)
                 except Exception as refund_error:
-                    print(f"[FoodPurchase] ❌ Refund failed: {str(refund_error)}")
+                    logger.exception("Food purchase refund failed after exception for user %s", user_id)
             
-            print(f"[FoodPurchase] ❌ Error: {str(e)}")
-            import traceback
-            traceback.print_exc()
+            logger.exception("Food purchase failed for user %s", user_id)
             raise HTTPException(status_code=500, detail=f"购买失败: {str(e)}")
     
     finally:

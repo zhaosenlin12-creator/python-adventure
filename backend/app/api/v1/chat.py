@@ -6,8 +6,9 @@ from sqlalchemy.orm import Session
 from sqlalchemy import or_, and_, desc
 from datetime import datetime, date, timedelta
 from typing import Dict, Set
-import json
 import asyncio
+import json
+import logging
 
 from app.core.database import get_db
 from app.models.chat import ChatMessage, UserChatLimit
@@ -18,6 +19,7 @@ from app.schemas.chat import (
 )
 
 router = APIRouter()
+logger = logging.getLogger(__name__)
 
 # 聊天配置
 CHAT_CONFIG = {
@@ -248,8 +250,7 @@ async def chat_websocket(websocket: WebSocket, user_id: int, db: Session = Depen
         manager.disconnect(user_id)
         await manager.broadcast_user_leave(user_id)
     except Exception as e:
-        # 🔥 只记录错误日志
-        print(f"[Chat WS] 连接错误: user_id={user_id}, error={e}")
+        logger.error("Chat websocket error for user %s: %s", user_id, e)
         manager.disconnect(user_id)
         await manager.broadcast_user_leave(user_id)
 

@@ -32,6 +32,7 @@ export class ArenaScene extends Phaser.Scene {
     private boundHandleClosed: ((e: Event) => void) | null = null;
     private lastCompletionKey: string | null = null;
     private lastCompletionAt: number = 0;
+    private stationChallenges: ArenaChallenge[] = [];
     
     // 🔥 触控输入状态追踪
     private lastTouchState: TouchInputState = {
@@ -43,6 +44,18 @@ export class ArenaScene extends Phaser.Scene {
         super({ key: 'ArenaScene' });
     }
 
+    private pickStationChallenges(): ArenaChallenge[] {
+        const byDifficulty = {
+            easy: ARENA_CHALLENGES.filter((challenge) => challenge.difficulty === 'easy'),
+            medium: ARENA_CHALLENGES.filter((challenge) => challenge.difficulty === 'medium'),
+            hard: ARENA_CHALLENGES.filter((challenge) => challenge.difficulty === 'hard'),
+        };
+
+        return [byDifficulty.easy, byDifficulty.medium, byDifficulty.hard].map((pool) => {
+            return pool[Math.floor(Math.random() * pool.length)] ?? ARENA_CHALLENGES[0];
+        });
+    }
+
     create() {
         const { width, height } = this.cameras.main;
         
@@ -50,6 +63,7 @@ export class ArenaScene extends Phaser.Scene {
         this.challengeZones = [];
         this.isInChallengeCooldown = false;
         this.currentChallenge = null;
+        this.stationChallenges = this.pickStationChallenges();
 
         // 确保音效已加载（如果没有经过BootScene）
         if (!this.cache.audio.exists('success')) {
@@ -181,9 +195,9 @@ export class ArenaScene extends Phaser.Scene {
         this.cameras.main.startFollow(this.player, true, 0.08, 0.08);
 
         // Create challenge stations - spread out horizontally
-        this.createChallengeStation(300, height - 170, ARENA_CHALLENGES[0]);
-        this.createChallengeStation(width / 2, height - 170, ARENA_CHALLENGES[1]);
-        this.createChallengeStation(width - 300, height - 170, ARENA_CHALLENGES[2]);
+        this.createChallengeStation(300, height - 170, this.stationChallenges[0]);
+        this.createChallengeStation(width / 2, height - 170, this.stationChallenges[1]);
+        this.createChallengeStation(width - 300, height - 170, this.stationChallenges[2]);
 
         // Back button
         const backButton = this.add.text(20, height - 40, '← 返回大厅', {

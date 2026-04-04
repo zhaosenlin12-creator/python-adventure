@@ -30,6 +30,7 @@ interface PlatformGameProps {
 }
 
 export default function PlatformGame({ onExit }: PlatformGameProps) {
+    const BASE_CAMPAIGN_LIVES = 3;
     const gameRef = useRef<Phaser.Game | null>(null);
     const parentRef = useRef<HTMLDivElement>(null);
     const { isTouchDevice } = useDeviceType();
@@ -61,13 +62,16 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
     const { 
         addXp, 
         addCoins,
+        skills,
+        unlockSkill,
         coins,
         completedCampaigns,
         campaignProgress,
         completeCampaignLevel,
         completeCampaign,
         completeAgeGroupCampaign,
-        completeAgeGroupLevel
+        completeAgeGroupLevel,
+        ageGroupCampaignProgress
     } = useGameStore();
     const { token } = useAuthStore();
     const { loadBalance } = useCoinStore();
@@ -81,6 +85,26 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         } catch (error) {
             console.error('[PlatformGame] Failed to sync coins:', error);
         }
+    };
+
+    const hasSkill = (skillId: string) => skills.includes(skillId);
+
+    const getCampaignStartingLives = () => (
+        hasSkill('academic_master') ? BASE_CAMPAIGN_LIVES + 1 : BASE_CAMPAIGN_LIVES
+    );
+
+    const applyCampaignRewardBonuses = (baseXp: number, baseCoins: number) => ({
+        xp: Math.round(baseXp * (hasSkill('ancient_wisdom') ? 1.1 : 1)),
+        coins: Math.round(baseCoins * (hasSkill('school_star') ? 1.1 : 1)),
+    });
+
+    const unlockRewardSkills = (skillIds?: string[]) => {
+        if (!skillIds?.length) return;
+        skillIds.forEach((skillId) => {
+            if (skillId) {
+                unlockSkill(skillId);
+            }
+        });
     };
 
     useEffect(() => {
@@ -214,7 +238,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         console.log('[PlatformGame] 🎲 随机生成题目:', randomQuestions.length, '道', ageGroup ? `(${ageGroup}年龄段)` : '');
         
         setCurrentCampaignLevel(levelWithRandomQuestions);
-        setPlayerLives(3);
+        setPlayerLives(getCampaignStartingLives());
         
         // 重置题目状态
         setCurrentQuestion(null);
@@ -311,8 +335,12 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         console.log('[PlatformGame] 完成关卡:', currentCampaignLevel.name, '当前索引:', currentLevelIndex, '年龄段:', currentAgeGroup);
         
         // 获取奖励金额
-        const coinsEarned = currentCampaignLevel.rewards.coins;
-        const xpEarned = currentCampaignLevel.rewards.xp;
+        const rewardValues = applyCampaignRewardBonuses(
+            currentCampaignLevel.rewards.xp,
+            currentCampaignLevel.rewards.coins,
+        );
+        const coinsEarned = rewardValues.coins;
+        const xpEarned = rewardValues.xp;
         
         // 添加奖励
         addXp(xpEarned);
@@ -339,6 +367,8 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         // 玩家需要使用获得的食物手动喂养宠物
         
         // 🔥 标记关卡完成（使用年龄段独立进度）
+        unlockRewardSkills(currentCampaignLevel.rewards.skills);
+
         if (currentAgeGroup) {
             completeAgeGroupLevel(currentAgeGroup, currentCampaignLevel.id);
         } else {
@@ -360,6 +390,33 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
             // 战役完成
             console.log('[PlatformGame] 战役完成!', '年龄段:', currentAgeGroup);
             // 🔥 标记战役完成（使用年龄段独立进度）
+            const alreadyCompletedCampaign = currentAgeGroup
+                ? Boolean(ageGroupCampaignProgress[currentAgeGroup]?.completed.includes(selectedCampaign.id))
+                : completedCampaigns.includes(selectedCampaign.id);
+
+            if (!alreadyCompletedCampaign) {
+                const campaignRewardValues = applyCampaignRewardBonuses(
+                    selectedCampaign.rewards.xp,
+                    selectedCampaign.rewards.coins,
+                );
+                addXp(campaignRewardValues.xp);
+                addCoins(campaignRewardValues.coins);
+                unlockRewardSkills(selectedCampaign.rewards.skills);
+
+                if (campaignRewardValues.coins > 0) {
+                    showCoinRewardToast(
+                        campaignRewardValues.coins,
+                        `完成战役: ${selectedCampaign.name}`,
+                        'reward',
+                    );
+                    syncCoinsToServer(
+                        campaignRewardValues.coins,
+                        'campaign_complete',
+                        `完成战役: ${selectedCampaign.name}`,
+                    );
+                }
+            }
+
             if (currentAgeGroup) {
                 completeAgeGroupCampaign(currentAgeGroup, selectedCampaign.id);
             } else {
@@ -417,7 +474,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         }
         
         setCurrentCampaignLevel(levelWithRandomQuestions);
-        setPlayerLives(3); // 重置生命数
+        setPlayerLives(getCampaignStartingLives()); // 重置生命数
         
         // 重置题目状态
         setCurrentQuestion(null);
@@ -466,9 +523,6 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         const { default: PlatformGameScene } = await import('@/components/world/scenes/PlatformGameScene');
 
         // 检测是否为移动设备
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
-                         ('ontouchstart' in window);
-        
         // 移动端使用自适应缩放
         const config: Phaser.Types.Core.GameConfig = {
             type: Phaser.AUTO,
@@ -492,10 +546,10 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
                 pixelArt: true,
                 roundPixels: true,
             },
-            scale: isMobile ? {
+            scale: {
                 mode: Phaser.Scale.FIT,
                 autoCenter: Phaser.Scale.CENTER_BOTH,
-            } : undefined,
+            },
         };
 
         gameRef.current = new Phaser.Game(config);
@@ -687,8 +741,15 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
                 </div>
 
                 {/* 游戏容器 - 移动端自适应 */}
-                <div className="flex-1 flex items-center justify-center bg-gradient-to-br from-slate-800 to-slate-900 overflow-auto">
-                    <div ref={parentRef} className="shadow-2xl" />
+                <div className="flex-1 flex items-center justify-center bg-gradient-to-br from-slate-800 to-slate-900 overflow-auto px-3 py-3">
+                    <div
+                        ref={parentRef}
+                        className="h-full w-full rounded-2xl border border-slate-700/70 bg-slate-950/70 shadow-2xl"
+                        style={{
+                            maxWidth: 'min(96vw, 1440px)',
+                            maxHeight: 'calc(100vh - 150px)',
+                        }}
+                    />
                 </div>
 
                 {/* 操作提示 - 移动端隐藏 */}

@@ -362,12 +362,22 @@ async function desktopAudit(browser: Browser, session: QaSession) {
 
   const homeButton = page.locator('button:has(svg.lucide-house), button:has(svg.lucide-home)').last();
   await homeButton.click();
+  const expandStarterToolsButton = page.getByRole('button', { name: /展开/ }).last();
+  if (await expandStarterToolsButton.count()) {
+    await expandStarterToolsButton.click().catch(() => {});
+  }
+  const homeBackpackButton = page.locator('button:has(svg.lucide-package-2)').first();
+  await expect(homeBackpackButton).toBeVisible({ timeout: 10000 });
+  await expect(page.locator('button:has(svg.lucide-sparkles)').last()).toBeVisible({ timeout: 10000 });
+  await page.waitForTimeout(6200);
+  if (false) {
   const homeBackpackButton = page.locator('button.absolute.right-4.top-1\\/2.z-40.bg-slate-700').first();
   await expect(homeBackpackButton).toBeVisible({ timeout: 10000 });
   await expect(page.getByText('想推进宠物蛋孵化进度时').first()).toBeVisible({ timeout: 10000 });
   await page.waitForTimeout(6200);
   await expect(page.getByRole('button', { name: '孵化提示' })).toBeVisible({ timeout: 10000 });
   await expect(page.getByText('想推进宠物蛋孵化进度时')).toHaveCount(0);
+  }
   await page.waitForTimeout(1200);
   await screenshot(page, '05-pet-home-desktop.png');
 

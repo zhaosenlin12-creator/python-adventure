@@ -40,6 +40,7 @@ export interface BattleRoyaleRoom {
   bot_count: number;
   created_at: string;
   started_at: string | null;
+  match_seed?: number | null;
   humans: BattleRoyaleHuman[];
   bots: BattleRoyaleBot[];
 }

@@ -1,3 +1,4 @@
+import logging
 import shutil
 import sqlite3
 from datetime import datetime
@@ -9,6 +10,8 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 from sqlalchemy.pool import NullPool, StaticPool
 
 from app.core.config import settings
+
+logger = logging.getLogger(__name__)
 
 
 def _is_sqlite_url(database_url: str) -> bool:
@@ -73,14 +76,17 @@ def repair_local_sqlite_if_needed(
 
     recovery_source = _get_local_recovery_source(db_path, project_root)
     if recovery_source is None:
-        print(f"[DB] SQLite integrity check failed for {db_path}: {details}")
+        logger.warning("SQLite integrity check failed for %s: %s", db_path, details)
         return
 
     source_healthy, source_details = _check_sqlite_integrity(recovery_source)
     if not source_healthy:
-        print(
-            f"[DB] SQLite integrity check failed for {db_path}: {details}. "
-            f"Recovery source {recovery_source} is also unhealthy: {source_details}"
+        logger.warning(
+            "SQLite integrity check failed for %s: %s. Recovery source %s is also unhealthy: %s",
+            db_path,
+            details,
+            recovery_source,
+            source_details,
         )
         return
 
@@ -90,9 +96,11 @@ def repair_local_sqlite_if_needed(
     shutil.move(str(db_path), str(backup_path))
     shutil.copy2(recovery_source, db_path)
     _delete_sqlite_sidecars(db_path)
-    print(
-        f"[DB] Recovered malformed SQLite database: {db_path} "
-        f"-> backup {backup_path} from source {recovery_source}"
+    logger.warning(
+        "Recovered malformed SQLite database: %s -> backup %s from source %s",
+        db_path,
+        backup_path,
+        recovery_source,
     )
 
 

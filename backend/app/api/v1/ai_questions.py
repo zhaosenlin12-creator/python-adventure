@@ -9,12 +9,15 @@ from pydantic import BaseModel, Field
 from typing import List, Optional, Literal, Dict
 import httpx
 import json
+import logging
 import re
 import time
 from app.core.config import settings
 from app.core.security import decode_access_token
 
 router = APIRouter()
+logger = logging.getLogger(__name__)
+IS_PRODUCTION = settings.ENVIRONMENT.lower() == "production"
 
 # ==================== 速率限制 ====================
 
@@ -227,7 +230,11 @@ async def generate_questions(
             
             if response.status_code != 200:
                 error_detail = response.text
-                print(f"[AI] DeepSeek API错误: {response.status_code} - {error_detail}")
+                logger.warning(
+                    "DeepSeek API request failed with status %s: %s",
+                    response.status_code,
+                    error_detail[:300],
+                )
                 raise HTTPException(
                     status_code=503,
                     detail="AI服务暂时不可用，请稍后重试"
@@ -256,7 +263,7 @@ async def generate_questions(
     except HTTPException:
         raise
     except Exception as e:
-        print(f"[AI] 生成题目错误: {e}")
+        logger.exception("AI question generation failed: %s", e)
         raise HTTPException(status_code=500, detail="生成题目失败，请重试")
 
 def parse_ai_response(content: str) -> List[GeneratedQuestion]:
@@ -300,7 +307,8 @@ def parse_ai_response(content: str) -> List[GeneratedQuestion]:
             )
             questions.append(question)
         except Exception as e:
-            print(f"[AI] 解析题目失败: {e}")
+            if not IS_PRODUCTION:
+                logger.warning("Failed to parse AI question item: %s", e)
             continue
     
     return questions

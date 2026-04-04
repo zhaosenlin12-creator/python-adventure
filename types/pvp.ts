@@ -18,6 +18,9 @@ export interface PlayerInfo {
     avatar: string;
     level: number;
     skills: string[];
+    petType?: string;
+    petStage?: number;
+    petName?: string;
 }
 
 // ==================== 房间系统类型 ====================

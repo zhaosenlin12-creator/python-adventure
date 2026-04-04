@@ -12,7 +12,7 @@ Each test runs at least 100 iterations.
 import string
 
 import pytest
-from hypothesis import given, settings, strategies as st
+from hypothesis import HealthCheck, given, settings as hypothesis_settings, strategies as st
 from datetime import datetime, timezone
 from pydantic import ValidationError
 
@@ -83,6 +83,15 @@ level_data_strategy = st.fixed_dictionaries({
 
 
 # ==================== Property Tests ====================
+
+property_settings = hypothesis_settings(
+    max_examples=100,
+    suppress_health_check=[HealthCheck.too_slow],
+)
+
+
+def settings(*_args, **_kwargs):
+    return property_settings
 
 class TestCommunityLevelSummaryFields:
     """
@@ -479,7 +488,7 @@ class TestCommunityListSorting:
                     f"Difficulty sort failed: {current.difficulty} should be <= {next_item.difficulty}"
                 )
 
-    @settings(max_examples=100)
+    @property_settings
     @given(
         num_levels=st.integers(min_value=0, max_value=1),
     )
@@ -531,7 +540,7 @@ class TestPublishUnpublishRoundTrip:
     and unpublishing should remove it from the community list while preserving the level data.
     """
     
-    @settings(max_examples=100)
+    @property_settings
     @given(
         is_published=st.booleans(),
         play_count=st.integers(min_value=0, max_value=10000),

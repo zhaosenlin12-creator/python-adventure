@@ -117,22 +117,21 @@ export default function InteractionButton({
         } else {
           await performInteraction(petId, interactionType);
         }
-      } catch (error) {
-        // 错误已经在store中处理，这里只是确保不会抛出未捕获的异常
-        console.error('Interaction failed:', error);
+      } catch {
+        // 错误已经在 store 中统一处理，这里只阻止未捕获异常冒泡到界面
       }
     }
   };
   
   // 根据size计算样式
   const sizeClasses = {
-    small: showLabel ? 'w-14 h-16 p-2' : 'w-12 h-12 p-2',
+    small: showLabel ? 'w-11 h-[3.75rem] p-1.5' : 'h-9 w-9 p-0',
     medium: 'w-full p-4',
     large: 'w-full p-6'
   };
   
   const iconSizes = {
-    small: 24,
+    small: 22,
     medium: 32,
     large: 40
   };
@@ -142,13 +141,19 @@ export default function InteractionButton({
     medium: 'text-sm',
     large: 'text-base'
   };
+  const isCompact = size === 'small';
+  const compactButtonClass = isChat
+    ? 'border-cyan-300/35 bg-[radial-gradient(circle_at_top,rgba(103,232,249,0.28),rgba(14,116,144,0.72))] text-white shadow-[0_16px_36px_rgba(6,182,212,0.28)]'
+    : 'border-white/10 bg-slate-950/76 text-white shadow-[0_16px_34px_rgba(2,6,23,0.22)]';
   
   return (
     <motion.button
       onClick={handleClick}
       disabled={isDisabled}
-      className={`pixel-btn relative overflow-hidden group ${sizeClasses[size]} ${
-        size === 'small' ? 'rounded-full flex items-center justify-center' : 'text-left'
+      title={config.name}
+      aria-label={config.name}
+      className={`${isCompact ? '' : 'pixel-btn'} relative overflow-hidden group ${sizeClasses[size]} ${
+        isCompact ? 'flex items-center justify-center rounded-full border backdrop-blur-md' : 'text-left'
       } ${
         isDisabled
           ? 'opacity-50 cursor-not-allowed'
@@ -157,10 +162,12 @@ export default function InteractionButton({
         hasError
           ? 'border-red-500 bg-red-900/20'
           : ''
-      } ${isChat ? 'bg-gradient-to-br from-blue-600 via-teal-500 to-cyan-500 text-white ring-2 ring-blue-500/80 shadow-[0_0_18px_rgba(52,211,153,0.45)]' : 'bg-slate-800 border border-slate-700 shadow-sm'}`}
+      } ${isCompact ? compactButtonClass : isChat ? 'bg-gradient-to-br from-blue-600 via-teal-500 to-cyan-500 text-white ring-2 ring-blue-500/80 shadow-[0_0_18px_rgba(52,211,153,0.45)]' : 'bg-slate-800 border border-slate-700 shadow-sm'} ${
+        isCompact ? 'hover:border-white/20 hover:bg-slate-900/88' : ''
+      }`}
       // Framer Motion 动画配置
       whileHover={!isDisabled ? { 
-        scale: 1.02,
+        scale: isCompact ? 1.06 : 1.02,
         background: isChat
           ? 'linear-gradient(135deg, rgba(34,211,238,0.95) 0%, rgba(59,130,246,0.95) 100%)'
           : 'linear-gradient(135deg, rgba(71, 85, 105, 0.8) 0%, rgba(51, 65, 85, 0.9) 100%)',
@@ -188,12 +195,12 @@ export default function InteractionButton({
     >
       {/* Chat Glow */}
       {isChat && !isDisabled && (
-        <motion.span
-          className={`absolute inset-0 ${size === 'small' ? 'rounded-full' : 'rounded-2xl'} bg-cyan-400/10`}
-          animate={{ opacity: [0.35, 0.7, 0.35] }}
-          transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
-        />
-      )}
+          <motion.span
+            className={`absolute inset-0 ${isCompact ? 'rounded-full' : 'rounded-2xl'} bg-cyan-400/10`}
+            animate={{ opacity: [0.35, 0.7, 0.35] }}
+            transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
+          />
+        )}
 
       {/* Ripple 波纹效果 */}
       {ripples.map(ripple => (
@@ -217,18 +224,21 @@ export default function InteractionButton({
           transition={{ duration: 0.5, ease: 'easeOut' }}
         />
       ))}
-      {/* AI Badge */}
-      {isChat && size === 'small' && (
-        <span className="absolute -top-1.5 -right-1.5 z-20 bg-sky-400 text-slate-900 text-[9px] font-bold px-1.5 py-0.5 rounded-full shadow">
-          AI
+      {!isDisabled && isCompact && (
+        <span className="absolute right-1.5 top-1.5 z-10 h-1.5 w-1.5 rounded-full bg-emerald-300/80 shadow-[0_0_8px_rgba(110,231,183,0.8)]" />
+      )}
+
+      {onCooldown && isCompact && (
+        <span className="absolute inset-x-2 bottom-1.5 z-10 rounded-full bg-amber-300/24 px-1 py-0.5 text-center text-[9px] font-semibold text-amber-100">
+          {remaining}s
         </span>
       )}
 
-      <div className={`flex items-start gap-3 relative z-10 ${size === 'small' ? 'flex-col items-center gap-1' : ''}`}>
+      <div className={`flex items-start gap-3 relative z-10 ${isCompact ? 'flex-col items-center gap-1' : ''}`}>
         {/* 加载图标或互动图标 */}
         {isLoadingState ? (
           <motion.div
-            className={size === 'small' ? 'text-xl' : 'text-3xl'}
+            className={isCompact ? 'text-lg' : 'text-3xl'}
             animate={{ rotate: 360 }}
             transition={{
               duration: 1,
@@ -240,11 +250,11 @@ export default function InteractionButton({
           </motion.div>
         ) : (
           <motion.div
-            className="flex-shrink-0"
-            animate={!isDisabled ? {
-              scale: isChat ? [1, 1.15, 1] : [1, 1.1, 1],
-              y: isChat ? [0, -2, 0] : undefined,
-            } : {}}
+              className="flex-shrink-0"
+              animate={!isDisabled ? {
+                scale: isChat ? [1, 1.16, 1] : [1, 1.08, 1],
+                y: isCompact ? [0, -1.5, 0] : isChat ? [0, -2, 0] : undefined,
+              } : {}}
             transition={{
               duration: isChat ? 1.6 : 2,
               repeat: Infinity,
@@ -266,14 +276,14 @@ export default function InteractionButton({
         )}
         
         {/* 小尺寸文字标签（可选） */}
-        {size === 'small' && showLabel && (
-          <div className="text-[10px] text-game-light leading-none mt-0.5">
+        {isCompact && showLabel && (
+          <div className="mt-0.5 text-[9px] leading-none text-slate-200/90">
             {config.name}
           </div>
         )}
 
         {/* 文字信息 - 小尺寸时隐藏 */}
-        {size !== 'small' && (
+        {!isCompact && (
           <div className="flex-1">
             <div className={`font-bold text-game-light mb-1 ${textSizes[size]}`}>
               {config.name}

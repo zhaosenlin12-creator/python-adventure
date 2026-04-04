@@ -1,3 +1,4 @@
+import logging
 import time
 
 from fastapi import APIRouter, Depends, HTTPException, status
@@ -22,6 +23,7 @@ from app.schemas.user import (
 from app.api.dependencies import oauth2_scheme
 
 router = APIRouter()
+logger = logging.getLogger(__name__)
 
 DEFAULT_RESET_PASSWORD = "123456"
 PASSWORD_RESET_COOLDOWN_SECONDS = 30
@@ -133,8 +135,7 @@ async def login(user_data: UserLogin, db: Session = Depends(get_db)):
     except HTTPException:
         raise
     except Exception as e:
-        # 🔥 捕获数据库错误，返回友好提示
-        print(f"[Auth] 登录错误: {e}")
+        logger.exception("Login failed: %s", e)
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail="服务器繁忙，请稍后重试"

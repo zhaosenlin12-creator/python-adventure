@@ -19,10 +19,12 @@ import StatusIcon from '@/components/ui/StatusIcon';
 import PetGrowthGuide from './PetGrowthGuide';
 import PetWelcomeGuide from './PetWelcomeGuide';
 import { toFriendlyMessage } from '@/lib/utils/friendlyError';
+import { useGlobalUiStore } from '@/store/globalUiStore';
 
 export default function PetMainPanel() {
   const { currentPet, pets, loadPets, isLoading, evolvePet, checkEvolution, updatePetName } = usePetStore();
   const { isAuthenticated, token, user } = useAuthStore();
+  const setPetHomeActive = useGlobalUiStore((state) => state.setPetHomeActive);
   const [isExpanded, setIsExpanded] = useState(false);
   const [showPetHome, setShowPetHome] = useState(false);
   const [showFoodSelector, setShowFoodSelector] = useState(false);
@@ -54,6 +56,21 @@ export default function PetMainPanel() {
       setPetName(currentPet.name);
     }
   }, [currentPet]);
+
+  useEffect(() => {
+    setPetHomeActive(showPetHome);
+
+    if (showPetHome) {
+      window.dispatchEvent(new CustomEvent('pet-home-opened'));
+    } else {
+      window.dispatchEvent(new CustomEvent('pet-home-closed'));
+    }
+
+    return () => {
+      setPetHomeActive(false);
+      window.dispatchEvent(new CustomEvent('pet-home-closed'));
+    };
+  }, [setPetHomeActive, showPetHome]);
 
   const getPetWelcomeGuideKey = (userId?: number) => (
     userId ? `petWelcomeGuideCompleted:${userId}` : 'petWelcomeGuideCompleted'
@@ -324,77 +341,33 @@ export default function PetMainPanel() {
   
   return (
     <>
-      <div 
-        className="fixed z-50"
-        style={{ 
-          left: `${position.x}px`, 
-          top: `${position.y}px`,
-          cursor: isDragging ? 'grabbing' : (isExpanded ? 'default' : 'grab')
-        }}
-      >
-        {/* 鎶樺彔鐘舵€?- 缂╁皬鐗?*/}
-        {!isExpanded && (
-          <div
-            className="pixel-panel p-2 cursor-grab active:cursor-grabbing hover:border-game-accent transition-all"
-            onMouseDown={handleMouseDown}
-            onClick={(e) => {
-              if (!isDragging) {
-                setIsExpanded(true);
-              }
-            }}
-          >
-            <div className="flex items-center gap-2">
-              <div className="relative flex h-12 w-12 items-center justify-center">
-                <div className="absolute inset-1.5 rounded-full bg-slate-200/8 blur-md" />
-                <div className="absolute inset-x-2 bottom-1 h-2.5 rounded-full bg-slate-950/20 blur-md" />
-                {currentTechAccent && (
-                  <div className={`absolute -bottom-1 -right-1 z-10 flex h-4 w-4 items-center justify-center rounded-full ${currentTechAccent.badge}`}>
-                    {currentTechAccent.icon}
-                  </div>
-                )}
-                {currentImageUrl ? (
-                  <img 
-                    src={currentImageUrl} 
-                    alt={petConfig.displayName}
-                    className="pet-sprite pet-sprite-panel w-full h-full object-contain"
-                    style={{ transform: `scale(${panelScale})` }}
-                  />
-                ) : (
-                  <span className="text-xl">{petConfig.icon}</span>
-                )}
-              </div>
-              <div className="text-xs font-bold text-game-light">
-                Lv.{currentPet.level}
-              </div>
-            </div>
-          </div>
-        )}
-        
-        {/* 灞曞紑鐘舵€?*/}
-        {isExpanded && (
-          <div className="pixel-panel w-80 border-2 border-slate-700 p-4 shadow-[0_26px_48px_rgba(15,23,42,0.36)]">
-            {/* 澶撮儴 */}
-            <div className="flex justify-between items-center mb-3">
-              <h3 className="font-bold text-lg text-white">我的伙伴</h3>
-              <button
-                onClick={() => setIsExpanded(false)}
-                className="text-slate-400 hover:text-white text-xl w-6 h-6 flex items-center justify-center"
-              >
-                ×
-              </button>
-            </div>
-            
-            {/* 瀹犵墿淇℃伅 */}
-            <div className="space-y-3">
-              {/* 澶村儚鍜屽熀鏈俊鎭?*/}
-              <div className="flex items-center gap-3">
-                <div className="relative flex h-20 w-20 items-center justify-center">
-                  <div className="absolute inset-3 rounded-full bg-slate-200/8 blur-xl" />
-                  <div className="absolute inset-x-3 bottom-2 h-4 rounded-full bg-slate-950/30 blur-lg" />
+      {!showPetHome && (
+        <div 
+          className="fixed z-50"
+          style={{ 
+            left: `${position.x}px`, 
+            top: `${position.y}px`,
+            cursor: isDragging ? 'grabbing' : (isExpanded ? 'default' : 'grab')
+          }}
+        >
+          {/* 鎶樺彔鐘舵€?- 缂╁皬鐗?*/}
+          {!isExpanded && (
+            <div
+              className="pixel-panel p-2 cursor-grab active:cursor-grabbing hover:border-game-accent transition-all"
+              onMouseDown={handleMouseDown}
+              onClick={(e) => {
+                if (!isDragging) {
+                  setIsExpanded(true);
+                }
+              }}
+            >
+              <div className="flex items-center gap-2">
+                <div className="relative flex h-12 w-12 items-center justify-center">
+                  <div className="absolute inset-1.5 rounded-full bg-slate-200/8 blur-md" />
+                  <div className="absolute inset-x-2 bottom-1 h-2.5 rounded-full bg-slate-950/20 blur-md" />
                   {currentTechAccent && (
-                    <div className={`absolute -bottom-1 -right-1 z-10 px-1.5 py-0.5 text-[9px] rounded-full flex items-center gap-1 ${currentTechAccent.badge}`}>
+                    <div className={`absolute -bottom-1 -right-1 z-10 flex h-4 w-4 items-center justify-center rounded-full ${currentTechAccent.badge}`}>
                       {currentTechAccent.icon}
-                      <span>{currentTechAccent.label}</span>
                     </div>
                   )}
                   {currentImageUrl ? (
@@ -405,162 +378,208 @@ export default function PetMainPanel() {
                       style={{ transform: `scale(${panelScale})` }}
                     />
                   ) : (
-                    <span className="text-3xl">{petConfig.icon}</span>
+                    <span className="text-xl">{petConfig.icon}</span>
+                  )}
+                </div>
+                <div className="text-xs font-bold text-game-light">
+                  Lv.{currentPet.level}
+                </div>
+              </div>
+            </div>
+          )}
+          
+          {/* 灞曞紑鐘舵€?*/}
+          {isExpanded && (
+            <div className="pixel-panel w-80 border-2 border-slate-700 p-4 shadow-[0_26px_48px_rgba(15,23,42,0.36)]">
+              {/* 澶撮儴 */}
+              <div className="flex justify-between items-center mb-3">
+                <h3 className="font-bold text-lg text-white">我的伙伴</h3>
+                <button
+                  onClick={() => setIsExpanded(false)}
+                  className="text-slate-400 hover:text-white text-xl w-6 h-6 flex items-center justify-center"
+                >
+                  ×
+                </button>
+              </div>
+              
+              {/* 瀹犵墿淇℃伅 */}
+              <div className="space-y-3">
+                {/* 澶村儚鍜屽熀鏈俊鎭?*/}
+                <div className="flex items-center gap-3">
+                  <div className="relative flex h-20 w-20 items-center justify-center">
+                    <div className="absolute inset-3 rounded-full bg-slate-200/8 blur-xl" />
+                    <div className="absolute inset-x-3 bottom-2 h-4 rounded-full bg-slate-950/30 blur-lg" />
+                    {currentTechAccent && (
+                      <div className={`absolute -bottom-1 -right-1 z-10 px-1.5 py-0.5 text-[9px] rounded-full flex items-center gap-1 ${currentTechAccent.badge}`}>
+                        {currentTechAccent.icon}
+                        <span>{currentTechAccent.label}</span>
+                      </div>
+                    )}
+                    {currentImageUrl ? (
+                      <img 
+                        src={currentImageUrl} 
+                        alt={petConfig.displayName}
+                        className="pet-sprite pet-sprite-panel w-full h-full object-contain"
+                        style={{ transform: `scale(${panelScale})` }}
+                      />
+                    ) : (
+                      <span className="text-3xl">{petConfig.icon}</span>
+                    )}
+                  </div>
+                  
+                  <div className="flex-1">
+                    {/* 鍚嶅瓧缂栬緫 */}
+                    {isEditingName ? (
+                      <div className="flex items-center gap-1">
+                        <input
+                          type="text"
+                          value={petName}
+                          onChange={(e) => setPetName(e.target.value)}
+                          onBlur={handleSaveName}
+                          onKeyDown={handleNameKeyDown}
+                          className="w-full px-2 py-1 bg-slate-700 border border-slate-600 text-white text-sm rounded"
+                          maxLength={12}
+                          autoFocus
+                        />
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-2">
+                        <div className="font-bold text-base text-white">{currentPet.name}</div>
+                        <button
+                          onClick={() => setIsEditingName(true)}
+                          className="text-gray-400 hover:text-game-accent transition-colors"
+                        >
+                          <Edit2 className="w-3 h-3" />
+                        </button>
+                      </div>
+                    )}
+                    <div className="text-xs text-slate-500">{petConfig.displayName}</div>
+                    <div className={`text-xs font-medium flex items-center gap-1 ${STATUS_COLORS[currentPet.status]}`}>
+                      <StatusIcon 
+                        status={currentPet.status} 
+                        size={16}
+                        animate={currentPet.status === 'tired' || currentPet.status === 'coma'}
+                      />
+                      {STATUS_TEXT[currentPet.status]}
+                    </div>
+                  </div>
+                </div>
+                
+                {/* 绛夌骇鍜岀粡楠?*/}
+                <div>
+                  <div className="flex justify-between text-xs mb-1 text-white">
+                    <span className="font-medium">Lv.{currentPet.level}</span>
+                    <span className="text-slate-400">{currentLevelExp}/100</span>
+                  </div>
+                  <div className="w-full bg-slate-700 h-2 rounded-full">
+                    <div
+                      className="bg-blue-600 h-full transition-all rounded-full"
+                      style={{ width: `${expPercentage}%` }}
+                    />
+                  </div>
+                </div>
+                
+                {/* 灞炴€?- 浣跨敤鍔ㄧ敾鐘舵€佹潯锛屽甫鍥炬爣鍜岄鑹插尯鍒?*/}
+                <div className="space-y-2">
+                  <AnimatedStatusValue
+                    value={currentPet.attributes.intelligence}
+                    label="智力"
+                    color="bg-sky-500"
+                    icon="🧠"
+                  />
+                  <AnimatedStatusValue
+                    value={currentPet.attributes.creativity}
+                    label="创造力"
+                    color="bg-indigo-500"
+                    icon="✨"
+                  />
+                  <AnimatedStatusValue
+                    value={currentPet.attributes.persistence}
+                    label="毅力"
+                    color="bg-cyan-500"
+                    icon="💪"
+                  />
+                </div>
+                
+                {/* 鎿嶄綔鎸夐挳 */}
+                <div className="space-y-2">
+                  <div className="grid grid-cols-2 gap-2">
+                    <button
+                      onClick={() => setShowFoodSelector(true)}
+                      disabled={isLoading || currentPet.status === 'coma'}
+                      className="pixel-btn pixel-btn-success text-xs flex items-center justify-center gap-1 h-10"
+                    >
+                      <Apple className="w-4 h-4" />
+                      喂养
+                    </button>
+                    
+                    <button
+                      onClick={() => {
+                        setIsExpanded(false);
+                        setShowPetHome(true);
+                      }}
+                      className="pixel-btn bg-sky-700 text-white hover:bg-sky-600 text-xs flex items-center justify-center gap-1 h-10"
+                    >
+                      <Home className="w-4 h-4" />
+                      小屋
+                    </button>
+                    <button
+                      onClick={handleEvolve}
+                      disabled={!canEvolveNow || isLoading}
+                      className={`pixel-btn text-xs flex items-center justify-center gap-1 h-10 ${
+                        canEvolveNow 
+                      ? 'bg-gradient-to-r from-amber-400 to-orange-400 text-white hover:from-amber-300 hover:to-orange-300 animate-pulse' 
+                          : 'bg-slate-700 text-slate-400 cursor-not-allowed'
+                      }`}
+                    >
+                      <Sparkles className="w-4 h-4" />
+                      {canEvolveNow ? '进化' : '进化'}
+                    </button>
+                    
+                    <button
+                      onClick={() => setShowPokedex(true)}
+                      className="pixel-btn bg-slate-700 text-white hover:bg-slate-600 text-xs flex items-center justify-center gap-1 h-10"
+                    >
+                      <BookOpen className="w-4 h-4" />
+                      图鉴
+                    </button>
+                    <button
+                      onClick={() => setShowGrowthGuide(true)}
+                      className="pixel-btn bg-slate-700 text-white hover:bg-slate-600 text-xs flex items-center justify-center gap-1 h-10 col-span-2"
+                    >
+                      成长说明
+                    </button>
+                  </div>
+                  <div className="text-[10px] text-slate-400 text-center">
+                    进入小屋可以互动、喂养和观察宠物状态，持续提升亲密度与成长属性。
+                  </div>
+                  {pendingEggCount > 0 && (
+                    <button
+                      onClick={() => setShowPokedex(true)}
+                      className="w-full rounded-lg border border-amber-400/30 bg-amber-500/10 px-3 py-2 text-left text-xs text-amber-100 transition hover:bg-amber-500/15"
+                    >
+                      还有 {pendingEggCount} 枚宠物蛋在孵化中。现在首次通关新关卡会自动推进所有宠物蛋，无需设为跟随。可进入图鉴蛋仓统一查看进度。
+                    </button>
                   )}
                 </div>
                 
-                <div className="flex-1">
-                  {/* 鍚嶅瓧缂栬緫 */}
-                  {isEditingName ? (
-                    <div className="flex items-center gap-1">
-                      <input
-                        type="text"
-                        value={petName}
-                        onChange={(e) => setPetName(e.target.value)}
-                        onBlur={handleSaveName}
-                        onKeyDown={handleNameKeyDown}
-                        className="w-full px-2 py-1 bg-slate-700 border border-slate-600 text-white text-sm rounded"
-                        maxLength={12}
-                        autoFocus
-                      />
-                    </div>
-                  ) : (
-                    <div className="flex items-center gap-2">
-                      <div className="font-bold text-base text-white">{currentPet.name}</div>
-                      <button
-                        onClick={() => setIsEditingName(true)}
-                        className="text-gray-400 hover:text-game-accent transition-colors"
-                      >
-                        <Edit2 className="w-3 h-3" />
-                      </button>
-                    </div>
-                  )}
-                  <div className="text-xs text-slate-500">{petConfig.displayName}</div>
-                  <div className={`text-xs font-medium flex items-center gap-1 ${STATUS_COLORS[currentPet.status]}`}>
-                    <StatusIcon 
-                      status={currentPet.status} 
-                      size={16}
-                      animate={currentPet.status === 'tired' || currentPet.status === 'coma'}
-                    />
-                    {STATUS_TEXT[currentPet.status]}
+                {/* 鐘舵€佹彁绀?*/}
+                {currentPet.status === 'tired' && (
+                  <div className="bg-amber-900/30 border border-amber-500/30 rounded-lg p-2 text-xs text-amber-400">
+                    提示：你的伙伴有点累了，记得多陪陪它，或者带它去小屋休息一下。
                   </div>
-                </div>
-              </div>
-              
-              {/* 绛夌骇鍜岀粡楠?*/}
-              <div>
-                <div className="flex justify-between text-xs mb-1 text-white">
-                  <span className="font-medium">Lv.{currentPet.level}</span>
-                  <span className="text-slate-400">{currentLevelExp}/100</span>
-                </div>
-                <div className="w-full bg-slate-700 h-2 rounded-full">
-                  <div
-                    className="bg-blue-600 h-full transition-all rounded-full"
-                    style={{ width: `${expPercentage}%` }}
-                  />
-                </div>
-              </div>
-              
-              {/* 灞炴€?- 浣跨敤鍔ㄧ敾鐘舵€佹潯锛屽甫鍥炬爣鍜岄鑹插尯鍒?*/}
-              <div className="space-y-2">
-                {/* 鏅哄姏 - 绱壊锛屽ぇ鑴戝浘鏍?*/}
-                <AnimatedStatusValue
-                  value={currentPet.attributes.intelligence}
-                  label="智力"
-                  color="bg-sky-500"
-                  icon="🧠"
-                />
-                {/* 鍒涢€犲姏 - 绮夎壊锛屾槦鏄熷浘鏍?*/}
-                <AnimatedStatusValue
-                  value={currentPet.attributes.creativity}
-                  label="创造力"
-                  color="bg-indigo-500"
-                  icon="✨"
-                />
-                {/* 姣呭姏 - 钃濊壊锛岃倢鑲夊浘鏍?*/}
-                <AnimatedStatusValue
-                  value={currentPet.attributes.persistence}
-                  label="毅力"
-                  color="bg-cyan-500"
-                  icon="💪"
-                />
-              </div>
-              
-              {/* 鎿嶄綔鎸夐挳 */}
-              <div className="space-y-2">
-                <div className="grid grid-cols-2 gap-2">
-                  <button
-                    onClick={() => setShowFoodSelector(true)}
-                    disabled={isLoading || currentPet.status === 'coma'}
-                    className="pixel-btn pixel-btn-success text-xs flex items-center justify-center gap-1 h-10"
-                  >
-                    <Apple className="w-4 h-4" />
-                    喂养
-                  </button>
-                  
-                  <button
-                    onClick={() => setShowPetHome(true)}
-                    className="pixel-btn bg-sky-700 text-white hover:bg-sky-600 text-xs flex items-center justify-center gap-1 h-10"
-                  >
-                    <Home className="w-4 h-4" />
-                    小屋
-                  </button>
-                  <button
-                    onClick={handleEvolve}
-                    disabled={!canEvolveNow || isLoading}
-                    className={`pixel-btn text-xs flex items-center justify-center gap-1 h-10 ${
-                      canEvolveNow 
-                    ? 'bg-gradient-to-r from-amber-400 to-orange-400 text-white hover:from-amber-300 hover:to-orange-300 animate-pulse' 
-                        : 'bg-slate-700 text-slate-400 cursor-not-allowed'
-                    }`}
-                  >
-                    <Sparkles className="w-4 h-4" />
-                    {canEvolveNow ? '进化' : '进化'}
-                  </button>
-                  
-                  <button
-                    onClick={() => setShowPokedex(true)}
-                    className="pixel-btn bg-slate-700 text-white hover:bg-slate-600 text-xs flex items-center justify-center gap-1 h-10"
-                  >
-                    <BookOpen className="w-4 h-4" />
-                    图鉴
-                  </button>
-                  <button
-                    onClick={() => setShowGrowthGuide(true)}
-                    className="pixel-btn bg-slate-700 text-white hover:bg-slate-600 text-xs flex items-center justify-center gap-1 h-10 col-span-2"
-                  >
-                    成长说明
-                  </button>
-                </div>
-                <div className="text-[10px] text-slate-400 text-center">
-                  进入小屋可以互动、喂养和观察宠物状态，持续提升亲密度与成长属性。
-                </div>
-                {pendingEggCount > 0 && (
-                  <button
-                    onClick={() => setShowPokedex(true)}
-                    className="w-full rounded-lg border border-amber-400/30 bg-amber-500/10 px-3 py-2 text-left text-xs text-amber-100 transition hover:bg-amber-500/15"
-                  >
-                    还有 {pendingEggCount} 枚宠物蛋在孵化中。现在首次通关新关卡会自动推进所有宠物蛋，无需设为跟随。可进入图鉴蛋仓统一查看进度。
-                  </button>
+                )}
+                
+                {currentPet.status === 'coma' && (
+                  <div className="bg-red-950/30 border border-red-500/40 rounded-lg p-2 text-xs text-red-300">
+                    警告：你的伙伴陷入昏迷了，快去答题营救它。
+                  </div>
                 )}
               </div>
-              
-              {/* 鐘舵€佹彁绀?*/}
-              {currentPet.status === 'tired' && (
-                <div className="bg-amber-900/30 border border-amber-500/30 rounded-lg p-2 text-xs text-amber-400">
-                  提示：你的伙伴有点累了，记得多陪陪它，或者带它去小屋休息一下。
-                </div>
-              )}
-              
-              {currentPet.status === 'coma' && (
-                <div className="bg-red-950/30 border border-red-500/40 rounded-lg p-2 text-xs text-red-300">
-                  警告：你的伙伴陷入昏迷了，快去答题营救它。
-                </div>
-              )}
             </div>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      )}
       
       {/* 瀹犵墿灏忓眿 - V3鍏ㄥ睆鐗堟湰 */}
       {showPetHome && (

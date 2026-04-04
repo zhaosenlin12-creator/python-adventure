@@ -18,13 +18,31 @@ import InteractionButton from './InteractionButton';
 import DecorationShop from './DecorationShop';
 import FoodSelector from './FoodSelector';
 import FoodShop from './FoodShop';
-import PetHomeGuide from './PetHomeGuide';
+import PetHomeGuide, { hasCompletedPetHomeGuide } from './PetHomeGuide';
 import PetChatModal from './PetChatModal';
 import { musicManager } from '@/lib/audio/musicManager';
 import { playSound } from '@/lib/utils/soundManager';
 import ConfirmModal from '@/components/ui/ConfirmModal';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Cpu, Zap, Sparkles } from 'lucide-react';
+import {
+  Apple,
+  ChevronDown,
+  ChevronUp,
+  Coins,
+  Cpu,
+  Home,
+  Info,
+  Move,
+  Package2,
+  PawPrint,
+  ShoppingBag,
+  Shirt,
+  Sparkles,
+  Trash2,
+  Trees,
+  X,
+  Zap,
+} from 'lucide-react';
 
 // 🌟 UI Enhanced Components
 import AnimatedCloud from './home/AnimatedCloud';
@@ -33,10 +51,19 @@ import PetSpeechBubble from './home/PetSpeechBubble';
 import HeartParticles, { useHeartParticles } from './home/HeartParticles';
 import AmbientSounds, { AmbientSoundToggle } from './home/AmbientSounds';
 import CozyRoomBackground from './home/CozyRoomBackground';
+import FarmGrid, {
+  findNearestFarmPlot,
+  getOccupiedPlotIds,
+  isPlantable,
+} from './home/FarmGrid';
+import GardenPlayPanel from './home/GardenPlayPanel';
 import FurnitureRenderer from './home/FurnitureRenderer';
 import InteractionFeedback, { setFeedbackTrigger } from './InteractionFeedback';
 import PetMoodOverlay from './PetMoodOverlay';
 import { DecorationIcon } from '@/components/ui/DecorationIcon';
+
+const DEBUG = process.env.NODE_ENV === 'development';
+const debugLog = DEBUG ? console.log.bind(console) : () => {};
 
 interface PetHomeSceneProps {
   isOpen?: boolean;
@@ -60,6 +87,16 @@ interface PetActorState {
   moveDurationMs: number;
 }
 
+interface WallSketch {
+  id: number;
+  left: string;
+  top: string;
+  rotate: number;
+  scale: number;
+  accent: string;
+  accentSoft: string;
+}
+
 const SCENE_LANES: Record<HomeSceneKey, HomeLane[]> = {
   living: [
     { minX: 10, maxX: 34, y: 63 },
@@ -78,6 +115,15 @@ const SCENE_LANES: Record<HomeSceneKey, HomeLane[]> = {
 const LANE_DEPTH_SCALE = [0.82, 0.9, 1, 1.08];
 const GOLDEN_DISTRIBUTION = 0.61803398875;
 const HATCH_HINT_AUTO_COLLAPSE_MS = 5600;
+const QUIET_ACTIONS = new Set<InteractionType>(['train', 'read', 'paint']);
+const SCENE_PERFORMANCE_ACTIONS = new Set<InteractionType>(['train', 'read', 'paint', 'bath']);
+const WALL_SKETCH_PALETTE = [
+  ['#f472b6', '#fbcfe8'],
+  ['#60a5fa', '#bfdbfe'],
+  ['#f59e0b', '#fde68a'],
+  ['#34d399', '#a7f3d0'],
+  ['#a78bfa', '#ddd6fe'],
+] as const;
 
 function clampToRange(value: number, min: number, max: number) {
   return Math.max(min, Math.min(max, value));
@@ -85,6 +131,19 @@ function clampToRange(value: number, min: number, max: number) {
 
 function randomBetween(min: number, max: number) {
   return min + Math.random() * (max - min);
+}
+
+function buildWallSketch(id: number): WallSketch {
+  const [accent, accentSoft] = WALL_SKETCH_PALETTE[id % WALL_SKETCH_PALETTE.length];
+  return {
+    id,
+    left: `${18 + Math.random() * 58}%`,
+    top: `${16 + Math.random() * 48}%`,
+    rotate: -10 + Math.random() * 20,
+    scale: 0.86 + Math.random() * 0.28,
+    accent,
+    accentSoft,
+  };
 }
 
 function pickInitialActor(scene: HomeSceneKey, slot: number, total: number, preferredLane = 1): PetActorState {
@@ -151,7 +210,7 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
   const { placedDecorations, ownedDecorations, loadDecorations, placeDecoration, removeDecoration, updateDecorationPosition } = useDecorationStore();
   const { balance: userCoins, loadBalance } = useCoinStore();
   const { inventory, loadInventory } = useFoodStore();
-  const { token, isAuthenticated } = useAuthStore();
+  const { token, isAuthenticated, user } = useAuthStore();
   const currentAppearance = currentPet ? getStageAppearance(currentPet.evolution_stage ?? (currentPet.isEgg ? 0 : 1)) : null;
   const currentRenderScale = currentPet ? getPetVariantScale(migratePetType(currentPet.petType), 'home') : 1;
   const currentScale = currentAppearance ? ((currentAppearance.size || 48) / 48) * currentRenderScale : 1;
@@ -213,7 +272,9 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
   const [showPetChat, setShowPetChat] = useState(false);
   const [showWardrobe, setShowWardrobe] = useState(false);
   const [showPetList, setShowPetList] = useState(false);
-  const [showInteractionPanel, setShowInteractionPanel] = useState(true);
+  const [showInteractionPanel, setShowInteractionPanel] = useState(false);
+  const [showSceneOverview, setShowSceneOverview] = useState(false);
+  const [isStarterMode, setIsStarterMode] = useState(false);
   const [isHatchHintCollapsed, setIsHatchHintCollapsed] = useState(false);
   const [draggingDecoration, setDraggingDecoration] = useState<string | null>(null);
   const sceneRef = useRef<HTMLDivElement | null>(null);
@@ -249,10 +310,12 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
   const [interactionPosition, setInteractionPosition] = useState({ x: 0, y: 0 });
   const [interactionFollowPet, setInteractionFollowPet] = useState(true);
   const [interactionSpeech, setInteractionSpeech] = useState<string | null>(null);
+  const [wallSketches, setWallSketches] = useState<WallSketch[]>(() => [buildWallSketch(1), buildWallSketch(2)]);
   const petRef = useRef<HTMLDivElement | null>(null);
   const petPositionRef = useRef(petPosition);
   const petLaneIndexRef = useRef(petLaneIndex);
   const otherPetActorsRef = useRef(otherPetActors);
+  const nextWallSketchIdRef = useRef(3);
   const otherPets = useMemo(() => (pets || []).filter((pet) => pet.id !== currentPet?.id), [pets, currentPet?.id]);
   
   // Load Data
@@ -268,11 +331,11 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
   useEffect(() => {
     if (isOpen === false || !currentPet) return;
     // Switch to home BGM when entering (lock to prevent override)
-    console.log('[PetHome] Switching to home BGM');
+    debugLog('[PetHome] Switching to home BGM');
     musicManager.lockBGM('home');
     return () => {
       // Switch back to main BGM when unmounting
-      console.log('[PetHome] Switching back to main BGM');
+      debugLog('[PetHome] Switching back to main BGM');
       musicManager.unlockBGM('home');
       musicManager.switchBGM('main');
     };
@@ -343,6 +406,11 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
     return () => setFeedbackTrigger(null);
   }, [getPetScreenPosition, burstHearts]);
 
+  const addWallSketch = useCallback(() => {
+    const nextId = nextWallSketchIdRef.current++;
+    setWallSketches((previous) => [...previous.slice(-4), buildWallSketch(nextId)]);
+  }, []);
+
   useEffect(() => {
     if (!interactionPlaying || !interactionFollowPet) return;
     let rafId = 0;
@@ -386,6 +454,28 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
     }, {});
     setOtherPetActors(actorMap);
   }, [isOpen, currentPet?.id, currentScene, otherPets]);
+
+  useEffect(() => {
+    if (currentScene === 'garden') {
+      setShowInteractionPanel(false);
+    }
+  }, [currentScene]);
+
+  useEffect(() => {
+    if (isOpen === false || typeof window === 'undefined') {
+      return;
+    }
+
+    const shouldStartFocused = !hasCompletedPetHomeGuide(user?.id);
+    setIsStarterMode(shouldStartFocused);
+    setShowSceneOverview(false);
+    setShowWardrobe(false);
+    setShowPetList(false);
+
+    if (shouldStartFocused) {
+      setShowInteractionPanel(true);
+    }
+  }, [isOpen, user?.id]);
 
   useEffect(() => {
     if (isOpen === false || !currentPet) return;
@@ -503,6 +593,36 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
       otherPetStopTimeoutsRef.current = {};
     };
   }, [isOpen, currentScene, otherPets]);
+
+  const resolveDecorationDropPosition = useCallback(
+    (
+      decorationId: string,
+      x: number,
+      y: number,
+      scene: HomeSceneKey,
+      movingPlacedId?: string | null,
+    ) => {
+      if (scene !== 'garden' || !isPlantable(decorationId)) {
+        return { x, y };
+      }
+
+      const occupiedPlotIds = getOccupiedPlotIds(
+        placedDecorations.filter(
+          (placed) => placed.scene === 'garden' && (!movingPlacedId || placed.id !== movingPlacedId),
+        ),
+      );
+      const nearestPlot = findNearestFarmPlot(x, y, occupiedPlotIds);
+      if (!nearestPlot) {
+        return { x, y };
+      }
+
+      return {
+        x: nearestPlot.x,
+        y: nearestPlot.y,
+      };
+    },
+    [placedDecorations],
+  );
   
   // Handle decoration drop (New placement)
   const handleDecorationDrop = async (e: React.MouseEvent) => {
@@ -517,13 +637,21 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
     const clampedY = Math.max(15, Math.min(85, y));
     
     if (draggingDecoration) {
+      const snapped = resolveDecorationDropPosition(draggingDecoration, clampedX, clampedY, currentScene);
       // Place new decoration
-      await placeDecoration(draggingDecoration, clampedX, clampedY, currentScene);
+      await placeDecoration(draggingDecoration, snapped.x, snapped.y, currentScene);
       playSound('decoration_place');
       setDraggingDecoration(null);
     } else if (isDraggingPlaced && selectedPlaced) {
+      const snapped = resolveDecorationDropPosition(
+        selectedPlaced.decorationId,
+        clampedX,
+        clampedY,
+        currentScene,
+        selectedPlaced.id,
+      );
       // Move existing decoration
-      await updateDecorationPosition(selectedPlaced.id, clampedX, clampedY);
+      await updateDecorationPosition(selectedPlaced.id, snapped.x, snapped.y);
       playSound('decoration_place');
       setIsDraggingPlaced(false);
     }
@@ -571,8 +699,7 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
         if (success) {
           playSound('button_click');
         }
-      } catch (error) {
-        console.error('Failed to remove decoration:', error);
+      } catch {
       } finally {
         setIsRemoving(false);
       }
@@ -672,6 +799,41 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
   const currentImageUrl = getPetImageUrl(resolvedPetType, isWalking ? 'normal' : currentPet.status, currentStageIndex);
   const currentTechAccent = getTechAccent(resolvedPetType);
   const roamingOtherPets = otherPets.filter((pet) => !pet.isEgg && pet.petType !== 'egg');
+  const currentSceneDecorations = placedDecorations.filter((placed) => placed.scene === currentScene);
+  const comfortScore = currentSceneDecorations.reduce((total, placed) => {
+    const effect = DECORATIONS[placed.decorationId]?.effect;
+    return total + (effect?.comfort ?? 0) + (effect?.happiness ?? 0);
+  }, 0);
+  const sceneMoodLabel =
+    currentScene === 'garden'
+      ? '慢节奏庭院'
+      : comfortScore > 26
+        ? '高舒适陪伴'
+        : comfortScore > 12
+          ? '温暖生活感'
+          : '正在慢慢成形';
+  const currentStatusText = STATUS_TEXT[currentPet.status];
+  const currentStatusColor = STATUS_COLORS[currentPet.status];
+  const homeHour = new Date().getHours();
+  const routineLabel =
+    currentScene === 'garden'
+      ? '适合种植、散步和慢养成'
+      : homeHour < 11
+        ? '早晨适合整理小屋和打招呼'
+        : homeHour < 18
+          ? '白天适合互动、阅读和训练'
+          : '夜晚适合安静陪伴和放松';
+  const interactiveHint =
+    currentScene === 'garden'
+      ? '庭院更适合多宠慢慢散步、种植和观察互动。'
+      : '客厅更适合连续互动、装扮和提升陪伴感。';
+  const interactionModeLabel = currentScene === 'garden' ? '庭院陪玩' : '客厅互动';
+  const interactionDockHint = currentScene === 'garden' ? '悬停图标查看玩法' : '点图标就能直接互动';
+
+  const activePerformanceAction =
+    interactionPlaying && interactionType && SCENE_PERFORMANCE_ACTIONS.has(interactionType) ? interactionType : null;
+  const shouldShowInteractionSpeech =
+    interactionPlaying && interactionSpeech && (!interactionType || !QUIET_ACTIONS.has(interactionType));
 
   const interactionMotion = (() => {
     if (!interactionPlaying || !interactionType) {
@@ -679,149 +841,207 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
     }
     switch (interactionType) {
       case 'train':
-        return { x: [0, 14, -14, 14, 0], y: [0, -4, 0], rotate: [0, 5, -5, 5, 0] };
+        return {
+          x: [0, 10, -12, 14, -8, 0],
+          y: [0, -12, -28, -10, -22, 0],
+          rotate: [0, -10, 15, -8, 12, 0],
+          scale: [1, 1.04, 0.95, 1.07, 0.98, 1],
+        };
       case 'play':
-        return { y: [0, -14, 0, -10, 0] };
+        return { y: [0, -22, -8, -18, 0], rotate: [0, 8, -8, 6, 0], scale: [1, 1.04, 0.99, 1.03, 1] };
       case 'talk':
-        return { rotate: [0, -8, 8, -6, 0] };
+        return { rotate: [0, -10, 10, -8, 0], y: [0, -3, 0] };
       case 'pat':
-        return { scale: [1, 1.12, 1] };
+        return { scale: [1, 1.1, 0.98, 1.03, 1], y: [0, -4, 0] };
       case 'read':
-        return { y: [0, -6, 0] };
+        return { x: [0, -2, 1, -1, 0], y: [0, -4, -6, -3, 0], rotate: [0, -5, 2, -4, 0], scale: [1, 0.995, 1, 0.995, 1] };
       case 'paint':
-        return { rotate: [0, 6, -6, 0] };
+        return { rotate: [0, 12, -8, 10, -5, 0], x: [0, 8, -10, 6, -2, 0], y: [0, -2, -5, -1, 0], scale: [1, 1.01, 0.99, 1.02, 1] };
       case 'chat':
-        return { x: [0, 6, -6, 0] };
+        return { x: [0, 8, -8, 6, 0], y: [0, -5, 0], scale: [1, 1.03, 1] };
       case 'bath':
-        return { rotate: [0, 8, -8, 0], scale: [1, 1.06, 1] };
+        return { rotate: [0, 6, -7, 5, 0], x: [0, 2, -2, 1, 0], y: [0, -4, -1, -3, 0], scale: [1, 1.03, 0.99, 1.01, 1] };
       default:
         return { x: 0, y: 0, rotate: 0, scale: 1 };
     }
   })();
   const interactionTransition = interactionPlaying
-    ? { duration: 0.8, ease: [0.4, 0, 0.2, 1] as [number, number, number, number] }
+    ? interactionType === 'train'
+      ? { duration: 1.28, repeat: Infinity, ease: 'easeInOut' as const }
+      : interactionType === 'read'
+        ? { duration: 1.55, repeat: Infinity, ease: 'easeInOut' as const }
+        : interactionType === 'paint'
+          ? { duration: 1.18, repeat: Infinity, ease: 'easeInOut' as const }
+          : interactionType === 'bath'
+            ? { duration: 1.35, repeat: Infinity, ease: 'easeInOut' as const }
+            : { duration: 0.82, ease: [0.4, 0, 0.2, 1] as [number, number, number, number] }
     : { duration: 0.2 };
   
   return (
     <div className="fixed inset-0 z-[9999] bg-slate-900">
       {/* Top Bar */}
-      <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-slate-900/80 to-transparent p-3 z-50">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <h2 className="text-lg font-bold text-white pixel-text-shadow flex items-center gap-2">
-              🏠 {currentPet.name}的小屋
-              {currentStageInfo && (
-                <span className="text-xs px-2 py-0.5 rounded-full bg-slate-800/80 border border-slate-600 text-slate-200">
-                  {currentStageInfo.name}
-                </span>
+      <div className="absolute top-0 left-0 right-0 z-50 bg-gradient-to-b from-slate-950/80 via-slate-950/18 to-transparent px-3 pt-2.5">
+        <div className="mx-auto max-w-[1460px] rounded-[20px] border border-white/6 bg-slate-950/34 px-2 py-1.5 shadow-[0_14px_28px_rgba(2,6,23,0.2)] backdrop-blur-md">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div className="min-w-0 flex-1">
+              <div className="flex flex-wrap items-center gap-1">
+                <div className="rounded-full border border-sky-300/16 bg-sky-500/10 px-2 py-0.5 text-[8px] font-semibold uppercase tracking-[0.22em] text-sky-100">
+                  Pet Home
+                </div>
+                <div className={`rounded-full border px-2 py-0.5 text-[10px] font-semibold ${currentStatusColor} border-white/10 bg-white/[0.04]`}>
+                  {currentStatusText}
+                </div>
+                {currentStageInfo && (
+                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-2 py-0.5 text-[10px] font-semibold text-slate-200">
+                    {currentStageInfo.name}
+                  </span>
+                )}
+              </div>
+
+              <div className="mt-1 flex flex-wrap items-center gap-1.5">
+                <h2 className="max-w-[42vw] truncate text-sm font-black tracking-tight text-white pixel-text-shadow sm:text-base">
+                  {currentPet.name}的小屋
+                </h2>
+                <span className="sr-only">{routineLabel}</span>
+              </div>
+
+              {!isStarterMode && (
+              <div className="mt-1.5 flex flex-wrap items-center gap-1">
+                <div className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-2 py-0.5 text-[10px] text-slate-200">
+                  <Coins className="h-3 w-3 text-amber-300" />
+                  <span className="font-semibold text-white">{userCoins}</span>
+                </div>
+                <div className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-2 py-0.5 text-[10px] text-slate-200">
+                  <PawPrint className="h-3 w-3 text-sky-200" />
+                  <span>{roamingOtherPets.length + 1} 只伙伴</span>
+                </div>
+                <div className="hidden max-w-[144px] items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-2 py-0.5 text-[10px] text-slate-200 md:inline-flex" title={routineLabel}>
+                  <Sparkles className="h-3 w-3 shrink-0 text-emerald-200" />
+                  <span className="truncate">{sceneMoodLabel}</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setShowSceneOverview((value) => !value)}
+                  className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-200 transition hover:bg-white/[0.08] hover:text-white"
+                  title={showSceneOverview ? '收起场景状态' : '展开场景状态'}
+                  aria-label={showSceneOverview ? '收起场景状态' : '展开场景状态'}
+                >
+                  {showSceneOverview ? <ChevronUp className="h-3.5 w-3.5" /> : <Info className="h-3.5 w-3.5 text-sky-200" />}
+                </button>
+              </div>
               )}
-            </h2>
-            
-            {/* Coin Display */}
-            <div className="bg-slate-800/85 border border-slate-600 px-3 py-1 rounded-lg text-sm font-bold text-amber-300 shadow-lg flex items-center gap-2">
-              <span>💰</span>
-              <span>{userCoins}</span>
             </div>
-            
-            {/* Scene Switcher */}
-            <div className="flex bg-slate-800/80 rounded-lg p-1 border border-slate-600">
-              <button
-                onClick={() => setCurrentScene('living')}
-                className={`px-3 py-1 text-sm rounded transition-all flex items-center gap-1 ${
-                  currentScene === 'living'
-                    ? 'bg-sky-600 text-white shadow'
-                    : 'text-gray-400 hover:text-white'
-                }`}
-              >
-                🛋️ 客厅
-              </button>
-              <button
-                onClick={() => setCurrentScene('garden')}
-                className={`px-3 py-1 text-sm rounded transition-all flex items-center gap-1 ${
-                  currentScene === 'garden'
-                    ? 'bg-cyan-600 text-white shadow'
-                    : 'text-gray-400 hover:text-white'
-                }`}
-              >
-                🌳 庭院
-              </button>
+
+            <div className="flex shrink-0 items-center gap-1">
+              <div className="flex items-center gap-1 rounded-full border border-white/10 bg-slate-950/58 p-0.5">
+                <button
+                  onClick={() => setCurrentScene('living')}
+                  title="切换到客厅"
+                  aria-label="切换到客厅"
+                  className={`flex h-8 w-8 items-center justify-center rounded-full px-0 py-0 text-[10px] font-semibold transition-all ${
+                    currentScene === 'living'
+                      ? 'bg-sky-600 text-white shadow-[0_10px_24px_rgba(14,165,233,0.28)]'
+                      : 'text-slate-300 hover:bg-white/[0.06] hover:text-white'
+                  }`}
+                >
+                  <span className="inline-flex items-center gap-1.5">
+                    <Home className="h-3.5 w-3.5" />
+                    <span className="sr-only">客厅</span>
+                  </span>
+                </button>
+                <button
+                  onClick={() => setCurrentScene('garden')}
+                  title="切换到庭院"
+                  aria-label="切换到庭院"
+                  className={`flex h-8 w-8 items-center justify-center rounded-full px-0 py-0 text-[10px] font-semibold transition-all ${
+                    currentScene === 'garden'
+                      ? 'bg-emerald-600 text-white shadow-[0_10px_24px_rgba(16,185,129,0.28)]'
+                      : 'text-slate-300 hover:bg-white/[0.06] hover:text-white'
+                  }`}
+                >
+                  <span className="inline-flex items-center gap-1.5">
+                    <Trees className="h-3.5 w-3.5" />
+                    <span className="sr-only">庭院</span>
+                  </span>
+                </button>
+              </div>
+
+              {!isStarterMode && (
+                <>
+                <button
+                  onClick={() => setShowShop(true)}
+                  className="flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-white/[0.05] text-white transition hover:scale-[1.03] hover:bg-white/[0.1]"
+                  title="打开装饰商店"
+                  aria-label="打开装饰商店"
+                >
+                  <ShoppingBag className="h-4 w-4" />
+                </button>
+                <button
+                  onClick={() => setShowFoodShop(true)}
+                  className="flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-white/[0.05] text-white transition hover:scale-[1.03] hover:bg-white/[0.1]"
+                  title="打开食物补给"
+                  aria-label="打开食物补给"
+                >
+                  <Apple className="h-4 w-4" />
+                </button>
+                <button
+                  onClick={() => setShowPetList(true)}
+                  className="flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-white/[0.05] text-white transition hover:scale-[1.03] hover:bg-white/[0.1]"
+                  title="查看所有宠物伙伴"
+                  aria-label="查看所有宠物伙伴"
+                >
+                  <PawPrint className="h-4 w-4" />
+                </button>
+              <AmbientSoundToggle
+                enabled={ambientEnabled}
+                onToggle={() => setAmbientEnabled(v => !v)}
+              />
+                </>
+              )}
+              {onClose && (
+                <button
+                  onClick={onClose}
+                  className="flex h-7 w-7 items-center justify-center rounded-full border border-red-300/25 bg-red-500/18 text-white transition hover:scale-105 hover:bg-red-500/28"
+                  title="关闭"
+                >
+                  <X className="h-4.5 w-4.5" />
+                </button>
+              )}
             </div>
-            
-            {/* Shop Button */}
-            <button
-              onClick={() => setShowShop(true)}
-              className="w-8 h-8 bg-slate-700 hover:bg-slate-600 text-white rounded-full flex items-center justify-center transition-all shadow-lg border border-slate-500"
-              title="商店"
-            >
-              🏪
-            </button>
-            
-            {/* Food Shop Button */}
-            <button
-              onClick={() => setShowFoodShop(true)}
-              className="w-8 h-8 bg-slate-700 hover:bg-slate-600 text-white rounded-full flex items-center justify-center transition-all shadow-lg border border-slate-500"
-              title="食物商店"
-            >
-              🍖
-            </button>
-
-            {/* Pet List Button */}
-            <button
-              onClick={() => setShowPetList(true)}
-              className="w-8 h-8 bg-slate-700 hover:bg-slate-600 text-white rounded-full flex items-center justify-center transition-all shadow-lg border border-slate-500"
-              title="我的伙伴"
-            >
-              🐾
-            </button>
-
-            {/* Ambient Sound Toggle */}
-            <AmbientSoundToggle
-              enabled={ambientEnabled}
-              onToggle={() => setAmbientEnabled(v => !v)}
-            />
           </div>
-          
-          {/* Close Button */}
-          {onClose && (
-            <button
-              onClick={onClose}
-              className="w-10 h-10 rounded-full bg-red-600 hover:bg-red-700 text-white text-2xl flex items-center justify-center transition-all shadow-lg hover:scale-110"
-              title="关闭"
-            >
-              ×
-            </button>
-          )}
         </div>
       </div>
       
       {/* Left Sidebar - Wardrobe */}
+      {!isStarterMode && (
       <button
-        onClick={() => setShowWardrobe(!showWardrobe)}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-40 bg-slate-700 hover:bg-slate-600 text-white px-3 py-6 rounded-r-xl shadow-2xl transition-all hover:scale-105 border-l-0 border-2 border-slate-500"
+        onClick={() => {
+          setShowInteractionPanel(false);
+          setShowWardrobe(!showWardrobe);
+        }}
+        className="absolute left-5 bottom-20 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-slate-950/68 text-white shadow-[0_16px_28px_rgba(2,6,23,0.2)] transition-all hover:scale-[1.03] hover:bg-slate-900/76"
         title="我的衣柜"
       >
-        <div className="flex flex-col items-center gap-1">
-          <span className="text-2xl">👔</span>
-          <span className="text-xs font-bold" style={{ writingMode: 'vertical-rl' }}>衣柜</span>
-        </div>
+        <Shirt className="h-5 w-5" />
       </button>
+      )}
       
       {/* Right Sidebar - Food Backpack */}
+      {!isStarterMode && (
       <button
         onClick={() => {
           setShowWardrobe(false);
           setShowPetList(false);
           setShowFoodShop(false);
+          setShowInteractionPanel(false);
           setShowFoodSelector(true);
         }}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-40 bg-slate-700 hover:bg-slate-600 text-white px-3 py-6 rounded-l-xl shadow-2xl transition-all hover:scale-105 border-r-0 border-2 border-slate-500"
+        className="absolute right-5 bottom-20 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-slate-950/68 text-white shadow-[0_16px_28px_rgba(2,6,23,0.2)] transition-all hover:scale-[1.03] hover:bg-slate-900/76"
         title="食物背包"
       >
-        <div className="flex flex-col items-center gap-1">
-          <span className="text-2xl">🍖</span>
-          <span className="text-xs font-bold" style={{ writingMode: 'vertical-rl' }}>背包</span>
-        </div>
+        <Package2 className="h-5 w-5" />
       </button>
+      )}
       
       {/* Main Game Area (using CozyRoomBackground) */}
       <div 
@@ -836,6 +1056,57 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
             .filter(p => p.scene === currentScene)
             .map(placed => renderPlacedDecoration(placed))}
 
+          {currentScene === 'living' && (
+            <div className="pointer-events-none absolute right-[10%] top-[15%] z-[12] hidden xl:block">
+              <div className="relative h-[150px] w-[220px] rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,rgba(15,23,42,0.28),rgba(15,23,42,0.08))] shadow-[0_18px_40px_rgba(15,23,42,0.18)] backdrop-blur-[1px]">
+                <div className="absolute inset-x-6 top-4 h-[10px] rounded-full bg-slate-950/12 blur-md" />
+                {wallSketches.map((sketch) => (
+                  <motion.div
+                    key={sketch.id}
+                    className="absolute h-14 w-14 rounded-[18px] border border-white/40 bg-white/80 shadow-[0_8px_20px_rgba(15,23,42,0.08)]"
+                    style={{
+                      left: sketch.left,
+                      top: sketch.top,
+                      rotate: `${sketch.rotate}deg`,
+                      scale: sketch.scale,
+                    }}
+                    initial={{ opacity: 0.72, scale: sketch.scale * 0.94 }}
+                    animate={{ opacity: 0.96, scale: sketch.scale }}
+                    transition={{ duration: 0.35, ease: 'easeOut' }}
+                  >
+                    <div className="absolute left-3 top-3 h-4 w-4 rounded-full" style={{ backgroundColor: sketch.accentSoft }} />
+                    <div
+                      className="absolute left-4 top-6 h-1.5 w-7 rounded-full"
+                      style={{ backgroundColor: sketch.accent, transform: 'rotate(-14deg)' }}
+                    />
+                    <div
+                      className="absolute left-4 top-8 h-1.5 w-5 rounded-full"
+                      style={{ backgroundColor: sketch.accentSoft, transform: 'rotate(18deg)' }}
+                    />
+                    <div
+                      className="absolute left-6 top-10 h-5 w-5 rounded-full border-[3px]"
+                      style={{ borderColor: sketch.accent }}
+                    />
+                  </motion.div>
+                ))}
+                {activePerformanceAction === 'paint' && (
+                  <motion.div
+                    className="absolute bottom-3 right-4 h-16 w-16 rounded-[22px] border border-fuchsia-300/45 bg-white/85 shadow-[0_14px_28px_rgba(217,70,239,0.18)]"
+                    initial={{ opacity: 0.3, scale: 0.9, rotate: -5 }}
+                    animate={{ opacity: [0.65, 1, 0.8], scale: [0.95, 1.04, 1], rotate: [-5, 0, 4, 0] }}
+                    transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
+                  >
+                    <div className="absolute left-3 top-3 h-2 w-9 rounded-full bg-fuchsia-300" />
+                    <div className="absolute left-5 top-6 h-2 w-6 rounded-full bg-sky-300" />
+                    <div className="absolute left-4 top-9 h-3 w-3 rounded-full bg-amber-300" />
+                    <div className="absolute left-9 top-9 h-3 w-3 rounded-full bg-emerald-300" />
+                  </motion.div>
+                )}
+              </div>
+            </div>
+          )}
+
+          {!isStarterMode && (
           <AnimatePresence initial={false}>
             {isHatchHintCollapsed ? (
               <motion.button
@@ -847,8 +1118,9 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
                 transition={{ duration: 0.2, ease: 'easeOut' }}
                 onClick={() => setIsHatchHintCollapsed(false)}
                 className="absolute left-5 top-24 z-30 rounded-full border border-sky-300/30 bg-slate-950/78 px-3 py-1.5 text-xs font-semibold text-sky-100 shadow-lg backdrop-blur-md"
+                title="展开孵化提醒"
               >
-                孵化提示
+                孵化提醒
               </motion.button>
             ) : (
               <motion.div
@@ -857,26 +1129,91 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -10, scale: 0.98 }}
                 transition={{ duration: 0.22, ease: 'easeOut' }}
-                className="absolute left-5 top-24 z-30 max-w-sm rounded-2xl border border-white/10 bg-slate-950/72 px-4 py-3 shadow-xl backdrop-blur-sm"
+                className="absolute left-5 top-24 z-30 w-[min(84vw,286px)] rounded-[24px] border border-white/10 bg-slate-950/74 px-3.5 py-3 shadow-xl backdrop-blur-sm"
               >
-                <div className="flex items-start justify-between gap-4">
+                <div className="flex items-start justify-between gap-3">
                   <div>
-                    <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-sky-300">孵化提示</div>
-                    <p className="mt-2 text-sm leading-6 text-slate-200">
-                      点击小屋里的其他宠物就能直接切换当前跟随。想推进宠物蛋孵化进度时，只要去挑战一个此前没有通关过的新关卡，首次通关后会自动推进进度，不需要先手动设置跟随。
+                    <div className="text-[10px] font-semibold uppercase tracking-[0.24em] text-sky-300">孵化提醒</div>
+                    <p className="mt-1 text-sm font-semibold leading-5 text-slate-100">
+                      切换伙伴后，直接去挑战一个没通关过的新关卡，就会推进孵化进度。
                     </p>
                   </div>
                   <button
                     type="button"
                     onClick={() => setIsHatchHintCollapsed(true)}
-                    className="shrink-0 rounded-full border border-slate-700 bg-slate-900/70 px-2.5 py-1 text-[11px] font-semibold text-slate-200 transition hover:border-sky-300/40 hover:text-white"
+                    className="shrink-0 rounded-full border border-slate-700 bg-slate-900/70 p-1.5 text-slate-200 transition hover:border-sky-300/40 hover:text-white"
+                    aria-label="收起孵化提醒"
                   >
-                    收起
+                    <X className="h-3.5 w-3.5" />
                   </button>
+                </div>
+                <div className="mt-2 grid gap-2 text-[11px] leading-5 text-slate-300">
+                  <div className="rounded-2xl border border-white/8 bg-white/[0.04] px-3 py-2">
+                    点小屋里的其他宠物，就能马上切到新的跟随伙伴。
+                  </div>
+                  <div className="rounded-2xl border border-white/8 bg-white/[0.04] px-3 py-2">
+                    首次通关新关卡后会自动结算孵化进度，不用再额外设置。
+                  </div>
                 </div>
               </motion.div>
             )}
           </AnimatePresence>
+          )}
+
+          {showSceneOverview && !isStarterMode && (
+            <div className="absolute left-5 top-[160px] z-20 w-[184px] rounded-[18px] border border-white/10 bg-slate-950/74 p-2 shadow-[0_14px_28px_rgba(2,6,23,0.2)] backdrop-blur-md">
+              <div className="flex items-start justify-between gap-3">
+                <div className="min-w-0">
+                  <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-sky-300">
+                    {currentScene === 'garden' ? '庭院状态' : '小屋状态'}
+                  </div>
+                  <div className="mt-1 truncate text-xs font-black text-white">{sceneMoodLabel}</div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setShowSceneOverview(false)}
+                  className="flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-300 transition hover:bg-white/[0.08] hover:text-white"
+                  aria-label="收起场景状态"
+                >
+                  <ChevronUp className="h-3.5 w-3.5" />
+                </button>
+              </div>
+
+              <div className="mt-2.5 grid grid-cols-3 gap-1.5">
+                <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-2 py-2">
+                  <div className="text-[10px] uppercase tracking-[0.16em] text-slate-400">装饰</div>
+                  <div className="mt-1 text-xs font-bold text-white">{currentSceneDecorations.length}</div>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-2 py-2">
+                  <div className="text-[10px] uppercase tracking-[0.16em] text-slate-400">舒适</div>
+                  <div className="mt-1 text-xs font-bold text-white">{comfortScore}</div>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-2 py-2">
+                  <div className="text-[10px] uppercase tracking-[0.16em] text-slate-400">伙伴</div>
+                  <div className="mt-1 text-xs font-bold text-white">{roamingOtherPets.length + 1}</div>
+                </div>
+                <p className="sr-only">
+                  顶部切换场景，右下打开互动，左下继续布置小屋。
+                </p>
+              </div>
+
+              <div className="mt-2.5 rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1.5 text-[10px] leading-4 text-slate-300">
+                {interactiveHint}
+              </div>
+            </div>
+          )}
+
+          {currentScene === 'garden' && (
+            <>
+              <FarmGrid placedDecorations={currentSceneDecorations} />
+              <GardenPlayPanel
+                userId={user?.id}
+                currentPetName={currentPet.name}
+                companionCount={roamingOtherPets.length + 1}
+                visible
+              />
+            </>
+          )}
 
           {/* Other Pets Render */}
           {roamingOtherPets.map((pet) => {
@@ -970,7 +1307,7 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
               animate={interactionMotion}
               transition={interactionTransition}
             >
-              {interactionPlaying && interactionSpeech && (
+              {shouldShowInteractionSpeech && (
                 <motion.div
                   className="absolute -top-16 left-1/2 -translate-x-1/2 z-40"
                   initial={{ opacity: 0, y: 10, scale: 0.9 }}
@@ -1020,6 +1357,116 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
               >
                 <div className={`absolute inset-4 rounded-full blur-2xl ${getPetAuraClass(currentStageIndex, currentPet.petStyle)}`} />
                 <div className="absolute inset-x-5 bottom-3 h-5 rounded-full bg-slate-950/16 blur-xl" />
+                {activePerformanceAction && (
+                  <div className="pointer-events-none absolute inset-0">
+                    {activePerformanceAction === 'train' && (
+                      <>
+                        <motion.div
+                          className="absolute inset-3 rounded-full border border-amber-300/60"
+                          animate={{ scale: [0.78, 1.12], opacity: [0.68, 0] }}
+                          transition={{ duration: 0.72, repeat: Infinity, ease: 'easeOut' }}
+                        />
+                        <motion.div
+                          className="absolute inset-1 rounded-full border border-orange-300/35"
+                          animate={{ scale: [0.7, 1.18], opacity: [0.42, 0] }}
+                          transition={{ duration: 0.82, repeat: Infinity, ease: 'easeOut', delay: 0.08 }}
+                        />
+                        <motion.div
+                          className="absolute -left-10 bottom-5 flex h-10 w-6 items-end justify-center"
+                          animate={{ y: [0, -8, 0] }}
+                          transition={{ duration: 0.9, repeat: Infinity, ease: 'easeInOut' }}
+                        >
+                          <div className="h-8 w-2 rounded-full bg-amber-300/75" />
+                          <div className="absolute top-0 h-3 w-6 rounded-full bg-orange-300/85" />
+                        </motion.div>
+                        <motion.div
+                          className="absolute -right-10 top-3 h-14 w-14 rounded-full border-2 border-dashed border-amber-200/80"
+                          animate={{ rotate: [0, 180, 360], scale: [0.94, 1.04, 0.94] }}
+                          transition={{ duration: 2.2, repeat: Infinity, ease: 'linear' }}
+                        >
+                          <div className="absolute inset-[18%] rounded-full border border-amber-100/60" />
+                        </motion.div>
+                        <motion.div
+                          className="absolute left-1/2 top-0 -translate-x-1/2 text-amber-200"
+                          animate={{ y: [2, -16, -2], rotate: [0, -16, 10], opacity: [0, 1, 0] }}
+                          transition={{ duration: 0.82, repeat: Infinity, ease: 'easeOut' }}
+                        >
+                          <Zap className="h-4 w-4" />
+                        </motion.div>
+                      </>
+                    )}
+
+                    {activePerformanceAction === 'read' && (
+                      <>
+                        <motion.div
+                          className="absolute -left-10 top-6 h-12 w-12 rounded-[18px] border border-indigo-200/60 bg-slate-950/60 shadow-[0_12px_26px_rgba(49,46,129,0.22)]"
+                          animate={{ y: [0, -4, 0], rotate: [-4, 0, 4, 0] }}
+                          transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+                        >
+                          <div className="absolute left-3 top-2 h-8 w-2 rounded-full bg-indigo-200/80" />
+                          <div className="absolute right-3 top-2 h-8 w-2 rounded-full bg-indigo-100/75" />
+                          <div className="absolute inset-y-2 left-1/2 w-px -translate-x-1/2 bg-white/45" />
+                        </motion.div>
+                        <motion.div
+                          className="absolute -right-9 top-4 h-8 w-8 rounded-full bg-amber-200/85 shadow-[0_0_28px_rgba(251,191,36,0.45)]"
+                          animate={{ opacity: [0.7, 1, 0.7], scale: [0.94, 1.04, 0.94] }}
+                          transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                        >
+                          <div className="absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/85" />
+                        </motion.div>
+                      </>
+                    )}
+
+                    {activePerformanceAction === 'paint' && (
+                      <>
+                        <motion.div
+                          className="absolute -right-14 top-1 h-20 w-16 rounded-[22px] border border-fuchsia-200/45 bg-white/90 shadow-[0_14px_32px_rgba(217,70,239,0.14)]"
+                          animate={{ rotate: [-4, 0, 4, 0], y: [0, -2, 0] }}
+                          transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
+                        >
+                          <div className="absolute left-3 top-4 h-2 w-9 rounded-full bg-fuchsia-300" />
+                          <div className="absolute left-5 top-8 h-2 w-6 rounded-full bg-sky-300" />
+                          <div className="absolute left-4 top-12 h-3 w-3 rounded-full bg-amber-300" />
+                          <div className="absolute left-9 top-12 h-3 w-3 rounded-full bg-emerald-300" />
+                        </motion.div>
+                        <motion.div
+                          className="absolute -left-6 top-8 h-3 w-11 rounded-full bg-gradient-to-r from-amber-200 via-orange-300 to-fuchsia-300 shadow-[0_4px_12px_rgba(249,115,22,0.3)]"
+                          animate={{ rotate: [-18, -6, 10, -12], x: [0, 4, -3, 0] }}
+                          transition={{ duration: 0.92, repeat: Infinity, ease: 'easeInOut' }}
+                        />
+                        <motion.div
+                          className="absolute right-2 -top-3 flex gap-1"
+                          animate={{ opacity: [0.5, 1, 0.6], y: [0, -6, 0] }}
+                          transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
+                        >
+                          <span className="h-2.5 w-2.5 rounded-full bg-fuchsia-300" />
+                          <span className="h-2.5 w-2.5 rounded-full bg-sky-300" />
+                          <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
+                        </motion.div>
+                      </>
+                    )}
+
+                    {activePerformanceAction === 'bath' && (
+                      <>
+                        <motion.div
+                          className="absolute inset-x-3 bottom-2 h-10 rounded-[24px] border border-cyan-200/35 bg-cyan-200/18"
+                          animate={{ scaleX: [0.96, 1.02, 0.98], y: [0, -1, 0] }}
+                          transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut' }}
+                        />
+                        <motion.div
+                          className="absolute left-4 top-5 h-3 w-3 rounded-full border border-white/60 bg-cyan-100/35"
+                          animate={{ y: [0, -18, -28], opacity: [0, 0.9, 0], scale: [0.5, 1, 1.1] }}
+                          transition={{ duration: 1.6, repeat: Infinity, ease: 'easeOut' }}
+                        />
+                        <motion.div
+                          className="absolute right-5 top-8 h-4 w-4 rounded-full border border-white/60 bg-cyan-100/35"
+                          animate={{ y: [0, -14, -24], opacity: [0, 0.85, 0], scale: [0.5, 1, 1.08] }}
+                          transition={{ duration: 1.3, repeat: Infinity, ease: 'easeOut', delay: 0.28 }}
+                        />
+                      </>
+                    )}
+                  </div>
+                )}
                 {currentTechAccent && (
                   <div className={`absolute -bottom-2 -right-2 z-10 px-2 py-1 text-[10px] rounded-full flex items-center gap-1 ${currentTechAccent.badge}`}>
                     {currentTechAccent.icon}
@@ -1070,24 +1517,36 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
       
       {/* Interaction Panel (toggleable) */}
       {showInteractionPanel && (
-        <div className="absolute right-4 bottom-24 z-50">
-          <div className="bg-slate-900/90 border-2 border-sky-500/60 rounded-2xl shadow-2xl px-3 py-2">
-            <div className="text-xs text-sky-300 font-bold mb-2 text-center">互动面板</div>
-            <div className="grid grid-cols-2 gap-2">
-              <InteractionButton interactionType="pat" petId={currentPet.id} size="small" showLabel />
-              <InteractionButton interactionType="play" petId={currentPet.id} size="small" showLabel />
-              <InteractionButton interactionType="talk" petId={currentPet.id} size="small" showLabel />
-              <InteractionButton interactionType="train" petId={currentPet.id} size="small" showLabel />
-              <InteractionButton interactionType="read" petId={currentPet.id} size="small" showLabel />
-              <InteractionButton interactionType="paint" petId={currentPet.id} size="small" showLabel />
+        <div className={`absolute z-50 ${isStarterMode ? 'right-5 bottom-24' : 'right-20 bottom-28 sm:right-24'}`}>
+          <div className="w-[156px] rounded-[20px] border border-white/10 bg-slate-950/74 px-1.5 py-1.5 shadow-[0_18px_36px_rgba(2,6,23,0.26)] backdrop-blur-md" title={interactionDockHint}>
+            <div className="hidden">
+              <div className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-2 py-1 text-[10px] font-semibold text-slate-100">
+                <Sparkles className="h-3.5 w-3.5 text-sky-200" />
+                <span>互动</span>
+              </div>
+            </div>
+            <div className="mb-1 flex justify-end">
+              <div className="rounded-full border border-white/10 bg-white/[0.04] px-1.5 py-0.5 text-[9px] font-semibold text-slate-300">
+                {interactionModeLabel}
+              </div>
+            </div>
+            <div className="grid grid-cols-4 gap-1">
+              <InteractionButton interactionType="pat" petId={currentPet.id} size="small" />
+              <InteractionButton interactionType="play" petId={currentPet.id} size="small" />
+              <InteractionButton interactionType="talk" petId={currentPet.id} size="small" />
+              <InteractionButton interactionType="train" petId={currentPet.id} size="small" />
+              <InteractionButton interactionType="read" petId={currentPet.id} size="small" />
+              <InteractionButton interactionType="paint" petId={currentPet.id} size="small" />
               <InteractionButton
                 interactionType="chat"
                 petId={currentPet.id}
                 size="small"
-                showLabel
                 onClickOverride={() => setShowPetChat(true)}
               />
-              <InteractionButton interactionType="bath" petId={currentPet.id} size="small" showLabel />
+              <InteractionButton interactionType="bath" petId={currentPet.id} size="small" />
+            </div>
+            <div className="hidden mt-1.5 text-[10px] text-slate-500">
+              {interactionDockHint}
             </div>
           </div>
         </div>
@@ -1096,10 +1555,31 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
       {/* Interaction Toggle Button */}
       <button
         onClick={() => setShowInteractionPanel(v => !v)}
-        className="absolute right-4 bottom-6 z-50 bg-sky-700 hover:bg-sky-600 text-white px-4 py-2 rounded-full shadow-xl border-2 border-sky-400/60 text-sm font-bold transition-all"
+        className="absolute right-5 bottom-6 z-50 flex h-9 w-9 items-center justify-center rounded-full border border-sky-300/30 bg-sky-600/88 text-white shadow-[0_16px_30px_rgba(2,132,199,0.3)] transition-all hover:scale-[1.03] hover:bg-sky-500"
+        title={showInteractionPanel ? '收起互动工具栏' : '展开互动工具栏'}
+        aria-label={showInteractionPanel ? '收起互动工具栏' : '展开互动工具栏'}
       >
-        {showInteractionPanel ? '收起互动' : '展开互动'}
+        <Sparkles className="h-4.5 w-4.5" />
       </button>
+
+      {isStarterMode && (
+        <div className="absolute left-5 bottom-6 z-50 max-w-[260px] rounded-full border border-emerald-300/20 bg-slate-950/82 px-3 py-2 shadow-[0_18px_38px_rgba(2,6,23,0.32)] backdrop-blur-md">
+          <div className="flex items-center gap-2 text-[11px] text-slate-200">
+            <span className="rounded-full bg-emerald-500/16 px-2 py-0.5 font-semibold text-emerald-100">新手视图</span>
+            <span className="truncate">先互动、切场景，熟悉后再展开全部工具。</span>
+            <button
+              type="button"
+              onClick={() => {
+                setIsStarterMode(false);
+                setShowInteractionPanel(false);
+              }}
+              className="shrink-0 rounded-full border border-white/10 bg-white/[0.05] px-2 py-1 text-[10px] font-semibold text-white transition hover:bg-white/[0.1]"
+            >
+              展开
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Interaction Feedback Effects */}
       <InteractionFeedback
@@ -1107,6 +1587,10 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
         isPlaying={interactionPlaying}
         position={interactionPosition}
         onComplete={() => {
+          const finishedInteraction = interactionType;
+          if (finishedInteraction === 'paint' && currentScene === 'living') {
+            addWallSketch();
+          }
           setInteractionPlaying(false);
           setInteractionType(null);
           setInteractionSpeech(null);
@@ -1131,25 +1615,35 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
           />
           
           <div 
-            className="absolute left-0 top-0 bottom-0 w-80 bg-slate-900/95 backdrop-blur-md z-[70] shadow-2xl border-r-4 border-sky-600 overflow-y-auto"
+            className="absolute left-0 top-0 bottom-0 z-[70] w-[336px] overflow-y-auto border-r border-white/10 bg-[linear-gradient(165deg,rgba(15,23,42,0.98),rgba(2,6,23,0.96))] shadow-2xl backdrop-blur-md"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="p-4">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-bold text-white pixel-text-shadow">👔 我的衣柜</h3>
+            <div className="p-5">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.24em] text-sky-300">Home Wardrobe</div>
+                  <h3 className="mt-2 flex items-center gap-2 text-xl font-black text-white pixel-text-shadow">
+                    <Shirt className="h-5 w-5 text-sky-300" />
+                    我的衣柜
+                  </h3>
+                  <p className="hidden mt-2 text-sm leading-6 text-slate-300">
+                    先选中一个装饰，再点击场景中的位置放下它。植物和农田装饰会优先吸附到可种植区域。
+                  </p>
+                </div>
                 <button
                   onClick={() => setShowWardrobe(false)}
-                  className="w-8 h-8 rounded-full bg-red-600 hover:bg-red-700 text-white flex items-center justify-center transition-all hover:scale-110"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white transition hover:bg-white/[0.1]"
+                  aria-label="关闭衣柜"
                 >
-                  ×
+                  <X className="h-4 w-4" />
                 </button>
               </div>
               
-              <p className="text-xs text-slate-300 mb-4 bg-slate-800/80 border border-slate-600 p-2 rounded">
-                💡 点击装饰品，然后点击场景中的位置放置
-              </p>
+              <div className="mt-3 rounded-full border border-sky-300/15 bg-sky-500/10 px-3 py-2 text-xs leading-5 text-sky-50">
+                当前可摆放装饰 {ownedDecorations.filter(d => d.quantity > 0).length} 种。想快速丰富小屋氛围，可以优先摆放植物、灯光和桌面摆件。
+              </div>
               
-              <div className="grid grid-cols-2 gap-3">
+              <div className="mt-5 grid grid-cols-2 gap-3">
                 {ownedDecorations
                   .filter(d => d.quantity > 0)
                   .map(owned => {
@@ -1165,26 +1659,38 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
                           setDraggingDecoration(owned.decorationId);
                           setShowWardrobe(false);
                         }}
-                        className={`p-3 rounded-lg border-2 transition-all ${
+                        className={`group rounded-[22px] border p-3 text-left transition-all ${
                           isSelected 
-                            ? 'bg-sky-600/30 border-sky-400 scale-105' 
-                            : 'bg-slate-800/50 border-slate-700 hover:bg-slate-700/50 hover:border-slate-600'
+                            ? 'scale-[1.02] border-sky-300/70 bg-sky-500/18 shadow-[0_18px_32px_rgba(14,165,233,0.18)]' 
+                            : 'border-white/10 bg-white/[0.04] hover:bg-white/[0.08] hover:border-white/20'
                         }`}
                       >
-                        <div className="mb-2 flex items-center justify-center">
+                        <div className="mb-3 flex items-center justify-between">
+                          <span className="rounded-full border border-white/10 bg-slate-950/60 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-300">
+                            x{owned.quantity}
+                          </span>
+                          {isSelected && (
+                            <span className="rounded-full bg-sky-300/15 px-2 py-1 text-[10px] font-semibold text-sky-100">
+                              已选中
+                            </span>
+                          )}
+                        </div>
+                        <div className="mb-3 flex min-h-[76px] items-center justify-center rounded-2xl border border-white/8 bg-slate-950/45">
                           <DecorationIcon decorationId={decoration.id} size={56} />
                         </div>
-                        <div className="text-xs font-bold text-white">{decoration.name}</div>
-                        <div className="text-xs text-sky-300">x{owned.quantity}</div>
+                        <div className="text-sm font-bold text-white">{decoration.name}</div>
+                        <div className="mt-1 text-[11px] leading-4 text-slate-400 group-hover:text-slate-300">
+                          点击后返回场景放置
+                        </div>
                       </button>
                     );
                   })}
                 
                 {ownedDecorations.filter(d => d.quantity > 0).length === 0 && (
-                  <div className="col-span-2 text-center text-gray-400 py-8">
-                    <p className="text-4xl mb-2">📦</p>
-                    <p className="text-sm">还没有装饰品</p>
-                    <p className="text-xs">去商店购买吧！</p>
+                  <div className="col-span-2 rounded-[26px] border border-dashed border-white/12 bg-white/[0.03] px-5 py-10 text-center text-slate-400">
+                    <Shirt className="mx-auto h-10 w-10 text-slate-500" />
+                    <p className="mt-3 text-sm font-semibold text-slate-300">衣柜里还没有可摆放的装饰</p>
+                    <p className="mt-1 text-xs leading-6 text-slate-400">去商店挑几件家具回来，小屋会立刻更有氛围。</p>
                   </div>
                 )}
               </div>
@@ -1201,21 +1707,35 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
             onClick={() => setShowPetList(false)}
           />
           <div
-            className="absolute right-0 top-0 bottom-0 w-80 bg-slate-900/95 backdrop-blur-md z-[70] shadow-2xl border-l-4 border-sky-600 overflow-y-auto"
+            className="absolute right-0 top-0 bottom-0 z-[70] w-[336px] overflow-y-auto border-l border-white/10 bg-[linear-gradient(165deg,rgba(15,23,42,0.98),rgba(2,6,23,0.96))] shadow-2xl backdrop-blur-md"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="p-4">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-bold text-white pixel-text-shadow">🐾 我的伙伴</h3>
+            <div className="p-5">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.24em] text-sky-300">Companion Queue</div>
+                  <h3 className="mt-2 flex items-center gap-2 text-xl font-black text-white pixel-text-shadow">
+                    <PawPrint className="h-5 w-5 text-sky-300" />
+                    我的伙伴
+                  </h3>
+                  <p className="hidden mt-2 text-sm leading-6 text-slate-300">
+                    点击任意宠物就能立即切换当前跟随。切换后返回大厅或关卡时，会自动使用新的伙伴外观。
+                  </p>
+                </div>
                 <button
                   onClick={() => setShowPetList(false)}
-                  className="w-8 h-8 rounded-full bg-red-600 hover:bg-red-700 text-white flex items-center justify-center transition-all hover:scale-110"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white transition hover:bg-white/[0.1]"
+                  aria-label="关闭伙伴列表"
                 >
-                  ×
+                  <X className="h-4 w-4" />
                 </button>
               </div>
 
-              <div className="space-y-3">
+              <div className="mt-3 rounded-full border border-emerald-300/14 bg-emerald-500/10 px-3 py-2 text-xs leading-5 text-emerald-50">
+                当前共有 {(pets || []).length} 只宠物。宠物蛋的孵化进度不需要手动切换跟随，只要去完成新的未通关关卡即可推进。
+              </div>
+
+              <div className="mt-5 space-y-3">
               {(pets || []).map(pet => {
                   const resolvedType = migratePetType(pet.petType);
                   const config = PET_CONFIGS[resolvedType];
@@ -1228,17 +1748,17 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
                   return (
                     <div
                       key={pet.id}
-                      className={`p-3 rounded-lg border-2 transition-all ${
+                      className={`rounded-[24px] border p-3 transition-all ${
                         isActive
-                          ? 'bg-sky-600/20 border-sky-400'
-                          : 'bg-slate-800/50 border-slate-700 hover:bg-slate-700/50 hover:border-slate-600'
+                          ? 'border-sky-300/70 bg-sky-500/16 shadow-[0_18px_32px_rgba(14,165,233,0.18)]'
+                          : 'border-white/10 bg-white/[0.04] hover:bg-white/[0.07] hover:border-white/20'
                       }`}
                     >
                       <div className="flex items-center gap-3">
-                        <div className="relative w-12 h-12 flex items-center justify-center">
+                        <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-white/8 bg-slate-950/50">
                           <div className={`absolute inset-1 rounded-full blur-md ${getPetAuraClass(stageIndex, pet.petStyle)}`} />
                           {techAccent && (
-                            <div className={`absolute -bottom-1 -right-1 z-10 px-1 py-0.5 text-[9px] rounded-full flex items-center gap-1 ${techAccent.badge}`}>
+                            <div className={`absolute -bottom-1 -right-1 z-10 flex items-center gap-1 rounded-full px-1 py-0.5 text-[9px] ${techAccent.badge}`}>
                               {techAccent.icon}
                             </div>
                           )}
@@ -1255,15 +1775,17 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="text-sm font-bold text-white truncate">{pet.name}</div>
-                          <div className="text-xs text-gray-400">Lv.{pet.level}</div>
-                          <div className={`text-xs ${STATUS_COLORS[pet.status]}`}>{STATUS_TEXT[pet.status]}</div>
+                          <div className="mt-1 text-xs text-slate-400">Lv.{pet.level}</div>
+                          <div className={`mt-1 text-xs font-medium ${STATUS_COLORS[pet.status]}`}>{STATUS_TEXT[pet.status]}</div>
                         </div>
                         {isActive ? (
-                          <div className="text-xs text-sky-300 font-bold">跟随中</div>
+                          <div className="rounded-full border border-sky-300/25 bg-sky-500/12 px-3 py-1 text-xs font-bold text-sky-100">
+                            跟随中
+                          </div>
                         ) : (
                           <button
                             onClick={() => setCurrentPet(pet)}
-                            className="px-2 py-1 text-xs bg-sky-700 hover:bg-sky-600 text-white rounded"
+                            className="rounded-full bg-sky-600 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-sky-500"
                           >
                             设为跟随
                           </button>
@@ -1274,9 +1796,10 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
                 })}
 
                 {(pets || []).length === 0 && (
-                  <div className="text-center text-gray-400 py-8">
-                    <p className="text-4xl mb-2">🐾</p>
-                    <p className="text-sm">还没有宠物</p>
+                  <div className="rounded-[26px] border border-dashed border-white/12 bg-white/[0.03] px-5 py-10 text-center text-slate-400">
+                    <PawPrint className="mx-auto h-10 w-10 text-slate-500" />
+                    <p className="mt-3 text-sm font-semibold text-slate-300">当前还没有宠物伙伴</p>
+                    <p className="mt-1 text-xs leading-6 text-slate-400">先去冒险或孵化新的伙伴，再回来布置属于你们的小屋。</p>
                   </div>
                 )}
               </div>
@@ -1304,46 +1827,61 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
       {/* Selected Decoration Controls - Bottom Floating Panel */}
       {selectedPlaced && (
         <div className="absolute bottom-24 left-1/2 -translate-x-1/2 z-[100] animate-scaleIn">
-          <div className="bg-slate-900/95 backdrop-blur-md rounded-2xl border-2 border-sky-500 shadow-2xl p-4">
-            <div className="flex items-center gap-3 mb-3">
-              <span className="text-4xl">{DECORATIONS[selectedPlaced.decorationId]?.icon}</span>
-              <span className="text-white font-bold text-lg">
-                {DECORATIONS[selectedPlaced.decorationId]?.name || '装饰品'}
-              </span>
+          <div className="w-[min(92vw,420px)] rounded-full border border-sky-300/20 bg-slate-950/92 px-3 py-2.5 shadow-[0_30px_60px_rgba(2,6,23,0.44)] backdrop-blur-md">
+            <div className="flex items-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/[0.05]">
+                <DecorationIcon decorationId={selectedPlaced.decorationId} size={40} />
+              </div>
+              <div className="min-w-0 flex-1">
+                <div className="hidden text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-300">Selected Decoration</div>
+                <div className="truncate text-sm font-bold text-white">
+                  {DECORATIONS[selectedPlaced.decorationId]?.name || '装饰品'}
+                </div>
+                <p className="mt-0.5 text-[11px] text-slate-400">
+                  轻点按钮即可移动、收回或关闭
+                </p>
+                <p className="hidden mt-1 text-sm leading-6 text-slate-300">
+                  你可以重新摆放它的位置，或者直接把它收回衣柜。
+                </p>
+              </div>
             </div>
             
-            <div className="flex gap-3">
-              {/* Move Button */}
+            <div className="mt-3 ml-auto flex items-center gap-2">
               <button
                 onClick={handleStartDragPlaced}
-                className={`px-5 py-2.5 rounded-xl font-bold transition-all flex items-center gap-2 ${
+                title={isDraggingPlaced ? '点击场景中的新位置完成摆放' : '重新摆放这个装饰'}
+                aria-label={isDraggingPlaced ? '点击场景中的新位置完成摆放' : '重新摆放这个装饰'}
+                className={`flex h-10 w-10 items-center justify-center rounded-full text-[0] transition-all ${
                   isDraggingPlaced
                     ? 'bg-emerald-500 text-white animate-pulse'
-                    : 'bg-sky-700 hover:bg-sky-600 text-white hover:scale-105'
+                    : 'bg-sky-700 text-white hover:scale-105 hover:bg-sky-600'
                 }`}
               >
-                <span className="text-xl">✋</span>
-                {isDraggingPlaced ? '点击新位置' : '移动'}
+                <Move className="h-4 w-4" />
+                {isDraggingPlaced ? '点击新位置放下' : '重新摆放'}
               </button>
               
-              {/* Remove Button */}
               <button
                 onClick={handleRemoveDecoration}
-                className="px-5 py-2.5 bg-red-600 hover:bg-red-500 text-white rounded-xl font-bold transition-all flex items-center gap-2 hover:scale-105"
+                title="移回衣柜"
+                aria-label="移回衣柜"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-red-600 text-[0] text-white transition-all hover:scale-105 hover:bg-red-500"
               >
-                <span className="text-xl">🗑️</span>
-                移除
+                <Trash2 className="h-4 w-4" />
+                移回衣柜
               </button>
               
-              {/* Cancel Button */}
               <button
                 onClick={() => {
                   setSelectedPlaced(null);
                   setIsDraggingPlaced(false);
                 }}
-                className="px-5 py-2.5 bg-slate-600 hover:bg-slate-500 text-white rounded-xl font-bold transition-all hover:scale-105"
+                title="关闭装饰工具条"
+                aria-label="关闭装饰工具条"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-700 text-[0] text-white transition-all hover:scale-105 hover:bg-slate-600"
               >
-                取消
+                <X className="h-4 w-4" />
+                关闭
               </button>
             </div>
           </div>
@@ -1356,8 +1894,8 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
       {/* Dragging Hint */}
       {(draggingDecoration || isDraggingPlaced) && (
         <div className="absolute top-20 left-1/2 -translate-x-1/2 z-[100]">
-          <div className="bg-sky-600/90 text-white px-6 py-3 rounded-full font-bold shadow-lg animate-pulse">
-            👆 点击场景中的位置放置装饰品
+          <div className="rounded-full border border-sky-300/25 bg-sky-600/90 px-4 py-2 text-xs font-semibold text-white shadow-lg animate-pulse">
+            点击场景中的目标位置完成摆放
           </div>
         </div>
       )}
@@ -1365,10 +1903,10 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
       {/* Remove Confirmation Modal */}
       <ConfirmModal
         isOpen={showRemoveConfirm}
-        title="移除装饰品"
-        message={`确定要移除 ${selectedPlaced ? DECORATIONS[selectedPlaced.decorationId]?.name || '这个装饰品' : ''} 吗？装饰品将返回到你的衣柜中。`}
-        icon="🗑️"
-        confirmText="确认移除"
+        title="移回衣柜"
+        message={`确定要移除 ${selectedPlaced ? DECORATIONS[selectedPlaced.decorationId]?.name || '这个装饰品' : ''} 吗？移除后它会回到你的衣柜，不会丢失。`}
+        icon="🪑"
+        confirmText="确认移回"
         cancelText="取消"
         confirmType="danger"
         onConfirm={confirmRemoveDecoration}
@@ -1379,7 +1917,7 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
       <AmbientSounds scene={currentScene} enabled={ambientEnabled} />
       
       {/* New User Guide */}
-      <PetHomeGuide />
+      <PetHomeGuide onComplete={() => setShowInteractionPanel(true)} />
     </div>
   );
 }

@@ -14,6 +14,7 @@ import LevelView from "@/components/game/LevelView";
 import LeaderboardModal from "@/components/game/LeaderboardModal";
 import { SyncStatusIndicator } from "@/components/game/SyncStatusIndicator";
 import { Level } from "@/lib/levels";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Trophy, LogOut, User, Volume2, VolumeX, Languages } from "lucide-react";
 import Footer from "@/components/Footer";
@@ -172,8 +173,25 @@ export default function Home() {
             {/* Top Bar */}
             <div className="flex flex-col sm:flex-row justify-between items-center p-2 sm:p-4 bg-[#0a0e27]/80 backdrop-blur-sm border-b border-blue-900/30 gap-2 sm:gap-0">
                 <div className="flex items-center gap-2 sm:gap-4 flex-wrap justify-center sm:justify-start">
-                    <h1 className="text-lg sm:text-2xl font-pixel text-blue-400">{t('app.title')}</h1>
-                    <div className="text-[10px] text-gray-500 opacity-50 hidden sm:block">v2.2</div>
+                    <div className="flex items-center gap-2 rounded-full border border-cyan-400/20 bg-slate-950/40 px-3 py-2 shadow-[0_8px_24px_rgba(4,18,38,0.35)]">
+                        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 ring-1 ring-white/10">
+                            <Image
+                                src="/brand/logo11-badge.png"
+                                alt="LeQiXiang Logo"
+                                width={32}
+                                height={32}
+                                priority
+                                className="h-7 w-7 object-contain"
+                            />
+                        </div>
+                        <div className="leading-tight">
+                            <div className="text-lg sm:text-2xl font-pixel text-blue-300">{t('app.title')}</div>
+                            <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.24em] text-cyan-200/75">
+                                <span>LeQiXiang</span>
+                                <span className="text-gray-500/80">v2.2</span>
+                            </div>
+                        </div>
+                    </div>
                     <div className="text-xs sm:text-sm text-slate-400 hidden sm:block">{t('app.welcome', { username: user?.username || '' })}</div>
                 </div>
                 <div className="flex items-center gap-2 sm:gap-4">

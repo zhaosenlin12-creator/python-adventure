@@ -38,6 +38,7 @@ from app.core.config import settings
 from app.core.database import ensure_database_ready
 
 IS_PRODUCTION = settings.ENVIRONMENT.lower() == "production"
+QUIET_SUCCESS_REQUEST_LOGS = IS_PRODUCTION or not settings.DEBUG
 ensure_database_ready()
 
 
@@ -95,6 +96,7 @@ logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
 )
 logger = logging.getLogger(__name__)
+logging.getLogger("uvicorn.access").setLevel(logging.WARNING if IS_PRODUCTION else logging.INFO)
 
 
 @app.middleware("http")
@@ -103,10 +105,10 @@ async def log_requests(request: Request, call_next):
     request.state.request_id = request_id
     try:
         response = await call_next(request)
-        if not IS_PRODUCTION:
+        if not QUIET_SUCCESS_REQUEST_LOGS:
             logger.info("%s %s - %s - %s", request.method, request.url.path, response.status_code, request_id)
-        elif response.status_code >= 400:
-            logger.warning("%s %s - %s - %s", request.method, request.url.path, response.status_code, request_id)
+        elif response.status_code >= 500:
+            logger.error("%s %s - %s - %s", request.method, request.url.path, response.status_code, request_id)
         response.headers["X-Request-ID"] = request_id
         return response
     except Exception as exc:
@@ -139,7 +141,8 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
             message = message.split("Value error,", 1)[-1].strip()
         friendly_errors.append(message)
 
-    logger.warning("Validation error %s - %s: %s", request.url.path, request_id, exc.errors())
+    if not IS_PRODUCTION:
+        logger.warning("Validation error %s - %s: %s", request.url.path, request_id, exc.errors())
     fallback = "请求参数不正确，请检查输入后重试"
     return JSONResponse(
         status_code=422,

@@ -1,7 +1,9 @@
 "use client";
 
 // 版本号 - 用于验证部署是否成功
-const BUILD_VERSION = "v2.1.18-20251219";
+const BUILD_VERSION = "v20260331-stable6-r5";
+const DEBUG = process.env.NODE_ENV === 'development';
+const debugLog = DEBUG ? console.log.bind(console) : () => {};
 
 import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import dynamicImport from 'next/dynamic';
@@ -29,7 +31,17 @@ const PvpBattleSystem = dynamicPvp(() => import('@/components/game/pvp/PvpBattle
 });
 const PvpBattleRoyaleSystem = dynamicPvp(() => import('@/components/game/pvp-br/PvpBattleRoyaleSystem'), {
     ssr: false,
-    loading: () => null
+    loading: () => (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/88 backdrop-blur-sm">
+            <div className="rounded-[28px] border border-cyan-300/15 bg-slate-900/92 px-7 py-6 text-center shadow-[0_24px_70px_rgba(2,6,23,0.52)]">
+                <div className="mx-auto mb-4 h-11 w-11 animate-spin rounded-full border-2 border-cyan-300/20 border-t-cyan-300" />
+                <div className="text-lg font-semibold text-white">正在进入宠物生存乱斗...</div>
+                <div className="mt-2 max-w-sm text-sm leading-6 text-slate-300">
+                    已触发交互，系统正在加载大厅与联网资源。加载完成后会自动进入，不需要重复按 E。
+                </div>
+            </div>
+        </div>
+    )
 });
 import PlatformGame from "@/components/game/PlatformGame";
 import ResultModal from "@/components/game/ResultModal";
@@ -140,13 +152,13 @@ export default function WorldPage() {
             });
         } catch (error) {
             // 静默处理，不阻塞游戏
-            console.debug('[WorldPage] Failed to update location (non-blocking):', error);
+            debugLog('[WorldPage] Failed to update location (non-blocking):', error);
         }
     }, [getBackendUrl, token]);
 
     useEffect(() => {
         // 输出版本号，用于验证部署
-        console.log(`%c🎮 Code Adventure ${BUILD_VERSION}`, 'color: #00ff00; font-size: 16px; font-weight: bold;');
+        debugLog(`%c🎮 Code Adventure ${BUILD_VERSION}`, 'color: #00ff00; font-size: 16px; font-weight: bold;');
         setMounted(true);
         
         // 初始化背景音乐
@@ -178,7 +190,7 @@ export default function WorldPage() {
     useEffect(() => {
         if (!user?.id || !isAuthenticated || !token) return;
         
-        console.log('[WorldPage] Initializing WebSocket for user:', user.id, user.username);
+        debugLog('[WorldPage] Initializing WebSocket for user:', user.id, user.username);
         
         // 先更新玩家位置到后端
         updatePlayerLocation(100, 100, "开放世界");
@@ -254,17 +266,17 @@ export default function WorldPage() {
         // 新的站点交互事件
         const handleStationInteraction = (event: any) => {
             const { stationId } = event.detail;
-            console.log('[WorldPage] Station interaction received:', stationId);
+            debugLog('[WorldPage] Station interaction received:', stationId);
             
             switch (stationId) {
                 case 'campaign':
-                    console.log('[WorldPage] 进入战役模式...');
+                    debugLog('[WorldPage] 进入战役模式...');
                     musicManager.switchBGM('battle'); // 🔥 切换到战斗BGM
                     setShowPlatformGame(true);
                     break;
                 case 'arena':
                     // 竞技场 - 进入竞技场平台游戏场景
-                    console.log('[WorldPage] 进入竞技场场景...');
+                    debugLog('[WorldPage] 进入竞技场场景...');
                     musicManager.switchBGM('arena'); // 🔥 切换到竞技场BGM
                     window.dispatchEvent(new CustomEvent('enter-arena'));
                     break;
@@ -276,16 +288,17 @@ export default function WorldPage() {
                     setShowNewPvp(true);
                     break;
                 case 'battle_royale':
+                    window.dispatchEvent(new Event('modal-opened'));
                     setShowBattleRoyale(true);
                     break;
                 case 'secret':
-                    console.log('[WorldPage] 打开密码门挑战');
+                    debugLog('[WorldPage] 打开密码门挑战');
                     setCurrentDoorId('arena_door');
                     setShowDoorChallenge(true);
                     break;
                 case 'creative':
                     // 创意工坊 - 显示加载提示后跳转到编辑器页面
-                    console.log('[WorldPage] 进入创意工坊...');
+                    debugLog('[WorldPage] 进入创意工坊...');
                     setIsLoadingEditor(true);
                     // 延迟一点让用户看到加载提示
                     setTimeout(() => {
@@ -319,7 +332,7 @@ export default function WorldPage() {
         
         // 🔥 监听场景切换事件（从竞技场返回时），切换回主BGM
         const handleSceneChanged = () => {
-            console.log('[WorldPage] Scene changed, switching to main BGM');
+            debugLog('[WorldPage] Scene changed, switching to main BGM');
             musicManager.switchBGM('main');
         };
 

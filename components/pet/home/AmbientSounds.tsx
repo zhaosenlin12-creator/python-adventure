@@ -2,6 +2,9 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+const DEBUG = process.env.NODE_ENV === 'development';
+const debugLog = DEBUG ? console.log.bind(console) : () => {};
+
 interface AmbientSoundsProps {
   scene: 'living' | 'garden';
   enabled?: boolean;
@@ -48,7 +51,7 @@ export default function AmbientSounds({
         setIsPlaying(true);
       } catch (e) {
         // 自动播放被阻止，等待用户交互
-        console.log('[AmbientSounds] Autoplay blocked, waiting for interaction');
+        debugLog('[AmbientSounds] Autoplay blocked, waiting for interaction');
         
         const handleInteraction = () => {
           audio.play().then(() => setIsPlaying(true)).catch(() => {});

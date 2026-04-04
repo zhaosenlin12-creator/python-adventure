@@ -80,8 +80,15 @@ export default function AchievementPanel() {
       firstLoadRef.current = false;
       unlockedIdsRef.current = unlockedIds;
     } catch (error) {
+      if (error instanceof ApiError && error.statusCode === 401) {
+        setAchievements([]);
+        setUnclaimedCount(0);
+        return;
+      }
       if (error instanceof ApiError && error.isNetworkError()) {
         // 网络问题交给全局提示处理，避免控制台重复报错
+      } else if (error instanceof ApiError && error.isClientError()) {
+        // 其他客户端错误静默降级，避免在开发环境把调试层直接打到页面上
       } else {
         console.error('获取成就失败:', error);
       }

@@ -21,6 +21,11 @@ import { musicManager } from '../../../lib/audio/musicManager';
 import { createPvpWebSocket, disconnectPvpWebSocket, PvpWebSocketClient } from '../../../lib/services/pvpWebSocket';
 import { touchInputManager } from '../../../lib/input/TouchInputManager';
 import { MobileGameWrapper } from '../MobileGameWrapper';
+import { usePvpStore } from '../../../store/pvpStore';
+import { usePetStore } from '@/store/petStore';
+import { getPetImageUrl } from '@/lib/config/petAssets';
+import { getPetVariantScale, getPetWorldYOffset } from '@/lib/config/petArtworkProfiles';
+import { migratePetType } from '@/lib/pet/migration';
 
 // 技能定义
 interface Skill {
@@ -116,6 +121,17 @@ interface PvpBattleRoundProps {
     onClose: () => void;
 }
 
+interface FighterPetProfile {
+    petType?: string;
+    petStage?: number;
+    petName?: string;
+}
+
+const isLocalDev = typeof window !== 'undefined'
+    ? (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+    : process.env.NODE_ENV === 'development';
+const debugLog = isLocalDev ? console.log.bind(console) : () => {};
+
 // 游戏常量 - 优化比例
 const GAME_WIDTH = 1800;
 const GAME_HEIGHT = 600;
@@ -139,8 +155,7 @@ const COMBO_WINDOW = 2000;
 
 
 export default function PvpBattleRound({ opponent, isRealPlayer, roomId, playerId, isHost = true, opponentName, onComplete }: PvpBattleRoundProps) {
-    // 🔥 调试日志
-    console.log('[PvpBattleRound] 组件参数:', { isRealPlayer, roomId, playerId, isHost, opponentName, hasOpponent: !!opponent });
+    debugLog('[PvpBattleRound] 组件参数:', { isRealPlayer, roomId, playerId, isHost, opponentName, hasOpponent: !!opponent });
     
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const gameLoopRef = useRef<number | null>(null);
@@ -148,6 +163,7 @@ export default function PvpBattleRound({ opponent, isRealPlayer, roomId, playerI
     const projectilesRef = useRef<Projectile[]>([]);
     const effectsRef = useRef<Effect[]>([]);
     const powerUpsRef = useRef<PowerUp[]>([]);
+    const petImageCacheRef = useRef<Record<string, HTMLImageElement>>({});
     const nextIdRef = useRef(1);
     const cameraRef = useRef({ x: 0, y: 0 });
     const wsRef = useRef<any>(null); // WebSocket 引用
@@ -175,6 +191,48 @@ export default function PvpBattleRound({ opponent, isRealPlayer, roomId, playerI
     const [p1Combo, setP1Combo] = useState(0);
     const [p2Combo, setP2Combo] = useState(0);
     const [soundEnabled, setSoundEnabled] = useState(true);
+    const currentRoom = usePvpStore((state) => state.currentRoom);
+    const currentPet = usePetStore((state) => state.currentPet);
+
+    const localPetProfile = useMemo<FighterPetProfile>(() => {
+        const roomProfile = isHost ? currentRoom?.hostPlayer : currentRoom?.guestPlayer;
+        return {
+            petType: roomProfile && !('type' in roomProfile) ? roomProfile.petType : currentPet?.petType,
+            petStage: roomProfile && !('type' in roomProfile) ? roomProfile.petStage : (currentPet?.evolution_stage ?? 3),
+            petName: roomProfile && !('type' in roomProfile) ? roomProfile.petName : currentPet?.name,
+        };
+    }, [currentPet?.evolution_stage, currentPet?.name, currentPet?.petType, currentRoom?.guestPlayer, currentRoom?.hostPlayer, isHost]);
+
+    const remotePetProfile = useMemo<FighterPetProfile>(() => {
+        if (!isRealPlayer) {
+            return {};
+        }
+        const roomProfile = isHost ? currentRoom?.guestPlayer : currentRoom?.hostPlayer;
+        if (roomProfile && !('type' in roomProfile)) {
+            return {
+                petType: roomProfile.petType,
+                petStage: roomProfile.petStage,
+                petName: roomProfile.petName,
+            };
+        }
+        return {};
+    }, [currentRoom?.guestPlayer, currentRoom?.hostPlayer, isHost, isRealPlayer]);
+
+    useEffect(() => {
+        [localPetProfile, remotePetProfile].forEach((profile) => {
+            if (!profile.petType) return;
+            const normalizedType = migratePetType(profile.petType);
+            const normalizedStage = Math.max(1, Math.min(5, profile.petStage ?? 3));
+            const cacheKey = `${normalizedType}-${normalizedStage}`;
+            if (petImageCacheRef.current[cacheKey]) {
+                return;
+            }
+            const image = new Image();
+            image.decoding = 'async';
+            image.src = getPetImageUrl(normalizedType, 'normal', normalizedStage);
+            petImageCacheRef.current[cacheKey] = image;
+        });
+    }, [localPetProfile, remotePetProfile]);
     
     // 初始化玩家 - 站在地面上
     // 真人对战时：房主在左边（蓝色），客人在右边（红色）
@@ -249,19 +307,19 @@ export default function PvpBattleRound({ opponent, isRealPlayer, roomId, playerI
         // 只有真人对战才需要 WebSocket
         if (!isRealPlayer || !roomId || !playerId) return;
         
-        console.log('[PvpBattleRound] 建立真人对战 WebSocket 连接', { roomId, playerId });
+        debugLog('[PvpBattleRound] 建立真人对战 WebSocket 连接', { roomId, playerId });
         
         wsRef.current = createPvpWebSocket({
             roomId,
             playerId,
             onMessage: (msg) => {
                 // 🔥 调试日志
-                console.log('[PvpBattleRound] 收到WS消息:', msg.type, msg);
+                debugLog('[PvpBattleRound] 收到WS消息:', msg.type, msg);
                 
                 // 🤖 处理AI接管消息
                 if (msg.type === 'player_replaced_by_ai') {
                     const msgAny = msg as any;
-                    console.log('[PvpBattleRound] 🤖 对方断线，AI接管:', msgAny);
+                    debugLog('[PvpBattleRound] 🤖 对方断线，AI接管:', msgAny);
                     setAiTakeover(true);
                     setAiTakeoverName(msgAny.disconnected_name || '对手');
                     // 切换到AI模式：不再从WebSocket接收对方状态，改用本地AI逻辑
@@ -269,7 +327,7 @@ export default function PvpBattleRound({ opponent, isRealPlayer, roomId, playerI
                 
                 // 🤖 处理重连被拒绝消息
                 if (msg.type === 'reconnect_rejected') {
-                    console.log('[PvpBattleRound] 🚫 重连被拒绝，结束游戏');
+                    debugLog('[PvpBattleRound] 🚫 重连被拒绝，结束游戏');
                     setGameEnded(true);
                 }
                 
@@ -280,7 +338,7 @@ export default function PvpBattleRound({ opponent, isRealPlayer, roomId, playerI
                     const state = msgAny.payload || {};
                     const senderId = msgAny.user_id?.toString() || state.id?.toString();
                     
-                    console.log('[PvpBattleRound] player_state - senderId:', senderId, 'myId:', playerId);
+                    debugLog('[PvpBattleRound] player_state - senderId:', senderId, 'myId:', playerId);
                     
                     // 只处理对方的状态（不是自己发的）
                     if (senderId && senderId !== playerId) {
@@ -334,16 +392,16 @@ export default function PvpBattleRound({ opponent, isRealPlayer, roomId, playerI
                 
                 // 🔥 处理对方发送的轮次结束消息（同步进入下一轮）
                 if (msg.type === 'round_end') {
-                    console.log('[PvpBattleRound] 收到对方 round_end 消息，同步结束游戏');
+                    debugLog('[PvpBattleRound] 收到对方 round_end 消息，同步结束游戏');
                     setGameEnded(true);
                 }
             },
             onConnect: () => {
-                console.log('[PvpBattleRound] WebSocket 已连接');
+                debugLog('[PvpBattleRound] WebSocket 已连接');
                 setWsConnected(true);
             },
             onDisconnect: () => {
-                console.log('[PvpBattleRound] WebSocket 断开');
+                debugLog('[PvpBattleRound] WebSocket 断开');
                 setWsConnected(false);
             },
         });
@@ -351,7 +409,7 @@ export default function PvpBattleRound({ opponent, isRealPlayer, roomId, playerI
         wsRef.current.connect();
         
         return () => {
-            console.log('[PvpBattleRound] 清理 WebSocket 连接');
+            debugLog('[PvpBattleRound] 清理 WebSocket 连接');
             // 🔥 不要在这里断开连接，让连接保持
             // disconnectPvpWebSocket();
             wsRef.current = null;
@@ -1115,119 +1173,153 @@ export default function PvpBattleRound({ opponent, isRealPlayer, roomId, playerI
             }
             
             const centerX = px + PLAYER_WIDTH / 2;
-            const baseColor = idx === 0 ? '#3b82f6' : '#ef4444';
-            const lightColor = idx === 0 ? '#60a5fa' : '#f87171';
-            const darkColor = idx === 0 ? '#1e40af' : '#991b1b';
-            
-            // 🎮 头部 - 圆形
-            const headRadius = 12;
-            const headY = py + headRadius + 2;
-            
-            // 头部渐变
-            const headGrad = ctx.createRadialGradient(centerX - 3, headY - 3, 0, centerX, headY, headRadius);
-            headGrad.addColorStop(0, '#ffe4c4');  // 肤色高光
-            headGrad.addColorStop(0.7, '#deb887'); // 肤色
-            headGrad.addColorStop(1, '#cd853f');   // 肤色阴影
-            ctx.fillStyle = headGrad;
-            ctx.beginPath();
-            ctx.arc(centerX, headY, headRadius, 0, Math.PI * 2);
-            ctx.fill();
-            
-            // 头发
-            ctx.fillStyle = idx === 0 ? '#2d1b0e' : '#1a1a1a';
-            ctx.beginPath();
-            ctx.arc(centerX, headY - 3, headRadius, Math.PI, Math.PI * 2);
-            ctx.fill();
-            
-            // 眼睛
-            const eyeOffset = player.facingRight ? 3 : -3;
-            ctx.fillStyle = 'white';
-            ctx.beginPath();
-            ctx.ellipse(centerX + eyeOffset - 4, headY, 3, 4, 0, 0, Math.PI * 2);
-            ctx.ellipse(centerX + eyeOffset + 4, headY, 3, 4, 0, 0, Math.PI * 2);
-            ctx.fill();
-            
-            // 瞳孔
-            const pupilOffset = player.facingRight ? 1 : -1;
-            ctx.fillStyle = '#333';
-            ctx.beginPath();
-            ctx.arc(centerX + eyeOffset - 4 + pupilOffset, headY, 1.5, 0, Math.PI * 2);
-            ctx.arc(centerX + eyeOffset + 4 + pupilOffset, headY, 1.5, 0, Math.PI * 2);
-            ctx.fill();
-            
-            // 🎮 身体 - 梯形躯干
-            const bodyTop = py + headRadius * 2 + 4;
-            const bodyHeight = 22;
-            const shoulderWidth = 20;
-            const waistWidth = 14;
-            
-            const bodyGrad = ctx.createLinearGradient(centerX, bodyTop, centerX, bodyTop + bodyHeight);
-            bodyGrad.addColorStop(0, lightColor);
-            bodyGrad.addColorStop(0.5, baseColor);
-            bodyGrad.addColorStop(1, darkColor);
-            ctx.fillStyle = bodyGrad;
-            
-            ctx.beginPath();
-            ctx.moveTo(centerX - shoulderWidth / 2, bodyTop);
-            ctx.lineTo(centerX + shoulderWidth / 2, bodyTop);
-            ctx.lineTo(centerX + waistWidth / 2, bodyTop + bodyHeight);
-            ctx.lineTo(centerX - waistWidth / 2, bodyTop + bodyHeight);
-            ctx.closePath();
-            ctx.fill();
-            
-            // 身体边框
-            ctx.strokeStyle = lightColor;
-            ctx.lineWidth = 1;
-            ctx.stroke();
-            
-            // 🎮 手臂
-            const armY = bodyTop + 3;
-            const armLength = 14;
-            const armWidth = 5;
-            
-            // 左臂
-            ctx.fillStyle = '#deb887';
-            ctx.beginPath();
-            ctx.ellipse(centerX - shoulderWidth / 2 - armWidth / 2, armY + armLength / 2, armWidth / 2, armLength / 2, 0, 0, Math.PI * 2);
-            ctx.fill();
-            
-            // 右臂（攻击时伸出）
-            if (player.isAttacking) {
-                const attackArmX = player.facingRight ? centerX + shoulderWidth / 2 + armLength : centerX - shoulderWidth / 2 - armLength;
-                ctx.fillStyle = '#deb887';
+            const petProfile = idx === 0 ? localPetProfile : remotePetProfile;
+            const resolvedPetType = petProfile.petType ? migratePetType(petProfile.petType) : null;
+            const petStage = Math.max(1, Math.min(5, petProfile.petStage ?? 3));
+            const petCacheKey = resolvedPetType ? `${resolvedPetType}-${petStage}` : '';
+            const petImage = petCacheKey ? petImageCacheRef.current[petCacheKey] : null;
+            const canDrawPet = Boolean(petImage && petImage.complete && petImage.naturalWidth > 0);
+
+            if (canDrawPet && resolvedPetType && petImage) {
+                const petScale = Math.max(0.9, Math.min(1.18, getPetVariantScale(resolvedPetType, 'world') * 0.86));
+                const petWidth = PLAYER_WIDTH * 1.9 * petScale;
+                const petHeight = PLAYER_HEIGHT * 1.82 * petScale;
+                const petX = centerX - petWidth / 2;
+                const petY = py - 8 + getPetWorldYOffset(resolvedPetType) * 0.9;
+
+                ctx.save();
+                ctx.shadowColor = idx === 0 ? 'rgba(59, 130, 246, 0.28)' : 'rgba(239, 68, 68, 0.28)';
+                ctx.shadowBlur = 14;
+                if (!player.facingRight) {
+                    ctx.translate(centerX, 0);
+                    ctx.scale(-1, 1);
+                    ctx.drawImage(petImage, -(petWidth / 2), petY, petWidth, petHeight);
+                } else {
+                    ctx.drawImage(petImage, petX, petY, petWidth, petHeight);
+                }
+                ctx.restore();
+
+                ctx.strokeStyle = idx === 0 ? 'rgba(96, 165, 250, 0.75)' : 'rgba(248, 113, 113, 0.75)';
+                ctx.lineWidth = 2;
                 ctx.beginPath();
-                ctx.ellipse(attackArmX, armY + 5, armLength / 2, armWidth / 2, 0, 0, Math.PI * 2);
+                ctx.ellipse(centerX, py + PLAYER_HEIGHT * 0.82, PLAYER_WIDTH * 0.38, 5, 0, 0, Math.PI * 2);
+                ctx.stroke();
+
+                if (player.isAttacking) {
+                    ctx.fillStyle = idx === 0 ? 'rgba(59, 130, 246, 0.32)' : 'rgba(239, 68, 68, 0.32)';
+                    const attackX = player.facingRight ? px + PLAYER_WIDTH : px - ATTACK_RANGE;
+                    ctx.beginPath();
+                    ctx.ellipse(
+                        attackX + ATTACK_RANGE / 2,
+                        py + PLAYER_HEIGHT / 2,
+                        ATTACK_RANGE * 0.42,
+                        ATTACK_RANGE * 0.28,
+                        0,
+                        0,
+                        Math.PI * 2,
+                    );
+                    ctx.fill();
+                }
+            } else {
+                const baseColor = idx === 0 ? '#3b82f6' : '#ef4444';
+                const lightColor = idx === 0 ? '#60a5fa' : '#f87171';
+                const darkColor = idx === 0 ? '#1e40af' : '#991b1b';
+                
+                const headRadius = 12;
+                const headY = py + headRadius + 2;
+                
+                const headGrad = ctx.createRadialGradient(centerX - 3, headY - 3, 0, centerX, headY, headRadius);
+                headGrad.addColorStop(0, '#ffe4c4');
+                headGrad.addColorStop(0.7, '#deb887');
+                headGrad.addColorStop(1, '#cd853f');
+                ctx.fillStyle = headGrad;
+                ctx.beginPath();
+                ctx.arc(centerX, headY, headRadius, 0, Math.PI * 2);
                 ctx.fill();
                 
-                // 攻击特效
-                ctx.fillStyle = idx === 0 ? 'rgba(59, 130, 246, 0.6)' : 'rgba(239, 68, 68, 0.6)';
-                const attackX = player.facingRight ? px + PLAYER_WIDTH : px - ATTACK_RANGE;
+                ctx.fillStyle = idx === 0 ? '#2d1b0e' : '#1a1a1a';
                 ctx.beginPath();
-                ctx.arc(attackX + ATTACK_RANGE / 2, py + PLAYER_HEIGHT / 2, ATTACK_RANGE / 2, 0, Math.PI * 2);
+                ctx.arc(centerX, headY - 3, headRadius, Math.PI, Math.PI * 2);
                 ctx.fill();
-            } else {
+                
+                const eyeOffset = player.facingRight ? 3 : -3;
+                ctx.fillStyle = 'white';
+                ctx.beginPath();
+                ctx.ellipse(centerX + eyeOffset - 4, headY, 3, 4, 0, 0, Math.PI * 2);
+                ctx.ellipse(centerX + eyeOffset + 4, headY, 3, 4, 0, 0, Math.PI * 2);
+                ctx.fill();
+                
+                const pupilOffset = player.facingRight ? 1 : -1;
+                ctx.fillStyle = '#333';
+                ctx.beginPath();
+                ctx.arc(centerX + eyeOffset - 4 + pupilOffset, headY, 1.5, 0, Math.PI * 2);
+                ctx.arc(centerX + eyeOffset + 4 + pupilOffset, headY, 1.5, 0, Math.PI * 2);
+                ctx.fill();
+                
+                const bodyTop = py + headRadius * 2 + 4;
+                const bodyHeight = 22;
+                const shoulderWidth = 20;
+                const waistWidth = 14;
+                
+                const bodyGrad = ctx.createLinearGradient(centerX, bodyTop, centerX, bodyTop + bodyHeight);
+                bodyGrad.addColorStop(0, lightColor);
+                bodyGrad.addColorStop(0.5, baseColor);
+                bodyGrad.addColorStop(1, darkColor);
+                ctx.fillStyle = bodyGrad;
+                
+                ctx.beginPath();
+                ctx.moveTo(centerX - shoulderWidth / 2, bodyTop);
+                ctx.lineTo(centerX + shoulderWidth / 2, bodyTop);
+                ctx.lineTo(centerX + waistWidth / 2, bodyTop + bodyHeight);
+                ctx.lineTo(centerX - waistWidth / 2, bodyTop + bodyHeight);
+                ctx.closePath();
+                ctx.fill();
+                
+                ctx.strokeStyle = lightColor;
+                ctx.lineWidth = 1;
+                ctx.stroke();
+                
+                const armY = bodyTop + 3;
+                const armLength = 14;
+                const armWidth = 5;
+                
                 ctx.fillStyle = '#deb887';
                 ctx.beginPath();
-                ctx.ellipse(centerX + shoulderWidth / 2 + armWidth / 2, armY + armLength / 2, armWidth / 2, armLength / 2, 0, 0, Math.PI * 2);
+                ctx.ellipse(centerX - shoulderWidth / 2 - armWidth / 2, armY + armLength / 2, armWidth / 2, armLength / 2, 0, 0, Math.PI * 2);
                 ctx.fill();
+                
+                if (player.isAttacking) {
+                    const attackArmX = player.facingRight ? centerX + shoulderWidth / 2 + armLength : centerX - shoulderWidth / 2 - armLength;
+                    ctx.fillStyle = '#deb887';
+                    ctx.beginPath();
+                    ctx.ellipse(attackArmX, armY + 5, armLength / 2, armWidth / 2, 0, 0, Math.PI * 2);
+                    ctx.fill();
+                    
+                    ctx.fillStyle = idx === 0 ? 'rgba(59, 130, 246, 0.6)' : 'rgba(239, 68, 68, 0.6)';
+                    const attackX = player.facingRight ? px + PLAYER_WIDTH : px - ATTACK_RANGE;
+                    ctx.beginPath();
+                    ctx.arc(attackX + ATTACK_RANGE / 2, py + PLAYER_HEIGHT / 2, ATTACK_RANGE / 2, 0, Math.PI * 2);
+                    ctx.fill();
+                } else {
+                    ctx.fillStyle = '#deb887';
+                    ctx.beginPath();
+                    ctx.ellipse(centerX + shoulderWidth / 2 + armWidth / 2, armY + armLength / 2, armWidth / 2, armLength / 2, 0, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                
+                const legTop = bodyTop + bodyHeight;
+                const legHeight = 14;
+                const legWidth = 5;
+                const legGap = 3;
+                
+                ctx.fillStyle = '#4a4a4a';
+                ctx.fillRect(centerX - legGap - legWidth, legTop, legWidth, legHeight);
+                ctx.fillRect(centerX + legGap, legTop, legWidth, legHeight);
+                
+                ctx.fillStyle = '#2d2d2d';
+                ctx.fillRect(centerX - legGap - legWidth - 1, legTop + legHeight - 3, legWidth + 2, 4);
+                ctx.fillRect(centerX + legGap - 1, legTop + legHeight - 3, legWidth + 2, 4);
             }
-            
-            // 🎮 腿部
-            const legTop = bodyTop + bodyHeight;
-            const legHeight = 14;
-            const legWidth = 5;
-            const legGap = 3;
-            
-            ctx.fillStyle = '#4a4a4a';  // 裤子颜色
-            // 左腿
-            ctx.fillRect(centerX - legGap - legWidth, legTop, legWidth, legHeight);
-            // 右腿
-            ctx.fillRect(centerX + legGap, legTop, legWidth, legHeight);
-            
-            // 鞋子
-            ctx.fillStyle = '#2d2d2d';
-            ctx.fillRect(centerX - legGap - legWidth - 1, legTop + legHeight - 3, legWidth + 2, 4);
-            ctx.fillRect(centerX + legGap - 1, legTop + legHeight - 3, legWidth + 2, 4);
             
             // 增益指示
             if (player.speedBoost > 1) {
@@ -1294,7 +1386,7 @@ export default function PvpBattleRound({ opponent, isRealPlayer, roomId, playerI
         
         // 🔥 真人对战时，发送轮次结束消息给对方
         if (isRealPlayer && wsRef.current) {
-            console.log('[PvpBattleRound] 发送 round_end 消息');
+            debugLog('[PvpBattleRound] 发送 round_end 消息');
             wsRef.current.send('round_end', {
                 round: 'battle',
                 scores: { player1: p1Score, player2: p2Score },

@@ -281,6 +281,51 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
           background: 'radial-gradient(ellipse at top, rgba(255,250,220,0.12) 0%, transparent 70%)'
         }} />
 
+        {/* I. 阅读角矮柜 */}
+        <div className="absolute bottom-[31%] right-[13%] z-[2] pointer-events-none">
+          <div className="relative h-[102px] w-[160px]">
+            <div className="absolute inset-x-0 bottom-0 h-[62px] rounded-[18px]" style={{
+              background: 'linear-gradient(180deg, rgba(110,76,40,0.76) 0%, rgba(72,48,24,0.88) 100%)',
+              boxShadow: '0 14px 26px rgba(15,23,42,0.12)',
+            }} />
+            <div className="absolute inset-x-[10px] bottom-[48px] h-[18px] rounded-[12px] bg-amber-100/18" />
+            <div className="absolute left-[18px] bottom-[20px] h-[28px] w-[48px] rounded-[10px] bg-amber-950/22" />
+            <div className="absolute right-[18px] bottom-[20px] h-[28px] w-[48px] rounded-[10px] bg-amber-950/22" />
+            <div className="absolute left-[22px] top-[12px] h-[28px] w-[16px] rounded-sm bg-emerald-300/32" />
+            <div className="absolute left-[42px] top-[10px] h-[30px] w-[14px] rounded-sm bg-sky-300/30" />
+            <div className="absolute left-[60px] top-[15px] h-[25px] w-[18px] rounded-sm bg-rose-300/30" />
+            <div className="absolute right-[24px] top-[8px] h-[18px] w-[18px] rounded-full bg-amber-100/36" />
+          </div>
+        </div>
+
+        {/* J. 吊灯暖光 */}
+        <div className="absolute left-1/2 top-[5%] z-[3] -translate-x-1/2 pointer-events-none">
+          <div className="mx-auto h-[34px] w-[4px] rounded-full bg-amber-900/24" />
+          <div className="mx-auto h-[18px] w-[68px] rounded-b-[999px] rounded-t-[10px]" style={{
+            background: 'linear-gradient(180deg, rgba(248,214,146,0.8) 0%, rgba(145,99,54,0.72) 100%)',
+          }} />
+          <div className={`absolute left-1/2 top-[10px] -translate-x-1/2 rounded-full transition-opacity duration-[2000ms] ${
+            timeOfDay === 'night' ? 'opacity-85' : 'opacity-45'
+          }`} style={{
+            width: '240px',
+            height: '150px',
+            background: 'radial-gradient(circle, rgba(255,234,178,0.28) 0%, rgba(255,219,146,0.12) 38%, transparent 72%)',
+          }} />
+        </div>
+
+        {/* K. 壁炉光影感 */}
+        <div className="absolute bottom-[31%] left-[42%] z-[1] pointer-events-none">
+          <div className="relative h-[120px] w-[120px]">
+            <div className="absolute inset-x-[18px] bottom-0 h-[86px] rounded-t-[26px] border border-white/8 bg-slate-100/10" />
+            <div className="absolute inset-x-[32px] bottom-[18px] h-[44px] rounded-[18px] bg-amber-900/18" />
+            <div className={`absolute inset-x-[30px] bottom-[22px] h-[34px] rounded-[18px] transition-opacity duration-[2000ms] ${
+              timeOfDay === 'night' ? 'opacity-100' : 'opacity-55'
+            }`} style={{
+              background: 'radial-gradient(circle at 50% 70%, rgba(251,146,60,0.42) 0%, rgba(245,158,11,0.22) 38%, transparent 78%)',
+            }} />
+          </div>
+        </div>
+
         {/* 7. 内容层 (家具、宠物等) */}
         <div className="relative z-10 w-full h-full">
           {children}
@@ -305,6 +350,15 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
   // 渲染庭院 - 丰富场景
   return (
     <div className={`relative w-full h-full overflow-hidden transition-colors duration-[2000ms] bg-gradient-to-b ${sceneConfig.garden.skyColor[timeOfDay]}`}>
+      <div
+        className="absolute inset-x-0 top-0 h-[34%] pointer-events-none"
+        style={{
+          background:
+            timeOfDay === 'night'
+              ? 'radial-gradient(circle at 70% 16%, rgba(148,163,184,0.16) 0%, transparent 32%), linear-gradient(180deg, rgba(15,23,42,0.18) 0%, transparent 100%)'
+              : 'radial-gradient(circle at 72% 14%, rgba(255,248,196,0.35) 0%, rgba(255,244,214,0.12) 24%, transparent 56%), linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 100%)',
+        }}
+      />
       
       {/* 远山层叠 */}
       <div className="absolute bottom-[28%] left-0 right-0 h-[30%] pointer-events-none">
@@ -338,7 +392,27 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
           background: 'linear-gradient(to bottom, rgba(100,200,80,0.3), transparent)'
         }} />
       </div>
-      
+
+      {/* 露珠和光斑层 */}
+      <div className="absolute inset-0 pointer-events-none z-[1]">
+        {Array.from({ length: 16 }).map((_, index) => (
+          <motion.div
+            key={`dew-${index}`}
+            className="absolute rounded-full"
+            style={{
+              left: `${8 + (index * 6.3) % 84}%`,
+              top: `${58 + (index % 5) * 6}%`,
+              width: `${index % 3 === 0 ? 8 : 5}px`,
+              height: `${index % 3 === 0 ? 8 : 5}px`,
+              background: timeOfDay === 'night' ? 'rgba(224,242,254,0.18)' : 'rgba(255,255,255,0.22)',
+              boxShadow: timeOfDay === 'night' ? '0 0 8px rgba(224,242,254,0.14)' : '0 0 8px rgba(255,255,255,0.16)',
+            }}
+            animate={{ opacity: [0.24, 0.62, 0.24], y: [0, -2, 0] }}
+            transition={{ duration: 3 + (index % 4), repeat: Infinity, delay: index * 0.15, ease: 'easeInOut' }}
+          />
+        ))}
+      </div>
+
       {/* 石板小路 */}
       <div className="absolute bottom-[5%] left-[40%] w-[20%] h-[22%] pointer-events-none z-[1]">
         {[0, 18, 38, 56, 75].map((top, i) => (
@@ -355,6 +429,46 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
             }}
           />
         ))}
+      </div>
+
+      {/* 花园凉亭 */}
+      <div className="absolute left-[49%] bottom-[31%] z-[3] pointer-events-none">
+        <div className="relative h-[130px] w-[150px]">
+          <div className="absolute left-[10px] right-[10px] top-[16px] h-[14px] rounded-[12px]" style={{
+            background: 'linear-gradient(180deg, rgba(145,94,54,0.7) 0%, rgba(101,67,33,0.75) 100%)',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.12)',
+          }} />
+          <div className="absolute left-[22px] right-[22px] top-[2px] h-[26px] rounded-[18px]" style={{
+            background: 'linear-gradient(180deg, rgba(244,205,154,0.72) 0%, rgba(180,117,69,0.82) 100%)',
+          }} />
+          <div className="absolute left-[18px] top-[20px] h-[74px] w-[8px] rounded-full bg-amber-900/45" />
+          <div className="absolute right-[18px] top-[20px] h-[74px] w-[8px] rounded-full bg-amber-900/45" />
+          <div className="absolute left-[36px] right-[36px] bottom-[16px] h-[12px] rounded-full bg-stone-200/25" />
+          <div className="absolute left-[34px] right-[34px] bottom-[12px] h-[6px] rounded-full bg-stone-800/14 blur-[1px]" />
+          <div className="absolute left-[8px] right-[8px] top-[28px] h-[42px] rounded-[18px]" style={{
+            background: 'linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 100%)',
+          }} />
+        </div>
+      </div>
+
+      {/* 小池塘 */}
+      <div className="absolute right-[20%] bottom-[24%] z-[2] h-[80px] w-[160px] pointer-events-none">
+        <div
+          className="absolute inset-0 rounded-[999px] border border-cyan-100/20"
+          style={{
+            background:
+              timeOfDay === 'night'
+                ? 'radial-gradient(ellipse at 50% 42%, rgba(56,189,248,0.16) 0%, rgba(21,94,117,0.28) 44%, rgba(12,22,39,0.12) 100%)'
+                : 'radial-gradient(ellipse at 50% 42%, rgba(191,219,254,0.42) 0%, rgba(56,189,248,0.26) 44%, rgba(14,116,144,0.14) 100%)',
+            boxShadow: 'inset 0 6px 18px rgba(255,255,255,0.08), 0 10px 18px rgba(15,23,42,0.08)',
+          }}
+        />
+        <div className="absolute inset-[9%] rounded-[999px] border border-white/10 bg-white/5" />
+        <motion.div
+          className="absolute left-[18%] top-[34%] h-[12px] w-[42px] rounded-full bg-white/15"
+          animate={{ x: [0, 16, 0], opacity: [0.18, 0.32, 0.18] }}
+          transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
+        />
       </div>
 
       {/* 花丛（左下） */}
@@ -510,7 +624,10 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
 
       {/* 田地土壤（草地区域，与 FarmGrid 格子坐标对齐） */}
       <div className="absolute pointer-events-none z-[1]" style={{ left: '3%', bottom: '8%', width: '38%', height: '16%' }}>
-        <div className="relative w-full h-full grid grid-cols-4 grid-rows-2 gap-[3px] p-[2px]">
+        <div className="absolute -top-[14%] left-[2%] right-[8%] h-[18%] rounded-[16px] bg-amber-950/14 blur-md" />
+        <div className="relative w-full h-full rounded-[28px] border border-amber-950/18 bg-[linear-gradient(180deg,rgba(116,74,32,0.18),rgba(80,46,18,0.26))] p-[10px] shadow-[0_18px_28px_rgba(15,23,42,0.12)]">
+          <div className="absolute inset-[4px] rounded-[24px] border border-white/6" />
+          <div className="relative grid h-full w-full grid-cols-4 grid-rows-2 gap-[5px]">
           {Array.from({ length: 8 }).map((_, i) => (
             <div key={i} className="rounded-sm" style={{
               background: timeOfDay === 'night'
@@ -524,6 +641,18 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
               }} />
             </div>
           ))}
+        </div>
+        </div>
+      </div>
+
+      {/* 农具和收纳箱 */}
+      <div className="absolute left-[38%] bottom-[26%] z-[3] pointer-events-none">
+        <div className="relative h-[70px] w-[70px]">
+          <div className="absolute bottom-[12px] left-[8px] h-[22px] w-[44px] rounded-[10px] bg-amber-900/28" />
+          <div className="absolute bottom-[18px] left-[12px] h-[22px] w-[38px] rounded-[10px] bg-amber-700/34" />
+          <div className="absolute bottom-[42px] left-[48px] h-[22px] w-[4px] rotate-[22deg] rounded-full bg-amber-900/40" />
+          <div className="absolute bottom-[20px] left-[50px] h-[10px] w-[12px] rounded-[6px] bg-slate-200/26" />
+          <div className="absolute bottom-[38px] left-[58px] h-[22px] w-[4px] -rotate-[18deg] rounded-full bg-amber-900/40" />
         </div>
       </div>
 
@@ -548,6 +677,35 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
         </div>
       )}
 
+      {(timeOfDay === 'day' || timeOfDay === 'dusk') && (
+        <div className="absolute inset-0 pointer-events-none z-[5]">
+          {Array.from({ length: 8 }).map((_, index) => (
+            <motion.div
+              key={`petal-${index}`}
+              className="absolute h-[8px] w-[12px] rounded-full"
+              style={{
+                left: `${12 + index * 10}%`,
+                top: `${18 + (index % 4) * 8}%`,
+                background: index % 2 === 0 ? 'rgba(253,164,175,0.52)' : 'rgba(254,240,138,0.46)',
+                boxShadow: '0 0 8px rgba(255,255,255,0.12)',
+              }}
+              animate={{
+                x: [0, 18, -10, 0],
+                y: [0, 26, 48, 72],
+                rotate: [0, 40, -25, 0],
+                opacity: [0, 0.75, 0.55, 0],
+              }}
+              transition={{
+                duration: 7 + index * 0.5,
+                repeat: Infinity,
+                delay: index * 0.6,
+                ease: 'easeInOut',
+              }}
+            />
+          ))}
+        </div>
+      )}
+      
       {/* 萤火虫（夜晚） */}
       {timeOfDay === 'night' && (
         <div className="absolute inset-0 pointer-events-none z-[5]">

@@ -10,6 +10,7 @@ from typing import Optional
 import logging
 
 from app.core.database import get_db
+from app.core.config import settings
 from app.models.error_log import ErrorLog
 from app.schemas.error_log import (
     ErrorLogCreate, 
@@ -22,6 +23,7 @@ from app.models.user import User
 
 router = APIRouter(prefix="/error-logs", tags=["错误日志"])
 logger = logging.getLogger(__name__)
+IS_PRODUCTION = settings.ENVIRONMENT.lower() == "production"
 
 # 速率限制：每个IP每分钟最多上报10条错误
 _rate_limit_cache: dict[str, list[datetime]] = {}
@@ -83,12 +85,13 @@ async def report_error(
         db.add(error_log)
         db.commit()
         
-        # 记录到服务器日志（WARNING级别，便于排查）
-        logger.warning(
-            f"[ErrorReport] type={error_data.error_type} "
-            f"url={error_data.page_url} "
-            f"msg={error_data.error_message[:100]}"
-        )
+        if not IS_PRODUCTION:
+            logger.warning(
+                "[ErrorReport] type=%s url=%s msg=%s",
+                error_data.error_type,
+                error_data.page_url,
+                error_data.error_message[:100],
+            )
         
         return {"success": True, "id": error_log.id}
         
@@ -208,6 +211,7 @@ async def cleanup_old_logs(
     
     db.commit()
     
-    logger.info(f"清理了 {deleted_count} 条旧错误日志")
+    if not IS_PRODUCTION:
+        logger.info("清理了 %s 条旧错误日志", deleted_count)
     
     return {"success": True, "deleted_count": deleted_count}

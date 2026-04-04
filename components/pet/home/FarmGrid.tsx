@@ -101,19 +101,46 @@ export default function FarmGrid({ placedDecorations }: FarmGridProps) {
             }}
           >
             {isOccupied ? (
-              /* 已种植 — 绿色生长光晕 */
-              <motion.div
-                className="absolute inset-0 rounded-full"
-                style={{
-                  background: 'radial-gradient(circle, rgba(74,222,128,0.18) 0%, transparent 70%)',
-                }}
-                animate={{ scale: [1, 1.25, 1], opacity: [0.4, 0.12, 0.4] }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-              />
+              <>
+                <div
+                  className="absolute inset-[6%] rounded-[18px] border border-emerald-900/25"
+                  style={{
+                    background:
+                      'linear-gradient(180deg, rgba(58,88,34,0.52) 0%, rgba(67,101,38,0.24) 32%, rgba(74,52,28,0.24) 100%)',
+                    boxShadow: 'inset 0 2px 8px rgba(14,116,48,0.18)',
+                  }}
+                />
+                <motion.div
+                  className="absolute inset-[12%] rounded-[18px]"
+                  style={{
+                    background: 'radial-gradient(circle, rgba(74,222,128,0.22) 0%, transparent 72%)',
+                  }}
+                  animate={{ scale: [1, 1.15, 1], opacity: [0.42, 0.18, 0.42] }}
+                  transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
+                />
+                <div className="absolute left-[22%] top-[20%] h-[55%] w-[8%] rounded-full bg-emerald-300/45 blur-[1px]" />
+                <div className="absolute left-[40%] top-[16%] h-[62%] w-[8%] rounded-full bg-green-200/45 blur-[1px]" />
+                <div className="absolute left-[58%] top-[24%] h-[50%] w-[8%] rounded-full bg-lime-200/40 blur-[1px]" />
+              </>
             ) : (
-              /* 空地 — 虚线提示 */
-              <div className="w-3/4 h-3/4 rounded border border-dashed border-amber-700/20 flex items-center justify-center">
-                <span className="opacity-20 text-sm select-none">🌱</span>
+              <div
+                className="relative h-[78%] w-[78%] overflow-hidden rounded-[18px] border border-amber-900/18"
+                style={{
+                  background:
+                    'linear-gradient(180deg, rgba(118,78,36,0.4) 0%, rgba(88,56,26,0.62) 100%)',
+                  boxShadow: 'inset 0 1px 6px rgba(255,226,168,0.08), 0 6px 10px rgba(15,23,42,0.08)',
+                }}
+              >
+                <div
+                  className="absolute inset-0 opacity-45"
+                  style={{
+                    backgroundImage:
+                      'repeating-linear-gradient(0deg, transparent 0, transparent 8px, rgba(51,33,14,0.22) 8px, rgba(51,33,14,0.22) 10px)',
+                  }}
+                />
+                <div className="absolute inset-x-[22%] top-[28%] h-[2px] rounded-full bg-amber-100/20" />
+                <div className="absolute inset-x-[30%] top-[50%] h-[2px] rounded-full bg-amber-100/16" />
+                <div className="absolute inset-x-[38%] top-[68%] h-[2px] rounded-full bg-amber-100/12" />
               </div>
             )}
           </div>

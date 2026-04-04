@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 import hashlib
+import logging
 import threading
 from typing import Optional, Set
 
@@ -10,22 +11,20 @@ from passlib.context import CryptContext
 from app.core.config import settings
 from app.core.time import utc_now
 
+logger = logging.getLogger(__name__)
 
 _bcrypt_available = False
 try:
     _test_hash = bcrypt_lib.hashpw(b"test", bcrypt_lib.gensalt())
     _bcrypt_available = bcrypt_lib.checkpw(b"test", _test_hash)
-    if _bcrypt_available:
-        print("[Security] bcrypt available")
 except Exception as e:
-    print(f"[Security] bcrypt unavailable: {type(e).__name__}")
+    logger.warning("bcrypt unavailable: %s", type(e).__name__)
 
 
 pwd_context = CryptContext(
     schemes=["pbkdf2_sha256"],
     default="pbkdf2_sha256",
 )
-print("[Security] using pbkdf2_sha256 as default password hash")
 
 
 _token_blacklist: Set[str] = set()
@@ -64,7 +63,7 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
     try:
         if hashed_password.startswith(("$2b$", "$2a$", "$2y$")):
             if not _bcrypt_available:
-                print("[Security] bcrypt hash detected but bcrypt library is unavailable")
+                logger.warning("bcrypt hash detected but bcrypt library is unavailable")
                 return False
             try:
                 return bcrypt_lib.checkpw(
@@ -72,12 +71,12 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
                     hashed_password.encode("utf-8"),
                 )
             except Exception as e:
-                print(f"[Security] bcrypt verification error: {e}")
+                logger.warning("bcrypt verification error: %s", e)
                 return False
 
         return pwd_context.verify(plain_password, hashed_password)
     except Exception as e:
-        print(f"[Security] password verification error: {e}")
+        logger.warning("password verification error: %s", e)
         return False
 
 
@@ -113,11 +112,11 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -
 def decode_access_token(token: str) -> Optional[dict]:
     """Decode a JWT access token, rejecting blacklisted tokens."""
     if is_token_blacklisted(token):
-        print("[JWT] token rejected because it is blacklisted")
+        logger.warning("token rejected because it is blacklisted")
         return None
 
     try:
         return jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
     except JWTError as e:
-        print(f"[JWT] decode failed: {type(e).__name__}: {e}")
+        logger.warning("JWT decode failed: %s: %s", type(e).__name__, e)
         return None

@@ -86,10 +86,13 @@ export default function PvpRoomWaiting({ onClose, onStartBattle }: PvpRoomWaitin
 
     // 房主：轮询检查是否有客人加入
     useEffect(() => {
-        if (!currentRoom?.id || !isHost) return;
+        if (!currentRoom?.id || !isHost || canStart) return;
         if (isAIOpponent(currentRoom?.guestPlayer)) return;
 
         const checkRoomStatus = async () => {
+            if (typeof document !== 'undefined' && document.visibilityState === 'hidden') {
+                return;
+            }
             try {
                 const baseUrl = getApiBaseUrl();
                 const res = await fetch(`${baseUrl}/pvp/rooms/${currentRoom.id}`);
@@ -114,6 +117,9 @@ export default function PvpRoomWaiting({ onClose, onStartBattle }: PvpRoomWaitin
                                     avatar: '🎮',
                                     level: 1,
                                     skills: [],
+                                    petType: data.guest_pet_type || 'code_kitty',
+                                    petStage: data.guest_pet_stage || 3,
+                                    petName: data.guest_pet_name || '对手伙伴',
                                 },
                                 status: 'ready',
                             } : null,
@@ -125,16 +131,24 @@ export default function PvpRoomWaiting({ onClose, onStartBattle }: PvpRoomWaitin
             }
         };
 
-        pollingRef.current = setInterval(checkRoomStatus, 2000);
+        const handleVisibilityRefresh = () => {
+            if (document.visibilityState === 'visible') {
+                void checkRoomStatus();
+            }
+        };
+
+        pollingRef.current = setInterval(checkRoomStatus, 6000);
         checkRoomStatus();
+        document.addEventListener('visibilitychange', handleVisibilityRefresh);
 
         return () => {
             if (pollingRef.current) {
                 clearInterval(pollingRef.current);
                 pollingRef.current = null;
             }
+            document.removeEventListener('visibilitychange', handleVisibilityRefresh);
         };
-    }, [currentRoom?.id, currentRoom?.guestPlayer, isHost, guestInfo, setRoomStatus]);
+    }, [currentRoom?.id, currentRoom?.guestPlayer, isHost, guestInfo, canStart, setRoomStatus]);
 
     // WebSocket 连接
     useEffect(() => {
@@ -163,17 +177,20 @@ export default function PvpRoomWaiting({ onClose, onStartBattle }: PvpRoomWaitin
                     setRoomStatus('ready');
                     
                     usePvpStore.setState((state) => ({
-                        currentRoom: state.currentRoom ? {
-                            ...state.currentRoom,
-                            guestPlayer: {
-                                id: guestId,
-                                username: guestName,
-                                avatar: '🎮',
-                                level: 1,
-                                skills: [],
-                            },
-                            status: 'ready',
-                        } : null,
+                            currentRoom: state.currentRoom ? {
+                                ...state.currentRoom,
+                                guestPlayer: {
+                                    id: guestId,
+                                    username: guestName,
+                                    avatar: '🎮',
+                                    level: 1,
+                                    skills: [],
+                                    petType: payload?.pet_type || 'code_kitty',
+                                    petStage: payload?.pet_stage || 3,
+                                    petName: payload?.pet_name || '对手伙伴',
+                                },
+                                status: 'ready',
+                            } : null,
                     }));
                 }
                 

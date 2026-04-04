@@ -8,20 +8,54 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 BACKEND_DIR = Path(__file__).resolve().parents[2]
 
 
-def _normalize_database_url(database_url: str) -> str:
-    """Resolve relative SQLite URLs against the backend directory."""
+def _resolve_sqlite_path(database_url: str, *, base_dir: Path = BACKEND_DIR) -> Path | None:
+    """Resolve a SQLite URL to an absolute filesystem path when applicable."""
     if not database_url.lower().startswith("sqlite:///"):
-        return database_url
+        return None
 
     sqlite_path = database_url[len("sqlite:///") :]
     if sqlite_path == ":memory:":
-        return database_url
+        return None
 
-    if sqlite_path.startswith("/") or (len(sqlite_path) > 1 and sqlite_path[1] == ":"):
-        return database_url
+    path = Path(sqlite_path)
+    if not path.is_absolute():
+        path = base_dir / path
 
-    resolved_path = (BACKEND_DIR / sqlite_path).resolve()
+    return path.resolve()
+
+
+def _normalize_database_url(database_url: str, *, base_dir: Path = BACKEND_DIR) -> str:
+    """Resolve SQLite URLs to stable absolute paths."""
+    resolved_path = _resolve_sqlite_path(database_url, base_dir=base_dir)
+    if resolved_path is None:
+        return database_url
     return f"sqlite:///{resolved_path.as_posix()}"
+
+
+def _validate_production_database_url(
+    database_url: str,
+    environment: str,
+    *,
+    backend_dir: Path = BACKEND_DIR,
+) -> None:
+    if environment.lower() != "production":
+        return
+
+    sqlite_path = _resolve_sqlite_path(database_url, base_dir=backend_dir)
+    if sqlite_path is None:
+        return
+
+    backend_root = backend_dir.resolve()
+    try:
+        sqlite_path.relative_to(backend_root)
+    except ValueError:
+        return
+
+    raise RuntimeError(
+        "SECURITY: Production SQLite database must live outside the backend deploy directory. "
+        "Set DATABASE_URL to an absolute path such as "
+        "sqlite:////www/data/game-backend/code_adventure.db."
+    )
 
 
 class Settings(BaseSettings):
@@ -61,17 +95,18 @@ class Settings(BaseSettings):
 
 settings = Settings()
 settings.DATABASE_URL = _normalize_database_url(settings.DATABASE_URL)
+_validate_production_database_url(settings.DATABASE_URL, settings.ENVIRONMENT)
 
-# Security: never run with the placeholder secret in production.
 if settings.SECRET_KEY == "your-secret-key-change-in-production":
     if settings.ENVIRONMENT.lower() == "production":
         raise RuntimeError(
-            "SECURITY: 生产环境禁止使用默认 JWT SECRET_KEY，请在 backend/.env 配置强随机密钥。"
+            "SECURITY: JWT SECRET_KEY is still using the placeholder value. "
+            "Set a strong SECRET_KEY in backend/.env before starting production."
         )
     warnings.warn(
-        "\n⚠️  [SECURITY] 正在使用默认 JWT SECRET_KEY，已自动生成仅本进程有效的临时密钥。"
-        "\n   请在 backend/.env 中设置: SECRET_KEY=<随机强密钥>"
-        '\n   生成命令: python -c "import secrets; print(secrets.token_urlsafe(32))"',
+        "\n[SECURITY] JWT SECRET_KEY is still using the placeholder value."
+        "\nSet backend/.env with SECRET_KEY=<strong random string>."
+        '\nExample: python -c "import secrets; print(secrets.token_urlsafe(32))"',
         RuntimeWarning,
         stacklevel=1,
     )
@@ -80,9 +115,9 @@ if settings.SECRET_KEY == "your-secret-key-change-in-production":
 if settings.ENVIRONMENT.lower() == "production":
     if settings.DEBUG:
         raise RuntimeError(
-            "SECURITY: 生产环境禁止启用 DEBUG，请在 backend/.env 中设置 DEBUG=false。"
+            "SECURITY: DEBUG must be false in production. Set DEBUG=false in backend/.env."
         )
     if len(settings.SECRET_KEY) < 32:
         raise RuntimeError(
-            "SECURITY: SECRET_KEY 长度不足，生产环境请至少使用 32 字符随机密钥。"
+            "SECURITY: SECRET_KEY must be at least 32 characters long in production."
         )

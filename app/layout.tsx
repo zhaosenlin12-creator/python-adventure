@@ -1,47 +1,39 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-// 生产环境日志控制 - 必须最早导入
 import "@/lib/logger";
-// 全局错误边界
 import ErrorBoundary from "@/components/common/ErrorBoundary";
-
+import { I18nProvider } from "@/lib/i18n";
+import StoreInitializer from "@/components/StoreInitializer";
+import GlobalOverlayShell from "@/components/layout/GlobalOverlayShell";
 
 export const metadata: Metadata = {
   title: "Python Adventure",
   description: "Learn Python in a Pixel Art World",
-  // 苹果设备配置
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   appleWebApp: {
     capable: true,
-    statusBarStyle: 'black-translucent',
-    title: 'Python Adventure',
+    statusBarStyle: "black-translucent",
+    title: "Python Adventure",
   },
 };
 
 export const viewport: Viewport = {
-  // 移动端viewport配置 - 允许用户缩放和滑动
-  width: 'device-width',
+  width: "device-width",
   initialScale: 0.5,
   minimumScale: 0.3,
   maximumScale: 3,
   userScalable: true,
-  viewportFit: 'cover',
-  // 主题色
-  themeColor: '#1a1a2e',
+  viewportFit: "cover",
+  themeColor: "#1a1a2e",
 };
-
-import { I18nProvider } from "@/lib/i18n";
-import StoreInitializer from "@/components/StoreInitializer";
-import GlobalChat from "@/components/chat/GlobalChat";
-import PetMainPanel from "@/components/pet/PetMainPanel";
-import PetStatusToast from "@/components/pet/PetStatusToast";
-import InteractionEffectToast from "@/components/pet/InteractionEffectToast";
-import FoodRewardToast from "@/components/ui/FoodRewardToast";
-import CoinRewardToast from "@/components/ui/CoinRewardToast";
-import ErrorToast from "@/components/ui/ErrorToast";
-import DailyCheckIn from "@/components/pet/DailyCheckIn";
-import AchievementPanel from "@/components/pet/AchievementPanel";
-// Temporarily disabled MonacoPreloader to fix loading issue
-// import MonacoPreloader from "@/components/game/MonacoPreloader";
 
 export default function RootLayout({
   children,
@@ -50,28 +42,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className="antialiased"
-        suppressHydrationWarning
-      >
-        {/* <MonacoPreloader /> */}
+      <body className="antialiased" suppressHydrationWarning>
         <StoreInitializer />
         <I18nProvider>
-          <ErrorBoundary>
-            {children}
-          </ErrorBoundary>
-          <GlobalChat />
-          <PetMainPanel />
-          <PetStatusToast />
-          <InteractionEffectToast />
-          <FoodRewardToast />
-          <CoinRewardToast />
-          <ErrorToast />
-          <DailyCheckIn />
-          <AchievementPanel />
+          <ErrorBoundary>{children}</ErrorBoundary>
+          <GlobalOverlayShell />
         </I18nProvider>
       </body>
     </html>
   );
 }
-

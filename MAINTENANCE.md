@@ -2,6 +2,9 @@
 
 > 本文档包含服务器部署、日常维护、故障排查的完整指南
 
+> 重要：从 2026-04-05 起，生产部署唯一准则是 `deploy/DEPLOY_SERVER_EXACT.md`。
+> 本文中凡是出现旧的 `quick-deploy.sh`、`update-frontend.sh`、`update-backend.sh`、`deploy.sh` 手工流程，均以 `deploy/DEPLOY_SERVER_EXACT.md` 为准。
+
 ---
 
 ## 🚀 快速运维指南
@@ -28,31 +31,25 @@ bash emergency-cleanup.sh
 ### 🔄 服务器重启后
 
 ```bash
-# 快速恢复应用
-cd /www/wwwroot/game/deploy
-bash quick-deploy.sh
+# 快速恢复应用（兼容壳，内部已转到标准 post-upload 流程）
+/bin/bash /www/wwwroot/game/deploy/quick-deploy.sh
 ```
 
 ### 📦 更新代码
 
 ```bash
-cd /www/wwwroot/game/deploy
-
-# 更新前端
-bash update-frontend.sh
-
-# 更新后端
-bash update-backend.sh
+# 唯一标准：看这个文档执行
+cat /www/wwwroot/game/deploy/DEPLOY_SERVER_EXACT.md
 ```
 
 ### 💾 备份数据
 
 ```bash
 # 备份数据库
-bash /www/wwwroot/game/deploy/backup-database.sh
+bash /www/wwwroot/game-backend/deploy/backup-database.sh
 
 # 查看备份
-ls -lh /www/backup/database/
+ls -lh /www/backups/game-backend/
 ```
 
 ### 🔧 首次设置
@@ -90,7 +87,8 @@ bash setup-scripts.sh
 ┌─────────────────────────────────────────────────────────────────┐
 │  🚨 更新后端时，绝对不要覆盖服务器的 code_adventure.db 文件！  │
 │     这是玩家数据，覆盖后无法恢复！                              │
-│     打包前务必删除本地的 .db 文件                               │
+│     生产数据库必须放在 /www/data/game-backend/                  │
+│     上线前必须先跑 database-safety-preflight.sh                │
 │                                                                 │
 │  🚨 不要执行 pkill -9 -f "python" 会杀掉宝塔面板！             │
 │     只杀端口8000: kill $(lsof -t -i:8000)                       │
@@ -119,13 +117,15 @@ bash setup-scripts.sh
 
 # ===== Python 环境（使用项目虚拟环境！）=====
 /www/wwwroot/game-backend/venv/bin/python
+/www/server/python_manager/versions/3.10.0/bin/python3.10 -m venv venv
 
 # ===== 项目目录 =====
 /www/wwwroot/game           # 前端项目
 /www/wwwroot/game-backend   # 后端项目
 
 # ===== 数据文件（重要！）=====
-/www/wwwroot/game-backend/code_adventure.db  # 玩家数据库
+/www/data/game-backend/code_adventure.db     # 生产玩家数据库
+/www/backups/game-backend/                   # 数据库压缩备份目录
 ```
 
 ---
@@ -199,27 +199,30 @@ rm -f game-v2.4.7-20260119-frontend.zip
 cd /www/wwwroot/game-backend
 
 # ===== 第一步：备份数据库（重要！）=====
-cp code_adventure.db code_adventure.db.backup.$(date +%Y%m%d%H%M)
+bash deploy/backup-database.sh
 
-# ===== 第二步：上传后端文件 =====
+# ===== 第二步：运行数据库安全预检（必须通过）=====
+bash deploy/database-safety-preflight.sh
+
+# ===== 第三步：上传后端文件 =====
 # 通过宝塔面板上传修改的文件到对应目录
 
-# ===== 第三步：验证代码无语法错误（重要！）=====
+# ===== 第四步：验证代码无语法错误（重要！）=====
 ./venv/bin/python -c "from app.main import app; print('✅ 代码检查通过')"
 
-# ===== 第四步：如有数据库迁移脚本，先运行 =====
+# ===== 第五步：如有数据库迁移脚本，先运行 =====
 # ./venv/bin/python migrate_xxx.py
 
-# ===== 第五步：查看PM2后端日志（可选，排查问题用）=====
+# ===== 第六步：查看PM2后端日志（可选，排查问题用）=====
 pm2 logs game-backend --lines 20
 
-# ===== 第六步：重启后端 =====
+# ===== 第七步：重启后端 =====
 pm2 restart game-backend
 
-# ===== 第七步：保存PM2配置 =====
+# ===== 第八步：保存PM2配置 =====
 pm2 save
 
-# ===== 第八步：等待启动完成并验证 =====
+# ===== 第九步：等待启动完成并验证 =====
 sleep 5
 curl http://localhost:8000/health
 
@@ -233,8 +236,9 @@ curl http://localhost:8000/health
 ```
 
 ### 后端部署检查清单
-- [ ] **删除本地 `backend/code_adventure.db`**（打包前）
-- [ ] **备份服务器数据库**
+- [ ] **生产数据库位于 `/www/data/game-backend/code_adventure.db`**
+- [ ] **执行 `bash deploy/backup-database.sh`**
+- [ ] **执行 `bash deploy/database-safety-preflight.sh` 并通过**
 - [ ] 上传代码文件到对应目录
 - [ ] **运行代码检查** `./venv/bin/python -c "from app.main import app; print('OK')"`
 - [ ] 如有迁移脚本，先运行迁移
@@ -245,6 +249,25 @@ curl http://localhost:8000/health
 - [ ] `pm2 restart 4` 重启后端
 - [ ] `curl http://localhost:8000/health` 验证健康检查
 - [ ] 测试关键API（登录、进度同步等）
+
+### 数据库事故排查
+```bash
+cd /www/wwwroot/game-backend
+
+# 比对所有数据库候选
+bash deploy/compare-database-candidates.sh
+
+# 只在确认正确候选后，才执行恢复
+bash deploy/restore-from-db-candidate.sh /absolute/path/to/candidate.db
+```
+
+### 自动备份建议
+```bash
+crontab -u game -l 2>/dev/null > /tmp/game-cron.txt || true
+grep -q 'backup-database.sh' /tmp/game-cron.txt || echo '0 */6 * * * /bin/bash /www/wwwroot/game-backend/deploy/backup-database.sh >> /www/wwwlogs/game-db-backup.log 2>&1' >> /tmp/game-cron.txt
+crontab -u game /tmp/game-cron.txt
+rm -f /tmp/game-cron.txt
+```
 
 ### 后端启动失败排查
 ```bash

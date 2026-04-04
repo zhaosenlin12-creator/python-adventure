@@ -2,8 +2,10 @@ from fastapi import APIRouter, Depends, HTTPException, WebSocket, WebSocketDisco
 from sqlalchemy.orm import Session
 from typing import Optional
 from datetime import datetime
+import logging
 from app.core.time import utc_now
 from app.core.database import get_db, SessionLocal
+from app.core.config import settings
 from app.core.security import decode_access_token
 from app.api.dependencies import get_current_user
 from app.models.user import User
@@ -25,6 +27,8 @@ from app.schemas.ai_battle import AIBattleStart, AIBattleAnswer, AIBattleRespons
 import json
 
 router = APIRouter()
+logger = logging.getLogger(__name__)
+IS_PRODUCTION = settings.ENVIRONMENT.lower() == "production"
 
 
 # ==================== 🔒 安全：Token验证辅助函数 ====================
@@ -39,8 +43,8 @@ def verify_ws_token(token: Optional[str], expected_user_id: int) -> tuple:
     - 如果没有token，记录警告但允许连接（兼容旧客户端）
     """
     if not token:
-        # 没有token - 开发环境或旧客户端，允许但记录警告
-        print(f"[World WS] ⚠️ 警告：用户 {expected_user_id} 未提供Token连接")
+        if not IS_PRODUCTION:
+            logger.info("World websocket connected without token for user %s", expected_user_id)
         return True, expected_user_id, None
     
     # 验证token
@@ -537,7 +541,7 @@ async def update_player_location(
         
         return {"success": True, "message": "位置已更新"}
     except Exception as e:
-        print(f"更新位置失败: {e}")
+        logger.error("World location update failed for user %s: %s", current_user.id, e)
         db.rollback()
         return {"success": False, "message": str(e)}
 
@@ -566,7 +570,7 @@ async def get_nearby_players_http(
             "count": len(nearby)
         }
     except Exception as e:
-        print(f"获取附近玩家失败: {e}")
+        logger.error("Nearby player lookup failed for user %s: %s", user_id, e)
         return {
             "players": [],
             "count": 0
@@ -591,16 +595,14 @@ async def websocket_world(
     is_valid, verified_user_id, error_msg = verify_ws_token(token, user_id)
     
     if not is_valid:
-        # Token验证失败，拒绝连接
-        print(f"[World WS] 🔒 拒绝连接: user={user_id}, 原因={error_msg}")
+        logger.warning("World websocket rejected for user %s: %s", user_id, error_msg)
         await websocket.close(code=4001, reason=error_msg or "认证失败")
         return
     
     try:
         await websocket.accept()
     except Exception as e:
-        # 🔥 只记录错误日志
-        print(f"[World WS] 连接失败: user_id={user_id}, error={e}")
+        logger.error("World websocket accept failed for user %s: %s", user_id, e)
         return
     
     # 创建独立的数据库会话
@@ -753,7 +755,7 @@ async def websocket_world(
     except WebSocketDisconnect:
         pass  # 正常断开，无需日志
     except Exception as e:
-        print(f"[World WS] 错误: user_id={user_id}, error={e}")
+        logger.error("World websocket runtime error for user %s: %s", user_id, e)
     finally:
         pass  # 清理连接
         # 断开连接
@@ -779,4 +781,3 @@ async def websocket_world(
                 pass
         
         db.close()
-

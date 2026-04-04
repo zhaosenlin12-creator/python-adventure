@@ -59,6 +59,22 @@ const SKILL_NODES: SkillNode[] = [
     }
 ];
 
+interface TalentBadge {
+    id: string;
+    title: string;
+    description: string;
+}
+
+const CAMPAIGN_TALENT_BADGES: TalentBadge[] = [
+    { id: 'ancient_wisdom', title: '古老智慧', description: '战役天赋：战役与关卡经验额外 +10%' },
+    { id: 'school_star', title: '校园之星', description: '战役天赋：战役与关卡金币额外 +10%' },
+    { id: 'academic_master', title: '学霸护符', description: '战役天赋：进入战役时额外获得 1 次生命' },
+    { id: 'science_master', title: '科学大师', description: '已获得的战役奖励天赋，可继续扩展玩法效果' },
+    { id: 'time_slow', title: '时间减速', description: '已获得的高级战役技能资格' },
+    { id: 'chemical_shield', title: '化学护盾', description: '已获得的高级战役技能资格' },
+    { id: 'quantum_dash', title: '量子冲刺', description: '已获得的高级战役技能资格' },
+];
+
 interface SkillTreeModalProps {
     isOpen: boolean;
     onClose: () => void;
@@ -73,6 +89,7 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
         description: string;
         instruction: string;
     } | null>(null);
+    const unlockedTalentBadges = CAMPAIGN_TALENT_BADGES.filter((badge) => skills.includes(badge.id));
 
     // 控制游戏按键
     useEffect(() => {
@@ -256,6 +273,48 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
                                 <p className="text-sm md:text-base">点击技能查看详情</p>
                             </div>
                         )}
+
+                        <div className="mt-4 border-t border-slate-700/80 pt-4">
+                            <div className="mb-2 flex items-center justify-between">
+                                <h4 className="text-sm font-semibold text-white">战役天赋</h4>
+                                <span className="text-xs text-slate-400">{unlockedTalentBadges.length}/{CAMPAIGN_TALENT_BADGES.length}</span>
+                            </div>
+                            <div className="space-y-2">
+                                {CAMPAIGN_TALENT_BADGES.map((badge) => {
+                                    const unlocked = skills.includes(badge.id);
+                                    return (
+                                        <div
+                                            key={badge.id}
+                                            className={`rounded-xl border px-3 py-2 text-left transition ${
+                                                unlocked
+                                                    ? 'border-emerald-400/40 bg-emerald-500/10'
+                                                    : 'border-slate-700 bg-slate-900/60'
+                                            }`}
+                                        >
+                                            <div className="flex items-center justify-between gap-3">
+                                                <div className="min-w-0">
+                                                    <div className={`text-sm font-semibold ${unlocked ? 'text-emerald-200' : 'text-slate-200'}`}>
+                                                        {badge.title}
+                                                    </div>
+                                                    <div className="mt-1 text-xs leading-5 text-slate-400">
+                                                        {badge.description}
+                                                    </div>
+                                                </div>
+                                                <span
+                                                    className={`shrink-0 rounded-full px-2 py-1 text-[11px] font-semibold ${
+                                                        unlocked
+                                                            ? 'bg-emerald-400/20 text-emerald-200'
+                                                            : 'bg-slate-800 text-slate-400'
+                                                    }`}
+                                                >
+                                                    {unlocked ? '已获得' : '未获得'}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

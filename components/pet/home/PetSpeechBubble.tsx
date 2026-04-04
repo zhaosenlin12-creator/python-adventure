@@ -1,139 +1,155 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 interface PetSpeechBubbleProps {
   petName: string;
-  mood?: string;  // 支持所有 PetMood 类型
+  mood?: string;
   onInteraction?: () => void;
 }
 
-// 不同心情的对话内容
+type BubbleKind = 'speech' | 'thought';
+
 const SPEECHES: Record<string, string[]> = {
   happy: [
-    '今天心情超好！✨',
-    '和你在一起真开心～',
-    '想要一起玩耍！🎮',
-    '嘿嘿，最喜欢你了！💕',
-    '学习也要记得休息哦～',
+    '今天状态很好，想多陪你一会儿。',
+    '和你待在一起的时候最舒服。',
+    '这个小屋越来越像家了。',
+    '再陪我玩一会儿吧。',
   ],
   excited: [
-    '太棒啦！！！🎉',
-    '耶耶耶！超级开心！🌟',
-    '我们做到了！✨',
-    '哇哦！好厉害！🎊',
+    '我已经准备好继续冒险了。',
+    '刚刚那一下互动很有精神。',
+    '今天想表现得更厉害一点。',
+    '继续继续，我现在超有劲。',
   ],
   sad: [
-    '呜呜...好难过 😢',
-    '没关系的，下次一定行！',
-    '需要一个拥抱...',
-    '加油，不要放弃哦～',
+    '抱一下就会好很多。',
+    '今天想安静地陪在你身边。',
+    '慢一点也没关系，我们一起调整。',
+    '如果能再摸摸我，我会安心很多。',
   ],
   curious: [
-    '嗯？这是什么？🔍',
-    '好有趣呀～想看看！',
-    '你发现了什么？👀',
-    '让我想想...🤔',
+    '那边的新摆设我还想再看看。',
+    '庭院里好像又有新变化。',
+    '你是不是准备了新的惊喜给我？',
+    '我感觉这里还有很多可以探索。',
   ],
   eating: [
-    '好吃好吃！🍖',
-    '谢谢投喂～😋',
-    '嗯嗯，真好吃！',
-    '吃饱了才有力气～',
+    '这份食物很合胃口。',
+    '补充完体力，状态好多了。',
+    '谢谢你准备的这份补给。',
+    '吃饱之后就更想活动了。',
   ],
   playing: [
-    '玩耍时间到！🎮',
-    '一起来玩吧！🎯',
-    '好好玩呀～🎪',
-    '再来再来！🎲',
+    '今天的互动很有趣。',
+    '再来一次，我还没玩够。',
+    '和你玩的时候最放松。',
+    '现在的小屋气氛正合适。',
   ],
   hungry: [
-    '肚子有点饿了...',
-    '想吃点好吃的～🍖',
-    '有食物吗？👀',
-    '饿饿，饭饭！',
+    '有点饿了，想吃点东西。',
+    '如果能补充一下体力就好了。',
+    '背包里还有食物吗？',
+    '我想先吃点东西再继续。',
   ],
   tired: [
-    '有点累了...💤',
-    '想休息一下～',
-    '打个小盹儿...',
-    'zzZ...',
+    '我想慢一点走，休息一下。',
+    '今天适合陪伴，不太适合冲太快。',
+    '先在小屋里放松一会儿吧。',
+    '有你在旁边，我就不着急。',
   ],
   sleeping: [
-    'zzZ...💤',
-    '做了个好梦～',
-    '呼噜呼噜...',
+    '先安静休息一下。',
+    '这里的氛围很适合打盹。',
+    '让我把体力慢慢恢复回来。',
   ],
   normal: [
-    '今天天气真好呀～☀️',
-    '你在做什么呢？',
-    '一起加油吧！💪',
-    '有什么新鲜事吗？',
-    '想要摸摸头～',
-    '嗯嗯！😊',
+    '今天也一起把小屋照顾好吧。',
+    '你来了，我就安心了。',
+    '我想先陪你逛逛这里。',
+    '如果有新装饰，我想第一个看到。',
   ],
-  greeting: [
-    '今天想一起做点什么呀？',
-    '嗨～你来啦！',
-    '欢迎回来！🏠',
-    '见到你真高兴！',
-  ]
 };
 
-/**
- * 💬 宠物说话气泡组件
- * 随机显示可爱的对话，增加互动感
- */
-export default function PetSpeechBubble({ petName, mood = 'normal', onInteraction }: PetSpeechBubbleProps) {
+function pickRandom<T>(items: T[]): T {
+  return items[Math.floor(Math.random() * items.length)];
+}
+
+function createGreeting(petName: string) {
+  return [
+    `${petName} 已经在等你了。`,
+    `欢迎回来，${petName} 今天状态不错。`,
+    `${petName} 想先陪你在小屋里走走。`,
+  ];
+}
+
+export default function PetSpeechBubble({
+  petName,
+  mood = 'normal',
+  onInteraction,
+}: PetSpeechBubbleProps) {
   const [currentSpeech, setCurrentSpeech] = useState('');
   const [isVisible, setIsVisible] = useState(false);
-  const [bubbleType, setBubbleType] = useState<'speech' | 'thought'>('speech');
-  
-  // 随机显示气泡
+  const [bubbleKind, setBubbleKind] = useState<BubbleKind>('speech');
+  const showTimeoutRef = useRef<number | null>(null);
+  const hideTimeoutRef = useRef<number | null>(null);
+
+  const speechPool = useMemo(() => SPEECHES[mood] || SPEECHES.normal, [mood]);
+  const greetings = useMemo(() => createGreeting(petName), [petName]);
+
   useEffect(() => {
-    const showBubble = () => {
-      // 70%概率显示
-      if (Math.random() < 0.7) {
-      const speeches = SPEECHES[mood] || SPEECHES.normal;
-        const randomSpeech = speeches[Math.floor(Math.random() * speeches.length)];
-        setCurrentSpeech(randomSpeech);
-        setBubbleType(Math.random() > 0.3 ? 'speech' : 'thought');
-        setIsVisible(true);
-        
-        // 3-5秒后隐藏
-        setTimeout(() => {
-          setIsVisible(false);
-        }, 3000 + Math.random() * 2000);
+    const clearTimers = () => {
+      if (showTimeoutRef.current) {
+        window.clearTimeout(showTimeoutRef.current);
+        showTimeoutRef.current = null;
+      }
+      if (hideTimeoutRef.current) {
+        window.clearTimeout(hideTimeoutRef.current);
+        hideTimeoutRef.current = null;
       }
     };
-    
-    // 初始显示greeting
-    const greetings = SPEECHES.greeting;
-    setCurrentSpeech(greetings[Math.floor(Math.random() * greetings.length)]);
-    setIsVisible(true);
-    setTimeout(() => setIsVisible(false), 3000);
-    
-    // 每8-15秒随机触发
-    const interval = setInterval(() => {
-      showBubble();
-    }, 8000 + Math.random() * 7000);
-    
-    return () => clearInterval(interval);
-  }, [mood]);
-  
+
+    const revealBubble = (message: string, kind: BubbleKind) => {
+      setCurrentSpeech(message);
+      setBubbleKind(kind);
+      setIsVisible(true);
+
+      hideTimeoutRef.current = window.setTimeout(() => {
+        setIsVisible(false);
+        hideTimeoutRef.current = null;
+      }, 2600 + Math.floor(Math.random() * 1400));
+    };
+
+    const scheduleNext = () => {
+      showTimeoutRef.current = window.setTimeout(() => {
+        const shouldShow = Math.random() < 0.64;
+        if (shouldShow) {
+          revealBubble(pickRandom(speechPool), Math.random() < 0.74 ? 'speech' : 'thought');
+        }
+        scheduleNext();
+      }, 12000 + Math.floor(Math.random() * 7000));
+    };
+
+    revealBubble(pickRandom(greetings), 'speech');
+    scheduleNext();
+
+    return clearTimers;
+  }, [greetings, speechPool]);
+
   return (
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="absolute -top-16 left-1/2 z-40"
-          initial={{ opacity: 0, y: 10, scale: 0.8, x: '-50%' }}
+          className="absolute left-1/2 top-[-76px] z-40"
+          initial={{ opacity: 0, y: 10, scale: 0.9, x: '-50%' }}
           animate={{ opacity: 1, y: 0, scale: 1, x: '-50%' }}
-          exit={{ opacity: 0, y: -10, scale: 0.8 }}
-          transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+          exit={{ opacity: 0, y: -8, scale: 0.92 }}
+          transition={{ type: 'spring', stiffness: 360, damping: 28 }}
           onClick={onInteraction}
         >
-          {bubbleType === 'speech' ? (
+          {bubbleKind === 'speech' ? (
             <SpeechBubble text={currentSpeech} />
           ) : (
             <ThoughtBubble text={currentSpeech} />
@@ -144,38 +160,42 @@ export default function PetSpeechBubble({ petName, mood = 'normal', onInteractio
   );
 }
 
-// 说话气泡
 function SpeechBubble({ text }: { text: string }) {
   return (
     <div className="relative">
-      <div className="min-w-[120px] max-w-[200px] rounded-2xl border border-cyan-400/35 bg-slate-950/92 px-4 py-2 shadow-[0_18px_34px_rgba(15,23,42,0.32)] backdrop-blur-sm">
-        <p className="text-center text-sm font-medium whitespace-nowrap text-slate-100">
-          {text}
-        </p>
+      <div className="min-w-[156px] max-w-[240px] rounded-[24px] border border-cyan-300/26 bg-[linear-gradient(145deg,rgba(15,23,42,0.98),rgba(2,6,23,0.94))] px-4 py-3 shadow-[0_20px_44px_rgba(2,6,23,0.34)] backdrop-blur-sm">
+        <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-cyan-200/70">
+          Companion Voice
+        </div>
+        <p className="mt-1 text-center text-sm font-medium leading-6 text-slate-100">{text}</p>
       </div>
-      {/* 气泡尾巴 */}
-      <div className="absolute -bottom-2 left-1/2 -translate-x-1/2">
-        <svg width="20" height="10" viewBox="0 0 20 10">
-          <path d="M0 0 L10 10 L20 0" fill="rgba(2,6,23,0.92)" stroke="rgba(34,211,238,0.35)" strokeWidth="2" />
+      <div className="absolute -bottom-3 left-1/2 -translate-x-1/2">
+        <svg width="28" height="16" viewBox="0 0 28 16" fill="none">
+          <path
+            d="M3 1C8.5 4.5 11.5 8 14 15C16.5 8 19.5 4.5 25 1"
+            fill="rgba(2,6,23,0.95)"
+            stroke="rgba(103,232,249,0.34)"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+          />
         </svg>
       </div>
     </div>
   );
 }
 
-// 思考气泡
 function ThoughtBubble({ text }: { text: string }) {
   return (
     <div className="relative">
-      <div className="min-w-[100px] rounded-full border border-cyan-400/30 bg-slate-950/92 px-4 py-2 shadow-[0_18px_34px_rgba(15,23,42,0.32)] backdrop-blur-sm">
-        <p className="text-center text-sm italic text-slate-200">
-          {text}
-        </p>
+      <div className="min-w-[144px] max-w-[228px] rounded-full border border-violet-300/22 bg-[linear-gradient(145deg,rgba(15,23,42,0.98),rgba(30,27,75,0.92))] px-5 py-3 shadow-[0_20px_44px_rgba(15,23,42,0.3)] backdrop-blur-sm">
+        <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-violet-200/65">
+          Quiet Thought
+        </div>
+        <p className="mt-1 text-center text-sm italic leading-6 text-slate-100">{text}</p>
       </div>
-      {/* 思考泡泡 */}
-      <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 flex gap-1">
-        <div className="h-3 w-3 rounded-full border border-cyan-400/30 bg-slate-950/92" />
-        <div className="mt-1 h-2 w-2 rounded-full border border-cyan-400/30 bg-slate-950/92" />
+      <div className="absolute -bottom-4 left-1/2 flex -translate-x-1/2 items-end gap-1.5">
+        <div className="h-3.5 w-3.5 rounded-full border border-violet-300/20 bg-slate-950/90" />
+        <div className="mb-[-2px] h-2.5 w-2.5 rounded-full border border-violet-300/18 bg-slate-950/88" />
       </div>
     </div>
   );

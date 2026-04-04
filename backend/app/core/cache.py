@@ -5,12 +5,14 @@ Cache helpers with Redis support and an in-memory fallback.
 from datetime import datetime, timedelta
 import fnmatch
 import json
+import logging
 import threading
 from typing import Any, Optional
 
 from app.core.config import settings
 from app.core.time import utc_now
 
+logger = logging.getLogger(__name__)
 
 _redis_client = None
 _redis_available = False
@@ -41,11 +43,10 @@ def init_redis() -> None:
         )
         _redis_client.ping()
         _redis_available = True
-        print("[Cache] redis connected")
     except Exception as e:
         _redis_available = False
         _redis_client = None
-        print(f"[Cache] redis unavailable, falling back to memory cache: {e}")
+        logger.warning("redis unavailable, falling back to memory cache: %s", e)
 
 
 def _cleanup_memory_cache() -> None:
@@ -65,7 +66,7 @@ def cache_get(key: str) -> Optional[Any]:
                 return json.loads(value)
             return None
         except Exception as e:
-            print(f"[Cache] redis read failed: {e}")
+            logger.warning("redis read failed: %s", e)
 
     with _cache_lock:
         _cleanup_memory_cache()
@@ -87,7 +88,7 @@ def cache_set(key: str, value: Any, ttl: int = CACHE_TTL_SHORT) -> bool:
             _redis_client.setex(key, ttl, json.dumps(value, ensure_ascii=False, default=str))
             return True
         except Exception as e:
-            print(f"[Cache] redis write failed: {e}")
+            logger.warning("redis write failed: %s", e)
 
     with _cache_lock:
         _cleanup_memory_cache()
@@ -102,7 +103,7 @@ def cache_delete(key: str) -> bool:
         try:
             _redis_client.delete(key)
         except Exception as e:
-            print(f"[Cache] redis delete failed: {e}")
+            logger.warning("redis delete failed: %s", e)
 
     with _cache_lock:
         _memory_cache.pop(key, None)
@@ -120,7 +121,7 @@ def cache_delete_pattern(pattern: str) -> int:
             if keys:
                 deleted_count = _redis_client.delete(*keys)
         except Exception as e:
-            print(f"[Cache] redis bulk delete failed: {e}")
+            logger.warning("redis bulk delete failed: %s", e)
 
     with _cache_lock:
         matching_keys = [key for key in _memory_cache.keys() if fnmatch.fnmatch(key, pattern)]

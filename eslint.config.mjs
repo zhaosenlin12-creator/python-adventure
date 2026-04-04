@@ -15,6 +15,8 @@ const eslintConfig = defineConfig([
     // Ignore third-party libraries
     "public/pyodide/**",
     "node_modules/**",
+    ".tmp/**",
+    "release/**",
     // Ignore archived snapshots/tests
     "_archive_20260128/**",
   ]),

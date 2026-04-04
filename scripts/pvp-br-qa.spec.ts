@@ -51,11 +51,34 @@ async function registerAndLogin(api: APIRequestContext, username: string, passwo
   };
 }
 
+async function getMyActiveRoomId(api: APIRequestContext, token: string) {
+  const response = await api.get(`${API_BASE}/pvp-br/rooms/my-active`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  if (!response.ok()) {
+    return null;
+  }
+  const payload = await response.json();
+  return (payload.room?.id as string | undefined) ?? null;
+}
+
+async function finishRoomIfPossible(api: APIRequestContext, token: string, roomId?: string | null) {
+  const activeRoomId = roomId ?? (await getMyActiveRoomId(api, token));
+  if (!activeRoomId) {
+    return;
+  }
+
+  await api.post(`${API_BASE}/pvp-br/rooms/${activeRoomId}/finish`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+}
+
 async function seedBrowserAuth(context: BrowserContext, token: string, user: any) {
   await context.addInitScript(
     ({ storedAuth, storedGame }) => {
       window.localStorage.setItem('auth-storage', storedAuth);
       window.localStorage.setItem('game-storage', storedGame);
+      window.localStorage.setItem('br-qa-debug', 'true');
       window.localStorage.setItem('editor-tutorial-completed', 'true');
       window.localStorage.setItem('newUserGuideCompleted', 'true');
       window.localStorage.setItem('pet-home-guide-completed', 'true');
@@ -177,86 +200,93 @@ test('battle royale world entry and room flow smoke', async ({ browser }) => {
     headers: { Authorization: `Bearer ${token}` },
   });
   expect(setActiveResponse.ok(), await setActiveResponse.text()).toBeTruthy();
-  await api.dispose();
-
   const context = await browser.newContext({
     viewport: { width: 1440, height: 960 },
   });
 
-  await context.addInitScript(
-    ({ storedAuth, storedGame }) => {
-      window.localStorage.setItem('auth-storage', storedAuth);
-      window.localStorage.setItem('game-storage', storedGame);
-      window.localStorage.setItem('editor-tutorial-completed', 'true');
-      window.localStorage.setItem('newUserGuideCompleted', 'true');
-      window.localStorage.setItem('pet-home-guide-completed', 'true');
-    },
-    {
-      storedAuth: authStorageValue(token, user),
-      storedGame: gameStorageValue(['double_jump', 'dash']),
-    },
-  );
-
-  const page = await context.newPage();
-  await page.goto(`${FRONTEND_ORIGIN}/world`, { waitUntil: 'domcontentloaded' });
-  await page.waitForTimeout(2500);
-
-  await page.evaluate(() => {
-    window.dispatchEvent(
-      new CustomEvent('stationInteraction', {
-        detail: { stationId: 'battle_royale' },
-      }),
+  try {
+    await context.addInitScript(
+      ({ storedAuth, storedGame }) => {
+        window.localStorage.setItem('auth-storage', storedAuth);
+        window.localStorage.setItem('game-storage', storedGame);
+        window.localStorage.setItem('br-qa-debug', 'true');
+        window.localStorage.setItem('editor-tutorial-completed', 'true');
+        window.localStorage.setItem('newUserGuideCompleted', 'true');
+        window.localStorage.setItem('pet-home-guide-completed', 'true');
+      },
+      {
+        storedAuth: authStorageValue(token, user),
+        storedGame: gameStorageValue(['double_jump', 'dash']),
+      },
     );
-  });
 
-  await expect(page.getByTestId('br-lobby')).toBeVisible({ timeout: 15000 });
-  const fullRoomButton = page.getByRole('button', { name: '房间已满' }).first();
-  await expect(fullRoomButton).toBeVisible({ timeout: 15000 });
-  await expect(fullRoomButton).toBeDisabled();
-  ensureArtifactDir();
-  await page.screenshot({
-    path: path.join(ARTIFACT_DIR, '01-br-lobby.png'),
-    fullPage: true,
-  });
+    const page = await context.newPage();
+    await page.goto(`${FRONTEND_ORIGIN}/world`, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
 
-  await page.getByTestId('br-create-room').click();
-  await expect(page.getByTestId('br-room')).toBeVisible({ timeout: 15000 });
+    await page.evaluate(() => {
+      window.dispatchEvent(
+        new CustomEvent('stationInteraction', {
+          detail: { stationId: 'battle_royale' },
+        }),
+      );
+    });
 
-  await page.getByTestId('br-add-bot').click();
-  await expect(page.getByTestId('br-room')).toBeVisible({ timeout: 10000 });
-  await page.screenshot({
-    path: path.join(ARTIFACT_DIR, '02-br-room.png'),
-    fullPage: true,
-  });
+    await expect(page.getByTestId('br-lobby')).toBeVisible({ timeout: 15000 });
+    const fullRoomButton = page.getByRole('button', { name: '房间已满' }).first();
+    await expect(fullRoomButton).toBeVisible({ timeout: 15000 });
+    await expect(fullRoomButton).toBeDisabled();
+    ensureArtifactDir();
+    await page.screenshot({
+      path: path.join(ARTIFACT_DIR, '01-br-lobby.png'),
+      fullPage: true,
+    });
 
-  await page.getByTestId('br-start-match').click();
-  await expect(page.getByTestId('br-arena')).toBeVisible({ timeout: 15000 });
-  await page.waitForTimeout(1500);
-  await page.getByTestId('br-arena').click({ position: { x: 240, y: 240 } });
-  const earlySnapshot = await page.evaluate(() => {
-    return (window as any).__brSnapshot ?? null;
-  });
+    await finishRoomIfPossible(api, fullHostToken, fullRoomPayload.room.id as string);
+    await page.getByRole('button', { name: '刷新' }).click();
+    await expect
+      .poll(async () => page.locator('body').innerText(), { timeout: 15000 })
+      .not.toContain('满员测试房');
+    await page.getByRole('button', { name: '创建房间' }).first().click();
 
-  await page.waitForTimeout(6000);
-  await expect(page.getByTestId('br-arena-status')).toBeVisible({ timeout: 10000 });
-  const laterSnapshot = await page.evaluate(() => {
-    return (window as any).__brSnapshot ?? null;
-  });
-  const arenaStatusText = await page.getByTestId('br-arena-status').textContent();
+    await page.getByTestId('br-create-room').click();
+    await expect(page.getByTestId('br-room')).toBeVisible({ timeout: 15000 });
 
-  expect(earlySnapshot).toBeTruthy();
-  expect(laterSnapshot).toBeTruthy();
-  expect(laterSnapshot.elapsedMs).toBeGreaterThan(4000);
-  expect(laterSnapshot.platforms.length).toBeGreaterThan(20);
-  expect(laterSnapshot.platforms.some((platform: any) => platform.kind === 'moving')).toBeTruthy();
-  expect(laterSnapshot.platforms.some((platform: any) => platform.kind === 'bounce')).toBeTruthy();
-  expect(arenaStatusText).not.toContain('战斗即将开始');
-  const spawnXs = earlySnapshot.fighters.map((fighter: any) => fighter.x);
-  expect(Math.max(...spawnXs) - Math.min(...spawnXs)).toBeGreaterThan(1800);
+    await page.getByTestId('br-add-bot').click();
+    await expect(page.getByTestId('br-room')).toBeVisible({ timeout: 10000 });
+    await page.screenshot({
+      path: path.join(ARTIFACT_DIR, '02-br-room.png'),
+      fullPage: true,
+    });
 
-  const earlyBots = earlySnapshot.fighters.filter((fighter: any) => fighter.isBot);
-  expect(earlyBots.length).toBeGreaterThan(0);
-  const botMotionSamples = await page.evaluate(async () => {
+    await page.getByTestId('br-start-match').click();
+    await expect(page.getByTestId('br-arena')).toBeVisible({ timeout: 15000 });
+    await page.waitForTimeout(1500);
+    await page.getByTestId('br-arena').click({ position: { x: 240, y: 240 } });
+    const earlySnapshot = await page.evaluate(() => {
+      return (window as any).__brSnapshot ?? null;
+    });
+
+    await page.waitForTimeout(6000);
+    await expect(page.getByTestId('br-arena-status')).toBeVisible({ timeout: 10000 });
+    const laterSnapshot = await page.evaluate(() => {
+      return (window as any).__brSnapshot ?? null;
+    });
+    const arenaStatusText = await page.getByTestId('br-arena-status').textContent();
+
+    expect(earlySnapshot).toBeTruthy();
+    expect(laterSnapshot).toBeTruthy();
+    expect(laterSnapshot.elapsedMs).toBeGreaterThan(4000);
+    expect(laterSnapshot.platforms.length).toBeGreaterThan(20);
+    expect(laterSnapshot.platforms.some((platform: any) => platform.kind === 'moving')).toBeTruthy();
+    expect(laterSnapshot.platforms.some((platform: any) => platform.kind === 'bounce')).toBeTruthy();
+    expect(arenaStatusText).not.toContain('战斗即将开始');
+    const spawnXs = earlySnapshot.fighters.map((fighter: any) => fighter.x);
+    expect(Math.max(...spawnXs) - Math.min(...spawnXs)).toBeGreaterThan(1800);
+
+    const earlyBots = earlySnapshot.fighters.filter((fighter: any) => fighter.isBot);
+    expect(earlyBots.length).toBeGreaterThan(0);
+    const botMotionSamples = await page.evaluate(async () => {
     const samples: Array<Record<string, { x: number; y: number }>> = [];
     const startedAt = performance.now();
 
@@ -277,7 +307,7 @@ test('battle royale world entry and room flow smoke', async ({ browser }) => {
 
     return samples;
   });
-  const maxBotMovementSpan = earlyBots.reduce((bestSpan: number, earlyBot: any) => {
+    const maxBotMovementSpan = earlyBots.reduce((bestSpan: number, earlyBot: any) => {
     const positions = [
       { x: earlyBot.x, y: earlyBot.y },
       laterSnapshot.fighters.find((fighter: any) => fighter.id === earlyBot.id),
@@ -290,84 +320,88 @@ test('battle royale world entry and room flow smoke', async ({ browser }) => {
     const ys = positions.map((position) => position.y);
     const movementSpan = Math.max(...xs) - Math.min(...xs) + Math.max(...ys) - Math.min(...ys);
     return Math.max(bestSpan, movementSpan);
-  }, 0);
-  expect(maxBotMovementSpan).toBeGreaterThan(55);
+    }, 0);
+    expect(maxBotMovementSpan).toBeGreaterThan(55);
 
-  await page.getByTestId('br-arena').click({ position: { x: 240, y: 240 } });
-  await page.evaluate(() => {
-    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'j', bubbles: true }));
-  });
-  await page.waitForTimeout(120);
-  await page.evaluate(() => {
-    window.dispatchEvent(new KeyboardEvent('keyup', { key: 'j', bubbles: true }));
-  });
-  await expect
-    .poll(
-      async () =>
-        page.evaluate(() => {
-          const swingSnapshot = (window as any).__brSnapshot ?? null;
-          if (!swingSnapshot) return false;
-          const swingFighter = swingSnapshot.fighters.find((fighter: any) => !fighter.isBot);
-          return Boolean(
-            swingFighter &&
-              ((swingFighter.swingMs ?? 0) > 0 ||
-                swingSnapshot.effects.some((effect: any) => effect.kind === 'slash')),
-          );
-        }),
-      { timeout: 1200, intervals: [100, 160, 220] },
-    )
-    .toBeTruthy();
+    await page.getByTestId('br-arena').click({ position: { x: 240, y: 240 } });
+    await page.evaluate(() => {
+      window.dispatchEvent(new KeyboardEvent('keydown', { key: 'j', bubbles: true }));
+    });
+    await page.waitForTimeout(120);
+    await page.evaluate(() => {
+      window.dispatchEvent(new KeyboardEvent('keyup', { key: 'j', bubbles: true }));
+    });
+    await expect
+      .poll(
+        async () =>
+          page.evaluate(() => {
+            const swingSnapshot = (window as any).__brSnapshot ?? null;
+            if (!swingSnapshot) return false;
+            const swingFighter = swingSnapshot.fighters.find((fighter: any) => !fighter.isBot);
+            return Boolean(
+              swingFighter &&
+                ((swingFighter.swingMs ?? 0) > 0 ||
+                  swingSnapshot.effects.some((effect: any) => effect.kind === 'slash')),
+            );
+          }),
+        { timeout: 1200, intervals: [100, 160, 220] },
+      )
+      .toBeTruthy();
 
-  await page.getByTestId('br-arena').click({ position: { x: 240, y: 240 } });
-  await page.evaluate(() => {
-    window.dispatchEvent(new KeyboardEvent('keydown', { key: ' ', bubbles: true }));
-  });
-  await page.waitForTimeout(140);
-  await page.evaluate(() => {
-    window.dispatchEvent(new KeyboardEvent('keyup', { key: ' ', bubbles: true }));
-  });
-  await expect
-    .poll(
-      async () =>
-        page.evaluate(() => {
-          const dashSnapshot = (window as any).__brSnapshot ?? null;
-          return Boolean(dashSnapshot?.effects.some((effect: any) => effect.kind === 'dash'));
-        }),
-      { timeout: 1200, intervals: [100, 160, 220] },
-    )
-    .toBeTruthy();
+    await page.getByTestId('br-arena').click({ position: { x: 240, y: 240 } });
+    await page.evaluate(() => {
+      window.dispatchEvent(new KeyboardEvent('keydown', { key: ' ', bubbles: true }));
+    });
+    await page.waitForTimeout(140);
+    await page.evaluate(() => {
+      window.dispatchEvent(new KeyboardEvent('keyup', { key: ' ', bubbles: true }));
+    });
+    await expect
+      .poll(
+        async () =>
+          page.evaluate(() => {
+            const dashSnapshot = (window as any).__brSnapshot ?? null;
+            return Boolean(dashSnapshot?.effects.some((effect: any) => effect.kind === 'dash'));
+          }),
+        { timeout: 1200, intervals: [100, 160, 220] },
+      )
+      .toBeTruthy();
 
-  await page.getByTestId('br-arena').click({ position: { x: 240, y: 240 } });
-  await page.evaluate(() => {
-    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', bubbles: true }));
-  });
-  await page.waitForTimeout(220);
-  await page.evaluate(() => {
-    window.dispatchEvent(new KeyboardEvent('keyup', { key: 'k', bubbles: true }));
-  });
-  await expect
-    .poll(
-      async () =>
-        page.evaluate(() => {
-          const throwSnapshot = (window as any).__brSnapshot ?? null;
-          if (!throwSnapshot) return false;
-          const localFighter = throwSnapshot.fighters.find((fighter: any) => !fighter.isBot);
-          return Boolean(
-            localFighter &&
-              !localFighter.weaponReady &&
-              (throwSnapshot.projectiles?.length ?? 0) + (throwSnapshot.weapons?.length ?? 0) > 0,
-          );
-        }),
-      { timeout: 1500, intervals: [120, 180, 240] },
-    )
-    .toBeTruthy();
+    await page.getByTestId('br-arena').click({ position: { x: 240, y: 240 } });
+    await page.evaluate(() => {
+      window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', bubbles: true }));
+    });
+    await page.waitForTimeout(220);
+    await page.evaluate(() => {
+      window.dispatchEvent(new KeyboardEvent('keyup', { key: 'k', bubbles: true }));
+    });
+    await expect
+      .poll(
+        async () =>
+          page.evaluate(() => {
+            const throwSnapshot = (window as any).__brSnapshot ?? null;
+            if (!throwSnapshot) return false;
+            const localFighter = throwSnapshot.fighters.find((fighter: any) => !fighter.isBot);
+            return Boolean(
+              localFighter &&
+                !localFighter.weaponReady &&
+                (throwSnapshot.projectiles?.length ?? 0) + (throwSnapshot.weapons?.length ?? 0) > 0,
+            );
+          }),
+        { timeout: 1500, intervals: [120, 180, 240] },
+      )
+      .toBeTruthy();
 
-  await page.screenshot({
-    path: path.join(ARTIFACT_DIR, '03-br-arena.png'),
-    fullPage: true,
-  });
-
-  await context.close();
+    await page.screenshot({
+      path: path.join(ARTIFACT_DIR, '03-br-arena.png'),
+      fullPage: true,
+    });
+  } finally {
+    await finishRoomIfPossible(api, token);
+    await finishRoomIfPossible(api, fullHostToken, fullRoomPayload.room.id as string);
+    await context.close();
+    await api.dispose();
+  }
 });
 
 test('battle royale host start syncs guest and guest can recover after reload', async ({ browser }) => {
@@ -386,61 +420,64 @@ test('battle royale host start syncs guest and guest can recover after reload', 
 
   const hostContext = await browser.newContext({ viewport: { width: 1440, height: 960 } });
   const guestContext = await browser.newContext({ viewport: { width: 1440, height: 960 } });
-  await seedBrowserAuth(hostContext, host.token, host.user);
-  await seedBrowserAuth(guestContext, guest.token, guest.user);
+  try {
+    await seedBrowserAuth(hostContext, host.token, host.user);
+    await seedBrowserAuth(guestContext, guest.token, guest.user);
 
-  const hostPage = await hostContext.newPage();
-  const guestPage = await guestContext.newPage();
-  const roomName = `同步房${seed}`;
+    const hostPage = await hostContext.newPage();
+    const guestPage = await guestContext.newPage();
+    const roomName = `同步房${seed}`;
 
-  await Promise.all([openBattleRoyaleLobby(hostPage), openBattleRoyaleLobby(guestPage)]);
+    await Promise.all([openBattleRoyaleLobby(hostPage), openBattleRoyaleLobby(guestPage)]);
 
-  await hostPage.getByRole('textbox', { name: '房间名称' }).fill(roomName);
-  await hostPage.getByTestId('br-create-room').click();
-  await expect(hostPage.getByTestId('br-room')).toBeVisible({ timeout: 30000 });
-  await expect
-    .poll(async () => hostPage.getByTestId('br-room').innerText(), { timeout: 30000 })
-    .toContain('房间准备中');
+    await hostPage.getByRole('textbox', { name: '房间名称' }).fill(roomName);
+    await hostPage.getByTestId('br-create-room').click();
+    await expect(hostPage.getByTestId('br-room')).toBeVisible({ timeout: 30000 });
+    await expect
+      .poll(async () => hostPage.getByTestId('br-room').innerText(), { timeout: 30000 })
+      .toContain('房间准备中');
 
-  await expect
-    .poll(async () => guestPage.locator('body').innerText(), { timeout: 20000 })
-    .toContain(roomName);
-  await guestPage
-    .locator('div')
-    .filter({ hasText: roomName })
-    .getByRole('button', { name: '加入房间' })
-    .last()
-    .click();
-  await expect(guestPage.getByTestId('br-room')).toBeVisible({ timeout: 30000 });
-  await expect
-    .poll(async () => guestPage.getByTestId('br-room').innerText(), { timeout: 30000 })
-    .toContain('房间准备中');
+    await expect
+      .poll(async () => guestPage.locator('body').innerText(), { timeout: 20000 })
+      .toContain(roomName);
+    await guestPage
+      .locator('div')
+      .filter({ hasText: roomName })
+      .getByRole('button', { name: '加入房间' })
+      .last()
+      .click();
+    await expect(guestPage.getByTestId('br-room')).toBeVisible({ timeout: 30000 });
+    await expect
+      .poll(async () => guestPage.getByTestId('br-room').innerText(), { timeout: 30000 })
+      .toContain('房间准备中');
 
-  await hostPage.getByTestId('br-start-match').click();
-  await expect
-    .poll(async () => hostPage.locator('body').innerText(), { timeout: 15000 })
-    .toContain('Space');
-  await expect
-    .poll(async () => guestPage.locator('body').innerText(), { timeout: 15000 })
-    .toContain('Space');
+    await hostPage.getByTestId('br-start-match').click();
+    await expect
+      .poll(async () => hostPage.locator('body').innerText(), { timeout: 15000 })
+      .toContain('Space');
+    await expect
+      .poll(async () => guestPage.locator('body').innerText(), { timeout: 15000 })
+      .toContain('Space');
 
-  await guestPage.goto(`${FRONTEND_ORIGIN}/world`, { waitUntil: 'domcontentloaded' });
-  await guestPage.waitForTimeout(2500);
-  await guestPage.evaluate(() => {
-    window.dispatchEvent(
-      new CustomEvent('stationInteraction', {
-        detail: { stationId: 'battle_royale' },
-      }),
-    );
-  });
+    await guestPage.goto(`${FRONTEND_ORIGIN}/world`, { waitUntil: 'domcontentloaded' });
+    await guestPage.waitForTimeout(2500);
+    await guestPage.evaluate(() => {
+      window.dispatchEvent(
+        new CustomEvent('stationInteraction', {
+          detail: { stationId: 'battle_royale' },
+        }),
+      );
+    });
 
-  await expect
-    .poll(async () => guestPage.locator('body').innerText(), { timeout: 15000 })
-    .toContain('Space');
-
-  await guestContext.close();
-  await hostContext.close();
-  await api.dispose();
+    await expect
+      .poll(async () => guestPage.locator('body').innerText(), { timeout: 15000 })
+      .toContain('Space');
+  } finally {
+    await finishRoomIfPossible(api, host.token);
+    await guestContext.close();
+    await hostContext.close();
+    await api.dispose();
+  }
 });
 
 test('battle royale waiting room connection badge stays stable while sync polling runs', async ({ browser }) => {
@@ -457,35 +494,38 @@ test('battle royale waiting room connection badge stays stable while sync pollin
   const host = await registerAndLogin(api, `brstable_host_${seed}`, password);
 
   const hostContext = await browser.newContext({ viewport: { width: 1440, height: 960 } });
-  await seedBrowserAuth(hostContext, host.token, host.user);
+  try {
+    await seedBrowserAuth(hostContext, host.token, host.user);
 
-  const hostPage = await hostContext.newPage();
-  await openBattleRoyaleLobby(hostPage);
+    const hostPage = await hostContext.newPage();
+    await openBattleRoyaleLobby(hostPage);
 
-  await hostPage.getByRole('textbox', { name: '房间名称' }).fill(`稳定等待房${seed}`);
-  await hostPage.getByTestId('br-create-room').click();
-  await expect(hostPage.getByTestId('br-room')).toBeVisible({ timeout: 15000 });
-  await expect(hostPage.getByTestId('br-room-connection-badge')).toContainText('连接稳定', { timeout: 15000 });
+    await hostPage.getByRole('textbox', { name: '房间名称' }).fill(`稳定等待房${seed}`);
+    await hostPage.getByTestId('br-create-room').click();
+    await expect(hostPage.getByTestId('br-room')).toBeVisible({ timeout: 15000 });
+    await expect(hostPage.getByTestId('br-room-connection-badge')).toContainText('连接稳定', { timeout: 15000 });
 
-  const connectionSamples = await hostPage.evaluate(async () => {
-    const samples: Array<{ badge: string; notice: string }> = [];
-    const startedAt = performance.now();
+    const connectionSamples = await hostPage.evaluate(async () => {
+      const samples: Array<{ badge: string; notice: string }> = [];
+      const startedAt = performance.now();
 
-    while (performance.now() - startedAt < 9800) {
-      const badge = document.querySelector('[data-testid="br-room-connection-badge"]')?.textContent?.trim() ?? '';
-      const notice = document.querySelector('[data-testid="br-room-notice"]')?.textContent?.trim() ?? '';
-      samples.push({ badge, notice });
-      await new Promise((resolve) => window.setTimeout(resolve, 50));
-    }
+      while (performance.now() - startedAt < 9800) {
+        const badge = document.querySelector('[data-testid="br-room-connection-badge"]')?.textContent?.trim() ?? '';
+        const notice = document.querySelector('[data-testid="br-room-notice"]')?.textContent?.trim() ?? '';
+        samples.push({ badge, notice });
+        await new Promise((resolve) => window.setTimeout(resolve, 50));
+      }
 
-    return samples;
-  });
+      return samples;
+    });
 
-  expect(connectionSamples.some((sample) => sample.badge.includes('重连中'))).toBeFalsy();
-  expect(connectionSamples.some((sample) => sample.notice.includes('自动重连'))).toBeFalsy();
-
-  await hostContext.close();
-  await api.dispose();
+    expect(connectionSamples.some((sample) => sample.badge.includes('重连中'))).toBeFalsy();
+    expect(connectionSamples.some((sample) => sample.notice.includes('自动重连'))).toBeFalsy();
+  } finally {
+    await finishRoomIfPossible(api, host.token);
+    await hostContext.close();
+    await api.dispose();
+  }
 });
 
 test('battle royale guest render stays smooth while moving after room start', async ({ browser }) => {
@@ -504,63 +544,66 @@ test('battle royale guest render stays smooth while moving after room start', as
 
   const hostContext = await browser.newContext({ viewport: { width: 1440, height: 960 } });
   const guestContext = await browser.newContext({ viewport: { width: 1440, height: 960 } });
-  await seedBrowserAuth(hostContext, host.token, host.user);
-  await seedBrowserAuth(guestContext, guest.token, guest.user);
+  try {
+    await seedBrowserAuth(hostContext, host.token, host.user);
+    await seedBrowserAuth(guestContext, guest.token, guest.user);
 
-  const hostPage = await hostContext.newPage();
-  const guestPage = await guestContext.newPage();
+    const hostPage = await hostContext.newPage();
+    const guestPage = await guestContext.newPage();
 
-  await Promise.all([openBattleRoyaleLobby(hostPage), openBattleRoyaleLobby(guestPage)]);
+    await Promise.all([openBattleRoyaleLobby(hostPage), openBattleRoyaleLobby(guestPage)]);
 
-  await hostPage.getByRole('textbox', { name: '房间名称' }).fill(`流畅房${seed}`);
-  await hostPage.getByTestId('br-create-room').click();
-  await expect(hostPage.getByTestId('br-room')).toBeVisible({ timeout: 15000 });
+    await hostPage.getByRole('textbox', { name: '房间名称' }).fill(`流畅房${seed}`);
+    await hostPage.getByTestId('br-create-room').click();
+    await expect(hostPage.getByTestId('br-room')).toBeVisible({ timeout: 15000 });
 
-  await expect
-    .poll(async () => guestPage.locator('body').innerText(), { timeout: 20000 })
-    .toContain(`流畅房${seed}`);
-  await guestPage
-    .locator('div')
-    .filter({ hasText: `流畅房${seed}` })
-    .getByRole('button', { name: '加入房间' })
-    .last()
-    .click();
-  await expect(guestPage.getByTestId('br-room')).toBeVisible({ timeout: 15000 });
+    await expect
+      .poll(async () => guestPage.locator('body').innerText(), { timeout: 20000 })
+      .toContain(`流畅房${seed}`);
+    await guestPage
+      .locator('div')
+      .filter({ hasText: `流畅房${seed}` })
+      .getByRole('button', { name: '加入房间' })
+      .last()
+      .click();
+    await expect(guestPage.getByTestId('br-room')).toBeVisible({ timeout: 15000 });
 
-  await hostPage.getByTestId('br-start-match').click();
-  await expect(hostPage.getByTestId('br-arena')).toBeVisible({ timeout: 15000 });
-  await expect(guestPage.getByTestId('br-arena')).toBeVisible({ timeout: 15000 });
-  await guestPage.getByTestId('br-arena').click({ position: { x: 240, y: 240 } });
+    await hostPage.getByTestId('br-start-match').click();
+    await expect(hostPage.getByTestId('br-arena')).toBeVisible({ timeout: 15000 });
+    await expect(guestPage.getByTestId('br-arena')).toBeVisible({ timeout: 15000 });
+    await guestPage.getByTestId('br-arena').click({ position: { x: 240, y: 240 } });
 
-  await guestPage.keyboard.down('d');
-  const sampledXs: number[] = [];
-  for (let index = 0; index < 36; index += 1) {
-    const currentX = await guestPage.evaluate((userId: number) => {
-      const snapshot = (window as any).__brRenderSnapshot ?? (window as any).__brSnapshot ?? null;
-      const fighter = snapshot?.fighters?.find((item: any) => item.id === `human-${userId}`);
-      return typeof fighter?.x === 'number' ? fighter.x : -1;
-    }, guest.user.id);
-    sampledXs.push(currentX);
-    await guestPage.waitForTimeout(25);
+    await guestPage.keyboard.down('d');
+    const sampledXs: number[] = [];
+    for (let index = 0; index < 36; index += 1) {
+      const currentX = await guestPage.evaluate((userId: number) => {
+        const snapshot = (window as any).__brRenderSnapshot ?? (window as any).__brSnapshot ?? null;
+        const fighter = snapshot?.fighters?.find((item: any) => item.id === `human-${userId}`);
+        return typeof fighter?.x === 'number' ? fighter.x : -1;
+      }, guest.user.id);
+      sampledXs.push(currentX);
+      await guestPage.waitForTimeout(25);
+    }
+    await guestPage.keyboard.up('d');
+
+    const effectiveSamples = sampledXs.filter((value) => value >= 0);
+    const movementChanges = effectiveSamples.filter((value, index) => index === 0 || Math.abs(value - effectiveSamples[index - 1]) >= 1);
+    const travelDistance = effectiveSamples[effectiveSamples.length - 1] - effectiveSamples[0];
+    const hostSyncStats = await hostPage.evaluate(() => (window as any).__brSyncStats ?? null);
+    const guestSyncStats = await guestPage.evaluate(() => (window as any).__brSyncStats ?? null);
+
+    expect(effectiveSamples.length).toBeGreaterThan(24);
+    expect(movementChanges.length).toBeGreaterThan(8);
+    expect(travelDistance).toBeGreaterThan(180);
+    expect(hostSyncStats?.platformsStripped).toBeTruthy();
+    expect(hostSyncStats?.lastWireSnapshotBytes).toBeGreaterThan(0);
+    expect(hostSyncStats?.lastWireSnapshotBytes).toBeLessThan(hostSyncStats?.lastFullSnapshotBytes ?? 0);
+    expect(guestSyncStats?.authoritativeSnapshots).toBeGreaterThan(4);
+    expect(guestSyncStats?.inputMessagesSent).toBeGreaterThan(8);
+  } finally {
+    await finishRoomIfPossible(api, host.token);
+    await guestContext.close();
+    await hostContext.close();
+    await api.dispose();
   }
-  await guestPage.keyboard.up('d');
-
-  const effectiveSamples = sampledXs.filter((value) => value >= 0);
-  const movementChanges = effectiveSamples.filter((value, index) => index === 0 || Math.abs(value - effectiveSamples[index - 1]) >= 1);
-  const travelDistance = effectiveSamples[effectiveSamples.length - 1] - effectiveSamples[0];
-  const hostSyncStats = await hostPage.evaluate(() => (window as any).__brSyncStats ?? null);
-  const guestSyncStats = await guestPage.evaluate(() => (window as any).__brSyncStats ?? null);
-
-  expect(effectiveSamples.length).toBeGreaterThan(24);
-  expect(movementChanges.length).toBeGreaterThan(8);
-  expect(travelDistance).toBeGreaterThan(180);
-  expect(hostSyncStats?.platformsStripped).toBeTruthy();
-  expect(hostSyncStats?.lastWireSnapshotBytes).toBeGreaterThan(0);
-  expect(hostSyncStats?.lastWireSnapshotBytes).toBeLessThan(hostSyncStats?.lastFullSnapshotBytes ?? 0);
-  expect(guestSyncStats?.authoritativeSnapshots).toBeGreaterThan(4);
-  expect(guestSyncStats?.inputMessagesSent).toBeGreaterThan(8);
-
-  await guestContext.close();
-  await hostContext.close();
-  await api.dispose();
 });

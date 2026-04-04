@@ -4,8 +4,10 @@ PvP 对战 WebSocket 通信
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from typing import Dict
 import json
+import logging
 
 router = APIRouter()
+logger = logging.getLogger(__name__)
 
 # 活跃的 WebSocket 连接 {room_id:user_id: websocket}
 active_connections: Dict[str, WebSocket] = {}
@@ -74,8 +76,7 @@ async def websocket_battle(websocket: WebSocket, room_id: str, user_id: int):
         }, exclude_user=user_id)
     
     except Exception as e:
-        # 🔥 只记录错误日志
-        print(f"[Battle WS] 连接错误: room={room_id}, user={user_id}, error={e}")
+        logger.error("Battle websocket error for room %s user %s: %s", room_id, user_id, e)
         if connection_key in active_connections:
             del active_connections[connection_key]
 

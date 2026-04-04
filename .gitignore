@@ -35,6 +35,8 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 frontend-dev.log
+frontend-qa.log
+frontend-qa.err.log
 backend/backend-dev.log
 backend/backend-dev.log.*
 
@@ -89,3 +91,6 @@ backend/*.pyc
 
 # Deployment packages
 *.zip
+tmp-br-debug.png
+tmp-br-guest-before-fill.png
+tmp-br-host-before-fill.png

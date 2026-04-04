@@ -17,6 +17,20 @@ import {
 } from '../types/pvp';
 import { createAIOpponent } from '../lib/pvpAI';
 import { getApiBaseUrl } from '../lib/config/api';
+import { usePetStore } from './petStore';
+
+function getActivePetInfo() {
+    const currentPet = usePetStore.getState().currentPet;
+    const petType = currentPet?.petType ?? 'code_kitty';
+    const petStage = Math.max(1, Math.min(5, currentPet?.evolution_stage ?? 3));
+    const petName = currentPet?.name ?? '伙伴';
+    return { petType, petStage, petName };
+}
+
+function buildPetQuery() {
+    const pet = getActivePetInfo();
+    return `pet_type=${encodeURIComponent(pet.petType)}&pet_stage=${pet.petStage}&pet_name=${encodeURIComponent(pet.petName)}`;
+}
 
 // ==================== 初始状态 ====================
 
@@ -89,12 +103,18 @@ export const usePvpStore = create<PvpState & PvpActions>()((set, get) => ({
     // ==================== 房间操作 ====================
     
     createRoom: (hostPlayer: PlayerInfo) => {
+        const activePet = getActivePetInfo();
         // 🔥 修复：先设置一个临时状态，等后端返回真正的房间ID后再更新
         // 不再使用本地生成的 roomId，避免 ID 不一致问题
         const tempRoomId = 'CREATING...';
         const room: RoomInfo = {
             id: tempRoomId,
-            hostPlayer,
+            hostPlayer: {
+                ...hostPlayer,
+                petType: hostPlayer.petType ?? activePet.petType,
+                petStage: hostPlayer.petStage ?? activePet.petStage,
+                petName: hostPlayer.petName ?? activePet.petName,
+            },
             guestPlayer: null,
             status: 'waiting',
             createdAt: Date.now(),
@@ -104,7 +124,7 @@ export const usePvpStore = create<PvpState & PvpActions>()((set, get) => ({
         
         // 调用后端API创建房间
         const baseUrl = getApiBaseUrl();
-        fetch(`${baseUrl}/pvp/rooms/create?user_id=${hostPlayer.id}&username=${encodeURIComponent(hostPlayer.username)}`, {
+        fetch(`${baseUrl}/pvp/rooms/create?user_id=${hostPlayer.id}&username=${encodeURIComponent(hostPlayer.username)}&${buildPetQuery()}`, {
             method: 'POST',
         })
         .then(res => res.json())
@@ -150,11 +170,12 @@ export const usePvpStore = create<PvpState & PvpActions>()((set, get) => ({
     },
     
     joinRoom: (roomId: string, player: PlayerInfo) => {
+        const activePet = getActivePetInfo();
         // 调用后端API加入房间
         const baseUrl = getApiBaseUrl();
         // 🔥 确保 user_id 是数字
         const userId = parseInt(player.id, 10) || 0;
-        const url = `${baseUrl}/pvp/rooms/${roomId}/join?user_id=${userId}&username=${encodeURIComponent(player.username)}`;
+        const url = `${baseUrl}/pvp/rooms/${roomId}/join?user_id=${userId}&username=${encodeURIComponent(player.username)}&${buildPetQuery()}`;
         
         // 🔥 添加超时控制器
         const controller = new AbortController();
@@ -183,9 +204,17 @@ export const usePvpStore = create<PvpState & PvpActions>()((set, get) => ({
                         username: data.host_name || '房主', 
                         avatar: '🎮', 
                         level: 1, 
-                        skills: [] 
+                        skills: [],
+                        petType: data.host_pet_type || 'code_kitty',
+                        petStage: data.host_pet_stage || 3,
+                        petName: data.host_pet_name || '房主伙伴',
                     },
-                    guestPlayer: player, // 自己是客人
+                    guestPlayer: {
+                        ...player,
+                        petType: player.petType ?? activePet.petType,
+                        petStage: player.petStage ?? activePet.petStage,
+                        petName: player.petName ?? activePet.petName,
+                    }, // 自己是客人
                     status: 'ready',
                     createdAt: Date.now(),
                 };

@@ -186,6 +186,9 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
     let cancelled = false;
 
     const poll = async () => {
+      if (typeof document !== 'undefined' && document.visibilityState === 'hidden') {
+        return;
+      }
       const nextRoom = await refreshCurrentRoom();
       if (cancelled || !nextRoom) {
         return;
@@ -195,13 +198,21 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
       }
     };
 
+    const handleVisibilityRefresh = () => {
+      if (document.visibilityState === 'visible') {
+        void poll();
+      }
+    };
+
     const interval = setInterval(() => {
       void poll();
-    }, wsConnected ? 12000 : 5000);
+    }, wsConnected ? 30000 : 12000);
+    document.addEventListener('visibilitychange', handleVisibilityRefresh);
 
     return () => {
       cancelled = true;
       clearInterval(interval);
+      document.removeEventListener('visibilitychange', handleVisibilityRefresh);
     };
   }, [refreshCurrentRoom, wsConnected]);
 

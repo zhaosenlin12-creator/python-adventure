@@ -23,7 +23,8 @@ if __name__ == "__main__":
         host="0.0.0.0",
         port=8000,
         reload=False,  # 🔥 关闭热重载，避免状态丢失
-        log_level="info",
+        log_level="warning",
+        access_log=False,
         ws_ping_interval=30,   # 🔥 服务器每30秒发ping
         ws_ping_timeout=30,    # 🔥 等待pong超时30秒
         timeout_keep_alive=65  # 🔥 HTTP keep-alive 超时65秒

@@ -5,6 +5,9 @@ import { X, Clock, Code, Trophy } from 'lucide-react';
 import { ArenaChallenge } from '@/types/arena';
 import usePyodide from '@/hooks/usePyodide';
 
+const DEBUG = process.env.NODE_ENV === 'development';
+const debugLog = DEBUG ? console.log.bind(console) : () => {};
+
 interface ArenaChallengeModalProps {
     challenge: ArenaChallenge | null;
     onClose: () => void;
@@ -463,8 +466,8 @@ export default function ArenaChallengeModal({ challenge, onClose, onComplete, on
         const normalizedResult = resultText.trim().replace(/\r\n/g, '\n');
         const normalizedExpected = expectedOutput.trim().replace(/\r\n/g, '\n');
         
-        console.log('[ArenaChallengeModal] Result:', normalizedResult);
-        console.log('[ArenaChallengeModal] Expected:', normalizedExpected);
+        debugLog('[ArenaChallengeModal] Result:', normalizedResult);
+        debugLog('[ArenaChallengeModal] Expected:', normalizedExpected);
         
         const success = normalizedResult === normalizedExpected;
         
@@ -500,7 +503,7 @@ export default function ArenaChallengeModal({ challenge, onClose, onComplete, on
     };
 
     const handleRunCode = async () => {
-        console.log('[ArenaChallengeModal] handleRunCode called');
+        debugLog('[ArenaChallengeModal] handleRunCode called');
         
         // 检查是否还有未填写的空
         if (code.includes('___')) {

@@ -9,6 +9,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import func, desc, asc
 from typing import Optional, Dict, List
 from datetime import datetime, timezone, timedelta
+import logging
 import threading
 
 from app.core.database import get_db
@@ -24,6 +25,7 @@ from app.schemas.community import (
 )
 
 router = APIRouter()
+logger = logging.getLogger(__name__)
 
 # ==================== 🔒 发布数量限制 ====================
 MAX_PUBLISHED_LEVELS_PER_USER = 10  # 每用户最多发布10个关卡到社区
@@ -431,8 +433,7 @@ async def record_play(
                 player_id=current_user.id
             )
         except Exception as e:
-            # 失败不影响游玩统计
-            print(f"[Community] play reward failed: {e}")
+            logger.warning("Community play reward failed for level %s: %s", level.id, e)
     
     return {
         "success": True,
@@ -514,8 +515,7 @@ async def like_level(
                 player_id=current_user.id
             )
         except Exception as e:
-            # 失败不影响点赞流程
-            print(f"[Community] like reward failed: {e}")
+            logger.warning("Community like reward failed for level %s: %s", level.id, e)
     
     return {
         "success": True,

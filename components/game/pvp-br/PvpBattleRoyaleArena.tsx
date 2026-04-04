@@ -34,9 +34,15 @@ import type {
 
 const VIEW_WIDTH = 1280;
 const VIEW_HEIGHT = 720;
-const MAP_WIDTH = 8600;
-const MAP_HEIGHT = 3200;
-const FLOOR_Y = 2860;
+const BASE_MAP_WIDTH = 8600;
+const BASE_MAP_HEIGHT = 3200;
+const BASE_FLOOR_Y = 2860;
+const MAP_WIDTH = 5600;
+const MAP_HEIGHT = 2480;
+const FLOOR_Y = Math.round((BASE_FLOOR_Y / BASE_MAP_HEIGHT) * MAP_HEIGHT);
+const X_SCALE = MAP_WIDTH / BASE_MAP_WIDTH;
+const Y_SCALE = MAP_HEIGHT / BASE_MAP_HEIGHT;
+const DISTANCE_SCALE = (X_SCALE + Y_SCALE) / 2;
 const FIGHTER_WIDTH = 68;
 const FIGHTER_HEIGHT = 78;
 const FIGHTER_HP = 120;
@@ -47,22 +53,22 @@ const DOUBLE_JUMP_FORCE = 1060;
 const DASH_SPEED = 1240;
 const DASH_DURATION_MS = 165;
 const DASH_COOLDOWN_MS = 1000;
-const ATTACK_RANGE = 78;
+const ATTACK_RANGE = 68;
 const ATTACK_VERTICAL_TOLERANCE = 92;
 const ATTACK_DAMAGE = 18;
 const ATTACK_COOLDOWN_MS = 460;
-const ATTACK_ACTIVE_MS = 170;
+const ATTACK_ACTIVE_MS = 200;
 const WEAPON_THROW_SPEED = 1260;
 const WEAPON_THROW_MAX_DISTANCE = 560;
 const WEAPON_THROW_COOLDOWN_MS = 360;
 const WEAPON_PROJECTILE_DAMAGE = 24;
 const WEAPON_PICKUP_RADIUS = 58;
 const WEAPON_PICKUP_GRACE_MS = 650;
-const WEAPON_MODEL_LENGTH = 42;
-const WEAPON_HOLD_OFFSET_X = 30;
+const WEAPON_MODEL_LENGTH = 50;
+const WEAPON_HOLD_OFFSET_X = 34;
 const HIT_FLASH_MS = 220;
-const SWING_MS = 220;
-const EFFECT_TTL_SLASH_MS = 180;
+const SWING_MS = 280;
+const EFFECT_TTL_SLASH_MS = 260;
 const EFFECT_TTL_HIT_MS = 240;
 const EFFECT_TTL_SHOCKWAVE_MS = 280;
 const EFFECT_TTL_DASH_MS = 220;
@@ -70,20 +76,53 @@ const SAFE_ZONE_DAMAGE_BY_PHASE = [10, 14, 20, 30, 42, 58, 78] as const;
 const MATCH_MAX_MS = 360000;
 const PICKUP_RESPAWN_MS = 12000;
 const QUIZ_PENDING_TIMEOUT_MS = 15000;
-const SNAPSHOT_INTERVAL_MS = 120;
-const UI_SYNC_INTERVAL_MS = 80;
-const INPUT_SEND_INTERVAL_MS = 66;
-const MAX_RENDER_EXTRAPOLATION_MS = 220;
-const LOCAL_INPUT_LEAD_MS = 68;
-const MAX_LOCAL_INPUT_LEAD_MS = 120;
-const LOCAL_FIGHTER_SMOOTHING_RATE = 22;
-const REMOTE_FIGHTER_SMOOTHING_RATE = 14;
+const SNAPSHOT_INTERVAL_MS = 50;
+const UI_SYNC_INTERVAL_MS = 50;
+const INPUT_SEND_INTERVAL_MS = 20;
+const MAX_RENDER_EXTRAPOLATION_MS = 300;
+const LOCAL_INPUT_LEAD_MS = 104;
+const MAX_LOCAL_INPUT_LEAD_MS = 240;
+const LOCAL_FIGHTER_SMOOTHING_RATE = 36;
+const REMOTE_FIGHTER_SMOOTHING_RATE = 20;
 const PROJECTILE_SMOOTHING_RATE = 16;
-const POSITION_SNAP_DISTANCE = 220;
+const POSITION_SNAP_DISTANCE = 300;
+const LOCAL_PREDICTION_BLEND_MIN = 0.92;
+const LOCAL_PREDICTION_BLEND_MAX = 0.985;
+const LOCAL_PREDICTION_HARD_CORRECTION_DISTANCE = 320;
 const CANVAS_FONT_FAMILY = '"Microsoft YaHei", "Noto Sans SC", "PingFang SC", sans-serif';
-const MAX_ACTIVE_PICKUPS = 18;
+const IS_DEV = process.env.NODE_ENV === 'development';
+const BR_QA_DEBUG =
+  process.env.NEXT_PUBLIC_BR_QA_DEBUG === 'true' || process.env.NEXT_PUBLIC_QA_DEBUG === 'true';
 
-const ZONE_PHASES = [
+function shouldExposeQaDebug() {
+  if (IS_DEV || BR_QA_DEBUG) {
+    return true;
+  }
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  try {
+    return (
+      window.localStorage.getItem('br-qa-debug') === 'true' ||
+      window.localStorage.getItem('qa-debug') === 'true'
+    );
+  } catch {
+    return false;
+  }
+}
+const MAX_ACTIVE_PICKUPS = 6;
+const OPENING_SPAWN_SAFE_MARGIN = 400;
+const OPENING_SPAWN_FLOOR_CUTOFF = FLOOR_Y - 160;
+const REVIVE_SPAWN_SAFE_MARGIN = 180;
+
+const scaleX = (value: number) => Math.round(value * X_SCALE);
+const scaleY = (value: number) => Math.round(value * Y_SCALE);
+const scaleDistance = (value: number) => Math.max(1, Math.round(value * DISTANCE_SCALE));
+const scaleWidth = (value: number) => Math.max(48, Math.round(value * X_SCALE));
+const scaleHeight = (value: number) => Math.max(18, Math.round(value * Y_SCALE));
+
+const BASE_ZONE_PHASES = [
   { until: 45000, radius: 3400 },
   { until: 100000, radius: 2860 },
   { until: 155000, radius: 2280 },
@@ -92,6 +131,11 @@ const ZONE_PHASES = [
   { until: 330000, radius: 760 },
   { until: MATCH_MAX_MS, radius: 360 },
 ] as const;
+
+const ZONE_PHASES: ReadonlyArray<{ until: number; radius: number }> = BASE_ZONE_PHASES.map((phase, index) => ({
+  ...phase,
+  radius: Math.max(index === BASE_ZONE_PHASES.length - 1 ? 300 : 420, scaleDistance(phase.radius)),
+}));
 
 interface SpawnPoint {
   id: string;
@@ -109,7 +153,39 @@ interface PickupSpawnZone {
   maxX: number;
 }
 
-const PLATFORM_LAYOUT: BattleRoyalePlatform[] = [
+function scalePlatform(platform: BattleRoyalePlatform): BattleRoyalePlatform {
+  return {
+    ...platform,
+    x: scaleX(platform.x),
+    y: scaleY(platform.y),
+    width: scaleWidth(platform.width),
+    height: scaleHeight(platform.height),
+    travel: platform.travel ? scaleDistance(platform.travel) : platform.travel,
+    bounceBoost: platform.bounceBoost ? Math.round(platform.bounceBoost * Math.sqrt(Y_SCALE)) : platform.bounceBoost,
+  };
+}
+
+function scaleSpawnPoint(point: SpawnPoint): SpawnPoint {
+  return {
+    ...point,
+    x: scaleX(point.x),
+    y: scaleY(point.y),
+    minX: scaleX(point.minX),
+    maxX: scaleX(point.maxX),
+  };
+}
+
+function scalePickupSpawn(point: PickupSpawnZone): PickupSpawnZone {
+  return {
+    ...point,
+    x: scaleX(point.x),
+    y: scaleY(point.y),
+    minX: scaleX(point.minX),
+    maxX: scaleX(point.maxX),
+  };
+}
+
+const BASE_PLATFORM_LAYOUT_ALL: BattleRoyalePlatform[] = [
   { id: 'p-ground-a', x: 220, y: 2570, width: 560, height: 28 },
   { id: 'p-ground-b', x: 920, y: 2350, width: 420, height: 28 },
   { id: 'p-ground-c', x: 1500, y: 2130, width: 360, height: 28 },
@@ -159,17 +235,49 @@ const PLATFORM_LAYOUT: BattleRoyalePlatform[] = [
   { id: 'p-bounce-e', x: 7440, y: 2090, width: 180, height: 24, kind: 'bounce', bounceBoost: 1280 },
 ];
 
-const PLATFORM_SPAWN_INDICES = [
-  0, 1, 3, 4, 6, 7, 8, 10, 11, 13, 14, 15, 16, 17, 18, 20, 21, 23, 24,
-  31, 32, 33, 35, 36, 38, 39, 40, 42, 43,
+const RETAINED_PLATFORM_IDS = new Set<string>([
+  'p-ground-a', 'p-ground-b', 'p-ground-c', 'p-ground-d', 'p-ground-e',
+  'p-ground-f', 'p-ground-g', 'p-ground-h', 'p-ground-i', 'p-ground-j',
+  'p-mid-a', 'p-mid-b', 'p-mid-c', 'p-mid-d', 'p-mid-e',
+  'p-high-a', 'p-high-b', 'p-high-c', 'p-high-e', 'p-high-g',
+  'p-move-h-1', 'p-move-v-2',
+  'p-bounce-a', 'p-bounce-c', 'p-bounce-d',
+  'p-step-a0', 'p-step-a1', 'p-step-b0', 'p-step-b1',
+  'p-step-c0', 'p-step-c1', 'p-step-d0', 'p-step-d1', 'p-step-e0',
+]);
+
+const BASE_PLATFORM_LAYOUT: BattleRoyalePlatform[] = BASE_PLATFORM_LAYOUT_ALL.filter((platform) =>
+  RETAINED_PLATFORM_IDS.has(platform.id),
+);
+
+const PLATFORM_LAYOUT: BattleRoyalePlatform[] = BASE_PLATFORM_LAYOUT.map(scalePlatform);
+const PLATFORM_BY_ID = new Map(PLATFORM_LAYOUT.map((platform) => [platform.id, platform]));
+
+function getPlatformById(id: string): BattleRoyalePlatform {
+  const platform = PLATFORM_BY_ID.get(id);
+  if (!platform) {
+    throw new Error(`Missing battle royale platform: ${id}`);
+  }
+  return platform;
+}
+
+const PLATFORM_SPAWN_IDS = [
+  'p-ground-a', 'p-ground-b', 'p-ground-d', 'p-ground-f', 'p-ground-g', 'p-ground-i', 'p-ground-j',
+  'p-mid-a', 'p-mid-c', 'p-mid-e',
+  'p-high-a', 'p-high-c', 'p-high-g',
+  'p-step-a1', 'p-step-b1', 'p-step-c1', 'p-step-d1', 'p-step-e0',
 ];
-const PICKUP_PLATFORM_INDICES = [
-  0, 2, 4, 5, 7, 8, 10, 11, 12, 14, 16, 18, 19, 20, 22, 24,
-  31, 33, 35, 36, 37, 39, 40, 41, 42, 43, 44, 45, 46,
+const PICKUP_PLATFORM_IDS = [
+  'p-ground-b', 'p-ground-c', 'p-ground-e', 'p-ground-f', 'p-ground-h', 'p-ground-j',
+  'p-mid-a', 'p-mid-c', 'p-mid-e',
+  'p-high-b', 'p-high-e',
+  'p-move-h-1', 'p-move-v-2',
+  'p-bounce-a', 'p-bounce-c', 'p-bounce-d',
+  'p-step-a0', 'p-step-b0', 'p-step-c0', 'p-step-d0', 'p-step-e0',
 ];
 
-const PRIMARY_SPAWN_POINTS: SpawnPoint[] = PLATFORM_SPAWN_INDICES.map((index) => {
-  const platform = PLATFORM_LAYOUT[index];
+const PRIMARY_SPAWN_POINTS: SpawnPoint[] = PLATFORM_SPAWN_IDS.map((platformId) => {
+  const platform = getPlatformById(platformId);
   const padding = Math.min(96, Math.max(28, Math.round(platform.width * 0.18)));
   return {
     id: `spawn-${platform.id}`,
@@ -181,19 +289,19 @@ const PRIMARY_SPAWN_POINTS: SpawnPoint[] = PLATFORM_SPAWN_INDICES.map((index) =>
 });
 
 const SECONDARY_SPAWN_POINTS: SpawnPoint[] = [
-  { id: 'spawn-floor-a', x: 180, y: FLOOR_Y - 96, minX: 90, maxX: 360 },
-  { id: 'spawn-floor-b', x: 1630, y: FLOOR_Y - 96, minX: 1480, maxX: 1800 },
-  { id: 'spawn-floor-c', x: 3300, y: FLOOR_Y - 96, minX: 3160, maxX: 3460 },
-  { id: 'spawn-floor-d', x: 5000, y: FLOOR_Y - 96, minX: 4850, maxX: 5180 },
-  { id: 'spawn-floor-e', x: 6750, y: FLOOR_Y - 96, minX: 6590, maxX: 6930 },
-  { id: 'spawn-floor-f', x: 8220, y: FLOOR_Y - 96, minX: 8040, maxX: 8390 },
-];
+  { id: 'spawn-floor-a', x: 180, y: BASE_FLOOR_Y - 96, minX: 90, maxX: 360 },
+  { id: 'spawn-floor-b', x: 1630, y: BASE_FLOOR_Y - 96, minX: 1480, maxX: 1800 },
+  { id: 'spawn-floor-c', x: 3300, y: BASE_FLOOR_Y - 96, minX: 3160, maxX: 3460 },
+  { id: 'spawn-floor-d', x: 5000, y: BASE_FLOOR_Y - 96, minX: 4850, maxX: 5180 },
+  { id: 'spawn-floor-e', x: 6750, y: BASE_FLOOR_Y - 96, minX: 6590, maxX: 6930 },
+  { id: 'spawn-floor-f', x: 8220, y: BASE_FLOOR_Y - 96, minX: 8040, maxX: 8390 },
+].map(scaleSpawnPoint);
 
 const SPAWN_POINTS = [...PRIMARY_SPAWN_POINTS, ...SECONDARY_SPAWN_POINTS];
 
 const PICKUP_SPAWNS: PickupSpawnZone[] = [
-  ...PICKUP_PLATFORM_INDICES.map((index) => {
-    const platform = PLATFORM_LAYOUT[index];
+  ...PICKUP_PLATFORM_IDS.map((platformId) => {
+    const platform = getPlatformById(platformId);
     const padding = Math.min(80, Math.max(24, Math.round(platform.width * 0.16)));
     return {
       id: `pickup-${platform.id}`,
@@ -203,53 +311,64 @@ const PICKUP_SPAWNS: PickupSpawnZone[] = [
       maxX: platform.x + platform.width - padding,
     };
   }),
-  { id: 'pickup-floor-a', x: 640, y: FLOOR_Y - 44, minX: 420, maxX: 900 },
-  { id: 'pickup-floor-b', x: 2410, y: FLOOR_Y - 44, minX: 2160, maxX: 2640 },
-  { id: 'pickup-floor-c', x: 4300, y: FLOOR_Y - 44, minX: 4080, maxX: 4530 },
-  { id: 'pickup-floor-d', x: 6210, y: FLOOR_Y - 44, minX: 5980, maxX: 6440 },
-  { id: 'pickup-floor-e', x: 8010, y: FLOOR_Y - 44, minX: 7800, maxX: 8240 },
-];
+  { id: 'pickup-floor-a', x: 640, y: BASE_FLOOR_Y - 44, minX: 420, maxX: 900 },
+  { id: 'pickup-floor-b', x: 2410, y: BASE_FLOOR_Y - 44, minX: 2160, maxX: 2640 },
+  { id: 'pickup-floor-c', x: 4300, y: BASE_FLOOR_Y - 44, minX: 4080, maxX: 4530 },
+  { id: 'pickup-floor-d', x: 6210, y: BASE_FLOOR_Y - 44, minX: 5980, maxX: 6440 },
+  { id: 'pickup-floor-e', x: 8010, y: BASE_FLOOR_Y - 44, minX: 7800, maxX: 8240 },
+].map(scalePickupSpawn);
 
 const BACKGROUND_ORBS = [
   { x: 520, y: 260, radius: 130, color: 'rgba(103, 232, 249, 0.08)' },
-  { x: 1680, y: 420, radius: 190, color: 'rgba(251, 191, 36, 0.07)' },
   { x: 3020, y: 300, radius: 160, color: 'rgba(45, 212, 191, 0.07)' },
-  { x: 4460, y: 360, radius: 210, color: 'rgba(125, 211, 252, 0.07)' },
   { x: 5930, y: 280, radius: 170, color: 'rgba(244, 114, 182, 0.06)' },
-  { x: 7440, y: 340, radius: 190, color: 'rgba(165, 180, 252, 0.06)' },
-];
+].map((orb) => ({
+  ...orb,
+  x: scaleX(orb.x),
+  y: scaleY(orb.y),
+  radius: scaleDistance(orb.radius),
+}));
 
 const FLOATING_CLOUDS = [
   { x: 420, y: 280, width: 220, height: 72 },
-  { x: 1360, y: 460, width: 260, height: 86 },
   { x: 2660, y: 240, width: 210, height: 68 },
   { x: 4210, y: 430, width: 280, height: 92 },
-  { x: 5660, y: 250, width: 240, height: 80 },
   { x: 7080, y: 400, width: 260, height: 86 },
-  { x: 8120, y: 300, width: 220, height: 72 },
-];
+].map((cloud) => ({
+  ...cloud,
+  x: scaleX(cloud.x),
+  y: scaleY(cloud.y),
+  width: scaleWidth(cloud.width),
+  height: scaleHeight(cloud.height),
+}));
 
 const GROUND_PROPS = [
   { x: 380, stem: '#94d2bd', cap: '#fda4af', size: 22 },
-  { x: 940, stem: '#93c5fd', cap: '#fcd34d', size: 18 },
   { x: 1710, stem: '#86efac', cap: '#f9a8d4', size: 24 },
   { x: 2480, stem: '#a7f3d0', cap: '#fdba74', size: 20 },
-  { x: 3370, stem: '#93c5fd', cap: '#c4b5fd', size: 22 },
   { x: 4230, stem: '#86efac', cap: '#fcd34d', size: 18 },
   { x: 5010, stem: '#67e8f9', cap: '#fda4af', size: 24 },
-  { x: 5820, stem: '#a7f3d0', cap: '#fdba74', size: 20 },
   { x: 6620, stem: '#93c5fd', cap: '#c4b5fd', size: 22 },
-  { x: 7390, stem: '#86efac', cap: '#fcd34d', size: 18 },
   { x: 8140, stem: '#67e8f9', cap: '#f9a8d4', size: 24 },
-];
+].map((prop) => ({
+  ...prop,
+  x: scaleX(prop.x),
+  size: Math.max(14, scaleDistance(prop.size)),
+}));
 
-const PICKUP_ROTATION: BrPickupType[] = [
-  'med_kit',
-  'armor_vest',
-  'shield_core',
-  'damage_claw',
-  'wind_boost',
-  'shockwave_charge',
+const PICKUP_WEIGHT_TABLE: Array<{
+  type: BrPickupType;
+  earlyWeight: number;
+  midWeight: number;
+  lateWeight: number;
+  maxConcurrent: number;
+}> = [
+  { type: 'med_kit', earlyWeight: 24, midWeight: 18, lateWeight: 12, maxConcurrent: 4 },
+  { type: 'armor_vest', earlyWeight: 22, midWeight: 16, lateWeight: 10, maxConcurrent: 4 },
+  { type: 'shield_core', earlyWeight: 20, midWeight: 16, lateWeight: 10, maxConcurrent: 4 },
+  { type: 'damage_claw', earlyWeight: 10, midWeight: 14, lateWeight: 18, maxConcurrent: 3 },
+  { type: 'wind_boost', earlyWeight: 10, midWeight: 14, lateWeight: 18, maxConcurrent: 3 },
+  { type: 'shockwave_charge', earlyWeight: 8, midWeight: 12, lateWeight: 16, maxConcurrent: 2 },
 ];
 
 const zoneCenter = {
@@ -569,6 +688,26 @@ function randomBetween(min: number, max: number): number {
   return min + Math.random() * (max - min);
 }
 
+function createSeededRandom(seed: number) {
+  let state = seed >>> 0;
+  return () => {
+    state = (state + 0x6d2b79f5) >>> 0;
+    let mixed = Math.imul(state ^ (state >>> 15), 1 | state);
+    mixed ^= mixed + Math.imul(mixed ^ (mixed >>> 7), 61 | mixed);
+    return ((mixed ^ (mixed >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function hashRoomSeed(room: BattleRoyaleRoom): number {
+  const seedSource = `${room.id}:${room.started_at ?? room.created_at}:${room.match_seed ?? 'pending'}`;
+  let hash = 2166136261;
+  for (let index = 0; index < seedSource.length; index += 1) {
+    hash ^= seedSource.charCodeAt(index);
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
+}
+
 function shuffleList<T>(items: T[]): T[] {
   const copy = [...items];
   for (let index = copy.length - 1; index > 0; index -= 1) {
@@ -589,10 +728,24 @@ function rollSpawnPoint(point: SpawnPoint): { x: number; y: number } {
   };
 }
 
+function rollSpawnPointWithRandom(point: SpawnPoint, rng: () => number): { x: number; y: number } {
+  return {
+    x: clamp(point.minX + rng() * Math.max(point.maxX - point.minX, 0), 0, MAP_WIDTH - FIGHTER_WIDTH),
+    y: point.y,
+  };
+}
+
 function rollPickupSpawn(zone: PickupSpawnZone): { x: number; y: number } {
   return {
     x: randomBetween(zone.minX, zone.maxX),
     y: zone.y - randomBetween(0, 8),
+  };
+}
+
+function rollPickupSpawnWithRandom(zone: PickupSpawnZone, rng: () => number): { x: number; y: number } {
+  return {
+    x: zone.minX + rng() * Math.max(zone.maxX - zone.minX, 0),
+    y: zone.y - rng() * 8,
   };
 }
 
@@ -606,14 +759,165 @@ function fighterIdForUser(userId: number): string {
   return `human-${userId}`;
 }
 
-function buildSpawnQueue() {
-  const remaining = [...SPAWN_POINTS];
+function buildSafeSpawnPoints(zone: BattleRoyaleZoneState) {
+  const distanceToZone = (point: SpawnPoint) => {
+    const centerX = spawnPointCenter(point);
+    const centerY = point.y + FIGHTER_HEIGHT * 0.5;
+    return Math.hypot(centerX - zone.centerX, centerY - zone.centerY);
+  };
+  const sortedFallbackPoints = [...SPAWN_POINTS].sort((left, right) => distanceToZone(left) - distanceToZone(right));
+  const elevatedSafePoints = PRIMARY_SPAWN_POINTS.filter((point) => {
+    return (
+      point.y <= OPENING_SPAWN_FLOOR_CUTOFF &&
+      distanceToZone(point) < zone.radius - OPENING_SPAWN_SAFE_MARGIN
+    );
+  });
+  const bufferedSafePoints = SPAWN_POINTS.filter((point) => distanceToZone(point) < zone.radius - 320);
+  const candidatePool = elevatedSafePoints.length >= 6
+    ? [...elevatedSafePoints, ...bufferedSafePoints]
+    : bufferedSafePoints.length > 0
+      ? bufferedSafePoints
+      : sortedFallbackPoints;
+  const seenIds = new Set<string>();
+  const uniqueCandidates = candidatePool.filter((point) => {
+    if (seenIds.has(point.id)) {
+      return false;
+    }
+    seenIds.add(point.id);
+    return true;
+  });
+
+  if (uniqueCandidates.length > 0) {
+    return uniqueCandidates;
+  }
+
+  return sortedFallbackPoints.slice(0, Math.min(8, sortedFallbackPoints.length));
+}
+
+function buildSafePickupZones(zone: BattleRoyaleZoneState) {
+  const distanceToZone = (spawnZone: PickupSpawnZone) => Math.hypot(spawnZone.x - zone.centerX, spawnZone.y - zone.centerY);
+  const sortedZones = [...PICKUP_SPAWNS].sort((left, right) => distanceToZone(left) - distanceToZone(right));
+  const elevatedSafeZones = PICKUP_SPAWNS.filter((spawnZone) => {
+    return (
+      spawnZone.y <= FLOOR_Y - 120 &&
+      distanceToZone(spawnZone) < zone.radius - 240
+    );
+  });
+  if (elevatedSafeZones.length >= 8) {
+    return [...elevatedSafeZones].sort((left, right) => distanceToZone(left) - distanceToZone(right));
+  }
+
+  const safeZones = PICKUP_SPAWNS.filter((spawnZone) => {
+    return distanceToZone(spawnZone) < zone.radius - 180;
+  });
+  if (safeZones.length >= 8) {
+    return [...safeZones].sort((left, right) => distanceToZone(left) - distanceToZone(right));
+  }
+  return sortedZones.slice(0, Math.min(Math.max(8, safeZones.length), sortedZones.length));
+}
+
+function pickupWeightForPhase(
+  entry: (typeof PICKUP_WEIGHT_TABLE)[number],
+  phase: number,
+) {
+  if (phase <= 2) {
+    return entry.earlyWeight;
+  }
+  if (phase <= 4) {
+    return entry.midWeight;
+  }
+  return entry.lateWeight;
+}
+
+function rollPickupType(
+  phase: number,
+  activePickups: Array<Pick<InternalPickup, 'type' | 'active'>>,
+  rng: () => number = Math.random,
+): BrPickupType {
+  const activeCounts = activePickups.reduce<Partial<Record<BrPickupType, number>>>((counts, pickup) => {
+    if (!pickup.active) {
+      return counts;
+    }
+    counts[pickup.type] = (counts[pickup.type] ?? 0) + 1;
+    return counts;
+  }, {});
+
+  const weightedEntries = PICKUP_WEIGHT_TABLE.map((entry) => {
+    const activeCount = activeCounts[entry.type] ?? 0;
+    if (activeCount >= entry.maxConcurrent) {
+      return null;
+    }
+
+    const duplicatePenalty = activeCount === 0 ? 1 : activeCount === 1 ? 0.72 : 0.46;
+    return {
+      type: entry.type,
+      weight: pickupWeightForPhase(entry, phase) * duplicatePenalty,
+    };
+  }).filter((entry): entry is { type: BrPickupType; weight: number } => Boolean(entry && entry.weight > 0));
+
+  if (weightedEntries.length === 0) {
+    return 'med_kit';
+  }
+
+  const totalWeight = weightedEntries.reduce((total, entry) => total + entry.weight, 0);
+  let remainingWeight = rng() * totalWeight;
+  for (const entry of weightedEntries) {
+    remainingWeight -= entry.weight;
+    if (remainingWeight <= 0) {
+      return entry.type;
+    }
+  }
+
+  return weightedEntries[weightedEntries.length - 1].type;
+}
+
+function buildSpawnQueue(seed: number) {
+  const rng = createSeededRandom(seed);
+  const remaining = [...buildSafeSpawnPoints(getZoneState(0))];
   if (remaining.length === 0) {
     return [];
   }
 
-  const firstIndex = Math.floor(Math.random() * remaining.length);
-  const queue = [rollSpawnPoint(remaining.splice(firstIndex, 1)[0])];
+  const queue: Array<{ x: number; y: number }> = [];
+
+  if (remaining.length >= 2) {
+    let bestLeftIndex = 0;
+    let bestRightIndex = 1;
+    let bestPairScore = -1;
+
+    for (let leftIndex = 0; leftIndex < remaining.length - 1; leftIndex += 1) {
+      for (let rightIndex = leftIndex + 1; rightIndex < remaining.length; rightIndex += 1) {
+        const left = remaining[leftIndex];
+        const right = remaining[rightIndex];
+        const horizontalSpread = Math.abs(spawnPointCenter(left) - spawnPointCenter(right));
+        const verticalSpread = Math.abs(left.y - right.y);
+        const midpointOffset = Math.abs((spawnPointCenter(left) + spawnPointCenter(right)) * 0.5 - zoneCenter.x);
+        const edgeBias =
+          Math.abs(spawnPointCenter(left) - zoneCenter.x) +
+          Math.abs(spawnPointCenter(right) - zoneCenter.x);
+        const pairScore =
+          horizontalSpread * 1.45 +
+          verticalSpread * 0.24 +
+          edgeBias * 0.18 -
+          midpointOffset * 0.08 +
+          rng() * 60;
+
+        if (pairScore > bestPairScore) {
+          bestPairScore = pairScore;
+          bestLeftIndex = leftIndex;
+          bestRightIndex = rightIndex;
+        }
+      }
+    }
+
+    const firstPairIndices = [bestLeftIndex, bestRightIndex].sort((left, right) => right - left);
+    const seededPair = firstPairIndices.map((index) => remaining.splice(index, 1)[0]).reverse();
+    seededPair.forEach((point) => {
+      queue.push(rollSpawnPointWithRandom(point, rng));
+    });
+  } else {
+    queue.push(rollSpawnPointWithRandom(remaining.splice(0, 1)[0], rng));
+  }
 
   while (remaining.length > 0) {
     let bestIndex = 0;
@@ -626,14 +930,15 @@ function buildSpawnQueue() {
         );
         return Math.min(lowest, distance);
       }, Number.POSITIVE_INFINITY);
-      const zoneOffset = Math.abs(spawnPointCenter(point) - zoneCenter.x) * 0.06;
-      const score = minDistance + zoneOffset + Math.random() * 160;
+      const lateralSpread = Math.abs(spawnPointCenter(point) - zoneCenter.x) * 0.14;
+      const highGroundBonus = Math.max(0, FLOOR_Y - point.y) * 0.09;
+      const score = minDistance * 1.22 + lateralSpread + highGroundBonus + rng() * 140;
       if (score > bestScore) {
         bestScore = score;
         bestIndex = index;
       }
     });
-    queue.push(rollSpawnPoint(remaining.splice(bestIndex, 1)[0]));
+    queue.push(rollSpawnPointWithRandom(remaining.splice(bestIndex, 1)[0], rng));
   }
 
   return queue;
@@ -648,7 +953,7 @@ function pickBotSkills(difficulty: BattleRoyaleDifficulty): string[] {
 
 function createInitialFighters(room: BattleRoyaleRoom): Map<string, InternalFighter> {
   const fighters = new Map<string, InternalFighter>();
-  const spawnQueue = buildSpawnQueue();
+  const spawnQueue = buildSpawnQueue(hashRoomSeed(room));
   let spawnIndex = 0;
 
   room.humans.forEach((human) => {
@@ -781,17 +1086,46 @@ function createInitialFighters(room: BattleRoyaleRoom): Map<string, InternalFigh
   return fighters;
 }
 
-function createInitialPickups(): InternalPickup[] {
+function createInitialPickups(room?: BattleRoyaleRoom): InternalPickup[] {
+  if (room) {
+    return createInitialPickupsForRoom(room);
+  }
+  const seededPickups: InternalPickup[] = [];
   return shuffleList(PICKUP_SPAWNS).slice(0, MAX_ACTIVE_PICKUPS).map((spawnZone, index) => {
     const rolled = rollPickupSpawn(spawnZone);
-    return {
+    const pickup: InternalPickup = {
       id: `pickup-${index}`,
-      type: PICKUP_ROTATION[(index + Math.floor(Math.random() * PICKUP_ROTATION.length)) % PICKUP_ROTATION.length],
+      type: rollPickupType(1, seededPickups),
       x: rolled.x,
       y: rolled.y,
       active: true,
       respawnAtMs: 0,
     };
+    seededPickups.push(pickup);
+    return pickup;
+  });
+}
+
+function createInitialPickupsForRoom(room: BattleRoyaleRoom): InternalPickup[] {
+  const rng = createSeededRandom(hashRoomSeed(room) ^ 0x9e3779b9);
+  const candidateZones = buildSafePickupZones(getZoneState(0));
+  const zones = [...candidateZones]
+    .sort(() => rng() - 0.5)
+    .slice(0, Math.min(MAX_ACTIVE_PICKUPS, candidateZones.length));
+
+  const seededPickups: InternalPickup[] = [];
+  return zones.map((spawnZone, index) => {
+    const rolled = rollPickupSpawnWithRandom(spawnZone, rng);
+    const pickup: InternalPickup = {
+      id: `pickup-${index}`,
+      type: rollPickupType(1, seededPickups, rng),
+      x: rolled.x,
+      y: rolled.y,
+      active: true,
+      respawnAtMs: 0,
+    };
+    seededPickups.push(pickup);
+    return pickup;
   });
 }
 
@@ -802,10 +1136,27 @@ function distanceToZone(fighter: InternalFighter, zone: BattleRoyaleZoneState): 
 }
 
 function spawnPositionForRevive(zone: BattleRoyaleZoneState): { x: number; y: number } {
-  const safeSpawn = SPAWN_POINTS.find(
-    (point) => Math.hypot(point.x - zone.centerX, point.y - zone.centerY) < zone.radius - 160,
-  );
-  return safeSpawn ?? SPAWN_POINTS[0];
+  const safeSpawns = buildSafeSpawnPoints(zone)
+    .filter(
+      (point) =>
+        Math.hypot(spawnPointCenter(point) - zone.centerX, point.y - zone.centerY) < zone.radius - REVIVE_SPAWN_SAFE_MARGIN,
+    )
+    .sort(
+      (left, right) =>
+        Math.hypot(spawnPointCenter(left) - zone.centerX, left.y - zone.centerY) -
+        Math.hypot(spawnPointCenter(right) - zone.centerX, right.y - zone.centerY),
+    );
+
+  if (safeSpawns.length > 0) {
+    const candidatePool = safeSpawns.slice(0, Math.min(6, safeSpawns.length));
+    const candidate = candidatePool[Math.floor(Math.random() * candidatePool.length)];
+    return rollSpawnPoint(candidate);
+  }
+
+  return {
+    x: clamp(zone.centerX - FIGHTER_WIDTH / 2, 0, MAP_WIDTH - FIGHTER_WIDTH),
+    y: zone.centerY - 120,
+  };
 }
 
 function buildSnapshot(
@@ -906,8 +1257,34 @@ function normalizeIncomingSnapshot(incoming: IncomingBattleRoyaleSnapshot): Batt
     elapsedMs,
     zone: incoming.zone ?? getZoneState(elapsedMs),
     fighters: (incoming.fighters ?? []).map((fighter) => ({
-      ...fighter,
-      buffs: { ...fighter.buffs },
+      id: fighter.id,
+      userId: fighter.userId,
+      name: fighter.name ?? '',
+      petType: fighter.petType ?? 'code_kitty',
+      petStage: fighter.petStage ?? 1,
+      x: fighter.x,
+      y: fighter.y,
+      vx: fighter.vx,
+      vy: fighter.vy,
+      hp: fighter.hp,
+      maxHp: fighter.maxHp ?? FIGHTER_HP,
+      shield: fighter.shield,
+      armor: fighter.armor,
+      kills: fighter.kills,
+      alive: fighter.alive,
+      facing: fighter.facing,
+      isBot: fighter.isBot ?? false,
+      difficulty: fighter.difficulty,
+      hasRevived: fighter.hasRevived,
+      reviveUsed: fighter.reviveUsed,
+      quizPending: fighter.quizPending,
+      damageDealt: fighter.damageDealt ?? 0,
+      survivedMs: fighter.survivedMs ?? elapsedMs,
+      specialCharges: fighter.specialCharges ?? 0,
+      buffs: { ...(fighter.buffs ?? {}) },
+      weaponReady: fighter.weaponReady ?? true,
+      swingMs: fighter.swingMs ?? 0,
+      hitFlashMs: fighter.hitFlashMs ?? 0,
     })),
     pickups: (incoming.pickups ?? []).map((pickup) => ({ ...pickup })),
     killFeed: (incoming.killFeed ?? []).map((item) => ({ ...item })),
@@ -920,9 +1297,8 @@ function normalizeIncomingSnapshot(incoming: IncomingBattleRoyaleSnapshot): Batt
 }
 
 function createTransportSnapshot(snapshot: BattleRoyaleSnapshot): Record<string, unknown> {
-  const { platforms: _platforms, ...transportSnapshot } = snapshot;
   return {
-    ...transportSnapshot,
+    tick: snapshot.tick,
     elapsedMs: Math.round(snapshot.elapsedMs),
     zone: {
       ...snapshot.zone,
@@ -932,7 +1308,8 @@ function createTransportSnapshot(snapshot: BattleRoyaleSnapshot): Record<string,
       nextShrinkAtMs: Math.round(snapshot.zone.nextShrinkAtMs),
     },
     fighters: snapshot.fighters.map((fighter) => ({
-      ...fighter,
+      id: fighter.id,
+      userId: fighter.userId,
       x: Math.round(fighter.x),
       y: Math.round(fighter.y),
       vx: Math.round(fighter.vx),
@@ -940,8 +1317,19 @@ function createTransportSnapshot(snapshot: BattleRoyaleSnapshot): Record<string,
       hp: Math.round(fighter.hp),
       shield: Math.round(fighter.shield),
       armor: Math.round(fighter.armor),
+      kills: fighter.kills,
+      alive: fighter.alive,
+      facing: fighter.facing,
+      hasRevived: fighter.hasRevived,
+      reviveUsed: fighter.reviveUsed,
+      quizPending: fighter.quizPending,
       damageDealt: Math.round(fighter.damageDealt ?? 0),
       survivedMs: Math.round(fighter.survivedMs ?? snapshot.elapsedMs),
+      specialCharges: fighter.specialCharges,
+      buffs: Object.fromEntries(
+        Object.entries(fighter.buffs ?? {}).filter(([, stacks]) => typeof stacks === 'number' && stacks > 0),
+      ),
+      weaponReady: fighter.weaponReady,
       swingMs: Math.round(fighter.swingMs),
       hitFlashMs: Math.round(fighter.hitFlashMs),
     })),
@@ -952,23 +1340,30 @@ function createTransportSnapshot(snapshot: BattleRoyaleSnapshot): Record<string,
       y: Math.round(pickup.y),
       active: pickup.active,
     })).filter((pickup) => pickup.active),
-    killFeed: snapshot.killFeed.slice(-3),
-    projectiles: snapshot.projectiles.slice(-8).map((projectile) => ({
-      ...projectile,
+    killFeed: snapshot.killFeed.slice(-1),
+    winnerId: snapshot.winnerId,
+    projectiles: snapshot.projectiles.filter((projectile) => projectile.active).slice(-3).map((projectile) => ({
+      id: projectile.id,
+      ownerId: projectile.ownerId,
       x: Math.round(projectile.x),
       y: Math.round(projectile.y),
       rotation: Math.round(projectile.rotation * 100) / 100,
+      active: projectile.active,
     })),
-    weapons: snapshot.weapons.slice(-8).map((weapon) => ({
-      ...weapon,
+    weapons: snapshot.weapons.filter((weapon) => weapon.active).slice(-3).map((weapon) => ({
+      id: weapon.id,
+      ownerId: weapon.ownerId,
       x: Math.round(weapon.x),
       y: Math.round(weapon.y),
+      active: weapon.active,
     })),
-    effects: snapshot.effects.slice(-6).map((effect) => ({
-      ...effect,
+    effects: snapshot.effects.slice(-2).map((effect) => ({
+      id: effect.id,
+      kind: effect.kind,
       x: Math.round(effect.x),
       y: Math.round(effect.y),
       radius: Math.round(effect.radius),
+      facing: effect.facing,
       ttlMs: Math.round(effect.ttlMs),
     })),
   } as Record<string, unknown>;
@@ -991,6 +1386,12 @@ function deriveSpeedMultiplierFromBuffs(buffs: Partial<Record<BrPickupType, numb
   return clamp(1 + (buffs.wind_boost ?? 0) * 0.12, 1, 1.45);
 }
 
+function buildLootHudLine(fighter: BattleRoyaleFighterView): string {
+  const damageBonus = deriveDamageBonusFromBuffs(fighter.buffs);
+  const speedBonusPercent = Math.max(0, Math.round((deriveSpeedMultiplierFromBuffs(fighter.buffs) - 1) * 100));
+  return `利爪 +${damageBonus}  风压 +${speedBonusPercent}%  L 冲击波 x${fighter.specialCharges}`;
+}
+
 function hydrateFightersFromSnapshot(room: BattleRoyaleRoom, snapshot: BattleRoyaleSnapshot): Map<string, InternalFighter> {
   const fighters = createInitialFighters(room);
 
@@ -1005,7 +1406,7 @@ function hydrateFightersFromSnapshot(room: BattleRoyaleRoom, snapshot: BattleRoy
     existing.vx = view.vx;
     existing.vy = view.vy;
     existing.hp = view.hp;
-    existing.maxHp = view.maxHp;
+    existing.maxHp = view.maxHp ?? existing.maxHp;
     existing.shield = view.shield;
     existing.armor = view.armor;
     existing.kills = view.kills;
@@ -1015,15 +1416,15 @@ function hydrateFightersFromSnapshot(room: BattleRoyaleRoom, snapshot: BattleRoy
     existing.reviveUsed = view.reviveUsed ?? existing.reviveUsed;
     existing.quizPending = view.quizPending ?? false;
     existing.damageDealt = view.damageDealt ?? existing.damageDealt;
-    existing.specialCharges = view.specialCharges;
-    existing.buffs = { ...view.buffs };
-    existing.damageBonus = deriveDamageBonusFromBuffs(view.buffs);
+    existing.specialCharges = view.specialCharges ?? existing.specialCharges;
+    existing.buffs = { ...(view.buffs ?? {}) };
+    existing.damageBonus = deriveDamageBonusFromBuffs(view.buffs ?? {});
     existing.speedMultiplier = existing.isBot
       ? AI_TUNING[existing.difficulty ?? 'medium'].speedMultiplier
-      : deriveSpeedMultiplierFromBuffs(view.buffs);
-    existing.weaponReady = view.weaponReady;
-    existing.swingMs = view.swingMs;
-    existing.hitFlashMs = view.hitFlashMs;
+      : deriveSpeedMultiplierFromBuffs(view.buffs ?? {});
+    existing.weaponReady = view.weaponReady ?? existing.weaponReady;
+    existing.swingMs = view.swingMs ?? 0;
+    existing.hitFlashMs = view.hitFlashMs ?? 0;
     existing.eliminatedAtMs = view.alive ? null : view.survivedMs ?? snapshot.elapsedMs;
     existing.attackTimerMs = view.swingMs;
     existing.weaponCooldownMs = view.weaponReady ? 0 : WEAPON_THROW_COOLDOWN_MS;
@@ -1138,6 +1539,18 @@ function deriveAmbientRoomNotice(snapshot: BattleRoyaleSnapshot, localFighterId:
     if (!localFighter.weaponReady) {
       return '你的武器不在手上，先捡回地面武器再近身。';
     }
+
+    if (localFighter.specialCharges > 0) {
+      return '你已拿到冲击波，按 L 可以逼退贴身目标，也适合抢回高台身位。';
+    }
+
+    if (deriveDamageBonusFromBuffs(localFighter.buffs) > 0) {
+      return '利爪增伤已生效，近战先手和投掷补刀都会更疼，可以主动找短线交战。';
+    }
+
+    if (deriveSpeedMultiplierFromBuffs(localFighter.buffs) > 1 && localDistanceToZone < snapshot.zone.radius - 220) {
+      return '风压提速已生效，可以更积极地绕侧翼、追残血，或提前抢到安全区平台。';
+    }
   }
 
   if (aliveCount <= 3) {
@@ -1153,12 +1566,12 @@ function deriveAmbientRoomNotice(snapshot: BattleRoyaleSnapshot, localFighterId:
 
 function connectionLabel(wsConnected: boolean, latencyMs: number) {
   if (!wsConnected) {
-    return '重连中';
+    return '重连';
   }
   if (latencyMs >= 140) {
-    return '连接波动';
+    return '波动';
   }
-  return '连接稳定';
+  return '稳定';
 }
 
 function pickBotRoamPoint(
@@ -1461,7 +1874,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   const platformsRef = useRef<BattleRoyalePlatform[]>(createPlatforms(0));
   const previousPlatformsRef = useRef<BattleRoyalePlatform[]>(createPlatforms(0));
   const fightersRef = useRef<Map<string, InternalFighter>>(createInitialFighters(room));
-  const pickupsRef = useRef<InternalPickup[]>(createInitialPickups());
+  const pickupsRef = useRef<InternalPickup[]>(createInitialPickups(room));
   const projectilesRef = useRef<InternalProjectile[]>([]);
   const weaponPickupsRef = useRef<InternalWeaponPickup[]>([]);
   const effectsRef = useRef<InternalEffect[]>([]);
@@ -1492,6 +1905,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   const lastRoomNoticeRef = useRef<{ message: string; at: number }>({ message: '', at: 0 });
   const hasConnectedOnceRef = useRef(false);
   const reconnectNoticeVisibleRef = useRef(false);
+  const initialHostSnapshotSentRef = useRef(false);
   const quizSubmitTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const quizOfferRef = useRef<BattleRoyaleQuizOffer | null>(null);
   const submittingQuizRef = useRef(false);
@@ -1512,17 +1926,18 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     localPredictionFrames: 0,
   });
 
+  const currentUserId = useAuthStore((state) => state.user?.id ?? null);
+  const localFighterId = currentUserId ? fighterIdForUser(currentUserId) : '';
+  const isHost = room.host_user_id === currentUserId;
   const [snapshot, setSnapshot] = useState<BattleRoyaleSnapshot>(snapshotRef.current);
   const [quizOffer, setQuizOffer] = useState<BattleRoyaleQuizOffer | null>(null);
   const [submittingQuiz, setSubmittingQuiz] = useState(false);
   const [quizSubmitError, setQuizSubmitError] = useState<string | null>(null);
   const [result, setResult] = useState<BattleRoyaleResult | null>(null);
   const [showEliminationPrompt, setShowEliminationPrompt] = useState(false);
-  const [roomNotice, setRoomNotice] = useState<string>('战场部署完成，先分散搜甲，再抢高台和地面掉落武器。');
+  const [hasAuthoritativeSnapshot, setHasAuthoritativeSnapshot] = useState(isHost);
+  const [roomNotice, setRoomNotice] = useState<string>('战场部署完成，先分散搜护甲和增益，再抢高台与地面掉落武器。');
 
-  const currentUserId = useAuthStore((state) => state.user?.id ?? null);
-  const localFighterId = currentUserId ? fighterIdForUser(currentUserId) : '';
-  const isHost = room.host_user_id === currentUserId;
   const finishCurrentRoom = usePvpBattleRoyaleStore((state) => state.finishCurrentRoom);
   const setCurrentRoom = usePvpBattleRoyaleStore((state) => state.setCurrentRoom);
   const leaveCurrentRoom = usePvpBattleRoyaleStore((state) => state.leaveCurrentRoom);
@@ -1559,7 +1974,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   }, []);
 
   useEffect(() => {
-    setRoomNotice('战场部署完成，先分散搜护甲，再争夺高台与武器。');
+    setRoomNotice('战场部署完成，先分散搜护甲和增益，再争夺高台与武器。');
   }, []);
 
   useEffect(() => {
@@ -1659,6 +2074,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
           }
 
           if (message.latest_snapshot) {
+            setHasAuthoritativeSnapshot(true);
             applyRecoveredSnapshot(message.latest_snapshot as BattleRoyaleSnapshot);
             if (reconnectNoticeVisibleRef.current) {
               reconnectNoticeVisibleRef.current = false;
@@ -1707,6 +2123,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         }
 
         if (message.type === 'br_snapshot' && !isHost && message.payload) {
+          setHasAuthoritativeSnapshot(true);
           applyRecoveredSnapshot(message.payload as BattleRoyaleSnapshot);
           return;
         }
@@ -1795,11 +2212,26 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     predictedLocalFighterRef.current = null;
     hasConnectedOnceRef.current = false;
     reconnectNoticeVisibleRef.current = false;
+    initialHostSnapshotSentRef.current = false;
+    setHasAuthoritativeSnapshot(isHost);
     setLatencyMs(0);
-  }, [localFighterId, room.id, setLatencyMs]);
+  }, [isHost, localFighterId, room.id, setLatencyMs]);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (!isHost || !wsConnected || initialHostSnapshotSentRef.current) {
+      return;
+    }
+
+    const transportSnapshot = createTransportSnapshot(snapshotRef.current);
+    const sent = wsRef.current?.sendSnapshot(transportSnapshot) ?? false;
+    if (sent) {
+      initialHostSnapshotSentRef.current = true;
+      lastSnapshotSentRef.current = typeof performance !== 'undefined' ? performance.now() : Date.now();
+    }
+  }, [isHost, wsConnected]);
+
+  useEffect(() => {
+    if (shouldExposeQaDebug() && typeof window !== 'undefined') {
       const debugWindow = window as Window & {
         __brSnapshot?: BattleRoyaleSnapshot;
         __brRenderSnapshot?: BattleRoyaleSnapshot;
@@ -1884,7 +2316,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
 
   const currentPredictionLeadMs = (snapshotAgeMs: number) =>
     clamp(
-      LOCAL_INPUT_LEAD_MS + latencyMs * 0.45 + Math.min(snapshotAgeMs * 0.22, 18),
+      LOCAL_INPUT_LEAD_MS + latencyMs * 0.55 + Math.min(snapshotAgeMs * 0.3, 22),
       LOCAL_INPUT_LEAD_MS,
       MAX_LOCAL_INPUT_LEAD_MS,
     );
@@ -1906,7 +2338,9 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     deltaSeconds: number,
     predictedLocalFighter: InternalFighter | null,
   ): BattleRoyaleSnapshot => {
-    syncStatsRef.current.guestRenderFrames += 1;
+    if (shouldExposeQaDebug()) {
+      syncStatsRef.current.guestRenderFrames += 1;
+    }
     const snapshotAgeMs = clamp(frameTime - lastAuthoritativeSnapshotAtRef.current, 0, MAX_RENDER_EXTRAPOLATION_MS);
     const renderElapsedMs = Math.max(current.elapsedMs + deltaSeconds * 1000, authoritative.elapsedMs + snapshotAgeMs);
     const platformState = createPlatforms(renderElapsedMs);
@@ -1917,13 +2351,28 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       const previous = currentFighters.get(fighter.id) ?? fighter;
       const isLocalFighter = fighter.id === localFighterId;
       if (isLocalFighter && predictedLocalFighter?.id === fighter.id) {
+        const predictionBlend = clamp(
+          LOCAL_PREDICTION_BLEND_MIN + Math.min(latencyMs, 180) / 1200,
+          LOCAL_PREDICTION_BLEND_MIN,
+          LOCAL_PREDICTION_BLEND_MAX,
+        );
+        const gapX = Math.abs(predictedLocalFighter.x - fighter.x);
+        const gapY = Math.abs(predictedLocalFighter.y - fighter.y);
+        const blendedX =
+          gapX > LOCAL_PREDICTION_HARD_CORRECTION_DISTANCE
+            ? lerpValue(predictedLocalFighter.x, fighter.x, 0.24)
+            : lerpValue(fighter.x, predictedLocalFighter.x, predictionBlend);
+        const blendedY =
+          gapY > LOCAL_PREDICTION_HARD_CORRECTION_DISTANCE
+            ? lerpValue(predictedLocalFighter.y, fighter.y, 0.28)
+            : lerpValue(fighter.y, predictedLocalFighter.y, Math.max(0.58, predictionBlend - 0.08));
         return {
           ...fighter,
           buffs: { ...predictedLocalFighter.buffs },
-          x: predictedLocalFighter.x,
-          y: predictedLocalFighter.y,
-          vx: predictedLocalFighter.vx,
-          vy: predictedLocalFighter.vy,
+          x: blendedX,
+          y: blendedY,
+          vx: lerpValue(fighter.vx, predictedLocalFighter.vx, 0.58),
+          vy: lerpValue(fighter.vy, predictedLocalFighter.vy, 0.52),
           facing: predictedLocalFighter.facing,
           swingMs: Math.max(predictedLocalFighter.swingMs, fighter.swingMs),
           hitFlashMs: Math.max(predictedLocalFighter.hitFlashMs, fighter.hitFlashMs),
@@ -2003,7 +2452,9 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   const applyRecoveredSnapshot = (incoming: IncomingBattleRoyaleSnapshot) => {
     const normalized = normalizeIncomingSnapshot(incoming);
     const receiptTime = typeof performance !== 'undefined' ? performance.now() : Date.now();
-    syncStatsRef.current.authoritativeSnapshots += 1;
+    if (shouldExposeQaDebug()) {
+      syncStatsRef.current.authoritativeSnapshots += 1;
+    }
 
     tickRef.current = normalized.tick;
     elapsedMsRef.current = normalized.elapsedMs;
@@ -2209,10 +2660,12 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     merged.weaponReady = authoritative.weaponReady;
     merged.swingMs = Math.max(previousPredicted.swingMs, authoritative.swingMs);
     merged.hitFlashMs = Math.max(previousPredicted.hitFlashMs, authoritative.hitFlashMs);
-    merged.x = lerpValue(previousPredicted.x, authoritative.x, 0.18);
-    merged.y = lerpValue(previousPredicted.y, authoritative.y, 0.18);
-    merged.vx = lerpValue(previousPredicted.vx, authoritative.vx, 0.24);
-    merged.vy = lerpValue(previousPredicted.vy, authoritative.vy, 0.24);
+    const correctionAlpha = clamp(0.1 - Math.min(latencyMs, 180) / 3600, 0.05, 0.1);
+    const velocityCorrectionAlpha = clamp(correctionAlpha + 0.05, 0.1, 0.16);
+    merged.x = lerpValue(previousPredicted.x, authoritative.x, correctionAlpha);
+    merged.y = lerpValue(previousPredicted.y, authoritative.y, correctionAlpha);
+    merged.vx = lerpValue(previousPredicted.vx, authoritative.vx, velocityCorrectionAlpha);
+    merged.vy = lerpValue(previousPredicted.vy, authoritative.vy, velocityCorrectionAlpha);
     predictedLocalFighterRef.current = merged;
     return merged;
   };
@@ -2229,7 +2682,9 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       return merged;
     }
 
-    syncStatsRef.current.localPredictionFrames += 1;
+    if (shouldExposeQaDebug()) {
+      syncStatsRef.current.localPredictionFrames += 1;
+    }
     const fighter = cloneInternalFighter(merged);
     const canDoubleJump = fighter.movementSkills.includes('double_jump');
     const canDash = fighter.movementSkills.includes('dash');
@@ -2613,30 +3068,38 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   };
 
   const applyPickup = (fighter: InternalFighter, pickup: InternalPickup) => {
+    let pickupMessage = `${pickupLabel(pickup.type)}已入手`;
+
     switch (pickup.type) {
       case 'med_kit':
         fighter.hp = Math.min(fighter.maxHp, fighter.hp + 36);
         fighter.buffs.med_kit = (fighter.buffs.med_kit ?? 0) + 1;
+        pickupMessage = '恢复 36 点生命';
         break;
       case 'armor_vest':
         fighter.armor = clamp(fighter.armor + 16, 0, 48);
         fighter.buffs.armor_vest = (fighter.buffs.armor_vest ?? 0) + 1;
+        pickupMessage = '减少后续近战伤害';
         break;
       case 'shield_core':
         fighter.shield = clamp(fighter.shield + 26, 0, 60);
         fighter.buffs.shield_core = (fighter.buffs.shield_core ?? 0) + 1;
+        pickupMessage = '补充临时护盾';
         break;
       case 'damage_claw':
         fighter.damageBonus = clamp(fighter.damageBonus + 5, 0, 18);
         fighter.buffs.damage_claw = (fighter.buffs.damage_claw ?? 0) + 1;
+        pickupMessage = '强化近战伤害';
         break;
       case 'wind_boost':
         fighter.speedMultiplier = clamp(fighter.speedMultiplier + 0.12, 1, 1.45);
         fighter.buffs.wind_boost = (fighter.buffs.wind_boost ?? 0) + 1;
+        pickupMessage = '提高位移速度';
         break;
       case 'shockwave_charge':
         fighter.specialCharges = clamp(fighter.specialCharges + 2, 0, 6);
         fighter.buffs.shockwave_charge = (fighter.buffs.shockwave_charge ?? 0) + 2;
+        pickupMessage = '追加 2 次冲击波';
         break;
       default:
         break;
@@ -2648,6 +3111,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     addKillFeed(`${fighter.name} 拾取了 ${pickupLabel(pickup.type)}`);
     if (fighter.id === localFighterId) {
       playArenaCue('pickup');
+      pushRoomNotice(`已拾取${pickupLabel(pickup.type)}：${pickupMessage}`, 1800);
     }
   };
 
@@ -2662,7 +3126,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       'slash',
       fighter.x + FIGHTER_WIDTH / 2 + fighter.facing * (WEAPON_HOLD_OFFSET_X + WEAPON_MODEL_LENGTH * 0.62),
       fighter.y + FIGHTER_HEIGHT * 0.44,
-      46,
+      38,
       fighter.facing,
     );
     if (fighter.id === localFighterId) {
@@ -2717,15 +3181,16 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       return;
     }
     fighter.specialCharges -= 1;
-    spawnEffect('shockwave', fighter.x + FIGHTER_WIDTH / 2, fighter.y + FIGHTER_HEIGHT / 2, 180, fighter.facing);
+    spawnEffect('shockwave', fighter.x + FIGHTER_WIDTH / 2, fighter.y + FIGHTER_HEIGHT / 2, 164, fighter.facing);
     if (fighter.id === localFighterId) {
       playArenaCue('shockwave');
+      pushRoomNotice('已释放冲击波，适合逼退贴身目标。', 1600);
     }
     fightersRef.current.forEach((target) => {
       if (!target.alive || target.id === fighter.id) return;
       const distance = Math.hypot(target.x - fighter.x, target.y - fighter.y);
-      if (distance < 180) {
-        applyDamage(target, 20 + fighter.damageBonus * 0.5, fighter.id);
+      if (distance < 164) {
+        applyDamage(target, 24 + fighter.damageBonus * 0.6, fighter.id);
       }
     });
     addKillFeed(`${fighter.name} 释放了冲击波`);
@@ -3070,7 +3535,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     ctx.clearRect(0, 0, VIEW_WIDTH, VIEW_HEIGHT);
 
     const currentSnapshot = snapshotRef.current;
-    if (typeof window !== 'undefined') {
+    if (shouldExposeQaDebug() && typeof window !== 'undefined') {
       const debugWindow = window as Window & {
         __brRenderSnapshot?: BattleRoyaleSnapshot;
         __brSyncStats?: typeof syncStatsRef.current;
@@ -3231,17 +3696,30 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
 
     const zone = currentSnapshot.zone;
     ctx.save();
-    ctx.fillStyle = 'rgba(56, 189, 248, 0.1)';
+    ctx.fillStyle = 'rgba(56, 189, 248, 0.08)';
     ctx.beginPath();
     ctx.arc(zone.centerX, zone.centerY, zone.radius, 0, Math.PI * 2);
     ctx.fill();
-    ctx.strokeStyle = 'rgba(147, 197, 253, 0.72)';
-    ctx.lineWidth = 6;
+    ctx.strokeStyle = 'rgba(186, 230, 253, 0.28)';
+    ctx.lineWidth = 18;
+    ctx.beginPath();
+    ctx.arc(zone.centerX, zone.centerY, zone.radius, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.strokeStyle = 'rgba(147, 197, 253, 0.78)';
+    ctx.lineWidth = 5;
     ctx.beginPath();
     ctx.arc(zone.centerX, zone.centerY, zone.radius, 0, Math.PI * 2);
     ctx.stroke();
 
-    ctx.fillStyle = 'rgba(248, 113, 113, 0.14)';
+    ctx.strokeStyle = 'rgba(251, 113, 133, 0.16)';
+    ctx.setLineDash([14, 18]);
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.arc(zone.centerX, zone.centerY, zone.radius + 20, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    ctx.fillStyle = 'rgba(248, 113, 113, 0.1)';
     ctx.fillRect(0, 0, MAP_WIDTH, MAP_HEIGHT);
     ctx.globalCompositeOperation = 'destination-out';
     ctx.beginPath();
@@ -3425,16 +3903,50 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
               : effect.ttlMs / EFFECT_TTL_SHOCKWAVE_MS;
       ctx.save();
       if (effect.kind === 'slash') {
-        ctx.strokeStyle = `rgba(125, 211, 252, ${0.18 + lifeProgress * 0.4})`;
-        ctx.lineWidth = 8;
+        const arcRadius = effect.radius * (1.04 - lifeProgress * 0.16);
+        ctx.strokeStyle = `rgba(186, 230, 253, ${0.16 + lifeProgress * 0.22})`;
+        ctx.lineWidth = 12;
         ctx.beginPath();
-        ctx.arc(effect.x, effect.y, effect.radius * (1.1 - lifeProgress * 0.2), effect.facing === -1 ? Math.PI * 0.3 : -Math.PI * 0.6, effect.facing === -1 ? Math.PI * 1.1 : Math.PI * 0.2);
+        ctx.arc(
+          effect.x,
+          effect.y,
+          arcRadius,
+          effect.facing === -1 ? Math.PI * 0.3 : -Math.PI * 0.6,
+          effect.facing === -1 ? Math.PI * 1.1 : Math.PI * 0.2,
+        );
+        ctx.stroke();
+        ctx.strokeStyle = `rgba(56, 189, 248, ${0.22 + lifeProgress * 0.44})`;
+        ctx.lineWidth = 5;
+        ctx.beginPath();
+        ctx.arc(
+          effect.x,
+          effect.y,
+          arcRadius,
+          effect.facing === -1 ? Math.PI * 0.36 : -Math.PI * 0.52,
+          effect.facing === -1 ? Math.PI * 1.02 : Math.PI * 0.12,
+        );
         ctx.stroke();
       } else if (effect.kind === 'hit') {
-        ctx.fillStyle = `rgba(251, 113, 133, ${0.16 + lifeProgress * 0.42})`;
+        ctx.fillStyle = `rgba(251, 113, 133, ${0.14 + lifeProgress * 0.34})`;
         ctx.beginPath();
         ctx.arc(effect.x, effect.y, effect.radius * (1.15 - lifeProgress * 0.28), 0, Math.PI * 2);
         ctx.fill();
+        ctx.strokeStyle = `rgba(254, 205, 211, ${0.16 + lifeProgress * 0.3})`;
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.arc(effect.x, effect.y, effect.radius * (0.62 + (1 - lifeProgress) * 0.22), 0, Math.PI * 2);
+        ctx.stroke();
+        for (let index = 0; index < 4; index += 1) {
+          const angle = (Math.PI * 2 * index) / 4 + (1 - lifeProgress) * 0.38;
+          const inner = effect.radius * 0.28;
+          const outer = effect.radius * (0.78 + (1 - lifeProgress) * 0.16);
+          ctx.strokeStyle = `rgba(254, 205, 211, ${0.1 + lifeProgress * 0.18})`;
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.moveTo(effect.x + Math.cos(angle) * inner, effect.y + Math.sin(angle) * inner);
+          ctx.lineTo(effect.x + Math.cos(angle) * outer, effect.y + Math.sin(angle) * outer);
+          ctx.stroke();
+        }
       } else if (effect.kind === 'dash') {
         ctx.translate(effect.x, effect.y);
         if (effect.facing === -1) {
@@ -3453,10 +3965,19 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
           ctx.fill();
         }
       } else {
-        ctx.strokeStyle = `rgba(192, 132, 252, ${0.12 + lifeProgress * 0.34})`;
-        ctx.lineWidth = 6;
+        ctx.fillStyle = `rgba(167, 139, 250, ${0.05 + lifeProgress * 0.12})`;
+        ctx.beginPath();
+        ctx.arc(effect.x, effect.y, effect.radius * (0.74 + (1 - lifeProgress) * 0.12), 0, Math.PI * 2);
+        ctx.fill();
+        ctx.strokeStyle = `rgba(216, 180, 254, ${0.14 + lifeProgress * 0.28})`;
+        ctx.lineWidth = 8;
         ctx.beginPath();
         ctx.arc(effect.x, effect.y, effect.radius * (1.25 - lifeProgress * 0.4), 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.strokeStyle = `rgba(125, 211, 252, ${0.08 + lifeProgress * 0.2})`;
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.arc(effect.x, effect.y, effect.radius * (0.8 + (1 - lifeProgress) * 0.18), 0, Math.PI * 2);
         ctx.stroke();
       }
       ctx.restore();
@@ -3483,7 +4004,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
 
     if (currentLocalView) {
       ctx.beginPath();
-      ctx.roundRect(VIEW_WIDTH - 300, 18, 280, 132, 20);
+      ctx.roundRect(VIEW_WIDTH - 300, 18, 280, 154, 20);
       ctx.fillStyle = 'rgba(2, 6, 23, 0.66)';
       ctx.fill();
       ctx.strokeStyle = 'rgba(148, 163, 184, 0.16)';
@@ -3496,10 +4017,13 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       ctx.fillText(`HP ${Math.round(currentLocalView.hp)}/${currentLocalView.maxHp}`, VIEW_WIDTH - 280, 72);
       ctx.fillText(`护盾 ${Math.round(currentLocalView.shield)}  护甲 ${Math.round(currentLocalView.armor)}`, VIEW_WIDTH - 280, 94);
       ctx.fillText(
-        `击败 ${currentLocalView.kills}  武器 ${currentLocalView.weaponReady ? '就绪' : '待回收'}  技能 ${currentLocalView.specialCharges}`,
+        `击败 ${currentLocalView.kills}  武器 ${currentLocalView.weaponReady ? '就绪' : '待回收'}`,
         VIEW_WIDTH - 280,
         116,
       );
+      ctx.font = `12px ${CANVAS_FONT_FAMILY}`;
+      ctx.fillStyle = '#93c5fd';
+      ctx.fillText(buildLootHudLine(currentLocalView), VIEW_WIDTH - 280, 138);
     }
   };
 
@@ -3550,9 +4074,15 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
 
           pickupsRef.current.forEach((pickup, index) => {
             if (!pickup.active && pickup.respawnAtMs <= elapsedMsRef.current) {
-              const spawnZone = PICKUP_SPAWNS[(index + Math.floor(Math.random() * PICKUP_SPAWNS.length)) % PICKUP_SPAWNS.length];
+              const candidateZones = buildSafePickupZones(zone);
+              const spawnZone =
+                candidateZones[(index + Math.floor(Math.random() * candidateZones.length)) % candidateZones.length];
               const spawn = rollPickupSpawn(spawnZone);
               pickup.active = true;
+              pickup.type = rollPickupType(
+                zone.phase,
+                pickupsRef.current.filter((candidate) => candidate.active && candidate.id !== pickup.id),
+              );
               pickup.x = spawn.x;
               pickup.y = spawn.y;
             }
@@ -3578,12 +4108,14 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
             lastSnapshotSentRef.current = time;
             setSnapshot(snapshotRef.current);
             const transportSnapshot = createTransportSnapshot(snapshotRef.current);
-            syncStatsRef.current.lastFullSnapshotBytes = JSON.stringify(snapshotRef.current).length;
-            syncStatsRef.current.lastWireSnapshotBytes = JSON.stringify(transportSnapshot).length;
-            syncStatsRef.current.platformsStripped = !Object.prototype.hasOwnProperty.call(
-              transportSnapshot,
-              'platforms',
-            );
+            if (shouldExposeQaDebug()) {
+              syncStatsRef.current.lastFullSnapshotBytes = JSON.stringify(snapshotRef.current).length;
+              syncStatsRef.current.lastWireSnapshotBytes = JSON.stringify(transportSnapshot).length;
+              syncStatsRef.current.platformsStripped = !Object.prototype.hasOwnProperty.call(
+                transportSnapshot,
+                'platforms',
+              );
+            }
             const snapshotSent = wsRef.current?.sendSnapshot(transportSnapshot) ?? false;
             if (!snapshotSent) {
               syncStatsRef.current.droppedSnapshots += 1;
@@ -3597,6 +4129,15 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
 
           await maybeEndMatch();
         } else {
+          if (!hasAuthoritativeSnapshot) {
+            if (time - lastUiSyncRef.current > UI_SYNC_INTERVAL_MS) {
+              lastUiSyncRef.current = time;
+              setSnapshot(snapshotRef.current);
+            }
+            drawFrame();
+            return;
+          }
+
           const previousFrameInput = previousFrameInputRef.current;
           pendingInputPulseRef.current.jumpPressed =
             pendingInputPulseRef.current.jumpPressed || (localInput.jump && !previousFrameInput.jump);
@@ -3679,7 +4220,9 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
 
         drawFrame();
       } catch (error) {
-        console.error('[PvpBattleRoyaleArena] Frame loop failed:', error);
+        if (shouldExposeQaDebug()) {
+          console.error('[PvpBattleRoyaleArena] Frame loop failed:', error);
+        }
         pushRoomNotice('战场画面出现波动，系统正在尝试自动恢复；如果几秒后仍未恢复，请退出房间重新进入。', 5200);
       } finally {
         animationRef.current = requestAnimationFrame(loop);
@@ -3692,7 +4235,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [finishCurrentRoom, isHost, localFighterId]);
+  }, [finishCurrentRoom, hasAuthoritativeSnapshot, isHost, localFighterId]);
 
   const handleSubmitQuiz = async (answers: string[]) => {
     if (!quizOffer) return;
@@ -3754,12 +4297,24 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
             className="h-full w-full max-h-screen object-contain"
           />
 
+          {!isHost && !hasAuthoritativeSnapshot ? (
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-slate-950/74 backdrop-blur-sm">
+              <div className="rounded-[28px] border border-cyan-300/15 bg-slate-900/92 px-7 py-6 text-center shadow-[0_24px_70px_rgba(2,6,23,0.52)]">
+                <div className="mx-auto mb-4 h-11 w-11 animate-spin rounded-full border-2 border-cyan-300/20 border-t-cyan-300" />
+                <div className="text-lg font-semibold text-white">正在同步战场</div>
+                <div className="mt-2 max-w-sm text-sm leading-6 text-slate-300">
+                  已进入对局，正在等待房主首帧权威快照。同步完成后会自动开始，避免出现错误出生点和卡死移动。
+                </div>
+              </div>
+            </div>
+          ) : null}
+
           <div className="pointer-events-none absolute inset-x-0 bottom-4 flex justify-center px-4">
             <div className="pointer-events-auto grid gap-3 rounded-full border border-white/10 bg-slate-950/78 px-5 py-3 text-xs text-slate-200 shadow-[0_18px_50px_rgba(2,6,23,0.55)] md:grid-cols-4 md:gap-6">
               <div className="flex items-center gap-2"><Users className="h-3.5 w-3.5 text-cyan-300" /> 方向键/A D 移动</div>
               <div className="flex items-center gap-2"><Wind className="h-3.5 w-3.5 text-cyan-300" /> W/↑ 跳跃，Space 冲刺</div>
-              <div className="flex items-center gap-2"><Swords className="h-3.5 w-3.5 text-cyan-300" /> J 近战，K 投掷；地上任何武器都可拾取</div>
-              <div className="flex items-center gap-2"><Shield className="h-3.5 w-3.5 text-cyan-300" /> S 防御，圈外伤害会越来越高</div>
+              <div className="flex items-center gap-2"><Swords className="h-3.5 w-3.5 text-cyan-300" /> J 近战，K 投掷，L 冲击波</div>
+              <div className="flex items-center gap-2"><Shield className="h-3.5 w-3.5 text-cyan-300" /> S 防御；武器可回收，圈外掉血会递增</div>
             </div>
           </div>
 
@@ -3767,7 +4322,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
             <div className="flex justify-end">
               <div
                 data-testid="br-arena-connection-badge"
-                className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-slate-950/78 px-3 py-1 text-[11px] font-medium text-slate-200 shadow-[0_16px_40px_rgba(2,6,23,0.42)] backdrop-blur-md"
+                className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-slate-950/78 px-2 py-0.5 text-[9px] font-medium text-slate-200 shadow-[0_16px_40px_rgba(2,6,23,0.42)] backdrop-blur-md"
               >
                 {wsConnected ? (
                   <Wifi className="h-3.5 w-3.5 text-emerald-300" />
@@ -3775,30 +4330,30 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
                   <WifiOff className="h-3.5 w-3.5 text-amber-300" />
                 )}
                 {connectionLabel(wsConnected, latencyMs)}
-                {wsConnected && latencyMs > 0 ? <span className="text-[10px] text-slate-400">{latencyMs}ms</span> : null}
+                {wsConnected && latencyMs > 0 ? <span className="text-[8px] text-slate-500">{latencyMs}ms</span> : null}
               </div>
             </div>
 
             <div
               data-testid="br-arena-status"
-              className="rounded-[20px] border border-white/10 bg-slate-950/72 p-3 text-xs text-slate-200 backdrop-blur-md"
+              className="rounded-[18px] border border-white/10 bg-slate-950/72 p-2.5 text-[11px] text-slate-200 backdrop-blur-md"
             >
-              <div className="flex items-center gap-2 font-bold text-white">
-                <AlertTriangle className="h-3.5 w-3.5 text-amber-300" />
-                战局提示
+              <div className="flex items-center gap-1.5 font-semibold text-white">
+                <AlertTriangle className="h-3 w-3 text-amber-300" />
+                提示
               </div>
-              <div className="mt-2 leading-5 text-slate-300">{roomNotice}</div>
+              <div className="mt-1.5 leading-5 text-slate-300">{roomNotice}</div>
             </div>
 
             {liveSnapshot.killFeed.length > 0 && (
-              <div className="rounded-[20px] border border-white/10 bg-slate-950/72 p-3 text-xs text-slate-200 backdrop-blur-md">
-                <div className="mb-2 flex items-center gap-2 font-bold text-white">
-                  <Swords className="h-3.5 w-3.5 text-rose-300" />
-                  击败播报
+              <div className="rounded-[18px] border border-white/10 bg-slate-950/72 p-2.5 text-[11px] text-slate-200 backdrop-blur-md">
+                <div className="mb-1.5 flex items-center gap-1.5 font-semibold text-white">
+                  <Swords className="h-3 w-3 text-rose-300" />
+                  播报
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-1.5">
                   {liveSnapshot.killFeed.map((item) => (
-                    <div key={item.id} className="rounded-2xl bg-white/[0.04] px-3 py-2 leading-5">
+                    <div key={item.id} className="rounded-2xl bg-white/[0.04] px-2.5 py-1.5 leading-5">
                       {item.text}
                     </div>
                   ))}

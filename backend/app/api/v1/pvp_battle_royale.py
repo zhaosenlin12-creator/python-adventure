@@ -21,18 +21,18 @@ router = APIRouter()
 Difficulty = Literal["easy", "medium", "hard"]
 RoomStatus = Literal["waiting", "in_progress", "finished"]
 
-MAX_ROOM_CAPACITY = 8
-MAX_WAITING_ROOM_COUNT = 4
+MAX_ROOM_CAPACITY = 6
+MAX_ACTIVE_ROOM_COUNT = 1
 MAX_IN_PROGRESS_ROOM_COUNT = 1
 ROOM_EXPIRY_MINUTES = 30
 FINISHED_ROOM_TTL_MINUTES = 5
 DISCONNECT_GRACE_SECONDS = 12.0
 ROOM_RUNTIME_TICK_SECONDS = 0.05
-SERVER_SNAPSHOT_INTERVAL_SECONDS = 0.12
-SERVER_INPUT_BATCH_INTERVAL_SECONDS = 0.05
-HOST_SNAPSHOT_STALE_SECONDS = 1.8
-INPUT_FORWARD_MIN_INTERVAL_SECONDS = 0.05
-INPUT_DUPLICATE_INTERVAL_SECONDS = 0.08
+SERVER_SNAPSHOT_INTERVAL_SECONDS = 0.05
+SERVER_INPUT_BATCH_INTERVAL_SECONDS = 0.016
+HOST_SNAPSHOT_STALE_SECONDS = 2.4
+INPUT_FORWARD_MIN_INTERVAL_SECONDS = 0.016
+INPUT_DUPLICATE_INTERVAL_SECONDS = 0.025
 SEND_JSON_TIMEOUT_SECONDS = 0.2
 
 AI_NAME_POOL = [
@@ -185,6 +185,7 @@ def serialize_room(room: Dict[str, Any]) -> Dict[str, Any]:
         "bot_count": len(room["bots"]),
         "created_at": room["created_at"],
         "started_at": room["started_at"],
+        "match_seed": room.get("match_seed"),
         "humans": sorted_humans(room),
         "bots": list(room["bots"]),
     }
@@ -314,6 +315,35 @@ async def broadcast_to_room(room_id: str, message: Dict[str, Any], exclude_user:
     )
 
 
+async def broadcast_host_snapshot_if_due(room: Dict[str, Any], sync_state: Dict[str, Any]) -> bool:
+    pending_version = sync_state.get("pending_snapshot_version", 0)
+    if not pending_version or pending_version == sync_state.get("broadcast_snapshot_version", 0):
+        return False
+
+    now_monotonic = monotonic_time()
+    if now_monotonic - sync_state.get("last_snapshot_broadcast_monotonic", 0.0) < SERVER_SNAPSHOT_INTERVAL_SECONDS:
+        return False
+
+    snapshot_payload = sync_state.get("pending_snapshot")
+    if snapshot_payload is None:
+        return False
+
+    room["latest_snapshot"] = snapshot_payload
+    sync_state["broadcast_snapshot_version"] = pending_version
+    sync_state["last_snapshot_broadcast_monotonic"] = now_monotonic
+    await broadcast_to_room(
+        room["id"],
+        {
+            "type": "br_snapshot",
+            "payload": snapshot_payload,
+            "server_seq": pending_version,
+            "timestamp": now_utc().timestamp(),
+        },
+        exclude_user=room["host_user_id"],
+    )
+    return True
+
+
 async def broadcast_room_snapshot(room: Dict[str, Any]) -> None:
     await broadcast_to_room(
         room["id"],
@@ -365,32 +395,17 @@ async def run_room_runtime(room_id: str) -> None:
                         "timestamp": now_utc().timestamp(),
                     },
                 ):
+                    input_state = sync_state.setdefault("input_state", {})
+                    for queued_user_id in pending_guest_inputs:
+                        previous_state = input_state.get(queued_user_id, {})
+                        input_state[queued_user_id] = {
+                            **previous_state,
+                            "forwarded_at": now_monotonic,
+                        }
                     sync_state["pending_guest_inputs"] = {}
                     sync_state["last_input_batch_monotonic"] = now_monotonic
 
-            pending_version = sync_state.get("pending_snapshot_version", 0)
-            should_broadcast_snapshot = (
-                pending_version
-                and pending_version != sync_state.get("broadcast_snapshot_version", 0)
-                and now_monotonic - sync_state.get("last_snapshot_broadcast_monotonic", 0.0)
-                >= SERVER_SNAPSHOT_INTERVAL_SECONDS
-            )
-            if should_broadcast_snapshot:
-                snapshot_payload = sync_state.get("pending_snapshot")
-                if snapshot_payload is not None:
-                    room["latest_snapshot"] = snapshot_payload
-                    sync_state["broadcast_snapshot_version"] = pending_version
-                    sync_state["last_snapshot_broadcast_monotonic"] = now_monotonic
-                    await broadcast_to_room(
-                        room_id,
-                        {
-                            "type": "br_snapshot",
-                            "payload": snapshot_payload,
-                            "server_seq": pending_version,
-                            "timestamp": now_utc().timestamp(),
-                        },
-                        exclude_user=room["host_user_id"],
-                    )
+            await broadcast_host_snapshot_if_due(room, sync_state)
 
             last_host_snapshot = sync_state.get("last_host_snapshot_monotonic", 0.0)
             host_snapshot_stale = bool(last_host_snapshot) and (now_monotonic - last_host_snapshot > HOST_SNAPSHOT_STALE_SECONDS)
@@ -523,7 +538,7 @@ class RoomParticipantPayload(BaseModel):
 
 class CreateRoomPayload(RoomParticipantPayload):
     room_name: str = Field(default="宠物生存乱斗", min_length=1, max_length=48)
-    max_players: int = Field(default=12, ge=2, le=MAX_ROOM_CAPACITY)
+    max_players: int = Field(default=MAX_ROOM_CAPACITY, ge=2, le=MAX_ROOM_CAPACITY)
 
 
 class AddBotPayload(BaseModel):
@@ -546,10 +561,11 @@ async def create_room(payload: CreateRoomPayload, current_user: User = Depends(g
         existing = find_user_room(current_user.id)
         if existing and existing["status"] != "finished":
             return {"room": serialize_room(existing), "reused": True, "cap": MAX_ROOM_CAPACITY}
-        if count_rooms_with_status("waiting") >= MAX_WAITING_ROOM_COUNT:
+        active_room_count = sum(1 for room in active_rooms.values() if room["status"] in {"waiting", "in_progress"})
+        if active_room_count >= MAX_ACTIVE_ROOM_COUNT:
             raise HTTPException(
                 status_code=503,
-                detail="Battle Royale waiting room limit reached",
+                detail="Battle Royale room slot is occupied",
             )
 
         room_id = generate_room_id()
@@ -563,6 +579,7 @@ async def create_room(payload: CreateRoomPayload, current_user: User = Depends(g
             "max_players": min(payload.max_players, MAX_ROOM_CAPACITY),
             "created_at": iso_now(),
             "started_at": None,
+            "match_seed": None,
             "humans": {current_user.id: host_entry},
             "bots": [],
             "latest_snapshot": None,
@@ -710,6 +727,7 @@ async def start_room(room_id: str, current_user: User = Depends(get_current_user
 
         room["status"] = "in_progress"
         room["started_at"] = iso_now()
+        room["match_seed"] = random.randint(100_000, 999_999_999)
         room["latest_snapshot"] = None
         room["latest_match_payload"] = None
         room["sync_state"] = build_sync_state()
@@ -829,28 +847,53 @@ async def battle_royale_ws(
                 now_monotonic = monotonic_time()
                 if (
                     payload_signature == previous_input_state.get("signature")
-                    and now_monotonic - previous_input_state.get("forwarded_at", 0.0) < INPUT_DUPLICATE_INTERVAL_SECONDS
+                    and now_monotonic - previous_input_state.get("seen_at", 0.0) < INPUT_DUPLICATE_INTERVAL_SECONDS
                 ):
                     continue
-                if now_monotonic - previous_input_state.get("forwarded_at", 0.0) < INPUT_FORWARD_MIN_INTERVAL_SECONDS:
-                    continue
-                input_state[user_id] = {
-                    "signature": payload_signature,
-                    "forwarded_at": now_monotonic,
-                }
                 previous_pending_payload = pending_guest_inputs.get(user_id, {}).get("payload", {})
+                merged_payload = merge_input_payload(previous_pending_payload, payload)
                 pending_guest_inputs[user_id] = {
-                    "payload": merge_input_payload(previous_pending_payload, payload),
+                    "payload": merged_payload,
                     "queued_at": now_monotonic,
                 }
+                input_state[user_id] = {
+                    **previous_input_state,
+                    "signature": payload_signature,
+                    "seen_at": now_monotonic,
+                }
+
+                can_forward_immediately = (
+                    current_room["host_user_id"] != user_id
+                    and now_monotonic - previous_input_state.get("forwarded_at", 0.0) >= INPUT_FORWARD_MIN_INTERVAL_SECONDS
+                )
+                if can_forward_immediately:
+                    sent = await send_to_user(
+                        room_id,
+                        current_room["host_user_id"],
+                        {
+                            "type": "br_input",
+                            "user_id": user_id,
+                            "payload": merged_payload,
+                            "timestamp": now_utc().timestamp(),
+                        },
+                    )
+                    if sent:
+                        input_state[user_id] = {
+                            **input_state[user_id],
+                            "forwarded_at": now_monotonic,
+                        }
+                        pending_guest_inputs.pop(user_id, None)
             elif message_type == "br_snapshot":
                 if current_room["host_user_id"] != user_id:
                     continue
                 sync_state = current_room.setdefault("sync_state", build_sync_state())
-                sync_state["pending_snapshot"] = message.get("payload", {})
+                payload = message.get("payload", {})
+                sync_state["pending_snapshot"] = payload
                 sync_state["pending_snapshot_version"] = sync_state.get("pending_snapshot_version", 0) + 1
                 sync_state["last_host_snapshot_monotonic"] = monotonic_time()
                 sync_state["host_stale"] = False
+                current_room["latest_snapshot"] = payload
+                await broadcast_host_snapshot_if_due(current_room, sync_state)
             elif message_type == "br_quiz_offer":
                 if current_room["host_user_id"] != user_id:
                     continue

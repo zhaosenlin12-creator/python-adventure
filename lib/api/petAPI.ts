@@ -30,9 +30,12 @@ export async function getMyPets(token: string): Promise<MyPetsResult> {
     });
     
     if (!response.ok) {
+      if (response.status === 401) {
+        return { pets: [], currentPetId: null };
+      }
+
       // 🔒 包含状态码以便上层检测
-      const statusText = response.status === 401 ? 'Unauthorized' : response.statusText;
-      throw new Error(`Failed to get pets: ${statusText}`);
+      throw new Error(`Failed to get pets: ${response.statusText}`);
     }
     
     const data = await response.json();
