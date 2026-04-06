@@ -1,7 +1,7 @@
 "use client";
 
 // 版本号 - 用于验证部署是否成功
-const BUILD_VERSION = "v20260331-stable6-r5";
+const BUILD_VERSION = "v20260406-stable6-r7";
 const DEBUG = process.env.NODE_ENV === 'development';
 const debugLog = DEBUG ? console.log.bind(console) : () => {};
 
@@ -37,7 +37,7 @@ const PvpBattleRoyaleSystem = dynamicPvp(() => import('@/components/game/pvp-br/
                 <div className="mx-auto mb-4 h-11 w-11 animate-spin rounded-full border-2 border-cyan-300/20 border-t-cyan-300" />
                 <div className="text-lg font-semibold text-white">正在进入宠物生存乱斗...</div>
                 <div className="mt-2 max-w-sm text-sm leading-6 text-slate-300">
-                    已触发交互，系统正在加载大厅与联网资源。加载完成后会自动进入，不需要重复按 E。
+                    已触发交互，系统正在加载大厅与联网资源。加载完成后会自动进入，不需要重复按 E/F。
                 </div>
             </div>
         </div>
@@ -648,10 +648,12 @@ export default function WorldPage() {
                 onClose={() => setShowNewPvp(false)}
             />
 
-            <PvpBattleRoyaleSystem
-                isOpen={showBattleRoyale}
-                onClose={() => setShowBattleRoyale(false)}
-            />
+            {showBattleRoyale && (
+                <PvpBattleRoyaleSystem
+                    isOpen={showBattleRoyale}
+                    onClose={() => setShowBattleRoyale(false)}
+                />
+            )}
 
             {/* 底部备案信息 */}
             <Footer />

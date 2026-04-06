@@ -76,10 +76,11 @@ const SAFE_ZONE_DAMAGE_BY_PHASE = [10, 14, 20, 30, 42, 58, 78] as const;
 const MATCH_MAX_MS = 360000;
 const PICKUP_RESPAWN_MS = 12000;
 const QUIZ_PENDING_TIMEOUT_MS = 15000;
-const SNAPSHOT_INTERVAL_MS = 50;
-const UI_SYNC_INTERVAL_MS = 50;
-const INPUT_SEND_INTERVAL_MS = 20;
-const MAX_RENDER_EXTRAPOLATION_MS = 300;
+const SNAPSHOT_INTERVAL_MS = 80;
+const UI_SYNC_INTERVAL_MS = 66;
+const INPUT_SEND_INTERVAL_MS = 34;
+const INPUT_KEEPALIVE_INTERVAL_MS = 90;
+const MAX_RENDER_EXTRAPOLATION_MS = 220;
 const LOCAL_INPUT_LEAD_MS = 104;
 const MAX_LOCAL_INPUT_LEAD_MS = 240;
 const LOCAL_FIGHTER_SMOOTHING_RATE = 36;
@@ -419,6 +420,9 @@ interface InternalFighter extends BattleRoyaleFighterView {
   combatAnchorExpireAtMs: number;
   combatTargetId: string | null;
   nextJumpPulseAtMs: number;
+  botThinkAtMs: number;
+  moveCommitDirection: -1 | 0 | 1;
+  moveCommitUntilMs: number;
   stuckMs: number;
   lastSampleX: number;
   lastSampleY: number;
@@ -497,6 +501,11 @@ const AI_TUNING = {
     lootRadius: 780,
     roamMinMs: 2600,
     roamMaxMs: 4300,
+    thinkMinMs: 250,
+    thinkMaxMs: 360,
+    jumpPulseMinMs: 520,
+    jumpPulseMaxMs: 780,
+    moveDeadZone: 66,
     attackChance: 0.34,
     throwChance: 0.08,
     skillChance: 0.06,
@@ -512,6 +521,11 @@ const AI_TUNING = {
     lootRadius: 680,
     roamMinMs: 2200,
     roamMaxMs: 3600,
+    thinkMinMs: 190,
+    thinkMaxMs: 290,
+    jumpPulseMinMs: 440,
+    jumpPulseMaxMs: 660,
+    moveDeadZone: 56,
     attackChance: 0.56,
     throwChance: 0.16,
     skillChance: 0.12,
@@ -527,6 +541,11 @@ const AI_TUNING = {
     lootRadius: 620,
     roamMinMs: 1800,
     roamMaxMs: 3000,
+    thinkMinMs: 140,
+    thinkMaxMs: 220,
+    jumpPulseMinMs: 380,
+    jumpPulseMaxMs: 560,
+    moveDeadZone: 44,
     attackChance: 0.76,
     throwChance: 0.26,
     skillChance: 0.18,
@@ -544,6 +563,11 @@ const AI_TUNING = {
     lootRadius: number;
     roamMinMs: number;
     roamMaxMs: number;
+    thinkMinMs: number;
+    thinkMaxMs: number;
+    jumpPulseMinMs: number;
+    jumpPulseMaxMs: number;
+    moveDeadZone: number;
     attackChance: number;
     throwChance: number;
     skillChance: number;
@@ -1014,6 +1038,9 @@ function createInitialFighters(room: BattleRoyaleRoom): Map<string, InternalFigh
       combatAnchorExpireAtMs: 0,
       combatTargetId: null,
       nextJumpPulseAtMs: 0,
+      botThinkAtMs: 0,
+      moveCommitDirection: 0,
+      moveCommitUntilMs: 0,
       stuckMs: 0,
       lastSampleX: spawn.x,
       lastSampleY: spawn.y,
@@ -1077,6 +1104,9 @@ function createInitialFighters(room: BattleRoyaleRoom): Map<string, InternalFigh
       combatAnchorExpireAtMs: 0,
       combatTargetId: null,
       nextJumpPulseAtMs: 0,
+      botThinkAtMs: 0,
+      moveCommitDirection: 0,
+      moveCommitUntilMs: 0,
       stuckMs: 0,
       lastSampleX: spawn.x,
       lastSampleY: spawn.y,
@@ -1249,43 +1279,83 @@ function buildSnapshot(
   };
 }
 
-function normalizeIncomingSnapshot(incoming: IncomingBattleRoyaleSnapshot): BattleRoyaleSnapshot {
+function buildSnapshotRoster(room: BattleRoyaleRoom) {
+  const roster = new Map<
+    string,
+    {
+      userId?: number;
+      name: string;
+      petType: string;
+      petStage: number;
+      isBot: boolean;
+      difficulty?: BattleRoyaleDifficulty;
+    }
+  >();
+
+  room.humans.forEach((human) => {
+    roster.set(fighterIdForUser(human.user_id), {
+      userId: human.user_id,
+      name: human.username,
+      petType: human.pet_type,
+      petStage: human.pet_stage ?? 3,
+      isBot: false,
+    });
+  });
+
+  room.bots.forEach((bot) => {
+    roster.set(bot.id, {
+      name: bot.name,
+      petType: bot.pet_type,
+      petStage: bot.pet_stage ?? 3,
+      isBot: true,
+      difficulty: bot.difficulty,
+    });
+  });
+
+  return roster;
+}
+
+function normalizeIncomingSnapshot(incoming: IncomingBattleRoyaleSnapshot, room: BattleRoyaleRoom): BattleRoyaleSnapshot {
   const elapsedMs = incoming.elapsedMs ?? 0;
+  const roster = buildSnapshotRoster(room);
 
   return {
     tick: incoming.tick ?? 0,
     elapsedMs,
     zone: incoming.zone ?? getZoneState(elapsedMs),
-    fighters: (incoming.fighters ?? []).map((fighter) => ({
-      id: fighter.id,
-      userId: fighter.userId,
-      name: fighter.name ?? '',
-      petType: fighter.petType ?? 'code_kitty',
-      petStage: fighter.petStage ?? 1,
-      x: fighter.x,
-      y: fighter.y,
-      vx: fighter.vx,
-      vy: fighter.vy,
-      hp: fighter.hp,
-      maxHp: fighter.maxHp ?? FIGHTER_HP,
-      shield: fighter.shield,
-      armor: fighter.armor,
-      kills: fighter.kills,
-      alive: fighter.alive,
-      facing: fighter.facing,
-      isBot: fighter.isBot ?? false,
-      difficulty: fighter.difficulty,
-      hasRevived: fighter.hasRevived,
-      reviveUsed: fighter.reviveUsed,
-      quizPending: fighter.quizPending,
-      damageDealt: fighter.damageDealt ?? 0,
-      survivedMs: fighter.survivedMs ?? elapsedMs,
-      specialCharges: fighter.specialCharges ?? 0,
-      buffs: { ...(fighter.buffs ?? {}) },
-      weaponReady: fighter.weaponReady ?? true,
-      swingMs: fighter.swingMs ?? 0,
-      hitFlashMs: fighter.hitFlashMs ?? 0,
-    })),
+    fighters: (incoming.fighters ?? []).map((fighter) => {
+      const rosterEntry = roster.get(fighter.id);
+      return {
+        id: fighter.id,
+        userId: fighter.userId ?? rosterEntry?.userId,
+        name: fighter.name ?? rosterEntry?.name ?? 'Player',
+        petType: fighter.petType ?? rosterEntry?.petType ?? 'code_kitty',
+        petStage: fighter.petStage ?? rosterEntry?.petStage ?? 1,
+        x: fighter.x,
+        y: fighter.y,
+        vx: fighter.vx,
+        vy: fighter.vy,
+        hp: fighter.hp,
+        maxHp: fighter.maxHp ?? FIGHTER_HP,
+        shield: fighter.shield,
+        armor: fighter.armor,
+        kills: fighter.kills,
+        alive: fighter.alive,
+        facing: fighter.facing,
+        isBot: fighter.isBot ?? rosterEntry?.isBot ?? false,
+        difficulty: fighter.difficulty ?? rosterEntry?.difficulty,
+        hasRevived: fighter.hasRevived,
+        reviveUsed: fighter.reviveUsed,
+        quizPending: fighter.quizPending,
+        damageDealt: fighter.damageDealt ?? 0,
+        survivedMs: fighter.survivedMs ?? elapsedMs,
+        specialCharges: fighter.specialCharges ?? 0,
+        buffs: { ...(fighter.buffs ?? {}) },
+        weaponReady: fighter.weaponReady ?? true,
+        swingMs: fighter.swingMs ?? 0,
+        hitFlashMs: fighter.hitFlashMs ?? 0,
+      };
+    }),
     pickups: (incoming.pickups ?? []).map((pickup) => ({ ...pickup })),
     killFeed: (incoming.killFeed ?? []).map((item) => ({ ...item })),
     winnerId: incoming.winnerId ?? null,
@@ -1309,7 +1379,6 @@ function createTransportSnapshot(snapshot: BattleRoyaleSnapshot): Record<string,
     },
     fighters: snapshot.fighters.map((fighter) => ({
       id: fighter.id,
-      userId: fighter.userId,
       x: Math.round(fighter.x),
       y: Math.round(fighter.y),
       vx: Math.round(fighter.vx),
@@ -1442,6 +1511,9 @@ function hydrateFightersFromSnapshot(room: BattleRoyaleRoom, snapshot: BattleRoy
     existing.combatAnchorExpireAtMs = snapshot.elapsedMs;
     existing.combatTargetId = null;
     existing.nextJumpPulseAtMs = snapshot.elapsedMs;
+    existing.botThinkAtMs = snapshot.elapsedMs;
+    existing.moveCommitDirection = 0;
+    existing.moveCommitUntilMs = snapshot.elapsedMs;
     existing.stuckMs = 0;
     existing.lastSampleX = view.x;
     existing.lastSampleY = view.y;
@@ -1515,11 +1587,11 @@ function deriveAmbientRoomNotice(snapshot: BattleRoyaleSnapshot, localFighterId:
   const aliveCount = snapshot.fighters.filter((fighter) => fighter.alive).length;
 
   if (snapshot.elapsedMs < 5000) {
-    return '开局先分散搜护甲、护盾和武器，再沿平台向安全区推进。';
+    return '开局先搜护甲、护盾和武器，再往安全区走。';
   }
 
   if (localFighter && !localFighter.alive && !localFighter.hasRevived) {
-    return '你已倒下，答对三题后可以半血复活一次。';
+    return '你已倒下，答对 3 题可半血复活 1 次。';
   }
 
   if (localFighter) {
@@ -1529,46 +1601,46 @@ function deriveAmbientRoomNotice(snapshot: BattleRoyaleSnapshot, localFighterId:
     );
 
     if (localDistanceToZone > snapshot.zone.radius + 120) {
-      return '你已离开安全区，先回圈，别在圈边恋战。';
+      return '你在圈外，先回安全区。';
     }
 
     if (localFighter.hp < localFighter.maxHp * 0.35) {
-      return '血量偏低，优先补医疗包、护盾核或防弹衣。';
+      return '血量低，先找医疗包、护盾核或防弹衣。';
     }
 
     if (!localFighter.weaponReady) {
-      return '你的武器不在手上，先捡回地面武器再近身。';
+      return '武器已脱手，先捡回武器再近身。';
     }
 
     if (localFighter.specialCharges > 0) {
-      return '你已拿到冲击波，按 L 可以逼退贴身目标，也适合抢回高台身位。';
+      return '有冲击波了，按 L 可以逼退近身目标。';
     }
 
     if (deriveDamageBonusFromBuffs(localFighter.buffs) > 0) {
-      return '利爪增伤已生效，近战先手和投掷补刀都会更疼，可以主动找短线交战。';
+      return '利爪生效，近战和投掷更疼。';
     }
 
     if (deriveSpeedMultiplierFromBuffs(localFighter.buffs) > 1 && localDistanceToZone < snapshot.zone.radius - 220) {
-      return '风压提速已生效，可以更积极地绕侧翼、追残血，或提前抢到安全区平台。';
+      return '风压生效，可以抢点或追残血。';
     }
   }
 
   if (aliveCount <= 3) {
-    return '决赛圈已成型，盯紧移动平台和弹跳台，别被逼到圈边。';
+    return '决赛圈到了，盯紧高台和移动平台。';
   }
 
   if (snapshot.zone.phase >= 5) {
-    return '风暴正在强力收缩，圈外掉血很快，优先守住高台。';
+    return '后期缩圈很快，先守安全区高台。';
   }
 
-  return '战场仍在收缩，先靠近安全区，再找机会用 J/K/L 连招。';
+  return '先靠近安全区，再用 J/K/L 找机会。';
 }
 
 function connectionLabel(wsConnected: boolean, latencyMs: number) {
   if (!wsConnected) {
     return '重连';
   }
-  if (latencyMs >= 140) {
+  if (latencyMs >= 180) {
     return '波动';
   }
   return '稳定';
@@ -1619,12 +1691,12 @@ function pickBotRoamPoint(
 
 function combatAnchorSpacingRange(difficulty: BattleRoyaleDifficulty | undefined) {
   if (difficulty === 'easy') {
-    return { min: 150, max: 230, holdMinMs: 850, holdMaxMs: 1300 };
+    return { min: 168, max: 262, holdMinMs: 1700, holdMaxMs: 2400 };
   }
   if (difficulty === 'hard') {
-    return { min: 110, max: 190, holdMinMs: 650, holdMaxMs: 1050 };
+    return { min: 118, max: 198, holdMinMs: 1200, holdMaxMs: 1760 };
   }
-  return { min: 130, max: 210, holdMinMs: 720, holdMaxMs: 1180 };
+  return { min: 144, max: 226, holdMinMs: 1450, holdMaxMs: 2050 };
 }
 
 function aiInputForFighter(
@@ -1636,6 +1708,19 @@ function aiInputForFighter(
   elapsedMs: number,
 ): BattleRoyaleInputPayload {
   const tuning = AI_TUNING[fighter.difficulty ?? 'medium'];
+  const isDecisionFrame =
+    elapsedMs >= fighter.botThinkAtMs || fighter.stuckMs > 420 || !fighter.alive || fighter.quizPending;
+  if (!isDecisionFrame) {
+    return {
+      ...fighter.input,
+      jumpPressed: false,
+      dashPressed: false,
+      attackPressed: false,
+      throwPressed: false,
+      skillPressed: false,
+    };
+  }
+
   const candidates = Array.from(fighters.values()).filter((target) => target.id !== fighter.id && target.alive);
   const aliveCount = candidates.length + 1;
   const nearestEnemy = candidates
@@ -1699,12 +1784,11 @@ function aiInputForFighter(
   if (combatTarget) {
     const { min, max, holdMinMs, holdMaxMs } = combatAnchorSpacingRange(fighter.difficulty);
     const targetChanged = fighter.combatTargetId !== combatTarget.id;
-    const reachedAnchor = Math.abs(fighter.combatAnchorX - fighter.x) < 34;
     const closeQuarterPivot = strikeGap < ATTACK_RANGE + 24 && strikeVerticalGap < 120;
-    if (targetChanged || elapsedMs >= fighter.combatAnchorExpireAtMs || reachedAnchor || closeQuarterPivot) {
+    if (targetChanged || elapsedMs >= fighter.combatAnchorExpireAtMs || (closeQuarterPivot && fighter.stuckMs > 220)) {
       const previousSign = fighter.combatAnchorX <= combatTarget.x ? -1 : 1;
       const fallbackSign = fighter.x <= combatTarget.x ? -1 : 1;
-      let anchorSign = targetChanged ? fallbackSign : -previousSign;
+      let anchorSign = targetChanged ? fallbackSign : previousSign;
       if ((fighter.hp < fighter.maxHp * 0.32 || !fighter.weaponReady) && strikeGap < 138) {
         anchorSign = fallbackSign;
       }
@@ -1767,19 +1851,29 @@ function aiInputForFighter(
   const dy = targetY - fighter.y;
   const canSecondJump = fighter.movementSkills.includes('double_jump') && fighter.jumpsUsed < 1;
   const shouldEscapeJump = fighter.stuckMs > (fighter.difficulty === 'easy' ? 320 : 250) && (fighter.onGround || canSecondJump);
-  const shouldClimb = dy < -88 && (fighter.onGround || canSecondJump || fighter.stuckMs > 280);
+  const shouldClimb = dy < -108 && (fighter.onGround || canSecondJump || fighter.stuckMs > 320);
   const shouldHopForward =
     fighter.onGround &&
-    Math.abs(dx) > 110 &&
-    Math.abs(dx) < 620 &&
-    (dy < 220 || (isOutsideZone && Math.abs(dx) > 220) || strikeVerticalGap > 62 || fighter.stuckMs > 240);
+    Math.abs(dx) > 180 &&
+    Math.abs(dx) < 460 &&
+    (
+      dy < -96 ||
+      (isOutsideZone && Math.abs(dx) > 320) ||
+      (combatTarget !== null && strikeVerticalGap > 136 && fighter.stuckMs > 220) ||
+      fighter.stuckMs > 460
+    );
   const jumpIntent = shouldEscapeJump || shouldClimb || shouldHopForward;
   const canTriggerJumpPulse =
     elapsedMs >= fighter.nextJumpPulseAtMs &&
     (!fighter.jumpHeld || fighter.onGround || canSecondJump || (fighter.movementSkills.includes('wall_jump') && Math.abs(dx) > 40));
   const shouldPulseJump = jumpIntent && canTriggerJumpPulse;
   if (shouldPulseJump) {
-    fighter.nextJumpPulseAtMs = elapsedMs + (fighter.onGround ? 140 : 220);
+    fighter.nextJumpPulseAtMs =
+      elapsedMs +
+      randomBetween(
+        fighter.onGround ? tuning.jumpPulseMinMs : tuning.jumpPulseMinMs + 60,
+        fighter.onGround ? tuning.jumpPulseMaxMs : tuning.jumpPulseMaxMs + 80,
+      );
   } else if (!jumpIntent && fighter.nextJumpPulseAtMs > elapsedMs + 420) {
     fighter.nextJumpPulseAtMs = elapsedMs;
   }
@@ -1807,9 +1901,40 @@ function aiInputForFighter(
     strikeVerticalGap < 118 &&
     Math.random() < tuning.throwChance;
 
+  const rawDirection = dx < -tuning.moveDeadZone ? -1 : dx > tuning.moveDeadZone ? 1 : 0;
+  if (rawDirection === 0) {
+    if (fighter.moveCommitDirection !== 0 || elapsedMs >= fighter.moveCommitUntilMs) {
+      fighter.moveCommitDirection = 0;
+      fighter.moveCommitUntilMs =
+        elapsedMs + randomBetween(combatTarget ? 220 : 280, combatTarget ? 340 : 460);
+    }
+  } else {
+    const commitExpired = elapsedMs >= fighter.moveCommitUntilMs;
+    const holdingPosition =
+      fighter.moveCommitDirection === 0 &&
+      !commitExpired &&
+      !isOutsideZone &&
+      fighter.stuckMs <= 180;
+    if (
+      (!holdingPosition && fighter.moveCommitDirection === 0) ||
+      commitExpired ||
+      isOutsideZone ||
+      fighter.stuckMs > 240
+    ) {
+      fighter.moveCommitDirection = rawDirection;
+      fighter.moveCommitUntilMs =
+        elapsedMs +
+        randomBetween(
+          combatTarget || isOutsideZone ? 520 : 620,
+          combatTarget || isOutsideZone ? 820 : 980,
+        );
+    }
+  }
+  const committedDirection = rawDirection === 0 ? 0 : fighter.moveCommitDirection;
+
   const nextInput: BattleRoyaleInputPayload = {
-    left: dx < -18,
-    right: dx > 18,
+    left: committedDirection < 0,
+    right: committedDirection > 0,
     jump: shouldPulseJump || shouldGlideHold,
     dash: shouldDash,
     attack:
@@ -1856,6 +1981,13 @@ function aiInputForFighter(
     nextInput.right = fallbackDx > 24;
     nextInput.jump = fallbackDy < -96 && (!fighter.jumpHeld || fighter.onGround || canSecondJump);
   }
+
+  fighter.botThinkAtMs =
+    elapsedMs +
+    randomBetween(
+      combatTarget || isOutsideZone ? tuning.thinkMinMs * 0.78 : tuning.thinkMinMs,
+      combatTarget || isOutsideZone ? tuning.thinkMaxMs * 0.86 : tuning.thinkMaxMs,
+    );
 
   return nextInput;
 }
@@ -1936,7 +2068,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   const [result, setResult] = useState<BattleRoyaleResult | null>(null);
   const [showEliminationPrompt, setShowEliminationPrompt] = useState(false);
   const [hasAuthoritativeSnapshot, setHasAuthoritativeSnapshot] = useState(isHost);
-  const [roomNotice, setRoomNotice] = useState<string>('战场部署完成，先分散搜护甲和增益，再抢高台与地面掉落武器。');
+  const [roomNotice, setRoomNotice] = useState<string>('战场已就绪，先搜资源，再抢高台和武器。');
 
   const finishCurrentRoom = usePvpBattleRoyaleStore((state) => state.finishCurrentRoom);
   const setCurrentRoom = usePvpBattleRoyaleStore((state) => state.setCurrentRoom);
@@ -1974,7 +2106,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   }, []);
 
   useEffect(() => {
-    setRoomNotice('战场部署完成，先分散搜护甲和增益，再争夺高台与武器。');
+    setRoomNotice('战场已就绪，先搜资源，再争夺高台和武器。');
   }, []);
 
   useEffect(() => {
@@ -2450,7 +2582,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   };
 
   const applyRecoveredSnapshot = (incoming: IncomingBattleRoyaleSnapshot) => {
-    const normalized = normalizeIncomingSnapshot(incoming);
+    const normalized = normalizeIncomingSnapshot(incoming, room);
     const receiptTime = typeof performance !== 'undefined' ? performance.now() : Date.now();
     if (shouldExposeQaDebug()) {
       syncStatsRef.current.authoritativeSnapshots += 1;
@@ -4117,7 +4249,10 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
               );
             }
             const snapshotSent = wsRef.current?.sendSnapshot(transportSnapshot) ?? false;
-            if (!snapshotSent) {
+            if (snapshotSent) {
+              initialHostSnapshotSentRef.current = true;
+            }
+            if (!snapshotSent && initialHostSnapshotSentRef.current) {
               syncStatsRef.current.droppedSnapshots += 1;
             }
           }
@@ -4194,11 +4329,11 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
             .map((value) => (value ? '1' : '0'))
             .join('');
           const hasPendingPulse = Object.values(pendingInputPulseRef.current).some(Boolean);
-          if (
-            hasPendingPulse ||
-            inputSignature !== lastInputSignatureRef.current ||
-            time - lastInputSentRef.current > INPUT_SEND_INTERVAL_MS
-          ) {
+          const timeSinceLastInputMs = time - lastInputSentRef.current;
+          const inputChanged = inputSignature !== lastInputSignatureRef.current;
+          const shouldSendKeepalive = timeSinceLastInputMs > INPUT_KEEPALIVE_INTERVAL_MS;
+          const shouldSendChangedInput = inputChanged && timeSinceLastInputMs > INPUT_SEND_INTERVAL_MS;
+          if (hasPendingPulse || shouldSendChangedInput || shouldSendKeepalive) {
             const inputSent =
               wsRef.current?.sendInput({
                 fighterId: localFighterId,
@@ -4303,7 +4438,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
                 <div className="mx-auto mb-4 h-11 w-11 animate-spin rounded-full border-2 border-cyan-300/20 border-t-cyan-300" />
                 <div className="text-lg font-semibold text-white">正在同步战场</div>
                 <div className="mt-2 max-w-sm text-sm leading-6 text-slate-300">
-                  已进入对局，正在等待房主首帧权威快照。同步完成后会自动开始，避免出现错误出生点和卡死移动。
+                  正在等待房主首帧快照。同步完成后会自动开始，避免出生错位和卡住。
                 </div>
               </div>
             </div>
@@ -4427,7 +4562,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
                     </div>
                   </div>
                   <div className="mt-6 text-sm leading-6 text-slate-300">
-                    建议下一局继续优先补防弹衣、护盾核和冲击波，缩圈后近战与投掷连招收益更高。
+                    下一局建议优先补防弹衣、护盾核和冲击波，缩圈后近战与投掷更强。
                   </div>
                   <div className="mt-8 flex justify-end">
                     <button

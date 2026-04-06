@@ -57,6 +57,7 @@ export default function CoinBalance({
   
   return (
     <div
+      data-testid={onClick ? 'coin-balance-button' : undefined}
       className={`
         pixel-panel bg-amber-900/30 border-amber-500/30
         flex items-center gap-2

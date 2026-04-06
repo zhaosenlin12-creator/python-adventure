@@ -714,7 +714,9 @@ def test_websocket_reconnect_receives_latest_snapshot_and_match_payload():
             assert recovered["latest_match_payload"]["winnerId"] == f"human-{host_user_id}"
 
 
-def test_in_progress_disconnect_keeps_human_recoverable(monkeypatch: pytest.MonkeyPatch):
+def test_guest_disconnect_keeps_human_recoverable_while_host_stays_connected(
+    monkeypatch: pytest.MonkeyPatch,
+):
     monkeypatch.setattr(br_api, "DISCONNECT_GRACE_SECONDS", 0.05)
 
     host_token = make_token("br_disc_host")
@@ -757,14 +759,71 @@ def test_in_progress_disconnect_keeps_human_recoverable(monkeypatch: pytest.Monk
             assert guest_socket.receive_json()["type"] == "connected"
 
         time.sleep(0.2)
+        room_state = active_rooms[room_id]
+        assert guest_user_id in room_state["humans"]
+        assert room_state["humans"][guest_user_id]["connected"] is False
 
-    room_state = active_rooms[room_id]
-    assert guest_user_id in room_state["humans"]
-    assert room_state["humans"][guest_user_id]["connected"] is False
+        response = client.get("/api/v1/pvp-br/rooms/my-active", headers=auth_headers(guest_token))
+        assert response.status_code == 200, response.text
+        assert response.json()["recoverable"] is True
 
-    response = client.get("/api/v1/pvp-br/rooms/my-active", headers=auth_headers(guest_token))
-    assert response.status_code == 200, response.text
-    assert response.json()["recoverable"] is True
+
+def test_host_disconnect_closes_in_progress_room_and_frees_slot(monkeypatch: pytest.MonkeyPatch):
+    monkeypatch.setattr(br_api, "DISCONNECT_GRACE_SECONDS", 0.05)
+
+    host_token = make_token("br_host_drop_host")
+    guest_token = make_token("br_host_drop_guest")
+    next_host_token = make_token("br_host_drop_next")
+
+    create = client.post(
+        "/api/v1/pvp-br/rooms/create",
+        headers=auth_headers(host_token),
+        json={
+            **participant_payload("host-drop-host"),
+            "room_name": "host-drop-room",
+            "max_players": 4,
+        },
+    )
+    room = create.json()["room"]
+    room_id = room["id"]
+    host_user_id = room["host_user_id"]
+
+    join = client.post(
+        f"/api/v1/pvp-br/rooms/{room_id}/join",
+        headers=auth_headers(guest_token),
+        json=participant_payload("host-drop-guest"),
+    )
+    assert join.status_code == 200, join.text
+    guest_user_id = join.json()["room"]["humans"][1]["user_id"]
+
+    start = client.post(
+        f"/api/v1/pvp-br/rooms/{room_id}/start",
+        headers=auth_headers(host_token),
+    )
+    assert start.status_code == 200, start.text
+
+    host_ws_url = f"/api/v1/pvp-br/ws/{room_id}/{host_user_id}?token={host_token}"
+    guest_ws_url = f"/api/v1/pvp-br/ws/{room_id}/{guest_user_id}?token={guest_token}"
+
+    with client.websocket_connect(host_ws_url) as host_socket:
+        assert host_socket.receive_json()["type"] == "connected"
+
+        with client.websocket_connect(guest_ws_url) as guest_socket:
+            assert guest_socket.receive_json()["type"] == "connected"
+
+    time.sleep(0.2)
+
+    next_create = client.post(
+        "/api/v1/pvp-br/rooms/create",
+        headers=auth_headers(next_host_token),
+        json={
+            **participant_payload("host-drop-next"),
+            "room_name": "fresh-room",
+            "max_players": 4,
+        },
+    )
+    assert next_create.status_code == 200, next_create.text
+    assert room_id not in active_rooms
 
 
 class TimedSocket:
@@ -796,9 +855,9 @@ def test_broadcast_to_room_sends_to_connections_concurrently():
     assert socket_c.messages[0]["payload"]["tick"] == 1
 
 
-def test_guest_inputs_are_forwarded_immediately_and_then_batched(monkeypatch: pytest.MonkeyPatch):
-    monkeypatch.setattr(br_api, "ROOM_RUNTIME_TICK_SECONDS", 0.005)
-    monkeypatch.setattr(br_api, "SERVER_INPUT_BATCH_INTERVAL_SECONDS", 0.015)
+def test_guest_movement_is_batched_and_edge_actions_forward_immediately(monkeypatch: pytest.MonkeyPatch):
+    monkeypatch.setattr(br_api, "ROOM_RUNTIME_TICK_SECONDS", 0.1)
+    monkeypatch.setattr(br_api, "SERVER_INPUT_BATCH_INTERVAL_SECONDS", 0.1)
     monkeypatch.setattr(br_api, "INPUT_FORWARD_MIN_INTERVAL_SECONDS", 0.03)
     monkeypatch.setattr(br_api, "INPUT_DUPLICATE_INTERVAL_SECONDS", 0.0)
 
@@ -843,23 +902,20 @@ def test_guest_inputs_are_forwarded_immediately_and_then_batched(monkeypatch: py
             assert guest_socket.receive_json()["type"] == "connected"
 
             guest_socket.send_json({"type": "br_input", "payload": {"input": {"right": True}}})
-            immediate_message = host_socket.receive_json()
-            assert immediate_message["type"] == "br_input"
-            assert immediate_message["user_id"] == guest_user_id
-            assert immediate_message["payload"] == {"input": {"right": True}}
-
-            guest_socket.send_json({"type": "br_input", "payload": {"input": {"attack": True, "attackPressed": True}}})
-            guest_socket.send_json({"type": "br_input", "payload": {"input": {"attack": False}}})
-
-            time.sleep(0.08)
-            batch_message = host_socket.receive_json()
-            assert batch_message["type"] == "br_input_batch"
-            assert batch_message["inputs"] == [
+            movement_message = receive_json_with_timeout(host_socket, timeout=0.35)
+            assert movement_message["type"] == "br_input_batch"
+            assert movement_message["inputs"] == [
                 {
                     "user_id": guest_user_id,
-                    "payload": {"input": {"attack": False, "attackPressed": True}},
+                    "payload": {"input": {"right": True}},
                 }
             ]
+
+            guest_socket.send_json({"type": "br_input", "payload": {"input": {"attack": True, "attackPressed": True}}})
+            direct_message = receive_json_with_timeout(host_socket, timeout=0.2)
+            assert direct_message["type"] == "br_input"
+            assert direct_message["user_id"] == guest_user_id
+            assert direct_message["payload"] == {"input": {"attack": True, "attackPressed": True}}
 
 
 def test_host_snapshot_is_forwarded_immediately_without_waiting_for_runtime_tick(

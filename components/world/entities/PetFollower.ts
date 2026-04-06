@@ -195,7 +195,15 @@ export class PetFollower {
    */
   private loadGifAsTexture(path: string) {
     try {
+      if (!this.canUseSceneSystems()) {
+        return;
+      }
+
       const loader = this.scene.load as any;
+      if (!loader) {
+        this.applyFallbackTexture();
+        return;
+      }
       const isSvg = path.toLowerCase().endsWith('.svg');
       // 使用Phaser的加载器动态加载图片/矢量图
       if (isSvg && typeof loader.svg === 'function') {
@@ -203,9 +211,9 @@ export class PetFollower {
       } else {
         loader.image(path, path);
       }
-      this.scene.load.once('complete', () => {
+      loader.once('complete', () => {
         // 🔒 安全检查：防止场景/对象已销毁后的回调崩溃
-        if (this.isDestroyed || !this.scene || !this.scene.textures) return;
+        if (!this.canUseSceneSystems()) return;
         if (this.scene.textures.exists(path)) {
           this.sprite.setTexture(path);
           // 🔧 关键修复：加载完成后重新设置尺寸
@@ -213,20 +221,24 @@ export class PetFollower {
           debugLog('[PetFollower] Loaded texture:', path);
         }
       });
-      this.scene.load.start();
+      const isLoaderBusy =
+        typeof loader.isLoading === 'function'
+          ? loader.isLoading()
+          : Boolean(loader.isLoading);
+
+      if (!isLoaderBusy) {
+        loader.start();
+      }
     } catch (error) {
       console.error('[PetFollower] Failed to load texture:', path, error);
       // 使用占位符（仅在未销毁时）
-      if (!this.isDestroyed) {
-        this.sprite.setTexture('pet-placeholder');
-        this.applyStageAppearance();
-      }
+      this.applyFallbackTexture();
     }
   }
 
   /** 应用进化阶段外观（大小/位置） */
   private applyStageAppearance() {
-    if (!this.pet) return;
+    if (!this.pet || !this.canUseSceneSystems()) return;
     const migratedType = migratePetType(this.pet.petType);
     const appearance = getStageAppearance(this.pet.evolution_stage ?? (this.pet.isEgg ? 0 : 1));
     const size = Math.round((appearance.size || 48) * getPetVariantScale(migratedType, 'world'));
@@ -238,6 +250,28 @@ export class PetFollower {
     }
     this.nameText.setY(yOffset - (size / 2 + 10));
     this.statusIcon.setY(yOffset + size / 2 + 8);
+  }
+
+  private canUseSceneSystems() {
+    const status = this.scene?.sys?.settings?.status;
+    return Boolean(
+      !this.isDestroyed &&
+      this.scene &&
+      this.scene.textures &&
+      this.scene.load &&
+      this.container?.scene &&
+      this.sprite?.scene &&
+      status !== Phaser.Scenes.SHUTDOWN &&
+      status !== Phaser.Scenes.DESTROYED
+    );
+  }
+
+  private applyFallbackTexture() {
+    if (!this.canUseSceneSystems()) return;
+    if (this.scene.textures.exists('pet-placeholder')) {
+      this.sprite.setTexture('pet-placeholder');
+    }
+    this.applyStageAppearance();
   }
   
   /**
@@ -410,6 +444,9 @@ export class PetFollower {
    * 销毁宠物
    */
   destroy() {
+    if (this.isDestroyed) {
+      return;
+    }
     this.isDestroyed = true;
     this.pet = null;
     if (this.emojiSprite) {

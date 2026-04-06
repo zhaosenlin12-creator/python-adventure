@@ -1,6 +1,7 @@
 import * as Phaser from 'phaser';
 import { ARENA_CHALLENGES, ArenaChallenge } from '@/types/arena';
 import { touchInputManager, TouchInputState } from '@/lib/input/TouchInputManager';
+import { ARENA_CONTROLS_HINT } from '@/lib/gameplayText';
 
 // 生产环境禁用调试日志
 const DEBUG = process.env.NODE_ENV === 'development';
@@ -10,6 +11,13 @@ export class ArenaScene extends Phaser.Scene {
     private player!: Phaser.Physics.Arcade.Sprite;
     private platforms!: Phaser.Physics.Arcade.StaticGroup;
     private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
+    private moveKeys!: {
+        up: Phaser.Input.Keyboard.Key;
+        down: Phaser.Input.Keyboard.Key;
+        left: Phaser.Input.Keyboard.Key;
+        right: Phaser.Input.Keyboard.Key;
+    };
+    private interactKey!: Phaser.Input.Keyboard.Key;
     private currentChallenge: ArenaChallenge | null = null;
     private timeRemaining: number = 0;
     private timerText!: Phaser.GameObjects.Text;
@@ -144,7 +152,7 @@ export class ArenaScene extends Phaser.Scene {
         }).setOrigin(1, 0);
 
         // Challenge info
-        this.challengeText = this.add.text(width / 2, 80, '选择一个挑战开始！', {
+        this.challengeText = this.add.text(width / 2, 80, ARENA_CONTROLS_HINT, {
             fontSize: '16px',
             color: '#00ff00',
             backgroundColor: '#000000aa',
@@ -173,6 +181,13 @@ export class ArenaScene extends Phaser.Scene {
         // Input
         if (this.input.keyboard) {
             this.cursors = this.input.keyboard.createCursorKeys();
+            this.moveKeys = this.input.keyboard.addKeys({
+                up: Phaser.Input.Keyboard.KeyCodes.W,
+                down: Phaser.Input.Keyboard.KeyCodes.S,
+                left: Phaser.Input.Keyboard.KeyCodes.A,
+                right: Phaser.Input.Keyboard.KeyCodes.D,
+            }) as typeof this.moveKeys;
+            this.interactKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         }
 
         // Check if player has double jump skill from window global
@@ -272,6 +287,13 @@ export class ArenaScene extends Phaser.Scene {
             this.cursors.down.isDown = false;
             this.cursors.left.isDown = false;
             this.cursors.right.isDown = false;
+            if (this.moveKeys) {
+                this.moveKeys.up.isDown = false;
+                this.moveKeys.down.isDown = false;
+                this.moveKeys.left.isDown = false;
+                this.moveKeys.right.isDown = false;
+            }
+            if (this.interactKey) this.interactKey.isDown = false;
             
             // 清除按键队列
             this.input.keyboard.resetKeys();
@@ -418,8 +440,8 @@ export class ArenaScene extends Phaser.Scene {
             // 3. 该区域没有被触发过（或已完成冷却）
             // 4. 不在挑战完成的冷却期内
             const touchState = touchInputManager.getState();
-            const isUpPressed = this.cursors.up.isDown || touchState.up || touchState.jump;
-            if (isUpPressed && 
+            const wantsInteract = this.interactKey?.isDown || touchState.interact;
+            if (wantsInteract && 
                 !this.currentChallenge && 
                 !zone.getData('triggered') &&
                 !this.isInChallengeCooldown) {
@@ -430,7 +452,7 @@ export class ArenaScene extends Phaser.Scene {
         });
 
         // Interactive hint
-        const hint = this.add.text(x, y + 70, '▲ 按UP键开始挑战', {
+        const hint = this.add.text(x, y + 70, 'F / 触控键开始挑战', {
             fontSize: '12px',
             color: '#00ffff',
             backgroundColor: '#000000cc',
@@ -817,9 +839,9 @@ export class ArenaScene extends Phaser.Scene {
         const touchState = touchInputManager.getState();
         
         // 合并键盘和触控输入
-        const inputLeft = this.cursors.left.isDown || touchState.left;
-        const inputRight = this.cursors.right.isDown || touchState.right;
-        const inputUp = this.cursors.up.isDown || touchState.up || touchState.jump;
+        const inputLeft = this.cursors.left.isDown || this.moveKeys.left.isDown || touchState.left;
+        const inputRight = this.cursors.right.isDown || this.moveKeys.right.isDown || touchState.right;
+        const inputUp = this.cursors.up.isDown || this.moveKeys.up.isDown || touchState.up || touchState.jump;
 
         // Reset near challenge flag
         this.isNearChallenge = false;
@@ -844,7 +866,7 @@ export class ArenaScene extends Phaser.Scene {
         // Handle jump ONLY if not near a challenge（支持触控）
         const touchJumpJustPressed = (touchState.up && !this.lastTouchState.up) || 
                                      (touchState.jump && !this.lastTouchState.jump);
-        if ((Phaser.Input.Keyboard.JustDown(this.cursors.up) || touchJumpJustPressed) && !this.isNearChallenge) {
+        if ((Phaser.Input.Keyboard.JustDown(this.cursors.up) || Phaser.Input.Keyboard.JustDown(this.moveKeys.up) || touchJumpJustPressed) && !this.isNearChallenge) {
             this.handleJump();
         }
 

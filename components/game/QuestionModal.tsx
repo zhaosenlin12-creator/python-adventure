@@ -5,6 +5,8 @@ import { Question } from '@/lib/campaigns';
 import { playSound } from '@/lib/soundEffects';
 import { FileText, Skull, Timer, CheckCircle2, XCircle } from 'lucide-react';
 import { executePythonCode, compareCodeOutputs, TestCase } from '@/lib/codeExecutor';
+import type { CampaignQuestionMode } from '@/lib/gameplayText';
+import { getCampaignQuestionCopy } from '@/lib/gameplayText';
 
 interface QuestionModalProps {
   isOpen: boolean;
@@ -16,6 +18,7 @@ interface QuestionModalProps {
   totalQuestions?: number;  // 总题目数
   timeLimit?: number;  // 答题时间限制（秒）
   isFailed?: boolean;  // 是否是失败状态（血量为0）
+  mode?: CampaignQuestionMode;
 }
 
 export default function QuestionModal({ 
@@ -27,13 +30,16 @@ export default function QuestionModal({
   currentIndex = 0,
   totalQuestions = 1,
   timeLimit = 60,
-  isFailed = false
+  isFailed = false,
+  mode = 'challenge'
 }: QuestionModalProps) {
   const [selectedAnswer, setSelectedAnswer] = useState<string>('');
   const [userInput, setUserInput] = useState<string>('');
   const [showResult, setShowResult] = useState<boolean>(false);
   const [isCorrect, setIsCorrect] = useState<boolean>(false);
   const [timeLeft, setTimeLeft] = useState<number>(timeLimit);
+  const copy = getCampaignQuestionCopy(mode, currentIndex, totalQuestions);
+  const isRetryStyle = isFailed || mode === 'retry';
 
   useEffect(() => {
     if (isOpen) {
@@ -504,11 +510,12 @@ export default function QuestionModal({
             {/* 题目头部 - 移动端适配 */}
             <div className="flex items-start sm:items-center justify-between mb-4 sm:mb-6 gap-2">
               <div className="flex items-center gap-2 sm:gap-3">
-                {isFailed ? <Skull className="w-7 h-7 sm:w-8 sm:h-8 text-red-500" /> : <FileText className="w-7 h-7 sm:w-8 sm:h-8 text-blue-400" />}
+                {isRetryStyle ? <Skull className="w-7 h-7 sm:w-8 sm:h-8 text-red-500" /> : <FileText className="w-7 h-7 sm:w-8 sm:h-8 text-blue-400" />}
                 <div>
                   <h2 className={`text-lg sm:text-2xl font-bold ${
-                    isFailed ? 'text-red-500' : 'text-blue-400'
-                  }`}>{isFailed ? '答题复活！' : '知识挑战'}</h2>
+                    isRetryStyle ? 'text-red-500' : 'text-blue-400'
+                  }`}>{copy.title}</h2>
+                  <p className="mt-1 text-xs sm:text-sm text-slate-400">{copy.subtitle}</p>
                   <div className="flex items-center gap-2 mt-1">
                     <span className={`text-xs sm:text-sm font-medium ${getDifficultyColor(question.difficulty)}`}>
                       {getDifficultyText(question.difficulty)}
@@ -524,7 +531,7 @@ export default function QuestionModal({
                   </div>
                 </div>
               </div>
-              {!isFailed && (
+              {mode === 'challenge' && !isRetryStyle && (
                 <button
                   onClick={onClose}
                   className="text-gray-400 hover:text-white active:text-gray-200 text-2xl font-bold p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
@@ -612,14 +619,14 @@ export default function QuestionModal({
           {/* 结果显示 - 在题目下方 */}
           {showResult && (
           <div className={`mt-6 text-center p-8 rounded-lg ${
-            isFailed ? 'bg-red-900/30 border-2 border-red-500/30' : 'bg-blue-900/30'
+            isRetryStyle ? 'bg-red-900/30 border-2 border-red-500/30' : 'bg-blue-900/30'
           }`}>
             <div className="mb-6">
               {isCorrect ? (
                 <div className="animate-bounce">
                   <div className="mb-4 animate-pulse flex justify-center"><CheckCircle2 className="w-20 h-20 text-green-400" strokeWidth={2.5} /></div>
-                  <h3 className="text-4xl font-bold mb-3 text-green-400">答对了！</h3>
-                  <p className="text-xl text-slate-500">太棒了，继续加油！</p>
+                  <h3 className="text-4xl font-bold mb-3 text-green-400">{copy.successTitle}</h3>
+                  <p className="text-xl text-slate-500">{copy.successBody}</p>
                 </div>
               ) : (
                 <div className="animate-shake">
@@ -628,7 +635,7 @@ export default function QuestionModal({
                     {timeLeft === 0 ? '超时了' : '答错了'}
                   </h3>
                   <p className="text-xl mb-4 text-slate-500">
-                    {timeLeft === 0 ? '时间到了，再快一点！' : '不要气馁，再试一次！'}
+                    {timeLeft === 0 ? copy.timeoutBody : copy.wrongBody}
                   </p>
                   <div className="bg-slate-800 p-4 rounded-lg text-left border border-slate-600">
                     <p className="text-white text-lg">
@@ -641,7 +648,7 @@ export default function QuestionModal({
                     </p>
                     {question.explanation && (
                       <p className="text-slate-500 mt-3 text-base">
-                        <strong className="text-sky-500">解释：</strong>
+                        <strong className="text-sky-500">解析：</strong>
                         <span className="ml-2">{question.explanation}</span>
                       </p>
                     )}

@@ -13,7 +13,7 @@ if (-not (Test-Path "backend")) {
 
 $zipFile = "deploy/backend-deploy.zip"
 $stageDir = "deploy/backend-dist"
-$excludedDirectories = @("__pycache__", "venv", ".venv", ".hypothesis", ".pytest_cache", "uploads")
+$excludedDirectories = @("__pycache__", "venv", ".venv", ".hypothesis", ".pytest_cache", "uploads", "logs", "tests")
 $dbArtifactPattern = '\.(db|sqlite|sqlite3)($|[.\-])'
 $runtimeDeployFiles = @(
     "backup-database.sh",
@@ -64,7 +64,7 @@ Get-ChildItem -Path $stageDir -Recurse -File -Force |
     Where-Object {
         $_.Extension -eq ".pyc" -or
         $_.Name -eq ".env" -or
-        $_.Name -eq "backend-dev.log" -or
+        $_.Extension -eq ".log" -or
         $_.Name -match $dbArtifactPattern
     } |
     Remove-Item -Force

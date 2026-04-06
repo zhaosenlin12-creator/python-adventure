@@ -24,6 +24,8 @@ import { grantLevelCompleteReward } from '@/lib/utils/foodRewards';
 import { showFoodRewardToast } from '@/components/ui/FoodRewardToast';
 import { showCoinRewardToast } from '@/components/ui/CoinRewardToast';
 import { addCoinsToServer } from '@/lib/api/coinAPI';
+import { shouldAutoGrantCampaignSkill } from '@/lib/skills';
+import type { CampaignQuestionMode } from '@/lib/gameplayText';
 
 interface PlatformGameProps {
     onExit: () => void;
@@ -34,6 +36,20 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
     const gameRef = useRef<Phaser.Game | null>(null);
     const parentRef = useRef<HTMLDivElement>(null);
     const { isTouchDevice } = useDeviceType();
+
+    const setDevPlatformGame = (game: Phaser.Game | null) => {
+        if (process.env.NODE_ENV === 'development' && typeof window !== 'undefined') {
+            (window as Window & { __platformPhaserGame?: Phaser.Game | null }).__platformPhaserGame = game;
+        }
+    };
+
+    const destroyPlatformGame = () => {
+        if (gameRef.current) {
+            gameRef.current.destroy(true);
+            gameRef.current = null;
+        }
+        setDevPlatformGame(null);
+    };
     
     // 战役系统状态
     const [selectedCampaign, setSelectedCampaign] = useState<Campaign | null>(null);
@@ -46,6 +62,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
     const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
     const [questionIndex, setQuestionIndex] = useState(0);
     const [showQuestion, setShowQuestion] = useState(false);
+    const [questionMode, setQuestionMode] = useState<CampaignQuestionMode>('challenge');
     const [isLevelFailed, setIsLevelFailed] = useState(false); // 标记关卡是否失败
     
     // 复活系统状态
@@ -98,10 +115,17 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         coins: Math.round(baseCoins * (hasSkill('school_star') ? 1.1 : 1)),
     });
 
-    const unlockRewardSkills = (skillIds?: string[]) => {
-        if (!skillIds?.length) return;
+    const unlockRewardSkills = (rewardSkills?: string[] | string) => {
+        const skillIds = Array.isArray(rewardSkills)
+            ? rewardSkills
+            : rewardSkills
+                ? [rewardSkills]
+                : [];
+
+        if (!skillIds.length) return;
+
         skillIds.forEach((skillId) => {
-            if (skillId) {
+            if (skillId && shouldAutoGrantCampaignSkill(skillId)) {
                 unlockSkill(skillId);
             }
         });
@@ -117,6 +141,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
             (window as any).__questionCallback = onAnswer;
             
             // 显示题目
+            setQuestionMode('challenge');
             setCurrentQuestion(question);
             setShowQuestion(true);
         };
@@ -140,13 +165,11 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
                 // 战役模式
                 if (data.success) {
                     // 成功：销毁游戏实例，显示题目挑战
-                    if (gameRef.current) {
-                        gameRef.current.destroy(true);
-                        gameRef.current = null;
-                    }
+                    destroyPlatformGame();
                     
                     setIsLevelFailed(false); // 重置失败标记
                     if (currentCampaignLevel.questions.length > 0) {
+                        setQuestionMode('clear');
                         setCurrentQuestion(currentCampaignLevel.questions[0]);
                         setQuestionIndex(0);
                         setShowQuestion(true);
@@ -159,15 +182,13 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
                     console.log('[PlatformGame] 关卡失败，弹出重生题目（保留游戏实例）');
                     setIsLevelFailed(true); // 标记为失败
                     if (currentCampaignLevel.questions.length > 0) {
+                        setQuestionMode('retry');
                         setCurrentQuestion(currentCampaignLevel.questions[0]);
                         setQuestionIndex(0);
                         setShowQuestion(true);
                     } else {
                         // 没有题目，销毁游戏实例并显示失败界面
-                        if (gameRef.current) {
-                            gameRef.current.destroy(true);
-                            gameRef.current = null;
-                        }
+                        destroyPlatformGame();
                         setLevelCompleteData({
                             success: false,
                             title: currentCampaignLevel.name,
@@ -181,10 +202,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
                 }
             } else {
                 // 非战役模式：销毁游戏实例，设置关卡完成数据
-                if (gameRef.current) {
-                    gameRef.current.destroy(true);
-                    gameRef.current = null;
-                }
+                destroyPlatformGame();
                 
                 setLevelCompleteData({
                     success: data.success,
@@ -205,10 +223,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
             window.removeEventListener('showQuestion', handleShowQuestion);
             window.removeEventListener('playerDeath', handlePlayerDeath);
             window.removeEventListener('platformLevelComplete', handleLevelComplete);
-            if (gameRef.current) {
-                gameRef.current.destroy(true);
-                gameRef.current = null;
-            }
+            destroyPlatformGame();
         };
     }, [currentCampaignLevel, playerLives]);
 
@@ -239,6 +254,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         
         setCurrentCampaignLevel(levelWithRandomQuestions);
         setPlayerLives(getCampaignStartingLives());
+        setQuestionMode('challenge');
         
         // 重置题目状态
         setCurrentQuestion(null);
@@ -367,7 +383,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         // 玩家需要使用获得的食物手动喂养宠物
         
         // 🔥 标记关卡完成（使用年龄段独立进度）
-        unlockRewardSkills(currentCampaignLevel.rewards.skills);
+        unlockRewardSkills(currentCampaignLevel.rewards.skills ?? (currentCampaignLevel.rewards as any).skill);
 
         if (currentAgeGroup) {
             completeAgeGroupLevel(currentAgeGroup, currentCampaignLevel.id);
@@ -401,7 +417,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
                 );
                 addXp(campaignRewardValues.xp);
                 addCoins(campaignRewardValues.coins);
-                unlockRewardSkills(selectedCampaign.rewards.skills);
+                unlockRewardSkills(selectedCampaign.rewards.skills ?? (selectedCampaign.rewards as any).skill);
 
                 if (campaignRewardValues.coins > 0) {
                     showCoinRewardToast(
@@ -446,8 +462,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         // 先销毁现有游戏实例
         if (gameRef.current) {
             console.log('[PlatformGame] 销毁现有游戏实例');
-            gameRef.current.destroy(true);
-            gameRef.current = null;
+            destroyPlatformGame();
         }
         
         // 🔥 检查是否已经有年龄段题目（通过题目ID前缀判断）
@@ -490,6 +505,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
                 title: campaignLevel.name,
                 description: campaignLevel.description,
                 story: campaignLevel.story || campaignLevel.description,
+                questions: campaignLevel.questions,
                 difficulty: 'medium',
                 objectives: [{ type: 'reach' as const, description: '到达终点' }],
                 rewards: { exp: campaignLevel.rewards.xp, coins: campaignLevel.rewards.coins },
@@ -526,7 +542,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         // 移动端使用自适应缩放
         const config: Phaser.Types.Core.GameConfig = {
             type: Phaser.AUTO,
-            width: 800,
+            width: isTouchDevice ? 800 : 960,
             height: 600,
             parent: parentRef.current,
             physics: {
@@ -553,6 +569,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         };
 
         gameRef.current = new Phaser.Game(config);
+        setDevPlatformGame(gameRef.current);
         
         // 启动场景并传递关卡数据
         gameRef.current.scene.start('PlatformGameScene', { level });
@@ -560,10 +577,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
 
     const restartLevel = () => {
         if (currentLevel) {
-            if (gameRef.current) {
-                gameRef.current.destroy(true);
-                gameRef.current = null;
-            }
+            destroyPlatformGame();
             startLevel(currentLevel);
         }
     };
@@ -635,7 +649,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
                     <div className="mb-8">
                         <h2 className="text-2xl font-bold text-white mb-2">选择关卡</h2>
                         <p className="text-slate-500">
-                            通过平台跳跃、躲避障碍、击败敌人，完成目标后回答问题即可通关！
+                            先完成目标，再答题过关；失败后答对 1 题可重开本关。
                         </p>
                     </div>
 
@@ -724,10 +738,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
                         </button>
                         <button
                             onClick={() => {
-                                if (gameRef.current) {
-                                    gameRef.current.destroy(true);
-                                    gameRef.current = null;
-                                }
+                                destroyPlatformGame();
                                 setShowCampaignSelector(true);
                                 setSelectedCampaign(null);
                                 setCurrentCampaignLevel(null);
@@ -741,25 +752,21 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
                 </div>
 
                 {/* 游戏容器 - 移动端自适应 */}
-                <div className="flex-1 flex items-center justify-center bg-gradient-to-br from-slate-800 to-slate-900 overflow-auto px-3 py-3">
+                <div className="flex-1 overflow-auto bg-gradient-to-br from-slate-800 to-slate-900 px-2 py-2 md:px-4 md:py-4">
                     <div
-                        ref={parentRef}
-                        className="h-full w-full rounded-2xl border border-slate-700/70 bg-slate-950/70 shadow-2xl"
-                        style={{
-                            maxWidth: 'min(96vw, 1440px)',
-                            maxHeight: 'calc(100vh - 150px)',
-                        }}
-                    />
-                </div>
-
-                {/* 操作提示 - 移动端隐藏 */}
-                <div className="bg-slate-800 backdrop-blur-sm border-t border-slate-700 p-2 md:p-4 hidden md:block">
-                    <div className="max-w-4xl mx-auto flex justify-center gap-8 text-slate-500 text-sm">
-                        <span>⬅️ ➡️ 移动</span>
-                        <span>⬆️ 跳跃</span>
-                        <span>SPACE 冲刺</span>
-                        <span>X 攻击</span>
-                        <span>到达🏮完成目标即可通关</span>
+                        className="mx-auto flex min-h-full min-w-fit items-center justify-center"
+                    >
+                        <div
+                            ref={parentRef}
+                            className="rounded-2xl border border-slate-700/70 bg-slate-950/70 shadow-2xl"
+                            style={{
+                                width: isTouchDevice ? 'min(100%, 960px)' : 'min(98vw, 1680px)',
+                                aspectRatio: isTouchDevice ? '4 / 3' : '16 / 10',
+                                minWidth: isTouchDevice ? '320px' : '960px',
+                                minHeight: isTouchDevice ? '240px' : '600px',
+                                maxHeight: isTouchDevice ? 'calc(100vh - 96px)' : 'calc(100vh - 92px)',
+                            }}
+                        />
                     </div>
                 </div>
 
@@ -801,6 +808,8 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
                     currentIndex={questionIndex}
                     totalQuestions={currentCampaignLevel.questions.length}
                     timeLimit={60}
+                    isFailed={questionMode === 'retry'}
+                    mode={questionMode}
                 />
             )}
 

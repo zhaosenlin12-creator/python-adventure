@@ -94,7 +94,8 @@ export default function CoinHistory({ isOpen, onClose, token }: CoinHistoryProps
       'workshop_play': '社区关卡被游玩',
       'workshop_like': '社区关卡被点赞',
       'food_purchase': '购买食物',
-      'decoration_purchase': '购买装饰'
+      'decoration_purchase': '购买装饰',
+      'system_update_compensation_20260406': '系统更新补给'
     };
     return labels[source] || source;
   };
@@ -103,7 +104,7 @@ export default function CoinHistory({ isOpen, onClose, token }: CoinHistoryProps
   
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/50 backdrop-blur-sm">
-      <div className="bg-slate-800 backdrop-blur-md border-2 border-slate-700 rounded-2xl shadow-xl w-full max-w-2xl max-h-[80vh] m-4 flex flex-col">
+      <div data-testid="coin-history-modal" className="bg-slate-800 backdrop-blur-md border-2 border-slate-700 rounded-2xl shadow-xl w-full max-w-2xl max-h-[80vh] m-4 flex flex-col">
         {/* 标题栏 */}
         <div className="flex items-center justify-between p-4 border-b border-slate-700">
           <div className="flex items-center gap-2">
@@ -112,6 +113,7 @@ export default function CoinHistory({ isOpen, onClose, token }: CoinHistoryProps
           </div>
           <button
             onClick={onClose}
+            data-testid="coin-history-close"
             className="p-2 hover:bg-slate-700 rounded-lg transition-colors"
           >
             <Icon name="close" size="sm" clickable />

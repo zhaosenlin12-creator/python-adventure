@@ -9,6 +9,7 @@ import * as primaryUpper from '@/lib/questionBank/primary-upper';
 import * as juniorHigh from '@/lib/questionBank/junior-high';
 import type { AgeGroup } from '@/types/ageGroup';
 import type { Question as BankQuestion } from '@/lib/questionBank/types';
+import { getCampaignQuestionCopy } from '@/lib/gameplayText';
 
 interface Question {
   id: string;
@@ -45,6 +46,7 @@ export default function DeathQuizModal({ isOpen, onSuccess }: DeathQuizModalProp
   
   // 获取当前年龄段
   const { selectedAgeGroup } = useGameStore();
+  const copy = getCampaignQuestionCopy('retry');
 
   const normalize = (s: string) => s.toLowerCase().replace(/\s+/g, '').trim();
 
@@ -151,8 +153,8 @@ export default function DeathQuizModal({ isOpen, onSuccess }: DeathQuizModalProp
     <div className="fixed inset-0 bg-gradient-to-b from-[#0a0e27]/95 via-[#1a1e3e]/95 to-[#0a0e27]/95 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto">
       <div className="bg-slate-800 backdrop-blur-md rounded-xl p-6 max-w-lg w-full border-2 border-slate-700 shadow-lg">
         <div className="text-center mb-4">
-          <h2 className="text-3xl font-bold text-blue-400 animate-pulse"><Lightbulb className="w-7 h-7 text-blue-400 inline mr-1" /> 答题复活！</h2>
-          <p className="text-slate-500 mt-2">答对题目才能重新开始</p>
+          <h2 className="text-3xl font-bold text-blue-400 animate-pulse"><Lightbulb className="w-7 h-7 text-blue-400 inline mr-1" /> {copy.title}</h2>
+          <p className="text-slate-500 mt-2">{copy.subtitle}</p>
           {wrongCount > 0 && <p className="text-red-400 text-sm mt-1">已答错 {wrongCount} 次</p>}
         </div>
 
@@ -193,9 +195,9 @@ export default function DeathQuizModal({ isOpen, onSuccess }: DeathQuizModalProp
           <div className="text-center py-4">
             <div className="text-6xl mb-3">{correct ? <CheckCircle2 className="w-14 h-14 text-green-400 mx-auto" /> : <XCircle className="w-14 h-14 text-red-500 mx-auto" />}</div>
             <div className={`text-2xl font-bold mb-3 ${correct ? 'text-green-500' : 'text-red-500'}`}>
-              {correct ? '🎉 答对了！' : '😢 答错了！'}
+              {correct ? copy.successTitle : '答错了'}
             </div>
-            <p className="text-slate-500 mb-4">{correct ? '正在重新开始...' : '记住答案再试一次'}</p>
+            <p className="text-slate-500 mb-4">{correct ? copy.successBody : copy.wrongBody}</p>
             
             {!correct && (
               <>

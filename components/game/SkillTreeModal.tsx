@@ -1,78 +1,145 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { X, Zap, ArrowRight, Lock, Unlock, Wind, ArrowUp, ChevronsUp } from 'lucide-react';
+import type { ElementType } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import {
+    ArrowUp,
+    CheckCircle2,
+    ChevronRight,
+    ChevronsUp,
+    Clock3,
+    Coins,
+    Shield,
+    Sparkles,
+    Wind,
+    X,
+    Zap,
+} from 'lucide-react';
 import { useGameStore } from '@/store/gameStore';
-import SkillUnlockNotification from './SkillUnlockNotification';
+import { SKILL_SHORT_INSTRUCTIONS } from '@/lib/gameplayText';
+import {
+    getSkillDisplayName,
+    getSkillShopRule,
+    isShopSkill,
+} from '@/lib/skills';
 
-interface SkillNode {
-    id: string;
-    title: string;
-    description: string;
-    icon: React.ElementType;
-    cost: number;
-    requirements: string[];
-    x: number;
-    y: number;
+type SkillTab = 'shop' | 'campaign';
+
+interface ShopSkillCard {
+    skillId: string;
+    icon: ElementType;
+    summary: string;
+    effect: string;
+    prerequisiteSkills: string[];
 }
 
-const SKILL_NODES: SkillNode[] = [
+interface CampaignBadge {
+    skillId: string;
+    title: string;
+    description: string;
+    unlockHint: string;
+}
+
+const SHOP_SKILL_CARDS: ShopSkillCard[] = [
     {
-        id: 'double_jump',
-        title: '二段跳',
-        description: '在空中再次跳跃',
+        skillId: 'double_jump',
         icon: ChevronsUp,
-        cost: 100,
-        requirements: [],
-        x: 50,
-        y: 80
+        summary: '先把纵向路线打开，平台课和世界探索都会立刻顺手很多。',
+        effect: '空中再跳一次，补足容错并解锁更高的平台路线。',
+        prerequisiteSkills: [],
     },
     {
-        id: 'dash',
-        title: '冲刺',
-        description: '按Shift键快速向前冲刺',
+        skillId: 'dash',
         icon: Zap,
-        cost: 300,
-        requirements: ['double_jump'],
-        x: 20,
-        y: 50
+        summary: '短距离爆发位移，过缝隙、抢时机、躲危险都更稳。',
+        effect: '按 H 冲刺，SPACE 也能兼容触发。',
+        prerequisiteSkills: ['double_jump'],
     },
     {
-        id: 'wall_jump',
-        title: '墙跳',
-        description: '在墙上按跳跃键反弹',
+        skillId: 'wall_jump',
         icon: ArrowUp,
-        cost: 500,
-        requirements: ['double_jump'],
-        x: 80,
-        y: 50
+        summary: '贴墙反弹，开始真正利用墙面做解题和攀爬。',
+        effect: '贴墙时继续起跳，可反弹到更高位置。',
+        prerequisiteSkills: ['double_jump'],
     },
     {
-        id: 'glide',
-        title: '滑翔',
-        description: '空中长按跳跃键缓慢下落',
+        skillId: 'glide',
         icon: Wind,
-        cost: 800,
-        requirements: ['wall_jump'],
-        x: 80,
-        y: 20
-    }
+        summary: '降低下坠速度，让高空路段更像规划而不是碰运气。',
+        effect: '长按跳跃时缓慢下落，更容易修正落点。',
+        prerequisiteSkills: ['wall_jump'],
+    },
+    {
+        skillId: 'time_slow',
+        icon: Clock3,
+        summary: '高压平台和 Boss 节奏点给自己争取思考窗口。',
+        effect: '按 J 暂时减速周围节奏，用来过难点或抓时机。',
+        prerequisiteSkills: ['dash'],
+    },
+    {
+        skillId: 'chemical_shield',
+        icon: Shield,
+        summary: '面对酸液、毒气和弹幕时，多一层主动容错。',
+        effect: '按 K 展开护盾，短时间抵挡伤害并稳住推进。',
+        prerequisiteSkills: ['glide', 'time_slow'],
+    },
 ];
 
-interface TalentBadge {
-    id: string;
-    title: string;
-    description: string;
-}
-
-const CAMPAIGN_TALENT_BADGES: TalentBadge[] = [
-    { id: 'ancient_wisdom', title: '古老智慧', description: '战役天赋：战役与关卡经验额外 +10%' },
-    { id: 'school_star', title: '校园之星', description: '战役天赋：战役与关卡金币额外 +10%' },
-    { id: 'academic_master', title: '学霸护符', description: '战役天赋：进入战役时额外获得 1 次生命' },
-    { id: 'science_master', title: '科学大师', description: '已获得的战役奖励天赋，可继续扩展玩法效果' },
-    { id: 'time_slow', title: '时间减速', description: '已获得的高级战役技能资格' },
-    { id: 'chemical_shield', title: '化学护盾', description: '已获得的高级战役技能资格' },
-    { id: 'quantum_dash', title: '量子冲刺', description: '已获得的高级战役技能资格' },
+const CAMPAIGN_BADGES: CampaignBadge[] = [
+    {
+        skillId: 'ancient_wisdom',
+        title: '古老智慧',
+        description: '经验获取 +10%。',
+        unlockHint: '完成战役 1 自动获得。',
+    },
+    {
+        skillId: 'school_star',
+        title: '校园之星',
+        description: '训练金币获取 +10%。',
+        unlockHint: '完成战役 2 自动获得。',
+    },
+    {
+        skillId: 'science_master',
+        title: '科学大师',
+        description: '主动技能冷却更短，连招节奏更顺。',
+        unlockHint: '完成战役 3 自动获得。',
+    },
+    {
+        skillId: 'academic_master',
+        title: '学霸护符',
+        description: '战役开局多 1 条命，容错更高。',
+        unlockHint: '完成战役 4 自动获得。',
+    },
+    {
+        skillId: 'time_mastery',
+        title: '时空掌控',
+        description: '时间减速持续更久、压制更明显。',
+        unlockHint: '完成战役 5 自动获得。',
+    },
+    {
+        skillId: 'windControl',
+        title: '驭风术',
+        description: '强风区域对你的干扰明显减弱。',
+        unlockHint: '完成战役 6 自动获得。',
+    },
+    {
+        skillId: 'shield',
+        title: '守护骨架',
+        description: '最大生命更高，硬扛失误的空间更大。',
+        unlockHint: '完成战役 6 自动获得。',
+    },
+    {
+        skillId: 'quantum_dash',
+        title: '量子冲刺',
+        description: '把冲刺升级为更远更快的后期强化。',
+        unlockHint: '完成战役 8 自动强化。',
+    },
+    {
+        skillId: 'time_shield',
+        title: '时空护盾',
+        description: '把化学护盾强化为更久更厚的高阶护盾。',
+        unlockHint: '完成战役 10 自动强化。',
+    },
 ];
 
 interface SkillTreeModalProps {
@@ -81,257 +148,446 @@ interface SkillTreeModalProps {
 }
 
 export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps) {
-    const { skills, arenaScore, unlockSkill, addArenaScore } = useGameStore();
-    const [selectedSkill, setSelectedSkill] = useState<SkillNode | null>(null);
-    const [showNotification, setShowNotification] = useState(false);
-    const [unlockedSkillInfo, setUnlockedSkillInfo] = useState<{
+    const {
+        skills,
+        coins,
+        level,
+        unlockSkill,
+        spendCoins,
+        completedCampaigns,
+        completedCampaignLevels,
+        campaignProgress,
+        ageGroupCampaignProgress,
+    } = useGameStore();
+    const [tab, setTab] = useState<SkillTab>('shop');
+    const [isCompactViewport, setIsCompactViewport] = useState(() =>
+        typeof window !== 'undefined' ? window.innerWidth < 960 : false
+    );
+    const [purchaseFeedback, setPurchaseFeedback] = useState<{
         title: string;
         description: string;
         instruction: string;
     } | null>(null);
-    const unlockedTalentBadges = CAMPAIGN_TALENT_BADGES.filter((badge) => skills.includes(badge.id));
 
-    // 控制游戏按键
     useEffect(() => {
         if (isOpen) {
             if (typeof window !== 'undefined') {
                 window.dispatchEvent(new CustomEvent('modal-opened'));
             }
-        } else {
-            if (typeof window !== 'undefined') {
-                window.dispatchEvent(new CustomEvent('modal-closed'));
-            }
+        } else if (typeof window !== 'undefined') {
+            window.dispatchEvent(new CustomEvent('modal-closed'));
         }
     }, [isOpen]);
 
-    if (!isOpen) return null;
+    useEffect(() => {
+        if (typeof window === 'undefined') {
+            return;
+        }
 
-    const handleUnlock = (skill: SkillNode) => {
-        if (skills.includes(skill.id)) return;
-        const meetsRequirements = skill.requirements.every(req => skills.includes(req));
-        if (!meetsRequirements) return;
+        const mediaQuery = window.matchMedia('(max-width: 959px)');
+        const handleViewportChange = () => setIsCompactViewport(mediaQuery.matches);
 
-        if (arenaScore >= skill.cost) {
-            unlockSkill(skill.id);
-            addArenaScore(-skill.cost);
-            
-            const skillInstructions = {
-                'double_jump': '空中再按UP键进行二段跳',
-                'dash': '按SHIFT键快速冲刺',
-                'wall_jump': '贴着墙壁按UP键墙跳',
-                'glide': '空中长按UP键滑翔'
-            };
-            
-            setUnlockedSkillInfo({
-                title: skill.title,
-                description: skill.description,
-                instruction: skillInstructions[skill.id as keyof typeof skillInstructions]
-            });
-            setShowNotification(true);
-            
-            if (typeof window !== 'undefined') {
-                window.dispatchEvent(new CustomEvent('skill-unlocked', {
-                    detail: { skillId: skill.id }
-                }));
+        handleViewportChange();
+        mediaQuery.addEventListener('change', handleViewportChange);
+
+        return () => mediaQuery.removeEventListener('change', handleViewportChange);
+    }, []);
+
+    useEffect(() => {
+        if (!purchaseFeedback) {
+            return;
+        }
+
+        const timer = window.setTimeout(() => {
+            setPurchaseFeedback(null);
+        }, 3600);
+
+        return () => window.clearTimeout(timer);
+    }, [purchaseFeedback]);
+
+    const campaignAccessSet = useMemo(() => {
+        const unlocked = new Set<string>();
+
+        completedCampaigns.forEach((campaignId) => {
+            unlocked.add(campaignId);
+            const splitIndex = campaignId.indexOf(':');
+            if (splitIndex >= 0) {
+                unlocked.add(campaignId.slice(splitIndex + 1));
             }
+        });
+
+        completedCampaignLevels.forEach((levelId) => {
+            const match = levelId.match(/(campaign_\d+)/);
+            if (match) {
+                unlocked.add(match[1]);
+            }
+        });
+
+        Object.entries(campaignProgress).forEach(([campaignId, progress]) => {
+            if ((progress ?? 0) > 0) {
+                unlocked.add(campaignId);
+            }
+        });
+
+        Object.values(ageGroupCampaignProgress).forEach((progress) => {
+            progress.completed.forEach((campaignId) => unlocked.add(campaignId));
+            progress.levels.forEach((levelId) => {
+                const match = levelId.match(/(campaign_\d+)/);
+                if (match) {
+                    unlocked.add(match[1]);
+                }
+            });
+        });
+
+        return unlocked;
+    }, [ageGroupCampaignProgress, campaignProgress, completedCampaignLevels, completedCampaigns]);
+
+    const shopCards = useMemo(
+        () =>
+            SHOP_SKILL_CARDS.map((card) => {
+                const rule = getSkillShopRule(card.skillId);
+                if (!rule) {
+                    throw new Error(`Missing skill shop rule for ${card.skillId}`);
+                }
+
+                const owned = skills.includes(card.skillId);
+                const campaignReady = campaignAccessSet.has(rule.requiredCampaignId);
+                const levelReady = level >= rule.requiredLevel;
+                const prerequisitesReady = card.prerequisiteSkills.every((skillId) => skills.includes(skillId));
+                const affordable = coins >= rule.costCoins;
+                const canUnlock =
+                    !owned && campaignReady && levelReady && prerequisitesReady && affordable;
+
+                const blockers: string[] = [];
+                if (!campaignReady) blockers.push(`先玩到 ${rule.requiredCampaignLabel}`);
+                if (!levelReady) blockers.push(`角色需 Lv.${rule.requiredLevel}+`);
+                if (!prerequisitesReady) {
+                    blockers.push(
+                        `前置：${card.prerequisiteSkills.map((skillId) => getSkillDisplayName(skillId)).join('、')}`
+                    );
+                }
+                if (!affordable) blockers.push(`训练金币不足（需 ${rule.costCoins}）`);
+
+                return {
+                    ...card,
+                    rule,
+                    owned,
+                    canUnlock,
+                    statusText: owned ? '已掌握，进入关卡后直接生效。' : blockers.join(' · ') || '可以学习',
+                };
+            }),
+        [campaignAccessSet, coins, level, skills]
+    );
+
+    const campaignOwnedCount = CAMPAIGN_BADGES.filter((badge) => skills.includes(badge.skillId)).length;
+
+    const handleUnlock = (skillId: string) => {
+        const rule = getSkillShopRule(skillId);
+        const card = shopCards.find((item) => item.skillId === skillId);
+
+        if (!rule || !card || card.owned || !card.canUnlock) {
+            return;
+        }
+
+        if (!spendCoins(rule.costCoins)) {
+            return;
+        }
+
+        unlockSkill(skillId);
+        setPurchaseFeedback({
+            title: getSkillDisplayName(skillId),
+            description: card.effect,
+            instruction: SKILL_SHORT_INSTRUCTIONS[skillId] ?? '进入关卡后会自动生效。',
+        });
+
+        if (typeof window !== 'undefined') {
+            window.dispatchEvent(
+                new CustomEvent('skill-unlocked', {
+                    detail: { skillId },
+                })
+            );
         }
     };
 
-    // 技能节点渲染
-    const renderSkillNode = (node: SkillNode) => {
-        const isUnlocked = skills.includes(node.id);
-        const canUnlock = !isUnlocked &&
-            node.requirements.every(req => skills.includes(req)) &&
-            arenaScore >= node.cost;
-        const isLocked = !isUnlocked && !canUnlock;
+    if (!isOpen) return null;
 
-        return (
-            <button
-                key={node.id}
-                onClick={() => setSelectedSkill(node)}
-                className={`absolute transform -translate-x-1/2 -translate-y-1/2 
-                    w-12 h-12 md:w-16 md:h-16 rounded-full border-4 flex items-center justify-center transition-all duration-300
-                    ${isUnlocked
-                        ? 'bg-blue-600 border-slate-600 shadow-[0_0_20px_rgba(16,185,129,0.5)] scale-110'
-                        : canUnlock
-                            ? 'bg-blue-900/20 border-amber-400 animate-pulse hover:scale-110 cursor-pointer'
-                            : 'bg-slate-700 border-slate-600 opacity-60 cursor-not-allowed'}
-                    ${selectedSkill?.id === node.id ? 'ring-4 ring-blue-400 ring-offset-2 md:ring-offset-4 ring-offset-slate-800' : ''}
-                `}
-                style={{ left: `${node.x}%`, top: `${node.y}%` }}
-            >
-                <node.icon className={`w-6 h-6 md:w-8 md:h-8 ${isUnlocked ? 'text-white' : 'text-slate-500'}`} />
-            </button>
-        );
+    const panelShellStyle = isCompactViewport
+        ? { left: 8, right: 8, bottom: 8, top: 'auto' as const }
+        : { right: 16, top: 16, bottom: 16, left: 'auto' as const };
+
+    const panelCardStyle = {
+        width: isCompactViewport ? '100%' : 420,
+        maxWidth: isCompactViewport ? '100%' : 420,
+        maxHeight: isCompactViewport ? '64vh' : '80vh',
     };
 
     return (
-        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 p-2 md:p-4 overflow-auto">
-            <div className="bg-slate-800 backdrop-blur-md rounded-xl shadow-lg w-full max-w-4xl min-h-[500px] md:h-[80vh] border-2 border-slate-700 flex flex-col overflow-hidden relative">
+        <div className="fixed inset-0 z-50">
+            <button
+                aria-label="关闭技能训练册"
+                className="absolute inset-0 bg-slate-950/10"
+                onClick={onClose}
+            />
 
-                {/* Background Grid */}
-                <div className="absolute inset-0 opacity-10 pointer-events-none"
-                    style={{ backgroundImage: 'radial-gradient(#10b981 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
-                </div>
-
-                {/* Header - 移动端响应式 */}
-                <div className="p-3 md:p-6 border-b border-slate-700 bg-blue-900/30 flex justify-between items-center z-10">
-                    <div className="min-w-0 flex-1">
-                        <h2 className="text-xl md:text-3xl font-bold text-white font-pixel flex items-center gap-2 md:gap-3">
-                            <Zap className="text-blue-400 w-5 h-5 md:w-6 md:h-6 flex-shrink-0" />
-                            <span className="truncate">技能树</span>
-                        </h2>
-                        <p className="text-slate-500 mt-0.5 md:mt-1 text-xs md:text-base hidden md:block">解锁强大的新能力</p>
-                    </div>
-                    <div className="flex items-center gap-2 md:gap-6 flex-shrink-0">
-                        <div className="bg-blue-900/30 px-2 md:px-4 py-1 md:py-2 rounded-lg border border-slate-700">
-                            <span className="text-slate-500 text-xs md:text-sm mr-1 md:mr-2 hidden md:inline">可用积分</span>
-                            <span className="text-blue-400 font-bold text-sm md:text-xl">{arenaScore}</span>
+            <div className="pointer-events-none absolute" style={panelShellStyle}>
+                <div
+                    className="pointer-events-auto flex flex-col overflow-hidden rounded-3xl border border-slate-700 bg-slate-950/94 shadow-2xl"
+                    style={panelCardStyle}
+                >
+                    <div className="border-b border-slate-800 bg-slate-900/92 px-4 py-4">
+                        <div className="flex items-start justify-between gap-3">
+                            <div className="min-w-0">
+                                <div className="text-xs font-semibold uppercase tracking-widest text-cyan-300">
+                                    Skill Book
+                                </div>
+                                <h2 className="mt-1 text-xl font-bold text-white">技能训练册</h2>
+                                <p className="mt-1 text-sm leading-6 text-slate-400">
+                                    先推进战役，再用训练金币学习。宠物和家园金币不在这里消耗。
+                                </p>
+                            </div>
+                            <button
+                                onClick={onClose}
+                                className="rounded-full border border-slate-700 p-2 text-slate-400 transition hover:text-white"
+                            >
+                                <X className="h-5 w-5" />
+                            </button>
                         </div>
-                        <button onClick={onClose} className="text-slate-400 hover:text-white transition p-1">
-                            <X className="w-6 h-6 md:w-8 md:h-8" />
-                        </button>
+
+                        <div className="mt-4 grid grid-cols-2 gap-3">
+                            <div className="rounded-2xl border border-slate-800 bg-slate-900/80 px-3 py-3">
+                                <div className="text-xs uppercase tracking-widest text-slate-500">角色等级</div>
+                                <div className="mt-1 text-lg font-bold text-cyan-300">Lv.{level}</div>
+                            </div>
+                            <div className="rounded-2xl border border-slate-800 bg-slate-900/80 px-3 py-3">
+                                <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-slate-500">
+                                    <Coins className="h-3.5 w-3.5" />
+                                    训练金币
+                                </div>
+                                <div className="mt-1 text-lg font-bold text-amber-300">{coins}</div>
+                                <div className="mt-1 text-[11px] leading-5 text-slate-500">
+                                    只用于这里学技能，不会扣宠物金币。
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="mt-4 flex gap-2 rounded-2xl bg-slate-900/80 p-1">
+                            <button
+                                onClick={() => setTab('shop')}
+                                className={`flex-1 rounded-xl px-3 py-2 text-sm font-semibold transition ${
+                                    tab === 'shop'
+                                        ? 'bg-cyan-400 text-slate-950'
+                                        : 'text-slate-300 hover:bg-slate-800'
+                                }`}
+                            >
+                                可购买技能
+                            </button>
+                            <button
+                                onClick={() => setTab('campaign')}
+                                className={`flex-1 rounded-xl px-3 py-2 text-sm font-semibold transition ${
+                                    tab === 'campaign'
+                                        ? 'bg-cyan-400 text-slate-950'
+                                        : 'text-slate-300 hover:bg-slate-800'
+                                }`}
+                            >
+                                战役专精
+                            </button>
+                        </div>
                     </div>
-                </div>
 
-                {/* Main Content - 移动端垂直布局 */}
-                <div className="flex-1 flex flex-col md:flex-row relative overflow-hidden">
-
-                    {/* Tree Visualization Area */}
-                    <div className="flex-1 relative bg-blue-900/30/30 m-2 md:m-4 rounded-xl border border-slate-700 overflow-hidden min-h-[250px] md:min-h-0">
-                        {/* Connections */}
-                        <svg className="absolute inset-0 w-full h-full pointer-events-none">
-                            {SKILL_NODES.map(node =>
-                                node.requirements.map(reqId => {
-                                    const reqNode = SKILL_NODES.find(n => n.id === reqId);
-                                    if (!reqNode) return null;
-                                    return (
-                                        <line
-                                            key={`${reqId}-${node.id}`}
-                                            x1={`${reqNode.x}%`} y1={`${reqNode.y}%`}
-                                            x2={`${node.x}%`} y2={`${node.y}%`}
-                                            stroke={skills.includes(reqId) ? "#10b981" : "#d1d5db"}
-                                            strokeWidth="3"
-                                            strokeDasharray={skills.includes(reqId) ? "0" : "8 4"}
-                                        />
-                                    );
-                                })
-                            )}
-                        </svg>
-
-                        {/* Nodes */}
-                        {SKILL_NODES.map(renderSkillNode)}
-                    </div>
-
-                    {/* Details Panel - 移动端底部显示 */}
-                    <div className="w-full md:w-80 bg-slate-800 border-t md:border-t-0 md:border-l border-slate-700 p-3 md:p-6 flex flex-col z-10 max-h-[40vh] md:max-h-none overflow-auto">
-                        {selectedSkill ? (
-                            <>
-                                <div className="flex md:flex-col items-center gap-3 md:gap-0 md:mb-6">
-                                    <div className="w-14 h-14 md:w-20 md:h-20 bg-blue-900/20 rounded-xl md:rounded-2xl flex items-center justify-center border-2 border-slate-700 flex-shrink-0 md:mx-auto md:mb-6">
-                                        <selectedSkill.icon className="w-7 h-7 md:w-10 md:h-10 text-blue-400" />
+                    <div className="min-h-0 flex-1 overflow-y-auto px-3 pb-4 pt-3 md:px-4">
+                        {tab === 'shop' ? (
+                            <div className="space-y-3">
+                                {purchaseFeedback ? (
+                                    <div className="rounded-2xl border border-emerald-400/30 bg-emerald-500/10 px-3 py-3 text-sm text-emerald-50">
+                                        <div className="flex items-start justify-between gap-3">
+                                            <div className="min-w-0">
+                                                <div className="flex items-center gap-2 text-sm font-semibold text-emerald-200">
+                                                    <CheckCircle2 className="h-4 w-4" />
+                                                    已学会：{purchaseFeedback.title}
+                                                </div>
+                                                <p className="mt-1 text-xs leading-5 text-slate-200">
+                                                    {purchaseFeedback.description}
+                                                </p>
+                                                <div className="mt-2 text-xs font-semibold text-cyan-100">
+                                                    用法：{purchaseFeedback.instruction}
+                                                </div>
+                                            </div>
+                                            <button
+                                                onClick={() => setPurchaseFeedback(null)}
+                                                className="shrink-0 rounded-full border border-emerald-300/30 px-3 py-1 text-xs font-semibold text-emerald-100 transition hover:bg-emerald-400/10"
+                                            >
+                                                收起
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div className="flex-1 md:text-center">
-                                        <h3 className="text-lg md:text-2xl font-bold text-white mb-0.5 md:mb-2">{selectedSkill.title}</h3>
-                                        <p className="text-slate-500 text-xs md:text-sm">{selectedSkill.description}</p>
-                                    </div>
+                                ) : null}
+
+                                <div className="rounded-2xl border border-cyan-400/20 bg-cyan-400/8 px-3 py-3 text-xs leading-5 text-cyan-100">
+                                    推荐路线：二段跳 → 冲刺 / 墙跳 → 滑翔 + 时间减速 → 化学护盾
                                 </div>
 
-                                <div className="space-y-2 md:space-y-4 mt-2 md:mt-auto">
-                                    <div className="flex justify-between items-center p-2 md:p-3 bg-blue-900/30 rounded-lg">
-                                        <span className="text-slate-500 text-sm md:text-base">花费</span>
-                                        <span className={`font-bold text-sm md:text-base ${arenaScore >= selectedSkill.cost ? 'text-blue-400' : 'text-red-400'}`}>
-                                            {selectedSkill.cost} 积分
-                                        </span>
-                                    </div>
-
-                                    {skills.includes(selectedSkill.id) ? (
-                                        <button disabled className="w-full py-2 md:py-3 bg-green-600 text-white rounded-lg font-bold flex items-center justify-center gap-2 opacity-50 cursor-default text-sm md:text-base">
-                                            <Unlock className="w-4 h-4 md:w-5 md:h-5" />
-                                            已解锁
-                                        </button>
-                                    ) : (
-                                        <button
-                                            onClick={() => handleUnlock(selectedSkill)}
-                                            disabled={!selectedSkill.requirements.every(req => skills.includes(req)) || arenaScore < selectedSkill.cost}
-                                            className={`w-full py-2 md:py-3 rounded-lg font-bold flex items-center justify-center gap-2 transition text-sm md:text-base
-                                                ${selectedSkill.requirements.every(req => skills.includes(req)) && arenaScore >= selectedSkill.cost
-                                                    ? 'bg-blue-600 hover:bg-emerald-400 text-white shadow-lg hover:shadow-blue-500/50'
-                                                    : 'bg-slate-700 text-slate-400 cursor-not-allowed'}
-                                            `}
-                                        >
-                                            {selectedSkill.requirements.every(req => skills.includes(req))
-                                                ? (arenaScore >= selectedSkill.cost ? '解锁技能' : '积分不足')
-                                                : '前置未解锁'}
-                                        </button>
-                                    )}
-                                </div>
-                            </>
-                        ) : (
-                            <div className="flex-1 flex flex-col items-center justify-center text-slate-500 py-4 md:py-0">
-                                <Zap className="w-10 h-10 md:w-16 md:h-16 mb-2 md:mb-4 opacity-20" />
-                                <p className="text-sm md:text-base">点击技能查看详情</p>
-                            </div>
-                        )}
-
-                        <div className="mt-4 border-t border-slate-700/80 pt-4">
-                            <div className="mb-2 flex items-center justify-between">
-                                <h4 className="text-sm font-semibold text-white">战役天赋</h4>
-                                <span className="text-xs text-slate-400">{unlockedTalentBadges.length}/{CAMPAIGN_TALENT_BADGES.length}</span>
-                            </div>
-                            <div className="space-y-2">
-                                {CAMPAIGN_TALENT_BADGES.map((badge) => {
-                                    const unlocked = skills.includes(badge.id);
+                                {shopCards.map((card) => {
+                                    const Icon = card.icon;
                                     return (
-                                        <div
-                                            key={badge.id}
-                                            className={`rounded-xl border px-3 py-2 text-left transition ${
-                                                unlocked
-                                                    ? 'border-emerald-400/40 bg-emerald-500/10'
-                                                    : 'border-slate-700 bg-slate-900/60'
+                                        <section
+                                            key={card.skillId}
+                                            className={`rounded-3xl border p-3.5 ${
+                                                card.owned
+                                                    ? 'border-emerald-500/40 bg-emerald-500/10'
+                                                    : 'border-slate-800 bg-slate-900/80'
                                             }`}
                                         >
-                                            <div className="flex items-center justify-between gap-3">
-                                                <div className="min-w-0">
-                                                    <div className={`text-sm font-semibold ${unlocked ? 'text-emerald-200' : 'text-slate-200'}`}>
-                                                        {badge.title}
-                                                    </div>
-                                                    <div className="mt-1 text-xs leading-5 text-slate-400">
-                                                        {badge.description}
-                                                    </div>
-                                                </div>
-                                                <span
-                                                    className={`shrink-0 rounded-full px-2 py-1 text-[11px] font-semibold ${
-                                                        unlocked
-                                                            ? 'bg-emerald-400/20 text-emerald-200'
-                                                            : 'bg-slate-800 text-slate-400'
+                                            <div className="flex items-start gap-3">
+                                                <div
+                                                    className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border ${
+                                                        card.owned
+                                                            ? 'border-emerald-400/50 bg-emerald-500/10 text-emerald-200'
+                                                            : 'border-slate-700 bg-slate-800 text-cyan-300'
                                                     }`}
                                                 >
-                                                    {unlocked ? '已获得' : '未获得'}
-                                                </span>
+                                                    <Icon className="h-6 w-6" />
+                                                </div>
+
+                                                <div className="min-w-0 flex-1">
+                                                    <div className="flex flex-wrap items-center gap-2">
+                                                        <h3 className="text-base font-bold text-white">
+                                                            {getSkillDisplayName(card.skillId)}
+                                                        </h3>
+                                                        {card.owned ? (
+                                                            <span className="rounded-full bg-emerald-400/15 px-2 py-1 text-xs font-semibold text-emerald-200">
+                                                                已掌握
+                                                            </span>
+                                                        ) : isShopSkill(card.skillId) ? (
+                                                            <span className="rounded-full bg-slate-800 px-2 py-1 text-xs font-semibold text-slate-300">
+                                                                成长路线
+                                                            </span>
+                                                        ) : null}
+                                                    </div>
+
+                                                    <p className="mt-1 text-sm leading-6 text-slate-300">
+                                                        {card.summary}
+                                                    </p>
+
+                                                    <div className="mt-2.5 flex flex-wrap gap-2 text-xs">
+                                                        <span className="rounded-full bg-amber-400/10 px-2.5 py-1 font-semibold text-amber-200">
+                                                            {card.rule.costCoins} 训练金币
+                                                        </span>
+                                                        <span className="rounded-full bg-slate-800 px-2.5 py-1 font-semibold text-slate-300">
+                                                            {card.rule.requiredCampaignLabel}
+                                                        </span>
+                                                        <span className="rounded-full bg-slate-800 px-2.5 py-1 font-semibold text-slate-300">
+                                                            Lv.{card.rule.requiredLevel}+
+                                                        </span>
+                                                    </div>
+
+                                                    {card.prerequisiteSkills.length > 0 ? (
+                                                        <div className="mt-2 text-xs text-slate-400">
+                                                            前置：
+                                                            {card.prerequisiteSkills
+                                                                .map((skillId) => getSkillDisplayName(skillId))
+                                                                .join('、')}
+                                                        </div>
+                                                    ) : null}
+
+                                                    <div className="mt-2 text-xs text-slate-400">
+                                                        操作：{SKILL_SHORT_INSTRUCTIONS[card.skillId] ?? '进入关卡后自动生效'}
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
+
+                                            <div className="mt-3 flex items-center justify-between gap-3">
+                                                <div className={`text-xs leading-5 ${card.owned ? 'text-emerald-200' : 'text-slate-400'}`}>
+                                                    {card.statusText}
+                                                </div>
+                                                <button
+                                                    onClick={() => handleUnlock(card.skillId)}
+                                                    disabled={!card.canUnlock}
+                                                    className={`shrink-0 rounded-full px-4 py-2 text-sm font-semibold transition ${
+                                                        card.owned
+                                                            ? 'cursor-default bg-emerald-500/20 text-emerald-200'
+                                                            : card.canUnlock
+                                                                ? 'bg-cyan-400 text-slate-950 hover:bg-cyan-300'
+                                                                : 'cursor-not-allowed bg-slate-800 text-slate-500'
+                                                    }`}
+                                                >
+                                                    {card.owned ? '已掌握' : `学习 ${card.rule.costCoins} 训练金币`}
+                                                </button>
+                                            </div>
+                                        </section>
                                     );
                                 })}
                             </div>
-                        </div>
+                        ) : (
+                            <div className="space-y-3">
+                                <div className="rounded-3xl border border-slate-800 bg-slate-900/80 p-4">
+                                    <div className="flex items-center justify-between gap-3">
+                                        <div>
+                                            <div className="text-sm font-semibold text-white">战役专精</div>
+                                            <div className="mt-1 text-xs leading-5 text-slate-400">
+                                                这些能力不花训练金币，推进战役后会自动加入或强化。
+                                            </div>
+                                        </div>
+                                        <div className="rounded-full bg-slate-800 px-3 py-1 text-xs font-semibold text-slate-300">
+                                            {campaignOwnedCount}/{CAMPAIGN_BADGES.length}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {CAMPAIGN_BADGES.map((badge) => {
+                                    const owned = skills.includes(badge.skillId);
+                                    return (
+                                        <section
+                                            key={badge.skillId}
+                                            className={`rounded-2xl border p-4 ${
+                                                owned
+                                                    ? 'border-emerald-500/30 bg-emerald-500/10'
+                                                    : 'border-slate-800 bg-slate-900/80'
+                                            }`}
+                                        >
+                                            <div className="flex items-start gap-3">
+                                                <div
+                                                    className={`mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border ${
+                                                        owned
+                                                            ? 'border-emerald-400/40 bg-emerald-500/10 text-emerald-200'
+                                                            : 'border-slate-700 bg-slate-800 text-slate-400'
+                                                    }`}
+                                                >
+                                                    {owned ? (
+                                                        <CheckCircle2 className="h-5 w-5" />
+                                                    ) : (
+                                                        <Sparkles className="h-5 w-5" />
+                                                    )}
+                                                </div>
+                                                <div className="min-w-0 flex-1">
+                                                    <div className="flex flex-wrap items-center gap-2">
+                                                        <h3 className="text-sm font-bold text-white">{badge.title}</h3>
+                                                        <span
+                                                            className={`rounded-full px-2 py-1 text-xs font-semibold ${
+                                                                owned
+                                                                    ? 'bg-emerald-400/15 text-emerald-200'
+                                                                    : 'bg-slate-800 text-slate-400'
+                                                            }`}
+                                                        >
+                                                            {owned ? '已获得' : '未获得'}
+                                                        </span>
+                                                    </div>
+                                                    <p className="mt-1 text-sm leading-6 text-slate-300">
+                                                        {badge.description}
+                                                    </p>
+                                                    <div className="mt-2 flex items-center gap-1 text-xs text-slate-500">
+                                                        <ChevronRight className="h-3.5 w-3.5" />
+                                                        {badge.unlockHint}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    );
+                                })}
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
-            
-            {/* 技能解锁通知 */}
-            {unlockedSkillInfo && (
-                <SkillUnlockNotification
-                    isOpen={showNotification}
-                    onClose={() => {
-                        setShowNotification(false);
-                        setUnlockedSkillInfo(null);
-                    }}
-                    skillTitle={unlockedSkillInfo.title}
-                    skillDescription={unlockedSkillInfo.description}
-                    skillInstruction={unlockedSkillInfo.instruction}
-                />
-            )}
         </div>
     );
 }

@@ -25,7 +25,7 @@ export const SKILLS: Record<string, Skill> = {
     icon: '⬆️',
     unlockCampaign: 'campaign_1',
     type: 'movement',
-    keyBinding: 'Space',
+    keyBinding: 'W / ↑',
   },
 
   dash: {
@@ -38,7 +38,7 @@ export const SKILLS: Record<string, Skill> = {
     unlockCampaign: 'campaign_1',
     type: 'movement',
     cooldown: 1000,
-    keyBinding: 'Shift',
+    keyBinding: 'H / SPACE',
   },
 
   wall_jump: {
@@ -50,6 +50,7 @@ export const SKILLS: Record<string, Skill> = {
     icon: '🧱',
     unlockCampaign: 'campaign_2',
     type: 'movement',
+    keyBinding: 'W / ↑',
   },
 
   // 进阶技能
@@ -62,6 +63,7 @@ export const SKILLS: Record<string, Skill> = {
     icon: '🪂',
     unlockCampaign: 'campaign_3',
     type: 'movement',
+    keyBinding: 'W / ↑',
   },
 
   ground_pound: {
@@ -74,7 +76,7 @@ export const SKILLS: Record<string, Skill> = {
     unlockCampaign: 'campaign_4',
     type: 'combat',
     cooldown: 2000,
-    keyBinding: 'S',
+    keyBinding: 'G',
   },
 
   time_slow: {
@@ -88,7 +90,20 @@ export const SKILLS: Record<string, Skill> = {
     type: 'utility',
     cooldown: 5000,
     energyCost: 30,
-    keyBinding: 'Q',
+    keyBinding: 'J',
+  },
+
+  quantum_dash: {
+    id: 'quantum_dash',
+    name: 'Quantum Dash',
+    nameCN: '量子冲刺',
+    description: 'Dash farther, faster, and briefly phase through danger',
+    descriptionCN: '冲刺距离更长、速度更快，并在短时间内穿越危险',
+    icon: '⚛️',
+    unlockCampaign: 'campaign_8',
+    type: 'movement',
+    cooldown: 800,
+    keyBinding: 'H / SPACE',
   },
 
   // 高级技能
@@ -139,14 +154,14 @@ export const SKILLS: Record<string, Skill> = {
     id: 'chemical_shield',
     name: 'Chemical Shield',
     nameCN: '化学护盾',
-    description: 'Create a protective shield that blocks chemical damage',
-    descriptionCN: '创建化学护盾，短暂免疫酸液和毒气伤害',
+    description: 'Create a shield that blocks one hit and ignores chemical zones',
+    descriptionCN: '展开化学护盾，抵挡一次伤害并短暂免疫酸液和毒气区域',
     icon: '🛡️',
     unlockCampaign: 'campaign_9',
     type: 'utility',
     cooldown: 8000,
     energyCost: 45,
-    keyBinding: 'G',
+    keyBinding: 'K',
   },
 
   // 终极技能
@@ -211,6 +226,50 @@ export const SKILLS: Record<string, Skill> = {
     unlockCampaign: 'campaign_4',
     type: 'utility',
   },
+
+  time_mastery: {
+    id: 'time_mastery',
+    name: 'Time Mastery',
+    nameCN: '时空掌控',
+    description: 'Passive: Time Slow lasts longer and slows harder',
+    descriptionCN: '被动：时间减速持续更久，减速效果更强',
+    icon: '⌛',
+    unlockCampaign: 'campaign_5',
+    type: 'utility',
+  },
+
+  windControl: {
+    id: 'windControl',
+    name: 'Wind Control',
+    nameCN: '驭风术',
+    description: 'Passive: Strong wind zones affect you less',
+    descriptionCN: '被动：大风区域对你的影响显著减弱',
+    icon: '🌪️',
+    unlockCampaign: 'campaign_6',
+    type: 'utility',
+  },
+
+  shield: {
+    id: 'shield',
+    name: 'Guardian Shield',
+    nameCN: '守护护盾',
+    description: 'Passive: Increase max HP and survivability',
+    descriptionCN: '被动：提升最大生命值与生存能力',
+    icon: '🧿',
+    unlockCampaign: 'campaign_6',
+    type: 'utility',
+  },
+
+  time_shield: {
+    id: 'time_shield',
+    name: 'Time Shield',
+    nameCN: '时空护盾',
+    description: 'Passive: Upgrade Chemical Shield into a longer multi-hit barrier',
+    descriptionCN: '被动：将化学护盾升级为持续更久、可抵挡多次伤害的时空护盾',
+    icon: '🛡️⏳',
+    unlockCampaign: 'campaign_10',
+    type: 'utility',
+  },
 };
 
 // 获取所有技能
@@ -223,7 +282,105 @@ export function getSkillById(id: string): Skill | undefined {
   return SKILLS[id];
 }
 
+export function getSkillDisplayName(id: string): string {
+  return getSkillById(id)?.nameCN || id;
+}
+
+export function formatSkillDisplayNames(ids: string[]): string {
+  return ids.map(getSkillDisplayName).join('、');
+}
+
 // 获取已解锁的技能
+export interface SkillShopRule {
+  skillId: string;
+  costCoins: number;
+  requiredCampaignId: string;
+  requiredCampaignLabel: string;
+  requiredLevel: number;
+}
+
+export const SKILL_SHOP_RULES: SkillShopRule[] = [
+  {
+    skillId: 'double_jump',
+    costCoins: 120,
+    requiredCampaignId: 'campaign_1',
+    requiredCampaignLabel: '古街探险',
+    requiredLevel: 2,
+  },
+  {
+    skillId: 'dash',
+    costCoins: 220,
+    requiredCampaignId: 'campaign_1',
+    requiredCampaignLabel: '古街探险',
+    requiredLevel: 3,
+  },
+  {
+    skillId: 'wall_jump',
+    costCoins: 320,
+    requiredCampaignId: 'campaign_2',
+    requiredCampaignLabel: '校园编程',
+    requiredLevel: 4,
+  },
+  {
+    skillId: 'glide',
+    costCoins: 450,
+    requiredCampaignId: 'campaign_3',
+    requiredCampaignLabel: '科学实验室',
+    requiredLevel: 5,
+  },
+  {
+    skillId: 'time_slow',
+    costCoins: 680,
+    requiredCampaignId: 'campaign_7',
+    requiredCampaignLabel: '量子前夜',
+    requiredLevel: 7,
+  },
+  {
+    skillId: 'chemical_shield',
+    costCoins: 880,
+    requiredCampaignId: 'campaign_9',
+    requiredCampaignLabel: '化学工厂',
+    requiredLevel: 9,
+  },
+];
+
+const SKILL_SHOP_RULE_MAP = Object.fromEntries(
+  SKILL_SHOP_RULES.map((rule) => [rule.skillId, rule])
+) as Record<string, SkillShopRule>;
+
+export function getSkillShopRule(skillId: string): SkillShopRule | undefined {
+  return SKILL_SHOP_RULE_MAP[skillId];
+}
+
+export function isShopSkill(skillId: string): boolean {
+  return Boolean(getSkillShopRule(skillId));
+}
+
+export function shouldAutoGrantCampaignSkill(skillId: string): boolean {
+  return !isShopSkill(skillId);
+}
+
+export function formatSkillRewardText(ids: string[]): string {
+  const purchasable = ids
+    .filter((skillId) => isShopSkill(skillId))
+    .map(getSkillDisplayName);
+  const granted = ids
+    .filter((skillId) => !isShopSkill(skillId))
+    .map(getSkillDisplayName);
+
+  const parts: string[] = [];
+
+  if (purchasable.length > 0) {
+    parts.push(`开放学习：${purchasable.join('、')}`);
+  }
+
+  if (granted.length > 0) {
+    parts.push(`自动获得：${granted.join('、')}`);
+  }
+
+  return parts.join('；');
+}
+
 export function getUnlockedSkills(completedCampaigns: string[], unlockedSkills: string[]): Skill[] {
   return getAllSkills().filter(skill => {
     // 检查战役是否完成

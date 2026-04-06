@@ -106,33 +106,33 @@ export default function VirtualController({
         style={buttonStyle}
       >
         <div className="relative w-40 h-40">
-          {/* 跳跃按钮 (A) - 上方 */}
+          {/* 跳跃按钮 - 上方 */}
           <ActionButton
-            label="A"
+            label="跳"
             color="green"
             className="absolute top-0 left-1/2 -translate-x-1/2"
             onStart={() => handleActionStart('jump')}
             onEnd={() => handleActionEnd('jump')}
           />
-          {/* 攻击按钮 (B) - 右侧 */}
+          {/* 攻击按钮 - 右侧 */}
           <ActionButton
-            label="B"
+            label="攻"
             color="red"
             className="absolute right-0 top-1/2 -translate-y-1/2"
             onStart={() => handleActionStart('attack')}
             onEnd={() => handleActionEnd('attack')}
           />
-          {/* 交互按钮 (E) - 左侧 */}
+          {/* 使用/技能按钮 - 左侧 */}
           <ActionButton
-            label="E"
+            label="用"
             color="yellow"
             className="absolute left-0 top-1/2 -translate-y-1/2"
             onStart={() => handleActionStart('interact')}
             onEnd={() => handleActionEnd('interact')}
           />
-          {/* 冲刺按钮 (空格) - 下方 */}
+          {/* 冲刺按钮 - 下方 */}
           <ActionButton
-            label="⚡"
+            label="冲"
             color="blue"
             className="absolute bottom-0 left-1/2 -translate-x-1/2"
             onStart={() => handleActionStart('dash')}
@@ -225,24 +225,24 @@ function ActionButton({ label, color, className, onStart, onEnd }: ActionButtonP
 
   const colors: Record<string, { bg: string; border: string; pressedBg: string }> = {
     green: {
-      bg: 'rgba(34, 197, 94, 0.8)',
-      border: 'rgba(74, 222, 128, 0.6)',
-      pressedBg: 'rgba(22, 163, 74, 0.9)',
+      bg: 'rgba(34, 197, 94, 0.85)',
+      border: 'rgba(187, 247, 208, 0.75)',
+      pressedBg: 'rgba(22, 163, 74, 0.95)',
     },
     red: {
-      bg: 'rgba(239, 68, 68, 0.8)',
-      border: 'rgba(248, 113, 113, 0.6)',
-      pressedBg: 'rgba(220, 38, 38, 0.9)',
+      bg: 'rgba(248, 113, 113, 0.82)',
+      border: 'rgba(254, 202, 202, 0.72)',
+      pressedBg: 'rgba(220, 38, 38, 0.92)',
     },
     blue: {
-      bg: 'rgba(59, 130, 246, 0.8)',
-      border: 'rgba(96, 165, 250, 0.6)',
-      pressedBg: 'rgba(37, 99, 235, 0.9)',
+      bg: 'rgba(56, 189, 248, 0.82)',
+      border: 'rgba(186, 230, 253, 0.75)',
+      pressedBg: 'rgba(14, 165, 233, 0.94)',
     },
     yellow: {
-      bg: 'rgba(234, 179, 8, 0.8)',
-      border: 'rgba(250, 204, 21, 0.6)',
-      pressedBg: 'rgba(202, 138, 4, 0.9)',
+      bg: 'rgba(250, 204, 21, 0.82)',
+      border: 'rgba(254, 240, 138, 0.76)',
+      pressedBg: 'rgba(202, 138, 4, 0.94)',
     },
   };
 
@@ -256,8 +256,8 @@ function ActionButton({ label, color, className, onStart, onEnd }: ActionButtonP
         border: `3px solid ${colorStyle.border}`,
         transform: pressed ? 'scale(0.9)' : 'scale(1)',
         boxShadow: pressed 
-          ? 'inset 0 2px 6px rgba(0,0,0,0.5)' 
-          : '0 4px 8px rgba(0,0,0,0.3), inset 0 -2px 4px rgba(0,0,0,0.2)',
+          ? 'inset 0 2px 6px rgba(0,0,0,0.55)' 
+          : '0 6px 12px rgba(0,0,0,0.28), inset 0 -2px 5px rgba(0,0,0,0.18), 0 0 14px rgba(255,255,255,0.08)',
         touchAction: 'none',
       }}
       onTouchStart={handleTouchStart}

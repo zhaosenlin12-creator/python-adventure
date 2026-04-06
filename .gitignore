@@ -37,8 +37,15 @@ yarn-error.log*
 frontend-dev.log
 frontend-qa.log
 frontend-qa.err.log
+.tmp-*.log
+.tmp-*.out.log
+.tmp-*.err.log
+.tmp-system-update-qa/
 backend/backend-dev.log
 backend/backend-dev.log.*
+backend/.tmp-*.log
+backend/.tmp-*.out.log
+backend/.tmp-*.err.log
 
 # env files (can opt-in for committing if needed)
 .env*

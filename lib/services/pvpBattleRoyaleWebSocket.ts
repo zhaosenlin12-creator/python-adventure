@@ -19,17 +19,21 @@ interface BattleRoyaleWebSocketConfig {
 
 const SNAPSHOT_BUFFER_LIMIT_BYTES = 256_000;
 const INPUT_BUFFER_LIMIT_BYTES = 128_000;
-const HEARTBEAT_INTERVAL_MS = 12000;
+const HEARTBEAT_INTERVAL_MS = 5000;
+const INITIAL_HEARTBEAT_DELAY_MS = 600;
 
 export class BattleRoyaleWebSocketClient {
   private ws: WebSocket | null = null;
   private reconnectTimer: ReturnType<typeof setTimeout> | null = null;
   private heartbeatTimer: ReturnType<typeof setInterval> | null = null;
+  private heartbeatKickoffTimer: ReturnType<typeof setTimeout> | null = null;
   private disconnectTimer: ReturnType<typeof setTimeout> | null = null;
   private readonly config: BattleRoyaleWebSocketConfig;
   private manualClose = false;
   private reconnectAttempts = 0;
   private lastPingAt = 0;
+  private smoothedLatencyMs = 0;
+  private latencySampleCount = 0;
 
   constructor(config: BattleRoyaleWebSocketConfig) {
     this.config = config;
@@ -62,7 +66,6 @@ export class BattleRoyaleWebSocketClient {
       this.clearReconnectTimer();
       this.reconnectAttempts = 0;
       this.startHeartbeat();
-      this.sendPing();
       this.config.onConnect?.();
     };
 
@@ -111,12 +114,20 @@ export class BattleRoyaleWebSocketClient {
 
   private startHeartbeat() {
     this.stopHeartbeat();
-    this.heartbeatTimer = setInterval(() => {
+    this.heartbeatKickoffTimer = setTimeout(() => {
+      this.heartbeatKickoffTimer = null;
       this.sendPing();
-    }, HEARTBEAT_INTERVAL_MS);
+      this.heartbeatTimer = setInterval(() => {
+        this.sendPing();
+      }, HEARTBEAT_INTERVAL_MS);
+    }, INITIAL_HEARTBEAT_DELAY_MS);
   }
 
   private stopHeartbeat() {
+    if (this.heartbeatKickoffTimer) {
+      clearTimeout(this.heartbeatKickoffTimer);
+      this.heartbeatKickoffTimer = null;
+    }
     if (this.heartbeatTimer) {
       clearInterval(this.heartbeatTimer);
       this.heartbeatTimer = null;
@@ -184,8 +195,11 @@ export class BattleRoyaleWebSocketClient {
     if (!this.lastPingAt) {
       return;
     }
-    const latencyMs = Math.max(0, Date.now() - this.lastPingAt);
-    this.config.onLatencyUpdate?.(latencyMs);
+    const latencyMs = Math.max(0, (Date.now() - this.lastPingAt) * 0.5);
+    this.latencySampleCount += 1;
+    this.smoothedLatencyMs =
+      this.latencySampleCount === 1 ? latencyMs : this.smoothedLatencyMs * 0.65 + latencyMs * 0.35;
+    this.config.onLatencyUpdate?.(Math.round(this.smoothedLatencyMs));
   }
 
   sendInput(payload: Record<string, unknown>) {

@@ -303,6 +303,7 @@ export default function PvpBattleRoyaleLobby({
                     setError(null);
                     void fetchRooms();
                   }}
+                  data-testid="br-refresh-rooms"
                   className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:border-cyan-300/40 hover:text-white"
                 >
                   <RefreshCw className={`h-4 w-4 ${isLoading ? 'animate-spin' : ''}`} />
@@ -329,6 +330,7 @@ export default function PvpBattleRoyaleLobby({
                     return (
                       <div
                         key={room.id}
+                        data-testid={`br-room-card-${room.id}`}
                         className="rounded-[24px] border border-white/10 bg-slate-950/65 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]"
                       >
                         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
@@ -368,6 +370,7 @@ export default function PvpBattleRoyaleLobby({
                             type="button"
                             onClick={() => void handleJoin(room)}
                             disabled={!canJoin || isLoading}
+                            data-testid={`br-join-room-${room.id}`}
                             className="inline-flex items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#0ea5e9,#2563eb)] px-5 py-3 text-sm font-bold text-white transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-55"
                           >
                             <LogIn className="h-4 w-4" />

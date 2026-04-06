@@ -204,23 +204,24 @@ export default function AchievementPanel() {
       {/* 成就入口按钮 - 圆形风格 */}
       <motion.button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-44 right-4 z-50"
+        data-testid="achievement-button"
+        className="fixed bottom-28 right-3 z-50"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
         <div className="relative">
-          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 border-4 border-amber-500 shadow-lg flex items-center justify-center">
-            <span className="text-2xl">🏆</span>
+          <div className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-amber-500 bg-gradient-to-br from-amber-400 to-orange-500 shadow-lg">
+            <span className="text-base">🏆</span>
           </div>
           
           {/* 未领取红点提示 */}
           {unclaimedCount > 0 && (
             <motion.div
-              className="absolute -top-1 -right-1 w-5 h-5 bg-red-600 border-2 border-red-800 rounded-full flex items-center justify-center"
+              className="absolute -top-1 -right-1 flex h-4 min-w-[16px] items-center justify-center rounded-full border border-red-800 bg-red-600 px-1"
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ repeat: Infinity, duration: 1 }}
             >
-              <span className="text-white text-xs font-bold">{unclaimedCount}</span>
+              <span className="text-[10px] font-bold text-white">{unclaimedCount}</span>
             </motion.div>
           )}
         </div>

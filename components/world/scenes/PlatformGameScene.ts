@@ -1,6 +1,7 @@
 ﻿import * as Phaser from 'phaser';
 import { touchInputManager, TouchInputState } from '@/lib/input/TouchInputManager';
 import { isMobileDevice } from '@/hooks/useDeviceType';
+import { buildCampaignOverviewText, buildPlatformControlsText } from '@/lib/gameplayText';
 
 // 生产环境禁用调试日志
 const DEBUG = process.env.NODE_ENV === 'development';
@@ -95,6 +96,19 @@ export default class PlatformGameScene extends Phaser.Scene {
     private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
     private spaceKey!: Phaser.Input.Keyboard.Key;
     private attackKey!: Phaser.Input.Keyboard.Key;
+    private moveKeys!: {
+        up: Phaser.Input.Keyboard.Key;
+        down: Phaser.Input.Keyboard.Key;
+        left: Phaser.Input.Keyboard.Key;
+        right: Phaser.Input.Keyboard.Key;
+    };
+    private actionKeys!: {
+        interact: Phaser.Input.Keyboard.Key;
+        attack: Phaser.Input.Keyboard.Key;
+        dash: Phaser.Input.Keyboard.Key;
+        timeSlow: Phaser.Input.Keyboard.Key;
+        shield: Phaser.Input.Keyboard.Key;
+    };
 
     private playerHP: number = 100;
     private maxHP: number = 100;
@@ -109,7 +123,10 @@ export default class PlatformGameScene extends Phaser.Scene {
     private hpBar!: Phaser.GameObjects.Graphics;
     private scoreText!: Phaser.GameObjects.Text;
     private objectiveText!: Phaser.GameObjects.Text;
+    private controlsHintText!: Phaser.GameObjects.Text;
+    private skillStatusText!: Phaser.GameObjects.Text;
     private goalReached: boolean = false;
+    private isLevelIntroActive: boolean = false;
 
     private levelData!: any;
     private isAttacking: boolean = false;
@@ -214,6 +231,13 @@ export default class PlatformGameScene extends Phaser.Scene {
     private playerSkills: string[] = [];
     private isGliding: boolean = false;
     private touchingWall: boolean = false;
+    private timeSlowCooldown: number = 0;
+    private timeSlowDuration: number = 0;
+    private chemicalShieldCooldown: number = 0;
+    private chemicalShieldDuration: number = 0;
+    private chemicalShieldCharges: number = 0;
+    private skillAura: Phaser.GameObjects.Arc | null = null;
+    private worldTimeScaleApplied: boolean = false;
 
     constructor() {
         super({ key: 'PlatformGameScene' });
@@ -222,12 +246,14 @@ export default class PlatformGameScene extends Phaser.Scene {
     init(data: { level: any }) {
         this.levelData = data.level;
         this.playerHP = 100;
+        this.maxHP = 100;
         this.score = 0;
         this.defeatedEnemies = 0;
         this.isGameOver = false;
         this.isAnswering = false;  // 重置答题状态
         this.collectedItems = 0;
         this.goalReached = false;
+        this.isLevelIntroActive = false;
         this.startTime = Date.now();
         this.timeElapsed = 0;
 
@@ -269,12 +295,82 @@ export default class PlatformGameScene extends Phaser.Scene {
         this.isBossLevel = false;
         this.bossEnemy = null;
 
+        this.timeSlowCooldown = 0;
+        this.timeSlowDuration = 0;
+        this.chemicalShieldCooldown = 0;
+        this.chemicalShieldDuration = 0;
+        this.chemicalShieldCharges = 0;
+        this.worldTimeScaleApplied = false;
+        this.skillAura = null;
+
         // 🔥🔥🔥 重置顺序双Boss状态（战役7-5、8-5）
         this.currentBossIndex = 1;
         this.secondBossConfig = null;
         this.isSpawningSecondBoss = false;
         (this as any).bossDefeatedTriggered = false;  // 重置Boss击败标志
         (this as any).bossQuizTriggered = false;  // 重置Boss答题标志
+
+        if (this.hasSkill('shield')) {
+            this.maxHP = 120;
+            this.playerHP = this.maxHP;
+        }
+    }
+
+    private hasSkill(skillId: string) {
+        return this.playerSkills.includes(skillId);
+    }
+
+    private hasDashSkill() {
+        return this.hasSkill('dash') || this.hasSkill('quantum_dash');
+    }
+
+    private hasChemicalShieldSkill() {
+        return this.hasSkill('chemical_shield') || this.hasSkill('time_shield');
+    }
+
+    private getSkillCooldownMultiplier() {
+        return this.hasSkill('science_master') ? 0.8 : 1;
+    }
+
+    private getDashCooldownSeconds() {
+        const baseCooldown = this.hasSkill('quantum_dash') ? 0.75 : 1;
+        return baseCooldown * this.getSkillCooldownMultiplier();
+    }
+
+    private getDashSpeed() {
+        return this.hasSkill('quantum_dash') ? 680 : 500;
+    }
+
+    private getDashDurationMs() {
+        return this.hasSkill('quantum_dash') ? 280 : 200;
+    }
+
+    private getTimeSlowCooldownSeconds() {
+        const baseCooldown = this.hasSkill('time_mastery') ? 6.5 : 8;
+        return baseCooldown * this.getSkillCooldownMultiplier();
+    }
+
+    private getTimeSlowDurationSeconds() {
+        return this.hasSkill('time_mastery') ? 3.4 : 2.5;
+    }
+
+    private getTimeSlowFactor() {
+        return this.hasSkill('time_mastery') ? 0.35 : 0.5;
+    }
+
+    private getChemicalShieldCooldownSeconds() {
+        const baseCooldown = this.hasSkill('time_shield') ? 7 : 9;
+        return baseCooldown * this.getSkillCooldownMultiplier();
+    }
+
+    private getChemicalShieldDurationSeconds() {
+        return this.hasSkill('time_shield') ? 5.5 : 4;
+    }
+
+    private getChemicalShieldCharges() {
+        if (this.hasSkill('time_shield')) return 3;
+        if (this.hasSkill('science_master')) return 2;
+        return 1;
     }
 
     create() {
@@ -412,6 +508,8 @@ export default class PlatformGameScene extends Phaser.Scene {
                 debugLog('[PlatformGameScene] 🔥 场景销毁，清理所有对象');
                 window.removeEventListener('playerRevive', handlePlayerRevive);
                 window.removeEventListener('playerGameOver', handlePlayerGameOver);
+                this.deactivateTimeSlow();
+                this.clearChemicalShield();
 
                 // 🔥🔥🔥 重置相机状态，确保返回编辑器时相机正常 🔥🔥🔥
                 this.cameras.main.stopFollow();
@@ -1637,10 +1735,11 @@ export default class PlatformGameScene extends Phaser.Scene {
                     yoyo: true,
                     repeat: -1,
                     ease: 'Sine.easeInOut',
-                    // 🔥 每帧更新时取整坐标，防止亚像素抖动
+                    // 只修正纵向坐标，避免和横向物理移动互相打架产生抖动
                     onUpdate: () => {
-                        enemy.x = Math.round(enemy.x);
-                        enemy.y = Math.round(enemy.y);
+                        if (enemy.active) {
+                            enemy.y = Math.round(enemy.y);
+                        }
                     }
                 });
             }
@@ -2085,6 +2184,19 @@ export default class PlatformGameScene extends Phaser.Scene {
             this.cursors = this.input.keyboard.createCursorKeys();
             this.spaceKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
             this.attackKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.X);
+            this.moveKeys = this.input.keyboard.addKeys({
+                up: Phaser.Input.Keyboard.KeyCodes.W,
+                down: Phaser.Input.Keyboard.KeyCodes.S,
+                left: Phaser.Input.Keyboard.KeyCodes.A,
+                right: Phaser.Input.Keyboard.KeyCodes.D,
+            }) as typeof this.moveKeys;
+            this.actionKeys = this.input.keyboard.addKeys({
+                interact: Phaser.Input.Keyboard.KeyCodes.F,
+                attack: Phaser.Input.Keyboard.KeyCodes.G,
+                dash: Phaser.Input.Keyboard.KeyCodes.H,
+                timeSlow: Phaser.Input.Keyboard.KeyCodes.J,
+                shield: Phaser.Input.Keyboard.KeyCodes.K,
+            }) as typeof this.actionKeys;
         }
     }
 
@@ -2123,20 +2235,235 @@ export default class PlatformGameScene extends Phaser.Scene {
 
         // 技能提示（底部）- 移动端简化或隐藏
         if (!isMobile) {
-            let skillsText = '方向键移动 | UP跳跃 | X攻击';
-            if (this.playerSkills.includes('double_jump')) skillsText += ' | 空中再按UP二段跳';
-            if (this.playerSkills.includes('dash')) skillsText += ' | SPACE冲刺';
-            if (this.playerSkills.includes('glide')) skillsText += ' | 空中长按UP滑翔';
-            if (this.playerSkills.includes('wall_jump')) skillsText += ' | 贴墙按UP墙跳';
-
-            this.add.text(width / 2, height - 20, skillsText, {
-                fontSize: tinyFontSize,
+            this.controlsHintText = this.add.text(width / 2, height - 12, buildPlatformControlsText({
+                hasDoubleJump: this.playerSkills.includes('double_jump'),
+                hasDash: this.hasDashSkill(),
+                isQuantumDash: this.hasSkill('quantum_dash'),
+                hasGlide: this.playerSkills.includes('glide'),
+                hasWallJump: this.playerSkills.includes('wall_jump'),
+                hasTimeSlow: this.hasSkill('time_slow'),
+                hasShield: this.hasChemicalShieldSkill(),
+            }), {
+                fontSize: '10px',
                 color: '#00ff00',
-                backgroundColor: '#000000aa',
-                padding: { x: 10, y: 5 }
-            }).setOrigin(0.5).setScrollFactor(0);
+                align: 'center',
+                stroke: '#04110a',
+                strokeThickness: 4,
+            }).setOrigin(0.5, 1).setScrollFactor(0).setDepth(2000);
+            this.refreshControlsHintLayout();
         }
         // 移动端不显示键盘提示，因为有虚拟控制器
+
+        this.skillStatusText = this.add.text(width - 18, 18, '', {
+            fontSize: tinyFontSize,
+            color: '#8ff7ff',
+            backgroundColor: '#000000aa',
+            padding: { x: 8, y: 5 },
+            align: 'right'
+        }).setOrigin(1, 0).setScrollFactor(0).setDepth(2000);
+        this.updateSkillStatusDisplay();
+    }
+
+    private fitBottomHintText(
+        textObject: Phaser.GameObjects.Text,
+        maxWidth: number,
+        preferredFontSize = 10,
+        minFontSize = 8
+    ) {
+        let nextFontSize = preferredFontSize;
+        textObject.setFontSize(`${nextFontSize}px`);
+
+        while (nextFontSize > minFontSize && textObject.width > maxWidth) {
+            nextFontSize -= 1;
+            textObject.setFontSize(`${nextFontSize}px`);
+        }
+    }
+
+    private refreshControlsHintLayout() {
+        if (!this.controlsHintText) return;
+
+        const { width, height } = this.cameras.main;
+        this.controlsHintText.setPosition(width / 2, height - 12);
+        this.fitBottomHintText(this.controlsHintText, Math.max(280, width - 40));
+    }
+
+    private updateSkillStatusDisplay() {
+        if (!this.skillStatusText) return;
+
+        const lines: string[] = [];
+        const isMobile = isMobileDevice();
+        const activeSkillKey = isMobile ? '技能键' : 'J';
+        const shieldSkillKey = isMobile ? '技能键' : 'K';
+
+        if (this.hasSkill('time_slow')) {
+            const status = this.timeSlowDuration > 0
+                ? `进行中 ${this.timeSlowDuration.toFixed(1)}s`
+                : this.timeSlowCooldown > 0
+                    ? `冷却 ${this.timeSlowCooldown.toFixed(1)}s`
+                    : '就绪';
+            lines.push(`${activeSkillKey} 时间减速 ${status}`);
+        }
+
+        if (this.hasChemicalShieldSkill()) {
+            const shieldLabel = this.chemicalShieldDuration > 0
+                ? `护盾 ${this.chemicalShieldCharges}层`
+                : this.chemicalShieldCooldown > 0
+                    ? `冷却 ${this.chemicalShieldCooldown.toFixed(1)}s`
+                    : '就绪';
+            lines.push(`${shieldSkillKey} 化学护盾 ${shieldLabel}`);
+        }
+
+        if (this.hasSkill('science_master')) {
+            lines.push('被动 科学大师 冷却缩短');
+        }
+
+        if (isMobile && this.hasChemicalShieldSkill() && this.hasSkill('time_slow')) {
+            lines.push('技能键：先开盾，再减速');
+        }
+
+        this.skillStatusText.setText(lines.join('\n'));
+        this.skillStatusText.setVisible(lines.length > 0);
+    }
+
+    private activateTimeSlow() {
+        if (!this.hasSkill('time_slow') || this.timeSlowCooldown > 0 || this.timeSlowDuration > 0) {
+            return;
+        }
+
+        this.timeSlowDuration = this.getTimeSlowDurationSeconds();
+        this.timeSlowCooldown = this.getTimeSlowCooldownSeconds();
+        this.updateSkillStatusDisplay();
+
+        const timeScale = this.getTimeSlowFactor();
+        this.physics.world.timeScale = timeScale;
+        this.time.timeScale = timeScale;
+        this.tweens.timeScale = timeScale;
+        this.worldTimeScaleApplied = true;
+
+        const burst = this.add.circle(this.player.x, this.player.y, 36, 0x7dd3fc, 0.28);
+        burst.setDepth(95);
+        this.tweens.add({
+            targets: burst,
+            scaleX: 2.4,
+            scaleY: 2.4,
+            alpha: 0,
+            duration: 420,
+            onComplete: () => burst.destroy()
+        });
+
+        const title = this.add.text(this.player.x, this.player.y - 58, '⏳ 时间放慢', {
+            fontSize: '20px',
+            color: '#fde68a',
+            stroke: '#0f172a',
+            strokeThickness: 4,
+            fontStyle: 'bold'
+        }).setOrigin(0.5).setDepth(120);
+        this.tweens.add({
+            targets: title,
+            y: title.y - 26,
+            alpha: 0,
+            duration: 650,
+            onComplete: () => title.destroy()
+        });
+    }
+
+    private deactivateTimeSlow() {
+        if (!this.worldTimeScaleApplied) {
+            return;
+        }
+
+        this.physics.world.timeScale = 1;
+        this.time.timeScale = 1;
+        this.tweens.timeScale = 1;
+        this.worldTimeScaleApplied = false;
+        this.updateSkillStatusDisplay();
+    }
+
+    private activateChemicalShield() {
+        if (!this.hasChemicalShieldSkill() || this.chemicalShieldCooldown > 0 || this.chemicalShieldDuration > 0) {
+            return;
+        }
+
+        this.chemicalShieldDuration = this.getChemicalShieldDurationSeconds();
+        this.chemicalShieldCooldown = this.getChemicalShieldCooldownSeconds();
+        this.chemicalShieldCharges = this.getChemicalShieldCharges();
+        this.updateSkillStatusDisplay();
+
+        if (!this.skillAura) {
+            this.skillAura = this.add.circle(this.player.x, this.player.y, 34, 0x38bdf8, 0.18);
+            this.skillAura.setStrokeStyle(3, 0x67e8f9, 0.95);
+            this.skillAura.setDepth(94);
+            this.tweens.add({
+                targets: this.skillAura,
+                scaleX: 1.08,
+                scaleY: 1.08,
+                alpha: 0.28,
+                duration: 480,
+                yoyo: true,
+                repeat: -1
+            });
+        }
+
+        const shieldText = this.add.text(this.player.x, this.player.y - 58, '🛡️ 护盾展开', {
+            fontSize: '20px',
+            color: '#bfdbfe',
+            stroke: '#082f49',
+            strokeThickness: 4,
+            fontStyle: 'bold'
+        }).setOrigin(0.5).setDepth(120);
+        this.tweens.add({
+            targets: shieldText,
+            y: shieldText.y - 20,
+            alpha: 0,
+            duration: 650,
+            onComplete: () => shieldText.destroy()
+        });
+    }
+
+    private clearChemicalShield() {
+        this.chemicalShieldDuration = 0;
+        this.chemicalShieldCharges = 0;
+        if (this.skillAura) {
+            this.skillAura.destroy();
+            this.skillAura = null;
+        }
+        this.updateSkillStatusDisplay();
+    }
+
+    private absorbIncomingDamage(source: 'damage' | 'chemical') {
+        if (this.chemicalShieldDuration <= 0 || this.chemicalShieldCharges <= 0) {
+            return false;
+        }
+
+        this.chemicalShieldCharges -= 1;
+        this.player.setTint(source === 'chemical' ? 0x7dd3fc : 0x67e8f9);
+        this.time.delayedCall(120, () => {
+            if (this.player?.active) {
+                this.player.clearTint();
+            }
+        });
+
+        const blockText = this.add.text(this.player.x, this.player.y - 36, '护盾抵消', {
+            fontSize: '16px',
+            color: '#7dd3fc',
+            stroke: '#082f49',
+            strokeThickness: 3
+        }).setOrigin(0.5).setDepth(120);
+        this.tweens.add({
+            targets: blockText,
+            y: blockText.y - 24,
+            alpha: 0,
+            duration: 420,
+            onComplete: () => blockText.destroy()
+        });
+
+        if (this.chemicalShieldCharges <= 0) {
+            this.clearChemicalShield();
+        } else {
+            this.updateSkillStatusDisplay();
+        }
+
+        return true;
     }
 
     private createBossHealthBar() {
@@ -3426,35 +3753,55 @@ export default class PlatformGameScene extends Phaser.Scene {
 
     private showLevelInfo() {
         const { width, height } = this.cameras.main;
+        this.isLevelIntroActive = true;
+        this.physics.world.pause();
+        const overlayDepth = 2400;
 
-        const bg = this.add.rectangle(width / 2, height / 2, width - 100, 300, 0x000000, 0.9);
+        const quizCount = Array.isArray((this.levelData as any)?.questions)
+            ? (this.levelData as any).questions.length
+            : 0;
+        const clearanceRule = `玩法规则：${buildCampaignOverviewText(quizCount)}`;
+        const bg = this.add.rectangle(width / 2, height / 2, width - 100, 388, 0x000000, 0.92);
         bg.setScrollFactor(0);
+        bg.setDepth(overlayDepth);
+        bg.setStrokeStyle(2, 0x334155, 0.95);
 
         const title = this.add.text(width / 2, height / 2 - 80, this.levelData.title, {
             fontSize: '32px',
             color: '#ffffff',
             fontStyle: 'bold'
-        }).setOrigin(0.5).setScrollFactor(0);
+        }).setOrigin(0.5).setScrollFactor(0).setDepth(overlayDepth + 1);
 
         const story = this.add.text(width / 2, height / 2 - 20, this.levelData.story || this.levelData.description || '', {
             fontSize: '18px',
             color: '#cccccc',
             wordWrap: { width: width - 150 },
             align: 'center'
-        }).setOrigin(0.5).setScrollFactor(0);
+        }).setOrigin(0.5).setScrollFactor(0).setDepth(overlayDepth + 1);
 
-        const startBtn = this.add.text(width / 2, height / 2 + 80, '开始挑战', {
+        const ruleText = this.add.text(width / 2, height / 2 + 54, clearanceRule, {
+            fontSize: '16px',
+            color: '#7dd3fc',
+            fontStyle: 'bold',
+            wordWrap: { width: width - 180 },
+            align: 'center'
+        }).setOrigin(0.5).setScrollFactor(0).setDepth(overlayDepth + 1);
+
+        const startBtn = this.add.text(width / 2, height / 2 + 126, '开始挑战', {
             fontSize: '24px',
             color: '#ffffff',
             backgroundColor: '#00ff00',
             padding: { x: 20, y: 10 }
-        }).setOrigin(0.5).setScrollFactor(0).setInteractive();
+        }).setOrigin(0.5).setScrollFactor(0).setDepth(overlayDepth + 1).setInteractive();
 
         startBtn.on('pointerdown', () => {
             bg.destroy();
             title.destroy();
             story.destroy();
+            ruleText.destroy();
             startBtn.destroy();
+            this.isLevelIntroActive = false;
+            this.physics.world.resume();
 
             // 🔥 相机跟随在update中自动处理
             debugLog('[PlatformGameScene] 🎮 点击开始挑战，相机将在update中跟随');
@@ -3463,6 +3810,7 @@ export default class PlatformGameScene extends Phaser.Scene {
 
     update() {
         if (!this.player || !this.cursors) return;
+        if (this.isLevelIntroActive) return;
 
         // 🔥🔥🔥 创意工坊：确保相机始终跟随玩家
         const isCustomLevel = (this.levelData as any).isCustomLevel || (this.levelData as any).isTestMode;
@@ -3483,15 +3831,35 @@ export default class PlatformGameScene extends Phaser.Scene {
         const touchState = touchInputManager.getState();
 
         // 合并键盘和触控输入
-        const inputLeft = this.cursors.left.isDown || touchState.left;
-        const inputRight = this.cursors.right.isDown || touchState.right;
-        const inputUp = this.cursors.up.isDown || touchState.up;
-        const inputDown = this.cursors.down.isDown || touchState.down;
+        const inputLeft = this.cursors.left.isDown || this.moveKeys.left.isDown || touchState.left;
+        const inputRight = this.cursors.right.isDown || this.moveKeys.right.isDown || touchState.right;
+        const inputUp = this.cursors.up.isDown || this.moveKeys.up.isDown || touchState.up;
+        const inputDown = this.cursors.down.isDown || this.moveKeys.down.isDown || touchState.down;
 
         // 更新计时器
         if (this.dashCooldown > 0) this.dashCooldown -= deltaTime;
         if (this.coyoteTime > 0) this.coyoteTime -= deltaTime;
         if (this.jumpBufferTime > 0) this.jumpBufferTime -= deltaTime;
+        if (this.timeSlowCooldown > 0) this.timeSlowCooldown -= deltaTime;
+        if (this.chemicalShieldCooldown > 0) this.chemicalShieldCooldown -= deltaTime;
+        if (this.timeSlowDuration > 0) {
+            this.timeSlowDuration -= deltaTime;
+            if (this.timeSlowDuration <= 0) {
+                this.timeSlowDuration = 0;
+                this.deactivateTimeSlow();
+            }
+        }
+        if (this.chemicalShieldDuration > 0) {
+            this.chemicalShieldDuration -= deltaTime;
+            if (this.chemicalShieldDuration <= 0) {
+                this.clearChemicalShield();
+            }
+        }
+
+        if (this.skillAura?.active) {
+            this.skillAura.setPosition(this.player.x, this.player.y);
+            this.skillAura.setAlpha(this.chemicalShieldDuration > 0 ? 0.22 : 0.1);
+        }
 
         // 检测墙壁接触（技能系统）
         this.touchingWall = body.touching.left || body.touching.right;
@@ -3531,6 +3899,7 @@ export default class PlatformGameScene extends Phaser.Scene {
         // 【战役6-1：风区冲刺系统】- 战役7禁用
         const campaignId = this.getCampaignId();
         if (campaignId !== 'campaign_7' && (this.player as any).windZones) {
+            const windResistance = this.hasSkill('windControl') ? 0.55 : 1;
             (this.player as any).windZones.forEach((windZone: any) => {
                 // 检测玩家是否在风区内
                 const inWindZone = this.player.x >= windZone.x &&
@@ -3574,13 +3943,13 @@ export default class PlatformGameScene extends Phaser.Scene {
                     if (!isInAir) {
                         // 在地面时：强制设置速度（无法对抗）
                         const dashSpeed = windZone.direction === 'right' ?
-                            windZone.windForce :
-                            -windZone.windForce;
+                            windZone.windForce * windResistance :
+                            -windZone.windForce * windResistance;
                         body.setVelocityX(dashSpeed);
                     } else {
                         // 在空中时：施加强推力（更艰难前进，高难度）
                         // 🔥🔥 再次加强空中阻力：1000风力 = 10推力，2000风力 = 20推力
-                        const windPushBase = (windZone.windForce / 1000) * 10;
+                        const windPushBase = (windZone.windForce / 1000) * 10 * windResistance;
                         const windPush = windZone.direction === 'right' ? windPushBase : -windPushBase;
                         const currentVelX = body.velocity.x;
                         const newVelX = currentVelX + windPush;
@@ -3609,11 +3978,11 @@ export default class PlatformGameScene extends Phaser.Scene {
 
         // Jump Buffer - 正常用上键，反重力用下键
         if (isReversedGravity) {
-            if (Phaser.Input.Keyboard.JustDown(this.cursors.down) || touchDownJustPressed || touchJumpJustPressed) {
+            if (Phaser.Input.Keyboard.JustDown(this.cursors.down) || Phaser.Input.Keyboard.JustDown(this.moveKeys.down) || touchDownJustPressed || touchJumpJustPressed) {
                 this.jumpBufferTime = 0.1;
             }
         } else {
-            if (Phaser.Input.Keyboard.JustDown(this.cursors.up) || touchUpJustPressed || touchJumpJustPressed) {
+            if (Phaser.Input.Keyboard.JustDown(this.cursors.up) || Phaser.Input.Keyboard.JustDown(this.moveKeys.up) || touchUpJustPressed || touchJumpJustPressed) {
                 this.jumpBufferTime = 0.1;
             }
         }
@@ -3666,16 +4035,33 @@ export default class PlatformGameScene extends Phaser.Scene {
 
         // 冲刺技能（检查是否解锁）- 支持触控
         const touchDashJustPressed = touchState.dash && !this.lastTouchState.dash;
-        if ((Phaser.Input.Keyboard.JustDown(this.spaceKey) || touchDashJustPressed) &&
-            this.playerSkills.includes('dash') &&
+        const touchInteractJustPressed = touchState.interact && !this.lastTouchState.interact;
+        if ((Phaser.Input.Keyboard.JustDown(this.spaceKey) || Phaser.Input.Keyboard.JustDown(this.actionKeys.dash) || touchDashJustPressed) &&
+            this.hasDashSkill() &&
             this.dashCooldown <= 0 &&
             !this.isDashing) {
             this.performDash();
         }
 
-        // X攻击 - 支持触控
+        if (Phaser.Input.Keyboard.JustDown(this.actionKeys.timeSlow) && this.hasSkill('time_slow')) {
+            this.activateTimeSlow();
+        }
+
+        if (Phaser.Input.Keyboard.JustDown(this.actionKeys.shield) && this.hasChemicalShieldSkill()) {
+            this.activateChemicalShield();
+        }
+
+        if (touchInteractJustPressed) {
+            if (this.hasChemicalShieldSkill() && this.chemicalShieldCooldown <= 0 && this.chemicalShieldDuration <= 0) {
+                this.activateChemicalShield();
+            } else if (this.hasSkill('time_slow') && this.timeSlowCooldown <= 0 && this.timeSlowDuration <= 0) {
+                this.activateTimeSlow();
+            }
+        }
+
+        // G主攻击（兼容 X）- 支持触控
         const touchAttackJustPressed = touchState.attack && !this.lastTouchState.attack;
-        if ((Phaser.Input.Keyboard.JustDown(this.attackKey) || touchAttackJustPressed) && this.canAttack && !this.isAttacking) {
+        if ((Phaser.Input.Keyboard.JustDown(this.attackKey) || Phaser.Input.Keyboard.JustDown(this.actionKeys.attack) || touchAttackJustPressed) && this.canAttack && !this.isAttacking) {
             this.performAttack();
         }
 
@@ -3683,6 +4069,7 @@ export default class PlatformGameScene extends Phaser.Scene {
 
         // 更新触控状态追踪（用于下一帧检测JustDown）
         this.lastTouchState = { ...touchState };
+        this.updateSkillStatusDisplay();
 
         // 检测玩家是否掉落到世界外（使用实际世界高度）
         const worldHeight = this.physics.world.bounds.height || 600;
@@ -4010,7 +4397,9 @@ export default class PlatformGameScene extends Phaser.Scene {
                     case 'acid':
                         // 酸液：每500ms造成一次伤害（更频繁）
                         if (now - this.lastChemicalDamageTime > 500) {
-                            this.takeDamage(damage || 15);
+                            if (!this.absorbIncomingDamage('chemical')) {
+                                this.takeDamage(damage || 15);
+                            }
                             this.lastChemicalDamageTime = now;
                             // 🎊 新年主题：辣椒酱视觉效果
                             const acidEffect = this.add.circle(this.player.x, this.player.y, 25, 0xDC143C, 0.6);
@@ -4027,7 +4416,9 @@ export default class PlatformGameScene extends Phaser.Scene {
                     case 'poison':
                         // 毒气：每300ms造成小伤害
                         if (now - this.lastChemicalDamageTime > 300) {
-                            this.takeDamage(damage || 5);
+                            if (!this.absorbIncomingDamage('chemical')) {
+                                this.takeDamage(damage || 5);
+                            }
                             this.lastChemicalDamageTime = now;
                             // 毒气视觉效果
                             const poisonEffect = this.add.circle(this.player.x, this.player.y, 20, 0x9932cc, 0.5);
@@ -4301,6 +4692,7 @@ export default class PlatformGameScene extends Phaser.Scene {
         // 🔥 检测玩家是否在空中（跳跃状态）
         const onGround = body.blocked.down || body.touching.down;
         const isInAir = !onGround;
+        const windResistance = this.hasSkill('windControl') ? 0.58 : 1;
 
         for (const windZone of this.windZonesData) {
             const { x, y, width, height, direction, windForce } = windZone.data;
@@ -4320,11 +4712,11 @@ export default class PlatformGameScene extends Phaser.Scene {
                     // 地面：windForce * 5 = 强推力，会被吹走
                     // 空中：windForce * 5 * 0.05 = windForce * 0.25 = 很弱的阻力，可以艰难前进
                     const airMultiplier = isInAir ? 0.05 : 1.0;
-                    forceMultiplier = windForce * 5 * airMultiplier;
+                    forceMultiplier = windForce * 5 * airMultiplier * windResistance;
                 } else {
                     // 战役9/10：强力风，空中减弱到60%
                     const airMultiplier = isInAir ? 0.6 : 1.0;
-                    forceMultiplier = windForce * 18 * airMultiplier;
+                    forceMultiplier = windForce * 18 * airMultiplier * windResistance;
                 }
 
                 switch (direction) {
@@ -4451,8 +4843,17 @@ export default class PlatformGameScene extends Phaser.Scene {
                 case 'basic':
                 case 'slime':
                     // 基础怪物：左右巡逻
-                    if (Math.abs(enemy.x - aiData.startX) > aiData.patrolDistance) {
-                        aiData.direction *= -1;
+                    {
+                        const leftBound = aiData.startX - aiData.patrolDistance;
+                        const rightBound = aiData.startX + aiData.patrolDistance;
+
+                        if (enemy.x <= leftBound) {
+                            enemy.x = leftBound;
+                            aiData.direction = 1;
+                        } else if (enemy.x >= rightBound) {
+                            enemy.x = rightBound;
+                            aiData.direction = -1;
+                        }
                     }
                     enemy.setVelocityX(aiData.direction * moveSpeed);  // 🔥 使用配置的速度
                     enemy.setFlipX(aiData.direction < 0);
@@ -4473,8 +4874,17 @@ export default class PlatformGameScene extends Phaser.Scene {
 
                 case 'robot':
                     // 机器人：巡逻+远程攻击
-                    if (Math.abs(enemy.x - aiData.startX) > aiData.patrolDistance) {
-                        aiData.direction *= -1;
+                    {
+                        const leftBound = aiData.startX - aiData.patrolDistance;
+                        const rightBound = aiData.startX + aiData.patrolDistance;
+
+                        if (enemy.x <= leftBound) {
+                            enemy.x = leftBound;
+                            aiData.direction = 1;
+                        } else if (enemy.x >= rightBound) {
+                            enemy.x = rightBound;
+                            aiData.direction = -1;
+                        }
                     }
                     enemy.setVelocityX(aiData.direction * moveSpeed);  // 🔥 使用配置的速度
                     enemy.setFlipX(aiData.direction < 0);
@@ -4744,6 +5154,10 @@ export default class PlatformGameScene extends Phaser.Scene {
                         } else {
                             // 🔥 非战役9的通用Boss AI
                             let direction = this.player.x > enemy.x ? 1 : -1;
+                            const horizontalGap = this.player.x - enemy.x;
+                            const yDistance = this.player.y - enemy.y;
+                            const isWithinStableAttackZone =
+                                Math.abs(horizontalGap) < 36 && Math.abs(yDistance) < 72;
 
                             // 🔥 分离力只在非常近时才影响方向，且不完全覆盖追击方向
                             // 改为：分离力作为速度调整，而不是方向覆盖
@@ -4772,13 +5186,22 @@ export default class PlatformGameScene extends Phaser.Scene {
                                 const yOscillate = Math.sin(Date.now() / 200) * 60;
                                 enemy.setVelocityY(yOscillate);
                                 debugLog('[Boss] 战术撤退中...');
+                            } else if (isWithinStableAttackZone) {
+                                // 进入近身稳定区后停住，避免贴脸时反复横跳
+                                enemy.setVelocityX(0);
+                                enemy.setFlipX(direction < 0);
+                                if (Math.abs(yDistance) > 50) {
+                                    const ySpeed = Math.min(Math.abs(yDistance) * 0.5, 60 * phaseSpeedMultiplier);
+                                    enemy.setVelocityY(yDistance > 0 ? ySpeed : -ySpeed);
+                                } else {
+                                    enemy.setVelocityY(0);
+                                }
                             } else if (distanceToPlayer < 80) {
                                 // 距离太近：后退并攻击（防止被卡距离）
                                 const backoffSpeed = 100 * phaseSpeedMultiplier;
                                 enemy.setVelocityX(-direction * backoffSpeed);
                                 enemy.setFlipX(direction < 0);
                                 // 后退时Y轴保持跟随
-                                const yDistance = this.player.y - enemy.y;
                                 if (Math.abs(yDistance) > 50) {
                                     const ySpeed = Math.min(Math.abs(yDistance) * 0.5, 60 * phaseSpeedMultiplier);
                                     enemy.setVelocityY(yDistance > 0 ? ySpeed : -ySpeed);
@@ -4793,7 +5216,6 @@ export default class PlatformGameScene extends Phaser.Scene {
                                 enemy.setFlipX(direction < 0);
 
                                 // Y轴跟随（无重力模式下需要手动控制）
-                                const yDistance = this.player.y - enemy.y;
                                 if (Math.abs(yDistance) > 50) {
                                     const ySpeed = Math.min(Math.abs(yDistance) * 0.5, 60 * phaseSpeedMultiplier);
                                     enemy.setVelocityY(yDistance > 0 ? ySpeed : -ySpeed);
@@ -5300,8 +5722,10 @@ export default class PlatformGameScene extends Phaser.Scene {
                                                 enemy.setVelocityY(yDiff > 0 ? 60 * speedMult : -60 * speedMult);
                                             }
                                         } else if (aiData.aiState === 'attack') {
-                                            // 攻击：停下来攻击
-                                            enemy.setVelocityX(direction * 20);  // 微调位置
+                                            // 攻击：保持一个稳定死区，避免贴脸时来回抖动
+                                            const horizontalGap = this.player.x - enemy.x;
+                                            const isWithinAttackDeadZone = Math.abs(horizontalGap) < 36;
+                                            enemy.setVelocityX(isWithinAttackDeadZone ? 0 : direction * 45 * speedMult);
                                             enemy.setFlipX(direction < 0);
                                         } else if (aiData.aiState === 'retreat') {
                                             // 撤退：远离玩家
@@ -7732,23 +8156,27 @@ export default class PlatformGameScene extends Phaser.Scene {
 
     private performDash() {
         this.isDashing = true;
-        this.dashCooldown = 1.0;
+        this.dashCooldown = this.getDashCooldownSeconds();
+        const isQuantumDash = this.hasSkill('quantum_dash');
+        const dashSpeed = this.getDashSpeed();
+        const dashDuration = this.getDashDurationMs();
+        this.isInvulnerable = isQuantumDash;
 
         // 获取触控输入状态
         const touchState = touchInputManager.getState();
 
         let dashDirection = 1;
-        if (this.cursors.left.isDown || touchState.left) {
+        if (this.cursors.left.isDown || this.moveKeys.left.isDown || touchState.left) {
             dashDirection = -1;
             this.player.setFlipX(true);
-        } else if (this.cursors.right.isDown || touchState.right) {
+        } else if (this.cursors.right.isDown || this.moveKeys.right.isDown || touchState.right) {
             dashDirection = 1;
             this.player.setFlipX(false);
         } else {
             dashDirection = this.player.flipX ? -1 : 1;
         }
 
-        this.player.setVelocityX(dashDirection * 500);
+        this.player.setVelocityX(dashDirection * dashSpeed);
         this.player.setVelocityY(0);
 
         // 创建冲刺残影效果
@@ -7766,8 +8194,18 @@ export default class PlatformGameScene extends Phaser.Scene {
         // 冲刺粒子效果
         this.createDashParticles(dashDirection);
 
-        this.time.delayedCall(200, () => {
+        if (isQuantumDash) {
+            this.player.setTint(0x22d3ee);
+        }
+
+        this.time.delayedCall(dashDuration, () => {
             this.isDashing = false;
+            if (isQuantumDash) {
+                this.isInvulnerable = false;
+                if (this.player?.active) {
+                    this.player.clearTint();
+                }
+            }
         });
     }
 
@@ -7781,10 +8219,10 @@ export default class PlatformGameScene extends Phaser.Scene {
 
         // 如果按着方向键，使用方向键方向（支持触控）
         const touchState = touchInputManager.getState();
-        if (this.cursors.left.isDown || touchState.left) {
+        if (this.cursors.left.isDown || this.moveKeys.left.isDown || touchState.left) {
             dashDirection = -1;
             this.player.setFlipX(true);
-        } else if (this.cursors.right.isDown || touchState.right) {
+        } else if (this.cursors.right.isDown || this.moveKeys.right.isDown || touchState.right) {
             dashDirection = 1;
             this.player.setFlipX(false);
         }
@@ -8164,6 +8602,10 @@ export default class PlatformGameScene extends Phaser.Scene {
     private takeDamage(damage: number) {
         // 🔥 安全检查：确保玩家存在且游戏未结束
         if (!this.player || !this.player.active || this.isGameOver) {
+            return;
+        }
+
+        if (this.absorbIncomingDamage('damage')) {
             return;
         }
 

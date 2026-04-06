@@ -33,8 +33,8 @@ const STYLE_META: Record<SelectableStyle, {
     title: '暖心伙伴',
     subtitle: '更强调陪伴、治愈和家园氛围，适合想要高频互动的玩家。',
     icon: <Heart className="h-10 w-10 text-rose-300" />,
-    shell: 'from-rose-100 via-orange-50 to-amber-100',
-    border: 'border-rose-200',
+    shell: 'from-rose-950 via-fuchsia-950 to-slate-950',
+    border: 'border-rose-400/40',
     chips: ['陪伴感', '治愈系', '毛绒感', '轻松风'],
   },
   tech: {
@@ -142,6 +142,7 @@ export default function PetSelection({ isOpen, onClose, onSelect }: PetSelection
       <motion.div
         initial={{ opacity: 0, y: 18, scale: 0.96 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
+        data-testid="pet-selection-modal"
         className="max-h-[92vh] w-full max-w-6xl overflow-y-auto rounded-[28px] border border-white/10 bg-[#090d14] shadow-[0_30px_90px_rgba(0,0,0,0.45)]"
       >
         <div className="relative overflow-hidden rounded-[28px]">
@@ -193,6 +194,7 @@ export default function PetSelection({ isOpen, onClose, onSelect }: PetSelection
                       whileHover={{ y: -6, scale: 1.01 }}
                       whileTap={{ scale: 0.99 }}
                       onClick={() => handleStyleSelect(styleKey)}
+                      data-testid={`pet-style-${styleKey}`}
                       className={`relative overflow-hidden rounded-[24px] border p-5 text-left ${meta.border} bg-gradient-to-br ${meta.shell}`}
                     >
                       <div className="absolute inset-x-0 top-0 h-24 bg-[linear-gradient(180deg,rgba(255,255,255,0.12),transparent)]" />
@@ -257,6 +259,7 @@ export default function PetSelection({ isOpen, onClose, onSelect }: PetSelection
                         whileHover={{ y: -4, scale: 1.01 }}
                         whileTap={{ scale: 0.99 }}
                         onClick={() => handleTypeSelect(petType)}
+                        data-testid={`pet-type-${petType}`}
                         className="rounded-[24px] border border-white/10 bg-gradient-to-br from-slate-900/95 via-slate-900/75 to-slate-950 p-4 text-left shadow-[0_18px_40px_rgba(2,6,23,0.2)] transition hover:border-white/20"
                       >
                         <div className="mb-4 flex items-center justify-between">

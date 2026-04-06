@@ -23,6 +23,9 @@ export default function PhaserGame() {
       };
 
       gameRef.current = new Phaser.Game(config);
+      if (process.env.NODE_ENV === 'development') {
+        (window as Window & { __worldPhaserGame?: Phaser.Game | null }).__worldPhaserGame = gameRef.current;
+      }
 
       if (gameRef.current.scene.keys.MainScene) {
         gameRef.current.scene.keys.MainScene.scene.restart({ skills });
@@ -45,6 +48,9 @@ export default function PhaserGame() {
       if (gameRef.current) {
         gameRef.current.destroy(true);
         gameRef.current = null;
+      }
+      if (process.env.NODE_ENV === 'development') {
+        (window as Window & { __worldPhaserGame?: Phaser.Game | null }).__worldPhaserGame = null;
       }
     };
   }, [skills]);

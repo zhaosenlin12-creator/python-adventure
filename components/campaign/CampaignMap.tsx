@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Star, Lock, Play, Trophy, Clock, Zap } from "lucide-react";
 import { useAuthStore } from "@/store/authStore";
+import { formatSkillRewardText } from "@/lib/skills";
 import type { CampaignLevel, CampaignProgress, Chapter } from "@/types/campaign";
 
 interface CampaignMapProps {
@@ -11,6 +12,15 @@ interface CampaignMapProps {
     onClose: () => void;
     onStartLevel: (levelId: number) => void;
 }
+
+const getRewardSkillText = (rewards: CampaignLevel['rewards']) => {
+    const rewardSkills = [
+        ...(rewards.skills ?? []),
+        ...((rewards as any).skill ? [(rewards as any).skill] : []),
+    ];
+
+    return rewardSkills.length > 0 ? formatSkillRewardText(rewardSkills) : '';
+};
 
 export default function CampaignMap({ isOpen, onClose, onStartLevel }: CampaignMapProps) {
     const [chapters, setChapters] = useState<Chapter[]>([]);
@@ -351,9 +361,11 @@ export default function CampaignMap({ isOpen, onClose, onStartLevel }: CampaignM
                                     <div className="bg-slate-800 border border-slate-600 rounded-lg px-4 py-2">
                                         <span className="text-blue-400">+{selectedLevel.rewards.coins} 金币</span>
                                     </div>
-                                    {selectedLevel.rewards.skills && selectedLevel.rewards.skills.length > 0 && (
+                                    {getRewardSkillText(selectedLevel.rewards) && (
                                         <div className="bg-slate-800 border border-slate-600 rounded-lg px-4 py-2">
-                                            <span className="text-purple-500">解锁技能</span>
+                                            <span className="text-purple-500">
+                                                奖励内容：{getRewardSkillText(selectedLevel.rewards)}
+                                            </span>
                                         </div>
                                     )}
                                 </div>

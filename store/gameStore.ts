@@ -43,6 +43,7 @@ export interface GameState {
     addXp: (amount: number) => void;
     addCoins: (amount: number) => void;
     setCoins: (coins: number) => void;
+    spendCoins: (amount: number) => boolean;
     unlockLevel: (levelId: string) => void;
     addToInventory: (item: string) => void;
 
@@ -122,6 +123,25 @@ export const useGameStore = create<GameState>()(
             setCoins: (coins) => {
                 set({ coins });
                 get().saveToCloud();
+            },
+
+            spendCoins: (amount) => {
+                if (amount <= 0) return true;
+
+                let spent = false;
+                set((state) => {
+                    if (state.coins < amount) {
+                        return state;
+                    }
+                    spent = true;
+                    return { coins: state.coins - amount };
+                });
+
+                if (spent) {
+                    get().saveToCloud();
+                }
+
+                return spent;
             },
 
             unlockLevel: (levelId) => {

@@ -23,7 +23,7 @@ export default function SkillUnlockNotification({
         if (isOpen) {
             const timer = setTimeout(() => {
                 onClose();
-            }, 5000); // 5秒后自动关闭
+            }, 3600);
             
             return () => clearTimeout(timer);
         }
@@ -32,54 +32,46 @@ export default function SkillUnlockNotification({
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 flex items-center justify-center z-[100] pointer-events-none">
-            <div className="pointer-events-auto bg-gradient-to-br from-blue-600 to-teal-500 rounded-2xl shadow-2xl max-w-md w-full mx-4 border-4 border-white/20 animate-bounce-in">
-                {/* 关闭按钮 */}
+        <div className="fixed inset-x-3 bottom-3 z-[100] flex justify-center pointer-events-none md:inset-x-auto md:bottom-5 md:right-5">
+            <div className="pointer-events-auto relative w-full max-w-sm rounded-3xl border border-cyan-400/30 bg-slate-950/92 shadow-2xl backdrop-blur-sm">
                 <button
                     onClick={onClose}
-                    className="absolute top-4 right-4 text-white/80 hover:text-white transition"
+                    className="absolute right-3 top-3 text-slate-400 transition hover:text-white"
                 >
-                    <X className="w-6 h-6" />
+                    <X className="h-5 w-5" />
                 </button>
 
-                <div className="p-8 text-center">
-                    {/* 成功图标 */}
-                    <div className="mb-6 flex justify-center">
-                        <div className="relative">
-                            <div className="absolute inset-0 bg-yellow-400 rounded-full blur-xl opacity-60 animate-pulse"></div>
-                            <CheckCircle className="w-20 h-20 text-yellow-400 relative animate-scale-in" strokeWidth={3} />
+                <div className="p-5">
+                    <div className="flex items-start gap-4">
+                        <div className="mt-0.5 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-cyan-400/30 bg-cyan-400/10 text-cyan-200">
+                            <CheckCircle className="h-6 w-6" strokeWidth={2.4} />
+                        </div>
+
+                        <div className="min-w-0 flex-1">
+                            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">
+                                Skill Learned
+                            </div>
+                            <h2 className="mt-1 text-xl font-bold text-white">已学习：{skillTitle}</h2>
+                            <p className="mt-2 text-sm leading-6 text-slate-300">{skillDescription}</p>
+
+                            <div className="mt-3 rounded-2xl border border-slate-800 bg-slate-900/90 px-3 py-3">
+                                <div className="text-[11px] uppercase tracking-[0.18em] text-slate-500">用法</div>
+                                <div className="mt-1 text-sm font-semibold text-cyan-100">{skillInstruction}</div>
+                            </div>
+
+                            <div className="mt-3 flex items-center justify-between gap-3">
+                                <p className="text-xs leading-5 text-slate-400">
+                                    已加入技能栏，进入关卡后直接生效。
+                                </p>
+                                <button
+                                    onClick={onClose}
+                                    className="rounded-full bg-cyan-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+                                >
+                                    继续
+                                </button>
+                            </div>
                         </div>
                     </div>
-
-                    {/* 标题 */}
-                    <h2 className="text-3xl font-bold text-white mb-2 font-pixel">
-                        🎉 技能解锁成功！
-                    </h2>
-
-                    {/* 技能名称 */}
-                    <div className="bg-white/20 rounded-lg p-4 mb-4 backdrop-blur-sm">
-                        <h3 className="text-2xl font-bold text-yellow-300 mb-2">{skillTitle}</h3>
-                        <p className="text-white/90 text-sm">{skillDescription}</p>
-                    </div>
-
-                    {/* 使用说明 */}
-                    <div className="bg-white/20 rounded-lg p-4 mb-4 backdrop-blur-sm">
-                        <p className="text-xs text-white/70 mb-1">使用方法</p>
-                        <p className="text-white font-semibold">{skillInstruction}</p>
-                    </div>
-
-                    {/* 提示 */}
-                    <p className="text-white/80 text-sm">
-                        ✨ 立即生效，可在开放世界中使用！
-                    </p>
-
-                    {/* 确认按钮 */}
-                    <button
-                        onClick={onClose}
-                        className="mt-6 px-8 py-3 bg-slate-700 text-blue-400 rounded-lg font-bold hover:bg-slate-600 hover:text-blue-300 transition-all transform hover:scale-105 shadow-lg"
-                    >
-                        确定
-                    </button>
                 </div>
             </div>
         </div>

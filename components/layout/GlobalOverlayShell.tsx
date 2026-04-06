@@ -1,8 +1,6 @@
 'use client';
 
 import GlobalChat from '@/components/chat/GlobalChat';
-import AchievementPanel from '@/components/pet/AchievementPanel';
-import DailyCheckIn from '@/components/pet/DailyCheckIn';
 import InteractionEffectToast from '@/components/pet/InteractionEffectToast';
 import PetMainPanel from '@/components/pet/PetMainPanel';
 import PetStatusToast from '@/components/pet/PetStatusToast';
@@ -28,8 +26,6 @@ export default function GlobalOverlayShell() {
         <FoodRewardToast />
         <CoinRewardToast />
         <ErrorToast />
-        <DailyCheckIn />
-        <AchievementPanel />
       </div>
     </>
   );

@@ -1,35 +1,33 @@
-# 20260331-stable6-r5
+# 20260406-stable6-r7
 
 ## Build
 
 - Frontend package: `game-deploy.zip`
 - Backend package: `backend-deploy.zip`
-- Frontend build version: `v20260331-stable6-r5`
+- Frontend build version: `v20260406-stable6-r7`
 
-## 本轮收口内容
+## 本轮更新
 
-- 生存乱斗与全局浮层彻底隔离，避免聊天、签到、成就、宠物挂件覆盖到乱斗界面
-- 宠物小屋进入时也会隐藏全局浮层，避免小屋体验被外层组件打断
-- 宠物小屋新手首进模式改成轻量引导，先保留核心互动，再展开高级工具
-- 宠物小屋引导改成按用户隔离的本地 key，同时兼容旧 key，避免不同账号互相污染
-- 修复小屋互动面板遮挡食物背包按钮的问题
-- 更新宠物/乱斗 QA 规约，和当前产品交互保持一致
-- 前端版本标识更新为 `v20260331-stable6-r5`
+- 生存乱斗继续做了同步与房间清理收口，客人端延迟波动更稳，最终 smoke 验证保持 `droppedSnapshots = 0`
+- 新增系统更新公告与补给入口，现有用户首次回来会看到更新说明，并一次性收到 `1000` 金币补给
+- 金币记录新增“系统更新补给”来源展示，前端余额会在公告拉起时同步刷新
+- 宠物孵化选择最左侧风格卡改为深色方案，避免白底导致文字发灰看不清
+- 公告弹窗、金币入口、孵化面板补充了稳定的 QA 测试点位，方便后续真实验收
+- 首页悬浮入口收口：签到与成就只在首页显示并缩小，聊天继续全局保留
+- 开放世界不再提前弹出生存乱斗恢复提示，只有真正进入生存乱斗时才会显示相关界面
+- 系统补给弹窗底部文案已收口为正式玩家提示，不再展示开发说明
 
 ## 已完成验证
 
 - `npm run lint`
 - `npm run build`
-- `pytest -q`
-- `npx playwright test scripts/pet-workshop-qa.spec.ts scripts/pvp-br-qa.spec.ts --reporter=line`
+- `python -m pytest backend/tests/test_system_announcements.py -q`
+- `python -m pytest backend/tests/test_pvp_battle_royale_api.py -q`
+- `node scripts/qa-system-update-pet.mjs`
+- `node scripts/qa-battle-royale-smoke.mjs`
 
-## 稳定性结论
+## 部署与数据安全
 
-- 当前最适合你服务器的仍然是单实例部署，不建议这轮改成多实例或容器编排
-- 前端可继续沿用当前 PM2 + Nginx 发布方式
-- 后端必须保持单实例，避免 WebSocket 状态、房间状态和 SQLite 写入竞争复杂化
-
-## 后续可做但不阻塞本次上线
-
-- 前端后续可以切 `Next standalone` 打包，进一步缩小部署包、减少服务器端无关文件
-- 后端如果未来要追求 `10+` 真人房，再考虑迁移房间态到 Redis/PostgreSQL，再谈多实例
+- 当前服务器唯一标准流程仍然是 [`deploy/DEPLOY_SERVER_EXACT.md`](../deploy/DEPLOY_SERVER_EXACT.md)
+- 后端包继续保持 DB-free，不包含 `.db` / `-wal` / `-shm`
+- 生产数据库继续固定在 `/www/data/game-backend/code_adventure.db`

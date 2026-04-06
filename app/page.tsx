@@ -21,6 +21,9 @@ import Footer from "@/components/Footer";
 import CoinBalance from "@/components/ui/CoinBalance";
 import CoinHistory from "@/components/ui/CoinHistory";
 import NewUserGuide, { shouldShowNewUserGuide } from "@/components/ui/NewUserGuide";
+import SystemUpdateAnnouncement from "@/components/ui/SystemUpdateAnnouncement";
+import DailyCheckIn from "@/components/pet/DailyCheckIn";
+import AchievementPanel from "@/components/pet/AchievementPanel";
 
 type ViewState = 'home' | 'map' | 'level';
 
@@ -205,6 +208,7 @@ export default function Home() {
                         size="sm"
                         onClick={() => setShowCoinHistory(true)}
                     />
+                    {view === 'home' && <SystemUpdateAnnouncement triggerVariant="toolbar" />}
                     <button
                         onClick={handleToggleMute}
                         className="p-2 sm:p-2 hover:bg-blue-900/30 rounded transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
@@ -317,6 +321,13 @@ export default function Home() {
                 isOpen={showNewUserGuide}
                 onClose={() => setShowNewUserGuide(false)}
             />
+
+            {view === 'home' && (
+                <>
+                    <DailyCheckIn />
+                    <AchievementPanel />
+                </>
+            )}
 
             {/* 底部备案信息 */}
             <Footer />

@@ -184,6 +184,7 @@ export default function PetMainPanel() {
         {/* 鎶樺彔鐘舵€?- 铔嬪浘鏍?*/}
         {!isExpanded && (
           <div
+            data-testid="pet-egg-panel-toggle"
             className="pixel-panel p-2 cursor-grab active:cursor-grabbing hover:border-sky-400 transition-all"
             onMouseDown={handleMouseDown}
             onClick={(e) => {
@@ -211,7 +212,7 @@ export default function PetMainPanel() {
         
         {/* 灞曞紑鐘舵€?- 铔嬭鎯?*/}
         {isExpanded && (
-          <div className="pixel-panel p-4 w-72 border-2 border-slate-700">
+          <div data-testid="pet-egg-panel" className="pixel-panel p-4 w-72 border-2 border-slate-700">
             <div className="flex justify-between items-center mb-3">
               <h3 className="font-bold text-lg text-white">神秘的蛋</h3>
               <button

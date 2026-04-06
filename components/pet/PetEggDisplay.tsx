@@ -155,6 +155,7 @@ export default function PetEggDisplay({ pet }: PetEggDisplayProps) {
               </div>
               <button
                 onClick={handleHatchClick}
+                data-testid="pet-hatch-button"
                 className="pixel-btn w-full bg-gradient-to-r from-sky-400 to-cyan-400 py-2 text-sm font-bold text-slate-950 hover:from-sky-300 hover:to-cyan-300"
               >
                 立即孵化

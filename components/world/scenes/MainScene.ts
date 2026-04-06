@@ -7,6 +7,7 @@ import { touchInputManager, TouchInputState } from '@/lib/input/TouchInputManage
 import { PetFollower } from '../entities/PetFollower';
 import { PET_CONFIGS, Pet, PetMood, PetStatus } from '@/types/pet';
 import { migratePetType } from '@/lib/pet/migration';
+import { buildWorldControlsText } from '@/lib/gameplayText';
 
 // 生产环境禁用调试日志
 const DEBUG = process.env.NODE_ENV === 'development';
@@ -28,6 +29,7 @@ export class MainScene extends Phaser.Scene {
     private platforms!: Phaser.Physics.Arcade.StaticGroup;
     private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
     private infoText!: Phaser.GameObjects.Text;
+    private skillsSummaryText!: Phaser.GameObjects.Text;
     private stations: Station[] = [];
     private stationSprites: Map<string, Phaser.GameObjects.Container> = new Map();
     private shiftKey!: Phaser.Input.Keyboard.Key;
@@ -60,6 +62,23 @@ export class MainScene extends Phaser.Scene {
     
     // 玩家技能状态（从游戏状态获取）
     private playerSkills: string[] = [];
+    private moveKeys!: {
+        up: Phaser.Input.Keyboard.Key;
+        down: Phaser.Input.Keyboard.Key;
+        left: Phaser.Input.Keyboard.Key;
+        right: Phaser.Input.Keyboard.Key;
+        interact: Phaser.Input.Keyboard.Key;
+        dash: Phaser.Input.Keyboard.Key;
+        timeSlow: Phaser.Input.Keyboard.Key;
+        shield: Phaser.Input.Keyboard.Key;
+    };
+    private timeSlowCooldown: number = 0;
+    private timeSlowDuration: number = 0;
+    private chemicalShieldCooldown: number = 0;
+    private chemicalShieldDuration: number = 0;
+    private skillAura: Phaser.GameObjects.Arc | null = null;
+    private worldTimeScaleApplied: boolean = false;
+    private lastStationInteraction = { id: '', time: 0 };
     
     // 按键监听控制
     private keyboardEnabled: boolean = true;
@@ -88,6 +107,133 @@ export class MainScene extends Phaser.Scene {
         // 从游戏状态获取玩家技能
         const gameState = useGameStore.getState();
         this.playerSkills = [...gameState.skills]; // 获取实际解锁的技能
+        this.timeSlowCooldown = 0;
+        this.timeSlowDuration = 0;
+        this.chemicalShieldCooldown = 0;
+        this.chemicalShieldDuration = 0;
+        this.skillAura = null;
+        this.worldTimeScaleApplied = false;
+        this.lastStationInteraction = { id: '', time: 0 };
+    }
+
+    private hasSkill(skillId: string) {
+        return this.playerSkills.includes(skillId);
+    }
+
+    private isSceneOperational() {
+        const status = this.sys?.settings?.status;
+        return Boolean(
+            this.add &&
+            this.tweens &&
+            status !== Phaser.Scenes.SHUTDOWN &&
+            status !== Phaser.Scenes.DESTROYED
+        );
+    }
+
+    private hasDashSkill() {
+        return this.hasSkill('dash') || this.hasSkill('quantum_dash');
+    }
+
+    private hasChemicalShieldSkill() {
+        return this.hasSkill('chemical_shield') || this.hasSkill('time_shield');
+    }
+
+    private getDashSpeed() {
+        return this.hasSkill('quantum_dash') ? 960 : 800;
+    }
+
+    private getDashDurationMs() {
+        return this.hasSkill('quantum_dash') ? 320 : 250;
+    }
+
+    private activateTimeSlow() {
+        if (!this.hasSkill('time_slow') || this.timeSlowCooldown > 0 || this.timeSlowDuration > 0) {
+            return;
+        }
+
+        this.timeSlowCooldown = this.hasSkill('science_master') ? 6.4 : 8;
+        this.timeSlowDuration = this.hasSkill('time_mastery') ? 3.4 : 2.4;
+        const timeScale = this.hasSkill('time_mastery') ? 0.4 : 0.55;
+        this.physics.world.timeScale = timeScale;
+        this.time.timeScale = timeScale;
+        this.tweens.timeScale = timeScale;
+        this.worldTimeScaleApplied = true;
+
+        const burst = this.add.circle(this.player.x, this.player.y, 36, 0x67e8f9, 0.25);
+        this.tweens.add({
+            targets: burst,
+            scaleX: 2.2,
+            scaleY: 2.2,
+            alpha: 0,
+            duration: 360,
+            onComplete: () => burst.destroy()
+        });
+
+        const title = this.add.text(this.player.x, this.player.y - 56, '⏳ 时间放慢', {
+            fontSize: '18px',
+            color: '#fde68a',
+            stroke: '#0f172a',
+            strokeThickness: 4,
+            fontStyle: 'bold'
+        }).setOrigin(0.5).setDepth(120);
+        this.tweens.add({
+            targets: title,
+            y: title.y - 22,
+            alpha: 0,
+            duration: 620,
+            onComplete: () => title.destroy()
+        });
+
+        this.updateSkillDisplay();
+    }
+
+    private deactivateTimeSlow() {
+        if (!this.worldTimeScaleApplied) return;
+        this.physics.world.timeScale = 1;
+        this.time.timeScale = 1;
+        this.tweens.timeScale = 1;
+        this.worldTimeScaleApplied = false;
+        this.updateSkillDisplay();
+    }
+
+    private activateChemicalShield() {
+        if (!this.hasChemicalShieldSkill() || this.chemicalShieldCooldown > 0 || this.chemicalShieldDuration > 0) {
+            return;
+        }
+
+        this.chemicalShieldCooldown = this.hasSkill('science_master') ? 7.2 : 9;
+        this.chemicalShieldDuration = this.hasSkill('time_shield') ? 5.5 : 4;
+
+        if (!this.skillAura) {
+            this.skillAura = this.add.circle(this.player.x, this.player.y, 32, 0x38bdf8, 0.16);
+            this.skillAura.setStrokeStyle(3, 0x67e8f9, 0.9);
+            this.tweens.add({
+                targets: this.skillAura,
+                scaleX: 1.08,
+                scaleY: 1.08,
+                alpha: 0.26,
+                duration: 480,
+                yoyo: true,
+                repeat: -1
+            });
+        }
+
+        const shieldText = this.add.text(this.player.x, this.player.y - 56, '🛡️ 护盾展开', {
+            fontSize: '18px',
+            color: '#bfdbfe',
+            stroke: '#082f49',
+            strokeThickness: 4,
+            fontStyle: 'bold'
+        }).setOrigin(0.5).setDepth(120);
+        this.tweens.add({
+            targets: shieldText,
+            y: shieldText.y - 18,
+            alpha: 0,
+            duration: 620,
+            onComplete: () => shieldText.destroy()
+        });
+
+        this.updateSkillDisplay();
     }
 
     create() {
@@ -156,13 +302,23 @@ export class MainScene extends Phaser.Scene {
             this.shiftKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SHIFT);
             this.spaceKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
             this.eKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
+            this.moveKeys = this.input.keyboard.addKeys({
+                up: Phaser.Input.Keyboard.KeyCodes.W,
+                down: Phaser.Input.Keyboard.KeyCodes.S,
+                left: Phaser.Input.Keyboard.KeyCodes.A,
+                right: Phaser.Input.Keyboard.KeyCodes.D,
+                interact: Phaser.Input.Keyboard.KeyCodes.F,
+                dash: Phaser.Input.Keyboard.KeyCodes.H,
+                timeSlow: Phaser.Input.Keyboard.KeyCodes.J,
+                shield: Phaser.Input.Keyboard.KeyCodes.K,
+            }) as typeof this.moveKeys;
 
             this.phaserKeyHandler = (event: KeyboardEvent) => {
                 if (!this.keyboardEnabled) {
                     return;
                 }
 
-                if (this.isEKey(event) && this.activeStationForInput && !this.isTextInputFocused()) {
+                if (this.isInteractKey(event) && this.activeStationForInput && !this.isTextInputFocused()) {
                     event.preventDefault();
                     debugLog('[MainScene] Phaser键盘事件触发站点:', this.activeStationForInput.id);
                     this.interactWithStation(this.activeStationForInput);
@@ -177,7 +333,7 @@ export class MainScene extends Phaser.Scene {
         // 使用原生DOM事件作为备用方案
         if (typeof window !== 'undefined') {
             this.nativeKeyHandler = (event: KeyboardEvent) => {
-                if (this.isEKey(event) && this.activeStationForInput && !this.isTextInputFocused()) {
+                if (this.isInteractKey(event) && this.activeStationForInput && !this.isTextInputFocused()) {
                     event.preventDefault();
                     debugLog('[MainScene] 原生键盘事件触发站点:', this.activeStationForInput.id);
                     this.interactWithStation(this.activeStationForInput);
@@ -187,6 +343,15 @@ export class MainScene extends Phaser.Scene {
             window.addEventListener('keydown', this.nativeKeyHandler);
 
             this.events.on('shutdown', () => {
+                this.deactivateTimeSlow();
+                if (this.skillAura) {
+                    this.skillAura.destroy();
+                    this.skillAura = null;
+                }
+                if (this.petFollower) {
+                    this.petFollower.destroy();
+                    this.petFollower = null;
+                }
                 if (this.nativeKeyHandler) {
                     window.removeEventListener('keydown', this.nativeKeyHandler);
                     this.nativeKeyHandler = undefined;
@@ -204,6 +369,8 @@ export class MainScene extends Phaser.Scene {
                 this.eventListeners = [];
                 
                 // 清理远端玩家宠物跟随器
+                this.otherPlayers.forEach((container) => container.destroy());
+                this.otherPlayers.clear();
                 this.otherPlayerPets.forEach((petFollower) => petFollower.destroy());
                 this.otherPlayerPets.clear();
                 this.otherPlayerDirections.clear();
@@ -211,14 +378,15 @@ export class MainScene extends Phaser.Scene {
             });
         }
 
-        // 信息文本（固定在相机底部）
-        this.infoText = this.add.text(width / 2, height - 30, this.getControlsText(), {
-            fontSize: '14px',
+        // 信息文本（固定在相机右下角）
+        this.infoText = this.add.text(width - 20, height - 14, this.getControlsText(), {
+            fontSize: '10px',
             fontFamily: 'Arial, sans-serif',
             color: '#00ff00',
-            backgroundColor: '#000000aa',
-            padding: { x: 10, y: 5 }
-        }).setOrigin(0.5).setScrollFactor(0);
+            align: 'right',
+            stroke: '#04110a',
+            strokeThickness: 4,
+        }).setOrigin(1, 1).setScrollFactor(0).setDepth(1100);
 
         // 返回按钮（固定在相机）
         const backButton = this.add.text(20, 20, '← 返回主菜单', {
@@ -293,14 +461,16 @@ export class MainScene extends Phaser.Scene {
             });
         }
         
-        // 技能提示文本（固定在相机左下角，与绿色控制提示对齐）
-        const skillText = this.add.text(20, height - 30, this.getSkillsText(), {
-            fontSize: '12px',
+        // 技能提示文本（固定在相机左下角，与右侧操作提示对称）
+        this.skillsSummaryText = this.add.text(20, height - 14, this.getSkillsText(), {
+            fontSize: '10px',
             fontFamily: 'Arial, sans-serif',
             color: '#FFD700',
-            backgroundColor: '#000000aa',
-            padding: { x: 8, y: 4 }
-        }).setScrollFactor(0);
+            stroke: '#231600',
+            strokeThickness: 3,
+            align: 'left',
+        }).setScrollFactor(0).setOrigin(0, 1).setDepth(1100);
+        this.refreshBottomHudLayout();
         
         // 交互提示文本（固定在相机中央上方）
         this.interactionPrompt = this.add.text(width / 2, 100, '', {
@@ -349,7 +519,17 @@ export class MainScene extends Phaser.Scene {
                     if (this.input && this.input.keyboard && this.scene && this.scene.isActive()) {
                         this.input.keyboard.enabled = true;
                         this.eKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
-                        debugLog('[MainScene] Phaser keyboard input enabled and E key recreated');
+                        this.moveKeys = this.input.keyboard.addKeys({
+                            up: Phaser.Input.Keyboard.KeyCodes.W,
+                            down: Phaser.Input.Keyboard.KeyCodes.S,
+                            left: Phaser.Input.Keyboard.KeyCodes.A,
+                            right: Phaser.Input.Keyboard.KeyCodes.D,
+                            interact: Phaser.Input.Keyboard.KeyCodes.F,
+                            dash: Phaser.Input.Keyboard.KeyCodes.H,
+                            timeSlow: Phaser.Input.Keyboard.KeyCodes.J,
+                            shield: Phaser.Input.Keyboard.KeyCodes.K,
+                        }) as typeof this.moveKeys;
+                        debugLog('[MainScene] Phaser keyboard input enabled and gameplay keys recreated');
                     }
                 } catch (e) {
                     console.warn('[MainScene] Failed to re-enable keyboard:', e);
@@ -465,7 +645,7 @@ export class MainScene extends Phaser.Scene {
         this.createPlatform(200, groundY - 80, 2);
         this.createPlatform(500, groundY - 200, 2);
         this.createPlatform(1300, groundY - 200, 2);
-        this.createPlatform(1500, groundY - 180, 4); // 技能树下方平台 - 降低高度
+        this.createPlatform(1500, groundY - 180, 4); // 技能训练站下方平台 - 降低高度
         this.createPlatform(2100, groundY - 200, 2);
         this.createPlatform(2750, groundY - 200, 2);
     }
@@ -526,10 +706,10 @@ export class MainScene extends Phaser.Scene {
                 id: 'skilltree',
                 x: 1500,
                 y: groundY - 180,
-                title: '技能树',
+                title: '技能训练',
                 color: 0xffe66d,
                 emoji: '⚡',
-                requiredSkills: [] // 用积分解锁技能
+                requiredSkills: []
             },
             {
                 id: 'campaign',
@@ -654,26 +834,68 @@ export class MainScene extends Phaser.Scene {
             'dash': '冲刺',
             'wall_jump': '墙跳',
             'glide': '滑翔',
+            'science_master': '科学大师',
+            'quantum_dash': '量子冲刺',
+            'time_slow': '时间减速',
+            'chemical_shield': '化学护盾',
             'door_unlocked': '密码门通行证'
         };
         return names[skillId] || skillId;
     }
     
     private getControlsText(): string {
-        let text = '方向键移动 | UP跳跃';
-        if (this.playerSkills.includes('double_jump')) text += ' | 空中再按UP二段跳';
-        if (this.playerSkills.includes('dash')) text += ' | SPACE冲刺';
-        if (this.playerSkills.includes('glide')) text += ' | 空中长按UP滑翔';
-        if (this.playerSkills.includes('wall_jump')) text += ' | 贴墙按UP墙跳';
-        return text;
+        return buildWorldControlsText({
+            hasDoubleJump: this.hasSkill('double_jump'),
+            hasDash: this.hasDashSkill(),
+            isQuantumDash: this.hasSkill('quantum_dash'),
+            hasGlide: this.hasSkill('glide'),
+            hasWallJump: this.hasSkill('wall_jump'),
+            hasTimeSlow: this.hasSkill('time_slow'),
+            isTimeSlowActive: this.timeSlowDuration > 0,
+            hasShield: this.hasChemicalShieldSkill(),
+            isShieldActive: this.chemicalShieldDuration > 0,
+        });
     }
     
     private getSkillsText(): string {
         if (this.playerSkills.length === 0) {
-            return '已解锁技能: 无 | 前往技能树解锁新技能';
+            return '已解锁技能：暂无，可去训练册学习，战役专精会自动获得';
         }
-        const skillNames = this.playerSkills.map(s => this.getSkillName(s)).join(', ');
-        return `已解锁技能: ${skillNames}`;
+        const skillNames = this.playerSkills.map((skillId) => this.getSkillName(skillId));
+        if (skillNames.length <= 6) {
+            return `已解锁技能：${skillNames.join('、')}`;
+        }
+        return `已解锁 ${skillNames.length} 项：${skillNames.slice(0, 6).join('、')} +${skillNames.length - 6}`;
+    }
+
+    private fitBottomHudText(
+        textObject: Phaser.GameObjects.Text,
+        maxWidth: number,
+        preferredFontSize = 10,
+        minFontSize = 8
+    ) {
+        let nextFontSize = preferredFontSize;
+        textObject.setFontSize(`${nextFontSize}px`);
+
+        while (nextFontSize > minFontSize && textObject.width > maxWidth) {
+            nextFontSize -= 1;
+            textObject.setFontSize(`${nextFontSize}px`);
+        }
+    }
+
+    private refreshBottomHudLayout() {
+        const { width, height } = this.cameras.main;
+        const halfHudWidth = Math.max(220, Math.floor(width * 0.44));
+
+        if (this.infoText) {
+            this.infoText.setPosition(width - 20, height - 14);
+            this.fitBottomHudText(this.infoText, halfHudWidth);
+        }
+
+        if (this.skillsSummaryText) {
+            this.skillsSummaryText.setPosition(20, height - 14);
+            this.fitBottomHudText(this.skillsSummaryText, halfHudWidth);
+        }
     }
 
     private updateSkillDisplay() {
@@ -682,15 +904,11 @@ export class MainScene extends Phaser.Scene {
             this.infoText.setText(this.getControlsText());
         }
         
-        // 更新技能显示文本
-        const skillTexts = this.children.getAll().filter(child => 
-            child instanceof Phaser.GameObjects.Text && 
-            child.text.includes('已解锁技能')
-        ) as Phaser.GameObjects.Text[];
-        
-        skillTexts.forEach(text => {
-            text.setText(this.getSkillsText());
-        });
+        if (this.skillsSummaryText) {
+            this.skillsSummaryText.setText(this.getSkillsText());
+        }
+
+        this.refreshBottomHudLayout();
         
         // 更新站点锁定状态
         this.stations.forEach(station => {
@@ -738,6 +956,30 @@ export class MainScene extends Phaser.Scene {
         
         const body = this.player.body as Phaser.Physics.Arcade.Body;
         const onGround = body.touching.down;
+        const deltaTime = this.game.loop.delta / 1000;
+
+        if (this.timeSlowCooldown > 0) this.timeSlowCooldown -= deltaTime;
+        if (this.chemicalShieldCooldown > 0) this.chemicalShieldCooldown -= deltaTime;
+        if (this.timeSlowDuration > 0) {
+            this.timeSlowDuration -= deltaTime;
+            if (this.timeSlowDuration <= 0) {
+                this.timeSlowDuration = 0;
+                this.deactivateTimeSlow();
+            }
+        }
+        if (this.chemicalShieldDuration > 0) {
+            this.chemicalShieldDuration -= deltaTime;
+            if (this.chemicalShieldDuration <= 0 && this.skillAura) {
+                this.skillAura.destroy();
+                this.skillAura = null;
+                this.chemicalShieldDuration = 0;
+                this.updateSkillDisplay();
+            }
+        }
+
+        if (this.skillAura?.active) {
+            this.skillAura.setPosition(this.player.x, this.player.y);
+        }
         
         // 重置二段跳
         if (onGround) {
@@ -760,9 +1002,9 @@ export class MainScene extends Phaser.Scene {
         const touchState = touchInputManager.getState();
         
         // 合并键盘和触控输入
-        const inputLeft = this.cursors.left.isDown || touchState.left;
-        const inputRight = this.cursors.right.isDown || touchState.right;
-        const inputUp = this.cursors.up.isDown || touchState.up || touchState.jump;
+        const inputLeft = this.cursors.left.isDown || this.moveKeys.left.isDown || touchState.left;
+        const inputRight = this.cursors.right.isDown || this.moveKeys.right.isDown || touchState.right;
+        const inputUp = this.cursors.up.isDown || this.moveKeys.up.isDown || touchState.up || touchState.jump;
         
         // 检测触控跳跃刚按下
         const touchJumpJustPressed = (touchState.up && !this.lastTouchState.up) || 
@@ -782,14 +1024,22 @@ export class MainScene extends Phaser.Scene {
         
         // 冲刺技能（支持触控）
         const touchDashJustPressed = touchState.dash && !this.lastTouchState.dash;
-        if ((Phaser.Input.Keyboard.JustDown(this.spaceKey) || touchDashJustPressed) && 
-            this.playerSkills.includes('dash') && 
+        if ((Phaser.Input.Keyboard.JustDown(this.spaceKey) || Phaser.Input.Keyboard.JustDown(this.moveKeys.dash) || touchDashJustPressed) && 
+            this.hasDashSkill() && 
             !this.isDashing) {
             this.performDash();
         }
-        
+
+        if (Phaser.Input.Keyboard.JustDown(this.moveKeys.timeSlow) && this.hasSkill('time_slow')) {
+            this.activateTimeSlow();
+        }
+
+        if (Phaser.Input.Keyboard.JustDown(this.moveKeys.shield) && this.hasChemicalShieldSkill()) {
+            this.activateChemicalShield();
+        }
+
         // 跳跃和技能（支持触控）
-        if (Phaser.Input.Keyboard.JustDown(this.cursors.up) || touchJumpJustPressed) {
+        if (Phaser.Input.Keyboard.JustDown(this.cursors.up) || Phaser.Input.Keyboard.JustDown(this.moveKeys.up) || touchJumpJustPressed) {
             if (onGround) {
                 // 普通跳跃（降低跳跃高度）
                 this.player.setVelocityY(-350);
@@ -896,8 +1146,12 @@ export class MainScene extends Phaser.Scene {
 
     private performDash() {
         this.isDashing = true;
-        const dashSpeed = this.player.flipX ? -800 : 800; // 增加冲刺速度
+        const isQuantumDash = this.hasSkill('quantum_dash');
+        const dashSpeed = this.player.flipX ? -this.getDashSpeed() : this.getDashSpeed();
         this.player.setVelocityX(dashSpeed);
+        if (isQuantumDash) {
+            this.player.setTint(0x22d3ee);
+        }
         
         // 播放冲刺音效
         const { isMuted } = useSoundStore.getState();
@@ -937,8 +1191,11 @@ export class MainScene extends Phaser.Scene {
             createAfterImage(i * 40);
         }
         
-        this.time.delayedCall(250, () => {
+        this.time.delayedCall(this.getDashDurationMs(), () => {
             this.isDashing = false;
+            if (isQuantumDash && this.player?.active) {
+                this.player.clearTint();
+            }
         });
     }
     
@@ -991,12 +1248,12 @@ export class MainScene extends Phaser.Scene {
             if (hasRequiredSkills) {
                 this.nearbyStation = station;
                 this.activeStationForInput = station;
-                this.interactionPrompt.setText(`按 E 键进入 ${station.title}`);
+                this.interactionPrompt.setText(`按 E/F 进入 ${station.title}`);
                 this.interactionPrompt.setVisible(true);
 
                 // 支持触控E键交互
                 const touchInteractJustPressed = touchState.interact && !this.lastTouchState.interact;
-                if ((this.eKey && Phaser.Input.Keyboard.JustDown(this.eKey) || touchInteractJustPressed) && !this.isTextInputFocused()) {
+                if (((this.eKey && Phaser.Input.Keyboard.JustDown(this.eKey)) || Phaser.Input.Keyboard.JustDown(this.moveKeys.interact) || touchInteractJustPressed) && !this.isTextInputFocused()) {
                     this.interactWithStation(station);
                 }
             } else {
@@ -1028,6 +1285,11 @@ export class MainScene extends Phaser.Scene {
     
     private interactWithStation(station: Station) {
         // 与站点交互
+        const now = Date.now();
+        if (this.lastStationInteraction.id === station.id && now - this.lastStationInteraction.time < 600) {
+            return;
+        }
+        this.lastStationInteraction = { id: station.id, time: now };
         debugLog('[MainScene] interactWithStation called:', station.id, station.title);
         if (typeof window !== 'undefined') {
             // 通过自定义事件通知React组件
@@ -1039,13 +1301,15 @@ export class MainScene extends Phaser.Scene {
         }
     }
 
-    private isEKey(event: KeyboardEvent) {
+    private isInteractKey(event: KeyboardEvent) {
         if (!event) return false;
-        if (event.code && event.code.toUpperCase() === 'KEYE') {
+        const code = event.code?.toUpperCase();
+        if (code === 'KEYE' || code === 'KEYF') {
             return true;
         }
         if (event.key) {
-            return event.key.toLowerCase() === 'e';
+            const key = event.key.toLowerCase();
+            return key === 'e' || key === 'f';
         }
         return false;
     }
@@ -1071,6 +1335,9 @@ export class MainScene extends Phaser.Scene {
      * 更新在线玩家显示
      */
     private updateOnlinePlayers(players: any[]) {
+        if (!this.isSceneOperational()) {
+            return;
+        }
         // 获取当前所有玩家ID
         const currentPlayerIds = new Set(players.map((p: any) => p.user_id));
         
@@ -1164,6 +1431,10 @@ export class MainScene extends Phaser.Scene {
         const playerContainer = this.otherPlayers.get(userId);
         const startX = playerContainer?.x ?? playerData?.x ?? 0;
         const startY = playerContainer?.y ?? playerData?.y ?? 0;
+
+        if (!this.isSceneOperational()) {
+            return;
+        }
         
         const petFollower = new PetFollower(this, startX - 60, startY);
         petFollower.setPet(petData);
@@ -1175,6 +1446,9 @@ export class MainScene extends Phaser.Scene {
      */
     private createOtherPlayer(playerData: any) {
         try {
+            if (!this.isSceneOperational()) {
+                return;
+            }
             // 🔥 空值检查，防止坐标为null时崩溃
             if (playerData.x == null || playerData.y == null) {
                 console.warn('[MainScene] Skipping player with null coordinates:', playerData);
@@ -1215,6 +1489,9 @@ export class MainScene extends Phaser.Scene {
      * 更新其他玩家位置
      */
     private updateOtherPlayer(playerData: any) {
+        if (!this.isSceneOperational()) {
+            return;
+        }
         const container = this.otherPlayers.get(playerData.user_id);
         if (!container) return;
         if (playerData.x == null || playerData.y == null) return;
@@ -1308,7 +1585,7 @@ export class MainScene extends Phaser.Scene {
      * 重置键盘状态，防止按键残留
      */
     private resetKeyboardState() {
-        // 🔥 清除当前激活的站点，防止 E 键误触发
+        // 🔥 清除当前激活的站点，防止交互键误触发
         this.activeStationForInput = null;
         this.nearbyStation = null;
         
@@ -1323,6 +1600,16 @@ export class MainScene extends Phaser.Scene {
             if (this.shiftKey) this.shiftKey.isDown = false;
             if (this.spaceKey) this.spaceKey.isDown = false;
             if (this.eKey) this.eKey.isDown = false;
+            if (this.moveKeys) {
+                this.moveKeys.up.isDown = false;
+                this.moveKeys.down.isDown = false;
+                this.moveKeys.left.isDown = false;
+                this.moveKeys.right.isDown = false;
+                this.moveKeys.interact.isDown = false;
+                this.moveKeys.dash.isDown = false;
+                this.moveKeys.timeSlow.isDown = false;
+                this.moveKeys.shield.isDown = false;
+            }
             
             // 清除按键队列
             this.input.keyboard.resetKeys();

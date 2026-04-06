@@ -2,9 +2,11 @@
 
 import React, { useState, useCallback } from 'react';
 import { Campaign, CampaignLevel, getAllCampaigns, getUnlockedCampaigns } from '@/lib/campaigns';
+import { formatSkillRewardText } from '@/lib/skills';
 import { useGameStore } from '@/store/gameStore';
 import { AgeGroup, AGE_GROUP_INFO } from '@/types/ageGroup';
 import AgeGroupSelector from './AgeGroupSelector';
+import { buildCampaignRuleText } from '@/lib/gameplayText';
 
 // 音效
 const playSound = (soundPath: string, volume = 0.5) => {
@@ -13,6 +15,15 @@ const playSound = (soundPath: string, volume = 0.5) => {
     audio.volume = volume;
     audio.play().catch(() => {});
   } catch {}
+};
+
+const getRewardSkillText = (rewards: CampaignLevel['rewards']) => {
+  const rewardSkills = [
+    ...(rewards.skills ?? []),
+    ...((rewards as any).skill ? [(rewards as any).skill] : []),
+  ];
+
+  return rewardSkills.length > 0 ? formatSkillRewardText(rewardSkills) : '';
 };
 
 interface CampaignSelectorProps {
@@ -292,6 +303,10 @@ export default function CampaignSelector({ onSelectCampaign, onClose }: Campaign
                       </span>
                     )}
                   </div>
+
+                  <div className="mt-4 rounded-xl border border-blue-500/25 bg-blue-500/10 px-3 py-3 text-xs sm:text-sm text-blue-100">
+                    规则：先完成目标，再按本关题数答题过关；失败后答对 1 题可重开本关。
+                  </div>
                 </div>
               </div>
             </div>
@@ -355,10 +370,14 @@ export default function CampaignSelector({ onSelectCampaign, onClose }: Campaign
                         </span>
                       </div>
 
+                      <div className="mt-2 text-xs text-sky-300">
+                        规则：{buildCampaignRuleText(level.questions.length)}
+                      </div>
+
                       {/* 技能奖励 */}
-                      {level.rewards.skills && level.rewards.skills.length > 0 && (
+                      {getRewardSkillText(level.rewards) && (
                         <div className="mt-2 text-xs text-purple-400 bg-purple-900/30 rounded-lg px-2 py-1">
-                          🎁 {level.rewards.skills.join(', ')}
+                          🎁 奖励：{getRewardSkillText(level.rewards)}
                         </div>
                       )}
 
@@ -377,7 +396,7 @@ export default function CampaignSelector({ onSelectCampaign, onClose }: Campaign
             {/* 提示信息 - 移动端简化 */}
             <div className="bg-slate-700 border border-slate-600 rounded-xl p-3 sm:p-4 mt-4 sm:mt-6">
               <p className="text-blue-300 text-xs sm:text-sm">
-                💡 点击已解锁的关卡开始挑战！加油！🌟
+                💡 点击已解锁关卡开始，具体题数看各关规则。
               </p>
             </div>
           </div>

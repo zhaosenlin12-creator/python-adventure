@@ -28,11 +28,11 @@ ROOM_EXPIRY_MINUTES = 30
 FINISHED_ROOM_TTL_MINUTES = 5
 DISCONNECT_GRACE_SECONDS = 12.0
 ROOM_RUNTIME_TICK_SECONDS = 0.05
-SERVER_SNAPSHOT_INTERVAL_SECONDS = 0.05
-SERVER_INPUT_BATCH_INTERVAL_SECONDS = 0.016
-HOST_SNAPSHOT_STALE_SECONDS = 2.4
-INPUT_FORWARD_MIN_INTERVAL_SECONDS = 0.016
-INPUT_DUPLICATE_INTERVAL_SECONDS = 0.025
+SERVER_SNAPSHOT_INTERVAL_SECONDS = 0.08
+SERVER_INPUT_BATCH_INTERVAL_SECONDS = 0.05
+HOST_SNAPSHOT_STALE_SECONDS = 3.0
+INPUT_FORWARD_MIN_INTERVAL_SECONDS = 0.04
+INPUT_DUPLICATE_INTERVAL_SECONDS = 0.035
 SEND_JSON_TIMEOUT_SECONDS = 0.2
 
 AI_NAME_POOL = [
@@ -167,6 +167,13 @@ def merge_input_payload(previous_payload: Dict[str, Any], incoming_payload: Dict
     return merged_payload
 
 
+def payload_has_edge_input(payload: Dict[str, Any]) -> bool:
+    input_payload = payload.get("input", {}) if isinstance(payload, dict) else {}
+    if not isinstance(input_payload, dict):
+        return False
+    return any(bool(input_payload.get(field)) for field in INPUT_EDGE_FIELDS)
+
+
 def sorted_humans(room: Dict[str, Any]) -> list[Dict[str, Any]]:
     humans = list(room["humans"].values())
     return sorted(humans, key=lambda item: (not item["is_host"], item["joined_at"]))
@@ -195,9 +202,23 @@ def cleanup_rooms() -> None:
     current_time = now_utc()
     stale_ids: list[str] = []
 
+    def disconnected_beyond_grace(human: Dict[str, Any]) -> bool:
+        if human.get("connected", True):
+            return False
+        disconnected_at_raw = human.get("disconnected_at")
+        if not disconnected_at_raw:
+            return True
+        try:
+            disconnected_at = datetime.fromisoformat(disconnected_at_raw)
+        except ValueError:
+            return True
+        return current_time - disconnected_at > timedelta(seconds=DISCONNECT_GRACE_SECONDS)
+
     for room_id, room in active_rooms.items():
         created_at = datetime.fromisoformat(room["created_at"])
         started_at = datetime.fromisoformat(room["started_at"]) if room["started_at"] else None
+        humans = room.get("humans", {})
+        host_entry = humans.get(room.get("host_user_id"))
 
         if room["status"] == "finished":
             if started_at and current_time - started_at > timedelta(minutes=FINISHED_ROOM_TTL_MINUTES):
@@ -205,6 +226,17 @@ def cleanup_rooms() -> None:
             elif current_time - created_at > timedelta(minutes=ROOM_EXPIRY_MINUTES):
                 stale_ids.append(room_id)
             continue
+
+        if room["status"] == "in_progress":
+            if not humans or host_entry is None:
+                stale_ids.append(room_id)
+                continue
+            if disconnected_beyond_grace(host_entry):
+                stale_ids.append(room_id)
+                continue
+            if all(disconnected_beyond_grace(human) for human in humans.values()):
+                stale_ids.append(room_id)
+                continue
 
         if current_time - created_at > timedelta(minutes=ROOM_EXPIRY_MINUTES):
             stale_ids.append(room_id)
@@ -395,13 +427,6 @@ async def run_room_runtime(room_id: str) -> None:
                         "timestamp": now_utc().timestamp(),
                     },
                 ):
-                    input_state = sync_state.setdefault("input_state", {})
-                    for queued_user_id in pending_guest_inputs:
-                        previous_state = input_state.get(queued_user_id, {})
-                        input_state[queued_user_id] = {
-                            **previous_state,
-                            "forwarded_at": now_monotonic,
-                        }
                     sync_state["pending_guest_inputs"] = {}
                     sync_state["last_input_batch_monotonic"] = now_monotonic
 
@@ -501,7 +526,19 @@ async def finalize_disconnect_after_grace(room_id: str, user_id: int, key: str) 
                 should_close_room = True
                 close_reason = "Host disconnected" if is_host else "All players disconnected"
         else:
-            should_emit_disconnect = True
+            connected_humans = [
+                human
+                for human in room["humans"].values()
+                if human.get("connected", True)
+            ]
+            if is_host:
+                should_close_room = True
+                close_reason = "Host disconnected"
+            elif not connected_humans:
+                should_close_room = True
+                close_reason = "All players disconnected"
+            else:
+                should_emit_disconnect = True
 
     if should_close_room:
         await close_room(room_id, reason=close_reason)
@@ -864,6 +901,7 @@ async def battle_royale_ws(
 
                 can_forward_immediately = (
                     current_room["host_user_id"] != user_id
+                    and payload_has_edge_input(merged_payload)
                     and now_monotonic - previous_input_state.get("forwarded_at", 0.0) >= INPUT_FORWARD_MIN_INTERVAL_SECONDS
                 )
                 if can_forward_immediately:

@@ -33,15 +33,15 @@ const difficultyOptions: Array<{ value: BattleRoyaleDifficulty; label: string; d
   { value: 'hard', label: '困难', description: '压迫更强，出手更频繁。' },
 ];
 
-const ROOM_READY_NOTICE = '房间同步已就绪，房主开始后所有玩家会自动进入战场。';
-const ROOM_RECOVERED_NOTICE = '连接已恢复，可以继续等待房主开战。';
-const ROOM_RECONNECTING_NOTICE = '连接波动，系统正在自动重连。';
+const ROOM_READY_NOTICE = '房主开始后，所有人会一起进入战场。';
+const ROOM_RECOVERED_NOTICE = '连接已恢复，继续等待房主开始。';
+const ROOM_RECONNECTING_NOTICE = '连接波动，正在自动重连。';
 
 function connectionLabel(wsConnected: boolean, latencyMs: number) {
   if (!wsConnected) {
     return '重连中';
   }
-  if (latencyMs >= 140) {
+  if (latencyMs >= 180) {
     return '连接波动';
   }
   return '连接稳定';
@@ -288,7 +288,7 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
                   </span>
                 </div>
                 <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300">
-                  生存乱斗开始后，所有玩家都会被投放到大地图中。风暴会持续缩圈，玩家需要抢武器、护盾和增益道具，活到最后获得胜利。
+                  抢武器和增益，边缩圈边生存，活到最后就赢。
                 </p>
               </div>
 
@@ -323,7 +323,7 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
                 <div className="mb-4 flex items-center justify-between">
                   <div>
                     <div className="text-lg font-bold text-white">真人玩家</div>
-                    <div className="text-sm text-slate-400">出战宠物会直接用于战斗形象和昵称展示</div>
+                    <div className="text-sm text-slate-400">当前宠物会直接显示为战斗形象和昵称</div>
                   </div>
                   <div className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-500/10 px-3 py-1 text-sm font-semibold text-cyan-100">
                     <Users className="h-4 w-4" />
@@ -374,7 +374,7 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
                 <div className="mb-4 flex items-center justify-between">
                   <div>
                     <div className="text-lg font-bold text-white">AI 人机</div>
-                    <div className="text-sm text-slate-400">房主可以逐个添加，并为每个 AI 单独设置难度</div>
+                    <div className="text-sm text-slate-400">房主可逐个添加 AI，并单独设置难度</div>
                   </div>
                   <div className="inline-flex items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-500/10 px-3 py-1 text-sm font-semibold text-emerald-100">
                     <Bot className="h-4 w-4" />
@@ -388,9 +388,7 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
                       <Sparkles className="h-6 w-6" />
                     </div>
                     <div className="text-lg font-bold text-white">还没有添加人机</div>
-                    <div className="mt-2 text-sm text-slate-400">
-                      建议先用简单难度补足空位，再按需要增加普通或困难人机。
-                    </div>
+                    <div className="mt-2 text-sm text-slate-400">建议先用简单 AI 补位，再逐步提高难度。</div>
                   </div>
                 ) : (
                   <div className="grid gap-4 md:grid-cols-2">
@@ -447,10 +445,10 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
                   {roomNotice}
                 </div>
                 <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-300">
-                  <li>风暴会持续向地图中心缩圈，站在圈外会不断掉血，而且越到后期越疼。</li>
-                  <li>玩家被淘汰后会触发 3 题复活问答，全部答对才能半血复活一次。</li>
-                  <li>武器丢出去后任何玩家都可以捡起，所以不要在危险位置乱丢。</li>
-                  <li>如果你中途刷新页面，系统会自动尝试把你恢复到当前房间或战场。</li>
+                  <li>风暴会一直缩圈，圈外会持续掉血，而且后期更疼。</li>
+                  <li>被淘汰后会进入 3 题复活问答，全部答对才能半血复活 1 次。</li>
+                  <li>武器投出去后谁都能捡，所以不要在危险位置乱丢。</li>
+                  <li>中途刷新页面时，系统会自动尝试恢复到当前房间或战场。</li>
                 </ul>
                 <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-slate-200">
                   当前还剩 <span className="font-bold text-white">{remainingSlots}</span> 个空位。
