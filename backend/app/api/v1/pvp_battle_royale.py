@@ -22,16 +22,18 @@ Difficulty = Literal["easy", "medium", "hard"]
 RoomStatus = Literal["waiting", "in_progress", "finished"]
 
 MAX_ROOM_CAPACITY = 6
+MAX_HUMAN_PLAYERS = 2
 MAX_ACTIVE_ROOM_COUNT = 1
 MAX_IN_PROGRESS_ROOM_COUNT = 1
 ROOM_EXPIRY_MINUTES = 30
 FINISHED_ROOM_TTL_MINUTES = 5
 DISCONNECT_GRACE_SECONDS = 12.0
-ROOM_RUNTIME_TICK_SECONDS = 0.05
-SERVER_SNAPSHOT_INTERVAL_SECONDS = 0.08
-SERVER_INPUT_BATCH_INTERVAL_SECONDS = 0.05
+IN_PROGRESS_HOST_DISCONNECT_GRACE_SECONDS = 2.8
+ROOM_RUNTIME_TICK_SECONDS = 0.03
+SERVER_SNAPSHOT_INTERVAL_SECONDS = 0.06
+SERVER_INPUT_BATCH_INTERVAL_SECONDS = 0.03
 HOST_SNAPSHOT_STALE_SECONDS = 3.0
-INPUT_FORWARD_MIN_INTERVAL_SECONDS = 0.04
+INPUT_FORWARD_MIN_INTERVAL_SECONDS = 0.025
 INPUT_DUPLICATE_INTERVAL_SECONDS = 0.035
 SEND_JSON_TIMEOUT_SECONDS = 0.2
 
@@ -131,6 +133,10 @@ def room_participant_count(room: Dict[str, Any]) -> int:
     return len(room["humans"]) + len(room["bots"])
 
 
+def room_human_count(room: Dict[str, Any]) -> int:
+    return len(room["humans"])
+
+
 def build_sync_state() -> Dict[str, Any]:
     return {
         "pending_snapshot": None,
@@ -228,11 +234,22 @@ def cleanup_rooms() -> None:
             continue
 
         if room["status"] == "in_progress":
-            if not humans or host_entry is None:
+            if not humans:
                 stale_ids.append(room_id)
                 continue
+            if host_entry is None:
+                next_host_user_id = promote_room_host(room, connected_only=True)
+                if next_host_user_id is None:
+                    stale_ids.append(room_id)
+                continue
             if disconnected_beyond_grace(host_entry):
-                stale_ids.append(room_id)
+                humans.pop(room["host_user_id"], None)
+                if not humans:
+                    stale_ids.append(room_id)
+                    continue
+                next_host_user_id = promote_room_host(room, connected_only=True)
+                if next_host_user_id is None:
+                    stale_ids.append(room_id)
                 continue
             if all(disconnected_beyond_grace(human) for human in humans.values()):
                 stale_ids.append(room_id)
@@ -377,11 +394,24 @@ async def broadcast_host_snapshot_if_due(room: Dict[str, Any], sync_state: Dict[
 
 
 async def broadcast_room_snapshot(room: Dict[str, Any]) -> None:
+    await broadcast_room_update(room)
+
+
+async def broadcast_room_update(
+    room: Dict[str, Any],
+    *,
+    host_changed: bool = False,
+    previous_host_user_id: Optional[int] = None,
+    latest_snapshot: Optional[Dict[str, Any]] = None,
+) -> None:
     await broadcast_to_room(
         room["id"],
         {
             "type": "br_room_update",
             "room": serialize_room(room),
+            "host_changed": host_changed,
+            "previous_host_user_id": previous_host_user_id,
+            "latest_snapshot": latest_snapshot if host_changed else None,
             "timestamp": now_utc().timestamp(),
         },
     )
@@ -391,6 +421,33 @@ def cancel_room_runtime(room_id: str) -> None:
     task = room_runtime_tasks.pop(room_id, None)
     if task and not task.done():
         task.cancel()
+
+
+def assign_room_host(room: Dict[str, Any], new_host_user_id: int) -> None:
+    if new_host_user_id not in room["humans"]:
+        raise KeyError(f"Host user {new_host_user_id} not found in room {room['id']}")
+    room["host_user_id"] = new_host_user_id
+    room["host_username"] = room["humans"][new_host_user_id]["username"]
+    for human_user_id, human in room["humans"].items():
+        human["is_host"] = human_user_id == new_host_user_id
+
+
+def promote_room_host(room: Dict[str, Any], *, connected_only: bool) -> Optional[int]:
+    candidates = sorted(
+        (
+            (human_user_id, human)
+            for human_user_id, human in room["humans"].items()
+            if not connected_only or human.get("connected", True)
+        ),
+        key=lambda item: item[1].get("joined_at", ""),
+    )
+    if not candidates:
+        return None
+
+    next_host_user_id, _ = candidates[0]
+    assign_room_host(room, next_host_user_id)
+    room["sync_state"] = build_sync_state()
+    return next_host_user_id
 
 
 async def run_room_runtime(room_id: str) -> None:
@@ -496,9 +553,28 @@ def cancel_disconnect_cleanup(key: str) -> None:
         task.cancel()
 
 
-async def finalize_disconnect_after_grace(room_id: str, user_id: int, key: str) -> None:
+def disconnect_grace_for_room(room: Optional[Dict[str, Any]], user_id: int) -> float:
+    if not room:
+        return DISCONNECT_GRACE_SECONDS
+
+    if room.get("status") != "in_progress":
+        return DISCONNECT_GRACE_SECONDS
+
+    if room.get("host_user_id") == user_id:
+        return min(DISCONNECT_GRACE_SECONDS, IN_PROGRESS_HOST_DISCONNECT_GRACE_SECONDS)
+
+    return DISCONNECT_GRACE_SECONDS
+
+
+async def finalize_disconnect_after_grace(
+    room_id: str,
+    user_id: int,
+    key: str,
+    *,
+    grace_seconds: float,
+) -> None:
     try:
-        await asyncio.sleep(DISCONNECT_GRACE_SECONDS)
+        await asyncio.sleep(grace_seconds)
     except asyncio.CancelledError:
         return
 
@@ -506,6 +582,10 @@ async def finalize_disconnect_after_grace(room_id: str, user_id: int, key: str) 
     should_close_room = False
     close_reason = ""
     should_emit_disconnect = False
+    should_broadcast = False
+    host_changed = False
+    previous_host_user_id: Optional[int] = None
+    latest_snapshot: Optional[Dict[str, Any]] = None
 
     async with room_lock:
         if ws_connections.get(key):
@@ -522,9 +602,20 @@ async def finalize_disconnect_after_grace(room_id: str, user_id: int, key: str) 
         if room["status"] == "waiting":
             room["humans"].pop(user_id, None)
 
-            if is_host or not room["humans"]:
+            if not room["humans"]:
                 should_close_room = True
                 close_reason = "Host disconnected" if is_host else "All players disconnected"
+            elif is_host:
+                previous_host_user_id = user_id
+                next_host_user_id = promote_room_host(room, connected_only=False)
+                if next_host_user_id is None:
+                    should_close_room = True
+                    close_reason = "Host disconnected"
+                else:
+                    host_changed = True
+                    should_broadcast = True
+            else:
+                should_broadcast = True
         else:
             connected_humans = [
                 human
@@ -532,17 +623,34 @@ async def finalize_disconnect_after_grace(room_id: str, user_id: int, key: str) 
                 if human.get("connected", True)
             ]
             if is_host:
-                should_close_room = True
-                close_reason = "Host disconnected"
+                room["humans"].pop(user_id, None)
+                previous_host_user_id = user_id
+                next_host_user_id = promote_room_host(room, connected_only=True)
+                if next_host_user_id is None:
+                    should_close_room = True
+                    close_reason = "Host disconnected"
+                else:
+                    host_changed = True
+                    should_broadcast = True
+                    latest_snapshot = room.get("latest_snapshot")
             elif not connected_humans:
                 should_close_room = True
                 close_reason = "All players disconnected"
             else:
                 should_emit_disconnect = True
+                should_broadcast = True
 
     if should_close_room:
         await close_room(room_id, reason=close_reason)
         return
+
+    if room and should_broadcast:
+        await broadcast_room_update(
+            room,
+            host_changed=host_changed,
+            previous_host_user_id=previous_host_user_id,
+            latest_snapshot=latest_snapshot,
+        )
 
     if room and should_emit_disconnect:
         await broadcast_to_room(
@@ -553,9 +661,6 @@ async def finalize_disconnect_after_grace(room_id: str, user_id: int, key: str) 
                 "timestamp": now_utc().timestamp(),
             },
         )
-
-    if room:
-        await broadcast_room_snapshot(room)
 
 
 class RoomParticipantPayload(BaseModel):
@@ -667,6 +772,9 @@ async def join_room(room_id: str, payload: RoomParticipantPayload, current_user:
         if current_user.id in room["humans"]:
             return {"room": serialize_room(room), "joined": True}
 
+        if room_human_count(room) >= MAX_HUMAN_PLAYERS:
+            raise HTTPException(status_code=400, detail="Battle Royale only supports two human players")
+
         if room_participant_count(room) >= room["max_players"]:
             raise HTTPException(status_code=400, detail="Room is full")
 
@@ -678,6 +786,13 @@ async def join_room(room_id: str, payload: RoomParticipantPayload, current_user:
 
 @router.post("/rooms/{room_id}/leave")
 async def leave_room(room_id: str, current_user: User = Depends(get_current_user)):
+    should_close_room = False
+    close_reason = ""
+    should_broadcast = False
+    host_changed = False
+    previous_host_user_id: Optional[int] = None
+    latest_snapshot: Optional[Dict[str, Any]] = None
+
     async with room_lock:
         room = active_rooms.get(room_id)
         if not room:
@@ -690,11 +805,33 @@ async def leave_room(room_id: str, current_user: User = Depends(get_current_user
         is_host = room["host_user_id"] == current_user.id
         room["humans"].pop(current_user.id, None)
 
-        if is_host or not room["humans"]:
-            await close_room(room_id, reason="Host left the room" if is_host else "All players left")
-            return {"success": True}
+        if not room["humans"]:
+            should_close_room = True
+            close_reason = "Host left the room" if is_host else "All players left"
+        elif is_host:
+            previous_host_user_id = current_user.id
+            next_host_user_id = promote_room_host(room, connected_only=room["status"] == "in_progress")
+            if next_host_user_id is None:
+                should_close_room = True
+                close_reason = "Host left the room"
+            else:
+                host_changed = True
+                should_broadcast = True
+                latest_snapshot = room.get("latest_snapshot") if room["status"] == "in_progress" else None
+        else:
+            should_broadcast = True
 
-    await broadcast_room_snapshot(room)
+    if should_close_room:
+        await close_room(room_id, reason=close_reason)
+        return {"success": True}
+
+    if should_broadcast:
+        await broadcast_room_update(
+            room,
+            host_changed=host_changed,
+            previous_host_user_id=previous_host_user_id,
+            latest_snapshot=latest_snapshot,
+        )
     return {"success": True}
 
 
@@ -1002,7 +1139,13 @@ async def battle_royale_ws(
         if room and user_id in room["humans"]:
             room["humans"][user_id]["connected"] = False
             room["humans"][user_id]["disconnected_at"] = iso_now()
-            await broadcast_room_snapshot(room)
+            await broadcast_room_update(room)
+        grace_seconds = disconnect_grace_for_room(room, user_id)
         disconnect_cleanup_tasks[key] = asyncio.create_task(
-            finalize_disconnect_after_grace(room_id, user_id, key)
+            finalize_disconnect_after_grace(
+                room_id,
+                user_id,
+                key,
+                grace_seconds=grace_seconds,
+            )
         )

@@ -33,7 +33,7 @@ const difficultyOptions: Array<{ value: BattleRoyaleDifficulty; label: string; d
   { value: 'hard', label: '困难', description: '压迫更强，出手更频繁。' },
 ];
 
-const ROOM_READY_NOTICE = '房主开始后，所有人会一起进入战场。';
+const ROOM_READY_NOTICE = '准备完成后进入战场，最多 2 名真人协作，其余由人机补足。';
 const ROOM_RECOVERED_NOTICE = '连接已恢复，继续等待房主开始。';
 const ROOM_RECONNECTING_NOTICE = '连接波动，正在自动重连。';
 
@@ -41,10 +41,13 @@ function connectionLabel(wsConnected: boolean, latencyMs: number) {
   if (!wsConnected) {
     return '重连中';
   }
-  if (latencyMs >= 180) {
+  if (latencyMs >= 260) {
     return '连接波动';
   }
-  return '连接稳定';
+  if (latencyMs >= 140) {
+    return '连接可玩';
+  }
+  return '连接顺畅';
 }
 
 export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattleRoyaleRoomProps) {
@@ -148,7 +151,13 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
         }
 
         if (message.type === 'br_room_update' && message.room) {
-          setCurrentRoom(message.room as BattleRoyaleRoom);
+          const nextRoom = message.room as BattleRoyaleRoom;
+          setCurrentRoom(nextRoom);
+          if (message.host_changed) {
+            setRoomNotice(
+              nextRoom.host_user_id === currentUserId ? '队友已离开，你现在负责带队开局。' : '房主已切换，继续准备后开局。',
+            );
+          }
           return;
         }
 
@@ -288,7 +297,7 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
                   </span>
                 </div>
                 <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300">
-                  抢武器和增益，边缩圈边生存，活到最后就赢。
+                  双人协作清掉全部人机就算通关；缩圈、武器和复活答题机制都会保留。
                 </p>
               </div>
 

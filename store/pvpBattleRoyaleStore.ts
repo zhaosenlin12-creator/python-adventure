@@ -67,6 +67,9 @@ function translateBattleRoyaleError(message: string): string {
   if (normalized.includes('room is full')) {
     return '房间人数已满，请刷新列表或选择其他房间。';
   }
+  if (normalized.includes('only supports two human players')) {
+    return '这一模式当前最多支持 2 名真人组队，其余位置请使用人机补足。';
+  }
   if (normalized.includes('room not found')) {
     return '房间不存在或已关闭，请返回大厅刷新后重试。';
   }

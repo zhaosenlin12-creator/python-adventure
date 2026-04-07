@@ -1,9 +1,10 @@
 import { chromium } from '@playwright/test';
 
-const baseUrl = process.env.BR_QA_BASE_URL ?? 'http://127.0.0.1:3200';
+const baseUrl = process.env.BR_QA_BASE_URL ?? 'http://127.0.0.1:3000';
 const apiBase = process.env.BR_QA_API_BASE ?? 'http://127.0.0.1:8000/api/v1';
 const sampleCount = Number(process.env.BR_QA_SAMPLE_COUNT ?? 56);
 const sampleIntervalMs = Number(process.env.BR_QA_SAMPLE_INTERVAL_MS ?? 150);
+const headless = process.env.BR_QA_HEADLESS !== 'false';
 
 function authStorageValue(auth) {
   return JSON.stringify({
@@ -57,7 +58,7 @@ async function openBattleRoyale(browser, auth) {
 
   const page = await context.newPage();
   await page.goto(`${baseUrl}/world`, { waitUntil: 'domcontentloaded' });
-  await page.locator('#phaser-game canvas').waitFor({ timeout: 20000 });
+  await page.locator('#phaser-game canvas').first().waitFor({ timeout: 20000 });
   await page.waitForTimeout(1200);
   await page.evaluate(() => {
     window.dispatchEvent(new CustomEvent('stationInteraction', { detail: { stationId: 'battle_royale' } }));
@@ -155,16 +156,18 @@ async function sampleArena(page) {
       const debugWindow = window;
       const live = debugWindow.__brSnapshot ?? null;
       const stats = debugWindow.__brSyncStats ?? null;
+      const network = debugWindow.__brNetDebug ?? null;
       const badge = document.querySelector('[data-testid="br-arena-connection-badge"]')?.textContent?.trim() ?? '';
       const notice = document.querySelector('[data-testid="br-arena-status"]')?.textContent?.trim() ?? '';
       if (!live) {
-        return { ready: false, badge, notice, stats };
+        return { ready: false, badge, notice, stats, network };
       }
       return {
         ready: true,
         badge,
         notice,
         stats,
+        network,
         tick: live.tick,
         bots: live.fighters
           .filter((fighter) => fighter.isBot)
@@ -191,14 +194,61 @@ function summarizeSamples(samples) {
   const readySamples = samples.filter((sample) => sample?.ready);
   const finalSample = readySamples.at(-1) ?? null;
   const stats = finalSample?.stats ?? samples.at(-1)?.stats ?? null;
+  const network = finalSample?.network ?? samples.at(-1)?.network ?? null;
   const unstableNoticeHits = readySamples.filter((sample) => /波动|重连|同步/.test(sample.notice)).length;
   return {
     readySamples: readySamples.length,
     unstableNoticeHits,
     finalBadge: finalSample?.badge ?? '',
     finalNotice: finalSample?.notice ?? '',
+    finalTick: Number(finalSample?.tick ?? 0),
     stats,
+    network,
     botMetrics: collectBotMetrics(readySamples),
+  };
+}
+
+async function waitForHostPromotion(page, previousTick) {
+  const deadline = Date.now() + 10000;
+
+  while (Date.now() < deadline) {
+    const arena = page.locator('[data-testid="br-arena"]');
+    await arena.waitFor({ state: 'visible', timeout: 2000 });
+    const state = await page.evaluate(() => {
+      const debugWindow = window;
+      const live = debugWindow.__brSnapshot ?? null;
+      return {
+        badge: document.querySelector('[data-testid="br-arena-connection-badge"]')?.textContent?.trim() ?? '',
+        notice: document.querySelector('[data-testid="br-arena-status"]')?.textContent?.trim() ?? '',
+        tick: Number(live?.tick ?? 0),
+        network: debugWindow.__brNetDebug ?? null,
+      };
+    });
+
+    if (state.badge.includes('主控') && state.tick > previousTick + 8) {
+      return {
+        promoted: true,
+        ...state,
+      };
+    }
+
+    await page.waitForTimeout(400);
+  }
+
+  const finalState = await page.evaluate(() => {
+    const debugWindow = window;
+    const live = debugWindow.__brSnapshot ?? null;
+    return {
+      badge: document.querySelector('[data-testid="br-arena-connection-badge"]')?.textContent?.trim() ?? '',
+      notice: document.querySelector('[data-testid="br-arena-status"]')?.textContent?.trim() ?? '',
+      tick: Number(live?.tick ?? 0),
+      network: debugWindow.__brNetDebug ?? null,
+    };
+  });
+
+  return {
+    promoted: false,
+    ...finalState,
   };
 }
 
@@ -208,7 +258,12 @@ async function main() {
   const guestAuth = await createLogin(`br_guest_${runId}`);
 
   const browser = await chromium.launch({
-    headless: true,
+    headless,
+    args: [
+      '--disable-background-timer-throttling',
+      '--disable-backgrounding-occluded-windows',
+      '--disable-renderer-backgrounding',
+    ],
   });
 
   try {
@@ -256,6 +311,11 @@ async function main() {
 
     const hostSummary = summarizeSamples(hostSamples);
     const guestSummary = summarizeSamples(guestSamples);
+    const guestDisplayedLatencyMs = Number(guestSummary.network?.displayedLatencyMs ?? 0);
+    const promotionState = await (async () => {
+      await host.context.close();
+      return waitForHostPromotion(guest.page, guestSummary.finalTick);
+    })();
 
     const result = {
       baseUrl,
@@ -263,6 +323,7 @@ async function main() {
       runId,
       host: hostSummary,
       guest: guestSummary,
+      hostMigration: promotionState,
     };
 
     console.log(JSON.stringify(result, null, 2));
@@ -300,6 +361,12 @@ async function main() {
     }
     if (unstableConnection) {
       throw new Error(`Connection badge unstable: host=${hostSummary.finalBadge}, guest=${guestSummary.finalBadge}`);
+    }
+    if (guestDisplayedLatencyMs > 260) {
+      throw new Error(`Guest end-to-end latency too high: ${guestDisplayedLatencyMs}ms`);
+    }
+    if (!promotionState.promoted) {
+      throw new Error(`Guest was not promoted after host exit: ${JSON.stringify(promotionState)}`);
     }
   } finally {
     await browser.close();

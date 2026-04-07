@@ -193,6 +193,7 @@ export interface BattleRoyaleSnapshot {
     createdAt: number;
   }>;
   winnerId: string | null;
+  inputAcks?: Record<string, number>;
   platforms: BattleRoyalePlatform[];
   projectiles: BattleRoyaleProjectileView[];
   weapons: BattleRoyaleWeaponPickupView[];
@@ -223,4 +224,5 @@ export interface BattleRoyaleResult {
   damageDealt: number;
   revived: boolean;
   survivedMs: number;
+  outcome?: 'victory' | 'defeat';
 }

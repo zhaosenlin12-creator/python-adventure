@@ -237,6 +237,39 @@ def test_join_add_bot_remove_bot_and_start():
     assert isinstance(start.json()["room"]["match_seed"], int)
 
 
+def test_room_only_allows_two_human_players():
+    host_token = make_token("br_two_host")
+    guest_token = make_token("br_two_guest")
+    overflow_token = make_token("br_two_overflow")
+
+    create = client.post(
+        "/api/v1/pvp-br/rooms/create",
+        headers=auth_headers(host_token),
+        json={
+            **participant_payload("two-host"),
+            "room_name": "two-human-room",
+            "max_players": 6,
+        },
+    )
+    assert create.status_code == 200, create.text
+    room_id = create.json()["room"]["id"]
+
+    join_guest = client.post(
+        f"/api/v1/pvp-br/rooms/{room_id}/join",
+        headers=auth_headers(guest_token),
+        json=participant_payload("two-guest"),
+    )
+    assert join_guest.status_code == 200, join_guest.text
+
+    join_overflow = client.post(
+        f"/api/v1/pvp-br/rooms/{room_id}/join",
+        headers=auth_headers(overflow_token),
+        json=participant_payload("two-overflow"),
+    )
+    assert join_overflow.status_code == 400, join_overflow.text
+    assert join_overflow.json()["detail"] == "Battle Royale only supports two human players"
+
+
 def test_room_capacity_is_limited_to_6():
     host_token = make_token("br_host_c")
 
@@ -319,11 +352,11 @@ def test_cannot_create_a_second_room_while_another_match_is_in_progress():
     assert blocked_create.json()["detail"] == "Battle Royale room slot is occupied"
 
 
-def test_six_player_room_coalesces_snapshots_and_broadcasts_to_all_guests(monkeypatch: pytest.MonkeyPatch):
+def test_two_human_room_coalesces_snapshots_and_broadcasts_to_guest(monkeypatch: pytest.MonkeyPatch):
     monkeypatch.setattr(br_api, "SERVER_SNAPSHOT_INTERVAL_SECONDS", 0.02)
 
-    player_tokens = [make_token(f"br_load_{index}") for index in range(6)]
-    host_token = player_tokens[0]
+    host_token = make_token("br_load_host")
+    guest_token = make_token("br_load_guest")
 
     create = client.post(
         "/api/v1/pvp-br/rooms/create",
@@ -339,15 +372,13 @@ def test_six_player_room_coalesces_snapshots_and_broadcasts_to_all_guests(monkey
     room_id = room["id"]
     host_user_id = room["host_user_id"]
 
-    guest_user_ids: list[int] = []
-    for index, token in enumerate(player_tokens[1:], start=1):
-        join = client.post(
-            f"/api/v1/pvp-br/rooms/{room_id}/join",
-            headers=auth_headers(token),
-            json=participant_payload(f"load-guest-{index}"),
-        )
-        assert join.status_code == 200, join.text
-        guest_user_ids.append(join.json()["room"]["humans"][-1]["user_id"])
+    join = client.post(
+        f"/api/v1/pvp-br/rooms/{room_id}/join",
+        headers=auth_headers(guest_token),
+        json=participant_payload("load-guest"),
+    )
+    assert join.status_code == 200, join.text
+    guest_user_id = join.json()["room"]["humans"][-1]["user_id"]
 
     start = client.post(
         f"/api/v1/pvp-br/rooms/{room_id}/start",
@@ -386,14 +417,14 @@ def test_six_player_room_coalesces_snapshots_and_broadcasts_to_all_guests(monkey
                 "hitFlashMs": 0,
             }
         ]
-        fighters.extend(
+        fighters.append(
             {
                 "id": f"human-{guest_user_id}",
                 "userId": guest_user_id,
-                "name": f"load-guest-{offset}",
+                "name": "load-guest",
                 "petType": "silver_lynx",
                 "petStage": 3,
-                "x": 1800 + offset * 20 + tick,
+                "x": 1820 + tick,
                 "y": 920,
                 "vx": 12,
                 "vy": 0,
@@ -414,7 +445,6 @@ def test_six_player_room_coalesces_snapshots_and_broadcasts_to_all_guests(monkey
                 "swingMs": 0,
                 "hitFlashMs": 0,
             }
-            for offset, guest_user_id in enumerate(guest_user_ids, start=1)
         )
         return {
             "tick": tick,
@@ -436,18 +466,14 @@ def test_six_player_room_coalesces_snapshots_and_broadcasts_to_all_guests(monkey
         }
 
     host_ws_url = f"/api/v1/pvp-br/ws/{room_id}/{host_user_id}?token={host_token}"
-    guest_ws_urls = [
-        f"/api/v1/pvp-br/ws/{room_id}/{guest_user_id}?token={token}"
-        for guest_user_id, token in zip(guest_user_ids, player_tokens[1:])
-    ]
+    guest_ws_url = f"/api/v1/pvp-br/ws/{room_id}/{guest_user_id}?token={guest_token}"
 
     with ExitStack() as stack:
         host_socket = stack.enter_context(client.websocket_connect(host_ws_url))
         assert host_socket.receive_json()["type"] == "connected"
 
-        guest_sockets = [stack.enter_context(client.websocket_connect(url)) for url in guest_ws_urls]
-        for guest_socket in guest_sockets:
-            assert guest_socket.receive_json()["type"] == "connected"
+        guest_socket = stack.enter_context(client.websocket_connect(guest_ws_url))
+        assert guest_socket.receive_json()["type"] == "connected"
 
         for tick in range(1, 6):
             host_socket.send_json({"type": "br_snapshot", "payload": snapshot_payload(tick)})
@@ -456,23 +482,19 @@ def test_six_player_room_coalesces_snapshots_and_broadcasts_to_all_guests(monkey
         host_socket.send_json({"type": "br_snapshot", "payload": snapshot_payload(99)})
         time.sleep(0.12)
 
-        observed_ticks: list[int] = []
-        for guest_socket in guest_sockets:
-            latest_tick = 0
-            for _ in range(8):
-                try:
-                    message = receive_json_with_timeout(guest_socket, timeout=0.3)
-                except AssertionError:
-                    break
-                if message["type"] != "br_snapshot":
-                    continue
-                latest_tick = message["payload"]["tick"]
-                if latest_tick == 99:
-                    break
-            observed_ticks.append(latest_tick)
+        latest_tick = 0
+        for _ in range(8):
+            try:
+                message = receive_json_with_timeout(guest_socket, timeout=0.3)
+            except AssertionError:
+                break
+            if message["type"] != "br_snapshot":
+                continue
+            latest_tick = message["payload"]["tick"]
+            if latest_tick == 99:
+                break
 
-    assert len(observed_ticks) == 5
-    assert all(tick == 99 for tick in observed_ticks)
+    assert latest_tick == 99
     assert active_rooms[room_id]["latest_snapshot"]["tick"] == 99
 
 
@@ -768,7 +790,7 @@ def test_guest_disconnect_keeps_human_recoverable_while_host_stays_connected(
         assert response.json()["recoverable"] is True
 
 
-def test_host_disconnect_closes_in_progress_room_and_frees_slot(monkeypatch: pytest.MonkeyPatch):
+def test_host_disconnect_promotes_remaining_human_and_keeps_room_active(monkeypatch: pytest.MonkeyPatch):
     monkeypatch.setattr(br_api, "DISCONNECT_GRACE_SECONDS", 0.05)
 
     host_token = make_token("br_host_drop_host")
@@ -805,13 +827,22 @@ def test_host_disconnect_closes_in_progress_room_and_frees_slot(monkeypatch: pyt
     host_ws_url = f"/api/v1/pvp-br/ws/{room_id}/{host_user_id}?token={host_token}"
     guest_ws_url = f"/api/v1/pvp-br/ws/{room_id}/{guest_user_id}?token={guest_token}"
 
-    with client.websocket_connect(host_ws_url) as host_socket:
-        assert host_socket.receive_json()["type"] == "connected"
+    with client.websocket_connect(guest_ws_url) as guest_socket:
+        assert guest_socket.receive_json()["type"] == "connected"
 
-        with client.websocket_connect(guest_ws_url) as guest_socket:
-            assert guest_socket.receive_json()["type"] == "connected"
+        with client.websocket_connect(host_ws_url) as host_socket:
+            assert host_socket.receive_json()["type"] == "connected"
 
-    time.sleep(0.2)
+        time.sleep(0.2)
+        room_state_response = client.get(
+            f"/api/v1/pvp-br/rooms/{room_id}",
+            headers=auth_headers(guest_token),
+        )
+        assert room_state_response.status_code == 200, room_state_response.text
+
+        assert room_id in active_rooms
+        assert active_rooms[room_id]["host_user_id"] == guest_user_id
+        assert guest_user_id in active_rooms[room_id]["humans"]
 
     next_create = client.post(
         "/api/v1/pvp-br/rooms/create",
@@ -822,8 +853,8 @@ def test_host_disconnect_closes_in_progress_room_and_frees_slot(monkeypatch: pyt
             "max_players": 4,
         },
     )
-    assert next_create.status_code == 200, next_create.text
-    assert room_id not in active_rooms
+    assert next_create.status_code == 503, next_create.text
+    assert next_create.json()["detail"] == "Battle Royale room slot is occupied"
 
 
 class TimedSocket:

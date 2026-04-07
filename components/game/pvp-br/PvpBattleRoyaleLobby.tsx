@@ -127,12 +127,12 @@ export default function PvpBattleRoyaleLobby({
               <div className="max-w-3xl">
                 <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-100">
                   <Shield className="h-3.5 w-3.5" />
-                  稳定 6 人模式
+                  稳定双人协作
                 </div>
                 <h2 className="text-3xl font-black tracking-tight text-white sm:text-4xl">宠物生存乱斗</h2>
                 <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300 sm:text-base">
-                  带着当前跟随宠物进入大地图乱斗。随时间推进会持续缩圈，玩家需要争夺武器、护盾与回血道具，
-                  活到最后即可获胜。当前服务器已切换到稳定上线模式，同一时间只开放一个房间，单房固定 6 人。
+                  带着当前跟随宠物进入协作战场。真人队伍最多 2 人，其余名额用人机补足；缩圈、武器和护盾机制保留，
+                  但胜负改成小队合作清场，更适合当前服务器稳定运行。
                 </p>
               </div>
               <button
@@ -216,9 +216,9 @@ export default function PvpBattleRoyaleLobby({
                     <div className="rounded-2xl border border-cyan-300/15 bg-cyan-500/10 px-4 py-3">
                       <div className="flex items-center justify-between gap-3">
                         <div>
-                          <div className="text-sm font-semibold text-white">房间人数</div>
+                          <div className="text-sm font-semibold text-white">房间规模</div>
                           <div className="mt-1 text-xs leading-5 text-slate-300">
-                            当前稳定版本固定为 6 人总房间，默认不再需要手动调人数。
+                            当前模式为 1 到 2 名真人加人机，总房间上限仍为 6。
                           </div>
                         </div>
                         <span className="rounded-full border border-cyan-300/20 bg-cyan-400/10 px-3 py-1 text-sm font-bold text-cyan-100">
@@ -228,8 +228,8 @@ export default function PvpBattleRoyaleLobby({
                     </div>
 
                     <div className="rounded-2xl border border-amber-400/20 bg-amber-500/10 px-4 py-3 text-sm leading-6 text-amber-100">
-                      房主可以在等待室逐个添加不同难度的人机。为了保证上线稳定性，建议优先控制在 4 到 5 名真人，
-                      总参战人数不要超过 6 人。
+                      房主可以在等待室逐个添加不同难度的人机。建议真人只保留 1 到 2 人，其余用人机补足，
+                      这样延迟更稳，房主切换后的续局也更可靠。
                     </div>
 
                     {hasOpenWaitingRoom && waitingRoom && (

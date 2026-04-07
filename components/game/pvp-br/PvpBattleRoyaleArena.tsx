@@ -76,7 +76,7 @@ const SAFE_ZONE_DAMAGE_BY_PHASE = [10, 14, 20, 30, 42, 58, 78] as const;
 const MATCH_MAX_MS = 360000;
 const PICKUP_RESPAWN_MS = 12000;
 const QUIZ_PENDING_TIMEOUT_MS = 15000;
-const SNAPSHOT_INTERVAL_MS = 80;
+const SNAPSHOT_INTERVAL_MS = 60;
 const UI_SYNC_INTERVAL_MS = 66;
 const INPUT_SEND_INTERVAL_MS = 34;
 const INPUT_KEEPALIVE_INTERVAL_MS = 90;
@@ -499,13 +499,13 @@ const AI_TUNING = {
     engageDistance: 230,
     lootScoreFloor: 0.42,
     lootRadius: 780,
-    roamMinMs: 2600,
-    roamMaxMs: 4300,
-    thinkMinMs: 250,
-    thinkMaxMs: 360,
-    jumpPulseMinMs: 520,
-    jumpPulseMaxMs: 780,
-    moveDeadZone: 66,
+    roamMinMs: 3200,
+    roamMaxMs: 5000,
+    thinkMinMs: 320,
+    thinkMaxMs: 460,
+    jumpPulseMinMs: 620,
+    jumpPulseMaxMs: 900,
+    moveDeadZone: 82,
     attackChance: 0.34,
     throwChance: 0.08,
     skillChance: 0.06,
@@ -1359,6 +1359,7 @@ function normalizeIncomingSnapshot(incoming: IncomingBattleRoyaleSnapshot, room:
     pickups: (incoming.pickups ?? []).map((pickup) => ({ ...pickup })),
     killFeed: (incoming.killFeed ?? []).map((item) => ({ ...item })),
     winnerId: incoming.winnerId ?? null,
+    inputAcks: { ...(incoming.inputAcks ?? {}) },
     platforms: createPlatforms(elapsedMs),
     projectiles: (incoming.projectiles ?? []).map((projectile) => ({ ...projectile })),
     weapons: (incoming.weapons ?? []).map((weapon) => ({ ...weapon })),
@@ -1411,6 +1412,7 @@ function createTransportSnapshot(snapshot: BattleRoyaleSnapshot): Record<string,
     })).filter((pickup) => pickup.active),
     killFeed: snapshot.killFeed.slice(-1),
     winnerId: snapshot.winnerId,
+    inputAcks: { ...(snapshot.inputAcks ?? {}) },
     projectiles: snapshot.projectiles.filter((projectile) => projectile.active).slice(-3).map((projectile) => ({
       id: projectile.id,
       ownerId: projectile.ownerId,
@@ -1636,14 +1638,28 @@ function deriveAmbientRoomNotice(snapshot: BattleRoyaleSnapshot, localFighterId:
   return '先靠近安全区，再用 J/K/L 找机会。';
 }
 
-function connectionLabel(wsConnected: boolean, latencyMs: number) {
+function connectionLabel(wsConnected: boolean, latencyMs: number, isHost: boolean) {
   if (!wsConnected) {
     return '重连';
   }
-  if (latencyMs >= 180) {
+  if (isHost) {
+    return '主控';
+  }
+  if (latencyMs >= 260) {
     return '波动';
   }
-  return '稳定';
+  if (latencyMs >= 140) {
+    return '可玩';
+  }
+  return '顺畅';
+}
+
+function isSameTeam(left: Pick<BattleRoyaleFighterView, 'isBot'>, right: Pick<BattleRoyaleFighterView, 'isBot'>) {
+  return left.isBot === right.isBot;
+}
+
+function isHumanFighter(fighter: Pick<BattleRoyaleFighterView, 'isBot'>) {
+  return !fighter.isBot;
 }
 
 function pickBotRoamPoint(
@@ -1721,7 +1737,9 @@ function aiInputForFighter(
     };
   }
 
-  const candidates = Array.from(fighters.values()).filter((target) => target.id !== fighter.id && target.alive);
+  const candidates = Array.from(fighters.values()).filter(
+    (target) => target.id !== fighter.id && target.alive && !isSameTeam(fighter, target),
+  );
   const aliveCount = candidates.length + 1;
   const nearestEnemy = candidates
     .map((target) => {
@@ -1901,12 +1919,16 @@ function aiInputForFighter(
     strikeVerticalGap < 118 &&
     Math.random() < tuning.throwChance;
 
+  const holdPositionScale = fighter.difficulty === 'easy' ? 1.35 : fighter.difficulty === 'hard' ? 0.92 : 1;
+  const moveCommitScale = fighter.difficulty === 'easy' ? 1.55 : fighter.difficulty === 'hard' ? 0.9 : 1;
   const rawDirection = dx < -tuning.moveDeadZone ? -1 : dx > tuning.moveDeadZone ? 1 : 0;
   if (rawDirection === 0) {
-    if (fighter.moveCommitDirection !== 0 || elapsedMs >= fighter.moveCommitUntilMs) {
+    const shouldIdleNow =
+      fighter.difficulty !== 'easy' || fighter.moveCommitDirection === 0 || elapsedMs >= fighter.moveCommitUntilMs;
+    if (shouldIdleNow) {
       fighter.moveCommitDirection = 0;
       fighter.moveCommitUntilMs =
-        elapsedMs + randomBetween(combatTarget ? 220 : 280, combatTarget ? 340 : 460);
+        elapsedMs + randomBetween(combatTarget ? 220 : 280, combatTarget ? 340 : 460) * holdPositionScale;
     }
   } else {
     const commitExpired = elapsedMs >= fighter.moveCommitUntilMs;
@@ -1927,7 +1949,8 @@ function aiInputForFighter(
         randomBetween(
           combatTarget || isOutsideZone ? 520 : 620,
           combatTarget || isOutsideZone ? 820 : 980,
-        );
+        ) *
+          moveCommitScale;
     }
   }
   const committedDirection = rawDirection === 0 ? 0 : fighter.moveCommitDirection;
@@ -2029,6 +2052,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   const authoritativeSnapshotRef = useRef<BattleRoyaleSnapshot>(snapshotRef.current);
   const lastAuthoritativeSnapshotAtRef = useRef(0);
   const remoteInputsRef = useRef<Record<string, BattleRoyaleInputPayload>>({});
+  const remoteInputAckSeqRef = useRef<Record<string, number>>({});
   const pendingQuizzesRef = useRef<Record<string, BattleRoyaleQuizQuestion[]>>({});
   const imageCacheRef = useRef<Record<string, HTMLImageElement>>({});
   const matchEndedRef = useRef(false);
@@ -2069,6 +2093,15 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   const [showEliminationPrompt, setShowEliminationPrompt] = useState(false);
   const [hasAuthoritativeSnapshot, setHasAuthoritativeSnapshot] = useState(isHost);
   const [roomNotice, setRoomNotice] = useState<string>('战场已就绪，先搜资源，再抢高台和武器。');
+  const [syncDelayMs, setSyncDelayMs] = useState(0);
+  const latestGuestInputSeqRef = useRef(0);
+  const pendingGuestInputAcksRef = useRef<Map<number, number>>(new Map());
+  const recentGuestSyncSamplesRef = useRef<number[]>([]);
+  const pendingAuthoritativeSnapshotRef = useRef<{
+    incoming: IncomingBattleRoyaleSnapshot;
+    roomOverride?: BattleRoyaleRoom;
+    receivedAt: number;
+  } | null>(null);
 
   const finishCurrentRoom = usePvpBattleRoyaleStore((state) => state.finishCurrentRoom);
   const setCurrentRoom = usePvpBattleRoyaleStore((state) => state.setCurrentRoom);
@@ -2079,6 +2112,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   const setLatencyMs = usePvpBattleRoyaleStore((state) => state.setLatencyMs);
   const resetBattleRoyaleStore = usePvpBattleRoyaleStore((state) => state.reset);
   const audioContextRef = useRef<AudioContext | null>(null);
+  const displayedLatencyMs = isHost ? 0 : Math.max(syncDelayMs, latencyMs);
 
   const liveSnapshot = snapshot;
 
@@ -2165,8 +2199,12 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     return () => {
       setWsConnected(false);
       setLatencyMs(0);
+      setSyncDelayMs(0);
+      pendingGuestInputAcksRef.current.clear();
+      recentGuestSyncSamplesRef.current = [];
+      pendingAuthoritativeSnapshotRef.current = null;
     };
-  }, [setLatencyMs, setWsConnected]);
+  }, [setLatencyMs, setSyncDelayMs, setWsConnected]);
 
   useEffect(() => {
     if (!currentUserId) {
@@ -2188,6 +2226,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       onDisconnect: () => {
         setWsConnected(false);
         setLatencyMs(0);
+        setSyncDelayMs(0);
         reconnectNoticeVisibleRef.current = true;
         if (quizOfferRef.current && submittingQuizRef.current) {
           clearQuizSubmitTimeout();
@@ -2231,8 +2270,31 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
           return;
         }
 
+        if (message.type === 'br_room_update' && message.room) {
+          const nextRoom = message.room as BattleRoyaleRoom;
+          const promotedToHost =
+            Boolean(message.host_changed) &&
+            nextRoom.host_user_id === currentUserId &&
+            room.host_user_id !== currentUserId;
+          setCurrentRoom(nextRoom);
+          if (message.latest_snapshot) {
+            setHasAuthoritativeSnapshot(true);
+            applyRecoveredSnapshot(message.latest_snapshot as BattleRoyaleSnapshot, nextRoom);
+          }
+          if (promotedToHost) {
+            pendingGuestInputAcksRef.current.clear();
+            recentGuestSyncSamplesRef.current = [];
+            pendingAuthoritativeSnapshotRef.current = null;
+            setSyncDelayMs(0);
+            pushRoomNotice('队友离线，你已接管本局。', 2800);
+          } else if (message.host_changed) {
+            pushRoomNotice('房主已切换，战斗继续。', 2200);
+          }
+          return;
+        }
+
         if (message.type === 'br_input_batch' && isHost && Array.isArray(message.inputs)) {
-          message.inputs.forEach((entry: { user_id?: number; payload?: { input?: Partial<BattleRoyaleInputPayload> } }) => {
+          message.inputs.forEach((entry: { user_id?: number; payload?: { input?: Partial<BattleRoyaleInputPayload>; clientInputSeq?: number } }) => {
             if (typeof entry.user_id !== 'number') {
               return;
             }
@@ -2241,6 +2303,9 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
               ...createDefaultInput(),
               ...(entry.payload?.input ?? {}),
             };
+            if (typeof entry.payload?.clientInputSeq === 'number') {
+              remoteInputAckSeqRef.current[fighterId] = entry.payload.clientInputSeq;
+            }
           });
           return;
         }
@@ -2251,12 +2316,18 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
             ...createDefaultInput(),
             ...(message.payload?.input ?? {}),
           };
+          if (typeof message.payload?.clientInputSeq === 'number') {
+            remoteInputAckSeqRef.current[fighterId] = message.payload.clientInputSeq;
+          }
           return;
         }
 
         if (message.type === 'br_snapshot' && !isHost && message.payload) {
           setHasAuthoritativeSnapshot(true);
-          applyRecoveredSnapshot(message.payload as BattleRoyaleSnapshot);
+          pendingAuthoritativeSnapshotRef.current = {
+            incoming: message.payload as BattleRoyaleSnapshot,
+            receivedAt: typeof performance !== 'undefined' ? performance.now() : Date.now(),
+          };
           return;
         }
 
@@ -2341,13 +2412,19 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   useEffect(() => {
     previousFrameInputRef.current = createDefaultInput();
     pendingInputPulseRef.current = createInputPulseState();
+    pendingGuestInputAcksRef.current.clear();
+    recentGuestSyncSamplesRef.current = [];
+    pendingAuthoritativeSnapshotRef.current = null;
+    latestGuestInputSeqRef.current = 0;
+    remoteInputAckSeqRef.current = {};
     predictedLocalFighterRef.current = null;
     hasConnectedOnceRef.current = false;
     reconnectNoticeVisibleRef.current = false;
     initialHostSnapshotSentRef.current = false;
     setHasAuthoritativeSnapshot(isHost);
     setLatencyMs(0);
-  }, [isHost, localFighterId, room.id, setLatencyMs]);
+    setSyncDelayMs(0);
+  }, [isHost, localFighterId, room.id, setLatencyMs, setSyncDelayMs]);
 
   useEffect(() => {
     if (!isHost || !wsConnected || initialHostSnapshotSentRef.current) {
@@ -2369,10 +2446,24 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         __brRenderSnapshot?: BattleRoyaleSnapshot;
         __brRoomNotice?: string;
         __brSyncStats?: typeof syncStatsRef.current;
+        __brNetDebug?: {
+          latencyMs: number;
+          syncDelayMs: number;
+          displayedLatencyMs: number;
+          pendingGuestInputAcks: number;
+          recentGuestSyncSamples: number[];
+        };
       };
       debugWindow.__brSnapshot = snapshot;
       debugWindow.__brRoomNotice = roomNotice;
       debugWindow.__brSyncStats = { ...syncStatsRef.current };
+      debugWindow.__brNetDebug = {
+        latencyMs,
+        syncDelayMs,
+        displayedLatencyMs,
+        pendingGuestInputAcks: pendingGuestInputAcksRef.current.size,
+        recentGuestSyncSamples: [...recentGuestSyncSamplesRef.current],
+      };
     }
 
     if (result || quizOffer || Date.now() < roomNoticeLockUntilRef.current) {
@@ -2381,7 +2472,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
 
     const nextNotice = deriveAmbientRoomNotice(snapshot, localFighterId);
     setRoomNotice((current) => (current === nextNotice ? current : nextNotice));
-  }, [localFighterId, quizOffer, result, roomNotice, snapshot]);
+  }, [displayedLatencyMs, latencyMs, localFighterId, quizOffer, result, roomNotice, snapshot, syncDelayMs]);
 
   useEffect(() => {
     const localFighter = snapshot.fighters.find((fighter) => fighter.id === localFighterId);
@@ -2574,6 +2665,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       pickups: authoritative.pickups.map((pickup) => ({ ...pickup })),
       killFeed: authoritative.killFeed.map((item) => ({ ...item })),
       winnerId: authoritative.winnerId,
+      inputAcks: { ...(authoritative.inputAcks ?? {}) },
       platforms: platformState,
       projectiles: nextProjectiles,
       weapons: authoritative.weapons.map((weapon) => ({ ...weapon })),
@@ -2581,9 +2673,14 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     };
   };
 
-  const applyRecoveredSnapshot = (incoming: IncomingBattleRoyaleSnapshot) => {
-    const normalized = normalizeIncomingSnapshot(incoming, room);
-    const receiptTime = typeof performance !== 'undefined' ? performance.now() : Date.now();
+  const applyRecoveredSnapshot = (
+    incoming: IncomingBattleRoyaleSnapshot,
+    roomOverride: BattleRoyaleRoom = room,
+    receiptTimeOverride?: number,
+  ) => {
+    const normalized = normalizeIncomingSnapshot(incoming, roomOverride);
+    const receiptTime = receiptTimeOverride ?? (typeof performance !== 'undefined' ? performance.now() : Date.now());
+    const isLocalHost = roomOverride.host_user_id === currentUserId;
     if (shouldExposeQaDebug()) {
       syncStatsRef.current.authoritativeSnapshots += 1;
     }
@@ -2593,16 +2690,39 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     winnerIdRef.current = normalized.winnerId;
     previousPlatformsRef.current = normalized.platforms;
     platformsRef.current = normalized.platforms;
-    fightersRef.current = hydrateFightersFromSnapshot(room, normalized);
+    fightersRef.current = hydrateFightersFromSnapshot(roomOverride, normalized);
     pickupsRef.current = hydratePickupsFromSnapshot(normalized);
     projectilesRef.current = [];
     weaponPickupsRef.current = hydrateWeaponsFromSnapshot(normalized);
     effectsRef.current = hydrateEffectsFromSnapshot(normalized);
     killFeedRef.current = normalized.killFeed.map((item) => ({ ...item }));
     authoritativeSnapshotRef.current = normalized;
-    if (!isHost) {
+    if (!isLocalHost) {
       const authoritativeLocalFighter = fightersRef.current.get(localFighterId) ?? null;
       mergeAuthoritativeIntoPredictedLocalFighter(authoritativeLocalFighter);
+    }
+
+    if (!isLocalHost && localFighterId) {
+      const acknowledgedSeq = normalized.inputAcks?.[localFighterId];
+      if (typeof acknowledgedSeq === 'number') {
+        const pendingEntries = Array.from(pendingGuestInputAcksRef.current.entries())
+          .filter(([seq]) => seq <= acknowledgedSeq)
+          .sort((left, right) => left[0] - right[0]);
+        const lastPending = pendingEntries[pendingEntries.length - 1];
+        if (lastPending) {
+          const syncAgeMs = Math.max(0, receiptTime - lastPending[1]);
+          const recentSamples = [...recentGuestSyncSamplesRef.current, syncAgeMs].slice(-8);
+          const sortedRecentSamples = [...recentSamples].sort((left, right) => left - right);
+          const middleIndex = Math.floor(sortedRecentSamples.length / 2);
+          const medianSyncAgeMs =
+            sortedRecentSamples.length % 2 === 0
+              ? ((sortedRecentSamples[middleIndex - 1] ?? syncAgeMs) + (sortedRecentSamples[middleIndex] ?? syncAgeMs)) / 2
+              : (sortedRecentSamples[middleIndex] ?? syncAgeMs);
+          pendingEntries.forEach(([seq]) => pendingGuestInputAcksRef.current.delete(seq));
+          recentGuestSyncSamplesRef.current = recentSamples;
+          setSyncDelayMs(Math.round(medianSyncAgeMs));
+        }
+      }
     }
 
     const shouldResetRenderSnapshot =
@@ -3146,6 +3266,12 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
 
   const applyDamage = (target: InternalFighter, rawDamage: number, sourceId: string | null) => {
     if (!target.alive) return;
+    if (sourceId) {
+      const attacker = fightersRef.current.get(sourceId);
+      if (attacker && isSameTeam(attacker, target)) {
+        return;
+      }
+    }
     let damage = rawDamage;
     let appliedDamage = 0;
     const guarded = target.input.guard;
@@ -3266,7 +3392,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     }
 
     fightersRef.current.forEach((target) => {
-      if (!target.alive || target.id === fighter.id) {
+      if (!target.alive || target.id === fighter.id || isSameTeam(fighter, target)) {
         return;
       }
       if (targetWithinStrikeLane(fighter, target)) {
@@ -3319,7 +3445,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       pushRoomNotice('已释放冲击波，适合逼退贴身目标。', 1600);
     }
     fightersRef.current.forEach((target) => {
-      if (!target.alive || target.id === fighter.id) return;
+      if (!target.alive || target.id === fighter.id || isSameTeam(fighter, target)) return;
       const distance = Math.hypot(target.x - fighter.x, target.y - fighter.y);
       if (distance < 164) {
         applyDamage(target, 24 + fighter.damageBonus * 0.6, fighter.id);
@@ -3355,13 +3481,18 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       }
 
       fightersRef.current.forEach((target) => {
-        if (!projectile.active || !target.alive || target.id === projectile.ownerId) {
+        const owner = fightersRef.current.get(projectile.ownerId);
+        if (
+          !projectile.active ||
+          !target.alive ||
+          target.id === projectile.ownerId ||
+          (owner && isSameTeam(owner, target))
+        ) {
           return;
         }
         const dx = Math.abs(projectile.x - (target.x + FIGHTER_WIDTH / 2));
         const dy = Math.abs(projectile.y - (target.y + FIGHTER_HEIGHT * 0.45));
         if (dx < 36 && dy < 44) {
-          const owner = fightersRef.current.get(projectile.ownerId);
           applyDamage(target, WEAPON_PROJECTILE_DAMAGE + (owner?.damageBonus ?? 0) * 0.75, projectile.ownerId);
           projectile.active = false;
           dropWeapon(projectile.ownerId, projectile.x, projectile.y);
@@ -3582,12 +3713,13 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     matchEndedRef.current = true;
     clearPendingRevivesForMatchEnd();
     const placements = (payload?.fighters as BattleRoyaleFighterView[] | undefined) ?? snapshotRef.current.fighters;
+    const humansWon = Boolean(payload?.humansWon);
     const sorted = [...placements].sort((left, right) => {
       if (left.alive !== right.alive) return left.alive ? -1 : 1;
       if (left.kills !== right.kills) return right.kills - left.kills;
       return right.hp - left.hp;
     });
-    const placement = Math.max(1, sorted.findIndex((fighter) => fighter.id === localFighterId) + 1);
+    const placement = humansWon ? 1 : Math.max(1, sorted.findIndex((fighter) => fighter.id === localFighterId) + 1);
     const local = sorted.find((fighter) => fighter.id === localFighterId);
     const localInternal = fightersRef.current.get(localFighterId) ?? null;
     const winner = sorted[0];
@@ -3596,15 +3728,16 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       : local?.survivedMs ?? localInternal?.eliminatedAtMs ?? snapshotRef.current.elapsedMs;
 
     setResult({
-      winnerId: winner?.id ?? null,
-      winnerName: winner?.name ?? '无人幸存',
+      winnerId: humansWon ? local?.id ?? localInternal?.id ?? winner?.id ?? null : winner?.id ?? null,
+      winnerName: humansWon ? '勇者小队' : winner?.name ?? '无人幸存',
       placement,
       kills: local?.kills ?? 0,
       damageDealt: Math.round(local?.damageDealt ?? localInternal?.damageDealt ?? 0),
       revived: Boolean(local?.hasRevived),
       survivedMs,
+      outcome: humansWon ? 'victory' : 'defeat',
     });
-    pushRoomNotice('本局已结算', 120000);
+    pushRoomNotice(humansWon ? '合作通关，返回大厅继续挑战。' : '本局结束，调整路线再来一局。', 120000);
   };
 
   const maybeEndMatch = async () => {
@@ -3613,24 +3746,24 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     }
     clearExpiredPendingRevives();
     const fighters = Array.from(fightersRef.current.values());
-    const alive = fighters.filter((fighter) => fighter.alive);
-    const pendingRevives = fighters.filter((fighter) => fighter.quizPending);
-    if (alive.length > 1 && elapsedMsRef.current < MATCH_MAX_MS) {
-      return;
-    }
-    if (alive.length === 1) {
-      winnerIdRef.current = alive[0].id;
-    } else if (alive.length === 0 && pendingRevives.length > 0 && elapsedMsRef.current < MATCH_MAX_MS) {
+    const aliveHumans = fighters.filter((fighter) => fighter.alive && isHumanFighter(fighter));
+    const aliveBots = fighters.filter((fighter) => fighter.alive && fighter.isBot);
+    const pendingHumanRevives = fighters.filter((fighter) => fighter.quizPending && isHumanFighter(fighter));
+    const humansWon = aliveHumans.length > 0 && (aliveBots.length === 0 || elapsedMsRef.current >= MATCH_MAX_MS);
+    const humansDefeated = aliveHumans.length === 0 && pendingHumanRevives.length === 0;
+
+    if (!humansWon && !humansDefeated) {
       return;
     }
 
-    winnerIdRef.current = alive[0]?.id ?? null;
+    winnerIdRef.current = humansWon ? aliveHumans[0]?.id ?? null : aliveBots[0]?.id ?? null;
     fightersRef.current.forEach((fighter) => {
       fighter.quizPending = false;
     });
     pendingQuizzesRef.current = {};
     const payload = {
       winnerId: winnerIdRef.current,
+      humansWon,
       fighters: buildSnapshot(
         tickRef.current,
         elapsedMsRef.current,
@@ -3652,7 +3785,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       wsRef.current?.sendMatchEnd(payload);
       if (!finishReportedRef.current) {
         finishReportedRef.current = true;
-        const winnerHuman = alive[0]?.userId ?? null;
+        const winnerHuman = humansWon ? aliveHumans[0]?.userId ?? null : null;
         await finishCurrentRoom(winnerHuman);
       }
     }
@@ -4235,6 +4368,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
             winnerIdRef.current,
             platformsRef.current,
           );
+          snapshotRef.current.inputAcks = { ...remoteInputAckSeqRef.current };
 
           if (time - lastSnapshotSentRef.current > SNAPSHOT_INTERVAL_MS) {
             lastSnapshotSentRef.current = time;
@@ -4264,6 +4398,16 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
 
           await maybeEndMatch();
         } else {
+          const pendingAuthoritative = pendingAuthoritativeSnapshotRef.current;
+          if (pendingAuthoritative) {
+            pendingAuthoritativeSnapshotRef.current = null;
+            applyRecoveredSnapshot(
+              pendingAuthoritative.incoming,
+              pendingAuthoritative.roomOverride ?? room,
+              pendingAuthoritative.receivedAt,
+            );
+          }
+
           if (!hasAuthoritativeSnapshot) {
             if (time - lastUiSyncRef.current > UI_SYNC_INTERVAL_MS) {
               lastUiSyncRef.current = time;
@@ -4334,12 +4478,16 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
           const shouldSendKeepalive = timeSinceLastInputMs > INPUT_KEEPALIVE_INTERVAL_MS;
           const shouldSendChangedInput = inputChanged && timeSinceLastInputMs > INPUT_SEND_INTERVAL_MS;
           if (hasPendingPulse || shouldSendChangedInput || shouldSendKeepalive) {
+            const nextInputSeq = latestGuestInputSeqRef.current + 1;
             const inputSent =
               wsRef.current?.sendInput({
                 fighterId: localFighterId,
                 input: outgoingInputPayload,
+                clientInputSeq: nextInputSeq,
               }) ?? false;
             if (inputSent) {
+              latestGuestInputSeqRef.current = nextInputSeq;
+              pendingGuestInputAcksRef.current.set(nextInputSeq, time);
               lastInputSignatureRef.current = inputSignature;
               lastInputSentRef.current = time;
               syncStatsRef.current.inputMessagesSent += 1;
@@ -4464,8 +4612,10 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
                 ) : (
                   <WifiOff className="h-3.5 w-3.5 text-amber-300" />
                 )}
-                {connectionLabel(wsConnected, latencyMs)}
-                {wsConnected && latencyMs > 0 ? <span className="text-[8px] text-slate-500">{latencyMs}ms</span> : null}
+                {connectionLabel(wsConnected, displayedLatencyMs, isHost)}
+                {wsConnected && displayedLatencyMs > 0 ? (
+                  <span className="text-[8px] text-slate-500">{displayedLatencyMs}ms</span>
+                ) : null}
               </div>
             </div>
 
@@ -4537,12 +4687,14 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
                   <h2 className="text-3xl font-black text-white">战斗结果</h2>
                   <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
-                      <div className="text-sm text-slate-400">冠军</div>
-                      <div className="mt-1 text-2xl font-bold text-white">{result.winnerName}</div>
+                      <div className="text-sm text-slate-400">挑战结果</div>
+                      <div className="mt-1 text-2xl font-bold text-white">
+                        {result.outcome === 'victory' ? '合作通关' : '挑战失败'}
+                      </div>
                     </div>
                     <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
-                      <div className="text-sm text-slate-400">你的名次</div>
-                      <div className="mt-1 text-2xl font-bold text-white">第 {result.placement} 名</div>
+                      <div className="text-sm text-slate-400">队伍</div>
+                      <div className="mt-1 text-2xl font-bold text-white">{result.winnerName}</div>
                     </div>
                     <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
                       <div className="text-sm text-slate-400">淘汰数</div>
