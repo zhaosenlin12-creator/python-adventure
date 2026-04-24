@@ -21,10 +21,9 @@ export default class PlatformGameScene extends Phaser.Scene {
         const target = objective?.target ?? 0;
 
         if (type === 'defeat') {
-            const required = target || this.totalEnemies || 0;
-            const completed = required > 0 ? this.defeatedEnemies >= required : this.defeatedEnemies > 0;
-            const progress = required > 0 ? `(${this.defeatedEnemies}/${required})` : '';
-            return { completed, progress };
+            const status = this.getDefeatObjectiveStatus(target);
+            const progress = status.total > 0 ? `(${status.completedCount}/${status.total})` : '';
+            return { completed: status.completed, progress };
         }
 
         if (type === 'collect') {
@@ -49,6 +48,76 @@ export default class PlatformGameScene extends Phaser.Scene {
         return { completed: false, progress: '' };
     }
 
+    private getDefeatObjectiveStatus(target: any) {
+        if (target === 'boss1' && this.dualBossState) {
+            return {
+                completed: this.dualBossState.boss1Defeated,
+                completedCount: this.dualBossState.boss1Defeated ? 1 : 0,
+                total: 1,
+            };
+        }
+
+        if (target === 'boss2') {
+            if (this.dualBossState) {
+                return {
+                    completed: this.dualBossState.boss2Defeated,
+                    completedCount: this.dualBossState.boss2Defeated ? 1 : 0,
+                    total: 1,
+                };
+            }
+
+            const secondBossDone = this.currentBossIndex === 2 && Boolean((this as any).bossDefeatedTriggered);
+            return {
+                completed: secondBossDone,
+                completedCount: secondBossDone ? 1 : 0,
+                total: 1,
+            };
+        }
+
+        if (target === 'boss') {
+            if (this.isDualBossLevel && this.secondBossConfig && !this.dualBossState) {
+                const completedCount = this.sequentialBoss1Defeated ? 1 : 0;
+                return {
+                    completed: completedCount >= 1,
+                    completedCount,
+                    total: 1,
+                };
+            }
+
+            const total = this.dualBossState ? 2 : 1;
+            let completedCount = Math.min(this.defeatedEnemies, total);
+
+            if (this.dualBossState) {
+                completedCount =
+                    (this.dualBossState.boss1Defeated ? 1 : 0)
+                    + (this.dualBossState.boss2Defeated ? 1 : 0);
+            }
+
+            return {
+                completed: completedCount >= total,
+                completedCount,
+                total,
+            };
+        }
+
+        if (typeof target === 'number') {
+            const total = target || this.totalEnemies || 0;
+            const completedCount = total > 0 ? Math.min(this.defeatedEnemies, total) : this.defeatedEnemies;
+            return {
+                completed: total > 0 ? this.defeatedEnemies >= total : this.defeatedEnemies > 0,
+                completedCount,
+                total,
+            };
+        }
+
+        const total = this.totalEnemies || 0;
+        return {
+            completed: total > 0 ? this.defeatedEnemies >= total : this.defeatedEnemies > 0,
+            completedCount: Math.min(this.defeatedEnemies, total || this.defeatedEnemies),
+            total,
+        };
+    }
+
     private updateObjectiveDisplay() {
         if (!this.objectiveText) return;
         const objectives = this.levelData?.objectives || [];
@@ -70,6 +139,19 @@ export default class PlatformGameScene extends Phaser.Scene {
         this.objectiveText.setColor(completedCount === objectives.length ? '#7CFC98' : '#FFFF88');
     }
 
+    private getStableHorizontalDirection(enemy: Phaser.Physics.Arcade.Sprite, deadZone: number = 28) {
+        const horizontalGap = this.player.x - enemy.x;
+        const cachedDirection = (enemy as any).stableFacingDirection;
+
+        if (Math.abs(horizontalGap) <= deadZone) {
+            return cachedDirection || (horizontalGap >= 0 ? 1 : -1);
+        }
+
+        const nextDirection = horizontalGap >= 0 ? 1 : -1;
+        (enemy as any).stableFacingDirection = nextDirection;
+        return nextDirection;
+    }
+
     // 音效辅助函数
     private playSound(soundId: string) {
         if (typeof window !== 'undefined' && (window as any).playGameSound) {
@@ -85,6 +167,33 @@ export default class PlatformGameScene extends Phaser.Scene {
     private disappearingPlatforms: { sprite: Phaser.GameObjects.Rectangle; data: any; isVisible: boolean; timer: number }[] = [];  // 🔥 创意工坊：消失平台
     private windZonesData: { rect: Phaser.GameObjects.Rectangle; data: any }[] = [];  // 🔥 战役9：风力区域数据
     private explosionTraps: { sprite: Phaser.GameObjects.Arc; data: any; lastExplosion: number; isWarning: boolean }[] = [];  // 🔥 战役9：爆炸陷阱
+    private gearChaserTraps: {
+        sprite: Phaser.GameObjects.Container;
+        data: any;
+        homeX: number;
+        homeY: number;
+        state: 'idle' | 'chasing' | 'cooldown';
+        stateStartedAt: number;
+        lastHitAt: number;
+    }[] = [];
+    private expandingHazardTraps: {
+        sprite: Phaser.GameObjects.Container;
+        core: Phaser.GameObjects.Arc;
+        ring: Phaser.GameObjects.Arc;
+        data: any;
+        state: 'idle' | 'warning' | 'cooldown';
+        stateStartedAt: number;
+        lastHitAt: number;
+        currentRadius: number;
+    }[] = [];
+    private movingSpikeTraps: {
+        sprite: Phaser.GameObjects.Container;
+        data: any;
+        startX: number;
+        startY: number;
+        direction: 1 | -1;
+        lastHitAt: number;
+    }[] = [];
     private enemies!: Phaser.Physics.Arcade.Group;
     private collectibles!: Phaser.Physics.Arcade.Group;
     private obstacles!: Phaser.Physics.Arcade.StaticGroup;
@@ -162,6 +271,7 @@ export default class PlatformGameScene extends Phaser.Scene {
     private currentBossIndex: number = 1;  // 1=第一个Boss, 2=第二个Boss
     private secondBossConfig: any = null;
     private isSpawningSecondBoss: boolean = false;
+    private sequentialBoss1Defeated: boolean = false;
 
     // 🔥🔥🔥 战役9：同时存在的双Boss状态（requireBothDefeated模式）
     private dualBossState: {
@@ -256,6 +366,9 @@ export default class PlatformGameScene extends Phaser.Scene {
         this.isLevelIntroActive = false;
         this.startTime = Date.now();
         this.timeElapsed = 0;
+        this.gearChaserTraps = [];
+        this.expandingHazardTraps = [];
+        this.movingSpikeTraps = [];
 
         // 🔥🔥🔥 清理纹理缓存，解决颜色异常问题 🔥🔥🔥
         PlatformGameScene.clearTextureCache();
@@ -307,6 +420,7 @@ export default class PlatformGameScene extends Phaser.Scene {
         this.currentBossIndex = 1;
         this.secondBossConfig = null;
         this.isSpawningSecondBoss = false;
+        this.sequentialBoss1Defeated = false;
         (this as any).bossDefeatedTriggered = false;  // 重置Boss击败标志
         (this as any).bossQuizTriggered = false;  // 重置Boss答题标志
 
@@ -602,10 +716,242 @@ export default class PlatformGameScene extends Phaser.Scene {
         this.showLevelInfo();
     }
 
+    private getCampaignVisualTheme() {
+        const campaignId = this.getCampaignId();
+
+        const baseTheme = {
+            skyTop: 0x0a1628,
+            skyBottom: 0x0d1117,
+            hill: 0x0f1d2e,
+            grass: 0x1a3a1a,
+            starPrimary: 0xFFFFFF,
+            starSecondary: 0xB0E0FF,
+            firefly: 0xAAFF44,
+            platform: 0x2D5A27,
+            platformBorder: 0x4A7C59,
+            groundPlatform: 0x3B2F1E,
+            groundBorder: 0x4A7C59,
+            movingPlatform: 0xff6b35,
+            movingPlatformBorder: 0xff8c42,
+            backdrop: 'default',
+        };
+
+        switch (campaignId) {
+            case 'campaign_11':
+                return {
+                    ...baseTheme,
+                    skyTop: 0x09111f,
+                    skyBottom: 0x140d18,
+                    hill: 0x1a2333,
+                    grass: 0x232014,
+                    starPrimary: 0xDCEFFF,
+                    starSecondary: 0x7FD6FF,
+                    firefly: 0x9BE5FF,
+                    platform: 0x48505E,
+                    platformBorder: 0x7CA8C1,
+                    groundPlatform: 0x3D3128,
+                    groundBorder: 0x7A9FB8,
+                    movingPlatform: 0x4C7BA2,
+                    movingPlatformBorder: 0x8ACFFF,
+                    backdrop: 'cave',
+                };
+            case 'campaign_12':
+                return {
+                    ...baseTheme,
+                    skyTop: 0x071528,
+                    skyBottom: 0x10304B,
+                    hill: 0x0F2D42,
+                    grass: 0x183C3A,
+                    starPrimary: 0xE7FBFF,
+                    starSecondary: 0x7DE3FF,
+                    firefly: 0xC8F7FF,
+                    platform: 0x396173,
+                    platformBorder: 0x8BDBF3,
+                    groundPlatform: 0x2D404C,
+                    groundBorder: 0x7BD3EA,
+                    movingPlatform: 0x2E8FB2,
+                    movingPlatformBorder: 0x8BE8FF,
+                    backdrop: 'waterfall',
+                };
+            case 'campaign_13':
+                return {
+                    ...baseTheme,
+                    skyTop: 0x120C24,
+                    skyBottom: 0x1B1A3A,
+                    hill: 0x231B43,
+                    grass: 0x20284E,
+                    starPrimary: 0xF7F2FF,
+                    starSecondary: 0xA2C4FF,
+                    firefly: 0xD0C2FF,
+                    platform: 0x4F5378,
+                    platformBorder: 0xB7C8FF,
+                    groundPlatform: 0x362E4D,
+                    groundBorder: 0x9EB7F1,
+                    movingPlatform: 0x7A6BFF,
+                    movingPlatformBorder: 0xC8D2FF,
+                    backdrop: 'mirror',
+                };
+            case 'campaign_14':
+                return {
+                    ...baseTheme,
+                    skyTop: 0x0A2030,
+                    skyBottom: 0x2C1D18,
+                    hill: 0x1F3A45,
+                    grass: 0x415735,
+                    starPrimary: 0xFFF6DD,
+                    starSecondary: 0x8DEBFF,
+                    firefly: 0xFFE17A,
+                    platform: 0x5A6C3D,
+                    platformBorder: 0xE6C46B,
+                    groundPlatform: 0x5A4330,
+                    groundBorder: 0xDAB36A,
+                    movingPlatform: 0xD47A2C,
+                    movingPlatformBorder: 0xFFD27D,
+                    backdrop: 'wind',
+                };
+            case 'campaign_15':
+                return {
+                    ...baseTheme,
+                    skyTop: 0x161118,
+                    skyBottom: 0x2A1E1A,
+                    hill: 0x312822,
+                    grass: 0x473928,
+                    starPrimary: 0xFFF5D8,
+                    starSecondary: 0xFFCFA8,
+                    firefly: 0xFFD971,
+                    platform: 0x7A5636,
+                    platformBorder: 0xE4BE79,
+                    groundPlatform: 0x5B3F2A,
+                    groundBorder: 0xCDA667,
+                    movingPlatform: 0xB9692E,
+                    movingPlatformBorder: 0xF1C27D,
+                    backdrop: 'academy',
+                };
+            case 'campaign_16':
+                return {
+                    ...baseTheme,
+                    skyTop: 0x091623,
+                    skyBottom: 0x1B2633,
+                    hill: 0x1F2E3C,
+                    grass: 0x273542,
+                    starPrimary: 0xF6FBFF,
+                    starSecondary: 0x9FD9FF,
+                    firefly: 0xFFD36A,
+                    platform: 0x5C6773,
+                    platformBorder: 0xBBD7F1,
+                    groundPlatform: 0x3E4954,
+                    groundBorder: 0xAFC9DE,
+                    movingPlatform: 0x6F8DA8,
+                    movingPlatformBorder: 0xD8E8F8,
+                    backdrop: 'dam',
+                };
+            default:
+                return baseTheme;
+        }
+    }
+
+    private drawCampaignBackdrop(theme: ReturnType<PlatformGameScene['getCampaignVisualTheme']>, worldWidth: number, worldHeight: number) {
+        if (theme.backdrop === 'default') {
+            return;
+        }
+
+        const graphics = this.add.graphics();
+        graphics.setScrollFactor(1);
+        graphics.setDepth(-70);
+
+        if (theme.backdrop === 'cave') {
+            graphics.fillStyle(0x1B2432, 0.86);
+            for (let i = 0; i < 8; i++) {
+                const x = 140 + i * (worldWidth / 8);
+                graphics.fillEllipse(x, worldHeight * 0.33, 360, 210);
+                graphics.fillRect(x - 180, worldHeight * 0.33, 360, worldHeight * 0.4);
+            }
+            graphics.fillStyle(0x6EB7D6, 0.16);
+            for (let i = 0; i < 6; i++) {
+                graphics.fillEllipse(260 + i * 620, worldHeight * 0.48, 220, 70);
+            }
+        } else if (theme.backdrop === 'waterfall') {
+            graphics.fillStyle(0x173246, 0.72);
+            graphics.fillRect(0, worldHeight * 0.18, worldWidth, worldHeight * 0.16);
+            graphics.fillStyle(0x7FDFFF, 0.2);
+            for (let i = 0; i < 7; i++) {
+                const x = 220 + i * (worldWidth / 7);
+                graphics.fillRect(x, worldHeight * 0.08, 90, worldHeight * 0.78);
+                graphics.fillEllipse(x + 45, worldHeight * 0.82, 220, 64);
+            }
+            graphics.fillStyle(0xE6FCFF, 0.14);
+            for (let i = 0; i < 10; i++) {
+                graphics.fillEllipse(120 + i * 360, worldHeight * 0.78, 160, 36);
+            }
+        } else if (theme.backdrop === 'mirror') {
+            graphics.fillStyle(0x2D3354, 0.55);
+            for (let i = 0; i < 9; i++) {
+                const x = 140 + i * (worldWidth / 9);
+                graphics.fillRect(x, worldHeight * 0.12, 88, worldHeight * 0.72);
+            }
+            graphics.lineStyle(2, 0xBFD4FF, 0.32);
+            for (let i = 0; i < 4; i++) {
+                const cx = 420 + i * 920;
+                graphics.strokeEllipse(cx, worldHeight * 0.34, 220, 300);
+                graphics.strokeEllipse(cx, worldHeight * 0.34, 290, 370);
+            }
+        } else if (theme.backdrop === 'wind') {
+            graphics.fillStyle(0x4E4B33, 0.38);
+            graphics.beginPath();
+            graphics.moveTo(0, worldHeight * 0.72);
+            graphics.lineTo(worldWidth * 0.18, worldHeight * 0.58);
+            graphics.lineTo(worldWidth * 0.34, worldHeight * 0.68);
+            graphics.lineTo(worldWidth * 0.5, worldHeight * 0.5);
+            graphics.lineTo(worldWidth * 0.7, worldHeight * 0.66);
+            graphics.lineTo(worldWidth, worldHeight * 0.46);
+            graphics.lineTo(worldWidth, worldHeight);
+            graphics.lineTo(0, worldHeight);
+            graphics.closePath();
+            graphics.fillPath();
+
+            graphics.lineStyle(2, 0xDCECC8, 0.24);
+            for (let i = 0; i < 12; i++) {
+                const x = 80 + i * 340;
+                const y = worldHeight * (0.2 + (i % 4) * 0.08);
+                graphics.lineBetween(x, y, x + 180, y - 22);
+                graphics.lineBetween(x + 40, y + 24, x + 240, y + 2);
+            }
+        } else if (theme.backdrop === 'academy') {
+            graphics.fillStyle(0x3E2B1F, 0.58);
+            for (let i = 0; i < 7; i++) {
+                const x = 180 + i * (worldWidth / 7);
+                graphics.fillRect(x, worldHeight * 0.26, 34, worldHeight * 0.54);
+                graphics.fillRect(x - 80, worldHeight * 0.22, 190, 18);
+                graphics.fillRect(x - 80, worldHeight * 0.52, 190, 18);
+            }
+            graphics.fillStyle(0xF7D27A, 0.16);
+            for (let i = 0; i < 6; i++) {
+                graphics.fillCircle(260 + i * 760, worldHeight * 0.27, 42);
+            }
+        } else if (theme.backdrop === 'dam') {
+            graphics.fillStyle(0x26323D, 0.86);
+            graphics.fillRect(0, worldHeight * 0.1, worldWidth, worldHeight * 0.62);
+            graphics.fillStyle(0x33424E, 0.92);
+            for (let i = 0; i < 10; i++) {
+                const x = i * (worldWidth / 10);
+                graphics.fillRect(x + 20, worldHeight * 0.14, 120, worldHeight * 0.54);
+            }
+            graphics.fillStyle(0x96A7B8, 0.24);
+            for (let i = 0; i < 8; i++) {
+                graphics.fillRect(120 + i * 520, worldHeight * 0.18, 18, worldHeight * 0.46);
+            }
+            graphics.fillStyle(0xFFD36A, 0.2);
+            for (let i = 0; i < 5; i++) {
+                graphics.fillCircle(280 + i * 900, worldHeight * 0.2, 18);
+            }
+        }
+    }
+
     private createBackground() {
         // 获取世界尺寸
         const campaignMapData = (this.levelData as any).campaignMapData;
         const mapData = (this.levelData as any).map;
+        const visualTheme = this.getCampaignVisualTheme();
 
         let worldWidth = 800;
         let worldHeight = 600;
@@ -622,16 +968,22 @@ export default class PlatformGameScene extends Phaser.Scene {
         debugLog('[PlatformGameScene] 📦 campaignMapData:', campaignMapData);
         debugLog('[PlatformGameScene] 📦 mapData:', mapData);
 
-        // 🌿 春意夜晚：深蓝靛色夜空渐变
+        // 基础天空渐变
         const graphics = this.add.graphics();
-        graphics.fillGradientStyle(0x0a1628, 0x0a1628, 0x0d1117, 0x0d1117, 1);
+        graphics.fillGradientStyle(
+            visualTheme.skyTop,
+            visualTheme.skyTop,
+            visualTheme.skyBottom,
+            visualTheme.skyBottom,
+            1
+        );
         graphics.fillRect(0, 0, worldWidth, worldHeight);
         graphics.setScrollFactor(1);
         graphics.setDepth(-100);
 
-        // 🌿 远景山丘剪影
+        // 远景地形剪影
         const hillGraphics = this.add.graphics();
-        hillGraphics.fillStyle(0x0f1d2e, 0.8);
+        hillGraphics.fillStyle(visualTheme.hill, 0.82);
         const hillBaseY = worldHeight * 0.65;
         hillGraphics.beginPath();
         hillGraphics.moveTo(0, hillBaseY);
@@ -646,9 +998,9 @@ export default class PlatformGameScene extends Phaser.Scene {
         hillGraphics.setScrollFactor(1);
         hillGraphics.setDepth(-90);
 
-        // 🌿 草地层
+        // 前景地形层
         const grassGraphics = this.add.graphics();
-        grassGraphics.fillStyle(0x1a3a1a, 0.6);
+        grassGraphics.fillStyle(visualTheme.grass, 0.7);
         const grassBaseY = worldHeight * 0.82;
         grassGraphics.beginPath();
         grassGraphics.moveTo(0, grassBaseY);
@@ -663,13 +1015,15 @@ export default class PlatformGameScene extends Phaser.Scene {
         grassGraphics.setScrollFactor(1);
         grassGraphics.setDepth(-80);
 
-        // 🌿 白色/淡青星星
+        this.drawCampaignBackdrop(visualTheme, worldWidth, worldHeight);
+
+        // 星点 / 环境点光
         const starCount = Math.floor(worldWidth / 10);
         for (let i = 0; i < starCount; i++) {
             const sx = Math.random() * worldWidth;
             const sy = Math.random() * (worldHeight * 0.55);
             const size = Math.random() * 1.8 + 0.5;
-            const starColor = Math.random() > 0.3 ? 0xFFFFFF : 0xB0E0FF;
+            const starColor = Math.random() > 0.3 ? visualTheme.starPrimary : visualTheme.starSecondary;
             const starAlpha = Math.random() * 0.7 + 0.2;
             const star = this.add.circle(sx, sy, size, starColor, starAlpha);
             star.setScrollFactor(1);
@@ -687,12 +1041,12 @@ export default class PlatformGameScene extends Phaser.Scene {
             }
         }
 
-        // 🌿 萤火虫粒子
+        // 环境粒子
         const fireflyCount = Math.max(6, Math.floor(worldWidth / 120));
         for (let i = 0; i < fireflyCount; i++) {
             const fx = Math.random() * worldWidth;
             const fy = worldHeight * 0.4 + Math.random() * (worldHeight * 0.5);
-            const firefly = this.add.circle(fx, fy, 2.5, 0xAAFF44, 0.7);
+            const firefly = this.add.circle(fx, fy, 2.5, visualTheme.firefly, 0.7);
             firefly.setScrollFactor(1);
             firefly.setDepth(-40);
             this.tweens.add({
@@ -708,7 +1062,7 @@ export default class PlatformGameScene extends Phaser.Scene {
             });
         }
 
-        debugLog('[PlatformGameScene] 🌿 春意夜晚背景创建完成');
+        debugLog('[PlatformGameScene] 🎨 战役背景创建完成:', visualTheme.backdrop);
     }
 
     private createPlatforms() {
@@ -717,6 +1071,7 @@ export default class PlatformGameScene extends Phaser.Scene {
         // 检查是否使用战役地图数据
         const campaignMapData = (this.levelData as any).campaignMapData;
         const platforms = campaignMapData ? campaignMapData.platforms : this.levelData.map.platforms;
+        const visualTheme = this.getCampaignVisualTheme();
 
         debugLog('[PlatformGameScene] 创建平台，数量:', platforms.length);
 
@@ -733,12 +1088,12 @@ export default class PlatformGameScene extends Phaser.Scene {
                 debugLog('[PlatformGameScene] 🔥 创建移动平台:', startX, startY, '→', endX, endY, '速度:', platform.moveSpeed);
 
                 // 创建移动平台纹理（橙色，更醒目）
-                const textureKey = `moving_platform_${platform.width}_${platform.height || 20}`;
+                const textureKey = `moving_platform_${this.getCampaignId()}_${platform.width}_${platform.height || 20}`;
                 if (!this.textures.exists(textureKey)) {
                     const graphics = this.add.graphics();
-                    graphics.fillStyle(0xff6b35, 1);
+                    graphics.fillStyle(visualTheme.movingPlatform, 1);
                     graphics.fillRect(0, 0, platform.width, platform.height || 20);
-                    graphics.lineStyle(2, 0xff8c42, 1);
+                    graphics.lineStyle(2, visualTheme.movingPlatformBorder, 1);
                     graphics.strokeRect(0, 0, platform.width, platform.height || 20);
                     graphics.generateTexture(textureKey, platform.width, platform.height || 20);
                     graphics.destroy();
@@ -925,11 +1280,13 @@ export default class PlatformGameScene extends Phaser.Scene {
 
                 debugLog('[PlatformGameScene] 🔥 创建消失平台:', platform.x, platform.y, '消失时间:', disappearTime);
             } else {
-                // 🌿 春意夜晚：森林绿平台
+                // 标准平台：按战役主题切换配色
                 const platformHeight = platform.height || 20;
-                let platformColor = 0x2D5A27; // 森林绿
+                let platformColor = visualTheme.platform;
+                let borderColor = visualTheme.platformBorder;
                 if (platform.type === 'ground') {
-                    platformColor = 0x3B2F1E; // 地面深棕色
+                    platformColor = visualTheme.groundPlatform;
+                    borderColor = visualTheme.groundBorder;
                 }
 
                 const rect = this.add.rectangle(
@@ -939,7 +1296,7 @@ export default class PlatformGameScene extends Phaser.Scene {
                     platformHeight,
                     platformColor
                 );
-                rect.setStrokeStyle(2, 0x4A7C59); // 苔藓绿边框
+                rect.setStrokeStyle(2, borderColor);
                 rect.setDepth(10);
                 this.platforms.add(rect);
             }
@@ -1014,6 +1371,21 @@ export default class PlatformGameScene extends Phaser.Scene {
         debugLog('[PlatformGameScene] 🔥 创建陷阱:', traps.length, '个');
 
         traps.forEach((trap: any) => {
+            if (trap.type === 'gear_chaser') {
+                this.createGearChaserTrap(trap);
+                return;
+            }
+
+            if (trap.type === 'expanding_hazard') {
+                this.createExpandingHazardTrap(trap);
+                return;
+            }
+
+            if (trap.type === 'moving_spike') {
+                this.createMovingSpikeTrap(trap);
+                return;
+            }
+
             let color = 0xff0000;
             let emoji = '⚡';
 
@@ -1073,6 +1445,142 @@ export default class PlatformGameScene extends Phaser.Scene {
         });
 
         debugLog('[PlatformGameScene] ✅ 陷阱创建完成');
+    }
+
+    private createGearChaserTrap(trap: any) {
+        const radius = trap.radius || 18;
+        const theme = trap.visualTheme || 'bronze';
+        const palette = theme === 'storm'
+            ? { body: 0x5A7CA7, accent: 0xBEE7FF, glow: 0x9CE8FF }
+            : theme === 'forge'
+                ? { body: 0x7A5134, accent: 0xF4C56D, glow: 0xFFD899 }
+                : { body: 0x6D553A, accent: 0xE7BE72, glow: 0xFFE2A4 };
+
+        const graphics = this.add.graphics();
+        graphics.fillStyle(palette.body, 1);
+        for (let index = 0; index < 8; index += 1) {
+            const angle = (Math.PI * 2 * index) / 8;
+            const toothX = 32 + Math.cos(angle) * 18;
+            const toothY = 32 + Math.sin(angle) * 18;
+            graphics.fillRect(toothX - 4, toothY - 4, 8, 8);
+        }
+        graphics.fillCircle(32, 32, 18);
+        graphics.fillStyle(palette.accent, 1);
+        graphics.fillCircle(32, 32, 10);
+        graphics.lineStyle(3, 0x1d2635, 0.9);
+        graphics.strokeCircle(32, 32, 19);
+        const textureKey = `gearTrap_${theme}`;
+        if (!this.textures.exists(textureKey)) {
+            graphics.generateTexture(textureKey, 64, 64);
+        }
+        graphics.destroy();
+
+        const sprite = this.add.image(trap.x, trap.y, textureKey).setDepth(42).setAlpha(0.96);
+        sprite.setDisplaySize(radius * 2.2, radius * 2.2);
+        const glow = this.add.circle(0, 0, radius + 8, palette.glow, 0.15);
+        const gear = this.add.container(trap.x, trap.y, [glow, sprite]).setDepth(42);
+        gear.setScale(0.9);
+
+        this.gearChaserTraps.push({
+            sprite: gear,
+            data: {
+                ...trap,
+                radius,
+                triggerRadius: trap.triggerRadius || 170,
+                speed: trap.speed || 170,
+                activeDuration: trap.activeDuration || 2800,
+                cooldown: trap.cooldown || 2200,
+            },
+            homeX: trap.x,
+            homeY: trap.y,
+            state: 'idle',
+            stateStartedAt: Date.now(),
+            lastHitAt: 0,
+        });
+    }
+
+    private createExpandingHazardTrap(trap: any) {
+        const baseRadius = trap.radius || 14;
+        const theme = trap.visualTheme || 'alert';
+        const palette = theme === 'pulse'
+            ? { core: 0x7C5CFF, ring: 0xC9BBFF }
+            : theme === 'frost'
+                ? { core: 0x4AC8FF, ring: 0xC3F1FF }
+                : { core: 0xFF6B4A, ring: 0xFFD4A3 };
+
+        const core = this.add.circle(0, 0, baseRadius, palette.core, 0.82);
+        core.setStrokeStyle(2, 0xFFFFFF, 0.25);
+        const ring = this.add.circle(0, 0, baseRadius + 6, palette.ring, 0.12);
+        ring.setStrokeStyle(3, palette.ring, 0.65);
+        const sprite = this.add.container(trap.x, trap.y, [ring, core]).setDepth(41);
+
+        this.expandingHazardTraps.push({
+            sprite,
+            core,
+            ring,
+            data: {
+                ...trap,
+                radius: baseRadius,
+                maxRadius: trap.maxRadius || 54,
+                triggerRadius: trap.triggerRadius || 150,
+                growDuration: trap.growDuration || 520,
+                activeDuration: trap.activeDuration || 1500,
+                cooldown: trap.cooldown || 2200,
+            },
+            state: 'idle',
+            stateStartedAt: Date.now(),
+            lastHitAt: 0,
+            currentRadius: baseRadius,
+        });
+    }
+
+    private createMovingSpikeTrap(trap: any) {
+        const width = trap.width || 54;
+        const height = trap.height || 28;
+        const theme = trap.visualTheme || 'steel';
+        const fillColor = theme === 'void' ? 0x7C3AED : theme === 'storm' ? 0x3AA6D0 : 0xD64545;
+        const accentColor = theme === 'void' ? 0xDDD6FE : theme === 'storm' ? 0xD7F3FF : 0xFFE6E6;
+
+        const graphics = this.add.graphics();
+        graphics.fillStyle(fillColor, 1);
+        const spikeCount = Math.max(3, Math.floor(width / 12));
+        const spikeWidth = width / spikeCount;
+        for (let index = 0; index < spikeCount; index += 1) {
+            const left = index * spikeWidth;
+            graphics.beginPath();
+            graphics.moveTo(left, height);
+            graphics.lineTo(left + spikeWidth / 2, 0);
+            graphics.lineTo(left + spikeWidth, height);
+            graphics.closePath();
+            graphics.fillPath();
+        }
+        graphics.lineStyle(2, accentColor, 0.8);
+        graphics.strokeRect(0, height - 6, width, 6);
+        const textureKey = `movingSpike_${theme}_${width}_${height}`;
+        if (!this.textures.exists(textureKey)) {
+            graphics.generateTexture(textureKey, width, height);
+        }
+        graphics.destroy();
+
+        const image = this.add.image(0, 0, textureKey);
+        const aura = this.add.rectangle(0, 0, width + 10, height + 10, accentColor, 0.08);
+        const sprite = this.add.container(trap.x, trap.y, [aura, image]).setDepth(41);
+
+        this.movingSpikeTraps.push({
+            sprite,
+            data: {
+                ...trap,
+                width,
+                height,
+                axis: trap.axis || 'x',
+                speed: trap.speed || 120,
+                moveDistance: trap.moveDistance || 180,
+            },
+            startX: trap.x,
+            startY: trap.y,
+            direction: 1,
+            lastHitAt: 0,
+        });
     }
 
     private createMechanisms() {
@@ -1509,6 +2017,7 @@ export default class PlatformGameScene extends Phaser.Scene {
             let textureName = '';
             let size = 32;
             let damage = 1;
+            const campaignId = this.getCampaignId();
 
             switch (enemyData.type) {
                 case 'slime':
@@ -1540,7 +2049,6 @@ export default class PlatformGameScene extends Phaser.Scene {
                     break;
                 case 'boss':
                     // 根据战役ID创建不同的Boss
-                    const campaignId = this.getCampaignId();
                     textureName = this.createBossTexture(campaignId);
                     size = this.getBossSize(campaignId);
                     damage = 3;
@@ -1567,9 +2075,6 @@ export default class PlatformGameScene extends Phaser.Scene {
                 // 禁用物理body的亚像素移动
                 body.setAllowGravity(false);  // 先禁用重力，后面根据类型重新设置
             }
-            // 2. 设置精灵使用整数坐标
-            enemy.x = Math.round(enemy.x);
-            enemy.y = Math.round(enemy.y);
 
             // 检查是否是Boss
             if (enemyData.type === 'boss') {
@@ -1656,14 +2161,18 @@ export default class PlatformGameScene extends Phaser.Scene {
                             this.dualBossState.boss1 = enemy;
                             (enemy as any).bossIndex = 1;
                             (enemy as any).bossName = bossConfig.phase1Boss?.name || '酸液博士';
+                            (enemy as any).bossConfig = bossConfig.phase1Boss || null;
                             this.bossMaxHP = this.dualBossState.boss1MaxHP;
                             this.bossHP = this.dualBossState.boss1HP;
                             this.bossEnemy = enemy;
+                            this.applyBossVisual(enemy, campaignId, bossConfig.phase1Boss || null, 1);
                             debugLog('[Boss] 酸液博士已创建，HP:', this.dualBossState.boss1MaxHP);
                         } else if (!this.dualBossState.boss2) {
                             this.dualBossState.boss2 = enemy;
                             (enemy as any).bossIndex = 2;
                             (enemy as any).bossName = bossConfig.phase2Boss?.name || '气体博士';
+                            (enemy as any).bossConfig = bossConfig.phase2Boss || null;
+                            this.applyBossVisual(enemy, campaignId, bossConfig.phase2Boss || null, 2);
                             debugLog('[Boss] 气体博士已创建，HP:', this.dualBossState.boss2MaxHP);
                         }
                     } else {
@@ -1672,6 +2181,8 @@ export default class PlatformGameScene extends Phaser.Scene {
                         this.secondBossConfig = bossConfig.secondBoss;
                         this.bossMaxHP = bossConfig.hp || 400;
                         this.bossEnemy = enemy;
+                        (enemy as any).bossConfig = bossConfig.phase1Boss || null;
+                        this.applyBossVisual(enemy, campaignId, bossConfig.phase1Boss || null, 1);
                         debugLog('[Boss] 🔥 双Boss关卡（顺序模式）！第一个Boss HP:', this.bossMaxHP);
                     }
                 } else {
@@ -1697,6 +2208,8 @@ export default class PlatformGameScene extends Phaser.Scene {
                     (this as any).savedDefeatCondition = defeatCondition;
                     (this as any).savedQuestionsRequired = questionsRequired;
                     debugLog('[Boss] 🔥 击败条件:', defeatCondition, '需要答题数:', questionsRequired);
+
+                    this.applyBossVisual(enemy, campaignId, bossConfig || null, 1);
                 }
                 this.bossHP = this.bossMaxHP;
 
@@ -1726,7 +2239,7 @@ export default class PlatformGameScene extends Phaser.Scene {
 
             // 添加浮动动画（Boss不添加，避免影响移动）
             // 🔥 移动端优化：减小浮动幅度，使用更平滑的动画
-            if (enemyData.type !== 'boss') {
+            if (enemyData.type === 'bat') {
                 const floatY = Math.round(enemyData.y - 3);  // 🔥 减小浮动幅度（原来是5）
                 this.tweens.add({
                     targets: enemy,
@@ -1735,12 +2248,6 @@ export default class PlatformGameScene extends Phaser.Scene {
                     yoyo: true,
                     repeat: -1,
                     ease: 'Sine.easeInOut',
-                    // 只修正纵向坐标，避免和横向物理移动互相打架产生抖动
-                    onUpdate: () => {
-                        if (enemy.active) {
-                            enemy.y = Math.round(enemy.y);
-                        }
-                    }
                 });
             }
 
@@ -1986,6 +2493,7 @@ export default class PlatformGameScene extends Phaser.Scene {
     private createAutoMovingPlatforms() {
         const campaignMapData = (this.levelData as any).campaignMapData;
         const autoPlatforms = campaignMapData?.autoMovingPlatforms || [];
+        const visualTheme = this.getCampaignVisualTheme();
 
         if (autoPlatforms.length === 0) {
             debugLog('[PlatformGameScene] 没有自动移动平台');
@@ -1996,12 +2504,12 @@ export default class PlatformGameScene extends Phaser.Scene {
             const platform = this.physics.add.sprite(platformData.startX, platformData.y, '');
 
             // 性能优化：使用纹理缓存
-            const textureKey = `autoPlatform_${platformData.width}`;
+            const textureKey = `autoPlatform_${this.getCampaignId()}_${platformData.width}`;
             if (!PlatformGameScene.textureCache.has(textureKey)) {
                 const graphics = this.add.graphics();
-                graphics.fillStyle(0xff6b35, 1);
+                graphics.fillStyle(visualTheme.movingPlatform, 1);
                 graphics.fillRect(0, 0, platformData.width, 20);
-                graphics.lineStyle(2, 0xff8c42, 1);
+                graphics.lineStyle(2, visualTheme.movingPlatformBorder, 1);
                 graphics.strokeRect(0, 0, platformData.width, 20);
                 graphics.generateTexture(textureKey, platformData.width, 20);
                 graphics.destroy();
@@ -2466,6 +2974,96 @@ export default class PlatformGameScene extends Phaser.Scene {
         return true;
     }
 
+    private getLevelBossConfig() {
+        return (this.levelData as any).campaignMapData?.bossConfig || (this.levelData as any).bossConfig || null;
+    }
+
+    private getDualBossDisplayNames() {
+        const bossConfig = this.getLevelBossConfig();
+        return {
+            boss1: bossConfig?.phase1Boss?.name || '左门神',
+            boss2: bossConfig?.phase2Boss?.name || '右门神',
+        };
+    }
+
+    private getSecondBossDisplayName() {
+        return this.secondBossConfig?.name || '激光守卫';
+    }
+
+    private runConfiguredDualBossSkills(
+        enemy: Phaser.Physics.Arcade.Sprite,
+        bossIndex: number,
+        bossHPPercent: number,
+        aiData: any,
+        now: number
+    ) {
+        const dualBossConfig = this.getLevelBossConfig();
+        if (!dualBossConfig || dualBossConfig.type !== 'dual' || !dualBossConfig.requireBothDefeated) {
+            return;
+        }
+
+        const bossConfig = bossIndex === 1 ? dualBossConfig.phase1Boss : dualBossConfig.phase2Boss;
+        if (!bossConfig) {
+            return;
+        }
+
+        const attacks = new Set<string>(bossConfig.attacks || []);
+        const cooldownMultiplier = this.dualBossState?.enraged ? 0.5 : 1;
+        const tryUseSkill = (key: string, cooldown: number, action: () => void) => {
+            const stampKey = `dualBoss_${key}`;
+            if (!aiData[stampKey]) {
+                aiData[stampKey] = 0;
+            }
+            if (now - aiData[stampKey] > cooldown * cooldownMultiplier) {
+                action();
+                aiData[stampKey] = now;
+            }
+        };
+
+        if (attacks.has('acid_pool')) {
+            tryUseSkill('acidPool', 3200, () => this.bossAcidPool(enemy));
+        }
+        if (attacks.has('acid_spray')) {
+            tryUseSkill('acidSpray', 4200, () => this.bossAcidSpray(enemy));
+        }
+        if (attacks.has('poison_cloud')) {
+            tryUseSkill('poisonCloud', 4200, () => this.bossPoisonCloud(enemy));
+        }
+        if (attacks.has('gas_burst')) {
+            tryUseSkill('gasBurst', 5200, () => this.bossGasBurst(enemy));
+        }
+        if (attacks.has('projectile')) {
+            tryUseSkill('projectile', 2200, () => this.enemyShoot(enemy));
+        }
+        if (attacks.has('projectile_spread')) {
+            tryUseSkill('projectileSpread', 3400, () =>
+                this.bossRedSpreadShot(enemy, 5, 16, (enemy as any).bossName || 'Boss')
+            );
+        }
+        if (attacks.has('summon')) {
+            tryUseSkill('summon', 12000, () => this.bossSpawnMinions(enemy));
+        }
+
+        const dualState: any = this.dualBossState as any;
+        const canUseCombinedAttack =
+            !!dualBossConfig.combinedAttack &&
+            !!dualState &&
+            !this.dualBossState?.boss1Defeated &&
+            !this.dualBossState?.boss2Defeated &&
+            bossHPPercent < 0.55;
+
+        if (canUseCombinedAttack) {
+            if (!dualState.lastCombinedAttackTime) {
+                dualState.lastCombinedAttackTime = 0;
+            }
+            const comboCooldown = (dualBossConfig.combinedAttack.cooldown || 10000) * cooldownMultiplier;
+            if (now - dualState.lastCombinedAttackTime > comboCooldown) {
+                this.bossChemicalReaction(enemy);
+                dualState.lastCombinedAttackTime = now;
+            }
+        }
+    }
+
     private createBossHealthBar() {
         const { width } = this.cameras.main;
         const isMobile = isMobileDevice();
@@ -2476,6 +3074,7 @@ export default class PlatformGameScene extends Phaser.Scene {
         // 🔥🔥🔥 战役9双Boss模式：创建两个血条
         if (this.dualBossState) {
             debugLog('[Boss] 🔥 创建双Boss血条UI');
+            const { boss1, boss2 } = this.getDualBossDisplayNames();
 
             const barWidth = isMobile ? 180 : 240;
             const barHeight = isMobile ? 20 : 25;
@@ -2485,7 +3084,7 @@ export default class PlatformGameScene extends Phaser.Scene {
             const y = isMobile ? 50 : 60;
 
             // 🎊 新年主题：Boss1 血条（左门神）
-            const boss1Name = '🚪 左门神';
+            const boss1Name = boss1;
             this.bossNameText = this.add.text(startX + barWidth / 2, y - 20, boss1Name, {
                 fontSize: isMobile ? '14px' : '16px',
                 color: '#FFD700',  // 金色
@@ -2513,7 +3112,7 @@ export default class PlatformGameScene extends Phaser.Scene {
 
             // 🎊 新年主题：Boss2 血条（右门神）
             const boss2X = startX + barWidth + gap;
-            const boss2Name = '🚪 右门神';
+            const boss2Name = boss2;
             this.boss2NameText = this.add.text(boss2X + barWidth / 2, y - 20, boss2Name, {
                 fontSize: isMobile ? '14px' : '16px',
                 color: '#FFD700',  // 金色
@@ -2541,11 +3140,11 @@ export default class PlatformGameScene extends Phaser.Scene {
 
             // 双Boss战斗开始对话
             this.time.delayedCall(500, () => {
-                this.showBossDialogue('酸液博士', '哈哈！你来得正好！', 2000);
+                this.showBossDialogue(boss1Name, '先找真路。', 1600);
                 this.playSound('boss_appear');
             });
             this.time.delayedCall(2500, () => {
-                this.showBossDialogue('气体博士', '让我们一起消灭这个入侵者！', 2000);
+                this.showBossDialogue(boss2Name, '别想硬闯。', 1600);
             });
 
             debugLog('[Boss] 双Boss血条UI创建完成');
@@ -2558,7 +3157,7 @@ export default class PlatformGameScene extends Phaser.Scene {
         const x = width / 2 - barWidth / 2;
         const y = isMobile ? 50 : 60;
 
-        const bossName = this.getBossName(campaignId);
+        const bossName = this.getLevelBossConfig()?.phase1Boss?.name || this.getBossName(campaignId);
 
         // Boss名称 - 移动端字体稍小
         this.bossNameText = this.add.text(width / 2, y - (isMobile ? 20 : 25), bossName, {
@@ -2787,7 +3386,8 @@ export default class PlatformGameScene extends Phaser.Scene {
     private onDualBossDefeated(bossIndex: number) {
         if (!this.dualBossState) return;
 
-        const bossName = bossIndex === 1 ? '酸液博士' : '气体博士';
+        const { boss1, boss2 } = this.getDualBossDisplayNames();
+        const bossName = bossIndex === 1 ? boss1 : boss2;
         debugLog(`[Boss] 🔥 ${bossName}被击败！`);
         this.playSound('boss_defeated');
 
@@ -2860,7 +3460,7 @@ export default class PlatformGameScene extends Phaser.Scene {
             });
         } else {
             // 另一个Boss狂暴！
-            const survivingBossName = bossIndex === 1 ? '气体博士' : '酸液博士';
+            const survivingBossName = bossIndex === 1 ? boss2 : boss1;
             this.dualBossState.enraged = true;
 
             // 显示狂暴提示
@@ -3233,6 +3833,7 @@ export default class PlatformGameScene extends Phaser.Scene {
         if (this.isDualBossLevel && this.currentBossIndex === 1 && this.secondBossConfig && !this.isSpawningSecondBoss) {
             debugLog('[Boss] 🔥🔥🔥 顺序双Boss模式：第一个Boss被击败，准备生成第二个Boss！');
             this.isSpawningSecondBoss = true;
+            this.sequentialBoss1Defeated = true;
 
             this.playSound('boss_defeated');
 
@@ -3514,7 +4115,7 @@ export default class PlatformGameScene extends Phaser.Scene {
 
             // 显示过渡提示
             const { width, height } = this.cameras.main;
-            const warningText = this.add.text(width / 2, height / 2, '⚠️ 警告：激光守卫即将出现！', {
+            const warningText = this.add.text(width / 2, height / 2, `⚠️ 警告：${this.getSecondBossDisplayName()}即将出现！`, {
                 fontSize: '32px',
                 color: '#ff0000',
                 fontStyle: 'bold',
@@ -3561,7 +4162,8 @@ export default class PlatformGameScene extends Phaser.Scene {
     private spawnSecondBoss() {
         if (!this.secondBossConfig) return;
 
-        debugLog('[Boss] 🔥 生成激光守卫！');
+        const secondBossName = this.getSecondBossDisplayName();
+        debugLog(`[Boss] 🔥 生成第二个Boss: ${secondBossName}`);
         this.playSound('boss_appear');
 
         this.currentBossIndex = 2;
@@ -3569,16 +4171,24 @@ export default class PlatformGameScene extends Phaser.Scene {
 
         // 获取生成位置
         const spawnPos = this.secondBossConfig.spawnPosition || { x: 1400, y: 500 };
-
-        // 创建激光守卫纹理
-        const textureName = this.createLaserGuardTexture();
+        const campaignId = this.getCampaignId();
+        const visualTheme = this.secondBossConfig.visualTheme || 'default';
+        const textureName = visualTheme === 'laser_guard_default'
+            ? this.createLaserGuardTexture()
+            : this.createBossTexture(campaignId, visualTheme);
 
         // 创建第二个Boss
         const boss2 = this.enemies.create(spawnPos.x, spawnPos.y, textureName);
-        boss2.setDisplaySize(80, 80);
+        boss2.setDisplaySize(this.secondBossConfig.size || 80, this.secondBossConfig.size || 80);
         (boss2 as any).damage = 3;
         (boss2 as any).enemyType = 'boss';
         (boss2 as any).isLaserGuard = true;  // 标记为激光守卫
+        (boss2 as any).bossName = secondBossName;
+        (boss2 as any).bossConfig = this.secondBossConfig;
+
+        if (this.secondBossConfig.tint) {
+            boss2.setTint(this.secondBossConfig.tint);
+        }
 
         this.bossEnemy = boss2;
         this.bossMaxHP = this.secondBossConfig.hp || 600;
@@ -3636,7 +4246,7 @@ export default class PlatformGameScene extends Phaser.Scene {
         });
 
         // Boss台词
-        this.showBossDialogue('激光守卫', '入侵者！接受激光的审判吧！', 3000);
+        this.showBossDialogue(secondBossName, '第二阶段开始。', 2200);
     }
 
     // 🔥 创建激光守卫纹理
@@ -3679,7 +4289,7 @@ export default class PlatformGameScene extends Phaser.Scene {
     private updateBossHealthBarForSecondBoss() {
         // 更新Boss名称
         if (this.bossNameText) {
-            this.bossNameText.setText('⚡ 激光守卫');
+            this.bossNameText.setText(this.getSecondBossDisplayName());
             this.bossNameText.setColor('#ff4500');
         }
 
@@ -4121,6 +4731,9 @@ export default class PlatformGameScene extends Phaser.Scene {
 
         // 🔥 战役9：更新爆炸陷阱
         this.updateExplosionTraps();
+
+        // 🔥 新增动态机关：追击齿轮、扩张脉冲、巡航尖刺
+        this.updateDynamicTraps(deltaTime);
 
         // 🔥 相机跟随由startFollow自动处理，不需要每帧centerOn
         // 这样可以避免抖动问题
@@ -4671,6 +5284,151 @@ export default class PlatformGameScene extends Phaser.Scene {
         }
     }
 
+    private damagePlayerFromDynamicTrap(sourceX: number, damage: number, lastHitAtRef: { lastHitAt: number }) {
+        const now = Date.now();
+        if (this.isInvulnerable || now - lastHitAtRef.lastHitAt < 900) {
+            return;
+        }
+
+        lastHitAtRef.lastHitAt = now;
+        this.takeDamage(damage);
+        if (this.player?.active) {
+            const knockbackDirection = this.player.x < sourceX ? -1 : 1;
+            this.player.setVelocityX(knockbackDirection * 220);
+            this.player.setVelocityY(-120);
+        }
+    }
+
+    private updateDynamicTraps(deltaTime: number) {
+        if (!this.player?.active) {
+            return;
+        }
+
+        const playerBounds = this.player.getBounds();
+        const now = Date.now();
+
+        for (const trap of this.gearChaserTraps) {
+            if (!trap.sprite.active) continue;
+
+            const distanceToPlayer = Phaser.Math.Distance.Between(trap.sprite.x, trap.sprite.y, this.player.x, this.player.y);
+            const { triggerRadius, speed, activeDuration, cooldown, radius, damage } = trap.data;
+
+            if (trap.state === 'idle' && distanceToPlayer <= triggerRadius) {
+                trap.state = 'chasing';
+                trap.stateStartedAt = now;
+                this.tweens.add({
+                    targets: trap.sprite,
+                    scaleX: 1.12,
+                    scaleY: 1.12,
+                    duration: 160,
+                    yoyo: true,
+                    repeat: 1,
+                });
+            }
+
+            if (trap.state === 'chasing') {
+                const angle = Phaser.Math.Angle.Between(trap.sprite.x, trap.sprite.y, this.player.x, this.player.y);
+                trap.sprite.x += Math.cos(angle) * speed * deltaTime;
+                trap.sprite.y += Math.sin(angle) * speed * deltaTime;
+                trap.sprite.rotation += 5.4 * deltaTime;
+
+                const trapBounds = new Phaser.Geom.Circle(trap.sprite.x, trap.sprite.y, radius + 10);
+                if (Phaser.Geom.Intersects.CircleToRectangle(trapBounds, playerBounds)) {
+                    this.damagePlayerFromDynamicTrap(trap.sprite.x, damage, trap);
+                }
+
+                if (now - trap.stateStartedAt >= activeDuration) {
+                    trap.state = 'cooldown';
+                    trap.stateStartedAt = now;
+                }
+            } else if (trap.state === 'cooldown') {
+                trap.sprite.x = Phaser.Math.Linear(trap.sprite.x, trap.homeX, Math.min(1, deltaTime * 3.2));
+                trap.sprite.y = Phaser.Math.Linear(trap.sprite.y, trap.homeY, Math.min(1, deltaTime * 3.2));
+                trap.sprite.rotation = Phaser.Math.Linear(trap.sprite.rotation, 0, Math.min(1, deltaTime * 4));
+                if (now - trap.stateStartedAt >= cooldown && Phaser.Math.Distance.Between(trap.sprite.x, trap.sprite.y, trap.homeX, trap.homeY) < 6) {
+                    trap.state = 'idle';
+                    trap.sprite.setPosition(trap.homeX, trap.homeY);
+                }
+            }
+        }
+
+        for (const trap of this.expandingHazardTraps) {
+            if (!trap.sprite.active) continue;
+
+            const { radius, maxRadius, triggerRadius, growDuration, activeDuration, cooldown, damage } = trap.data;
+            const distanceToPlayer = Phaser.Math.Distance.Between(trap.sprite.x, trap.sprite.y, this.player.x, this.player.y);
+
+            if (trap.state === 'idle' && distanceToPlayer <= triggerRadius) {
+                trap.state = 'warning';
+                trap.stateStartedAt = now;
+            }
+
+            if (trap.state === 'warning') {
+                const growProgress = Math.min(1, (now - trap.stateStartedAt) / growDuration);
+                trap.currentRadius = Phaser.Math.Linear(radius, maxRadius, growProgress);
+                const scale = trap.currentRadius / radius;
+                trap.sprite.setScale(scale);
+                trap.core.setAlpha(0.7 + growProgress * 0.2);
+                trap.ring.setAlpha(0.24 + growProgress * 0.26);
+                trap.ring.rotation += 1.8 * deltaTime;
+
+                const blastCircle = new Phaser.Geom.Circle(trap.sprite.x, trap.sprite.y, trap.currentRadius);
+                if (Phaser.Geom.Intersects.CircleToRectangle(blastCircle, playerBounds)) {
+                    this.damagePlayerFromDynamicTrap(trap.sprite.x, damage, trap);
+                }
+
+                if (now - trap.stateStartedAt >= activeDuration) {
+                    trap.state = 'cooldown';
+                    trap.stateStartedAt = now;
+                }
+            } else if (trap.state === 'cooldown') {
+                trap.currentRadius = Phaser.Math.Linear(trap.currentRadius, radius, Math.min(1, deltaTime * 4));
+                const scale = trap.currentRadius / radius;
+                trap.sprite.setScale(scale);
+                trap.core.setAlpha(0.82);
+                trap.ring.setAlpha(0.18);
+                if (now - trap.stateStartedAt >= cooldown && Math.abs(trap.currentRadius - radius) < 1) {
+                    trap.currentRadius = radius;
+                    trap.sprite.setScale(1);
+                    trap.state = 'idle';
+                }
+            }
+        }
+
+        for (const trap of this.movingSpikeTraps) {
+            if (!trap.sprite.active) continue;
+
+            const { axis, speed, moveDistance, width, height, damage } = trap.data;
+            const delta = speed * deltaTime * trap.direction;
+
+            if (axis === 'y') {
+                trap.sprite.y += delta;
+                if (Math.abs(trap.sprite.y - trap.startY) >= moveDistance) {
+                    trap.sprite.y = trap.startY + moveDistance * trap.direction;
+                    trap.direction *= -1;
+                }
+            } else {
+                trap.sprite.x += delta;
+                if (Math.abs(trap.sprite.x - trap.startX) >= moveDistance) {
+                    trap.sprite.x = trap.startX + moveDistance * trap.direction;
+                    trap.direction *= -1;
+                }
+            }
+
+            trap.sprite.rotation = axis === 'y' ? 0 : trap.direction * 0.05;
+
+            const rect = new Phaser.Geom.Rectangle(
+                trap.sprite.x - width / 2,
+                trap.sprite.y - height / 2,
+                width,
+                height,
+            );
+            if (Phaser.Geom.Intersects.RectangleToRectangle(rect, playerBounds)) {
+                this.damagePlayerFromDynamicTrap(trap.sprite.x, damage, trap);
+            }
+        }
+    }
+
     // 🔥 战役9：检查风力区域效果
     private checkWindZoneEffects() {
         // 🔥🔥🔥 这个函数处理风力区域效果
@@ -5021,13 +5779,17 @@ export default class PlatformGameScene extends Phaser.Scene {
                     // 🔥 Boss始终主动移动（无论玩家是否在范围内）
                     // 🔥🔥🔥 战役9双Boss：强制始终追击，不受距离限制
                     const campaignId = this.getCampaignId();
-                    const isCampaign9DualBoss = campaignId === 'campaign_9' && this.dualBossState;
-                    const effectiveChaseRange = isCampaign9DualBoss ? 3000 : aiData.chaseRange; // 战役9追击范围扩大到3000
+                    const levelBossConfig = this.getLevelBossConfig();
+                    const useAdvancedDualBossAI =
+                        !!this.dualBossState &&
+                        levelBossConfig?.type === 'dual' &&
+                        levelBossConfig?.requireBothDefeated;
+                    const effectiveChaseRange = useAdvancedDualBossAI ? 3000 : aiData.chaseRange;
                     const inChaseRange = distanceToPlayer < effectiveChaseRange;
 
                     if (inChaseRange) {
                         // 🔥🔥🔥 战役9双Boss专用AI：完全重写，确保追击玩家
-                        if (isCampaign9DualBoss) {
+                        if (useAdvancedDualBossAI) {
                             const bossIndex = (enemy as any).bossIndex;
                             const isEnraged = this.dualBossState!.enraged;
                             const c9SpeedMult = isEnraged ? 1.6 : 1.0;
@@ -5093,71 +5855,24 @@ export default class PlatformGameScene extends Phaser.Scene {
                                 enemy.setVelocityY(0);
                             }
 
-                            // 🔥🔥🔥 战役9双Boss技能攻击（直接在这里执行，不依赖通用攻击代码）
+                            // 🔥🔥🔥 可复用的双Boss技能攻击（不再锁死在战役9）
                             const now = Date.now();
-                            const c9CooldownMult = isEnraged ? 0.5 : 1;
-
-                            // 🔥 酸液博士技能（bossIndex === 1）
-                            if (bossIndex === 1) {
-                                // 酸液池攻击（3秒冷却）- 更频繁
-                                if (!aiData.lastAcidPoolTime) aiData.lastAcidPoolTime = 0;
-                                if (now - aiData.lastAcidPoolTime > 3000 * c9CooldownMult) {
-                                    this.bossAcidPool(enemy);
-                                    aiData.lastAcidPoolTime = now;
-                                    debugLog('[战役9 Boss1] 释放酸液池！');
-                                }
-
-                                // 酸液喷射（4秒冷却）- 移除血量限制，始终可用
-                                if (!aiData.lastAcidSprayTime) aiData.lastAcidSprayTime = 0;
-                                if (now - aiData.lastAcidSprayTime > 4000 * c9CooldownMult) {
-                                    this.bossAcidSpray(enemy);
-                                    aiData.lastAcidSprayTime = now;
-                                    debugLog('[战役9 Boss1] 释放酸液喷射！');
-                                }
-                            }
-
-                            // 🔥 气体博士技能（bossIndex === 2）
-                            if (bossIndex === 2) {
-                                // 毒气云攻击（4秒冷却）- 更频繁
-                                if (!aiData.lastPoisonCloudTime) aiData.lastPoisonCloudTime = 0;
-                                if (now - aiData.lastPoisonCloudTime > 4000 * c9CooldownMult) {
-                                    this.bossPoisonCloud(enemy);
-                                    aiData.lastPoisonCloudTime = now;
-                                    debugLog('[战役9 Boss2] 释放毒气云！');
-                                }
-
-                                // 气体爆发（5秒冷却）- 移除血量限制
-                                if (!aiData.lastGasBurstTime) aiData.lastGasBurstTime = 0;
-                                if (now - aiData.lastGasBurstTime > 5000 * c9CooldownMult) {
-                                    this.bossGasBurst(enemy);
-                                    aiData.lastGasBurstTime = now;
-                                    debugLog('[战役9 Boss2] 释放气体爆发！');
-                                }
-                            }
-
-                            // 🔥 化学反应终极技能（血量<50%时可用，更早触发）
-                            if (bossHPPercent < 0.5) {
-                                if (!aiData.lastChemicalReactionTime) aiData.lastChemicalReactionTime = 0;
-                                if (now - aiData.lastChemicalReactionTime > 10000 * c9CooldownMult) {
-                                    this.bossChemicalReaction(enemy);
-                                    aiData.lastChemicalReactionTime = now;
-                                    debugLog('[战役9] 触发化学反应！');
-                                }
-                            }
-
-                            // 🔥 普通射击攻击（2秒冷却）
-                            if (!aiData.lastShootTime) aiData.lastShootTime = 0;
-                            if (now - aiData.lastShootTime > 2000 * c9CooldownMult) {
-                                this.enemyShoot(enemy);
-                                aiData.lastShootTime = now;
-                            }
+                            this.runConfiguredDualBossSkills(enemy, bossIndex, bossHPPercent, aiData, now);
                         } else {
                             // 🔥 非战役9的通用Boss AI
-                            let direction = this.player.x > enemy.x ? 1 : -1;
                             const horizontalGap = this.player.x - enemy.x;
                             const yDistance = this.player.y - enemy.y;
+                            if (!aiData.facingDirection) {
+                                aiData.facingDirection = horizontalGap >= 0 ? 1 : -1;
+                            }
+                            if (horizontalGap > 56) {
+                                aiData.facingDirection = 1;
+                            } else if (horizontalGap < -56) {
+                                aiData.facingDirection = -1;
+                            }
+                            const direction = aiData.facingDirection;
                             const isWithinStableAttackZone =
-                                Math.abs(horizontalGap) < 36 && Math.abs(yDistance) < 72;
+                                Math.abs(horizontalGap) < 42 && Math.abs(yDistance) < 72;
 
                             // 🔥 分离力只在非常近时才影响方向，且不完全覆盖追击方向
                             // 改为：分离力作为速度调整，而不是方向覆盖
@@ -5647,7 +6362,7 @@ export default class PlatformGameScene extends Phaser.Scene {
                                 }
 
                                 // 🔥🔥🔥 战役10：三Boss竞技场智能AI 🔥🔥🔥
-                                if (campaignId === 'campaign_10' && this.tripleBossState && !(enemy as any).defeated) {
+                                if (this.tripleBossState && !(enemy as any).defeated) {
                                     const now = Date.now();
                                     const bossIndex = (enemy as any).bossIndex || 1;
                                     const isEnraged = this.tripleBossState.enraged;
@@ -5705,7 +6420,7 @@ export default class PlatformGameScene extends Phaser.Scene {
                                         }
 
                                         // 🔥 根据状态执行行为
-                                        const direction = this.player.x > enemy.x ? 1 : -1;
+                                        const direction = this.getStableHorizontalDirection(enemy, aiData.aiState === 'attack' ? 42 : 28);
 
                                         if (aiData.aiState === 'observe') {
                                             // 观察：缓慢移动，面向玩家
@@ -6490,11 +7205,12 @@ export default class PlatformGameScene extends Phaser.Scene {
 
     // 🔥🔥🔥 战役9 Boss技能：酸液池 - 在玩家位置创建持续伤害区域
     private bossAcidPool(boss: any) {
-        debugLog('[Boss] 酸液博士释放酸液池！');
+        const bossName = (boss as any).bossName || 'Boss';
+        debugLog(`[Boss] ${bossName}释放酸液池！`);
         this.playSound('boss_wave');
 
         // Boss台词
-        this.showBossDialogue('酸液博士', '尝尝我的酸液池！💀', 1500);
+        this.showBossDialogue(bossName, '站稳脚下。', 1500);
 
         // 在玩家当前位置创建酸液池
         const poolX = this.player.x;
@@ -6574,10 +7290,11 @@ export default class PlatformGameScene extends Phaser.Scene {
 
     // 🔥🔥🔥 战役9 Boss技能：毒气云 - 追踪玩家的毒气
     private bossPoisonCloud(boss: any) {
-        debugLog('[Boss] 气体博士释放毒气云！');
+        const bossName = (boss as any).bossName || 'Boss';
+        debugLog(`[Boss] ${bossName}释放毒气云！`);
         this.playSound('boss_wave');
 
-        this.showBossDialogue('气体博士', '毒气来袭！快跑！☠️', 1500);
+        this.showBossDialogue(bossName, '躲开追踪云。', 1500);
 
         // 创建追踪毒气云
         const cloud = this.add.circle(boss.x, boss.y - 50, 60, 0x9932cc, 0.6);
@@ -6687,10 +7404,11 @@ export default class PlatformGameScene extends Phaser.Scene {
 
     // 🔥🔥🔥 战役9 Boss技能：酸液喷射 - 扇形酸液攻击
     private bossAcidSpray(boss: any) {
-        debugLog('[Boss] 酸液博士酸液喷射！');
+        const bossName = (boss as any).bossName || 'Boss';
+        debugLog(`[Boss] ${bossName}酸液喷射！`);
         this.playSound('boss_laser');
 
-        this.showBossDialogue('酸液博士', '酸液喷射！无处可逃！', 1200);
+        this.showBossDialogue(bossName, '别站直线。', 1200);
 
         const direction = this.player.x > boss.x ? 1 : -1;
         const angles = [-30, -15, 0, 15, 30];
@@ -6740,10 +7458,11 @@ export default class PlatformGameScene extends Phaser.Scene {
 
     // 🔥🔥🔥 战役9 Boss技能：气体爆发 - 大范围毒气爆发
     private bossGasBurst(boss: any) {
-        debugLog('[Boss] 气体博士气体爆发！');
+        const bossName = (boss as any).bossName || 'Boss';
+        debugLog(`[Boss] ${bossName}气体爆发！`);
         this.playSound('boss_wave');
 
-        this.showBossDialogue('气体博士', '毒气爆发！全场覆盖！💨', 1500);
+        this.showBossDialogue(bossName, '全场压制。', 1500);
 
         // 蓄力警告
         const warning = this.add.circle(boss.x, boss.y, 30, 0x9932cc, 0.5);
@@ -7046,10 +7765,11 @@ export default class PlatformGameScene extends Phaser.Scene {
 
     // 🔥🔥🔥 激光守卫 - 持续激光攻击（追踪玩家）
     private laserGuardContinuousLaser(boss: any) {
-        debugLog('[激光守卫] 持续激光攻击！');
+        const bossName = (boss as any).bossName || this.getSecondBossDisplayName();
+        debugLog(`[${bossName}] 持续激光攻击！`);
 
         this.playSound('boss_laser');
-        this.showBossDialogue('激光守卫', '激光锁定！无处可逃！', 2000);
+        this.showBossDialogue(bossName, '激光锁定。', 2000);
 
         // 标记激光激活
         this.laserGuardState.laserActive = true;
@@ -7098,7 +7818,7 @@ export default class PlatformGameScene extends Phaser.Scene {
                 if (elapsed > actualDuration) {
                     laser.destroy();
                     this.laserGuardState.laserActive = false;
-                    debugLog('[激光守卫] 激光攻击结束');
+                    debugLog(`[${bossName}] 激光攻击结束`);
                     return;
                 }
 
@@ -7141,10 +7861,11 @@ export default class PlatformGameScene extends Phaser.Scene {
 
     // 🔥🔥🔥 激光守卫 - 定身玩家技能
     private laserGuardStunPlayer(boss: any) {
-        debugLog('[激光守卫] 定身技能！');
+        const bossName = (boss as any).bossName || this.getSecondBossDisplayName();
+        debugLog(`[${bossName}] 定身技能！`);
 
         this.playSound('boss_emp');
-        this.showBossDialogue('激光守卫', '电磁锁定！', 1500);
+        this.showBossDialogue(bossName, '定身锁定。', 1500);
 
         // 🔥 优化：检测范围从250降到180，更容易躲避
         const stunRange = 180;
@@ -7162,7 +7883,7 @@ export default class PlatformGameScene extends Phaser.Scene {
         });
 
         if (distToPlayer < stunRange) {
-            debugLog('[激光守卫] 玩家被定身！');
+            debugLog(`[${bossName}] 玩家被定身！`);
 
             // 🔥 优化：定身时间从1500降到1000（1秒），更容易恢复
             const stunDuration = this.secondBossConfig?.specialAbilities?.stunDuration || 1000;
@@ -8751,10 +9472,9 @@ export default class PlatformGameScene extends Phaser.Scene {
         const objective = this.levelData.objectives[0];
 
         if (objective.type === 'defeat') {
-            // 如果目标是击败敌人，检查是否全部击败
-            const requiredDefeats = objective.target || 0;
-            if (this.defeatedEnemies < requiredDefeats) {
-                debugLog('[PlatformGameScene] 还有敌人未击败，无法通关！', this.defeatedEnemies, '/', requiredDefeats);
+            const status = this.getDefeatObjectiveStatus(objective.target);
+            if (!status.completed) {
+                debugLog('[PlatformGameScene] 还有敌人未击败，无法通关！', status.completedCount, '/', status.total);
                 return; // 不触发通关
             }
         } else if (objective.type === 'collect') {
@@ -9036,72 +9756,166 @@ export default class PlatformGameScene extends Phaser.Scene {
         return 'turretEnemy';
     }
 
-    private createBossTexture(campaignId: string = 'campaign_1'): string {
-        // 🎊 新年主题：超萌年兽Boss（小朋友喜欢的可爱设计）
-        const graphics = this.add.graphics();
+    private applyBossVisual(
+        enemy: Phaser.Physics.Arcade.Sprite,
+        campaignId: string,
+        bossConfig: any,
+        bossIndex: number,
+    ) {
+        const visualTheme = bossConfig?.visualTheme || (bossIndex === 2 ? 'variant_b' : 'default');
+        const textureName = this.createBossTexture(campaignId, visualTheme);
+        const size = bossConfig?.size || this.getBossSize(campaignId);
+        enemy.setTexture(textureName);
+        enemy.setDisplaySize(size, size);
 
-        // 🎊 圆润的红色身体（像个大福娃）
-        graphics.fillGradientStyle(0xE8363B, 0xE8363B, 0xB22222, 0xB22222, 1);
-        graphics.fillCircle(24, 26, 22);
+        if (bossConfig?.tint) {
+            enemy.setTint(bossConfig.tint);
+        } else {
+            enemy.clearTint();
+        }
+    }
 
-        // 🎊 金色大角（可爱的弯角）
-        graphics.fillStyle(0xFFD700, 1);
-        graphics.fillCircle(6, 10, 8);   // 左角底
-        graphics.fillCircle(42, 10, 8);  // 右角底
-        graphics.fillCircle(4, 4, 5);    // 左角尖
-        graphics.fillCircle(44, 4, 5);   // 右角尖
+    private getBossAppearance(campaignId: string, visualTheme: string) {
+        const appearanceMap: Record<string, {
+            shape: 'mask' | 'wave' | 'prism' | 'drum' | 'forge' | 'gate' | 'beast';
+            body: number;
+            accent: number;
+            glow: number;
+            outline: number;
+            eye: number;
+        }> = {
+            'campaign_11:default': { shape: 'mask', body: 0x50606B, accent: 0xA6D8FF, glow: 0xC8F2FF, outline: 0x1E2A33, eye: 0x9BE9FF },
+            'campaign_11:echo': { shape: 'mask', body: 0x364656, accent: 0x8B7BFF, glow: 0xD5CCFF, outline: 0x17202A, eye: 0xC5BEFF },
+            'campaign_12:default': { shape: 'wave', body: 0x2C7697, accent: 0xC0F4FF, glow: 0x7DE7FF, outline: 0x173847, eye: 0xF1FFFF },
+            'campaign_12:current': { shape: 'wave', body: 0x1F8AB2, accent: 0x8AE8FF, glow: 0xCBFAFF, outline: 0x15394C, eye: 0xF4FEFF },
+            'campaign_13:default': { shape: 'prism', body: 0x6760A8, accent: 0xD4D8FF, glow: 0x8EE9FF, outline: 0x231E45, eye: 0xF7FBFF },
+            'campaign_13:mirror_left': { shape: 'prism', body: 0x6674D4, accent: 0xEEF1FF, glow: 0xA9E9FF, outline: 0x24285E, eye: 0xFFFFFF },
+            'campaign_13:mirror_right': { shape: 'prism', body: 0x7A58D6, accent: 0xF3E4FF, glow: 0xFFC3F2, outline: 0x381D63, eye: 0xFFFFFF },
+            'campaign_14:default': { shape: 'drum', body: 0xB66A2D, accent: 0xFFE2A1, glow: 0xFFF3C7, outline: 0x4F2D18, eye: 0xF7FFFA },
+            'campaign_14:wind_guard': { shape: 'drum', body: 0x7EA74E, accent: 0xE7FFB2, glow: 0xD7FFE8, outline: 0x263B1B, eye: 0xF9FFF2 },
+            'campaign_14:beat_guard': { shape: 'drum', body: 0xC9782E, accent: 0xFFE1A6, glow: 0xFFD7B0, outline: 0x5B2F18, eye: 0xFFFDF4 },
+            'campaign_15:default': { shape: 'forge', body: 0x7A5436, accent: 0xE8C376, glow: 0xFFE6B2, outline: 0x2D1C12, eye: 0xFFF7D9 },
+            'campaign_15:forge_scribe': { shape: 'forge', body: 0x845232, accent: 0xF6CC78, glow: 0xFFE0A6, outline: 0x341F12, eye: 0xFFF5DA },
+            'campaign_15:shift_judge': { shape: 'forge', body: 0x4D6A88, accent: 0xD9F0FF, glow: 0xAEE7FF, outline: 0x1D2A38, eye: 0xF5FDFF },
+            'campaign_16:default': { shape: 'gate', body: 0x49657B, accent: 0xB7E7FF, glow: 0xD8F4FF, outline: 0x172634, eye: 0xF8FDFF },
+            'campaign_16:gate_commander': { shape: 'gate', body: 0x5A7D96, accent: 0xCFF3FF, glow: 0xDDF8FF, outline: 0x193042, eye: 0xF9FEFF },
+            'campaign_16:gate_core': { shape: 'gate', body: 0x8070CE, accent: 0xE8E0FF, glow: 0xC6EBFF, outline: 0x262152, eye: 0xFFFFFF },
+        };
 
-        // 🎊 金色蓬松鬃毛
-        graphics.fillStyle(0xFFD700, 1);
-        for (let i = 0; i < 5; i++) {
-            graphics.fillCircle(14 + i * 5, 6, 4);
+        return appearanceMap[`${campaignId}:${visualTheme}`]
+            || appearanceMap[`${campaignId}:default`]
+            || { shape: 'beast', body: 0xD53B40, accent: 0xFFD36B, glow: 0xFFE79A, outline: 0x5A1717, eye: 0xFFFFFF };
+    }
+
+    private createBossTexture(campaignId: string = 'campaign_1', visualTheme: string = 'default'): string {
+        const textureName = `bossEnemy_${campaignId}_${visualTheme}`;
+        if (this.textures.exists(textureName)) {
+            return textureName;
         }
 
-        // 🎊 超大可爱眼睛
-        graphics.fillStyle(0xffffff, 1);
-        graphics.fillEllipse(16, 22, 10, 12);
-        graphics.fillEllipse(32, 22, 10, 12);
-        // 眼珠
-        graphics.fillStyle(0x2D1B0E, 1);
-        graphics.fillCircle(16, 23, 4);
-        graphics.fillCircle(32, 23, 4);
-        // 眼睛高光
-        graphics.fillStyle(0xffffff, 1);
-        graphics.fillCircle(14, 21, 2);
-        graphics.fillCircle(30, 21, 2);
+        const appearance = this.getBossAppearance(campaignId, visualTheme);
+        const graphics = this.add.graphics();
+        graphics.clear();
 
-        // 🎊 粉色腮红
-        graphics.fillStyle(0xFFB6C1, 0.7);
-        graphics.fillEllipse(8, 30, 6, 4);
-        graphics.fillEllipse(40, 30, 6, 4);
+        switch (appearance.shape) {
+            case 'mask':
+                graphics.fillStyle(appearance.body, 1);
+                graphics.fillRoundedRect(10, 10, 44, 38, 12);
+                graphics.fillStyle(appearance.accent, 0.85);
+                graphics.fillTriangle(18, 10, 14, 2, 26, 8);
+                graphics.fillTriangle(46, 10, 38, 8, 50, 2);
+                graphics.fillStyle(appearance.glow, 0.18);
+                graphics.fillEllipse(32, 26, 34, 24);
+                break;
+            case 'wave':
+                graphics.fillStyle(appearance.body, 1);
+                graphics.fillEllipse(32, 34, 38, 30);
+                graphics.fillTriangle(14, 24, 2, 18, 10, 38);
+                graphics.fillTriangle(50, 24, 62, 18, 54, 38);
+                graphics.fillStyle(appearance.accent, 0.8);
+                graphics.fillEllipse(32, 20, 30, 14);
+                break;
+            case 'prism':
+                graphics.fillStyle(appearance.body, 1);
+                graphics.beginPath();
+                graphics.moveTo(32, 4);
+                graphics.lineTo(54, 22);
+                graphics.lineTo(44, 54);
+                graphics.lineTo(20, 54);
+                graphics.lineTo(10, 22);
+                graphics.closePath();
+                graphics.fillPath();
+                graphics.fillStyle(appearance.accent, 0.38);
+                graphics.fillTriangle(32, 10, 46, 24, 18, 24);
+                break;
+            case 'drum':
+                graphics.fillStyle(appearance.body, 1);
+                graphics.fillCircle(32, 30, 20);
+                graphics.fillStyle(appearance.accent, 0.9);
+                graphics.fillCircle(32, 30, 14);
+                graphics.fillTriangle(8, 24, 2, 12, 16, 18);
+                graphics.fillTriangle(56, 24, 62, 12, 48, 18);
+                break;
+            case 'forge':
+                graphics.fillStyle(appearance.body, 1);
+                graphics.fillRoundedRect(12, 12, 40, 40, 10);
+                for (let index = 0; index < 8; index += 1) {
+                    const angle = (Math.PI * 2 * index) / 8;
+                    const toothX = 32 + Math.cos(angle) * 22;
+                    const toothY = 32 + Math.sin(angle) * 22;
+                    graphics.fillRect(toothX - 4, toothY - 4, 8, 8);
+                }
+                graphics.fillStyle(appearance.accent, 0.88);
+                graphics.fillCircle(32, 32, 11);
+                break;
+            case 'gate':
+                graphics.fillStyle(appearance.body, 1);
+                graphics.fillRoundedRect(14, 8, 36, 48, 10);
+                graphics.fillStyle(appearance.accent, 0.82);
+                graphics.fillRoundedRect(22, 16, 20, 32, 8);
+                graphics.fillRect(28, 2, 8, 12);
+                break;
+            default:
+                graphics.fillStyle(appearance.body, 1);
+                graphics.fillCircle(32, 30, 20);
+                graphics.fillStyle(appearance.accent, 0.9);
+                graphics.fillCircle(10, 12, 6);
+                graphics.fillCircle(54, 12, 6);
+                break;
+        }
 
-        // 🎊 可爱大嘴巴（张嘴笑）
-        graphics.fillStyle(0x8B0000, 1);
-        graphics.fillEllipse(24, 36, 12, 6);
-        // 舌头
-        graphics.fillStyle(0xFF6B6B, 1);
-        graphics.fillEllipse(24, 38, 6, 4);
+        graphics.fillStyle(appearance.eye, 1);
+        graphics.fillEllipse(24, 28, 8, 10);
+        graphics.fillEllipse(40, 28, 8, 10);
+        graphics.fillStyle(0x10161D, 1);
+        graphics.fillCircle(24, 29, 3);
+        graphics.fillCircle(40, 29, 3);
+        graphics.fillStyle(0xFFFFFF, 0.9);
+        graphics.fillCircle(22, 27, 1.5);
+        graphics.fillCircle(38, 27, 1.5);
+        graphics.lineStyle(3, appearance.outline, 0.95);
+        graphics.strokeRect(18, 38, 28, 2);
 
-        // 金色眼睛
-        graphics.fillStyle(0xFFD700, 1);
-        graphics.fillCircle(16, 18, 5);
-        graphics.fillCircle(32, 18, 5);
-        graphics.fillStyle(0x000000, 1);
-        graphics.fillCircle(16, 18, 3);
-        graphics.fillCircle(32, 18, 3);
+        if (appearance.shape === 'drum') {
+            graphics.lineStyle(3, appearance.outline, 0.85);
+            graphics.strokeCircle(32, 30, 20);
+            graphics.strokeCircle(32, 30, 14);
+        } else if (appearance.shape === 'prism') {
+            graphics.lineStyle(3, appearance.outline, 0.95);
+            graphics.beginPath();
+            graphics.moveTo(32, 4);
+            graphics.lineTo(54, 22);
+            graphics.lineTo(44, 54);
+            graphics.lineTo(20, 54);
+            graphics.lineTo(10, 22);
+            graphics.closePath();
+            graphics.strokePath();
+        } else {
+            graphics.lineStyle(3, appearance.outline, 0.9);
+            graphics.strokeCircle(32, 32, 22);
+        }
 
-        // 金色嘴巴
-        graphics.lineStyle(3, 0xFFD700, 1);
-        graphics.beginPath();
-        graphics.arc(24, 28, 10, 0.2, Math.PI - 0.2);
-        graphics.strokePath();
-
-        // 金色边框
-        graphics.lineStyle(2, 0xFFD700, 0.8);
-        graphics.strokeCircle(24, 24, 20);
-
-        const textureName = `bossEnemy_${campaignId}`;
-        graphics.generateTexture(textureName, 48, 48);
+        graphics.generateTexture(textureName, 64, 64);
         graphics.destroy();
         return textureName;
     }
@@ -9126,6 +9940,12 @@ export default class PlatformGameScene extends Phaser.Scene {
         if (levelId.startsWith('level_8_')) return 'campaign_8';
         if (levelId.startsWith('level_9_')) return 'campaign_9';
         if (levelId.startsWith('level_10_')) return 'campaign_10';
+        if (levelId.startsWith('level_11_')) return 'campaign_11';
+        if (levelId.startsWith('level_12_')) return 'campaign_12';
+        if (levelId.startsWith('level_13_')) return 'campaign_13';
+        if (levelId.startsWith('level_14_')) return 'campaign_14';
+        if (levelId.startsWith('level_15_')) return 'campaign_15';
+        if (levelId.startsWith('level_16_')) return 'campaign_16';
         return 'campaign_1';
     }
 
@@ -9143,6 +9963,12 @@ export default class PlatformGameScene extends Phaser.Scene {
             campaign_8: 65,
             campaign_9: 100,
             campaign_10: 85,
+            campaign_11: 80,
+            campaign_12: 82,
+            campaign_13: 84,
+            campaign_14: 86,
+            campaign_15: 88,
+            campaign_16: 92,
         };
         return BOSS_SIZES[campaignId] || 60;
     }
@@ -9161,6 +9987,12 @@ export default class PlatformGameScene extends Phaser.Scene {
             campaign_8: '🧪 分子怪博士',
             campaign_9: '⚗️ 酸液博士',
             campaign_10: '🐲 终极年兽',
+            campaign_11: '🌀 幻门守卫',
+            campaign_12: '🧱 坠门守卫',
+            campaign_13: '🪞 镜门守卫',
+            campaign_14: '🎼 节拍守卫',
+            campaign_15: '🛠️ 工坊守卫',
+            campaign_16: '🚪 终门守卫',
         };
         return BOSS_NAMES[campaignId] || '👹 Boss';
     }

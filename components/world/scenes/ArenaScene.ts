@@ -1,6 +1,7 @@
 import * as Phaser from 'phaser';
-import { ARENA_CHALLENGES, ArenaChallenge } from '@/types/arena';
+import { ArenaChallenge, getArenaChallengeById, getArenaChallengesByDifficulty } from '@/types/arena';
 import { touchInputManager, TouchInputState } from '@/lib/input/TouchInputManager';
+import { getArenaRewardClaimsUsed, ARENA_DAILY_DIAMOND_LIMIT } from '@/lib/arenaRewards';
 import { ARENA_CONTROLS_HINT } from '@/lib/gameplayText';
 
 // 生产环境禁用调试日志
@@ -53,14 +54,9 @@ export class ArenaScene extends Phaser.Scene {
     }
 
     private pickStationChallenges(): ArenaChallenge[] {
-        const byDifficulty = {
-            easy: ARENA_CHALLENGES.filter((challenge) => challenge.difficulty === 'easy'),
-            medium: ARENA_CHALLENGES.filter((challenge) => challenge.difficulty === 'medium'),
-            hard: ARENA_CHALLENGES.filter((challenge) => challenge.difficulty === 'hard'),
-        };
-
-        return [byDifficulty.easy, byDifficulty.medium, byDifficulty.hard].map((pool) => {
-            return pool[Math.floor(Math.random() * pool.length)] ?? ARENA_CHALLENGES[0];
+        return ['easy', 'medium', 'hard'].map((difficulty) => {
+            const pool = getArenaChallengesByDifficulty(difficulty as ArenaChallenge['difficulty']);
+            return pool[Math.floor(Math.random() * pool.length)] ?? pool[0];
         });
     }
 
@@ -127,16 +123,11 @@ export class ArenaScene extends Phaser.Scene {
         }).setOrigin(0.5);
 
         // Score display
-        let score = 0;
-        let highScore = 0;
-        if (typeof window !== 'undefined' && (window as any).__gameStore) {
-            score = (window as any).__gameStore.getState().arenaScore || 0;
-            highScore = (window as any).__gameStore.getState().arenaHighScore || 0;
-        }
-        this.scoreText = this.add.text(20, 20, `积分: ${score} | 最高: ${highScore}`, {
+        this.scoreText = this.add.text(20, 20, '', {
             fontSize: '18px',
             color: '#ffffff'
         });
+        this.updateScoreDisplay();
 
         // Timer
         this.timerText = this.add.text(width - 20, 20, '挑战时间: --', {
@@ -152,7 +143,7 @@ export class ArenaScene extends Phaser.Scene {
         }).setOrigin(1, 0);
 
         // Challenge info
-        this.challengeText = this.add.text(width / 2, 80, ARENA_CONTROLS_HINT, {
+        this.challengeText = this.add.text(width / 2, 80, `${ARENA_CONTROLS_HINT} | 通关可拿积分和钻石`, {
             fontSize: '16px',
             color: '#00ff00',
             backgroundColor: '#000000aa',
@@ -521,11 +512,10 @@ export class ArenaScene extends Phaser.Scene {
         this.isInChallengeCooldown = true;
 
         // Find the challenge if not already set
-        const challenge = this.currentChallenge ?? ARENA_CHALLENGES.find(ch => ch.id === data.challengeId) ?? null;
+        const challenge = this.currentChallenge ?? getArenaChallengeById(data.challengeId) ?? null;
 
         if (!challenge) {
             console.error('[ArenaScene] No challenge found for completion, challengeId:', data.challengeId);
-            console.error('[ArenaScene] Available challenges:', ARENA_CHALLENGES.map(c => c.id));
             return;
         }
 
@@ -600,7 +590,7 @@ export class ArenaScene extends Phaser.Scene {
         });
         this.isNearChallenge = false;
         this.timerText.setText('挑战时间: --');
-        this.challengeText.setText('选择一个挑战开始！');
+        this.challengeText.setText(`${ARENA_CONTROLS_HINT} | 继续挑战可冲分，今日钻石有上限`);
         this.updateScoreDisplay();
     }
 
@@ -630,7 +620,7 @@ export class ArenaScene extends Phaser.Scene {
         this.currentChallenge = null;
         this.isNearChallenge = false;
         this.timerText.setText('挑战时间: --');
-        this.challengeText.setText('选择一个挑战开始！');
+        this.challengeText.setText(`${ARENA_CONTROLS_HINT} | 失败不扣分，调整后再试`);
         
         // 🔥 设置冷却期，防止立即重复触发
         this.isInChallengeCooldown = true;
@@ -658,7 +648,7 @@ export class ArenaScene extends Phaser.Scene {
             this.currentChallenge = null;
             this.isNearChallenge = false;
             this.timerText.setText('挑战时间: --');
-            this.challengeText.setText('选择一个挑战开始！');
+            this.challengeText.setText(`${ARENA_CONTROLS_HINT} | 选下一题继续冲分`);
             
             // 🔥 设置冷却期，防止立即重复触发
             this.isInChallengeCooldown = true;
@@ -790,11 +780,14 @@ export class ArenaScene extends Phaser.Scene {
     updateScoreDisplay() {
         let score = 0;
         let highScore = 0;
+        let rewardClaimsUsed = 0;
         if (typeof window !== 'undefined' && (window as any).__gameStore) {
-            score = (window as any).__gameStore.getState().arenaScore || 0;
-            highScore = (window as any).__gameStore.getState().arenaHighScore || 0;
+            const state = (window as any).__gameStore.getState();
+            score = state.arenaScore || 0;
+            highScore = state.arenaHighScore || 0;
+            rewardClaimsUsed = getArenaRewardClaimsUsed(state.completedChallenges || []);
         }
-        this.scoreText.setText(`积分: ${score} | 最高: ${highScore}`);
+        this.scoreText.setText(`积分: ${score} | 最高: ${highScore} | 今日钻石: ${rewardClaimsUsed}/${ARENA_DAILY_DIAMOND_LIMIT}`);
     }
 
     handleJump() {

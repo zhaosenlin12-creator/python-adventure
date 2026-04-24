@@ -8,6 +8,12 @@ import { Campaign } from './campaigns';
 import { campaign8 } from './campaign-8-quantum';
 import { campaign9 } from './campaign-9-xingfa';
 import { campaign10 } from './campaign-10-yichangdong';
+import { campaign11 } from './campaign-11-huanmen';
+import { campaign12 } from './campaign-12-zhuimen';
+import { campaign13 } from './campaign-13-jingmen';
+import { campaign14 } from './campaign-14-jiepai';
+import { campaign15 } from './campaign-15-gongfang';
+import { campaign16 } from './campaign-16-zhongmen';
 
 export const advancedCampaigns: Campaign[] = [
   // ========================================
@@ -858,5 +864,11 @@ export const advancedCampaigns: Campaign[] = [
   // 🔥 战役9从独立文件导入
   campaign9,
   // 🔥 战役10：宜昌东站时空列车大冒险
-  campaign10
+  campaign10,
+  campaign11,
+  campaign12,
+  campaign13,
+  campaign14,
+  campaign15,
+  campaign16
 ];

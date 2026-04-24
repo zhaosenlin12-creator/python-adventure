@@ -1,7 +1,9 @@
-from fastapi import APIRouter, Depends, HTTPException, WebSocket, WebSocketDisconnect, Query
-from sqlalchemy.orm import Session
-from typing import Optional
+import asyncio
 from datetime import datetime
+from typing import Optional
+
+from fastapi import APIRouter, Depends, HTTPException, Query, WebSocket, WebSocketDisconnect
+from sqlalchemy.orm import Session
 import logging
 from app.core.time import utc_now
 from app.core.database import get_db, SessionLocal
@@ -29,6 +31,81 @@ import json
 router = APIRouter()
 logger = logging.getLogger(__name__)
 IS_PRODUCTION = settings.ENVIRONMENT.lower() == "production"
+WORLD_SEND_TIMEOUT_SECONDS = 0.6
+
+
+def _drop_world_connection(
+    user_id: int,
+    *,
+    websocket: Optional[WebSocket] = None,
+    map_area: Optional[str] = None,
+) -> None:
+    active_socket = world_manager.active_connections.get(user_id)
+    if websocket is not None and active_socket is not None and active_socket is not websocket:
+        return
+
+    world_manager.active_connections.pop(user_id, None)
+    if map_area is not None:
+        area_users = world_manager.map_areas.get(map_area)
+        if area_users is not None:
+            area_users.discard(user_id)
+        return
+
+    for area_users in list(world_manager.map_areas.values()):
+        area_users.discard(user_id)
+
+
+async def _send_world_message(
+    user_id: int,
+    websocket: WebSocket,
+    message: dict,
+    *,
+    map_area: Optional[str] = None,
+) -> bool:
+    try:
+        await asyncio.wait_for(websocket.send_json(message), timeout=WORLD_SEND_TIMEOUT_SECONDS)
+        return True
+    except WebSocketDisconnect:
+        error = "websocket_disconnect"
+    except Exception as exc:
+        error = exc
+
+    _drop_world_connection(user_id, websocket=websocket, map_area=map_area)
+    logger.debug(
+        "World send dropped stale connection user_id=%s map_area=%s error=%s",
+        user_id,
+        map_area or "-",
+        error,
+    )
+    return False
+
+
+async def _broadcast_world_event(map_area: str, message: dict, exclude_user: Optional[int] = None) -> None:
+    recipients = tuple(world_manager.map_areas.get(map_area, ()))
+    if not recipients:
+        return
+
+    targets: list[tuple[int, WebSocket]] = []
+    for target_user_id in recipients:
+        if exclude_user and target_user_id == exclude_user:
+            continue
+
+        websocket = world_manager.active_connections.get(target_user_id)
+        if websocket is None:
+            continue
+
+        targets.append((target_user_id, websocket))
+
+    if not targets:
+        return
+
+    await asyncio.gather(
+        *(
+            _send_world_message(target_user_id, websocket, message, map_area=map_area)
+            for target_user_id, websocket in targets
+        ),
+        return_exceptions=True,
+    )
 
 
 # ==================== 🔒 安全：Token验证辅助函数 ====================
@@ -103,7 +180,7 @@ async def update_my_location(
     )
     
     # 广播位置更新给附近玩家
-    await world_manager.broadcast_to_area(
+    await _broadcast_world_event(
         location.map_area,
         {
             "type": "player_move",
@@ -649,7 +726,7 @@ async def websocket_world(
             world_manager.map_areas[location.map_area].add(user_id)
             
             # 通知其他玩家有新玩家进入
-            await world_manager.broadcast_to_area(
+            await _broadcast_world_event(
                 location.map_area,
                 {
                     "type": "player_join",
@@ -669,17 +746,28 @@ async def websocket_world(
         # 接收并处理消息
         while True:
             data = await websocket.receive_text()
-            message = json.loads(data)
+            try:
+                message = json.loads(data)
+            except json.JSONDecodeError:
+                logger.debug("World websocket ignored invalid JSON for user %s", user_id)
+                continue
             
             # 根据消息类型处理
             msg_type = message.get("type")
             
             # 🔥 处理心跳ping
             if msg_type == "ping":
-                await websocket.send_json({
-                    "type": "pong",
-                    "timestamp": datetime.now().timestamp() if 'datetime' in dir() else 0
-                })
+                pong_sent = await _send_world_message(
+                    user_id,
+                    websocket,
+                    {
+                        "type": "pong",
+                        "timestamp": datetime.now().timestamp() if 'datetime' in dir() else 0,
+                    },
+                    map_area=location.map_area if location else None,
+                )
+                if not pong_sent:
+                    break
                 continue
             
             if msg_type in ("move", "pet_change"):
@@ -733,7 +821,7 @@ async def websocket_world(
                     move_data.setdefault("direction", location.direction)
                 move_data.update(active_pet_snapshot)
                 
-                await world_manager.broadcast_to_area(
+                await _broadcast_world_event(
                     target_map_area,
                     {
                         "type": "player_move",
@@ -745,31 +833,31 @@ async def websocket_world(
                 # 请求当前在线玩家列表
                 map_area = message.get("map_area", "开放世界")
                 nearby = world_manager.get_nearby_players(db, user_id, map_area, radius=5000.0)
-                await websocket.send_json({
-                    "type": "players_list",
-                    "data": {
-                        "players": nearby
-                    }
-                })
+                players_sent = await _send_world_message(
+                    user_id,
+                    websocket,
+                    {
+                        "type": "players_list",
+                        "data": {
+                            "players": nearby
+                        }
+                    },
+                    map_area=location.map_area if location else None,
+                )
+                if not players_sent:
+                    break
             
     except WebSocketDisconnect:
         pass  # 正常断开，无需日志
     except Exception as e:
         logger.error("World websocket runtime error for user %s: %s", user_id, e)
     finally:
-        pass  # 清理连接
-        # 断开连接
-        if user_id in world_manager.active_connections:
-            del world_manager.active_connections[user_id]
-        
-        # 从地图区域移除
-        for area in world_manager.map_areas.values():
-            area.discard(user_id)
-        
+        _drop_world_connection(user_id, websocket=websocket)
+
         # 通知其他玩家
         if location:
             try:
-                await world_manager.broadcast_to_area(
+                await _broadcast_world_event(
                     location.map_area,
                     {
                         "type": "player_leave",

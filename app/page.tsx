@@ -8,15 +8,18 @@ import { useSoundStore } from "@/store/soundStore";
 import { musicManager } from "@/lib/audio/musicManager";
 import { useI18n } from "@/lib/i18n";
 import AuthModal from "@/components/auth/AuthModal";
+import SubjectSelect from "@/components/game/SubjectSelect";
 import ChapterSelect from "@/components/game/ChapterSelect";
+import { LearningIcon } from "@/components/game/LearningIcon";
 import WorldMap from "@/components/game/WorldMap";
 import LevelView from "@/components/game/LevelView";
 import LeaderboardModal from "@/components/game/LeaderboardModal";
 import { SyncStatusIndicator } from "@/components/game/SyncStatusIndicator";
 import { Level } from "@/lib/levels";
+import { getLearningChapter, getLearningCopy, type LearningSubjectId } from "@/lib/learningHub";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Trophy, LogOut, User, Volume2, VolumeX, Languages } from "lucide-react";
+import { Trophy, LogOut, User, Volume2, VolumeX, Languages, Globe2 } from "lucide-react";
 import Footer from "@/components/Footer";
 import CoinBalance from "@/components/ui/CoinBalance";
 import CoinHistory from "@/components/ui/CoinHistory";
@@ -31,6 +34,7 @@ export default function Home() {
     const router = useRouter();
     const { isAuthenticated, user, logout, validateToken, token } = useAuthStore();
     const [view, setView] = useState<ViewState>('home');
+    const [selectedSubject, setSelectedSubject] = useState<LearningSubjectId | null>(null);
     const [selectedChapter, setSelectedChapter] = useState<number>(1);
     const [selectedLevel, setSelectedLevel] = useState<Level | null>(null);
     const [showLeaderboard, setShowLeaderboard] = useState(false);
@@ -99,12 +103,14 @@ export default function Home() {
         // Listen for campaign mode trigger from open world
         const handleOpenCampaign = (event?: Event) => {
             const detail = (event as CustomEvent | undefined)?.detail as { chapterId?: number; openMap?: boolean } | undefined;
+            setSelectedSubject('python');
             if (detail?.openMap) {
                 setSelectedChapter(detail.chapterId ?? 1);
                 setView('map');
                 return;
             }
-            setView('home'); // Show chapter selection
+            setSelectedChapter(detail?.chapterId ?? 1);
+            setView('home');
         };
         
 
@@ -128,7 +134,18 @@ export default function Home() {
         return <AuthModal />;
     }
 
+    const selectedChapterMeta = getLearningChapter(selectedChapter);
+
+    const handleSelectSubject = (subjectId: LearningSubjectId) => {
+        setSelectedSubject(subjectId);
+        setView('home');
+    };
+
     const handleSelectChapter = (chapterId: number) => {
+        const chapter = getLearningChapter(chapterId);
+        if (chapter) {
+            setSelectedSubject(chapter.subjectId);
+        }
         setSelectedChapter(chapterId);
         setView('map');
     };
@@ -141,6 +158,12 @@ export default function Home() {
     const handleBackToHome = () => {
         setView('home');
         setSelectedLevel(null);
+    };
+
+    const handleBackToSubjects = () => {
+        setSelectedSubject(null);
+        setSelectedLevel(null);
+        setView('home');
     };
 
     const handleBackToMap = () => {
@@ -208,7 +231,9 @@ export default function Home() {
                         size="sm"
                         onClick={() => setShowCoinHistory(true)}
                     />
-                    {view === 'home' && <SystemUpdateAnnouncement triggerVariant="toolbar" />}
+                    {view === 'home' && !showNewUserGuide && (
+                        <SystemUpdateAnnouncement triggerVariant="toolbar" />
+                    )}
                     <button
                         onClick={handleToggleMute}
                         className="p-2 sm:p-2 hover:bg-blue-900/30 rounded transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
@@ -247,7 +272,7 @@ export default function Home() {
 
             {/* Main Content - 响应式适配 */}
             {view === 'home' && (
-                <div className="max-w-5xl mx-auto p-4 sm:p-8">
+                <div className="max-w-6xl mx-auto p-4 sm:p-8">
                     {/* Open World Button - 移动端优化 */}
                     {/* 开放世界按钮 */}
                     <button
@@ -255,7 +280,9 @@ export default function Home() {
                         className="relative w-full mb-4 sm:mb-8 p-4 sm:p-6 bg-gradient-to-r from-yellow-600 to-orange-600 hover:from-yellow-500 hover:to-orange-500 rounded-xl border-2 sm:border-4 border-yellow-400 transition-all active:scale-95 sm:hover:scale-105 group min-h-[80px]"
                     >
                         <div className="flex items-center justify-center gap-2 sm:gap-4">
-                            <span className="text-2xl sm:text-4xl">🌍</span>
+                            <span className="flex h-10 w-10 items-center justify-center rounded-2xl border border-yellow-100/30 bg-white/10 text-white sm:h-14 sm:w-14">
+                                <Globe2 className="h-5 w-5 sm:h-7 sm:w-7" />
+                            </span>
                             <div className="text-left">
                                 <h2 className="text-xl sm:text-3xl font-pixel text-white">{t('btn.openWorld')}</h2>
                                 <p className="text-yellow-100 text-xs sm:text-sm mt-1">{t('btn.openWorld.desc')}</p>
@@ -263,28 +290,60 @@ export default function Home() {
                         </div>
                     </button>
 
-                    {/* Chapter Cards */}
-                    <ChapterSelect
-                        onSelectChapter={handleSelectChapter}
-                        userLevel={userLevel}
-                    />
+                    {!selectedSubject ? (
+                        <SubjectSelect
+                            userLevel={userLevel}
+                            onSelectSubject={handleSelectSubject}
+                        />
+                    ) : (
+                        <ChapterSelect
+                            subjectId={selectedSubject}
+                            onSelectChapter={handleSelectChapter}
+                            onBackToSubjects={handleBackToSubjects}
+                            userLevel={userLevel}
+                        />
+                    )}
                 </div>
             )}
 
             {view === 'map' && (
                 <div className="p-8">
                     <div className="max-w-6xl mx-auto">
-                        <div className="flex justify-between items-center mb-4">
+                        <div className="mb-4 flex items-center">
                             <button
                                 onClick={handleBackToHome}
-                                className="px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded text-white font-pixel transition-colors"
+                                className="rounded bg-slate-700 px-4 py-2 font-pixel text-white transition-colors hover:bg-slate-600"
                             >
                                 ← {t('ui.backToHome')}
                             </button>
-                            <h2 className="text-2xl font-pixel text-yellow-400">
-                                Chapter {selectedChapter}
-                            </h2>
                         </div>
+                        {selectedChapterMeta && (
+                            <div className="mb-5 rounded-[28px] border border-cyan-400/18 bg-slate-950/70 p-5 shadow-[0_18px_42px_rgba(8,15,30,0.35)]">
+                                <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                                    <div className="flex items-start gap-4">
+                                        <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-cyan-100">
+                                            <LearningIcon icon={selectedChapterMeta.icon} className="h-7 w-7" />
+                                        </div>
+                                        <div>
+                                            <h2 className="text-2xl font-pixel text-yellow-400">
+                                                {getLearningCopy(language, selectedChapterMeta.titleCN, selectedChapterMeta.title)}
+                                            </h2>
+                                            <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-300">
+                                                {getLearningCopy(language, selectedChapterMeta.descriptionCN, selectedChapterMeta.description)}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200/90">
+                                        <div className="text-[11px] uppercase tracking-[0.18em] text-slate-400">
+                                            {language === 'cn' ? '本章重点' : 'Chapter Focus'}
+                                        </div>
+                                        <div className="mt-2 max-w-xs">
+                                            {getLearningCopy(language, selectedChapterMeta.focusCN, selectedChapterMeta.focus)}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
                         <WorldMap
                             onSelectLevel={handleSelectLevel}
                             chapterFilter={selectedChapter}
@@ -322,7 +381,7 @@ export default function Home() {
                 onClose={() => setShowNewUserGuide(false)}
             />
 
-            {view === 'home' && (
+            {view === 'home' && !showNewUserGuide && (
                 <>
                     <DailyCheckIn />
                     <AchievementPanel />

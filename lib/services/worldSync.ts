@@ -31,6 +31,8 @@ interface WebSocketMessage {
     data: any;
 }
 
+export type WorldSyncMode = 'websocket' | 'reconnecting' | 'polling';
+
 // 🔒 安全：获取认证Token
 function getAuthToken(): string | null {
     try {
@@ -56,7 +58,10 @@ export class WorldSyncService {
     private isConnecting = false;
     private heartbeatInterval: NodeJS.Timeout | null = null;
     private pollingInterval: NodeJS.Timeout | null = null;
+    private reconnectTimer: NodeJS.Timeout | null = null;
     private usingHttpPolling = false;
+    private manualClose = false;
+    private syncMode: WorldSyncMode = 'websocket';
     private lastSentPosition = { x: 0, y: 0, time: 0 };
     private throttleMs = 100; // 100ms节流
     
@@ -67,10 +72,26 @@ export class WorldSyncService {
     private onPlayersList: ((players: PlayerData[]) => void) | null = null;
     private onConnected: (() => void) | null = null;
     private onDisconnected: (() => void) | null = null;
+    private onModeChange: ((mode: WorldSyncMode) => void) | null = null;
 
     constructor(userId: number, mapArea: string = "开放世界") {
         this.userId = userId;
         this.mapArea = mapArea;
+    }
+
+    private setSyncMode(mode: WorldSyncMode) {
+        if (this.syncMode === mode) {
+            return;
+        }
+        this.syncMode = mode;
+        this.onModeChange?.(mode);
+    }
+
+    private clearReconnectTimer() {
+        if (this.reconnectTimer) {
+            clearTimeout(this.reconnectTimer);
+            this.reconnectTimer = null;
+        }
     }
 
     /**
@@ -86,19 +107,23 @@ export class WorldSyncService {
 
             if (this.isConnecting) {
                 debugLog('[WorldSync] Connection in progress');
+                resolve();
                 return;
             }
 
+            this.manualClose = false;
             this.isConnecting = true;
+            this.clearReconnectTimer();
 
             // 尝试WebSocket连接
-            this.tryWebSocketConnection().then(() => {
-                resolve();
-            }).catch((error) => {
-                console.warn('[WorldSync] WebSocket failed, falling back to HTTP polling:', error);
-                this.startHttpPolling();
-                resolve();
-            });
+            this.tryWebSocketConnection()
+                .then(() => {
+                    resolve();
+                })
+                .catch((error) => {
+                    console.warn('[WorldSync] WebSocket failed, falling back to HTTP polling:', error);
+                    this.startHttpPolling().then(resolve).catch(reject);
+                });
         });
     }
 
@@ -150,6 +175,25 @@ export class WorldSyncService {
     private tryWebSocketConnection(): Promise<void> {
         return new Promise((resolve, reject) => {
             try {
+                let opened = false;
+                let settled = false;
+
+                const resolveOnce = () => {
+                    if (settled) {
+                        return;
+                    }
+                    settled = true;
+                    resolve();
+                };
+
+                const rejectOnce = (error: unknown) => {
+                    if (settled) {
+                        return;
+                    }
+                    settled = true;
+                    reject(error);
+                };
+
                 // 构建WebSocket URL
                 const { wsUrl: baseWsUrl } = this.getBackendUrl();
                 let wsUrl = `${baseWsUrl}/api/v1/world/ws/${this.userId}`;
@@ -160,25 +204,33 @@ export class WorldSyncService {
                     wsUrl += `?token=${encodeURIComponent(token)}`;
                 }
 
-                this.ws = new WebSocket(wsUrl);
+                const socket = new WebSocket(wsUrl);
+                this.ws = socket;
 
                 // 设置超时 - 缩短到3秒，更快切换到HTTP轮询
                 const timeout = setTimeout(() => {
-                    if (this.ws && this.ws.readyState !== WebSocket.OPEN) {
+                    if (socket.readyState !== WebSocket.OPEN) {
                         try {
-                            this.ws.close();
+                            socket.close();
                         } catch (e) {
                             // 忽略关闭错误
                         }
-                        this.ws = null;
-                        reject(new Error('WebSocket connection timeout'));
+                        if (this.ws === socket) {
+                            this.ws = null;
+                        }
+                        this.isConnecting = false;
+                        rejectOnce(new Error('WebSocket connection timeout'));
                     }
                 }, 3000); // 3秒超时
 
-                this.ws.onopen = () => {
+                socket.onopen = () => {
                     clearTimeout(timeout);
+                    opened = true;
                     this.isConnecting = false;
+                    this.clearReconnectTimer();
+                    this.stopHttpPolling();
                     this.reconnectAttempts = 0;
+                    this.setSyncMode('websocket');
                     
                     // 启动心跳
                     this.startHeartbeat();
@@ -190,10 +242,10 @@ export class WorldSyncService {
                         this.onConnected();
                     }
                     
-                    resolve();
+                    resolveOnce();
                 };
 
-                this.ws.onmessage = (event) => {
+                socket.onmessage = (event) => {
                     try {
                         const message: WebSocketMessage = JSON.parse(event.data);
                         this.handleMessage(message);
@@ -202,33 +254,39 @@ export class WorldSyncService {
                     }
                 };
 
-                this.ws.onerror = (error) => {
-                    clearTimeout(timeout); // 清除超时
-                    console.warn('[WorldSync] WebSocket error (will fallback to HTTP polling):', error);
+                socket.onerror = (error) => {
+                    clearTimeout(timeout);
+                    console.warn('[WorldSync] WebSocket error:', error);
                     this.isConnecting = false;
-                    // 不在这里reject，让onclose处理
+                    if (!opened) {
+                        rejectOnce(new Error('WebSocket connection failed'));
+                    }
                 };
 
-                this.ws.onclose = (event) => {
-                    clearTimeout(timeout); // 清除超时
+                socket.onclose = (event) => {
+                    clearTimeout(timeout);
                     debugLog('[WorldSync] Connection closed, code:', event.code, 'reason:', event.reason);
+                    if (this.ws === socket) {
+                        this.ws = null;
+                    }
                     this.isConnecting = false;
                     this.stopHeartbeat();
-                    
-                    // 如果还没有成功连接过，reject promise
-                    if (this.reconnectAttempts === 0 && !this.usingHttpPolling) {
-                        reject(new Error('WebSocket connection failed'));
+
+                    if (this.manualClose) {
                         return;
                     }
-                    
+
+                    if (!opened) {
+                        rejectOnce(new Error('WebSocket connection failed'));
+                        return;
+                    }
+
                     if (this.onDisconnected) {
                         this.onDisconnected();
                     }
-                    
-                    // 尝试重连（只有在之前成功连接过的情况下）
-                    if (this.reconnectAttempts > 0) {
-                        this.attemptReconnect();
-                    }
+
+                    this.setSyncMode('reconnecting');
+                    this.attemptReconnect();
                 };
 
             } catch (error) {
@@ -425,21 +483,28 @@ export class WorldSyncService {
      * 尝试重连
      */
     private attemptReconnect() {
+        if (this.manualClose) {
+            return;
+        }
         if (this.reconnectAttempts >= this.maxReconnectAttempts) {
             debugLog('[WorldSync] Max reconnect attempts reached, falling back to HTTP polling');
             // 🔥 达到最大重连次数后，切换到HTTP轮询而不是放弃
-            this.startHttpPolling();
+            void this.startHttpPolling();
             return;
         }
 
         this.reconnectAttempts++;
+        this.setSyncMode('reconnecting');
         // 🔥 使用指数退避策略，避免频繁重连
         const delay = Math.min(this.reconnectDelay * Math.pow(1.5, this.reconnectAttempts - 1), 15000);
         debugLog(`[WorldSync] Reconnecting in ${delay}ms... (${this.reconnectAttempts}/${this.maxReconnectAttempts})`);
 
-        setTimeout(() => {
-            this.connect().catch(error => {
+        this.clearReconnectTimer();
+        this.reconnectTimer = setTimeout(() => {
+            this.reconnectTimer = null;
+            this.tryWebSocketConnection().catch(error => {
                 console.error('[WorldSync] Reconnect failed:', error);
+                this.attemptReconnect();
             });
         }, delay);
     }
@@ -450,6 +515,8 @@ export class WorldSyncService {
     disconnect() {
         debugLog('[WorldSync] Disconnecting...');
         
+        this.manualClose = true;
+        this.clearReconnectTimer();
         this.stopHeartbeat();
         this.stopHttpPolling();
         
@@ -471,6 +538,7 @@ export class WorldSyncService {
         onPlayersList?: (players: PlayerData[]) => void;
         onConnected?: () => void;
         onDisconnected?: () => void;
+        onModeChange?: (mode: WorldSyncMode) => void;
     }) {
         this.onPlayerJoin = callbacks.onPlayerJoin || null;
         this.onPlayerLeave = callbacks.onPlayerLeave || null;
@@ -478,6 +546,7 @@ export class WorldSyncService {
         this.onPlayersList = callbacks.onPlayersList || null;
         this.onConnected = callbacks.onConnected || null;
         this.onDisconnected = callbacks.onDisconnected || null;
+        this.onModeChange = callbacks.onModeChange || null;
     }
 
     /**
@@ -492,8 +561,13 @@ export class WorldSyncService {
      */
     private async startHttpPolling() {
         debugLog('[WorldSync] Starting HTTP polling fallback');
+        if (this.usingHttpPolling && this.pollingInterval) {
+            return;
+        }
+        this.clearReconnectTimer();
         this.usingHttpPolling = true;
         this.isConnecting = false;
+        this.setSyncMode('polling');
 
         if (this.onConnected) {
             this.onConnected();

@@ -76,17 +76,7 @@ export async function saveProgress(progress: GameProgress, token: string): Promi
         },
         body: JSON.stringify(progress),
     });
-    const data = await handleResponse<any>(response);
-    if (data?.new_achievements && data.new_achievements.length > 0) {
-        data.new_achievements.forEach((a: any) => {
-            showErrorToast(`🏆 成就解锁：${a.title}，快去领取奖励！`, 'info');
-        });
-        if (typeof window !== 'undefined') {
-            window.dispatchEvent(new Event('achievement-refresh'));
-        }
-    }
-    return data;
-    return handleResponse(response);
+    return handleResponse<any>(response);
 }
 
 /**

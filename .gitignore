@@ -40,12 +40,16 @@ frontend-qa.err.log
 .tmp-*.log
 .tmp-*.out.log
 .tmp-*.err.log
+.tmp-*/
+.tmp-*.png
+.tmp-*.txt
 .tmp-system-update-qa/
 backend/backend-dev.log
 backend/backend-dev.log.*
 backend/.tmp-*.log
 backend/.tmp-*.out.log
 backend/.tmp-*.err.log
+backend/.tmp-runtime/
 
 # env files (can opt-in for committing if needed)
 .env*
@@ -73,6 +77,7 @@ console.md
 .tmp/
 .git.opencode-backup/
 .vscode/
+.idea/
 *.code-workspace
 uploads/
 backend/uploads/
@@ -98,6 +103,8 @@ backend/*.pyc
 
 # Deployment packages
 *.zip
+qa-level-*.png
 tmp-br-debug.png
 tmp-br-guest-before-fill.png
 tmp-br-host-before-fill.png
+.gstack/

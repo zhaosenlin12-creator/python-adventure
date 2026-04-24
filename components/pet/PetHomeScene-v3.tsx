@@ -8,7 +8,7 @@ import { useFoodStore } from '@/store/foodStore';
 import { useAuthStore } from '@/store/authStore';
 import { PET_CONFIGS, STATUS_TEXT, STATUS_COLORS } from '@/types/pet';
 import { InteractionType, INTERACTION_CONFIGS } from '@/types/interaction';
-import { DECORATIONS, PlacedDecoration } from '@/types/decoration';
+import { DECORATIONS, PlacedDecoration, TYPE_TEXT } from '@/types/decoration';
 import { getPetImageUrl } from '@/lib/config/petAssets';
 import { getPetVariantScale } from '@/lib/config/petArtworkProfiles';
 import { migratePetType } from '@/lib/pet/migration';
@@ -30,6 +30,8 @@ import {
   ChevronUp,
   Coins,
   Cpu,
+  Check,
+  Heart,
   Home,
   Info,
   Move,
@@ -38,7 +40,6 @@ import {
   ShoppingBag,
   Shirt,
   Sparkles,
-  Trash2,
   Trees,
   X,
   Zap,
@@ -47,6 +48,7 @@ import {
 // 🌟 UI Enhanced Components
 import AnimatedCloud from './home/AnimatedCloud';
 import AnimatedSun from './home/AnimatedSun';
+import HealingCornerPanel from './home/HealingCornerPanel';
 import PetSpeechBubble from './home/PetSpeechBubble';
 import HeartParticles, { useHeartParticles } from './home/HeartParticles';
 import AmbientSounds, { AmbientSoundToggle } from './home/AmbientSounds';
@@ -131,6 +133,14 @@ function clampToRange(value: number, min: number, max: number) {
 
 function randomBetween(min: number, max: number) {
   return min + Math.random() * (max - min);
+}
+
+function shouldCollapseHatchHint(userId?: number) {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  return hasCompletedPetHomeGuide(userId) || Boolean(window.localStorage.getItem('petWelcomeGuideCompleted'));
 }
 
 function buildWallSketch(id: number): WallSketch {
@@ -270,12 +280,13 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
   const [showFoodShop, setShowFoodShop] = useState(false);
   const [showFoodSelector, setShowFoodSelector] = useState(false);
   const [showPetChat, setShowPetChat] = useState(false);
+  const [showHealingCorner, setShowHealingCorner] = useState(false);
   const [showWardrobe, setShowWardrobe] = useState(false);
   const [showPetList, setShowPetList] = useState(false);
   const [showInteractionPanel, setShowInteractionPanel] = useState(false);
   const [showSceneOverview, setShowSceneOverview] = useState(false);
   const [isStarterMode, setIsStarterMode] = useState(false);
-  const [isHatchHintCollapsed, setIsHatchHintCollapsed] = useState(false);
+  const [isHatchHintCollapsed, setIsHatchHintCollapsed] = useState(() => shouldCollapseHatchHint(user?.id));
   const [draggingDecoration, setDraggingDecoration] = useState<string | null>(null);
   const sceneRef = useRef<HTMLDivElement | null>(null);
   
@@ -351,11 +362,15 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
       return;
     }
 
-    setIsHatchHintCollapsed(false);
-    hatchHintTimeoutRef.current = setTimeout(() => {
-      setIsHatchHintCollapsed(true);
-      hatchHintTimeoutRef.current = null;
-    }, HATCH_HINT_AUTO_COLLAPSE_MS);
+    const shouldStartCollapsed = shouldCollapseHatchHint(user?.id);
+    setIsHatchHintCollapsed(shouldStartCollapsed);
+
+    if (!shouldStartCollapsed) {
+      hatchHintTimeoutRef.current = setTimeout(() => {
+        setIsHatchHintCollapsed(true);
+        hatchHintTimeoutRef.current = null;
+      }, HATCH_HINT_AUTO_COLLAPSE_MS);
+    }
 
     return () => {
       if (hatchHintTimeoutRef.current) {
@@ -363,7 +378,7 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
         hatchHintTimeoutRef.current = null;
       }
     };
-  }, [isOpen, currentPet?.id]);
+  }, [isOpen, currentPet?.id, user?.id]);
 
   const getPetScreenPosition = useCallback(() => {
     if (petRef.current) {
@@ -748,12 +763,18 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
         <AnimatePresence>
           {isSelected && (
             <motion.div 
-              className="absolute -inset-4 border-4 border-dashed border-sky-400 rounded-2xl bg-sky-500/20"
+              className="absolute -inset-3 rounded-[28px] border border-sky-300/60 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.18),rgba(14,165,233,0.06)_48%,transparent_78%)] shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_22px_44px_rgba(14,165,233,0.16)]"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.2 }}
-            />
+            >
+              <div className="absolute inset-[10px] rounded-[20px] border border-white/12" />
+              <div className="absolute left-3 top-3 h-2.5 w-2.5 rounded-full bg-sky-300 shadow-[0_0_10px_rgba(125,211,252,0.8)]" />
+              <div className="absolute right-3 top-3 h-2.5 w-2.5 rounded-full bg-sky-300/85 shadow-[0_0_10px_rgba(125,211,252,0.55)]" />
+              <div className="absolute bottom-3 left-3 h-2.5 w-2.5 rounded-full bg-sky-300/85 shadow-[0_0_10px_rgba(125,211,252,0.55)]" />
+              <div className="absolute bottom-3 right-3 h-2.5 w-2.5 rounded-full bg-sky-300 shadow-[0_0_10px_rgba(125,211,252,0.8)]" />
+            </motion.div>
           )}
         </AnimatePresence>
         
@@ -761,11 +782,11 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
         <motion.div 
           className="transition-transform duration-200"
           animate={{ 
-            scale: isSelected ? 1.05 : 1,
-            rotate: isSelected ? [0, -2, 2, 0] : 0
+            scale: isSelected ? 1.03 : 1,
+            y: isSelected ? [0, -2, 0] : 0
           }}
           transition={{ 
-            rotate: { repeat: Infinity, duration: 2, repeatDelay: 1 }
+            y: { repeat: Infinity, duration: 2.6, repeatDelay: 0.2, ease: 'easeInOut' }
           }}
         >
           <FurnitureRenderer 
@@ -782,7 +803,7 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
           animate={{ opacity: isSelected ? 1 : 0, y: isSelected ? 0 : -5 }}
           whileHover={{ opacity: 1, y: 0 }}
         >
-          <span className="bg-slate-900/95 text-white text-xs px-3 py-1 rounded-full border-2 border-slate-600 font-bold">
+          <span className="rounded-full border border-white/12 bg-slate-950/88 px-3 py-1 text-[11px] font-semibold text-white shadow-[0_10px_22px_rgba(2,6,23,0.22)]">
             {decoration.name}
           </span>
         </motion.div>
@@ -800,6 +821,7 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
   const currentTechAccent = getTechAccent(resolvedPetType);
   const roamingOtherPets = otherPets.filter((pet) => !pet.isEgg && pet.petType !== 'egg');
   const currentSceneDecorations = placedDecorations.filter((placed) => placed.scene === currentScene);
+  const selectedDecorationMeta = selectedPlaced ? DECORATIONS[selectedPlaced.decorationId] : null;
   const comfortScore = currentSceneDecorations.reduce((total, placed) => {
     const effect = DECORATIONS[placed.decorationId]?.effect;
     return total + (effect?.comfort ?? 0) + (effect?.happiness ?? 0);
@@ -965,6 +987,23 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
                   </span>
                 </button>
               </div>
+
+              <button
+                onClick={() => {
+                  setShowHealingCorner((value) => !value);
+                  setShowInteractionPanel(false);
+                }}
+                className={`flex h-7 items-center justify-center gap-1 rounded-full border px-2 text-white transition ${
+                  showHealingCorner
+                    ? 'border-emerald-300/45 bg-emerald-500/18'
+                    : 'border-white/10 bg-white/[0.05] hover:scale-[1.03] hover:bg-white/[0.1]'
+                }`}
+                title="打开心能角"
+                aria-label="打开心能角"
+              >
+                <Heart className="h-4 w-4" />
+                <span className="hidden text-[10px] font-semibold sm:inline">心能角</span>
+              </button>
 
               {!isStarterMode && (
                 <>
@@ -1605,6 +1644,18 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
         petId={currentPet.id}
         petName={currentPet.name}
       />
+
+      <HealingCornerPanel
+        isOpen={showHealingCorner}
+        onClose={() => setShowHealingCorner(false)}
+        onOpenChat={() => {
+          setShowHealingCorner(false);
+          setShowPetChat(true);
+        }}
+        petName={currentPet.name}
+        ambientEnabled={ambientEnabled}
+        onEnableAmbient={() => setAmbientEnabled(true)}
+      />
       
       {/* Wardrobe Modal */}
       {showWardrobe && (
@@ -1826,66 +1877,109 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
       
       {/* Selected Decoration Controls - Bottom Floating Panel */}
       {selectedPlaced && (
-        <div className="absolute bottom-24 left-1/2 -translate-x-1/2 z-[100] animate-scaleIn">
-          <div className="w-[min(92vw,420px)] rounded-full border border-sky-300/20 bg-slate-950/92 px-3 py-2.5 shadow-[0_30px_60px_rgba(2,6,23,0.44)] backdrop-blur-md">
-            <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/[0.05]">
-                <DecorationIcon decorationId={selectedPlaced.decorationId} size={40} />
-              </div>
-              <div className="min-w-0 flex-1">
-                <div className="hidden text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-300">Selected Decoration</div>
-                <div className="truncate text-sm font-bold text-white">
-                  {DECORATIONS[selectedPlaced.decorationId]?.name || '装饰品'}
+        <motion.div
+          initial={{ opacity: 0, y: 12, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 8, scale: 0.98 }}
+          transition={{ duration: 0.18, ease: 'easeOut' }}
+          className="absolute bottom-6 left-1/2 z-[100] w-[min(94vw,520px)] -translate-x-1/2"
+        >
+          <div className="overflow-hidden rounded-[28px] border border-white/10 bg-[linear-gradient(155deg,rgba(11,18,38,0.96),rgba(6,11,27,0.94))] shadow-[0_28px_64px_rgba(2,6,23,0.42)] backdrop-blur-xl">
+            <div className="border-b border-white/8 bg-[linear-gradient(180deg,rgba(56,189,248,0.12),rgba(56,189,248,0.02))] px-4 py-3.5">
+              <div className="flex items-center gap-3">
+                <div className="flex h-12 w-12 items-center justify-center rounded-[18px] border border-white/10 bg-white/[0.05] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+                  <DecorationIcon decorationId={selectedPlaced.decorationId} size={38} />
                 </div>
-                <p className="mt-0.5 text-[11px] text-slate-400">
-                  轻点按钮即可移动、收回或关闭
-                </p>
-                <p className="hidden mt-1 text-sm leading-6 text-slate-300">
-                  你可以重新摆放它的位置，或者直接把它收回衣柜。
-                </p>
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-2">
+                    <span className="rounded-full border border-sky-300/20 bg-sky-400/10 px-2 py-0.5 text-[10px] font-semibold tracking-[0.18em] text-sky-200">
+                      已选装饰
+                    </span>
+                    {selectedDecorationMeta && (
+                      <span className="rounded-full border border-white/10 bg-white/[0.04] px-2 py-0.5 text-[10px] font-medium text-slate-300">
+                        {TYPE_TEXT[selectedDecorationMeta.type]}
+                      </span>
+                    )}
+                  </div>
+                  <div className="mt-1 truncate text-sm font-bold text-white">
+                    {selectedDecorationMeta?.name || '这个装饰'}
+                  </div>
+                  <p className="mt-1 text-[11px] text-slate-400">
+                    轻点下方按钮，可移动、收回或关闭选择。
+                  </p>
+                </div>
               </div>
             </div>
-            
-            <div className="mt-3 ml-auto flex items-center gap-2">
+
+            <div className="grid grid-cols-1 gap-2 px-4 py-3 sm:grid-cols-3">
               <button
                 onClick={handleStartDragPlaced}
-                title={isDraggingPlaced ? '点击场景中的新位置完成摆放' : '重新摆放这个装饰'}
-                aria-label={isDraggingPlaced ? '点击场景中的新位置完成摆放' : '重新摆放这个装饰'}
-                className={`flex h-10 w-10 items-center justify-center rounded-full text-[0] transition-all ${
+                title={isDraggingPlaced ? '点击场景中的位置，完成摆放' : '重新摆放这个装饰'}
+                aria-label={isDraggingPlaced ? '点击场景中的位置，完成摆放' : '重新摆放这个装饰'}
+                className={`flex items-center gap-3 rounded-[20px] border px-3 py-3 text-left transition ${
                   isDraggingPlaced
-                    ? 'bg-emerald-500 text-white animate-pulse'
-                    : 'bg-sky-700 text-white hover:scale-105 hover:bg-sky-600'
+                    ? 'border-emerald-300/25 bg-emerald-400/12 text-emerald-100 shadow-[0_16px_34px_rgba(16,185,129,0.18)]'
+                    : 'border-sky-300/18 bg-sky-400/10 text-sky-100 hover:bg-sky-400/14'
                 }`}
               >
-                <Move className="h-4 w-4" />
-                {isDraggingPlaced ? '点击新位置放下' : '重新摆放'}
+                <span
+                  className={`flex h-10 w-10 items-center justify-center rounded-[16px] border ${
+                    isDraggingPlaced
+                      ? 'border-emerald-300/25 bg-emerald-400/18'
+                      : 'border-sky-300/18 bg-sky-400/16'
+                  }`}
+                >
+                  {isDraggingPlaced ? <Check className="h-4 w-4" /> : <Move className="h-4 w-4" />}
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block text-xs font-semibold">
+                    {isDraggingPlaced ? '完成摆放' : '移动位置'}
+                  </span>
+                  <span className="mt-0.5 block text-[11px] text-white/65">
+                    {isDraggingPlaced ? '点场景落点即可' : '换到更合适的位置'}
+                  </span>
+                </span>
               </button>
-              
+
               <button
                 onClick={handleRemoveDecoration}
-                title="移回衣柜"
-                aria-label="移回衣柜"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-red-600 text-[0] text-white transition-all hover:scale-105 hover:bg-red-500"
+                title="收回到衣柜"
+                aria-label="收回到衣柜"
+                className="flex items-center gap-3 rounded-[20px] border border-rose-300/16 bg-rose-400/10 px-3 py-3 text-left text-rose-100 transition hover:bg-rose-400/14"
               >
-                <Trash2 className="h-4 w-4" />
-                移回衣柜
+                <span className="flex h-10 w-10 items-center justify-center rounded-[16px] border border-rose-300/16 bg-rose-400/14">
+                  <Package2 className="h-4 w-4" />
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block text-xs font-semibold">收回衣柜</span>
+                  <span className="mt-0.5 block text-[11px] text-white/65">
+                    不会丢失这件装饰
+                  </span>
+                </span>
               </button>
-              
+
               <button
                 onClick={() => {
                   setSelectedPlaced(null);
                   setIsDraggingPlaced(false);
                 }}
-                title="关闭装饰工具条"
-                aria-label="关闭装饰工具条"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-700 text-[0] text-white transition-all hover:scale-105 hover:bg-slate-600"
+                title="关闭装饰工具栏"
+                aria-label="关闭装饰工具栏"
+                className="flex items-center gap-3 rounded-[20px] border border-white/10 bg-white/[0.04] px-3 py-3 text-left text-white transition hover:bg-white/[0.07]"
               >
-                <X className="h-4 w-4" />
-                关闭
+                <span className="flex h-10 w-10 items-center justify-center rounded-[16px] border border-white/10 bg-white/[0.05]">
+                  <X className="h-4 w-4" />
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block text-xs font-semibold">取消选择</span>
+                  <span className="mt-0.5 block text-[11px] text-white/65">
+                    继续查看当前场景
+                  </span>
+                </span>
               </button>
             </div>
           </div>
-        </div>
+        </motion.div>
       )}
       
       {/* Heart Particles Overlay */}
@@ -1895,7 +1989,7 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
       {(draggingDecoration || isDraggingPlaced) && (
         <div className="absolute top-20 left-1/2 -translate-x-1/2 z-[100]">
           <div className="rounded-full border border-sky-300/25 bg-sky-600/90 px-4 py-2 text-xs font-semibold text-white shadow-lg animate-pulse">
-            点击场景中的目标位置完成摆放
+            {isDraggingPlaced ? '点击想摆放的位置，完成移动' : '点击场景中的空位，放下装饰'}
           </div>
         </div>
       )}
@@ -1921,3 +2015,4 @@ export default function PetHomeSceneV3({ isOpen, onClose }: PetHomeSceneProps) {
     </div>
   );
 }
+

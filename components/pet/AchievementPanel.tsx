@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Trophy } from 'lucide-react';
 import { useAuthStore } from '@/store/authStore';
 import { useGameStore } from '@/store/gameStore';
 import { usePetStore } from '@/store/petStore';
@@ -211,7 +212,7 @@ export default function AchievementPanel() {
       >
         <div className="relative">
           <div className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-amber-500 bg-gradient-to-br from-amber-400 to-orange-500 shadow-lg">
-            <span className="text-base">🏆</span>
+            <Trophy className="h-[18px] w-[18px] text-white" />
           </div>
           
           {/* 未领取红点提示 */}

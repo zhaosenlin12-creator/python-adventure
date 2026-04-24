@@ -10,6 +10,46 @@ interface CozyRoomBackgroundProps {
   children?: React.ReactNode;
 }
 
+const WINDOW_CLOUDS = [
+  { top: '12%', left: '-8%', width: 94, height: 30, duration: 24, opacity: 0.68 },
+  { top: '28%', left: '22%', width: 74, height: 24, duration: 20, opacity: 0.54 },
+];
+
+const GARDEN_CLOUDS = [
+  { top: '10%', left: '-6%', width: 160, height: 42, duration: 42, opacity: 0.32 },
+  { top: '18%', left: '18%', width: 118, height: 34, duration: 36, opacity: 0.28 },
+  { top: '13%', left: '56%', width: 138, height: 38, duration: 40, opacity: 0.26 },
+];
+
+const GARDEN_BUTTERFLIES = [
+  { x: 28, y: 34, duration: 12, color: 'rgba(251,113,133,0.82)' },
+  { x: 63, y: 26, duration: 16, color: 'rgba(167,139,250,0.8)' },
+  { x: 48, y: 38, duration: 18, color: 'rgba(250,204,21,0.78)' },
+];
+
+const GARDEN_FIREFLIES = [
+  { left: '12%', top: '22%', x: [0, 10, -6, 0], y: [0, -12, -4, 0], duration: 5.2, delay: 0.3 },
+  { left: '22%', top: '30%', x: [0, -8, 12, 0], y: [0, -10, -16, 0], duration: 6.4, delay: 1.1 },
+  { left: '33%', top: '18%', x: [0, 14, -9, 0], y: [0, -8, -12, 0], duration: 5.8, delay: 2.2 },
+  { left: '43%', top: '34%', x: [0, -12, 8, 0], y: [0, -14, -5, 0], duration: 6.8, delay: 0.8 },
+  { left: '51%', top: '26%', x: [0, 9, -7, 0], y: [0, -11, -15, 0], duration: 5.6, delay: 1.7 },
+  { left: '58%', top: '20%', x: [0, -10, 14, 0], y: [0, -9, -13, 0], duration: 6.1, delay: 2.7 },
+  { left: '65%', top: '31%', x: [0, 12, -10, 0], y: [0, -15, -6, 0], duration: 7.1, delay: 1.4 },
+  { left: '73%', top: '24%', x: [0, -11, 9, 0], y: [0, -10, -14, 0], duration: 6.3, delay: 3.1 },
+  { left: '80%', top: '19%', x: [0, 8, -5, 0], y: [0, -13, -8, 0], duration: 5.4, delay: 0.5 },
+  { left: '18%', top: '42%', x: [0, 7, -10, 0], y: [0, -7, -12, 0], duration: 6.7, delay: 2.4 },
+];
+
+const FLOATING_DUST_PARTICLES = Array.from({ length: 18 }, (_, index) => ({
+  x: `${6 + (index * 5.2) % 88}%`,
+  y: `${12 + (index * 7.4) % 74}%`,
+  scale: 0.45 + (index % 5) * 0.14,
+  driftX: ((index % 6) - 2.5) * 5,
+  driftY: -12 - (index % 4) * 4,
+  duration: 6 + (index % 6) * 1.4,
+  delay: index * 0.28,
+}));
+
 /**
  * 🏠 舒适房间背景组件
  * 包含：
@@ -59,12 +99,17 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
       }
     },
     garden: {
-      // 庭院配置稍后完善
       skyColor: {
-        morning: 'from-blue-300 via-blue-200 to-orange-200',
-        day: 'from-sky-400 via-sky-200 to-green-100',
-        dusk: 'from-indigo-400 via-purple-300 to-orange-300',
+        morning: 'from-sky-300 via-sky-200 to-orange-100',
+        day: 'from-sky-400 via-sky-200 to-emerald-50',
+        dusk: 'from-indigo-400 via-violet-300 to-orange-200',
         night: 'from-slate-900 via-slate-800 to-slate-900'
+      },
+      lightOverlay: {
+        morning: 'bg-amber-200/8',
+        day: 'bg-emerald-200/6',
+        dusk: 'bg-orange-500/16',
+        night: 'bg-slate-900/24',
       }
     }
   };
@@ -347,53 +392,127 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
     );
   }
 
-  // 渲染庭院 - 丰富场景
   return (
     <div className={`relative w-full h-full overflow-hidden transition-colors duration-[2000ms] bg-gradient-to-b ${sceneConfig.garden.skyColor[timeOfDay]}`}>
       <div
-        className="absolute inset-x-0 top-0 h-[34%] pointer-events-none"
+        className="absolute inset-x-0 top-0 h-[38%] pointer-events-none"
         style={{
           background:
             timeOfDay === 'night'
-              ? 'radial-gradient(circle at 70% 16%, rgba(148,163,184,0.16) 0%, transparent 32%), linear-gradient(180deg, rgba(15,23,42,0.18) 0%, transparent 100%)'
-              : 'radial-gradient(circle at 72% 14%, rgba(255,248,196,0.35) 0%, rgba(255,244,214,0.12) 24%, transparent 56%), linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 100%)',
+              ? 'radial-gradient(circle at 72% 16%, rgba(148,163,184,0.18) 0%, transparent 34%), linear-gradient(180deg, rgba(15,23,42,0.18) 0%, rgba(15,23,42,0.08) 42%, transparent 100%)'
+              : 'radial-gradient(circle at 74% 14%, rgba(255,244,194,0.42) 0%, rgba(255,239,210,0.16) 22%, transparent 58%), linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 32%, transparent 100%)',
         }}
       />
-      
-      {/* 远山层叠 */}
-      <div className="absolute bottom-[28%] left-0 right-0 h-[30%] pointer-events-none">
-        {/* 远山1 */}
-        <svg className="absolute bottom-0 w-full h-full" viewBox="0 0 800 200" preserveAspectRatio="none">
-          <path d="M0 200 L0 120 Q100 60 200 100 Q300 40 400 80 Q500 30 600 90 Q700 50 800 100 L800 200Z" fill="rgba(40,80,30,0.25)" />
-          <path d="M0 200 L0 140 Q150 80 280 120 Q400 70 520 110 Q650 65 800 120 L800 200Z" fill="rgba(50,100,40,0.3)" />
-        </svg>
-      </div>
-      
-      {/* 草地 + 纹理 */}
-      <div className="absolute bottom-0 left-0 right-0 h-[30%] transition-colors duration-[2000ms]">
-        <div className="w-full h-full" style={{
-          background: `linear-gradient(to bottom, 
-            ${timeOfDay === 'night' ? '#1a3a15' : '#4ade50'} 0%, 
-            ${timeOfDay === 'night' ? '#0f2a0d' : '#22863a'} 50%, 
-            ${timeOfDay === 'night' ? '#0a1f08' : '#166534'} 100%)`
-        }} />
-        {/* 草地纹理 */}
-        <div className="absolute inset-0" style={{
-          opacity: 0.15,
-          backgroundImage: `
-            radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
-            radial-gradient(rgba(200,255,200,0.2) 1px, transparent 1px)
-          `,
-          backgroundSize: '14px 14px, 10px 10px',
-          backgroundPosition: '0 0, 7px 7px'
-        }} />
-        {/* 草地上边缘柔化 */}
-        <div className="absolute top-0 left-0 right-0 h-4" style={{
-          background: 'linear-gradient(to bottom, rgba(100,200,80,0.3), transparent)'
-        }} />
+
+      <div className="absolute inset-x-0 top-[8%] h-[16%] pointer-events-none z-[1] overflow-hidden">
+        {GARDEN_CLOUDS.map((cloud, index) => (
+          <motion.div
+            key={`garden-cloud-${index}`}
+            className="absolute rounded-[999px] blur-sm"
+            style={{
+              top: cloud.top,
+              left: cloud.left,
+              width: cloud.width,
+              height: cloud.height,
+              opacity: timeOfDay === 'night' ? cloud.opacity * 0.38 : cloud.opacity,
+              background:
+                timeOfDay === 'night'
+                  ? 'linear-gradient(180deg, rgba(203,213,225,0.18), rgba(148,163,184,0.04))'
+                  : 'linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.18))',
+              boxShadow: timeOfDay === 'night' ? '0 0 28px rgba(148,163,184,0.08)' : '0 10px 28px rgba(255,255,255,0.16)',
+            }}
+            animate={{ x: ['0%', '6%', '0%'], opacity: [cloud.opacity * 0.92, cloud.opacity, cloud.opacity * 0.88] }}
+            transition={{ duration: cloud.duration, repeat: Infinity, ease: 'easeInOut', delay: index * 2.4 }}
+          />
+        ))}
       </div>
 
-      {/* 露珠和光斑层 */}
+      <div className="absolute bottom-[27%] left-0 right-0 h-[32%] pointer-events-none z-[1]">
+        <svg className="absolute bottom-0 h-full w-full" viewBox="0 0 800 220" preserveAspectRatio="none">
+          <path
+            d="M0 220 L0 132 Q78 88 154 110 Q242 64 332 96 Q420 40 520 86 Q610 56 700 104 Q754 90 800 114 L800 220Z"
+            fill={timeOfDay === 'night' ? 'rgba(44,72,58,0.34)' : 'rgba(129,152,122,0.46)'}
+          />
+          <path
+            d="M0 220 L0 156 Q90 120 178 136 Q268 98 362 126 Q470 90 566 126 Q684 96 800 140 L800 220Z"
+            fill={timeOfDay === 'night' ? 'rgba(50,89,64,0.42)' : 'rgba(113,144,95,0.62)'}
+          />
+          <path
+            d="M0 220 L0 176 Q110 150 214 162 Q314 134 420 154 Q548 128 650 154 Q738 136 800 160 L800 220Z"
+            fill={timeOfDay === 'night' ? 'rgba(28,64,39,0.62)' : 'rgba(82,122,61,0.82)'}
+          />
+        </svg>
+        <div
+          className="absolute inset-x-0 bottom-[18%] h-[18%] blur-2xl"
+          style={{
+            background:
+              timeOfDay === 'night'
+                ? 'linear-gradient(180deg, rgba(125,211,252,0.05), transparent)'
+                : 'linear-gradient(180deg, rgba(255,255,255,0.2), transparent)',
+          }}
+        />
+      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-[31%] transition-colors duration-[2000ms]">
+        <div
+          className="w-full h-full"
+          style={{
+            background: `linear-gradient(to bottom, ${timeOfDay === 'night' ? '#17321a' : '#6f9650'} 0%, ${timeOfDay === 'night' ? '#102411' : '#4f7b39'} 52%, ${timeOfDay === 'night' ? '#0b160c' : '#2e4f22'} 100%)`,
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            opacity: 0.12,
+            backgroundImage:
+              'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), radial-gradient(rgba(180,220,170,0.12) 1px, transparent 1px), linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.06) 22%, transparent 56%)',
+            backgroundSize: '14px 14px, 10px 10px, 100% 100%',
+            backgroundPosition: '0 0, 7px 7px, 0 0',
+          }}
+        />
+        <div
+          className="absolute inset-x-0 top-[5%] h-[12%]"
+          style={{
+            background: timeOfDay === 'night'
+              ? 'linear-gradient(180deg, rgba(66,98,51,0.26), transparent)'
+              : 'linear-gradient(180deg, rgba(229,244,211,0.22), transparent)',
+          }}
+        />
+        <div
+          className="absolute inset-x-0 top-[28%] h-[16%]"
+          style={{
+            background: timeOfDay === 'night'
+              ? 'linear-gradient(180deg, rgba(20,46,24,0.18), transparent)'
+              : 'linear-gradient(180deg, rgba(94,132,68,0.2), transparent)',
+          }}
+        />
+      </div>
+
+      <div className="absolute bottom-[28%] left-0 right-0 h-[8%] pointer-events-none z-[2]">
+        <div
+          className="absolute inset-x-[2%] bottom-0 h-[72%] rounded-[999px]"
+          style={{
+            background: timeOfDay === 'night'
+              ? 'linear-gradient(180deg, rgba(27,53,30,0.86), rgba(11,26,14,0.94))'
+              : 'linear-gradient(180deg, rgba(70,112,56,0.78), rgba(38,79,32,0.9))',
+            boxShadow: '0 12px 26px rgba(15,23,42,0.14)',
+          }}
+        />
+      </div>
+
+      <div className="absolute bottom-[20.8%] left-[5%] right-[4%] h-[7.4%] pointer-events-none z-[1]">
+        <div
+          className="absolute inset-0 rounded-[999px]"
+          style={{
+            background: timeOfDay === 'night'
+              ? 'linear-gradient(180deg, rgba(88,58,28,0.4), rgba(46,28,12,0.64))'
+              : 'linear-gradient(180deg, rgba(158,114,66,0.34), rgba(105,69,32,0.54))',
+            boxShadow: 'inset 0 1px 0 rgba(255,232,196,0.12)',
+          }}
+        />
+        <div className="absolute inset-x-[5%] top-[34%] h-[2px] rounded-full bg-white/10" />
+      </div>
+
       <div className="absolute inset-0 pointer-events-none z-[1]">
         {Array.from({ length: 16 }).map((_, index) => (
           <motion.div
@@ -413,8 +532,7 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
         ))}
       </div>
 
-      {/* 石板小路 */}
-      <div className="absolute bottom-[5%] left-[40%] w-[20%] h-[22%] pointer-events-none z-[1]">
+      <div className="absolute bottom-[5%] left-[40%] h-[22%] w-[20%] pointer-events-none z-[1]">
         {[0, 18, 38, 56, 75].map((top, i) => (
           <div key={i}
             className="absolute rounded-md"
@@ -431,7 +549,6 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
         ))}
       </div>
 
-      {/* 花园凉亭 */}
       <div className="absolute left-[49%] bottom-[31%] z-[3] pointer-events-none">
         <div className="relative h-[130px] w-[150px]">
           <div className="absolute left-[10px] right-[10px] top-[16px] h-[14px] rounded-[12px]" style={{
@@ -451,34 +568,33 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
         </div>
       </div>
 
-      {/* 小池塘 */}
       <div className="absolute right-[20%] bottom-[24%] z-[2] h-[80px] w-[160px] pointer-events-none">
         <div
-          className="absolute inset-0 rounded-[999px] border border-cyan-100/20"
+          className="absolute inset-0 rounded-[56%_44%_58%_42%/50%_46%_54%_50%] border border-cyan-100/18"
           style={{
             background:
               timeOfDay === 'night'
-                ? 'radial-gradient(ellipse at 50% 42%, rgba(56,189,248,0.16) 0%, rgba(21,94,117,0.28) 44%, rgba(12,22,39,0.12) 100%)'
-                : 'radial-gradient(ellipse at 50% 42%, rgba(191,219,254,0.42) 0%, rgba(56,189,248,0.26) 44%, rgba(14,116,144,0.14) 100%)',
-            boxShadow: 'inset 0 6px 18px rgba(255,255,255,0.08), 0 10px 18px rgba(15,23,42,0.08)',
+                ? 'radial-gradient(ellipse at 50% 42%, rgba(56,189,248,0.18) 0%, rgba(21,94,117,0.28) 42%, rgba(12,22,39,0.14) 100%)'
+                : 'radial-gradient(ellipse at 50% 38%, rgba(219,234,254,0.54) 0%, rgba(56,189,248,0.24) 42%, rgba(14,116,144,0.14) 100%)',
+            boxShadow: 'inset 0 6px 18px rgba(255,255,255,0.1), 0 10px 18px rgba(15,23,42,0.1)',
           }}
         />
-        <div className="absolute inset-[9%] rounded-[999px] border border-white/10 bg-white/5" />
+        <div className="absolute inset-[9%] rounded-[56%_44%_58%_42%/50%_46%_54%_50%] border border-white/10 bg-white/5" />
         <motion.div
           className="absolute left-[18%] top-[34%] h-[12px] w-[42px] rounded-full bg-white/15"
           animate={{ x: [0, 16, 0], opacity: [0.18, 0.32, 0.18] }}
           transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
         />
+        <div className="absolute -left-[8px] bottom-[8px] h-[22px] w-[10px] rounded-full bg-emerald-900/30" />
+        <div className="absolute -left-[2px] bottom-[12px] h-[20px] w-[8px] rounded-full bg-emerald-700/32" />
+        <div className="absolute right-[8px] bottom-[6px] h-[18px] w-[8px] rounded-full bg-emerald-900/24" />
       </div>
 
-      {/* 花丛（左下） */}
       <div className="absolute bottom-[25%] left-[5%] pointer-events-none z-[2]">
-        <div className="relative w-28 h-16">
-          {/* 叶子层 */}
-          <div className="absolute bottom-0 left-2 w-24 h-8 rounded-[50%]" style={{
+        <div className="relative h-16 w-28">
+          <div className="absolute bottom-0 left-2 h-8 w-24 rounded-[50%]" style={{
             background: 'radial-gradient(ellipse, rgba(34,139,34,0.6) 0%, rgba(34,139,34,0.2) 70%, transparent 100%)'
           }} />
-          {/* 花朵 */}
           {[[8, 2, '#F472B6'], [20, 0, '#FB923C'], [32, 3, '#A78BFA'], [16, 6, '#F9A8D4'], [28, 1, '#FDE047']].map(([x, y, c], i) => (
             <div key={i} className="absolute rounded-full" style={{
               left: `${x}px`, top: `${y}px`,
@@ -491,10 +607,9 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
         </div>
       </div>
 
-      {/* 花丛（右下） */}
       <div className="absolute bottom-[27%] right-[8%] pointer-events-none z-[2]">
-        <div className="relative w-24 h-14">
-          <div className="absolute bottom-0 left-2 w-20 h-7 rounded-[50%]" style={{
+        <div className="relative h-14 w-24">
+          <div className="absolute bottom-0 left-2 h-7 w-20 rounded-[50%]" style={{
             background: 'radial-gradient(ellipse, rgba(22,120,22,0.55) 0%, rgba(22,120,22,0.15) 70%, transparent 100%)'
           }} />
           {[[6, 1, '#EC4899'], [16, 3, '#8B5CF6'], [26, 0, '#F59E0B'], [12, 5, '#EF4444']].map(([x, y, c], i) => (
@@ -508,9 +623,8 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
         </div>
       </div>
 
-      {/* 木栅栏（底部边界） */}
-      <div className="absolute bottom-[28%] left-0 right-0 h-10 pointer-events-none z-[3] flex items-end">
-        <div className="w-full flex justify-between px-2" style={{ gap: '12px' }}>
+      <div className="absolute bottom-[28%] left-0 right-0 z-[3] flex h-10 items-end pointer-events-none">
+        <div className="flex w-full justify-between px-2" style={{ gap: '12px' }}>
           {Array.from({ length: 28 }).map((_, i) => (
             <div key={i} className="flex-shrink-0" style={{
               width: '6px',
@@ -521,7 +635,6 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
             }} />
           ))}
         </div>
-        {/* 栅栏横梁 */}
         <div className="absolute bottom-[40%] left-0 right-0 h-[3px]" style={{
           background: `rgba(120,80,30,${timeOfDay === 'night' ? 0.25 : 0.4})`
         }} />
@@ -530,63 +643,54 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
         }} />
       </div>
 
-      {/* 大树（右侧） */}
       <div className="absolute bottom-[28%] right-[4%] pointer-events-none z-[4]">
-        {/* 树干 */}
-        <div className="w-8 h-28 mx-auto rounded-md" style={{
+        <div className="mx-auto h-28 w-8 rounded-md" style={{
           background: `linear-gradient(90deg, rgba(100,65,25,${timeOfDay === 'night' ? 0.4 : 0.65}), rgba(120,80,35,${timeOfDay === 'night' ? 0.35 : 0.55}), rgba(100,65,25,${timeOfDay === 'night' ? 0.4 : 0.65}))`,
         }} />
-        {/* 树冠 */}
         <div className="absolute -top-16 left-1/2 -translate-x-1/2">
-          <div className="w-32 h-24 rounded-full" style={{
+          <div className="h-24 w-32 rounded-full" style={{
             background: `radial-gradient(ellipse at 40% 40%, rgba(60,160,60,${timeOfDay === 'night' ? 0.35 : 0.6}) 0%, rgba(30,120,30,${timeOfDay === 'night' ? 0.3 : 0.5}) 50%, rgba(20,80,20,${timeOfDay === 'night' ? 0.2 : 0.35}) 100%)`
           }} />
-          <div className="absolute top-2 left-4 w-24 h-16 rounded-full" style={{
+          <div className="absolute top-2 left-4 h-16 w-24 rounded-full" style={{
             background: `radial-gradient(ellipse, rgba(80,180,80,${timeOfDay === 'night' ? 0.2 : 0.35}) 0%, transparent 70%)`
           }} />
         </div>
       </div>
 
-      {/* 可爱小屋（左侧，栅栏后方） */}
       <div className="absolute pointer-events-none z-[2]" style={{ left: '3%', bottom: '28%' }}>
         <div className="relative" style={{ width: '130px', height: '120px' }}>
-          {/* 烟囱 */}
           <div className="absolute" style={{
             right: '22px', top: '0', width: '12px', height: '28px',
             background: `linear-gradient(90deg, ${timeOfDay === 'night' ? '#5A3D2B' : '#8B6843'}, ${timeOfDay === 'night' ? '#6B4A35' : '#A0784F'})`,
             borderRadius: '2px 2px 0 0'
           }} />
-          {/* 夜晚烟囱冒烟 */}
           {timeOfDay === 'night' && (
             <>
               <motion.div
-                className="absolute w-3 h-3 rounded-full bg-gray-400/30"
+                className="absolute h-3 w-3 rounded-full bg-gray-400/30"
                 style={{ right: '23px', top: '-6px' }}
                 animate={{ y: [0, -15], opacity: [0.3, 0], scale: [0.5, 1.3] }}
                 transition={{ duration: 3, repeat: Infinity }}
               />
               <motion.div
-                className="absolute w-2.5 h-2.5 rounded-full bg-gray-300/20"
+                className="absolute h-2.5 w-2.5 rounded-full bg-gray-300/20"
                 style={{ right: '26px', top: '-4px' }}
                 animate={{ y: [0, -18], opacity: [0.2, 0], scale: [0.4, 1.1] }}
                 transition={{ duration: 3.5, repeat: Infinity, delay: 1 }}
               />
             </>
           )}
-          {/* 屋顶 */}
           <svg className="absolute w-full" style={{ top: '16px', height: '42px' }} viewBox="0 0 130 42" preserveAspectRatio="none">
             <polygon points="2,42 65,2 128,42" fill={timeOfDay === 'night' ? '#5C3322' : '#B85C38'} />
             <polygon points="8,42 65,6 122,42" fill={timeOfDay === 'night' ? '#6B3D2E' : '#CD6B45'} />
           </svg>
-          {/* 墙体 */}
-          <div className="absolute left-[10px] right-[10px] bottom-0 rounded-b-sm" style={{
+          <div className="absolute bottom-0 left-[10px] right-[10px] rounded-b-sm" style={{
             top: '52px',
             background: timeOfDay === 'night'
               ? 'linear-gradient(to bottom, #4A3B28, #3D3020)'
               : 'linear-gradient(to bottom, #F5E6C8, #E8D5AA)',
             border: `1px solid ${timeOfDay === 'night' ? 'rgba(60,45,25,0.5)' : 'rgba(180,150,100,0.5)'}`
           }}>
-            {/* 门 */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2" style={{
               width: '24px', height: '36px',
               background: timeOfDay === 'night' ? '#4A2E15' : '#8B6843',
@@ -594,9 +698,8 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
               border: `1px solid ${timeOfDay === 'night' ? '#3A200A' : '#6B4F30'}`,
               borderBottom: 'none'
             }}>
-              <div className="absolute right-[5px] top-[55%] w-[3px] h-[3px] rounded-full bg-yellow-600" />
+              <div className="absolute right-[5px] top-[55%] h-[3px] w-[3px] rounded-full bg-yellow-600" />
             </div>
-            {/* 左窗 */}
             <div className="absolute top-[8px] left-[10px]" style={{
               width: '20px', height: '18px',
               background: timeOfDay === 'night' ? 'rgba(255,200,100,0.3)' : 'rgba(135,206,250,0.5)',
@@ -604,48 +707,73 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
               borderRadius: '2px',
               boxShadow: timeOfDay === 'night' ? '0 0 8px rgba(255,200,100,0.25)' : 'none'
             }}>
-              <div className="absolute top-1/2 left-0 right-0 h-[1px]" style={{ background: timeOfDay === 'night' ? '#4A2E15' : '#8B6843' }} />
-              <div className="absolute left-1/2 top-0 bottom-0 w-[1px]" style={{ background: timeOfDay === 'night' ? '#4A2E15' : '#8B6843' }} />
+              <div className="absolute left-0 right-0 top-1/2 h-[1px]" style={{ background: timeOfDay === 'night' ? '#4A2E15' : '#8B6843' }} />
+              <div className="absolute bottom-0 left-1/2 top-0 w-[1px]" style={{ background: timeOfDay === 'night' ? '#4A2E15' : '#8B6843' }} />
             </div>
-            {/* 右窗 */}
-            <div className="absolute top-[8px] right-[10px]" style={{
+            <div className="absolute right-[10px] top-[8px]" style={{
               width: '20px', height: '18px',
               background: timeOfDay === 'night' ? 'rgba(255,200,100,0.3)' : 'rgba(135,206,250,0.5)',
               border: `2px solid ${timeOfDay === 'night' ? '#4A2E15' : '#8B6843'}`,
               borderRadius: '2px',
               boxShadow: timeOfDay === 'night' ? '0 0 8px rgba(255,200,100,0.25)' : 'none'
             }}>
-              <div className="absolute top-1/2 left-0 right-0 h-[1px]" style={{ background: timeOfDay === 'night' ? '#4A2E15' : '#8B6843' }} />
-              <div className="absolute left-1/2 top-0 bottom-0 w-[1px]" style={{ background: timeOfDay === 'night' ? '#4A2E15' : '#8B6843' }} />
+              <div className="absolute left-0 right-0 top-1/2 h-[1px]" style={{ background: timeOfDay === 'night' ? '#4A2E15' : '#8B6843' }} />
+              <div className="absolute bottom-0 left-1/2 top-0 w-[1px]" style={{ background: timeOfDay === 'night' ? '#4A2E15' : '#8B6843' }} />
             </div>
           </div>
         </div>
       </div>
 
-      {/* 田地土壤（草地区域，与 FarmGrid 格子坐标对齐） */}
       <div className="absolute pointer-events-none z-[1]" style={{ left: '3%', bottom: '8%', width: '38%', height: '16%' }}>
-        <div className="absolute -top-[14%] left-[2%] right-[8%] h-[18%] rounded-[16px] bg-amber-950/14 blur-md" />
-        <div className="relative w-full h-full rounded-[28px] border border-amber-950/18 bg-[linear-gradient(180deg,rgba(116,74,32,0.18),rgba(80,46,18,0.26))] p-[10px] shadow-[0_18px_28px_rgba(15,23,42,0.12)]">
-          <div className="absolute inset-[4px] rounded-[24px] border border-white/6" />
-          <div className="relative grid h-full w-full grid-cols-4 grid-rows-2 gap-[5px]">
-          {Array.from({ length: 8 }).map((_, i) => (
-            <div key={i} className="rounded-sm" style={{
-              background: timeOfDay === 'night'
-                ? 'linear-gradient(to bottom, rgba(60,40,20,0.5), rgba(45,30,15,0.6))'
-                : 'linear-gradient(to bottom, rgba(120,80,40,0.45), rgba(90,60,30,0.55))',
-              border: `1px solid ${timeOfDay === 'night' ? 'rgba(80,55,30,0.3)' : 'rgba(100,70,35,0.3)'}`,
-              boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.15)'
-            }}>
-              <div className="w-full h-full" style={{
-                backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 3px, ${timeOfDay === 'night' ? 'rgba(40,25,10,0.2)' : 'rgba(80,50,20,0.15)'} 3px, ${timeOfDay === 'night' ? 'rgba(40,25,10,0.2)' : 'rgba(80,50,20,0.15)'} 4px)`
-              }} />
-            </div>
-          ))}
-        </div>
+        <div className="absolute -top-[10%] left-[4%] right-[6%] h-[14%] rounded-[18px] bg-amber-950/30 blur-lg" />
+        <div
+          className="absolute inset-x-[1%] bottom-0 top-[12%] rounded-[30px]"
+          style={{
+            background: 'linear-gradient(180deg, rgba(116,72,33,0.92), rgba(73,41,17,0.98))',
+            boxShadow: '0 18px 30px rgba(15,23,42,0.16), inset 0 2px 0 rgba(255,230,194,0.12)',
+          }}
+        />
+        <div
+          className="absolute inset-x-[2.6%] top-[10%] h-[16%] rounded-[20px]"
+          style={{
+            background: 'linear-gradient(180deg, rgba(163,109,58,0.82), rgba(116,74,34,0.96))',
+            boxShadow: '0 10px 20px rgba(15,23,42,0.12)',
+          }}
+        />
+        <div className="relative h-full w-full rounded-[28px] border border-amber-950/22 p-[10px]">
+          <div className="absolute inset-[8px] rounded-[24px] border border-amber-50/6" />
+          <div
+            className="absolute inset-x-[4%] bottom-[8%] top-[24%] rounded-[24px]"
+            style={{
+              background: 'linear-gradient(180deg, rgba(85,51,22,0.96), rgba(60,34,14,0.98))',
+              boxShadow: 'inset 0 12px 18px rgba(255,219,168,0.05), inset 0 -12px 22px rgba(18,10,4,0.34)',
+            }}
+          />
+          <div className="relative grid h-full w-full grid-cols-4 grid-rows-2 gap-[5px] pt-[20px]">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <div
+                key={i}
+                className="rounded-[14px]"
+                style={{
+                  background: timeOfDay === 'night'
+                    ? 'radial-gradient(ellipse at 50% 28%, rgba(122,83,44,0.46), rgba(62,38,18,0.72) 58%, rgba(40,24,11,0.86) 100%)'
+                    : 'radial-gradient(ellipse at 50% 28%, rgba(146,97,50,0.56), rgba(96,61,28,0.76) 58%, rgba(59,35,15,0.9) 100%)',
+                  border: `1px solid ${timeOfDay === 'night' ? 'rgba(94,65,36,0.34)' : 'rgba(116,76,36,0.38)'}`,
+                  boxShadow: 'inset 0 10px 14px rgba(255,221,178,0.04), inset 0 -10px 14px rgba(19,10,5,0.32)',
+                }}
+              >
+                <div
+                  className="h-full w-full rounded-[14px]"
+                  style={{
+                    backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 3px, ${timeOfDay === 'night' ? 'rgba(48,28,12,0.26)' : 'rgba(76,46,18,0.18)'} 3px, ${timeOfDay === 'night' ? 'rgba(48,28,12,0.26)' : 'rgba(76,46,18,0.18)'} 4px)`,
+                  }}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* 农具和收纳箱 */}
       <div className="absolute left-[38%] bottom-[26%] z-[3] pointer-events-none">
         <div className="relative h-[70px] w-[70px]">
           <div className="absolute bottom-[12px] left-[8px] h-[22px] w-[44px] rounded-[10px] bg-amber-900/28" />
@@ -656,22 +784,25 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
         </div>
       </div>
 
-      {/* 蝴蝶动画（白天/黄昏） */}
       {(timeOfDay === 'day' || timeOfDay === 'morning') && (
         <div className="absolute inset-0 pointer-events-none z-[5]">
-          {[{ x: 30, y: 35, d: 12, c: '#F472B6' }, { x: 65, y: 25, d: 16, c: '#A78BFA' }, { x: 50, y: 40, d: 20, c: '#FDE047' }].map((b, i) => (
+          {GARDEN_BUTTERFLIES.map((butterfly, index) => (
             <motion.div
-              key={i}
-              className="absolute text-lg"
-              style={{ left: `${b.x}%`, top: `${b.y}%` }}
+              key={index}
+              className="absolute"
+              style={{ left: `${butterfly.x}%`, top: `${butterfly.y}%` }}
               animate={{
-                x: [0, 30, -20, 10, 0],
-                y: [0, -15, -5, -20, 0],
-                rotate: [0, 10, -10, 5, 0]
+                x: [0, 24, -14, 8, 0],
+                y: [0, -14, -6, -18, 0],
+                rotate: [0, 8, -10, 5, 0]
               }}
-              transition={{ duration: b.d, repeat: Infinity, ease: 'easeInOut', delay: i * 3 }}
+              transition={{ duration: butterfly.duration, repeat: Infinity, ease: 'easeInOut', delay: index * 2.5 }}
             >
-              🦋
+              <div className="relative h-4 w-5">
+                <span className="absolute left-0 top-[2px] h-3 w-3 rounded-[90%_65%_85%_70%] -rotate-[18deg]" style={{ background: butterfly.color }} />
+                <span className="absolute right-0 top-[2px] h-3 w-3 rounded-[65%_90%_70%_85%] rotate-[18deg]" style={{ background: butterfly.color }} />
+                <span className="absolute left-1/2 top-0 h-4 w-[2px] -translate-x-1/2 rounded-full bg-slate-700/60" />
+              </div>
             </motion.div>
           ))}
         </div>
@@ -705,29 +836,28 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
           ))}
         </div>
       )}
-      
-      {/* 萤火虫（夜晚） */}
+
       {timeOfDay === 'night' && (
         <div className="absolute inset-0 pointer-events-none z-[5]">
-          {Array.from({ length: 12 }).map((_, i) => (
+          {GARDEN_FIREFLIES.map((firefly, index) => (
             <motion.div
-              key={i}
-              className="absolute w-1.5 h-1.5 rounded-full"
+              key={index}
+              className="absolute h-1.5 w-1.5 rounded-full"
               style={{
-                left: `${10 + Math.random() * 80}%`,
-                top: `${15 + Math.random() * 55}%`,
+                left: firefly.left,
+                top: firefly.top,
                 background: '#fef08a',
                 boxShadow: '0 0 6px 2px rgba(254,240,138,0.6)'
               }}
               animate={{
                 opacity: [0, 0.8, 0.3, 0.9, 0],
-                x: [0, (Math.random() - 0.5) * 40],
-                y: [0, (Math.random() - 0.5) * 30]
+                x: firefly.x,
+                y: firefly.y
               }}
               transition={{
-                duration: 4 + Math.random() * 4,
+                duration: firefly.duration,
                 repeat: Infinity,
-                delay: Math.random() * 5,
+                delay: firefly.delay,
                 ease: 'easeInOut'
               }}
             />
@@ -739,13 +869,10 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
         {children}
       </div>
       
-      {/* 氛围滤镜 */}
-      <div className={`absolute inset-0 pointer-events-none mix-blend-overlay transition-colors duration-[2000ms] z-50 ${sceneConfig.living.lightOverlay[timeOfDay]}`} />
+      <div className={`absolute inset-0 pointer-events-none mix-blend-overlay transition-colors duration-[2000ms] z-50 ${sceneConfig.garden.lightOverlay[timeOfDay]}`} />
     </div>
   );
 }
-
-// 窗外景色组件
 function WindowView({ timeOfDay }: { timeOfDay: TimeOfDay }) {
   const bgColors = {
     morning: 'bg-sky-200',
@@ -756,65 +883,71 @@ function WindowView({ timeOfDay }: { timeOfDay: TimeOfDay }) {
 
   return (
     <div className={`w-full h-full transition-colors duration-[3000ms] ${bgColors[timeOfDay]} relative`}>
-      {/* 太阳/月亮 */}
       <motion.div 
-        className="absolute w-12 h-12 rounded-full"
+        className="absolute h-12 w-12 rounded-full"
         animate={{
           top: timeOfDay === 'day' ? '10%' : timeOfDay === 'dusk' ? '60%' : '80%',
           left: timeOfDay === 'morning' ? '20%' : timeOfDay === 'day' ? '50%' : '80%',
-          backgroundColor: timeOfDay === 'night' ? '#fcd34d' : '#fef3c7', // 月亮黄 vs 太阳黄
+          backgroundColor: timeOfDay === 'night' ? '#fcd34d' : '#fef3c7',
           boxShadow: timeOfDay === 'night' ? '0 0 10px #fcd34d' : '0 0 20px #fef3c7'
         }}
         transition={{ duration: 2 }}
       />
       
-      {/* 云朵 */}
-      <motion.div 
-        className="absolute top-10 left-0 text-white opacity-80 text-4xl"
-        animate={{ x: [0, 100, 0] }}
-        transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-      >
-        ☁️
-      </motion.div>
+      {WINDOW_CLOUDS.map((cloud, index) => (
+        <motion.div
+          key={index}
+          className="absolute"
+          style={{ top: cloud.top, left: cloud.left, opacity: cloud.opacity }}
+          animate={{ x: [0, 110, 0] }}
+          transition={{ duration: cloud.duration, repeat: Infinity, ease: 'linear' }}
+        >
+          <div className="relative" style={{ width: cloud.width, height: cloud.height }}>
+            <span className="absolute bottom-0 left-[10%] h-[58%] w-[34%] rounded-full bg-white/72" />
+            <span className="absolute left-[30%] top-0 h-[74%] w-[36%] rounded-full bg-white/78" />
+            <span className="absolute bottom-[6%] right-[8%] h-[54%] w-[30%] rounded-full bg-white/68" />
+            <span className="absolute inset-x-[14%] bottom-0 h-[40%] rounded-full bg-white/62 blur-[1px]" />
+          </div>
+        </motion.div>
+      ))}
       
-      {/* 星星 (仅夜晚) */}
       {timeOfDay === 'night' && (
         <>
-          <div className="absolute top-4 left-10 w-1 h-1 bg-white rounded-full animate-pulse" />
-          <div className="absolute top-12 left-24 w-1 h-1 bg-white rounded-full animate-pulse delay-75" />
-          <div className="absolute top-8 left-40 w-1 h-1 bg-white rounded-full animate-pulse delay-150" />
+          <div className="absolute top-4 left-10 h-1 w-1 rounded-full bg-white animate-pulse" />
+          <div className="absolute top-12 left-24 h-1 w-1 rounded-full bg-white animate-pulse delay-75" />
+          <div className="absolute top-8 left-40 h-1 w-1 rounded-full bg-white animate-pulse delay-150" />
         </>
       )}
     </div>
   );
 }
 
-// 漂浮尘埃组件
 function FloatingDust() {
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
-      {[...Array(20)].map((_, i) => (
+      {FLOATING_DUST_PARTICLES.map((particle, index) => (
         <motion.div
-          key={i}
-          className="absolute w-1 h-1 bg-white rounded-full opacity-40"
+          key={index}
+          className="absolute h-1 w-1 rounded-full bg-white opacity-40"
           initial={{
-            x: Math.random() * 100 + '%',
-            y: Math.random() * 100 + '%',
-            scale: Math.random() * 0.5 + 0.5
+            x: particle.x,
+            y: particle.y,
+            scale: particle.scale
           }}
           animate={{
-            y: [null, Math.random() * -20 - 10], // 向上漂浮
-            x: [null, (Math.random() - 0.5) * 20], // 左右摆动
-            opacity: [0.4, 0, 0.4]
+            y: [particle.y, `calc(${particle.y} + ${particle.driftY}px)`],
+            x: [particle.x, `calc(${particle.x} + ${particle.driftX}px)`],
+            opacity: [0.38, 0.08, 0.32]
           }}
           transition={{
-            duration: 5 + Math.random() * 10,
+            duration: particle.duration,
             repeat: Infinity,
             ease: 'linear',
-            delay: Math.random() * 5
+            delay: particle.delay
           }}
         />
       ))}
     </div>
   );
 }
+

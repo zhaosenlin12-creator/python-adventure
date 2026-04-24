@@ -23,6 +23,7 @@ from app.api.v1 import (
     food,
     interactions,
     leaderboard,
+    learning_assistant,
     pets,
     pet_chat,
     progress,
@@ -194,6 +195,7 @@ app.include_router(daily.router, prefix="/api/v1/daily", tags=["每日签到"])
 app.include_router(custom_levels.router, prefix="/api/v1", tags=["自定义关卡"])
 app.include_router(community.router, prefix="/api/v1", tags=["社区关卡"])
 app.include_router(pet_chat.router, prefix="/api/v1/ai", tags=["宠物 AI 聊天"])
+app.include_router(learning_assistant.router, prefix="/api/v1/ai/learning-assistant", tags=["AI Learning Assistant"])
 app.include_router(user_questions.router, prefix="/api/v1/user-questions", tags=["用户题库"])
 app.include_router(ai_questions.router, prefix="/api/v1/ai/questions", tags=["AI 出题"])
 

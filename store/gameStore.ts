@@ -1,13 +1,14 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { useAuthStore } from './authStore';
-import { useCoinStore } from './coinStore';
 import * as progressAPI from '@/lib/api/progress';
 import { TokenExpiredError } from '@/lib/api/progress';
 import { getApiBaseUrl } from '@/lib/config/api';
 import { balanceXP, balanceCoins } from '@/lib/rankSystem';
 import { AgeGroup } from '@/types/ageGroup';
 import { throttle } from '@/lib/utils/apiCache';
+import { toFriendlyMessage } from '@/lib/utils/friendlyError';
+import { mergeArenaRewardMarker } from '@/lib/arenaRewards';
 
 // 生产环境禁用调试日志
 // 只在真正的本地开发环境输出调试日志
@@ -221,11 +222,14 @@ export const useGameStore = create<GameState>()(
                     lastArenaSubmissionKey = submissionKey;
                     lastArenaSubmissionAt = now;
                     const { user, token } = useAuthStore.getState();
-                    if (!user) return;
+                    if (!user || !token) return;
 
                     const response = await fetch(`${getApiBaseUrl()}/leaderboard/submit`, {
                         method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`,
+                        },
                         body: JSON.stringify({
                             user_id: user.id,
                             username: user.username,
@@ -236,31 +240,32 @@ export const useGameStore = create<GameState>()(
                         })
                     });
 
-                    // 🪙 处理金币奖励
                     if (response.ok) {
                         const result = await response.json();
                         debugLog('[GameStore] Arena score submitted:', result);
-                        
-                        // 如果后端返回了金币信息
-                        if (result.coins_earned && result.coin_awarded) {
-                            // 更新本地金币余额
-                            set({ coins: (get().coins || 0) + result.coins_earned });
-                            
-                            // 显示金币Toast
-                            if (typeof window !== 'undefined') {
-                                const { showCoinRewardToast } = await import('@/components/ui/CoinRewardToast');
-                                showCoinRewardToast(
-                                    result.coins_earned,
-                                    `竞技场挑战: ${data.challengeId}`,
-                                    'reward'
-                                );
-                            }
-                            
-                            debugLog('[GameStore] Coins awarded:', result.coins_earned);
-                            if (token) {
-                                useCoinStore.getState().loadBalance(token).catch(() => {});
-                            }
+
+                        if (result.diamonds_earned || result.reward_marker) {
+                            set((state) => ({
+                                coins: state.coins + (result.diamonds_earned || 0),
+                                completedChallenges: mergeArenaRewardMarker(
+                                    state.completedChallenges,
+                                    result.reward_marker
+                                ),
+                            }));
+                            get().saveToCloud();
                         }
+
+                        if (result.diamonds_earned > 0 && typeof window !== 'undefined') {
+                            const { showDiamondRewardToast } = await import('@/components/ui/CoinRewardToast');
+                            const rewardTip =
+                                result.daily_reward_remaining > 0
+                                    ? `竞技场通关 · 今日还可领 ${result.daily_reward_remaining} 次`
+                                    : '竞技场通关 · 今日钻石已领满';
+                            showDiamondRewardToast(result.diamonds_earned, rewardTip, 'reward');
+                        }
+                    } else {
+                        const errorPayload = await response.json().catch(() => null);
+                        console.error('[GameStore] Failed to submit arena score:', errorPayload ?? response.statusText);
                     }
                 } catch (error) {
                     console.error('Failed to submit score:', error);
@@ -401,7 +406,10 @@ export const useGameStore = create<GameState>()(
                         useAuthStore.getState().handleTokenExpired();
                     } else {
                         console.error('[GameStore] Failed to load progress from cloud:', error);
-                        useAuthStore.getState().setSyncStatus('failed', String(error));
+                        useAuthStore.getState().setSyncStatus(
+                            'failed',
+                            toFriendlyMessage(error, '云端进度暂时没有同步成功，本地进度还在。')
+                        );
                     }
                     set({ isSyncing: false });
                 }
@@ -462,7 +470,10 @@ export const useGameStore = create<GameState>()(
                             useAuthStore.getState().handleTokenExpired();
                         } else {
                             console.error('[GameStore] Failed to save progress to cloud:', error);
-                            useAuthStore.getState().setSyncStatus('failed', String(error));
+                            useAuthStore.getState().setSyncStatus(
+                                'failed',
+                                toFriendlyMessage(error, '云端进度暂时没有同步成功，本地进度还在。')
+                            );
                         }
                     }
                 });

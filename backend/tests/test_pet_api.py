@@ -264,6 +264,24 @@ class TestPetFeeding:
         assert pet_state[0] == 10
         assert pet_state[1] == 1
 
+    def test_feed_pet_bulk_quantity_scales_effects(self, auth_token, clean_pets):
+        create_response = _create_pet(auth_token)
+        pet_id = create_response.json()["pet"]["id"]
+        _set_food_inventory(TEST_USER["username"], "fish", 2)
+
+        response = client.put(
+            f"/api/v1/pets/{pet_id}/feed",
+            headers=_headers(auth_token),
+            json={"food_id": "fish", "quantity": 2},
+        )
+
+        assert response.status_code == 200, response.text
+        pet = response.json()["pet"]
+        assert response.json()["remaining_quantity"] == 0
+        assert pet["exp"] == 36
+        assert pet["attributes"]["intelligence"] == 4
+        assert pet["intimacy"] == 2
+
 
 class TestPetStatus:
     def test_normal_status(self, auth_token, clean_pets):

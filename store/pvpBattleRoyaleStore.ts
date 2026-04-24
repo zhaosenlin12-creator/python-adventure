@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 
 import { getApiBaseUrl } from '@/lib/config/api';
+import { showFriendlyErrorToast } from '@/lib/utils/friendlyError';
 import { useAuthStore } from '@/store/authStore';
 import { useGameStore } from '@/store/gameStore';
 import { usePetStore } from '@/store/petStore';
@@ -38,7 +39,11 @@ interface BattleRoyaleState {
   reset: () => void;
 }
 
-const STABLE_BATTLE_ROYALE_CAP = 6;
+export const STABLE_BATTLE_ROYALE_CAP = 8;
+export const STABLE_BATTLE_ROYALE_HUMAN_CAP = 4;
+export const STABLE_BATTLE_ROYALE_ACTIVE_ROOM_CAP = 4;
+export const STABLE_BATTLE_ROYALE_IN_PROGRESS_CAP = 2;
+export const STABLE_BATTLE_ROYALE_DEFAULT_BOT_COUNT = 4;
 
 const initialState = {
   cap: STABLE_BATTLE_ROYALE_CAP,
@@ -58,7 +63,7 @@ const NETWORK_ERROR_PATTERNS = [
   'fetch failed',
 ];
 
-function translateBattleRoyaleError(message: string): string {
+export function translateBattleRoyaleError(message: string): string {
   const normalized = message.toLowerCase().trim();
 
   if (NETWORK_ERROR_PATTERNS.some((pattern) => normalized.includes(pattern))) {
@@ -67,8 +72,11 @@ function translateBattleRoyaleError(message: string): string {
   if (normalized.includes('room is full')) {
     return '房间人数已满，请刷新列表或选择其他房间。';
   }
+  if (normalized.includes('only supports four human players')) {
+    return '同一房间最多 4 名真人，其余位置留给敌方人机。';
+  }
   if (normalized.includes('only supports two human players')) {
-    return '这一模式当前最多支持 2 名真人组队，其余位置请使用人机补足。';
+    return '同一房间最多 4 名真人，其余位置留给敌方人机。';
   }
   if (normalized.includes('room not found')) {
     return '房间不存在或已关闭，请返回大厅刷新后重试。';
@@ -92,7 +100,7 @@ function translateBattleRoyaleError(message: string): string {
     return '只有房主可以提交这局的最终结果。';
   }
   if (normalized.includes('at least two fighters are required')) {
-    return '至少需要 2 名参战者才能开始，请先邀请玩家或添加人机。';
+    return '至少需要 2 名参战者才能开始，请先补足对手或邀请玩家。';
   }
   if (normalized.includes('you are not in this room')) {
     return '你已经不在这个房间里了，请返回大厅后重新进入。';
@@ -104,10 +112,10 @@ function translateBattleRoyaleError(message: string): string {
     return '生存乱斗请求失败，请稍后重试。';
   }
   if (normalized.includes('battle royale server is busy')) {
-    return '当前服务器正在处理另一场生存乱斗，请稍候几分钟后再开始新对局。';
+    return '当前已有 2 个房间正在对战，请稍后再开始这一局。';
   }
   if (normalized.includes('battle royale room slot is occupied')) {
-    return '当前服务器同一时间只开放一个生存乱斗房间。请先加入现有房间，或等本局结束后再创建新房间。';
+    return '当前等待中和进行中的乱斗房间已到上限，请先加入现有房间或稍后再试。';
   }
 
   return message;
@@ -118,6 +126,12 @@ function toBattleRoyaleUiError(error: unknown, fallback: string): string {
     return translateBattleRoyaleError(error.message.trim());
   }
   return fallback;
+}
+
+function reportBattleRoyaleActionError(error: unknown, fallback: string): string {
+  const message = toBattleRoyaleUiError(error, fallback);
+  void showFriendlyErrorToast(message, fallback);
+  return message;
 }
 
 function clampRoomCap(value: number | undefined): number {
@@ -322,13 +336,19 @@ export const usePvpBattleRoyaleStore = create<BattleRoyaleState>()((set, get) =>
       throw new Error('当前没有可编辑的生存乱斗房间。');
     }
 
-    const data = await apiRequest<BattleRoyaleRoomResponse>(`/pvp-br/rooms/${roomId}/bots`, {
-      method: 'POST',
-      body: JSON.stringify({ difficulty }),
-    });
-    const room = normalizeRoom(data.room);
-    set({ currentRoom: room, error: null });
-    return room;
+    try {
+      const data = await apiRequest<BattleRoyaleRoomResponse>(`/pvp-br/rooms/${roomId}/bots`, {
+        method: 'POST',
+        body: JSON.stringify({ difficulty }),
+      });
+      const room = normalizeRoom(data.room);
+      set({ currentRoom: room, error: null });
+      return room;
+    } catch (error) {
+      const message = reportBattleRoyaleActionError(error, '添加敌方人机失败，请稍后再试。');
+      set({ error: message });
+      throw new Error(message);
+    }
   },
 
   removeBot: async (botId: string) => {
@@ -337,12 +357,18 @@ export const usePvpBattleRoyaleStore = create<BattleRoyaleState>()((set, get) =>
       throw new Error('当前没有可编辑的生存乱斗房间。');
     }
 
-    const data = await apiRequest<BattleRoyaleRoomResponse>(`/pvp-br/rooms/${roomId}/bots/${botId}`, {
-      method: 'DELETE',
-    });
-    const room = normalizeRoom(data.room);
-    set({ currentRoom: room, error: null });
-    return room;
+    try {
+      const data = await apiRequest<BattleRoyaleRoomResponse>(`/pvp-br/rooms/${roomId}/bots/${botId}`, {
+        method: 'DELETE',
+      });
+      const room = normalizeRoom(data.room);
+      set({ currentRoom: room, error: null });
+      return room;
+    } catch (error) {
+      const message = reportBattleRoyaleActionError(error, '移除敌方人机失败，请稍后再试。');
+      set({ error: message });
+      throw new Error(message);
+    }
   },
 
   startCurrentRoom: async () => {
@@ -351,12 +377,18 @@ export const usePvpBattleRoyaleStore = create<BattleRoyaleState>()((set, get) =>
       throw new Error('当前没有可以开始的生存乱斗房间。');
     }
 
-    const data = await apiRequest<BattleRoyaleRoomResponse>(`/pvp-br/rooms/${roomId}/start`, {
-      method: 'POST',
-    });
-    const room = normalizeRoom(data.room);
-    set({ currentRoom: room, error: null });
-    return room;
+    try {
+      const data = await apiRequest<BattleRoyaleRoomResponse>(`/pvp-br/rooms/${roomId}/start`, {
+        method: 'POST',
+      });
+      const room = normalizeRoom(data.room);
+      set({ currentRoom: room, error: null });
+      return room;
+    } catch (error) {
+      const message = reportBattleRoyaleActionError(error, '开启生存乱斗失败，请稍后再试。');
+      set({ error: message });
+      throw new Error(message);
+    }
   },
 
   finishCurrentRoom: async (winnerUserId?: number | null) => {

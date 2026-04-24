@@ -1,3 +1,5 @@
+import { EXTRA_LEVELS } from "./learningExtraLevels";
+
 export interface BattleConfig {
     enemyName: string;
     enemyAvatar: string; // Emoji or URL
@@ -22,12 +24,16 @@ export interface Level {
     reqLevel: number;
     type: 'lesson' | 'boss' | 'battle';
     initialCode: string;
+    runtime?: 'python' | 'pattern';
+    editorLanguage?: 'python' | 'cpp' | 'java' | 'go' | 'javascript' | 'prompt' | 'html' | 'css' | 'sql' | 'bash';
     expectedOutput?: string; // Simple string match
     validationKeyword?: string; // Keyword check
+    requiredSnippets?: string[];
+    simulatedOutput?: string[];
     battle?: BattleConfig; // Optional battle config
 }
 
-export const LEVELS: Level[] = [
+const BASE_LEVELS: Level[] = [
     // ===== CHAPTER 1: Python Basics =====
     {
         id: 'level-1',
@@ -2060,3 +2066,5 @@ export const LEVELS: Level[] = [
         }
     }
 ];
+
+export const LEVELS: Level[] = [...BASE_LEVELS, ...EXTRA_LEVELS];

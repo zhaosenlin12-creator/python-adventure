@@ -267,7 +267,11 @@ async def feed_pet(
             if not food_type:
                 raise HTTPException(status_code=400, detail=f"Invalid food_id: {food_id}")
 
-            effects = food_type.effects or {}
+            base_effects = food_type.effects or {}
+            effects = {
+                key: int(value) * quantity
+                for key, value in base_effects.items()
+            }
 
             # 纭繚鑳屽寘琛ㄥ瓨??
             db.execute(text("""

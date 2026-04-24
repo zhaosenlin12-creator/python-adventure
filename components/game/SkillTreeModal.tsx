@@ -8,13 +8,14 @@ import {
     ChevronRight,
     ChevronsUp,
     Clock3,
-    Coins,
+    Gem,
     Shield,
     Sparkles,
     Wind,
     X,
     Zap,
 } from 'lucide-react';
+import { TRAINING_CURRENCY_LABEL } from '@/lib/gameEconomy';
 import { useGameStore } from '@/store/gameStore';
 import { SKILL_SHORT_INSTRUCTIONS } from '@/lib/gameplayText';
 import {
@@ -95,7 +96,7 @@ const CAMPAIGN_BADGES: CampaignBadge[] = [
     {
         skillId: 'school_star',
         title: '校园之星',
-        description: '训练金币获取 +10%。',
+        description: '钻石获取 +10%。',
         unlockHint: '完成战役 2 自动获得。',
     },
     {
@@ -251,29 +252,34 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
                 }
 
                 const owned = skills.includes(card.skillId);
-                const campaignReady = campaignAccessSet.has(rule.requiredCampaignId);
-                const levelReady = level >= rule.requiredLevel;
+                const campaignReady = !rule.requiredCampaignId || campaignAccessSet.has(rule.requiredCampaignId);
+                const levelReady = level >= (rule.requiredLevel ?? 1);
                 const prerequisitesReady = card.prerequisiteSkills.every((skillId) => skills.includes(skillId));
                 const affordable = coins >= rule.costCoins;
                 const canUnlock =
                     !owned && campaignReady && levelReady && prerequisitesReady && affordable;
 
                 const blockers: string[] = [];
-                if (!campaignReady) blockers.push(`先玩到 ${rule.requiredCampaignLabel}`);
-                if (!levelReady) blockers.push(`角色需 Lv.${rule.requiredLevel}+`);
+                if (!campaignReady && rule.requiredCampaignLabel) blockers.push(`先玩到 ${rule.requiredCampaignLabel}`);
+                if (!levelReady) blockers.push(`角色需 Lv.${rule.requiredLevel ?? 1}+`);
                 if (!prerequisitesReady) {
                     blockers.push(
                         `前置：${card.prerequisiteSkills.map((skillId) => getSkillDisplayName(skillId)).join('、')}`
                     );
                 }
-                if (!affordable) blockers.push(`训练金币不足（需 ${rule.costCoins}）`);
+                if (!affordable) blockers.push(`${TRAINING_CURRENCY_LABEL}不足（需 ${rule.costCoins}）`);
+
+                const costText = rule.costCoins > 0 ? `${rule.costCoins} ${TRAINING_CURRENCY_LABEL}` : '免费起步';
 
                 return {
                     ...card,
                     rule,
                     owned,
                     canUnlock,
-                    statusText: owned ? '已掌握，进入关卡后直接生效。' : blockers.join(' · ') || '可以学习',
+                    costText,
+                    statusText: owned
+                        ? '已掌握，进入关卡后直接生效。'
+                        : blockers.join(' · ') || (rule.costCoins > 0 ? '可以学习' : '可立即领取'),
                 };
             }),
         [campaignAccessSet, coins, level, skills]
@@ -342,7 +348,7 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
                                 </div>
                                 <h2 className="mt-1 text-xl font-bold text-white">技能训练册</h2>
                                 <p className="mt-1 text-sm leading-6 text-slate-400">
-                                    先推进战役，再用训练金币学习。宠物和家园金币不在这里消耗。
+                                    先领起步技能，再用钻石解锁进阶能力。宠物和家园金币不会在这里扣除。
                                 </p>
                             </div>
                             <button
@@ -360,12 +366,12 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
                             </div>
                             <div className="rounded-2xl border border-slate-800 bg-slate-900/80 px-3 py-3">
                                 <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-slate-500">
-                                    <Coins className="h-3.5 w-3.5" />
-                                    训练金币
+                                    <Gem className="h-3.5 w-3.5" />
+                                    {TRAINING_CURRENCY_LABEL}
                                 </div>
                                 <div className="mt-1 text-lg font-bold text-amber-300">{coins}</div>
                                 <div className="mt-1 text-[11px] leading-5 text-slate-500">
-                                    只用于这里学技能，不会扣宠物金币。
+                                    只用于学技能，不会扣宠物金币。
                                 </div>
                             </div>
                         </div>
@@ -423,7 +429,7 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
                                 ) : null}
 
                                 <div className="rounded-2xl border border-cyan-400/20 bg-cyan-400/8 px-3 py-3 text-xs leading-5 text-cyan-100">
-                                    推荐路线：二段跳 → 冲刺 / 墙跳 → 滑翔 + 时间减速 → 化学护盾
+                                    推荐路线：先免费领二段跳，再学冲刺 / 墙跳，后续补滑翔、减速和护盾。
                                 </div>
 
                                 {shopCards.map((card) => {
@@ -470,14 +476,18 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
 
                                                     <div className="mt-2.5 flex flex-wrap gap-2 text-xs">
                                                         <span className="rounded-full bg-amber-400/10 px-2.5 py-1 font-semibold text-amber-200">
-                                                            {card.rule.costCoins} 训练金币
+                                                            {card.costText}
                                                         </span>
-                                                        <span className="rounded-full bg-slate-800 px-2.5 py-1 font-semibold text-slate-300">
-                                                            {card.rule.requiredCampaignLabel}
-                                                        </span>
-                                                        <span className="rounded-full bg-slate-800 px-2.5 py-1 font-semibold text-slate-300">
-                                                            Lv.{card.rule.requiredLevel}+
-                                                        </span>
+                                                        {card.rule.requiredCampaignLabel ? (
+                                                            <span className="rounded-full bg-slate-800 px-2.5 py-1 font-semibold text-slate-300">
+                                                                {card.rule.requiredCampaignLabel}
+                                                            </span>
+                                                        ) : null}
+                                                        {(card.rule.requiredLevel ?? 1) > 1 ? (
+                                                            <span className="rounded-full bg-slate-800 px-2.5 py-1 font-semibold text-slate-300">
+                                                                Lv.{card.rule.requiredLevel}+
+                                                            </span>
+                                                        ) : null}
                                                     </div>
 
                                                     {card.prerequisiteSkills.length > 0 ? (
@@ -510,7 +520,11 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
                                                                 : 'cursor-not-allowed bg-slate-800 text-slate-500'
                                                     }`}
                                                 >
-                                                    {card.owned ? '已掌握' : `学习 ${card.rule.costCoins} 训练金币`}
+                                                    {card.owned
+                                                        ? '已掌握'
+                                                        : card.rule.costCoins > 0
+                                                            ? `学习 ${card.rule.costCoins} ${TRAINING_CURRENCY_LABEL}`
+                                                            : '免费领取'}
                                                 </button>
                                             </div>
                                         </section>
@@ -524,7 +538,7 @@ export default function SkillTreeModal({ isOpen, onClose }: SkillTreeModalProps)
                                         <div>
                                             <div className="text-sm font-semibold text-white">战役专精</div>
                                             <div className="mt-1 text-xs leading-5 text-slate-400">
-                                                这些能力不花训练金币，推进战役后会自动加入或强化。
+                                                这些能力不花钻石，推进战役后会自动加入或强化。
                                             </div>
                                         </div>
                                         <div className="rounded-full bg-slate-800 px-3 py-1 text-xs font-semibold text-slate-300">

@@ -196,8 +196,8 @@ export const SKILLS: Record<string, Skill> = {
     id: 'school_star',
     name: 'School Star',
     nameCN: '校园之星',
-    description: 'Passive: +10% coins gain',
-    descriptionCN: '被动：金币获取+10%',
+    description: 'Passive: +10% diamonds gain',
+    descriptionCN: '被动：钻石获取+10%',
     icon: '⭐',
     unlockCampaign: 'campaign_2',
     type: 'utility',
@@ -294,18 +294,16 @@ export function formatSkillDisplayNames(ids: string[]): string {
 export interface SkillShopRule {
   skillId: string;
   costCoins: number;
-  requiredCampaignId: string;
-  requiredCampaignLabel: string;
-  requiredLevel: number;
+  requiredCampaignId?: string;
+  requiredCampaignLabel?: string;
+  requiredLevel?: number;
 }
 
 export const SKILL_SHOP_RULES: SkillShopRule[] = [
   {
     skillId: 'double_jump',
-    costCoins: 120,
-    requiredCampaignId: 'campaign_1',
-    requiredCampaignLabel: '古街探险',
-    requiredLevel: 2,
+    costCoins: 0,
+    requiredLevel: 1,
   },
   {
     skillId: 'dash',

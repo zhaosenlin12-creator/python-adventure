@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Coins, Gift, Megaphone, Sparkles, X } from 'lucide-react';
 
+import { showCoinRewardToast } from '@/components/ui/CoinRewardToast';
 import { getApiBaseUrl } from '@/lib/config/api';
 import { useAuthStore } from '@/store/authStore';
 import { useCoinStore } from '@/store/coinStore';
-import { showCoinRewardToast } from '@/components/ui/CoinRewardToast';
 
 interface SystemAnnouncement {
   slug: string;
@@ -215,7 +215,7 @@ export default function SystemUpdateAnnouncement({
               </div>
 
               <div className="flex items-center justify-between border-t border-white/8 bg-slate-950/70 px-6 py-4">
-                <div className="text-xs text-slate-400">补给已送达，查收后继续冒险吧。</div>
+                <div className="text-xs text-slate-400">补给已经送达，查收后继续冒险吧。</div>
                 <button
                   type="button"
                   data-testid="system-update-confirm"

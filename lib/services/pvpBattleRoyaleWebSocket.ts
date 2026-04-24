@@ -210,6 +210,14 @@ export class BattleRoyaleWebSocketClient {
     return this.sendRaw({ type: 'br_snapshot', payload }, SNAPSHOT_BUFFER_LIMIT_BYTES);
   }
 
+  sendPresenceState(payload: Record<string, unknown>) {
+    return this.sendRaw({ type: 'br_presence_state', payload }, INPUT_BUFFER_LIMIT_BYTES);
+  }
+
+  sendBotDamage(payload: Record<string, unknown>) {
+    return this.sendRaw({ type: 'br_bot_damage', payload }, INPUT_BUFFER_LIMIT_BYTES);
+  }
+
   sendQuizOffer(targetUserId: number, payload: Record<string, unknown>) {
     return this.sendRaw({ type: 'br_quiz_offer', target_user_id: targetUserId, payload });
   }

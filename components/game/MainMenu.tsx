@@ -5,6 +5,7 @@ import { Gamepad2, BookOpen, Trophy, LogOut, User, Coins, Zap } from "lucide-rea
 import { useGameStore } from "@/store/gameStore";
 import { useAuthStore } from "@/store/authStore";
 import { useI18n } from "@/lib/i18n";
+import { TRAINING_CURRENCY_LABEL } from "@/lib/gameEconomy";
 
 interface MainMenuProps {
     onNavigateToWorld: () => void;
@@ -67,7 +68,7 @@ export default function MainMenu({
                     <div className="bg-slate-800 border-2 border-slate-700 rounded-xl p-4 flex items-center gap-3">
                         <Coins className="w-8 h-8 text-amber-400" />
                         <div>
-                            <div className="text-xs text-slate-400">Coins</div>
+                            <div className="text-xs text-slate-400">{TRAINING_CURRENCY_LABEL}</div>
                             <div className="text-2xl font-pixel text-amber-400">{coins}</div>
                         </div>
                     </div>

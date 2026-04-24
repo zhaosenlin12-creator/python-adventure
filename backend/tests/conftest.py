@@ -2,7 +2,8 @@ import os
 from pathlib import Path
 
 
-TEST_DB_PATH = Path(__file__).resolve().parents[1] / "test_backend.db"
+_DEFAULT_TEST_DB_PATH = Path(__file__).resolve().parents[1] / f"test_backend_{os.getpid()}.db"
+TEST_DB_PATH = Path(os.environ.get("TEST_DB_PATH", _DEFAULT_TEST_DB_PATH)).resolve()
 
 
 def _delete_sqlite_sidecars(db_path: Path) -> None:

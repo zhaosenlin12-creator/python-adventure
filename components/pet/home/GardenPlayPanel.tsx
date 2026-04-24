@@ -7,7 +7,7 @@ import { FARM_PLOTS } from '@/components/pet/home/FarmGrid';
 
 type CropId = 'carrot' | 'strawberry' | 'pumpkin' | 'sunflower';
 
-type PlotStage = 'empty' | 'seed' | 'sprout' | 'bloom' | 'ready';
+type PlotStage = 'empty' | 'seed' | 'sprout' | 'bloom' | 'ready' | 'thirsty' | 'wilted';
 
 interface GardenPlotState {
   cropId: CropId | null;
@@ -22,6 +22,17 @@ interface GardenSaveState {
   lastPatrolAt: number | null;
 }
 
+interface PlotView {
+  stage: PlotStage;
+  progress: number;
+  remainingMs: number;
+  cropId: CropId | null;
+  crop: (typeof CROPS)[CropId] | null;
+  actionLabel: string;
+  subtitle: string;
+  needsWater: boolean;
+}
+
 interface GardenPlayPanelProps {
   userId?: string | number | null;
   currentPetName: string;
@@ -31,46 +42,62 @@ interface GardenPlayPanelProps {
 
 const STORAGE_KEY_PREFIX = 'pet-home-garden-v2';
 const MAX_PLOTS = FARM_PLOTS.length;
+const PATROL_COOLDOWN_MS = 90 * 1000;
 
-const CROPS: Record<
+const CROPS = {
+  carrot: {
+    label: '胡萝卜',
+    accent: '#fb923c',
+    cardClass: 'from-orange-500/18 to-amber-400/10 border-orange-300/30',
+    growMs: 3 * 60 * 1000,
+    thirstMs: 70 * 1000,
+    wiltMs: 150 * 1000,
+    mood: '清爽醒神',
+    tip: '长得稳，适合先把田地热起来。',
+  },
+  strawberry: {
+    label: '草莓',
+    accent: '#f43f5e',
+    cardClass: 'from-rose-500/18 to-pink-400/10 border-rose-300/30',
+    growMs: 4 * 60 * 1000,
+    thirstMs: 80 * 1000,
+    wiltMs: 170 * 1000,
+    mood: '甜香满园',
+    tip: '成熟后很亮眼，收获感强。',
+  },
+  pumpkin: {
+    label: '南瓜',
+    accent: '#f59e0b',
+    cardClass: 'from-amber-500/18 to-orange-400/10 border-amber-300/30',
+    growMs: 5 * 60 * 1000,
+    thirstMs: 90 * 1000,
+    wiltMs: 190 * 1000,
+    mood: '丰收厚实',
+    tip: '慢一点，但成熟时最有成就感。',
+  },
+  sunflower: {
+    label: '向日葵',
+    accent: '#facc15',
+    cardClass: 'from-yellow-500/18 to-amber-300/10 border-yellow-300/30',
+    growMs: 160 * 1000,
+    thirstMs: 60 * 1000,
+    wiltMs: 130 * 1000,
+    mood: '阳光明亮',
+    tip: '长得最快，适合先练手。',
+  },
+} satisfies Record<
   CropId,
   {
     label: string;
     accent: string;
     cardClass: string;
     growMs: number;
+    thirstMs: number;
+    wiltMs: number;
     mood: string;
+    tip: string;
   }
-> = {
-  carrot: {
-    label: '胡萝卜',
-    accent: '#fb923c',
-    cardClass: 'from-orange-500/18 to-amber-400/10 border-orange-300/30',
-    growMs: 7 * 60 * 1000,
-    mood: '清脆醒神',
-  },
-  strawberry: {
-    label: '草莓',
-    accent: '#f43f5e',
-    cardClass: 'from-rose-500/18 to-pink-400/10 border-rose-300/30',
-    growMs: 8 * 60 * 1000,
-    mood: '甜香满园',
-  },
-  pumpkin: {
-    label: '南瓜',
-    accent: '#f59e0b',
-    cardClass: 'from-amber-500/18 to-orange-400/10 border-amber-300/30',
-    growMs: 9 * 60 * 1000,
-    mood: '丰收感十足',
-  },
-  sunflower: {
-    label: '向日葵',
-    accent: '#facc15',
-    cardClass: 'from-yellow-500/18 to-amber-300/10 border-yellow-300/30',
-    growMs: 6 * 60 * 1000,
-    mood: '阳光明亮',
-  },
-};
+>;
 
 function createEmptyPlot(): GardenPlotState {
   return {
@@ -133,68 +160,112 @@ function normalizeGardenState(input: unknown): GardenSaveState {
   };
 }
 
-function getPlotProgress(plot: GardenPlotState, now: number) {
+function formatRemainingMs(ms: number) {
+  if (ms <= 0) {
+    return '马上成熟';
+  }
+  const minutes = Math.ceil(ms / 60000);
+  return `${minutes} 分钟`;
+}
+
+function getPlotProgress(plot: GardenPlotState, now: number): PlotView {
   if (!plot.cropId || !plot.plantedAt) {
     return {
-      stage: 'empty' as PlotStage,
+      stage: 'empty',
       progress: 0,
       remainingMs: 0,
       cropId: null,
       crop: null,
       actionLabel: '播种',
-      subtitle: '空地待耕',
+      subtitle: '空地待播种',
+      needsWater: false,
     };
   }
 
   const crop = CROPS[plot.cropId];
-  const wateredBonusRatio = plot.wateredAt ? 0.16 : 0;
-  const careBonusRatio = clamp(plot.careCount * 0.03, 0, 0.09);
+  const wateredBonusRatio = plot.wateredAt ? 0.12 : 0;
+  const careBonusRatio = clamp(plot.careCount * 0.025, 0, 0.12);
   const effectiveGrowMs = crop.growMs * (1 - wateredBonusRatio - careBonusRatio);
   const elapsedMs = Math.max(0, now - plot.plantedAt);
   const progress = clamp(elapsedMs / effectiveGrowMs, 0, 1);
+  const remainingMs = Math.max(0, effectiveGrowMs - elapsedMs);
+  const lastCareAt = plot.wateredAt ?? plot.plantedAt;
+  const dryMs = Math.max(0, now - lastCareAt);
+
+  if (dryMs >= crop.wiltMs) {
+    return {
+      stage: 'wilted',
+      progress,
+      remainingMs,
+      cropId: plot.cropId,
+      crop,
+      actionLabel: '浇水救回',
+      subtitle: `${crop.label}有点打蔫了`,
+      needsWater: true,
+    };
+  }
 
   if (progress >= 1) {
     return {
-      stage: 'ready' as PlotStage,
+      stage: 'ready',
       progress,
       remainingMs: 0,
       cropId: plot.cropId,
       crop,
       actionLabel: '收获',
-      subtitle: `${crop.label}已经成熟`,
+      subtitle: `${crop.label}成熟了`,
+      needsWater: false,
     };
   }
+
+  if (dryMs >= crop.thirstMs) {
+    return {
+      stage: 'thirsty',
+      progress,
+      remainingMs,
+      cropId: plot.cropId,
+      crop,
+      actionLabel: '浇水',
+      subtitle: `${crop.label}在等水`,
+      needsWater: true,
+    };
+  }
+
   if (progress >= 0.68) {
     return {
-      stage: 'bloom' as PlotStage,
+      stage: 'bloom',
       progress,
-      remainingMs: effectiveGrowMs - elapsedMs,
+      remainingMs,
       cropId: plot.cropId,
       crop,
-      actionLabel: plot.wateredAt ? '等待成熟' : '浇水',
-      subtitle: `快成熟了，还差 ${Math.ceil((effectiveGrowMs - elapsedMs) / 60000)} 分钟`,
+      actionLabel: '等待成熟',
+      subtitle: `${formatRemainingMs(remainingMs)} 后可收`,
+      needsWater: false,
     };
   }
+
   if (progress >= 0.32) {
     return {
-      stage: 'sprout' as PlotStage,
+      stage: 'sprout',
       progress,
-      remainingMs: effectiveGrowMs - elapsedMs,
+      remainingMs,
       cropId: plot.cropId,
       crop,
-      actionLabel: plot.wateredAt ? '继续成长' : '浇水',
-      subtitle: `${crop.label}正在长叶`,
+      actionLabel: '继续生长',
+      subtitle: `${crop.label}正在抽叶`,
+      needsWater: false,
     };
   }
 
   return {
-    stage: 'seed' as PlotStage,
+    stage: 'seed',
     progress,
-    remainingMs: effectiveGrowMs - elapsedMs,
+    remainingMs,
     cropId: plot.cropId,
     crop,
-    actionLabel: plot.wateredAt ? '等待发芽' : '浇水',
-    subtitle: `${crop.label}刚刚播下`,
+    actionLabel: '等待发芽',
+    subtitle: `${crop.label}刚种下`,
+    needsWater: false,
   };
 }
 
@@ -208,9 +279,13 @@ function CropSigil({
   compact?: boolean;
 }) {
   const crop = CROPS[cropId];
-  const size = compact ? 28 : 42;
-  const sproutHeight = stage === 'seed' ? '24%' : stage === 'sprout' ? '46%' : '68%';
-  const bloomScale = stage === 'ready' ? 1 : stage === 'bloom' ? 0.84 : 0.72;
+  const size = compact ? 28 : 54;
+  const stemHeight =
+    stage === 'seed' ? size * 0.16 : stage === 'sprout' ? size * 0.38 : stage === 'thirsty' ? size * 0.48 : size * 0.62;
+  const wilted = stage === 'wilted';
+  const bloomVisible = stage === 'bloom' || stage === 'ready' || stage === 'thirsty';
+  const stemRotation = wilted ? -22 : 0;
+  const bloomOpacity = wilted ? 0.28 : stage === 'thirsty' ? 0.72 : 1;
 
   return (
     <div
@@ -219,15 +294,18 @@ function CropSigil({
       aria-hidden="true"
     >
       <div
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 rounded-full bg-slate-950/18 blur-sm"
-        style={{ width: size * 0.62, height: Math.max(6, size * 0.16) }}
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 rounded-full bg-slate-950/20 blur-sm"
+        style={{ width: size * 0.68, height: Math.max(7, size * 0.18) }}
       />
       <div
-        className="absolute bottom-[16%] left-1/2 -translate-x-1/2 rounded-full"
+        className="absolute bottom-[16%] left-1/2 origin-bottom -translate-x-1/2 rounded-full"
         style={{
-          width: size * 0.12,
-          height: sproutHeight,
-          background: 'linear-gradient(180deg, rgba(167,243,208,0.95) 0%, rgba(22,163,74,0.92) 100%)',
+          width: size * 0.14,
+          height: stemHeight,
+          transform: `translateX(-50%) rotate(${stemRotation}deg)`,
+          background: wilted
+            ? 'linear-gradient(180deg, rgba(163,163,163,0.85) 0%, rgba(120,53,15,0.85) 100%)'
+            : 'linear-gradient(180deg, rgba(167,243,208,0.96) 0%, rgba(22,163,74,0.92) 100%)',
         }}
       />
       {stage !== 'seed' && (
@@ -235,54 +313,69 @@ function CropSigil({
           <div
             className="absolute rounded-full"
             style={{
-              left: size * 0.16,
-              bottom: size * 0.3,
-              width: size * 0.32,
-              height: size * 0.2,
-              transform: 'rotate(-28deg)',
-              background: 'linear-gradient(180deg, rgba(110,231,183,0.95) 0%, rgba(21,128,61,0.92) 100%)',
+              left: size * 0.12,
+              bottom: size * 0.28,
+              width: size * 0.34,
+              height: size * 0.22,
+              transform: `rotate(${wilted ? '-46deg' : '-28deg'})`,
+              background: wilted
+                ? 'linear-gradient(180deg, rgba(202,138,4,0.38) 0%, rgba(120,53,15,0.76) 100%)'
+                : 'linear-gradient(180deg, rgba(110,231,183,0.96) 0%, rgba(21,128,61,0.92) 100%)',
             }}
           />
           <div
             className="absolute rounded-full"
             style={{
-              right: size * 0.16,
+              right: size * 0.12,
               bottom: size * 0.36,
-              width: size * 0.3,
-              height: size * 0.18,
-              transform: 'rotate(32deg)',
-              background: 'linear-gradient(180deg, rgba(134,239,172,0.95) 0%, rgba(22,101,52,0.92) 100%)',
+              width: size * 0.32,
+              height: size * 0.2,
+              transform: `rotate(${wilted ? '42deg' : '30deg'})`,
+              background: wilted
+                ? 'linear-gradient(180deg, rgba(202,138,4,0.34) 0%, rgba(120,53,15,0.72) 100%)'
+                : 'linear-gradient(180deg, rgba(134,239,172,0.95) 0%, rgba(22,101,52,0.92) 100%)',
             }}
           />
         </>
       )}
-      {stage === 'bloom' || stage === 'ready' ? (
+      {bloomVisible && (
         <div
           className="absolute rounded-full"
           style={{
-            top: size * 0.08,
+            top: size * 0.02,
             left: '50%',
-            width: size * 0.52,
-            height: size * 0.52,
-            transform: `translateX(-50%) scale(${bloomScale})`,
-            background: `radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55) 0%, ${crop.accent}cc 45%, ${crop.accent}aa 100%)`,
-            boxShadow: `0 0 18px ${crop.accent}55`,
+            width: size * 0.5,
+            height: size * 0.5,
+            opacity: bloomOpacity,
+            transform: `translateX(-50%) scale(${stage === 'ready' ? 1.04 : 0.9})`,
+            background: `radial-gradient(circle at 35% 35%, rgba(255,255,255,0.56) 0%, ${crop.accent}dd 45%, ${crop.accent}aa 100%)`,
+            boxShadow: `0 0 18px ${crop.accent}44`,
           }}
         />
-      ) : null}
-      {stage === 'ready' ? (
+      )}
+      {stage === 'ready' && (
         <div
           className="absolute rounded-full border border-white/25"
           style={{
-            top: size * 0.04,
+            top: 0,
             left: '50%',
-            width: size * 0.66,
-            height: size * 0.66,
+            width: size * 0.64,
+            height: size * 0.64,
             transform: 'translateX(-50%)',
-            boxShadow: `0 0 20px ${crop.accent}40`,
+            boxShadow: `0 0 18px ${crop.accent}35`,
           }}
         />
-      ) : null}
+      )}
+      {stage === 'thirsty' && (
+        <div className="absolute right-0 top-0 rounded-full bg-cyan-300/16 px-1.5 py-0.5 text-[10px] font-semibold text-cyan-50">
+          水
+        </div>
+      )}
+      {stage === 'wilted' && (
+        <div className="absolute right-0 top-0 rounded-full bg-amber-500/16 px-1.5 py-0.5 text-[10px] font-semibold text-amber-50">
+          枯
+        </div>
+      )}
     </div>
   );
 }
@@ -295,10 +388,10 @@ export default function GardenPlayPanel({
 }: GardenPlayPanelProps) {
   const storageKey = useMemo(() => getStorageKey(userId), [userId]);
   const [gardenState, setGardenState] = useState<GardenSaveState>(() => createDefaultState());
-  const [selectedCrop, setSelectedCrop] = useState<CropId>('carrot');
+  const [selectedCrop, setSelectedCrop] = useState<CropId>('sunflower');
   const [now, setNow] = useState(() => Date.now());
   const [isExpanded, setIsExpanded] = useState(false);
-  const [gardenHint, setGardenHint] = useState('选一块空地播种，宠物会在庭院里陪你慢慢等作物成熟。');
+  const [gardenHint, setGardenHint] = useState('点空地播种，成熟后再回来收获。');
 
   useEffect(() => {
     if (typeof window === 'undefined') {
@@ -321,9 +414,12 @@ export default function GardenPlayPanel({
   }, [gardenState, storageKey]);
 
   useEffect(() => {
-    const timer = window.setInterval(() => {
-      setNow(Date.now());
-    }, visible ? 15000 : 45000);
+    const timer = window.setInterval(
+      () => {
+        setNow(Date.now());
+      },
+      visible ? 6000 : 18000,
+    );
 
     return () => {
       window.clearInterval(timer);
@@ -335,17 +431,23 @@ export default function GardenPlayPanel({
     [gardenState.plots, now],
   );
 
-  const matureCount = plots.filter((plot) => plot.stage === 'ready').length;
+  const readyCount = plots.filter((plot) => plot.stage === 'ready').length;
+  const thirstyCount = plots.filter((plot) => plot.stage === 'thirsty').length;
+  const wiltedCount = plots.filter((plot) => plot.stage === 'wilted').length;
   const plantedCount = plots.filter((plot) => plot.stage !== 'empty').length;
-  const harvestCount = (Object.values(gardenState.harvestLedger).reduce((sum, value) => sum + (value ?? 0), 0));
-  const atmosphereLabel = matureCount > 0 ? '丰收时刻' : plantedCount > 3 ? '生机渐浓' : '慢慢布置中';
-  const patrolCooldownMs = 3 * 60 * 1000;
-  const patrolRemainingMs = Math.max(0, patrolCooldownMs - (gardenState.lastPatrolAt ? now - gardenState.lastPatrolAt : patrolCooldownMs));
+  const harvestCount = Object.values(gardenState.harvestLedger).reduce((sum, value) => sum + (value ?? 0), 0);
+  const needsCareCount = thirstyCount + wiltedCount;
+  const atmosphereLabel =
+    readyCount > 0 ? '丰收时刻' : wiltedCount > 0 ? '等你救回' : plantedCount > 3 ? '庭院正热闹' : '慢慢种起来';
+  const patrolRemainingMs = Math.max(
+    0,
+    PATROL_COOLDOWN_MS - (gardenState.lastPatrolAt ? now - gardenState.lastPatrolAt : PATROL_COOLDOWN_MS),
+  );
   const canPatrol = patrolRemainingMs <= 0;
 
   const handleCompanionPatrol = () => {
     if (!canPatrol) {
-      setGardenHint(`巡园还需要等待 ${Math.ceil(patrolRemainingMs / 1000)} 秒，${currentPetName} 正在庭院里慢慢散步。`);
+      setGardenHint(`${currentPetName} 休息一下，${Math.ceil(patrolRemainingMs / 1000)} 秒后再巡园。`);
       return;
     }
 
@@ -354,10 +456,18 @@ export default function GardenPlayPanel({
       const nextPlots = [...previous.plots];
       let helped = 0;
 
-      for (let index = 0; index < nextPlots.length; index += 1) {
+      const priority = [...nextPlots.keys()].sort((left, right) => {
+        const leftPlot = getPlotProgress(nextPlots[left], timestamp);
+        const rightPlot = getPlotProgress(nextPlots[right], timestamp);
+        const leftScore = leftPlot.stage === 'wilted' ? 3 : leftPlot.stage === 'thirsty' ? 2 : leftPlot.stage !== 'empty' && leftPlot.stage !== 'ready' ? 1 : 0;
+        const rightScore = rightPlot.stage === 'wilted' ? 3 : rightPlot.stage === 'thirsty' ? 2 : rightPlot.stage !== 'empty' && rightPlot.stage !== 'ready' ? 1 : 0;
+        return rightScore - leftScore;
+      });
+
+      for (const index of priority) {
         const current = nextPlots[index];
         const progress = getPlotProgress(current, timestamp);
-        if (!current.cropId || progress.stage === 'ready') {
+        if (!current.cropId || progress.stage === 'ready' || progress.stage === 'empty') {
           continue;
         }
         nextPlots[index] = {
@@ -366,15 +476,15 @@ export default function GardenPlayPanel({
           careCount: current.careCount + 1,
         };
         helped += 1;
-        if (helped >= 2) {
+        if (helped >= 3) {
           break;
         }
       }
 
       setGardenHint(
         helped > 0
-          ? `${currentPetName} 巡园时顺手照看了 ${helped} 块作物，庭院的成长节奏更稳定了。`
-          : `${currentPetName} 在庭院里逛了一圈，今天暂时没有需要额外照看的作物。`,
+          ? `${currentPetName} 巡园照看了 ${helped} 块田，院子又精神起来了。`
+          : `${currentPetName} 在庭院里逛了一圈，今天的田地状态很稳。`,
       );
 
       return {
@@ -386,7 +496,6 @@ export default function GardenPlayPanel({
   };
 
   const handlePlotAction = (plotIndex: number) => {
-    const plot = gardenState.plots[plotIndex];
     const progress = plots[plotIndex];
     const timestamp = Date.now();
 
@@ -398,31 +507,40 @@ export default function GardenPlayPanel({
         nextPlots[plotIndex] = {
           cropId: selectedCrop,
           plantedAt: timestamp,
-          wateredAt: null,
+          wateredAt: timestamp,
           careCount: 0,
         };
-        setGardenHint(`${currentPetName} 帮你把 ${CROPS[selectedCrop].label} 种下了，记得过一会儿回来看看。`);
-      } else if (progress.stage === 'ready') {
+        setGardenHint(`${currentPetName} 帮你种下了 ${CROPS[selectedCrop].label}。`);
+        return {
+          ...previous,
+          plots: nextPlots,
+        };
+      }
+
+      if (progress.stage === 'ready') {
         const cropId = current.cropId;
         nextPlots[plotIndex] = createEmptyPlot();
-        setGardenHint(`收获完成：${CROPS[cropId].label} 已装进庭院收纳箱，今天的庭院更热闹了。`);
+        setGardenHint(`收下了 ${CROPS[cropId].label}，庭院里多了一份小丰收。`);
         return {
+          ...previous,
           plots: nextPlots,
           harvestLedger: {
             ...previous.harvestLedger,
             [cropId]: (previous.harvestLedger[cropId] ?? 0) + 1,
           },
-          lastPatrolAt: previous.lastPatrolAt,
         };
-      } else {
-        nextPlots[plotIndex] = {
-          ...current,
-          wateredAt: timestamp,
-          careCount: current.careCount + 1,
-        };
-        setGardenHint(`${currentPetName} 给 ${progress.crop?.label ?? '作物'} 浇了水，成熟速度会更快一点。`);
       }
 
+      nextPlots[plotIndex] = {
+        ...current,
+        wateredAt: timestamp,
+        careCount: current.careCount + 1,
+      };
+      setGardenHint(
+        progress.stage === 'wilted'
+          ? `${progress.crop?.label ?? '作物'} 喝到水了，慢慢缓回来了。`
+          : `${progress.crop?.label ?? '作物'} 已浇水，继续等它长大。`,
+      );
       return {
         ...previous,
         plots: nextPlots,
@@ -432,60 +550,113 @@ export default function GardenPlayPanel({
 
   return (
     <>
-      <div className="absolute inset-0 pointer-events-none z-[12]">
+      <div className="pointer-events-none absolute left-[3.2%] top-[73.4%] z-[11] flex w-[36%] items-start justify-between">
+        <div className="rounded-[22px] border border-amber-950/22 bg-[linear-gradient(180deg,rgba(102,63,28,0.82),rgba(67,39,16,0.96))] px-3 py-2 text-[11px] text-amber-50 shadow-[0_14px_24px_rgba(15,23,42,0.18)]">
+          <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-amber-100/70">浇水提示</div>
+          <div className="mt-1 text-amber-50/92">缺水时点田块浇回去</div>
+        </div>
+        <div className="mt-[7.2%] rounded-[22px] border border-amber-950/20 bg-[linear-gradient(180deg,rgba(71,44,23,0.8),rgba(49,28,12,0.94))] px-3 py-2 text-[11px] text-amber-50 shadow-[0_14px_24px_rgba(15,23,42,0.14)]">
+          <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-amber-100/70">丰收篮</div>
+          <div className="mt-1 text-amber-50/92">{harvestCount} 份小收获</div>
+        </div>
+      </div>
+
+      <div className="pointer-events-none absolute inset-0 z-[12]">
         {FARM_PLOTS.map((plotAnchor, index) => {
           const plot = plots[index];
           const crop = plot.crop;
-          const isEmpty = plot.stage === 'empty';
           const glowColor = crop?.accent ?? '#f59e0b';
+          const isReady = plot.stage === 'ready';
+          const isDry = plot.stage === 'thirsty' || plot.stage === 'wilted';
+          const isEmpty = plot.stage === 'empty';
 
           return (
             <button
               key={plotAnchor.id}
               type="button"
               onClick={() => handlePlotAction(index)}
-              className="group pointer-events-auto absolute flex min-h-[62px] min-w-[62px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-3xl border border-white/10 bg-slate-950/12 backdrop-blur-[1px] transition hover:scale-[1.03]"
+              className="group pointer-events-auto absolute flex h-[70px] w-[86px] -translate-x-1/2 -translate-y-1/2 items-center justify-center transition hover:scale-[1.015]"
               style={{
                 left: `${plotAnchor.x}%`,
-                top: `${plotAnchor.y - 2}%`,
-                boxShadow: isEmpty ? 'none' : `0 0 24px ${glowColor}22`,
+                top: `${plotAnchor.y - 1.6}%`,
               }}
-              >
-                <motion.div
-                  animate={{
-                  scale: plot.stage === 'ready' ? [1, 1.08, 1] : [1, 1.02, 1],
-                  y: plot.stage === 'ready' ? [0, -3, 0] : [0, -1, 0],
+            >
+              <motion.div
+                animate={{
+                  y: isReady ? [0, -4, 0] : [0, -1.5, 0],
+                  scale: isReady ? [1, 1.03, 1] : [1, 1.01, 1],
                 }}
                 transition={{
-                  duration: plot.stage === 'ready' ? 1.8 : 3.2,
+                  duration: isReady ? 1.8 : 3.4,
                   repeat: Infinity,
                   ease: 'easeInOut',
                 }}
-                className="relative flex h-14 w-14 items-center justify-center rounded-full"
+                className="relative flex h-full w-full items-center justify-center"
               >
+                <div
+                  className="absolute inset-0 rounded-[24px]"
+                  style={{
+                    background: 'linear-gradient(180deg, rgba(108,67,31,0.95) 0%, rgba(76,44,18,0.98) 100%)',
+                    boxShadow: '0 10px 18px rgba(15,23,42,0.18), inset 0 1px 0 rgba(255,241,214,0.08)',
+                  }}
+                />
+                <div
+                  className={`absolute inset-[5px] overflow-hidden rounded-[20px] border ${
+                    isDry ? 'border-amber-200/22' : 'border-amber-950/28'
+                  }`}
+                  style={{
+                    background: isEmpty
+                      ? 'radial-gradient(ellipse at 50% 26%, rgba(161,108,57,0.92) 0%, rgba(112,70,33,0.94) 34%, rgba(74,44,19,0.98) 100%)'
+                      : isDry
+                        ? 'radial-gradient(ellipse at 50% 26%, rgba(148,82,34,0.9) 0%, rgba(106,52,17,0.94) 36%, rgba(61,29,10,0.98) 100%)'
+                        : 'radial-gradient(ellipse at 50% 24%, rgba(132,86,44,0.9) 0%, rgba(93,57,26,0.95) 34%, rgba(60,34,14,0.98) 100%)',
+                    boxShadow: isEmpty
+                      ? 'inset 0 12px 16px rgba(255,213,153,0.05), inset 0 -10px 16px rgba(28,18,8,0.34)'
+                      : `inset 0 10px 16px rgba(255,214,164,0.05), inset 0 -12px 18px rgba(20,12,6,0.42), 0 0 16px ${glowColor}10`,
+                  }}
+                >
+                  <div
+                    className="absolute inset-[8%] rounded-[18px] opacity-55"
+                    style={{
+                      backgroundImage:
+                        'repeating-linear-gradient(0deg, transparent 0, transparent 9px, rgba(54,31,13,0.3) 9px, rgba(54,31,13,0.3) 11px)',
+                    }}
+                  />
+                  <div className="absolute inset-x-[20%] top-[22%] h-[1px] rounded-full bg-amber-50/14" />
+                  <div className="absolute inset-x-[24%] top-[46%] h-[1px] rounded-full bg-amber-50/10" />
+                  <div className="absolute inset-x-[29%] top-[69%] h-[1px] rounded-full bg-amber-50/8" />
+                  <div className="absolute inset-x-[14%] top-[11%] h-[14%] rounded-full bg-white/6 blur-sm" />
+                </div>
+
                 {!isEmpty && (
                   <div
-                    className="absolute inset-1 rounded-full blur-xl"
-                    style={{ background: `${glowColor}2a` }}
+                    className="absolute inset-[12px] rounded-[18px] blur-lg"
+                    style={{ background: `${glowColor}${isReady ? '28' : '12'}` }}
                   />
                 )}
-                {plot.cropId && plot.stage !== 'empty' ? (
+
+                {plot.cropId ? (
                   <div className="relative">
                     <CropSigil cropId={plot.cropId} stage={plot.stage} />
                   </div>
-                ) : (
-                  <div
-                    className="relative rounded-[18px] border border-amber-100/18"
-                    style={{
-                      width: 28,
-                      height: 28,
-                      background: 'linear-gradient(180deg, rgba(120,74,36,0.58) 0%, rgba(78,46,18,0.76) 100%)',
-                    }}
-                  />
+                ) : null}
+
+                {!isEmpty && (
+                  <div className="absolute inset-x-3 bottom-[7px] h-1 overflow-hidden rounded-full bg-black/28">
+                    <div
+                      className={`h-full rounded-full ${
+                        isDry ? 'bg-amber-300/80' : isReady ? 'bg-emerald-300' : 'bg-cyan-300/90'
+                      }`}
+                      style={{ width: `${Math.max(8, Math.round(plot.progress * 100))}%` }}
+                    />
+                  </div>
                 )}
-                <span className={`absolute -bottom-5 rounded-full bg-slate-900/82 px-2 py-0.5 text-[10px] font-semibold text-slate-100 transition ${
-                  plot.stage === 'ready' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-                }`}>
+
+                <span
+                  className={`absolute -bottom-5 rounded-full px-2 py-0.5 text-[10px] font-semibold text-amber-50 transition ${
+                    isReady || isDry ? 'bg-[rgba(60,33,15,0.9)] opacity-100' : 'bg-[rgba(60,33,15,0.84)] opacity-0 group-hover:opacity-100'
+                  }`}
+                >
                   {plot.actionLabel}
                 </span>
               </motion.div>
@@ -498,98 +669,106 @@ export default function GardenPlayPanel({
         <button
           type="button"
           onClick={() => setIsExpanded((value) => !value)}
-          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-950/76 px-2.5 py-1.5 text-[11px] font-semibold text-white shadow-[0_16px_34px_rgba(2,6,23,0.26)] backdrop-blur-md transition hover:bg-slate-900/86"
-          title="展开庭院种植面板"
+          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-950/78 px-2.5 py-1.5 text-[11px] font-semibold text-white shadow-[0_16px_34px_rgba(2,6,23,0.26)] backdrop-blur-md transition hover:bg-slate-900/86"
+          title="展开庭院面板"
         >
-          <span>庭院助手</span>
+          <span>庭院手册</span>
           <span className="rounded-full bg-emerald-500/12 px-2 py-0.5 text-xs text-emerald-100">{plantedCount}/{MAX_PLOTS}</span>
         </button>
 
         {isExpanded && (
-          <div className="w-[244px] rounded-[22px] border border-white/10 bg-slate-950/72 p-3 shadow-[0_26px_60px_rgba(2,6,23,0.32)] backdrop-blur-md">
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-emerald-200">庭院日常</div>
-            <div className="mt-1 text-base font-black text-white">轻养成种植台</div>
-            <p className="hidden mt-2 text-sm leading-6 text-slate-300">
-              先选种子，再点空地播种。成熟前可以浇水，也可以让宠物巡园帮你照看作物。
-            </p>
-          </div>
-          <div className="rounded-full border border-emerald-300/20 bg-emerald-500/10 px-3 py-1.5 text-right">
-            <div className="text-[10px] font-semibold text-emerald-50">{atmosphereLabel}</div>
-          </div>
-        </div>
-
-        <div className="mt-2.5 grid grid-cols-3 gap-1.5">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-2 py-2">
-            <div className="text-[11px] uppercase tracking-[0.18em] text-slate-400">已种植</div>
-            <div className="mt-1 text-sm font-bold text-white">{plantedCount}/{MAX_PLOTS}</div>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-2 py-2">
-            <div className="text-[11px] uppercase tracking-[0.18em] text-slate-400">已成熟</div>
-            <div className="mt-1 text-sm font-bold text-white">{matureCount}</div>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-2 py-2">
-            <div className="text-[11px] uppercase tracking-[0.18em] text-slate-400">总收成</div>
-            <div className="mt-1 text-sm font-bold text-white">{harvestCount}</div>
-          </div>
-        </div>
-
-        <div className="mt-2.5 rounded-full border border-cyan-300/15 bg-cyan-500/10 px-2.5 py-1.5 text-[11px] leading-5 text-cyan-50">
-          {gardenHint}
-        </div>
-
-        <div className="mt-2.5 flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-2.5 py-2.5">
-          <div>
-            <div className="text-sm font-semibold text-white">宠物巡园</div>
-            <div className="mt-1 text-xs leading-5 text-slate-400">
-              {canPatrol ? '可以让宠物巡园一次，帮助照看 2 块未成熟作物。' : `冷却中，还需 ${Math.ceil(patrolRemainingMs / 1000)} 秒。`}
+          <div className="w-[272px] rounded-[24px] border border-white/10 bg-slate-950/74 p-3 shadow-[0_26px_60px_rgba(2,6,23,0.32)] backdrop-blur-md">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <div className="text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald-200">庭院日常</div>
+                <div className="mt-1 text-base font-black text-white">减压小农场</div>
+                <p className="mt-2 text-xs leading-5 text-slate-300">播种、浇水、等成熟，再轻轻收下今天的小丰收。</p>
+              </div>
+              <div className="rounded-full border border-emerald-300/20 bg-emerald-500/10 px-3 py-1.5 text-right">
+                <div className="text-[10px] font-semibold text-emerald-50">{atmosphereLabel}</div>
+              </div>
             </div>
-          </div>
-          <button
-            type="button"
-            onClick={handleCompanionPatrol}
-            disabled={!canPatrol}
-            className="rounded-full bg-emerald-600 px-3 py-2 text-xs font-semibold text-white transition hover:bg-emerald-500 disabled:cursor-not-allowed disabled:bg-slate-700 disabled:text-slate-300"
-          >
-            巡园一次
-          </button>
-        </div>
 
-        <div className="mt-2.5 grid grid-cols-2 gap-2">
-          {(Object.keys(CROPS) as CropId[]).map((cropId) => {
-            const crop = CROPS[cropId];
-            const selected = cropId === selectedCrop;
-            return (
-              <button
-                key={cropId}
-                type="button"
-                onClick={() => {
-                  setSelectedCrop(cropId);
-                  setGardenHint(`已切换到 ${crop.label} 种子，这片庭院会呈现 ${crop.mood} 的感觉。`);
-                }}
-                className={`rounded-[20px] border bg-gradient-to-br px-2.5 py-2 text-left transition ${
-                  selected
-                    ? `${crop.cardClass} shadow-[0_0_0_1px_rgba(255,255,255,0.04)]`
-                    : 'border-white/10 from-white/[0.05] to-white/[0.02] hover:border-white/20'
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <CropSigil cropId={cropId} stage="ready" compact />
-                  <div>
-                    <div className="font-semibold text-white">{crop.label}</div>
-                    <div className="text-xs text-slate-300">{crop.mood}</div>
-                  </div>
+            <div className="mt-3 grid grid-cols-3 gap-1.5">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-2 py-2">
+                <div className="text-[11px] uppercase tracking-[0.18em] text-slate-400">已种</div>
+                <div className="mt-1 text-sm font-bold text-white">{plantedCount}</div>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-2 py-2">
+                <div className="text-[11px] uppercase tracking-[0.18em] text-slate-400">待照看</div>
+                <div className="mt-1 text-sm font-bold text-white">{needsCareCount}</div>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-2 py-2">
+                <div className="text-[11px] uppercase tracking-[0.18em] text-slate-400">可收</div>
+                <div className="mt-1 text-sm font-bold text-white">{readyCount}</div>
+              </div>
+            </div>
+
+            <div className="mt-3 rounded-2xl border border-cyan-300/15 bg-cyan-500/10 px-3 py-2 text-[11px] leading-5 text-cyan-50">
+              {gardenHint}
+            </div>
+
+            <div className="mt-3 flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2.5">
+              <div>
+                <div className="text-sm font-semibold text-white">宠物巡园</div>
+                <div className="mt-1 text-xs leading-5 text-slate-400">
+                  {canPatrol ? '可帮你照看 3 块田，优先救回缺水作物。' : `冷却中，还需 ${Math.ceil(patrolRemainingMs / 1000)} 秒。`}
                 </div>
+              </div>
+              <button
+                type="button"
+                onClick={handleCompanionPatrol}
+                disabled={!canPatrol}
+                className="rounded-full bg-emerald-600 px-3 py-2 text-xs font-semibold text-white transition hover:bg-emerald-500 disabled:cursor-not-allowed disabled:bg-slate-700 disabled:text-slate-300"
+              >
+                巡园一次
               </button>
-            );
-          })}
-        </div>
+            </div>
 
-        <div className="mt-2.5 flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-2.5 py-2 text-[13px] text-slate-300">
-          <span>庭院陪玩伙伴</span>
-          <span className="font-semibold text-white">{Math.max(1, companionCount)} 只</span>
-        </div>
+            <div className="mt-3 grid grid-cols-2 gap-2">
+              {(Object.keys(CROPS) as CropId[]).map((cropId) => {
+                const crop = CROPS[cropId];
+                const selected = cropId === selectedCrop;
+                return (
+                  <button
+                    key={cropId}
+                    type="button"
+                    onClick={() => {
+                      setSelectedCrop(cropId);
+                      setGardenHint(`已切换到 ${crop.label}，${crop.tip}`);
+                    }}
+                    className={`rounded-[20px] border bg-gradient-to-br px-2.5 py-2 text-left transition ${
+                      selected
+                        ? `${crop.cardClass} shadow-[0_0_0_1px_rgba(255,255,255,0.04)]`
+                        : 'border-white/10 from-white/[0.05] to-white/[0.02] hover:border-white/20'
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <CropSigil cropId={cropId} stage="ready" compact />
+                      <div>
+                        <div className="font-semibold text-white">{crop.label}</div>
+                        <div className="text-xs text-slate-300">{crop.mood}</div>
+                      </div>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="mt-3 rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2.5">
+              <div className="flex items-center justify-between text-[13px] text-slate-300">
+                <span>陪玩伙伴</span>
+                <span className="font-semibold text-white">{Math.max(1, companionCount)} 只</span>
+              </div>
+              <div className="mt-2 grid grid-cols-4 gap-1.5">
+                {(Object.keys(CROPS) as CropId[]).map((cropId) => (
+                  <div key={cropId} className="rounded-2xl border border-white/8 bg-slate-950/28 px-2 py-2 text-center">
+                    <div className="text-[10px] text-slate-400">{CROPS[cropId].label}</div>
+                    <div className="mt-1 text-sm font-bold text-white">{gardenState.harvestLedger[cropId] ?? 0}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         )}
       </div>

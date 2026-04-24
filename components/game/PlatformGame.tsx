@@ -131,6 +131,27 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         });
     };
 
+    const buildRuntimeCampaignLevel = (campaignLevel: CampaignLevel, levelIndex: number, ageGroup?: AgeGroup | null) => {
+        const hasQuestionTriggers = Boolean(campaignLevel.campaignMapData?.questionTriggers?.length);
+        const questionCount = Math.max(
+            campaignLevel.questions?.length || 0,
+            campaignLevel.id.endsWith('_5') ? 3 : 1,
+        );
+
+        if (hasQuestionTriggers) {
+            return campaignLevel;
+        }
+
+        const randomQuestions = ageGroup
+            ? generateQuestionsForAgeGroup(ageGroup, questionCount)
+            : generateQuestionsForLevel(levelIndex + 1, questionCount);
+
+        return {
+            ...campaignLevel,
+            questions: randomQuestions.length > 0 ? randomQuestions : campaignLevel.questions,
+        };
+    };
+
     useEffect(() => {
         // 监听关卡内答题触发事件
         const handleShowQuestion = (event: any) => {
@@ -242,15 +263,12 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         const campaignLevel = campaign.levels[levelIndex];
         
         // 🔥 根据年龄段生成题目
-        const questionCount = campaignLevel.questions?.length || 3;
-        const randomQuestions = ageGroup 
-            ? generateQuestionsForAgeGroup(ageGroup, questionCount)
-            : generateQuestionsForLevel(levelIndex + 1, questionCount);
-        const levelWithRandomQuestions = {
-            ...campaignLevel,
-            questions: randomQuestions.length > 0 ? randomQuestions : campaignLevel.questions
-        };
-        console.log('[PlatformGame] 🎲 随机生成题目:', randomQuestions.length, '道', ageGroup ? `(${ageGroup}年龄段)` : '');
+        const levelWithRandomQuestions = buildRuntimeCampaignLevel(campaignLevel, levelIndex, ageGroup);
+        console.log(
+            '[PlatformGame] runtime questions prepared:',
+            levelWithRandomQuestions.questions?.length || 0,
+            ageGroup ? `(${ageGroup})` : '(default)',
+        );
         
         setCurrentCampaignLevel(levelWithRandomQuestions);
         setPlayerLives(getCampaignStartingLives());
@@ -466,27 +484,12 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         }
         
         // 🔥 检查是否已经有年龄段题目（通过题目ID前缀判断）
-        const hasAgeGroupQuestions = campaignLevel.questions?.length > 0 && 
-            (campaignLevel.questions[0]?.id?.startsWith('pl-') || 
-             campaignLevel.questions[0]?.id?.startsWith('pu-') || 
-             campaignLevel.questions[0]?.id?.startsWith('jh-'));
-        
-        let levelWithRandomQuestions = campaignLevel;
-        
-        if (!hasAgeGroupQuestions && activeAgeGroup) {
-            // 需要生成新的年龄段题目
-            const questionCount = campaignLevel.questions?.length || 3;
-            const randomQuestions = generateQuestionsForAgeGroup(activeAgeGroup, questionCount);
-            levelWithRandomQuestions = {
-                ...campaignLevel,
-                questions: randomQuestions.length > 0 ? randomQuestions : campaignLevel.questions
-            };
-            console.log('[PlatformGame] 🎲 生成年龄段题目:', randomQuestions.length, '道', `(${activeAgeGroup})`);
-        } else if (hasAgeGroupQuestions) {
-            console.log('[PlatformGame] ✅ 使用已有的年龄段题目');
-        } else {
-            console.log('[PlatformGame] ⚠️ 没有年龄段，使用原始题目');
-        }
+        const levelWithRandomQuestions = buildRuntimeCampaignLevel(campaignLevel, levelIndex, activeAgeGroup);
+        console.log(
+            '[PlatformGame] start level with runtime questions:',
+            levelWithRandomQuestions.questions?.length || 0,
+            activeAgeGroup ? `(${activeAgeGroup})` : '(default)',
+        );
         
         setCurrentCampaignLevel(levelWithRandomQuestions);
         setPlayerLives(getCampaignStartingLives()); // 重置生命数
@@ -505,9 +508,11 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
                 title: campaignLevel.name,
                 description: campaignLevel.description,
                 story: campaignLevel.story || campaignLevel.description,
-                questions: campaignLevel.questions,
+                questions: levelWithRandomQuestions.questions,
                 difficulty: 'medium',
-                objectives: [{ type: 'reach' as const, description: '到达终点' }],
+                objectives: campaignLevel.objectives?.length
+                    ? campaignLevel.objectives
+                    : [{ type: 'reach' as const, description: '到达终点' }],
                 rewards: { exp: campaignLevel.rewards.xp, coins: campaignLevel.rewards.coins },
                 campaignMapData: campaignLevel.campaignMapData || campaignLevel.mapData,
                 bossConfig: campaignLevel.bossConfig // 传递Boss配置

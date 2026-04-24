@@ -36,7 +36,8 @@ const RATE_LIMITS: Record<string, RateLimitConfig> = {
   'pet:interact': { maxRequests: 60, windowMs: 60000 },    // 每分钟60次
   'pet:feed': { maxRequests: 20, windowMs: 60000 },        // 每分钟20次
   'pet:chat': { maxRequests: 6, windowMs: 60000 },         // 每分钟6次
-  
+  'ai:learning-assistant': { maxRequests: 8, windowMs: 60000 }, // 每分钟8次
+
   // 聊天
   'chat:send': { maxRequests: 20, windowMs: 60000 },       // 每分钟20次
   

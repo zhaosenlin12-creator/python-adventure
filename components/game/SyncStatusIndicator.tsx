@@ -1,7 +1,6 @@
 'use client';
 
 import { useAuthStore } from '@/store/authStore';
-import { useGameStore } from '@/store/gameStore';
 import { useRouter } from 'next/navigation';
 
 /**
@@ -10,7 +9,6 @@ import { useRouter } from 'next/navigation';
  */
 export function SyncStatusIndicator() {
     const { syncStatus, lastSyncError, isAuthenticated, logout } = useAuthStore();
-    const { lastSyncTime } = useGameStore();
     const router = useRouter();
 
     // 未登录时不显示
@@ -32,7 +30,7 @@ export function SyncStatusIndicator() {
                 <span className="text-2xl">☁️</span>
                 <div className="flex-1">
                     <div className="font-pixel text-sm text-yellow-100">需要重新登录</div>
-                    <div className="text-xs text-yellow-200">游戏进度已保存在本地，登录后可同步到云端</div>
+                    <div className="text-xs text-yellow-200">本地进度还在，重新登录后会继续同步。</div>
                 </div>
                 <button
                     onClick={handleReLogin}
@@ -51,7 +49,7 @@ export function SyncStatusIndicator() {
                 <span className="text-2xl">⚠️</span>
                 <div>
                     <div className="font-pixel text-sm text-red-100">同步失败</div>
-                    <div className="text-xs text-red-200">{lastSyncError || '请检查网络连接'}</div>
+                    <div className="text-xs text-red-200">{lastSyncError || '云端暂时没有连上，本地进度还在。'}</div>
                 </div>
             </div>
         );

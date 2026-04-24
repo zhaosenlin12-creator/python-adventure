@@ -3,6 +3,7 @@ import type { PetType } from '@/types/pet';
 
 export type BattleRoyaleDifficulty = 'easy' | 'medium' | 'hard';
 export type BattleRoyaleRoomStatus = 'waiting' | 'in_progress' | 'finished';
+export type BattleRoyaleSyncMode = 'host_authoritative' | 'local_coop';
 
 export interface BattleRoyaleHuman {
   user_id: number;
@@ -32,6 +33,7 @@ export interface BattleRoyaleRoom {
   id: string;
   room_name: string;
   status: BattleRoyaleRoomStatus;
+  sync_mode?: BattleRoyaleSyncMode;
   host_user_id: number;
   host_username: string;
   max_players: number;
@@ -225,4 +227,27 @@ export interface BattleRoyaleResult {
   revived: boolean;
   survivedMs: number;
   outcome?: 'victory' | 'defeat';
+}
+
+export interface BattleRoyalePresenceState {
+  userId: number;
+  fighter: BattleRoyaleFighterView;
+  localBotAliveCount: number;
+  cleared: boolean;
+  alive: boolean;
+  quizPending: boolean;
+  kills: number;
+  damageDealt: number;
+  updatedAt: number;
+}
+
+export interface BattleRoyaleSharedBotState {
+  id: string;
+  hp: number;
+  maxHp: number;
+  shield: number;
+  armor: number;
+  alive: boolean;
+  updatedAt: number;
+  lastAttackerId?: string | null;
 }

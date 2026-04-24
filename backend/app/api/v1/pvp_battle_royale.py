@@ -20,22 +20,28 @@ router = APIRouter()
 
 Difficulty = Literal["easy", "medium", "hard"]
 RoomStatus = Literal["waiting", "in_progress", "finished"]
+SyncMode = Literal["host_authoritative", "local_coop"]
 
-MAX_ROOM_CAPACITY = 6
-MAX_HUMAN_PLAYERS = 2
-MAX_ACTIVE_ROOM_COUNT = 1
-MAX_IN_PROGRESS_ROOM_COUNT = 1
+MAX_ROOM_CAPACITY = 8
+MAX_HUMAN_PLAYERS = 4
+MAX_ACTIVE_ROOM_COUNT = 4
+MAX_IN_PROGRESS_ROOM_COUNT = 2
 ROOM_EXPIRY_MINUTES = 30
 FINISHED_ROOM_TTL_MINUTES = 5
 DISCONNECT_GRACE_SECONDS = 12.0
 IN_PROGRESS_HOST_DISCONNECT_GRACE_SECONDS = 2.8
-ROOM_RUNTIME_TICK_SECONDS = 0.03
-SERVER_SNAPSHOT_INTERVAL_SECONDS = 0.06
-SERVER_INPUT_BATCH_INTERVAL_SECONDS = 0.03
+ROOM_RUNTIME_TICK_SECONDS = 0.016
+SERVER_SNAPSHOT_INTERVAL_SECONDS = 0.033
+SERVER_INPUT_BATCH_INTERVAL_SECONDS = 0.016
 HOST_SNAPSHOT_STALE_SECONDS = 3.0
-INPUT_FORWARD_MIN_INTERVAL_SECONDS = 0.025
-INPUT_DUPLICATE_INTERVAL_SECONDS = 0.035
+INPUT_FORWARD_MIN_INTERVAL_SECONDS = 0.016
+INPUT_DUPLICATE_INTERVAL_SECONDS = 0.022
 SEND_JSON_TIMEOUT_SECONDS = 0.2
+DEFAULT_SYNC_MODE: SyncMode = "local_coop"
+FIGHTER_HP = 120
+MATCH_MAX_MS = 360000
+LOCAL_COOP_SHARED_BOT_BROADCAST_INTERVAL_SECONDS = 0.15
+BOT_DAMAGE_EVENT_TTL_SECONDS = 30.0
 
 AI_NAME_POOL = [
     "Scout Byte",
@@ -71,6 +77,8 @@ AI_PET_POOL = [
     "taowu_flare",
     "golden_roc",
 ]
+
+DEFAULT_ENEMY_SQUAD: tuple[Difficulty, ...] = ("easy", "medium", "medium", "hard")
 
 LEGACY_PET_TYPE_ALIASES = {
     "algo_bunny": "silver_lynx",
@@ -129,6 +137,10 @@ def connection_key(room_id: str, user_id: int) -> str:
     return f"{room_id}:{user_id}"
 
 
+def fighter_id_for_user(user_id: int) -> str:
+    return f"human-{user_id}"
+
+
 def room_participant_count(room: Dict[str, Any]) -> int:
     return len(room["humans"]) + len(room["bots"])
 
@@ -148,6 +160,12 @@ def build_sync_state() -> Dict[str, Any]:
         "input_state": {},
         "pending_guest_inputs": {},
         "last_input_batch_monotonic": 0.0,
+        "presence_states": {},
+        "shared_bots": {},
+        "shared_bot_version": 0,
+        "broadcast_shared_bot_version": 0,
+        "last_shared_bot_broadcast_monotonic": 0.0,
+        "processed_bot_damage_events": {},
     }
 
 
@@ -173,6 +191,297 @@ def merge_input_payload(previous_payload: Dict[str, Any], incoming_payload: Dict
     return merged_payload
 
 
+def read_int_value(value: Any, fallback: int = 0) -> int:
+    try:
+        return int(float(value))
+    except (TypeError, ValueError):
+        return fallback
+
+
+def room_elapsed_ms(room: Dict[str, Any]) -> int:
+    started_at_raw = room.get("started_at")
+    if not started_at_raw:
+        return 0
+    try:
+        started_at = datetime.fromisoformat(str(started_at_raw))
+    except (TypeError, ValueError):
+        return 0
+    elapsed = now_utc() - started_at
+    return max(0, int(elapsed.total_seconds() * 1000))
+
+
+def sanitize_presence_payload(user_id: int, room: Dict[str, Any], payload: Any) -> Optional[Dict[str, Any]]:
+    if not isinstance(payload, dict):
+        return None
+
+    fighter_payload = payload.get("fighter")
+    if not isinstance(fighter_payload, dict):
+        return None
+
+    human = room.get("humans", {}).get(user_id, {})
+    server_updated_at = int(time.time() * 1000)
+    client_updated_at = read_int_value(payload.get("updated_at"), server_updated_at)
+    kills = max(0, read_int_value(payload.get("kills", fighter_payload.get("kills")), 0))
+    damage_dealt = max(0, read_int_value(payload.get("damage_dealt", fighter_payload.get("damage_dealt")), 0))
+    quiz_pending = bool(payload.get("quiz_pending", fighter_payload.get("quiz_pending", False)))
+
+    return {
+        "fighter": {
+            "id": normalize_text(
+                str(fighter_payload.get("id") or f"fighter-{user_id}"),
+                fallback=f"fighter-{user_id}",
+                max_length=40,
+            ),
+            "name": normalize_text(
+                str(fighter_payload.get("name") or human.get("username") or f"player-{user_id}"),
+                fallback=f"player-{user_id}",
+                max_length=24,
+            ),
+            "pet_type": normalize_pet_type(str(fighter_payload.get("pet_type") or fighter_payload.get("petType") or human.get("pet_type") or "code_kitty")),
+            "pet_stage": max(1, read_int_value(fighter_payload.get("pet_stage", fighter_payload.get("petStage", human.get("pet_stage", 3))), 3)),
+            "x": read_int_value(fighter_payload.get("x"), 0),
+            "y": read_int_value(fighter_payload.get("y"), 0),
+            "vx": read_int_value(fighter_payload.get("vx"), 0),
+            "vy": read_int_value(fighter_payload.get("vy"), 0),
+            "hp": max(0, read_int_value(fighter_payload.get("hp"), 0)),
+            "shield": max(0, read_int_value(fighter_payload.get("shield"), 0)),
+            "armor": max(0, read_int_value(fighter_payload.get("armor"), 0)),
+            "kills": kills,
+            "alive": bool(fighter_payload.get("alive", payload.get("alive", True))),
+            "facing": -1 if fighter_payload.get("facing") == -1 else 1,
+            "quiz_pending": quiz_pending,
+            "damage_dealt": damage_dealt,
+            "special_charges": max(0, read_int_value(fighter_payload.get("special_charges"), 0)),
+            "weapon_ready": bool(fighter_payload.get("weapon_ready", True)),
+            "swing_ms": max(0, read_int_value(fighter_payload.get("swing_ms"), 0)),
+            "hit_flash_ms": max(0, read_int_value(fighter_payload.get("hit_flash_ms"), 0)),
+        },
+        "local_bot_alive_count": max(0, read_int_value(payload.get("local_bot_alive_count"), 0)),
+        "cleared": bool(payload.get("cleared")),
+        "alive": bool(payload.get("alive", fighter_payload.get("alive", True))),
+        "quiz_pending": quiz_pending,
+        "kills": kills,
+        "damage_dealt": damage_dealt,
+        "updated_at": client_updated_at,
+        "server_updated_at": server_updated_at,
+    }
+
+
+def build_shared_bot_state(bot: Dict[str, Any]) -> Dict[str, Any]:
+    updated_at = int(time.time() * 1000)
+    return {
+        "id": bot["id"],
+        "name": bot["name"],
+        "difficulty": bot["difficulty"],
+        "pet_type": bot["pet_type"],
+        "pet_stage": bot.get("pet_stage", 3),
+        "hp": FIGHTER_HP,
+        "max_hp": FIGHTER_HP,
+        "shield": 0,
+        "armor": 0,
+        "alive": True,
+        "last_attacker_id": None,
+        "updated_at": updated_at,
+    }
+
+
+def ensure_shared_bot_states(room: Dict[str, Any]) -> Dict[str, Dict[str, Any]]:
+    sync_state = room.setdefault("sync_state", build_sync_state())
+    shared_bots = sync_state.setdefault("shared_bots", {})
+    bot_ids = {bot["id"] for bot in room["bots"]}
+
+    for bot in room["bots"]:
+        if not isinstance(shared_bots.get(bot["id"]), dict):
+            shared_bots[bot["id"]] = build_shared_bot_state(bot)
+
+    for bot_id in list(shared_bots.keys()):
+        if bot_id not in bot_ids:
+            shared_bots.pop(bot_id, None)
+
+    return shared_bots
+
+
+def serialize_shared_bot_states(room: Dict[str, Any]) -> list[Dict[str, Any]]:
+    shared_bots = ensure_shared_bot_states(room)
+    return [
+        {
+            **state,
+            "hp": max(0, read_int_value(state.get("hp"), FIGHTER_HP)),
+            "max_hp": max(FIGHTER_HP, read_int_value(state.get("max_hp"), FIGHTER_HP)),
+            "shield": max(0, read_int_value(state.get("shield"), 0)),
+            "armor": max(0, read_int_value(state.get("armor"), 0)),
+            "alive": bool(state.get("alive", True)),
+        }
+        for _, state in sorted(shared_bots.items(), key=lambda item: item[0])
+        if isinstance(state, dict)
+    ]
+
+
+def get_shared_bot_version(room: Dict[str, Any]) -> int:
+    sync_state = room.setdefault("sync_state", build_sync_state())
+    return read_int_value(sync_state.get("shared_bot_version"), 0)
+
+
+def sanitize_bot_damage_payload(user_id: int, room: Dict[str, Any], payload: Any) -> Optional[Dict[str, Any]]:
+    if not isinstance(payload, dict):
+        return None
+
+    target_id = normalize_text(str(payload.get("target_id") or ""), fallback="", max_length=64)
+    if not target_id:
+        return None
+
+    if target_id not in {bot["id"] for bot in room["bots"]}:
+        return None
+
+    damage = max(1, min(120, read_int_value(payload.get("damage"), 0)))
+    event_id = normalize_text(
+        str(payload.get("event_id") or f"{user_id}-{int(time.time() * 1000)}"),
+        fallback=f"{user_id}-{int(time.time() * 1000)}",
+        max_length=96,
+    )
+
+    return {
+        "target_id": target_id,
+        "damage": damage,
+        "event_id": event_id,
+        "source_id": fighter_id_for_user(user_id),
+    }
+
+
+def apply_shared_bot_damage(room: Dict[str, Any], payload: Dict[str, Any]) -> bool:
+    sync_state = room.setdefault("sync_state", build_sync_state())
+    processed_events = sync_state.setdefault("processed_bot_damage_events", {})
+    now_monotonic = monotonic_time()
+
+    for event_id, seen_at in list(processed_events.items()):
+        if now_monotonic - float(seen_at) > BOT_DAMAGE_EVENT_TTL_SECONDS:
+            processed_events.pop(event_id, None)
+
+    event_id = payload["event_id"]
+    if event_id in processed_events:
+        return False
+    processed_events[event_id] = now_monotonic
+
+    shared_bots = ensure_shared_bot_states(room)
+    bot_state = shared_bots.get(payload["target_id"])
+    if not isinstance(bot_state, dict):
+        return False
+
+    current_hp = max(0, read_int_value(bot_state.get("hp"), FIGHTER_HP))
+    if current_hp <= 0 or not bool(bot_state.get("alive", True)):
+        bot_state["hp"] = 0
+        bot_state["alive"] = False
+        return False
+
+    next_hp = max(0, current_hp - max(1, read_int_value(payload.get("damage"), 0)))
+    if next_hp == current_hp:
+        return False
+
+    bot_state["hp"] = next_hp
+    bot_state["shield"] = 0
+    bot_state["armor"] = 0
+    bot_state["alive"] = next_hp > 0
+    bot_state["last_attacker_id"] = payload.get("source_id")
+    bot_state["updated_at"] = int(time.time() * 1000)
+    sync_state["shared_bot_version"] = read_int_value(sync_state.get("shared_bot_version"), 0) + 1
+    return True
+
+
+def build_local_coop_human_fighter_view(human: Dict[str, Any], state: Dict[str, Any], elapsed_ms: int) -> Dict[str, Any]:
+    fighter = state.get("fighter", {}) if isinstance(state.get("fighter"), dict) else {}
+    quiz_pending = bool(state.get("quiz_pending", fighter.get("quiz_pending", False)))
+    alive = bool(state.get("alive", fighter.get("alive", True)))
+    return {
+        "id": fighter.get("id") or fighter_id_for_user(human["user_id"]),
+        "userId": human["user_id"],
+        "name": fighter.get("name") or human["username"],
+        "petType": fighter.get("pet_type") or human.get("pet_type", "code_kitty"),
+        "petStage": max(1, read_int_value(fighter.get("pet_stage", human.get("pet_stage", 3)), 3)),
+        "x": read_int_value(fighter.get("x"), 0),
+        "y": read_int_value(fighter.get("y"), 0),
+        "vx": read_int_value(fighter.get("vx"), 0),
+        "vy": read_int_value(fighter.get("vy"), 0),
+        "hp": max(0, read_int_value(fighter.get("hp"), FIGHTER_HP)),
+        "maxHp": max(FIGHTER_HP, read_int_value(fighter.get("max_hp"), FIGHTER_HP)),
+        "shield": max(0, read_int_value(fighter.get("shield"), 0)),
+        "armor": max(0, read_int_value(fighter.get("armor"), 0)),
+        "kills": max(0, read_int_value(state.get("kills", fighter.get("kills")), 0)),
+        "alive": alive,
+        "facing": -1 if read_int_value(fighter.get("facing"), 1) == -1 else 1,
+        "isBot": False,
+        "hasRevived": bool(fighter.get("has_revived", fighter.get("hasRevived", False))),
+        "reviveUsed": bool(fighter.get("revive_used", fighter.get("reviveUsed", False))),
+        "quizPending": quiz_pending,
+        "damageDealt": max(0, read_int_value(state.get("damage_dealt", fighter.get("damage_dealt")), 0)),
+        "survivedMs": elapsed_ms,
+        "specialCharges": max(0, read_int_value(fighter.get("special_charges"), 0)),
+        "buffs": fighter.get("buffs", {}) if isinstance(fighter.get("buffs"), dict) else {},
+        "weaponReady": bool(fighter.get("weapon_ready", True)),
+        "swingMs": max(0, read_int_value(fighter.get("swing_ms"), 0)),
+        "hitFlashMs": max(0, read_int_value(fighter.get("hit_flash_ms"), 0)),
+    }
+
+
+def build_local_coop_bot_fighter_view(bot: Dict[str, Any], state: Dict[str, Any], elapsed_ms: int) -> Dict[str, Any]:
+    return {
+        "id": bot["id"],
+        "name": bot["name"],
+        "petType": bot["pet_type"],
+        "petStage": max(1, read_int_value(bot.get("pet_stage"), 3)),
+        "x": 0,
+        "y": 0,
+        "vx": 0,
+        "vy": 0,
+        "hp": max(0, read_int_value(state.get("hp"), FIGHTER_HP)),
+        "maxHp": max(FIGHTER_HP, read_int_value(state.get("max_hp"), FIGHTER_HP)),
+        "shield": max(0, read_int_value(state.get("shield"), 0)),
+        "armor": max(0, read_int_value(state.get("armor"), 0)),
+        "kills": 0,
+        "alive": bool(state.get("alive", True)),
+        "facing": 1,
+        "isBot": True,
+        "difficulty": bot["difficulty"],
+        "hasRevived": False,
+        "reviveUsed": True,
+        "quizPending": False,
+        "damageDealt": 0,
+        "survivedMs": elapsed_ms,
+        "specialCharges": 0,
+        "buffs": {},
+        "weaponReady": True,
+        "swingMs": 0,
+        "hitFlashMs": 0,
+    }
+
+
+def fighter_remaining_power(fighter: Dict[str, Any]) -> int:
+    return (
+        max(0, read_int_value(fighter.get("hp"), 0))
+        + max(0, read_int_value(fighter.get("shield"), 0))
+        + max(0, read_int_value(fighter.get("armor"), 0))
+    )
+
+
+def build_local_coop_fighter_views(room: Dict[str, Any]) -> list[Dict[str, Any]]:
+    elapsed_ms = room_elapsed_ms(room)
+    sync_state = room.setdefault("sync_state", build_sync_state())
+    presence_states = sync_state.setdefault("presence_states", {})
+    shared_bots = ensure_shared_bot_states(room)
+
+    fighters: list[Dict[str, Any]] = []
+    for human in sorted_humans(room):
+        state = presence_states.get(human["user_id"])
+        if isinstance(state, dict):
+            fighters.append(build_local_coop_human_fighter_view(human, state, elapsed_ms))
+
+    for bot in room["bots"]:
+        bot_state = shared_bots.get(bot["id"])
+        if isinstance(bot_state, dict):
+            fighters.append(build_local_coop_bot_fighter_view(bot, bot_state, elapsed_ms))
+
+    return fighters
+
+
 def payload_has_edge_input(payload: Dict[str, Any]) -> bool:
     input_payload = payload.get("input", {}) if isinstance(payload, dict) else {}
     if not isinstance(input_payload, dict):
@@ -190,6 +499,7 @@ def serialize_room(room: Dict[str, Any]) -> Dict[str, Any]:
         "id": room["id"],
         "room_name": room["room_name"],
         "status": room["status"],
+        "sync_mode": room.get("sync_mode", DEFAULT_SYNC_MODE),
         "host_user_id": room["host_user_id"],
         "host_username": room["host_username"],
         "max_players": room["max_players"],
@@ -202,6 +512,197 @@ def serialize_room(room: Dict[str, Any]) -> Dict[str, Any]:
         "humans": sorted_humans(room),
         "bots": list(room["bots"]),
     }
+
+
+def serialize_presence_states(room: Dict[str, Any]) -> list[Dict[str, Any]]:
+    sync_state = room.setdefault("sync_state", build_sync_state())
+    presence_states = sync_state.setdefault("presence_states", {})
+    return [
+        {
+            **payload,
+            "user_id": user_id,
+        }
+        for user_id, payload in sorted(presence_states.items(), key=lambda item: item[0])
+        if isinstance(payload, dict)
+    ]
+
+
+def build_local_coop_match_payload(room: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    if room.get("sync_mode", DEFAULT_SYNC_MODE) != "local_coop":
+        return None
+
+    sync_state = room.setdefault("sync_state", build_sync_state())
+    presence_states = sync_state.setdefault("presence_states", {})
+    shared_bots = ensure_shared_bot_states(room)
+    active_humans = [
+        human
+        for human in sorted_humans(room)
+        if human.get("connected", True)
+    ]
+    if not active_humans:
+        return None
+
+    active_states = [presence_states.get(human["user_id"]) for human in active_humans]
+    if any(not isinstance(state, dict) for state in active_states):
+        return None
+
+    typed_states = [state for state in active_states if isinstance(state, dict)]
+    if len(typed_states) != len(active_humans):
+        return None
+
+    if room_human_count(room) <= 1:
+        if all(bool(state.get("cleared")) for state in typed_states):
+            winner_state = max(
+                typed_states,
+                key=lambda state: (
+                    int(state.get("kills", 0)),
+                    float(state.get("damage_dealt", 0)),
+                    -float(state.get("local_bot_alive_count", 0)),
+                ),
+            )
+            return {
+                "winnerId": winner_state.get("fighter", {}).get("id"),
+                "humanSideWon": True,
+                "humansWon": True,
+                "reason": "clear",
+                "mode": "local_coop",
+                "fighters": [
+                    state.get("fighter", {})
+                    for state in typed_states
+                    if isinstance(state.get("fighter"), dict)
+                ],
+            }
+
+        any_human_alive = any(bool(state.get("alive")) or bool(state.get("quiz_pending")) for state in typed_states)
+        if not any_human_alive:
+            return {
+                "winnerId": None,
+                "humanSideWon": False,
+                "humansWon": False,
+                "reason": "clear",
+                "mode": "local_coop",
+                "fighters": [
+                    state.get("fighter", {})
+                    for state in typed_states
+                    if isinstance(state.get("fighter"), dict)
+                ],
+            }
+
+        return None
+
+    human_views = [
+        build_local_coop_human_fighter_view(human, state, room_elapsed_ms(room))
+        for human, state in zip(active_humans, typed_states)
+    ]
+    bot_views = [
+        build_local_coop_bot_fighter_view(bot, shared_bots[bot["id"]], room_elapsed_ms(room))
+        for bot in room["bots"]
+        if isinstance(shared_bots.get(bot["id"]), dict)
+    ]
+    alive_bots = [fighter for fighter in bot_views if fighter["alive"]]
+    alive_humans = [
+        fighter
+        for fighter in human_views
+        if fighter["alive"] or fighter["quizPending"]
+    ]
+
+    if not alive_bots and alive_humans:
+        winner_state = max(
+            human_views,
+            key=lambda fighter: (
+                int(fighter.get("kills", 0)),
+                float(fighter.get("damageDealt", 0)),
+                float(fighter_remaining_power(fighter)),
+            ),
+        )
+        return {
+            "winnerId": winner_state.get("id"),
+            "humanSideWon": True,
+            "humansWon": True,
+            "reason": "clear",
+            "mode": "local_coop",
+            "fighters": human_views + bot_views,
+        }
+
+    if not alive_humans:
+        return {
+            "winnerId": alive_bots[0]["id"] if alive_bots else None,
+            "humanSideWon": False,
+            "humansWon": False,
+            "reason": "clear",
+            "mode": "local_coop",
+            "fighters": human_views + bot_views,
+        }
+
+    elapsed_ms = room_elapsed_ms(room)
+    if elapsed_ms < MATCH_MAX_MS:
+        return None
+
+    if len(alive_humans) != len(alive_bots):
+        human_side_won = len(alive_humans) > len(alive_bots)
+        return {
+            "winnerId": (alive_humans[0]["id"] if human_side_won else alive_bots[0]["id"]) if (alive_humans or alive_bots) else None,
+            "humanSideWon": human_side_won,
+            "humansWon": human_side_won,
+            "reason": "timeout",
+            "mode": "local_coop",
+            "fighters": human_views + bot_views,
+        }
+
+    human_power = sum(fighter_remaining_power(fighter) for fighter in alive_humans)
+    bot_power = sum(fighter_remaining_power(fighter) for fighter in alive_bots)
+    if human_power != bot_power:
+        human_side_won = human_power > bot_power
+        return {
+            "winnerId": (alive_humans[0]["id"] if human_side_won else alive_bots[0]["id"]) if (alive_humans or alive_bots) else None,
+            "humanSideWon": human_side_won,
+            "humansWon": human_side_won,
+            "reason": "timeout",
+            "mode": "local_coop",
+            "fighters": human_views + bot_views,
+        }
+
+    human_kills = sum(max(0, read_int_value(fighter.get("kills"), 0)) for fighter in human_views)
+    defeated_bots = len([fighter for fighter in bot_views if not fighter["alive"]])
+    human_side_won = human_kills >= defeated_bots
+    return {
+        "winnerId": (alive_humans[0]["id"] if human_side_won else alive_bots[0]["id"]) if (alive_humans or alive_bots) else None,
+        "humanSideWon": human_side_won,
+        "humansWon": human_side_won,
+        "reason": "timeout",
+        "mode": "local_coop",
+        "fighters": human_views + bot_views,
+    }
+
+
+async def broadcast_shared_bot_states(room: Dict[str, Any], *, force: bool = False) -> bool:
+    if room.get("sync_mode", DEFAULT_SYNC_MODE) != "local_coop":
+        return False
+
+    sync_state = room.setdefault("sync_state", build_sync_state())
+    now_monotonic = monotonic_time()
+    if (
+        not force
+        and now_monotonic - sync_state.get("last_shared_bot_broadcast_monotonic", 0.0)
+        < LOCAL_COOP_SHARED_BOT_BROADCAST_INTERVAL_SECONDS
+    ):
+        return False
+
+    payload = {
+        "bots": serialize_shared_bot_states(room),
+        "version": read_int_value(sync_state.get("shared_bot_version"), 0),
+    }
+    sync_state["broadcast_shared_bot_version"] = payload["version"]
+    sync_state["last_shared_bot_broadcast_monotonic"] = now_monotonic
+    await broadcast_to_room(
+        room["id"],
+        {
+            "type": "br_shared_bot_states",
+            "payload": payload,
+            "timestamp": now_utc().timestamp(),
+        },
+    )
+    return True
 
 
 def cleanup_rooms() -> None:
@@ -301,6 +802,16 @@ def build_bot_entry(difficulty: Difficulty) -> Dict[str, Any]:
         "pet_stage": random.choice([2, 3, 4]),
         "joined_at": iso_now(),
     }
+
+
+def build_default_enemy_squad(max_players: int) -> list[Dict[str, Any]]:
+    available_slots = max(0, min(max_players, MAX_ROOM_CAPACITY) - 1)
+    default_bot_count = min(len(DEFAULT_ENEMY_SQUAD), available_slots)
+    return [build_bot_entry(DEFAULT_ENEMY_SQUAD[index]) for index in range(default_bot_count)]
+
+
+def resolve_sync_mode_for_start(room: Dict[str, Any]) -> SyncMode:
+    return DEFAULT_SYNC_MODE
 
 
 def verify_ws_token(token: Optional[str], expected_user_id: int) -> None:
@@ -409,6 +920,9 @@ async def broadcast_room_update(
         {
             "type": "br_room_update",
             "room": serialize_room(room),
+            "presence_states": serialize_presence_states(room),
+            "shared_bot_states": serialize_shared_bot_states(room),
+            "shared_bot_version": get_shared_bot_version(room),
             "host_changed": host_changed,
             "previous_host_user_id": previous_host_user_id,
             "latest_snapshot": latest_snapshot if host_changed else None,
@@ -526,6 +1040,11 @@ async def run_room_runtime(room_id: str) -> None:
 
 
 def ensure_room_runtime(room_id: str) -> None:
+    room = active_rooms.get(room_id)
+    if room and room.get("sync_mode", DEFAULT_SYNC_MODE) == "local_coop":
+        cancel_room_runtime(room_id)
+        return
+
     existing = room_runtime_tasks.get(room_id)
     if existing and not existing.done():
         return
@@ -564,6 +1083,33 @@ def disconnect_grace_for_room(room: Optional[Dict[str, Any]], user_id: int) -> f
         return min(DISCONNECT_GRACE_SECONDS, IN_PROGRESS_HOST_DISCONNECT_GRACE_SECONDS)
 
     return DISCONNECT_GRACE_SECONDS
+
+
+async def handle_live_disconnect(
+    room_id: str,
+    user_id: int,
+    key: str,
+    websocket: WebSocket,
+) -> None:
+    if ws_connections.get(key) is not websocket:
+        return
+
+    drop_ws_connection(key)
+    cancel_disconnect_cleanup(key)
+    room = active_rooms.get(room_id)
+    if room and user_id in room["humans"]:
+        room["humans"][user_id]["connected"] = False
+        room["humans"][user_id]["disconnected_at"] = iso_now()
+        await broadcast_room_update(room)
+    grace_seconds = disconnect_grace_for_room(room, user_id)
+    disconnect_cleanup_tasks[key] = asyncio.create_task(
+        finalize_disconnect_after_grace(
+            room_id,
+            user_id,
+            key,
+            grace_seconds=grace_seconds,
+        )
+    )
 
 
 async def finalize_disconnect_after_grace(
@@ -712,22 +1258,25 @@ async def create_room(payload: CreateRoomPayload, current_user: User = Depends(g
 
         room_id = generate_room_id()
         host_entry = build_human_entry(current_user, payload, is_host=True)
+        max_players = min(payload.max_players, MAX_ROOM_CAPACITY)
         room = {
             "id": room_id,
             "room_name": normalize_text(payload.room_name, fallback="宠物生存乱斗", max_length=48),
             "status": "waiting",
+            "sync_mode": DEFAULT_SYNC_MODE,
             "host_user_id": current_user.id,
             "host_username": host_entry["username"],
-            "max_players": min(payload.max_players, MAX_ROOM_CAPACITY),
+            "max_players": max_players,
             "created_at": iso_now(),
             "started_at": None,
             "match_seed": None,
             "humans": {current_user.id: host_entry},
-            "bots": [],
+            "bots": build_default_enemy_squad(max_players),
             "latest_snapshot": None,
             "latest_match_payload": None,
             "sync_state": build_sync_state(),
         }
+        ensure_shared_bot_states(room)
         active_rooms[room_id] = room
 
     return {"room": serialize_room(room), "reused": False, "cap": MAX_ROOM_CAPACITY}
@@ -773,7 +1322,7 @@ async def join_room(room_id: str, payload: RoomParticipantPayload, current_user:
             return {"room": serialize_room(room), "joined": True}
 
         if room_human_count(room) >= MAX_HUMAN_PLAYERS:
-            raise HTTPException(status_code=400, detail="Battle Royale only supports two human players")
+            raise HTTPException(status_code=400, detail="Battle Royale only supports four human players")
 
         if room_participant_count(room) >= room["max_players"]:
             raise HTTPException(status_code=400, detail="Room is full")
@@ -850,6 +1399,7 @@ async def add_bot(room_id: str, payload: AddBotPayload, current_user: User = Dep
 
         bot = build_bot_entry(payload.difficulty)
         room["bots"].append(bot)
+        ensure_shared_bot_states(room)
 
     await broadcast_room_snapshot(room)
     return {"room": serialize_room(room), "bot": bot}
@@ -870,6 +1420,7 @@ async def remove_bot(room_id: str, bot_id: str, current_user: User = Depends(get
         room["bots"] = [bot for bot in room["bots"] if bot["id"] != bot_id]
         if len(room["bots"]) == original_count:
             raise HTTPException(status_code=404, detail="Bot not found")
+        ensure_shared_bot_states(room)
 
     await broadcast_room_snapshot(room)
     return {"room": serialize_room(room), "removed_bot_id": bot_id}
@@ -899,12 +1450,14 @@ async def start_room(room_id: str, current_user: User = Depends(get_current_user
                 detail="Battle Royale server is busy",
             )
 
+        room["sync_mode"] = resolve_sync_mode_for_start(room)
         room["status"] = "in_progress"
         room["started_at"] = iso_now()
         room["match_seed"] = random.randint(100_000, 999_999_999)
         room["latest_snapshot"] = None
         room["latest_match_payload"] = None
         room["sync_state"] = build_sync_state()
+        ensure_shared_bot_states(room)
 
     ensure_room_runtime(room_id)
 
@@ -985,21 +1538,31 @@ async def battle_royale_ws(
         except Exception:
             pass
 
-    await websocket.send_json(
-        {
-            "type": "connected",
-            "room": serialize_room(room),
-            "latest_snapshot": room.get("latest_snapshot"),
-            "latest_match_payload": room.get("latest_match_payload"),
-            "recoverable": room["status"] in {"waiting", "in_progress"},
-            "timestamp": now_utc().timestamp(),
-        }
-    )
+    try:
+        await websocket.send_json(
+            {
+                "type": "connected",
+                "room": serialize_room(room),
+                "latest_snapshot": room.get("latest_snapshot"),
+                "presence_states": serialize_presence_states(room),
+                "shared_bot_states": serialize_shared_bot_states(room),
+                "shared_bot_version": get_shared_bot_version(room),
+                "latest_match_payload": room.get("latest_match_payload"),
+                "recoverable": room["status"] in {"waiting", "in_progress"},
+                "timestamp": now_utc().timestamp(),
+            }
+        )
+    except Exception:
+        await handle_live_disconnect(room_id, user_id, key, websocket)
+        return
 
     try:
         while True:
             raw_message = await websocket.receive_text()
-            message = json.loads(raw_message)
+            try:
+                message = json.loads(raw_message)
+            except json.JSONDecodeError:
+                continue
             message_type = message.get("type")
 
             if message_type == "ping":
@@ -1069,6 +1632,64 @@ async def battle_royale_ws(
                 sync_state["host_stale"] = False
                 current_room["latest_snapshot"] = payload
                 await broadcast_host_snapshot_if_due(current_room, sync_state)
+            elif message_type == "br_presence_state":
+                sync_state = current_room.setdefault("sync_state", build_sync_state())
+                payload = sanitize_presence_payload(user_id, current_room, message.get("payload", {}))
+                if payload is None:
+                    continue
+                sync_state.setdefault("presence_states", {})[user_id] = payload
+                await broadcast_to_room(
+                    room_id,
+                    {
+                        "type": "br_presence_state",
+                        "user_id": user_id,
+                        "payload": payload,
+                        "timestamp": now_utc().timestamp(),
+                    },
+                    exclude_user=user_id,
+                )
+                await broadcast_shared_bot_states(current_room)
+                if current_room.get("latest_match_payload") is None:
+                    local_coop_payload = build_local_coop_match_payload(current_room)
+                    if local_coop_payload is not None:
+                        current_room["latest_match_payload"] = local_coop_payload
+                        current_room["status"] = "finished"
+                        if current_room.get("started_at") is None:
+                            current_room["started_at"] = iso_now()
+                        cancel_room_runtime(room_id)
+                        await broadcast_to_room(
+                            room_id,
+                            {
+                                "type": "br_match_end",
+                                "payload": local_coop_payload,
+                                "timestamp": now_utc().timestamp(),
+                            },
+                        )
+            elif message_type == "br_bot_damage":
+                if current_room.get("sync_mode", DEFAULT_SYNC_MODE) != "local_coop":
+                    continue
+                payload = sanitize_bot_damage_payload(user_id, current_room, message.get("payload", {}))
+                if payload is None:
+                    continue
+                changed = apply_shared_bot_damage(current_room, payload)
+                if changed:
+                    await broadcast_shared_bot_states(current_room, force=True)
+                if current_room.get("latest_match_payload") is None:
+                    local_coop_payload = build_local_coop_match_payload(current_room)
+                    if local_coop_payload is not None:
+                        current_room["latest_match_payload"] = local_coop_payload
+                        current_room["status"] = "finished"
+                        if current_room.get("started_at") is None:
+                            current_room["started_at"] = iso_now()
+                        cancel_room_runtime(room_id)
+                        await broadcast_to_room(
+                            room_id,
+                            {
+                                "type": "br_match_end",
+                                "payload": local_coop_payload,
+                                "timestamp": now_utc().timestamp(),
+                            },
+                        )
             elif message_type == "br_quiz_offer":
                 if current_room["host_user_id"] != user_id:
                     continue
@@ -1130,22 +1751,7 @@ async def battle_royale_ws(
                 )
 
     except WebSocketDisconnect:
-        if ws_connections.get(key) is not websocket:
-            return
-
-        drop_ws_connection(key)
-        cancel_disconnect_cleanup(key)
-        room = active_rooms.get(room_id)
-        if room and user_id in room["humans"]:
-            room["humans"][user_id]["connected"] = False
-            room["humans"][user_id]["disconnected_at"] = iso_now()
-            await broadcast_room_update(room)
-        grace_seconds = disconnect_grace_for_room(room, user_id)
-        disconnect_cleanup_tasks[key] = asyncio.create_task(
-            finalize_disconnect_after_grace(
-                room_id,
-                user_id,
-                key,
-                grace_seconds=grace_seconds,
-            )
-        )
+        await handle_live_disconnect(room_id, user_id, key, websocket)
+    except Exception as exc:
+        logger.warning("Battle Royale websocket runtime error room=%s user=%s error=%s", room_id, user_id, exc)
+        await handle_live_disconnect(room_id, user_id, key, websocket)

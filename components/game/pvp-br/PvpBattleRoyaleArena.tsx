@@ -8,6 +8,12 @@ import BattleRoyaleQuizModal from '@/components/game/pvp-br/BattleRoyaleQuizModa
 import { musicManager } from '@/lib/audio/musicManager';
 import { getPetVariantScale, getPetWorldYOffset } from '@/lib/config/petArtworkProfiles';
 import { getPetImageUrl } from '@/lib/config/petAssets';
+import {
+  clampDisplayedBotFighter,
+  clampDisplayedBotState,
+  reconcileSharedBotState,
+  shouldAcceptSharedBotVersion,
+} from '@/lib/game/pvpBrSharedBotState';
 import { touchInputManager } from '@/lib/input/TouchInputManager';
 import { migratePetType } from '@/lib/pet/migration';
 import { buildBattleRoyaleQuiz, evaluateBattleRoyaleQuiz } from '@/lib/pvpBrQuestions';
@@ -20,6 +26,7 @@ import type {
   BattleRoyaleEffectView,
   BattleRoyaleFighterView,
   BattleRoyaleInputPayload,
+  BattleRoyalePresenceState,
   BattleRoyalePickupView,
   BattleRoyalePlatform,
   BattleRoyaleProjectileView,
@@ -27,6 +34,7 @@ import type {
   BattleRoyaleQuizQuestion,
   BattleRoyaleResult,
   BattleRoyaleRoom,
+  BattleRoyaleSharedBotState,
   BattleRoyaleSnapshot,
   BattleRoyaleWeaponPickupView,
   BrPickupType,
@@ -76,11 +84,18 @@ const SAFE_ZONE_DAMAGE_BY_PHASE = [10, 14, 20, 30, 42, 58, 78] as const;
 const MATCH_MAX_MS = 360000;
 const PICKUP_RESPAWN_MS = 12000;
 const QUIZ_PENDING_TIMEOUT_MS = 15000;
-const SNAPSHOT_INTERVAL_MS = 60;
+const HOST_LOOP_INTERVAL_MS = 16;
+const SNAPSHOT_INTERVAL_MS = 33;
 const UI_SYNC_INTERVAL_MS = 66;
-const INPUT_SEND_INTERVAL_MS = 34;
-const INPUT_KEEPALIVE_INTERVAL_MS = 90;
+const INPUT_SEND_INTERVAL_MS = 22;
+const INPUT_KEEPALIVE_INTERVAL_MS = 66;
+const PRESENCE_SEND_INTERVAL_ACTIVE_MS = 40;
+const PRESENCE_SEND_INTERVAL_IDLE_MS = 70;
 const MAX_RENDER_EXTRAPOLATION_MS = 220;
+const REMOTE_PRESENCE_EXTRAPOLATION_MS = 170;
+const REMOTE_PRESENCE_STALE_MS = 2200;
+const REMOTE_PRESENCE_SMOOTHING_RATE = 18;
+const REMOTE_PRESENCE_SNAP_DISTANCE = 220;
 const LOCAL_INPUT_LEAD_MS = 104;
 const MAX_LOCAL_INPUT_LEAD_MS = 240;
 const LOCAL_FIGHTER_SMOOTHING_RATE = 36;
@@ -90,6 +105,10 @@ const POSITION_SNAP_DISTANCE = 300;
 const LOCAL_PREDICTION_BLEND_MIN = 0.92;
 const LOCAL_PREDICTION_BLEND_MAX = 0.985;
 const LOCAL_PREDICTION_HARD_CORRECTION_DISTANCE = 320;
+const NAMEPLATE_MAX_WIDTH = 74;
+const NAMEPLATE_MAX_CHARS = 8;
+const PET_TAG_MAX_WIDTH = 86;
+const PET_TAG_MAX_CHARS = 10;
 const CANVAS_FONT_FAMILY = '"Microsoft YaHei", "Noto Sans SC", "PingFang SC", sans-serif';
 const IS_DEV = process.env.NODE_ENV === 'development';
 const BR_QA_DEBUG =
@@ -476,12 +495,12 @@ const PICKUP_COLORS: Record<BrPickupType, string> = {
 };
 
 const PICKUP_SYMBOLS: Record<BrPickupType, string> = {
-  med_kit: '血',
+  med_kit: '补',
   armor_vest: '甲',
   shield_core: '盾',
-  damage_claw: '爪',
+  damage_claw: '攻',
   wind_boost: '速',
-  shockwave_charge: '波',
+  shockwave_charge: '震',
 };
 
 const ARENA_SOUND_MAP = {
@@ -501,22 +520,22 @@ const AI_TUNING = {
     lootRadius: 780,
     roamMinMs: 3200,
     roamMaxMs: 5000,
-    thinkMinMs: 320,
-    thinkMaxMs: 460,
-    jumpPulseMinMs: 620,
-    jumpPulseMaxMs: 900,
-    moveDeadZone: 82,
-    attackChance: 0.34,
+    thinkMinMs: 420,
+    thinkMaxMs: 640,
+    jumpPulseMinMs: 900,
+    jumpPulseMaxMs: 1280,
+    moveDeadZone: 96,
+    attackChance: 0.28,
     throwChance: 0.08,
     skillChance: 0.06,
-    dashChance: 0.12,
+    dashChance: 0.08,
     dashMinDistance: 380,
     guardHpThreshold: 30,
     speedMultiplier: 0.94,
-    lowHpFocus: 0.18,
+    lowHpFocus: 0.12,
   },
   medium: {
-    engageDistance: 320,
+    engageDistance: 290,
     lootScoreFloor: 0.26,
     lootRadius: 680,
     roamMinMs: 2200,
@@ -526,17 +545,17 @@ const AI_TUNING = {
     jumpPulseMinMs: 440,
     jumpPulseMaxMs: 660,
     moveDeadZone: 56,
-    attackChance: 0.56,
-    throwChance: 0.16,
-    skillChance: 0.12,
-    dashChance: 0.22,
+    attackChance: 0.46,
+    throwChance: 0.12,
+    skillChance: 0.09,
+    dashChance: 0.17,
     dashMinDistance: 280,
     guardHpThreshold: 38,
-    speedMultiplier: 1,
-    lowHpFocus: 0.36,
+    speedMultiplier: 0.98,
+    lowHpFocus: 0.28,
   },
   hard: {
-    engageDistance: 460,
+    engageDistance: 420,
     lootScoreFloor: 0.16,
     lootRadius: 620,
     roamMinMs: 1800,
@@ -546,14 +565,14 @@ const AI_TUNING = {
     jumpPulseMinMs: 380,
     jumpPulseMaxMs: 560,
     moveDeadZone: 44,
-    attackChance: 0.76,
-    throwChance: 0.26,
-    skillChance: 0.18,
-    dashChance: 0.34,
+    attackChance: 0.68,
+    throwChance: 0.22,
+    skillChance: 0.15,
+    dashChance: 0.28,
     dashMinDistance: 220,
     guardHpThreshold: 48,
-    speedMultiplier: 1.06,
-    lowHpFocus: 0.6,
+    speedMultiplier: 1.03,
+    lowHpFocus: 0.48,
   },
 } satisfies Record<
   BattleRoyaleDifficulty,
@@ -591,8 +610,130 @@ function smoothingFactor(deltaSeconds: number, rate: number): number {
   return 1 - Math.exp(-deltaSeconds * rate);
 }
 
+function fitCanvasLabel(
+  ctx: CanvasRenderingContext2D,
+  text: string,
+  maxWidth: number,
+  maxChars = NAMEPLATE_MAX_CHARS,
+): string {
+  const glyphs = Array.from((text || '').trim());
+  if (glyphs.length === 0) {
+    return '无名';
+  }
+
+  const boundedGlyphs = glyphs.slice(0, maxChars);
+  const boundedText = boundedGlyphs.join('');
+  if (glyphs.length <= maxChars && ctx.measureText(boundedText).width <= maxWidth) {
+    return boundedText;
+  }
+
+  let candidateGlyphs = boundedGlyphs;
+  while (candidateGlyphs.length > 1) {
+    const candidate = candidateGlyphs.join('') + '...';
+    if (ctx.measureText(candidate).width <= maxWidth) {
+      return candidate;
+    }
+    candidateGlyphs = candidateGlyphs.slice(0, -1);
+  }
+
+  return candidateGlyphs.join('');
+}
+
+function formatPetTypeLabel(petType: string): string {
+  const normalized = (petType || '').trim().replace(/_/g, '-');
+  return normalized || 'pet';
+}
+
+function buildPresenceTransportPayload(
+  fighter: BattleRoyaleFighterView,
+  localBotAliveCount: number,
+  updatedAt: number,
+) {
+  const damageDealt = Math.round(fighter.damageDealt ?? 0);
+  const quizPending = Boolean(fighter.quizPending);
+
+  return {
+    fighter: {
+      id: fighter.id,
+      x: Math.round(fighter.x),
+      y: Math.round(fighter.y),
+      vx: Math.round(fighter.vx),
+      vy: Math.round(fighter.vy),
+      hp: Math.round(fighter.hp),
+      shield: Math.round(fighter.shield),
+      armor: Math.round(fighter.armor),
+      kills: fighter.kills,
+      alive: Boolean(fighter.alive),
+      facing: fighter.facing,
+      quiz_pending: quizPending,
+      damage_dealt: damageDealt,
+      special_charges: fighter.specialCharges,
+      weapon_ready: Boolean(fighter.weaponReady),
+      swing_ms: Math.round(fighter.swingMs),
+      hit_flash_ms: Math.round(fighter.hitFlashMs),
+    },
+    local_bot_alive_count: localBotAliveCount,
+    cleared: localBotAliveCount === 0 && (Boolean(fighter.alive) || quizPending),
+    alive: Boolean(fighter.alive),
+    quiz_pending: quizPending,
+    kills: fighter.kills,
+    damage_dealt: damageDealt,
+    updated_at: updatedAt,
+  };
+}
+
+function presenceSendIntervalMs(fighter: BattleRoyaleFighterView) {
+  const isActive =
+    Math.abs(fighter.vx) > 28 ||
+    Math.abs(fighter.vy) > 72 ||
+    fighter.swingMs > 0 ||
+    fighter.hitFlashMs > 0 ||
+    !fighter.weaponReady ||
+    Boolean(fighter.quizPending) ||
+    !fighter.alive;
+  return isActive ? PRESENCE_SEND_INTERVAL_ACTIVE_MS : PRESENCE_SEND_INTERVAL_IDLE_MS;
+}
+
+function medianRounded(values: number[]): number {
+  if (values.length === 0) {
+    return 0;
+  }
+  const sorted = [...values].sort((left, right) => left - right);
+  const middleIndex = Math.floor(sorted.length / 2);
+  const median =
+    sorted.length % 2 === 0
+      ? ((sorted[middleIndex - 1] ?? sorted[middleIndex]) + (sorted[middleIndex] ?? sorted[middleIndex - 1])) / 2
+      : (sorted[middleIndex] ?? 0);
+  return Math.round(median);
+}
+
 function canDrawImage(image: HTMLImageElement | undefined): image is HTMLImageElement {
   return Boolean(image && image.complete && image.naturalWidth > 0 && image.naturalHeight > 0);
+}
+
+function buildPetImageCacheKey(petType: string, petStage: number | undefined) {
+  const normalizedStage = Math.max(1, petStage ?? 3);
+  const normalizedType = migratePetType(petType as any);
+  return `${normalizedType}-${normalizedStage}`;
+}
+
+function ensureBattleRoyalePetImageCached(
+  cache: Record<string, HTMLImageElement>,
+  petType: string,
+  petStage: number | undefined,
+) {
+  const normalizedStage = Math.max(1, petStage ?? 3);
+  const normalizedType = migratePetType(petType as any);
+  const cacheKey = buildPetImageCacheKey(normalizedType, normalizedStage);
+  const existing = cache[cacheKey];
+  if (existing && (!existing.complete || existing.naturalWidth > 0)) {
+    return;
+  }
+
+  const image = new Image();
+  image.decoding = 'async';
+  image.src = getPetImageUrl(normalizedType as any, 'normal', normalizedStage);
+  cache[cacheKey] = image;
 }
 
 function fighterCenterX(fighter: Pick<BattleRoyaleFighterView, 'x'>) {
@@ -1460,7 +1601,7 @@ function deriveSpeedMultiplierFromBuffs(buffs: Partial<Record<BrPickupType, numb
 function buildLootHudLine(fighter: BattleRoyaleFighterView): string {
   const damageBonus = deriveDamageBonusFromBuffs(fighter.buffs);
   const speedBonusPercent = Math.max(0, Math.round((deriveSpeedMultiplierFromBuffs(fighter.buffs) - 1) * 100));
-  return `利爪 +${damageBonus}  风压 +${speedBonusPercent}%  L 冲击波 x${fighter.specialCharges}`;
+  return `攻 +${damageBonus} | 速 +${speedBonusPercent}% | L ${fighter.specialCharges}`;
 }
 
 function hydrateFightersFromSnapshot(room: BattleRoyaleRoom, snapshot: BattleRoyaleSnapshot): Map<string, InternalFighter> {
@@ -1524,6 +1665,272 @@ function hydrateFightersFromSnapshot(room: BattleRoyaleRoom, snapshot: BattleRoy
   return fighters;
 }
 
+function buildSimulationRoom(room: BattleRoyaleRoom, currentUserId: number | null, localCoopMode: boolean): BattleRoyaleRoom {
+  if (!localCoopMode || !currentUserId) {
+    return room;
+  }
+
+  return {
+    ...room,
+    humans: room.humans.filter((human) => human.user_id === currentUserId),
+  };
+}
+
+function readFiniteNumber(value: unknown, fallback: number): number {
+  return typeof value === 'number' && Number.isFinite(value) ? value : fallback;
+}
+
+function normalizePresenceUpdatedAt(raw: Record<string, unknown>): number {
+  const serverUpdatedAt = readFiniteNumber(raw.server_updated_at ?? raw.serverUpdatedAt, Date.now());
+  const clientUpdatedAt = readFiniteNumber(raw.updated_at ?? raw.updatedAt, serverUpdatedAt);
+  const skewMs = Math.abs(Date.now() - clientUpdatedAt);
+  return skewMs <= 5000 ? clientUpdatedAt : serverUpdatedAt;
+}
+
+function normalizePresenceStatePayload(
+  room: BattleRoyaleRoom,
+  payload: unknown,
+): BattleRoyalePresenceState | null {
+  if (!payload || typeof payload !== 'object') {
+    return null;
+  }
+
+  const raw = payload as Record<string, unknown>;
+  const userId = readFiniteNumber(raw.user_id ?? raw.userId, -1);
+  if (userId < 0) {
+    return null;
+  }
+
+  const fighterPayload = raw.fighter;
+  if (!fighterPayload || typeof fighterPayload !== 'object') {
+    return null;
+  }
+
+  const human = room.humans.find((entry) => entry.user_id === userId);
+  const fighter = fighterPayload as Record<string, unknown>;
+  const quizPending = Boolean(raw.quiz_pending ?? raw.quizPending ?? fighter.quizPending ?? fighter.quiz_pending);
+  const damageDealt = readFiniteNumber(
+    raw.damage_dealt ?? raw.damageDealt ?? fighter.damageDealt ?? fighter.damage_dealt,
+    0,
+  );
+
+  return {
+    userId,
+    fighter: {
+      id: (typeof fighter.id === 'string' && fighter.id) || fighterIdForUser(userId),
+      userId,
+      name: (typeof fighter.name === 'string' && fighter.name) || human?.username || `player-${userId}`,
+      petType:
+        (typeof fighter.petType === 'string' && fighter.petType) ||
+        (typeof fighter.pet_type === 'string' && fighter.pet_type) ||
+        human?.pet_type ||
+        'code_kitty',
+      petStage: readFiniteNumber(fighter.petStage ?? fighter.pet_stage, human?.pet_stage ?? 3),
+      x: readFiniteNumber(fighter.x, 0),
+      y: readFiniteNumber(fighter.y, 0),
+      vx: readFiniteNumber(fighter.vx, 0),
+      vy: readFiniteNumber(fighter.vy, 0),
+      hp: readFiniteNumber(fighter.hp, FIGHTER_HP),
+      maxHp: readFiniteNumber(fighter.maxHp ?? fighter.max_hp, FIGHTER_HP),
+      shield: readFiniteNumber(fighter.shield, 0),
+      armor: readFiniteNumber(fighter.armor, 0),
+      kills: readFiniteNumber(fighter.kills, 0),
+      alive: Boolean(fighter.alive),
+      facing: fighter.facing === -1 ? -1 : 1,
+      isBot: false,
+      difficulty: undefined,
+      hasRevived: Boolean(fighter.hasRevived ?? fighter.has_revived),
+      reviveUsed: Boolean(fighter.reviveUsed ?? fighter.revive_used),
+      quizPending,
+      damageDealt,
+      survivedMs: readFiniteNumber(fighter.survivedMs ?? fighter.survived_ms, 0),
+      specialCharges: readFiniteNumber(fighter.specialCharges ?? fighter.special_charges, 0),
+      buffs: { ...((fighter.buffs as Partial<Record<BrPickupType, number>> | undefined) ?? {}) },
+      weaponReady: Boolean(fighter.weaponReady ?? fighter.weapon_ready ?? true),
+      swingMs: readFiniteNumber(fighter.swingMs ?? fighter.swing_ms, 0),
+      hitFlashMs: readFiniteNumber(fighter.hitFlashMs ?? fighter.hit_flash_ms, 0),
+    },
+    localBotAliveCount: readFiniteNumber(raw.local_bot_alive_count ?? raw.localBotAliveCount, 0),
+    cleared: Boolean(raw.cleared),
+    alive: Boolean(raw.alive ?? fighter.alive),
+    quizPending,
+    kills: readFiniteNumber(raw.kills ?? fighter.kills, 0),
+    damageDealt,
+    updatedAt: normalizePresenceUpdatedAt(raw),
+  };
+}
+
+function buildPresenceStateRecord(
+  room: BattleRoyaleRoom,
+  presenceStates: unknown,
+): Record<number, BattleRoyalePresenceState> {
+  if (!Array.isArray(presenceStates)) {
+    return {};
+  }
+
+  return presenceStates.reduce<Record<number, BattleRoyalePresenceState>>((record, payload) => {
+    const normalized = normalizePresenceStatePayload(room, payload);
+    if (normalized) {
+      record[normalized.userId] = normalized;
+    }
+    return record;
+  }, {});
+}
+
+function normalizeSharedBotStatePayload(payload: unknown): BattleRoyaleSharedBotState | null {
+  if (!payload || typeof payload !== 'object') {
+    return null;
+  }
+
+  const raw = payload as Record<string, unknown>;
+  const id = typeof raw.id === 'string' ? raw.id : '';
+  if (!id) {
+    return null;
+  }
+
+  return {
+    id,
+    hp: readFiniteNumber(raw.hp, FIGHTER_HP),
+    maxHp: readFiniteNumber(raw.maxHp ?? raw.max_hp, FIGHTER_HP),
+    shield: readFiniteNumber(raw.shield, 0),
+    armor: readFiniteNumber(raw.armor, 0),
+    alive: Boolean(raw.alive ?? true),
+    updatedAt: readFiniteNumber(raw.updatedAt ?? raw.updated_at, Date.now()),
+    lastAttackerId:
+      typeof raw.lastAttackerId === 'string'
+        ? raw.lastAttackerId
+        : typeof raw.last_attacker_id === 'string'
+          ? raw.last_attacker_id
+          : null,
+  };
+}
+
+function buildSharedBotStateRecord(sharedBotStates: unknown): Record<string, BattleRoyaleSharedBotState> {
+  if (!Array.isArray(sharedBotStates)) {
+    return {};
+  }
+
+  return sharedBotStates.reduce<Record<string, BattleRoyaleSharedBotState>>((record, payload) => {
+    const normalized = normalizeSharedBotStatePayload(payload);
+    if (normalized) {
+      record[normalized.id] = normalized;
+    }
+    return record;
+  }, {});
+}
+
+function buildRemotePresenceFighters(
+  room: BattleRoyaleRoom,
+  currentUserId: number | null,
+  presenceStates: Record<number, BattleRoyalePresenceState>,
+): BattleRoyaleFighterView[] {
+  return room.humans.reduce<BattleRoyaleFighterView[]>((fighters, human) => {
+    if (human.user_id === currentUserId || human.connected === false) {
+      return fighters;
+    }
+
+    const presence = presenceStates[human.user_id];
+    const fighter = presence?.fighter;
+    if (!fighter) {
+      return fighters;
+    }
+
+    fighters.push({
+      ...fighter,
+      id: fighter.id || fighterIdForUser(human.user_id),
+      userId: human.user_id,
+      name: fighter.name || human.username,
+      petType: fighter.petType || human.pet_type,
+      petStage: fighter.petStage || human.pet_stage || 3,
+      isBot: false,
+    });
+    return fighters;
+  }, []);
+}
+
+function mergeRemotePresenceIntoSnapshot(
+  snapshot: BattleRoyaleSnapshot,
+  remoteFighters: BattleRoyaleFighterView[],
+): BattleRoyaleSnapshot {
+  if (remoteFighters.length === 0) {
+    return snapshot;
+  }
+
+  const localIds = new Set(snapshot.fighters.map((fighter) => fighter.id));
+  return {
+    ...snapshot,
+    fighters: [
+      ...snapshot.fighters,
+      ...remoteFighters.filter((fighter) => !localIds.has(fighter.id)),
+    ],
+  };
+}
+
+function buildRenderedRemotePresenceState(
+  room: BattleRoyaleRoom,
+  currentUserId: number | null,
+  presenceStates: Record<number, BattleRoyalePresenceState>,
+  previousRenderedState: Record<number, BattleRoyaleFighterView>,
+  deltaSeconds: number,
+  nowMs: number,
+): Record<number, BattleRoyaleFighterView> {
+  const nextState: Record<number, BattleRoyaleFighterView> = {};
+  const alpha = smoothingFactor(deltaSeconds, REMOTE_PRESENCE_SMOOTHING_RATE);
+
+  room.humans.forEach((human) => {
+    if (human.user_id === currentUserId || human.connected === false) {
+      return;
+    }
+
+    const presence = presenceStates[human.user_id];
+    const fighter = presence?.fighter;
+    if (!fighter) {
+      return;
+    }
+
+    const presenceAgeMs = clamp(nowMs - (presence.updatedAt || nowMs), 0, REMOTE_PRESENCE_STALE_MS);
+    if (presenceAgeMs >= REMOTE_PRESENCE_STALE_MS) {
+      return;
+    }
+
+    const extrapolationMs = clamp(presenceAgeMs, 0, REMOTE_PRESENCE_EXTRAPOLATION_MS);
+    const predictedX = clamp(fighter.x + fighter.vx * (extrapolationMs / 1000), 0, MAP_WIDTH - FIGHTER_WIDTH);
+    const predictedY = clamp(fighter.y + fighter.vy * (extrapolationMs / 1000), 0, FLOOR_Y - FIGHTER_HEIGHT);
+    const target: BattleRoyaleFighterView = {
+      ...fighter,
+      id: fighter.id || fighterIdForUser(human.user_id),
+      userId: human.user_id,
+      name: fighter.name || human.username,
+      petType: fighter.petType || human.pet_type,
+      petStage: fighter.petStage || human.pet_stage || 3,
+      isBot: false,
+      x: predictedX,
+      y: predictedY,
+    };
+    const previous = previousRenderedState[human.user_id];
+    const shouldSnap =
+      !previous ||
+      previous.alive !== target.alive ||
+      previous.quizPending !== target.quizPending ||
+      Math.abs(previous.x - target.x) > REMOTE_PRESENCE_SNAP_DISTANCE ||
+      Math.abs(previous.y - target.y) > REMOTE_PRESENCE_SNAP_DISTANCE;
+
+    nextState[human.user_id] = shouldSnap
+      ? target
+      : {
+          ...target,
+          x: lerpValue(previous.x, target.x, alpha),
+          y: lerpValue(previous.y, target.y, alpha),
+          vx: lerpValue(previous.vx, target.vx, alpha),
+          vy: lerpValue(previous.vy, target.vy, alpha),
+          hitFlashMs: Math.max(target.hitFlashMs, previous.hitFlashMs - deltaSeconds * 1000),
+          swingMs: Math.max(target.swingMs, previous.swingMs - deltaSeconds * 1000),
+        };
+  });
+
+  return nextState;
+}
+
 function hydratePickupsFromSnapshot(snapshot: BattleRoyaleSnapshot): InternalPickup[] {
   return snapshot.pickups.map((pickup) => ({
     ...pickup,
@@ -1550,17 +1957,17 @@ function hydrateEffectsFromSnapshot(snapshot: BattleRoyaleSnapshot): InternalEff
 function pickupLabel(type: BrPickupType): string {
   switch (type) {
     case 'med_kit':
-      return '医疗包';
+      return '治疗包';
     case 'armor_vest':
-      return '防弹衣';
+      return '护甲片';
     case 'shield_core':
       return '护盾核';
     case 'damage_claw':
-      return '利爪武器';
+      return '强攻爪';
     case 'wind_boost':
-      return '风压助推';
+      return '疾风靴';
     case 'shockwave_charge':
-      return '冲击波';
+      return '震波充能';
     default:
       return type;
   }
@@ -1589,11 +1996,11 @@ function deriveAmbientRoomNotice(snapshot: BattleRoyaleSnapshot, localFighterId:
   const aliveCount = snapshot.fighters.filter((fighter) => fighter.alive).length;
 
   if (snapshot.elapsedMs < 5000) {
-    return '开局先搜护甲、护盾和武器，再往安全区走。';
+    return '先抱团拿补给，再往安全区靠。';
   }
 
   if (localFighter && !localFighter.alive && !localFighter.hasRevived) {
-    return '你已倒下，答对 3 题可半血复活 1 次。';
+    return '答完 3 题能复活 1 次。';
   }
 
   if (localFighter) {
@@ -1603,50 +2010,50 @@ function deriveAmbientRoomNotice(snapshot: BattleRoyaleSnapshot, localFighterId:
     );
 
     if (localDistanceToZone > snapshot.zone.radius + 120) {
-      return '你在圈外，先回安全区。';
+      return '你在毒圈外，先回安全区。';
     }
 
     if (localFighter.hp < localFighter.maxHp * 0.35) {
-      return '血量低，先找医疗包、护盾核或防弹衣。';
+      return '血量偏低，先补状态。';
     }
 
     if (!localFighter.weaponReady) {
-      return '武器已脱手，先捡回武器再近身。';
+      return '武器没在手上，快去捡回。';
     }
 
     if (localFighter.specialCharges > 0) {
-      return '有冲击波了，按 L 可以逼退近身目标。';
+      return '已蓄能，按 L 放震波。';
     }
 
     if (deriveDamageBonusFromBuffs(localFighter.buffs) > 0) {
-      return '利爪生效，近战和投掷更疼。';
+      return '拿到强攻爪，近身压制更强。';
     }
 
     if (deriveSpeedMultiplierFromBuffs(localFighter.buffs) > 1 && localDistanceToZone < snapshot.zone.radius - 220) {
-      return '风压生效，可以抢点或追残血。';
+      return '有加速，快和队友一起转点。';
     }
   }
 
   if (aliveCount <= 3) {
-    return '决赛圈到了，盯紧高台和移动平台。';
+    return '终局到了，别单走。';
   }
 
   if (snapshot.zone.phase >= 5) {
-    return '后期缩圈很快，先守安全区高台。';
+    return '决赛圈很小，先抢平台。';
   }
 
-  return '先靠近安全区，再用 J/K/L 找机会。';
+  return '抱团推进，用 J/K/L 找机会。';
 }
 
-function connectionLabel(wsConnected: boolean, latencyMs: number, isHost: boolean) {
+function connectionLabel(wsConnected: boolean, latencyMs: number, hasAuthority: boolean) {
   if (!wsConnected) {
-    return '重连';
+    return '离线';
   }
-  if (isHost) {
-    return '主控';
+  if (hasAuthority) {
+    return '房主';
   }
   if (latencyMs >= 260) {
-    return '波动';
+    return '偏高';
   }
   if (latencyMs >= 140) {
     return '可玩';
@@ -1660,6 +2067,78 @@ function isSameTeam(left: Pick<BattleRoyaleFighterView, 'isBot'>, right: Pick<Ba
 
 function isHumanFighter(fighter: Pick<BattleRoyaleFighterView, 'isBot'>) {
   return !fighter.isBot;
+}
+
+function sideRemainingPower(
+  fighters: Array<Pick<BattleRoyaleFighterView, 'hp' | 'shield' | 'armor'>>,
+) {
+  return fighters.reduce(
+    (total, fighter) => total + Math.max(0, fighter.hp) + Math.max(0, fighter.shield) + Math.max(0, fighter.armor),
+    0,
+  );
+}
+
+function sideKillCount(fighters: Array<Pick<BattleRoyaleFighterView, 'kills'>>) {
+  return fighters.reduce((total, fighter) => total + fighter.kills, 0);
+}
+
+function determineMatchOutcome(
+  fighters: Array<
+    Pick<BattleRoyaleFighterView, 'id' | 'hp' | 'shield' | 'armor' | 'kills' | 'alive' | 'isBot' | 'quizPending'>
+  >,
+  elapsedMs: number,
+): { humanSideWon: boolean; winnerId: string | null; reason: 'clear' | 'timeout' } | null {
+  const aliveHumans = fighters.filter((fighter) => fighter.alive && isHumanFighter(fighter));
+  const aliveBots = fighters.filter((fighter) => fighter.alive && fighter.isBot);
+  const pendingHumanRevives = fighters.filter((fighter) => fighter.quizPending && isHumanFighter(fighter));
+
+  if (aliveBots.length === 0 && (aliveHumans.length > 0 || pendingHumanRevives.length > 0)) {
+    return {
+      humanSideWon: true,
+      winnerId: aliveHumans[0]?.id ?? pendingHumanRevives[0]?.id ?? null,
+      reason: 'clear',
+    };
+  }
+
+  if (aliveHumans.length === 0 && pendingHumanRevives.length === 0) {
+    return {
+      humanSideWon: false,
+      winnerId: aliveBots[0]?.id ?? null,
+      reason: 'clear',
+    };
+  }
+
+  if (elapsedMs < MATCH_MAX_MS) {
+    return null;
+  }
+
+  const humanCount = aliveHumans.length;
+  const botCount = aliveBots.length;
+  if (humanCount !== botCount) {
+    return {
+      humanSideWon: humanCount > botCount,
+      winnerId: humanCount > botCount ? aliveHumans[0]?.id ?? null : aliveBots[0]?.id ?? null,
+      reason: 'timeout',
+    };
+  }
+
+  const humanPower = sideRemainingPower(aliveHumans);
+  const botPower = sideRemainingPower(aliveBots);
+  if (humanPower !== botPower) {
+    return {
+      humanSideWon: humanPower > botPower,
+      winnerId: humanPower > botPower ? aliveHumans[0]?.id ?? null : aliveBots[0]?.id ?? null,
+      reason: 'timeout',
+    };
+  }
+
+  const humanKills = sideKillCount(fighters.filter((fighter) => isHumanFighter(fighter)));
+  const botKills = sideKillCount(fighters.filter((fighter) => fighter.isBot));
+  return {
+    humanSideWon: humanKills >= botKills,
+    winnerId: humanKills >= botKills ? aliveHumans[0]?.id ?? null : aliveBots[0]?.id ?? null,
+    reason: 'timeout',
+  };
 }
 
 function pickBotRoamPoint(
@@ -1740,6 +2219,9 @@ function aiInputForFighter(
   const candidates = Array.from(fighters.values()).filter(
     (target) => target.id !== fighter.id && target.alive && !isSameTeam(fighter, target),
   );
+  const allies = Array.from(fighters.values()).filter(
+    (target) => target.id !== fighter.id && target.alive && isSameTeam(fighter, target),
+  );
   const aliveCount = candidates.length + 1;
   const nearestEnemy = candidates
     .map((target) => {
@@ -1747,9 +2229,19 @@ function aiInputForFighter(
       const verticalPenalty = fighterVerticalGap(fighter, target) * 0.22;
       const lowHpBonus = (target.maxHp - target.hp) * tuning.lowHpFocus;
       const zonePenalty = distanceToZone(target, zone) > zone.radius - 90 ? 70 : 0;
+      const alliedFocusBonus = allies.reduce((bonus, ally) => {
+        const trackingBonus = ally.combatTargetId === target.id ? 86 : 0;
+        const nearbySupportBonus = fighterDistance(ally, target) < 280 ? 24 : 0;
+        return bonus + trackingBonus + nearbySupportBonus;
+      }, 0);
+      const targetSupportPenalty = candidates.reduce((penalty, other) => {
+        if (other.id === target.id) return penalty;
+        const supportDistance = fighterDistance(other, target);
+        return penalty + Math.max(0, 190 - supportDistance) * 0.16;
+      }, 0);
       return {
         target,
-        score: distance + verticalPenalty + zonePenalty - lowHpBonus,
+        score: distance + verticalPenalty + zonePenalty + targetSupportPenalty - lowHpBonus - alliedFocusBonus,
       };
     })
     .sort((left, right) => left.score - right.score)[0]?.target;
@@ -2016,6 +2508,13 @@ function aiInputForFighter(
 }
 
 export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleArenaProps) {
+  const currentUserId = useAuthStore((state) => state.user?.id ?? null);
+  const localFighterId = currentUserId ? fighterIdForUser(currentUserId) : '';
+  const localCoopMode = room.sync_mode === 'local_coop';
+  const distributedCoopMode = localCoopMode && room.humans.length > 1;
+  const simulationRoom = buildSimulationRoom(room, currentUserId, localCoopMode);
+  const isHost = room.host_user_id === currentUserId;
+  const hostDrivesSnapshots = !localCoopMode && isHost;
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const wsRef = useRef<BattleRoyaleWebSocketClient | null>(null);
   const animationRef = useRef<number | null>(null);
@@ -2028,8 +2527,8 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   const winnerIdRef = useRef<string | null>(null);
   const platformsRef = useRef<BattleRoyalePlatform[]>(createPlatforms(0));
   const previousPlatformsRef = useRef<BattleRoyalePlatform[]>(createPlatforms(0));
-  const fightersRef = useRef<Map<string, InternalFighter>>(createInitialFighters(room));
-  const pickupsRef = useRef<InternalPickup[]>(createInitialPickups(room));
+  const fightersRef = useRef<Map<string, InternalFighter>>(createInitialFighters(simulationRoom));
+  const pickupsRef = useRef<InternalPickup[]>(createInitialPickups(simulationRoom));
   const projectilesRef = useRef<InternalProjectile[]>([]);
   const weaponPickupsRef = useRef<InternalWeaponPickup[]>([]);
   const effectsRef = useRef<InternalEffect[]>([]);
@@ -2076,23 +2575,22 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     guestRenderFrames: 0,
     lastWireSnapshotBytes: 0,
     lastFullSnapshotBytes: 0,
+    lastPresenceBytes: 0,
     platformsStripped: false,
     inputMessagesSent: 0,
+    presenceMessagesSent: 0,
     droppedSnapshots: 0,
     localPredictionFrames: 0,
   });
 
-  const currentUserId = useAuthStore((state) => state.user?.id ?? null);
-  const localFighterId = currentUserId ? fighterIdForUser(currentUserId) : '';
-  const isHost = room.host_user_id === currentUserId;
   const [snapshot, setSnapshot] = useState<BattleRoyaleSnapshot>(snapshotRef.current);
   const [quizOffer, setQuizOffer] = useState<BattleRoyaleQuizOffer | null>(null);
   const [submittingQuiz, setSubmittingQuiz] = useState(false);
   const [quizSubmitError, setQuizSubmitError] = useState<string | null>(null);
   const [result, setResult] = useState<BattleRoyaleResult | null>(null);
   const [showEliminationPrompt, setShowEliminationPrompt] = useState(false);
-  const [hasAuthoritativeSnapshot, setHasAuthoritativeSnapshot] = useState(isHost);
-  const [roomNotice, setRoomNotice] = useState<string>('战场已就绪，先搜资源，再抢高台和武器。');
+  const [hasAuthoritativeSnapshot, setHasAuthoritativeSnapshot] = useState(hostDrivesSnapshots || localCoopMode);
+  const [roomNotice, setRoomNotice] = useState<string>('准备开局，先跟队友会合。');
   const [syncDelayMs, setSyncDelayMs] = useState(0);
   const latestGuestInputSeqRef = useRef(0);
   const pendingGuestInputAcksRef = useRef<Map<number, number>>(new Map());
@@ -2102,6 +2600,13 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     roomOverride?: BattleRoyaleRoom;
     receivedAt: number;
   } | null>(null);
+  const remotePresenceRef = useRef<Record<number, BattleRoyalePresenceState>>({});
+  const remotePresenceVisualRef = useRef<Record<number, BattleRoyaleFighterView>>({});
+  const lastPresenceSentRef = useRef(0);
+  const lastPresenceSignatureRef = useRef('');
+  const currentRoomRef = useRef(room);
+  const sharedBotStatesRef = useRef<Record<string, BattleRoyaleSharedBotState>>({});
+  const sharedBotVersionRef = useRef(0);
 
   const finishCurrentRoom = usePvpBattleRoyaleStore((state) => state.finishCurrentRoom);
   const setCurrentRoom = usePvpBattleRoyaleStore((state) => state.setCurrentRoom);
@@ -2112,7 +2617,39 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   const setLatencyMs = usePvpBattleRoyaleStore((state) => state.setLatencyMs);
   const resetBattleRoyaleStore = usePvpBattleRoyaleStore((state) => state.reset);
   const audioContextRef = useRef<AudioContext | null>(null);
-  const displayedLatencyMs = isHost ? 0 : Math.max(syncDelayMs, latencyMs);
+  const activeCoopSyncDelayMs = localCoopMode && recentGuestSyncSamplesRef.current.length > 0 ? syncDelayMs : 0;
+  const displayedLatencyMs = hostDrivesSnapshots ? 0 : Math.max(activeCoopSyncDelayMs, latencyMs);
+
+  useEffect(() => {
+    currentRoomRef.current = room;
+  }, [room]);
+
+  useEffect(() => {
+    sharedBotVersionRef.current = 0;
+  }, [room.id]);
+
+  useEffect(() => {
+    if (!localCoopMode) {
+      sharedBotStatesRef.current = {};
+      sharedBotVersionRef.current = 0;
+      return;
+    }
+
+    sharedBotStatesRef.current = room.bots.reduce<Record<string, BattleRoyaleSharedBotState>>((record, bot) => {
+      const existing = sharedBotStatesRef.current[bot.id];
+      record[bot.id] = existing ?? {
+        id: bot.id,
+        hp: FIGHTER_HP,
+        maxHp: FIGHTER_HP,
+        shield: 0,
+        armor: 0,
+        alive: true,
+        updatedAt: Date.now(),
+        lastAttackerId: null,
+      };
+      return record;
+    }, {});
+  }, [localCoopMode, room.bots]);
 
   const liveSnapshot = snapshot;
 
@@ -2140,7 +2677,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   }, []);
 
   useEffect(() => {
-    setRoomNotice('战场已就绪，先搜资源，再争夺高台和武器。');
+    setRoomNotice('战斗开始后，先抱团清敌方。');
   }, []);
 
   useEffect(() => {
@@ -2180,18 +2717,10 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
 
   useEffect(() => {
     room.humans.forEach((human) => {
-      const cacheKey = `${human.pet_type}-${human.pet_stage ?? 3}`;
-      const image = new Image();
-      image.decoding = 'async';
-      image.src = getPetImageUrl(human.pet_type as any, 'normal', human.pet_stage ?? 3);
-      imageCacheRef.current[cacheKey] = image;
+      ensureBattleRoyalePetImageCached(imageCacheRef.current, human.pet_type, human.pet_stage);
     });
     room.bots.forEach((bot) => {
-      const cacheKey = `${bot.pet_type}-${bot.pet_stage ?? 3}`;
-      const image = new Image();
-      image.decoding = 'async';
-      image.src = getPetImageUrl(bot.pet_type as any, 'normal', bot.pet_stage ?? 3);
-      imageCacheRef.current[cacheKey] = image;
+      ensureBattleRoyalePetImageCached(imageCacheRef.current, bot.pet_type, bot.pet_stage);
     });
   }, [room]);
 
@@ -2200,11 +2729,97 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       setWsConnected(false);
       setLatencyMs(0);
       setSyncDelayMs(0);
+      sharedBotVersionRef.current = 0;
       pendingGuestInputAcksRef.current.clear();
       recentGuestSyncSamplesRef.current = [];
       pendingAuthoritativeSnapshotRef.current = null;
     };
   }, [setLatencyMs, setSyncDelayMs, setWsConnected]);
+
+  const replaceRemotePresence = (nextRoom: BattleRoyaleRoom, presenceStates: unknown) => {
+    remotePresenceRef.current = buildPresenceStateRecord(nextRoom, presenceStates);
+  };
+
+  const applySharedBotStates = (
+    nextRoom: BattleRoyaleRoom,
+    sharedBotStates: unknown,
+    incomingVersionRaw?: unknown,
+  ) => {
+    if (!localCoopMode) {
+      return;
+    }
+
+    const incomingVersion =
+      typeof incomingVersionRaw === 'number' && Number.isFinite(incomingVersionRaw)
+        ? Math.max(0, Math.trunc(incomingVersionRaw))
+        : null;
+    if (!shouldAcceptSharedBotVersion(sharedBotVersionRef.current, incomingVersion)) {
+      return;
+    }
+
+    const normalized = buildSharedBotStateRecord(sharedBotStates);
+    if (Object.keys(normalized).length === 0) {
+      return;
+    }
+
+    const previousSharedStates = sharedBotStatesRef.current;
+    const reconciled = nextRoom.bots.reduce<Record<string, BattleRoyaleSharedBotState>>((record, bot) => {
+      const incoming = normalized[bot.id];
+      const previous = previousSharedStates[bot.id];
+      if (incoming) {
+        record[bot.id] = reconcileSharedBotState(previous, incoming);
+      } else if (previous) {
+        record[bot.id] = previous;
+      }
+      return record;
+    }, {});
+
+    sharedBotStatesRef.current = reconciled;
+    if (incomingVersion != null) {
+      sharedBotVersionRef.current = Math.max(sharedBotVersionRef.current, incomingVersion);
+    }
+    nextRoom.bots.forEach((bot) => {
+      const sharedState = reconciled[bot.id];
+      const fighter = fightersRef.current.get(bot.id);
+      if (!sharedState || !fighter) {
+        return;
+      }
+
+      const wasAlive = fighter.alive;
+      const clamped = clampDisplayedBotState(fighter, sharedState);
+      fighter.hp = clamped.hp;
+      fighter.maxHp = clamped.maxHp;
+      fighter.shield = clamped.shield;
+      fighter.armor = clamped.armor;
+      fighter.alive = clamped.alive;
+      fighter.lastAttackerId = clamped.lastAttackerId ?? fighter.lastAttackerId;
+      if (!clamped.alive) {
+        fighter.vx = 0;
+        fighter.vy = 0;
+        fighter.quizPending = false;
+        if (wasAlive) {
+          fighter.eliminatedAtMs = elapsedMsRef.current;
+        }
+      }
+    });
+
+    snapshotRef.current = {
+      ...snapshotRef.current,
+      fighters: snapshotRef.current.fighters.map((fighter) => {
+        if (!fighter.isBot) {
+          return fighter;
+        }
+        const sharedState = reconciled[fighter.id];
+        if (!sharedState) {
+          return fighter;
+        }
+        return clampDisplayedBotFighter(fighter, sharedState);
+      }),
+    };
+  };
+
+  const sharedAliveBotCount = (targetRoom: BattleRoyaleRoom) =>
+    targetRoom.bots.reduce((count, bot) => count + (sharedBotStatesRef.current[bot.id]?.alive ?? true ? 1 : 0), 0);
 
   useEffect(() => {
     if (!currentUserId) {
@@ -2231,37 +2846,42 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         if (quizOfferRef.current && submittingQuizRef.current) {
           clearQuizSubmitTimeout();
           setSubmittingQuiz(false);
-          setQuizSubmitError('连接波动，答题结果还未确认。连接恢复后请重新提交当前答卷。');
+          setQuizSubmitError('连接断开了，答题提交失败。');
         }
-        pushRoomNotice('连接波动，系统正在重连。', 2800);
+        pushRoomNotice('连接断开，正在重连。', 2800);
       },
       onLatencyUpdate: (nextLatencyMs) => {
         setLatencyMs(Math.round(nextLatencyMs));
       },
       onMessage: (message) => {
         if (message.type === 'connected') {
+          const connectedRoom = (message.room as BattleRoyaleRoom | undefined) ?? room;
+          replaceRemotePresence(connectedRoom, message.presence_states);
+          applySharedBotStates(connectedRoom, message.shared_bot_states, message.shared_bot_version);
+
           if (message.room) {
-            setCurrentRoom(message.room as BattleRoyaleRoom);
+            currentRoomRef.current = connectedRoom;
+            setCurrentRoom(connectedRoom);
           }
 
-          if (message.latest_snapshot) {
+          if (!localCoopMode && message.latest_snapshot) {
             setHasAuthoritativeSnapshot(true);
             applyRecoveredSnapshot(message.latest_snapshot as BattleRoyaleSnapshot);
             if (reconnectNoticeVisibleRef.current) {
               reconnectNoticeVisibleRef.current = false;
-              pushRoomNotice('同步已恢复，可以继续操作。', 2200);
+              pushRoomNotice('重连成功，战斗已续上。', 2200);
             }
           }
 
           if (reconnectNoticeVisibleRef.current && !message.latest_snapshot) {
             reconnectNoticeVisibleRef.current = false;
-            pushRoomNotice('连接已恢复。', 1800);
+            pushRoomNotice('已重新连上。', 1800);
           }
 
           if (quizOfferRef.current && submittingQuizRef.current) {
             clearQuizSubmitTimeout();
             setSubmittingQuiz(false);
-            setQuizSubmitError('连接已恢复，请重新提交当前答卷。');
+            setQuizSubmitError('连接恢复了，请重新提交答案。');
           }
 
           if (message.latest_match_payload) {
@@ -2276,8 +2896,11 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
             Boolean(message.host_changed) &&
             nextRoom.host_user_id === currentUserId &&
             room.host_user_id !== currentUserId;
+          replaceRemotePresence(nextRoom, message.presence_states);
+          applySharedBotStates(nextRoom, message.shared_bot_states, message.shared_bot_version);
+          currentRoomRef.current = nextRoom;
           setCurrentRoom(nextRoom);
-          if (message.latest_snapshot) {
+          if (!localCoopMode && message.latest_snapshot) {
             setHasAuthoritativeSnapshot(true);
             applyRecoveredSnapshot(message.latest_snapshot as BattleRoyaleSnapshot, nextRoom);
           }
@@ -2286,14 +2909,14 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
             recentGuestSyncSamplesRef.current = [];
             pendingAuthoritativeSnapshotRef.current = null;
             setSyncDelayMs(0);
-            pushRoomNotice('队友离线，你已接管本局。', 2800);
+            pushRoomNotice('你现在是房主，继续带队。', 2800);
           } else if (message.host_changed) {
             pushRoomNotice('房主已切换，战斗继续。', 2200);
           }
           return;
         }
 
-        if (message.type === 'br_input_batch' && isHost && Array.isArray(message.inputs)) {
+        if (message.type === 'br_input_batch' && hostDrivesSnapshots && Array.isArray(message.inputs)) {
           message.inputs.forEach((entry: { user_id?: number; payload?: { input?: Partial<BattleRoyaleInputPayload>; clientInputSeq?: number } }) => {
             if (typeof entry.user_id !== 'number') {
               return;
@@ -2310,7 +2933,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
           return;
         }
 
-        if (message.type === 'br_input' && isHost) {
+        if (message.type === 'br_input' && hostDrivesSnapshots) {
           const fighterId = fighterIdForUser(message.user_id);
           remoteInputsRef.current[fighterId] = {
             ...createDefaultInput(),
@@ -2322,7 +2945,35 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
           return;
         }
 
-        if (message.type === 'br_snapshot' && !isHost && message.payload) {
+        if (message.type === 'br_presence_state') {
+          const normalizedPresence = normalizePresenceStatePayload(currentRoomRef.current, {
+            ...(message.payload ?? {}),
+            user_id: message.user_id,
+          });
+          if (normalizedPresence) {
+            remotePresenceRef.current = {
+              ...remotePresenceRef.current,
+              [normalizedPresence.userId]: normalizedPresence,
+            };
+            if (localCoopMode) {
+              const payload = message.payload as Record<string, unknown> | undefined;
+              const syncAnchor = readFiniteNumber(payload?.server_updated_at ?? payload?.updated_at, Date.now());
+              const syncAgeMs = clamp(Date.now() - syncAnchor - PRESENCE_SEND_INTERVAL_ACTIVE_MS, 0, 1000);
+              const recentSamples = [...recentGuestSyncSamplesRef.current, syncAgeMs].slice(-4);
+              recentGuestSyncSamplesRef.current = recentSamples;
+              setSyncDelayMs(medianRounded(recentSamples));
+            }
+          }
+          return;
+        }
+
+        if (message.type === 'br_shared_bot_states' && message.payload) {
+          const payload = message.payload as { bots?: unknown; version?: unknown };
+          applySharedBotStates(currentRoomRef.current, payload.bots, payload.version);
+          return;
+        }
+
+        if (message.type === 'br_snapshot' && !localCoopMode && !hostDrivesSnapshots && message.payload) {
           setHasAuthoritativeSnapshot(true);
           pendingAuthoritativeSnapshotRef.current = {
             incoming: message.payload as BattleRoyaleSnapshot,
@@ -2355,11 +3006,11 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
             setQuizSubmitError(null);
           }
           resolveReviveOutcome(payload.fighterId, payload.success);
-          pushRoomNotice(payload.success ? '答题成功，半血复活' : '答题失败，本局出局', 4200);
+          pushRoomNotice(payload.success ? '答题成功，已复活。' : '答题失败，本回合出局。', 4200);
           return;
         }
 
-        if (message.type === 'br_quiz_submit' && isHost && message.payload) {
+        if (message.type === 'br_quiz_submit' && hostDrivesSnapshots && message.payload) {
           const payload = message.payload as { fighterId: string; answers: string[] };
           const questions = pendingQuizzesRef.current[payload.fighterId];
           if (!questions?.length) {
@@ -2371,15 +3022,15 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
           return;
         }
 
-        if (message.type === 'br_player_disconnected' && isHost) {
+        if (message.type === 'br_player_disconnected' && hostDrivesSnapshots) {
           const fighter = fightersRef.current.get(fighterIdForUser(message.user_id));
           if (fighter && fighter.alive) {
-            eliminateFighter(fighter, null, '断线离场');
+            eliminateFighter(fighter, null, '掉线');
           }
           return;
         }
 
-        if (message.type === 'br_match_end' && !isHost && message.payload) {
+        if (message.type === 'br_match_end' && (!hostDrivesSnapshots || localCoopMode) && message.payload) {
           finalizeMatch(message.payload);
           return;
         }
@@ -2391,7 +3042,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
 
         if (message.type === 'br_room_closed') {
           setCurrentRoom(null);
-          pushRoomNotice(message.reason || '房间已关闭，即将返回大厅。', 5000);
+          pushRoomNotice(message.reason || '房间已关闭，正在返回。', 5000);
           setTimeout(() => {
             resetBattleRoyaleStore();
             onExit();
@@ -2407,9 +3058,64 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       client.disconnect();
       wsRef.current = null;
     };
-  }, [currentUserId, isHost, localFighterId, onExit, resetBattleRoyaleStore, room.id, setCurrentRoom, setLatencyMs, setWsConnected]);
+  }, [
+    currentUserId,
+    hostDrivesSnapshots,
+    localCoopMode,
+    localFighterId,
+    onExit,
+    resetBattleRoyaleStore,
+    room.id,
+    room.host_user_id,
+    setCurrentRoom,
+    setLatencyMs,
+    setWsConnected,
+  ]);
 
   useEffect(() => {
+    const freshPlatforms = createPlatforms(0);
+    const freshFighters = createInitialFighters(simulationRoom);
+    const freshPickups = createInitialPickups(simulationRoom);
+    const freshSnapshot = buildSnapshot(
+      0,
+      0,
+      getZoneState(0),
+      freshFighters,
+      freshPickups,
+      [],
+      [],
+      [],
+      [],
+      null,
+      freshPlatforms,
+    );
+
+    tickRef.current = 0;
+    elapsedMsRef.current = 0;
+    winnerIdRef.current = null;
+    previousPlatformsRef.current = freshPlatforms;
+    platformsRef.current = freshPlatforms;
+    fightersRef.current = freshFighters;
+    pickupsRef.current = freshPickups;
+    projectilesRef.current = [];
+    weaponPickupsRef.current = [];
+    effectsRef.current = [];
+    killFeedRef.current = [];
+    snapshotRef.current = freshSnapshot;
+    authoritativeSnapshotRef.current = freshSnapshot;
+    lastAuthoritativeSnapshotAtRef.current = 0;
+    remoteInputsRef.current = {};
+    pendingQuizzesRef.current = {};
+    remotePresenceRef.current = {};
+    remotePresenceVisualRef.current = {};
+    matchEndedRef.current = false;
+    finishReportedRef.current = false;
+    roomNoticeLockUntilRef.current = 0;
+    lastRoomNoticeRef.current = { message: '', at: 0 };
+    quizOfferRef.current = null;
+    submittingQuizRef.current = false;
+    lastPresenceSentRef.current = 0;
+    lastPresenceSignatureRef.current = '';
     previousFrameInputRef.current = createDefaultInput();
     pendingInputPulseRef.current = createInputPulseState();
     pendingGuestInputAcksRef.current.clear();
@@ -2421,13 +3127,24 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     hasConnectedOnceRef.current = false;
     reconnectNoticeVisibleRef.current = false;
     initialHostSnapshotSentRef.current = false;
-    setHasAuthoritativeSnapshot(isHost);
+    localEliminationHandledRef.current = false;
+    lastFrameTimeRef.current = 0;
+    lastInputSentRef.current = 0;
+    lastUiSyncRef.current = 0;
+    lastSnapshotSentRef.current = 0;
+    setSnapshot(freshSnapshot);
+    setResult(null);
+    setQuizOffer(null);
+    setSubmittingQuiz(false);
+    setQuizSubmitError(null);
+    setShowEliminationPrompt(false);
+    setHasAuthoritativeSnapshot(hostDrivesSnapshots || localCoopMode);
     setLatencyMs(0);
     setSyncDelayMs(0);
-  }, [isHost, localFighterId, room.id, setLatencyMs, setSyncDelayMs]);
+  }, [currentUserId, hostDrivesSnapshots, localCoopMode, localFighterId, room.id, setLatencyMs, setSyncDelayMs]);
 
   useEffect(() => {
-    if (!isHost || !wsConnected || initialHostSnapshotSentRef.current) {
+    if (!hostDrivesSnapshots || !wsConnected || initialHostSnapshotSentRef.current) {
       return;
     }
 
@@ -2437,7 +3154,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       initialHostSnapshotSentRef.current = true;
       lastSnapshotSentRef.current = typeof performance !== 'undefined' ? performance.now() : Date.now();
     }
-  }, [isHost, wsConnected]);
+  }, [hostDrivesSnapshots, wsConnected]);
 
   useEffect(() => {
     if (shouldExposeQaDebug() && typeof window !== 'undefined') {
@@ -2754,7 +3471,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       localEliminationHandledRef.current = true;
     }
 
-    if (isHost && fighter.userId && fighter.id !== localFighterId) {
+    if (hostDrivesSnapshots && fighter.userId && fighter.id !== localFighterId) {
       wsRef.current?.sendQuizResult(fighter.userId, {
         fighterId: fighter.id,
         success: false,
@@ -2772,7 +3489,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         fighter.eliminatedAtMs === null ? 0 : elapsedMsRef.current - fighter.eliminatedAtMs;
 
       if (elapsedSinceElimination >= QUIZ_PENDING_TIMEOUT_MS) {
-        expirePendingRevive(fighter, '答题超时，正式出局');
+        expirePendingRevive(fighter, '复活超时');
       }
     });
   };
@@ -2787,6 +3504,64 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     setSubmittingQuiz(false);
     setQuizSubmitError(null);
     setShowEliminationPrompt(false);
+  };
+
+  const maybeSendLocalCoopPresence = (time: number) => {
+    if (!localCoopMode || !currentUserId || matchEndedRef.current) {
+      return;
+    }
+
+    const localFighter = snapshotRef.current.fighters.find((fighter) => fighter.id === localFighterId);
+    if (!localFighter) {
+      return;
+    }
+
+    const localBotAliveCount = distributedCoopMode
+      ? sharedAliveBotCount(currentRoomRef.current)
+      : snapshotRef.current.fighters.filter((fighter) => fighter.isBot && fighter.alive).length;
+    const alive = Boolean(localFighter.alive);
+    const quizPending = Boolean(localFighter.quizPending);
+    const cleared = localBotAliveCount === 0 && (alive || quizPending);
+    const damageDealt = Math.round(localFighter.damageDealt ?? 0);
+    const presenceIntervalMs = presenceSendIntervalMs(localFighter);
+    const signature = [
+      Math.round(localFighter.x),
+      Math.round(localFighter.y),
+      Math.round(localFighter.vx),
+      Math.round(localFighter.vy),
+      Math.round(localFighter.hp),
+      Math.round(localFighter.shield),
+      Math.round(localFighter.armor),
+      alive ? 1 : 0,
+      quizPending ? 1 : 0,
+      localFighter.kills,
+      damageDealt,
+      localFighter.weaponReady ? 1 : 0,
+      localFighter.specialCharges,
+      localFighter.facing,
+      localBotAliveCount,
+      cleared ? 1 : 0,
+    ].join(':');
+
+    if (
+      signature === lastPresenceSignatureRef.current &&
+      time - lastPresenceSentRef.current < presenceIntervalMs
+    ) {
+      return;
+    }
+
+    const updatedAt = Date.now();
+    const payload = buildPresenceTransportPayload(localFighter, localBotAliveCount, updatedAt);
+    const sent =
+      wsRef.current?.sendPresenceState(payload) ?? false;
+    if (!sent) {
+      return;
+    }
+
+    syncStatsRef.current.lastPresenceBytes = JSON.stringify(payload).length;
+    syncStatsRef.current.presenceMessagesSent += 1;
+    lastPresenceSentRef.current = time;
+    lastPresenceSignatureRef.current = signature;
   };
 
   const playArenaCue = (kind: 'swing' | 'throw' | 'hit' | 'pickup' | 'shockwave' | 'bounce' | 'dash') => {
@@ -3123,9 +3898,9 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     fighter.weaponCooldownMs = Math.max(fighter.weaponCooldownMs, 160);
     recoveredWeapon.active = false;
     if (originalOwner && originalOwner.id !== fighter.id) {
-      addKillFeed(`${fighter.name} 捡起了 ${originalOwner.name} 的掉落武器`);
+      addKillFeed(`${fighter.name} 捡走了 ${originalOwner.name} 的武器`);
     } else {
-      addKillFeed(`${fighter.name} 取回了自己的武器`);
+      addKillFeed(`${fighter.name} 拿回了武器`);
     }
     if (fighter.id === localFighterId || recoveredWeapon.ownerId === localFighterId) {
       playArenaCue('pickup');
@@ -3175,7 +3950,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         projectile.active = false;
       }
     });
-    addKillFeed(`${fighter.name} 答题成功，半血重返战场`);
+    addKillFeed(`${fighter.name} 重新回到战场`);
   };
 
   const resolveReviveOutcome = (fighterId: string, success: boolean) => {
@@ -3189,11 +3964,11 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     } else {
       if (fighter) {
         fighter.quizPending = false;
-        addKillFeed(`${fighter.name} 复活失败，正式出局`);
+        addKillFeed(`${fighter.name} 复活失败，结束本局`);
       }
     }
 
-    if (isHost && fighter?.userId && fighterId !== localFighterId) {
+    if (hostDrivesSnapshots && fighter?.userId && fighterId !== localFighterId) {
       wsRef.current?.sendQuizResult(fighter.userId, {
         fighterId,
         success,
@@ -3225,7 +4000,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     fighter.reviveUsed = true;
     fighter.quizPending = true;
 
-    const questions = buildBattleRoyaleQuiz((fighter.ageGroup as any) ?? 'primary-upper', 3);
+      const questions = buildBattleRoyaleQuiz((fighter.ageGroup as any) ?? 'primary-upper', 3);
     pendingQuizzesRef.current[fighter.id] = questions;
 
     if (fighter.id === localFighterId) {
@@ -3236,7 +4011,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       return;
     }
 
-    if (fighter.userId) {
+    if (hostDrivesSnapshots && fighter.userId) {
       wsRef.current?.sendQuizOffer(fighter.userId, {
         fighterId: fighter.id,
         questions,
@@ -3244,7 +4019,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     }
   };
 
-  const eliminateFighter = (fighter: InternalFighter, killerId: string | null, reason = '被击败') => {
+  const eliminateFighter = (fighter: InternalFighter, killerId: string | null, reason = '出局') => {
     if (!fighter.alive) return;
     fighter.alive = false;
     fighter.vx = 0;
@@ -3255,10 +4030,10 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       const killer = fightersRef.current.get(killerId);
       if (killer) {
         killer.kills += 1;
-        addKillFeed(`${killer.name} 击败了 ${fighter.name}`);
+        addKillFeed(`${killer.name} 淘汰了 ${fighter.name}`);
       }
     } else {
-      addKillFeed(`${fighter.name} ${reason}`);
+      addKillFeed(fighter.name + ' ' + reason);
     }
 
     maybeOfferRevive(fighter);
@@ -3272,9 +4047,10 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         return;
       }
     }
+    const shouldShareBotDamage = distributedCoopMode && target.isBot && sourceId === localFighterId;
     let damage = rawDamage;
     let appliedDamage = 0;
-    const guarded = target.input.guard;
+    const guarded = shouldShareBotDamage ? false : target.input.guard;
 
     if (guarded) {
       damage *= 0.55;
@@ -3302,7 +4078,8 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     }
 
     const hpDamage = Math.min(target.hp, damage);
-    target.hp = Math.max(0, target.hp - damage);
+    const nextHp = Math.max(0, target.hp - damage);
+    target.hp = shouldShareBotDamage && nextHp <= 0 ? 1 : nextHp;
     appliedDamage += hpDamage;
     target.lastAttackerId = sourceId;
     target.hitFlashMs = HIT_FLASH_MS;
@@ -3313,6 +4090,13 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         attacker.damageDealt += appliedDamage;
       }
     }
+    if (shouldShareBotDamage && appliedDamage > 0) {
+      wsRef.current?.sendBotDamage({
+        target_id: target.id,
+        damage: Math.max(1, Math.round(appliedDamage)),
+        event_id: `${sourceId}-${target.id}-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+      });
+    }
     if (sourceId === localFighterId || target.id === localFighterId) {
       if (guarded) {
         playSound('pvp_block');
@@ -3320,44 +4104,47 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         playArenaCue('hit');
       }
     }
-    if (target.hp <= 0) {
+    if (!shouldShareBotDamage && target.hp <= 0) {
       eliminateFighter(target, sourceId);
     }
   };
 
   const applyPickup = (fighter: InternalFighter, pickup: InternalPickup) => {
-    let pickupMessage = `${pickupLabel(pickup.type)}已入手`;
+    if (distributedCoopMode && fighter.isBot) {
+      return;
+    }
+    let pickupMessage = `${pickupLabel(pickup.type)}到手`;
 
     switch (pickup.type) {
       case 'med_kit':
         fighter.hp = Math.min(fighter.maxHp, fighter.hp + 36);
         fighter.buffs.med_kit = (fighter.buffs.med_kit ?? 0) + 1;
-        pickupMessage = '恢复 36 点生命';
+        pickupMessage = '回复 36 点生命';
         break;
       case 'armor_vest':
         fighter.armor = clamp(fighter.armor + 16, 0, 48);
         fighter.buffs.armor_vest = (fighter.buffs.armor_vest ?? 0) + 1;
-        pickupMessage = '减少后续近战伤害';
+        pickupMessage = '护甲 +16';
         break;
       case 'shield_core':
         fighter.shield = clamp(fighter.shield + 26, 0, 60);
         fighter.buffs.shield_core = (fighter.buffs.shield_core ?? 0) + 1;
-        pickupMessage = '补充临时护盾';
+        pickupMessage = '护盾 +26';
         break;
       case 'damage_claw':
         fighter.damageBonus = clamp(fighter.damageBonus + 5, 0, 18);
         fighter.buffs.damage_claw = (fighter.buffs.damage_claw ?? 0) + 1;
-        pickupMessage = '强化近战伤害';
+        pickupMessage = '近战伤害提升';
         break;
       case 'wind_boost':
         fighter.speedMultiplier = clamp(fighter.speedMultiplier + 0.12, 1, 1.45);
         fighter.buffs.wind_boost = (fighter.buffs.wind_boost ?? 0) + 1;
-        pickupMessage = '提高位移速度';
+        pickupMessage = '移动速度提升';
         break;
       case 'shockwave_charge':
         fighter.specialCharges = clamp(fighter.specialCharges + 2, 0, 6);
         fighter.buffs.shockwave_charge = (fighter.buffs.shockwave_charge ?? 0) + 2;
-        pickupMessage = '追加 2 次冲击波';
+        pickupMessage = '震波 +2，可按 L 释放';
         break;
       default:
         break;
@@ -3366,10 +4153,10 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     pickup.active = false;
     pickup.respawnAtMs = elapsedMsRef.current + PICKUP_RESPAWN_MS;
     spawnEffect('hit', pickup.x, pickup.y - 6, pickup.type === 'shockwave_charge' ? 38 : 28, fighter.facing);
-    addKillFeed(`${fighter.name} 拾取了 ${pickupLabel(pickup.type)}`);
+    addKillFeed(`${fighter.name} 拿到了 ${pickupLabel(pickup.type)}`);
     if (fighter.id === localFighterId) {
       playArenaCue('pickup');
-      pushRoomNotice(`已拾取${pickupLabel(pickup.type)}：${pickupMessage}`, 1800);
+      pushRoomNotice(`获得${pickupLabel(pickup.type)}，${pickupMessage}`, 1800);
     }
   };
 
@@ -3442,7 +4229,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     spawnEffect('shockwave', fighter.x + FIGHTER_WIDTH / 2, fighter.y + FIGHTER_HEIGHT / 2, 164, fighter.facing);
     if (fighter.id === localFighterId) {
       playArenaCue('shockwave');
-      pushRoomNotice('已释放冲击波，适合逼退贴身目标。', 1600);
+      pushRoomNotice('震波已释放，注意追击。', 1600);
     }
     fightersRef.current.forEach((target) => {
       if (!target.alive || target.id === fighter.id || isSameTeam(fighter, target)) return;
@@ -3451,7 +4238,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         applyDamage(target, 24 + fighter.damageBonus * 0.6, fighter.id);
       }
     });
-    addKillFeed(`${fighter.name} 释放了冲击波`);
+    addKillFeed(`${fighter.name} 放出了震波`);
   };
 
   const stepProjectiles = (deltaSeconds: number) => {
@@ -3713,13 +4500,14 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     matchEndedRef.current = true;
     clearPendingRevivesForMatchEnd();
     const placements = (payload?.fighters as BattleRoyaleFighterView[] | undefined) ?? snapshotRef.current.fighters;
-    const humansWon = Boolean(payload?.humansWon);
+    const humanSideWon = Boolean(payload?.humanSideWon ?? payload?.humansWon);
+    const endReason = payload?.reason === 'timeout' ? 'timeout' : 'clear';
     const sorted = [...placements].sort((left, right) => {
       if (left.alive !== right.alive) return left.alive ? -1 : 1;
       if (left.kills !== right.kills) return right.kills - left.kills;
       return right.hp - left.hp;
     });
-    const placement = humansWon ? 1 : Math.max(1, sorted.findIndex((fighter) => fighter.id === localFighterId) + 1);
+    const placement = humanSideWon ? 1 : Math.max(1, sorted.findIndex((fighter) => fighter.id === localFighterId) + 1);
     const local = sorted.find((fighter) => fighter.id === localFighterId);
     const localInternal = fightersRef.current.get(localFighterId) ?? null;
     const winner = sorted[0];
@@ -3728,42 +4516,52 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       : local?.survivedMs ?? localInternal?.eliminatedAtMs ?? snapshotRef.current.elapsedMs;
 
     setResult({
-      winnerId: humansWon ? local?.id ?? localInternal?.id ?? winner?.id ?? null : winner?.id ?? null,
-      winnerName: humansWon ? '勇者小队' : winner?.name ?? '无人幸存',
+      winnerId: humanSideWon ? local?.id ?? localInternal?.id ?? winner?.id ?? null : winner?.id ?? null,
+      winnerName: humanSideWon ? '我方' : '敌方',
       placement,
       kills: local?.kills ?? 0,
       damageDealt: Math.round(local?.damageDealt ?? localInternal?.damageDealt ?? 0),
       revived: Boolean(local?.hasRevived),
       survivedMs,
-      outcome: humansWon ? 'victory' : 'defeat',
+      outcome: humanSideWon ? 'victory' : 'defeat',
     });
-    pushRoomNotice(humansWon ? '合作通关，返回大厅继续挑战。' : '本局结束，调整路线再来一局。', 120000);
+    pushRoomNotice(
+      endReason === 'timeout'
+        ? humanSideWon
+          ? '时间到，我方点数更高。'
+          : '时间到，敌方点数更高。'
+        : humanSideWon
+          ? '敌方已清空，我方获胜。'
+          : '我方被清空，本局失败。',
+      120000,
+    );
   };
 
   const maybeEndMatch = async () => {
     if (matchEndedRef.current) {
       return;
     }
+    if (localCoopMode) {
+      return;
+    }
     clearExpiredPendingRevives();
     const fighters = Array.from(fightersRef.current.values());
-    const aliveHumans = fighters.filter((fighter) => fighter.alive && isHumanFighter(fighter));
-    const aliveBots = fighters.filter((fighter) => fighter.alive && fighter.isBot);
-    const pendingHumanRevives = fighters.filter((fighter) => fighter.quizPending && isHumanFighter(fighter));
-    const humansWon = aliveHumans.length > 0 && (aliveBots.length === 0 || elapsedMsRef.current >= MATCH_MAX_MS);
-    const humansDefeated = aliveHumans.length === 0 && pendingHumanRevives.length === 0;
-
-    if (!humansWon && !humansDefeated) {
+    const outcome = determineMatchOutcome(fighters, elapsedMsRef.current);
+    if (!outcome) {
       return;
     }
 
-    winnerIdRef.current = humansWon ? aliveHumans[0]?.id ?? null : aliveBots[0]?.id ?? null;
+    const aliveHumans = fighters.filter((fighter) => fighter.alive && isHumanFighter(fighter));
+    winnerIdRef.current = outcome.winnerId;
     fightersRef.current.forEach((fighter) => {
       fighter.quizPending = false;
     });
     pendingQuizzesRef.current = {};
     const payload = {
       winnerId: winnerIdRef.current,
-      humansWon,
+      humanSideWon: outcome.humanSideWon,
+      humansWon: outcome.humanSideWon,
+      reason: outcome.reason,
       fighters: buildSnapshot(
         tickRef.current,
         elapsedMsRef.current,
@@ -3781,11 +4579,11 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
 
     finalizeMatch(payload);
 
-    if (isHost) {
+    if (hostDrivesSnapshots) {
       wsRef.current?.sendMatchEnd(payload);
       if (!finishReportedRef.current) {
         finishReportedRef.current = true;
-        const winnerHuman = humansWon ? aliveHumans[0]?.userId ?? null : null;
+        const winnerHuman = outcome.humanSideWon ? aliveHumans[0]?.userId ?? null : null;
         await finishCurrentRoom(winnerHuman);
       }
     }
@@ -3800,12 +4598,15 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     ctx.clearRect(0, 0, VIEW_WIDTH, VIEW_HEIGHT);
 
     const currentSnapshot = snapshotRef.current;
+    const renderedSnapshot = localCoopMode
+      ? mergeRemotePresenceIntoSnapshot(currentSnapshot, Object.values(remotePresenceVisualRef.current))
+      : currentSnapshot;
     if (shouldExposeQaDebug() && typeof window !== 'undefined') {
       const debugWindow = window as Window & {
         __brRenderSnapshot?: BattleRoyaleSnapshot;
         __brSyncStats?: typeof syncStatsRef.current;
       };
-      debugWindow.__brRenderSnapshot = currentSnapshot;
+      debugWindow.__brRenderSnapshot = renderedSnapshot;
       debugWindow.__brSyncStats = { ...syncStatsRef.current };
     }
     const currentLocalView = currentSnapshot.fighters.find((fighter) => fighter.id === localFighterId);
@@ -3948,7 +4749,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         ctx.fillStyle = 'rgba(255,255,255,0.22)';
         ctx.font = `bold 14px ${CANVAS_FONT_FAMILY}`;
         ctx.textAlign = 'center';
-        ctx.fillText('弹', platform.x + platform.width / 2, platform.y + platform.height - 6);
+        ctx.fillText('?', platform.x + platform.width / 2, platform.y + platform.height - 6);
       } else if (index % 4 === 0) {
         ctx.strokeStyle = 'rgba(110, 231, 183, 0.18)';
         ctx.lineWidth = 3;
@@ -4072,8 +4873,8 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       ctx.restore();
     });
 
-    currentSnapshot.fighters.forEach((fighter) => {
-      const cacheKey = `${fighter.petType}-${fighter.petStage}`;
+    renderedSnapshot.fighters.forEach((fighter) => {
+      const cacheKey = buildPetImageCacheKey(fighter.petType, fighter.petStage);
       const image = imageCacheRef.current[cacheKey];
       const resolvedType = migratePetType(fighter.petType as any);
       const fighterScale = Math.min(getPetVariantScale(resolvedType, 'world') * 1.08, 1.42);
@@ -4111,8 +4912,39 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         }
         ctx.restore();
       } else {
-        ctx.fillStyle = fighter.isBot ? '#22c55e' : '#38bdf8';
-        ctx.fillRect(fighter.x, fighter.y, FIGHTER_WIDTH, FIGHTER_HEIGHT);
+        const fallbackAccent = fighter.isBot
+          ? 'rgba(251, 146, 60, 0.92)'
+          : fighter.id === localFighterId
+            ? 'rgba(56, 189, 248, 0.92)'
+            : 'rgba(34, 211, 238, 0.82)';
+        const fallbackWidth = Math.max(42, width * 0.72);
+        const fallbackHeight = Math.max(36, height * 0.66);
+        const fallbackX = fighter.x + FIGHTER_WIDTH / 2 - fallbackWidth / 2;
+        const fallbackY = fighter.y + FIGHTER_HEIGHT / 2 - fallbackHeight / 2 - 4;
+
+        ctx.save();
+        ctx.fillStyle = 'rgba(15, 23, 42, 0.94)';
+        ctx.beginPath();
+        ctx.roundRect(fallbackX, fallbackY, fallbackWidth, fallbackHeight, 18);
+        ctx.fill();
+        ctx.strokeStyle = fallbackAccent;
+        ctx.lineWidth = 3;
+        ctx.stroke();
+
+        ctx.fillStyle = 'rgba(248, 250, 252, 0.92)';
+        ctx.beginPath();
+        ctx.arc(fighter.x + FIGHTER_WIDTH / 2, fallbackY + fallbackHeight * 0.33, 11, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.roundRect(
+          fighter.x + FIGHTER_WIDTH / 2 - 13,
+          fallbackY + fallbackHeight * 0.48,
+          26,
+          fallbackHeight * 0.24,
+          8,
+        );
+        ctx.fill();
+        ctx.restore();
       }
 
       if (fighter.hitFlashMs > 0) {
@@ -4144,17 +4976,34 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         ctx.fillRect(barX, barY - 6, Math.min(82, fighter.shield), 4);
       }
 
-      ctx.fillStyle = '#f8fafc';
-      ctx.font = `bold 14px ${CANVAS_FONT_FAMILY}`;
+      const roleLabel = fighter.isBot ? '敌方' : fighter.id === localFighterId ? '自己' : '队友';
+      const roleWidth = 40;
+      const roleX = fighter.x + FIGHTER_WIDTH / 2 - roleWidth / 2;
+      const roleY = fighter.y - 74;
+      ctx.fillStyle = fighter.isBot ? 'rgba(251, 146, 60, 0.9)' : 'rgba(34, 211, 238, 0.9)';
+      ctx.beginPath();
+      ctx.roundRect(roleX, roleY, roleWidth, 16, 8);
+      ctx.fill();
+      ctx.fillStyle = '#020617';
+      ctx.font = 'bold 10px ' + CANVAS_FONT_FAMILY;
       ctx.textAlign = 'center';
-      ctx.fillText(fighter.name, fighter.x + FIGHTER_WIDTH / 2, fighter.y - 26);
-      ctx.font = `11px ${CANVAS_FONT_FAMILY}`;
-      ctx.fillStyle = fighter.isBot ? '#bbf7d0' : '#bae6fd';
-      ctx.fillText(
-        fighter.isBot ? `${fighter.difficulty ?? 'bot'} AI` : `击败 ${fighter.kills}`,
-        fighter.x + FIGHTER_WIDTH / 2,
-        fighter.y - 38,
-      );
+      ctx.fillText(roleLabel, fighter.x + FIGHTER_WIDTH / 2, roleY + 11);
+
+      const petTagLabel = fitCanvasLabel(ctx, formatPetTypeLabel(fighter.petType), PET_TAG_MAX_WIDTH, PET_TAG_MAX_CHARS);
+      const petTagWidth = Math.max(40, Math.min(PET_TAG_MAX_WIDTH + 12, ctx.measureText(petTagLabel).width + 16));
+      const petTagX = fighter.x + FIGHTER_WIDTH / 2 - petTagWidth / 2;
+      const petTagY = fighter.y - 54;
+      ctx.fillStyle = fighter.isBot ? 'rgba(125, 211, 252, 0.16)' : 'rgba(248, 250, 252, 0.12)';
+      ctx.beginPath();
+      ctx.roundRect(petTagX, petTagY, petTagWidth, 14, 7);
+      ctx.fill();
+      ctx.fillStyle = fighter.isBot ? '#fdba74' : '#bfdbfe';
+      ctx.font = 'bold 9px ' + CANVAS_FONT_FAMILY;
+      ctx.fillText(petTagLabel, fighter.x + FIGHTER_WIDTH / 2, petTagY + 10);
+
+      ctx.fillStyle = '#f8fafc';
+      ctx.font = 'bold 13px ' + CANVAS_FONT_FAMILY;
+      ctx.fillText(fitCanvasLabel(ctx, fighter.name, NAMEPLATE_MAX_WIDTH), fighter.x + FIGHTER_WIDTH / 2, fighter.y - 30);
     });
 
     currentSnapshot.effects.forEach((effect) => {
@@ -4260,12 +5109,12 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     ctx.stroke();
     ctx.fillStyle = '#f8fafc';
     ctx.font = `bold 20px ${CANVAS_FONT_FAMILY}`;
-    ctx.fillText('宠物生存乱斗', 38, 48);
-    ctx.font = `13px ${CANVAS_FONT_FAMILY}`;
+    ctx.fillText('战况', 38, 48);
+    ctx.font = '13px ' + CANVAS_FONT_FAMILY;
     ctx.fillStyle = '#cbd5e1';
-    ctx.fillText(`剩余 ${currentAliveCount} / ${currentSnapshot.fighters.length}`, 38, 76);
-    ctx.fillText(`缩圈阶段 ${currentSnapshot.zone.phase}`, 38, 98);
-    ctx.fillText(`用时 ${currentElapsedSeconds}s`, 38, 120);
+    ctx.fillText('存活 ' + currentAliveCount + ' / ' + currentSnapshot.fighters.length, 38, 76);
+    ctx.fillText('圈层 ' + currentSnapshot.zone.phase, 38, 98);
+    ctx.fillText('时间 ' + currentElapsedSeconds + 's', 38, 120);
 
     if (currentLocalView) {
       ctx.beginPath();
@@ -4275,17 +5124,13 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
       ctx.strokeStyle = 'rgba(148, 163, 184, 0.16)';
       ctx.stroke();
       ctx.fillStyle = '#f8fafc';
-      ctx.font = `bold 18px ${CANVAS_FONT_FAMILY}`;
+      ctx.font = 'bold 18px ' + CANVAS_FONT_FAMILY;
       ctx.fillText(currentLocalView.name, VIEW_WIDTH - 280, 46);
-      ctx.font = `13px ${CANVAS_FONT_FAMILY}`;
+      ctx.font = '13px ' + CANVAS_FONT_FAMILY;
       ctx.fillStyle = '#cbd5e1';
-      ctx.fillText(`HP ${Math.round(currentLocalView.hp)}/${currentLocalView.maxHp}`, VIEW_WIDTH - 280, 72);
-      ctx.fillText(`护盾 ${Math.round(currentLocalView.shield)}  护甲 ${Math.round(currentLocalView.armor)}`, VIEW_WIDTH - 280, 94);
-      ctx.fillText(
-        `击败 ${currentLocalView.kills}  武器 ${currentLocalView.weaponReady ? '就绪' : '待回收'}`,
-        VIEW_WIDTH - 280,
-        116,
-      );
+      ctx.fillText('HP ' + Math.round(currentLocalView.hp) + '/' + currentLocalView.maxHp, VIEW_WIDTH - 280, 72);
+      ctx.fillText('盾 ' + Math.round(currentLocalView.shield) + '  甲 ' + Math.round(currentLocalView.armor), VIEW_WIDTH - 280, 94);
+      ctx.fillText('击败 ' + currentLocalView.kills + '  武器 ' + (currentLocalView.weaponReady ? '就绪' : '未回收'), VIEW_WIDTH - 280, 116);
       ctx.font = `12px ${CANVAS_FONT_FAMILY}`;
       ctx.fillStyle = '#93c5fd';
       ctx.fillText(buildLootHudLine(currentLocalView), VIEW_WIDTH - 280, 138);
@@ -4293,6 +5138,21 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
   };
 
   useEffect(() => {
+    const getLoopTime = () => (typeof performance !== 'undefined' ? performance.now() : Date.now());
+
+    const scheduleNextLoop = () => {
+      if (hostDrivesSnapshots) {
+        animationRef.current = window.setTimeout(() => {
+          void loop(getLoopTime());
+        }, HOST_LOOP_INTERVAL_MS);
+        return;
+      }
+
+      animationRef.current = requestAnimationFrame((nextTime) => {
+        void loop(nextTime);
+      });
+    };
+
     const loop = async (time: number) => {
       try {
         if (matchEndedRef.current) {
@@ -4307,7 +5167,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         elapsedMsRef.current += deltaMs;
 
         const localInput = readLocalInput();
-        if (isHost) {
+        if (hostDrivesSnapshots || localCoopMode) {
           const zone = getZoneState(elapsedMsRef.current);
           previousPlatformsRef.current = platformsRef.current;
           platformsRef.current = createPlatforms(elapsedMsRef.current);
@@ -4324,12 +5184,18 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
                       zone,
                       elapsedMsRef.current,
                     )
-                  : remoteInputsRef.current[fighter.id] ?? createDefaultInput();
+                  : localCoopMode
+                    ? createDefaultInput()
+                    : remoteInputsRef.current[fighter.id] ?? createDefaultInput();
+
+            if (distributedCoopMode && fighter.isBot) {
+              input.guard = false;
+            }
 
             fighter.input = input;
             stepFighter(fighter, input, deltaSeconds);
 
-            if (distanceToZone(fighter, zone) > zone.radius) {
+            if (!(distributedCoopMode && fighter.isBot) && distanceToZone(fighter, zone) > zone.radius) {
               applyDamage(fighter, zoneDamagePerSecond(zone, elapsedMsRef.current) * deltaSeconds, null);
             }
           });
@@ -4370,7 +5236,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
           );
           snapshotRef.current.inputAcks = { ...remoteInputAckSeqRef.current };
 
-          if (time - lastSnapshotSentRef.current > SNAPSHOT_INTERVAL_MS) {
+          if (hostDrivesSnapshots && time - lastSnapshotSentRef.current > SNAPSHOT_INTERVAL_MS) {
             lastSnapshotSentRef.current = time;
             setSnapshot(snapshotRef.current);
             const transportSnapshot = createTransportSnapshot(snapshotRef.current);
@@ -4389,6 +5255,10 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
             if (!snapshotSent && initialHostSnapshotSentRef.current) {
               syncStatsRef.current.droppedSnapshots += 1;
             }
+          }
+
+          if (localCoopMode) {
+            maybeSendLocalCoopPresence(time);
           }
 
           if (time - lastUiSyncRef.current > UI_SYNC_INTERVAL_MS) {
@@ -4501,24 +5371,47 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
           }
         }
 
+        if (localCoopMode) {
+          remotePresenceVisualRef.current = buildRenderedRemotePresenceState(
+            room,
+            currentUserId,
+            remotePresenceRef.current,
+            remotePresenceVisualRef.current,
+            deltaSeconds,
+            Date.now(),
+          );
+          if (Object.keys(remotePresenceVisualRef.current).length === 0) {
+            recentGuestSyncSamplesRef.current = [];
+            if (syncDelayMs !== 0) {
+              setSyncDelayMs(0);
+            }
+          }
+        } else if (Object.keys(remotePresenceVisualRef.current).length > 0) {
+          remotePresenceVisualRef.current = {};
+        }
+
         drawFrame();
       } catch (error) {
         if (shouldExposeQaDebug()) {
           console.error('[PvpBattleRoyaleArena] Frame loop failed:', error);
         }
-        pushRoomNotice('战场画面出现波动，系统正在尝试自动恢复；如果几秒后仍未恢复，请退出房间重新进入。', 5200);
+        pushRoomNotice('战场同步异常，请稍后重试。', 5200);
       } finally {
-        animationRef.current = requestAnimationFrame(loop);
+        scheduleNextLoop();
       }
     };
 
-    animationRef.current = requestAnimationFrame(loop);
+    scheduleNextLoop();
     return () => {
       if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
+        if (hostDrivesSnapshots) {
+          clearTimeout(animationRef.current);
+        } else {
+          cancelAnimationFrame(animationRef.current);
+        }
       }
     };
-  }, [finishCurrentRoom, hasAuthoritativeSnapshot, isHost, localFighterId]);
+  }, [finishCurrentRoom, hasAuthoritativeSnapshot, hostDrivesSnapshots, localCoopMode, localFighterId, room.id]);
 
   const handleSubmitQuiz = async (answers: string[]) => {
     if (!quizOffer) return;
@@ -4527,7 +5420,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
     setQuizSubmitError(null);
     setSubmittingQuiz(true);
 
-    if (isHost) {
+    if (hostDrivesSnapshots || localCoopMode) {
       const questions = pendingQuizzesRef.current[fighterId] ?? quizOffer.questions;
       const success = evaluateBattleRoyaleQuiz(questions, answers);
       pendingQuizzesRef.current[fighterId] = [];
@@ -4543,8 +5436,8 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
 
     if (!sent) {
       setSubmittingQuiz(false);
-      setQuizSubmitError('当前连接不可用，答卷还没有发出去。请等待连接恢复后重新提交。');
-      pushRoomNotice('答题提交失败，请等待连接恢复后重新提交。', 3600);
+      setQuizSubmitError('提交失败，请检查连接后重试。');
+      pushRoomNotice('提交失败，请检查连接后重试。', 3600);
       return;
     }
 
@@ -4554,8 +5447,8 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
         return;
       }
       setSubmittingQuiz(false);
-      setQuizSubmitError('答题结果同步超时，请重新提交当前答卷。');
-      pushRoomNotice('答题结果同步超时，请重新提交当前答卷。', 3600);
+      setQuizSubmitError('答题超时，请重新尝试。');
+      pushRoomNotice('答题超时，请重新尝试。', 3600);
     }, 6500);
   };
 
@@ -4580,24 +5473,23 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
             className="h-full w-full max-h-screen object-contain"
           />
 
-          {!isHost && !hasAuthoritativeSnapshot ? (
+          {!hostDrivesSnapshots && !hasAuthoritativeSnapshot ? (
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-slate-950/74 backdrop-blur-sm">
               <div className="rounded-[28px] border border-cyan-300/15 bg-slate-900/92 px-7 py-6 text-center shadow-[0_24px_70px_rgba(2,6,23,0.52)]">
                 <div className="mx-auto mb-4 h-11 w-11 animate-spin rounded-full border-2 border-cyan-300/20 border-t-cyan-300" />
                 <div className="text-lg font-semibold text-white">正在同步战场</div>
                 <div className="mt-2 max-w-sm text-sm leading-6 text-slate-300">
-                  正在等待房主首帧快照。同步完成后会自动开始，避免出生错位和卡住。
-                </div>
+                  正在接收最新房间状态，请稍等片刻。                </div>
               </div>
             </div>
           ) : null}
 
           <div className="pointer-events-none absolute inset-x-0 bottom-4 flex justify-center px-4">
             <div className="pointer-events-auto grid gap-3 rounded-full border border-white/10 bg-slate-950/78 px-5 py-3 text-xs text-slate-200 shadow-[0_18px_50px_rgba(2,6,23,0.55)] md:grid-cols-4 md:gap-6">
-              <div className="flex items-center gap-2"><Users className="h-3.5 w-3.5 text-cyan-300" /> 方向键/A D 移动</div>
-              <div className="flex items-center gap-2"><Wind className="h-3.5 w-3.5 text-cyan-300" /> W/↑ 跳跃，Space 冲刺</div>
-              <div className="flex items-center gap-2"><Swords className="h-3.5 w-3.5 text-cyan-300" /> J 近战，K 投掷，L 冲击波</div>
-              <div className="flex items-center gap-2"><Shield className="h-3.5 w-3.5 text-cyan-300" /> S 防御；武器可回收，圈外掉血会递增</div>
+              <div className="flex items-center gap-2"><Users className="h-3.5 w-3.5 text-cyan-300" /> ← → / A D 移动</div>
+              <div className="flex items-center gap-2"><Wind className="h-3.5 w-3.5 text-cyan-300" /> ↑ / W 跳跃，Space 冲刺</div>
+              <div className="flex items-center gap-2"><Swords className="h-3.5 w-3.5 text-cyan-300" /> J 攻击，K 投掷，L 技能</div>
+              <div className="flex items-center gap-2"><Shield className="h-3.5 w-3.5 text-cyan-300" /> ↓ / S 防御，E 互动</div>
             </div>
           </div>
 
@@ -4612,7 +5504,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
                 ) : (
                   <WifiOff className="h-3.5 w-3.5 text-amber-300" />
                 )}
-                {connectionLabel(wsConnected, displayedLatencyMs, isHost)}
+                {connectionLabel(wsConnected, displayedLatencyMs, hostDrivesSnapshots)}
                 {wsConnected && displayedLatencyMs > 0 ? (
                   <span className="text-[8px] text-slate-500">{displayedLatencyMs}ms</span>
                 ) : null}
@@ -4651,9 +5543,9 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
             <div className="absolute inset-0 overflow-y-auto bg-slate-950/60 p-4 backdrop-blur-sm">
               <div className="flex min-h-full items-start justify-center py-4 sm:items-center">
                 <div className="my-auto w-full max-w-lg rounded-[28px] border border-white/10 bg-slate-950/90 p-6 shadow-[0_26px_90px_rgba(2,6,23,0.58)]">
-                  <div className="text-2xl font-black text-white">你已被淘汰</div>
+                  <div className="text-2xl font-black text-white">暂时出局</div>
                   <div className="mt-3 text-sm leading-6 text-slate-300">
-                    你可以继续观战等待最终结果，也可以现在退出房间返回大厅。
+                    可以先观战，也可以直接退出到大厅。
                   </div>
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end">
                     <button
@@ -4668,8 +5560,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
                       onClick={() => void handleExit()}
                       className="rounded-full bg-[linear-gradient(135deg,#f97316,#dc2626)] px-5 py-3 text-sm font-bold text-white transition hover:brightness-110"
                     >
-                      退出房间
-                    </button>
+                      返回大厅                    </button>
                   </div>
                 </div>
               </div>
@@ -4682,39 +5573,39 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
                 <div className="my-auto w-full max-w-2xl rounded-[32px] border border-amber-300/20 bg-[linear-gradient(145deg,rgba(15,23,42,0.98),rgba(10,15,30,0.98))] p-8 shadow-[0_26px_90px_rgba(2,6,23,0.58)]">
                   <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-amber-300/20 bg-amber-500/10 px-3 py-1 text-xs font-semibold tracking-[0.22em] text-amber-100">
                     <Trophy className="h-3.5 w-3.5" />
-                    本局结算
+                    结算
                   </div>
-                  <h2 className="text-3xl font-black text-white">战斗结果</h2>
+                  <h2 className="text-3xl font-black text-white">本局结果</h2>
                   <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
-                      <div className="text-sm text-slate-400">挑战结果</div>
+                      <div className="text-sm text-slate-400">胜负</div>
                       <div className="mt-1 text-2xl font-bold text-white">
-                        {result.outcome === 'victory' ? '合作通关' : '挑战失败'}
+                        {result.outcome === 'victory' ? '胜利' : '失败'}
                       </div>
                     </div>
                     <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
-                      <div className="text-sm text-slate-400">队伍</div>
+                      <div className="text-sm text-slate-400">阵营</div>
                       <div className="mt-1 text-2xl font-bold text-white">{result.winnerName}</div>
                     </div>
                     <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
-                      <div className="text-sm text-slate-400">淘汰数</div>
+                      <div className="text-sm text-slate-400">击败</div>
                       <div className="mt-1 text-2xl font-bold text-white">{result.kills}</div>
                     </div>
                     <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
-                      <div className="text-sm text-slate-400">造成伤害</div>
+                      <div className="text-sm text-slate-400">伤害</div>
                       <div className="mt-1 text-2xl font-bold text-white">{result.damageDealt}</div>
                     </div>
                     <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
-                      <div className="text-sm text-slate-400">生存时间</div>
+                      <div className="text-sm text-slate-400">存活</div>
                       <div className="mt-1 text-2xl font-bold text-white">{(result.survivedMs / 1000).toFixed(1)} 秒</div>
                     </div>
                     <div className="rounded-[24px] border border-white/10 bg-white/[0.04] p-5">
-                      <div className="text-sm text-slate-400">是否复活过</div>
-                      <div className="mt-1 text-2xl font-bold text-white">{result.revived ? '是' : '否'}</div>
+                      <div className="text-sm text-slate-400">复活</div>
+                      <div className="mt-1 text-2xl font-bold text-white">{result.revived ? '用过' : '未用'}</div>
                     </div>
                   </div>
                   <div className="mt-6 text-sm leading-6 text-slate-300">
-                    下一局建议优先补防弹衣、护盾核和冲击波，缩圈后近战与投掷更强。
+                    调整一下阵容和路线，再开一局会更稳。
                   </div>
                   <div className="mt-8 flex justify-end">
                     <button
@@ -4722,8 +5613,7 @@ export default function PvpBattleRoyaleArena({ room, onExit }: PvpBattleRoyaleAr
                       onClick={handleExit}
                       className="rounded-full bg-[linear-gradient(135deg,#14b8a6,#2563eb)] px-6 py-3 text-sm font-bold text-white transition hover:brightness-110"
                     >
-                      返回开放大厅
-                    </button>
+                      返回大厅</button>
                   </div>
                 </div>
               </div>

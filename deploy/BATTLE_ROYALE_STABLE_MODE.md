@@ -8,10 +8,13 @@
 
 ## Production Limits
 
-- Only `1` active Battle Royale room at a time
-  - waiting or in-progress both count
-- Current launch target: `4-5` real players
-- Recommended total participants: `<= 6` including bots
+- Up to `4` active Battle Royale rooms at a time
+  - waiting and in-progress both count
+- Up to `2` in-progress rooms at a time
+- Per room: up to `4` real players
+- Default enemy side: `4` bots
+- Recommended total participants per room: `<= 8`
+- Current stable public mode is `1-4 humans vs bot side`
 - Do not market or configure this mode as `10+` real-time players on the current shared server
 
 ## Why
@@ -21,6 +24,7 @@
 - The current implementation is not a fully server-authoritative dedicated game server.
 - Shared ECS pressure can affect all sites if Battle Royale traffic is allowed to spike freely.
 - Browser-hosted simulation plus websocket sync is acceptable only in a low-concurrency stable mode.
+- `1-4 humans vs bots` is safer than a larger real-player free-for-all because relay load and host-side simulation variance stay lower.
 
 ## Incident Summary
 
@@ -76,3 +80,4 @@ su - game -c "export PATH=/www/server/nodejs/v20.19.6/bin:$PATH && pm2 logs game
 ## Release Rule
 
 - If a future version needs `10+` real players, stop and move Battle Royale to a dedicated game server or re-implement the battle runtime as a true server-authoritative service first.
+- If future demand requires more than `2` simultaneous in-progress rooms, re-evaluate ECS capacity with live load data before raising the cap.

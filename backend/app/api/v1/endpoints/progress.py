@@ -16,6 +16,25 @@ from app.utils.transaction_id import generate_level_transaction_id, generate_cam
 import json
 
 router = APIRouter()
+ARENA_REWARD_MARKER_PREFIX = "arena_reward_claim:"
+
+
+def _is_system_completed_challenge(entry: str) -> bool:
+    return isinstance(entry, str) and entry.startswith(ARENA_REWARD_MARKER_PREFIX)
+
+
+def _merge_completed_challenges(existing: list[str], incoming: list[str]) -> list[str]:
+    merged: list[str] = []
+
+    for entry in incoming:
+        if entry and entry not in merged:
+            merged.append(entry)
+
+    for entry in existing:
+        if _is_system_completed_challenge(entry) and entry not in merged:
+            merged.append(entry)
+
+    return merged
 
 @router.post("/save", response_model=ProgressResponse)
 async def save_progress(
@@ -34,6 +53,9 @@ async def save_progress(
     if not user_progress:
         user_progress = UserProgress(user_id=current_user.id)
         db.add(user_progress)
+        existing_completed_challenges: list[str] = []
+    else:
+        existing_completed_challenges = user_progress.get_completed_challenges()
     
     # 更新进度数据
     user_progress.level = progress.level
@@ -45,7 +67,9 @@ async def save_progress(
     user_progress.has_key = 1 if progress.has_key else 0
     user_progress.arena_score = progress.arena_score
     user_progress.arena_high_score = progress.arena_high_score
-    user_progress.set_completed_challenges(progress.completed_challenges)
+    user_progress.set_completed_challenges(
+        _merge_completed_challenges(existing_completed_challenges, progress.completed_challenges)
+    )
     # 更新战役进度
     user_progress.set_completed_campaigns(progress.completed_campaigns)
     user_progress.set_completed_campaign_levels(progress.completed_campaign_levels)

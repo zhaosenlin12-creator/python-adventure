@@ -1,12 +1,13 @@
 "use client";
 
 import React, { useState, useCallback } from 'react';
-import { Campaign, CampaignLevel, getAllCampaigns, getUnlockedCampaigns } from '@/lib/campaigns';
+import { Campaign, CampaignLevel, getAllCampaigns } from '@/lib/campaigns';
 import { formatSkillRewardText } from '@/lib/skills';
 import { useGameStore } from '@/store/gameStore';
 import { AgeGroup, AGE_GROUP_INFO } from '@/types/ageGroup';
 import AgeGroupSelector from './AgeGroupSelector';
 import { buildCampaignRuleText } from '@/lib/gameplayText';
+import { resolveCompatibleCampaignProgress } from '@/lib/campaignProgress';
 
 // 音效
 const playSound = (soundPath: string, volume = 0.5) => {
@@ -63,15 +64,18 @@ export default function CampaignSelector({ onSelectCampaign, onClose }: Campaign
   const ageProgress = activeAgeGroup ? ageGroupCampaignProgress[activeAgeGroup] : null;
   
   // 获取当前年龄段已完成的战役（优先用新的年龄段进度，兼容旧进度）
-  const ageGroupCompletedCampaigns = ageProgress?.completed || 
-    (activeAgeGroup ? completedCampaigns.filter(id => id.startsWith(`${activeAgeGroup}:`)).map(id => id.split(':')[1]) : completedCampaigns);
+  const {
+    completedCampaignIds: ageGroupCompletedCampaigns,
+    completedLevelIds: ageGroupCompletedLevels,
+  } = resolveCompatibleCampaignProgress({
+    activeAgeGroup,
+    ageProgress,
+    completedCampaigns,
+    completedCampaignLevels,
+  });
   
   // 获取当前年龄段已完成的关卡
-  const ageGroupCompletedLevels = ageProgress?.levels || 
-    (activeAgeGroup ? completedCampaignLevels.filter(id => id.startsWith(`${activeAgeGroup}:`)).map(id => id.split(':')[1]) : completedCampaignLevels);
   
-  const unlockedCampaigns = getUnlockedCampaigns(ageGroupCompletedCampaigns);
-
   // 处理年龄段选择
   const handleAgeGroupSelect = (ageGroup: AgeGroup) => {
     setCurrentAgeGroup(ageGroup);
@@ -109,7 +113,13 @@ export default function CampaignSelector({ onSelectCampaign, onClose }: Campaign
       '宜昌东站': '🚄',
       '猇亭工业园': '🏭',
       '宜昌高新区': '🔬',
-      '兴发集团': '🏭'
+      '兴发集团': '🏭',
+      '幻门试炼场': '🌀',
+      '坠门训练塔': '🧱',
+      '镜门回环馆': '🪞',
+      '节拍门阵馆': '🎼',
+      '单门机关工坊': '🛠️',
+      '终门总测场': '🚪'
     };
     return emojiMap[location] || '📍';
   };
@@ -125,14 +135,20 @@ export default function CampaignSelector({ onSelectCampaign, onClose }: Campaign
       '商业中心': 'from-gray-600 to-slate-700',
       '古代战争': 'from-red-600 to-crimson-700',
       '体育运动': 'from-orange-600 to-yellow-700',
-      '交通枢纽': 'from-cyan-600 to-blue-700'
+      '交通枢纽': 'from-cyan-600 to-blue-700',
+      '逆向机关': 'from-violet-600 to-fuchsia-700',
+      '坍塌机关': 'from-stone-600 to-orange-700',
+      '传送镜像': 'from-sky-600 to-indigo-700',
+      '安全窗节奏': 'from-emerald-600 to-cyan-700',
+      '多室试炼': 'from-amber-600 to-red-700',
+      '终极混合': 'from-rose-600 to-orange-700'
     };
     return colorMap[theme] || 'from-gray-600 to-gray-700';
   };
 
   const isCampaignUnlocked = (campaign: Campaign) => {
-    // 正常逻辑：根据完成情况解锁
-    return unlockedCampaigns.some((c) => c.id === campaign.id);
+    if (!campaign.unlockRequirement) return true;
+    return ageGroupCompletedCampaigns.includes(campaign.unlockRequirement);
   };
 
   const isCampaignCompleted = (campaignId: string) => {
@@ -142,12 +158,15 @@ export default function CampaignSelector({ onSelectCampaign, onClose }: Campaign
 
   // 判断关卡是否解锁
   const isLevelUnlocked = (campaign: Campaign, levelIndex: number): boolean => {
-    // 第一关总是解锁的
+    if (!isCampaignUnlocked(campaign)) return false;
+    const currentLevel = campaign.levels[levelIndex];
+    if (!currentLevel) return false;
+    if (isLevelCompleted(currentLevel.id)) return true;
+    if (isCampaignCompleted(campaign.id)) return true;
     if (levelIndex === 0) return true;
-    
-    // 检查前一关是否完成（使用年龄段独立进度）
-    const previousLevelId = campaign.levels[levelIndex - 1].id;
-    return ageGroupCompletedLevels.includes(previousLevelId);
+
+    const previousLevel = campaign.levels[levelIndex - 1];
+    return Boolean(previousLevel && isLevelCompleted(previousLevel.id));
   };
 
   // 判断关卡是否完成
@@ -201,6 +220,7 @@ export default function CampaignSelector({ onSelectCampaign, onClose }: Campaign
               return (
                 <div
                   key={campaign.id}
+                  data-campaign-id={campaign.id}
                   className={`relative rounded-2xl p-4 sm:p-6 border-2 transition-all cursor-pointer ${
                     isUnlocked
                       ? 'border-slate-600 hover:border-blue-500 active:border-blue-400 sm:hover:scale-105 active:scale-95 bg-slate-700/80 shadow-lg'
@@ -323,6 +343,7 @@ export default function CampaignSelector({ onSelectCampaign, onClose }: Campaign
                   return (
                     <div
                       key={level.id}
+                      data-level-id={level.id}
                       className={`relative bg-slate-700/80 rounded-xl p-3 sm:p-4 border-2 transition-all ${
                         unlocked
                           ? 'border-slate-600 hover:border-blue-500 active:border-blue-400 cursor-pointer sm:hover:scale-105 active:scale-95 shadow-md'

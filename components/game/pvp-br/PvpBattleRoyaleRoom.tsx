@@ -18,7 +18,11 @@ import {
 import { getPetImageUrl } from '@/lib/config/petAssets';
 import { BattleRoyaleWebSocketClient } from '@/lib/services/pvpBattleRoyaleWebSocket';
 import { useAuthStore } from '@/store/authStore';
-import { usePvpBattleRoyaleStore } from '@/store/pvpBattleRoyaleStore';
+import {
+  STABLE_BATTLE_ROYALE_DEFAULT_BOT_COUNT,
+  STABLE_BATTLE_ROYALE_HUMAN_CAP,
+  usePvpBattleRoyaleStore,
+} from '@/store/pvpBattleRoyaleStore';
 import type { BattleRoyaleDifficulty, BattleRoyaleRoom } from '@/types/pvp-br';
 
 interface PvpBattleRoyaleRoomProps {
@@ -33,9 +37,16 @@ const difficultyOptions: Array<{ value: BattleRoyaleDifficulty; label: string; d
   { value: 'hard', label: '困难', description: '压迫更强，出手更频繁。' },
 ];
 
-const ROOM_READY_NOTICE = '准备完成后进入战场，最多 2 名真人协作，其余由人机补足。';
+const ROOM_READY_NOTICE = `最多 ${STABLE_BATTLE_ROYALE_HUMAN_CAP} 名真人同场，默认 ${STABLE_BATTLE_ROYALE_DEFAULT_BOT_COUNT} 名人机开局；真人可互伤，清完人机算我方胜利。`;
 const ROOM_RECOVERED_NOTICE = '连接已恢复，继续等待房主开始。';
 const ROOM_RECONNECTING_NOTICE = '连接波动，正在自动重连。';
+
+function resolveRoomNotice(error: unknown, fallback: string) {
+  if (error instanceof Error && error.message.trim()) {
+    return error.message.trim();
+  }
+  return fallback;
+}
 
 function connectionLabel(wsConnected: boolean, latencyMs: number) {
   if (!wsConnected) {
@@ -230,6 +241,8 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
     try {
       await leaveCurrentRoom();
       onLeaveRef.current();
+    } catch (error) {
+      setRoomNotice(resolveRoomNotice(error, '离开房间失败，请稍后再试。'));
     } finally {
       setBusyAction(null);
     }
@@ -239,6 +252,8 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
     setBusyAction('bot');
     try {
       await addBot(selectedDifficulty);
+    } catch (error) {
+      setRoomNotice(resolveRoomNotice(error, '添加敌方人机失败，请稍后再试。'));
     } finally {
       setBusyAction(null);
     }
@@ -248,6 +263,8 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
     setBusyAction('bot');
     try {
       await removeBot(botId);
+    } catch (error) {
+      setRoomNotice(resolveRoomNotice(error, '移除敌方人机失败，请稍后再试。'));
     } finally {
       setBusyAction(null);
     }
@@ -260,6 +277,8 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
       reconnectNoticeVisibleRef.current = false;
       setRoomNotice('战斗已开始，正在进入战场...');
       onStartRef.current(startedRoom);
+    } catch (error) {
+      setRoomNotice(resolveRoomNotice(error, '开启生存乱斗失败，请稍后再试。'));
     } finally {
       setBusyAction(null);
     }
@@ -297,7 +316,7 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
                   </span>
                 </div>
                 <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300">
-                  双人协作清掉全部人机就算通关；缩圈、武器和复活答题机制都会保留。
+                  最多 4 名真人同场，对面默认 4 名人机。真人之间可以互相伤害，但结果只看我方阵营还是人机阵营获胜。
                 </p>
               </div>
 
@@ -315,11 +334,11 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
                   </div>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3">
-                  <div className="text-xs uppercase tracking-[0.2em] text-slate-400">真人</div>
+                  <div className="text-xs uppercase tracking-[0.2em] text-slate-400">我方真人</div>
                   <div className="mt-1 text-lg font-bold text-white">{effectiveRoom.human_count}</div>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3">
-                  <div className="text-xs uppercase tracking-[0.2em] text-slate-400">人机</div>
+                  <div className="text-xs uppercase tracking-[0.2em] text-slate-400">敌方人机</div>
                   <div className="mt-1 text-lg font-bold text-white">{effectiveRoom.bot_count}</div>
                 </div>
               </div>
@@ -331,7 +350,7 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
               <section className="rounded-[28px] border border-white/10 bg-white/[0.04] p-5">
                 <div className="mb-4 flex items-center justify-between">
                   <div>
-                    <div className="text-lg font-bold text-white">真人玩家</div>
+                    <div className="text-lg font-bold text-white">我方真人</div>
                     <div className="text-sm text-slate-400">当前宠物会直接显示为战斗形象和昵称</div>
                   </div>
                   <div className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-500/10 px-3 py-1 text-sm font-semibold text-cyan-100">
@@ -382,8 +401,8 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
               <section className="rounded-[28px] border border-white/10 bg-white/[0.04] p-5">
                 <div className="mb-4 flex items-center justify-between">
                   <div>
-                    <div className="text-lg font-bold text-white">AI 人机</div>
-                    <div className="text-sm text-slate-400">房主可逐个添加 AI，并单独设置难度</div>
+                    <div className="text-lg font-bold text-white">敌方人机</div>
+                    <div className="text-sm text-slate-400">房主可增减敌方数量，并单独设置难度</div>
                   </div>
                   <div className="inline-flex items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-500/10 px-3 py-1 text-sm font-semibold text-emerald-100">
                     <Bot className="h-4 w-4" />
@@ -396,8 +415,8 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
                     <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-3xl bg-cyan-500/10 text-cyan-100">
                       <Sparkles className="h-6 w-6" />
                     </div>
-                    <div className="text-lg font-bold text-white">还没有添加人机</div>
-                    <div className="mt-2 text-sm text-slate-400">建议先用简单 AI 补位，再逐步提高难度。</div>
+                    <div className="text-lg font-bold text-white">当前没有敌方人机</div>
+                    <div className="mt-2 text-sm text-slate-400">至少保留 1 个对手再开局，单人建议直接恢复到 4 人默认阵容。</div>
                   </div>
                 ) : (
                   <div className="grid gap-4 md:grid-cols-2">
@@ -455,6 +474,8 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
                 </div>
                 <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-300">
                   <li>风暴会一直缩圈，圈外会持续掉血，而且后期更疼。</li>
+                  <li>真人之间可以互相伤害，但最后只看我方阵营还是人机阵营获胜。</li>
+                  <li>时间到时先比存活人数；同人数再比剩余血量。</li>
                   <li>被淘汰后会进入 3 题复活问答，全部答对才能半血复活 1 次。</li>
                   <li>武器投出去后谁都能捡，所以不要在危险位置乱丢。</li>
                   <li>中途刷新页面时，系统会自动尝试恢复到当前房间或战场。</li>
@@ -462,13 +483,13 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
                 <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-slate-200">
                   当前还剩 <span className="font-bold text-white">{remainingSlots}</span> 个空位。
                   {isFull
-                    ? ' 房间已满，已停止添加玩家和人机。'
-                    : ' 未满员前可以继续邀请玩家或添加人机。'}
+                    ? ' 房间已满，已停止添加真人和人机。'
+                    : ' 想给真人留位时，可先移除一部分敌方人机。'}
                 </div>
               </section>
 
               <section className="rounded-[28px] border border-white/10 bg-white/[0.04] p-5">
-                <div className="text-lg font-bold text-white">人机配置</div>
+                <div className="text-lg font-bold text-white">敌方配置</div>
                 <div className="mt-4 grid gap-3">
                   {difficultyOptions.map((option) => (
                     <button
@@ -498,7 +519,7 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
                   {busyAction === 'bot'
                     ? '正在添加...'
                     : isFull
-                      ? '房间已满，无法添加人机'
+                      ? '房间已满，无法添加敌方人机'
                       : `添加${difficultyOptions.find((item) => item.value === selectedDifficulty)?.label ?? '简单'}人机`}
                 </button>
                 {isFull && (
@@ -518,7 +539,7 @@ export default function PvpBattleRoyaleRoom({ room, onLeave, onStart }: PvpBattl
                 {!canStart && (
                   <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-slate-300">
                     {effectiveRoom.participant_count < 2
-                      ? '还不能开始：至少需要 2 名参战者。你可以邀请玩家，或先补一个简单人机。'
+                      ? '还不能开始：至少需要 2 名参战者。你可以邀请玩家，或先补至少 1 个对手。'
                       : '房间当前不是可开战状态，请等待同步完成。'}
                   </div>
                 )}

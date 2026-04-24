@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { CalendarDays } from 'lucide-react';
 import { useAuthStore } from '@/store/authStore';
 import { useCoinStore } from '@/store/coinStore';
 import { usePetStore } from '@/store/petStore';
@@ -168,7 +169,7 @@ export default function DailyCheckIn() {
       >
         <div className="relative">
           <div className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-slate-600 bg-gradient-to-br from-blue-500 to-teal-500 shadow-lg">
-            <span className="text-base">📅</span>
+            <CalendarDays className="h-[18px] w-[18px] text-white" />
           </div>
           
           {/* 未签到红点提示 */}

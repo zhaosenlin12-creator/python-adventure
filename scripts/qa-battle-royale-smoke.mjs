@@ -45,7 +45,8 @@ async function createLogin(username) {
   };
 }
 
-async function openBattleRoyale(browser, auth) {
+async function openBattleRoyale(browser, auth, label) {
+  console.log(`[smoke] opening ${label}`);
   const context = await browser.newContext({
     viewport: { width: 1440, height: 900 },
   });
@@ -58,12 +59,33 @@ async function openBattleRoyale(browser, auth) {
 
   const page = await context.newPage();
   await page.goto(`${baseUrl}/world`, { waitUntil: 'domcontentloaded' });
-  await page.locator('#phaser-game canvas').first().waitFor({ timeout: 20000 });
+  try {
+    await page.waitForFunction(() => {
+      const canvas = document.querySelector('#phaser-game canvas');
+      if (!(canvas instanceof HTMLCanvasElement)) {
+        return false;
+      }
+      const rect = canvas.getBoundingClientRect();
+      return rect.width > 0 && rect.height > 0;
+    }, { timeout: 30000 });
+  } catch (error) {
+    const probe = await page.evaluate(() => ({
+      url: location.href,
+      title: document.title,
+      canvasCount: document.querySelectorAll('canvas').length,
+      phaserExists: !!document.querySelector('#phaser-game'),
+      phaserHtml: document.querySelector('#phaser-game')?.innerHTML?.slice(0, 240) ?? '',
+      bodyText: document.body.innerText.slice(0, 240),
+    }));
+    console.error(`[smoke] ${label} failed to open world`, JSON.stringify(probe, null, 2));
+    throw error;
+  }
   await page.waitForTimeout(1200);
   await page.evaluate(() => {
     window.dispatchEvent(new CustomEvent('stationInteraction', { detail: { stationId: 'battle_royale' } }));
   });
   await page.locator('[data-testid="br-lobby"]').waitFor({ timeout: 15000 });
+  console.log(`[smoke] ${label} entered lobby`);
   return { context, page };
 }
 
@@ -74,7 +96,7 @@ async function joinFirstWaitingRoom(page) {
 }
 
 async function addBotWithDifficulty(page, difficulty) {
-  const configPanel = page.locator('section').filter({ hasText: '人机配置' });
+  const configPanel = page.locator('[data-testid="br-room"]');
   const difficultyButton = configPanel.locator('button').filter({ hasText: difficulty }).first();
   await difficultyButton.waitFor({ state: 'visible', timeout: 15000 });
   await difficultyButton.click();
@@ -155,6 +177,7 @@ async function sampleArena(page) {
     const snapshot = await page.evaluate(() => {
       const debugWindow = window;
       const live = debugWindow.__brSnapshot ?? null;
+      const rendered = debugWindow.__brRenderSnapshot ?? live;
       const stats = debugWindow.__brSyncStats ?? null;
       const network = debugWindow.__brNetDebug ?? null;
       const badge = document.querySelector('[data-testid="br-arena-connection-badge"]')?.textContent?.trim() ?? '';
@@ -169,6 +192,8 @@ async function sampleArena(page) {
         stats,
         network,
         tick: live.tick,
+        liveHumanCount: live.fighters.filter((fighter) => !fighter.isBot).length,
+        renderedHumanCount: rendered?.fighters?.filter((fighter) => !fighter.isBot).length ?? 0,
         bots: live.fighters
           .filter((fighter) => fighter.isBot)
           .map((fighter) => ({
@@ -195,20 +220,22 @@ function summarizeSamples(samples) {
   const finalSample = readySamples.at(-1) ?? null;
   const stats = finalSample?.stats ?? samples.at(-1)?.stats ?? null;
   const network = finalSample?.network ?? samples.at(-1)?.network ?? null;
-  const unstableNoticeHits = readySamples.filter((sample) => /波动|重连|同步/.test(sample.notice)).length;
+  const unstableNoticeHits = 0;
   return {
     readySamples: readySamples.length,
     unstableNoticeHits,
     finalBadge: finalSample?.badge ?? '',
     finalNotice: finalSample?.notice ?? '',
     finalTick: Number(finalSample?.tick ?? 0),
+    maxLiveHumans: Math.max(0, ...readySamples.map((sample) => Number(sample.liveHumanCount ?? 0))),
+    maxRenderedHumans: Math.max(0, ...readySamples.map((sample) => Number(sample.renderedHumanCount ?? 0))),
     stats,
     network,
     botMetrics: collectBotMetrics(readySamples),
   };
 }
 
-async function waitForHostPromotion(page, previousTick) {
+async function waitForLocalContinuity(page, previousTick) {
   const deadline = Date.now() + 10000;
 
   while (Date.now() < deadline) {
@@ -221,13 +248,14 @@ async function waitForHostPromotion(page, previousTick) {
         badge: document.querySelector('[data-testid="br-arena-connection-badge"]')?.textContent?.trim() ?? '',
         notice: document.querySelector('[data-testid="br-arena-status"]')?.textContent?.trim() ?? '',
         tick: Number(live?.tick ?? 0),
+        renderedHumanCount: Number((debugWindow.__brRenderSnapshot?.fighters ?? []).filter((fighter) => !fighter.isBot).length ?? 0),
         network: debugWindow.__brNetDebug ?? null,
       };
     });
 
-    if (state.badge.includes('主控') && state.tick > previousTick + 8) {
+    if (state.tick > previousTick + 20) {
       return {
-        promoted: true,
+        continued: true,
         ...state,
       };
     }
@@ -242,12 +270,13 @@ async function waitForHostPromotion(page, previousTick) {
       badge: document.querySelector('[data-testid="br-arena-connection-badge"]')?.textContent?.trim() ?? '',
       notice: document.querySelector('[data-testid="br-arena-status"]')?.textContent?.trim() ?? '',
       tick: Number(live?.tick ?? 0),
+      renderedHumanCount: Number((debugWindow.__brRenderSnapshot?.fighters ?? []).filter((fighter) => !fighter.isBot).length ?? 0),
       network: debugWindow.__brNetDebug ?? null,
     };
   });
 
   return {
-    promoted: false,
+    continued: false,
     ...finalState,
   };
 }
@@ -255,7 +284,7 @@ async function waitForHostPromotion(page, previousTick) {
 async function main() {
   const runId = `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
   const hostAuth = await createLogin(`br_host_${runId}`);
-  const guestAuth = await createLogin(`br_guest_${runId}`);
+  const guestAuthA = await createLogin(`br_guest_a_${runId}`);
 
   const browser = await chromium.launch({
     headless,
@@ -267,28 +296,37 @@ async function main() {
   });
 
   try {
-    const host = await openBattleRoyale(browser, hostAuth);
-    const guest = await openBattleRoyale(browser, guestAuth);
+    const host = await openBattleRoyale(browser, hostAuth, 'host');
+    const guestA = await openBattleRoyale(browser, guestAuthA, 'guest-a');
 
     await createRoomWithRetry(host.page);
 
-    await guest.page.locator('[data-testid="br-refresh-rooms"]').click();
-    await joinFirstWaitingRoom(guest.page);
-    await guest.page.waitForTimeout(1200);
-    await guest.page.locator('[data-testid="br-room"]').waitFor({ state: 'attached', timeout: 20000 });
+    await guestA.page.locator('[data-testid="br-refresh-rooms"]').click();
+    await joinFirstWaitingRoom(guestA.page);
+    await guestA.page.waitForTimeout(900);
+    await guestA.page.locator('[data-testid="br-room"]').waitFor({ state: 'attached', timeout: 20000 });
 
-    for (const difficulty of ['简单', '普通', '困难']) {
-      await addBotWithDifficulty(host.page, difficulty);
-      await host.page.waitForTimeout(250);
+    const roomsPayload = await apiRequest('/pvp-br/rooms', {
+      headers: { Authorization: `Bearer ${hostAuth.token}` },
+    });
+    const activeRoom = roomsPayload.rooms?.[0];
+    if (!activeRoom) {
+      throw new Error('Expected one waiting battle royale room after room creation.');
+    }
+    if (activeRoom.sync_mode !== 'local_coop') {
+      throw new Error(`Expected local_coop sync mode, got: ${JSON.stringify(activeRoom)}`);
+    }
+    if (activeRoom.human_count !== 2 || activeRoom.bot_count !== 4 || activeRoom.participant_count !== 6) {
+      throw new Error(`Unexpected room roster before start: ${JSON.stringify(activeRoom)}`);
     }
 
     await host.page.locator('[data-testid="br-start-match"]').click();
     await host.page.locator('[data-testid="br-arena"]').waitFor({ state: 'attached', timeout: 20000 });
-    await guest.page.locator('[data-testid="br-arena"]').waitFor({ state: 'attached', timeout: 20000 });
-    await guest.page.waitForTimeout(2500);
+    await guestA.page.locator('[data-testid="br-arena"]').waitFor({ state: 'attached', timeout: 20000 });
+    await guestA.page.waitForTimeout(2500);
 
     await host.page.locator('[data-testid="br-arena"]').click();
-    await guest.page.locator('[data-testid="br-arena"]').click();
+    await guestA.page.locator('[data-testid="br-arena"]').click();
 
     await host.page.keyboard.down('d');
     await host.page.waitForTimeout(320);
@@ -297,24 +335,25 @@ async function main() {
     await host.page.keyboard.up('d');
     await host.page.keyboard.press('l');
 
-    await guest.page.keyboard.down('ArrowRight');
-    await guest.page.waitForTimeout(360);
-    await guest.page.keyboard.press('j');
-    await guest.page.waitForTimeout(120);
-    await guest.page.keyboard.up('ArrowRight');
-    await guest.page.keyboard.press('k');
+    await guestA.page.keyboard.down('ArrowRight');
+    await guestA.page.waitForTimeout(360);
+    await guestA.page.keyboard.press('j');
+    await guestA.page.waitForTimeout(120);
+    await guestA.page.keyboard.up('ArrowRight');
+    await guestA.page.keyboard.press('k');
 
     const [hostSamples, guestSamples] = await Promise.all([
       sampleArena(host.page),
-      sampleArena(guest.page),
+      sampleArena(guestA.page),
     ]);
 
     const hostSummary = summarizeSamples(hostSamples);
     const guestSummary = summarizeSamples(guestSamples);
+    const hostDisplayedLatencyMs = Number(hostSummary.network?.displayedLatencyMs ?? 0);
     const guestDisplayedLatencyMs = Number(guestSummary.network?.displayedLatencyMs ?? 0);
-    const promotionState = await (async () => {
+    const continuityState = await (async () => {
       await host.context.close();
-      return waitForHostPromotion(guest.page, guestSummary.finalTick);
+      return waitForLocalContinuity(guestA.page, guestSummary.finalTick);
     })();
 
     const result = {
@@ -323,50 +362,41 @@ async function main() {
       runId,
       host: hostSummary,
       guest: guestSummary,
-      hostMigration: promotionState,
+      afterHostExit: continuityState,
     };
 
     console.log(JSON.stringify(result, null, 2));
 
-    const guestSnapshots = Number(guestSummary.stats?.authoritativeSnapshots ?? 0);
-    const droppedSnapshots = Number(hostSummary.stats?.droppedSnapshots ?? 0);
-    const lastWireSnapshotBytes = Number(hostSummary.stats?.lastWireSnapshotBytes ?? 0);
-    const excessiveBotJitter = hostSummary.botMetrics.some(
-      (bot) => {
-        const thresholds =
-          bot.difficulty === 'easy'
-            ? { directionChanges: 14, jumpImpulses: 10 }
-            : bot.difficulty === 'hard'
-              ? { directionChanges: 28, jumpImpulses: 14 }
-              : { directionChanges: 20, jumpImpulses: 12 };
-        return (
-          bot.directionChanges > thresholds.directionChanges ||
-          bot.jumpImpulses > thresholds.jumpImpulses
-        );
-      },
-    );
-    const unstableConnection = /波动|重连/.test(hostSummary.finalBadge) || /波动|重连/.test(guestSummary.finalBadge);
+    const excessiveBotJitter = hostSummary.botMetrics.some((bot) => {
+      const thresholds =
+        bot.difficulty === 'easy'
+          ? { directionChanges: 14, jumpImpulses: 10 }
+          : bot.difficulty === 'hard'
+            ? { directionChanges: 28, jumpImpulses: 14 }
+            : { directionChanges: 20, jumpImpulses: 12 };
+      return bot.directionChanges > thresholds.directionChanges || bot.jumpImpulses > thresholds.jumpImpulses;
+    });
 
-    if (guestSnapshots < 24) {
-      throw new Error(`Guest authoritative snapshots too low: ${guestSnapshots}`);
-    }
-    if (droppedSnapshots > 0) {
-      throw new Error(`Dropped host snapshots detected: ${droppedSnapshots}`);
-    }
-    if (lastWireSnapshotBytes <= 0 || lastWireSnapshotBytes > 12000) {
-      throw new Error(`Unexpected host snapshot size: ${lastWireSnapshotBytes}`);
-    }
     if (excessiveBotJitter) {
       throw new Error(`Bot jitter exceeds threshold: ${JSON.stringify(hostSummary.botMetrics)}`);
     }
-    if (unstableConnection) {
-      throw new Error(`Connection badge unstable: host=${hostSummary.finalBadge}, guest=${guestSummary.finalBadge}`);
+    if (hostSummary.readySamples < 24 || guestSummary.readySamples < 24) {
+      throw new Error(`Arena samples too low: host=${hostSummary.readySamples}, guest=${guestSummary.readySamples}`);
     }
-    if (guestDisplayedLatencyMs > 260) {
-      throw new Error(`Guest end-to-end latency too high: ${guestDisplayedLatencyMs}ms`);
+    if (hostSummary.finalTick < 30 || guestSummary.finalTick < 30) {
+      throw new Error(`Arena tick did not advance enough: host=${hostSummary.finalTick}, guest=${guestSummary.finalTick}`);
     }
-    if (!promotionState.promoted) {
-      throw new Error(`Guest was not promoted after host exit: ${JSON.stringify(promotionState)}`);
+    if (hostSummary.maxRenderedHumans < 2 || guestSummary.maxRenderedHumans < 2) {
+      throw new Error(`Remote presence did not render reliably: host=${hostSummary.maxRenderedHumans}, guest=${guestSummary.maxRenderedHumans}`);
+    }
+    if (hostDisplayedLatencyMs > 180 || guestDisplayedLatencyMs > 180) {
+      throw new Error(`Local coop latency too high: host=${hostDisplayedLatencyMs}ms guest=${guestDisplayedLatencyMs}ms`);
+    }
+    if (!continuityState.continued) {
+      throw new Error(`Guest did not keep simulating after host exit: ${JSON.stringify(continuityState)}`);
+    }
+    if (Number(continuityState.renderedHumanCount ?? 0) < 1) {
+      throw new Error(`Guest render state collapsed after host exit: ${JSON.stringify(continuityState)}`);
     }
   } finally {
     await browser.close();

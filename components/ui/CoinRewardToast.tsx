@@ -1,51 +1,54 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Icon from './Icon';
+import { CheckCircle2, Coins, Gem, Sparkles } from 'lucide-react';
+import { TRAINING_CURRENCY_LABEL, SERVER_CURRENCY_LABEL } from '@/lib/gameEconomy';
 
-interface CoinToastMessage {
+type ToastType = 'reward' | 'spend';
+type CurrencyType = 'coin' | 'diamond';
+
+interface CurrencyToastMessage {
   id: number;
-  coins: number;
+  amount: number;
   source: string;
-  type: 'reward' | 'spend';
+  type: ToastType;
+  currency: CurrencyType;
 }
 
 let toastId = 0;
-const toastListeners: ((coins: number, source: string, type: 'reward' | 'spend') => void)[] = [];
+const toastListeners: ((amount: number, source: string, type: ToastType, currency: CurrencyType) => void)[] = [];
 
-/**
- * 显示金币奖励Toast通知
- * @param coins 金币数量
- * @param source 来源描述
- * @param type 类型(reward=获得, spend=消费)
- */
 export function showCoinRewardToast(
-  coins: number, 
+  coins: number,
   source: string = '完成任务',
-  type: 'reward' | 'spend' = 'reward'
+  type: ToastType = 'reward'
 ) {
-  toastListeners.forEach(listener => listener(coins, source, type));
+  toastListeners.forEach((listener) => listener(coins, source, type, 'coin'));
 }
 
-/**
- * 金币奖励Toast通知组件
- */
+export function showDiamondRewardToast(
+  diamonds: number,
+  source: string = '完成挑战',
+  type: ToastType = 'reward'
+) {
+  toastListeners.forEach((listener) => listener(diamonds, source, type, 'diamond'));
+}
+
 export default function CoinRewardToast() {
-  const [toasts, setToasts] = useState<CoinToastMessage[]>([]);
-  
+  const [toasts, setToasts] = useState<CurrencyToastMessage[]>([]);
+
   useEffect(() => {
-    const listener = (coins: number, source: string, type: 'reward' | 'spend') => {
+    const listener = (amount: number, source: string, type: ToastType, currency: CurrencyType) => {
       const id = toastId++;
-      setToasts(prev => [...prev, { id, coins, source, type }]);
-      
-      // 3秒后自动移除
+      setToasts((prev) => [...prev, { id, amount, source, type, currency }]);
+
       setTimeout(() => {
-        setToasts(prev => prev.filter(t => t.id !== id));
+        setToasts((prev) => prev.filter((toast) => toast.id !== id));
       }, 3000);
     };
-    
+
     toastListeners.push(listener);
-    
+
     return () => {
       const index = toastListeners.indexOf(listener);
       if (index > -1) {
@@ -53,63 +56,65 @@ export default function CoinRewardToast() {
       }
     };
   }, []);
-  
-  if (toasts.length === 0) return null;
-  
+
+  if (toasts.length === 0) {
+    return null;
+  }
+
   return (
-    <div className="fixed top-24 right-4 z-[100] space-y-2">
-      {toasts.map((toast) => (
-        <div
-          key={toast.id}
-          className={`
-            pixel-panel p-4 min-w-[300px] max-w-[400px]
-            animate-slide-in-right
-            ${toast.type === 'reward' 
-              ? 'bg-amber-900/30 border-amber-500/30' 
-              : 'bg-slate-800 border-slate-600'
-            }
-          `}
-        >
-          <div className="flex items-center gap-3">
-            {/* 金币图标 */}
-            <div className={`
-              flex items-center justify-center w-10 h-10 rounded-full
-              ${toast.type === 'reward' ? 'bg-amber-900/30' : 'bg-slate-700'}
-            `}>
-              <Icon 
-                name="coin" 
-                size={24}
-              />
+    <div className="fixed right-4 top-24 z-[100] space-y-2">
+      {toasts.map((toast) => {
+        const isDiamond = toast.currency === 'diamond';
+        const isReward = toast.type === 'reward';
+        const amountColor = isDiamond
+          ? (isReward ? 'text-cyan-200' : 'text-slate-400')
+          : (isReward ? 'text-amber-400' : 'text-slate-400');
+        const frameColor = isDiamond
+          ? (isReward ? 'bg-cyan-950/80 border-cyan-400/30' : 'bg-slate-800 border-slate-600')
+          : (isReward ? 'bg-amber-950/80 border-amber-500/30' : 'bg-slate-800 border-slate-600');
+        const label = isDiamond ? TRAINING_CURRENCY_LABEL : SERVER_CURRENCY_LABEL;
+
+        return (
+          <div
+            key={toast.id}
+            className={`pixel-panel min-w-[300px] max-w-[400px] animate-slide-in-right border p-4 ${frameColor}`}
+          >
+            <div className="flex items-center gap-3">
+              <div
+                className={`flex h-10 w-10 items-center justify-center rounded-full ${
+                  isDiamond
+                    ? 'bg-cyan-400/10 text-cyan-200'
+                    : isReward
+                      ? 'bg-amber-400/10 text-amber-300'
+                      : 'bg-slate-700 text-slate-300'
+                }`}
+              >
+                {isDiamond ? <Gem className="h-5 w-5" /> : <Coins className="h-5 w-5" />}
+              </div>
+
+              <div className="flex-1">
+                <div className="mb-1 flex items-center gap-2">
+                  <span className={`text-lg font-bold ${amountColor}`}>
+                    {toast.type === 'reward' ? '+' : '-'}{toast.amount}
+                  </span>
+                  <span className="text-xs font-semibold text-slate-300">{label}</span>
+                </div>
+                <div className="text-xs text-slate-300">{toast.source}</div>
+              </div>
+
+              {isReward ? (
+                <div className="rounded-full border border-white/10 bg-white/5 p-2 text-slate-100">
+                  {isDiamond ? (
+                    <Sparkles className="h-4 w-4 text-cyan-200" />
+                  ) : (
+                    <CheckCircle2 className="h-4 w-4 text-amber-300" />
+                  )}
+                </div>
+              ) : null}
             </div>
-            
-            {/* 内容 */}
-            <div className="flex-1">
-              <div className="flex items-center gap-2 mb-1">
-                <span className={`
-                  text-lg font-bold
-                  ${toast.type === 'reward' ? 'text-amber-400' : 'text-slate-500'}
-                `}>
-                  {toast.type === 'reward' ? '+' : '-'}{toast.coins}
-                </span>
-                <Icon 
-                  name="coin" 
-                  size={16}
-                />
-              </div>
-              <div className="text-xs text-slate-300">
-                {toast.source}
-              </div>
-            </div>
-            
-            {/* 动画效果 */}
-            {toast.type === 'reward' && (
-              <div className="text-2xl animate-bounce">
-                ✨
-              </div>
-            )}
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }

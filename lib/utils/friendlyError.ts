@@ -21,6 +21,11 @@ export function toFriendlyMessage(err: unknown, fallback: string = '操作失败
   if (lower.includes('failed to fetch') || lower.includes('networkerror') || lower.includes('err_connection')) {
     return '网络异常，请检查网络连接';
   }
+  // 服务繁忙 / 网关错误
+  if (lower.includes('503') || lower.includes('502') || lower.includes('504')
+    || lower.includes('service unavailable') || lower.includes('bad gateway') || lower.includes('gateway timeout')) {
+    return '服务器刚刚有点忙，本地进度还在，稍后会自动重试';
+  }
   // 超时
   if (lower.includes('timeout') || lower.includes('aborted')) {
     return '请求超时，请稍后再试';

@@ -24,6 +24,10 @@ interface Props {
     players: OnlinePlayer[];
     currentUserId: number;
     mapArea?: string;
+    connectionNotice?: {
+        tone: 'success' | 'warning' | 'info';
+        text: string;
+    } | null;
 }
 
 const PLAYERS_PER_PAGE = 10;
@@ -36,7 +40,18 @@ const STATUS_CONFIG: Record<string, { label: string; color: string; icon: string
     pvp: { label: 'PK', color: 'text-red-400', icon: '🎮' },
 };
 
-export default function OnlinePlayersList({ players, currentUserId, mapArea = "开放世界" }: Props) {
+const NOTICE_TONE_CLASS: Record<'success' | 'warning' | 'info', string> = {
+    success: 'border-emerald-400/30 bg-emerald-500/10 text-emerald-100',
+    warning: 'border-amber-400/30 bg-amber-500/10 text-amber-100',
+    info: 'border-cyan-400/30 bg-cyan-500/10 text-cyan-100',
+};
+
+export default function OnlinePlayersList({
+    players,
+    currentUserId,
+    mapArea = "开放世界",
+    connectionNotice = null,
+}: Props) {
     const { setActivePrivateChat, setOpen } = useChatStore();
     const [currentPage, setCurrentPage] = useState(0);
     const [isExpanded, setIsExpanded] = useState(false);
@@ -92,6 +107,12 @@ export default function OnlinePlayersList({ players, currentUserId, mapArea = "�
                 />
             </button>
             
+            {connectionNotice ? (
+                <div className={`mx-2 mb-2 rounded-md border px-2 py-1 text-[11px] ${NOTICE_TONE_CLASS[connectionNotice.tone]}`}>
+                    {connectionNotice.text}
+                </div>
+            ) : null}
+
             {/* 展开的玩家列表 */}
             {isExpanded && (
                 <div className="border-t border-slate-700">

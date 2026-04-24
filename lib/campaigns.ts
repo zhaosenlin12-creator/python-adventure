@@ -78,12 +78,35 @@ export interface NPC {
 export interface Trap {
   x: number;
   y: number;
-  type: 'spike' | 'fire' | 'water' | 'electric' | 'falling_platform' | 'rotating_arm';
+  type:
+    | 'spike'
+    | 'fire'
+    | 'water'
+    | 'electric'
+    | 'falling_platform'
+    | 'rotating_arm'
+    | 'gear_chaser'
+    | 'expanding_hazard'
+    | 'moving_spike';
   damage: number;
   pattern?: 'static' | 'periodic' | 'triggered';
   // 战役7-2新增：旋转机械臂特性
   rotationSpeed?: number;  // 旋转速度（度/秒）
   armLength?: number;      // 机械臂长度
+  width?: number;
+  height?: number;
+  radius?: number;
+  maxRadius?: number;
+  triggerRadius?: number;
+  speed?: number;
+  axis?: 'x' | 'y';
+  moveDistance?: number;
+  activeDuration?: number;
+  cooldown?: number;
+  growDuration?: number;
+  visualTheme?: string;
+  icon?: string;
+  [key: string]: any;
 }
 
 // 战役5新增：玩家成长系统
@@ -142,6 +165,32 @@ export interface Question {
   hint?: string; // 提示
 }
 
+function shuffleQuestionOptions<T extends Question>(question: T): T {
+  if (!question.options || question.options.length < 2) {
+    return { ...question };
+  }
+
+  const options = [...question.options];
+  for (let index = options.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [options[index], options[swapIndex]] = [options[swapIndex], options[index]];
+  }
+
+  const normalizedAnswer = Array.isArray(question.answer)
+    ? String(question.answer[0] ?? '').trim()
+    : String(question.answer ?? '').trim();
+
+  const resolvedAnswer = options.includes(normalizedAnswer)
+    ? normalizedAnswer
+    : options.find((option, index) => String.fromCharCode(65 + index) === normalizedAnswer) || normalizedAnswer;
+
+  return {
+    ...question,
+    options,
+    answer: Array.isArray(question.answer) ? [resolvedAnswer] : resolvedAnswer,
+  };
+}
+
 // 为关卡生成随机题目（旧版本，保持兼容）
 export function generateQuestionsForLevel(levelNumber: number, count: number = 3): Question[] {
   const questions = getQuestionsForLevel(levelNumber, count);
@@ -152,10 +201,10 @@ export function generateQuestionsForLevel(levelNumber: number, count: number = 3
     options: q.options,
     answer: q.answer,
     explanation: q.explanation,
-    difficulty: q.difficulty === 'easy' ? 1 : q.difficulty === 'medium' ? 2 : 3,
+    difficulty: (q.difficulty === 'easy' ? 1 : q.difficulty === 'medium' ? 2 : 3) as 1 | 2 | 3,
     subject: q.subject as any,
     hint: q.hint
-  }));
+  })).map(question => shuffleQuestionOptions(question));
 }
 
 // 🔥 新版本：根据年龄段生成题目
@@ -176,9 +225,9 @@ export function generateQuestionsForAgeGroup(
     options: q.options,
     answer: q.answer,
     explanation: q.explanation,
-    difficulty: q.difficulty,
+    difficulty: q.difficulty as 1 | 2 | 3,
     subject: q.subject as any,
-  }));
+  })).map(question => shuffleQuestionOptions(question));
 }
 
 // 🔥 战役8：传送门
@@ -221,8 +270,32 @@ export interface BossConfig {
   hp?: number;  // Boss血量（双Boss模式可选）
   secondBoss?: any;  // 🔥 双Boss模式：第二个Boss配置
   specialAbilities?: any;  // 🔥 Boss特殊能力
-  phase1Boss?: { name: string; hp: number; attacks: string[]; attackInterval?: number; moveSpeed?: number; specialAbilities?: any; };  // 第一阶段Boss
-  phase2Boss?: { name: string; hp: number; attacks: string[]; attackInterval?: number; moveSpeed?: number; laserDuration?: number; stunDuration?: number; specialAbilities?: any; };  // 第二阶段Boss
+  phase1Boss?: {
+    name?: string;
+    hp?: number;
+    attacks?: string[];
+    attackInterval?: number;
+    moveSpeed?: number;
+    visualTheme?: string;
+    size?: number;
+    tint?: number;
+    specialAbilities?: any;
+    [key: string]: any;
+  };  // 第一阶段Boss
+  phase2Boss?: {
+    name?: string;
+    hp?: number;
+    attacks?: string[];
+    attackInterval?: number;
+    moveSpeed?: number;
+    visualTheme?: string;
+    size?: number;
+    tint?: number;
+    laserDuration?: number;
+    stunDuration?: number;
+    specialAbilities?: any;
+    [key: string]: any;
+  };  // 第二阶段Boss
   phases?: {  // 多阶段配置
     hp: number;
     name?: string;  // 阶段名称
@@ -778,8 +851,8 @@ export const campaigns: Campaign[] = [
             subject: 'programming'
           }
         ],
-        story: '古街的守护者出现了！他是一位强大的战士，掌握着二段跳的秘密。先用跳跃踩踏削弱他，然后答对题目才能最终击败！',
-        rewards: { xp: 300, coins: 150, skills: ['double_jump'] }
+        story: '古街的守护者出现了！他会逼你把跳跃节奏练稳。先用踩踏削弱他，再答对题目完成最后一击！',
+        rewards: { xp: 300, coins: 150, skills: ['ancient_wisdom'] }
       }
     ],
     rewards: { xp: 600, coins: 300, title: '古街探险家' }
@@ -3847,8 +3920,7 @@ export function getCampaignById(id: string): Campaign | undefined {
 
 // 获取已解锁的战役
 export function getUnlockedCampaigns(completedCampaigns: string[]): Campaign[] {
-  return allCampaigns.filter(campaign => {
-    if (!campaign.unlockRequirement) return true;
-    return completedCampaigns.includes(campaign.unlockRequirement);
-  });
+  return allCampaigns.filter((campaign) => (
+    !campaign.unlockRequirement || completedCampaigns.includes(campaign.unlockRequirement)
+  ));
 }

@@ -64,6 +64,12 @@ if (Test-Path (Join-Path $stageDir ".next/dev")) {
 if (Test-Path (Join-Path $stageDir ".next/cache")) {
     Remove-Item -LiteralPath (Join-Path $stageDir ".next/cache") -Recurse -Force
 }
+if (Test-Path (Join-Path $stageDir ".next/diagnostics")) {
+    Remove-Item -LiteralPath (Join-Path $stageDir ".next/diagnostics") -Recurse -Force
+}
+if (Test-Path (Join-Path $stageDir ".next/dev-server.log")) {
+    Remove-Item -LiteralPath (Join-Path $stageDir ".next/dev-server.log") -Force
+}
 if (Test-Path (Join-Path $stageDir "public/sounds.rar")) {
     Remove-Item -LiteralPath (Join-Path $stageDir "public/sounds.rar") -Force
 }

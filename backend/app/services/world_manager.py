@@ -1,6 +1,7 @@
 """
 开放世界管理器 - 处理地图、位置、实时同步等
 """
+import logging
 from typing import Any, Dict, List, Optional, Set
 from sqlalchemy.orm import Session
 from datetime import datetime, timedelta
@@ -10,6 +11,8 @@ from app.models.map_object import MapObject, UserMapProgress
 from app.models.user import User
 from app.models.pet import Pet
 import asyncio
+
+logger = logging.getLogger(__name__)
 
 class WorldManager:
     """世界管理器 - 处理实时世界状态"""
@@ -200,8 +203,9 @@ class WorldManager:
         
         result = []
         found_user_ids = set()
+        active_connection_user_ids = set(self.active_connections.keys())
         candidate_user_ids = {u.id for _, u in nearby}
-        candidate_user_ids.update(uid for uid in self.active_connections.keys() if uid != user_id)
+        candidate_user_ids.update(uid for uid in active_connection_user_ids if uid != user_id)
         pet_snapshot_map = self._get_active_pet_snapshot_map(db, candidate_user_ids, persist_fallback=False)
         
         for location, user in nearby:
@@ -210,7 +214,7 @@ class WorldManager:
                        (location.y - current_location.y) ** 2) ** 0.5
             
             # 🔥 放宽距离限制，或者如果玩家有活跃的 WebSocket 连接则直接包含
-            if distance <= radius or user.id in self.active_connections:
+            if distance <= radius or user.id in active_connection_user_ids:
                 result.append({
                     "user_id": user.id,
                     "username": user.username,
@@ -225,7 +229,7 @@ class WorldManager:
                 found_user_ids.add(user.id)
         
         # 🔥 方案2：补充当前有 WebSocket 连接但可能不在数据库查询结果中的玩家
-        for connected_user_id in self.active_connections.keys():
+        for connected_user_id in list(self.active_connections.keys()):
             if connected_user_id != user_id and connected_user_id not in found_user_ids:
                 # 查询这个用户的信息
                 connected_location = db.query(UserLocation, User).join(User).filter(
@@ -439,8 +443,6 @@ class WorldManager:
 
 # 全局实例
 world_manager = WorldManager()
-
-
 
 
 

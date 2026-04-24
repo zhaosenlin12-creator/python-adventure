@@ -171,13 +171,16 @@ def test_create_and_list_battle_royale_room():
         json={
             **participant_payload("host-a"),
             "room_name": "twilight-den",
-            "max_players": 6,
+            "max_players": 8,
         },
     )
     assert create.status_code == 200, create.text
     room = create.json()["room"]
     assert room["room_name"] == "twilight-den"
-    assert room["participant_count"] == 1
+    assert room["sync_mode"] == "local_coop"
+    assert room["participant_count"] == 5
+    assert room["bot_count"] == 4
+    assert [bot["difficulty"] for bot in room["bots"]] == ["easy", "medium", "medium", "hard"]
     assert room["humans"][0]["pet_stage"] == 5
     assert room["humans"][0]["movement_skills"] == ["double_jump", "dash"]
 
@@ -186,7 +189,7 @@ def test_create_and_list_battle_royale_room():
     rooms = listing.json()["rooms"]
     assert len(rooms) == 1
     assert rooms[0]["id"] == room["id"]
-    assert listing.json()["cap"] == 6
+    assert listing.json()["cap"] == 8
 
 
 def test_join_add_bot_remove_bot_and_start():
@@ -199,7 +202,7 @@ def test_join_add_bot_remove_bot_and_start():
         json={
             **participant_payload("host-b", "shiba_debugger"),
             "room_name": "arena-br",
-            "max_players": 6,
+            "max_players": 8,
         },
     )
     room_id = create.json()["room"]["id"]
@@ -210,7 +213,8 @@ def test_join_add_bot_remove_bot_and_start():
         json=participant_payload("guest-b", "silver_lynx"),
     )
     assert join.status_code == 200, join.text
-    assert join.json()["room"]["participant_count"] == 2
+    assert join.json()["room"]["participant_count"] == 6
+    assert join.json()["room"]["bot_count"] == 4
 
     add_bot = client.post(
         f"/api/v1/pvp-br/rooms/{room_id}/bots",
@@ -220,13 +224,14 @@ def test_join_add_bot_remove_bot_and_start():
     assert add_bot.status_code == 200, add_bot.text
     bot_id = add_bot.json()["bot"]["id"]
     assert add_bot.json()["bot"]["difficulty"] == "hard"
+    assert add_bot.json()["room"]["bot_count"] == 5
 
     remove_bot = client.delete(
         f"/api/v1/pvp-br/rooms/{room_id}/bots/{bot_id}",
         headers=auth_headers(host_token),
     )
     assert remove_bot.status_code == 200, remove_bot.text
-    assert remove_bot.json()["room"]["bot_count"] == 0
+    assert remove_bot.json()["room"]["bot_count"] == 4
 
     start = client.post(
         f"/api/v1/pvp-br/rooms/{room_id}/start",
@@ -234,43 +239,63 @@ def test_join_add_bot_remove_bot_and_start():
     )
     assert start.status_code == 200, start.text
     assert start.json()["room"]["status"] == "in_progress"
+    assert start.json()["room"]["sync_mode"] == "local_coop"
     assert isinstance(start.json()["room"]["match_seed"], int)
+    assert room_id not in room_runtime_tasks
 
 
-def test_room_only_allows_two_human_players():
-    host_token = make_token("br_two_host")
-    guest_token = make_token("br_two_guest")
-    overflow_token = make_token("br_two_overflow")
+def test_room_only_allows_four_human_players():
+    host_token = make_token("br_four_host")
+    guest_token_a = make_token("br_four_guest_a")
+    guest_token_b = make_token("br_four_guest_b")
+    guest_token_c = make_token("br_four_guest_c")
+    overflow_token = make_token("br_four_overflow")
 
     create = client.post(
         "/api/v1/pvp-br/rooms/create",
         headers=auth_headers(host_token),
         json={
-            **participant_payload("two-host"),
-            "room_name": "two-human-room",
-            "max_players": 6,
+            **participant_payload("four-host"),
+            "room_name": "four-human-room",
+            "max_players": 8,
         },
     )
     assert create.status_code == 200, create.text
     room_id = create.json()["room"]["id"]
 
-    join_guest = client.post(
+    join_guest_a = client.post(
         f"/api/v1/pvp-br/rooms/{room_id}/join",
-        headers=auth_headers(guest_token),
-        json=participant_payload("two-guest"),
+        headers=auth_headers(guest_token_a),
+        json=participant_payload("four-guest-a"),
     )
-    assert join_guest.status_code == 200, join_guest.text
+    assert join_guest_a.status_code == 200, join_guest_a.text
+
+    join_guest_b = client.post(
+        f"/api/v1/pvp-br/rooms/{room_id}/join",
+        headers=auth_headers(guest_token_b),
+        json=participant_payload("four-guest-b"),
+    )
+    assert join_guest_b.status_code == 200, join_guest_b.text
+
+    join_guest_c = client.post(
+        f"/api/v1/pvp-br/rooms/{room_id}/join",
+        headers=auth_headers(guest_token_c),
+        json=participant_payload("four-guest-c"),
+    )
+    assert join_guest_c.status_code == 200, join_guest_c.text
+    assert join_guest_c.json()["room"]["human_count"] == 4
+    assert join_guest_c.json()["room"]["participant_count"] == 8
 
     join_overflow = client.post(
         f"/api/v1/pvp-br/rooms/{room_id}/join",
         headers=auth_headers(overflow_token),
-        json=participant_payload("two-overflow"),
+        json=participant_payload("four-overflow"),
     )
     assert join_overflow.status_code == 400, join_overflow.text
-    assert join_overflow.json()["detail"] == "Battle Royale only supports two human players"
+    assert join_overflow.json()["detail"] == "Battle Royale only supports four human players"
 
 
-def test_room_capacity_is_limited_to_6():
+def test_room_capacity_is_limited_to_8():
     host_token = make_token("br_host_c")
 
     response = client.post(
@@ -279,43 +304,48 @@ def test_room_capacity_is_limited_to_6():
         json={
             **participant_payload("host-c"),
             "room_name": "too-big",
-            "max_players": 7,
+            "max_players": 9,
         },
     )
     assert response.status_code == 422
 
 
-def test_only_one_active_room_can_exist_at_a_time():
-    waiting_host = make_token("br_waiting_host_a")
-    create = client.post(
-        "/api/v1/pvp-br/rooms/create",
-        headers=auth_headers(waiting_host),
-        json={
-            **participant_payload("waiting-host-a"),
-            "room_name": "waiting-a",
-            "max_players": 4,
-        },
-    )
-    assert create.status_code == 200, create.text
+def test_only_four_active_rooms_can_exist_at_a_time():
+    room_ids = []
+    for index in range(4):
+        token = make_token(f"br_waiting_host_{index}")
+        create = client.post(
+            "/api/v1/pvp-br/rooms/create",
+            headers=auth_headers(token),
+            json={
+                **participant_payload(f"waiting-host-{index}"),
+                "room_name": f"waiting-{index}",
+                "max_players": 8,
+            },
+        )
+        assert create.status_code == 200, create.text
+        room_ids.append(create.json()["room"]["id"])
 
-    overflow_host = make_token("br_waiting_host_b")
+    assert len(room_ids) == 4
+
+    overflow_host = make_token("br_waiting_host_overflow")
     overflow = client.post(
         "/api/v1/pvp-br/rooms/create",
         headers=auth_headers(overflow_host),
         json={
-            **participant_payload("waiting-host-b"),
-            "room_name": "waiting-b",
-            "max_players": 4,
+            **participant_payload("overflow"),
+            "room_name": "waiting-overflow",
+            "max_players": 8,
         },
     )
     assert overflow.status_code == 503
     assert overflow.json()["detail"] == "Battle Royale room slot is occupied"
 
 
-def test_cannot_create_a_second_room_while_another_match_is_in_progress():
+def test_cannot_start_a_third_room_while_two_matches_are_in_progress():
     first_host = make_token("br_progress_host_a")
-    first_guest = make_token("br_progress_guest_a")
     second_host = make_token("br_progress_host_b")
+    third_host = make_token("br_progress_host_c")
 
     first_create = client.post(
         "/api/v1/pvp-br/rooms/create",
@@ -323,38 +353,56 @@ def test_cannot_create_a_second_room_while_another_match_is_in_progress():
         json={
             **participant_payload("progress-host-a"),
             "room_name": "progress-a",
-            "max_players": 4,
+            "max_players": 8,
         },
     )
-    first_room_id = first_create.json()["room"]["id"]
-    first_join = client.post(
-        f"/api/v1/pvp-br/rooms/{first_room_id}/join",
-        headers=auth_headers(first_guest),
-        json=participant_payload("progress-guest-a"),
-    )
-    assert first_join.status_code == 200, first_join.text
-    first_start = client.post(
-        f"/api/v1/pvp-br/rooms/{first_room_id}/start",
-        headers=auth_headers(first_host),
-    )
-    assert first_start.status_code == 200, first_start.text
-
-    blocked_create = client.post(
+    second_create = client.post(
         "/api/v1/pvp-br/rooms/create",
         headers=auth_headers(second_host),
         json={
             **participant_payload("progress-host-b"),
             "room_name": "progress-b",
-            "max_players": 4,
+            "max_players": 8,
         },
     )
-    assert blocked_create.status_code == 503
-    assert blocked_create.json()["detail"] == "Battle Royale room slot is occupied"
+    third_create = client.post(
+        "/api/v1/pvp-br/rooms/create",
+        headers=auth_headers(third_host),
+        json={
+            **participant_payload("progress-host-c"),
+            "room_name": "progress-c",
+            "max_players": 8,
+        },
+    )
+
+    assert first_create.status_code == 200, first_create.text
+    assert second_create.status_code == 200, second_create.text
+    assert third_create.status_code == 200, third_create.text
+
+    first_room_id = first_create.json()["room"]["id"]
+    second_room_id = second_create.json()["room"]["id"]
+    third_room_id = third_create.json()["room"]["id"]
+
+    first_start = client.post(
+        f"/api/v1/pvp-br/rooms/{first_room_id}/start",
+        headers=auth_headers(first_host),
+    )
+    second_start = client.post(
+        f"/api/v1/pvp-br/rooms/{second_room_id}/start",
+        headers=auth_headers(second_host),
+    )
+    blocked_start = client.post(
+        f"/api/v1/pvp-br/rooms/{third_room_id}/start",
+        headers=auth_headers(third_host),
+    )
+
+    assert first_start.status_code == 200, first_start.text
+    assert second_start.status_code == 200, second_start.text
+    assert blocked_start.status_code == 503
+    assert blocked_start.json()["detail"] == "Battle Royale server is busy"
 
 
-def test_two_human_room_coalesces_snapshots_and_broadcasts_to_guest(monkeypatch: pytest.MonkeyPatch):
-    monkeypatch.setattr(br_api, "SERVER_SNAPSHOT_INTERVAL_SECONDS", 0.02)
-
+def test_two_human_room_broadcasts_shared_bot_states_to_guest():
     host_token = make_token("br_load_host")
     guest_token = make_token("br_load_guest")
 
@@ -364,7 +412,7 @@ def test_two_human_room_coalesces_snapshots_and_broadcasts_to_guest(monkeypatch:
         json={
             **participant_payload("load-host"),
             "room_name": "load-room",
-            "max_players": 6,
+            "max_players": 8,
         },
     )
     assert create.status_code == 200, create.text
@@ -385,117 +433,46 @@ def test_two_human_room_coalesces_snapshots_and_broadcasts_to_guest(monkeypatch:
         headers=auth_headers(host_token),
     )
     assert start.status_code == 200, start.text
-    assert room_id in room_runtime_tasks
-
-    def snapshot_payload(tick: int) -> dict:
-        fighters = [
-            {
-                "id": f"human-{host_user_id}",
-                "userId": host_user_id,
-                "name": "load-host",
-                "petType": "code_kitty",
-                "petStage": 3,
-                "x": 1200 + tick,
-                "y": 880,
-                "vx": 15,
-                "vy": 0,
-                "hp": 120,
-                "maxHp": 120,
-                "shield": 16,
-                "armor": 8,
-                "kills": 0,
-                "alive": True,
-                "facing": 1,
-                "isBot": False,
-                "hasRevived": False,
-                "reviveUsed": False,
-                "quizPending": False,
-                "specialCharges": 1,
-                "buffs": {},
-                "weaponReady": True,
-                "swingMs": 0,
-                "hitFlashMs": 0,
-            }
-        ]
-        fighters.append(
-            {
-                "id": f"human-{guest_user_id}",
-                "userId": guest_user_id,
-                "name": "load-guest",
-                "petType": "silver_lynx",
-                "petStage": 3,
-                "x": 1820 + tick,
-                "y": 920,
-                "vx": 12,
-                "vy": 0,
-                "hp": 120,
-                "maxHp": 120,
-                "shield": 0,
-                "armor": 0,
-                "kills": 0,
-                "alive": True,
-                "facing": -1,
-                "isBot": False,
-                "hasRevived": False,
-                "reviveUsed": False,
-                "quizPending": False,
-                "specialCharges": 0,
-                "buffs": {},
-                "weaponReady": True,
-                "swingMs": 0,
-                "hitFlashMs": 0,
-            }
-        )
-        return {
-            "tick": tick,
-            "elapsedMs": tick * 80,
-            "zone": {
-                "centerX": 3200,
-                "centerY": 1700,
-                "radius": 2100,
-                "phase": 2,
-                "nextShrinkAtMs": 14000,
-            },
-            "fighters": fighters,
-            "pickups": [],
-            "killFeed": [],
-            "winnerId": None,
-            "projectiles": [],
-            "weapons": [],
-            "effects": [],
-        }
+    assert start.json()["room"]["sync_mode"] == "local_coop"
+    assert room_id not in room_runtime_tasks
 
     host_ws_url = f"/api/v1/pvp-br/ws/{room_id}/{host_user_id}?token={host_token}"
     guest_ws_url = f"/api/v1/pvp-br/ws/{room_id}/{guest_user_id}?token={guest_token}"
 
     with ExitStack() as stack:
         host_socket = stack.enter_context(client.websocket_connect(host_ws_url))
-        assert host_socket.receive_json()["type"] == "connected"
+        host_connected = host_socket.receive_json()
+        assert host_connected["type"] == "connected"
+        assert host_connected["room"]["sync_mode"] == "local_coop"
+        assert len(host_connected["shared_bot_states"]) == 4
 
         guest_socket = stack.enter_context(client.websocket_connect(guest_ws_url))
-        assert guest_socket.receive_json()["type"] == "connected"
+        guest_connected = guest_socket.receive_json()
+        assert guest_connected["type"] == "connected"
+        assert guest_connected["room"]["sync_mode"] == "local_coop"
+        assert len(guest_connected["shared_bot_states"]) == 4
 
-        for tick in range(1, 6):
-            host_socket.send_json({"type": "br_snapshot", "payload": snapshot_payload(tick)})
+        target_bot_id = host_connected["shared_bot_states"][0]["id"]
+        guest_socket.send_json(
+            {
+                "type": "br_bot_damage",
+                "payload": {
+                    "target_id": target_bot_id,
+                    "damage": 18,
+                    "event_id": "evt-bot-hit-1",
+                },
+            }
+        )
 
-        time.sleep(0.08)
-        host_socket.send_json({"type": "br_snapshot", "payload": snapshot_payload(99)})
-        time.sleep(0.12)
+        host_update = receive_json_with_timeout(host_socket, timeout=0.35)
+        guest_update = receive_json_with_timeout(guest_socket, timeout=0.35)
+        assert host_update["type"] == "br_shared_bot_states"
+        assert guest_update["type"] == "br_shared_bot_states"
 
-        latest_tick = 0
-        for _ in range(8):
-            try:
-                message = receive_json_with_timeout(guest_socket, timeout=0.3)
-            except AssertionError:
-                break
-            if message["type"] != "br_snapshot":
-                continue
-            latest_tick = message["payload"]["tick"]
-            if latest_tick == 99:
-                break
-
-    assert latest_tick == 99
-    assert active_rooms[room_id]["latest_snapshot"]["tick"] == 99
+        host_bot = next(bot for bot in host_update["payload"]["bots"] if bot["id"] == target_bot_id)
+        guest_bot = next(bot for bot in guest_update["payload"]["bots"] if bot["id"] == target_bot_id)
+        assert host_bot["hp"] == 102
+        assert guest_bot["hp"] == 102
 
 
 def test_duplicate_websocket_session_does_not_close_room():
@@ -507,7 +484,7 @@ def test_duplicate_websocket_session_does_not_close_room():
         json={
             **participant_payload("host-dup"),
             "room_name": "duplicate-guard",
-            "max_players": 4,
+            "max_players": 8,
         },
     )
     assert create.status_code == 200, create.text
@@ -547,6 +524,37 @@ def test_duplicate_websocket_session_does_not_close_room():
             assert host_user_id in active_rooms[room_id]["humans"]
 
 
+def test_websocket_invalid_json_is_ignored_and_connection_stays_alive():
+    host_token = make_token("br_invalid_json_host")
+
+    create = client.post(
+        "/api/v1/pvp-br/rooms/create",
+        headers=auth_headers(host_token),
+        json={
+            **participant_payload("invalid-json-host"),
+            "room_name": "json-guard",
+            "max_players": 8,
+        },
+    )
+    assert create.status_code == 200, create.text
+    room = create.json()["room"]
+    room_id = room["id"]
+    host_user_id = room["host_user_id"]
+
+    ws_url = f"/api/v1/pvp-br/ws/{room_id}/{host_user_id}?token={host_token}"
+    with client.websocket_connect(ws_url) as socket:
+        connected = socket.receive_json()
+        assert connected["type"] == "connected"
+
+        socket.send_text("{not-valid-json")
+        socket.send_json({"type": "ping"})
+
+        pong = receive_json_with_timeout(socket)
+        assert pong["type"] == "pong"
+        assert room_id in active_rooms
+        assert ws_connections.get(f"{room_id}:{host_user_id}") is not None
+
+
 def test_my_active_room_returns_waiting_or_active_room():
     host_token = make_token("br_active_host")
 
@@ -578,7 +586,7 @@ def test_only_host_can_finish_room():
         json={
             **participant_payload("finish-host"),
             "room_name": "finish-room",
-            "max_players": 4,
+            "max_players": 8,
         },
     )
     room_id = create.json()["room"]["id"]
@@ -633,107 +641,247 @@ def test_websocket_reconnect_receives_latest_snapshot_and_match_payload():
         headers=auth_headers(host_token),
     )
     assert start.status_code == 200, start.text
+    assert start.json()["room"]["sync_mode"] == "local_coop"
 
     host_ws_url = f"/api/v1/pvp-br/ws/{room_id}/{host_user_id}?token={host_token}"
     guest_ws_url = f"/api/v1/pvp-br/ws/{room_id}/{guest_user_id}?token={guest_token}"
-    snapshot_payload = {
-        "tick": 18,
-        "elapsedMs": 9300,
-        "zone": {
-            "centerX": 3200,
-            "centerY": 1700,
-            "radius": 2100,
-            "phase": 2,
-            "nextShrinkAtMs": 14000,
-        },
-        "fighters": [
-            {
-                "id": f"human-{host_user_id}",
-                "userId": host_user_id,
-                "name": "reconnect-host",
-                "petType": "code_kitty",
-                "petStage": 3,
-                "x": 1200,
-                "y": 880,
-                "vx": 0,
-                "vy": 0,
-                "hp": 110,
-                "maxHp": 120,
-                "shield": 12,
-                "armor": 6,
-                "kills": 1,
-                "alive": True,
-                "facing": 1,
-                "isBot": False,
-                "hasRevived": False,
-                "reviveUsed": False,
-                "quizPending": False,
-                "specialCharges": 1,
-                "buffs": {},
-                "weaponReady": True,
-                "swingMs": 0,
-                "hitFlashMs": 0,
-            },
-            {
-                "id": f"human-{guest_user_id}",
-                "userId": guest_user_id,
-                "name": "reconnect-guest",
-                "petType": "silver_lynx",
-                "petStage": 3,
-                "x": 1820,
-                "y": 920,
-                "vx": 0,
-                "vy": 0,
-                "hp": 48,
-                "maxHp": 120,
-                "shield": 0,
-                "armor": 0,
-                "kills": 0,
-                "alive": False,
-                "facing": -1,
-                "isBot": False,
-                "hasRevived": False,
-                "reviveUsed": True,
-                "quizPending": True,
-                "specialCharges": 0,
-                "buffs": {},
-                "weaponReady": False,
-                "swingMs": 0,
-                "hitFlashMs": 0,
-            },
-        ],
-        "pickups": [],
-        "killFeed": [{"id": "kf-1", "text": "host downed guest", "createdAt": 1}],
-        "winnerId": None,
-        "platforms": [],
-        "projectiles": [],
-        "weapons": [],
-        "effects": [],
-    }
-    match_payload = {
-        "winnerId": f"human-{host_user_id}",
-        "fighters": snapshot_payload["fighters"],
-    }
 
     with client.websocket_connect(host_ws_url) as host_socket:
         host_connected = host_socket.receive_json()
         assert host_connected["type"] == "connected"
+        bot_ids = [bot["id"] for bot in host_connected["shared_bot_states"]]
 
         with client.websocket_connect(guest_ws_url) as guest_socket:
             guest_connected = guest_socket.receive_json()
             assert guest_connected["type"] == "connected"
+            assert len(guest_connected["shared_bot_states"]) == 4
 
-            host_socket.send_json({"type": "br_snapshot", "payload": snapshot_payload})
-            host_socket.send_json({"type": "br_match_end", "payload": match_payload})
+            host_socket.send_json(
+                {
+                    "type": "br_presence_state",
+                    "payload": {
+                        "fighter": {
+                            "id": f"human-{host_user_id}",
+                            "userId": host_user_id,
+                            "name": "reconnect-host",
+                            "petType": "code_kitty",
+                            "petStage": 3,
+                            "x": 1200,
+                            "y": 880,
+                            "vx": 0,
+                            "vy": 0,
+                            "hp": 110,
+                            "maxHp": 120,
+                            "shield": 12,
+                            "armor": 6,
+                            "kills": 1,
+                            "alive": True,
+                            "facing": 1,
+                            "isBot": False,
+                            "hasRevived": False,
+                            "reviveUsed": False,
+                            "quizPending": False,
+                            "specialCharges": 1,
+                            "buffs": {},
+                            "weaponReady": True,
+                            "swingMs": 0,
+                            "hitFlashMs": 0,
+                        },
+                        "local_bot_alive_count": 4,
+                        "cleared": False,
+                        "alive": True,
+                        "quiz_pending": False,
+                        "kills": 1,
+                        "damage_dealt": 30,
+                        "updated_at": 1001,
+                    },
+                }
+            )
+            guest_socket.send_json(
+                {
+                    "type": "br_presence_state",
+                    "payload": {
+                        "fighter": {
+                            "id": f"human-{guest_user_id}",
+                            "userId": guest_user_id,
+                            "name": "reconnect-guest",
+                            "petType": "silver_lynx",
+                            "petStage": 3,
+                            "x": 1820,
+                            "y": 920,
+                            "vx": 0,
+                            "vy": 0,
+                            "hp": 48,
+                            "maxHp": 120,
+                            "shield": 0,
+                            "armor": 0,
+                            "kills": 0,
+                            "alive": True,
+                            "facing": -1,
+                            "isBot": False,
+                            "hasRevived": False,
+                            "reviveUsed": False,
+                            "quizPending": False,
+                            "specialCharges": 0,
+                            "buffs": {},
+                            "weaponReady": False,
+                            "swingMs": 0,
+                            "hitFlashMs": 0,
+                        },
+                        "local_bot_alive_count": 4,
+                        "cleared": False,
+                        "alive": True,
+                        "quiz_pending": False,
+                        "kills": 0,
+                        "damage_dealt": 0,
+                        "updated_at": 1002,
+                    },
+                }
+            )
+
+            for index, bot_id in enumerate(bot_ids):
+                host_socket.send_json(
+                    {
+                        "type": "br_bot_damage",
+                        "payload": {
+                            "target_id": bot_id,
+                            "damage": 120,
+                            "event_id": f"evt-reconnect-{index}",
+                        },
+                    }
+                )
+
+            match_end = None
+            for _ in range(12):
+                message = receive_json_with_timeout(host_socket, timeout=0.35)
+                if message["type"] == "br_match_end":
+                    match_end = message
+                    break
+
+            assert match_end is not None
+            assert match_end["payload"]["humanSideWon"] is True
 
         time.sleep(0.15)
 
         with client.websocket_connect(guest_ws_url) as guest_socket:
             recovered = guest_socket.receive_json()
             assert recovered["type"] == "connected"
-            assert recovered["latest_snapshot"]["tick"] == 18
-            assert recovered["latest_snapshot"]["fighters"][1]["quizPending"] is True
-            assert recovered["latest_match_payload"]["winnerId"] == f"human-{host_user_id}"
+            assert recovered["latest_snapshot"] is None
+            assert all(bot["alive"] is False for bot in recovered["shared_bot_states"])
+            assert recovered["latest_match_payload"]["humanSideWon"] is True
+
+
+def test_local_coop_presence_state_finishes_room_and_broadcasts_match_end():
+    host_token = make_token("br_local_coop_host")
+
+    create = client.post(
+        "/api/v1/pvp-br/rooms/create",
+        headers=auth_headers(host_token),
+        json={
+            **participant_payload("local-coop-host"),
+            "room_name": "local-coop-room",
+            "max_players": 6,
+        },
+    )
+    assert create.status_code == 200, create.text
+    room = create.json()["room"]
+    room_id = room["id"]
+    host_user_id = room["host_user_id"]
+
+    start = client.post(
+        f"/api/v1/pvp-br/rooms/{room_id}/start",
+        headers=auth_headers(host_token),
+    )
+    assert start.status_code == 200, start.text
+
+    host_ws_url = f"/api/v1/pvp-br/ws/{room_id}/{host_user_id}?token={host_token}"
+    with client.websocket_connect(host_ws_url) as host_socket:
+        connected = host_socket.receive_json()
+        assert connected["type"] == "connected"
+        assert connected["room"]["sync_mode"] == "local_coop"
+        assert connected["presence_states"] == []
+
+        host_socket.send_json(
+            {
+                "type": "br_presence_state",
+                "payload": {
+                    "fighter": {
+                        "id": f"human-{host_user_id}",
+                        "userId": host_user_id,
+                        "name": "local-coop-host",
+                        "petType": "code_kitty",
+                        "petStage": 5,
+                        "x": 1200,
+                        "y": 820,
+                        "vx": 0,
+                        "vy": 0,
+                        "hp": 98,
+                        "maxHp": 120,
+                        "shield": 8,
+                        "armor": 4,
+                        "kills": 3,
+                        "alive": True,
+                        "facing": 1,
+                        "isBot": False,
+                        "hasRevived": False,
+                        "reviveUsed": False,
+                        "quizPending": False,
+                        "damageDealt": 72,
+                        "specialCharges": 1,
+                        "buffs": {},
+                        "weaponReady": True,
+                        "swingMs": 0,
+                        "hitFlashMs": 0,
+                    },
+                    "local_bot_alive_count": 0,
+                    "cleared": True,
+                    "alive": True,
+                    "quiz_pending": False,
+                    "kills": 3,
+                    "damage_dealt": 72,
+                    "updated_at": 123456,
+                },
+            }
+        )
+
+        match_end = None
+        for _ in range(6):
+            message = receive_json_with_timeout(host_socket, timeout=1.0)
+            if message["type"] == "br_match_end":
+                match_end = message
+                break
+
+        assert match_end is not None
+        assert match_end["payload"]["humanSideWon"] is True
+        assert match_end["payload"]["mode"] == "local_coop"
+
+    assert active_rooms[room_id]["status"] == "finished"
+    assert active_rooms[room_id]["latest_match_payload"]["mode"] == "local_coop"
+
+
+def test_local_coop_start_does_not_spawn_runtime_loop():
+    host_token = make_token("br_local_coop_runtime")
+
+    create = client.post(
+        "/api/v1/pvp-br/rooms/create",
+        headers=auth_headers(host_token),
+        json={
+            **participant_payload("local-coop-runtime"),
+            "room_name": "local-coop-runtime-room",
+            "max_players": 8,
+        },
+    )
+    assert create.status_code == 200, create.text
+    room_id = create.json()["room"]["id"]
+
+    start = client.post(
+        f"/api/v1/pvp-br/rooms/{room_id}/start",
+        headers=auth_headers(host_token),
+    )
+    assert start.status_code == 200, start.text
+
+    runtime_task = room_runtime_tasks.get(room_id)
+    assert runtime_task is None or runtime_task.done()
 
 
 def test_guest_disconnect_keeps_human_recoverable_while_host_stays_connected(
@@ -750,7 +898,7 @@ def test_guest_disconnect_keeps_human_recoverable_while_host_stays_connected(
         json={
             **participant_payload("disc-host"),
             "room_name": "disconnect-room",
-            "max_players": 4,
+            "max_players": 8,
         },
     )
     room = create.json()["room"]
@@ -803,7 +951,7 @@ def test_host_disconnect_promotes_remaining_human_and_keeps_room_active(monkeypa
         json={
             **participant_payload("host-drop-host"),
             "room_name": "host-drop-room",
-            "max_players": 4,
+            "max_players": 8,
         },
     )
     room = create.json()["room"]
@@ -850,11 +998,11 @@ def test_host_disconnect_promotes_remaining_human_and_keeps_room_active(monkeypa
         json={
             **participant_payload("host-drop-next"),
             "room_name": "fresh-room",
-            "max_players": 4,
+            "max_players": 8,
         },
     )
-    assert next_create.status_code == 503, next_create.text
-    assert next_create.json()["detail"] == "Battle Royale room slot is occupied"
+    assert next_create.status_code == 200, next_create.text
+    assert next_create.json()["room"]["room_name"] == "fresh-room"
 
 
 class TimedSocket:
@@ -886,12 +1034,7 @@ def test_broadcast_to_room_sends_to_connections_concurrently():
     assert socket_c.messages[0]["payload"]["tick"] == 1
 
 
-def test_guest_movement_is_batched_and_edge_actions_forward_immediately(monkeypatch: pytest.MonkeyPatch):
-    monkeypatch.setattr(br_api, "ROOM_RUNTIME_TICK_SECONDS", 0.1)
-    monkeypatch.setattr(br_api, "SERVER_INPUT_BATCH_INTERVAL_SECONDS", 0.1)
-    monkeypatch.setattr(br_api, "INPUT_FORWARD_MIN_INTERVAL_SECONDS", 0.03)
-    monkeypatch.setattr(br_api, "INPUT_DUPLICATE_INTERVAL_SECONDS", 0.0)
-
+def test_guest_bot_damage_is_deduplicated_in_local_coop():
     host_token = make_token("br_batch_host")
     guest_token = make_token("br_batch_guest")
 
@@ -901,7 +1044,7 @@ def test_guest_movement_is_batched_and_edge_actions_forward_immediately(monkeypa
         json={
             **participant_payload("batch-host"),
             "room_name": "batch-room",
-            "max_players": 4,
+            "max_players": 8,
         },
     )
     assert create.status_code == 200, create.text
@@ -922,39 +1065,38 @@ def test_guest_movement_is_batched_and_edge_actions_forward_immediately(monkeypa
         headers=auth_headers(host_token),
     )
     assert start.status_code == 200, start.text
+    assert start.json()["room"]["sync_mode"] == "local_coop"
+    assert room_id not in room_runtime_tasks
 
     host_ws_url = f"/api/v1/pvp-br/ws/{room_id}/{host_user_id}?token={host_token}"
     guest_ws_url = f"/api/v1/pvp-br/ws/{room_id}/{guest_user_id}?token={guest_token}"
 
     with client.websocket_connect(host_ws_url) as host_socket:
-        assert host_socket.receive_json()["type"] == "connected"
+        host_connected = host_socket.receive_json()
+        assert host_connected["type"] == "connected"
 
         with client.websocket_connect(guest_ws_url) as guest_socket:
-            assert guest_socket.receive_json()["type"] == "connected"
+            guest_connected = guest_socket.receive_json()
+            assert guest_connected["type"] == "connected"
+            target_bot_id = guest_connected["shared_bot_states"][0]["id"]
 
-            guest_socket.send_json({"type": "br_input", "payload": {"input": {"right": True}}})
-            movement_message = receive_json_with_timeout(host_socket, timeout=0.35)
-            assert movement_message["type"] == "br_input_batch"
-            assert movement_message["inputs"] == [
-                {
-                    "user_id": guest_user_id,
-                    "payload": {"input": {"right": True}},
-                }
-            ]
+            damage_payload = {
+                "type": "br_bot_damage",
+                "payload": {
+                    "target_id": target_bot_id,
+                    "damage": 18,
+                    "event_id": "evt-dedup-1",
+                },
+            }
+            guest_socket.send_json(damage_payload)
+            guest_socket.send_json(damage_payload)
 
-            guest_socket.send_json({"type": "br_input", "payload": {"input": {"attack": True, "attackPressed": True}}})
-            direct_message = receive_json_with_timeout(host_socket, timeout=0.2)
-            assert direct_message["type"] == "br_input"
-            assert direct_message["user_id"] == guest_user_id
-            assert direct_message["payload"] == {"input": {"attack": True, "attackPressed": True}}
+            first_update = receive_json_with_timeout(host_socket, timeout=0.35)
+            assert first_update["type"] == "br_shared_bot_states"
+            assert active_rooms[room_id]["sync_state"]["shared_bots"][target_bot_id]["hp"] == 102
 
 
-def test_host_snapshot_is_forwarded_immediately_without_waiting_for_runtime_tick(
-    monkeypatch: pytest.MonkeyPatch,
-):
-    monkeypatch.setattr(br_api, "ROOM_RUNTIME_TICK_SECONDS", 0.25)
-    monkeypatch.setattr(br_api, "SERVER_SNAPSHOT_INTERVAL_SECONDS", 0.02)
-
+def test_local_coop_match_uses_shared_bot_states_instead_of_local_bot_alive_count():
     host_token = make_token("br_snapshot_host")
     guest_token = make_token("br_snapshot_guest")
 
@@ -964,7 +1106,7 @@ def test_host_snapshot_is_forwarded_immediately_without_waiting_for_runtime_tick
         json={
             **participant_payload("snapshot-host"),
             "room_name": "snapshot-room",
-            "max_players": 4,
+            "max_players": 8,
         },
     )
     assert create.status_code == 200, create.text
@@ -985,97 +1127,122 @@ def test_host_snapshot_is_forwarded_immediately_without_waiting_for_runtime_tick
         headers=auth_headers(host_token),
     )
     assert start.status_code == 200, start.text
+    assert start.json()["room"]["sync_mode"] == "local_coop"
 
     host_ws_url = f"/api/v1/pvp-br/ws/{room_id}/{host_user_id}?token={host_token}"
     guest_ws_url = f"/api/v1/pvp-br/ws/{room_id}/{guest_user_id}?token={guest_token}"
 
     with client.websocket_connect(host_ws_url) as host_socket:
-        assert host_socket.receive_json()["type"] == "connected"
+        host_connected = host_socket.receive_json()
+        assert host_connected["type"] == "connected"
+        bot_ids = [bot["id"] for bot in host_connected["shared_bot_states"]]
 
         with client.websocket_connect(guest_ws_url) as guest_socket:
-            assert guest_socket.receive_json()["type"] == "connected"
+            guest_connected = guest_socket.receive_json()
+            assert guest_connected["type"] == "connected"
 
             host_socket.send_json(
                 {
-                    "type": "br_snapshot",
+                    "type": "br_presence_state",
                     "payload": {
-                        "tick": 7,
-                        "elapsedMs": 3500,
-                        "zone": {
-                            "centerX": 2800,
-                            "centerY": 1400,
-                            "radius": 2000,
-                            "phase": 1,
-                            "nextShrinkAtMs": 10000,
+                        "fighter": {
+                            "id": f"human-{host_user_id}",
+                            "userId": host_user_id,
+                            "name": "snapshot-host",
+                            "petType": "code_kitty",
+                            "petStage": 5,
+                            "x": 900,
+                            "y": 820,
+                            "vx": 0,
+                            "vy": 0,
+                            "hp": 120,
+                            "maxHp": 120,
+                            "shield": 0,
+                            "armor": 0,
+                            "kills": 0,
+                            "alive": True,
+                            "facing": 1,
+                            "isBot": False,
+                            "hasRevived": False,
+                            "reviveUsed": False,
+                            "quizPending": False,
+                            "specialCharges": 0,
+                            "buffs": {},
+                            "weaponReady": True,
+                            "swingMs": 0,
+                            "hitFlashMs": 0,
                         },
-                        "fighters": [
-                            {
-                                "id": f"human-{host_user_id}",
-                                "userId": host_user_id,
-                                "name": "snapshot-host",
-                                "petType": "code_kitty",
-                                "petStage": 5,
-                                "x": 900,
-                                "y": 820,
-                                "vx": 0,
-                                "vy": 0,
-                                "hp": 120,
-                                "maxHp": 120,
-                                "shield": 0,
-                                "armor": 0,
-                                "kills": 0,
-                                "alive": True,
-                                "facing": 1,
-                                "isBot": False,
-                                "hasRevived": False,
-                                "reviveUsed": False,
-                                "quizPending": False,
-                                "specialCharges": 0,
-                                "buffs": {},
-                                "weaponReady": True,
-                                "swingMs": 0,
-                                "hitFlashMs": 0,
-                            },
-                            {
-                                "id": f"human-{guest_user_id}",
-                                "userId": guest_user_id,
-                                "name": "snapshot-guest",
-                                "petType": "silver_lynx",
-                                "petStage": 5,
-                                "x": 1480,
-                                "y": 870,
-                                "vx": 0,
-                                "vy": 0,
-                                "hp": 120,
-                                "maxHp": 120,
-                                "shield": 0,
-                                "armor": 0,
-                                "kills": 0,
-                                "alive": True,
-                                "facing": -1,
-                                "isBot": False,
-                                "hasRevived": False,
-                                "reviveUsed": False,
-                                "quizPending": False,
-                                "specialCharges": 0,
-                                "buffs": {},
-                                "weaponReady": True,
-                                "swingMs": 0,
-                                "hitFlashMs": 0,
-                            },
-                        ],
-                        "pickups": [],
-                        "killFeed": [],
-                        "winnerId": None,
-                        "platforms": [],
-                        "projectiles": [],
-                        "weapons": [],
-                        "effects": [],
+                        "local_bot_alive_count": 4,
+                        "cleared": False,
+                        "alive": True,
+                        "quiz_pending": False,
+                        "kills": 0,
+                        "damage_dealt": 0,
+                        "updated_at": 2001,
+                    },
+                }
+            )
+            guest_socket.send_json(
+                {
+                    "type": "br_presence_state",
+                    "payload": {
+                        "fighter": {
+                            "id": f"human-{guest_user_id}",
+                            "userId": guest_user_id,
+                            "name": "snapshot-guest",
+                            "petType": "silver_lynx",
+                            "petStage": 5,
+                            "x": 1480,
+                            "y": 870,
+                            "vx": 0,
+                            "vy": 0,
+                            "hp": 120,
+                            "maxHp": 120,
+                            "shield": 0,
+                            "armor": 0,
+                            "kills": 0,
+                            "alive": True,
+                            "facing": -1,
+                            "isBot": False,
+                            "hasRevived": False,
+                            "reviveUsed": False,
+                            "quizPending": False,
+                            "specialCharges": 0,
+                            "buffs": {},
+                            "weaponReady": True,
+                            "swingMs": 0,
+                            "hitFlashMs": 0,
+                        },
+                        "local_bot_alive_count": 4,
+                        "cleared": False,
+                        "alive": True,
+                        "quiz_pending": False,
+                        "kills": 0,
+                        "damage_dealt": 0,
+                        "updated_at": 2002,
                     },
                 }
             )
 
-            forwarded = receive_json_with_timeout(guest_socket, timeout=0.12)
-            assert forwarded["type"] == "br_snapshot"
-            assert forwarded["payload"]["tick"] == 7
-            assert forwarded["server_seq"] == 1
+            for index, bot_id in enumerate(bot_ids):
+                host_socket.send_json(
+                    {
+                        "type": "br_bot_damage",
+                        "payload": {
+                            "target_id": bot_id,
+                            "damage": 120,
+                            "event_id": f"evt-clear-{index}",
+                        },
+                    }
+                )
+
+            match_end = None
+            for _ in range(12):
+                message = receive_json_with_timeout(host_socket, timeout=0.35)
+                if message["type"] == "br_match_end":
+                    match_end = message
+                    break
+
+            assert match_end is not None
+            assert match_end["payload"]["humanSideWon"] is True
+            assert all(fighter["alive"] is False for fighter in match_end["payload"]["fighters"] if fighter["isBot"])

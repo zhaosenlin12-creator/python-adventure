@@ -52,7 +52,7 @@ import { usePetStore } from "@/store/petStore";
 import { useSoundStore } from "@/store/soundStore";
 import { musicManager } from "@/lib/audio/musicManager";
 import { ARENA_CHALLENGES, ArenaChallenge } from "@/types/arena";
-import { WorldSyncService } from "@/lib/services/worldSync";
+import { WorldSyncService, type WorldSyncMode } from "@/lib/services/worldSync";
 import OrientationLock from "@/components/game/OrientationLock";
 import MobileGameWrapper from "@/components/game/MobileGameWrapper";
 
@@ -93,6 +93,8 @@ export default function WorldPage() {
     // 在线玩家状态
     const [onlinePlayers, setOnlinePlayers] = useState<any[]>([]);
     const [worldSync, setWorldSync] = useState<WorldSyncService | null>(null);
+    const [worldSyncNotice, setWorldSyncNotice] = useState<{ tone: 'success' | 'warning' | 'info'; text: string } | null>(null);
+    const lastWorldSyncModeRef = useRef<WorldSyncMode>('websocket');
     
     // 🔥 创意工坊加载状态
     const [isLoadingEditor, setIsLoadingEditor] = useState(false);
@@ -186,11 +188,23 @@ export default function WorldPage() {
         }
     }, []);
 
+    useEffect(() => {
+        if (worldSyncNotice?.tone !== 'success') {
+            return;
+        }
+        const timer = setTimeout(() => {
+            setWorldSyncNotice(current => (current?.tone === 'success' ? null : current));
+        }, 2400);
+        return () => clearTimeout(timer);
+    }, [worldSyncNotice]);
+
     // 单独的 useEffect 处理 WebSocket
     useEffect(() => {
         if (!user?.id || !isAuthenticated || !token) return;
         
         debugLog('[WorldPage] Initializing WebSocket for user:', user.id, user.username);
+        lastWorldSyncModeRef.current = 'websocket';
+        setWorldSyncNotice(null);
         
         // 先更新玩家位置到后端
         updatePlayerLocation(100, 100, "开放世界");
@@ -227,11 +241,27 @@ export default function WorldPage() {
                 setOnlinePlayers(players);
             },
             onConnected: () => {},
-            onDisconnected: () => {}
+            onDisconnected: () => {},
+            onModeChange: (mode) => {
+                const previousMode = lastWorldSyncModeRef.current;
+                lastWorldSyncModeRef.current = mode;
+                if (mode === 'reconnecting') {
+                    setWorldSyncNotice({ tone: 'warning', text: '联机波动，正在自动重连' });
+                    return;
+                }
+                if (mode === 'polling') {
+                    setWorldSyncNotice({ tone: 'info', text: '联机波动，已切到轻量模式' });
+                    return;
+                }
+                if (mode === 'websocket' && previousMode !== 'websocket') {
+                    setWorldSyncNotice({ tone: 'success', text: '实时联机已恢复' });
+                }
+            }
         });
         
         sync.connect().catch(error => {
             console.error('[WorldPage] Failed to connect WebSocket:', error);
+            setWorldSyncNotice({ tone: 'info', text: '联机暂时不可用，已切到轻量模式' });
         });
         
         setWorldSync(sync);
@@ -436,7 +466,7 @@ export default function WorldPage() {
         }));
     };
 
-    const handleArenaChallengeComplete = (timeUsed: number, codeLength: number) => {
+    const handleArenaChallengeComplete = useCallback((timeUsed: number, codeLength: number) => {
         // Dispatch event to ArenaScene
         window.dispatchEvent(new CustomEvent('arena-challenge-completed', {
             detail: { 
@@ -447,13 +477,24 @@ export default function WorldPage() {
         }));
         setShowArenaChallenge(false);
         // 不要跳转到选择界面，留在竞技场场景中
-    };
+    }, [currentChallenge?.id]);
     
-    const handleSelectChallenge = (challenge: ArenaChallenge) => {
+    const handleArenaChallengeClose = useCallback(() => {
+        setShowArenaChallenge(false);
+        // 鍏抽棴鍚庣暀鍦ㄧ珵鎶€鍦猴紝涓嶈烦杞?
+        window.dispatchEvent(new CustomEvent('arena-challenge-closed'));
+    }, []);
+
+    const handleArenaChallengeFail = useCallback(() => {
+        // 澶辫触鍚庝篃鐣欏湪绔炴妧鍦?
+        window.dispatchEvent(new CustomEvent('arena-challenge-failed'));
+    }, []);
+
+    const handleSelectChallenge = useCallback((challenge: ArenaChallenge) => {
         setCurrentChallenge(challenge);
         setShowArenaSelect(false);
         setShowArenaChallenge(true);
-    };
+    }, []);
     
     
     // PvP对战处理
@@ -529,6 +570,7 @@ export default function WorldPage() {
                     players={onlinePlayers}
                     currentUserId={user.id}
                     mapArea="开放世界"
+                    connectionNotice={worldSyncNotice}
                 />
             )}
             
@@ -580,16 +622,9 @@ export default function WorldPage() {
             {showArenaChallenge && currentChallenge && (
                 <ArenaChallengeModal
                     challenge={currentChallenge}
-                    onClose={() => {
-                        setShowArenaChallenge(false);
-                        // 关闭后留在竞技场，不跳转
-                        window.dispatchEvent(new CustomEvent('arena-challenge-closed'));
-                    }}
+                    onClose={handleArenaChallengeClose}
                     onComplete={handleArenaChallengeComplete}
-                    onFail={() => {
-                        // 失败后也留在竞技场
-                        window.dispatchEvent(new CustomEvent('arena-challenge-failed'));
-                    }}
+                    onFail={handleArenaChallengeFail}
                 />
             )}
             

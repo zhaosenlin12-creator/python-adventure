@@ -36,22 +36,34 @@ const FurnitureRenderer = memo(({ decorationId, name, isSelected, size, scene = 
     if (decoration.baseSize) return decoration.baseSize;
     return defaultByType[decoration.type] ?? 120;
   }, [size, decoration, scene]);
-  const shadowWidth = Math.max(40, Math.round(resolvedSize * 0.7));
-  const shadowHeight = Math.max(6, Math.round(resolvedSize * 0.12));
+  const isWallMounted = decoration?.anchor === 'wall';
   const isPlantLike = decoration?.type === 'plant' || decoration?.type === 'nature';
+  const isRugLike = decorationId === 'rug_round' || decoration?.type === 'floor';
+  const shadowWidth = isRugLike
+    ? Math.max(78, Math.round(resolvedSize * 0.92))
+    : isWallMounted
+      ? Math.max(30, Math.round(resolvedSize * 0.5))
+      : Math.max(42, Math.round(resolvedSize * (isPlantLike ? 0.58 : 0.68)));
+  const shadowHeight = isRugLike
+    ? Math.max(10, Math.round(resolvedSize * 0.08))
+    : Math.max(6, Math.round(resolvedSize * (isWallMounted ? 0.08 : 0.12)));
   const baseGlow =
-    decoration?.type === 'plant'
-      ? 'radial-gradient(circle, rgba(74,222,128,0.18) 0%, rgba(34,197,94,0.08) 48%, transparent 78%)'
-      : decoration?.type === 'nature'
-        ? 'radial-gradient(circle, rgba(56,189,248,0.14) 0%, rgba(74,222,128,0.08) 48%, transparent 80%)'
-        : decoration?.type === 'furniture'
-          ? 'radial-gradient(circle, rgba(251,191,36,0.14) 0%, rgba(245,158,11,0.06) 48%, transparent 80%)'
-          : 'radial-gradient(circle, rgba(148,163,184,0.16) 0%, rgba(71,85,105,0.06) 52%, transparent 82%)';
-  const pedestalWidth = Math.max(54, Math.round(resolvedSize * (isPlantLike ? 0.54 : 0.64)));
-  const pedestalHeight = Math.max(8, Math.round(resolvedSize * (isPlantLike ? 0.12 : 0.09)));
+    isWallMounted
+      ? 'radial-gradient(ellipse at 50% 50%, rgba(148,163,184,0.12) 0%, rgba(51,65,85,0.04) 54%, transparent 78%)'
+      : isRugLike
+        ? 'radial-gradient(ellipse at 50% 70%, rgba(248,250,252,0.08) 0%, rgba(148,163,184,0.04) 52%, transparent 82%)'
+        : decoration?.type === 'plant'
+          ? 'radial-gradient(circle, rgba(74,222,128,0.14) 0%, rgba(34,197,94,0.05) 50%, transparent 78%)'
+          : decoration?.type === 'nature'
+            ? 'radial-gradient(circle, rgba(56,189,248,0.1) 0%, rgba(74,222,128,0.05) 48%, transparent 80%)'
+            : decoration?.type === 'furniture'
+              ? 'radial-gradient(circle, rgba(251,191,36,0.1) 0%, rgba(245,158,11,0.04) 48%, transparent 80%)'
+              : 'radial-gradient(circle, rgba(148,163,184,0.12) 0%, rgba(71,85,105,0.05) 52%, transparent 82%)';
   const ambientFrameClass = isSelected
-    ? 'scale-105 drop-shadow-[0_0_14px_rgba(255,215,0,0.5)]'
-    : 'drop-shadow-[0_16px_20px_rgba(15,23,42,0.18)]';
+    ? 'scale-[1.03] drop-shadow-[0_0_12px_rgba(125,211,252,0.28)]'
+    : isWallMounted
+      ? 'drop-shadow-[0_12px_18px_rgba(15,23,42,0.16)]'
+      : 'drop-shadow-[0_18px_24px_rgba(15,23,42,0.18)]';
 
   return (
     <div
@@ -59,30 +71,62 @@ const FurnitureRenderer = memo(({ decorationId, name, isSelected, size, scene = 
       aria-label={name}
     >
       <span
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[42%] rounded-full blur-2xl"
+        className={`absolute left-1/2 rounded-full blur-2xl ${
+          isWallMounted ? 'top-[48%] -translate-y-1/2' : 'top-1/2 -translate-y-[42%]'
+        } -translate-x-1/2`}
         style={{
-          width: Math.round(resolvedSize * 0.94),
-          height: Math.round(resolvedSize * 0.78),
+          width: Math.round(resolvedSize * (isWallMounted ? 0.72 : isRugLike ? 0.98 : 0.9)),
+          height: Math.round(resolvedSize * (isWallMounted ? 0.54 : isRugLike ? 0.42 : 0.72)),
           background: baseGlow,
-          opacity: isSelected ? 1 : 0.8,
+          opacity: isSelected ? 0.95 : 0.62,
         }}
       />
-      <span
-        className="absolute -bottom-1 left-1/2 -translate-x-1/2 rounded-full bg-black/30 blur-[2px]"
-        style={{ width: shadowWidth, height: shadowHeight }}
-      />
-      <span
-        className="absolute left-1/2 top-[72%] -translate-x-1/2 rounded-full border border-white/10 bg-white/[0.06] backdrop-blur-[1px]"
-        style={{
-          width: pedestalWidth,
-          height: pedestalHeight,
-          boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.12), 0 8px 20px rgba(15,23,42,0.14)',
-        }}
-      />
+
+      {isWallMounted ? (
+        <span
+          className="absolute left-1/2 top-[54%] -translate-x-1/2 rounded-full bg-black/16 blur-md"
+          style={{
+            width: shadowWidth,
+            height: shadowHeight,
+          }}
+        />
+      ) : (
+        <>
+          {isRugLike && (
+            <span
+              className="absolute left-1/2 top-[70%] -translate-x-1/2 rounded-full border border-white/6"
+              style={{
+                width: Math.round(resolvedSize * 0.84),
+                height: Math.max(12, Math.round(resolvedSize * 0.16)),
+                background:
+                  'radial-gradient(ellipse at center, rgba(248,250,252,0.12) 0%, rgba(15,23,42,0.02) 58%, transparent 100%)',
+              }}
+            />
+          )}
+          <span
+            className="absolute -bottom-1 left-1/2 -translate-x-1/2 rounded-full bg-black/30 blur-[2px]"
+            style={{ width: shadowWidth, height: shadowHeight }}
+          />
+          {!isRugLike && (
+            <span
+              className="absolute left-1/2 top-[76%] -translate-x-1/2 rounded-full"
+              style={{
+                width: Math.round(resolvedSize * (isPlantLike ? 0.42 : 0.5)),
+                height: Math.max(5, Math.round(resolvedSize * 0.055)),
+                background: 'linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02))',
+                boxShadow: '0 8px 20px rgba(15,23,42,0.08)',
+              }}
+            />
+          )}
+        </>
+      )}
+
       <DecorationIcon
         decorationId={decorationId}
         size={resolvedSize}
-        className="relative z-[2] select-none"
+        className={`relative z-[2] select-none ${
+          isWallMounted ? '-translate-y-[3%]' : isRugLike ? 'translate-y-[8%]' : ''
+        }`}
       />
     </div>
   );
