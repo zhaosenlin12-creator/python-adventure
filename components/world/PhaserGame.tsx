@@ -17,13 +17,16 @@ export default function PhaserGame() {
     }
 
     try {
+      const shouldExposeDebugHandle =
+        typeof window !== 'undefined' &&
+        Boolean((window as Window & { __enableWorldDebug?: boolean }).__enableWorldDebug);
       const config = {
         ...gameConfig,
         parent: parentRef.current,
       };
 
       gameRef.current = new Phaser.Game(config);
-      if (process.env.NODE_ENV === 'development') {
+      if (process.env.NODE_ENV === 'development' || shouldExposeDebugHandle) {
         (window as Window & { __worldPhaserGame?: Phaser.Game | null }).__worldPhaserGame = gameRef.current;
       }
 
@@ -49,7 +52,11 @@ export default function PhaserGame() {
         gameRef.current.destroy(true);
         gameRef.current = null;
       }
-      if (process.env.NODE_ENV === 'development') {
+      if (
+        process.env.NODE_ENV === 'development' ||
+        (typeof window !== 'undefined' &&
+          Boolean((window as Window & { __enableWorldDebug?: boolean }).__enableWorldDebug))
+      ) {
         (window as Window & { __worldPhaserGame?: Phaser.Game | null }).__worldPhaserGame = null;
       }
     };

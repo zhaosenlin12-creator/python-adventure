@@ -1,41 +1,42 @@
 <svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bs" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#A0652A"/><stop offset="100%" stop-color="#6B3A1A"/></linearGradient>
-    <filter id="bf"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity=".2"/></filter>
+    <linearGradient id="shelfWood" x1="17" y1="8" x2="112" y2="121" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#B88451"/>
+      <stop offset=".5" stop-color="#70451F"/>
+      <stop offset="1" stop-color="#2F1D10"/>
+    </linearGradient>
+    <linearGradient id="shelfInset" x1="25" y1="16" x2="103" y2="112" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7A4B28"/>
+      <stop offset="1" stop-color="#3B2415"/>
+    </linearGradient>
+    <filter id="shelfShadow" x="8" y="2" width="112" height="124" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#20140B" flood-opacity=".24"/>
+    </filter>
   </defs>
-  <g filter="url(#bf)">
-    <!-- 外框 -->
-    <rect x="16" y="8" width="96" height="112" rx="4" fill="url(#bs)"/>
-    <rect x="18" y="10" width="92" height="108" rx="3" fill="#8B5430"/>
-    <!-- 隔板 -->
-    <rect x="18" y="40" width="92" height="4" rx="1" fill="#6B3A1A"/>
-    <rect x="18" y="72" width="92" height="4" rx="1" fill="#6B3A1A"/>
-    <!-- 第1层书 -->
-    <rect x="24" y="14" width="8" height="24" rx="1" fill="#E74C3C"/><rect x="24" y="14" width="8" height="3" rx="1" fill="#fff" opacity=".15"/>
-    <rect x="34" y="16" width="10" height="22" rx="1" fill="#3498DB"/><rect x="34" y="16" width="10" height="3" rx="1" fill="#fff" opacity=".15"/>
-    <rect x="46" y="12" width="7" height="26" rx="1" fill="#2ECC71"/>
-    <rect x="55" y="18" width="12" height="20" rx="1" fill="#F39C12"/>
-    <rect x="69" y="14" width="9" height="24" rx="1" fill="#9B59B6"/>
-    <rect x="80" y="16" width="10" height="22" rx="1" fill="#1ABC9C"/>
-    <rect x="92" y="13" width="14" height="25" rx="1" fill="#E67E22"/>
-    <!-- 第2层书 -->
-    <rect x="24" y="46" width="12" height="24" rx="1" fill="#5DADE2"/>
-    <rect x="38" y="48" width="8" height="22" rx="1" fill="#EC7063"/>
-    <rect x="48" y="44" width="10" height="26" rx="1" fill="#58D68D"/>
-    <rect x="60" y="48" width="14" height="22" rx="1" fill="#AF7AC5"/>
-    <rect x="76" y="46" width="10" height="24" rx="1" fill="#F4D03F"/>
-    <rect x="88" y="47" width="16" height="23" rx="1" fill="#EB984E"/>
-    <!-- 第3层: 装饰品 -->
-    <circle cx="36" cy="90" r="10" fill="#D4A06A" opacity=".6"/>
-    <ellipse cx="36" cy="88" rx="4" ry="3" fill="#fff" opacity=".15"/>
-    <rect x="56" y="80" width="16" height="20" rx="2" fill="#85C1E9" opacity=".5"/>
-    <rect x="58" y="82" width="12" height="14" rx="1" fill="#fff" opacity=".2"/>
-    <rect x="80" y="82" width="6" height="18" rx="1" fill="#27AE60"/>
-    <circle cx="83" cy="80" r="5" fill="#2ECC71"/>
-    <ellipse cx="83" cy="79" rx="2" ry="1.5" fill="#fff" opacity=".15"/>
-    <!-- 木纹 -->
-    <line x1="20" y1="20" x2="108" y2="20" stroke="#5C2E0E" stroke-width=".3" opacity=".2"/>
-    <line x1="20" y1="55" x2="108" y2="55" stroke="#5C2E0E" stroke-width=".3" opacity=".2"/>
-    <line x1="20" y1="90" x2="108" y2="90" stroke="#5C2E0E" stroke-width=".3" opacity=".2"/>
+  <ellipse cx="64" cy="120" rx="42" ry="5" fill="#20140B" opacity=".2"/>
+  <g filter="url(#shelfShadow)">
+    <rect x="17" y="8" width="94" height="112" rx="6" fill="url(#shelfWood)"/>
+    <rect x="23" y="14" width="82" height="100" rx="3" fill="url(#shelfInset)"/>
+    <rect x="23" y="39" width="82" height="7" rx="2" fill="#4A2B16"/>
+    <rect x="23" y="72" width="82" height="7" rx="2" fill="#4A2B16"/>
+    <path d="M28 20H101M28 53H101M28 86H101" stroke="#D2A36E" stroke-width="1.2" opacity=".18"/>
+    <rect x="29" y="17" width="8" height="20" rx="1.5" fill="#C75348"/>
+    <rect x="39" y="19" width="10" height="18" rx="1.5" fill="#3C8DBC"/>
+    <rect x="52" y="15" width="7" height="22" rx="1.5" fill="#4DAD73"/>
+    <rect x="61" y="21" width="12" height="16" rx="1.5" fill="#D69A30"/>
+    <rect x="76" y="17" width="9" height="20" rx="1.5" fill="#7A65B7"/>
+    <rect x="88" y="18" width="12" height="19" rx="1.5" fill="#2F9A91"/>
+    <path d="M31 22H35M42 22H47M63 25H70M90 22H98" stroke="#FFF7E8" stroke-width="1" stroke-linecap="round" opacity=".38"/>
+    <rect x="29" y="50" width="12" height="20" rx="1.5" fill="#4C9ED9"/>
+    <rect x="44" y="52" width="8" height="18" rx="1.5" fill="#D75F55"/>
+    <rect x="55" y="48" width="10" height="22" rx="1.5" fill="#5BBF7E"/>
+    <rect x="68" y="52" width="13" height="18" rx="1.5" fill="#9A6BC4"/>
+    <rect x="84" y="50" width="15" height="20" rx="1.5" fill="#D98F3C"/>
+    <circle cx="38" cy="93" r="9" fill="#D7B37C"/>
+    <circle cx="38" cy="93" r="5" fill="#715132" opacity=".38"/>
+    <rect x="55" y="84" width="18" height="20" rx="3" fill="#88B6D6"/>
+    <rect x="58" y="87" width="12" height="14" rx="2" fill="#E8F3FA" opacity=".5"/>
+    <rect x="82" y="86" width="7" height="19" rx="2" fill="#426B3C"/>
+    <path d="M86 85C80 78 83 73 91 77C96 80 95 87 86 85Z" fill="#65A85D"/>
   </g>
 </svg>

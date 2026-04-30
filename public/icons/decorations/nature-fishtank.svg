@@ -1,37 +1,82 @@
 <svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="wg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E3F2FD" stop-opacity=".4"/><stop offset="100%" stop-color="#42A5F5" stop-opacity=".6"/></linearGradient>
-    <filter id="ftf"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity=".18"/></filter>
+    <linearGradient id="tankWater" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8F7FF" stop-opacity="0.92" />
+      <stop offset="40%" stop-color="#8FD8FF" stop-opacity="0.72" />
+      <stop offset="100%" stop-color="#2C9ED8" stop-opacity="0.84" />
+    </linearGradient>
+    <linearGradient id="tankGlass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#CBEAFE" stop-opacity="0.12" />
+    </linearGradient>
+    <linearGradient id="tankBase" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8B5E3C" />
+      <stop offset="100%" stop-color="#5A3D22" />
+    </linearGradient>
+    <linearGradient id="plantLeafA" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2F855A" />
+      <stop offset="100%" stop-color="#63E6BE" />
+    </linearGradient>
+    <linearGradient id="plantLeafB" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1D4ED8" />
+      <stop offset="100%" stop-color="#60A5FA" />
+    </linearGradient>
+    <radialGradient id="tankGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(64 46) rotate(90) scale(44 54)">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </radialGradient>
+    <filter id="tankShadow" x="10" y="10" width="108" height="108" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="6" stdDeviation="4.5" flood-color="#0F172A" flood-opacity="0.18" />
+    </filter>
   </defs>
-  <g filter="url(#ftf)">
-    <!-- 鱼缸框 -->
-    <rect x="16" y="16" width="96" height="88" rx="8" fill="#B3E5FC" opacity=".3" stroke="#81D4FA" stroke-width="2"/>
-    <!-- 水 -->
-    <rect x="18" y="24" width="92" height="76" rx="6" fill="url(#wg)"/>
-    <!-- 沙子 -->
-    <ellipse cx="64" cy="96" rx="44" ry="6" fill="#FFE082" opacity=".5"/>
-    <!-- 水草 -->
-    <path d="M32 96 Q28 76 34 60 Q38 50 32 40" stroke="#4CAF50" stroke-width="3" fill="none"/>
-    <path d="M40 96 Q36 72 42 56 Q46 44 40 34" stroke="#66BB6A" stroke-width="2.5" fill="none"/>
-    <path d="M88 96 Q92 74 86 58 Q82 46 88 36" stroke="#4CAF50" stroke-width="3" fill="none"/>
-    <!-- 鱼1 - 橙色 -->
-    <ellipse cx="62" cy="52" rx="10" ry="6" fill="#FF7043"/>
-    <polygon points="50,52 42,46 42,58" fill="#FF7043"/>
-    <circle cx="68" cy="50" r="2" fill="#fff"/><circle cx="69" cy="50" r="1" fill="#333"/>
-    <path d="M60 48 Q62 46 64 48" stroke="#E64A19" stroke-width=".5" fill="none"/>
-    <!-- 鱼2 - 蓝色 -->
-    <ellipse cx="78" cy="72" rx="8" ry="5" fill="#42A5F5"/>
-    <polygon points="68,72 62,67 62,77" fill="#42A5F5"/>
-    <circle cx="83" cy="70" r="1.5" fill="#fff"/><circle cx="83.5" cy="70" r=".8" fill="#333"/>
-    <!-- 泡泡 -->
-    <circle cx="56" cy="36" r="3" fill="#fff" opacity=".3" stroke="#fff" stroke-width=".5" opacity=".2"/>
-    <circle cx="50" cy="28" r="2" fill="#fff" opacity=".25"/>
-    <circle cx="80" cy="32" r="2.5" fill="#fff" opacity=".3"/>
-    <!-- 石头 -->
-    <ellipse cx="54" cy="94" rx="6" ry="4" fill="#90A4AE" opacity=".5"/>
-    <ellipse cx="74" cy="92" rx="8" ry="5" fill="#78909C" opacity=".5"/>
-    <!-- 盖子 -->
-    <rect x="14" y="14" width="100" height="8" rx="4" fill="#455A64"/>
-    <rect x="16" y="16" width="96" height="4" rx="2" fill="#607D8B"/>
+
+  <g filter="url(#tankShadow)">
+    <rect x="22" y="18" width="84" height="80" rx="14" fill="url(#tankGlass)" stroke="#8BD5FF" stroke-width="2.2" />
+    <rect x="26" y="24" width="76" height="68" rx="10" fill="url(#tankWater)" />
+    <rect x="26" y="24" width="76" height="10" rx="10" fill="#F8FEFF" opacity="0.38" />
+    <rect x="29" y="27" width="14" height="60" rx="7" fill="#FFFFFF" opacity="0.16" />
+    <path d="M38 92C44 87 53 84 64 84C75 84 84 87 90 92" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="2" />
+    <ellipse cx="64" cy="49" rx="34" ry="28" fill="url(#tankGlow)" />
+
+    <rect x="20" y="14" width="88" height="8" rx="4" fill="#44556A" />
+    <rect x="24" y="16" width="80" height="4" rx="2" fill="#6B7D90" />
+
+    <path d="M32 96H96" stroke="#25364A" stroke-opacity="0.18" stroke-width="2" />
+    <ellipse cx="64" cy="95" rx="31" ry="7.5" fill="#E8C98D" opacity="0.86" />
+    <ellipse cx="46" cy="96" rx="6" ry="3.8" fill="#A78B7A" opacity="0.65" />
+    <ellipse cx="60" cy="98" rx="4.5" ry="2.8" fill="#8B7284" opacity="0.46" />
+    <ellipse cx="80" cy="95" rx="7.5" ry="4.2" fill="#94A3B8" opacity="0.58" />
+
+    <path d="M36 96C31 80 35 66 40 54C43 47 43 39 37 33" stroke="url(#plantLeafA)" stroke-width="4" stroke-linecap="round" />
+    <path d="M46 96C43 82 45 69 49 58C52 50 54 43 50 36" stroke="#6EE7B7" stroke-width="3.2" stroke-linecap="round" />
+    <path d="M88 96C92 82 90 70 85 58C82 51 80 43 84 35" stroke="url(#plantLeafB)" stroke-width="3.6" stroke-linecap="round" />
+    <path d="M77 96C82 85 78 71 72 60C67 52 66 44 69 36" stroke="#34D399" stroke-width="2.8" stroke-linecap="round" />
+
+    <g transform="translate(62 54)">
+      <ellipse cx="0" cy="0" rx="12" ry="7" fill="#FF8C5A" />
+      <ellipse cx="2" cy="-1" rx="8" ry="4.4" fill="#FFD2C2" opacity="0.34" />
+      <path d="M-12 0L-20 -5V5L-12 0Z" fill="#FF8C5A" />
+      <circle cx="6.5" cy="-1.2" r="2.1" fill="#FFFFFF" />
+      <circle cx="7.1" cy="-1.2" r="1" fill="#1F2937" />
+      <path d="M1 -4C3 -5 5 -5 7 -4" stroke="#EF5B2A" stroke-width="1" stroke-linecap="round" />
+      <path d="M-4 4C-1 5 2 5 5 4" stroke="#FFFFFF" stroke-opacity="0.34" stroke-width="1.2" stroke-linecap="round" />
+    </g>
+
+    <g transform="translate(79 69)">
+      <ellipse cx="0" cy="0" rx="9" ry="5.6" fill="#60A5FA" />
+      <ellipse cx="1.4" cy="-0.8" rx="5.5" ry="3" fill="#DBEAFE" opacity="0.3" />
+      <path d="M-9 0L-15 -4V4L-9 0Z" fill="#60A5FA" />
+      <circle cx="5.4" cy="-1" r="1.6" fill="#FFFFFF" />
+      <circle cx="5.9" cy="-1" r="0.7" fill="#0F172A" />
+    </g>
+
+    <circle cx="54" cy="38" r="3.2" fill="#FFFFFF" fill-opacity="0.34" />
+    <circle cx="49" cy="31" r="2.1" fill="#FFFFFF" fill-opacity="0.28" />
+    <circle cx="85" cy="34" r="2.6" fill="#FFFFFF" fill-opacity="0.3" />
+    <circle cx="88" cy="27" r="1.8" fill="#FFFFFF" fill-opacity="0.24" />
+
+    <rect x="28" y="100" width="72" height="8" rx="4" fill="url(#tankBase)" />
+    <rect x="34" y="106" width="10" height="4" rx="2" fill="#4A2E1A" opacity="0.9" />
+    <rect x="84" y="106" width="10" height="4" rx="2" fill="#4A2E1A" opacity="0.9" />
   </g>
 </svg>

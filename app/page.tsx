@@ -19,7 +19,7 @@ import { Level } from "@/lib/levels";
 import { getLearningChapter, getLearningCopy, type LearningSubjectId } from "@/lib/learningHub";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Trophy, LogOut, User, Volume2, VolumeX, Languages, Globe2 } from "lucide-react";
+import { Trophy, LogOut, User, Volume2, VolumeX, Languages, Globe2, BrainCircuit, ExternalLink } from "lucide-react";
 import Footer from "@/components/Footer";
 import CoinBalance from "@/components/ui/CoinBalance";
 import CoinHistory from "@/components/ui/CoinHistory";
@@ -29,6 +29,7 @@ import DailyCheckIn from "@/components/pet/DailyCheckIn";
 import AchievementPanel from "@/components/pet/AchievementPanel";
 
 type ViewState = 'home' | 'map' | 'level';
+const AI_RESEARCH_URL = "https://research.google/ai-quests/intl/en_us/quest/market-marshes";
 
 export default function Home() {
     const router = useRouter();
@@ -191,6 +192,11 @@ export default function Home() {
         router.push('/world');
     };
 
+    const handleOpenAiResearch = () => {
+        if (typeof window === 'undefined') return;
+        window.open(AI_RESEARCH_URL, '_blank', 'noopener,noreferrer');
+    };
+
     return (
         <main className="min-h-screen bg-gradient-to-b from-[#0a0e27] via-[#1a1e3e] to-[#0a0e27] text-white">
             {/* 🔒 进度同步状态指示器 */}
@@ -234,6 +240,15 @@ export default function Home() {
                     {view === 'home' && !showNewUserGuide && (
                         <SystemUpdateAnnouncement triggerVariant="toolbar" />
                     )}
+                    <button
+                        onClick={handleOpenAiResearch}
+                        className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-3 py-2 text-cyan-100 transition-colors hover:bg-cyan-500/18"
+                        title="国外资源：需要调整网络环境"
+                    >
+                        <BrainCircuit className="h-4 w-4 text-cyan-300" />
+                        <span className="hidden text-sm font-medium sm:inline">AI Research</span>
+                        <ExternalLink className="h-3.5 w-3.5 text-cyan-200/80" />
+                    </button>
                     <button
                         onClick={handleToggleMute}
                         className="p-2 sm:p-2 hover:bg-blue-900/30 rounded transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"

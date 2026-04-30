@@ -1,43 +1,44 @@
 <svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="tvg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#616161"/><stop offset="100%" stop-color="#424242"/></linearGradient>
-    <filter id="tvf"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity=".2"/></filter>
+    <linearGradient id="tvCase" x1="18" y1="24" x2="112" y2="104" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6E4D34"/>
+      <stop offset=".58" stop-color="#3E2D25"/>
+      <stop offset="1" stop-color="#231C1A"/>
+    </linearGradient>
+    <linearGradient id="tvScreen" x1="27" y1="36" x2="90" y2="88" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9DE8D6"/>
+      <stop offset=".52" stop-color="#2E8178"/>
+      <stop offset="1" stop-color="#163B42"/>
+    </linearGradient>
+    <linearGradient id="tvMetal" x1="94" y1="36" x2="108" y2="88" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#B7A28B"/>
+      <stop offset=".55" stop-color="#6B6259"/>
+      <stop offset="1" stop-color="#2D2F33"/>
+    </linearGradient>
+    <filter id="tvShadow" x="4" y="4" width="120" height="118" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#111827" flood-opacity=".25"/>
+    </filter>
   </defs>
-  <g filter="url(#tvf)">
-    <!-- 天线 -->
-    <line x1="48" y1="8" x2="58" y2="28" stroke="#9E9E9E" stroke-width="3" stroke-linecap="round"/>
-    <line x1="80" y1="8" x2="70" y2="28" stroke="#9E9E9E" stroke-width="3" stroke-linecap="round"/>
-    <circle cx="48" cy="8" r="3" fill="#BDBDBD"/>
-    <circle cx="80" cy="8" r="3" fill="#BDBDBD"/>
-    <!-- 外壳 -->
-    <rect x="14" y="28" width="100" height="72" rx="10" fill="url(#tvg)"/>
-    <rect x="16" y="30" width="96" height="68" rx="8" fill="#4E4E4E"/>
-    <!-- 屏幕 -->
-    <rect x="22" y="34" width="68" height="56" rx="4" fill="#1B5E20"/>
-    <rect x="24" y="36" width="64" height="52" rx="3" fill="#2E7D32"/>
-    <!-- 屏幕内容 (简单图案) -->
-    <ellipse cx="56" cy="56" rx="16" ry="12" fill="#4CAF50" opacity=".6"/>
-    <rect x="40" y="68" width="32" height="4" rx="1" fill="#81C784" opacity=".5"/>
-    <rect x="46" y="74" width="20" height="3" rx="1" fill="#A5D6A7" opacity=".4"/>
-    <!-- 屏幕扫描线 -->
-    <line x1="24" y1="44" x2="86" y2="44" stroke="#fff" stroke-width=".3" opacity=".1"/>
-    <line x1="24" y1="52" x2="86" y2="52" stroke="#fff" stroke-width=".3" opacity=".1"/>
-    <line x1="24" y1="60" x2="86" y2="60" stroke="#fff" stroke-width=".3" opacity=".1"/>
-    <line x1="24" y1="68" x2="86" y2="68" stroke="#fff" stroke-width=".3" opacity=".1"/>
-    <line x1="24" y1="76" x2="86" y2="76" stroke="#fff" stroke-width=".3" opacity=".1"/>
-    <!-- 旋钮面板 -->
-    <rect x="94" y="38" width="14" height="48" rx="3" fill="#3E3E3E"/>
-    <circle cx="101" cy="48" r="5" fill="#757575" stroke="#9E9E9E" stroke-width="1"/>
-    <circle cx="101" cy="48" r="2" fill="#9E9E9E"/>
-    <circle cx="101" cy="64" r="5" fill="#757575" stroke="#9E9E9E" stroke-width="1"/>
-    <circle cx="101" cy="64" r="2" fill="#9E9E9E"/>
-    <!-- 指示灯 -->
-    <circle cx="101" cy="78" r="2.5" fill="#F44336"/>
-    <ellipse cx="100.5" cy="77.5" rx="1" ry=".8" fill="#fff" opacity=".3"/>
-    <!-- 底座 -->
-    <rect x="40" y="100" width="48" height="8" rx="3" fill="#616161"/>
-    <rect x="34" y="106" width="60" height="6" rx="3" fill="#757575"/>
-    <!-- 屏幕高光 -->
-    <ellipse cx="42" cy="44" rx="10" ry="6" fill="#fff" opacity=".08"/>
+  <ellipse cx="64" cy="112" rx="42" ry="7" fill="#111827" opacity=".22"/>
+  <g filter="url(#tvShadow)">
+    <path d="M48 23L39 8" stroke="#6B7280" stroke-width="3" stroke-linecap="round"/>
+    <path d="M80 23L91 8" stroke="#6B7280" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="39" cy="8" r="3" fill="#A3A3A3"/>
+    <circle cx="91" cy="8" r="3" fill="#A3A3A3"/>
+    <rect x="13" y="27" width="102" height="76" rx="14" fill="url(#tvCase)"/>
+    <rect x="18" y="32" width="92" height="64" rx="10" fill="#2C2927" opacity=".66"/>
+    <rect x="24" y="37" width="65" height="50" rx="7" fill="#0D2026"/>
+    <rect x="28" y="40" width="57" height="44" rx="5" fill="url(#tvScreen)"/>
+    <path d="M32 45C43 38 65 39 81 45" stroke="#E6FFFA" stroke-width="3" stroke-linecap="round" opacity=".28"/>
+    <path d="M30 75C43 81 61 82 83 75" stroke="#D8FFF8" stroke-width="2" stroke-linecap="round" opacity=".18"/>
+    <path d="M31 52H82M31 62H82M31 72H82" stroke="#E0FBFF" stroke-width=".7" opacity=".16"/>
+    <rect x="94" y="39" width="13" height="44" rx="5" fill="url(#tvMetal)"/>
+    <circle cx="100.5" cy="50" r="5" fill="#2F343A" stroke="#C8B69F" stroke-width="1.5"/>
+    <circle cx="100.5" cy="50" r="2" fill="#D5C4AA"/>
+    <circle cx="100.5" cy="66" r="5" fill="#2F343A" stroke="#C8B69F" stroke-width="1.5"/>
+    <circle cx="100.5" cy="66" r="2" fill="#D5C4AA"/>
+    <circle cx="100.5" cy="79" r="2.5" fill="#F97316"/>
+    <rect x="37" y="102" width="54" height="7" rx="3.5" fill="#2B2622"/>
+    <rect x="45" y="95" width="38" height="9" rx="4" fill="#4A382C"/>
   </g>
 </svg>

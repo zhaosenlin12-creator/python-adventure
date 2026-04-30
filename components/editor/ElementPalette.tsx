@@ -185,7 +185,7 @@ const ENEMY_ELEMENTS: ElementDefinition[] = [
     id: "enemy_boss",
     name: "Boss",
     nameCN: "Boss",
-    icon: "👹",
+    icon: "B",
     category: "enemies",
     defaultConfig: {
       enemyType: "boss",

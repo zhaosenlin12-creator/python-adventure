@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 import { FARM_PLOTS } from '@/components/pet/home/FarmGrid';
 
@@ -38,6 +38,7 @@ interface GardenPlayPanelProps {
   currentPetName: string;
   companionCount: number;
   visible: boolean;
+  compact?: boolean;
 }
 
 const STORAGE_KEY_PREFIX = 'pet-home-garden-v2';
@@ -385,7 +386,10 @@ export default function GardenPlayPanel({
   currentPetName,
   companionCount,
   visible,
+  compact = false,
 }: GardenPlayPanelProps) {
+  const prefersReducedMotion = useReducedMotion();
+  const shouldToneDownMotion = compact || !!prefersReducedMotion;
   const storageKey = useMemo(() => getStorageKey(userId), [userId]);
   const [gardenState, setGardenState] = useState<GardenSaveState>(() => createDefaultState());
   const [selectedCrop, setSelectedCrop] = useState<CropId>('sunflower');
@@ -418,13 +422,13 @@ export default function GardenPlayPanel({
       () => {
         setNow(Date.now());
       },
-      visible ? 6000 : 18000,
+      visible ? (shouldToneDownMotion ? 9000 : 6000) : 18000,
     );
 
     return () => {
       window.clearInterval(timer);
     };
-  }, [visible]);
+  }, [shouldToneDownMotion, visible]);
 
   const plots = useMemo(
     () => gardenState.plots.map((plot) => getPlotProgress(plot, now)),
@@ -439,6 +443,19 @@ export default function GardenPlayPanel({
   const needsCareCount = thirstyCount + wiltedCount;
   const atmosphereLabel =
     readyCount > 0 ? '丰收时刻' : wiltedCount > 0 ? '等你救回' : plantedCount > 3 ? '庭院正热闹' : '慢慢种起来';
+  const gardenVitalityScore = clamp(
+    38 + plantedCount * 7 + readyCount * 9 + companionCount * 4 + Math.min(harvestCount, 12) * 2 - needsCareCount * 8,
+    0,
+    100,
+  );
+  const gardenFocusLabel =
+    needsCareCount > 0
+      ? '优先补水'
+      : readyCount > 0
+        ? '可以收获'
+        : plantedCount > 0
+          ? '稳定生长'
+          : '等待播种';
   const patrolRemainingMs = Math.max(
     0,
     PATROL_COOLDOWN_MS - (gardenState.lastPatrolAt ? now - gardenState.lastPatrolAt : PATROL_COOLDOWN_MS),
@@ -550,12 +567,12 @@ export default function GardenPlayPanel({
 
   return (
     <>
-      <div className="pointer-events-none absolute left-[3.2%] top-[73.4%] z-[11] flex w-[36%] items-start justify-between">
-        <div className="rounded-[22px] border border-amber-950/22 bg-[linear-gradient(180deg,rgba(102,63,28,0.82),rgba(67,39,16,0.96))] px-3 py-2 text-[11px] text-amber-50 shadow-[0_14px_24px_rgba(15,23,42,0.18)]">
+      <div className={`pointer-events-none absolute z-[11] ${compact ? 'left-[4.4%] top-[69.6%] flex w-[118px] flex-col gap-1.5' : 'left-[3.2%] top-[72.2%] flex w-[36%] items-start justify-between'}`}>
+        <div className={`rounded-[22px] border border-cyan-200/22 bg-[linear-gradient(180deg,rgba(8,66,82,0.76),rgba(6,31,52,0.94))] px-3 text-[11px] text-cyan-50 shadow-[0_16px_30px_rgba(15,23,42,0.18)] backdrop-blur-md ${compact ? 'py-2 px-2.5' : 'py-2.5'}`}>
           <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-amber-100/70">浇水提示</div>
           <div className="mt-1 text-amber-50/92">缺水时点田块浇回去</div>
         </div>
-        <div className="mt-[7.2%] rounded-[22px] border border-amber-950/20 bg-[linear-gradient(180deg,rgba(71,44,23,0.8),rgba(49,28,12,0.94))] px-3 py-2 text-[11px] text-amber-50 shadow-[0_14px_24px_rgba(15,23,42,0.14)]">
+        <div className={`rounded-[22px] border border-emerald-200/20 bg-[linear-gradient(180deg,rgba(16,95,76,0.74),rgba(7,45,47,0.94))] px-3 text-[11px] text-emerald-50 shadow-[0_16px_30px_rgba(15,23,42,0.14)] backdrop-blur-md ${compact ? 'py-2 px-2.5' : 'mt-[6.4%] py-2.5'}`}>
           <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-amber-100/70">丰收篮</div>
           <div className="mt-1 text-amber-50/92">{harvestCount} 份小收获</div>
         </div>
@@ -575,7 +592,9 @@ export default function GardenPlayPanel({
               key={plotAnchor.id}
               type="button"
               onClick={() => handlePlotAction(index)}
-              className="group pointer-events-auto absolute flex h-[70px] w-[86px] -translate-x-1/2 -translate-y-1/2 items-center justify-center transition hover:scale-[1.015]"
+              className={`group pointer-events-auto absolute flex -translate-x-1/2 -translate-y-1/2 items-center justify-center transition ${
+                compact ? 'h-[72px] w-[88px]' : 'h-[78px] w-[94px]'
+              }`}
               style={{
                 left: `${plotAnchor.x}%`,
                 top: `${plotAnchor.y - 1.6}%`,
@@ -583,77 +602,147 @@ export default function GardenPlayPanel({
             >
               <motion.div
                 animate={{
-                  y: isReady ? [0, -4, 0] : [0, -1.5, 0],
-                  scale: isReady ? [1, 1.03, 1] : [1, 1.01, 1],
+                  y: isReady
+                    ? shouldToneDownMotion
+                      ? [0, -2.4, 0]
+                      : [0, -4, 0]
+                    : shouldToneDownMotion
+                      ? [0, -0.8, 0]
+                      : [0, -1.5, 0],
+                  scale: isReady
+                    ? shouldToneDownMotion
+                      ? [1, 1.016, 1]
+                      : [1, 1.03, 1]
+                    : shouldToneDownMotion
+                      ? [1, 1.004, 1]
+                      : [1, 1.01, 1],
                 }}
                 transition={{
-                  duration: isReady ? 1.8 : 3.4,
+                  duration: isReady
+                    ? shouldToneDownMotion
+                      ? 2.3
+                      : 1.8
+                    : shouldToneDownMotion
+                      ? 4.2
+                      : 3.4,
                   repeat: Infinity,
                   ease: 'easeInOut',
                 }}
                 className="relative flex h-full w-full items-center justify-center"
               >
+                <div className="absolute left-1/2 bottom-[4px] h-[16px] w-[56px] -translate-x-1/2 rounded-full bg-slate-950/18 blur-md" />
+                {!isEmpty && (
+                  <div
+                    className="absolute left-1/2 bottom-[18px] h-[18px] w-[52px] -translate-x-1/2 rounded-full blur-lg"
+                    style={{ background: `${glowColor}${isReady ? '30' : '18'}` }}
+                  />
+                )}
                 <div
-                  className="absolute inset-0 rounded-[24px]"
+                  className="absolute inset-x-[8px] bottom-[10px] top-[16px] rounded-[28px] border border-white/10"
                   style={{
-                    background: 'linear-gradient(180deg, rgba(108,67,31,0.95) 0%, rgba(76,44,18,0.98) 100%)',
-                    boxShadow: '0 10px 18px rgba(15,23,42,0.18), inset 0 1px 0 rgba(255,241,214,0.08)',
+                    background:
+                      isEmpty
+                        ? 'linear-gradient(180deg, rgba(120,84,44,0.92) 0%, rgba(87,56,26,0.98) 100%)'
+                        : 'linear-gradient(180deg, rgba(126,88,48,0.94) 0%, rgba(79,46,18,0.98) 100%)',
+                    boxShadow: '0 12px 20px rgba(15,23,42,0.18), inset 0 1px 0 rgba(255,241,214,0.1)',
                   }}
                 />
                 <div
-                  className={`absolute inset-[5px] overflow-hidden rounded-[20px] border ${
+                  className={`absolute inset-x-[12px] bottom-[14px] top-[22px] overflow-hidden rounded-[24px] border ${
                     isDry ? 'border-amber-200/22' : 'border-amber-950/28'
                   }`}
                   style={{
                     background: isEmpty
-                      ? 'radial-gradient(ellipse at 50% 26%, rgba(161,108,57,0.92) 0%, rgba(112,70,33,0.94) 34%, rgba(74,44,19,0.98) 100%)'
+                      ? 'radial-gradient(ellipse at 50% 22%, rgba(169,117,64,0.94) 0%, rgba(120,77,36,0.96) 34%, rgba(74,44,19,0.98) 100%)'
                       : isDry
-                        ? 'radial-gradient(ellipse at 50% 26%, rgba(148,82,34,0.9) 0%, rgba(106,52,17,0.94) 36%, rgba(61,29,10,0.98) 100%)'
-                        : 'radial-gradient(ellipse at 50% 24%, rgba(132,86,44,0.9) 0%, rgba(93,57,26,0.95) 34%, rgba(60,34,14,0.98) 100%)',
+                        ? 'radial-gradient(ellipse at 50% 24%, rgba(157,92,38,0.92) 0%, rgba(115,58,19,0.96) 36%, rgba(61,29,10,0.98) 100%)'
+                        : 'radial-gradient(ellipse at 50% 22%, rgba(142,96,52,0.92) 0%, rgba(99,61,29,0.96) 34%, rgba(60,34,14,0.98) 100%)',
                     boxShadow: isEmpty
                       ? 'inset 0 12px 16px rgba(255,213,153,0.05), inset 0 -10px 16px rgba(28,18,8,0.34)'
                       : `inset 0 10px 16px rgba(255,214,164,0.05), inset 0 -12px 18px rgba(20,12,6,0.42), 0 0 16px ${glowColor}10`,
                   }}
                 >
                   <div
-                    className="absolute inset-[8%] rounded-[18px] opacity-55"
+                    className="absolute inset-[10%] rounded-[18px] opacity-55"
                     style={{
                       backgroundImage:
-                        'repeating-linear-gradient(0deg, transparent 0, transparent 9px, rgba(54,31,13,0.3) 9px, rgba(54,31,13,0.3) 11px)',
+                        'repeating-linear-gradient(0deg, transparent 0, transparent 8px, rgba(54,31,13,0.28) 8px, rgba(54,31,13,0.28) 10px)',
                     }}
                   />
-                  <div className="absolute inset-x-[20%] top-[22%] h-[1px] rounded-full bg-amber-50/14" />
-                  <div className="absolute inset-x-[24%] top-[46%] h-[1px] rounded-full bg-amber-50/10" />
-                  <div className="absolute inset-x-[29%] top-[69%] h-[1px] rounded-full bg-amber-50/8" />
-                  <div className="absolute inset-x-[14%] top-[11%] h-[14%] rounded-full bg-white/6 blur-sm" />
+                  <div className="absolute inset-x-[20%] top-[21%] h-[1px] rounded-full bg-amber-50/14" />
+                  <div className="absolute inset-x-[24%] top-[45%] h-[1px] rounded-full bg-amber-50/10" />
+                  <div className="absolute inset-x-[30%] top-[68%] h-[1px] rounded-full bg-amber-50/8" />
+                  <div className="absolute inset-x-[16%] top-[10%] h-[16%] rounded-full bg-white/8 blur-sm" />
                 </div>
 
-                {!isEmpty && (
-                  <div
-                    className="absolute inset-[12px] rounded-[18px] blur-lg"
-                    style={{ background: `${glowColor}${isReady ? '28' : '12'}` }}
+                {plot.cropId ? (
+                  <div className="relative z-[2]">
+                    <CropSigil cropId={plot.cropId} stage={plot.stage} compact={compact} />
+                  </div>
+                ) : (
+                  <>
+                    <motion.div
+                      className="absolute left-[34px] top-[32px] h-2.5 w-2.5 rounded-full bg-amber-200/72 shadow-[0_0_10px_rgba(253,224,71,0.25)]"
+                      animate={{
+                        y: shouldToneDownMotion ? [0, -1.5, 0] : [0, -3, 0],
+                        opacity: shouldToneDownMotion ? [0.45, 0.66, 0.45] : [0.45, 0.8, 0.45],
+                      }}
+                      transition={{
+                        duration: shouldToneDownMotion ? 3.2 : 2.6,
+                        repeat: Infinity,
+                        ease: 'easeInOut',
+                      }}
+                    />
+                    <div className="absolute left-[28px] top-[42px] h-[2px] w-[18px] rounded-full bg-amber-100/16" />
+                    <div className="absolute left-[46px] top-[38px] h-[10px] w-[10px] rounded-full bg-amber-100/12" />
+                    <div className="absolute right-[24px] top-[28px] flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-white/[0.05] text-[10px] font-semibold text-amber-50/90">
+                      +
+                    </div>
+                  </>
+                )}
+
+                {isReady && (
+                  <motion.div
+                    className="absolute right-[18px] top-[18px] h-3 w-3 rounded-full bg-amber-200/90 shadow-[0_0_16px_rgba(253,224,71,0.5)]"
+                    animate={{
+                      scale: shouldToneDownMotion ? [0.94, 1.08, 0.94] : [0.9, 1.18, 0.9],
+                      opacity: shouldToneDownMotion ? [0.5, 0.86, 0.5] : [0.42, 1, 0.42],
+                    }}
+                    transition={{
+                      duration: shouldToneDownMotion ? 1.8 : 1.3,
+                      repeat: Infinity,
+                      ease: 'easeInOut',
+                    }}
                   />
                 )}
 
-                {plot.cropId ? (
-                  <div className="relative">
-                    <CropSigil cropId={plot.cropId} stage={plot.stage} />
-                  </div>
-                ) : null}
-
                 {!isEmpty && (
-                  <div className="absolute inset-x-3 bottom-[7px] h-1 overflow-hidden rounded-full bg-black/28">
-                    <div
+                  <div className="absolute inset-x-[18px] bottom-[10px] h-[4px] overflow-hidden rounded-full bg-slate-950/28">
+                    <motion.div
                       className={`h-full rounded-full ${
                         isDry ? 'bg-amber-300/80' : isReady ? 'bg-emerald-300' : 'bg-cyan-300/90'
                       }`}
                       style={{ width: `${Math.max(8, Math.round(plot.progress * 100))}%` }}
+                      animate={{
+                        opacity: isReady
+                          ? shouldToneDownMotion
+                            ? [0.78, 0.96, 0.78]
+                            : [0.7, 1, 0.7]
+                          : [0.9, 0.9, 0.9],
+                      }}
+                      transition={{
+                        duration: shouldToneDownMotion ? 2.1 : 1.6,
+                        repeat: Infinity,
+                        ease: 'easeInOut',
+                      }}
                     />
                   </div>
                 )}
 
                 <span
-                  className={`absolute -bottom-5 rounded-full px-2 py-0.5 text-[10px] font-semibold text-amber-50 transition ${
+                  className={`absolute rounded-full px-2 py-0.5 font-semibold text-amber-50 transition ${
+                    compact ? '-bottom-4.5 text-[9px]' : '-bottom-5 text-[10px]'
+                  } ${
                     isReady || isDry ? 'bg-[rgba(60,33,15,0.9)] opacity-100' : 'bg-[rgba(60,33,15,0.84)] opacity-0 group-hover:opacity-100'
                   }`}
                 >
@@ -665,11 +754,11 @@ export default function GardenPlayPanel({
         })}
       </div>
 
-      <div className="absolute right-5 top-24 z-[14] flex flex-col items-end gap-2">
+      <div className={`absolute z-[14] flex flex-col items-end ${compact ? 'right-3 top-[5.8rem] gap-1.5' : 'right-5 top-24 gap-2'}`}>
         <button
           type="button"
           onClick={() => setIsExpanded((value) => !value)}
-          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-950/78 px-2.5 py-1.5 text-[11px] font-semibold text-white shadow-[0_16px_34px_rgba(2,6,23,0.26)] backdrop-blur-md transition hover:bg-slate-900/86"
+          className={`inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-950/78 font-semibold text-white shadow-[0_16px_34px_rgba(2,6,23,0.26)] backdrop-blur-md transition hover:bg-slate-900/86 ${compact ? 'px-2 py-1.5 text-[10px]' : 'px-2.5 py-1.5 text-[11px]'}`}
           title="展开庭院面板"
         >
           <span>庭院手册</span>
@@ -677,7 +766,7 @@ export default function GardenPlayPanel({
         </button>
 
         {isExpanded && (
-          <div className="w-[272px] rounded-[24px] border border-white/10 bg-slate-950/74 p-3 shadow-[0_26px_60px_rgba(2,6,23,0.32)] backdrop-blur-md">
+          <div className={`rounded-[24px] border border-white/10 bg-slate-950/74 p-3 shadow-[0_26px_60px_rgba(2,6,23,0.32)] backdrop-blur-md ${compact ? 'w-[min(84vw,272px)]' : 'w-[272px]'}`}>
             <div className="flex items-start justify-between gap-4">
               <div>
                 <div className="text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald-200">庭院日常</div>
@@ -701,6 +790,24 @@ export default function GardenPlayPanel({
               <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-2 py-2">
                 <div className="text-[11px] uppercase tracking-[0.18em] text-slate-400">可收</div>
                 <div className="mt-1 text-sm font-bold text-white">{readyCount}</div>
+              </div>
+            </div>
+
+            <div className="mt-3 rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2.5">
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <div className="text-xs font-semibold text-white">庭院活力</div>
+                  <div className="mt-1 text-[11px] text-slate-400">{gardenFocusLabel}</div>
+                </div>
+                <div className="text-right text-sm font-black text-emerald-100">{gardenVitalityScore}%</div>
+              </div>
+              <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-slate-800/80">
+                <motion.div
+                  className="h-full rounded-full bg-[linear-gradient(90deg,#34d399,#a7f3d0,#fbbf24)]"
+                  initial={false}
+                  animate={{ width: `${gardenVitalityScore}%` }}
+                  transition={{ duration: 0.35, ease: 'easeOut' }}
+                />
               </div>
             </div>
 

@@ -57,13 +57,13 @@ export default function DecorationShop({ isOpen, onClose }: DecorationShopProps)
     
     // 检查等级
     if (currentPet.level < decoration.unlockLevel) {
-      showToast(`🔒 等级不足\n\n需要等级：Lv.${decoration.unlockLevel}\n当前等级：Lv.${currentPet.level}\n\n💡 完成更多关卡来提升等级！`, 'warning');
+      showToast(`等级不足\n\n需要等级：Lv.${decoration.unlockLevel}\n当前等级：Lv.${currentPet.level}\n\n完成更多关卡可以提升等级。`, 'warning');
       return;
     }
     
     // 检查金币
     if (userCoins < decoration.price) {
-      showToast(`💰 金币不足\n\n需要：${decoration.price} 金币\n当前：${userCoins} 金币\n缺少：${decoration.price - userCoins} 金币\n\n💡 如何获得金币？\n• 完成章节关卡和战役\n• 参与PVP对战获胜\n• 创意工坊发布作品`, 'warning');
+      showToast(`金币不足\n\n需要：${decoration.price} 金币\n当前：${userCoins} 金币\n缺少：${decoration.price - userCoins} 金币\n\n完成关卡、战役和创作任务可以获得金币。`, 'warning');
       return;
     }
     
@@ -96,7 +96,7 @@ export default function DecorationShop({ isOpen, onClose }: DecorationShopProps)
         
         // 更新本地装饰品状态
         const owned = getOwnedQuantity(decoration.id);
-        showToast(`🎉 购买成功！\n\n获得：${decoration.name}\n花费：${decoration.price} 金币\n剩余：${userCoins - decoration.price} 金币\n拥有数量：${owned + 1}`, 'success');
+        showToast(`购买成功\n\n获得：${decoration.name}\n花费：${decoration.price} 金币\n剩余：${userCoins - decoration.price} 金币\n拥有数量：${owned + 1}`, 'success');
       } else {
         throw new Error('购买失败');
       }
@@ -113,14 +113,14 @@ export default function DecorationShop({ isOpen, onClose }: DecorationShopProps)
       const { toFriendlyMessage } = await import('@/lib/utils/friendlyError');
       if (error instanceof ApiError) {
         if (error.isNetworkError()) {
-          showToast('❌ 购买失败\n\n网络连接失败\n请检查网络连接后重试', 'error');
+          showToast('购买失败\n\n网络连接失败，请检查网络后重试。', 'error');
         } else if (error.isTimeout()) {
-          showToast('❌ 购买失败\n\n请求超时，请稍后重试', 'error');
+          showToast('购买失败\n\n请求超时，请稍后重试。', 'error');
         } else {
-          showToast(`❌ 购买失败\n\n${toFriendlyMessage(error, '请稍后再试')}`, 'error');
+          showToast(`购买失败\n\n${toFriendlyMessage(error, '请稍后再试')}`, 'error');
         }
       } else {
-        showToast(`❌ 购买失败\n\n${toFriendlyMessage(error, '请稍后再试')}`, 'error');
+        showToast(`购买失败\n\n${toFriendlyMessage(error, '请稍后再试')}`, 'error');
       }
     } finally {
       setPurchasing(null);
@@ -142,7 +142,7 @@ export default function DecorationShop({ isOpen, onClose }: DecorationShopProps)
           <div className="flex justify-between items-center p-4 border-b border-slate-700">
             <div>
               <h2 className="text-xl font-bold text-white">
-                🏪 装饰品商店
+                装饰品商店
               </h2>
               <p className="text-xs text-slate-500 mt-1">
                 装饰你的宠物小屋，让它更温馨！
@@ -151,7 +151,7 @@ export default function DecorationShop({ isOpen, onClose }: DecorationShopProps)
             
             <div className="flex items-center gap-4">
               <div className="bg-slate-800 border border-slate-600 rounded-lg px-3 py-1 text-sm font-bold text-amber-300">
-                💰 {userCoins} 金币
+                {userCoins} 金币
               </div>
               <button
                 onClick={onClose}
@@ -166,12 +166,12 @@ export default function DecorationShop({ isOpen, onClose }: DecorationShopProps)
             {['all', 'furniture', 'plant', 'nature', 'toy', 'fun', 'decor'].map(type => {
               const labels: Record<string, string> = {
                 all: '全部',
-                furniture: '🛋️ 家具',
-                plant: '🌱 植物',
-                nature: '🌿 自然',
-                toy: '🎾 玩具',
-                fun: '🎲 趣味',
-                decor: '✨ 装饰',
+                furniture: '家具',
+                plant: '植物',
+                nature: '自然',
+                toy: '玩具',
+                fun: '趣味',
+                decor: '装饰',
               };
               return (
                 <button
@@ -203,12 +203,16 @@ export default function DecorationShop({ isOpen, onClose }: DecorationShopProps)
                     className={`pixel-panel p-3 ${isLocked || !canAfford ? 'opacity-50' : ''}`}
                   >
                     <div className="text-center mb-2">
-                      <div className="mb-1 flex items-center justify-center">
-                        <DecorationIcon 
-                          decorationId={decoration.id}
-                          size={64}
-                          className="transition-transform duration-200 hover:scale-110"
-                        />
+                      <div className="mb-2 flex items-center justify-center">
+                        <div className="relative flex h-24 w-24 items-center justify-center overflow-hidden rounded-[28px] border border-white/10 bg-[radial-gradient(circle_at_35%_22%,rgba(255,255,255,0.22),transparent_34%),linear-gradient(160deg,rgba(30,41,59,0.96),rgba(15,23,42,0.78))] shadow-[0_18px_34px_rgba(2,6,23,0.28),inset_0_1px_0_rgba(255,255,255,0.08)]">
+                          <span className="absolute bottom-4 h-4 w-16 rounded-full bg-black/25 blur-md" />
+                          <span className="absolute left-4 top-3 h-8 w-12 rounded-full bg-white/12 blur-lg" />
+                          <DecorationIcon
+                            decorationId={decoration.id}
+                            size={70}
+                            className="relative z-[1] transition-transform duration-200 hover:scale-110"
+                          />
+                        </div>
                       </div>
                       <div className="font-bold text-sm text-game-light">
                         {decoration.name}
@@ -225,10 +229,10 @@ export default function DecorationShop({ isOpen, onClose }: DecorationShopProps)
                     {decoration.effect && (
                       <div className="text-xs text-center mb-2">
                         {decoration.effect.happiness && (
-                          <span className="text-rose-300">❤️ +{decoration.effect.happiness}</span>
+                          <span className="text-rose-300">快乐 +{decoration.effect.happiness}</span>
                         )}
                         {decoration.effect.comfort && (
-                          <span className="text-sky-300 ml-2">🛋️ +{decoration.effect.comfort}</span>
+                          <span className="text-sky-300 ml-2">舒适 +{decoration.effect.comfort}</span>
                         )}
                       </div>
                     )}
@@ -241,7 +245,7 @@ export default function DecorationShop({ isOpen, onClose }: DecorationShopProps)
                     
                     {isLocked ? (
                       <div className="text-xs text-center text-red-400 py-1">
-                        🔒 Lv.{decoration.unlockLevel} 解锁
+                        Lv.{decoration.unlockLevel} 解锁
                       </div>
                     ) : (
                       <button
@@ -253,7 +257,7 @@ export default function DecorationShop({ isOpen, onClose }: DecorationShopProps)
                             : 'bg-slate-700 text-slate-400 cursor-not-allowed'
                         }`}
                       >
-                        {purchasing === decoration.id ? '购买中...' : `💰 ${decoration.price}`}
+                        {purchasing === decoration.id ? '购买中...' : `${decoration.price} 金币`}
                       </button>
                     )}
                   </div>
@@ -263,7 +267,7 @@ export default function DecorationShop({ isOpen, onClose }: DecorationShopProps)
           </div>
           
           <div className="bg-slate-800 border-t border-slate-700 p-3 text-xs text-slate-300">
-            <p className="font-bold mb-1">💡 提示</p>
+            <p className="font-bold mb-1">提示</p>
             <ul className="space-y-0.5 list-disc list-inside">
               <li>装饰品可以增加宠物的快乐值和舒适度</li>
               <li>完成关卡和任务可以获得金币</li>

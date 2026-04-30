@@ -1,42 +1,46 @@
 <svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="rb" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#78909C"/><stop offset="100%" stop-color="#455A64"/></linearGradient>
-    <filter id="rf"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity=".2"/></filter>
+    <linearGradient id="robotSteel" x1="30" y1="16" x2="96" y2="108" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#C7D2DF"/>
+      <stop offset=".48" stop-color="#708190"/>
+      <stop offset="1" stop-color="#33424D"/>
+    </linearGradient>
+    <linearGradient id="robotFace" x1="40" y1="28" x2="88" y2="54" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#233D55"/>
+      <stop offset="1" stop-color="#0F2332"/>
+    </linearGradient>
+    <linearGradient id="robotGlow" x1="44" y1="34" x2="84" y2="46" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A7F3D0"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+    <filter id="robotShadow" x="8" y="2" width="112" height="124" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#0F172A" flood-opacity=".22"/>
+    </filter>
   </defs>
-  <g filter="url(#rf)">
-    <!-- 天线 -->
-    <line x1="64" y1="6" x2="64" y2="22" stroke="#90A4AE" stroke-width="3"/>
-    <circle cx="64" cy="6" r="5" fill="#F44336"/>
-    <ellipse cx="63" cy="5" rx="2" ry="1.5" fill="#fff" opacity=".3"/>
-    <!-- 头 -->
-    <rect x="36" y="22" width="56" height="36" rx="8" fill="url(#rb)"/>
-    <rect x="38" y="24" width="52" height="32" rx="6" fill="#546E7A"/>
-    <!-- 眼 LED -->
-    <rect x="44" y="32" width="16" height="12" rx="3" fill="#0D47A1"/>
-    <rect x="46" y="34" width="12" height="8" rx="2" fill="#42A5F5"/>
-    <circle cx="50" cy="38" r="2" fill="#fff" opacity=".6"/>
-    <rect x="68" y="32" width="16" height="12" rx="3" fill="#0D47A1"/>
-    <rect x="70" y="34" width="12" height="8" rx="2" fill="#42A5F5"/>
-    <circle cx="74" cy="38" r="2" fill="#fff" opacity=".6"/>
-    <!-- 嘴 -->
-    <rect x="50" y="48" width="28" height="4" rx="2" fill="#37474F"/>
-    <rect x="54" y="49" width="4" height="2" fill="#4CAF50"/><rect x="62" y="49" width="4" height="2" fill="#4CAF50"/><rect x="70" y="49" width="4" height="2" fill="#4CAF50"/>
-    <!-- 身体 -->
-    <rect x="32" y="60" width="64" height="40" rx="6" fill="url(#rb)"/>
-    <rect x="34" y="62" width="60" height="36" rx="4" fill="#546E7A"/>
-    <!-- 胸部仪表 -->
-    <circle cx="54" cy="76" r="6" fill="#1B5E20"/><circle cx="54" cy="76" r="4" fill="#4CAF50"/><ellipse cx="53" cy="75" rx="1.5" ry="1" fill="#fff" opacity=".3"/>
-    <circle cx="74" cy="76" r="6" fill="#B71C1C"/><circle cx="74" cy="76" r="4" fill="#EF5350"/><ellipse cx="73" cy="75" rx="1.5" ry="1" fill="#fff" opacity=".3"/>
-    <rect x="46" y="86" width="36" height="6" rx="2" fill="#37474F"/>
-    <!-- 手臂 -->
-    <rect x="18" y="64" width="14" height="28" rx="6" fill="#607D8B"/>
-    <circle cx="25" cy="96" r="6" fill="#78909C"/>
-    <rect x="96" y="64" width="14" height="28" rx="6" fill="#607D8B"/>
-    <circle cx="103" cy="96" r="6" fill="#78909C"/>
-    <!-- 腿 -->
-    <rect x="42" y="100" width="14" height="18" rx="4" fill="#607D8B"/>
-    <rect x="72" y="100" width="14" height="18" rx="4" fill="#607D8B"/>
-    <rect x="38" y="116" width="22" height="6" rx="3" fill="#455A64"/>
-    <rect x="68" y="116" width="22" height="6" rx="3" fill="#455A64"/>
+  <ellipse cx="64" cy="116" rx="35" ry="6" fill="#0F172A" opacity=".2"/>
+  <g filter="url(#robotShadow)">
+    <path d="M64 18V7" stroke="#637180" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="64" cy="6" r="5" fill="#F87171"/>
+    <rect x="35" y="18" width="58" height="39" rx="13" fill="url(#robotSteel)"/>
+    <rect x="42" y="27" width="44" height="21" rx="8" fill="url(#robotFace)"/>
+    <rect x="48" y="34" width="12" height="7" rx="3.5" fill="url(#robotGlow)"/>
+    <rect x="68" y="34" width="12" height="7" rx="3.5" fill="url(#robotGlow)"/>
+    <path d="M53 48C59 52 69 52 75 48" stroke="#A7F3D0" stroke-width="2" stroke-linecap="round" opacity=".82"/>
+    <rect x="31" y="60" width="66" height="43" rx="12" fill="url(#robotSteel)"/>
+    <path d="M41 67H87" stroke="#E2E8F0" stroke-width="2" stroke-linecap="round" opacity=".28"/>
+    <circle cx="53" cy="80" r="7" fill="#12342D"/>
+    <circle cx="53" cy="80" r="4" fill="#34D399"/>
+    <circle cx="75" cy="80" r="7" fill="#3C1717"/>
+    <circle cx="75" cy="80" r="4" fill="#F87171"/>
+    <rect x="48" y="91" width="32" height="6" rx="3" fill="#26323C"/>
+    <path d="M31 66C23 65 18 70 17 79C16 87 20 94 27 96" stroke="#637180" stroke-width="8" stroke-linecap="round"/>
+    <path d="M97 66C105 65 110 70 111 79C112 87 108 94 101 96" stroke="#637180" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="27" cy="97" r="7" fill="#81919E"/>
+    <circle cx="101" cy="97" r="7" fill="#81919E"/>
+    <rect x="42" y="103" width="15" height="16" rx="5" fill="#52616E"/>
+    <rect x="71" y="103" width="15" height="16" rx="5" fill="#52616E"/>
+    <rect x="37" y="116" width="25" height="6" rx="3" fill="#2F3B45"/>
+    <rect x="66" y="116" width="25" height="6" rx="3" fill="#2F3B45"/>
+    <path d="M44 22C54 18 74 18 85 23" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity=".22"/>
   </g>
 </svg>

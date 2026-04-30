@@ -50,6 +50,32 @@ const FLOATING_DUST_PARTICLES = Array.from({ length: 18 }, (_, index) => ({
   delay: index * 0.28,
 }));
 
+const LIVING_WALL_PANELS = [
+  { left: '5%', width: '24%', opacity: 0.5 },
+  { left: '37%', width: '26%', opacity: 0.34 },
+  { left: '68%', width: '22%', opacity: 0.42 },
+];
+
+const LIVING_MOBILE_STARS = [
+  { left: '0%', top: '0%', size: 12, delay: 0 },
+  { left: '24%', top: '14%', size: 10, delay: 0.2 },
+  { left: '52%', top: '6%', size: 14, delay: 0.45 },
+  { left: '74%', top: '18%', size: 9, delay: 0.7 },
+];
+
+const GARDEN_STEPPING_STONES = [
+  { left: '26%', width: 48, height: 18, rotate: -8 },
+  { left: '37%', width: 54, height: 20, rotate: 4 },
+  { left: '49%', width: 62, height: 22, rotate: -5 },
+  { left: '63%', width: 52, height: 18, rotate: 7 },
+];
+
+const GARDEN_LANTERNS = [
+  { right: '10%', top: '18%', glow: 'rgba(253,224,71,0.3)', delay: 0.1 },
+  { right: '18%', top: '24%', glow: 'rgba(125,211,252,0.24)', delay: 0.4 },
+  { right: '4%', top: '28%', glow: 'rgba(251,191,36,0.24)', delay: 0.8 },
+];
+
 /**
  * 🏠 舒适房间背景组件
  * 包含：
@@ -145,6 +171,26 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
           background: 'linear-gradient(to bottom, transparent 0%, rgba(255,240,210,0.08) 50%, rgba(255,220,180,0.12) 70%)'
         }} />
 
+        {/* 1d. 墙面分区与拱形壁板，让空间更像真实小屋而不是单张平墙 */}
+        <div className="absolute inset-x-[4%] top-[10%] bottom-[31%] pointer-events-none z-[1]">
+          {LIVING_WALL_PANELS.map((panel, index) => (
+            <div
+              key={`living-panel-${index}`}
+              className="absolute bottom-0 top-0 rounded-t-[999px] rounded-b-[28px] border border-white/10"
+              style={{
+                left: panel.left,
+                width: panel.width,
+                opacity: panel.opacity,
+                background:
+                  'linear-gradient(180deg, rgba(255,255,255,0.18) 0%, rgba(255,239,213,0.05) 42%, rgba(131,96,58,0.08) 100%)',
+                boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.18), inset 0 -10px 24px rgba(94,59,28,0.05)',
+              }}
+            >
+              <div className="absolute inset-[12px] rounded-t-[999px] rounded-b-[20px] border border-white/8" />
+            </div>
+          ))}
+        </div>
+
         {/* 2. 木纹地板 (30% 高度) */}
         <div className={`absolute bottom-0 left-0 right-0 h-[30%] bg-gradient-to-b ${sceneConfig.living.floorColor[timeOfDay]} transition-colors duration-[2000ms]`}>
           {/* 木地板纹理 - 更逼真 */}
@@ -216,32 +262,69 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
           }`} style={{ background: 'radial-gradient(circle, rgba(255,245,190,0.4) 0%, transparent 60%)' }} />
         </div>
 
-        {/* D. 装饰画（右墙高处） */}
-        <div className="absolute top-[22%] right-[20%] pointer-events-none z-[2]">
-          <div className="w-20 h-16 rounded-sm border-2 border-amber-800/20 overflow-hidden" style={{
-            background: 'linear-gradient(135deg, #dce8d0 0%, #a8c896 40%, #7ba668 70%, #8bc078 100%)',
-            boxShadow: '2px 3px 8px rgba(0,0,0,0.15)'
-          }}>
-            {/* 小山 */}
-            <div className="absolute bottom-0 left-0 right-0 h-[60%]" style={{
-              background: 'linear-gradient(to bottom, transparent, rgba(100,160,80,0.5))'
-            }} />
-            {/* 小太阳 */}
-            <div className="absolute top-2 right-3 w-3 h-3 rounded-full bg-yellow-200/60" />
+        {/* D. Layered mood board, replacing the flat wall tile */}
+        <motion.div
+          className="absolute top-[20%] right-[18%] pointer-events-none z-[2]"
+          animate={{ y: [0, -2.5, 0], rotate: [-0.8, 0.6, -0.8] }}
+          transition={{ duration: 6.2, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          <div
+            className="relative h-[118px] w-[128px] rounded-[28px] border border-amber-100/20"
+            style={{
+              background:
+                'linear-gradient(180deg, rgba(255,253,245,0.2) 0%, rgba(255,240,214,0.08) 28%, rgba(116,81,50,0.1) 100%)',
+              boxShadow: '0 16px 30px rgba(15,23,42,0.14), inset 0 1px 0 rgba(255,255,255,0.18)',
+            }}
+          >
+            <div className="absolute left-1/2 top-[10px] h-[14px] w-[78px] -translate-x-1/2 rounded-full bg-amber-950/10 blur-sm" />
+            <div className="absolute left-1/2 top-[6px] h-[10px] w-[72px] -translate-x-1/2 rounded-full bg-amber-100/28" />
+            <div className="absolute left-[14px] top-[18px] h-[62px] w-[82px] rounded-[20px] border border-white/55 bg-[linear-gradient(160deg,rgba(232,250,236,0.95),rgba(159,213,185,0.88)_56%,rgba(104,164,123,0.92))] shadow-[0_12px_22px_rgba(15,23,42,0.12)]">
+              <div className="absolute inset-x-[10px] top-[9px] h-[16px] rounded-full bg-white/24 blur-sm" />
+              <div className="absolute bottom-[16px] left-[10px] right-[12px] h-[22px] rounded-[16px] bg-emerald-900/18" />
+              <div className="absolute bottom-[17px] left-[12px] h-[28px] w-[48px] rounded-[20px] bg-emerald-300/24" />
+              <div className="absolute bottom-[18px] right-[14px] h-[24px] w-[32px] rounded-[20px] bg-sky-200/24" />
+              <div className="absolute left-[16px] top-[26px] h-[16px] w-[16px] rounded-full bg-white/76 shadow-[0_6px_12px_rgba(255,255,255,0.2)]" />
+              <div className="absolute right-[12px] top-[18px] h-[8px] w-[8px] rounded-full bg-amber-100/85" />
+            </div>
+            <div className="absolute right-[14px] top-[32px] h-[34px] w-[26px] rounded-[16px] border border-amber-100/55 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,246,230,0.88))] shadow-[0_10px_16px_rgba(15,23,42,0.1)]">
+              <div className="absolute left-[6px] top-[8px] h-[3px] w-[12px] rounded-full bg-rose-300/90" />
+              <div className="absolute left-[6px] top-[14px] h-[3px] w-[10px] rounded-full bg-sky-300/85" />
+              <div className="absolute left-[8px] top-[20px] h-[8px] w-[8px] rounded-full bg-amber-300/85" />
+            </div>
+            <div className="absolute left-[94px] top-[18px] h-[8px] w-[8px] rounded-full bg-amber-200/90 shadow-[0_0_12px_rgba(253,224,71,0.35)]" />
+            <div className="absolute left-[102px] top-[28px] h-[5px] w-[5px] rounded-full bg-rose-200/85" />
+            <div className="absolute left-[100px] top-[38px] h-[12px] w-[2px] rounded-full bg-amber-100/40" />
           </div>
-          {/* 挂钩 */}
-          <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-amber-700/30" />
-        </div>
+        </motion.div>
 
-        {/* E. 小装饰画2（左窗下方） */}
-        <div className="absolute top-[45%] left-[6%] pointer-events-none z-[2]">
-          <div className="w-14 h-14 rounded-sm border-2 border-amber-700/15 overflow-hidden" style={{
-            background: 'linear-gradient(to bottom, #fceabb 0%, #f8b500 100%)',
-            boxShadow: '1px 2px 6px rgba(0,0,0,0.12)'
-          }}>
-            <div className="absolute bottom-1 left-1 right-1 h-[40%] bg-amber-600/20 rounded-t" />
+        {/* E. Window-side keepsake badge, replacing the flat orange square */}
+        <motion.div
+          className="absolute top-[43%] left-[5.2%] pointer-events-none z-[2]"
+          animate={{ y: [0, -1.5, 0], rotate: [-1.4, 0.5, -1.4] }}
+          transition={{ duration: 5.4, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          <div className="relative h-[78px] w-[88px]">
+            <div
+              className="absolute left-[6px] top-[8px] h-[56px] w-[66px] rounded-[22px] border border-amber-100/35"
+              style={{
+                background:
+                  'linear-gradient(180deg, rgba(255,244,216,0.96) 0%, rgba(255,208,112,0.92) 56%, rgba(226,146,44,0.96) 100%)',
+                boxShadow: '0 12px 22px rgba(15,23,42,0.14), inset 0 1px 0 rgba(255,255,255,0.4)',
+              }}
+            >
+              <div className="absolute inset-x-[10px] top-[10px] h-[14px] rounded-full bg-white/34 blur-sm" />
+              <div className="absolute left-[16px] top-[14px] h-[18px] w-[18px] rounded-full bg-white/72" />
+              <div className="absolute left-[22px] top-[20px] h-[6px] w-[6px] rounded-full bg-amber-300/90" />
+              <div className="absolute right-[14px] top-[18px] h-[10px] w-[10px] rounded-full bg-rose-200/82" />
+              <div className="absolute bottom-[13px] left-[12px] h-[16px] w-[42px] rounded-[12px] bg-amber-900/14" />
+              <div className="absolute bottom-[16px] left-[18px] h-[10px] w-[28px] rounded-full bg-white/26" />
+            </div>
+            <div className="absolute left-[24px] top-0 h-[10px] w-[22px] rounded-full bg-amber-900/16" />
+            <div className="absolute left-[12px] bottom-[6px] h-[14px] w-[16px] rounded-[4px_4px_12px_12px] bg-fuchsia-300/72" />
+            <div className="absolute left-[28px] bottom-[4px] h-[18px] w-[18px] rounded-[4px_4px_14px_14px] bg-sky-300/72" />
+            <div className="absolute left-[46px] bottom-[7px] h-[13px] w-[16px] rounded-[4px_4px_12px_12px] bg-amber-200/88" />
           </div>
-        </div>
+        </motion.div>
 
         {/* F. 窗台小盆栽 */}
         <div className="absolute pointer-events-none z-[3]" style={{ top: 'calc(15% + 210px)', left: 'calc(10% + 30px)' }}>
@@ -369,6 +452,61 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
               background: 'radial-gradient(circle at 50% 70%, rgba(251,146,60,0.42) 0%, rgba(245,158,11,0.22) 38%, transparent 78%)',
             }} />
           </div>
+        </div>
+
+        {/* L. 星星挂饰，增强可爱感和空间纵深 */}
+        <div className="absolute left-[52%] top-[11%] z-[3] pointer-events-none">
+          <div className="absolute left-[6px] top-0 h-10 w-px bg-white/18" />
+          {LIVING_MOBILE_STARS.map((star, index) => (
+            <motion.div
+              key={`mobile-star-${index}`}
+              className="absolute"
+              style={{ left: star.left, top: star.top }}
+              animate={{ y: [0, 6, 0], rotate: [-6, 4, -6] }}
+              transition={{ duration: 4 + index * 0.5, repeat: Infinity, ease: 'easeInOut', delay: star.delay }}
+            >
+              <div className="mx-auto h-5 w-px bg-white/22" />
+              <div
+                className="rounded-full border border-white/22 bg-white/10 shadow-[0_0_18px_rgba(255,244,194,0.18)]"
+                style={{ width: `${star.size}px`, height: `${star.size}px` }}
+              />
+            </motion.div>
+          ))}
+        </div>
+
+        {/* M. 宠物互动舞台，强化中心焦点和立体落脚点 */}
+        <div className="absolute bottom-[8%] left-1/2 z-[2] h-[20%] w-[42%] -translate-x-1/2 pointer-events-none">
+          <div className="absolute inset-x-[3%] bottom-[8%] h-[54%] rounded-[50%]" style={{
+            background: 'radial-gradient(ellipse, rgba(255,214,153,0.2) 0%, rgba(210,141,78,0.1) 32%, rgba(15,23,42,0.04) 72%, transparent 100%)',
+            boxShadow: '0 18px 34px rgba(15,23,42,0.12)',
+          }} />
+          <div className="absolute inset-x-[10%] bottom-[18%] h-[32%] rounded-[50%] border border-white/10" style={{
+            background: 'radial-gradient(ellipse, rgba(255,248,220,0.12) 0%, rgba(255,232,198,0.05) 55%, transparent 100%)'
+          }} />
+          <div className="absolute left-1/2 top-[28%] h-[42%] w-[32%] -translate-x-1/2 rounded-[50%] border border-amber-100/10" />
+          <div className="absolute left-1/2 top-[40%] h-[16%] w-[12%] -translate-x-1/2 rounded-[50%] bg-amber-100/10" />
+        </div>
+
+        {/* N. 靠窗抱枕角，让左侧不再空，增加宠物小窝的陪伴感 */}
+        <div className="absolute bottom-[12%] left-[7%] z-[2] h-[20%] w-[22%] pointer-events-none">
+          <div className="absolute bottom-[10%] left-[6%] h-[34%] w-[62%] rounded-[40px] bg-rose-200/16 shadow-[0_18px_28px_rgba(15,23,42,0.12)]" />
+          <div className="absolute bottom-[16%] left-[28%] h-[28%] w-[34%] rounded-[26px] bg-sky-200/16" />
+          <div className="absolute bottom-[24%] left-[48%] h-[22%] w-[22%] rounded-[999px] bg-amber-100/20" />
+          <div className="absolute bottom-[20%] left-[12%] h-[16%] w-[18%] rounded-[999px] bg-white/12" />
+          <div className="absolute bottom-[26%] left-[50%] h-[22%] w-[14%] rounded-[18px_18px_14px_14px] bg-amber-950/18" />
+        </div>
+
+        {/* O. 右侧拱形陈列架，用来承托装饰和灯光，减少空洞感 */}
+        <div className="absolute bottom-[31%] right-[6%] z-[2] h-[34%] w-[18%] pointer-events-none">
+          <div className="absolute inset-x-[16%] top-0 bottom-[10%] rounded-t-[999px] rounded-b-[30px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(111,78,47,0.08))] shadow-[0_14px_28px_rgba(15,23,42,0.12)]" />
+          <div className="absolute inset-x-[24%] top-[10%] h-[4px] rounded-full bg-amber-50/28" />
+          <div className="absolute inset-x-[22%] top-[24%] h-[7px] rounded-full bg-amber-900/30" />
+          <div className="absolute inset-x-[22%] top-[46%] h-[7px] rounded-full bg-amber-900/30" />
+          <div className="absolute left-[28%] top-[16%] h-[18px] w-[18px] rounded-full bg-emerald-200/20 shadow-[0_0_18px_rgba(74,222,128,0.16)]" />
+          <div className="absolute left-[48%] top-[13%] h-[34px] w-[10px] rounded-full bg-emerald-500/28" />
+          <div className="absolute left-[44%] top-[28%] h-[22px] w-[26px] rounded-[14px] bg-sky-200/14" />
+          <div className="absolute left-[31%] top-[43%] h-[24px] w-[32px] rounded-[16px] bg-rose-200/16" />
+          <div className="absolute left-[55%] top-[42%] h-[18px] w-[18px] rounded-full bg-amber-100/20" />
         </div>
 
         {/* 7. 内容层 (家具、宠物等) */}
@@ -607,6 +745,25 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
         </div>
       </div>
 
+      <div className="absolute bottom-[20.6%] left-[20%] right-[12%] z-[2] h-[6.6%] pointer-events-none">
+        {GARDEN_STEPPING_STONES.map((stone, index) => (
+          <div
+            key={`stone-${index}`}
+            className="absolute rounded-[999px] border border-white/8"
+            style={{
+              left: stone.left,
+              width: `${stone.width}px`,
+              height: `${stone.height}px`,
+              transform: `rotate(${stone.rotate}deg)`,
+              background: timeOfDay === 'night'
+                ? 'linear-gradient(180deg, rgba(71,85,105,0.52), rgba(30,41,59,0.8))'
+                : 'linear-gradient(180deg, rgba(226,232,240,0.72), rgba(148,163,184,0.52))',
+              boxShadow: '0 10px 18px rgba(15,23,42,0.1)',
+            }}
+          />
+        ))}
+      </div>
+
       <div className="absolute bottom-[27%] right-[8%] pointer-events-none z-[2]">
         <div className="relative h-14 w-24">
           <div className="absolute bottom-0 left-2 h-7 w-20 rounded-[50%]" style={{
@@ -621,6 +778,24 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
             }} />
           ))}
         </div>
+      </div>
+
+      <div className="absolute right-[3%] top-[16%] z-[3] pointer-events-none">
+        <div className="absolute right-[22px] top-0 h-[96px] w-px bg-white/12" />
+        {GARDEN_LANTERNS.map((lantern, index) => (
+          <motion.div
+            key={`garden-lantern-${index}`}
+            className="absolute"
+            style={{ right: lantern.right, top: lantern.top }}
+            animate={{ y: [0, 5, 0], rotate: [-4, 4, -4] }}
+            transition={{ duration: 4.4 + index * 0.6, repeat: Infinity, ease: 'easeInOut', delay: lantern.delay }}
+          >
+            <div className="mx-auto h-6 w-px bg-white/16" />
+            <div className="relative h-7 w-6 rounded-[10px] border border-white/12 bg-slate-950/22">
+              <div className="absolute inset-[3px] rounded-[8px]" style={{ background: lantern.glow }} />
+            </div>
+          </motion.div>
+        ))}
       </div>
 
       <div className="absolute bottom-[28%] left-0 right-0 z-[3] flex h-10 items-end pointer-events-none">
@@ -774,6 +949,28 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
         </div>
       </div>
 
+      <div className="absolute left-[11%] bottom-[24%] z-[2] pointer-events-none">
+        <div className="relative h-[122px] w-[144px]">
+          <div className="absolute left-[14px] right-[14px] bottom-[18px] h-[58px] rounded-[24px] border border-amber-100/18 bg-[linear-gradient(180deg,rgba(255,250,234,0.2),rgba(118,84,46,0.18))] shadow-[0_18px_30px_rgba(15,23,42,0.14)]" />
+          <div className="absolute left-[26px] right-[26px] bottom-[60px] h-[32px] rounded-t-[999px] rounded-b-[10px] bg-[linear-gradient(180deg,rgba(164,110,62,0.94),rgba(112,70,36,0.96))]" />
+          <div className="absolute left-[34px] right-[34px] bottom-[78px] h-[12px] rounded-full bg-amber-200/24" />
+          <div className="absolute left-[48px] bottom-[30px] h-[28px] w-[44px] rounded-[18px_18px_16px_16px] bg-amber-950/18" />
+          <div className="absolute left-[62px] bottom-[44px] h-[12px] w-[16px] rounded-full bg-amber-100/16" />
+          <div className="absolute left-[98px] bottom-[68px] h-[20px] w-[8px] rounded-full bg-amber-900/36" />
+          <motion.div
+            className="absolute left-[88px] bottom-[80px] flex gap-1"
+            animate={{ y: [0, -2, 0], rotate: [-4, 3, -4] }}
+            transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <span className="h-[12px] w-[10px] rounded-[6px_6px_10px_10px] bg-rose-300/80" />
+            <span className="h-[11px] w-[10px] rounded-[6px_6px_10px_10px] bg-amber-200/88" />
+            <span className="h-[12px] w-[10px] rounded-[6px_6px_10px_10px] bg-sky-300/76" />
+          </motion.div>
+          <div className="absolute left-[16px] bottom-[10px] h-[10px] w-[112px] rounded-full bg-slate-950/16 blur-[5px]" />
+          <div className="absolute left-[20px] bottom-[82px] h-[12px] w-[12px] rounded-full bg-lime-100/18" />
+        </div>
+      </div>
+
       <div className="absolute left-[38%] bottom-[26%] z-[3] pointer-events-none">
         <div className="relative h-[70px] w-[70px]">
           <div className="absolute bottom-[12px] left-[8px] h-[22px] w-[44px] rounded-[10px] bg-amber-900/28" />
@@ -865,6 +1062,28 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
         </div>
       )}
       
+      <div className="absolute right-[11%] bottom-[22%] z-[2] h-[110px] w-[168px] pointer-events-none">
+        <motion.div
+          className="absolute inset-0 rounded-[42%_58%_48%_52%/48%_44%_56%_52%] border border-rose-100/18"
+          style={{
+            background:
+              timeOfDay === 'night'
+                ? 'linear-gradient(180deg, rgba(93,48,67,0.16), rgba(41,22,35,0.24))'
+                : 'linear-gradient(180deg, rgba(255,233,241,0.28), rgba(255,203,223,0.14))',
+            boxShadow: '0 16px 28px rgba(15,23,42,0.12), inset 0 1px 0 rgba(255,255,255,0.15)',
+          }}
+          animate={{ y: [0, -2, 0] }}
+          transition={{ duration: 4.6, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          <div className="absolute left-[18px] top-[24px] h-[24px] w-[46px] rounded-[18px] bg-rose-100/30" />
+          <div className="absolute left-[54px] top-[18px] h-[18px] w-[18px] rounded-full bg-amber-100/34" />
+          <div className="absolute right-[18px] top-[28px] h-[18px] w-[54px] rounded-[18px] bg-emerald-100/20" />
+          <div className="absolute left-[22px] bottom-[24px] h-[20px] w-[24px] rounded-full bg-fuchsia-200/32" />
+          <div className="absolute left-[46px] bottom-[20px] h-[26px] w-[70px] rounded-[20px] bg-white/12" />
+          <div className="absolute right-[24px] bottom-[22px] h-[18px] w-[18px] rounded-full bg-amber-200/34" />
+        </motion.div>
+      </div>
+
       <div className="relative z-10 w-full h-full">
         {children}
       </div>

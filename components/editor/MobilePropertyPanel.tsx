@@ -426,7 +426,7 @@ function getElementIcon(type: string): string {
     enemy_bat: "🦇",
     enemy_robot: "🤖",
     enemy_slime: "🟢",
-    enemy_boss: "👹",
+    enemy_boss: "B",
     coin: "🪙",
     gem: "💎",
     key: "🔑",

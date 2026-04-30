@@ -850,6 +850,72 @@ export default class PlatformGameScene extends Phaser.Scene {
         }
     }
 
+    private isDoorCampaign(campaignId = this.getCampaignId()) {
+        return /^campaign_1[1-6]$/.test(campaignId);
+    }
+
+    private getDoorCampaignEnemyPalette(campaignId = this.getCampaignId()) {
+        const palettes: Record<string, {
+            body: number;
+            bodyDark: number;
+            accent: number;
+            accentSoft: number;
+            glow: number;
+            eye: number;
+        }> = {
+            campaign_11: {
+                body: 0x516174,
+                bodyDark: 0x1f2937,
+                accent: 0x7dd3fc,
+                accentSoft: 0x334155,
+                glow: 0xa78bfa,
+                eye: 0xe0f2fe,
+            },
+            campaign_12: {
+                body: 0x1d4ed8,
+                bodyDark: 0x0f172a,
+                accent: 0x22d3ee,
+                accentSoft: 0x164e63,
+                glow: 0x93c5fd,
+                eye: 0xecfeff,
+            },
+            campaign_13: {
+                body: 0x5b5fc7,
+                bodyDark: 0x312e81,
+                accent: 0xc4b5fd,
+                accentSoft: 0x4338ca,
+                glow: 0xf0abfc,
+                eye: 0xf8fafc,
+            },
+            campaign_14: {
+                body: 0x7c5f2f,
+                bodyDark: 0x292524,
+                accent: 0xfbbf24,
+                accentSoft: 0x3f6212,
+                glow: 0x67e8f9,
+                eye: 0xfffbeb,
+            },
+            campaign_15: {
+                body: 0x7c2d12,
+                bodyDark: 0x1c1917,
+                accent: 0xf97316,
+                accentSoft: 0x78350f,
+                glow: 0xfacc15,
+                eye: 0xfff7ed,
+            },
+            campaign_16: {
+                body: 0x475569,
+                bodyDark: 0x0f172a,
+                accent: 0xe2e8f0,
+                accentSoft: 0x334155,
+                glow: 0xf59e0b,
+                eye: 0xf8fafc,
+            },
+        };
+
+        return palettes[campaignId] || palettes.campaign_11;
+    }
+
     private drawCampaignBackdrop(theme: ReturnType<PlatformGameScene['getCampaignVisualTheme']>, worldWidth: number, worldHeight: number) {
         if (theme.backdrop === 'default') {
             return;
@@ -1752,11 +1818,12 @@ export default class PlatformGameScene extends Phaser.Scene {
             };
             const color = colors[portal.color] || 0x44AA66;
 
-            const portalSprite = this.add.circle(portal.x, portal.y, 35, color, 0.6);
-            portalSprite.setStrokeStyle(4, 0x88CCAA, 0.9);
+            const isPremiumDoor = this.isDoorCampaign();
+            const portalSprite = this.add.circle(portal.x, portal.y, isPremiumDoor ? 38 : 35, color, isPremiumDoor ? 0.5 : 0.6);
+            portalSprite.setStrokeStyle(isPremiumDoor ? 5 : 4, isPremiumDoor ? 0xE0F2FE : 0x88CCAA, isPremiumDoor ? 0.78 : 0.9);
             portalSprite.setDepth(5);
 
-            const innerCircle = this.add.circle(portal.x, portal.y, 20, 0xAAFFCC, 0.6);
+            const innerCircle = this.add.circle(portal.x, portal.y, isPremiumDoor ? 18 : 20, isPremiumDoor ? 0xE0F2FE : 0xAAFFCC, isPremiumDoor ? 0.42 : 0.6);
             innerCircle.setDepth(6);
 
             this.tweens.add({
@@ -1776,8 +1843,10 @@ export default class PlatformGameScene extends Phaser.Scene {
                 repeat: -1
             });
 
-            const label = this.add.text(portal.x, portal.y - 50, '🌸', {
-                fontSize: '24px'
+            const label = this.add.text(portal.x, portal.y - 50, isPremiumDoor ? 'GATE' : '🌸', {
+                fontSize: isPremiumDoor ? '12px' : '24px',
+                color: isPremiumDoor ? '#E0F2FE' : '#FFFFFF',
+                fontStyle: isPremiumDoor ? 'bold' : 'normal',
             }).setOrigin(0.5).setDepth(7);
 
             this.portals.set(portal.id, {
@@ -1799,6 +1868,7 @@ export default class PlatformGameScene extends Phaser.Scene {
         debugLog('[PlatformGameScene] 🌿 创建自然区域:', zonesData.length, '个');
 
         zonesData.forEach((zone: any) => {
+            const isPremiumDoor = this.isDoorCampaign();
             let themeColor = zone.color;
             if (zone.type === 'acid') themeColor = 0x44AA00;        // 毒液绿
             else if (zone.type === 'poison') themeColor = 0x6B3FA0;  // 毒紫
@@ -1811,26 +1881,51 @@ export default class PlatformGameScene extends Phaser.Scene {
                 zone.width,
                 zone.height,
                 themeColor,
-                0.3
+                isPremiumDoor ? 0.22 : 0.3
             );
-            rect.setStrokeStyle(2, themeColor, 0.6);
+            rect.setStrokeStyle(isPremiumDoor ? 3 : 2, themeColor, isPremiumDoor ? 0.78 : 0.6);
             rect.setDepth(1);
 
-            let emoji = '🌿';
+            let zoneLabel = isPremiumDoor ? 'FIELD' : '🌿';
             switch (zone.type) {
-                case 'acid': emoji = '☢️ 酸'; break;
-                case 'poison': emoji = '💀 毒'; break;
-                case 'heal': emoji = '💚 治愈'; break;
-                case 'speed': emoji = '⚡ 加速'; break;
-                case 'synthesis': emoji = '🧪 合成'; break;
+                case 'acid': zoneLabel = isPremiumDoor ? 'ACID FIELD' : '☢️ 酸'; break;
+                case 'poison': zoneLabel = isPremiumDoor ? 'POISON FIELD' : '💀 毒'; break;
+                case 'heal': zoneLabel = isPremiumDoor ? 'RECOVERY' : '💚 治愈'; break;
+                case 'speed': zoneLabel = isPremiumDoor ? 'BOOST FLOW' : '⚡ 加速'; break;
+                case 'synthesis': zoneLabel = isPremiumDoor ? 'SYNTHESIS' : '🧪 合成'; break;
             }
 
             const text = this.add.text(
                 zone.x + zone.width / 2,
                 zone.y + 20,
-                emoji,
-                { fontSize: '16px', color: '#B0E0FF' }
+                zoneLabel,
+                {
+                    fontSize: isPremiumDoor ? '11px' : '16px',
+                    color: isPremiumDoor ? '#E0F2FE' : '#B0E0FF',
+                    fontStyle: isPremiumDoor ? 'bold' : 'normal',
+                }
             ).setOrigin(0.5).setDepth(2);
+
+            if (isPremiumDoor) {
+                const guideLine = this.add.rectangle(
+                    zone.x + zone.width / 2,
+                    zone.y + zone.height - 8,
+                    zone.width * 0.72,
+                    2,
+                    themeColor,
+                    0.75
+                ).setDepth(2);
+
+                this.tweens.add({
+                    targets: guideLine,
+                    scaleX: 0.55,
+                    alpha: 0.35,
+                    duration: 900,
+                    yoyo: true,
+                    repeat: -1,
+                    ease: 'Sine.easeInOut'
+                });
+            }
 
             this.tweens.add({
                 targets: rect,
@@ -1901,6 +1996,7 @@ export default class PlatformGameScene extends Phaser.Scene {
         debugLog('[PlatformGameScene] 🍃 创建风力区域:', zonesData.length, '个');
 
         zonesData.forEach((zone: any) => {
+            const isPremiumDoor = this.isDoorCampaign();
             let color = 0x66CCAA;  // 默认薄荷绿
             if (zone.direction === 'up') color = 0x88DDCC;      // 淡青（向上）
             else if (zone.direction === 'down') color = 0x5599AA;  // 深青（向下）
@@ -1911,9 +2007,9 @@ export default class PlatformGameScene extends Phaser.Scene {
                 zone.width,
                 zone.height,
                 color,
-                0.25
+                isPremiumDoor ? 0.18 : 0.25
             );
-            rect.setStrokeStyle(2, color, 0.5);
+            rect.setStrokeStyle(isPremiumDoor ? 3 : 2, color, isPremiumDoor ? 0.68 : 0.5);
             rect.setDepth(1);
 
             let emoji = '🍃';
@@ -1921,12 +2017,23 @@ export default class PlatformGameScene extends Phaser.Scene {
             else if (zone.direction === 'down') emoji = '🍃⬇️';
             else if (zone.direction === 'left') emoji = '🍃⬅️';
             else emoji = '🍃➡️';
+            const directionLabel = zone.direction === 'up'
+                ? 'UP'
+                : zone.direction === 'down'
+                    ? 'DOWN'
+                    : zone.direction === 'left'
+                        ? 'LEFT'
+                        : 'RIGHT';
 
             const text = this.add.text(
                 zone.x + zone.width / 2,
                 zone.y + zone.height / 2,
-                emoji + ' ' + zone.windForce,
-                { fontSize: '14px', color: '#B0E0FF' }
+                isPremiumDoor ? `WIND ${directionLabel} ${zone.windForce}` : emoji + ' ' + zone.windForce,
+                {
+                    fontSize: isPremiumDoor ? '11px' : '14px',
+                    color: isPremiumDoor ? '#E0F2FE' : '#B0E0FF',
+                    fontStyle: isPremiumDoor ? 'bold' : 'normal',
+                }
             ).setOrigin(0.5).setDepth(2);
 
             const moveAmount = 15;
@@ -1962,14 +2069,31 @@ export default class PlatformGameScene extends Phaser.Scene {
         debugLog('[PlatformGameScene] 💥 创建爆炸陷阱:', trapsData.length, '个');
 
         trapsData.forEach((trap: any) => {
-            const sprite = this.add.circle(trap.x, trap.y, 20, 0xff6600, 0.6);
-            sprite.setStrokeStyle(3, 0xff0000, 0.8);
+            const isPremiumDoor = this.isDoorCampaign();
+            const sprite = this.add.circle(trap.x, trap.y, isPremiumDoor ? 22 : 20, isPremiumDoor ? 0xf97316 : 0xff6600, isPremiumDoor ? 0.42 : 0.6);
+            sprite.setStrokeStyle(isPremiumDoor ? 4 : 3, isPremiumDoor ? 0xfacc15 : 0xff0000, isPremiumDoor ? 0.78 : 0.8);
             sprite.setDepth(5);
 
             // 添加警告图标
-            const icon = this.add.text(trap.x, trap.y, '💥', {
-                fontSize: '20px'
+            const icon = this.add.text(trap.x, trap.y, isPremiumDoor ? '!' : '💥', {
+                fontSize: isPremiumDoor ? '18px' : '20px',
+                color: isPremiumDoor ? '#FFF7ED' : '#FFFFFF',
+                fontStyle: 'bold',
             }).setOrigin(0.5).setDepth(6);
+
+            if (isPremiumDoor) {
+                const outerRing = this.add.circle(trap.x, trap.y, 32, 0xf97316, 0);
+                outerRing.setStrokeStyle(2, 0xfacc15, 0.36);
+                outerRing.setDepth(4);
+                this.tweens.add({
+                    targets: outerRing,
+                    scale: 1.35,
+                    alpha: 0.2,
+                    duration: Math.max(760, trap.warningTime || 1000),
+                    yoyo: true,
+                    repeat: -1
+                });
+            }
 
             // 脉冲动画
             this.tweens.add({
@@ -2022,28 +2146,28 @@ export default class PlatformGameScene extends Phaser.Scene {
             switch (enemyData.type) {
                 case 'slime':
                 case 'basic':
-                    textureName = this.createSlimeTexture();
+                    textureName = this.createSlimeTexture(campaignId);
                     size = 32;
                     damage = 1;
                     break;
                 case 'bat':
-                    textureName = this.createBatTexture();
+                    textureName = this.createBatTexture(campaignId);
                     size = 28;
                     damage = 1;
                     break;
                 case 'robot':
-                    textureName = this.createRobotTexture();
+                    textureName = this.createRobotTexture(campaignId);
                     size = 36;
                     damage = 2;
                     break;
                 case 'turret':
-                    textureName = this.createTurretTexture();
+                    textureName = this.createTurretTexture(campaignId);
                     size = 40;
                     damage = 2;
                     break;
                 case 'acid_turret':
                     // 🔥 战役9：酸液喷射怪
-                    textureName = this.createAcidTurretTexture();
+                    textureName = this.createAcidTurretTexture(campaignId);
                     size = 45;
                     damage = 2;
                     break;
@@ -2054,7 +2178,7 @@ export default class PlatformGameScene extends Phaser.Scene {
                     damage = 3;
                     break;
                 default:
-                    textureName = this.createSlimeTexture();
+                    textureName = this.createSlimeTexture(campaignId);
                     size = 32;
                     damage = 1;
                     break;
@@ -2118,9 +2242,10 @@ export default class PlatformGameScene extends Phaser.Scene {
                         (enemy as any).keepDistance = thisBossConfig.keepDistance || 0;
                         (enemy as any).canTeleport = thisBossConfig.canTeleport || false;
                         (enemy as any).defeated = false;
+                        this.applyBossVisual(enemy, campaignId, thisBossConfig, bossIndex);
 
                         // 设置Boss颜色
-                        if (thisBossConfig.color) {
+                        if (thisBossConfig.color && !thisBossConfig.visualTheme && !thisBossConfig.id) {
                             enemy.setTint(thisBossConfig.color);
                         }
 
@@ -4173,7 +4298,8 @@ export default class PlatformGameScene extends Phaser.Scene {
         const spawnPos = this.secondBossConfig.spawnPosition || { x: 1400, y: 500 };
         const campaignId = this.getCampaignId();
         const visualTheme = this.secondBossConfig.visualTheme || 'default';
-        const textureName = visualTheme === 'laser_guard_default'
+        const isLaserGuardStyle = visualTheme === 'laser_guard_default' || secondBossName.includes('激光守卫');
+        const textureName = isLaserGuardStyle
             ? this.createLaserGuardTexture()
             : this.createBossTexture(campaignId, visualTheme);
 
@@ -4251,36 +4377,76 @@ export default class PlatformGameScene extends Phaser.Scene {
 
     // 🔥 创建激光守卫纹理
     private createLaserGuardTexture(): string {
-        const textureName = 'laserGuardBoss';
+        const textureName = 'laserGuardBoss_v2';
         if (this.textures.exists(textureName)) {
             return textureName;
         }
 
         const graphics = this.add.graphics();
 
-        // 主体 - 红橙色机械风格
-        graphics.fillGradientStyle(0xff4500, 0xff4500, 0xff0000, 0xff0000, 1);
-        graphics.fillCircle(24, 24, 22);
+        graphics.fillStyle(0x050816, 0.2);
+        graphics.fillEllipse(32, 58, 36, 7);
 
-        // 激光眼睛
-        graphics.fillStyle(0xff0000, 1);
-        graphics.fillCircle(16, 18, 6);
-        graphics.fillCircle(32, 18, 6);
+        graphics.fillGradientStyle(0x4d5a69, 0x4d5a69, 0x1c2632, 0x1c2632, 1);
+        graphics.beginPath();
+        graphics.moveTo(18, 18);
+        graphics.lineTo(28, 9);
+        graphics.lineTo(36, 9);
+        graphics.lineTo(46, 18);
+        graphics.lineTo(50, 32);
+        graphics.lineTo(43, 47);
+        graphics.lineTo(21, 47);
+        graphics.lineTo(14, 32);
+        graphics.closePath();
+        graphics.fillPath();
 
-        // 眼睛发光效果
-        graphics.fillStyle(0xffff00, 1);
-        graphics.fillCircle(16, 18, 3);
-        graphics.fillCircle(32, 18, 3);
+        graphics.fillStyle(0xa3afbf, 0.92);
+        graphics.fillRoundedRect(22, 14, 20, 8, 4);
+        graphics.fillRect(29, 6, 6, 8);
+        graphics.fillStyle(0xf97316, 1);
+        graphics.fillCircle(32, 6, 4);
+        graphics.fillStyle(0xffb86b, 0.95);
+        graphics.fillCircle(32, 6, 1.8);
 
-        // 激光发射器（嘴巴位置）
-        graphics.fillStyle(0xff0000, 1);
-        graphics.fillRect(18, 30, 12, 6);
+        graphics.fillStyle(0x0d1620, 1);
+        graphics.fillRoundedRect(18, 22, 28, 11, 5);
+        graphics.fillGradientStyle(0xfff1a6, 0xfff1a6, 0xff5a36, 0xff5a36, 1);
+        graphics.fillRoundedRect(20, 24, 10, 7, 3);
+        graphics.fillRoundedRect(34, 24, 10, 7, 3);
+        graphics.fillStyle(0xfffbcc, 0.9);
+        graphics.fillRect(22, 26, 5, 2);
+        graphics.fillRect(36, 26, 5, 2);
 
-        // 机械边框
-        graphics.lineStyle(3, 0xffff00, 1);
-        graphics.strokeCircle(24, 24, 22);
+        graphics.fillStyle(0xf97316, 0.95);
+        graphics.fillTriangle(28, 36, 36, 36, 32, 41);
+        graphics.fillStyle(0x1b232f, 1);
+        graphics.fillRoundedRect(25, 40, 14, 5, 2);
+        graphics.fillStyle(0xffd166, 0.92);
+        graphics.fillRect(27, 41, 10, 2);
 
-        graphics.generateTexture(textureName, 48, 48);
+        graphics.fillStyle(0xfacc15, 0.92);
+        graphics.fillTriangle(16, 18, 10, 15, 14, 24);
+        graphics.fillTriangle(48, 18, 54, 15, 50, 24);
+
+        graphics.lineStyle(3, 0x0f172a, 0.95);
+        graphics.beginPath();
+        graphics.moveTo(18, 18);
+        graphics.lineTo(28, 9);
+        graphics.lineTo(36, 9);
+        graphics.lineTo(46, 18);
+        graphics.lineTo(50, 32);
+        graphics.lineTo(43, 47);
+        graphics.lineTo(21, 47);
+        graphics.lineTo(14, 32);
+        graphics.closePath();
+        graphics.strokePath();
+        graphics.strokeRoundedRect(18, 22, 28, 11, 5);
+        graphics.strokeRoundedRect(25, 40, 14, 5, 2);
+        graphics.lineStyle(2, 0xfacc15, 0.85);
+        graphics.lineBetween(21, 20, 26, 16);
+        graphics.lineBetween(43, 16, 47, 20);
+
+        graphics.generateTexture(textureName, 64, 64);
         graphics.destroy();
         return textureName;
     }
@@ -9621,8 +9787,114 @@ export default class PlatformGameScene extends Phaser.Scene {
         this.hasDoubleJumped = false; // 墙跳后重置二段跳
     }
 
+    private createDoorSlimeTexture(campaignId: string): string {
+        const textureName = `doorSlimeEnemy_${campaignId}`;
+        if (this.textures.exists(textureName)) return textureName;
+
+        const palette = this.getDoorCampaignEnemyPalette(campaignId);
+        const graphics = this.add.graphics();
+        graphics.fillGradientStyle(palette.body, palette.body, palette.bodyDark, palette.bodyDark, 1);
+        graphics.fillEllipse(16, 18, 26, 18);
+        graphics.fillStyle(palette.accentSoft, 0.95);
+        graphics.fillRect(5, 16, 22, 4);
+        graphics.lineStyle(1, palette.accent, 0.95);
+        graphics.strokeRect(5, 16, 22, 4);
+        graphics.fillStyle(palette.eye, 1);
+        graphics.fillEllipse(10, 12, 6, 7);
+        graphics.fillEllipse(22, 12, 6, 7);
+        graphics.fillStyle(palette.bodyDark, 1);
+        graphics.fillCircle(10, 13, 2);
+        graphics.fillCircle(22, 13, 2);
+        graphics.fillStyle(palette.glow, 0.9);
+        graphics.fillCircle(16, 20, 3);
+        graphics.lineStyle(1, palette.accent, 0.85);
+        graphics.lineBetween(10, 24, 22, 24);
+        graphics.generateTexture(textureName, 32, 32);
+        graphics.destroy();
+        return textureName;
+    }
+
+    private createDoorBatTexture(campaignId: string): string {
+        const textureName = `doorBatEnemy_${campaignId}`;
+        if (this.textures.exists(textureName)) return textureName;
+
+        const palette = this.getDoorCampaignEnemyPalette(campaignId);
+        const graphics = this.add.graphics();
+        graphics.fillStyle(palette.bodyDark, 0.95);
+        graphics.fillTriangle(2, 15, 11, 8, 12, 22);
+        graphics.fillTriangle(26, 15, 17, 8, 16, 22);
+        graphics.fillStyle(palette.body, 1);
+        graphics.fillEllipse(14, 15, 17, 16);
+        graphics.lineStyle(2, palette.accent, 0.82);
+        graphics.lineBetween(3, 15, 11, 14);
+        graphics.lineBetween(25, 15, 17, 14);
+        graphics.fillStyle(palette.eye, 1);
+        graphics.fillCircle(10, 13, 2);
+        graphics.fillCircle(18, 13, 2);
+        graphics.fillStyle(palette.glow, 0.92);
+        graphics.fillRect(11, 19, 6, 2);
+        graphics.generateTexture(textureName, 28, 28);
+        graphics.destroy();
+        return textureName;
+    }
+
+    private createDoorRobotTexture(campaignId: string): string {
+        const textureName = `doorRobotEnemy_${campaignId}`;
+        if (this.textures.exists(textureName)) return textureName;
+
+        const palette = this.getDoorCampaignEnemyPalette(campaignId);
+        const graphics = this.add.graphics();
+        graphics.fillStyle(palette.bodyDark, 1);
+        graphics.fillRect(5, 7, 26, 25);
+        graphics.fillStyle(palette.body, 1);
+        graphics.fillRect(8, 10, 20, 18);
+        graphics.fillStyle(palette.accentSoft, 1);
+        graphics.fillRect(10, 4, 16, 5);
+        graphics.fillStyle(palette.eye, 1);
+        graphics.fillRect(11, 15, 5, 4);
+        graphics.fillRect(20, 15, 5, 4);
+        graphics.fillStyle(palette.glow, 0.95);
+        graphics.fillRect(12, 25, 12, 3);
+        graphics.lineStyle(2, palette.accent, 0.9);
+        graphics.strokeRect(6, 8, 24, 23);
+        graphics.lineStyle(1, palette.accent, 0.65);
+        graphics.lineBetween(4, 19, 0, 24);
+        graphics.lineBetween(32, 19, 36, 24);
+        graphics.generateTexture(textureName, 36, 36);
+        graphics.destroy();
+        return textureName;
+    }
+
+    private createDoorTurretTexture(campaignId: string): string {
+        const textureName = `doorTurretEnemy_${campaignId}`;
+        if (this.textures.exists(textureName)) return textureName;
+
+        const palette = this.getDoorCampaignEnemyPalette(campaignId);
+        const graphics = this.add.graphics();
+        graphics.fillStyle(palette.bodyDark, 1);
+        graphics.fillRect(7, 28, 26, 7);
+        graphics.fillStyle(palette.body, 1);
+        graphics.fillRect(11, 13, 18, 17);
+        graphics.fillStyle(palette.accentSoft, 1);
+        graphics.fillRect(15, 7, 10, 8);
+        graphics.fillStyle(palette.accent, 1);
+        graphics.fillRect(18, 2, 4, 10);
+        graphics.fillStyle(palette.glow, 0.95);
+        graphics.fillCircle(20, 10, 3);
+        graphics.fillRect(14, 20, 12, 3);
+        graphics.lineStyle(2, palette.accent, 0.92);
+        graphics.strokeRect(11, 13, 18, 17);
+        graphics.generateTexture(textureName, 40, 40);
+        graphics.destroy();
+        return textureName;
+    }
+
     // 创建敌人纹理
-    private createSlimeTexture(): string {
+    private createSlimeTexture(campaignId = this.getCampaignId()): string {
+        if (this.isDoorCampaign(campaignId)) {
+            return this.createDoorSlimeTexture(campaignId);
+        }
+        if (this.textures.exists('slimeEnemy')) return 'slimeEnemy';
         // 🎊 新年主题：超萌年糕怪（Q弹可爱）
         const graphics = this.add.graphics();
         // 🎊 白色/粉色Q弹年糕身体
@@ -9661,7 +9933,11 @@ export default class PlatformGameScene extends Phaser.Scene {
         return 'slimeEnemy';
     }
 
-    private createBatTexture(): string {
+    private createBatTexture(campaignId = this.getCampaignId()): string {
+        if (this.isDoorCampaign(campaignId)) {
+            return this.createDoorBatTexture(campaignId);
+        }
+        if (this.textures.exists('batEnemy')) return 'batEnemy';
         // 🎊 新年主题：超萌蝙蝠福（福气满满的小蝙蝠）
         const graphics = this.add.graphics();
         // 🎊 红色圆润身体
@@ -9697,7 +9973,11 @@ export default class PlatformGameScene extends Phaser.Scene {
         return 'batEnemy';
     }
 
-    private createRobotTexture(): string {
+    private createRobotTexture(campaignId = this.getCampaignId()): string {
+        if (this.isDoorCampaign(campaignId)) {
+            return this.createDoorRobotTexture(campaignId);
+        }
+        if (this.textures.exists('robotEnemy')) return 'robotEnemy';
         // 🎊 新年主题：舞狮机器人
         const graphics = this.add.graphics();
         // 红色狮头主体
@@ -9729,7 +10009,11 @@ export default class PlatformGameScene extends Phaser.Scene {
         return 'robotEnemy';
     }
 
-    private createTurretTexture(): string {
+    private createTurretTexture(campaignId = this.getCampaignId()): string {
+        if (this.isDoorCampaign(campaignId)) {
+            return this.createDoorTurretTexture(campaignId);
+        }
+        if (this.textures.exists('turretEnemy')) return 'turretEnemy';
         // 🎊 新年主题：鞭炮炮塔
         const graphics = this.add.graphics();
         // 金色底座
@@ -9762,9 +10046,15 @@ export default class PlatformGameScene extends Phaser.Scene {
         bossConfig: any,
         bossIndex: number,
     ) {
-        const visualTheme = bossConfig?.visualTheme || (bossIndex === 2 ? 'variant_b' : 'default');
+        const visualTheme = bossConfig?.visualTheme || bossConfig?.id || (bossIndex === 3 ? 'variant_c' : bossIndex === 2 ? 'variant_b' : 'default');
         const textureName = this.createBossTexture(campaignId, visualTheme);
-        const size = bossConfig?.size || this.getBossSize(campaignId);
+        const configuredSize = bossConfig?.visualSize || bossConfig?.size;
+        const size =
+            typeof configuredSize === 'number'
+                ? configuredSize
+                : configuredSize && typeof configuredSize === 'object'
+                    ? Math.max(configuredSize.width || 0, configuredSize.height || 0) || this.getBossSize(campaignId)
+                    : this.getBossSize(campaignId);
         enemy.setTexture(textureName);
         enemy.setDisplaySize(size, size);
 
@@ -9777,13 +10067,32 @@ export default class PlatformGameScene extends Phaser.Scene {
 
     private getBossAppearance(campaignId: string, visualTheme: string) {
         const appearanceMap: Record<string, {
-            shape: 'mask' | 'wave' | 'prism' | 'drum' | 'forge' | 'gate' | 'beast';
+            shape: 'mask' | 'wave' | 'prism' | 'drum' | 'forge' | 'gate' | 'beast' | 'sprout' | 'bot' | 'dragon' | 'clock' | 'chef' | 'rail';
             body: number;
             accent: number;
             glow: number;
             outline: number;
             eye: number;
         }> = {
+            'custom:default': { shape: 'sprout', body: 0x38BDF8, accent: 0xFDE68A, glow: 0xBAE6FD, outline: 0x075985, eye: 0xFFFFFF },
+            'custom:variant_b': { shape: 'prism', body: 0x8B5CF6, accent: 0xDDD6FE, glow: 0xF0ABFC, outline: 0x3B0764, eye: 0xFFFFFF },
+            'custom:variant_c': { shape: 'bot', body: 0x10B981, accent: 0xA7F3D0, glow: 0xCCFBF1, outline: 0x064E3B, eye: 0xECFEFF },
+            'campaign_1:default': { shape: 'sprout', body: 0x3B82F6, accent: 0xFDE68A, glow: 0xBFDBFE, outline: 0x1E3A8A, eye: 0xFFFFFF },
+            'campaign_2:default': { shape: 'bot', body: 0x64748B, accent: 0x7DD3FC, glow: 0xE0F2FE, outline: 0x1E293B, eye: 0xF8FAFC },
+            'campaign_3:default': { shape: 'dragon', body: 0x0EA5E9, accent: 0xA7F3D0, glow: 0xBAE6FD, outline: 0x075985, eye: 0xFFFFFF },
+            'campaign_4:default': { shape: 'beast', body: 0xEF4444, accent: 0xFDE68A, glow: 0xFECACA, outline: 0x7F1D1D, eye: 0xFFFFFF },
+            'campaign_5:default': { shape: 'clock', body: 0xA16207, accent: 0xFDE68A, glow: 0xFEF3C7, outline: 0x451A03, eye: 0xFFFFFF },
+            'campaign_6:default': { shape: 'bot', body: 0x475569, accent: 0xF97316, glow: 0xFED7AA, outline: 0x0F172A, eye: 0xFFFFFF },
+            'campaign_7:default': { shape: 'chef', body: 0xF97316, accent: 0xFFF7ED, glow: 0xFDBA74, outline: 0x7C2D12, eye: 0xFFFFFF },
+            'campaign_7:variant_b': { shape: 'bot', body: 0x334155, accent: 0xFDE68A, glow: 0xFACC15, outline: 0x0F172A, eye: 0xFFFFFF },
+            'campaign_8:default': { shape: 'prism', body: 0x7C3AED, accent: 0xA7F3D0, glow: 0xDDD6FE, outline: 0x2E1065, eye: 0xFFFFFF },
+            'campaign_8:variant_b': { shape: 'gate', body: 0x0891B2, accent: 0xCFFAFE, glow: 0x67E8F9, outline: 0x164E63, eye: 0xFFFFFF },
+            'campaign_9:default': { shape: 'wave', body: 0x16A34A, accent: 0xBEF264, glow: 0xBBF7D0, outline: 0x14532D, eye: 0xFFFFFF },
+            'campaign_9:variant_b': { shape: 'wave', body: 0x0891B2, accent: 0xA5F3FC, glow: 0xCFFAFE, outline: 0x164E63, eye: 0xFFFFFF },
+            'campaign_10:default': { shape: 'rail', body: 0xDC2626, accent: 0xFDE68A, glow: 0xFECACA, outline: 0x7F1D1D, eye: 0xFFFFFF },
+            'campaign_10:ticket_master': { shape: 'rail', body: 0xDC2626, accent: 0xFDE68A, glow: 0xFECACA, outline: 0x7F1D1D, eye: 0xFFFFFF },
+            'campaign_10:platform_master': { shape: 'gate', body: 0xD97706, accent: 0xFEF3C7, glow: 0xFDE68A, outline: 0x78350F, eye: 0xFFFFFF },
+            'campaign_10:conductor': { shape: 'clock', body: 0x7C3AED, accent: 0xDDD6FE, glow: 0xC4B5FD, outline: 0x2E1065, eye: 0xFFFFFF },
             'campaign_11:default': { shape: 'mask', body: 0x50606B, accent: 0xA6D8FF, glow: 0xC8F2FF, outline: 0x1E2A33, eye: 0x9BE9FF },
             'campaign_11:echo': { shape: 'mask', body: 0x364656, accent: 0x8B7BFF, glow: 0xD5CCFF, outline: 0x17202A, eye: 0xC5BEFF },
             'campaign_12:default': { shape: 'wave', body: 0x2C7697, accent: 0xC0F4FF, glow: 0x7DE7FF, outline: 0x173847, eye: 0xF1FFFF },
@@ -9816,8 +10125,161 @@ export default class PlatformGameScene extends Phaser.Scene {
         const appearance = this.getBossAppearance(campaignId, visualTheme);
         const graphics = this.add.graphics();
         graphics.clear();
+        graphics.fillStyle(0x050816, 0.16);
+        graphics.fillEllipse(32, 57, 38, 7);
+
+        const outline = (alpha = 0.96) => graphics.lineStyle(3, appearance.outline, alpha);
+        const softOutline = () => graphics.lineStyle(2, appearance.outline, 0.62);
+        const drawEyes = (leftX = 24, rightX = 40, y = 28, scale = 1) => {
+            graphics.fillStyle(appearance.eye, 1);
+            graphics.fillEllipse(leftX, y, 8 * scale, 10 * scale);
+            graphics.fillEllipse(rightX, y, 8 * scale, 10 * scale);
+            graphics.fillStyle(0x10161D, 1);
+            graphics.fillCircle(leftX, y + 1, 2.8 * scale);
+            graphics.fillCircle(rightX, y + 1, 2.8 * scale);
+            graphics.fillStyle(0xFFFFFF, 0.88);
+            graphics.fillCircle(leftX - 1.6 * scale, y - 1.8 * scale, 1.3 * scale);
+            graphics.fillCircle(rightX - 1.6 * scale, y - 1.8 * scale, 1.3 * scale);
+        };
+        const drawSmile = (y = 39, width = 15) => {
+            graphics.lineStyle(2.4, appearance.outline, 0.92);
+            graphics.lineBetween(32 - width / 2, y, 32, y + 4);
+            graphics.lineBetween(32, y + 4, 32 + width / 2, y);
+            graphics.fillStyle(appearance.accent, 0.82);
+            graphics.fillEllipse(21, y - 2, 5, 3);
+            graphics.fillEllipse(43, y - 2, 5, 3);
+        };
+        const drawBrow = (tilt = 1) => {
+            graphics.lineStyle(2.4, appearance.outline, 0.72);
+            graphics.lineBetween(19, 21 + tilt, 28, 19 - tilt);
+            graphics.lineBetween(36, 19 - tilt, 45, 21 + tilt);
+        };
 
         switch (appearance.shape) {
+            case 'sprout':
+                graphics.fillStyle(appearance.body, 1);
+                graphics.fillEllipse(32, 34, 40, 34);
+                graphics.fillStyle(appearance.accent, 0.92);
+                graphics.fillEllipse(23, 11, 16, 24);
+                graphics.fillEllipse(42, 11, 16, 24);
+                graphics.fillStyle(appearance.body, 0.82);
+                graphics.fillCircle(14, 36, 8);
+                graphics.fillCircle(50, 36, 8);
+                graphics.fillStyle(appearance.glow, 0.28);
+                graphics.fillEllipse(27, 25, 14, 9);
+                outline();
+                graphics.strokeEllipse(32, 34, 40, 34);
+                graphics.strokeEllipse(23, 11, 16, 24);
+                graphics.strokeEllipse(42, 11, 16, 24);
+                softOutline();
+                graphics.strokeCircle(14, 36, 8);
+                graphics.strokeCircle(50, 36, 8);
+                drawEyes();
+                drawSmile(39, 13);
+                break;
+            case 'bot':
+                graphics.fillStyle(appearance.body, 1);
+                graphics.fillRoundedRect(12, 14, 40, 36, 10);
+                graphics.fillStyle(appearance.accent, 0.88);
+                graphics.fillRoundedRect(19, 9, 26, 10, 5);
+                graphics.fillRect(28, 3, 8, 8);
+                graphics.fillCircle(13, 33, 7);
+                graphics.fillCircle(51, 33, 7);
+                graphics.fillStyle(appearance.glow, 0.18);
+                graphics.fillRoundedRect(18, 21, 28, 8, 4);
+                outline();
+                graphics.strokeRoundedRect(12, 14, 40, 36, 10);
+                graphics.strokeRoundedRect(19, 9, 26, 10, 5);
+                softOutline();
+                graphics.lineBetween(32, 3, 32, 9);
+                graphics.strokeCircle(13, 33, 7);
+                graphics.strokeCircle(51, 33, 7);
+                drawEyes(24, 40, 28, 0.92);
+                graphics.lineStyle(2, appearance.outline, 0.9);
+                graphics.lineBetween(25, 39, 39, 39);
+                break;
+            case 'dragon':
+                graphics.fillStyle(appearance.body, 1);
+                graphics.fillEllipse(32, 34, 42, 32);
+                graphics.fillStyle(appearance.accent, 0.9);
+                graphics.fillTriangle(18, 18, 10, 4, 28, 14);
+                graphics.fillTriangle(46, 18, 54, 4, 36, 14);
+                graphics.fillTriangle(32, 9, 26, 0, 38, 0);
+                graphics.fillStyle(appearance.glow, 0.22);
+                graphics.fillEllipse(32, 38, 28, 16);
+                graphics.fillStyle(appearance.accent, 0.55);
+                graphics.fillEllipse(32, 42, 20, 10);
+                outline();
+                graphics.strokeEllipse(32, 34, 42, 32);
+                graphics.strokeTriangle(18, 18, 10, 4, 28, 14);
+                graphics.strokeTriangle(46, 18, 54, 4, 36, 14);
+                softOutline();
+                graphics.strokeTriangle(32, 9, 26, 0, 38, 0);
+                drawEyes(24, 40, 28, 0.92);
+                graphics.fillStyle(appearance.outline, 0.72);
+                graphics.fillCircle(28, 39, 1.8);
+                graphics.fillCircle(36, 39, 1.8);
+                drawSmile(41, 12);
+                break;
+            case 'clock':
+                graphics.fillStyle(appearance.body, 1);
+                graphics.fillRoundedRect(13, 14, 38, 38, 13);
+                graphics.fillStyle(appearance.accent, 0.86);
+                graphics.fillRoundedRect(18, 19, 28, 27, 10);
+                graphics.lineStyle(2.3, appearance.outline, 0.78);
+                graphics.lineBetween(32, 31, 32, 22);
+                graphics.lineBetween(32, 31, 41, 34);
+                graphics.fillStyle(appearance.accent, 0.9);
+                graphics.fillCircle(16, 12, 5);
+                graphics.fillCircle(48, 12, 5);
+                graphics.fillRect(20, 50, 6, 6);
+                graphics.fillRect(39, 50, 6, 6);
+                outline();
+                graphics.strokeRoundedRect(13, 14, 38, 38, 13);
+                softOutline();
+                graphics.strokeRoundedRect(18, 19, 28, 27, 10);
+                graphics.strokeCircle(16, 12, 5);
+                graphics.strokeCircle(48, 12, 5);
+                drawEyes(25, 39, 28, 0.76);
+                break;
+            case 'chef':
+                graphics.fillStyle(appearance.accent, 0.96);
+                graphics.fillCircle(22, 11, 8);
+                graphics.fillCircle(32, 8, 10);
+                graphics.fillCircle(43, 11, 8);
+                graphics.fillStyle(appearance.body, 1);
+                graphics.fillRoundedRect(13, 19, 38, 34, 12);
+                graphics.fillStyle(0xFFFFFF, 0.18);
+                graphics.fillRoundedRect(20, 24, 24, 9, 4);
+                outline();
+                graphics.strokeRoundedRect(13, 19, 38, 34, 12);
+                graphics.strokeCircle(22, 11, 8);
+                graphics.strokeCircle(32, 8, 10);
+                graphics.strokeCircle(43, 11, 8);
+                drawEyes(24, 31, 31, 0.78);
+                graphics.fillStyle(appearance.outline, 0.84);
+                graphics.fillCircle(39, 35, 1.8);
+                drawSmile(41, 12);
+                break;
+            case 'rail':
+                graphics.fillStyle(appearance.body, 1);
+                graphics.fillRoundedRect(12, 13, 40, 38, 12);
+                graphics.fillStyle(appearance.accent, 0.92);
+                graphics.fillRoundedRect(20, 5, 24, 14, 7);
+                graphics.fillRect(17, 47, 8, 8);
+                graphics.fillRect(39, 47, 8, 8);
+                graphics.fillStyle(appearance.glow, 0.22);
+                graphics.fillRoundedRect(18, 24, 28, 12, 5);
+                outline();
+                graphics.strokeRoundedRect(12, 13, 40, 38, 12);
+                graphics.strokeRoundedRect(20, 5, 24, 14, 7);
+                softOutline();
+                graphics.strokeRect(17, 47, 8, 8);
+                graphics.strokeRect(39, 47, 8, 8);
+                drawEyes(24, 40, 30, 0.88);
+                graphics.lineStyle(2.2, appearance.outline, 0.85);
+                graphics.lineBetween(24, 40, 40, 40);
+                break;
             case 'mask':
                 graphics.fillStyle(appearance.body, 1);
                 graphics.fillRoundedRect(10, 10, 44, 38, 12);
@@ -9826,6 +10288,13 @@ export default class PlatformGameScene extends Phaser.Scene {
                 graphics.fillTriangle(46, 10, 38, 8, 50, 2);
                 graphics.fillStyle(appearance.glow, 0.18);
                 graphics.fillEllipse(32, 26, 34, 24);
+                outline();
+                graphics.strokeRoundedRect(10, 10, 44, 38, 12);
+                graphics.strokeTriangle(18, 10, 14, 2, 26, 8);
+                graphics.strokeTriangle(46, 10, 38, 8, 50, 2);
+                drawEyes(23, 41, 28, 0.86);
+                drawBrow(-1);
+                drawSmile(39, 16);
                 break;
             case 'wave':
                 graphics.fillStyle(appearance.body, 1);
@@ -9834,6 +10303,16 @@ export default class PlatformGameScene extends Phaser.Scene {
                 graphics.fillTriangle(50, 24, 62, 18, 54, 38);
                 graphics.fillStyle(appearance.accent, 0.8);
                 graphics.fillEllipse(32, 20, 30, 14);
+                graphics.fillStyle(appearance.glow, 0.2);
+                graphics.fillEllipse(28, 32, 18, 10);
+                outline();
+                graphics.strokeEllipse(32, 34, 38, 30);
+                graphics.strokeTriangle(14, 24, 2, 18, 10, 38);
+                graphics.strokeTriangle(50, 24, 62, 18, 54, 38);
+                softOutline();
+                graphics.strokeEllipse(32, 20, 30, 14);
+                drawEyes(24, 40, 31, 0.84);
+                drawSmile(42, 11);
                 break;
             case 'prism':
                 graphics.fillStyle(appearance.body, 1);
@@ -9847,26 +10326,63 @@ export default class PlatformGameScene extends Phaser.Scene {
                 graphics.fillPath();
                 graphics.fillStyle(appearance.accent, 0.38);
                 graphics.fillTriangle(32, 10, 46, 24, 18, 24);
+                graphics.fillStyle(appearance.glow, 0.22);
+                graphics.fillTriangle(32, 13, 41, 24, 27, 24);
+                outline();
+                graphics.beginPath();
+                graphics.moveTo(32, 4);
+                graphics.lineTo(54, 22);
+                graphics.lineTo(44, 54);
+                graphics.lineTo(20, 54);
+                graphics.lineTo(10, 22);
+                graphics.closePath();
+                graphics.strokePath();
+                drawEyes(24, 40, 29, 0.84);
+                drawBrow(1);
+                drawSmile(41, 11);
                 break;
             case 'drum':
                 graphics.fillStyle(appearance.body, 1);
-                graphics.fillCircle(32, 30, 20);
+                graphics.fillRoundedRect(12, 14, 40, 36, 11);
                 graphics.fillStyle(appearance.accent, 0.9);
-                graphics.fillCircle(32, 30, 14);
+                graphics.fillRoundedRect(16, 19, 32, 13, 7);
+                graphics.fillRoundedRect(16, 36, 32, 9, 5);
                 graphics.fillTriangle(8, 24, 2, 12, 16, 18);
                 graphics.fillTriangle(56, 24, 62, 12, 48, 18);
+                outline(0.9);
+                graphics.strokeRoundedRect(12, 14, 40, 36, 11);
+                graphics.strokeTriangle(8, 24, 2, 12, 16, 18);
+                graphics.strokeTriangle(56, 24, 62, 12, 48, 18);
+                softOutline();
+                graphics.lineBetween(17, 35, 47, 35);
+                drawEyes(24, 40, 28, 0.82);
+                drawSmile(39, 12);
                 break;
             case 'forge':
                 graphics.fillStyle(appearance.body, 1);
-                graphics.fillRoundedRect(12, 12, 40, 40, 10);
                 for (let index = 0; index < 8; index += 1) {
                     const angle = (Math.PI * 2 * index) / 8;
                     const toothX = 32 + Math.cos(angle) * 22;
                     const toothY = 32 + Math.sin(angle) * 22;
                     graphics.fillRect(toothX - 4, toothY - 4, 8, 8);
                 }
+                graphics.fillRoundedRect(12, 12, 40, 40, 10);
+                graphics.fillStyle(appearance.glow, 0.18);
+                graphics.fillRoundedRect(19, 18, 26, 10, 5);
                 graphics.fillStyle(appearance.accent, 0.88);
                 graphics.fillCircle(32, 32, 11);
+                outline();
+                graphics.strokeRoundedRect(12, 12, 40, 40, 10);
+                softOutline();
+                for (let index = 0; index < 8; index += 1) {
+                    const angle = (Math.PI * 2 * index) / 8;
+                    const toothX = 32 + Math.cos(angle) * 22;
+                    const toothY = 32 + Math.sin(angle) * 22;
+                    graphics.strokeRect(toothX - 4, toothY - 4, 8, 8);
+                }
+                drawEyes(24, 40, 28, 0.82);
+                graphics.fillStyle(appearance.outline, 0.8);
+                graphics.fillCircle(32, 38, 2);
                 break;
             case 'gate':
                 graphics.fillStyle(appearance.body, 1);
@@ -9874,45 +10390,30 @@ export default class PlatformGameScene extends Phaser.Scene {
                 graphics.fillStyle(appearance.accent, 0.82);
                 graphics.fillRoundedRect(22, 16, 20, 32, 8);
                 graphics.fillRect(28, 2, 8, 12);
+                graphics.fillStyle(appearance.glow, 0.18);
+                graphics.fillRoundedRect(25, 20, 14, 20, 6);
+                outline();
+                graphics.strokeRoundedRect(14, 8, 36, 48, 10);
+                graphics.strokeRoundedRect(22, 16, 20, 32, 8);
+                softOutline();
+                graphics.strokeRect(28, 2, 8, 12);
+                drawEyes(25, 39, 29, 0.78);
+                graphics.lineStyle(2.2, appearance.outline, 0.86);
+                graphics.lineBetween(25, 40, 39, 40);
                 break;
             default:
                 graphics.fillStyle(appearance.body, 1);
-                graphics.fillCircle(32, 30, 20);
+                graphics.fillEllipse(32, 32, 40, 34);
                 graphics.fillStyle(appearance.accent, 0.9);
                 graphics.fillCircle(10, 12, 6);
                 graphics.fillCircle(54, 12, 6);
+                outline();
+                graphics.strokeEllipse(32, 32, 40, 34);
+                graphics.strokeCircle(10, 12, 6);
+                graphics.strokeCircle(54, 12, 6);
+                drawEyes();
+                drawSmile(40, 14);
                 break;
-        }
-
-        graphics.fillStyle(appearance.eye, 1);
-        graphics.fillEllipse(24, 28, 8, 10);
-        graphics.fillEllipse(40, 28, 8, 10);
-        graphics.fillStyle(0x10161D, 1);
-        graphics.fillCircle(24, 29, 3);
-        graphics.fillCircle(40, 29, 3);
-        graphics.fillStyle(0xFFFFFF, 0.9);
-        graphics.fillCircle(22, 27, 1.5);
-        graphics.fillCircle(38, 27, 1.5);
-        graphics.lineStyle(3, appearance.outline, 0.95);
-        graphics.strokeRect(18, 38, 28, 2);
-
-        if (appearance.shape === 'drum') {
-            graphics.lineStyle(3, appearance.outline, 0.85);
-            graphics.strokeCircle(32, 30, 20);
-            graphics.strokeCircle(32, 30, 14);
-        } else if (appearance.shape === 'prism') {
-            graphics.lineStyle(3, appearance.outline, 0.95);
-            graphics.beginPath();
-            graphics.moveTo(32, 4);
-            graphics.lineTo(54, 22);
-            graphics.lineTo(44, 54);
-            graphics.lineTo(20, 54);
-            graphics.lineTo(10, 22);
-            graphics.closePath();
-            graphics.strokePath();
-        } else {
-            graphics.lineStyle(3, appearance.outline, 0.9);
-            graphics.strokeCircle(32, 32, 22);
         }
 
         graphics.generateTexture(textureName, 64, 64);
@@ -9976,25 +10477,25 @@ export default class PlatformGameScene extends Phaser.Scene {
     // 🎊 Boss名称（战役1-9用原名，战役10用年兽，自定义关卡用通用名）
     private getBossName(campaignId: string): string {
         const BOSS_NAMES: Record<string, string> = {
-            custom: '👹 自定义Boss',
-            campaign_1: '👹 古街守护者',
-            campaign_2: '🤖 机械博士',
-            campaign_3: '🌊 水龙王',
-            campaign_4: '⚔️ 战神将军',
-            campaign_5: '⏰ 时间博士',
-            campaign_6: '🦾 机甲统领',
-            campaign_7: '🔥 火焰博士',
-            campaign_8: '🧪 分子怪博士',
-            campaign_9: '⚗️ 酸液博士',
-            campaign_10: '🐲 终极年兽',
-            campaign_11: '🌀 幻门守卫',
-            campaign_12: '🧱 坠门守卫',
-            campaign_13: '🪞 镜门守卫',
-            campaign_14: '🎼 节拍守卫',
-            campaign_15: '🛠️ 工坊守卫',
-            campaign_16: '🚪 终门守卫',
+            custom: '自定义Boss',
+            campaign_1: '古街守护者',
+            campaign_2: '机械博士',
+            campaign_3: '水龙王',
+            campaign_4: '战神将军',
+            campaign_5: '时间博士',
+            campaign_6: '机甲统领',
+            campaign_7: '火焰博士',
+            campaign_8: '分子怪博士',
+            campaign_9: '酸液博士',
+            campaign_10: '终极年兽',
+            campaign_11: '幻门守卫',
+            campaign_12: '坠门守卫',
+            campaign_13: '镜门守卫',
+            campaign_14: '节拍守卫',
+            campaign_15: '工坊守卫',
+            campaign_16: '终门守卫',
         };
-        return BOSS_NAMES[campaignId] || '👹 Boss';
+        return BOSS_NAMES[campaignId] || 'Boss';
     }
 
     // 颜色加深函数
@@ -10479,7 +10980,31 @@ export default class PlatformGameScene extends Phaser.Scene {
     }
 
     // 🎊 新年主题：烟花喷射器
-    private createAcidTurretTexture(): string {
+    private createAcidTurretTexture(campaignId = this.getCampaignId()): string {
+        if (this.isDoorCampaign(campaignId)) {
+            const doorKey = `doorAcidTurretTexture_${campaignId}`;
+            if (this.textures.exists(doorKey)) return doorKey;
+
+            const palette = this.getDoorCampaignEnemyPalette(campaignId);
+            const graphics = this.add.graphics();
+            graphics.fillStyle(palette.bodyDark, 1);
+            graphics.fillCircle(22, 22, 20);
+            graphics.fillStyle(palette.body, 1);
+            graphics.fillCircle(22, 22, 14);
+            graphics.fillStyle(palette.accentSoft, 1);
+            graphics.fillRect(31, 18, 12, 8);
+            graphics.fillStyle(palette.accent, 1);
+            graphics.fillCircle(40, 20, 3);
+            graphics.fillStyle(palette.glow, 0.92);
+            graphics.fillCircle(41, 25, 2);
+            graphics.fillCircle(22, 22, 4);
+            graphics.lineStyle(2, palette.accent, 0.86);
+            graphics.strokeCircle(22, 22, 18);
+            graphics.generateTexture(doorKey, 45, 45);
+            graphics.destroy();
+            return doorKey;
+        }
+
         const key = 'acid_turret_texture';
         if (PlatformGameScene.textureCache.has(key)) return key;
 

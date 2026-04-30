@@ -5,6 +5,25 @@
 export type DecorationType = 'furniture' | 'plant' | 'toy' | 'nature' | 'fun' | 'decor' | 'wallpaper' | 'floor';
 
 export type DecorationRarity = 'common' | 'rare' | 'epic' | 'legendary';
+export type DecorationScene = 'living' | 'garden';
+export type DecorationRenderTone = 'amber' | 'rose' | 'sky' | 'emerald' | 'violet';
+export type DecorationRenderMotion = 'none' | 'float' | 'sway' | 'pulse' | 'twinkle' | 'bob';
+export type DecorationRenderAccent = 'none' | 'sparkles' | 'notes' | 'bubbles' | 'petals' | 'fireflies';
+export type DecorationRenderSurface = 'none' | 'cushion' | 'wood' | 'planter' | 'meadow' | 'spotlight';
+export type DecorationRenderBackplate = 'none' | 'halo' | 'panel' | 'gallery' | 'bloom';
+export type DecorationShadowProfile = 'soft' | 'grounded' | 'wide';
+
+export interface DecorationRenderHints {
+  tone?: DecorationRenderTone;
+  motion?: DecorationRenderMotion;
+  accent?: DecorationRenderAccent;
+  surface?: DecorationRenderSurface;
+  backplate?: DecorationRenderBackplate;
+  shadow?: DecorationShadowProfile;
+  iconScale?: number;
+  iconOffsetX?: number;
+  iconOffsetY?: number;
+}
 
 export interface Decoration {
   id: string;
@@ -22,9 +41,11 @@ export interface Decoration {
   /** 基础像素尺寸（px），未指定则按类型默认 */
   baseSize?: number;
   /** 场景特定尺寸（px），优先于 baseSize */
-  sceneSizes?: Partial<Record<'living' | 'garden', number>>;
+  sceneSizes?: Partial<Record<DecorationScene, number>>;
   /** 布局锚点：地面贴边/靠墙/居中 */
   anchor?: 'floor' | 'wall' | 'center';
+  /** 渲染提示：用于增强立体感、动态效果和空间表现 */
+  renderHints?: DecorationRenderHints;
 }
 
 export interface PlacedDecoration {
@@ -33,7 +54,7 @@ export interface PlacedDecoration {
   x: number;
   y: number;
   rotation?: number;
-  scene: 'living' | 'garden';
+  scene: DecorationScene;
 }
 
 export interface UserDecoration {
@@ -42,6 +63,41 @@ export interface UserDecoration {
   quantity: number;
   purchasedAt: Date;
 }
+
+export const DEFAULT_DECORATION_SIZE_BY_TYPE: Record<DecorationType, number> = {
+  furniture: 180,
+  plant: 140,
+  toy: 110,
+  nature: 150,
+  fun: 160,
+  decor: 170,
+  wallpaper: 220,
+  floor: 220,
+};
+
+export const DECORATION_RENDER_LIBRARY: Record<string, DecorationRenderHints> = {
+  sofa_red: { tone: 'amber', motion: 'none', surface: 'cushion', shadow: 'grounded', iconScale: 1.08, iconOffsetY: 2 },
+  table_wood: { tone: 'amber', motion: 'none', surface: 'wood', shadow: 'grounded', iconScale: 1.05 },
+  bookshelf: { tone: 'amber', motion: 'none', backplate: 'gallery', shadow: 'soft', iconScale: 1.01, iconOffsetY: -2 },
+  plant_small: { tone: 'emerald', motion: 'sway', surface: 'planter', accent: 'petals', shadow: 'grounded', iconScale: 1.08 },
+  plant_flower: { tone: 'rose', motion: 'sway', surface: 'planter', accent: 'petals', shadow: 'grounded', iconScale: 1.08 },
+  plant_tree: { tone: 'emerald', motion: 'sway', surface: 'meadow', accent: 'fireflies', shadow: 'grounded', iconScale: 1.12 },
+  toy_ball: { tone: 'amber', motion: 'bob', surface: 'cushion', accent: 'sparkles', shadow: 'soft', iconScale: 1.18, iconOffsetY: 4 },
+  toy_robot: { tone: 'sky', motion: 'bob', surface: 'wood', accent: 'sparkles', shadow: 'soft', iconScale: 1.08 },
+  toy_teddy: { tone: 'rose', motion: 'bob', surface: 'cushion', accent: 'sparkles', shadow: 'soft', iconScale: 1.08 },
+  lamp_floor: { tone: 'amber', motion: 'none', surface: 'spotlight', backplate: 'none', shadow: 'grounded', iconScale: 1.1, iconOffsetY: -4 },
+  rug_round: { tone: 'amber', motion: 'none', surface: 'cushion', shadow: 'wide', iconScale: 1.1, iconOffsetY: 8 },
+  clock_wall: { tone: 'amber', motion: 'pulse', backplate: 'panel', shadow: 'soft', iconScale: 1.1 },
+  bed_cozy: { tone: 'rose', motion: 'none', surface: 'cushion', backplate: 'none', shadow: 'grounded', iconScale: 1.08, iconOffsetY: 3 },
+  fish_tank: { tone: 'sky', motion: 'pulse', surface: 'wood', accent: 'bubbles', backplate: 'halo', shadow: 'grounded', iconScale: 0.82, iconOffsetY: 4 },
+  cactus: { tone: 'emerald', motion: 'none', surface: 'planter', shadow: 'grounded', iconScale: 1.08 },
+  flower_vase: { tone: 'rose', motion: 'sway', surface: 'wood', accent: 'petals', shadow: 'grounded', iconScale: 1.1 },
+  cat_tower: { tone: 'amber', motion: 'bob', surface: 'wood', accent: 'sparkles', shadow: 'grounded', iconScale: 1.1 },
+  music_box: { tone: 'violet', motion: 'float', surface: 'wood', accent: 'notes', backplate: 'halo', shadow: 'soft', iconScale: 1.08 },
+  tv_retro: { tone: 'sky', motion: 'none', surface: 'wood', backplate: 'none', shadow: 'grounded', iconScale: 1.08 },
+  fairy_lights: { tone: 'amber', motion: 'twinkle', accent: 'sparkles', backplate: 'halo', shadow: 'soft', iconScale: 1.06, iconOffsetY: -2 },
+  picture_frame: { tone: 'emerald', motion: 'float', backplate: 'gallery', shadow: 'soft', iconScale: 0.98 },
+};
 
 // 装饰品配置
 export const DECORATIONS: Record<string, Decoration> = {
@@ -242,7 +298,7 @@ export const DECORATIONS: Record<string, Decoration> = {
     unlockLevel: 8,
     description: '热带鱼在水草中游动，治愈力满分',
     effect: { happiness: 20, comfort: 10 },
-    baseSize: 170,
+    baseSize: 148,
     anchor: 'floor'
   },
 
@@ -344,6 +400,26 @@ export const DECORATIONS: Record<string, Decoration> = {
     anchor: 'wall'
   },
 };
+
+Object.entries(DECORATION_RENDER_LIBRARY).forEach(([decorationId, renderHints]) => {
+  if (DECORATIONS[decorationId]) {
+    DECORATIONS[decorationId].renderHints = renderHints;
+  }
+});
+
+export function getDecorationDisplaySize(
+  decoration: Decoration | undefined,
+  scene: DecorationScene,
+  overrideSize?: number
+) {
+  if (overrideSize) return overrideSize;
+  if (!decoration) return 120;
+
+  const sceneSize = decoration.sceneSizes?.[scene];
+  if (sceneSize) return sceneSize;
+  if (decoration.baseSize) return decoration.baseSize;
+  return DEFAULT_DECORATION_SIZE_BY_TYPE[decoration.type] ?? 120;
+}
 
 // 稀有度颜色
 export const RARITY_COLORS: Record<DecorationRarity, string> = {

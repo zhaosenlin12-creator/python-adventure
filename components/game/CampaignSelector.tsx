@@ -9,6 +9,8 @@ import AgeGroupSelector from './AgeGroupSelector';
 import { buildCampaignRuleText } from '@/lib/gameplayText';
 import { resolveCompatibleCampaignProgress } from '@/lib/campaignProgress';
 
+type CampaignIconSize = 'card' | 'hero';
+
 // 音效
 const playSound = (soundPath: string, volume = 0.5) => {
   try {
@@ -122,6 +124,108 @@ export default function CampaignSelector({ onSelectCampaign, onClose }: Campaign
       '终门总测场': '🚪'
     };
     return emojiMap[location] || '📍';
+  };
+
+  const renderCampaignLocationIcon = (campaign: Campaign, size: CampaignIconSize = 'card') => {
+    const iconSize = size === 'hero' ? 116 : 72;
+    const stroke = size === 'hero' ? 3.5 : 3;
+    const containerClass = size === 'hero'
+      ? 'mx-auto sm:mx-0 flex h-28 w-28 items-center justify-center rounded-[30px] border border-white/10 bg-slate-950/28 shadow-[0_18px_40px_rgba(15,23,42,0.26),inset_0_1px_0_rgba(255,255,255,0.14)]'
+      : 'mx-auto flex h-20 w-20 items-center justify-center rounded-[24px] border border-white/10 bg-slate-950/28 shadow-[0_12px_26px_rgba(15,23,42,0.22),inset_0_1px_0_rgba(255,255,255,0.12)]';
+
+    const renderDoorGlyph = (accent: string, fill: string) => (
+      <svg viewBox="0 0 96 96" width={iconSize} height={iconSize} aria-hidden="true">
+        <path d="M48 8L71 22V54C71 70 61 82 48 88C35 82 25 70 25 54V22L48 8Z" fill={fill} stroke="#101828" strokeWidth={stroke} strokeLinejoin="round" />
+        <path d="M48 18V78" stroke={accent} strokeWidth={stroke} strokeLinecap="round" />
+        <circle cx="48" cy="18" r="12" fill={accent} stroke="#101828" strokeWidth={stroke} />
+        <path d="M39 56C43 51 53 51 57 56" stroke={accent} strokeWidth={stroke - 0.8} strokeLinecap="round" />
+        <circle cx="54" cy="46" r="2.7" fill={accent} />
+      </svg>
+    );
+
+    const renderValleyGlyph = () => (
+      <svg viewBox="0 0 96 96" width={iconSize} height={iconSize} aria-hidden="true">
+        <path d="M14 72L32 32L48 58L64 28L82 72H14Z" fill="#4B5563" stroke="#0F172A" strokeWidth={stroke} strokeLinejoin="round" />
+        <path d="M12 72C18 68 24 65 31 65C39 65 44 70 48 76C52 70 57 65 65 65C72 65 78 68 84 72" fill="none" stroke="#9BE7FF" strokeWidth={stroke} strokeLinecap="round" />
+        <path d="M22 62L30 47L38 62" fill="none" stroke="#D8F5FF" strokeWidth={stroke - 0.8} strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="66" cy="22" r="8" fill="#B8ECFF" stroke="#0F172A" strokeWidth={stroke - 0.6} />
+      </svg>
+    );
+
+    const renderMirrorGlyph = () => (
+      <svg viewBox="0 0 96 96" width={iconSize} height={iconSize} aria-hidden="true">
+        <rect x="18" y="16" width="60" height="64" rx="16" fill="#5B5FC7" stroke="#161B44" strokeWidth={stroke} />
+        <rect x="28" y="24" width="40" height="48" rx="12" fill="#D9ECFF" stroke="#161B44" strokeWidth={stroke - 0.8} />
+        <path d="M48 28V68" stroke="#7A58D6" strokeWidth={stroke} strokeLinecap="round" />
+        <path d="M35 38L44 47L35 56" fill="none" stroke="#58BFFF" strokeWidth={stroke - 0.8} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M61 38L52 47L61 56" fill="none" stroke="#FF8DE1" strokeWidth={stroke - 0.8} strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    );
+
+    const renderWindGlyph = () => (
+      <svg viewBox="0 0 96 96" width={iconSize} height={iconSize} aria-hidden="true">
+        <circle cx="48" cy="48" r="12" fill="#F7C66A" stroke="#5A3217" strokeWidth={stroke} />
+        <path d="M48 16C58 20 64 26 66 36C58 38 52 38 48 36V16Z" fill="#7FCB67" stroke="#28431F" strokeWidth={stroke - 0.8} strokeLinejoin="round" />
+        <path d="M80 48C76 58 70 64 60 66C58 58 58 52 60 48H80Z" fill="#F2A94A" stroke="#5A3217" strokeWidth={stroke - 0.8} strokeLinejoin="round" />
+        <path d="M48 80C38 76 32 70 30 60C38 58 44 58 48 60V80Z" fill="#54B2E8" stroke="#1C4161" strokeWidth={stroke - 0.8} strokeLinejoin="round" />
+        <path d="M16 48C20 38 26 32 36 30C38 38 38 44 36 48H16Z" fill="#D96B57" stroke="#5E221A" strokeWidth={stroke - 0.8} strokeLinejoin="round" />
+        <path d="M71 22C77 28 80 34 80 42" fill="none" stroke="#DDF7FF" strokeWidth={stroke - 1} strokeLinecap="round" />
+        <path d="M68 28C72 32 74 36 74 40" fill="none" stroke="#DDF7FF" strokeWidth={stroke - 1} strokeLinecap="round" />
+      </svg>
+    );
+
+    const renderWorkshopGlyph = () => (
+      <svg viewBox="0 0 96 96" width={iconSize} height={iconSize} aria-hidden="true">
+        <rect x="20" y="18" width="42" height="54" rx="10" fill="#9C6A3D" stroke="#311C12" strokeWidth={stroke} />
+        <path d="M30 28H52M30 38H48M30 48H50" stroke="#FCE8B2" strokeWidth={stroke - 1} strokeLinecap="round" />
+        <path d="M36 58L44 50L52 58" fill="none" stroke="#FCE8B2" strokeWidth={stroke - 1} strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="67" cy="56" r="14" fill="#4D6A88" stroke="#162534" strokeWidth={stroke} />
+        <circle cx="67" cy="56" r="5" fill="#D6EFFD" stroke="#162534" strokeWidth={stroke - 1} />
+        <path d="M67 35V28M67 84V77M46 56H39M95 56H88M52 41L47 36M82 76L77 71M82 36L77 41M52 71L47 76" stroke="#162534" strokeWidth={stroke - 0.8} strokeLinecap="round" />
+      </svg>
+    );
+
+    const renderDamGlyph = () => (
+      <svg viewBox="0 0 96 96" width={iconSize} height={iconSize} aria-hidden="true">
+        <path d="M22 24H60C70 24 76 30 76 40V72H22V24Z" fill="#5D7C92" stroke="#172634" strokeWidth={stroke} strokeLinejoin="round" />
+        <path d="M32 24V72M44 24V72M56 24V72" stroke="#CFF3FF" strokeWidth={stroke - 1} opacity="0.7" />
+        <path d="M76 42C83 46 86 51 86 58C86 65 83 70 76 74" fill="none" stroke="#97E8FF" strokeWidth={stroke} strokeLinecap="round" />
+        <path d="M14 76C22 71 30 69 38 69C46 69 54 71 62 76C70 81 78 83 86 83" fill="none" stroke="#8CDFFF" strokeWidth={stroke - 0.6} strokeLinecap="round" />
+        <path d="M14 66C22 61 30 59 38 59C46 59 54 61 62 66C70 71 78 73 86 73" fill="none" stroke="#66C7FF" strokeWidth={stroke - 1} strokeLinecap="round" opacity="0.9" />
+      </svg>
+    );
+
+    const fallback = (
+      <span className={size === 'hero' ? 'text-6xl sm:text-7xl' : 'text-4xl sm:text-5xl'}>
+        {getLocationEmoji(campaign.location)}
+      </span>
+    );
+
+    let iconNode: React.ReactNode = fallback;
+    switch (campaign.id) {
+      case 'campaign_11':
+        iconNode = renderDoorGlyph('#D86B55', '#48515F');
+        break;
+      case 'campaign_12':
+        iconNode = renderValleyGlyph();
+        break;
+      case 'campaign_13':
+        iconNode = renderMirrorGlyph();
+        break;
+      case 'campaign_14':
+        iconNode = renderWindGlyph();
+        break;
+      case 'campaign_15':
+        iconNode = renderWorkshopGlyph();
+        break;
+      case 'campaign_16':
+        iconNode = renderDamGlyph();
+        break;
+      default:
+        break;
+    }
+
+    return <div className={containerClass}>{iconNode}</div>;
   };
 
   const getThemeColor = (theme: string) => {
@@ -255,7 +359,7 @@ export default function CampaignSelector({ onSelectCampaign, onClose }: Campaign
 
                   {/* 地点图标 - 移动端适配 */}
                   <div className="text-center mb-3 sm:mb-4">
-                    <div className="text-4xl sm:text-6xl mb-1 sm:mb-2">{getLocationEmoji(campaign.location)}</div>
+                    <div className="mb-1 sm:mb-2">{renderCampaignLocationIcon(campaign, 'card')}</div>
                     <h3 className="text-base sm:text-xl font-bold text-white mb-1">{campaign.name}</h3>
                     <p className="text-xs sm:text-sm text-slate-400">{campaign.location}</p>
                   </div>
@@ -298,7 +402,7 @@ export default function CampaignSelector({ onSelectCampaign, onClose }: Campaign
             <div className="bg-gradient-to-r from-slate-700 to-slate-700 rounded-xl p-4 sm:p-8 border border-slate-600 shadow-lg">
               {/* 移动端：垂直布局 / 桌面端：水平布局 */}
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6">
-                <div className="text-6xl sm:text-8xl">{getLocationEmoji(selectedCampaign.location)}</div>
+                {renderCampaignLocationIcon(selectedCampaign, 'hero')}
                 <div className="flex-1 text-center sm:text-left">
                   <h2 className="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2">{selectedCampaign.name}</h2>
                   <p className="text-lg sm:text-xl text-blue-400 mb-3 sm:mb-4">{selectedCampaign.location}</p>

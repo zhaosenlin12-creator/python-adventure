@@ -1,29 +1,40 @@
 <svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="ss" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E04040"/><stop offset="100%" stop-color="#B52020"/></linearGradient>
-    <linearGradient id="sb" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#C42020"/><stop offset="100%" stop-color="#901818"/></linearGradient>
-    <filter id="sf"><feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000" flood-opacity=".22"/></filter>
+    <linearGradient id="sofaFabric" x1="24" y1="30" x2="104" y2="104" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#B75B52"/>
+      <stop offset=".55" stop-color="#8F3B36"/>
+      <stop offset="1" stop-color="#642821"/>
+    </linearGradient>
+    <linearGradient id="sofaSeat" x1="20" y1="58" x2="104" y2="94" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#D07A68"/>
+      <stop offset=".56" stop-color="#A6473F"/>
+      <stop offset="1" stop-color="#733027"/>
+    </linearGradient>
+    <linearGradient id="sofaWood" x1="20" y1="88" x2="108" y2="110" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8B5B31"/>
+      <stop offset=".58" stop-color="#5C361D"/>
+      <stop offset="1" stop-color="#2E1A0F"/>
+    </linearGradient>
+    <filter id="sofaShadow" x="2" y="12" width="124" height="112" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#23140D" flood-opacity=".24"/>
+    </filter>
   </defs>
-  <g filter="url(#sf)">
-    <rect x="22" y="98" width="8" height="14" rx="3" fill="#5C3317"/>
-    <rect x="44" y="98" width="8" height="14" rx="3" fill="#5C3317"/>
-    <rect x="76" y="98" width="8" height="14" rx="3" fill="#5C3317"/>
-    <rect x="98" y="98" width="8" height="14" rx="3" fill="#5C3317"/>
-    <rect x="16" y="82" width="96" height="20" rx="4" fill="#7B3F00"/>
-    <rect x="20" y="32" width="88" height="28" rx="8" fill="url(#sb)"/>
-    <line x1="42" y1="36" x2="42" y2="56" stroke="#fff" stroke-width=".7" opacity=".15"/>
-    <line x1="64" y1="36" x2="64" y2="56" stroke="#fff" stroke-width=".7" opacity=".15"/>
-    <line x1="86" y1="36" x2="86" y2="56" stroke="#fff" stroke-width=".7" opacity=".15"/>
-    <ellipse cx="64" cy="40" rx="30" ry="8" fill="#fff" opacity=".12"/>
-    <rect x="8" y="40" width="18" height="44" rx="8" fill="url(#sb)"/>
-    <rect x="102" y="40" width="18" height="44" rx="8" fill="url(#sb)"/>
-    <rect x="20" y="56" width="88" height="28" rx="6" fill="url(#ss)"/>
-    <line x1="42" y1="60" x2="42" y2="80" stroke="#fff" stroke-width=".8" opacity=".18"/>
-    <line x1="64" y1="60" x2="64" y2="80" stroke="#fff" stroke-width=".8" opacity=".18"/>
-    <line x1="86" y1="60" x2="86" y2="80" stroke="#fff" stroke-width=".8" opacity=".18"/>
-    <ellipse cx="42" cy="64" rx="12" ry="4" fill="#fff" opacity=".12"/>
-    <ellipse cx="86" cy="64" rx="12" ry="4" fill="#fff" opacity=".12"/>
-    <ellipse cx="34" cy="52" rx="10" ry="12" fill="#FFD700" opacity=".55" transform="rotate(-10 34 52)"/>
-    <ellipse cx="94" cy="52" rx="10" ry="12" fill="#FFD700" opacity=".55" transform="rotate(10 94 52)"/>
+  <ellipse cx="64" cy="109" rx="47" ry="8" fill="#1F150E" opacity=".2"/>
+  <g filter="url(#sofaShadow)">
+    <path d="M25 89H103L108 100C109 104 106 107 101 107H27C22 107 19 104 20 100L25 89Z" fill="url(#sofaWood)"/>
+    <rect x="27" y="98" width="9" height="17" rx="3" fill="#4A2A17"/>
+    <rect x="92" y="98" width="9" height="17" rx="3" fill="#4A2A17"/>
+    <path d="M24 38C24 29 31 24 41 26C50 28 55 34 55 43V66H24V38Z" fill="url(#sofaFabric)"/>
+    <path d="M104 38C104 29 97 24 87 26C78 28 73 34 73 43V66H104V38Z" fill="url(#sofaFabric)"/>
+    <path d="M34 31H94C101 31 105 36 105 43V74H23V43C23 36 27 31 34 31Z" fill="url(#sofaFabric)"/>
+    <path d="M35 38H93C97 38 99 41 99 45V67H29V45C29 41 31 38 35 38Z" fill="#7C332F" opacity=".32"/>
+    <path d="M22 58H106C111 58 115 62 115 67V88C115 94 110 98 104 98H24C18 98 13 94 13 88V67C13 62 17 58 22 58Z" fill="url(#sofaSeat)"/>
+    <path d="M21 65C23 61 27 60 33 60H95C101 60 105 61 107 65C101 70 92 73 80 73H48C36 73 27 70 21 65Z" fill="#E6A08D" opacity=".22"/>
+    <path d="M42 36V94" stroke="#5C2722" stroke-width="2" opacity=".55"/>
+    <path d="M64 36V96" stroke="#5C2722" stroke-width="2" opacity=".5"/>
+    <path d="M86 36V94" stroke="#5C2722" stroke-width="2" opacity=".55"/>
+    <path d="M29 76C38 81 49 83 64 83C79 83 90 81 99 76" stroke="#F1C0AE" stroke-width="2" stroke-linecap="round" opacity=".25"/>
+    <path d="M32 41C39 36 49 36 55 42" stroke="#F4CABD" stroke-width="2" stroke-linecap="round" opacity=".25"/>
+    <path d="M73 42C79 36 89 36 96 41" stroke="#F4CABD" stroke-width="2" stroke-linecap="round" opacity=".25"/>
   </g>
 </svg>

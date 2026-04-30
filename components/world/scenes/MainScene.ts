@@ -25,6 +25,7 @@ interface Station {
 }
 
 export class MainScene extends Phaser.Scene {
+    private static readonly HUD_FONT_FAMILY = '"Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif';
     private player!: Phaser.Physics.Arcade.Sprite;
     private platforms!: Phaser.Physics.Arcade.StaticGroup;
     private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
@@ -380,12 +381,14 @@ export class MainScene extends Phaser.Scene {
 
         // 信息文本（固定在相机右下角）
         this.infoText = this.add.text(width - 20, height - 14, this.getControlsText(), {
-            fontSize: '10px',
-            fontFamily: 'Arial, sans-serif',
+            fontSize: '13px',
+            fontFamily: MainScene.HUD_FONT_FAMILY,
             color: '#00ff00',
             align: 'right',
+            backgroundColor: '#04110acc',
+            padding: { x: 8, y: 5 },
             stroke: '#04110a',
-            strokeThickness: 4,
+            strokeThickness: 2,
         }).setOrigin(1, 1).setScrollFactor(0).setDepth(1100);
 
         // 返回按钮（固定在相机）
@@ -463,11 +466,13 @@ export class MainScene extends Phaser.Scene {
         
         // 技能提示文本（固定在相机左下角，与右侧操作提示对称）
         this.skillsSummaryText = this.add.text(20, height - 14, this.getSkillsText(), {
-            fontSize: '10px',
-            fontFamily: 'Arial, sans-serif',
+            fontSize: '13px',
+            fontFamily: MainScene.HUD_FONT_FAMILY,
             color: '#FFD700',
+            backgroundColor: '#231600cc',
+            padding: { x: 8, y: 5 },
             stroke: '#231600',
-            strokeThickness: 3,
+            strokeThickness: 2,
             align: 'left',
         }).setScrollFactor(0).setOrigin(0, 1).setDepth(1100);
         this.refreshBottomHudLayout();
@@ -793,6 +798,7 @@ export class MainScene extends Phaser.Scene {
         const colorHex = '#' + stationColor.toString(16).padStart(6, '0');
         const title = this.add.text(0, -95, station.title, {
             fontSize: '18px',
+            fontFamily: MainScene.HUD_FONT_FAMILY,
             fontStyle: 'bold',
             color: colorHex,
             backgroundColor: '#0a0e27CC',
@@ -815,10 +821,11 @@ export class MainScene extends Phaser.Scene {
                 const requirement = this.add.text(0, 10, 
                     `需要: ${station.requiredSkills.map(s => this.getSkillName(s)).join(', ')}`,
                     {
-                        fontSize: '11px',
-                        color: '#ff6b6b',
-                        backgroundColor: '#00000099',
-                        padding: { x: 6, y: 3 }
+                        fontSize: '13px',
+                        fontFamily: MainScene.HUD_FONT_FAMILY,
+                        color: '#ffd0d0',
+                        backgroundColor: '#210707dd',
+                        padding: { x: 8, y: 4 }
                     }
                 ).setOrigin(0.5);
                 container.add(requirement);
@@ -871,8 +878,8 @@ export class MainScene extends Phaser.Scene {
     private fitBottomHudText(
         textObject: Phaser.GameObjects.Text,
         maxWidth: number,
-        preferredFontSize = 10,
-        minFontSize = 8
+        preferredFontSize = 13,
+        minFontSize = 11
     ) {
         let nextFontSize = preferredFontSize;
         textObject.setFontSize(`${nextFontSize}px`);

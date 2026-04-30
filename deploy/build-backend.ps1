@@ -78,6 +78,20 @@ Compress-Archive -Path "$stageDir\*" -DestinationPath $zipFile -Force
 Remove-Item -LiteralPath $stageDir -Recurse -Force
 
 $zipSize = (Get-Item -LiteralPath $zipFile).Length / 1MB
+$zipHash = (Get-FileHash -LiteralPath $zipFile -Algorithm SHA256).Hash.ToLowerInvariant()
+$releaseDir = "release"
+$shaFile = Join-Path $releaseDir "SHA256SUMS.txt"
+
+if (-not (Test-Path $releaseDir)) {
+    New-Item -ItemType Directory -Path $releaseDir | Out-Null
+}
+
+$shaLines = @()
+if (Test-Path $shaFile) {
+    $shaLines = Get-Content $shaFile | Where-Object { $_ -and ($_ -notmatch '\s+backend-deploy\.zip$') }
+}
+$shaLines = @("$zipHash  backend-deploy.zip") + $shaLines
+Set-Content -LiteralPath $shaFile -Value $shaLines
 
 Write-Host ""
 Write-Host "========================================" -ForegroundColor Green
@@ -86,6 +100,7 @@ Write-Host "========================================" -ForegroundColor Green
 Write-Host ""
 Write-Host "Package: $zipFile" -ForegroundColor Cyan
 Write-Host "Size: $([math]::Round($zipSize, 2)) MB" -ForegroundColor Cyan
+Write-Host "SHA256: $zipHash" -ForegroundColor Cyan
 Write-Host "Included runtime deploy helpers: $($runtimeDeployFiles -join ', ')" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "Next steps:" -ForegroundColor Yellow

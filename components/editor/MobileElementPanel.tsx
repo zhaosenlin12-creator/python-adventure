@@ -65,7 +65,7 @@ const ENEMY_ELEMENTS: ElementDefinition[] = [
   { id: "enemy_bat", name: "Bat", nameCN: "蝙蝠", icon: "🦇", category: "enemies", defaultConfig: { enemyType: "bat", patrolDistance: 200, moveSpeed: 80 } as EnemyConfig, defaultSize: { width: 28, height: 28 }, isAdvanced: false, tooltip: "蝙蝠" },
   { id: "enemy_robot", name: "Robot", nameCN: "机器人", icon: "🤖", category: "enemies", defaultConfig: { enemyType: "robot", patrolDistance: 180, moveSpeed: 70 } as EnemyConfig, defaultSize: { width: 36, height: 36 }, isAdvanced: false, tooltip: "机器人" },
   { id: "enemy_slime", name: "Slime", nameCN: "史莱姆", icon: "🟢", category: "enemies", defaultConfig: { enemyType: "slime", patrolDistance: 100, moveSpeed: 40 } as EnemyConfig, defaultSize: { width: 32, height: 32 }, isAdvanced: false, tooltip: "史莱姆" },
-  { id: "enemy_boss", name: "Boss", nameCN: "Boss", icon: "👹", category: "enemies", defaultConfig: { enemyType: "boss", patrolDistance: 300, moveSpeed: 100, bossConfig: { hp: 100, defeatCondition: "combat" } } as EnemyConfig, defaultSize: { width: 64, height: 64 }, isAdvanced: true, tooltip: "Boss" },
+  { id: "enemy_boss", name: "Boss", nameCN: "Boss", icon: "B", category: "enemies", defaultConfig: { enemyType: "boss", patrolDistance: 300, moveSpeed: 100, bossConfig: { hp: 100, defeatCondition: "combat" } } as EnemyConfig, defaultSize: { width: 64, height: 64 }, isAdvanced: true, tooltip: "Boss" },
 ];
 
 // 收集物元素

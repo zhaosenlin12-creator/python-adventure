@@ -14,6 +14,16 @@ import { campaign13 } from './campaign-13-jingmen';
 import { campaign14 } from './campaign-14-jiepai';
 import { campaign15 } from './campaign-15-gongfang';
 import { campaign16 } from './campaign-16-zhongmen';
+import { applyDoorCampaignPolish } from './campaign-door-polish';
+
+const polishedDoorCampaigns = applyDoorCampaignPolish([
+  campaign11,
+  campaign12,
+  campaign13,
+  campaign14,
+  campaign15,
+  campaign16,
+]);
 
 export const advancedCampaigns: Campaign[] = [
   // ========================================
@@ -865,10 +875,5 @@ export const advancedCampaigns: Campaign[] = [
   campaign9,
   // 🔥 战役10：宜昌东站时空列车大冒险
   campaign10,
-  campaign11,
-  campaign12,
-  campaign13,
-  campaign14,
-  campaign15,
-  campaign16
+  ...polishedDoorCampaigns
 ];

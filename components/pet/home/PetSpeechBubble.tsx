@@ -7,6 +7,8 @@ interface PetSpeechBubbleProps {
   petName: string;
   mood?: string;
   onInteraction?: () => void;
+  compact?: boolean;
+  paused?: boolean;
 }
 
 type BubbleKind = 'speech' | 'thought';
@@ -73,6 +75,19 @@ const SPEECHES: Record<string, string[]> = {
   ],
 };
 
+const COMPACT_SPEECHES = [
+  '我在这里。',
+  '一起放松一下。',
+  '想玩一会儿。',
+  '小屋很舒服。',
+];
+
+const COMPACT_GREETINGS = [
+  '欢迎回来。',
+  '今天也一起玩。',
+  '我已经准备好了。',
+];
+
 function pickRandom<T>(items: T[]): T {
   return items[Math.floor(Math.random() * items.length)];
 }
@@ -89,6 +104,8 @@ export default function PetSpeechBubble({
   petName,
   mood = 'normal',
   onInteraction,
+  compact = false,
+  paused = false,
 }: PetSpeechBubbleProps) {
   const [currentSpeech, setCurrentSpeech] = useState('');
   const [isVisible, setIsVisible] = useState(false);
@@ -96,8 +113,8 @@ export default function PetSpeechBubble({
   const showTimeoutRef = useRef<number | null>(null);
   const hideTimeoutRef = useRef<number | null>(null);
 
-  const speechPool = useMemo(() => SPEECHES[mood] || SPEECHES.normal, [mood]);
-  const greetings = useMemo(() => createGreeting(petName), [petName]);
+  const speechPool = useMemo(() => (compact ? COMPACT_SPEECHES : SPEECHES[mood] || SPEECHES.normal), [compact, mood]);
+  const greetings = useMemo(() => (compact ? COMPACT_GREETINGS : createGreeting(petName)), [compact, petName]);
 
   useEffect(() => {
     const clearTimers = () => {
@@ -111,6 +128,12 @@ export default function PetSpeechBubble({
       }
     };
 
+    if (paused) {
+      clearTimers();
+      setIsVisible(false);
+      return clearTimers;
+    }
+
     const revealBubble = (message: string, kind: BubbleKind) => {
       setCurrentSpeech(message);
       setBubbleKind(kind);
@@ -119,30 +142,33 @@ export default function PetSpeechBubble({
       hideTimeoutRef.current = window.setTimeout(() => {
         setIsVisible(false);
         hideTimeoutRef.current = null;
-      }, 2600 + Math.floor(Math.random() * 1400));
+      }, (compact ? 2200 : 2600) + Math.floor(Math.random() * (compact ? 900 : 1400)));
     };
 
     const scheduleNext = () => {
       showTimeoutRef.current = window.setTimeout(() => {
-        const shouldShow = Math.random() < 0.64;
+        const shouldShow = Math.random() < (compact ? 0.42 : 0.64);
         if (shouldShow) {
           revealBubble(pickRandom(speechPool), Math.random() < 0.74 ? 'speech' : 'thought');
         }
         scheduleNext();
-      }, 12000 + Math.floor(Math.random() * 7000));
+      }, (compact ? 19000 : 12000) + Math.floor(Math.random() * (compact ? 11000 : 7000)));
     };
 
-    revealBubble(pickRandom(greetings), 'speech');
+    setIsVisible(false);
+    if (!compact) {
+      revealBubble(pickRandom(greetings), 'speech');
+    }
     scheduleNext();
 
     return clearTimers;
-  }, [greetings, speechPool]);
+  }, [compact, greetings, paused, speechPool]);
 
   return (
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="absolute left-1/2 top-[-76px] z-40"
+          className={`absolute left-1/2 z-40 ${compact ? 'top-[-46px]' : 'top-[-76px]'}`}
           initial={{ opacity: 0, y: 10, scale: 0.9, x: '-50%' }}
           animate={{ opacity: 1, y: 0, scale: 1, x: '-50%' }}
           exit={{ opacity: 0, y: -8, scale: 0.92 }}
@@ -150,9 +176,9 @@ export default function PetSpeechBubble({
           onClick={onInteraction}
         >
           {bubbleKind === 'speech' ? (
-            <SpeechBubble text={currentSpeech} />
+            <SpeechBubble text={currentSpeech} compact={compact} />
           ) : (
-            <ThoughtBubble text={currentSpeech} />
+            <ThoughtBubble text={currentSpeech} compact={compact} />
           )}
         </motion.div>
       )}
@@ -160,21 +186,29 @@ export default function PetSpeechBubble({
   );
 }
 
-function SpeechBubble({ text }: { text: string }) {
+function SpeechBubble({ text, compact = false }: { text: string; compact?: boolean }) {
   return (
     <div className="relative">
-      <div className="min-w-[156px] max-w-[240px] rounded-[24px] border border-cyan-300/26 bg-[linear-gradient(145deg,rgba(15,23,42,0.98),rgba(2,6,23,0.94))] px-4 py-3 shadow-[0_20px_44px_rgba(2,6,23,0.34)] backdrop-blur-sm">
-        <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-cyan-200/70">
-          Companion Voice
-        </div>
-        <p className="mt-1 text-center text-sm font-medium leading-6 text-slate-100">{text}</p>
+      <div
+        className={`backdrop-blur-sm ${
+          compact
+            ? 'min-w-[104px] max-w-[148px] rounded-[18px] border border-cyan-200/24 bg-[linear-gradient(145deg,rgba(8,47,73,0.86),rgba(15,23,42,0.82))] px-2.5 py-2 shadow-[0_14px_28px_rgba(8,47,73,0.16)]'
+            : 'min-w-[156px] max-w-[240px] rounded-[24px] border border-cyan-300/26 bg-[linear-gradient(145deg,rgba(15,23,42,0.98),rgba(2,6,23,0.94))] px-4 py-3 shadow-[0_20px_44px_rgba(2,6,23,0.34)]'
+        }`}
+      >
+        {!compact && (
+          <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-cyan-200/70">
+            Companion Voice
+          </div>
+        )}
+        <p className={`text-center font-medium text-slate-100 ${compact ? 'text-[11px] leading-[1.35rem]' : 'mt-1 text-sm leading-6'}`}>{text}</p>
       </div>
-      <div className="absolute -bottom-3 left-1/2 -translate-x-1/2">
-        <svg width="28" height="16" viewBox="0 0 28 16" fill="none">
+      <div className={`absolute left-1/2 -translate-x-1/2 ${compact ? '-bottom-2.5' : '-bottom-3'}`}>
+        <svg width={compact ? 22 : 28} height={compact ? 12 : 16} viewBox="0 0 28 16" fill="none">
           <path
             d="M3 1C8.5 4.5 11.5 8 14 15C16.5 8 19.5 4.5 25 1"
-            fill="rgba(2,6,23,0.95)"
-            stroke="rgba(103,232,249,0.34)"
+            fill={compact ? 'rgba(8,47,73,0.86)' : 'rgba(2,6,23,0.95)'}
+            stroke={compact ? 'rgba(165,243,252,0.3)' : 'rgba(103,232,249,0.34)'}
             strokeWidth="1.8"
             strokeLinecap="round"
           />
@@ -184,18 +218,26 @@ function SpeechBubble({ text }: { text: string }) {
   );
 }
 
-function ThoughtBubble({ text }: { text: string }) {
+function ThoughtBubble({ text, compact = false }: { text: string; compact?: boolean }) {
   return (
     <div className="relative">
-      <div className="min-w-[144px] max-w-[228px] rounded-full border border-violet-300/22 bg-[linear-gradient(145deg,rgba(15,23,42,0.98),rgba(30,27,75,0.92))] px-5 py-3 shadow-[0_20px_44px_rgba(15,23,42,0.3)] backdrop-blur-sm">
-        <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-violet-200/65">
-          Quiet Thought
-        </div>
-        <p className="mt-1 text-center text-sm italic leading-6 text-slate-100">{text}</p>
+      <div
+        className={`backdrop-blur-sm ${
+          compact
+            ? 'min-w-[104px] max-w-[144px] rounded-[18px] border border-violet-200/22 bg-[linear-gradient(145deg,rgba(46,16,101,0.82),rgba(30,41,59,0.82))] px-3 py-2 shadow-[0_14px_28px_rgba(30,41,59,0.16)]'
+            : 'min-w-[144px] max-w-[228px] rounded-full border border-violet-300/22 bg-[linear-gradient(145deg,rgba(15,23,42,0.98),rgba(30,27,75,0.92))] px-5 py-3 shadow-[0_20px_44px_rgba(15,23,42,0.3)]'
+        }`}
+      >
+        {!compact && (
+          <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-violet-200/65">
+            Quiet Thought
+          </div>
+        )}
+        <p className={`text-center italic text-slate-100 ${compact ? 'text-[11px] leading-[1.35rem]' : 'mt-1 text-sm leading-6'}`}>{text}</p>
       </div>
-      <div className="absolute -bottom-4 left-1/2 flex -translate-x-1/2 items-end gap-1.5">
-        <div className="h-3.5 w-3.5 rounded-full border border-violet-300/20 bg-slate-950/90" />
-        <div className="mb-[-2px] h-2.5 w-2.5 rounded-full border border-violet-300/18 bg-slate-950/88" />
+      <div className={`absolute left-1/2 flex -translate-x-1/2 items-end ${compact ? '-bottom-3 gap-1' : '-bottom-4 gap-1.5'}`}>
+        <div className={`${compact ? 'h-3 w-3 border-violet-200/18 bg-violet-950/74' : 'h-3.5 w-3.5 border-violet-300/20 bg-slate-950/90'} rounded-full border`} />
+        <div className={`${compact ? 'mb-[-1px] h-2 w-2 border-violet-200/16 bg-violet-950/68' : 'mb-[-2px] h-2.5 w-2.5 border-violet-300/18 bg-slate-950/88'} rounded-full border`} />
       </div>
     </div>
   );

@@ -411,7 +411,7 @@ function EnemyProperties({
       {config.enemyType === "boss" && (
         <>
           <div className="border-t border-yellow-600/20 pt-3 mt-3">
-            <p className="text-xs text-yellow-400 mb-2">👹 Boss 基础配置</p>
+            <p className="text-xs text-yellow-400 mb-2">Boss 基础配置</p>
           </div>
           <NumberInput
             label="Boss血量"
@@ -444,7 +444,7 @@ function EnemyProperties({
 
           {/* 🔥 Boss技能配置 */}
           <div className="border-t border-red-600/20 pt-3 mt-3">
-            <p className="text-xs text-red-400 mb-2">⚔️ Boss 技能配置</p>
+            <p className="text-xs text-red-400 mb-2">Boss 技能配置</p>
             <p className="text-[10px] text-gray-500 mb-3">
               💡 选择Boss拥有的技能，技能会自动按冷却时间释放
             </p>
@@ -916,7 +916,7 @@ function getEnemyTypeName(type: string): string {
     bat: "蝙蝠 🦇",
     robot: "机器人 🤖",
     slime: "史莱姆 🟢",
-    boss: "Boss 👹",
+    boss: "Boss",
   };
   return names[type] || type;
 }
