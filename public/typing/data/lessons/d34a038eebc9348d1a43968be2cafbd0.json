@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.424846+00:00",
+  "request": {
+    "lesson_id": "d34a038eebc9348d1a43968be2cafbd0",
+    "course_id": "30951c93875a1e260feda8cb699005df",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "30951c93875a1e260feda8cb699005df",
+    "order": 508,
+    "nextCourseId": "30951c93875a1e260feda8cb699005df",
+    "courseName": "英语每日故事（初级）32-61",
+    "lessonId": "d34a038eebc9348d1a43968be2cafbd0",
+    "nextLessonId": "a10c7e2d9735e852c82dbe5fe05a8cc4",
+    "lessonName": "Snowman",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f02ae8500f9064c5099abba6cacdda79",
+        "index": 1,
+        "text": [
+          "Want to make a snowman? Here is what you do. Start with a small ball of snow and roll it around in the snow to make it bigger. Then make another smaller ball and put it on top of the first snowball. Next, make an even smaller ball for the head and put it on top of the second ball. Then give your snowman a nose, two eyes, and a mouth. That's it!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.178195+00:00",
+  "request": {
+    "lesson_id": "dc859e27a9055ab36244440ad06fca88",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 30,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "dc859e27a9055ab36244440ad06fca88",
+    "nextLessonId": "102f935a9178012596fbac1265ceb7fe",
+    "lessonName": "2022年版 PEP-五年级-上册-7",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-五年级-上册 - 第7课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d63da919f398467d1591c9d91a702749",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"nature\",\"pronun\":\"[ˈneɪtʃər]\",\"translation\":\"n. 自然；性质；本性；种类\",\"audio\":\"nature.mp3\"},{\"word\":\"forest\",\"pronun\":\"[ˈfɔːrɪst]\",\"translation\":\"n. 森林\\nvt. 植树于，使成为森林\",\"audio\":\"forest.mp3\"},{\"word\":\"river\",\"pronun\":\"[ˈrɪvər]\",\"translation\":\"n. 河，江\",\"audio\":\"river.mp3\"},{\"word\":\"lake\",\"pronun\":\"[leɪk]\",\"translation\":\"n. 湖；深红色颜料；胭脂红\\nvt. （使）血球溶解\\nvi. （使）血球溶解\",\"audio\":\"lake.mp3\"},{\"word\":\"mountain\",\"pronun\":\"[ˈmaʊntn]\",\"translation\":\"n. 山；山脉\",\"audio\":\"mountain.mp3\"},{\"word\":\"hill\",\"pronun\":\"[hɪl]\",\"translation\":\"n. 小山；丘陵；斜坡；山冈\",\"audio\":\"hill.mp3\"},{\"word\":\"tree\",\"pronun\":\"[triː]\",\"translation\":\"n. 树；木料；树状物\\nvt. 把...赶上树\\nvi. 爬上树；逃上树\",\"audio\":\"tree.mp3\"},{\"word\":\"bridge\",\"pronun\":\"[brɪdʒ]\",\"translation\":\"n. 桥；桥牌；桥接器；船桥\\nvt. 架桥；渡过\",\"audio\":\"bridge.mp3\"},{\"word\":\"building\",\"pronun\":\"[ˈbɪldɪŋ]\",\"translation\":\"n. 建筑；建筑物\\nv. 建筑；建立；增加（build的ing形式）\",\"audio\":\"building.mp3\"},{\"word\":\"village\",\"pronun\":\"[ˈvɪlɪdʒ]\",\"translation\":\"n. 村庄；村民；（动物的）群落\",\"audio\":\"village.mp3\"},{\"word\":\"boating\",\"pronun\":\"[ˈboʊtɪŋ]\",\"translation\":\"n. 划船\\nv. 划船（boat的ing形式）\\nadj. 划船的\",\"audio\":\"boating.mp3\"},{\"word\":\"go\",\"pronun\":\"[ɡoʊ]\",\"translation\":\"n. 去；进行；尝试\\nvi. 走；达到；运转；趋于\\nvt. 忍受；出产；以…打赌\\n[复数 goes 第三人称单数 goes 过去式 went 过去分词 gone 现在分词 going]\",\"audio\":\"go.mp3\"},{\"word\":\"are\",\"pronun\":\"[ər; ɑːr; er]\",\"translation\":\"v. 是（be的第二人称单复数现在式）\\nn. 公亩\",\"audio\":\"are.mp3\"},{\"word\":\"not\",\"pronun\":\"[nɑːt]\",\"translation\":\"adv. 表示否定，不\\nn. “非”（计算机中逻辑运算的一种）\",\"audio\":\"not.mp3\"},{\"word\":\"rabbit\",\"pronun\":\"[ˈræbɪt]\",\"translation\":\"n. 兔子，野兔\\nvt. 让…见鬼去吧\\nvi. 猎兔\",\"audio\":\"rabbit.mp3\"},{\"word\":\"high\",\"pronun\":\"[haɪ]\",\"translation\":\"n. 高水平；天空；由麻醉品引起的快感；高压地带\\nadj. 高的；高级的；崇高的；高音调的\\nadv. 高；奢侈地\",\"audio\":\"high.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

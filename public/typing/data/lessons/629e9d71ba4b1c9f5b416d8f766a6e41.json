@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.986782+00:00",
+  "request": {
+    "lesson_id": "629e9d71ba4b1c9f5b416d8f766a6e41",
+    "course_id": "6b7e28f9c51591c604dbd65a0dd6d5c4",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "6b7e28f9c51591c604dbd65a0dd6d5c4",
+    "order": 402,
+    "nextCourseId": "6b7e28f9c51591c604dbd65a0dd6d5c4",
+    "courseName": "百科知识2",
+    "lessonId": "629e9d71ba4b1c9f5b416d8f766a6e41",
+    "nextLessonId": "852ae287750d763bf48dbc72a2bf425e",
+    "lessonName": "游戏：英文单词",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-duck.b036f0ad8f.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "22c216bc5d011d43d037f5b207830bd0",
+        "index": 1,
+        "text": [
+          "seizure legacy legal flaw cope dignity ranch depress"
+        ],
+        "contentType": 3,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 30,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

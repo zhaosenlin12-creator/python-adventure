@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.669163+00:00",
+  "request": {
+    "lesson_id": "52ea407b701cb4068963e7ce2f3370fc",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 124,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "52ea407b701cb4068963e7ce2f3370fc",
+    "nextLessonId": "b8aa6b94d7099300c5c397ab4e4d1c0b",
+    "lessonName": "KET核心词-74",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第74课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8e61e485f390d12207ab6e961cb24a53",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"wild\",\"pronun\":\"[waɪld]\",\"translation\":\"n. 荒野\\nadj. 野生的；野蛮的；狂热的；荒凉的\\nadv. 疯狂地；胡乱地\",\"audio\":\"wild.mp3\"},{\"word\":\"wildlife\",\"pronun\":\"[ˈwaɪldlaɪf]\",\"translation\":\"n. 野生动植物\\nadj. 野生动植物的\",\"audio\":\"wildlife.mp3\"},{\"word\":\"will\",\"pronun\":\"[wɪl]\",\"translation\":\"n. 意志；决心；情感；遗嘱；意图；心愿\\nvt. 决心要；遗赠；用意志力使\\nvi. 愿意；下决心\\naux. 将；愿意；必须\",\"audio\":\"will.mp3\"},{\"word\":\"win\",\"pronun\":\"[wɪn]\",\"translation\":\"n. 赢；胜利\\nvt. 赢得；在…中获胜；劝诱\\nvi. 赢；获胜；成功\",\"audio\":\"win.mp3\"},{\"word\":\"wind\",\"pronun\":\"[wɪnd]\",\"translation\":\"vi. 缠绕；上发条；吹响号角\\nn. 风；呼吸；气味；卷绕\\nvt. 缠绕；上发条；使弯曲；吹号角；绕住或缠住某人\",\"audio\":\"wind.mp3\"},{\"word\":\"window\",\"pronun\":\"[ˈwɪndoʊ]\",\"translation\":\"n. 窗；窗口；窗户\",\"audio\":\"window.mp3\"},{\"word\":\"windsurf\",\"pronun\":\"[ˈwɪndsɜːrf]\",\"translation\":\"vi. 帆板；风帆冲浪\",\"audio\":\"windsurf.mp3\"},{\"word\":\"winner\",\"pronun\":\"[ˈwɪnər]\",\"translation\":\"n. 胜利者\",\"audio\":\"winner.mp3\"},{\"word\":\"winning\",\"pronun\":\"[ˈwɪnɪŋ]\",\"translation\":\"n. 胜利；获得；成功\\nv. 获胜（win的ing形式）\\nadj. 胜利的；获胜的\",\"audio\":\"winning.mp3\"},{\"word\":\"wise\",\"pronun\":\"[waɪz]\",\"translation\":\"adj. 明智的；聪明的；博学的\\nvt. 使知道；教导\\nvi. 了解\",\"audio\":\"wise.mp3\"},{\"word\":\"wish\",\"pronun\":\"[wɪʃ]\",\"translation\":\"n. 希望；祝福；心愿\\nvt. 祝愿；渴望；向…致问候语\\nvi. 愿望；需要\",\"audio\":\"wish.mp3\"},{\"word\":\"with\",\"pronun\":\"[wɪð; wɪθ]\",\"translation\":\"prep. 用；随着；支持；和…在一起\",\"audio\":\"with.mp3\"},{\"word\":\"woman\",\"pronun\":\"[ˈwʊmən]\",\"translation\":\"n. 妇女；女性；成年女子\",\"audio\":\"woman.mp3\"},{\"word\":\"wonder\",\"pronun\":\"[ˈwʌndər]\",\"translation\":\"n. 惊奇；奇迹；惊愕\\nadj. 奇妙的；非凡的\\nvi. 怀疑；想知道；惊讶\\nvt. 怀疑；惊奇；对…感到惊讶\",\"audio\":\"wonder.mp3\"},{\"word\":\"wonderful\",\"pronun\":\"[ˈwʌndərf(ə)l]\",\"translation\":\"adj. 极好的，精彩的，绝妙的；奇妙的；美妙；胜；神妙\",\"audio\":\"wonderful.mp3\"},{\"word\":\"wood\",\"pronun\":\"[wʊd]\",\"translation\":\"n. 木材；木制品；树林\\nvt. 植林于；给…添加木柴\\nvi. 收集木材\",\"audio\":\"wood.mp3\"},{\"word\":\"wool\",\"pronun\":\"[wʊl]\",\"translation\":\"n. 羊毛；毛线；绒线；毛织品；毛料衣物\",\"audio\":\"wool.mp3\"},{\"word\":\"word\",\"pronun\":\"[wɜːrd]\",\"translation\":\"n. [语] 单词；话语；消息；诺言；命令\\nvt. 用言辞表达\",\"audio\":\"word.mp3\"},{\"word\":\"work\",\"pronun\":\"[wɜːrk]\",\"translation\":\"n. 工作；[物] 功；产品；操作；职业；行为；事业；工厂；著作；文学、音乐或艺术作品\\nvt. 使工作；操作；经营；使缓慢前进\\nvi. 工作；运作；起作用\",\"audio\":\"work.mp3\"},{\"word\":\"worker\",\"pronun\":\"[ˈwɜːrkər]\",\"translation\":\"n. 工人；劳动者；职蚁\",\"audio\":\"worker.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

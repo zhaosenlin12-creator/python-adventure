@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.373540+00:00",
+  "request": {
+    "lesson_id": "b3762b6275f850a4d7185ed0dd96738b",
+    "course_id": "d47f40df8593ffe75da61fffca274131",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "d47f40df8593ffe75da61fffca274131",
+    "order": 252,
+    "nextCourseId": "d47f40df8593ffe75da61fffca274131",
+    "courseName": "汉字三级",
+    "lessonId": "b3762b6275f850a4d7185ed0dd96738b",
+    "nextLessonId": "271615d133633c728400b734bebb5574",
+    "lessonName": "游戏：英文单词",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-duck.b036f0ad8f.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "b48131d87562fef65ea33919792b9b58",
+        "index": 1,
+        "text": [
+          "intense scuffled because commission street familiar across heart commission important"
+        ],
+        "contentType": 3,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 1,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

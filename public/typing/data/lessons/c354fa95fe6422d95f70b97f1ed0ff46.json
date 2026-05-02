@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.770996+00:00",
+  "request": {
+    "lesson_id": "c354fa95fe6422d95f70b97f1ed0ff46",
+    "course_id": "df7bf8b8c0456926de2c1fac14a741b2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "order": 449,
+    "nextCourseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "courseName": "宋词必备67首（1）",
+    "lessonId": "c354fa95fe6422d95f70b97f1ed0ff46",
+    "nextLessonId": "ddaebb4028ed304610a99ae68cefcbc8",
+    "lessonName": "三衢道中",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a971bf105ce26d3975afb3faaa18ada1",
+        "index": 1,
+        "text": [
+          "三衢道中\\n曾几\\n梅子黄时日日晴，小溪泛尽却山行。\\n绿阴不减来时路，添得黄鹂四五声。"
+        ],
+        "pinyin": "[[\"三\", \"sān\"], [\"衢\", \"qú\"], [\"道\", \"dào\"], [\"中\", \"zhōng\"], [\"\\n\", \"\"], [\"曾\", \"zēng\"], [\"几\", \"jǐ\"], [\"\\n\", \"\"], [\"梅\", \"méi\"], [\"子\", \"zǐ\"], [\"黄\", \"huáng\"], [\"时\", \"shí\"], [\"日\", \"rì\"], [\"日\", \"rì\"], [\"晴\", \"qíng\"], [\"，\", \"\"], [\"小\", \"xiǎo\"], [\"溪\", \"xī\"], [\"泛\", \"fàn\"], [\"尽\", \"jìn\"], [\"却\", \"què\"], [\"山\", \"shān\"], [\"行\", \"xíng\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"绿\", \"lǜ\"], [\"阴\", \"yīn\"], [\"不\", \"bù\"], [\"减\", \"jiǎn\"], [\"来\", \"lái\"], [\"时\", \"shí\"], [\"路\", \"lù\"], [\"，\", \"\"], [\"添\", \"tiān\"], [\"得\", \"de\"], [\"黄\", \"huáng\"], [\"鹂\", \"lí\"], [\"四\", \"sì\"], [\"五\", \"wǔ\"], [\"声\", \"shēng\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.755544+00:00",
+  "request": {
+    "lesson_id": "c5245cf9f31c2bebecb07435d2e72547",
+    "course_id": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "order": 55,
+    "nextCourseId": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "courseName": "声母组合练习",
+    "lessonId": "c5245cf9f31c2bebecb07435d2e72547",
+    "nextLessonId": "3d4035d65d3145632027bb52cd2bf353",
+    "lessonName": "声母组合l",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "练习声母l与各韵母的组合",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "172a6c1b537e0d05d227b146f23162ac",
+        "index": 1,
+        "highlights": [
+          "l"
+        ],
+        "text": [
+          "请输入按键 [l]"
+        ],
+        "detail": "学习双拼按键 l"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "ea5b39eb71ad993c9e88543b31442c11",
+        "index": 2,
+        "text": [
+          "llllllll"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "512c5c8194a407cc89ae080396447815",
+        "index": 3,
+        "text": [
+          "李丽拉着篮子来到柳林，蓝蓝的天空飘着流云。她摘下绿绿的柳叶，轻轻放进篮里。林边有头老牛懒懒地躺着，李丽笑了，拎起篮子慢慢走回村里。"
+        ],
+        "pinyin": "[[\"李\", \"lǐ\"], [\"丽\", \"lì\"], [\"拉\", \"lā\"], [\"着\", \"zhe\"], [\"篮\", \"lán\"], [\"子\", \"zi\"], [\"来\", \"lái\"], [\"到\", \"dào\"], [\"柳\", \"liǔ\"], [\"林\", \"lín\"], [\"，\", \"\"], [\"蓝\", \"lán\"], [\"蓝\", \"lán\"], [\"的\", \"de\"], [\"天\", \"tiān\"], [\"空\", \"kōng\"], [\"飘\", \"piāo\"], [\"着\", \"zhe\"], [\"流\", \"liú\"], [\"云\", \"yún\"], [\"。\", \"\"], [\"她\", \"tā\"], [\"摘\", \"zhāi\"], [\"下\", \"xià\"], [\"绿\", \"lǜ\"], [\"绿\", \"lǜ\"], [\"的\", \"de\"], [\"柳\", \"liǔ\"], [\"叶\", \"yè\"], [\"，\", \"\"], [\"轻\", \"qīng\"], [\"轻\", \"qīng\"], [\"放\", \"fàng\"], [\"进\", \"jìn\"], [\"篮\", \"lán\"], [\"里\", \"li\"], [\"。\", \"\"], [\"林\", \"lín\"], [\"边\", \"biān\"], [\"有\", \"yǒu\"], [\"头\", \"tóu\"], [\"老\", \"lǎo\"], [\"牛\", \"niú\"], [\"懒\", \"lǎn\"], [\"懒\", \"lǎn\"], [\"地\", \"de\"], [\"躺\", \"tǎng\"], [\"着\", \"zhe\"], [\"，\", \"\"], [\"李\", \"lǐ\"], [\"丽\", \"lì\"], [\"笑\", \"xiào\"], [\"了\", \"le\"], [\"，\", \"\"], [\"拎\", \"līn\"], [\"起\", \"qǐ\"], [\"篮\", \"lán\"], [\"子\", \"zi\"], [\"慢\", \"màn\"], [\"慢\", \"màn\"], [\"走\", \"zǒu\"], [\"回\", \"huí\"], [\"村\", \"cūn\"], [\"里\", \"li\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 10,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.942639+00:00",
+  "request": {
+    "lesson_id": "91218be0aeea9c24ccbf84d81a4b5b12",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 406,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "91218be0aeea9c24ccbf84d81a4b5b12",
+    "nextLessonId": "da378a2d3d8601124539378eb47dcfa5",
+    "lessonName": "六级词汇正序版-134",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第134课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "04a0fa452f1bbe955b48fdda4c6229c2",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"library\",\"pronun\":\"[ˈlaɪbreri]\",\"translation\":\"n. 图书馆，藏书室；文库\",\"audio\":\"library.mp3\"},{\"word\":\"lot\",\"pronun\":\"[lɑːt]\",\"translation\":\"n. 份额；许多；命运；阄\\nadv. （与形容词和副词连用）很，非常；（与动词连用）非常\\npron. 大量，许多\\nvt. 分组，把…划分（常与out连用）；把（土地）划分成块\\nvi. 抽签，拈阄\",\"audio\":\"lot.mp3\"},{\"word\":\"Mark\",\"pronun\":\"[mɑːrk]\",\"translation\":\"n. 标志；马克；符号；痕迹；分数\\nvi. 作记号\\nvt. .标志；做标记于；打分数\\nn. . 标志；做标记于；打分数\",\"audio\":\"Mark.mp3\"},{\"word\":\"master\",\"pronun\":\"[ˈmæstər]\",\"translation\":\"vt. 控制；精通；征服\\nn. 硕士；主人；大师；教师\\nadj. 主人的；主要的；熟练的\",\"audio\":\"master.mp3\"},{\"word\":\"mean\",\"pronun\":\"[miːn]\",\"translation\":\"adj. 平均的；卑鄙的；低劣的；吝啬的\\nvt. 意味；想要；意欲\\nn. 平均值\\nvi. 用意\",\"audio\":\"mean.mp3\"},{\"word\":\"might\",\"pronun\":\"[maɪt]\",\"translation\":\"n. 力量；威力；势力\\nv. 可以；或许（may的过去式）；应该\\naux. 可能；也许\",\"audio\":\"might.mp3\"},{\"word\":\"mine\",\"pronun\":\"[maɪn]\",\"translation\":\"n. 矿，矿藏；矿山，矿井；地雷，水雷\\nvt. 开采，采掘；在…布雷\\nvi. 开矿，采矿；埋设地雷\\npron. 我的\",\"audio\":\"mine.mp3\"},{\"word\":\"minute\",\"pronun\":\"[ˈmɪnɪt]\",\"translation\":\"n. 分，分钟；片刻，一会儿；备忘录，笔记；会议记录\\nvt. 将…记录下来\\nadj. 微小的，详细的 [maɪˈnjuːt; US -ˈnuːt; maɪˋnut]\",\"audio\":\"minute.mp3\"},{\"word\":\"mirror\",\"pronun\":\"[ˈmɪrər]\",\"translation\":\"n. 镜子；真实的写照；榜样\\nvt. 反射；反映\",\"audio\":\"mirror.mp3\"},{\"word\":\"moon\",\"pronun\":\"[muːn]\",\"translation\":\"n. 月亮；月球；月光；卫星\\nvi. 闲荡；出神\\nvt. 虚度\",\"audio\":\"moon.mp3\"},{\"word\":\"novel\",\"pronun\":\"[ˈnɑːvl]\",\"translation\":\"adj. 新奇的；异常的\\nn. 小说\",\"audio\":\"novel.mp3\"},{\"word\":\"nurse\",\"pronun\":\"[nɜːrs]\",\"translation\":\"vt. 看护，护理；照顾；培养；给…喂奶\\nvi. 照料，护理；喂奶；当保姆\\nn. 护士；奶妈，保姆\",\"audio\":\"nurse.mp3\"},{\"word\":\"paper\",\"pronun\":\"[ˈpeɪpər]\",\"translation\":\"n. 纸；论文；文件；报纸\\nadj. 纸做的\\nvt. 用纸糊；用纸包装\\nvi. 贴糊墙纸；发交通违章传票\",\"audio\":\"paper.mp3\"},{\"word\":\"park\",\"pronun\":\"[pɑːrk]\",\"translation\":\"n. 公园；[交] 停车场\\nvt. 停放；放置；寄存\\nvi. 停放车辆\",\"audio\":\"park.mp3\"},{\"word\":\"part\",\"pronun\":\"[pɑːrt]\",\"translation\":\"n. 部分；角色；零件；一些；片段\\nadj. 部分的\\nvt. 分离；分配；分开\\nadv. 部分地\\nvi. 断裂；分手\",\"audio\":\"part.mp3\"},{\"word\":\"peanut\",\"pronun\":\"[ˈpiːnʌt]\",\"translation\":\"n. 花生\",\"audio\":\"peanut.mp3\"},{\"word\":\"period\",\"pronun\":\"[ˈpɪriəd]\",\"translation\":\"n. 周期，期间；时期；月经；课时；（语法学）句点，句号\\nadj. 某一时代的\",\"audio\":\"period.mp3\"},{\"word\":\"permit\",\"pronun\":\"[pərˈmɪt]\",\"translation\":\"n. 许可证，执照\\nvt. 许可；允许\\nvi. 许可；允许\",\"audio\":\"permit.mp3\"},{\"word\":\"piece\",\"pronun\":\"[piːs]\",\"translation\":\"n. 块；件；篇；硬币\\nvt. 修补；接合；凑合\",\"audio\":\"piece.mp3\"},{\"word\":\"pipe\",\"pronun\":\"[paɪp]\",\"translation\":\"n. 管；烟斗；笛\\nvt. 用管道输送；尖声唱；用管乐器演奏\\nvi. 吹笛；尖叫\",\"audio\":\"pipe.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.750518+00:00",
+  "request": {
+    "lesson_id": "a9a2aaf3c8b7382b736a6b81cd88319b",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 142,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "a9a2aaf3c8b7382b736a6b81cd88319b",
+    "nextLessonId": "3715296747a04e6a827dff8d46bfd154",
+    "lessonName": "KET核心词-128",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第128课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ccba77953686905fafede0aa2cef1b47",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"exciting\",\"pronun\":\"[ɪkˈsaɪtɪŋ]\",\"translation\":\"adj. 令人兴奋的；使人激动的\\nv. 激动；刺激（excite的ing形式）；唤起\",\"audio\":\"exciting.mp3\"},{\"word\":\"fashionable\",\"pronun\":\"[ˈfæʃnəbl]\",\"translation\":\"adj. 流行的；时髦的；上流社会的\",\"audio\":\"fashionable.mp3\"},{\"word\":\"funny\",\"pronun\":\"[ˈfʌni]\",\"translation\":\"n. 滑稽人物；笑话，有趣的故事；滑稽连环漫画栏；（英）（比赛用）单人双桨小艇\\nadj. 有趣的，好笑的，滑稽的；（口）稀奇的，古怪的，奇异的；有病的，不舒服的；狡猾的，欺骗（性）的，可疑的，不光明\",\"audio\":\"funny.mp3\"},{\"word\":\"gentle\",\"pronun\":\"[ˈdʒentl]\",\"translation\":\"n. 蛆，饵\\nadj. 温和的；文雅的\\nvt. 使温和，使驯服\",\"audio\":\"gentle.mp3\"},{\"word\":\"happy\",\"pronun\":\"[ˈhæpi]\",\"translation\":\"adj. 幸福的；高兴的；巧妙的\",\"audio\":\"happy.mp3\"},{\"word\":\"honest\",\"pronun\":\"[ˈɑːnɪst]\",\"translation\":\"adj. 诚实的，实在的；可靠的；坦率的\",\"audio\":\"honest.mp3\"},{\"word\":\"interested\",\"pronun\":\"[ˈɪntrəstɪd; ˈɪntrestɪd]\",\"translation\":\"v. 使…感兴趣（interest的过去分词）\\nadj. 感兴趣的；有权益的；有成见的\",\"audio\":\"interested.mp3\"},{\"word\":\"interesting\",\"pronun\":\"[ˈɪntrəstɪŋ; ˈɪntrestɪŋ]\",\"translation\":\"adj. 有趣的；引起兴趣的，令人关注的\",\"audio\":\"interesting.mp3\"},{\"word\":\"lazy\",\"pronun\":\"[ˈleɪzi]\",\"translation\":\"adj. 懒惰的；懒洋洋的；怠惰的；慢吞吞的\",\"audio\":\"lazy.mp3\"},{\"word\":\"nervous\",\"pronun\":\"[ˈnɜːrvəs]\",\"translation\":\"adj. 神经的；紧张不安的；强健有力的\",\"audio\":\"nervous.mp3\"},{\"word\":\"serious\",\"pronun\":\"[ˈsɪriəs]\",\"translation\":\"adj. 严肃的，严重的；认真的；庄重的；危急的\",\"audio\":\"serious.mp3\"},{\"word\":\"shy\",\"pronun\":\"[ʃaɪ]\",\"translation\":\"n. 投掷；惊跳\\nadj. 害羞的；畏缩的，胆怯的\\nvi. 投；畏缩；惊退；厌恶\\nvt. 投；乱掷\",\"audio\":\"shy.mp3\"},{\"word\":\"silly\",\"pronun\":\"[ˈsɪli]\",\"translation\":\"n. 傻瓜\\nadj. 愚蠢的；不明事理的；没头脑的\",\"audio\":\"silly.mp3\"},{\"word\":\"stupid\",\"pronun\":\"[ˈstuːpɪd]\",\"translation\":\"n. 傻瓜，笨蛋\\nadj. 愚蠢的；麻木的；乏味的\",\"audio\":\"stupid.mp3\"},{\"word\":\"tired\",\"pronun\":\"[ˈtaɪərd]\",\"translation\":\"v. 疲倦；对…腻烦（tire的过去分词形式）\\nadj. 疲倦的；厌倦的，厌烦的\",\"audio\":\"tired.mp3\"},{\"word\":\"tiring\",\"pronun\":\"[ˈtaɪərɪŋ]\",\"translation\":\"adj. 累人的；麻烦的；无聊的；引起疲劳的\\nv. 厌倦；使劳累（tire的ing形式）；感到疲倦\",\"audio\":\"tiring.mp3\"},{\"word\":\"upset\",\"pronun\":\"[ˌʌpˈset]\",\"translation\":\"n. 混乱；翻倒；颠覆\\nadj. 心烦的；混乱的；弄翻的\\nvt. 使心烦；颠覆；扰乱\\nvi. 翻倒\",\"audio\":\"upset.mp3\"},{\"word\":\"bar\",\"pronun\":\"[bɑːr]\",\"translation\":\"n. 条，棒；酒吧；障碍；法庭\\nprep. 除……外\\nvt. 禁止；阻拦\",\"audio\":\"bar.mp3\"},{\"word\":\"beautiful\",\"pronun\":\"[ˈbjuːtɪf(ə)l]\",\"translation\":\"adj. 美丽的\\n出色地\\n出色的\\n迷人的\\n迷人地\",\"audio\":\"beautiful.mp3\"},{\"word\":\"bookshop\",\"pronun\":\"[ˈbʊkʃɑːp]\",\"translation\":\"n. 书店\",\"audio\":\"bookshop.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

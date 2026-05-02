@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.794142+00:00",
+  "request": {
+    "lesson_id": "c8cf3b6b336bfeef0a3c7c17dae03e39",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 151,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "c8cf3b6b336bfeef0a3c7c17dae03e39",
+    "nextLessonId": "346e9f765c114142f7e6689048eadc62",
+    "lessonName": "KET核心词-18",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第18课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8eec52f7fc73d0a4bd6c170622ec3a43",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"delicious\",\"pronun\":\"[dɪˈlɪʃəs]\",\"translation\":\"adj. 美味的；可口的\",\"audio\":\"delicious.mp3\"},{\"word\":\"dentist\",\"pronun\":\"[ˈdentɪst]\",\"translation\":\"n. 牙科医生\\n牙医诊所\",\"audio\":\"dentist.mp3\"},{\"word\":\"department\",\"pronun\":\"[dɪˈpɑːrtmənt]\",\"translation\":\"n. 部；部门；系；科；局\",\"audio\":\"department.mp3\"},{\"word\":\"describe\",\"pronun\":\"[dɪˈskraɪb]\",\"translation\":\"vt. 描述，形容；描绘\",\"audio\":\"describe.mp3\"},{\"word\":\"desert\",\"pronun\":\"[ˈdezərt; dɪˈzɜːrt]\",\"translation\":\"n. 沙漠；荒原；应得的赏罚\\nvt. 遗弃；放弃；逃跑\\nadj. 沙漠的；荒凉的；不毛的\\nvi. 遗弃；开小差；逃掉\",\"audio\":\"desert.mp3\"},{\"word\":\"dessert\",\"pronun\":\"[dɪˈzɜːrt]\",\"translation\":\"n. 餐后甜点；甜点心\",\"audio\":\"dessert.mp3\"},{\"word\":\"detail\",\"pronun\":\"[ˈdiːteɪlˌdɪˈteɪl]\",\"translation\":\"n. 细节，详情\\nvt. 详述；选派\\nvi. 画详图\",\"audio\":\"detail.mp3\"},{\"word\":\"diary\",\"pronun\":\"[ˈdaɪəri]\",\"translation\":\"n. 日志，日记；日记簿\",\"audio\":\"diary.mp3\"},{\"word\":\"dictionary\",\"pronun\":\"[ˈdɪkʃəneri]\",\"translation\":\"n. 字典；词典\",\"audio\":\"dictionary.mp3\"},{\"word\":\"die\",\"pronun\":\"[daɪ]\",\"translation\":\"n. 冲模，钢模；骰子\\nvi. 死亡；凋零；熄灭\\nvt. 死，死于…\",\"audio\":\"die.mp3\"},{\"word\":\"different\",\"pronun\":\"[ˈdɪfrənt]\",\"translation\":\"adj. 不同的；个别的，与众不同的\",\"audio\":\"different.mp3\"},{\"word\":\"difficult\",\"pronun\":\"[ˈdɪfɪkəlt]\",\"translation\":\"adj. 困难的；不随和的；执拗的\",\"audio\":\"difficult.mp3\"},{\"word\":\"dig\",\"pronun\":\"[dɪɡ]\",\"translation\":\"n. 戳，刺；挖苦\\nvi. 挖掘\\nvt. 挖，掘；探究\",\"audio\":\"dig.mp3\"},{\"word\":\"digital\",\"pronun\":\"[ˈdɪdʒɪtl]\",\"translation\":\"n. 数字；键\\nadj. 数字的；手指的\",\"audio\":\"digital.mp3\"},{\"word\":\"dining-room\",\"pronun\":\"[ˈdaɪnɪŋ ruːmˌˈdaɪnɪŋ rʊm]\",\"translation\":\"n. 餐厅\",\"audio\":\"dining-room.mp3\"},{\"word\":\"dinner\",\"pronun\":\"[ˈdɪnər]\",\"translation\":\"n. 晚餐，晚宴；宴会；正餐\",\"audio\":\"dinner.mp3\"},{\"word\":\"dinosaur\",\"pronun\":\"[ˈdaɪnəsɔːr]\",\"translation\":\"n. 恐龙；过时、落伍的人或事物\",\"audio\":\"dinosaur.mp3\"},{\"word\":\"diploma\",\"pronun\":\"[dɪˈploʊmə]\",\"translation\":\"n. 毕业证书，学位证书；公文，文书；奖状\\nvt. 发给…毕业文凭\",\"audio\":\"diploma.mp3\"},{\"word\":\"direction\",\"pronun\":\"[dəˈrekʃn; daɪˈrekʃn]\",\"translation\":\"n. 方向；指导；趋势；用法说明\",\"audio\":\"direction.mp3\"},{\"word\":\"dirty\",\"pronun\":\"[ˈdɜːrti]\",\"translation\":\"adj. 下流的，卑鄙的；肮脏的；恶劣的；暗淡的\\nvt. 弄脏\\nvi. 变脏\",\"audio\":\"dirty.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

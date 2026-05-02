@@ -1,0 +1,105 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.673760+00:00",
+  "request": {
+    "lesson_id": "6c589e914eb903ca29406b325e811428",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 36,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "6c589e914eb903ca29406b325e811428",
+    "nextLessonId": "5ce7966ea022b81fd202863070d26715",
+    "lessonName": "巩固练习：uan、uang、iong、ing",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母uan、uang、iong、ing的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "30832ca73c0e15844239f2b612fa4a17",
+        "index": 1,
+        "highlights": [
+          "uan"
+        ],
+        "text": [
+          "请输入按键 [uan]"
+        ],
+        "detail": "学习双拼按键 uan"
+      },
+      {
+        "chapterId": "a3ef46bf441a9bf5561a17e82b093d10",
+        "index": 2,
+        "highlights": [
+          "uang"
+        ],
+        "text": [
+          "请输入按键 [uang]"
+        ],
+        "detail": "学习双拼按键 uang"
+      },
+      {
+        "chapterId": "243a77aa86262fbb7d20d3140be059b3",
+        "index": 3,
+        "highlights": [
+          "iong"
+        ],
+        "text": [
+          "请输入按键 [iong]"
+        ],
+        "detail": "学习双拼按键 iong"
+      },
+      {
+        "chapterId": "c6906860ae081b22b0acb7af7523a0d2",
+        "index": 4,
+        "highlights": [
+          "ing"
+        ],
+        "text": [
+          "请输入按键 [ing]"
+        ],
+        "detail": "学习双拼按键 ing"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "10d22e704dccbc00b9c22e517818d2b0",
+        "index": 5,
+        "text": [
+          "uanuanuanuanuanguanguanguangiongiongiongionginginginginguanuangionginguanuangionginguanuangionginguanuangionging"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "e9e21ed353788b1e6a5cbf88b13ec9b2",
+        "index": 6,
+        "text": [
+          "黄莺穿云唱，春光满园香。\\n王将军出征，勇士挺胸行。\\n狂风卷巨浪，船晃人惊慌。"
+        ],
+        "pinyin": "[\n  [\"黄\", \"huáng\"],\n  [\"莺\", \"yīng\"],\n  [\"穿\", \"chuān\"],\n  [\"云\", \"yún\"],\n  [\"唱\", \"chàng\"],\n  [\"，\", \"\"],\n  [\"春\", \"chūn\"],\n  [\"光\", \"guāng\"],\n  [\"满\", \"mǎn\"],\n  [\"园\", \"yuán\"],\n  [\"香\", \"xiāng\"],\n  [\"。\", \"\"],\n  [\"王\", \"wáng\"],\n  [\"将\", \"jiāng\"],\n  [\"军\", \"jūn\"],\n  [\"出\", \"chū\"],\n  [\"征\", \"zhēng\"],\n  [\"，\", \"\"],\n  [\"勇\", \"yǒng\"],\n  [\"士\", \"shì\"],\n  [\"挺\", \"tǐng\"],\n  [\"胸\", \"xiōng\"],\n  [\"行\", \"xíng\"],\n  [\"。\", \"\"],\n  [\"狂\", \"kuáng\"],\n  [\"风\", \"fēng\"],\n  [\"卷\", \"juǎn\"],\n  [\"巨\", \"jù\"],\n  [\"浪\", \"làng\"],\n  [\"，\", \"\"],\n  [\"船\", \"chuán\"],\n  [\"晃\", \"huàng\"],\n  [\"人\", \"rén\"],\n  [\"惊\", \"jīng\"],\n  [\"慌\", \"huāng\"],\n  [\"。\", \"\"]\n]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

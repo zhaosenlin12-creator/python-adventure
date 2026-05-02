@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.058343+00:00",
+  "request": {
+    "lesson_id": "573b5024d260dbe27d9500749977bff1",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 429,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "573b5024d260dbe27d9500749977bff1",
+    "nextLessonId": "2dea35342214cce1830984f71f8f9e02",
+    "lessonName": "六级词汇正序版-66",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第66课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5a77795d2846bf1b0b83b193ae962d59",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"loom\",\"pronun\":\"[luːm]\",\"translation\":\"n. 织布机；若隐若现的景象\\nvi. 可怕地出现；朦胧地出现；隐约可见\\nvt. 在织布机上织\",\"audio\":\"loom.mp3\"},{\"word\":\"lounge\",\"pronun\":\"[laʊndʒ]\",\"translation\":\"n. 休息室；闲逛；躺椅；（英）酒吧间\\nvi. 闲逛；懒洋洋地躺卧；闲混\\nvt. 虚度光阴\",\"audio\":\"lounge.mp3\"},{\"word\":\"loyal\",\"pronun\":\"[ˈlɔɪəl]\",\"translation\":\"adj. 忠诚的，忠心的；忠贞的\\nn. 效忠的臣民；忠实信徒\",\"audio\":\"loyal.mp3\"},{\"word\":\"loyalty\",\"pronun\":\"[ˈlɔɪəlti]\",\"translation\":\"n. 忠诚；忠心；忠实；忠于…感情\",\"audio\":\"loyalty.mp3\"},{\"word\":\"lubricate\",\"pronun\":\"[ˈluːbrɪkeɪt]\",\"translation\":\"vi. 润滑；涂油；起润滑剂作用\\nvt. 使…润滑；给…加润滑油\",\"audio\":\"lubricate.mp3\"},{\"word\":\"luggage\",\"pronun\":\"[ˈlʌɡɪdʒ]\",\"translation\":\"n. 行李；皮箱\",\"audio\":\"luggage.mp3\"},{\"word\":\"luminous\",\"pronun\":\"[ˈluːmɪnəs]\",\"translation\":\"adj. 发光的；明亮的；清楚的\",\"audio\":\"luminous.mp3\"},{\"word\":\"lunar\",\"pronun\":\"[ˈluːnər]\",\"translation\":\"adj. 月亮的，月球的；阴历的；银的；微亮的\",\"audio\":\"lunar.mp3\"},{\"word\":\"lure\",\"pronun\":\"[lʊr]\",\"translation\":\"n. 诱惑；饵；诱惑物\\nvt. 诱惑；引诱\",\"audio\":\"lure.mp3\"},{\"word\":\"luxury\",\"pronun\":\"[ˈlʌkʃəri]\",\"translation\":\"n. 奢侈，奢华；奢侈品；享受\\nadj. 奢侈的\",\"audio\":\"luxury.mp3\"},{\"word\":\"machinery\",\"pronun\":\"[məˈʃiːnəri]\",\"translation\":\"n. 机械；机器；机构；机械装置\",\"audio\":\"machinery.mp3\"},{\"word\":\"magistrate\",\"pronun\":\"[ˈmædʒɪstreɪt]\",\"translation\":\"n. 地方法官；文职官员；治安推事\",\"audio\":\"magistrate.mp3\"},{\"word\":\"magnet\",\"pronun\":\"[ˈmæɡnət]\",\"translation\":\"n. 磁铁；[电磁] 磁体；磁石\",\"audio\":\"magnet.mp3\"},{\"word\":\"magnetic\",\"pronun\":\"[mæɡˈnetɪk]\",\"translation\":\"adj. 地磁的；有磁性的；有吸引力的\",\"audio\":\"magnetic.mp3\"},{\"word\":\"magnificent\",\"pronun\":\"[mæɡˈnɪfɪsnt]\",\"translation\":\"adj. 高尚的；壮丽的；华丽的；宏伟的\",\"audio\":\"magnificent.mp3\"},{\"word\":\"magnify\",\"pronun\":\"[ˈmæɡnɪfaɪ]\",\"translation\":\"vt. 放大；赞美；夸大\\nvi. 放大；有放大能力\",\"audio\":\"magnify.mp3\"},{\"word\":\"magnitude\",\"pronun\":\"[ˈmæɡnɪtuːd]\",\"translation\":\"n. 大小；量级；[地震] 震级；重要；光度\",\"audio\":\"magnitude.mp3\"},{\"word\":\"maintain\",\"pronun\":\"[meɪnˈteɪn]\",\"translation\":\"vt. 维持；继续；维修；主张；供养\",\"audio\":\"maintain.mp3\"},{\"word\":\"majesty\",\"pronun\":\"[ˈmædʒəsti]\",\"translation\":\"n. 威严；最高权威，王权；雄伟；权威\",\"audio\":\"majesty.mp3\"},{\"word\":\"majority\",\"pronun\":\"[məˈdʒɔːrəti]\",\"translation\":\"n. 多数；成年\",\"audio\":\"majority.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

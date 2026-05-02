@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.596769+00:00",
+  "request": {
+    "lesson_id": "8178f250b9c4805dddb5f8f4ac094891",
+    "course_id": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "order": 408,
+    "nextCourseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "courseName": "初中必背古诗60首（1）",
+    "lessonId": "8178f250b9c4805dddb5f8f4ac094891",
+    "nextLessonId": "5b519c5fd8ffc3332b7f34ca25ddfdd2",
+    "lessonName": "相见欢",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "441773a02a275ec2a53d4989e4204fa8",
+        "index": 1,
+        "text": [
+          "相见欢\\n李煜\\n无言独上西楼，月如钩。寂寞梧桐深院锁清秋。\\n剪不断，理还乱，是离愁。别是一般滋味在心头。"
+        ],
+        "pinyin": "[[\"相\", \"xiāng\"], [\"见\", \"jiàn\"], [\"欢\", \"huān\"], [\"\\n\", \"\"], [\"李\", \"lǐ\"], [\"煜\", \"yù\"], [\"\\n\", \"\"], [\"无\", \"wú\"], [\"言\", \"yán\"], [\"独\", \"dú\"], [\"上\", \"shàng\"], [\"西\", \"xī\"], [\"楼\", \"lóu\"], [\"，\", \"\"], [\"月\", \"yuè\"], [\"如\", \"rú\"], [\"钩\", \"gōu\"], [\"。\", \"\"], [\"寂\", \"jì\"], [\"寞\", \"mò\"], [\"梧\", \"wú\"], [\"桐\", \"tóng\"], [\"深\", \"shēn\"], [\"院\", \"yuàn\"], [\"锁\", \"suǒ\"], [\"清\", \"qīng\"], [\"秋\", \"qiū\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"剪\", \"jiǎn\"], [\"不\", \"bù\"], [\"断\", \"duàn\"], [\"，\", \"\"], [\"理\", \"lǐ\"], [\"还\", \"hái\"], [\"乱\", \"luàn\"], [\"，\", \"\"], [\"是\", \"shì\"], [\"离\", \"lí\"], [\"愁\", \"chóu\"], [\"。\", \"\"], [\"别\", \"bié\"], [\"是\", \"shì\"], [\"一\", \"yī\"], [\"般\", \"bān\"], [\"滋\", \"zī\"], [\"味\", \"wèi\"], [\"在\", \"zài\"], [\"心\", \"xīn\"], [\"头\", \"tóu\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

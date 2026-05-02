@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.705902+00:00",
+  "request": {
+    "lesson_id": "cbd9503dc11c53f8265c5e3c8b0e8f65",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 357,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "cbd9503dc11c53f8265c5e3c8b0e8f65",
+    "nextLessonId": "97b4ea2eb8ccd7cec0ada47b25ae7248",
+    "lessonName": "六级词汇正序版-124",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第124课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ca74c0aac18ec81a5d8fb938f93a8c17",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"imposing\",\"pronun\":\"[ɪmˈpoʊzɪŋ]\",\"translation\":\"v. impose的ing形式\\nadj. （建筑物等）壮观的；威风的；（仪表）堂堂的；给人深刻印象的\",\"audio\":\"imposing.mp3\"},{\"word\":\"inaccessible\",\"pronun\":\"[ˌɪnækˈsesəbl]\",\"translation\":\"adj. 难达到的；难接近的；难见到的\",\"audio\":\"inaccessible.mp3\"},{\"word\":\"incompatible\",\"pronun\":\"[ˌɪnkəmˈpætəbl]\",\"translation\":\"n. 互不相容的人或事物\\nadj. 不相容的；矛盾的；不能同时成立的\",\"audio\":\"incompatible.mp3\"},{\"word\":\"incredibly\",\"pronun\":\"[ɪnˈkredəbli]\",\"translation\":\"adv. 难以置信地；非常地\",\"audio\":\"incredibly.mp3\"},{\"word\":\"indefinitely\",\"pronun\":\"[ɪnˈdefɪnətli]\",\"translation\":\"adv. 不确定地，无限期地；模糊地，不明确地\",\"audio\":\"indefinitely.mp3\"},{\"word\":\"inevitably\",\"pronun\":\"[ɪnˈevɪtəbli]\",\"translation\":\"adv. 不可避免地；必然地\",\"audio\":\"inevitably.mp3\"},{\"word\":\"infection\",\"pronun\":\"[ɪnˈfekʃn]\",\"translation\":\"n. 感染；传染；影响；传染病\",\"audio\":\"infection.mp3\"},{\"word\":\"infinitely\",\"pronun\":\"[ˈɪnfɪnətli]\",\"translation\":\"adv. 无限地；极其\",\"audio\":\"infinitely.mp3\"},{\"word\":\"informed\",\"pronun\":\"[ɪnˈfɔːrmd]\",\"translation\":\"v. 通知；使了解；提供资料（inform的过去分词）\\nadj. 消息灵通的；见多识广的\",\"audio\":\"informed.mp3\"},{\"word\":\"infusion\",\"pronun\":\"[ɪnˈfjuːʒn]\",\"translation\":\"n. 灌输；浸泡；注入物；激励\",\"audio\":\"infusion.mp3\"},{\"word\":\"initially\",\"pronun\":\"[ɪˈnɪʃəli]\",\"translation\":\"adv. 最初，首先；开头\",\"audio\":\"initially.mp3\"},{\"word\":\"innate\",\"pronun\":\"[ɪˈneɪt]\",\"translation\":\"adj. 先天的；固有的；与生俱来的\",\"audio\":\"innate.mp3\"},{\"word\":\"innovative\",\"pronun\":\"[ˈɪnəveɪtɪv]\",\"translation\":\"adj. 革新的，创新的；新颖的；有创新精神的\",\"audio\":\"innovative.mp3\"},{\"word\":\"insanity\",\"pronun\":\"[ɪnˈsænəti]\",\"translation\":\"n. 疯狂；精神错乱；精神病；愚顽\",\"audio\":\"insanity.mp3\"},{\"word\":\"inspection\",\"pronun\":\"[ɪnˈspekʃn]\",\"translation\":\"n. 视察，检查\",\"audio\":\"inspection.mp3\"},{\"word\":\"inspirational\",\"pronun\":\"[ˌɪnspəˈreɪʃənl]\",\"translation\":\"adj. 鼓舞人心的；带有灵感的，给予灵感的\",\"audio\":\"inspirational.mp3\"},{\"word\":\"inspiring\",\"pronun\":\"[ɪnˈspaɪərɪŋ]\",\"translation\":\"v. 鼓舞；激发；使感悟（inspire的ing形式）\\nadj. 鼓舞人心的；灌输的；启发灵感的\",\"audio\":\"inspiring.mp3\"},{\"word\":\"instability\",\"pronun\":\"[ˌɪnstəˈbɪləti]\",\"translation\":\"n. 不稳定（性）；基础薄弱；不安定\",\"audio\":\"instability.mp3\"},{\"word\":\"instructive\",\"pronun\":\"[ɪnˈstrʌktɪv]\",\"translation\":\"adj. 有益的；教育性的\",\"audio\":\"instructive.mp3\"},{\"word\":\"intake\",\"pronun\":\"[ˈɪnteɪk]\",\"translation\":\"n. 摄取量；通风口；引入口；引入的量\",\"audio\":\"intake.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

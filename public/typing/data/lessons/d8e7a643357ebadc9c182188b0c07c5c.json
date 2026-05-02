@@ -1,0 +1,62 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.511916+00:00",
+  "request": {
+    "lesson_id": "d8e7a643357ebadc9c182188b0c07c5c",
+    "course_id": "a74c1aef61379ff4f0a2ca54be6ac56f",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "a74c1aef61379ff4f0a2ca54be6ac56f",
+    "order": 2,
+    "nextCourseId": "a74c1aef61379ff4f0a2ca54be6ac56f",
+    "courseName": "基础练习-下排数字",
+    "lessonId": "d8e7a643357ebadc9c182188b0c07c5c",
+    "nextLessonId": "99a8e24a941fe2835da964b819d2857c",
+    "lessonName": "2指法练习",
+    "icon": "data/assets/daziya.com/key-icon_num-2.9c7c8b7e05.png",
+    "description": "数字输入练习 - 2指法练习",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "6928a2790c73c231dad407fafb0b43b5",
+        "index": 1,
+        "highlights": [
+          "2"
+        ],
+        "text": [
+          "请用右手中指输入数字2"
+        ],
+        "detail": "新的数字键"
+      }
+    ],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2b202aa0f93a77a6de8b2ba3e4ae1c38",
+        "index": 2,
+        "text": [
+          "22222222222222222222"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "2",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

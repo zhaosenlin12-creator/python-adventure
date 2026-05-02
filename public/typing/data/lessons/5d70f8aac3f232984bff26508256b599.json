@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.590775+00:00",
+  "request": {
+    "lesson_id": "5d70f8aac3f232984bff26508256b599",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 551,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "5d70f8aac3f232984bff26508256b599",
+    "nextLessonId": "91098b322ee078cc7fd29d998dfbea7f",
+    "lessonName": "Earth Day",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a8cfdc26fb71478cdfdc343e0395964a",
+        "index": 1,
+        "text": [
+          "Earth Day\\nThe first Earth Day was on April 22, 1970. It was in the United States.\\nA man named Mr. Nelson started it. He wanted people to take care of the earth. People worked on cleaning the land, water and air. Some people picked up trash. Other people planted trees and flowers.\\nThe second Earth Day was on April 22, 1990. This time, people all over the world took part. Now we celebrate Earth Day every year on April 22.\\nPeople in Australia clean beaches.\\nPeople in Jordan and Canada plant trees.\\nPeople in Russia plant gardens. People in Sweden visit farms. On one Earth Day, people in Japan made soap and postcards out of trash.\\nWhat will you do on Earth Day this year?"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

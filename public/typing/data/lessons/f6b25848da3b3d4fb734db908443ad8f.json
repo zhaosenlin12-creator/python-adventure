@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.832037+00:00",
+  "request": {
+    "lesson_id": "f6b25848da3b3d4fb734db908443ad8f",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 379,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "f6b25848da3b3d4fb734db908443ad8f",
+    "nextLessonId": "3ae2d9674a83b4f8f606db30f2fd4f41",
+    "lessonName": "六级词汇正序版-53",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第53课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6a08678232911020cfdfb55efecd9258",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"handicap\",\"pronun\":\"[ˈhændikæp]\",\"translation\":\"n. 障碍；不利条件，不利的因素\\nvt. 妨碍，阻碍；使不利\",\"audio\":\"handicap.mp3\"},{\"word\":\"harden\",\"pronun\":\"[ˈhɑːrdn]\",\"translation\":\"vi. 变硬，变坚固；变坚强；变冷酷\\nvt. 使…变硬；使…坚强；使…冷酷；使…麻木不仁\",\"audio\":\"harden.mp3\"},{\"word\":\"hardy\",\"pronun\":\"[ˈhɑːrdi]\",\"translation\":\"n. 强壮的人；耐寒植物；方柄凿\\nadj. 坚强的；勇敢的；能吃苦耐劳的；鲁莽的\",\"audio\":\"hardy.mp3\"},{\"word\":\"harmony\",\"pronun\":\"[ˈhɑːrməni]\",\"translation\":\"n. 协调；和睦；融洽；调和\",\"audio\":\"harmony.mp3\"},{\"word\":\"hasty\",\"pronun\":\"[ˈheɪsti]\",\"translation\":\"adj. 轻率的；匆忙的；草率的；懈怠的\\n[ 比较级 hastier 最高级 hastiest ]\",\"audio\":\"hasty.mp3\"},{\"word\":\"hatch\",\"pronun\":\"[hætʃ]\",\"translation\":\"n. 孵化；舱口\\nvt. 孵；策划\\nvi. 孵化\",\"audio\":\"hatch.mp3\"},{\"word\":\"hatred\",\"pronun\":\"[ˈheɪtrɪd]\",\"translation\":\"n. 憎恨；怨恨；敌意\",\"audio\":\"hatred.mp3\"},{\"word\":\"haul\",\"pronun\":\"[hɔːl]\",\"translation\":\"n. 拖，拉；用力拖拉；努力得到的结果；捕获物；一网捕获的鱼量；拖运距离\\nvt. 拖运；拖拉\\nvi. 拖，拉；改变主意；改变方向\",\"audio\":\"haul.mp3\"},{\"word\":\"haunt\",\"pronun\":\"[hɔːnt]\",\"translation\":\"n. 栖息地；常去的地方\\nvt. 常出没于…；萦绕于…；经常去…\\nvi. 出没；作祟\",\"audio\":\"haunt.mp3\"},{\"word\":\"hawk\",\"pronun\":\"[hɔːk]\",\"translation\":\"n. 鹰；鹰派成员；掠夺他人的人\\nvi. 清嗓；咳嗽；像鹰一般地袭击\\nvt. 兜售，沿街叫卖；捕捉；咳出\",\"audio\":\"hawk.mp3\"},{\"word\":\"hazard\",\"pronun\":\"[ˈhæzərd]\",\"translation\":\"n. 危险，冒险；冒险的事\\nvt. 赌运气；冒…的危险，使遭受危险\",\"audio\":\"hazard.mp3\"},{\"word\":\"hazardous\",\"pronun\":\"[ˈhæzərdəs]\",\"translation\":\"adj. 有危险的；冒险的；碰运气的\",\"audio\":\"hazardous.mp3\"},{\"word\":\"heap\",\"pronun\":\"[hiːp]\",\"translation\":\"n. 堆；许多；累积\\nvt. 堆；堆积\\nvi. 堆起来\",\"audio\":\"heap.mp3\"},{\"word\":\"heave\",\"pronun\":\"[hiːv]\",\"translation\":\"n. 举起；起伏；投掷；一阵呕吐\\nvt. 举起；使起伏；投掷；恶心；发出（叹息等）\\nvi. 起伏；举起；喘息；呕吐\",\"audio\":\"heave.mp3\"},{\"word\":\"heel\",\"pronun\":\"[hiːl]\",\"translation\":\"n. 脚后跟；踵\\nvt. 倾侧\\nvi. 倾侧\",\"audio\":\"heel.mp3\"},{\"word\":\"heighten\",\"pronun\":\"[ˈhaɪtn]\",\"translation\":\"vt. 提高；增高；加强；使更显著\\nvi. 升高；变强\",\"audio\":\"heighten.mp3\"},{\"word\":\"heir\",\"pronun\":\"[er]\",\"translation\":\"n. [法] 继承人；后嗣；嗣子\",\"audio\":\"heir.mp3\"},{\"word\":\"hemisphere\",\"pronun\":\"\",\"translation\":\"\",\"audio\":\"hemisphere.mp3\"},{\"word\":\"henceforth\",\"pronun\":\"[ˌhensˈfɔːrθ]\",\"translation\":\"adv. 今后；自此以后\",\"audio\":\"henceforth.mp3\"},{\"word\":\"herb\",\"pronun\":\"[ɜːrb; hɜːrb]\",\"translation\":\"n. 香草，药草\",\"audio\":\"herb.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

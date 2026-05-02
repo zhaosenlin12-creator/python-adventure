@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.210090+00:00",
+  "request": {
+    "lesson_id": "2e2bab55f99a008af5007e23f91c6d35",
+    "course_id": "77636b47c0ae2f1a01e822bed50cbd42",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "77636b47c0ae2f1a01e822bed50cbd42",
+    "order": 252,
+    "nextCourseId": "77636b47c0ae2f1a01e822bed50cbd42",
+    "courseName": "高中必备3500词-上",
+    "lessonId": "2e2bab55f99a008af5007e23f91c6d35",
+    "nextLessonId": "1b76d57b422e58e975d626e5924c0e94",
+    "lessonName": "Chapter.10",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "cefab6fdf5f7f6fbdef2237dbf5bed1e",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"drought\",\"pronun\":\"\\/dra\\u028at\\/\",\"translation\":\"n.\\u65f1\\u707e;\\u4e45\\u65f1\"},{\"word\":\"landslide\",\"pronun\":\"\\/\\u02c8l\\u00e6ndsla\\u026ad\\/\",\"translation\":\"n.(\\u5c71\\u5730\\u6216\\u60ac\\u5d16\\u7684)\\u5d29\\u584c;\\u6ed1\\u5761\"},{\"word\":\"tsunami\",\"pronun\":\"\\/tsu:\\u02c8n\\u0251:mi\\/\",\"translation\":\"n.\\u6d77\\u5578\"},{\"word\":\"flood\",\"pronun\":\"\\/fl\\u028cd\\/\",\"translation\":\"n.\\u6d2a\\u6c34;\\u5927\\u91cf vi.\\u6df9\\u6ca1\"},{\"word\":\"magnitude\",\"pronun\":\"\\/\\u02c8m\\u00e6gn\\u026atju:d\\/\",\"translation\":\"n.(\\u5730)\\u9707\\u7ea7;\\u91cd\\u5927\"},{\"word\":\"rescue\",\"pronun\":\"\\/\\u02c8reskju:\\/\",\"translation\":\"n.&vt.\\u8425\\u6551;\\u6551\\u63f4\"},{\"word\":\"damage\",\"pronun\":\"\\/\\u02c8d\\u00e6m\\u026ad\\u0292\\/\",\"translation\":\"vt.\\u635f\\u5bb3;\\u7834\\u574f n.\\u635f\\u574f;\\u635f\\u5931\"},{\"word\":\"destroy\",\"pronun\":\"\\/d\\u026a\\u02c8str\\u0254\\u026a\\/\",\"translation\":\"vt.\\u6467\\u6bc1;\\u6bc1\\u706d\"},{\"word\":\"evacuate\",\"pronun\":\"\\/\\u026a\\u02c8v\\u00e6kjue\\u026at\\/\",\"translation\":\"vt.\\u758f\\u6563;\\u64a4\\u51fa vi.\\u64a4\\u79bb\"},{\"word\":\"affect\",\"pronun\":\"\\/\\u0259\\u02c8fekt\\/\",\"translation\":\"vt.\\u5f71\\u54cd;(\\u75be\\u75c5)\\u4fb5\\u88ad\"},{\"word\":\"shelter\",\"pronun\":\"\\/\\u02c8\\u0283elt\\u0259(r)\\/\",\"translation\":\"n.\\u907f\\u96be\\u5904;\\u5c45\\u6240 vt.\\u4fdd\\u62a4\"},{\"word\":\"crack\",\"pronun\":\"\\/kr\\u00e6k\\/\",\"translation\":\"n.\\u88c2\\u7eb9;\\u88c2\\u7f1d vi.&vt.\\u4f7f\\u7834\\u88c2\"},{\"word\":\"ruin\",\"pronun\":\"\\/\\u02c8ru:\\u026an\\/\",\"translation\":\"n.&vt.\\u7834\\u574f;\\u6bc1\\u574f\"},{\"word\":\"brick\",\"pronun\":\"\\/br\\u026ak\\/\",\"translation\":\"n.\\u7816;\\u7816\\u5757\"},{\"word\":\"shock\",\"pronun\":\"\\/\\u0283\\u0252k\\/\",\"translation\":\"n.\\u9707\\u60ca;\\u4f11\\u514b vt.(\\u4f7f)\\u9707\\u60ca\"},{\"word\":\"trap\",\"pronun\":\"\\/tr\\u00e6p\\/\",\"translation\":\"vt.\\u4f7f\\u843d\\u5165\\u9669\\u5883 n.\\u9669\\u5883;\\u9677\\u9631\"},{\"word\":\"bury\",\"pronun\":\"\\/\\u02c8beri\\/\",\"translation\":\"vt.\\u57cb\\u846c;\\u5b89\\u846c\"},{\"word\":\"revive\",\"pronun\":\"\\/r\\u026a\\u02c8va\\u026av\\/\",\"translation\":\"vi.&vt.\\u590d\\u6d3b;(\\u4f7f)\\u82cf\\u9192\"},{\"word\":\"revival\",\"pronun\":\"\\/r\\u026a\\u02c8va\\u026avl\\/\",\"translation\":\"n.\\u632f\\u5174;\\u590d\\u82cf\"},{\"word\":\"effort\",\"pronun\":\"\\/\\u02c8ef\\u0259t\\/\",\"translation\":\"n.\\u52aa\\u529b;\\u8270\\u96be\\u7684\\u5c1d\\u8bd5;\\u5c3d\\u529b\"},{\"word\":\"unify\",\"pronun\":\"\\/\\u02c8ju:n\\u026afa\\u026a\\/\",\"translation\":\"vi.&vt.\\u7edf\\u4e00;(\\u4f7f)\\u6210\\u4e00\\u4f53\"},{\"word\":\"wisdom\",\"pronun\":\"\\/\\u02c8w\\u026azd\\u0259m\\/\",\"translation\":\"n.\\u667a\\u6167;\\u624d\\u667a\"},{\"word\":\"context\",\"pronun\":\"\\/\\u02c8k\\u0252ntekst\\/\",\"translation\":\"n.\\u4e0a\\u4e0b\\u6587;\\u8bed\\u5883;\\u80cc\\u666f\"},{\"word\":\"suffer\",\"pronun\":\"\\/\\u02c8s\\u028cf\\u0259(r)\\/\",\"translation\":\"vt.\\u906d\\u53d7;\\u8499\\u53d7 vi.\\u53d7\\u82e6\"},{\"word\":\"volcano\",\"pronun\":\"\\/v\\u0252l\\u02c8ke\\u026an\\u0259\\u028a\\/\",\"translation\":\"n.\\u706b\\u5c71\"},{\"word\":\"erupt\",\"pronun\":\"\\/\\u026a\\u02c8r\\u028cpt\\/\",\"translation\":\"vi.&vt.\\u706b\\u5c71\\u7206\\u53d1;\\u5ca9\\u6d46\\u55b7\\u51fa\"},{\"word\":\"supply\",\"pronun\":\"\\/s\\u0259\\u02c8pla\\u026a\\/\",\"translation\":\"n.\\u4f9b\\u5e94;\\u8865\\u7ed9 vt.\\u4f9b\\u5e94;\\u4f9b\\u7ed9\"},{\"word\":\"typhoon\",\"pronun\":\"\\/ta\\u026a\\u02c8fu:n\\/\",\"translation\":\"n.\\u53f0\\u98ce\"},{\"word\":\"hurricane\",\"pronun\":\"\\/\\u02c8h\\u028cr\\u026ak\\u0259n\\/\",\"translation\":\"n.(\\u5c24\\u6307\\u897f\\u5927\\u897f\\u6d0b\\u7684)\\u98d3\\u98ce\"},{\"word\":\"survive\",\"pronun\":\"\\/s\\u0259\\u02c8va\\u026av\\/\",\"translation\":\"vi.\\u751f\\u5b58;\\u5b58\\u6d3b vt.\\u5e78\\u5b58\"},{\"word\":\"whistle\",\"pronun\":\"\\/\\u02c8w\\u026asl\\/\",\"translation\":\"vi.&vt.\\u5439\\u53e3\\u54e8 n.\\u54e8\\u5b50(\\u58f0)\"},{\"word\":\"emergency\",\"pronun\":\"\\/i\\u02c8m\\u025c:d\\u0292\\u0259nsi\\/\",\"translation\":\"n.\\u7a81\\u53d1\\u4e8b\\u4ef6;\\u7d27\\u6025\\u60c5\\u51b5\"},{\"word\":\"calm\",\"pronun\":\"\\/k\\u0251:m\\/\",\"translation\":\"a.\\u9547\\u9759\\u7684;\\u6c89\\u7740\\u7684 vt.\\u4f7f\\u5e73\\u9759\"},{\"word\":\"aid\",\"pronun\":\"\\/e\\u026ad\\/\",\"translation\":\"n.\\u63f4\\u52a9;\\u5e2e\\u52a9 vi.&vt.\\u5e2e\\u52a9\"},{\"word\":\"kit\",\"pronun\":\"\\/k\\u026at\\/\",\"translation\":\"n.\\u6210\\u5957\\u5de5\\u5177;\\u6210\\u5957\\u8bbe\\u5907\"},{\"word\":\"crash\",\"pronun\":\"\\/kr\\u00e6\\u0283\\/\",\"translation\":\"vt&vi.\\u78b0\\u649e;\\u649e\\u51fb n.\\u649e\\u8f66\"},{\"word\":\"strike\",\"pronun\":\"\\/stra\\u026ak\\/\",\"translation\":\"vi.&vt.\\u4fb5\\u88ad;\\u7a81\\u51fb n.\\u7f62\\u5de5\"},{\"word\":\"deliver\",\"pronun\":\"\\/d\\u026a\\u02c8l\\u026av\\u0259(r)\\/\",\"translation\":\"vi.&vt.\\u4f20\\u9012;\\u4f20\\u8fbe vt.\\u53d1\\u8868\"},{\"word\":\"summary\",\"pronun\":\"\\/\\u02c8s\\u028cm\\u0259ri\\/\",\"translation\":\"n.\\u603b\\u7ed3;\\u6982\\u62ec;\\u6982\\u8981\"},{\"word\":\"effect\",\"pronun\":\"\\/\\u026a\\u02c8fekt\\/\",\"translation\":\"n.\\u5f71\\u54cd;\\u7ed3\\u679c;\\u6548\\u679c\"},{\"word\":\"Ecuador\",\"pronun\":\"\\/'ekw\\u0259d\\u0254:(r)\\/\",\"translation\":\"\\u5384\\u74dc\\u591a\\u5c14(\\u56fd\\u5bb6\\u540d)\"},{\"word\":\"Memphis\",\"pronun\":\"\\/\\u02c8memfis\\/\",\"translation\":\"\\u5b5f\\u83f2\\u65af(\\u7f8e\\u56fd\\u57ce\\u5e02)\"},{\"word\":\"Alberta\",\"pronun\":\"\\/\\u00e6l'b\\u025c:t\\u0259\\/\",\"translation\":\"\\u827e\\u4f2f\\u5854\\u7701(\\u52a0\\u62ff\\u5927\\u7701\\u4efd)\"},{\"word\":\"Colombo\",\"pronun\":\"\\/k\\u0259\\u02c8l\\u028cmb\\u0259u\\/\",\"translation\":\"\\u79d1\\u4f26\\u5761(\\u65af\\u91cc\\u5170\\u5361\\u9996\\u90fd)\"},{\"word\":\"Indonesia\",\"pronun\":\"\\/\\u02cc\\u026and\\u0259\\u028a'ni:zj\\u0259\\/\",\"translation\":\"\\u5ea6\\u5c3c\\u897f\\u4e9a(\\u56fd\\u5bb6\\u540d)\"},{\"word\":\"Malaysia\",\"pronun\":\"\\/m\\u0259'le\\u026a\\u0292\\u0259\\/\",\"translation\":\"\\u9a6c\\u6765\\u897f\\u4e9a(\\u56fd\\u5bb6\\u540d)\"},{\"word\":\"billion\",\"pronun\":\"\\/\\u02c8b\\u026alj\\u0259n\\/\",\"translation\":\"n.\\u5341\\u4ebf\"},{\"word\":\"native\",\"pronun\":\"\\/\\u02c8ne\\u026at\\u026av\\/\",\"translation\":\"a.\\u672c\\u5730\\u7684;\\u571f\\u8457\\u7684 n.\\u672c\\u5730\\u4eba\"},{\"word\":\"attitude\",\"pronun\":\"\\/\\u02c8\\u00e6t\\u026atju:d\\/\",\"translation\":\"n.\\u6001\\u5ea6;\\u770b\\u6cd5\"},{\"word\":\"reference\",\"pronun\":\"\\/\\u02c8refr\\u0259ns\\/\",\"translation\":\"n.\\u6307\\u79f0\\u5173\\u7cfb;\\u53c2\\u8003\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 22,
+        "minSpeed": 15,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.535712+00:00",
+  "request": {
+    "lesson_id": "838c9e72da1671aae61d465212c9cf1d",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 98,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "838c9e72da1671aae61d465212c9cf1d",
+    "nextLessonId": "ae9d93c43f04c16a8d243e206fce852e",
+    "lessonName": "KET核心词-133",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第133课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "25c51c1ad7995216736d123430b4aa4d",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"thin\",\"pronun\":\"[θɪn]\",\"translation\":\"n. 细小部分\\nadj. 薄的；瘦的；稀薄的；微弱的\\nvt. 使瘦；使淡；使稀疏\\nvi. 变薄；变瘦；变淡\\nadv. 稀疏地；微弱地\",\"audio\":\"thin.mp3\"},{\"word\":\"ugly\",\"pronun\":\"[ˈʌɡli]\",\"translation\":\"adj. 丑陋的；邪恶的；令人厌恶的\",\"audio\":\"ugly.mp3\"},{\"word\":\"young\",\"pronun\":\"[jʌŋ]\",\"translation\":\"n. 年轻人；（动物的）崽，仔\\nadj. 年轻的；初期的；没有经验的\",\"audio\":\"young.mp3\"},{\"word\":\"youth\",\"pronun\":\"[juːθ]\",\"translation\":\"n. 青年；青春；年轻；青少年时期\",\"audio\":\"youth.mp3\"},{\"word\":\"aeroplane\",\"pronun\":\"[ˈerəpleɪn]\",\"translation\":\"n. 飞机（等于airplane）\",\"audio\":\"aeroplane.mp3\"},{\"word\":\"boat\",\"pronun\":\"[boʊt]\",\"translation\":\"n. 小船；轮船\\nvi. 划船\",\"audio\":\"boat.mp3\"},{\"word\":\"bicycle\",\"pronun\":\"[ˈbaɪsɪkl]\",\"translation\":\"n. 自行车\\nvt. 骑自行车运送\\nvi. 骑脚踏车\",\"audio\":\"bicycle.mp3\"},{\"word\":\"bike\",\"pronun\":\"[baɪk]\",\"translation\":\"n. 自行车；脚踏车\\nvi. 骑自行车（或摩托车）\",\"audio\":\"bike.mp3\"},{\"word\":\"bus\",\"pronun\":\"[bʌs]\",\"translation\":\"n. 公共汽车\\n乘公共汽车\",\"audio\":\"bus.mp3\"},{\"word\":\"cab\",\"pronun\":\"[kæb]\",\"translation\":\"n. 驾驶室；出租汽车；出租马车\\nvi. 乘出租马车（或汽车）\",\"audio\":\"cab.mp3\"},{\"word\":\"car\",\"pronun\":\"[kɑːr]\",\"translation\":\"n. 汽车；车厢\",\"audio\":\"car.mp3\"},{\"word\":\"coach\",\"pronun\":\"[koʊtʃ]\",\"translation\":\"n. 教练；旅客车厢；长途公车；四轮大马车\\nvt. 训练；指导\\nvi. 作指导；接受辅导；坐马车旅行\\nn.  蔻驰（皮革品牌）\",\"audio\":\"coach.mp3\"},{\"word\":\"engine\",\"pronun\":\"[ˈendʒɪn]\",\"translation\":\"n. 引擎，发动机；机车，火车头；工具\",\"audio\":\"engine.mp3\"},{\"word\":\"helicopter\",\"pronun\":\"[ˈhelɪkɑːptər]\",\"translation\":\"n. [航] 直升飞机\\nvt. 由直升机运送\\nvi. [航] 乘直升飞机\",\"audio\":\"helicopter.mp3\"},{\"word\":\"lorry\",\"pronun\":\"[ˈlɔːri]\",\"translation\":\"n. （英）卡车；[车辆] 货车；运料车\",\"audio\":\"lorry.mp3\"},{\"word\":\"motorbike\",\"pronun\":\"[ˈmoʊtərbaɪk]\",\"translation\":\"n. 摩托车\",\"audio\":\"motorbike.mp3\"},{\"word\":\"seatbelt\",\"pronun\":\"[si:tbelt]\",\"translation\":\"n. 座位安全带\",\"audio\":\"seatbelt.mp3\"},{\"word\":\"ship\",\"pronun\":\"[ʃɪp]\",\"translation\":\"n. 船；舰；太空船\\nvt. 运送，乘船；以船运送\\nvi. 上船；乘船旅行；当船员\",\"audio\":\"ship.mp3\"},{\"word\":\"taxi\",\"pronun\":\"[ˈtæksi]\",\"translation\":\"n. 出租汽车\\nvt. 使滑行；用出租车送\\nvi. 乘出租车；滑行\",\"audio\":\"taxi.mp3\"},{\"word\":\"train\",\"pronun\":\"[treɪn]\",\"translation\":\"n. 火车；行列；长队；裙裾\\nv. 培养；训练；瞄准\",\"audio\":\"train.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.282777+00:00",
+  "request": {
+    "lesson_id": "2099108793446b1a4c1ff1b287c6c460",
+    "course_id": "be2af5259ed993e6499f4c46d3f7e67e",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "be2af5259ed993e6499f4c46d3f7e67e",
+    "order": 440,
+    "nextCourseId": "be2af5259ed993e6499f4c46d3f7e67e",
+    "courseName": "实战演练-1亿以内金额",
+    "lessonId": "2099108793446b1a4c1ff1b287c6c460",
+    "nextLessonId": "9287d900895702039545bfe5b80c87d7",
+    "lessonName": "整数元练习",
+    "icon": "data/assets/daziya.com/key-icon_key-practise-star.b4ccc47d6d.png",
+    "description": "数字输入练习 - 整数元练习",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6d47c66ce8f789462fdc834f2ec9793e",
+        "index": 1,
+        "text": [
+          "1000000000\\n2000000000\\n3000000000\\n4000000000\\n5000000000\\n6000000000\\n7000000000\\n8000000000\\n9000000000\\n1500000000\\n2500000000\\n3500000000\\n4500000000\\n5500000000\\n6500000000\\n7500000000\\n8500000000\\n9500000000\\n1800000000\\n2800000000\\n3800000000\\n4800000000\\n5800000000\\n6800000000\\n7800000000\\n8800000000\\n9800000000\\n1900000000\\n2900000000\\n3900000000"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

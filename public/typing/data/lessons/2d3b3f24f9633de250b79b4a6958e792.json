@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.690653+00:00",
+  "request": {
+    "lesson_id": "2d3b3f24f9633de250b79b4a6958e792",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 354,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "2d3b3f24f9633de250b79b4a6958e792",
+    "nextLessonId": "2e4683d0cdd6551850ec25fbe8e270bc",
+    "lessonName": "六级词汇正序版-115",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第115课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "0abb80b67773fbfe4feb69b7f2fc644d",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"veteran\",\"pronun\":\"[ˈvetərən]\",\"translation\":\"n. 老兵；老手；富有经验的人；老运动员\\nadj. 经验丰富的；老兵的\",\"audio\":\"veteran.mp3\"},{\"word\":\"veto\",\"pronun\":\"[ˈviːtoʊ]\",\"translation\":\"n. 否决权\\nvt. 否决；禁止\\nvi. 否决；禁止\",\"audio\":\"veto.mp3\"},{\"word\":\"vice\",\"pronun\":\"[vaɪs]\",\"translation\":\"prep. 代替\\nn. 恶习；缺点；[机] 老虎钳；卖淫\\nadj. 副的；代替的\\nvt. 钳住\",\"audio\":\"vice.mp3\"},{\"word\":\"vicinity\",\"pronun\":\"[vəˈsɪnəti]\",\"translation\":\"n. 邻近，附近；近处\",\"audio\":\"vicinity.mp3\"},{\"word\":\"vicious\",\"pronun\":\"[ˈvɪʃəs]\",\"translation\":\"adj. 恶毒的；恶意的；堕落的；有错误的；品性不端的；剧烈的\",\"audio\":\"vicious.mp3\"},{\"word\":\"victim\",\"pronun\":\"[ˈvɪktɪm]\",\"translation\":\"n. 受害人；牺牲品；牺牲者\",\"audio\":\"victim.mp3\"},{\"word\":\"vigorous\",\"pronun\":\"[ˈvɪɡərəs]\",\"translation\":\"adj. 有力的；精力充沛的\",\"audio\":\"vigorous.mp3\"},{\"word\":\"violate\",\"pronun\":\"[ˈvaɪəleɪt]\",\"translation\":\"vt. 违反；侵犯，妨碍；亵渎\",\"audio\":\"violate.mp3\"},{\"word\":\"violent\",\"pronun\":\"[ˈvaɪələnt]\",\"translation\":\"adj. 暴力的；猛烈的\",\"audio\":\"violent.mp3\"},{\"word\":\"virgin\",\"pronun\":\"[ˈvɜːrdʒɪn]\",\"translation\":\"n. 处女\\nadj. 处女的；纯洁的；未经利用的，处于原始状态的\",\"audio\":\"virgin.mp3\"},{\"word\":\"virtual\",\"pronun\":\"[ˈvɜːrtʃuəl]\",\"translation\":\"adj. [计] 虚拟的；实质上的，事实上的（但未在名义上或正式获承认）\",\"audio\":\"virtual.mp3\"},{\"word\":\"virtually\",\"pronun\":\"[ˈvɜːrtʃuəli]\",\"translation\":\"adv. 事实上，几乎；实质上\",\"audio\":\"virtually.mp3\"},{\"word\":\"virtue\",\"pronun\":\"[ˈvɜːrtʃuː]\",\"translation\":\"n. 美德；优点；贞操；功效\",\"audio\":\"virtue.mp3\"},{\"word\":\"visa\",\"pronun\":\"[ˈviːzə]\",\"translation\":\"n. 签证\\nvt. 签发签证\",\"audio\":\"visa.mp3\"},{\"word\":\"visceral\",\"pronun\":\"[ˈvɪsərəl]\",\"translation\":\"adj. 内脏的；出于本能的；发自肺腑的；粗俗的\",\"audio\":\"visceral.mp3\"},{\"word\":\"vision\",\"pronun\":\"[ˈvɪʒn]\",\"translation\":\"n. 视力；美景；眼力；幻象；想象力；幻视（漫威漫画旗下超级英雄）\\nvt. 想象；显现；梦见\",\"audio\":\"vision.mp3\"},{\"word\":\"visual\",\"pronun\":\"[ˈvɪʒuəl]\",\"translation\":\"adj. 视觉的，视力的；栩栩如生的\",\"audio\":\"visual.mp3\"},{\"word\":\"visualize\",\"pronun\":\"[ˈvɪʒuəlaɪz]\",\"translation\":\"vt. 形象，形象化；想像，设想\\nvi. 显现\",\"audio\":\"visualize.mp3\"},{\"word\":\"vital\",\"pronun\":\"[ˈvaɪtl]\",\"translation\":\"adj. 至关重要的；生死攸关的；有活力的\",\"audio\":\"vital.mp3\"},{\"word\":\"vitality\",\"pronun\":\"[vaɪˈtæləti]\",\"translation\":\"n. 活力，生气；生命力，生动性\",\"audio\":\"vitality.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

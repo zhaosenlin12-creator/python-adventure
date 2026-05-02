@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:42.504725+00:00",
+  "request": {
+    "lesson_id": "ad36d5ceb707b2ddc87e695a4a43e7fd",
+    "course_id": "37a7adf23aab7533faea85ded4a73fdb",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "37a7adf23aab7533faea85ded4a73fdb",
+    "order": 247,
+    "nextCourseId": "37a7adf23aab7533faea85ded4a73fdb",
+    "courseName": "财务汇算-整数计算",
+    "lessonId": "ad36d5ceb707b2ddc87e695a4a43e7fd",
+    "nextLessonId": "94ad353f34c18b843cf498e0b90e1f07",
+    "lessonName": "千位数累加一",
+    "icon": "data/assets/daziya.com/key-icon_num-jifagonggu.fdc0e59810.png",
+    "description": "数字输入练习 - 千位数累加一",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "025fd597c25adfaf02b18a8cfa616275",
+        "index": 1,
+        "text": [
+          "1250+\\n2380+\\n3470+\\n4560+\\n5890+\\n6120+\\n7340+\\n8510+\\n9260+\\n1180"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

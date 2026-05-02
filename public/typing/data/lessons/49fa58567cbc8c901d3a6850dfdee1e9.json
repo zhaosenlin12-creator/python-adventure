@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.089188+00:00",
+  "request": {
+    "lesson_id": "49fa58567cbc8c901d3a6850dfdee1e9",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 18,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "49fa58567cbc8c901d3a6850dfdee1e9",
+    "nextLessonId": "93e1354cd9bcef9d134a58c5668623d6",
+    "lessonName": "2022年版 PEP-四年级-下册-1",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-四年级-下册 - 第1课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3ef013443a724a0a4e593977bdb96e06",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"first\",\"pronun\":\"[fɜːrst]\",\"translation\":\"num. 第一\\nn. 第一；开始；冠军\\nadj. 第一的；基本的；最早的\\nadv. 第一；首先；优先；宁愿\",\"audio\":\"first.mp3\"},{\"word\":\"floor\",\"pronun\":\"[flɔːr]\",\"translation\":\"n. 地板，地面；楼层；基底；议员席\\nvt. 铺地板；打倒，击倒；（被困难）难倒\",\"audio\":\"floor.mp3\"},{\"word\":\"second\",\"pronun\":\"[ˈsekənd; sɪˈkɑːnd]\",\"translation\":\"num. 第二\\nn. 秒；第二名；瞬间；二等品\\nadj. 第二的；次要的；附加的\\nvt. 支持\\nadv. 第二；其次；居第二位\",\"audio\":\"second.mp3\"},{\"word\":\"office\",\"pronun\":\"[ˈɑːfɪs]\",\"translation\":\"n. 办公室；政府机关；官职；营业处\",\"audio\":\"office.mp3\"},{\"word\":\"library\",\"pronun\":\"[ˈlaɪbreri]\",\"translation\":\"n. 图书馆，藏书室；文库\",\"audio\":\"library.mp3\"},{\"word\":\"playground\",\"pronun\":\"[ˈpleɪɡraʊnd]\",\"translation\":\"n. 运动场，操场；游乐场\",\"audio\":\"playground.mp3\"},{\"word\":\"computer\",\"pronun\":\"[kəmˈpjuːtər]\",\"translation\":\"n. 计算机；电脑；电子计算机\",\"audio\":\"computer.mp3\"},{\"word\":\"room\",\"pronun\":\"[ruːm; rʊm]\",\"translation\":\"n. 房间；空间；余地；机会；房间里所有的人\\nvt. 为…提供住处；租房，合住；投宿，住宿；留…住宿\\nvi. 居住；住宿\",\"audio\":\"room.mp3\"},{\"word\":\"art\",\"pronun\":\"[ɑːrt]\",\"translation\":\"n. 艺术；美术；艺术品\\nv. 是（be的变体）\\nadj. 艺术的；艺术品的\",\"audio\":\"art.mp3\"},{\"word\":\"music\",\"pronun\":\"[ˈmjuːzɪk]\",\"translation\":\"n. 音乐，乐曲\",\"audio\":\"music.mp3\"},{\"word\":\"next\",\"pronun\":\"[nekst]\",\"translation\":\"adv. 然后；下次；其次\\nadj. 下一个的；其次的；贴近的\\nn. 下一个\\nprep. 靠近；居于…之后\",\"audio\":\"next.mp3\"},{\"word\":\"to\",\"pronun\":\"[tə; tu; tuː]\",\"translation\":\"prep. 到；向；（表示时间、方向）朝…方向\\nadv. 向前；（门等）关上\",\"audio\":\"to.mp3\"},{\"word\":\"homework\",\"pronun\":\"[ˈhoʊmwɜːrk]\",\"translation\":\"n. 家庭作业，课外作业\",\"audio\":\"homework.mp3\"},{\"word\":\"class\",\"pronun\":\"[klæs]\",\"translation\":\"n. 阶级；班级；种类；班；等级\\nadj. 极好的；很好的，优秀的，出色的\\nvt. 分类；把…分等级；把…归入某等级，把…看作（或分类、归类）；把…编入某一班级\\nvi. 属于…类（或等级），被列为某类（或某级）\",\"audio\":\"class.mp3\"},{\"word\":\"forty\",\"pronun\":\"[ˈfɔːrti]\",\"translation\":\"n. 四十\\nadj. 四十的；四十个的\",\"audio\":\"forty.mp3\"},{\"word\":\"way\",\"pronun\":\"[weɪ]\",\"translation\":\"n. 方法；道路；方向；行业；习惯\\nadj. 途中的\\nadv. 大大地；远远地\",\"audio\":\"way.mp3\"},{\"word\":\"go\",\"pronun\":\"[ɡoʊ]\",\"translation\":\"n. 去；进行；尝试\\nvi. 走；达到；运转；趋于\\nvt. 忍受；出产；以…打赌\\n[复数 goes 第三人称单数 goes 过去式 went 过去分词 gone 现在分词 going]\",\"audio\":\"go.mp3\"},{\"word\":\"bed\",\"pronun\":\"[bed]\",\"translation\":\"n. 床；基础；河底， 海底\\nvt. 使睡觉；安置，嵌入；栽种\\nvi. 上床；分层\",\"audio\":\"bed.mp3\"},{\"word\":\"over\",\"pronun\":\"[ˈoʊvər]\",\"translation\":\"adv. 结束；越过；从头到尾\\nprep. 越过；在…之上；遍于…之上\\nadj. 结束的；上面的\\nvt. 越过\",\"audio\":\"over.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

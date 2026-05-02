@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.506427+00:00",
+  "request": {
+    "lesson_id": "9b89291fe7cd7625052faaf1ec41cefb",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 89,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "9b89291fe7cd7625052faaf1ec41cefb",
+    "nextLessonId": "179845dd9ac618156362664a734c4e04",
+    "lessonName": "KET核心词-106",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第106课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "22adc1620348da153497093c6c38f163",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"architect\",\"pronun\":\"[ˈɑːrkɪtekt]\",\"translation\":\"n. 建筑师\\n缔造者\",\"audio\":\"architect.mp3\"},{\"word\":\"artist\",\"pronun\":\"[ˈɑːrtɪst]\",\"translation\":\"n. 艺术家；美术家（尤指画家）；大师\",\"audio\":\"artist.mp3\"},{\"word\":\"boss\",\"pronun\":\"[bɔːs]\",\"translation\":\"n. 老板；首领；工头\\nvt. 指挥，调遣；当…的领导\\nvi. 当首领，发号施令\",\"audio\":\"boss.mp3\"},{\"word\":\"businessman\",\"pronun\":\"[ˈbɪznəsmæn]\",\"translation\":\"n. 商人\",\"audio\":\"businessman.mp3\"},{\"word\":\"businesswoman\",\"pronun\":\"[ˈbɪznəswʊmən]\",\"translation\":\"n. 女商人\",\"audio\":\"businesswoman.mp3\"},{\"word\":\"carpenter\",\"pronun\":\"[ˈkɑːrpəntər]\",\"translation\":\"n. 木匠，木工\\nvt. 制作\\nvi. 当木匠，做木匠工作\",\"audio\":\"carpenter.mp3\"},{\"word\":\"career\",\"pronun\":\"[kəˈrɪr]\",\"translation\":\"n. 生涯；职业；事业；速度，全速\\nadj. 作为毕生职业的\\nvi. 全速前进，猛冲\",\"audio\":\"career.mp3\"},{\"word\":\"chef\",\"pronun\":\"[ʃef]\",\"translation\":\"n. 厨师，大师傅\",\"audio\":\"chef.mp3\"},{\"word\":\"chemist\",\"pronun\":\"[ˈkemɪst]\",\"translation\":\"n. 化学家；化学工作者；药剂师；炼金术士\",\"audio\":\"chemist.mp3\"},{\"word\":\"cleaner\",\"pronun\":\"[ˈkliːnər]\",\"translation\":\"n. [化工] 清洁剂；清洁工；干洗店；干洗商；洗洁器\",\"audio\":\"cleaner.mp3\"},{\"word\":\"dancer\",\"pronun\":\"[ˈdænsər]\",\"translation\":\"n. 舞蹈家；舞蹈演员；舞女；跳舞者\",\"audio\":\"dancer.mp3\"},{\"word\":\"dentist\",\"pronun\":\"[ˈdentɪst]\",\"translation\":\"n. 牙科医生\\n牙医诊所\",\"audio\":\"dentist.mp3\"},{\"word\":\"designer\",\"pronun\":\"[dɪˈzaɪnər]\",\"translation\":\"n. 设计师；谋划者\\nadj. 由设计师专门设计的；享有盛名的；赶时髦的\",\"audio\":\"designer.mp3\"},{\"word\":\"detective\",\"pronun\":\"[dɪˈtektɪv]\",\"translation\":\"n. 侦探\\nadj. 侦探的\",\"audio\":\"detective.mp3\"},{\"word\":\"disc jockey\",\"pronun\":\"\",\"translation\":\"n. （电台、电视台、俱乐部）唱片节目主持人\",\"audio\":\"disc_jockey.mp3\"},{\"word\":\"DJ\",\"pronun\":\"[ˈdiː dʒeɪ]\",\"translation\":\"abbr. 流行音乐播音员，流行音乐节目主持人（disc jockey）；地方初审法院法官（District Judge）；司法部（Department of Justice）\",\"audio\":\"DJ.mp3\"},{\"word\":\"doctor\",\"pronun\":\"[ˈdɑːktər]\",\"translation\":\"vt. 修理；篡改，伪造；为…治病；授以博士学位\\nn. 医生；博士\\nvi. 就医；行医\",\"audio\":\"doctor.mp3\"},{\"word\":\"Dr.\",\"pronun\":\"\",\"translation\":\"abbr. （书写形式）医生；（用于街道名）路\\nn. 【摄】动态范围\",\"audio\":\"Dr_.mp3\"},{\"word\":\"engineer\",\"pronun\":\"[ˌendʒɪˈnɪr]\",\"translation\":\"n. 工程师；工兵；火车司机\\nvt. 设计；策划；精明地处理\\nvi. 设计；建造\",\"audio\":\"engineer.mp3\"},{\"word\":\"employment\",\"pronun\":\"[ɪmˈplɔɪmənt]\",\"translation\":\"n. 使用；职业；雇用\",\"audio\":\"employment.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

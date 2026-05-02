@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.741499+00:00",
+  "request": {
+    "lesson_id": "61bc1c24cbe7da22a82a82ed7bef0d09",
+    "course_id": "77cc7d3093a4e829cb2fb89b1788a0e1",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "77cc7d3093a4e829cb2fb89b1788a0e1",
+    "order": 112,
+    "nextCourseId": "77cc7d3093a4e829cb2fb89b1788a0e1",
+    "courseName": "拼音",
+    "lessonId": "61bc1c24cbe7da22a82a82ed7bef0d09",
+    "nextLessonId": "919de060466456664cefc583cda99ceb",
+    "lessonName": "拼音组合 b",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-py-b.6ed34431a3.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3eb886245443fc839c2794c2912c8f19",
+        "index": 1,
+        "text": [
+          "ba bai ban bang bao bei ben beng bi bian biao bie bin bing bo bu"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "bai ngoe",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 33,
+        "minSpeed": 10,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

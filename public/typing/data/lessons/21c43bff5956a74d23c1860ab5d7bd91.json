@@ -1,0 +1,105 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.595199+00:00",
+  "request": {
+    "lesson_id": "21c43bff5956a74d23c1860ab5d7bd91",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 16,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "21c43bff5956a74d23c1860ab5d7bd91",
+    "nextLessonId": "12098b025c1444ae059d7138faba795b",
+    "lessonName": "巩固练习：iu、ie、ui、ue",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母iu、ie、ui、ue的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "36cf16c30988a047b0b80f4ccbbb7080",
+        "index": 1,
+        "highlights": [
+          "iu"
+        ],
+        "text": [
+          "请输入按键 [iu]"
+        ],
+        "detail": "学习双拼按键 iu"
+      },
+      {
+        "chapterId": "4db6eb2d9c9b35beecc7c1a46efedf4b",
+        "index": 2,
+        "highlights": [
+          "ie"
+        ],
+        "text": [
+          "请输入按键 [ie]"
+        ],
+        "detail": "学习双拼按键 ie"
+      },
+      {
+        "chapterId": "554b4ee159e349bf6c87bd6821671caf",
+        "index": 3,
+        "highlights": [
+          "ui"
+        ],
+        "text": [
+          "请输入按键 [ui]"
+        ],
+        "detail": "学习双拼按键 ui"
+      },
+      {
+        "chapterId": "dd7dac213b929e3aee9854afc246fd7d",
+        "index": 4,
+        "highlights": [
+          "ue"
+        ],
+        "text": [
+          "请输入按键 [ue]"
+        ],
+        "detail": "学习双拼按键 ue"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "b704831b4925b409e920630ad492b9bd",
+        "index": 5,
+        "text": [
+          "iuiuiuiuieieieieuiuiuiuiueueueueiuieuiueiuieuiueiuieuiueiuieuiue"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "8153c87d3e9f13993b9e03c58527e76a",
+        "index": 6,
+        "text": [
+          "柳枝摇曳水波流，秋月斜照小楼幽。\\n蝶舞花间追晚露，喜鹊归巢啼柳丘。"
+        ],
+        "pinyin": "[[\"柳\", \"liǔ\"], [\"枝\", \"zhī\"], [\"摇\", \"yáo\"], [\"曳\", \"yè\"], [\"水\", \"shuǐ\"], [\"波\", \"bō\"], [\"流\", \"liú\"], [\"，\", \"\"], [\"秋\", \"qiū\"], [\"月\", \"yuè\"], [\"斜\", \"xié\"], [\"照\", \"zhào\"], [\"小\", \"xiǎo\"], [\"楼\", \"lóu\"], [\"幽\", \"yōu\"], [\"。\", \"\"], [\"蝶\", \"dié\"], [\"舞\", \"wǔ\"], [\"花\", \"huā\"], [\"间\", \"jiān\"], [\"追\", \"zhuī\"], [\"晚\", \"wǎn\"], [\"露\", \"lù\"], [\"，\", \"\"], [\"喜\", \"xǐ\"], [\"鹊\", \"què\"], [\"归\", \"guī\"], [\"巢\", \"cháo\"], [\"啼\", \"tí\"], [\"柳\", \"liǔ\"], [\"丘\", \"qiū\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

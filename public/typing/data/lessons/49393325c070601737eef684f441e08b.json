@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.649677+00:00",
+  "request": {
+    "lesson_id": "49393325c070601737eef684f441e08b",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 123,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "49393325c070601737eef684f441e08b",
+    "nextLessonId": "52ea407b701cb4068963e7ce2f3370fc",
+    "lessonName": "KET核心词-71",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第71课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a61e23f3ce99304d9827edf25b329faa",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"vase\",\"pronun\":\"[veɪs; veɪz]\",\"translation\":\"n. 瓶；花瓶\",\"audio\":\"vase.mp3\"},{\"word\":\"vegetable\",\"pronun\":\"[ˈvedʒtəbl]\",\"translation\":\"n. 蔬菜；植物；植物人\\nadj. 蔬菜的；植物的\",\"audio\":\"vegetable.mp3\"},{\"word\":\"Venice\",\"pronun\":\"[ˈvenɪs]\",\"translation\":\"n. 威尼斯（意大利港市）\",\"audio\":\"Venice.mp3\"},{\"word\":\"versus\",\"pronun\":\"[ˈvɜːrsəs]\",\"translation\":\"prep. 对；与...相对；对抗\",\"audio\":\"versus.mp3\"},{\"word\":\"vest\",\"pronun\":\"[vest]\",\"translation\":\"n. 背心；汗衫\\nvt. 授予；使穿衣\\nvi. 归属；穿衣服\",\"audio\":\"vest.mp3\"},{\"word\":\"video\",\"pronun\":\"[ˈvɪdioʊ]\",\"translation\":\"n. [电子] 视频；录像，录像机；电视\\nadj. 视频的；录像的；电视的\\nv. 录制\",\"audio\":\"video.mp3\"},{\"word\":\"village\",\"pronun\":\"[ˈvɪlɪdʒ]\",\"translation\":\"n. 村庄；村民；（动物的）群落\",\"audio\":\"village.mp3\"},{\"word\":\"violin\",\"pronun\":\"[ˌvaɪəˈlɪn]\",\"translation\":\"n. 小提琴；小提琴手\",\"audio\":\"violin.mp3\"},{\"word\":\"visit\",\"pronun\":\"[ˈvɪzɪt]\",\"translation\":\"n. 访问；参观；逗留\\nvt. 访问；参观；视察\\nvi. 访问；暂住；闲谈\",\"audio\":\"visit.mp3\"},{\"word\":\"vocabulary\",\"pronun\":\"[vəˈkæbjəleri]\",\"translation\":\"n. 词汇；词表；词汇量\",\"audio\":\"vocabulary.mp3\"},{\"word\":\"voice\",\"pronun\":\"[vɔɪs]\",\"translation\":\"n. 声音；嗓音；发言权；愿望\\nvt. 表达；吐露\",\"audio\":\"voice.mp3\"},{\"word\":\"volleyball\",\"pronun\":\"[ˈvɑːlibɔːl]\",\"translation\":\"n. 排球\",\"audio\":\"volleyball.mp3\"},{\"word\":\"wait\",\"pronun\":\"[weɪt]\",\"translation\":\"n. 等待；等候\\nvi. 等待；耽搁；伺候用餐\\nvt. 等候；推迟；延缓\",\"audio\":\"wait.mp3\"},{\"word\":\"waiter\",\"pronun\":\"[ˈweɪtər]\",\"translation\":\"n. 服务员，侍者\",\"audio\":\"waiter.mp3\"},{\"word\":\"wake\",\"pronun\":\"[weɪk]\",\"translation\":\"n. 尾迹；守夜；守丧\\nvt. 叫醒；激发\\nvi. 醒来；唤醒；警觉\",\"audio\":\"wake.mp3\"},{\"word\":\"walk\",\"pronun\":\"[wɔːk]\",\"translation\":\"n. 步行，走；散步\\nvi. 走，步行；散步\\nvt. 散步；走过\",\"audio\":\"walk.mp3\"},{\"word\":\"wallet\",\"pronun\":\"[ˈwɑːlɪt]\",\"translation\":\"n. 钱包，皮夹\",\"audio\":\"wallet.mp3\"},{\"word\":\"want\",\"pronun\":\"[wɑːnt]\",\"translation\":\"n. 需要；缺乏；贫困；必需品\\nvt. 需要；希望；应该；缺少\\nvi. 需要；缺少\",\"audio\":\"want.mp3\"},{\"word\":\"war\",\"pronun\":\"[wɔːr]\",\"translation\":\"n. 战争，斗争；军事，战术；冲突，对抗，竞争\\nvi. 打仗，作战；对抗\",\"audio\":\"war.mp3\"},{\"word\":\"warm\",\"pronun\":\"[wɔːrm]\",\"translation\":\"n. 取暖；加热\\nadj. 温暖的；热情的\\nvt. 使…兴奋；使…温暖；使…感兴趣\\nvi. 同情；激动；变温暖\",\"audio\":\"warm.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

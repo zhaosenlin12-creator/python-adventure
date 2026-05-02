@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.605635+00:00",
+  "request": {
+    "lesson_id": "69fe88447e52724b8def266edd1d0a72",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 340,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "69fe88447e52724b8def266edd1d0a72",
+    "nextLessonId": "bc6a889ec4cf07c7ec61e517f2dc5d59",
+    "lessonName": "六级词汇正序版-73",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第73课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b51ee73e88a6fc91488bf05d3e465340",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"notify\",\"pronun\":\"[ˈnoʊtɪfaɪ]\",\"translation\":\"vt. 通告，通知；公布\",\"audio\":\"notify.mp3\"},{\"word\":\"notion\",\"pronun\":\"[ˈnoʊʃn]\",\"translation\":\"n. 概念；见解；打算\",\"audio\":\"notion.mp3\"},{\"word\":\"notorious\",\"pronun\":\"[noʊˈtɔːriəs]\",\"translation\":\"adj. 声名狼藉的，臭名昭著的\",\"audio\":\"notorious.mp3\"},{\"word\":\"notwithstanding\",\"pronun\":\"[ˌnɑːtwɪθˈstændɪŋˌˌnɑːtwɪðˈstændɪŋ]\",\"translation\":\"adv. 尽管，仍然\\nprep. 尽管，虽然\\nconj. 虽然\",\"audio\":\"notwithstanding.mp3\"},{\"word\":\"nourish\",\"pronun\":\"[ˈnɜːrɪʃ]\",\"translation\":\"vt. 滋养；怀有；使健壮\",\"audio\":\"nourish.mp3\"},{\"word\":\"novelty\",\"pronun\":\"[ˈnɑːvlti]\",\"translation\":\"n. 新奇；新奇的事物；新颖小巧而廉价的物品\",\"audio\":\"novelty.mp3\"},{\"word\":\"nuisance\",\"pronun\":\"[ˈnuːsns]\",\"translation\":\"n. 讨厌的人；损害；麻烦事；讨厌的东西\",\"audio\":\"nuisance.mp3\"},{\"word\":\"numerical\",\"pronun\":\"[nuːˈmerɪkl]\",\"translation\":\"adj. 数值的；数字的；用数字表示的（等于numeric）\",\"audio\":\"numerical.mp3\"},{\"word\":\"numerous\",\"pronun\":\"[ˈnuːmərəs]\",\"translation\":\"adj. 许多的，很多的\",\"audio\":\"numerous.mp3\"},{\"word\":\"nurture\",\"pronun\":\"[ˈnɜːrtʃər]\",\"translation\":\"vt. 养育；鼓励；培植\\nn. 养育；教养；营养物\",\"audio\":\"nurture.mp3\"},{\"word\":\"nutrition\",\"pronun\":\"[nuˈtrɪʃn]\",\"translation\":\"n. 营养，营养学；营养品\",\"audio\":\"nutrition.mp3\"},{\"word\":\"oak\",\"pronun\":\"[oʊk]\",\"translation\":\"n. 橡树；橡木色；橡木家具\\nadj. 栎树的；栎木制的\",\"audio\":\"oak.mp3\"},{\"word\":\"oath\",\"pronun\":\"[oʊθ]\",\"translation\":\"n. 誓言，誓约；诅咒，咒骂\",\"audio\":\"oath.mp3\"},{\"word\":\"obedient\",\"pronun\":\"[əˈbiːdiənt]\",\"translation\":\"adj. 顺从的，服从的；孝顺的\",\"audio\":\"obedient.mp3\"},{\"word\":\"obesity\",\"pronun\":\"[oʊˈbiːsəti]\",\"translation\":\"n. 肥大，肥胖\",\"audio\":\"obesity.mp3\"},{\"word\":\"object\",\"pronun\":\"[ˈɑːbdʒɪkt]\",\"translation\":\"n. 目标；物体；客体；宾语\\nvt. 提出…作为反对的理由\\nvi. 反对；拒绝\",\"audio\":\"object.mp3\"},{\"word\":\"objection\",\"pronun\":\"[əbˈdʒekʃn]\",\"translation\":\"n. 异议，反对；缺陷，缺点；妨碍；拒绝的理由\",\"audio\":\"objection.mp3\"},{\"word\":\"objective\",\"pronun\":\"[əbˈdʒektɪv]\",\"translation\":\"adj. 客观的；目标的；宾格的\\nn. 目的；目标；[光] 物镜；宾格\",\"audio\":\"objective.mp3\"},{\"word\":\"obligation\",\"pronun\":\"[ˌɑːblɪˈɡeɪʃn]\",\"translation\":\"n. 义务；职责；债务\",\"audio\":\"obligation.mp3\"},{\"word\":\"obscene\",\"pronun\":\"[əbˈsiːn]\",\"translation\":\"adj. 淫秽的；猥亵的；可憎的\",\"audio\":\"obscene.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

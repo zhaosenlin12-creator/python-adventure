@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.197132+00:00",
+  "request": {
+    "lesson_id": "ad36045cbbe25a0f36809dfef4ff5e72",
+    "course_id": "21fe8d60de407da95e1abc33ac636014",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "21fe8d60de407da95e1abc33ac636014",
+    "order": 39,
+    "nextCourseId": "21fe8d60de407da95e1abc33ac636014",
+    "courseName": "上排字母",
+    "lessonId": "ad36045cbbe25a0f36809dfef4ff5e72",
+    "nextLessonId": "5d33116225473997d637a1724c88b529",
+    "lessonName": "回顾：基准键上排字母",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-practise-star.533c8094ae.png",
+    "description": "回顾：基准键上排字母",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9cc69bc68f7ebd84c4afbc9da7e1e9d8",
+        "index": 1,
+        "text": [
+          "hei he shui shi yi ge shi hui wo de po qiu piao yao wo er ri rui lei jie qiao pao qia qie ti tiao tu you yao de er sei shi ai"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "hei suygwodpqarljt",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

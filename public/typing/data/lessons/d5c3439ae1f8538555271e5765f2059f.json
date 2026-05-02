@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.473566+00:00",
+  "request": {
+    "lesson_id": "d5c3439ae1f8538555271e5765f2059f",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 81,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "d5c3439ae1f8538555271e5765f2059f",
+    "nextLessonId": "a8e764aa459cad482680b24171788880",
+    "lessonName": "KET核心词-82",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第82课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2fb58544e0b0038b751c1a78dd31e748",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"track\",\"pronun\":\"[træk]\",\"translation\":\"n. 轨道；足迹，踪迹；小道\\nvt. 追踪；通过；循路而行；用纤拉\\nvi. 追踪；走；留下足迹\",\"audio\":\"track.mp3\"},{\"word\":\"volleyball\",\"pronun\":\"[ˈvɑːlibɔːl]\",\"translation\":\"n. 排球\",\"audio\":\"volleyball.mp3\"},{\"word\":\"windsurfing\",\"pronun\":\"[ˈwɪndsɜːrfɪŋ]\",\"translation\":\"n. 帆板运动\\nv. 风帆冲浪（windsurf的ing形式）\",\"audio\":\"windsurfing.mp3\"},{\"word\":\"winner\",\"pronun\":\"[ˈwɪnər]\",\"translation\":\"n. 胜利者\",\"audio\":\"winner.mp3\"},{\"word\":\"add\",\"pronun\":\"[æd]\",\"translation\":\"n. 加法，加法运算\\nvi. 加；增加；加起来；做加法\\nvt. 增加，添加；补充说；计算…总和\",\"audio\":\"add.mp3\"},{\"word\":\"bake\",\"pronun\":\"[beɪk]\",\"translation\":\"n. 烤；烘烤食品\\nvi. 烘面包；被烤干；受热\\nvt. 烤，烘焙\",\"audio\":\"bake.mp3\"},{\"word\":\"barbecue\",\"pronun\":\"[ˈbɑːrbɪkjuː]\",\"translation\":\"n. 烤肉；吃烤肉的野宴\\nvt. 烧烤；烤肉\",\"audio\":\"barbecue.mp3\"},{\"word\":\"beat\",\"pronun\":\"[biːt]\",\"translation\":\"n. 拍子；敲击；有规律的一连串敲打\\nadj. 筋疲力尽的；疲惫不堪的\\nvt. 打；打败\\nvi. 打；打败；拍打；有节奏地舒张与收缩\",\"audio\":\"beat.mp3\"},{\"word\":\"boil\",\"pronun\":\"[bɔɪl]\",\"translation\":\"n. 沸腾，煮沸；疖子\\nvt. 煮沸，烧开；使…激动；使…蒸发\\nvi. 煮沸，沸腾；激动，激昂\",\"audio\":\"boil.mp3\"},{\"word\":\"burn\",\"pronun\":\"[bɜːrn]\",\"translation\":\"n. 灼伤，烧伤；烙印\\nvt. 燃烧；烧毁，灼伤；激起…的愤怒\\nvi. 燃烧；烧毁；发热\",\"audio\":\"burn.mp3\"},{\"word\":\"cook\",\"pronun\":\"[kʊk]\",\"translation\":\"n. 厨师，厨子\\nvt. 烹调，煮\\nvi. 烹调，做菜\",\"audio\":\"cook.mp3\"},{\"word\":\"cut\",\"pronun\":\"[kʌt]\",\"translation\":\"n. 伤口；切口；削减；（服装等的）式样；削球；切入\\nadj. 割下的；雕过的；缩减的\\nvt. [机] 切割；削减；缩短；刺痛\\nvi. [机] 切割；相交；切牌；停拍；不出席\",\"audio\":\"cut.mp3\"},{\"word\":\"fry\",\"pronun\":\"[fraɪ]\",\"translation\":\"n. 鱼苗；油炸食物\\nvt. 油炸；油煎\\nvi. 油炸；油煎\",\"audio\":\"fry.mp3\"},{\"word\":\"instructions\",\"pronun\":\"[ɪnˈstrʌkʃnz]\",\"translation\":\"n. 指令；说明（instruction的复数形式）\",\"audio\":\"instructions.mp3\"},{\"word\":\"mix\",\"pronun\":\"[mɪks]\",\"translation\":\"vt. 配制；混淆；使混和；使结交\\nvi. 参与；相混合；交往\\nn. 混合；混合物；混乱\",\"audio\":\"mix.mp3\"},{\"word\":\"pour\",\"pronun\":\"[pɔːr]\",\"translation\":\"n. 倾泻；流出；骤雨\\nvt. 灌，注；倒；倾泻；倾吐\\nvi. 倾泻；涌流；斟茶\",\"audio\":\"pour.mp3\"},{\"word\":\"recipe\",\"pronun\":\"[ˈresəpi]\",\"translation\":\"n. 食谱；[临床] 处方；秘诀；烹饪法\",\"audio\":\"recipe.mp3\"},{\"word\":\"roast\",\"pronun\":\"[roʊst]\",\"translation\":\"n. 烤肉；烘烤\\nadj. 烘烤的；烤过的\\nvt. 烤，焙；烘，烘烤；暴露于某种热力下以得温暖\\nvi. 烤；烘\",\"audio\":\"roast.mp3\"},{\"word\":\"stir\",\"pronun\":\"[stɜːr]\",\"translation\":\"n. 搅拌；轰动\\nvi. 搅动；传播；走动\\nvt. 搅拌；激起；惹起\",\"audio\":\"stir.mp3\"},{\"word\":\"taste\",\"pronun\":\"[teɪst]\",\"translation\":\"n. 味道；品味；审美\\nvt. 尝；体验\\nvi. 尝起来；有…的味道\",\"audio\":\"taste.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

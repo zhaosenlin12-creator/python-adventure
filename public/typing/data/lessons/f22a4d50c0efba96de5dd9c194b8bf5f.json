@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.995958+00:00",
+  "request": {
+    "lesson_id": "f22a4d50c0efba96de5dd9c194b8bf5f",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 417,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "f22a4d50c0efba96de5dd9c194b8bf5f",
+    "nextLessonId": "97b18e3b87e26268e01c2d9c3025b81b",
+    "lessonName": "六级词汇正序版-30",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第30课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b9ee99573696c36ed7353471eb9a67c2",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"debate\",\"pronun\":\"[dɪˈbeɪt]\",\"translation\":\"n. 辩论；辩论会\\nvt. 辩论，争论，讨论\\nvi. 辩论，争论，讨论\",\"audio\":\"debate.mp3\"},{\"word\":\"decade\",\"pronun\":\"[ˈdekeɪdˌdɪˈkeɪd]\",\"translation\":\"n. 十年，十年期；十\",\"audio\":\"decade.mp3\"},{\"word\":\"decay\",\"pronun\":\"[dɪˈkeɪ]\",\"translation\":\"n. 衰退，[核] 衰减；腐烂，腐朽\\nvt. 使腐烂，使腐败；使衰退，使衰落\\nvi. 衰退，[核] 衰减；腐烂，腐朽\",\"audio\":\"decay.mp3\"},{\"word\":\"deceive\",\"pronun\":\"[dɪˈsiːv]\",\"translation\":\"v. 欺骗；行骗\",\"audio\":\"deceive.mp3\"},{\"word\":\"decency\",\"pronun\":\"[ˈdiːsnsi]\",\"translation\":\"n. 正派；体面；庄重；合乎礼仪；礼貌\",\"audio\":\"decency.mp3\"},{\"word\":\"decent\",\"pronun\":\"[ˈdiːsnt]\",\"translation\":\"adj. 正派的；得体的；相当好的\",\"audio\":\"decent.mp3\"},{\"word\":\"decimal\",\"pronun\":\"[ˈdesɪml]\",\"translation\":\"n. 小数\\nadj. 小数的；十进位的\",\"audio\":\"decimal.mp3\"},{\"word\":\"decisive\",\"pronun\":\"[dɪˈsaɪsɪv]\",\"translation\":\"adj. 决定性的；果断的，坚定的\",\"audio\":\"decisive.mp3\"},{\"word\":\"decorate\",\"pronun\":\"[ˈdekəreɪt]\",\"translation\":\"vt. 装饰；布置；授勋给\\nvi. 装饰；布置\",\"audio\":\"decorate.mp3\"},{\"word\":\"decrease\",\"pronun\":\"[dɪˈkriːs; ˈdiːkriːs]\",\"translation\":\"n. 减少，减小；减少量\\nvt. 减少，减小\\nvi. 减少，减小\",\"audio\":\"decrease.mp3\"},{\"word\":\"decree\",\"pronun\":\"[dɪˈkriː]\",\"translation\":\"n. 法令；判决\\nvt. 命令；颁布；注定；判决\\nvi. 注定；发布命令\",\"audio\":\"decree.mp3\"},{\"word\":\"dedicate\",\"pronun\":\"[ˈdedɪkeɪt]\",\"translation\":\"vt. 致力；献身；题献\",\"audio\":\"dedicate.mp3\"},{\"word\":\"deduce\",\"pronun\":\"[dɪˈduːs]\",\"translation\":\"vt. 推论，推断；演绎出\",\"audio\":\"deduce.mp3\"},{\"word\":\"deduct\",\"pronun\":\"[dɪˈdʌkt]\",\"translation\":\"vt. 扣除，减去；演绎\",\"audio\":\"deduct.mp3\"},{\"word\":\"deem\",\"pronun\":\"[diːm]\",\"translation\":\"vt. 认为，视作；相信\\nvi. 认为，持某种看法；作某种评价\",\"audio\":\"deem.mp3\"},{\"word\":\"default\",\"pronun\":\"[dɪˈfɔːltˌˈdiːfɔːlt]\",\"translation\":\"n. 违约；缺席；缺乏；系统默认值\\nvt. 不履行；不参加（比赛等）；对…处以缺席裁判\\nvi. 拖欠；不履行；不到场\",\"audio\":\"default.mp3\"},{\"word\":\"defeat\",\"pronun\":\"[dɪˈfiːt]\",\"translation\":\"n. 失败的事实；击败的行为\\nvt. 击败，战胜；挫败；使…失败\",\"audio\":\"defeat.mp3\"},{\"word\":\"defect\",\"pronun\":\"[ˈdiːfekt; dɪˈfekt]\",\"translation\":\"n. 缺点，缺陷；不足之处\\nvi. 变节；叛变\",\"audio\":\"defect.mp3\"},{\"word\":\"defendant\",\"pronun\":\"[dɪˈfendənt]\",\"translation\":\"n. 被告\\nadj. 辩护的；为自己辩护的\",\"audio\":\"defendant.mp3\"},{\"word\":\"deferential\",\"pronun\":\"[ˌdefəˈrenʃl]\",\"translation\":\"adj. 恭敬的；惯于顺从的\",\"audio\":\"deferential.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

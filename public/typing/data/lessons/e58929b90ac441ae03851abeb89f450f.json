@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.085407+00:00",
+  "request": {
+    "lesson_id": "e58929b90ac441ae03851abeb89f450f",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 105,
+    "nextCourseId": "e13b6bae2990dd699f332f225dd1955b",
+    "courseName": "Javascript",
+    "lessonId": "e58929b90ac441ae03851abeb89f450f",
+    "nextLessonId": "8d3514cd3e861e240783218841c91549",
+    "lessonName": "判断素数",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - 判断素数",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e606f4d9e19d43bc5b7bc311efca7dd8",
+        "index": 1,
+        "text": [
+          "// 判断一个数是否为素数\\nfunction isPrime(n) {\\n    if (n < 2) return false;\\n    for (let i = 2; i <= Math.sqrt(n); i++) {\\n        if (n % i === 0) return false;\\n    }\\n    return true;\\n}\\n\\n// 测试素数判断\\nconst testNumbers = [2, 3, 4, 17, 20, 29];\\nfor (const num of testNumbers) {\\n    if (isPrime(num)) {\\n        console.log(`${num} 是素数`);\\n    } else {\\n        console.log(`${num} 不是素数`);\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

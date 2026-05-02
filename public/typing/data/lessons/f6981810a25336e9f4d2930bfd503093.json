@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.433092+00:00",
+  "request": {
+    "lesson_id": "f6981810a25336e9f4d2930bfd503093",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 74,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "f6981810a25336e9f4d2930bfd503093",
+    "nextLessonId": "35e49e9d26025597d884f71310918155",
+    "lessonName": "KET核心词-61",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第61课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d0dbb2033bdfae8dd1273cafb5229c80",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"somewhere\",\"pronun\":\"[ˈsʌmwer]\",\"translation\":\"n. 某个地方\\nadv. 在某处；到某处\",\"audio\":\"somewhere.mp3\"},{\"word\":\"song\",\"pronun\":\"[sɔŋ]\",\"translation\":\"n. 歌曲；歌唱；诗歌；鸣声\",\"audio\":\"song.mp3\"},{\"word\":\"soon\",\"pronun\":\"[suːn]\",\"translation\":\"adv. 快；不久，一会儿；立刻；宁愿\",\"audio\":\"soon.mp3\"},{\"word\":\"sorry\",\"pronun\":\"[ˈsɑːri]\",\"translation\":\"adj. 遗憾的；对不起的，抱歉的\\nint. 对不起，抱歉（表示委婉的拒绝等）\",\"audio\":\"sorry.mp3\"},{\"word\":\"sort\",\"pronun\":\"[sɔːrt]\",\"translation\":\"n. 种类；方式；品质\\nvt. 将…分类；将…排序；挑选出某物\\nvi. 分类；协调；交往\",\"audio\":\"sort.mp3\"},{\"word\":\"sound\",\"pronun\":\"[saʊnd]\",\"translation\":\"n. 声音，语音；噪音；海峡；吵闹；听力范围；[医] 探条\\nadj. 健全的，健康的；合理的；可靠的；有效彻底的\\nvt. 听（诊）；测量，测…深；使发声；试探；宣告\\nvi. 听起来；发\",\"audio\":\"sound.mp3\"},{\"word\":\"soup\",\"pronun\":\"[suːp]\",\"translation\":\"n. 汤，羹；马力\\nvt. 加速；增加马力\",\"audio\":\"soup.mp3\"},{\"word\":\"sour\",\"pronun\":\"[ˈsaʊər]\",\"translation\":\"n. 酸味；苦事\\nadj. 酸的；发酵的；刺耳的；酸臭的；讨厌的\\nvt. 使变酸；使失望\\nvi. 发酵；变酸；厌烦\",\"audio\":\"sour.mp3\"},{\"word\":\"space\",\"pronun\":\"[speɪs]\",\"translation\":\"n. 空间；太空；距离\\nvt. 隔开\\nvi. 留间隔\",\"audio\":\"space.mp3\"},{\"word\":\"Spanish\",\"pronun\":\"[ˈspænɪʃ]\",\"translation\":\"n. 西班牙语；西班牙人\\nadj. 西班牙的；西班牙人的；西班牙语的\",\"audio\":\"Spanish.mp3\"},{\"word\":\"spare\",\"pronun\":\"[sper]\",\"translation\":\"n. 剩余；备用零件\\nvt. 节约，吝惜；饶恕；分出，分让\\nadj. 多余的；瘦的；少量的\\nvi. 饶恕，宽恕；节约\",\"audio\":\"spare.mp3\"},{\"word\":\"speak\",\"pronun\":\"[spiːk]\",\"translation\":\"vi. 说话；演讲；表明；陈述\\nvt. 讲话；发言；讲演\",\"audio\":\"speak.mp3\"},{\"word\":\"special\",\"pronun\":\"[ˈspeʃl]\",\"translation\":\"n. 特使，特派人员；特刊；特色菜；专车；特价商品\\nadj. 特别的；专门的，专用的\",\"audio\":\"special.mp3\"},{\"word\":\"speech\",\"pronun\":\"[spiːtʃ]\",\"translation\":\"n. 演讲；讲话；[语] 语音；演说\",\"audio\":\"speech.mp3\"},{\"word\":\"spell\",\"pronun\":\"[spel]\",\"translation\":\"n. 符咒；一段时间；魅力\\nvi. 拼字；轮替\\nvt. 拼，拼写；意味着；招致；拼成；迷住；轮值\",\"audio\":\"spell.mp3\"},{\"word\":\"spend\",\"pronun\":\"[spend]\",\"translation\":\"n. 预算\\nvt. 度过，消磨（时光）；花费；浪费；用尽\\nvi. 花钱；用尽，耗尽\",\"audio\":\"spend.mp3\"},{\"word\":\"spicy\",\"pronun\":\"[ˈspaɪsi]\",\"translation\":\"adj. 辛辣的；香的，多香料的；下流的\",\"audio\":\"spicy.mp3\"},{\"word\":\"spit\",\"pronun\":\"[spɪt]\",\"translation\":\"n. 唾液\\nvi. 吐痰；吐口水；发出劈啪声\\nvt. 吐，吐出；发出；发射\",\"audio\":\"spit.mp3\"},{\"word\":\"spoon\",\"pronun\":\"[spuːn]\",\"translation\":\"n. 匙，勺子；一杓的量\\nvt. 用匙舀；使成匙状\\nvi. 轻轻向上击\",\"audio\":\"spoon.mp3\"},{\"word\":\"sport\",\"pronun\":\"[spɔːrt]\",\"translation\":\"n. 运动；游戏；娱乐；运动会；玩笑\\nadj. 运动的\\nvt. 游戏；参加体育运动；夸耀\\nvi. 游戏\",\"audio\":\"sport.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

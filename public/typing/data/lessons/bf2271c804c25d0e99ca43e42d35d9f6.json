@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.663035+00:00",
+  "request": {
+    "lesson_id": "bf2271c804c25d0e99ca43e42d35d9f6",
+    "course_id": "f5e1caafe742206a7fc8abc95cf77b44",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "order": 327,
+    "nextCourseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "courseName": "诗词歌赋",
+    "lessonId": "bf2271c804c25d0e99ca43e42d35d9f6",
+    "nextLessonId": "6f951ff185b166c923d642c1d1b3b4d8",
+    "lessonName": "游戏：英文单词",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-duck.b036f0ad8f.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "65f86d23c73903c13a3f0f9df65d041c",
+        "index": 1,
+        "text": [
+          "little bundle looms seats boots common rail lands needed stopped scissor brighter choose happiness"
+        ],
+        "contentType": 3,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

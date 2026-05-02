@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.305042+00:00",
+  "request": {
+    "lesson_id": "08c9c7a63cd0033eb8574346f4cdceeb",
+    "course_id": "be2af5259ed993e6499f4c46d3f7e67e",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "be2af5259ed993e6499f4c46d3f7e67e",
+    "order": 447,
+    "nextCourseId": "be2af5259ed993e6499f4c46d3f7e67e",
+    "courseName": "实战演练-1亿以内金额",
+    "lessonId": "08c9c7a63cd0033eb8574346f4cdceeb",
+    "nextLessonId": "9e8f11e16c1a1f2247d265adf15a0b81",
+    "lessonName": "极限挑战二",
+    "icon": "data/assets/daziya.com/key-icon_key-practise-star.b4ccc47d6d.png",
+    "description": "数字输入练习 - 极限挑战二",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3bc482985b41556c2f4abb573dca6d12",
+        "index": 1,
+        "text": [
+          "9541827364\\n8632938475\\n7723149586\\n6814251697\\n5915362718\\n4126473829\\n3237584931\\n2348696152\\n1459717263\\n9652938475\\n8743149586\\n7834251697\\n6925362718\\n5136473829\\n4247584931\\n3358696152\\n2469717263\\n1571828374\\n9753149586\\n8844251697\\n7935362718\\n6146473829\\n5257584931\\n4368696152\\n3479717263\\n2581828374\\n1692939485\\n9854251697\\n8945362718\\n7156473829"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

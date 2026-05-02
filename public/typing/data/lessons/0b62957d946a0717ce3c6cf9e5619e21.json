@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.557898+00:00",
+  "request": {
+    "lesson_id": "0b62957d946a0717ce3c6cf9e5619e21",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 326,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "0b62957d946a0717ce3c6cf9e5619e21",
+    "nextLessonId": "80324f7b4339b6f6a62daa643eaccc80",
+    "lessonName": "六级词汇正序版-31",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第31课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "aa86b3437755b1a85f5206af4f6cbf6d",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"defiance\",\"pronun\":\"[dɪˈfaɪəns]\",\"translation\":\"n. 蔑视；挑战；反抗\",\"audio\":\"defiance.mp3\"},{\"word\":\"deficiency\",\"pronun\":\"[dɪˈfɪʃnsi]\",\"translation\":\"n. 缺陷，缺点；缺乏；不足的数额\",\"audio\":\"deficiency.mp3\"},{\"word\":\"deficit\",\"pronun\":\"[ˈdefɪsɪt]\",\"translation\":\"n. 赤字；不足额\",\"audio\":\"deficit.mp3\"},{\"word\":\"define\",\"pronun\":\"[dɪˈfaɪn]\",\"translation\":\"vt. 定义；使明确；规定\",\"audio\":\"define.mp3\"},{\"word\":\"definitely\",\"pronun\":\"[ˈdefɪnətli]\",\"translation\":\"adv. 清楚地，当然；明确地，肯定地\",\"audio\":\"definitely.mp3\"},{\"word\":\"definition\",\"pronun\":\"[ˌdefɪˈnɪʃn]\",\"translation\":\"n. 定义；[物] 清晰度；解说\",\"audio\":\"definition.mp3\"},{\"word\":\"definitive\",\"pronun\":\"[dɪˈfɪnətɪv]\",\"translation\":\"n. 限定词\\nadj. 决定性的；最后的；限定的\",\"audio\":\"definitive.mp3\"},{\"word\":\"defy\",\"pronun\":\"[dɪˈfaɪ]\",\"translation\":\"n. 挑战；对抗\\nvt. 藐视；公然反抗；挑衅；使落空\",\"audio\":\"defy.mp3\"},{\"word\":\"degenerate\",\"pronun\":\"[dɪˈdʒenəreɪt; dɪˈdʒenərət; dɪˈdʒenərɪt]\",\"translation\":\"n. 堕落的人\\nadj. 退化的；堕落的\\nvi. 退化；堕落\\nvt. 使退化；恶化\",\"audio\":\"degenerate.mp3\"},{\"word\":\"degrade\",\"pronun\":\"[dɪˈɡreɪd]\",\"translation\":\"vt. 贬低；使……丢脸；使……降级；使……降解\\nvi. 降级，降低；退化\",\"audio\":\"degrade.mp3\"},{\"word\":\"deliberate\",\"pronun\":\"[dɪˈlɪbərət]\",\"translation\":\"adj. 故意的；深思熟虑的；从容的\\nvt. 仔细考虑；商议\",\"audio\":\"deliberate.mp3\"},{\"word\":\"delicate\",\"pronun\":\"[ˈdelɪkət]\",\"translation\":\"adj. 微妙的；精美的，雅致的；柔和的；易碎的；纤弱的；清淡可口的\",\"audio\":\"delicate.mp3\"},{\"word\":\"delusion\",\"pronun\":\"[dɪˈluːʒn]\",\"translation\":\"n. 迷惑，欺骗；错觉；幻想\",\"audio\":\"delusion.mp3\"},{\"word\":\"demand\",\"pronun\":\"[dɪˈmænd]\",\"translation\":\"n. [经] 需求；要求；需要\\nvt. 要求；需要；查询\\nvi. 需要；请求；查问\",\"audio\":\"demand.mp3\"},{\"word\":\"demonstrate\",\"pronun\":\"[ˈdemənstreɪt]\",\"translation\":\"vt. 证明；展示；论证\\nvi. 示威\",\"audio\":\"demonstrate.mp3\"},{\"word\":\"denial\",\"pronun\":\"[dɪˈnaɪəl]\",\"translation\":\"n. 否认；拒绝；节制；背弃\",\"audio\":\"denial.mp3\"},{\"word\":\"denote\",\"pronun\":\"[dɪˈnoʊt]\",\"translation\":\"vt. 表示，指示\",\"audio\":\"denote.mp3\"},{\"word\":\"denounce\",\"pronun\":\"[dɪˈnaʊns]\",\"translation\":\"vt. 谴责；告发；公然抨击；通告废除\",\"audio\":\"denounce.mp3\"},{\"word\":\"dentist\",\"pronun\":\"[ˈdentɪst]\",\"translation\":\"n. 牙科医生\\n牙医诊所\",\"audio\":\"dentist.mp3\"},{\"word\":\"deny\",\"pronun\":\"[dɪˈnaɪ]\",\"translation\":\"vi. 否认；拒绝\\nvt. 否定，否认；拒绝给予；拒绝…的要求\",\"audio\":\"deny.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

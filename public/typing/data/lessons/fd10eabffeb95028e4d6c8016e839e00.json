@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.572294+00:00",
+  "request": {
+    "lesson_id": "fd10eabffeb95028e4d6c8016e839e00",
+    "course_id": "f5e1caafe742206a7fc8abc95cf77b44",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "order": 303,
+    "nextCourseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "courseName": "诗词歌赋",
+    "lessonId": "fd10eabffeb95028e4d6c8016e839e00",
+    "nextLessonId": "9b67be1dfdbc82790728bce0e9a78443",
+    "lessonName": "《将进酒》李白",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-poet-1.54ee3c2d1e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1de7f2ab697848481aaa2d47464f243c",
+        "index": 1,
+        "text": [
+          "君不见，黄河之水天上来，奔流到海不复回。\\n君不见，高堂明镜悲白发，朝如青丝暮成雪。"
+        ],
+        "pinyin": "[[\"君\", \"jūn\"], [\"不\", \"bù\"], [\"见\", \"jiàn\"], [\"，\", \"\"], [\"黄\", \"huáng\"], [\"河\", \"hé\"], [\"之\", \"zhī\"], [\"水\", \"shuǐ\"], [\"天\", \"tiān\"], [\"上\", \"shàng\"], [\"来\", \"lái\"], [\"，\", \"\"], [\"奔\", \"bēn\"], [\"流\", \"liú\"], [\"到\", \"dào\"], [\"海\", \"hǎi\"], [\"不\", \"bù\"], [\"复\", \"fù\"], [\"回\", \"huí\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"君\", \"jūn\"], [\"不\", \"bù\"], [\"见\", \"jiàn\"], [\"，\", \"\"], [\"高\", \"gāo\"], [\"堂\", \"táng\"], [\"明\", \"míng\"], [\"镜\", \"jìng\"], [\"悲\", \"bēi\"], [\"白\", \"bái\"], [\"发\", \"fà\"], [\"，\", \"\"], [\"朝\", \"zhāo\"], [\"如\", \"rú\"], [\"青\", \"qīng\"], [\"丝\", \"sī\"], [\"暮\", \"mù\"], [\"成\", \"chéng\"], [\"雪\", \"xuě\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 42,
+        "minSpeed": 27,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

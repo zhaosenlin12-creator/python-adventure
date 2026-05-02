@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.656604+00:00",
+  "request": {
+    "lesson_id": "cd2f3b8834ddfabbaab6360002fda48d",
+    "course_id": "f5e1caafe742206a7fc8abc95cf77b44",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "order": 322,
+    "nextCourseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "courseName": "诗词歌赋",
+    "lessonId": "cd2f3b8834ddfabbaab6360002fda48d",
+    "nextLessonId": "3ebabcc35549ff1467718ee9569d4472",
+    "lessonName": "游戏：英文单词",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-duck.b036f0ad8f.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "df4c2223d9c6d85f1e55ac7ca52fb809",
+        "index": 1,
+        "text": [
+          "little available window cloth sky blue tulips afternoon weavers everyone brings pretty houses"
+        ],
+        "contentType": 3,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

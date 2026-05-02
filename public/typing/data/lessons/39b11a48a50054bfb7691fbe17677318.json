@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:42.606144+00:00",
+  "request": {
+    "lesson_id": "39b11a48a50054bfb7691fbe17677318",
+    "course_id": "3d8843cc8aae77f0342b8831e23d52c3",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "3d8843cc8aae77f0342b8831e23d52c3",
+    "order": 272,
+    "nextCourseId": "3d8843cc8aae77f0342b8831e23d52c3",
+    "courseName": "财务汇算-小数计算",
+    "lessonId": "39b11a48a50054bfb7691fbe17677318",
+    "nextLessonId": "23387316375938e9487b6b2aeef41403",
+    "lessonName": "一位小数累加二",
+    "icon": "data/assets/daziya.com/key-icon_num-jiadeng.3722a47f6f.png",
+    "description": "数字输入练习 - 一位小数累加二",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "43ea2fe801e0c1404691049804b94537",
+        "index": 1,
+        "text": [
+          "8.2+\\n4.5+\\n6.7+\\n9.1+\\n2.8+\\n7.3+\\n5.9+\\n3.4+\\n1.6+\\n8.7+\\n4.2"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.174327+00:00",
+  "request": {
+    "lesson_id": "af634d248374f454496e2616dfd4692f",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 25,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "af634d248374f454496e2616dfd4692f",
+    "nextLessonId": "da45070bcca085fb98723177e5f1a4b0",
+    "lessonName": "2022年版 PEP-五年级-上册-2",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-五年级-上册 - 第2课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "dce2008483f668837925181e06dd317b",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"Monday\",\"pronun\":\"[ˈmʌndeɪ]\",\"translation\":\"n. 星期一\",\"audio\":\"Monday.mp3\"},{\"word\":\"Tuesday\",\"pronun\":\"[ˈtuːzdeɪ]\",\"translation\":\"n. 星期二\",\"audio\":\"Tuesday.mp3\"},{\"word\":\"Wednesday\",\"pronun\":\"[ˈwenzdeɪ]\",\"translation\":\"n. 星期三\",\"audio\":\"Wednesday.mp3\"},{\"word\":\"Thursday\",\"pronun\":\"[ˈθɜːrzdeɪ]\",\"translation\":\"n. 星期四\",\"audio\":\"Thursday.mp3\"},{\"word\":\"Friday\",\"pronun\":\"[ˈfraɪdeɪ]\",\"translation\":\"n. 星期五\",\"audio\":\"Friday.mp3\"},{\"word\":\"Saturday\",\"pronun\":\"[ˈsætərdeɪ]\",\"translation\":\"n. 星期六\",\"audio\":\"Saturday.mp3\"},{\"word\":\"Sunday\",\"pronun\":\"[ˈsʌndeɪ]\",\"translation\":\"n. 星期日；礼拜日\",\"audio\":\"Sunday.mp3\"},{\"word\":\"weekend\",\"pronun\":\"[ˈwiːkend]\",\"translation\":\"n. 周末，周末休假；周末聚会\\nadj. 周末的，周末用的\\nvi. 度周末\",\"audio\":\"weekend.mp3\"},{\"word\":\"wash\",\"pronun\":\"[wɑːʃ]\",\"translation\":\"n. 洗涤；洗的衣服；化妆水；冲积物\\nvt. 洗涤；洗刷；冲走；拍打\\nvi. 洗澡；被冲蚀\",\"audio\":\"wash.mp3\"},{\"word\":\"my\",\"pronun\":\"[maɪ]\",\"translation\":\"pron. 我的\\nint. 哎呀（表示惊奇等）；喔唷\",\"audio\":\"my.mp3\"},{\"word\":\"clothes\",\"pronun\":\"[kloʊðz; kloʊz]\",\"translation\":\"n. 衣服\",\"audio\":\"clothes.mp3\"},{\"word\":\"watch\",\"pronun\":\"[wɑːtʃ]\",\"translation\":\"n. 手表；监视；守护；值班人\\nvt. 观察；注视；看守；警戒\\nvi. 观看，注视；守侯，看守\",\"audio\":\"watch.mp3\"},{\"word\":\"TV\",\"pronun\":\"[ˌtiː ˈviː]\",\"translation\":\"abbr. 电视（television）\",\"audio\":\"TV.mp3\"},{\"word\":\"do\",\"pronun\":\"[duː; də; du; doʊ]\",\"translation\":\"vi. 行，足够；生长\\nn. 要求；规定；C大调音阶中的第一音\\nv. 做；干；学习；研究；进行；完成；解答；整理；算出；引起；行过\\naux. 助动词（构成疑问句和否定句）；（代替动词）；（用于加强语气）\\nn. （口语）事件；（主英国口语）诈骗；（主英国、新西兰口语）宴会；（口语）必须做到的事情\",\"audio\":\"do.mp3\"},{\"word\":\"homework\",\"pronun\":\"[ˈhoʊmwɜːrk]\",\"translation\":\"n. 家庭作业，课外作业\",\"audio\":\"homework.mp3\"},{\"word\":\"read\",\"pronun\":\"[riːd]\",\"translation\":\"n. 阅读；读物\\nadj. 有学问的\\nvi. 读；读起来\\nvt. 阅读；读懂，理解\",\"audio\":\"read.mp3\"},{\"word\":\"play\",\"pronun\":\"[pleɪ]\",\"translation\":\"n. 游戏；比赛；剧本\\nvt. 游戏；扮演；演奏；播放；同…比赛\\nvi. 演奏；玩耍；上演；参加比赛\",\"audio\":\"play.mp3\"},{\"word\":\"football\",\"pronun\":\"[ˈfʊtbɔːl]\",\"translation\":\"n. 足球，橄榄球\\nvi. 踢足球；打橄榄球\",\"audio\":\"football.mp3\"},{\"word\":\"cooking\",\"pronun\":\"[ˈkʊkɪŋ]\",\"translation\":\"n. 烹饪\\nadj. 烹调的\\nv. 烹调；筹划（cook的ing形式）\",\"audio\":\"cooking.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

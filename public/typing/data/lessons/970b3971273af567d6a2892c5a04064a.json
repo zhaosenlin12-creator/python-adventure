@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:37.427964+00:00",
+  "request": {
+    "lesson_id": "970b3971273af567d6a2892c5a04064a",
+    "course_id": "080aa640e5f820c887b06c95eded7890",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "080aa640e5f820c887b06c95eded7890",
+    "order": 772,
+    "nextCourseId": "080aa640e5f820c887b06c95eded7890",
+    "courseName": "国学经典2",
+    "lessonId": "970b3971273af567d6a2892c5a04064a",
+    "nextLessonId": "4f49de6158134e566d21b25e4f0e3132",
+    "lessonName": "诗经11 卷耳（节选）",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-4.cd3573ff4d.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ea9af5777c319874809f544635531e47",
+        "index": 1,
+        "text": [
+          "采采卷耳，不盈顷筐。\\n嗟我怀人，寘彼周行。\\n陟彼崔嵬，我马虺隤。\\n我姑酌彼金櫑，维以不永怀。"
+        ],
+        "pinyin": "[[\"采\", \"cǎi\"], [\"采\", \"cǎi\"], [\"卷\", \"juǎn\"], [\"耳\", \"ěr\"], [\"，\", \"\"], [\"不\", \"bù\"], [\"盈\", \"yíng\"], [\"顷\", \"qǐng\"], [\"筐\", \"kuāng\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"嗟\", \"jiē\"], [\"我\", \"wǒ\"], [\"怀\", \"huái\"], [\"人\", \"rén\"], [\"，\", \"\"], [\"寘\", \"zhì\"], [\"彼\", \"bǐ\"], [\"周\", \"zhōu\"], [\"行\", \"háng\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"陟\", \"zhì\"], [\"彼\", \"bǐ\"], [\"崔\", \"cuī\"], [\"嵬\", \"wéi\"], [\"，\", \"\"], [\"我\", \"wǒ\"], [\"马\", \"mǎ\"], [\"虺\", \"huī\"], [\"隤\", \"tuí\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"我\", \"wǒ\"], [\"姑\", \"gū\"], [\"酌\", \"zhuó\"], [\"彼\", \"bǐ\"], [\"金\", \"jīn\"], [\"櫑\", \"léi\"], [\"，\", \"\"], [\"维\", \"wéi\"], [\"以\", \"yǐ\"], [\"不\", \"bù\"], [\"永\", \"yǒng\"], [\"怀\", \"huái\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

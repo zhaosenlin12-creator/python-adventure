@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.666903+00:00",
+  "request": {
+    "lesson_id": "0cd496213f3a32d7cfd01557ce7c12c7",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 569,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "0cd496213f3a32d7cfd01557ce7c12c7",
+    "nextLessonId": "249748c3030a6fabb076d58898cb6392",
+    "lessonName": "Big Green Ball",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "cc6c6dbe63d7b30b3822c742f8df9a0e",
+        "index": 1,
+        "text": [
+          "Big Green Ball\\nSean had a new green ball—the best ball in the world!\\nHe took the ball into the garden. He rolled, bounced and kicked it. It was a great ball!\\nHis little brother Sam wanted the ball too. \"No!\" said\\nSean. \"It's my ball! ALL MINE!\"\\nSean kicked the ball hard. It flew high, high in the sky and over the fence!\\nThe fence was very tall, much taller than Sean. There was also a hole in the fence. It was much smaller than Sean.\\nSean started to cry because he couldn't get his ball back.\\nBut, Sam was small. He said, \"Let me go get it.\" He crawled through the hole and reached for the ball.\\nThen he came back. \"Here is your ball, Sean!\" he exclaimed.\\nSean looked at Sam and smiled. \"No, it's OUR ball!\""
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

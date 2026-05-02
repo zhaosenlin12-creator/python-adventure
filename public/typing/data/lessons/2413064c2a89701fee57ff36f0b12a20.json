@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.792749+00:00",
+  "request": {
+    "lesson_id": "2413064c2a89701fee57ff36f0b12a20",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 36,
+    "nextCourseId": "ff61770b1da83313ceacb0a08aef6378",
+    "courseName": "Python",
+    "lessonId": "2413064c2a89701fee57ff36f0b12a20",
+    "nextLessonId": "8a4dd60714e24f1a2ac3a8ba7b54be32",
+    "lessonName": "列表操作",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - 列表操作",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a1817edb4079b667393e63f67f10c412",
+        "index": 1,
+        "text": [
+          "# 列表的基本操作\\nnumbers = [1, 2, 3, 4, 5]\\n\\nnumbers.append(6)  # 添加元素\\nnumbers.insert(0, 0)  # 在开头插入\\nnumbers.remove(3)  # 删除指定元素\\n\\nprint(f\"列表内容: {numbers}\")\\nprint(f\"列表长度: {len(numbers)}\")\\nprint(f\"最大值: {max(numbers)}\")\\nprint(f\"最小值: {min(numbers)}\")\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.893536+00:00",
+  "request": {
+    "lesson_id": "41fbc7118249ae5db90ffa7d13d2c711",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 171,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "41fbc7118249ae5db90ffa7d13d2c711",
+    "nextLessonId": "a8fa12aaf774901fee9e9ee34d57a132",
+    "lessonName": "KET核心词-78",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第78课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6627e76cfabfddedc73fa720750e4cba",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"lunch\",\"pronun\":\"[lʌntʃ]\",\"translation\":\"n. 午餐\\nvt. 吃午餐；供给午餐\\nvi. 吃午餐；供给午餐\",\"audio\":\"lunch.mp3\"},{\"word\":\"mango\",\"pronun\":\"[ˈmæŋɡoʊ]\",\"translation\":\"n. [园艺] 芒果\",\"audio\":\"mango.mp3\"},{\"word\":\"meal\",\"pronun\":\"[miːl]\",\"translation\":\"n. 一餐，一顿饭；膳食\\nvi. 进餐\",\"audio\":\"meal.mp3\"},{\"word\":\"meat\",\"pronun\":\"[miːt]\",\"translation\":\"n. 肉，肉类（食用）\",\"audio\":\"meat.mp3\"},{\"word\":\"melon\",\"pronun\":\"[ˈmelən]\",\"translation\":\"n. 瓜；甜瓜；大肚子；圆鼓鼓像瓜似的东西\",\"audio\":\"melon.mp3\"},{\"word\":\"milk\",\"pronun\":\"[mɪlk]\",\"translation\":\"n. 牛奶；乳状物\\nvt. 榨取；挤…的奶\\nvi. 挤奶\",\"audio\":\"milk.mp3\"},{\"word\":\"mineral water\",\"pronun\":\"\",\"translation\":\"n. 矿泉水；一杯（或一瓶）矿泉水\",\"audio\":\"mineral_water.mp3\"},{\"word\":\"mushroom\",\"pronun\":\"[ˈmʌʃrʊm; ˈmʌʃruːm]\",\"translation\":\"n. 蘑菇，伞菌；蘑菇形物体；暴发户\\nadj. 蘑菇的；蘑菇形的；迅速生长的\\nvi. 迅速增加；采蘑菇；迅速生长\",\"audio\":\"mushroom.mp3\"},{\"word\":\"omelette\",\"pronun\":\"[ˈɑːmlət]\",\"translation\":\"n. 煎蛋卷\",\"audio\":\"omelette.mp3\"},{\"word\":\"onion\",\"pronun\":\"[ˈʌnjən]\",\"translation\":\"n. 洋葱；洋葱头\",\"audio\":\"onion.mp3\"},{\"word\":\"orange\",\"pronun\":\"[ˈɔrɪndʒ]\",\"translation\":\"adj. 橙色的；橘色的\\nn. 橙；橙色；桔子\",\"audio\":\"orange.mp3\"},{\"word\":\"pasta\",\"pronun\":\"[ˈpɑːstə]\",\"translation\":\"n. 意大利面食；面团\",\"audio\":\"pasta.mp3\"},{\"word\":\"pear\",\"pronun\":\"[per]\",\"translation\":\"n. [园艺] 梨树；梨子\",\"audio\":\"pear.mp3\"},{\"word\":\"pepper\",\"pronun\":\"[ˈpepər]\",\"translation\":\"n. 胡椒；辣椒；胡椒粉\\nvt. 加胡椒粉于；使布满\",\"audio\":\"pepper.mp3\"},{\"word\":\"pie\",\"pronun\":\"[paɪ]\",\"translation\":\"n. 馅饼；饼图；爱说话的人\\nvt. 使杂乱\",\"audio\":\"pie.mp3\"},{\"word\":\"pizza\",\"pronun\":\"[ˈpiːtsə]\",\"translation\":\"n. 比萨饼（一种涂有乳酪核番茄酱的意大利式有馅烘饼）\",\"audio\":\"pizza.mp3\"},{\"word\":\"potato\",\"pronun\":\"[pəˈteɪtoʊ]\",\"translation\":\"n. [作物] 土豆，[作物] 马铃薯\",\"audio\":\"potato.mp3\"},{\"word\":\"rice\",\"pronun\":\"[raɪs]\",\"translation\":\"n. 稻；米饭\\nvt. 把…捣成米糊状\",\"audio\":\"rice.mp3\"},{\"word\":\"roll\",\"pronun\":\"[roʊl]\",\"translation\":\"n. 卷，卷形物；名单；摇晃\\nvt. 卷；滚动，转动；辗\\nvi. 卷；滚动；转动；起伏，摇晃\",\"audio\":\"roll.mp3\"},{\"word\":\"salad\",\"pronun\":\"[ˈsæləd]\",\"translation\":\"n. 色拉；尤指莴苣\",\"audio\":\"salad.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

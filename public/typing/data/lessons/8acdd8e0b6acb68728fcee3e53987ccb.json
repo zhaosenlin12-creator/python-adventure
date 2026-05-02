@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.853740+00:00",
+  "request": {
+    "lesson_id": "8acdd8e0b6acb68728fcee3e53987ccb",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 165,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "8acdd8e0b6acb68728fcee3e53987ccb",
+    "nextLessonId": "c215cd05938c2b695ec40a40226e851e",
+    "lessonName": "KET核心词-60",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第60课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ad153680af916f994135d75b34e2bcb4",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"smart\",\"pronun\":\"[smɑːrt]\",\"translation\":\"adj. 聪明的；巧妙的；敏捷的；厉害的；潇洒的；剧烈的；时髦的\",\"audio\":\"smart.mp3\"},{\"word\":\"smell\",\"pronun\":\"[smel]\",\"translation\":\"n. 气味，嗅觉；臭味\\nvt. 嗅，闻；察觉到；发出…的气味\\nvi. 嗅，闻；有…气味\",\"audio\":\"smell.mp3\"},{\"word\":\"smile\",\"pronun\":\"[smaɪl]\",\"translation\":\"n. 微笑；笑容；喜色\\nvt. 微笑着表示\\nvi. 微笑\",\"audio\":\"smile.mp3\"},{\"word\":\"smoke\",\"pronun\":\"[smoʊk]\",\"translation\":\"n. 烟；抽烟；无常的事物\\nvt. 吸烟；抽\\nvi. 冒烟，吸烟；抽烟；弥漫\",\"audio\":\"smoke.mp3\"},{\"word\":\"snack\",\"pronun\":\"[snæk]\",\"translation\":\"n. 小吃，快餐；一份，部分\\nvi. 吃快餐，吃点心\",\"audio\":\"snack.mp3\"},{\"word\":\"snail\",\"pronun\":\"[sneɪl]\",\"translation\":\"n. 蜗牛；迟钝的人\\nvt. 缓慢移动\\nvi. 缓慢移动\",\"audio\":\"snail.mp3\"},{\"word\":\"snake\",\"pronun\":\"[sneɪk]\",\"translation\":\"n. 蛇；阴险的人\\nvt. 拉（木材等）；迂回前进\\nvi. 迂回前进\",\"audio\":\"snake.mp3\"},{\"word\":\"snow\",\"pronun\":\"[snoʊ]\",\"translation\":\"n. 雪，积雪；下雪\\nvt. 使纷纷落下；使变白\\nvi. 降雪\",\"audio\":\"snow.mp3\"},{\"word\":\"snowboard\",\"pronun\":\"[ˈsnoʊbɔːrd]\",\"translation\":\"n. 滑雪板\",\"audio\":\"snowboard.mp3\"},{\"word\":\"so\",\"pronun\":\"[soʊ]\",\"translation\":\"conj. 所以；因此\\nadv. 如此，这么；确是如此\\npron. 这样\",\"audio\":\"so.mp3\"},{\"word\":\"soap\",\"pronun\":\"[soʊp]\",\"translation\":\"n. 肥皂\\nvt. 将肥皂涂在……上；对……拍马屁（俚语）\\nvi. 用肥皂擦洗\",\"audio\":\"soap.mp3\"},{\"word\":\"soccer\",\"pronun\":\"[ˈsɑːkər]\",\"translation\":\"n. 英式足球，足球\",\"audio\":\"soccer.mp3\"},{\"word\":\"sock\",\"pronun\":\"[sɑːk]\",\"translation\":\"vt. 重击；给……穿袜\\nn. 短袜；一击\\nadv. 正着地；不偏不倚地\\nadj. 非常成功的\",\"audio\":\"sock.mp3\"},{\"word\":\"sofa\",\"pronun\":\"[ˈsoʊfə]\",\"translation\":\"n. 沙发；长椅\",\"audio\":\"sofa.mp3\"},{\"word\":\"soft\",\"pronun\":\"[sɔːft]\",\"translation\":\"n. 柔性；柔软的东西；柔软部分\\nadj. 软的，柔软的；温柔的，温和的；软弱的；笨的\\nadv. 柔软地；温和地\",\"audio\":\"soft.mp3\"},{\"word\":\"software\",\"pronun\":\"[ˈsɔːftwer]\",\"translation\":\"n. 软件\",\"audio\":\"software.mp3\"},{\"word\":\"some\",\"pronun\":\"[sʌm; səm]\",\"translation\":\"adj. 一些；某个；大约；相当多的\\npron. 一些；若干；其中的一部分；（数量不确切时用）有些人\\nadv. 非常；相当；<美>稍微\",\"audio\":\"some.mp3\"},{\"word\":\"somebody\",\"pronun\":\"[ˈsʌmbədi]\",\"translation\":\"n. 大人物；重要人物\\npron. 有人；某人\",\"audio\":\"somebody.mp3\"},{\"word\":\"something\",\"pronun\":\"[ˈsʌmθɪŋ]\",\"translation\":\"n. 重要的人；值得重视的事\\nadj. 大约；有点象\\nadv. 非常；有点；大约\\npron. 某事；某物\",\"audio\":\"something.mp3\"},{\"word\":\"sometimes\",\"pronun\":\"[ˈsʌmtaɪmz]\",\"translation\":\"adv. 有时，间或\",\"audio\":\"sometimes.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

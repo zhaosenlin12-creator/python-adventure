@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.765611+00:00",
+  "request": {
+    "lesson_id": "11507574db9b1adc7fcd2a92bc0924ec",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 145,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "11507574db9b1adc7fcd2a92bc0924ec",
+    "nextLessonId": "03f226a3f46a1946fd32319ab8ce06c1",
+    "lessonName": "KET核心词-137",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第137课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "19cde36826e7e273e4af1014ee4b45b9",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"one\",\"pronun\":\"[wʌn]\",\"translation\":\"pron. 一个人；任何人\\nadj. 一的；唯一的\\nn. 一\\nnum. 一；一个\",\"audio\":\"one.mp3\"},{\"word\":\"two\",\"pronun\":\"[tuː]\",\"translation\":\"num. 二\\nn. 两个\\nadj. 两个的\",\"audio\":\"two.mp3\"},{\"word\":\"three\",\"pronun\":\"[θriː]\",\"translation\":\"num. 三\\nn. 三，三个\\nadj. 三的，三个的\",\"audio\":\"three.mp3\"},{\"word\":\"four\",\"pronun\":\"[fɔːr]\",\"translation\":\"num. 四；四个\\nadj. 四的；四个的\",\"audio\":\"four.mp3\"},{\"word\":\"five\",\"pronun\":\"[faɪv]\",\"translation\":\"num. 五，五个\\nn. 五，五个；五美元钞票\\nadj. 五的；五个的\",\"audio\":\"five.mp3\"},{\"word\":\"six\",\"pronun\":\"[sɪks]\",\"translation\":\"num. 六，六个\\nn. 六，六个\",\"audio\":\"six.mp3\"},{\"word\":\"seven\",\"pronun\":\"[ˈsev(ə)n]\",\"translation\":\"num. 七个，七\\nn. 七个，七\\nadj. 七的；七个的\",\"audio\":\"seven.mp3\"},{\"word\":\"eight\",\"pronun\":\"[eɪt]\",\"translation\":\"num. 八；八个；第八\\nn. 八字形\\nadj. 八的\",\"audio\":\"eight.mp3\"},{\"word\":\"nine\",\"pronun\":\"[naɪn]\",\"translation\":\"n. 九，九个\\nnum. 九；九个\\nadj. 九的，九个的\",\"audio\":\"nine.mp3\"},{\"word\":\"ten\",\"pronun\":\"[ten]\",\"translation\":\"num. 十个，十\",\"audio\":\"ten.mp3\"},{\"word\":\"eleven\",\"pronun\":\"[ɪˈlevn]\",\"translation\":\"num. 十一；十一个\\nn. 十一；十一个\\nadj. 十一的；十一个的\",\"audio\":\"eleven.mp3\"},{\"word\":\"twelve\",\"pronun\":\"[twelv]\",\"translation\":\"num. 十二；十二个\\nn. 十二；十二个\\nadj. 十二的；十二个的\",\"audio\":\"twelve.mp3\"},{\"word\":\"thirteen\",\"pronun\":\"[ˌθɜːrˈtiːn]\",\"translation\":\"n. 十三；十三岁；十三个\\nnum. 十三\\nadj. 十三的；十三个的\",\"audio\":\"thirteen.mp3\"},{\"word\":\"fourteen\",\"pronun\":\"[ˌfɔːrˈtiːn]\",\"translation\":\"num. 十四；十四个；第十四\\nn. 十四的记号；十四岁；十四点钟；十五世纪\",\"audio\":\"fourteen.mp3\"},{\"word\":\"fifteen\",\"pronun\":\"[ˌfɪfˈtiːn]\",\"translation\":\"n. 十五；十五个；十五人组成的橄榄球队\\nnum. 十五\\nadj. 十五的\",\"audio\":\"fifteen.mp3\"},{\"word\":\"sixteen\",\"pronun\":\"[ˌsɪksˈtiːn]\",\"translation\":\"num. 十六\\nadj. 十六的，十六个的\",\"audio\":\"sixteen.mp3\"},{\"word\":\"seventeen\",\"pronun\":\"[ˌsevnˈtiːn]\",\"translation\":\"n. 十七，十七个\\nnum. 十七\\nadj. 十七岁的；十七的，十七个的\",\"audio\":\"seventeen.mp3\"},{\"word\":\"eighteen\",\"pronun\":\"[ˌeɪˈtiːn]\",\"translation\":\"n. 十八，十八个\\nnum. 十八\\nadj. 十八个的，十八的\",\"audio\":\"eighteen.mp3\"},{\"word\":\"nineteen\",\"pronun\":\"[ˌnaɪnˈtiːn]\",\"translation\":\"num. 十九\",\"audio\":\"nineteen.mp3\"},{\"word\":\"twenty\",\"pronun\":\"[ˈtwenti]\",\"translation\":\"num. 二十\\nn. 二十；二十年代\\nadj. 二十的\",\"audio\":\"twenty.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

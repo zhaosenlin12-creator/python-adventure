@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:33.698222+00:00",
+  "request": {
+    "lesson_id": "5ae759e5b7ba8718ceda442b54c5c274",
+    "course_id": "e4d5087245744028854c07f840ae61ec",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "e4d5087245744028854c07f840ae61ec",
+    "order": 25,
+    "nextCourseId": "e4d5087245744028854c07f840ae61ec",
+    "courseName": "语文课内同步一年级下册",
+    "lessonId": "5ae759e5b7ba8718ceda442b54c5c274",
+    "nextLessonId": "a9604612a727a7bb5027eee9ef2d0a66",
+    "lessonName": "春夏秋冬",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ce543f17eb5f1254ba252174efd3a286",
+        "index": 1,
+        "text": [
+          "春风 夏雨 秋霜 冬雪\\n春风吹 夏雨落 秋霜降 冬雪飘\\n青草 红花 游鱼 飞鸟\\n池草青 山花红 鱼出水 鸟入林"
+        ],
+        "pinyin": "[\n    [\"春\", \"chūn\"],\n    [\"风\", \"fēng\"],\n    [\" \", \"\"],\n    [\"夏\", \"xià\"],\n    [\"雨\", \"yǔ\"],\n    [\" \", \"\"],\n    [\"秋\", \"qiū\"],\n    [\"霜\", \"shuāng\"],\n    [\" \", \"\"],\n    [\"冬\", \"dōng\"],\n    [\"雪\", \"xuě\"],\n    [\"\\n\", \"\"],\n    [\"春\", \"chūn\"],\n    [\"风\", \"fēng\"],\n    [\"吹\", \"chuī\"],\n    [\" \", \"\"],\n    [\"夏\", \"xià\"],\n    [\"雨\", \"yǔ\"],\n    [\"落\", \"luò\"],\n    [\" \", \"\"],\n    [\"秋\", \"qiū\"],\n    [\"霜\", \"shuāng\"],\n    [\"降\", \"jiàng\"],\n    [\" \", \"\"],\n    [\"冬\", \"dōng\"],\n    [\"雪\", \"xuě\"],\n    [\"飘\", \"piāo\"],\n    [\"\\n\", \"\"],\n    [\"青\", \"qīng\"],\n    [\"草\", \"cǎo\"],\n    [\" \", \"\"],\n    [\"红\", \"hóng\"],\n    [\"花\", \"huā\"],\n    [\" \", \"\"],\n    [\"游\", \"yóu\"],\n    [\"鱼\", \"yú\"],\n    [\" \", \"\"],\n    [\"飞\", \"fēi\"],\n    [\"鸟\", \"niǎo\"],\n    [\"\\n\", \"\"],\n    [\"池\", \"chí\"],\n    [\"草\", \"cǎo\"],\n    [\"青\", \"qīng\"],\n    [\" \", \"\"],\n    [\"山\", \"shān\"],\n    [\"花\", \"huā\"],\n    [\"红\", \"hóng\"],\n    [\" \", \"\"],\n    [\"鱼\", \"yú\"],\n    [\"出\", \"chū\"],\n    [\"水\", \"shuǐ\"],\n    [\" \", \"\"],\n    [\"鸟\", \"niǎo\"],\n    [\"入\", \"rù\"],\n    [\"林\", \"lín\"]\n]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

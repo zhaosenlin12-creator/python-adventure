@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.040365+00:00",
+  "request": {
+    "lesson_id": "1d1a0883f60917e043a43c95233e3743",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 424,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "1d1a0883f60917e043a43c95233e3743",
+    "nextLessonId": "e1d6d332fde17366abbd878b4cf7083d",
+    "lessonName": "六级词汇正序版-51",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第51课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a2af0f6cd396f60d98145a9c689320ce",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"genetic\",\"pronun\":\"[dʒəˈnetɪk]\",\"translation\":\"adj. 遗传的；基因的；起源的\",\"audio\":\"genetic.mp3\"},{\"word\":\"genuine\",\"pronun\":\"[ˈdʒenjuɪn]\",\"translation\":\"adj. 真实的，真正的；诚恳的\",\"audio\":\"genuine.mp3\"},{\"word\":\"geology\",\"pronun\":\"[dʒiˈɑːlədʒi]\",\"translation\":\"n. 地质学；地质情况\",\"audio\":\"geology.mp3\"},{\"word\":\"gigantic\",\"pronun\":\"[dʒaɪˈɡæntɪk]\",\"translation\":\"adj. 巨大的，庞大的\",\"audio\":\"gigantic.mp3\"},{\"word\":\"giggle\",\"pronun\":\"[ˈɡɪɡl]\",\"translation\":\"n. 吃吃的笑\\nvt. 咯咯地笑着说\\nvi. 傻笑；咯咯地笑\",\"audio\":\"giggle.mp3\"},{\"word\":\"given\",\"pronun\":\"[ˈɡɪvn]\",\"translation\":\"prep. 考虑到\\nv. 给予（give的过去分词）\\nadj. 赠予的；沉溺的；规定的\",\"audio\":\"given.mp3\"},{\"word\":\"glamor\",\"pronun\":\"[ˈɡlæmər]\",\"translation\":\"n. 魅力；魔法；迷人的美（等于glamour）\\nvt. 迷惑；使有魅力（等于glamour）\",\"audio\":\"glamor.mp3\"},{\"word\":\"glance\",\"pronun\":\"[ɡlæns]\",\"translation\":\"n. 一瞥；一滑；闪光\\nvt. 扫视；瞥见；擦过\\nvi. 扫视，匆匆一看；反光；瞥闪，瞥见\",\"audio\":\"glance.mp3\"},{\"word\":\"gland\",\"pronun\":\"[ɡlænd]\",\"translation\":\"n. 腺\\n密封压盖\",\"audio\":\"gland.mp3\"},{\"word\":\"glare\",\"pronun\":\"[ɡler]\",\"translation\":\"n. 刺眼；耀眼的光；受公众注目\\nvt. 瞪视；发眩光\\nvi. 瞪眼表示\",\"audio\":\"glare.mp3\"},{\"word\":\"gleam\",\"pronun\":\"[ɡliːm]\",\"translation\":\"n. 微光；闪光；瞬息的一现\\nvt. 使闪烁；使发微光\\nvi. 闪烁；隐约地闪现\",\"audio\":\"gleam.mp3\"},{\"word\":\"glide\",\"pronun\":\"[ɡlaɪd]\",\"translation\":\"vi. 滑翔；滑行；悄悄地走；消逝\\nvt. 使滑行；使滑动\\nn. 滑翔；滑行；滑移；滑音\",\"audio\":\"glide.mp3\"},{\"word\":\"glitter\",\"pronun\":\"[ˈɡlɪtər]\",\"translation\":\"vi. 闪光；闪烁\\nn. 闪光；灿烂\",\"audio\":\"glitter.mp3\"},{\"word\":\"gloom\",\"pronun\":\"[ɡluːm]\",\"translation\":\"n. 昏暗；阴暗\",\"audio\":\"gloom.mp3\"},{\"word\":\"gloomy\",\"pronun\":\"[ˈɡluːmi]\",\"translation\":\"adj. 黑暗的；沮丧的；阴郁的\",\"audio\":\"gloomy.mp3\"},{\"word\":\"glow\",\"pronun\":\"[ɡloʊ]\",\"translation\":\"n. 灼热；色彩鲜艳；兴高采烈\\nvi. 发热；洋溢；绚丽夺目\",\"audio\":\"glow.mp3\"},{\"word\":\"gorgeous\",\"pronun\":\"[ˈɡɔːrdʒəs]\",\"translation\":\"adj. 华丽的，灿烂的；极好的\",\"audio\":\"gorgeous.mp3\"},{\"word\":\"gossip\",\"pronun\":\"[ˈɡɑːsɪp]\",\"translation\":\"n. 小道传闻；随笔；爱说长道短的人\\nvi. 闲聊；传播流言蜚语\",\"audio\":\"gossip.mp3\"},{\"word\":\"gown\",\"pronun\":\"[ɡaʊn]\",\"translation\":\"n. 长袍，长外衣；礼服；睡袍；法衣\\nvt. 使穿睡衣\",\"audio\":\"gown.mp3\"},{\"word\":\"gracious\",\"pronun\":\"[ˈɡreɪʃəs]\",\"translation\":\"adj. 亲切的；高尚的；和蔼的；雅致的\\nint. 天哪；哎呀\",\"audio\":\"gracious.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

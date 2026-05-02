@@ -1,0 +1,75 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:30.471041+00:00",
+  "request": {
+    "lesson_id": "25f2bff601f750fcf1dc8560bd8eb876",
+    "course_id": "21fe8d60de407da95e1abc33ac636014",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "21fe8d60de407da95e1abc33ac636014",
+    "order": 22,
+    "nextCourseId": "21fe8d60de407da95e1abc33ac636014",
+    "courseName": "上排字母",
+    "lessonId": "25f2bff601f750fcf1dc8560bd8eb876",
+    "nextLessonId": "a93a0b5d493f9b30a8c63e20b366c649",
+    "lessonName": "学习e和i",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-learn-ei.31079b7038.png",
+    "description": "学习e和i",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "87b0bb57ae39208a2dcc02b6ca5cda28",
+        "index": 1,
+        "highlights": [
+          "e"
+        ],
+        "text": [
+          "请使用左手中指输入按键e"
+        ],
+        "detail": "新的字母键/请输入[e]键"
+      },
+      {
+        "chapterId": "5c22c7472e7a557cacdbad52cbe3e025",
+        "index": 2,
+        "highlights": [
+          "i"
+        ],
+        "text": [
+          "请使用右手中指输入按键i"
+        ],
+        "detail": "新的字母键/请输入[i]键"
+      },
+      {
+        "chapterId": "d865f7373ffd1df73c7914a8b5fee63c",
+        "index": 3,
+        "highlights": [
+          " "
+        ],
+        "text": [
+          "接下来我们将练习如何输入[e]和[i]，请确保使用正确的指法输入，敲击 键开始"
+        ],
+        "detail": "新的字母键/很好"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "8f0ed2e2c74c077d84c7e72c6d54d4c4",
+        "index": 4,
+        "text": [
+          "eiiieeeeiieieeiieieiiieeiieieiee"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

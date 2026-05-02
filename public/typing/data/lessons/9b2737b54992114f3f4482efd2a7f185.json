@@ -1,0 +1,50 @@
+{
+  "source": "speed-test",
+  "scrapedAt": "2026-05-02T06:08:44.808174+00:00",
+  "request": {
+    "lesson_id": "9b2737b54992114f3f4482efd2a7f185",
+    "course_id": "c6bc39f4ba86486e20cc171fab797ea3",
+    "source": "speed-test"
+  },
+  "data": {
+    "level": "速度测试",
+    "courseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "order": 26,
+    "nextCourseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "courseName": "英文速度测试",
+    "lessonId": "9b2737b54992114f3f4482efd2a7f185",
+    "nextLessonId": "71d43cb2ab25ee898196a9d48fa71c99",
+    "lessonName": "A Picture for Dad",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "7e0e403442f3590da61f9115d29e676d",
+        "index": 1,
+        "text": [
+          "I painted a picture of my dad for his birthday. It was the first time I drew a picture of him.\\nAt the party, I was scared to give it to him. Why? Because it wasn't very good.\\nBut when my dad saw it, he said that he liked it. He put it right up on the wall and said, \"It looks just like me!\""
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": 13,
+    "categoryTitle": "速度测试"
+  }
+}

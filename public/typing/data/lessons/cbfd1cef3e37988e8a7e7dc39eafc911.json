@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.344356+00:00",
+  "request": {
+    "lesson_id": "cbfd1cef3e37988e8a7e7dc39eafc911",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 55,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "cbfd1cef3e37988e8a7e7dc39eafc911",
+    "nextLessonId": "41d829dc330116697bd3d12ded332ab7",
+    "lessonName": "KET核心词-4",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第4课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "837958ea645d96c0eaa1ec241aa490e7",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"anywhere\",\"pronun\":\"[ˈeniwer]\",\"translation\":\"n. 任何地方\\nadv. 在任何地方；无论何处\",\"audio\":\"anywhere.mp3\"},{\"word\":\"apartment\",\"pronun\":\"[əˈpɑːrtmənt]\",\"translation\":\"n. 公寓；房间\",\"audio\":\"apartment.mp3\"},{\"word\":\"appear\",\"pronun\":\"[əˈpɪr]\",\"translation\":\"vi. 出现；显得；似乎；出庭；登场\",\"audio\":\"appear.mp3\"},{\"word\":\"apple\",\"pronun\":\"[ˈæpl]\",\"translation\":\"n. 苹果，苹果树，苹果似的东西；[美俚]炸弹，手榴弹，（棒球的）球；[美俚]人，家伙。\",\"audio\":\"apple.mp3\"},{\"word\":\"appointment\",\"pronun\":\"[əˈpɔɪntmənt]\",\"translation\":\"n. 任命；约定；任命的职位\",\"audio\":\"appointment.mp3\"},{\"word\":\"Arabic\",\"pronun\":\"[ˈærəbɪk]\",\"translation\":\"n. 阿拉伯语\\nadj. 阿拉伯的；阿拉伯人的\",\"audio\":\"Arabic.mp3\"},{\"word\":\"area\",\"pronun\":\"[ˈeriə]\",\"translation\":\"n. 区域，地区；面积；范围\",\"audio\":\"area.mp3\"},{\"word\":\"arm\",\"pronun\":\"[ɑːrm]\",\"translation\":\"n. 手臂；武器；袖子；装备；部门\\nvt. 武装；备战\\nvi. 武装起来\",\"audio\":\"arm.mp3\"},{\"word\":\"armchair\",\"pronun\":\"[ˈɑːrmtʃer]\",\"translation\":\"n. 扶手椅，单人沙发\\nadj. 不切实际的\",\"audio\":\"armchair.mp3\"},{\"word\":\"army\",\"pronun\":\"[ˈɑːrmi]\",\"translation\":\"n. 陆军，军队\",\"audio\":\"army.mp3\"},{\"word\":\"around\",\"pronun\":\"[əˈraʊnd]\",\"translation\":\"prep. 四处；在…周围\\nadv. 大约；到处；在附近\",\"audio\":\"around.mp3\"},{\"word\":\"arrive\",\"pronun\":\"[əˈraɪv]\",\"translation\":\"vi. 到达；成功；达成；出生\",\"audio\":\"arrive.mp3\"},{\"word\":\"arrow\",\"pronun\":\"[ˈæroʊ]\",\"translation\":\"n. 箭，箭头；箭状物；箭头记号\\nvt. 以箭头指示；箭一般地飞向\",\"audio\":\"arrow.mp3\"},{\"word\":\"art\",\"pronun\":\"[ɑːrt]\",\"translation\":\"n. 艺术；美术；艺术品\\nv. 是（be的变体）\\nadj. 艺术的；艺术品的\",\"audio\":\"art.mp3\"},{\"word\":\"article\",\"pronun\":\"[ˈɑːrtɪk(ə)l]\",\"translation\":\"n. 文章；物品；条款；[语] 冠词\\nvt. 订约将…收为学徒或见习生；使…受协议条款的约束\\nvi. 签订协议；进行控告\",\"audio\":\"article.mp3\"},{\"word\":\"as\",\"pronun\":\"[əz; æz]\",\"translation\":\"conj. 因为；随着；虽然；依照；当…时\\nprep. 如同；当作；以…的身份\\nadv. 同样地；和…一样的\",\"audio\":\"as.mp3\"},{\"word\":\"ask\",\"pronun\":\"[æsk]\",\"translation\":\"vt. 问，询问；要求；需要；邀请；讨价\\nvi. 问，询问；要求\",\"audio\":\"ask.mp3\"},{\"word\":\"assistant\",\"pronun\":\"[əˈsɪstənt]\",\"translation\":\"n. 助手，助理，助教\\nadj. 辅助的，助理的；有帮助的\",\"audio\":\"assistant.mp3\"},{\"word\":\"astronaut\",\"pronun\":\"[ˈæstrənɔːt]\",\"translation\":\"n. 宇航员，航天员；太空旅行者\",\"audio\":\"astronaut.mp3\"},{\"word\":\"attend\",\"pronun\":\"[əˈtend]\",\"translation\":\"vi. 出席；致力于；照料；照顾\\nvt. 出席；上（大学等）；照料；招待；陪伴\",\"audio\":\"attend.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

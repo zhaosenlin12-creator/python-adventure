@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.009148+00:00",
+  "request": {
+    "lesson_id": "40336142f26275cc386fdef126d31f94",
+    "course_id": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "order": 88,
+    "nextCourseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "courseName": "C++",
+    "lessonId": "40336142f26275cc386fdef126d31f94",
+    "nextLessonId": "bf7b25c9bf2243b17e5ba24a905c30c9",
+    "lessonName": "矩阵转置",
+    "icon": "data/assets/daziya.com/key-icon_key-cpp.b136419115.png",
+    "description": "C++编程练习 - 矩阵转置",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "0ec628a88f0286c478f006f42c582493",
+        "index": 1,
+        "text": [
+          "#include <iostream>\\nusing namespace std;\\n\\nvoid printMatrix(int matrix[][3], int rows, int cols) {\\n    for (int i = 0; i < rows; i++) {\\n        for (int j = 0; j < cols; j++) {\\n            cout << matrix[i][j] << \" \";\\n        }\\n        cout << endl;\\n    }\\n}\\n\\nvoid transposeMatrix(int matrix[][3], int result[][3], int rows, int cols) {\\n    for (int i = 0; i < rows; i++) {\\n        for (int j = 0; j < cols; j++) {\\n            result[j][i] = matrix[i][j];\\n        }\\n    }\\n}\\n\\nint main() {\\n    int matrix[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};\\n    int transposed[3][3];\\n\\n    cout << \"原矩阵:\" << endl;\\n    printMatrix(matrix, 3, 3);\\n\\n    transposeMatrix(matrix, transposed, 3, 3);\\n\\n    cout << \"\\n转置后:\" << endl;\\n    printMatrix(transposed, 3, 3);\\n\\n    return 0;\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "cpp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.626989+00:00",
+  "request": {
+    "lesson_id": "e4b5cd1bfed248c1ad19e08e93d07899",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 23,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "e4b5cd1bfed248c1ad19e08e93d07899",
+    "nextLessonId": "66e93c7337ff6c5a0972edd40fe6a839",
+    "lessonName": "巩固练习：ve、ua",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母ve、ua的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "ea9318a09682dd3cecd520ab9d7d7d34",
+        "index": 1,
+        "highlights": [
+          "ve"
+        ],
+        "text": [
+          "请输入按键 [ve]"
+        ],
+        "detail": "学习双拼按键 ve"
+      },
+      {
+        "chapterId": "f1209069c91ac34888e72a76af7122ae",
+        "index": 2,
+        "highlights": [
+          "ua"
+        ],
+        "text": [
+          "请输入按键 [ua]"
+        ],
+        "detail": "学习双拼按键 ua"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "f69713c1a97417f850b4d0a1f7e216a1",
+        "index": 3,
+        "text": [
+          "veveveveuauauauaveuaveuaveuaveua"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "9aa637d362e5e6062358ec8d7d2c7664",
+        "index": 4,
+        "text": [
+          "雪花飘落月儿缺，落花流水去又回。\\n学音乐的学生说，越学越觉得快乐。"
+        ],
+        "pinyin": "[[\"雪\", \"xuě\"], [\"花\", \"huā\"], [\"飘\", \"piāo\"], [\"落\", \"luò\"], [\"月\", \"yuè\"], [\"儿\", \"ér\"], [\"缺\", \"quē\"], [\"，\", \"\"], [\"落\", \"luò\"], [\"花\", \"huā\"], [\"流\", \"liú\"], [\"水\", \"shuǐ\"], [\"去\", \"qù\"], [\"又\", \"yòu\"], [\"回\", \"huí\"], [\"。\", \"\"], [\"学\", \"xué\"], [\"音\", \"yīn\"], [\"乐\", \"yuè\"], [\"的\", \"de\"], [\"学\", \"xué\"], [\"生\", \"sheng\"], [\"说\", \"shuō\"], [\"，\", \"\"], [\"越\", \"yuè\"], [\"学\", \"xué\"], [\"越\", \"yuè\"], [\"觉\", \"jué\"], [\"得\", \"de\"], [\"快\", \"kuài\"], [\"乐\", \"lè\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

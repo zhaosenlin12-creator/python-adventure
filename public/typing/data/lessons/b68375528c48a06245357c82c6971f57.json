@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.468559+00:00",
+  "request": {
+    "lesson_id": "b68375528c48a06245357c82c6971f57",
+    "course_id": "007ef7afc48bb0178d2f077a23bc898d",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "007ef7afc48bb0178d2f077a23bc898d",
+    "order": 377,
+    "nextCourseId": "007ef7afc48bb0178d2f077a23bc898d",
+    "courseName": "小学必备古诗75首（3）",
+    "lessonId": "b68375528c48a06245357c82c6971f57",
+    "nextLessonId": "319099e0a1ace1dd78871532923fd180",
+    "lessonName": "墨梅",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c820ac96fb25971ecb8cc9cf63b9e9fd",
+        "index": 1,
+        "text": [
+          "墨梅\\n王冕\\n我家洗砚池头树，朵朵花开淡墨痕。\\n不要人夸好颜色，只留清气满乾坤。"
+        ],
+        "pinyin": "[[\"墨\", \"mò\"], [\"梅\", \"méi\"], [\"\\n\", \"\"], [\"王\", \"wáng\"], [\"冕\", \"miǎn\"], [\"\\n\", \"\"], [\"我\", \"wǒ\"], [\"家\", \"jiā\"], [\"洗\", \"xǐ\"], [\"砚\", \"yàn\"], [\"池\", \"chí\"], [\"头\", \"tóu\"], [\"树\", \"shù\"], [\"，\", \"\"], [\"朵\", \"duǒ\"], [\"朵\", \"duǒ\"], [\"花\", \"huā\"], [\"开\", \"kāi\"], [\"淡\", \"dàn\"], [\"墨\", \"mò\"], [\"痕\", \"hén\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"不\", \"bù\"], [\"要\", \"yào\"], [\"人\", \"rén\"], [\"夸\", \"kuā\"], [\"好\", \"hǎo\"], [\"颜\", \"yán\"], [\"色\", \"sè\"], [\"，\", \"\"], [\"只\", \"zhǐ\"], [\"留\", \"liú\"], [\"清\", \"qīng\"], [\"气\", \"qì\"], [\"满\", \"mǎn\"], [\"乾\", \"qián\"], [\"坤\", \"kūn\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.915037+00:00",
+  "request": {
+    "lesson_id": "6d210520141610e175cb22ee614b7ab6",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 180,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "6d210520141610e175cb22ee614b7ab6",
+    "nextLessonId": "77754b602c9b2f7f86b979b66b53b3bf",
+    "lessonName": "KET核心词-105",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第105课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3ca9ec76b1ed76a93cda20a6d0149928",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"show\",\"pronun\":\"[ʃoʊ]\",\"translation\":\"n. 显示；表演；炫耀\\nvt. 显示；说明；演出；展出\\nvi. 显示；说明；指示\",\"audio\":\"show.mp3\"},{\"word\":\"sound\",\"pronun\":\"[saʊnd]\",\"translation\":\"n. 声音，语音；噪音；海峡；吵闹；听力范围；[医] 探条\\nadj. 健全的，健康的；合理的；可靠的；有效彻底的\\nvt. 听（诊）；测量，测…深；使发声；试探；宣告\\nvi. 听起来；发\",\"audio\":\"sound.mp3\"},{\"word\":\"stage\",\"pronun\":\"[steɪdʒ]\",\"translation\":\"n. 阶段；舞台；戏剧；驿站\\nvt. 举行；上演；筹划\\nvi. 举行；适于上演；乘驿车旅行\",\"audio\":\"stage.mp3\"},{\"word\":\"ticket\",\"pronun\":\"[ˈtɪkɪt]\",\"translation\":\"vt. 加标签于；指派；对…开出交通违规罚单\",\"audio\":\"ticket.mp3\"},{\"word\":\"violin\",\"pronun\":\"[ˌvaɪəˈlɪn]\",\"translation\":\"n. 小提琴；小提琴手\",\"audio\":\"violin.mp3\"},{\"word\":\"anniversary\",\"pronun\":\"[ˌænɪˈvɜːrsəri]\",\"translation\":\"n. 周年纪念日\",\"audio\":\"anniversary.mp3\"},{\"word\":\"band\",\"pronun\":\"[bænd]\",\"translation\":\"n. 带，环；[物] 波段；(演奏流行音乐的) 乐队\\nn. n.乐队；队；一群\\nvi. 用带绑扎；给...镶边\",\"audio\":\"band.mp3\"},{\"word\":\"bride\",\"pronun\":\"[braɪd]\",\"translation\":\"n. 新娘；姑娘，女朋友\",\"audio\":\"bride.mp3\"},{\"word\":\"cake\",\"pronun\":\"[keɪk]\",\"translation\":\"n. 蛋糕；块状物；利益总额\\nvt. 使结块\\nvi. 结成块状\",\"audio\":\"cake.mp3\"},{\"word\":\"disco\",\"pronun\":\"[ˈdɪskoʊ]\",\"translation\":\"n. 迪斯科舞厅；的士高\",\"audio\":\"disco.mp3\"},{\"word\":\"guest\",\"pronun\":\"[ɡest]\",\"translation\":\"n. 客人，宾客；顾客\\nadj. 客人的；特邀的，客座的\\nvt. 款待，招待\\nvi. 作客，寄宿\",\"audio\":\"guest.mp3\"},{\"word\":\"invitation\",\"pronun\":\"[ˌɪnvɪˈteɪʃn]\",\"translation\":\"n. 邀请；引诱；请帖；邀请函\",\"audio\":\"invitation.mp3\"},{\"word\":\"neighbour\",\"pronun\":\"[ˈneɪbər]\",\"translation\":\"n. n. 邻居;同胞；仁慈的人\\nvt. 邻接\\nvi. 住在邻近；毗邻；友善，和睦\\nadj. 邻居的；邻近的\",\"audio\":\"neighbour.mp3\"},{\"word\":\"party\",\"pronun\":\"[ˈpɑːrti]\",\"translation\":\"n. 政党，党派；聚会，派对；当事人 [复数 parties]\\nvi. 参加社交聚会 [ 过去式 partied 过去分词 partied 现在分词 partying ]\",\"audio\":\"party.mp3\"},{\"word\":\"reception\",\"pronun\":\"[rɪˈsepʃn]\",\"translation\":\"n. 接待；接收；招待会；感受；反应\",\"audio\":\"reception.mp3\"},{\"word\":\"ring\",\"pronun\":\"[rɪŋ]\",\"translation\":\"n. 戒指；铃声，钟声；拳击场；环形物\\nvi. 按铃；敲钟；回响；成环形\\nvt. 按铃；包围；敲钟；套住\",\"audio\":\"ring.mp3\"},{\"word\":\"speech\",\"pronun\":\"[spiːtʃ]\",\"translation\":\"n. 演讲；讲话；[语] 语音；演说\",\"audio\":\"speech.mp3\"},{\"word\":\"wedding\",\"pronun\":\"[ˈwedɪŋ]\",\"translation\":\"n. 婚礼，婚宴；结婚；结合\\nv. 与…结婚（wed的ing形式）\",\"audio\":\"wedding.mp3\"},{\"word\":\"actor\",\"pronun\":\"[ˈæktər]\",\"translation\":\"n. 男演员；行动者；作用物\",\"audio\":\"actor.mp3\"},{\"word\":\"actress\",\"pronun\":\"[ˈæktrəs]\",\"translation\":\"n. 女演员\",\"audio\":\"actress.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

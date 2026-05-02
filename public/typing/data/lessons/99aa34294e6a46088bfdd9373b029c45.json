@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.343738+00:00",
+  "request": {
+    "lesson_id": "99aa34294e6a46088bfdd9373b029c45",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 54,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "99aa34294e6a46088bfdd9373b029c45",
+    "nextLessonId": "cbfd1cef3e37988e8a7e7dc39eafc911",
+    "lessonName": "KET核心词-1",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第1课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8c645fde2389f087c517c03760d608c7",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"party\",\"pronun\":\"[ˈpɑːrti]\",\"translation\":\"n. 政党，党派；聚会，派对；当事人 [复数 parties]\\nvi. 参加社交聚会 [ 过去式 partied 过去分词 partied 现在分词 partying ]\",\"audio\":\"party.mp3\"},{\"word\":\"choose\",\"pronun\":\"[tʃuːz]\",\"translation\":\"vt. 选择，决定\\nvi. 选择，挑选\",\"audio\":\"choose.mp3\"},{\"word\":\"teach\",\"pronun\":\"[tiːtʃ]\",\"translation\":\"vt. 教；教授；教导\\nvi. 教授；讲授；当老师\",\"audio\":\"teach.mp3\"},{\"word\":\"hot\",\"pronun\":\"[hɑːt]\",\"translation\":\"adj. 热的；辣的；热情的；激动的；紧迫的\\nvt. 增加；给…加温\\nadv. 热；紧迫地\\nvi. 变热\",\"audio\":\"hot.mp3\"},{\"word\":\"large\",\"pronun\":\"[lɑːrdʒ]\",\"translation\":\"adj. 大的；多数的；广博的\\nadv. 大大地；夸大地\\nn. 大\",\"audio\":\"large.mp3\"},{\"word\":\"able\",\"pronun\":\"[ˈeɪbl]\",\"translation\":\"adj. 能；[经管] 有能力的；能干的\",\"audio\":\"able.mp3\"},{\"word\":\"about\",\"pronun\":\"[əˈbaʊt]\",\"translation\":\"prep. 关于；大约\\nn. 大致；粗枝大叶；不拘小节的人\\nadj. 在附近的；四处走动的；在起作用的\\nadv. 大约；周围；到处\",\"audio\":\"about.mp3\"},{\"word\":\"above\",\"pronun\":\"[əˈbʌv]\",\"translation\":\"prep. 超过；在……上面；在……之上\\nn. 上文\\nadj. 上文的\\nadv. 在上面；在上文\",\"audio\":\"above.mp3\"},{\"word\":\"abroad\",\"pronun\":\"[əˈbrɔːd]\",\"translation\":\"n. 海外；异国\\nadj. 往国外的\\nadv. 在国外；到海外\",\"audio\":\"abroad.mp3\"},{\"word\":\"across\",\"pronun\":\"[əˈkrɔːs]\",\"translation\":\"prep. 穿过；横穿\\nadv. 横过；在对面\",\"audio\":\"across.mp3\"},{\"word\":\"act\",\"pronun\":\"[ækt]\",\"translation\":\"n. 行为，行动；法令，法案；（戏剧，歌剧的）一幕，段；装腔作势\\nvt. 扮演；装作，举动像\\nvi. 行动；扮演，充当；表现，举止；假装，演戏；起作用，见效\",\"audio\":\"act.mp3\"},{\"word\":\"active\",\"pronun\":\"[ˈæktɪv]\",\"translation\":\"n. 主动语态；积极分子\\nadj. 积极的；活跃的；主动的；有效的；现役的\",\"audio\":\"active.mp3\"},{\"word\":\"activity\",\"pronun\":\"[ækˈtɪvəti]\",\"translation\":\"n. 活动；行动；活跃\",\"audio\":\"activity.mp3\"},{\"word\":\"actor\",\"pronun\":\"[ˈæktər]\",\"translation\":\"n. 男演员；行动者；作用物\",\"audio\":\"actor.mp3\"},{\"word\":\"actress\",\"pronun\":\"[ˈæktrəs]\",\"translation\":\"n. 女演员\",\"audio\":\"actress.mp3\"},{\"word\":\"actually\",\"pronun\":\"[ˈæktʃuəli]\",\"translation\":\"adv. 实际上；事实上\",\"audio\":\"actually.mp3\"},{\"word\":\"add\",\"pronun\":\"[æd]\",\"translation\":\"n. 加法，加法运算\\nvi. 加；增加；加起来；做加法\\nvt. 增加，添加；补充说；计算…总和\",\"audio\":\"add.mp3\"},{\"word\":\"address\",\"pronun\":\"[əˈdres; ˈædres]\",\"translation\":\"n. 地址；演讲；致辞；说话的技巧；称呼\\nvt. 演说；从事；忙于；写姓名地址；向…致辞；与…说话；提出；处理\",\"audio\":\"address.mp3\"},{\"word\":\"adult\",\"pronun\":\"[əˈdʌlt; ˈædʌlt]\",\"translation\":\"n. 成年人\\nadj. 成年的；成熟的\",\"audio\":\"adult.mp3\"},{\"word\":\"advanced\",\"pronun\":\"[ədˈvænst]\",\"translation\":\"adj. 先进的；高级的；晚期的；年老的\\nv. 前进；增加；上涨（advance的过去式和过去分词形式）\",\"audio\":\"advanced.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.354693+00:00",
+  "request": {
+    "lesson_id": "41d829dc330116697bd3d12ded332ab7",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 56,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "41d829dc330116697bd3d12ded332ab7",
+    "nextLessonId": "a7d8ae3d2b8a7351d1c581705662a6f6",
+    "lessonName": "KET核心词-7",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第7课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "dd26edd36c9e6d25bd5c2cbf4f0f7a76",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"behind\",\"pronun\":\"[bɪˈhaɪnd]\",\"translation\":\"prep. 落后于；支持；晚于\\nn. 屁股\\nadv. 在后地；在原处\",\"audio\":\"behind.mp3\"},{\"word\":\"believe\",\"pronun\":\"[bɪˈliːv]\",\"translation\":\"vi. 信任；料想；笃信宗教\\nvt. 相信；认为；信任\",\"audio\":\"believe.mp3\"},{\"word\":\"bell\",\"pronun\":\"[bel]\",\"translation\":\"n. 铃，钟；钟声，铃声；钟状物\\nvt. 装钟于，系铃于\\nvi. 鸣钟；成钟状鼓起\",\"audio\":\"bell.mp3\"},{\"word\":\"belong\",\"pronun\":\"[bɪˈlɔːŋ]\",\"translation\":\"vi. 属于，应归入；居住；适宜；应被放置\",\"audio\":\"belong.mp3\"},{\"word\":\"below\",\"pronun\":\"[bɪˈloʊ]\",\"translation\":\"prep. 在…下面\\nadv. 在下面，在较低处；在本页下面\",\"audio\":\"below.mp3\"},{\"word\":\"belt\",\"pronun\":\"[belt]\",\"translation\":\"n. 带；腰带；地带\\nvt. 用带子系住；用皮带抽打\\nvi. 猛击\",\"audio\":\"belt.mp3\"},{\"word\":\"beside\",\"pronun\":\"[bɪˈsaɪd]\",\"translation\":\"prep. 在旁边；与…相比；和…无关\",\"audio\":\"beside.mp3\"},{\"word\":\"better\",\"pronun\":\"[ˈbetər]\",\"translation\":\"n. 长辈；较好者；打赌的人（等于bettor）\\nadj. 较好的\\nvt. 改善；胜过\\nadv. 更好的；更多的；较大程度地\\nvi. 变得较好\",\"audio\":\"better.mp3\"},{\"word\":\"bet\",\"pronun\":\"[bet]\",\"translation\":\"n. 打赌，赌注；被打赌的事物\\nvt. 打赌；敢断定，确信\\nvi. 打赌\",\"audio\":\"bet.mp3\"},{\"word\":\"between\",\"pronun\":\"[bɪˈtwiːn]\",\"translation\":\"prep. 在…之间\\nadv. 在中间\",\"audio\":\"between.mp3\"},{\"word\":\"bicycle\",\"pronun\":\"[ˈbaɪsɪkl]\",\"translation\":\"n. 自行车\\nvt. 骑自行车运送\\nvi. 骑脚踏车\",\"audio\":\"bicycle.mp3\"},{\"word\":\"big\",\"pronun\":\"[bɪɡ]\",\"translation\":\"adj. 大的；重要的；量大的\\nadv. 大量地；顺利；夸大地\",\"audio\":\"big.mp3\"},{\"word\":\"bike\",\"pronun\":\"[baɪk]\",\"translation\":\"n. 自行车；脚踏车\\nvi. 骑自行车（或摩托车）\",\"audio\":\"bike.mp3\"},{\"word\":\"Bill\",\"pronun\":\"\",\"translation\":\"n. [法] 法案；广告；账单；[金融] 票据；钞票；清单\\nvt. 宣布；开账单；用海报宣传\",\"audio\":\"Bill.mp3\"},{\"word\":\"bin\",\"pronun\":\"[bɪn]\",\"translation\":\"n. 箱子，容器；二进制\\nvt. 把…放入箱中\",\"audio\":\"bin.mp3\"},{\"word\":\"biology\",\"pronun\":\"[baɪˈɑːlədʒi]\",\"translation\":\"n. （一个地区全部的）生物；生物学\",\"audio\":\"biology.mp3\"},{\"word\":\"birth\",\"pronun\":\"[bɜːrθ]\",\"translation\":\"n. 出生；血统，出身；起源\",\"audio\":\"birth.mp3\"},{\"word\":\"birthday\",\"pronun\":\"[ˈbɜːrθdeɪ]\",\"translation\":\"n. 生日，诞辰；诞生的日子\",\"audio\":\"birthday.mp3\"},{\"word\":\"biscuit\",\"pronun\":\"[ˈbɪskɪt]\",\"translation\":\"n. 小点心，饼干\",\"audio\":\"biscuit.mp3\"},{\"word\":\"bit\",\"pronun\":\"[bɪt]\",\"translation\":\"n. [计] 比特（二进位制信息单位）；少量；马嚼子；辅币；老一套；一点，一块\\nadj. 很小的；微不足道的\\nvt. 咬（bite的过去式和过去分词）\\nvt. 控制\\nadv. 有点儿；相当\",\"audio\":\"bit.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

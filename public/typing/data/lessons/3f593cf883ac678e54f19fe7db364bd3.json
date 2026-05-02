@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.511974+00:00",
+  "request": {
+    "lesson_id": "3f593cf883ac678e54f19fe7db364bd3",
+    "course_id": "2ab9dc27a9350a9ff86633c542967f70",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "order": 60,
+    "nextCourseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "courseName": "下排字母",
+    "lessonId": "3f593cf883ac678e54f19fe7db364bd3",
+    "nextLessonId": "c786c1943b52b2647c03226a3e3bbc95",
+    "lessonName": "回顾b和n",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-review-bn.f3e10bd06f.png",
+    "description": "回顾b和n",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a8564713a03e5367f7ffd235bcd92b1e",
+        "index": 1,
+        "text": [
+          "bi bu neng han chuan shuang cheng jiu bei bie ba bo mie mou bian biao pian ming min bing bin ben beng bang pan bao biao"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "bi uneghacsjomp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

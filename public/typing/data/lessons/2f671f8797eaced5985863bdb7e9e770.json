@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.613524+00:00",
+  "request": {
+    "lesson_id": "2f671f8797eaced5985863bdb7e9e770",
+    "course_id": "f5e1caafe742206a7fc8abc95cf77b44",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "order": 312,
+    "nextCourseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "courseName": "诗词歌赋",
+    "lessonId": "2f671f8797eaced5985863bdb7e9e770",
+    "nextLessonId": "f69ed9069e3d90f083d2c5c6473b68d0",
+    "lessonName": "游戏：英文单词",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-duck.b036f0ad8f.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "c9733d20c5513eead32d23c915eef5be",
+        "index": 1,
+        "text": [
+          "person looked became almost people precious reading pearls colors turned windows march squeezed country"
+        ],
+        "contentType": 3,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

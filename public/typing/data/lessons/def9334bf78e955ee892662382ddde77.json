@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.346981+00:00",
+  "request": {
+    "lesson_id": "def9334bf78e955ee892662382ddde77",
+    "course_id": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "order": 348,
+    "nextCourseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "courseName": "小学必备古诗75首（2）",
+    "lessonId": "def9334bf78e955ee892662382ddde77",
+    "nextLessonId": "bd2c1462d788042efac2c3fa1583838c",
+    "lessonName": "悯农",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a6b4182a62a7120276fede61b20153b3",
+        "index": 1,
+        "text": [
+          "悯农\\n李绅\\n锄禾日当午，汗滴禾下土。\\n谁知盘中餐，粒粒皆辛苦。"
+        ],
+        "pinyin": "[[\"悯\", \"mǐn\"], [\"农\", \"nóng\"], [\"\\n\", \"\"], [\"李\", \"lǐ\"], [\"绅\", \"shēn\"], [\"\\n\", \"\"], [\"锄\", \"chú\"], [\"禾\", \"hé\"], [\"日\", \"rì\"], [\"当\", \"dāng\"], [\"午\", \"wǔ\"], [\"，\", \"\"], [\"汗\", \"hàn\"], [\"滴\", \"dī\"], [\"禾\", \"hé\"], [\"下\", \"xià\"], [\"土\", \"tǔ\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"谁\", \"shuí\"], [\"知\", \"zhī\"], [\"盘\", \"pán\"], [\"中\", \"zhōng\"], [\"餐\", \"cān\"], [\"，\", \"\"], [\"粒\", \"lì\"], [\"粒\", \"lì\"], [\"皆\", \"jiē\"], [\"辛\", \"xīn\"], [\"苦\", \"kǔ\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

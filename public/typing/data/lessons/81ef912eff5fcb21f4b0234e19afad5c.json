@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.838198+00:00",
+  "request": {
+    "lesson_id": "81ef912eff5fcb21f4b0234e19afad5c",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 378,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "81ef912eff5fcb21f4b0234e19afad5c",
+    "nextLessonId": "f6b25848da3b3d4fb734db908443ad8f",
+    "lessonName": "六级词汇正序版-50",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第50课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2d536feb8a772360290eb5bda385f9d6",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"fund\",\"pronun\":\"[fʌnd]\",\"translation\":\"n. 基金；资金；存款\\nvt. 投资；资助\",\"audio\":\"fund.mp3\"},{\"word\":\"fundamental\",\"pronun\":\"[ˌfʌndəˈmentl]\",\"translation\":\"n. 基本原理；基本原则\\nadj. 基本的，根本的\",\"audio\":\"fundamental.mp3\"},{\"word\":\"furious\",\"pronun\":\"[ˈfjʊriəs]\",\"translation\":\"adj. 激烈的；狂怒的；热烈兴奋的；喧闹的\",\"audio\":\"furious.mp3\"},{\"word\":\"furnish\",\"pronun\":\"[ˈfɜːrnɪʃ]\",\"translation\":\"vt. 提供；供应；装备\",\"audio\":\"furnish.mp3\"},{\"word\":\"furniture\",\"pronun\":\"[ˈfɜːrnɪtʃər]\",\"translation\":\"n. 家具；设备；储藏物\",\"audio\":\"furniture.mp3\"},{\"word\":\"furthermore\",\"pronun\":\"[ˌfɜːrðərˈmɔːr]\",\"translation\":\"adv. 此外；而且\",\"audio\":\"furthermore.mp3\"},{\"word\":\"fury\",\"pronun\":\"[ˈfjʊri]\",\"translation\":\"n. 狂怒；暴怒；激怒者\",\"audio\":\"fury.mp3\"},{\"word\":\"fuse\",\"pronun\":\"[fjuːz]\",\"translation\":\"n. 保险丝，熔线；导火线，雷管\\nvt. 使融合；使熔化，使熔融\\nvi. 融合；熔化，熔融\",\"audio\":\"fuse.mp3\"},{\"word\":\"fusion\",\"pronun\":\"[ˈfjuːʒn]\",\"translation\":\"n. 融合；熔化；熔接；融合物；[物] 核聚变\",\"audio\":\"fusion.mp3\"},{\"word\":\"galaxy\",\"pronun\":\"[ˈɡæləksi]\",\"translation\":\"n. 银河；[天] 星系；银河系；一群显赫的人\\nn. 三星智能手机品牌 2015年三星中国公布Galaxy的中文名称为“盖乐世”（Galaxy）\\n[ 复数galaxies ]\",\"audio\":\"galaxy.mp3\"},{\"word\":\"gamble\",\"pronun\":\"[ˈɡæmbl]\",\"translation\":\"n. 赌博；冒险；打赌\\nvi. 赌博；孤注一掷；投机；打赌\\nvt. 赌博；孤注一掷；冒险假设\",\"audio\":\"gamble.mp3\"},{\"word\":\"garbage\",\"pronun\":\"[ˈɡɑːrbɪdʒ]\",\"translation\":\"n. 垃圾；废物\",\"audio\":\"garbage.mp3\"},{\"word\":\"garment\",\"pronun\":\"[ˈɡɑːrmənt]\",\"translation\":\"n. 衣服，服装；外表，外观\\nvt. 给…穿衣服\",\"audio\":\"garment.mp3\"},{\"word\":\"gasp\",\"pronun\":\"[ɡæsp]\",\"translation\":\"n. 喘气\\nvi. 喘气；喘息；渴望\\nvt. 气喘吁吁地说；喘着气说话\",\"audio\":\"gasp.mp3\"},{\"word\":\"gauge\",\"pronun\":\"[ɡeɪdʒ]\",\"translation\":\"n. 计量器；标准尺寸；容量规格\\nvt. 测量；估计；给…定规格\",\"audio\":\"gauge.mp3\"},{\"word\":\"gaze\",\"pronun\":\"[ɡeɪz]\",\"translation\":\"n. 凝视；注视\\nvi. 凝视；注视\",\"audio\":\"gaze.mp3\"},{\"word\":\"gear\",\"pronun\":\"[ɡɪr]\",\"translation\":\"n. 齿轮；装置，工具；传动装置\\nadj. 好极了\\nvt. 开动；搭上齿轮；使……适合；使……准备好\\nvi. 适合；搭上齿轮；开始工作\",\"audio\":\"gear.mp3\"},{\"word\":\"generalize\",\"pronun\":\"[ˈdʒenrəlaɪz]\",\"translation\":\"vi. 形成概念\\nvt. 概括；推广；使...一般化\",\"audio\":\"generalize.mp3\"},{\"word\":\"generate\",\"pronun\":\"[ˈdʒenəreɪt]\",\"translation\":\"vt. 使形成；发生；生殖；产生物理反应\",\"audio\":\"generate.mp3\"},{\"word\":\"generous\",\"pronun\":\"[ˈdʒenərəs]\",\"translation\":\"adj. 慷慨的，大方的；宽宏大量的；有雅量的\",\"audio\":\"generous.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

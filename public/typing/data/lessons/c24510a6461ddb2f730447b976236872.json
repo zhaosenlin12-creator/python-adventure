@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.483653+00:00",
+  "request": {
+    "lesson_id": "c24510a6461ddb2f730447b976236872",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 653,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "c24510a6461ddb2f730447b976236872",
+    "nextLessonId": "c8b11d24e2ba8dd59e3f60e1ae8b21eb",
+    "lessonName": " 五年级下-5",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点五年级下 - 第5课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f370ff521fb0797def22e37f40118b35",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"plant\",\"pronun\":\"[plænt]\",\"translation\":\"n. 工厂，车间；植物；设备；庄稼\\nvt. 种植；培养；栽培；安置\\nvi. 种植\",\"audio\":\"plant.mp3\"},{\"word\":\"contest\",\"pronun\":\"[ˈkɑːntest]\",\"translation\":\"n. 竞赛；争夺；争论\\nvt. 争辩；质疑\\nvi. 竞争；争辩\",\"audio\":\"contest.mp3\"},{\"word\":\"the Great Wall\",\"pronun\":\"\",\"translation\":\"长城；万里长城；中国万里长城\",\"audio\":\"the_Great_Wall.mp3\"},{\"word\":\"national\",\"pronun\":\"[ˈnæʃnəl]\",\"translation\":\"adj. 国家的；国民的；民族的；国立的\\nn. 国民\",\"audio\":\"national.mp3\"},{\"word\":\"National Day\",\"pronun\":\"\",\"translation\":\"na. 国庆日\",\"audio\":\"National_Day.mp3\"},{\"word\":\"American\",\"pronun\":\"[əˈmerɪkən]\",\"translation\":\"n. 美国人，美洲人；美国英语\\nadj. 美国的，美洲的；地道美国式的\",\"audio\":\"American.mp3\"},{\"word\":\"Thanksgiving\",\"pronun\":\"\",\"translation\":\"n. 感恩\",\"audio\":\"Thanksgiving.mp3\"},{\"word\":\"Christmas\",\"pronun\":\"[ˈkrɪsməs]\",\"translation\":\"n. 圣诞节；圣诞节期间\",\"audio\":\"Christmas.mp3\"},{\"word\":\"holiday\",\"pronun\":\"[ˈhɑːlədeɪ]\",\"translation\":\"n. 假日；节日；休息日\\nvi. 外出度假\",\"audio\":\"holiday.mp3\"},{\"word\":\"game\",\"pronun\":\"[ɡeɪm]\",\"translation\":\"n. 游戏；比赛\\nadj. 勇敢的\\nvi. 赌博\",\"audio\":\"game.mp3\"},{\"word\":\"roll\",\"pronun\":\"[roʊl]\",\"translation\":\"n. 卷，卷形物；名单；摇晃\\nvt. 卷；滚动，转动；辗\\nvi. 卷；滚动；转动；起伏，摇晃\",\"audio\":\"roll.mp3\"},{\"word\":\"look for\",\"pronun\":\"[ˈlʊk fɔːr]\",\"translation\":\"v. 寻找；探索；渴望；盼望\",\"audio\":\"look_for.mp3\"},{\"word\":\"chocolate\",\"pronun\":\"[ˈtʃɔːklət]\",\"translation\":\"n. 巧克力，巧克力糖；巧克力色\\nadj. 巧克力色的；巧克力口味的\",\"audio\":\"chocolate.mp3\"},{\"word\":\"bunny\",\"pronun\":\"[ˈbʌni]\",\"translation\":\"n. 兔子（特别是小兔子）；可爱女郎\",\"audio\":\"bunny.mp3\"},{\"word\":\"RSVP\",\"pronun\":\"[ˌɑːr es viː ˈpiː]\",\"translation\":\"abbr. 请回复 Répondez s'il vous plaît.（法语）\",\"audio\":\"RSVP.mp3\"},{\"word\":\"by\",\"pronun\":\"[baɪ]\",\"translation\":\"prep. 通过；被；依据；经由；在附近；在……之前\\nadv. 通过；经过；附近；[互联网] 白俄罗斯的国家代码顶级域名\",\"audio\":\"by.mp3\"},{\"word\":\"first\",\"pronun\":\"[fɜːrst]\",\"translation\":\"num. 第一\\nn. 第一；开始；冠军\\nadj. 第一的；基本的；最早的\\nadv. 第一；首先；优先；宁愿\",\"audio\":\"first.mp3\"},{\"word\":\"second\",\"pronun\":\"[ˈsekənd; sɪˈkɑːnd]\",\"translation\":\"num. 第二\\nn. 秒；第二名；瞬间；二等品\\nadj. 第二的；次要的；附加的\\nvt. 支持\\nadv. 第二；其次；居第二位\",\"audio\":\"second.mp3\"},{\"word\":\"third\",\"pronun\":\"[θɜːrd]\",\"translation\":\"num. 第三；三分之一\\nadj. 第三的；三分之一的\",\"audio\":\"third.mp3\"},{\"word\":\"fourth\",\"pronun\":\"[fɔːrθ]\",\"translation\":\"num. 第四\\nn. 第四，月的第四日；四分之一\\nadj. 第四的，第四个的；四分之一的\",\"audio\":\"fourth.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

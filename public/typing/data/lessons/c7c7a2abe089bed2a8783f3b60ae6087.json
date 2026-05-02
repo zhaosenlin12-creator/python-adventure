@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.656981+00:00",
+  "request": {
+    "lesson_id": "c7c7a2abe089bed2a8783f3b60ae6087",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 345,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "c7c7a2abe089bed2a8783f3b60ae6087",
+    "nextLessonId": "d65b7a5ceee1349883a7118349d27c92",
+    "lessonName": "六级词汇正序版-88",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第88课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "32ca94514802340f0ceb94b0f1c55db8",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"rape\",\"pronun\":\"[reɪp]\",\"translation\":\"n. 强奸，掠夺；[园艺] 油菜；葡萄渣\\nvt. 强奸；掠夺，抢夺\\nvi. 犯强奸罪\",\"audio\":\"rape.mp3\"},{\"word\":\"rarely\",\"pronun\":\"[ˈrerli]\",\"translation\":\"adv. 很少地；难得；罕有地\",\"audio\":\"rarely.mp3\"},{\"word\":\"rash\",\"pronun\":\"[ræʃ]\",\"translation\":\"n. [皮肤] 皮疹；突然大量出现的事物\\nadj. 轻率的；鲁莽的；不顾后果的\",\"audio\":\"rash.mp3\"},{\"word\":\"rating\",\"pronun\":\"[ˈreɪtɪŋ]\",\"translation\":\"n. 等级；等级评定；额定功率\\nv. 对…评价（rate的ing形式）\",\"audio\":\"rating.mp3\"},{\"word\":\"rational\",\"pronun\":\"[ˈræʃnəl]\",\"translation\":\"n. 有理数\\nadj. 合理的；理性的\",\"audio\":\"rational.mp3\"},{\"word\":\"reaction\",\"pronun\":\"[riˈækʃn]\",\"translation\":\"n. 反应，感应；反动，复古；反作用\",\"audio\":\"reaction.mp3\"},{\"word\":\"readily\",\"pronun\":\"[ˈredɪli]\",\"translation\":\"adv. 容易地；乐意地；无困难地\",\"audio\":\"readily.mp3\"},{\"word\":\"reaffirm\",\"pronun\":\"[ˌriːəˈfɜːrm]\",\"translation\":\"vt. 再肯定，重申；再断言\",\"audio\":\"reaffirm.mp3\"},{\"word\":\"realistic\",\"pronun\":\"[ˌriːəˈlɪstɪk]\",\"translation\":\"adj. 现实的；现实主义的；逼真的；实在论的\",\"audio\":\"realistic.mp3\"},{\"word\":\"reap\",\"pronun\":\"[riːp]\",\"translation\":\"vt. 收获，获得；收割\\nvi. 收割，收获\",\"audio\":\"reap.mp3\"},{\"word\":\"reassess\",\"pronun\":\"[ˌriːəˈses]\",\"translation\":\"vt. 再评价；再课税；再摊派\",\"audio\":\"reassess.mp3\"},{\"word\":\"reassure\",\"pronun\":\"[ˌriːəˈʃʊr]\",\"translation\":\"vt. 使…安心，使消除疑虑\",\"audio\":\"reassure.mp3\"},{\"word\":\"rebel\",\"pronun\":\"[ˈrebl]\",\"translation\":\"n. 反叛者；叛徒\\nadj. 反抗的；造反的\\nvi. 反叛；反抗；造反\",\"audio\":\"rebel.mp3\"},{\"word\":\"rebellion\",\"pronun\":\"[rɪˈbeljən]\",\"translation\":\"n. 叛乱；反抗；谋反；不服从\",\"audio\":\"rebellion.mp3\"},{\"word\":\"recall\",\"pronun\":\"[rɪˈkɔːl]\",\"translation\":\"n. 召回；回忆；撤消\\nvt. 召回；回想起，记起；取消\",\"audio\":\"recall.mp3\"},{\"word\":\"recede\",\"pronun\":\"[rɪˈsiːd]\",\"translation\":\"vi. 后退；减弱\\nvt. 撤回\",\"audio\":\"recede.mp3\"},{\"word\":\"receipt\",\"pronun\":\"[rɪˈsiːt]\",\"translation\":\"n. 收到；收据；收入\\nvt. 收到\",\"audio\":\"receipt.mp3\"},{\"word\":\"reception\",\"pronun\":\"[rɪˈsepʃn]\",\"translation\":\"n. 接待；接收；招待会；感受；反应\",\"audio\":\"reception.mp3\"},{\"word\":\"recession\",\"pronun\":\"[rɪˈseʃn]\",\"translation\":\"n. 衰退；不景气；后退；凹处\",\"audio\":\"recession.mp3\"},{\"word\":\"recipe\",\"pronun\":\"[ˈresəpi]\",\"translation\":\"n. 食谱；[临床] 处方；秘诀；烹饪法\",\"audio\":\"recipe.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

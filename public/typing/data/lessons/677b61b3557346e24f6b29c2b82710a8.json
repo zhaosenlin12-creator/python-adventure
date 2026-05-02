@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.370369+00:00",
+  "request": {
+    "lesson_id": "677b61b3557346e24f6b29c2b82710a8",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 187,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "677b61b3557346e24f6b29c2b82710a8",
+    "nextLessonId": "180c41411dbb7d93ba068e2c4597eb9e",
+    "lessonName": "AVG平均值",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - AVG平均值",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "49974a98abf94929e674fad94f8d8f8e",
+        "index": 1,
+        "text": [
+          "-- 计算平均年龄\\nSELECT AVG(age) AS average_age FROM users;\\n\\n-- 计算平均订单金额\\nSELECT AVG(amount) AS avg_order_amount FROM orders;\\n\\n-- 按城市计算平均年龄\\nSELECT city, AVG(age) AS avg_age\\nFROM users\\nGROUP BY city;\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

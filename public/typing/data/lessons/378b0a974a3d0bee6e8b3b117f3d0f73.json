@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:42.400400+00:00",
+  "request": {
+    "lesson_id": "378b0a974a3d0bee6e8b3b117f3d0f73",
+    "course_id": "e52cc8eda96f7509fa421962517744bb",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "e52cc8eda96f7509fa421962517744bb",
+    "order": 216,
+    "nextCourseId": "e52cc8eda96f7509fa421962517744bb",
+    "courseName": "进阶练习-信息录入",
+    "lessonId": "378b0a974a3d0bee6e8b3b117f3d0f73",
+    "nextLessonId": "75b242d9d81f93fd1045f5c25e47f7a1",
+    "lessonName": "手机号练习六",
+    "icon": "data/assets/daziya.com/key-icon_num-jianpan.758041f8e3.png",
+    "description": "数字输入练习 - 手机号练习六",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ac59ea30168a9a88def808756b1e0077",
+        "index": 1,
+        "text": [
+          "13987654321\\n13887654321\\n13787654321\\n13687654321\\n13587654321\\n13487654321\\n13387654321\\n13287654321\\n13187654321\\n13087654321"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

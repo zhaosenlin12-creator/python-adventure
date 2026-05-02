@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.423532+00:00",
+  "request": {
+    "lesson_id": "02b379a51e9cda05105340080f0e629e",
+    "course_id": "007ef7afc48bb0178d2f077a23bc898d",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "007ef7afc48bb0178d2f077a23bc898d",
+    "order": 367,
+    "nextCourseId": "007ef7afc48bb0178d2f077a23bc898d",
+    "courseName": "小学必备古诗75首（3）",
+    "lessonId": "02b379a51e9cda05105340080f0e629e",
+    "nextLessonId": "3d75d23da1e492774cc2c610c7689a45",
+    "lessonName": "秋夜将晓出篱门迎凉有感",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b27fc1aad203448325ea33f912a06906",
+        "index": 1,
+        "text": [
+          "秋夜将晓出篱门迎凉有感\\n陆游\\n三万里河东入海，五千仞岳上摩天。\\n遗民泪尽胡尘里，南望王师又一年。"
+        ],
+        "pinyin": "[[\"秋\", \"qiū\"], [\"夜\", \"yè\"], [\"将\", \"jiāng\"], [\"晓\", \"xiǎo\"], [\"出\", \"chū\"], [\"篱\", \"lí\"], [\"门\", \"mén\"], [\"迎\", \"yíng\"], [\"凉\", \"liáng\"], [\"有\", \"yǒu\"], [\"感\", \"gǎn\"], [\"\\n\", \"\"], [\"陆\", \"lù\"], [\"游\", \"yóu\"], [\"\\n\", \"\"], [\"三\", \"sān\"], [\"万\", \"wàn\"], [\"里\", \"lǐ\"], [\"河\", \"hé\"], [\"东\", \"dōng\"], [\"入\", \"rù\"], [\"海\", \"hǎi\"], [\"，\", \"\"], [\"五\", \"wǔ\"], [\"千\", \"qiān\"], [\"仞\", \"rèn\"], [\"岳\", \"yuè\"], [\"上\", \"shàng\"], [\"摩\", \"mó\"], [\"天\", \"tiān\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"遗\", \"yí\"], [\"民\", \"mín\"], [\"泪\", \"lèi\"], [\"尽\", \"jìn\"], [\"胡\", \"hú\"], [\"尘\", \"chén\"], [\"里\", \"lǐ\"], [\"，\", \"\"], [\"南\", \"nán\"], [\"望\", \"wàng\"], [\"王\", \"wáng\"], [\"师\", \"shī\"], [\"又\", \"yòu\"], [\"一\", \"yī\"], [\"年\", \"nián\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

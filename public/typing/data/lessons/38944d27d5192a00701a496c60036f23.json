@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.126280+00:00",
+  "request": {
+    "lesson_id": "38944d27d5192a00701a496c60036f23",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 117,
+    "nextCourseId": "e13b6bae2990dd699f332f225dd1955b",
+    "courseName": "Javascript",
+    "lessonId": "38944d27d5192a00701a496c60036f23",
+    "nextLessonId": "8a5bdfdea8639d77a9c999b7e4ebdfed",
+    "lessonName": "最大公约数",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - 最大公约数",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ae516951ddbea14b7a21bcae3cbe3da7",
+        "index": 1,
+        "text": [
+          "// 计算两个数的最大公约数\\nfunction gcd(a, b) {\\n    while (b !== 0) {\\n        [a, b] = [b, a % b];\\n    }\\n    return a;\\n}\\n\\nfunction gcdRecursive(a, b) {\\n    if (b === 0) return a;\\n    return gcdRecursive(b, a % b);\\n}\\n\\nfunction lcm(a, b) {\\n    return Math.abs(a * b) / gcd(a, b);\\n}\\n\\n// 测试最大公约数和最小公倍数\\nconst pairs = [[48, 18], [100, 75], [17, 19]];\\n\\nconsole.log(\"最大公约数和最小公倍数:\");\\nfor (const [a, b] of pairs) {\\n    console.log(`GCD(${a}, ${b}) = ${gcd(a, b)}`);\\n    console.log(`LCM(${a}, ${b}) = ${lcm(a, b)}`);\\n    console.log();\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

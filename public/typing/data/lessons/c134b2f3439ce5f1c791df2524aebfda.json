@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.825462+00:00",
+  "request": {
+    "lesson_id": "c134b2f3439ce5f1c791df2524aebfda",
+    "course_id": "df7bf8b8c0456926de2c1fac14a741b2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "order": 466,
+    "nextCourseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "courseName": "宋词必备67首（1）",
+    "lessonId": "c134b2f3439ce5f1c791df2524aebfda",
+    "nextLessonId": "98654e394d26b16d125290dde81b32b7",
+    "lessonName": "六月二十七日望湖楼醉书",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ec938e7868e74652ad100b9eb9b72a61",
+        "index": 1,
+        "text": [
+          "六月二十七日望湖楼醉书\\n苏轼\\n黑云翻墨未遮山，白雨跳珠乱入船。\\n卷地风来忽吹散，望湖楼下水如天。"
+        ],
+        "pinyin": "[[\"六\", \"liù\"], [\"月\", \"yuè\"], [\"二\", \"èr\"], [\"十\", \"shí\"], [\"七\", \"qī\"], [\"日\", \"rì\"], [\"望\", \"wàng\"], [\"湖\", \"hú\"], [\"楼\", \"lóu\"], [\"醉\", \"zuì\"], [\"书\", \"shū\"], [\"\\n\", \"\"], [\"苏\", \"sū\"], [\"轼\", \"shì\"], [\"\\n\", \"\"], [\"黑\", \"hēi\"], [\"云\", \"yún\"], [\"翻\", \"fān\"], [\"墨\", \"mò\"], [\"未\", \"wèi\"], [\"遮\", \"zhē\"], [\"山\", \"shān\"], [\"，\", \"\"], [\"白\", \"bái\"], [\"雨\", \"yǔ\"], [\"跳\", \"tiào\"], [\"珠\", \"zhū\"], [\"乱\", \"luàn\"], [\"入\", \"rù\"], [\"船\", \"chuán\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"卷\", \"juǎn\"], [\"地\", \"dì\"], [\"风\", \"fēng\"], [\"来\", \"lái\"], [\"忽\", \"hū\"], [\"吹\", \"chuī\"], [\"散\", \"sàn\"], [\"，\", \"\"], [\"望\", \"wàng\"], [\"湖\", \"hú\"], [\"楼\", \"lóu\"], [\"下\", \"xià\"], [\"水\", \"shuǐ\"], [\"如\", \"rú\"], [\"天\", \"tiān\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

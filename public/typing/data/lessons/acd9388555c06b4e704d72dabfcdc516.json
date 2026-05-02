@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.711199+00:00",
+  "request": {
+    "lesson_id": "acd9388555c06b4e704d72dabfcdc516",
+    "course_id": "5e52147dad246d64cba012617962b179",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "5e52147dad246d64cba012617962b179",
+    "order": 44,
+    "nextCourseId": "5e52147dad246d64cba012617962b179",
+    "courseName": "基础练习-中排数字",
+    "lessonId": "acd9388555c06b4e704d72dabfcdc516",
+    "nextLessonId": "a6a93dc3d68d94a1aaca5d8937381314",
+    "lessonName": "减法巩固一",
+    "icon": "data/assets/daziya.com/key-icon_num-jianfagonggu.8baf118dbb.png",
+    "description": "数字输入练习 - 减法巩固一",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6ecb5c3067f3375797e3c79676fafcd0",
+        "index": 1,
+        "text": [
+          "44-55-66-44-55-66-44"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.381642+00:00",
+  "request": {
+    "lesson_id": "27f9abd5bb65129e65411d7a63b1a7cf",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 635,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "27f9abd5bb65129e65411d7a63b1a7cf",
+    "nextLessonId": "76f3ba04e2000f20423e43befdbfe4cd",
+    "lessonName": " 四年级上-3",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点四年级上 - 第3课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "37f1f70fbd80e294aea184cf59bf6eeb",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"bedroom\",\"pronun\":\"[ˈbedruːm; ˈbedrʊm]\",\"translation\":\"n. 卧室\\nadj. 两性关系的；城郊住宅区的\",\"audio\":\"bedroom.mp3\"},{\"word\":\"living room\",\"pronun\":\"[ˈlɪvɪŋ ruːm]\",\"translation\":\"n. 客厅；起居室\",\"audio\":\"living_room.mp3\"},{\"word\":\"study\",\"pronun\":\"[ˈstʌdi]\",\"translation\":\"n. 学习，研究；课题；书房；学问\\nvt. 学习；考虑；攻读；细察\\nvi. 研究；用功\",\"audio\":\"study.mp3\"},{\"word\":\"kitchen\",\"pronun\":\"[ˈkɪtʃɪn]\",\"translation\":\"n. 厨房；炊具；炊事人员\",\"audio\":\"kitchen.mp3\"},{\"word\":\"bathroom\",\"pronun\":\"[ˈbæθruːm]\",\"translation\":\"n. 浴室；厕所；盥洗室\",\"audio\":\"bathroom.mp3\"},{\"word\":\"bed\",\"pronun\":\"[bed]\",\"translation\":\"n. 床；基础；河底， 海底\\nvt. 使睡觉；安置，嵌入；栽种\\nvi. 上床；分层\",\"audio\":\"bed.mp3\"},{\"word\":\"phone\",\"pronun\":\"[foʊn]\",\"translation\":\"n. 电话；耳机，听筒\\nvt. 打电话\\nvi. 打电话\",\"audio\":\"phone.mp3\"},{\"word\":\"table\",\"pronun\":\"[ˈteɪbl]\",\"translation\":\"n. 桌子；表格；平地层\\nvt. 制表；搁置；嵌合\\nadj. 桌子的\",\"audio\":\"table.mp3\"},{\"word\":\"sofa\",\"pronun\":\"[ˈsoʊfə]\",\"translation\":\"n. 沙发；长椅\",\"audio\":\"sofa.mp3\"},{\"word\":\"fridge\",\"pronun\":\"[frɪdʒ]\",\"translation\":\"n. 电冰箱\",\"audio\":\"fridge.mp3\"},{\"word\":\"find\",\"pronun\":\"[faɪnd]\",\"translation\":\"n. 发现\\nvi. 裁决\\nvt. 查找，找到；发现；认为；感到；获得\",\"audio\":\"find.mp3\"},{\"word\":\"them\",\"pronun\":\"[ðəm; ðem]\",\"translation\":\"pron. 他们；它们；她们\",\"audio\":\"them.mp3\"},{\"word\":\"beef\",\"pronun\":\"[biːf]\",\"translation\":\"n. 牛肉；肌肉；食用牛；牢骚\\nvt. 养；加强\\nvi. 抱怨，告发；发牢骚\",\"audio\":\"beef.mp3\"},{\"word\":\"chicken\",\"pronun\":\"[ˈtʃɪkɪn]\",\"translation\":\"n. 鸡肉；小鸡；胆小鬼，懦夫\\nadj. 鸡肉的；胆怯的；幼小的\",\"audio\":\"chicken.mp3\"},{\"word\":\"noodles\",\"pronun\":\"[ˈnuːd(ə)lz]\",\"translation\":\"n. 面条，挂面（noodle的复数形式)\",\"audio\":\"noodles.mp3\"},{\"word\":\"soup\",\"pronun\":\"[suːp]\",\"translation\":\"n. 汤，羹；马力\\nvt. 加速；增加马力\",\"audio\":\"soup.mp3\"},{\"word\":\"vegetable\",\"pronun\":\"[ˈvedʒtəbl]\",\"translation\":\"n. 蔬菜；植物；植物人\\nadj. 蔬菜的；植物的\",\"audio\":\"vegetable.mp3\"},{\"word\":\"chopsticks\",\"pronun\":\"[ˈtʃɑːpstɪks]\",\"translation\":\"n. 筷子\",\"audio\":\"chopsticks.mp3\"},{\"word\":\"bowl\",\"pronun\":\"[boʊl]\",\"translation\":\"n. 碗；木球；大酒杯\\nvt. 投球；旋转；平稳快速移动\\nvi. 玩保龄球；滑动；平稳快速移动\",\"audio\":\"bowl.mp3\"},{\"word\":\"fork\",\"pronun\":\"[fɔːrk]\",\"translation\":\"n. 叉；餐叉；耙\\nvt. 叉起；使成叉状\\nvi. 分叉；分歧\",\"audio\":\"fork.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

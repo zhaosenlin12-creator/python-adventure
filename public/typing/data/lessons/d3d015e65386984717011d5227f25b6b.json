@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.325480+00:00",
+  "request": {
+    "lesson_id": "d3d015e65386984717011d5227f25b6b",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 49,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "d3d015e65386984717011d5227f25b6b",
+    "nextLessonId": "69b5a65584d919af52c2a6b57545577f",
+    "lessonName": "2022年版 PEP-六年级-下册-2",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-六年级-下册 - 第2课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4301f03ced37c6f4e4308b38b33531d3",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"dinosaur\",\"pronun\":\"[ˈdaɪnəsɔːr]\",\"translation\":\"n. 恐龙；过时、落伍的人或事物\",\"audio\":\"dinosaur.mp3\"},{\"word\":\"hall\",\"pronun\":\"[hɔːl]\",\"translation\":\"n. 过道，门厅，走廊；会堂；食堂；学生宿舍；大厅，前厅；娱乐中心，会所\",\"audio\":\"hall.mp3\"},{\"word\":\"metre\",\"pronun\":\"[ˈmiːtər]\",\"translation\":\"n. 米；公尺；韵律\",\"audio\":\"metre.mp3\"},{\"word\":\"meter\",\"pronun\":\"[ˈmiːtər]\",\"translation\":\"n. 米；仪表；[计量] 公尺；韵律\\nvt. 用仪表测量\\nvi. 用表计量\",\"audio\":\"meter.mp3\"},{\"word\":\"than\",\"pronun\":\"[ðən; ðæn]\",\"translation\":\"conj. 比（用于形容词、副词的比较级之后）；除…外（用于other等之后）；与其…（用于 rather等之后）；一…就（用于 no sooner等之后）\\nprep. 比；超过\",\"audio\":\"than.mp3\"},{\"word\":\"both\",\"pronun\":\"[boʊθ]\",\"translation\":\"conj. 既…且…\\nadj. 两个的；两者的\\npron. 双方都；两者都\\nadv. 并；又；两者皆\",\"audio\":\"both.mp3\"},{\"word\":\"kilogram\",\"pronun\":\"[ˈkɪləɡræm]\",\"translation\":\"n. 公斤；千克\",\"audio\":\"kilogram.mp3\"},{\"word\":\"countryside\",\"pronun\":\"[ˈkʌntrisaɪd]\",\"translation\":\"n. 农村，乡下；乡下的全体居民\",\"audio\":\"countryside.mp3\"},{\"word\":\"lower\",\"pronun\":\"[ˈloʊər]\",\"translation\":\"vt. 减弱，减少；放下，降下；贬低\\nvi. 降低；减弱；跌落\\nadj. 下游的；下级的；下等的\",\"audio\":\"lower.mp3\"},{\"word\":\"low\",\"pronun\":\"[loʊ]\",\"translation\":\"adj. 低的，浅的；卑贱的；粗俗的；消沉的\\nadv. 低声地；谦卑地，低下地\\nn. 低；低价；低点；牛叫声\\nvi. 牛叫\",\"audio\":\"low.mp3\"},{\"word\":\"shadow\",\"pronun\":\"[ˈʃædoʊ]\",\"translation\":\"n. 阴影；影子；幽灵；庇护；隐蔽处\\nadj. 影子内阁的\\nvt. 遮蔽；使朦胧；尾随；预示\\nvi. 渐变；变阴暗\",\"audio\":\"shadow.mp3\"},{\"word\":\"smarter\",\"pronun\":\"[smɑːrtər]\",\"translation\":\"adj. 聪明的；精明的（smart的比较级）\",\"audio\":\"smarter.mp3\"},{\"word\":\"smart\",\"pronun\":\"[smɑːrt]\",\"translation\":\"adj. 聪明的；巧妙的；敏捷的；厉害的；潇洒的；剧烈的；时髦的\",\"audio\":\"smart.mp3\"},{\"word\":\"become\",\"pronun\":\"[bɪˈkʌm]\",\"translation\":\"vt. 适合；相称\\nvi. 成为；变得；变成\",\"audio\":\"become.mp3\"},{\"word\":\"cleaned\",\"pronun\":\"[kliːnd]\",\"translation\":\"v. 打扫（clean的过去式）；把…弄干净\\nadj. 净化的\",\"audio\":\"cleaned.mp3\"},{\"word\":\"clean\",\"pronun\":\"[kliːn]\",\"translation\":\"n. 打扫\\nadj. 清洁的，干净的；清白的\\nvt. 使干净\\nvi. 打扫，清扫\\nadv. 完全地\",\"audio\":\"clean.mp3\"},{\"word\":\"stayed\",\"pronun\":\"[steɪd]\",\"translation\":\"v. 停留，制止（stay的过去分词形式）\",\"audio\":\"stayed.mp3\"},{\"word\":\"stay\",\"pronun\":\"[steɪ]\",\"translation\":\"n. 逗留；停止；支柱\\nvi. 停留；坚持；暂住；停下\\nvt. 坚持；暂住；抑制\",\"audio\":\"stay.mp3\"},{\"word\":\"washed\",\"pronun\":\"[wɑːʃt]\",\"translation\":\"v. 洗，洗涤（wash的过去分词）\\nadj. 洗过的\",\"audio\":\"washed.mp3\"},{\"word\":\"wash\",\"pronun\":\"[wɑːʃ]\",\"translation\":\"n. 洗涤；洗的衣服；化妆水；冲积物\\nvt. 洗涤；洗刷；冲走；拍打\\nvi. 洗澡；被冲蚀\",\"audio\":\"wash.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

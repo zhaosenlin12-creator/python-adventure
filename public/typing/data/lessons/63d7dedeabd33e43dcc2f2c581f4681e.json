@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.520876+00:00",
+  "request": {
+    "lesson_id": "63d7dedeabd33e43dcc2f2c581f4681e",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 532,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "63d7dedeabd33e43dcc2f2c581f4681e",
+    "nextLessonId": "12c84c9e94dc9112a3983e09dfdfb516",
+    "lessonName": "A New Song",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1f415ba38d05a01e7cf6f6934b700428",
+        "index": 1,
+        "text": [
+          "We learned a new song at school today. It's called \"A Happy Family\". I can't wait to sing it at home.\\nI love you. You love me.\\nWe are a happy family.\\nWith a father, a mother, and a child too.\\nTwo plus one in our family.\\nDo you know how many people are in our family? You guessed it!\\nThere are three people in our family."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

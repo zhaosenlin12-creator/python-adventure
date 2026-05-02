@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.032294+00:00",
+  "request": {
+    "lesson_id": "f72c5cbb0cd53fe3d3c29f327a23c752",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 92,
+    "nextCourseId": "e13b6bae2990dd699f332f225dd1955b",
+    "courseName": "Javascript",
+    "lessonId": "f72c5cbb0cd53fe3d3c29f327a23c752",
+    "nextLessonId": "86ca9ad8440e487572f95685f447709c",
+    "lessonName": "基本运算",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - 基本运算",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a54a5f78357dd4000ad90d07abc501e5",
+        "index": 1,
+        "text": [
+          "// 基本数学运算\\nconst a = 10;\\nconst b = 3;\\n\\nconsole.log(`加法: ${a} + ${b} = ${a + b}`);\\nconsole.log(`减法: ${a} - ${b} = ${a - b}`);\\nconsole.log(`乘法: ${a} * ${b} = ${a * b}`);\\nconsole.log(`除法: ${a} / ${b} = ${a / b}`);\\nconsole.log(`取余: ${a} % ${b} = ${a % b}`);\\nconsole.log(`幂运算: ${a} ** ${b} = ${a ** b}`);\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.806080+00:00",
+  "request": {
+    "lesson_id": "d5753c664b67a358a3c0bfcb71fee687",
+    "course_id": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "order": 68,
+    "nextCourseId": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "courseName": "声母组合练习",
+    "lessonId": "d5753c664b67a358a3c0bfcb71fee687",
+    "nextLessonId": "c02f8ccaecae687d8d9a61ee21e30f9d",
+    "lessonName": "声母组合s",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "练习声母s与各韵母的组合",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "996ce2d1997d9064f7ed75ec25ded918",
+        "index": 1,
+        "highlights": [
+          "s"
+        ],
+        "text": [
+          "请输入按键 [s]"
+        ],
+        "detail": "学习双拼按键 s"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "5a48541141162d302953c468a74bd489",
+        "index": 2,
+        "text": [
+          "ssssssss"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "0d1eea7f795ef5567011504ab99e345f",
+        "index": 3,
+        "text": [
+          "三思而行，四散而去。松树耸立在山上，松鼠在松枝间窜来窜去。苏轼送伞给素素，素素送酥饼给苏轼。虽然酸涩，却是素素亲手所送，苏轼十分喜欢。"
+        ],
+        "pinyin": "[[\"三\", \"sān\"], [\"思\", \"sī\"], [\"而\", \"ér\"], [\"行\", \"xíng\"], [\"，\", \"\"], [\"四\", \"sì\"], [\"散\", \"sàn\"], [\"而\", \"ér\"], [\"去\", \"qù\"], [\"。\", \"\"], [\"松\", \"sōng\"], [\"树\", \"shù\"], [\"耸\", \"sǒng\"], [\"立\", \"lì\"], [\"在\", \"zài\"], [\"山\", \"shān\"], [\"上\", \"shàng\"], [\"，\", \"\"], [\"松\", \"sōng\"], [\"鼠\", \"shǔ\"], [\"在\", \"zài\"], [\"松\", \"sōng\"], [\"枝\", \"zhī\"], [\"间\", \"jiān\"], [\"窜\", \"cuàn\"], [\"来\", \"lái\"], [\"窜\", \"cuàn\"], [\"去\", \"qù\"], [\"。\", \"\"], [\"苏\", \"Sū\"], [\"轼\", \"shì\"], [\"送\", \"sòng\"], [\"伞\", \"sǎn\"], [\"给\", \"gěi\"], [\"素\", \"Sù\"], [\"素\", \"sù\"], [\"，\", \"\"], [\"素\", \"Sù\"], [\"素\", \"sù\"], [\"送\", \"sòng\"], [\"酥\", \"sū\"], [\"饼\", \"bǐng\"], [\"给\", \"gěi\"], [\"苏\", \"Sū\"], [\"轼\", \"shì\"], [\"。\", \"\"], [\"虽\", \"suī\"], [\"然\", \"rán\"], [\"酸\", \"suān\"], [\"涩\", \"sè\"], [\"，\", \"\"], [\"却\", \"què\"], [\"是\", \"shì\"], [\"素\", \"Sù\"], [\"素\", \"sù\"], [\"亲\", \"qīn\"], [\"手\", \"shǒu\"], [\"所\", \"suǒ\"], [\"送\", \"sòng\"], [\"，\", \"\"], [\"苏\", \"Sū\"], [\"轼\", \"shì\"], [\"十\", \"shí\"], [\"分\", \"fēn\"], [\"喜\", \"xǐ\"], [\"欢\", \"huan\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 10,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

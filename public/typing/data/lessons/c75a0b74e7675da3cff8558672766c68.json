@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.061461+00:00",
+  "request": {
+    "lesson_id": "c75a0b74e7675da3cff8558672766c68",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 8,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "c75a0b74e7675da3cff8558672766c68",
+    "nextLessonId": "277189686da3fed4a8881a635b4c6a6d",
+    "lessonName": "2022年版 PEP-三年级-下册-3",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-三年级-下册 - 第3课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b68f1d964ef864226b75a337df30d97d",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"dance\",\"pronun\":\"[dæns]\",\"translation\":\"n. 舞蹈；舞会；舞曲\\nadj. 舞蹈的；用于跳舞的\\nvt. 跳舞；使跳跃\\nvi. 跳舞；跳跃；飘扬\",\"audio\":\"dance.mp3\"},{\"word\":\"face\",\"pronun\":\"[feɪs]\",\"translation\":\"n. 脸；表面；面子；面容；外观；威信\\nvi. 向；朝\\nvt. 面对；面向；承认；抹盖\",\"audio\":\"face.mp3\"},{\"word\":\"all\",\"pronun\":\"[ɔːl]\",\"translation\":\"n. 全部\\nadj. 全部的\\nadv. 全然地；越发\\npron. 全部\",\"audio\":\"all.mp3\"},{\"word\":\"so\",\"pronun\":\"[soʊ]\",\"translation\":\"conj. 所以；因此\\nadv. 如此，这么；确是如此\\npron. 这样\",\"audio\":\"so.mp3\"},{\"word\":\"talk\",\"pronun\":\"[tɔːk]\",\"translation\":\"n. 谈话；演讲；空谈\\nvi. 谈话；说闲话\\nvt. 说；谈话；讨论\",\"audio\":\"talk.mp3\"},{\"word\":\"song\",\"pronun\":\"[sɔŋ]\",\"translation\":\"n. 歌曲；歌唱；诗歌；鸣声\",\"audio\":\"song.mp3\"},{\"word\":\"or\",\"pronun\":\"[ɔːr]\",\"translation\":\"conj. 或，或者；还是\",\"audio\":\"or.mp3\"},{\"word\":\"much\",\"pronun\":\"[mʌtʃ]\",\"translation\":\"adv. 非常，很\\nadj. 大量的\\nn. 许多，大量\\npron. 许多，大量\",\"audio\":\"much.mp3\"},{\"word\":\"eraser\",\"pronun\":\"[ɪˈreɪsər]\",\"translation\":\"n. 橡皮；擦除器；[计] 清除器\",\"audio\":\"eraser.mp3\"},{\"word\":\"find\",\"pronun\":\"[faɪnd]\",\"translation\":\"n. 发现\\nvi. 裁决\\nvt. 查找，找到；发现；认为；感到；获得\",\"audio\":\"find.mp3\"},{\"word\":\"ruler\",\"pronun\":\"[ˈruːlər]\",\"translation\":\"n. 尺；统治者；[测] 划线板，划线的人\",\"audio\":\"ruler.mp3\"},{\"word\":\"pen\",\"pronun\":\"[pen]\",\"translation\":\"n. 钢笔；作家；围栏\\nvt. 写；关入栏中\",\"audio\":\"pen.mp3\"},{\"word\":\"pencil\",\"pronun\":\"[ˈpensl]\",\"translation\":\"n. 铅笔；笔状物\\nvt. 用铅笔写；用眉笔涂\\nvi. 成铅笔状\",\"audio\":\"pencil.mp3\"},{\"word\":\"book\",\"pronun\":\"[bʊk]\",\"translation\":\"n. 书籍；卷；帐簿；名册；工作簿\\nvt. 预订；登记\",\"audio\":\"book.mp3\"},{\"word\":\"bag\",\"pronun\":\"[bæɡ]\",\"translation\":\"n. 袋；猎获物；（俚）一瓶啤酒\\nvt. 猎获；把…装入袋中；占据，私吞；使膨大\\nvi. 松垂\",\"audio\":\"bag.mp3\"},{\"word\":\"paper\",\"pronun\":\"[ˈpeɪpər]\",\"translation\":\"n. 纸；论文；文件；报纸\\nadj. 纸做的\\nvt. 用纸糊；用纸包装\\nvi. 贴糊墙纸；发交通违章传票\",\"audio\":\"paper.mp3\"},{\"word\":\"these\",\"pronun\":\"[ðiːz]\",\"translation\":\"adj. 这些的\\npron. 这些\",\"audio\":\"these.mp3\"},{\"word\":\"see\",\"pronun\":\"[siː]\",\"translation\":\"vi. 看；看见；领会\\nvt. 看见；理解；领会\",\"audio\":\"see.mp3\"},{\"word\":\"smell\",\"pronun\":\"[smel]\",\"translation\":\"n. 气味，嗅觉；臭味\\nvt. 嗅，闻；察觉到；发出…的气味\\nvi. 嗅，闻；有…气味\",\"audio\":\"smell.mp3\"},{\"word\":\"taste\",\"pronun\":\"[teɪst]\",\"translation\":\"n. 味道；品味；审美\\nvt. 尝；体验\\nvi. 尝起来；有…的味道\",\"audio\":\"taste.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

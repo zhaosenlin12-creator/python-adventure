@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.866696+00:00",
+  "request": {
+    "lesson_id": "8e2b762926b9c6cb8385b18e2e908fa1",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 54,
+    "nextCourseId": "ff61770b1da83313ceacb0a08aef6378",
+    "courseName": "Python",
+    "lessonId": "8e2b762926b9c6cb8385b18e2e908fa1",
+    "nextLessonId": "059116c28b64a03ca91da723020df9e2",
+    "lessonName": "栈的实现",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - 栈的实现",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ffe3212d5382e81b50cba0457ee8d164",
+        "index": 1,
+        "text": [
+          "# 使用列表实现栈数据结构\\nclass Stack:\\n    def __init__(self):\\n        self.items = []\\n\\n    def push(self, item):\\n        self.items.append(item)\\n\\n    def pop(self):\\n        if not self.is_empty():\\n            return self.items.pop()\\n        return None\\n\\n    def peek(self):\\n        if not self.is_empty():\\n            return self.items[-1]\\n        return None\\n\\n    def is_empty(self):\\n        return len(self.items) == 0\\n\\n    def size(self):\\n        return len(self.items)\\n\\n# 测试栈操作\\nstack = Stack()\\nstack.push(1)\\nstack.push(2)\\nstack.push(3)\\nprint(f\"栈顶元素: {stack.peek()}\")\\nprint(f\"弹出元素: {stack.pop()}\")\\nprint(f\"栈的大小: {stack.size()}\")\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

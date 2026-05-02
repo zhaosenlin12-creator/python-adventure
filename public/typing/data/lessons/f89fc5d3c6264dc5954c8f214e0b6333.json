@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.995443+00:00",
+  "request": {
+    "lesson_id": "f89fc5d3c6264dc5954c8f214e0b6333",
+    "course_id": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "order": 83,
+    "nextCourseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "courseName": "C++",
+    "lessonId": "f89fc5d3c6264dc5954c8f214e0b6333",
+    "nextLessonId": "cbcda5062086e9455a67e460da4bc3e6",
+    "lessonName": "回文判断",
+    "icon": "data/assets/daziya.com/key-icon_key-cpp.b136419115.png",
+    "description": "C++编程练习 - 回文判断",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c0f3e2eba56458cfe714d7e615fdc3b9",
+        "index": 1,
+        "text": [
+          "#include <iostream>\\n#include <string>\\n#include <algorithm>\\nusing namespace std;\\n\\nbool isPalindrome(string text) {\\n    string cleaned = \"\";\\n    for (char c : text) {\\n        if (isalnum(c)) {\\n            cleaned += tolower(c);\\n        }\\n    }\\n\\n    string reversed = cleaned;\\n    reverse(reversed.begin(), reversed.end());\\n\\n    return cleaned == reversed;\\n}\\n\\nint main() {\\n    string testStrings[] = {\"radar\", \"hello\", \"level\", \"A man a plan a canal Panama\"};\\n\\n    for (int i = 0; i < 4; i++) {\\n        bool result = isPalindrome(testStrings[i]);\\n        cout << \"'\" << testStrings[i] << \"' 是回文: \" << (result ? \"是\" : \"否\") << endl;\\n    }\\n\\n    return 0;\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "cpp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

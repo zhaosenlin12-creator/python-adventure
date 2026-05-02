@@ -1,0 +1,62 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.906603+00:00",
+  "request": {
+    "lesson_id": "b7dae30433a9511a53430480732c0aea",
+    "course_id": "649abfd4e6da035acc06a37a3357166f",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "649abfd4e6da035acc06a37a3357166f",
+    "order": 91,
+    "nextCourseId": "649abfd4e6da035acc06a37a3357166f",
+    "courseName": "基础练习-全键位输入",
+    "lessonId": "b7dae30433a9511a53430480732c0aea",
+    "nextLessonId": "e2f658f46c732a67ab3a0260929a7c8f",
+    "lessonName": "0键练习",
+    "icon": "data/assets/daziya.com/key-icon_num-0.fbede85781.png",
+    "description": "数字输入练习 - 0键练习",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "3fe284e23b1fefe2f7e64c2a0eb4dcfa",
+        "index": 1,
+        "highlights": [
+          "0"
+        ],
+        "text": [
+          "请用右手拇指输入数字0"
+        ],
+        "detail": "新的数字键[0]"
+      }
+    ],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b7de6dc9fa1f0f72b1052fb491526606",
+        "index": 2,
+        "text": [
+          "00000000000000000000"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "0",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.323138+00:00",
+  "request": {
+    "lesson_id": "90508be6ebfbdb4688ca88c34867e4d2",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 172,
+    "nextCourseId": "d7df026ff1d81047d30da28a958b118f",
+    "courseName": "golang",
+    "lessonId": "90508be6ebfbdb4688ca88c34867e4d2",
+    "nextLessonId": "c88c67454405ab6651c54bf91597b8be",
+    "lessonName": "阶乘计算",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - 阶乘计算",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e70af79b74da8d99c6d94ff62adc985c",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport \"fmt\"\\n\\nfunc factorialRecursive(n int) int {\\n\tif n <= 1 {\\n\t\treturn 1\\n\t}\\n\treturn n * factorialRecursive(n-1)\\n}\\n\\nfunc factorialIterative(n int) int {\\n\tresult := 1\\n\tfor i := 2; i <= n; i++ {\\n\t\tresult *= i\\n\t}\\n\treturn result\\n}\\n\\nfunc main() {\\n\tnumbers := []int{5, 6, 7, 8}\\n\\n\tfmt.Println(\"阶乘计算结果:\")\\n\tfor _, num := range numbers {\\n\t\tfmt.Printf(\"%d! = %d\\n\", num, factorialRecursive(num))\\n\t}\\n\\n\tn := 10\\n\tfmt.Printf(\"\\n递归方法: %d! = %d\\n\", n, factorialRecursive(n))\\n\tfmt.Printf(\"迭代方法: %d! = %d\\n\", n, factorialIterative(n))\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

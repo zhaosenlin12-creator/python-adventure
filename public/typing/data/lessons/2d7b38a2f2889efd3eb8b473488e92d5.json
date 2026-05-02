@@ -1,0 +1,75 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.375719+00:00",
+  "request": {
+    "lesson_id": "2d7b38a2f2889efd3eb8b473488e92d5",
+    "course_id": "2ab9dc27a9350a9ff86633c542967f70",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "order": 44,
+    "nextCourseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "courseName": "下排字母",
+    "lessonId": "2d7b38a2f2889efd3eb8b473488e92d5",
+    "nextLessonId": "579f1a4c2db30b8e9b19790893efa67c",
+    "lessonName": "学习v和m",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-learn-vm.34c4cd1e92.png",
+    "description": "学习v和m",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "228a6047d2f022214b861aecf9c0e3ae",
+        "index": 1,
+        "highlights": [
+          "v"
+        ],
+        "text": [
+          "请使用左手食指输入按键v"
+        ],
+        "detail": "新的字母键/请输入[v]键"
+      },
+      {
+        "chapterId": "a338c6f3d28581b3bad21466b466cbfb",
+        "index": 2,
+        "highlights": [
+          "m"
+        ],
+        "text": [
+          "请使用右手食指输入按键m"
+        ],
+        "detail": "新的字母键/请输入[m]键"
+      },
+      {
+        "chapterId": "635deec5fb7c069933dfa24ff7df1fe4",
+        "index": 3,
+        "highlights": [
+          " "
+        ],
+        "text": [
+          "接下来我们将练习如何输入[v]和[m]，请确保使用正确的指法输入，敲击 键开始"
+        ],
+        "detail": "新的字母键/很好"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "9ecb5e24b07e04899ecf07e6a9048416",
+        "index": 4,
+        "text": [
+          "mvmvvmvvvmmmmvmvmvmvvmvmvvmmmvv"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

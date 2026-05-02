@@ -8,6 +8,7 @@
     "build": "node scripts/build.js",
     "start": "next start",
     "lint": "eslint",
+    "typing:sync": "powershell -ExecutionPolicy Bypass -File scripts/sync-typing.ps1",
     "pet:artwork:refresh": "python scripts/remaster_camp_pet_artwork.py",
     "test": "jest",
     "test:watch": "jest --watch",

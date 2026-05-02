@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.361278+00:00",
+  "request": {
+    "lesson_id": "2c85faa4eece7f4b439041ba3426ea71",
+    "course_id": "d47f40df8593ffe75da61fffca274131",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "d47f40df8593ffe75da61fffca274131",
+    "order": 244,
+    "nextCourseId": "d47f40df8593ffe75da61fffca274131",
+    "courseName": "汉字三级",
+    "lessonId": "2c85faa4eece7f4b439041ba3426ea71",
+    "nextLessonId": "c82d5f0cd45ac1af10110218afca9510",
+    "lessonName": "《荷叶·母亲》 冰心",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-3.f410710cf0.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b9675eb49ef6ee0e5caf22eb2b468dd5",
+        "index": 1,
+        "text": [
+          "八年之久，我没有在院子里看莲花了。但故乡的园院里，却有许多；不但有并蒂的，还有三蒂的，四蒂的，都是红莲。"
+        ],
+        "pinyin": "[[\"八\", \"bā\"], [\"年\", \"nián\"], [\"之\", \"zhī\"], [\"久\", \"jiǔ\"], [\"，\", \"\"], [\"我\", \"wǒ\"], [\"没\", \"méi\"], [\"有\", \"yǒu\"], [\"在\", \"zài\"], [\"院\", \"yuàn\"], [\"子\", \"zǐ\"], [\"里\", \"lǐ\"], [\"看\", \"kàn\"], [\"莲\", \"lián\"], [\"花\", \"huā\"], [\"了\", \"le\"], [\"。\", \"\"], [\"但\", \"dàn\"], [\"故\", \"gù\"], [\"乡\", \"xiāng\"], [\"的\", \"de\"], [\"园\", \"yuán\"], [\"院\", \"yuàn\"], [\"里\", \"lǐ\"], [\"，\", \"\"], [\"却\", \"què\"], [\"有\", \"yǒu\"], [\"许\", \"xǔ\"], [\"多\", \"duō\"], [\"；\", \"\"], [\"不\", \"bù\"], [\"但\", \"dàn\"], [\"有\", \"yǒu\"], [\"并\", \"bìng\"], [\"蒂\", \"dì\"], [\"的\", \"de\"], [\"，\", \"\"], [\"还\", \"hái\"], [\"有\", \"yǒu\"], [\"三\", \"sān\"], [\"蒂\", \"dì\"], [\"的\", \"de\"], [\"，\", \"\"], [\"四\", \"sì\"], [\"蒂\", \"dì\"], [\"的\", \"de\"], [\"，\", \"\"], [\"都\", \"dōu\"], [\"是\", \"shì\"], [\"红\", \"hóng\"], [\"莲\", \"lián\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 29,
+        "minSpeed": 21,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

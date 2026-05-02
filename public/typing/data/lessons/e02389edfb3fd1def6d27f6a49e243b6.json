@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.072602+00:00",
+  "request": {
+    "lesson_id": "e02389edfb3fd1def6d27f6a49e243b6",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 432,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "e02389edfb3fd1def6d27f6a49e243b6",
+    "nextLessonId": "b12cf73552ebddc2d3a0c0f0d571e50e",
+    "lessonName": "六级词汇正序版-75",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第75课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "30ac56e0043c7b0a1c2072fb238e0064",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"optimistic\",\"pronun\":\"[ˌɑːptɪˈmɪstɪk]\",\"translation\":\"adj. 乐观的；乐观主义的\",\"audio\":\"optimistic.mp3\"},{\"word\":\"optimum\",\"pronun\":\"[ˈɑːptɪməm]\",\"translation\":\"adj. 最适宜的\\nn. 最佳效果；最适宜条件\",\"audio\":\"optimum.mp3\"},{\"word\":\"option\",\"pronun\":\"[ˈɑːpʃ(ə)n]\",\"translation\":\"n. [计] 选项；选择权；买卖的特权\",\"audio\":\"option.mp3\"},{\"word\":\"orbit\",\"pronun\":\"[ˈɔːrbɪt]\",\"translation\":\"n. 轨道；眼眶；势力范围；生活常规\\nvi. 盘旋；绕轨道运行\\nvt. 绕…轨道而行\",\"audio\":\"orbit.mp3\"},{\"word\":\"orchestra\",\"pronun\":\"[ˈɔːrkɪstrə]\",\"translation\":\"n. 管弦乐队；乐队演奏处\",\"audio\":\"orchestra.mp3\"},{\"word\":\"ore\",\"pronun\":\"[ɔːr]\",\"translation\":\"n. 矿；矿石\",\"audio\":\"ore.mp3\"},{\"word\":\"orient\",\"pronun\":\"[ˈɔːrient]\",\"translation\":\"vt. 使适应；确定方向；使朝东\\nn. 东方；东方诸国\\nadj. 东方的\\nvi. 向东\",\"audio\":\"orient.mp3\"},{\"word\":\"Oriental\",\"pronun\":\"\",\"translation\":\"adj. 东方的；东方人的\\nn. 东方人\",\"audio\":\"Oriental.mp3\"},{\"word\":\"orientation\",\"pronun\":\"[ˌɔːriənˈteɪʃn]\",\"translation\":\"n. 方向；定向；适应；情况介绍；向东方\",\"audio\":\"orientation.mp3\"},{\"word\":\"origin\",\"pronun\":\"[ˈɔːrɪdʒɪn]\",\"translation\":\"n. 起源；原点；出身；开端\",\"audio\":\"origin.mp3\"},{\"word\":\"original\",\"pronun\":\"[əˈrɪdʒənl]\",\"translation\":\"n. 原件；原作；原物；原型\\nadj. 原始的；最初的；独创的；新颖的\",\"audio\":\"original.mp3\"},{\"word\":\"originate\",\"pronun\":\"[əˈrɪdʒɪneɪt]\",\"translation\":\"vt. 引起；创作\\nvi. 发源；发生；起航\",\"audio\":\"originate.mp3\"},{\"word\":\"ornament\",\"pronun\":\"[ˈɔːrnəmənt]\",\"translation\":\"n. 装饰；[建][服装] 装饰物；教堂用品\\nvt. 装饰，修饰\",\"audio\":\"ornament.mp3\"},{\"word\":\"orthodox\",\"pronun\":\"[ˈɔːrθədɑːks]\",\"translation\":\"adj. 正统的；传统的；惯常的；东正教的\\nn. 正统的人；正统的事物\",\"audio\":\"orthodox.mp3\"},{\"word\":\"outbreak\",\"pronun\":\"[ˈaʊtbreɪk]\",\"translation\":\"n. （战争的）爆发；（疾病的）发作\\nvi. 爆发\",\"audio\":\"outbreak.mp3\"},{\"word\":\"outcry\",\"pronun\":\"[ˈaʊtkraɪ]\",\"translation\":\"n. 强烈抗议；大声疾呼；尖叫；倒彩\",\"audio\":\"outcry.mp3\"},{\"word\":\"outfit\",\"pronun\":\"[ˈaʊtfɪt]\",\"translation\":\"n. 机构；用具；全套装备\\nvi. 得到装备\\nvt. 配备；供应\",\"audio\":\"outfit.mp3\"},{\"word\":\"outline\",\"pronun\":\"[ˈaʊtlaɪn]\",\"translation\":\"n. 轮廓；大纲；概要；略图\\nvt. 概述；略述；描画…轮廓\",\"audio\":\"outline.mp3\"},{\"word\":\"output\",\"pronun\":\"[ˈaʊtpʊt]\",\"translation\":\"n. 输出，输出量；产量；出产\\nvt. 输出\",\"audio\":\"output.mp3\"},{\"word\":\"outrage\",\"pronun\":\"[ˈaʊtreɪdʒ]\",\"translation\":\"n. 愤怒，愤慨；暴行；侮辱\\nvt. 凌辱，强奸；对…施暴行；激起愤怒\",\"audio\":\"outrage.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

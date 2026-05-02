@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.573822+00:00",
+  "request": {
+    "lesson_id": "fef9336eea38215abddece5fdcbc1ee6",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 332,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "fef9336eea38215abddece5fdcbc1ee6",
+    "nextLessonId": "05f4d7c3971dfade6b77b0088dd8a760",
+    "lessonName": "六级词汇正序版-49",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第49课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "7d46e23f6a21ae2a45c0ee3b2daa5e3a",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"fort\",\"pronun\":\"[fɔːrt]\",\"translation\":\"n. 堡垒；要塞；（美）边界贸易站\\nvt. 设要塞保卫\\nvi. 构筑要塞\",\"audio\":\"fort.mp3\"},{\"word\":\"forthcoming\",\"pronun\":\"[ˌfɔːrθˈkʌmɪŋ]\",\"translation\":\"n. 来临\\nadj. 即将来临的\",\"audio\":\"forthcoming.mp3\"},{\"word\":\"forum\",\"pronun\":\"[ˈfɔːrəm]\",\"translation\":\"n. 论坛，讨论会；法庭；公开讨论的广场\",\"audio\":\"forum.mp3\"},{\"word\":\"fossil\",\"pronun\":\"[ˈfɑːsl]\",\"translation\":\"n. 化石；僵化的事物；顽固不化的人\\nadj. 化石的；陈腐的，守旧的\",\"audio\":\"fossil.mp3\"},{\"word\":\"foster\",\"pronun\":\"[ˈfɑːstər]\",\"translation\":\"vt. 培养；养育，抚育；抱（希望等）\\nadj. 收养的，养育的\",\"audio\":\"foster.mp3\"},{\"word\":\"foul\",\"pronun\":\"[faʊl]\",\"translation\":\"n. 犯规；缠绕\\nadj. 犯规的；邪恶的；污秽的；淤塞的\\nvt. 犯规；弄脏；淤塞；缠住，妨害\\nadv. 违反规则地，不正当地\\nvi. 犯规；腐烂；缠结\",\"audio\":\"foul.mp3\"},{\"word\":\"fraction\",\"pronun\":\"[ˈfrækʃn]\",\"translation\":\"n. 分数；部分；小部分；稍微\",\"audio\":\"fraction.mp3\"},{\"word\":\"fracture\",\"pronun\":\"[ˈfræktʃər]\",\"translation\":\"n. 破裂，断裂；[外科] 骨折\\nvt. 使破裂\\nvi. 破裂；折断\",\"audio\":\"fracture.mp3\"},{\"word\":\"fragile\",\"pronun\":\"[ˈfrædʒl]\",\"translation\":\"adj. 脆的；易碎的\",\"audio\":\"fragile.mp3\"},{\"word\":\"fragrance\",\"pronun\":\"[ˈfreɪɡrəns]\",\"translation\":\"n. 香味，芬芳\",\"audio\":\"fragrance.mp3\"},{\"word\":\"frantic\",\"pronun\":\"[ˈfræntɪk]\",\"translation\":\"adj. 狂乱的，疯狂的\",\"audio\":\"frantic.mp3\"},{\"word\":\"fraud\",\"pronun\":\"[frɔːd]\",\"translation\":\"n. 欺骗；骗子；诡计\",\"audio\":\"fraud.mp3\"},{\"word\":\"frequency\",\"pronun\":\"[ˈfriːkwənsi]\",\"translation\":\"n. 频率；频繁\",\"audio\":\"frequency.mp3\"},{\"word\":\"frequent\",\"pronun\":\"[ˈfriːkwənt; friˈkwent]\",\"translation\":\"adj. 频繁的；时常发生的；惯常的\\nvt. 常到，常去；时常出入于\",\"audio\":\"frequent.mp3\"},{\"word\":\"friction\",\"pronun\":\"[ˈfrɪkʃn]\",\"translation\":\"n. 摩擦，[力] 摩擦力\",\"audio\":\"friction.mp3\"},{\"word\":\"fringe\",\"pronun\":\"[frɪndʒ]\",\"translation\":\"n. 边缘；穗；刘海\\nadj. 边缘的；附加的\\nvt. 加穗于\",\"audio\":\"fringe.mp3\"},{\"word\":\"frustration\",\"pronun\":\"[frʌˈstreɪʃn]\",\"translation\":\"n. 挫折\",\"audio\":\"frustration.mp3\"},{\"word\":\"fuel\",\"pronun\":\"[ˈfjuːəl]\",\"translation\":\"n. 燃料；刺激因素\\nvt. 供以燃料，加燃料\\nvi. 得到燃料\",\"audio\":\"fuel.mp3\"},{\"word\":\"fulfill\",\"pronun\":\"[fʊlˈfɪl]\",\"translation\":\"vt. 履行；实现；满足；使结束（等于fulfil）\",\"audio\":\"fulfill.mp3\"},{\"word\":\"function\",\"pronun\":\"[ˈfʌŋkʃn]\",\"translation\":\"n. 功能；[数] 函数；职责；盛大的集会\\nvi. 运行；活动；行使职责\",\"audio\":\"function.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

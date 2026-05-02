@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.445102+00:00",
+  "request": {
+    "lesson_id": "8565d4b078fdf30f79744d56610d3c7d",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 76,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "8565d4b078fdf30f79744d56610d3c7d",
+    "nextLessonId": "22f871689bfdcd12d823f81580a2080d",
+    "lessonName": "KET核心词-67",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第67课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d0b237523644bbc13119826669dcfebc",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"throw\",\"pronun\":\"[θroʊ]\",\"translation\":\"n. 投掷；冒险\\nvt. 投；抛；掷\\nvi. 抛；投掷\",\"audio\":\"throw.mp3\"},{\"word\":\"thunderstorm\",\"pronun\":\"[ˈθʌndərstɔːrm]\",\"translation\":\"n. [气象] 雷暴；雷暴雨；大雷雨\",\"audio\":\"thunderstorm.mp3\"},{\"word\":\"tick\",\"pronun\":\"[tɪk]\",\"translation\":\"n. 滴答声；扁虱；记号；赊欠\\nvt. 标记号于；滴答地记录\\nvi. 发出滴答声；标以记号\",\"audio\":\"tick.mp3\"},{\"word\":\"ticket\",\"pronun\":\"[ˈtɪkɪt]\",\"translation\":\"vt. 加标签于；指派；对…开出交通违规罚单\",\"audio\":\"ticket.mp3\"},{\"word\":\"tidy\",\"pronun\":\"[ˈtaɪdi]\",\"translation\":\"n. 椅子的背罩\\nadj. 整齐的；相当大的\\nvi. 整理；收拾\\nvt. 整理；收拾；弄整齐\",\"audio\":\"tidy.mp3\"},{\"word\":\"tie\",\"pronun\":\"[taɪ]\",\"translation\":\"n. 领带；平局；鞋带；领结；不分胜负\\nvi. 打结；不分胜负；被用带（或绳子等）系住\\nvt. 系；约束；打结；与…成平局\",\"audio\":\"tie.mp3\"},{\"word\":\"till\",\"pronun\":\"[tɪl]\",\"translation\":\"prep. 直到\\nconj. 直到...为止\\nn. [地理][水文] 冰碛；放钱的抽屉；备用现金\\nvt. 耕种；犁\\nvi. 耕种；耕耘\",\"audio\":\"till.mp3\"},{\"word\":\"time\",\"pronun\":\"[taɪm]\",\"translation\":\"n. 时间；时代；次数；节拍；倍数\\nadj. 定时的；定期的；分期的\\nvt. 计时；测定…的时间；安排…的速度\",\"audio\":\"time.mp3\"},{\"word\":\"tin\",\"pronun\":\"[tɪn]\",\"translation\":\"n. 锡；罐头，罐；马口铁\\nadj. 锡制的\\nvt. 涂锡于；给…包马口铁\",\"audio\":\"tin.mp3\"},{\"word\":\"tip\",\"pronun\":\"[tɪp]\",\"translation\":\"n. 小费；尖端；小建议，小窍门；轻拍\\nvt. 给小费；倾斜；翻倒；装顶端\\nvi. 给小费；翻倒；倾覆\",\"audio\":\"tip.mp3\"},{\"word\":\"tire\",\"pronun\":\"[ˈtaɪər]\",\"translation\":\"n. 轮胎；头饰\\nvt. 使…疲倦；使…厌烦\\nvi. 疲劳；厌倦\",\"audio\":\"tire.mp3\"},{\"word\":\"title\",\"pronun\":\"[ˈtaɪtl]\",\"translation\":\"n. 冠军；标题；头衔；权利；字幕\\nadj. 冠军的；标题的；头衔的\\nvt. 加标题于；赋予头衔；把…称为\",\"audio\":\"title.mp3\"},{\"word\":\"to\",\"pronun\":\"[tə; tu; tuː]\",\"translation\":\"prep. 到；向；（表示时间、方向）朝…方向\\nadv. 向前；（门等）关上\",\"audio\":\"to.mp3\"},{\"word\":\"toast\",\"pronun\":\"[toʊst]\",\"translation\":\"n. 干杯；烤面包；接受敬酒的人；（在某领域）广受赞誉的人\\nvt. 向…祝酒，为…干杯\\nvi. 烤火，取暖；使暖和；烘烤（面包片等）\",\"audio\":\"toast.mp3\"},{\"word\":\"tomorrow\",\"pronun\":\"[təˈmɑːroʊ]\",\"translation\":\"n. 明天；未来\\nadv. 明天；未来地（等于to-morrow）\",\"audio\":\"tomorrow.mp3\"},{\"word\":\"toe\",\"pronun\":\"[toʊ]\",\"translation\":\"n. 脚趾；足尖\\nvt. 用脚尖走；以趾踏触\\nvi. 动脚尖；用足尖跳舞\",\"audio\":\"toe.mp3\"},{\"word\":\"together\",\"pronun\":\"[təˈɡeðər]\",\"translation\":\"adj. 新潮的；情绪稳定的，做事有效率的\\nadv. 一起；同时；相互；连续地；总共\",\"audio\":\"together.mp3\"},{\"word\":\"toilet\",\"pronun\":\"[ˈtɔɪlət]\",\"translation\":\"n. 厕所，盥洗室；梳妆，打扮\\nvt. 给…梳妆打扮\\nvi. 梳妆，打扮\",\"audio\":\"toilet.mp3\"},{\"word\":\"tomato\",\"pronun\":\"[təˈmeɪtoʊ]\",\"translation\":\"n. 番茄，西红柿\",\"audio\":\"tomato.mp3\"},{\"word\":\"tongue\",\"pronun\":\"[tʌŋ]\",\"translation\":\"n. 舌头；语言\\nvt. 舔；斥责；用舌吹\\nvi. 说话；吹管乐器\",\"audio\":\"tongue.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

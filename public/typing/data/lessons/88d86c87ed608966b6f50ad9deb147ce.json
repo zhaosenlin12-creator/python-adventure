@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.195675+00:00",
+  "request": {
+    "lesson_id": "88d86c87ed608966b6f50ad9deb147ce",
+    "course_id": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "order": 455,
+    "nextCourseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "courseName": "英语每日故事（初级）1-31",
+    "lessonId": "88d86c87ed608966b6f50ad9deb147ce",
+    "nextLessonId": "81a72d9ba630fd2757c80f2812381bf7",
+    "lessonName": "Report Card",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "70076233999ace3ad1a63cc07b99dedb",
+        "index": 1,
+        "text": [
+          "Pat stopped working and came out of his office. He wanted to see what others were doing in the next room.\\nHe told them that his 95-year-old mother still kept his kindergarten report card.\\n\"What did the report card say?\" asked one of his friends.\\n\"Stop visiting your neighbours!\" said Pat."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

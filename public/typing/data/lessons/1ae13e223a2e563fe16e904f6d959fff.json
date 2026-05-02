@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.381786+00:00",
+  "request": {
+    "lesson_id": "1ae13e223a2e563fe16e904f6d959fff",
+    "course_id": "d47f40df8593ffe75da61fffca274131",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "d47f40df8593ffe75da61fffca274131",
+    "order": 254,
+    "nextCourseId": "d47f40df8593ffe75da61fffca274131",
+    "courseName": "汉字三级",
+    "lessonId": "1ae13e223a2e563fe16e904f6d959fff",
+    "nextLessonId": "0a495e421c8a6b04a5afe70470daba9b",
+    "lessonName": "《秋夜》 鲁迅",
+    "icon": " https://typing-web.oss-cn-shanghai.aliyuncs.com/key-icon/key-han-3.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "beae57a1eeaa3b404c1ba6844d1c3751",
+        "index": 1,
+        "text": [
+          "这上面的夜的天空，奇怪而高，我生平没有见过这样奇怪而高的天空。他仿佛要离开人间而去，使人们仰面不再看见。"
+        ],
+        "pinyin": "[[\"这\", \"zhè\"], [\"上\", \"shàng\"], [\"面\", \"miàn\"], [\"的\", \"de\"], [\"夜\", \"yè\"], [\"的\", \"de\"], [\"天\", \"tiān\"], [\"空\", \"kōng\"], [\"，\", \"\"], [\"奇\", \"qí\"], [\"怪\", \"guài\"], [\"而\", \"ér\"], [\"高\", \"gāo\"], [\"，\", \"\"], [\"我\", \"wǒ\"], [\"生\", \"shēng\"], [\"平\", \"píng\"], [\"没\", \"méi\"], [\"有\", \"yǒu\"], [\"见\", \"jiàn\"], [\"过\", \"guò\"], [\"这\", \"zhè\"], [\"样\", \"yàng\"], [\"奇\", \"qí\"], [\"怪\", \"guài\"], [\"而\", \"ér\"], [\"高\", \"gāo\"], [\"的\", \"de\"], [\"天\", \"tiān\"], [\"空\", \"kōng\"], [\"。\", \"\"], [\"他\", \"tā\"], [\"仿\", \"fǎng\"], [\"佛\", \"fú\"], [\"要\", \"yào\"], [\"离\", \"lí\"], [\"开\", \"kāi\"], [\"人\", \"rén\"], [\"间\", \"jiān\"], [\"而\", \"ér\"], [\"去\", \"qù\"], [\"，\", \"\"], [\"使\", \"shǐ\"], [\"人\", \"rén\"], [\"们\", \"men\"], [\"仰\", \"yǎng\"], [\"面\", \"miàn\"], [\"不\", \"bù\"], [\"再\", \"zài\"], [\"看\", \"kàn\"], [\"见\", \"jiàn\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 33,
+        "minSpeed": 25,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

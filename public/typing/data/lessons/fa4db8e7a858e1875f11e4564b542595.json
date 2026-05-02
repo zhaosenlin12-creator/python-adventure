@@ -1,0 +1,62 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.780454+00:00",
+  "request": {
+    "lesson_id": "fa4db8e7a858e1875f11e4564b542595",
+    "course_id": "66724e53770af94715b9e0524520eb74",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "66724e53770af94715b9e0524520eb74",
+    "order": 61,
+    "nextCourseId": "66724e53770af94715b9e0524520eb74",
+    "courseName": "基础练习-上排数字",
+    "lessonId": "fa4db8e7a858e1875f11e4564b542595",
+    "nextLessonId": "f7ab169f22f1642db73cad290ebaf2ab",
+    "lessonName": "7指法练习",
+    "icon": "data/assets/daziya.com/key-icon_num-7.6508a0cfc0.png",
+    "description": "数字输入练习 - 7指法练习",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "c363d9673c335a01bc3a4df6830b44bb",
+        "index": 1,
+        "highlights": [
+          "7"
+        ],
+        "text": [
+          "请用右手食指输入数字7"
+        ],
+        "detail": "新的数字键[7]"
+      }
+    ],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "107d5689aff2040670eaf7fdea211b9a",
+        "index": 2,
+        "text": [
+          "77777777777777777777"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "7",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

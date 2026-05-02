@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.534580+00:00",
+  "request": {
+    "lesson_id": "fdb6e7db9e6f8e35d8620ca68faf847e",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 97,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "fdb6e7db9e6f8e35d8620ca68faf847e",
+    "nextLessonId": "838c9e72da1671aae61d465212c9cf1d",
+    "lessonName": "KET核心词-130",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第130课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "810c7cf6f4071bcfec6be33d0e03573d",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"square\",\"pronun\":\"[skwer]\",\"translation\":\"n. 平方；广场；正方形\\nadj. 平方的；正方形的；直角的；正直的\\nvt. 使成方形；与…一致\\nvi. 一致；成方形\\nadv. 成直角地\",\"audio\":\"square.mp3\"},{\"word\":\"street\",\"pronun\":\"[striːt]\",\"translation\":\"n. 街道\\nadj. 街道的\",\"audio\":\"street.mp3\"},{\"word\":\"supermarket\",\"pronun\":\"[ˈsuːpərmɑːrkɪt]\",\"translation\":\"n. 超级市场；自助售货商店\",\"audio\":\"supermarket.mp3\"},{\"word\":\"traffic lights\",\"pronun\":\"\",\"translation\":\"n. 交通信号灯；红绿灯\",\"audio\":\"traffic_lights.mp3\"},{\"word\":\"turning\",\"pronun\":\"[ˈtɜːrnɪŋ]\",\"translation\":\"n. 转向；旋转；回转；转弯处\\nv. 旋转（turn的ing形式）\",\"audio\":\"turning.mp3\"},{\"word\":\"bank\",\"pronun\":\"[bæŋk]\",\"translation\":\"n. 银行；岸；浅滩；储库\\nvt. 将…存入银行；倾斜转弯\\nvi. 堆积；倾斜转弯\",\"audio\":\"bank.mp3\"},{\"word\":\"café\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"caf__.mp3\"},{\"word\":\"cafeteria\",\"pronun\":\"[ˌkæfəˈtɪriə]\",\"translation\":\"n. 自助餐厅\",\"audio\":\"cafeteria.mp3\"},{\"word\":\"cinema\",\"pronun\":\"[ˈsɪnəmə]\",\"translation\":\"n. 电影；电影院；电影业，电影制作术\",\"audio\":\"cinema.mp3\"},{\"word\":\"hotel\",\"pronun\":\"[hoʊˈtel]\",\"translation\":\"n. 旅馆，饭店；客栈\\nvt. 使…在饭店下榻\\nvi. 进行旅馆式办公\",\"audio\":\"hotel.mp3\"},{\"word\":\"museum\",\"pronun\":\"[mjuˈziːəm]\",\"translation\":\"n. 博物馆\",\"audio\":\"museum.mp3\"},{\"word\":\"petrol station\",\"pronun\":\"[ˈpetrəl steɪʃn]\",\"translation\":\"n. 汽车加油站\",\"audio\":\"petrol_station.mp3\"},{\"word\":\"post office\",\"pronun\":\"[ˈpost ɔfɪs]\",\"translation\":\"n. 邮局；邮政部门；邮政系统；邮差敲门游戏（儿童用假托的信件换取亲吻）\",\"audio\":\"post_office.mp3\"},{\"word\":\"restaurant\",\"pronun\":\"[ˈrestrɑːnt; ˈrestərɑːnt]\",\"translation\":\"n. 餐馆；[经] 饭店\",\"audio\":\"restaurant.mp3\"},{\"word\":\"sports centre\",\"pronun\":\"\",\"translation\":\"体育运动中心, 运动场\",\"audio\":\"sports_centre.mp3\"},{\"word\":\"theatre\",\"pronun\":\"[ˈθiːətər]\",\"translation\":\"n. 电影院，戏院；戏剧；阶梯式讲堂\",\"audio\":\"theatre.mp3\"},{\"word\":\"tourist information centre\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"tourist_information_centre.mp3\"},{\"word\":\"advise\",\"pronun\":\"[ədˈvaɪz]\",\"translation\":\"vt. 建议；劝告，忠告；通知；警告\\nvi. 建议；与…商量\",\"audio\":\"advise.mp3\"},{\"word\":\"agree\",\"pronun\":\"[əˈɡriː]\",\"translation\":\"vi. vi. 同意，意见一致；约定，商定\\nvt. 同意，赞成；承认；约定，商定\",\"audio\":\"agree.mp3\"},{\"word\":\"decide\",\"pronun\":\"[dɪˈsaɪd]\",\"translation\":\"vi. 决定，下决心\\nvt. 决定；解决；判决\",\"audio\":\"decide.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

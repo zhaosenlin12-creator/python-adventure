@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.756031+00:00",
+  "request": {
+    "lesson_id": "96b6c42a1a37879e886467d94b2fcd1c",
+    "course_id": "77cc7d3093a4e829cb2fb89b1788a0e1",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "77cc7d3093a4e829cb2fb89b1788a0e1",
+    "order": 119,
+    "nextCourseId": "77cc7d3093a4e829cb2fb89b1788a0e1",
+    "courseName": "拼音",
+    "lessonId": "96b6c42a1a37879e886467d94b2fcd1c",
+    "nextLessonId": "e8c92ec22b112be9a86233477954984f",
+    "lessonName": "拼音组合 i",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-py-i.932c424d8b.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "de82c60cd2d30a717782ad830c991097",
+        "index": 1,
+        "text": [
+          "ai bi ci di fei gei hai ji li mi ni pi qi ri si ti xi yi zi"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "abcdefghijklmnpqrstxyz",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 33,
+        "minSpeed": 10,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

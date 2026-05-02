@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.807488+00:00",
+  "request": {
+    "lesson_id": "a3b32f6c01aad965be190e04a1fe2b3d",
+    "course_id": "305e1352051511f2dff62dc198c6af98",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "305e1352051511f2dff62dc198c6af98",
+    "order": 71,
+    "nextCourseId": "305e1352051511f2dff62dc198c6af98",
+    "courseName": "1000个日常汉字",
+    "lessonId": "a3b32f6c01aad965be190e04a1fe2b3d",
+    "nextLessonId": "5cfeec767b390c2d4725256ea811e3a9",
+    "lessonName": "常见汉字1",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "1000个日常汉字 - 第1组（1-50字）",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "46de3e9d509ff1230f305f83400e591a",
+        "index": 1,
+        "text": [
+          "的一是了我不人在他有这个上们来到时大地为子中你说生国年着就那和要她出也得里后自以会家可下而过天去能对"
+        ],
+        "pinyin": "[[\"的\",\"de\"],[\"一\",\"yī\"],[\"是\",\"shì\"],[\"了\",\"le\"],[\"我\",\"wǒ\"],[\"不\",\"bù\"],[\"人\",\"rén\"],[\"在\",\"zài\"],[\"他\",\"tā\"],[\"有\",\"yǒu\"],[\"这\",\"zhè\"],[\"个\",\"gè\"],[\"上\",\"shàng\"],[\"们\",\"men\"],[\"来\",\"lái\"],[\"到\",\"dào\"],[\"时\",\"shí\"],[\"大\",\"dà\"],[\"地\",\"dì\"],[\"为\",\"wèi\"],[\"子\",\"zǐ\"],[\"中\",\"zhōng\"],[\"你\",\"nǐ\"],[\"说\",\"shuō\"],[\"生\",\"shēng\"],[\"国\",\"guó\"],[\"年\",\"nián\"],[\"着\",\"zhe\"],[\"就\",\"jiù\"],[\"那\",\"nà\"],[\"和\",\"hé\"],[\"要\",\"yào\"],[\"她\",\"tā\"],[\"出\",\"chū\"],[\"也\",\"yě\"],[\"得\",\"děi\"],[\"里\",\"lǐ\"],[\"后\",\"hòu\"],[\"自\",\"zì\"],[\"以\",\"yǐ\"],[\"会\",\"huì\"],[\"家\",\"jiā\"],[\"可\",\"kě\"],[\"下\",\"xià\"],[\"而\",\"ér\"],[\"过\",\"guò\"],[\"天\",\"tiān\"],[\"去\",\"qù\"],[\"能\",\"néng\"],[\"对\",\"duì\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 10,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.794039+00:00",
+  "request": {
+    "lesson_id": "37f41949afd484ab2e5b7964487f429d",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 373,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "37f41949afd484ab2e5b7964487f429d",
+    "nextLessonId": "3b3931c8e238eae34d7707695856c40d",
+    "lessonName": "六级词汇正序版-35",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第35课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "744bfbf4ff36ee6bb7428a8fe3219cd8",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"discreet\",\"pronun\":\"[dɪˈskriːt]\",\"translation\":\"adj. 谨慎的；小心的\",\"audio\":\"discreet.mp3\"},{\"word\":\"discrepancy\",\"pronun\":\"[dɪˈskrepənsi]\",\"translation\":\"n. 不符；矛盾；相差\",\"audio\":\"discrepancy.mp3\"},{\"word\":\"discrete\",\"pronun\":\"[dɪˈskriːt]\",\"translation\":\"n. 分立元件；独立部件\\nadj. 离散的，不连续的\",\"audio\":\"discrete.mp3\"},{\"word\":\"discriminate\",\"pronun\":\"[dɪˈskrɪmɪneɪt]\",\"translation\":\"vi. 区别；辨别\\nvt. 歧视；区别；辨别\",\"audio\":\"discriminate.mp3\"},{\"word\":\"disease\",\"pronun\":\"[dɪˈziːz]\",\"translation\":\"n. 病，[医] 疾病；弊病\\nvt. 传染；使…有病\",\"audio\":\"disease.mp3\"},{\"word\":\"disguise\",\"pronun\":\"[dɪsˈɡaɪz]\",\"translation\":\"n. 伪装；假装；用作伪装的东西\\nvt. 掩饰；假装；隐瞒\",\"audio\":\"disguise.mp3\"},{\"word\":\"disgust\",\"pronun\":\"[dɪsˈɡʌst]\",\"translation\":\"n. 厌恶，嫌恶\\nvt. 使厌恶；使作呕\",\"audio\":\"disgust.mp3\"},{\"word\":\"disintegration\",\"pronun\":\"[dɪsˌɪntɪˈɡreɪʃn]\",\"translation\":\"n. 瓦解，崩溃；分解\",\"audio\":\"disintegration.mp3\"},{\"word\":\"dismantle\",\"pronun\":\"[dɪsˈmæntl]\",\"translation\":\"vt. 拆除；取消；解散；除掉…的覆盖物\\nvi. 可拆卸\",\"audio\":\"dismantle.mp3\"},{\"word\":\"dismay\",\"pronun\":\"[dɪsˈmeɪ]\",\"translation\":\"n. 沮丧，灰心；惊慌\\nvt. 使沮丧；使惊慌\",\"audio\":\"dismay.mp3\"},{\"word\":\"dismiss\",\"pronun\":\"[dɪsˈmɪs]\",\"translation\":\"vt. 解散；解雇；开除；让...离开；不予理会、不予考虑\\nvi. 解散\",\"audio\":\"dismiss.mp3\"},{\"word\":\"disorder\",\"pronun\":\"[dɪsˈɔːrdər]\",\"translation\":\"n. 混乱；骚乱\\nvt. 使失调；扰乱\",\"audio\":\"disorder.mp3\"},{\"word\":\"dispatch\",\"pronun\":\"[dɪˈspætʃ]\",\"translation\":\"n. 派遣；急件\\nvt. 派遣；分派\",\"audio\":\"dispatch.mp3\"},{\"word\":\"disperse\",\"pronun\":\"[dɪˈspɜːrs]\",\"translation\":\"vt. 分散；使散开；传播\\nadj. 分散的\\nvi. 分散\",\"audio\":\"disperse.mp3\"},{\"word\":\"displace\",\"pronun\":\"[dɪsˈpleɪs]\",\"translation\":\"vt. 取代；置换；转移；把…免职；排水\",\"audio\":\"displace.mp3\"},{\"word\":\"display\",\"pronun\":\"[dɪˈspleɪ]\",\"translation\":\"n. 显示；炫耀\\nvt. 显示；表现；陈列\\nadj. 展览的；陈列用的\\nvi. [动] 作炫耀行为\",\"audio\":\"display.mp3\"},{\"word\":\"disposable\",\"pronun\":\"[dɪˈspoʊzəbl]\",\"translation\":\"adj. 可任意处理的；可自由使用的；用完即可丢弃的\",\"audio\":\"disposable.mp3\"},{\"word\":\"disposal\",\"pronun\":\"[dɪˈspoʊzl]\",\"translation\":\"n. 处理；支配；清理；安排\",\"audio\":\"disposal.mp3\"},{\"word\":\"dispose\",\"pronun\":\"[dɪˈspoʊz]\",\"translation\":\"n. 处置；性情\\nvi. 处理；安排；（能够）决定\\nvt. 处理；处置；安排\",\"audio\":\"dispose.mp3\"},{\"word\":\"disposition\",\"pronun\":\"[ˌdɪspəˈzɪʃn]\",\"translation\":\"n. 处置；[心理] 性情；[军] 部署；倾向\",\"audio\":\"disposition.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

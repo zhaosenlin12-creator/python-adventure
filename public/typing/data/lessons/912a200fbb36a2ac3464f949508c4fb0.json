@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.955804+00:00",
+  "request": {
+    "lesson_id": "912a200fbb36a2ac3464f949508c4fb0",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 190,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "912a200fbb36a2ac3464f949508c4fb0",
+    "nextLessonId": "f12c5dd565abe36efd2b0965ccb5e2ac",
+    "lessonName": "KET核心词-135",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第135课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d17eea557f7aa925571aa8749bf31522",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"stream\",\"pronun\":\"[striːm]\",\"translation\":\"n. 溪流；流动；潮流；光线\\nvt. 流出；涌出；使飘动\\nvi. 流；涌进；飘扬\",\"audio\":\"stream.mp3\"},{\"word\":\"thick\",\"pronun\":\"[θɪk]\",\"translation\":\"n. 最拥挤部分；活动最多部分；事物的粗大浓密部分\\nadj. 厚的；浓的；粗大的\\nadv. 密集地；浓浓地，厚厚地\",\"audio\":\"thick.mp3\"},{\"word\":\"valley\",\"pronun\":\"[ˈvæli]\",\"translation\":\"n. 山谷；流域；溪谷\",\"audio\":\"valley.mp3\"},{\"word\":\"waterfall\",\"pronun\":\"[ˈwɔːtərfɔːl]\",\"translation\":\"n. 瀑布；瀑布似的东西\",\"audio\":\"waterfall.mp3\"},{\"word\":\"daily\",\"pronun\":\"[ˈdeɪli]\",\"translation\":\"n. 日报；朝来夜去的女佣\\nadj. 日常的；每日的\\nadv. 日常地；每日；天天\",\"audio\":\"daily.mp3\"},{\"word\":\"journalist\",\"pronun\":\"[ˈdʒɜːrnəlɪst]\",\"translation\":\"n. 新闻工作者；报人；记日志者\",\"audio\":\"journalist.mp3\"},{\"word\":\"magazine\",\"pronun\":\"[ˈmæɡəziːn]\",\"translation\":\"n. 杂志；弹药库；胶卷盒\",\"audio\":\"magazine.mp3\"},{\"word\":\"monthly\",\"pronun\":\"[ˈmʌnθli]\",\"translation\":\"adj. 每月的，每月一次的；有效期为一个月的\\nn. 月刊\\nadv. 每月，每月一次\",\"audio\":\"monthly.mp3\"},{\"word\":\"newspaper\",\"pronun\":\"[ˈnuːzpeɪpər]\",\"translation\":\"n. 报纸\\n报社\\n旧报纸\",\"audio\":\"newspaper.mp3\"},{\"word\":\"photograph\",\"pronun\":\"[ˈfoʊtəɡræf]\",\"translation\":\"n. 照片，相片\\nvt. 为…拍照；使深深印入\\nvi. 拍照；在照片上显得\",\"audio\":\"photograph.mp3\"},{\"word\":\"report\",\"pronun\":\"[rɪˈpɔːrt]\",\"translation\":\"n. 报告；报道；成绩单\\nvt. 报告；报导；使报到\\nvi. 报告；报到；写报导\",\"audio\":\"report.mp3\"},{\"word\":\"reporter\",\"pronun\":\"[rɪˈpɔːrtər]\",\"translation\":\"n. 记者\",\"audio\":\"reporter.mp3\"},{\"word\":\"review\",\"pronun\":\"[rɪˈvjuː]\",\"translation\":\"n. 回顾；复习；评论；检讨；检阅\\nvt. 回顾；检查；复审\\nvi. 回顾；复习功课；写评论\",\"audio\":\"review.mp3\"},{\"word\":\"weekly\",\"pronun\":\"[ˈwiːkli]\",\"translation\":\"n. 周刊\\nadj. 每周的；周刊的；一周一次的\\nadv. 每周一次；逐周\",\"audio\":\"weekly.mp3\"},{\"word\":\"active\",\"pronun\":\"[ˈæktɪv]\",\"translation\":\"n. 主动语态；积极分子\\nadj. 积极的；活跃的；主动的；有效的；现役的\",\"audio\":\"active.mp3\"},{\"word\":\"aim for\",\"pronun\":\"\",\"translation\":\"un. 力求；以…为最终目的\",\"audio\":\"aim_for.mp3\"},{\"word\":\"cycle\",\"pronun\":\"[ˈsaɪkl]\",\"translation\":\"n. 循环；周期；自行车；整套；一段时间\\nvt. 使循环；使轮转\\nvi. 循环；骑自行车；轮转\",\"audio\":\"cycle.mp3\"},{\"word\":\"exercise\",\"pronun\":\"[ˈeksərsaɪz]\",\"translation\":\"n. 运动；练习；运用；操练；礼拜；典礼\\nvt. 锻炼；练习；使用；使忙碌；使惊恐\\nvi. 运动；练习\",\"audio\":\"exercise.mp3\"},{\"word\":\"fat\",\"pronun\":\"[fæt]\",\"translation\":\"n. 脂肪，肥肉\\nadj. 肥的，胖的；油腻的；丰满的\\nvt. 养肥；在…中加入脂肪\\nvi. 长肥\",\"audio\":\"fat.mp3\"},{\"word\":\"fit\",\"pronun\":\"[fɪt]\",\"translation\":\"n. 合身；发作；痉挛\\nadj. 健康的；合适的；恰当的；准备好的\\nvt. 安装；使……适应；使……合身；与……相符\\nvi. 符合，配合；适合；合身\",\"audio\":\"fit.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.186078+00:00",
+  "request": {
+    "lesson_id": "ec020d8e432db86ef252d8683a8f4ec7",
+    "course_id": "9983508511f457b02ddcae4777acab15",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "9983508511f457b02ddcae4777acab15",
+    "order": 131,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "JAVA",
+    "lessonId": "ec020d8e432db86ef252d8683a8f4ec7",
+    "nextLessonId": "6d86edf0756108b7012e5094dd821480",
+    "lessonName": "最大值最小值",
+    "icon": "data/assets/daziya.com/key-icon_key-java.09b827febf.png",
+    "description": "Java编程练习 - 最大值最小值",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1932d9573ca75e8ffc939808f3671879",
+        "index": 1,
+        "text": [
+          "class Main {\\n    public static void main(String[] args) {\\n        int[] arr = {23, 45, 12, 67, 34, 8, 90};\\n        int maxNum = arr[0], minNum = arr[0];\\n\\n        for (int i = 1; i < arr.length; i++) {\\n            if (arr[i] > maxNum) maxNum = arr[i];\\n            if (arr[i] < minNum) minNum = arr[i];\\n        }\\n\\n        System.out.println(\"最大值: \" + maxNum);\\n        System.out.println(\"最小值: \" + minNum);\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "java",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

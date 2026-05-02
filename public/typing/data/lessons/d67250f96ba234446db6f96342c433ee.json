@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.339981+00:00",
+  "request": {
+    "lesson_id": "d67250f96ba234446db6f96342c433ee",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 177,
+    "nextCourseId": "d7df026ff1d81047d30da28a958b118f",
+    "courseName": "golang",
+    "lessonId": "d67250f96ba234446db6f96342c433ee",
+    "nextLessonId": "0c60a2035f57e9d33120769c90ec6ecc",
+    "lessonName": "最大公约数",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - 最大公约数",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a7a01863f8306601b5fe5a94e8d13338",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport \"fmt\"\\n\\nfunc gcd(a, b int) int {\\n\tfor b != 0 {\\n\t\ta, b = b, a%b\\n\t}\\n\treturn a\\n}\\n\\nfunc gcdRecursive(a, b int) int {\\n\tif b == 0 {\\n\t\treturn a\\n\t}\\n\treturn gcdRecursive(b, a%b)\\n}\\n\\nfunc lcm(a, b int) int {\\n\treturn a * b / gcd(a, b)\\n}\\n\\nfunc main() {\\n\tpairs := [][]int{{48, 18}, {100, 75}, {17, 19}}\\n\\n\tfmt.Println(\"最大公约数和最小公倍数:\")\\n\tfor _, pair := range pairs {\\n\t\ta, b := pair[0], pair[1]\\n\t\tfmt.Printf(\"GCD(%d, %d) = %d\\n\", a, b, gcd(a, b))\\n\t\tfmt.Printf(\"LCM(%d, %d) = %d\\n\", a, b, lcm(a, b))\\n\t\tfmt.Println()\\n\t}\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

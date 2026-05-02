@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.023187+00:00",
+  "request": {
+    "lesson_id": "6f24b184021767b18f66a22cb75c23a0",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 2,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "6f24b184021767b18f66a22cb75c23a0",
+    "nextLessonId": "f18ceb9ad10bf1bc71fcaef1bb97574d",
+    "lessonName": "2022年版 PEP-三年级-上册-2",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-三年级-上册 - 第2课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "42c926b239027d9f2fbd5444c20e59d9",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"family\",\"pronun\":\"[ˈfæməli]\",\"translation\":\"n. 家庭；亲属；家族；子女；[生]科；语族；[化]族\\nadj. 家庭的；家族的；适合于全家的\",\"audio\":\"family.mp3\"},{\"word\":\"have\",\"pronun\":\"[həv; əv; hæv]\",\"translation\":\"aux. 已经\\nvt. 有；让；拿；从事；允许\",\"audio\":\"have.mp3\"},{\"word\":\"big\",\"pronun\":\"[bɪɡ]\",\"translation\":\"adj. 大的；重要的；量大的\\nadv. 大量地；顺利；夸大地\",\"audio\":\"big.mp3\"},{\"word\":\"cousin\",\"pronun\":\"[ˈkʌzn]\",\"translation\":\"n. 堂兄弟姊妹；表兄弟姊妹\",\"audio\":\"cousin.mp3\"},{\"word\":\"brother\",\"pronun\":\"[ˈbrʌðər]\",\"translation\":\"n. 兄弟；同事；战友\\nint. 我的老兄！\",\"audio\":\"brother.mp3\"},{\"word\":\"baby\",\"pronun\":\"[ˈbeɪbi]\",\"translation\":\"n. 婴儿，婴孩；孩子气的人\\nadj. 婴儿的；幼小的\\nvt. 纵容，娇纵；把……当婴儿般对待\",\"audio\":\"baby.mp3\"},{\"word\":\"uncle\",\"pronun\":\"[ˈʌŋkl]\",\"translation\":\"n. 叔叔；伯父；伯伯；舅父；姨丈；姑父\",\"audio\":\"uncle.mp3\"},{\"word\":\"aunt\",\"pronun\":\"[ænt]\",\"translation\":\"n. 阿姨；姑妈；伯母；舅妈\",\"audio\":\"aunt.mp3\"},{\"word\":\"small\",\"pronun\":\"[smɔːl]\",\"translation\":\"n. 小件物品；矮小的人\\nadj. 少的，小的；微弱的；几乎没有的；不重要的；幼小的\\nadv. 小小地；卑鄙地\",\"audio\":\"small.mp3\"},{\"word\":\"mum\",\"pronun\":\"[mʌm]\",\"translation\":\"adj. 沉默的\\nn. 妈妈（口语）；沉默；菊花\\nvi. 演哑剧\\nint. 别说话\",\"audio\":\"mum.mp3\"},{\"word\":\"dad\",\"pronun\":\"[dæd]\",\"translation\":\"n. 爸爸；爹爹\",\"audio\":\"dad.mp3\"},{\"word\":\"grandma\",\"pronun\":\"[ˈɡrænmɑː]\",\"translation\":\"n. 奶奶；外婆\",\"audio\":\"grandma.mp3\"},{\"word\":\"grandpa\",\"pronun\":\"[ˈɡrænpɑː]\",\"translation\":\"n. 爷爷；外公\",\"audio\":\"grandpa.mp3\"},{\"word\":\"grandfather\",\"pronun\":\"[ˈɡrænfɑːðər]\",\"translation\":\"n. 祖父；始祖\\nvt. 不受新规定限制\",\"audio\":\"grandfather.mp3\"},{\"word\":\"like\",\"pronun\":\"[laɪk]\",\"translation\":\"vt. 喜欢；想；愿意\\nvi. 喜欢；希望\\nprep. 像；如同\\nadj. 同样的；相似的\\nn. 爱好；同样的人或物\\nadv. 可能\\nconj. 好像\",\"audio\":\"like.mp3\"},{\"word\":\"dog\",\"pronun\":\"[dɔːɡ]\",\"translation\":\"n. 狗；卑鄙的人；(俚)朋友\\nvt. 跟踪；尾随\",\"audio\":\"dog.mp3\"},{\"word\":\"pet\",\"pronun\":\"[pet]\",\"translation\":\"n. 宠物；生气；受宠爱的人\\nadj. 宠爱的\\nvt. 宠爱\\nvi. 生气；爱抚\",\"audio\":\"pet.mp3\"},{\"word\":\"cat\",\"pronun\":\"[kæt]\",\"translation\":\"n. 猫，猫科动物\",\"audio\":\"cat.mp3\"},{\"word\":\"fish\",\"pronun\":\"[fɪʃ]\",\"translation\":\"n. 鱼，鱼类\\nvt. 钓鱼，捕鱼；搜寻\\nvi. 捕鱼，钓鱼；用钩捞取\",\"audio\":\"fish.mp3\"},{\"word\":\"bird\",\"pronun\":\"[bɜːrd]\",\"translation\":\"n. 鸟；家伙；羽毛球\\nvt. 向…喝倒彩；起哄\\nvi. 猎鸟；观察研究野鸟\",\"audio\":\"bird.mp3\"}]"
+        ],
+        "pinyin": "",
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

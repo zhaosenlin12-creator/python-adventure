@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.304248+00:00",
+  "request": {
+    "lesson_id": "9f1fdccbca6fef4dd5d6b3501268eb05",
+    "course_id": "507208abf6b7416a5e11a3c2bcd62136",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "507208abf6b7416a5e11a3c2bcd62136",
+    "order": 274,
+    "nextCourseId": "507208abf6b7416a5e11a3c2bcd62136",
+    "courseName": "高中必备3500词-下",
+    "lessonId": "9f1fdccbca6fef4dd5d6b3501268eb05",
+    "nextLessonId": "d8c46eb40956ddb0a1326061f26e46cc",
+    "lessonName": "Chapter.11",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "17a02add4c138dcddcc565cc6a041411",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"antique\",\"pronun\":\"\\/\\u00e6n\\u02c8ti:k\\/\",\"translation\":\"n.\\u53e4\\u7269;\\u53e4\\u8463 a.\\u53e4\\u8001\\u7684\"},{\"word\":\"pleasant\",\"pronun\":\"\\/\\u02c8pleznt\\/\",\"translation\":\"a.\\u4ee4\\u4eba\\u6109\\u5feb\\u7684;\\u53cb\\u597d\\u7684\"},{\"word\":\"arise\",\"pronun\":\"\\/\\u0259\\u02c8ra\\u026az\\/\",\"translation\":\"vi.\\u8d77\\u8eab;\\u51fa\\u73b0;\\u7531\\u2026\\u5f15\\u8d77\"},{\"word\":\"massive\",\"pronun\":\"\\/\\u02c8m\\u00e6s\\u026av\\/\",\"translation\":\"a.\\u5de8\\u5927\\u7684;\\u975e\\u5e38\\u4e25\\u91cd\\u7684\"},{\"word\":\"literally\",\"pronun\":\"\\/\\u02c8l\\u026at\\u0259r\\u0259li\\/\",\"translation\":\"ad.\\u5b57\\u9762\\u4e0a;\\u771f\\u6b63\\u5730\"},{\"word\":\"breath\",\"pronun\":\"\\/bre\\u03b8\\/\",\"translation\":\"n.\\u547c\\u5438\\u7684\\u7a7a\\u6c14\"},{\"word\":\"bound\",\"pronun\":\"\\/ba\\u028and\\/\",\"translation\":\"a.\\u51c6\\u5907\\u524d\\u5f80(\\u67d0\\u5730);\\u4e00\\u5b9a\\u4f1a\"},{\"word\":\"scenery\",\"pronun\":\"\\/\\u02c8si:n\\u0259ri\\/\",\"translation\":\"n.\\u98ce\\u666f;\\u666f\\u8272\"},{\"word\":\"awesome\",\"pronun\":\"\\/\\u02c8\\u0254:s\\u0259m\\/\",\"translation\":\"a.\\u4ee4\\u4eba\\u60ca\\u53f9\\u7684;\\u53ef\\u6015\\u7684\"},{\"word\":\"spectacular\",\"pronun\":\"\\/spek\\u02c8t\\u00e6kj\\u0259l\\u0259(r)\\/\",\"translation\":\"a.\\u58ee\\u89c2\\u7684;\\u58ee\\u4e3d\\u7684n.\\u58ee\\u4e3d\\u573a\\u9762\"},{\"word\":\"peak\",\"pronun\":\"\\/pi:k\\/\",\"translation\":\"n.\\u9876\\u5cf0;\\u5c71\\u5cf0;\\u5c16\\u5f62\"},{\"word\":\"highlight\",\"pronun\":\"\\/\\u02c8ha\\u026ala\\u026at\\/\",\"translation\":\"n.\\u6700\\u597d\\u7684\\u90e8\\u5206 vt.\\u7a81\\u51fa;\\u5f3a\\u8c03\"},{\"word\":\"goat\",\"pronun\":\"\\/g\\u0259\\u028at\\/\",\"translation\":\"n.\\u5c71\\u7f8a\"},{\"word\":\"freeze\",\"pronun\":\"\\/fri:z\\/\",\"translation\":\"vi.&vt.\\u7ed3\\u51b0;(\\u4f7f)\\u51bb\\u4f4f\"},{\"word\":\"prairie\",\"pronun\":\"\\/\\u02c8pre\\u0259ri\\/\",\"translation\":\"n.\\u5317\\u7f8e\\u8349\\u539f\"},{\"word\":\"anticipate\",\"pronun\":\"\\/\\u00e6n\\u02c8t\\u026as\\u026ape\\u026at\\/\",\"translation\":\"vt.\\u9884\\u6599;\\u9884\\u89c1;\\u671f\\u671b\"},{\"word\":\"bunch\",\"pronun\":\"\\/b\\u028cnt\\u0283\\/\",\"translation\":\"n.\\u675f;\\u4e32;\\u6346\"},{\"word\":\"frost\",\"pronun\":\"\\/fr\\u0252st\\/\",\"translation\":\"n.\\u971c;\\u4e25\\u5bd2\\u5929\\u6c14 vt.\\u4f7f\\u8499\\u4e0a\\u971c\"},{\"word\":\"curtain\",\"pronun\":\"\\/\\u02c8k\\u025c:tn\\/\",\"translation\":\"n.\\u7a97\\u5e18\"},{\"word\":\"border\",\"pronun\":\"\\/\\u02c8b\\u0254:d\\u0259(r)\\/\",\"translation\":\"n.\\u56fd\\u754c;\\u8fb9\\u754c(\\u5730\\u533a)\"},{\"word\":\"duration\",\"pronun\":\"\\/dju\\u02c8re\\u026a\\u0283n\\/\",\"translation\":\"n.\\u6301\\u7eed\\u65f6\\u95f4;\\u671f\\u95f4\"},{\"word\":\"enrol\",\"pronun\":\"\\/\\u026an\\u02c8r\\u0259\\u028al\\/\",\"translation\":\"vi.&vt.(\\u4f7f)\\u52a0\\u5165;\\u6ce8\\u518c;\\u767b\\u8bb0\"},{\"word\":\"quarry\",\"pronun\":\"\\/\\u02c8kw\\u0252ri\\/\",\"translation\":\"n.\\u91c7\\u77f3\\u573a\"},{\"word\":\"idiom\",\"pronun\":\"\\/\\u02c8\\u026adi\\u0259m\\/\",\"translation\":\"n.\\u4e60\\u8bed;\\u6210\\u8bed\"},{\"word\":\"contrary\",\"pronun\":\"\\/\\u02c8k\\u0252ntr\\u0259ri\\/\",\"translation\":\"a.\\u76f8\\u53cd\\u7684 n.\\u76f8\\u53cd\\u7684\\u4e8b\\u5b9e\"},{\"word\":\"anyhow\",\"pronun\":\"\\/\\u02c8eniha\\u028a\\/\",\"translation\":\"ad.(\\u7ed3\\u675f\\u4ea4\\u8c08)\\u4e0d\\u8fc7;\\u53cd\\u6b63\"},{\"word\":\"alongside\",\"pronun\":\"\\/\\u0259\\u02ccl\\u0252\\u014b\\u02c8sa\\u026ad\\/\",\"translation\":\"prep.\\u5728\\u2026\\u65c1\\u8fb9 ad.\\u5728\\u65c1\\u8fb9\"},{\"word\":\"proceed\",\"pronun\":\"\\/pr\\u0259\\u02c8si:d\\/\",\"translation\":\"vi.\\u884c\\u8fdb;\\u7ee7\\u7eed\\u505a\"},{\"word\":\"shore\",\"pronun\":\"\\/\\u0283\\u0254:(r)\\/\",\"translation\":\"n.\\u5cb8;\\u6ee8\"},{\"word\":\"astonish\",\"pronun\":\"\\/\\u0259\\u02c8st\\u0252n\\u026a\\u0283\\/\",\"translation\":\"vi.\\u4f7f\\u5341\\u5206\\u60ca\\u8bb6;\\u4f7f\\u5403\\u60ca\"},{\"word\":\"misty\",\"pronun\":\"\\/\\u02c8m\\u026asti\\/\",\"translation\":\"a.\\u591a\\u96fe\\u7684;\\u6a21\\u7cca\\u7684\"},{\"word\":\"mist\",\"pronun\":\"\\/m\\u026ast\\/\",\"translation\":\"n.\\u8584\\u96fe;\\u6c34\\u6c7d\"},{\"word\":\"dusk\",\"pronun\":\"\\/d\\u028csk\\/\",\"translation\":\"n.\\u9ec4\\u660f;\\u508d\\u665a\"},{\"word\":\"advertisement\",\"pronun\":\"\\/\\u0259d\\u02c8v\\u025c:t\\u026asm\\u0259nt\\/\",\"translation\":\"n.\\u5e7f\\u544a;\\u542f\\u4e8b\"},{\"word\":\"accent\",\"pronun\":\"\\/\\u02c8\\u00e6ksent\\/\",\"translation\":\"n.\\u53e3\\u97f3\"},{\"word\":\"photographer\",\"pronun\":\"\\/f\\u0259\\u02c8t\\u0252gr\\u0259f\\u0259(r)\\/\",\"translation\":\"n.\\u6444\\u5f71\\u5e08;\\u62cd\\u7167\\u8005\"},{\"word\":\"owe\",\"pronun\":\"\\/\\u0259\\u028a\\/\",\"translation\":\"vt.\\u6b20(\\u8d26\\u3001\\u503a\\u3001\\u60c5\\u7b49)\"},{\"word\":\"cobblestone\",\"pronun\":\"\\/\\u02c8k\\u0252blst\\u0259\\u028an\\/\",\"translation\":\"a.\\u94fa\\u6709\\u9e45\\u5375\\u77f3\\u7684\"},{\"word\":\"coherent\",\"pronun\":\"\\/k\\u0259\\u028a\\u02c8h\\u026a\\u0259r\\u0259nt\\/\",\"translation\":\"a.\\u6709\\u6761\\u7406\\u7684;\\u6e05\\u695a\\u6613\\u61c2\\u7684\"},{\"word\":\"Halifax\",\"pronun\":\"\",\"translation\":\"\\u54c8\\u5229\\u6cd5\\u514b\\u65af(\\u52a0\\u62ff\\u5927\\u57ce\\u5e02)\"},{\"word\":\"Vancouver\",\"pronun\":\"\\/v\\u00e6n\\u02c8ku:v\\u0259\\/\",\"translation\":\"\\u6e29\\u54e5\\u534e(\\u52a0\\u62ff\\u5927\\u57ce\\u5e02)\"},{\"word\":\"Jasper\",\"pronun\":\"\\/'d\\u0292\\u00e6sp\\u0259\\/\",\"translation\":\"\\u8d3e\\u65af\\u73c0(\\u52a0\\u62ff\\u5927\\u57ce\\u5e02)\"},{\"word\":\"Toronto\",\"pronun\":\"\\/t\\u0259'r\\u0252nt\\u0259\\u028a\\/\",\"translation\":\"\\u591a\\u4f26\\u591a(\\u52a0\\u62ff\\u5927\\u57ce\\u5e02)\"},{\"word\":\"Edmonton\",\"pronun\":\"\\/'edm\\u0259nt\\u0259n\\/\",\"translation\":\"\\u57c3\\u5fb7\\u8499\\u987f(\\u52a0\\u62ff\\u5927\\u57ce\\u5e02)\"},{\"word\":\"Winnipeg\",\"pronun\":\"\",\"translation\":\"\\u6e29\\u5c3c\\u4f2f(\\u52a0\\u62ff\\u5927\\u57ce\\u5e02)\"},{\"word\":\"Ontario\",\"pronun\":\"\\/\\u0252n'te\\u0259r\\u026a\\u0259\\u028a\\/\",\"translation\":\"\\u5b89\\u5927\\u7565\\u7701(\\u52a0\\u62ff\\u5927)\"},{\"word\":\"Montreal\",\"pronun\":\"\",\"translation\":\"\\u8499\\u7279\\u5229\\u5c14(\\u52a0\\u62ff\\u5927\\u57ce\\u5e02)\"},{\"word\":\"Jean-Philippe\",\"pronun\":\"\",\"translation\":\"\\u8ba9-\\u83f2\\u5229\\u666e\"},{\"word\":\"technique\",\"pronun\":\"\\/tek\\u02c8ni:k\\/\",\"translation\":\"n.\\u6280\\u80fd;\\u6280\\u672f;\\u6280\\u827a\"},{\"word\":\"leaflet\",\"pronun\":\"\\/\\u02c8li:fl\\u0259t\\/\",\"translation\":\"n.\\u6563\\u9875\\u5370\\u5237\\u54c1;\\u4f20\\u5355;\\u5c0f\\u518c\\u5b50\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 22,
+        "minSpeed": 16,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

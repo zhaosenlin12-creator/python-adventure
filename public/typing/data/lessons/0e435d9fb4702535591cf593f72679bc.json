@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.388892+00:00",
+  "request": {
+    "lesson_id": "0e435d9fb4702535591cf593f72679bc",
+    "course_id": "30951c93875a1e260feda8cb699005df",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "30951c93875a1e260feda8cb699005df",
+    "order": 501,
+    "nextCourseId": "30951c93875a1e260feda8cb699005df",
+    "courseName": "英语每日故事（初级）32-61",
+    "lessonId": "0e435d9fb4702535591cf593f72679bc",
+    "nextLessonId": "bf964fa654ac110993d79c1f541645a9",
+    "lessonName": "Who Is Your Hero?-2",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "eb05c44ccfc85f62e8c1770fa3cee6c0",
+        "index": 1,
+        "text": [
+          "I called my uncle. He said, 'You should write about your grandpa.' 'Why is Grandpa a hero?' I asked. 'He raised eight children when there was little food at that time,' said my uncle. 'He was a very skilled man, and he used his skills to help others. In return, people gave him food to feed the children.' Wow! I found a hero in my family."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

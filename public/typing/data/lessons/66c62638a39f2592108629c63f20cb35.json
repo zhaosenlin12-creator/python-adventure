@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.450714+00:00",
+  "request": {
+    "lesson_id": "66c62638a39f2592108629c63f20cb35",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 79,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "66c62638a39f2592108629c63f20cb35",
+    "nextLessonId": "931c78a13bc558e0a24ce0187cff9b89",
+    "lessonName": "KET核心词-76",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第76课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3ca5915c9ff086ad63d5f0e60e922835",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"butter\",\"pronun\":\"[ˈbʌtər]\",\"translation\":\"n. 黄油；奶油；奉承话\\nvt. 涂黄油于；讨好\",\"audio\":\"butter.mp3\"},{\"word\":\"cabbage\",\"pronun\":\"[ˈkæbɪdʒ]\",\"translation\":\"n. 卷心菜，甘蓝菜，洋白菜；（俚)脑袋；（非正式、侮辱）植物人（常用于英式英语）；（俚）钱，尤指纸币（常用于美式俚语）\",\"audio\":\"cabbage.mp3\"},{\"word\":\"cake\",\"pronun\":\"[keɪk]\",\"translation\":\"n. 蛋糕；块状物；利益总额\\nvt. 使结块\\nvi. 结成块状\",\"audio\":\"cake.mp3\"},{\"word\":\"can\",\"pronun\":\"[kən; kæn]\",\"translation\":\"aux. 能； 能够； 可以； 可能\\nn. 罐头； （用金属或塑料制作的）容器； （马口铁或其他金属制作的）食品罐头\\nvt. 将…装入密封罐中保存\",\"audio\":\"can.mp3\"},{\"word\":\"candy\",\"pronun\":\"[ˈkændi]\",\"translation\":\"n. 糖果（等于sweets）；冰糖（等于sugar candy，rock candy）；毒品\\nadj. 新潮的（服饰）；甜言蜜语的\\nvt. 用糖煮；使结晶为砂糖；美化\\nvi. 糖煮；成为结晶\",\"audio\":\"candy.mp3\"},{\"word\":\"carrot\",\"pronun\":\"[ˈkærət]\",\"translation\":\"n. 胡萝卜\\n诱饵\",\"audio\":\"carrot.mp3\"},{\"word\":\"cereal\",\"pronun\":\"[ˈsɪriəl]\",\"translation\":\"n. 谷类，谷物；谷类食品；谷类植物\\nadj. 谷类的；谷类制成的\",\"audio\":\"cereal.mp3\"},{\"word\":\"cheese\",\"pronun\":\"[tʃiːz]\",\"translation\":\"n. [食品] 奶酪；干酪；要人\\nadj. 叛变的；胆小的\\nvt. 停止\",\"audio\":\"cheese.mp3\"},{\"word\":\"chicken\",\"pronun\":\"[ˈtʃɪkɪn]\",\"translation\":\"n. 鸡肉；小鸡；胆小鬼，懦夫\\nadj. 鸡肉的；胆怯的；幼小的\",\"audio\":\"chicken.mp3\"},{\"word\":\"chilli\",\"pronun\":\"[ˈtʃɪli]\",\"translation\":\"n. 红辣椒\",\"audio\":\"chilli.mp3\"},{\"word\":\"chips\",\"pronun\":\"[tʃɪps]\",\"translation\":\"n. [食品] 炸土豆条；小木片；（作赌注用的）圆形筹码；缺口（chip的复数形式）\",\"audio\":\"chips.mp3\"},{\"word\":\"chocolate\",\"pronun\":\"[ˈtʃɔːklət]\",\"translation\":\"n. 巧克力，巧克力糖；巧克力色\\nadj. 巧克力色的；巧克力口味的\",\"audio\":\"chocolate.mp3\"},{\"word\":\"coconut\",\"pronun\":\"[ˈkoʊkənʌt]\",\"translation\":\"n. 椰子；椰子肉\",\"audio\":\"coconut.mp3\"},{\"word\":\"coffee\",\"pronun\":\"[ˈkɔːfi]\",\"translation\":\"n. 咖啡；咖啡豆；咖啡色\",\"audio\":\"coffee.mp3\"},{\"word\":\"coke\",\"pronun\":\"[koʊk]\",\"translation\":\"n. 可口可乐（等于Coca-Cola）\",\"audio\":\"coke.mp3\"},{\"word\":\"cola\",\"pronun\":\"[ˈkoʊlə]\",\"translation\":\"n. 可乐；可乐树（其子含咖啡碱）\",\"audio\":\"cola.mp3\"},{\"word\":\"cookie\",\"pronun\":\"[ˈkʊki]\",\"translation\":\"n. 饼干；小甜点\",\"audio\":\"cookie.mp3\"},{\"word\":\"cream\",\"pronun\":\"[kriːm]\",\"translation\":\"n. 奶油，乳脂；精华；面霜；乳酪\",\"audio\":\"cream.mp3\"},{\"word\":\"cucumber\",\"pronun\":\"[ˈkjuːkʌmbər]\",\"translation\":\"n. 黄瓜；胡瓜\",\"audio\":\"cucumber.mp3\"},{\"word\":\"curry\",\"pronun\":\"[ˈkɜːri]\",\"translation\":\"n. 咖哩粉，咖喱；咖哩饭菜\\nvt. 用咖喱烧，给…加咖喱粉；梳刷；鞭打\",\"audio\":\"curry.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.040848+00:00",
+  "request": {
+    "lesson_id": "34148b517e8f522247cdcb0e8d44a673",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 6,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "34148b517e8f522247cdcb0e8d44a673",
+    "nextLessonId": "8b862a8ad29ca800e7988ce15e05d0f7",
+    "lessonName": "2022年版 PEP-三年级-下册-1",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-三年级-下册 - 第1课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "efe03bae329997830efecbd68a1ba067",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"where\",\"pronun\":\"[wer]\",\"translation\":\"conj. 在…的地方\\nn. 地点\\nadv. 在哪里\\npron. 哪里\",\"audio\":\"where.mp3\"},{\"word\":\"from\",\"pronun\":\"[frəm; frʌm; frɑːm]\",\"translation\":\"prep. 来自，从；由于；今后\",\"audio\":\"from.mp3\"},{\"word\":\"about\",\"pronun\":\"[əˈbaʊt]\",\"translation\":\"prep. 关于；大约\\nn. 大致；粗枝大叶；不拘小节的人\\nadj. 在附近的；四处走动的；在起作用的\\nadv. 大约；周围；到处\",\"audio\":\"about.mp3\"},{\"word\":\"today\",\"pronun\":\"[təˈdeɪ]\",\"translation\":\"n. 今天；现今\\nadv. 今天；现今\",\"audio\":\"today.mp3\"},{\"word\":\"teacher\",\"pronun\":\"[ˈtiːtʃər]\",\"translation\":\"n. 教师；导师\",\"audio\":\"teacher.mp3\"},{\"word\":\"student\",\"pronun\":\"[ˈstuːdnt]\",\"translation\":\"n. 学生；学者\",\"audio\":\"student.mp3\"},{\"word\":\"after\",\"pronun\":\"[ˈæftər]\",\"translation\":\"conj. 在……之后\\nprep. 在……之后\\nadj. 以后的\\nadv. 后来，以后\",\"audio\":\"after.mp3\"},{\"word\":\"who\",\"pronun\":\"[huː]\",\"translation\":\"pron. 谁；什么人\",\"audio\":\"who.mp3\"},{\"word\":\"girl\",\"pronun\":\"[ɡɜːrl]\",\"translation\":\"n. 女孩；姑娘，未婚女子；女职员，女演员；（男人的）女朋友\\nn. （捷）吉尔\",\"audio\":\"girl.mp3\"},{\"word\":\"neighbour\",\"pronun\":\"[ˈneɪbər]\",\"translation\":\"n. n. 邻居;同胞；仁慈的人\\nvt. 邻接\\nvi. 住在邻近；毗邻；友善，和睦\\nadj. 邻居的；邻近的\",\"audio\":\"neighbour.mp3\"},{\"word\":\"boy\",\"pronun\":\"[bɔɪ]\",\"translation\":\"n. 男孩；男人\",\"audio\":\"boy.mp3\"},{\"word\":\"woman\",\"pronun\":\"[ˈwʊmən]\",\"translation\":\"n. 妇女；女性；成年女子\",\"audio\":\"woman.mp3\"},{\"word\":\"man\",\"pronun\":\"[mæn]\",\"translation\":\"n. 人；男人；人类；丈夫；雇工\\nvt. 操纵；给…配置人员；使增强勇气；在…就位\",\"audio\":\"man.mp3\"},{\"word\":\"Mr\",\"pronun\":\"[ˈmɪstər]\",\"translation\":\"abbr. 先生（Mister）\",\"audio\":\"Mr.mp3\"},{\"word\":\"classmate\",\"pronun\":\"[ˈklæsmeɪt]\",\"translation\":\"n. 同班同学\",\"audio\":\"classmate.mp3\"},{\"word\":\"he\",\"pronun\":\"[hi; iː; i; hiː]\",\"translation\":\"n. 男孩，男人；它（雄性动物）\\npron. 他\",\"audio\":\"he.mp3\"},{\"word\":\"English\",\"pronun\":\"[ˈɪŋɡlɪʃ]\",\"translation\":\"n. 英语；英国人；英文；英格兰人\\nadj. 英国人的；英国的；英文的\\nvt. 把…译成英语\",\"audio\":\"English.mp3\"},{\"word\":\"she\",\"pronun\":\"[ʃi; ʃiː]\",\"translation\":\"n. 女人；雌性动物\\npron. 她（主格）；它（用来指雌性动物或国家、船舶、地球、月亮等）\",\"audio\":\"she.mp3\"},{\"word\":\"very\",\"pronun\":\"[ˈveri]\",\"translation\":\"adv. 非常，很；完全\\nadj. 恰好是，正是；甚至；十足的；特有的\",\"audio\":\"very.mp3\"},{\"word\":\"UK\",\"pronun\":\"[ˌjuː ˈkeɪ]\",\"translation\":\"n. 英国\\nabbr. 联合王国（United Kingdom）\",\"audio\":\"UK.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

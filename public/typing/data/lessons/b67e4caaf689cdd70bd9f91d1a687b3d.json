@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.508809+00:00",
+  "request": {
+    "lesson_id": "b67e4caaf689cdd70bd9f91d1a687b3d",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 530,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "b67e4caaf689cdd70bd9f91d1a687b3d",
+    "nextLessonId": "5cde325cb225797b16011d178128e6ae",
+    "lessonName": "The Butterfly",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "0f8f944f0434055ba3a623e57963920a",
+        "index": 1,
+        "text": [
+          "One day, we were playing outside. Suddenly, a big purple butterfly flew over to us.\\n\"Let's catch it!\" said my sister. We chased the butterfly and caught it. It was beautiful. We put it in a cage.\\nSoon, the butterfly stopped moving. We realized that the butterfly had to go.\\nIf we kept it in the cage, it would die soon. So we set it free and said, \"Goodbye butterfly!\""
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

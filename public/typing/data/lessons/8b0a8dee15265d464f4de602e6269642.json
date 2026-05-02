@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.765188+00:00",
+  "request": {
+    "lesson_id": "8b0a8dee15265d464f4de602e6269642",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 367,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "8b0a8dee15265d464f4de602e6269642",
+    "nextLessonId": "1d4e81af2190bee3e86a618bba8e03b8",
+    "lessonName": "六级词汇正序版-17",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第17课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e60b7b64501d93e44734bdd01deb6f25",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"chapel\",\"pronun\":\"[ˈtʃæpl]\",\"translation\":\"n. 小礼拜堂，小教堂；礼拜\\nadj. 非国教的\",\"audio\":\"chapel.mp3\"},{\"word\":\"character\",\"pronun\":\"[ˈkærəktər]\",\"translation\":\"n. 性格，品质；特性；角色；[计] 字符\\nvt. 印，刻；使具有特征\",\"audio\":\"character.mp3\"},{\"word\":\"characteristic\",\"pronun\":\"[ˌkærəktəˈrɪstɪk]\",\"translation\":\"n. 特征；特性；特色\\nadj. 典型的；特有的；表示特性的\",\"audio\":\"characteristic.mp3\"},{\"word\":\"characterize\",\"pronun\":\"[ˈkærəktəraɪz]\",\"translation\":\"vt. 描绘…的特性；具有…的特征\\nvi. 塑造人物\",\"audio\":\"characterize.mp3\"},{\"word\":\"charge\",\"pronun\":\"[tʃɑːrdʒ]\",\"translation\":\"n. 费用；电荷；掌管；控告；命令；负载\\nvt. 使充电；使承担；指责；装载；对…索费；向…冲去\\nvi. 充电；控告；索价；向前冲；记在账上\",\"audio\":\"charge.mp3\"},{\"word\":\"chase\",\"pronun\":\"[tʃeɪs]\",\"translation\":\"n. 追逐；追赶；追击\\nvt. 追逐；追捕；试图赢得；雕镂\\nvi. 追逐；追赶；奔跑\",\"audio\":\"chase.mp3\"},{\"word\":\"cherish\",\"pronun\":\"[ˈtʃerɪʃ]\",\"translation\":\"vt. 珍爱\\nvt. 怀有（感情等）；抱有（希望等）\",\"audio\":\"cherish.mp3\"},{\"word\":\"chief\",\"pronun\":\"[tʃiːf]\",\"translation\":\"n. 首领；酋长；主要部分\\nadj. 首席的；主要的；主任的\\nadv. 主要地；首要地\",\"audio\":\"chief.mp3\"},{\"word\":\"chip\",\"pronun\":\"[tʃɪp]\",\"translation\":\"n. [电子] 芯片；筹码；碎片；(食物的) 小片; 薄片\\nvt. 削，凿；削成碎片\\nvi. 剥落；碎裂\",\"audio\":\"chip.mp3\"},{\"word\":\"cholesterol\",\"pronun\":\"[kəˈlestərɔːl]\",\"translation\":\"n. [生化] 胆固醇\",\"audio\":\"cholesterol.mp3\"},{\"word\":\"chord\",\"pronun\":\"[kɔːrd]\",\"translation\":\"n. 弦；和弦；香水的基调\",\"audio\":\"chord.mp3\"},{\"word\":\"chorus\",\"pronun\":\"[ˈkɔːrəs]\",\"translation\":\"n. 合唱队；齐声；歌舞队\\nvt. 合唱；异口同声地说\\nvi. 合唱；异口同声地说话\",\"audio\":\"chorus.mp3\"},{\"word\":\"chronic\",\"pronun\":\"[ˈkrɑːnɪk]\",\"translation\":\"adj. 慢性的；长期的；习惯性的\",\"audio\":\"chronic.mp3\"},{\"word\":\"chunk\",\"pronun\":\"[tʃʌŋk]\",\"translation\":\"n. 大块；矮胖的人或物\",\"audio\":\"chunk.mp3\"},{\"word\":\"circulation\",\"pronun\":\"[ˌsɜːrkjəˈleɪʃn]\",\"translation\":\"n. 流通，传播；循环；发行量\",\"audio\":\"circulation.mp3\"},{\"word\":\"circumstance\",\"pronun\":\"[ˈsɜːrkəmstæns]\",\"translation\":\"n. 环境，情况；事件；境遇\",\"audio\":\"circumstance.mp3\"},{\"word\":\"circus\",\"pronun\":\"[ˈsɜːrkəs]\",\"translation\":\"n. 马戏；马戏团\",\"audio\":\"circus.mp3\"},{\"word\":\"cite\",\"pronun\":\"[saɪt]\",\"translation\":\"vt. 引用；传讯；想起；表彰\",\"audio\":\"cite.mp3\"},{\"word\":\"citizenship\",\"pronun\":\"[ˈsɪtɪzənʃɪp]\",\"translation\":\"n. [法] 公民身份，公民资格；国籍；公民权\",\"audio\":\"citizenship.mp3\"},{\"word\":\"claim\",\"pronun\":\"[kleɪm]\",\"translation\":\"n. 要求；声称；索赔；断言；值得\\nvt. 要求；声称；需要；认领\\nvi. 提出要求\",\"audio\":\"claim.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

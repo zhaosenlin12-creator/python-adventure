@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.996372+00:00",
+  "request": {
+    "lesson_id": "cbcda5062086e9455a67e460da4bc3e6",
+    "course_id": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "order": 84,
+    "nextCourseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "courseName": "C++",
+    "lessonId": "cbcda5062086e9455a67e460da4bc3e6",
+    "nextLessonId": "d2bc706fc9b55c27fd37edc827e8ae32",
+    "lessonName": "栈的实现",
+    "icon": "data/assets/daziya.com/key-icon_key-cpp.b136419115.png",
+    "description": "C++编程练习 - 栈的实现",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6a244df2e3ba9a3a4091b3b9e7d31480",
+        "index": 1,
+        "text": [
+          "#include <iostream>\\n#include <vector>\\nusing namespace std;\\n\\nclass Stack {\\nprivate:\\n    vector<int> items;\\n\\npublic:\\n    void push(int item) {\\n        items.push_back(item);\\n    }\\n\\n    int pop() {\\n        if (!isEmpty()) {\\n            int top = items.back();\\n            items.pop_back();\\n            return top;\\n        }\\n        return -1;\\n    }\\n\\n    int peek() {\\n        if (!isEmpty()) return items.back();\\n        return -1;\\n    }\\n\\n    bool isEmpty() {\\n        return items.empty();\\n    }\\n\\n    int size() {\\n        return items.size();\\n    }\\n};\\n\\nint main() {\\n    Stack stack;\\n    stack.push(1);\\n    stack.push(2);\\n    stack.push(3);\\n\\n    cout << \"栈顶元素: \" << stack.peek() << endl;\\n    cout << \"弹出元素: \" << stack.pop() << endl;\\n    cout << \"栈的大小: \" << stack.size() << endl;\\n\\n    return 0;\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "cpp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

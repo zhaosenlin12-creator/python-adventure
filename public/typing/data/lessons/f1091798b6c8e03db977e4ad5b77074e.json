@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.300054+00:00",
+  "request": {
+    "lesson_id": "f1091798b6c8e03db977e4ad5b77074e",
+    "course_id": "f81aeb9f7457592295d8d925c4358b36",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "f81aeb9f7457592295d8d925c4358b36",
+    "order": 232,
+    "nextCourseId": "f81aeb9f7457592295d8d925c4358b36",
+    "courseName": "汉字二级",
+    "lessonId": "f1091798b6c8e03db977e4ad5b77074e",
+    "nextLessonId": "237b2a39088f139ae269341dd1fd98e1",
+    "lessonName": "游戏：英文单词",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-duck.b036f0ad8f.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "ce5fe77a369e0cbb648678df2b3a0bac",
+        "index": 1,
+        "text": [
+          "leaning earth little hundred grieve degrees little little degrees louder belly reading"
+        ],
+        "contentType": 3,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 1,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

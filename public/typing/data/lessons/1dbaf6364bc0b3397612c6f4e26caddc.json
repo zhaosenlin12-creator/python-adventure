@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.333493+00:00",
+  "request": {
+    "lesson_id": "1dbaf6364bc0b3397612c6f4e26caddc",
+    "course_id": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "order": 347,
+    "nextCourseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "courseName": "小学必备古诗75首（2）",
+    "lessonId": "1dbaf6364bc0b3397612c6f4e26caddc",
+    "nextLessonId": "def9334bf78e955ee892662382ddde77",
+    "lessonName": "小儿垂钓",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "99f6f24b2df0dc3839d2cc4aed323fad",
+        "index": 1,
+        "text": [
+          "小儿垂钓\\n胡令能\\n蓬头稚子学垂纶，侧坐莓苔草映身。\\n路人借问遥招手，怕得鱼惊不应人。"
+        ],
+        "pinyin": "[[\"小\", \"xiǎo\"], [\"儿\", \"ér\"], [\"垂\", \"chuí\"], [\"钓\", \"diào\"], [\"\\n\", \"\"], [\"胡\", \"hú\"], [\"令\", \"lìng\"], [\"能\", \"néng\"], [\"\\n\", \"\"], [\"蓬\", \"péng\"], [\"头\", \"tóu\"], [\"稚\", \"zhì\"], [\"子\", \"zǐ\"], [\"学\", \"xué\"], [\"垂\", \"chuí\"], [\"纶\", \"lún\"], [\"，\", \"\"], [\"侧\", \"cè\"], [\"坐\", \"zuò\"], [\"莓\", \"méi\"], [\"苔\", \"tái\"], [\"草\", \"cǎo\"], [\"映\", \"yìng\"], [\"身\", \"shēn\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"路\", \"lù\"], [\"人\", \"rén\"], [\"借\", \"jiè\"], [\"问\", \"wèn\"], [\"遥\", \"yáo\"], [\"招\", \"zhāo\"], [\"手\", \"shǒu\"], [\"，\", \"\"], [\"怕\", \"pà\"], [\"得\", \"dé\"], [\"鱼\", \"yú\"], [\"惊\", \"jīng\"], [\"不\", \"bù\"], [\"应\", \"yìng\"], [\"人\", \"rén\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

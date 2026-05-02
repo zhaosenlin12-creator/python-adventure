@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:42.560632+00:00",
+  "request": {
+    "lesson_id": "4673e54faa04d95a009c537d04cce1ba",
+    "course_id": "37a7adf23aab7533faea85ded4a73fdb",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "37a7adf23aab7533faea85ded4a73fdb",
+    "order": 264,
+    "nextCourseId": "37a7adf23aab7533faea85ded4a73fdb",
+    "courseName": "财务汇算-整数计算",
+    "lessonId": "4673e54faa04d95a009c537d04cce1ba",
+    "nextLessonId": "b5380a7b123c34f952281747f09ff133",
+    "lessonName": "乘法累计二",
+    "icon": "data/assets/daziya.com/key-icon_num-chengfagonggu.2c32173289.png",
+    "description": "数字输入练习 - 乘法累计二",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "38a4639dc6e5d62677f06070002d7dbd",
+        "index": 1,
+        "text": [
+          "12*\\n5*\\n8*\\n3*\\n15*\\n2*\\n9*\\n4*\\n6*\\n7"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

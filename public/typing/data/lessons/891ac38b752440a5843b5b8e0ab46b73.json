@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.846638+00:00",
+  "request": {
+    "lesson_id": "891ac38b752440a5843b5b8e0ab46b73",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 50,
+    "nextCourseId": "ff61770b1da83313ceacb0a08aef6378",
+    "courseName": "Python",
+    "lessonId": "891ac38b752440a5843b5b8e0ab46b73",
+    "nextLessonId": "6ff8f061da2ecb2cf1c4c091d240427a",
+    "lessonName": "快速排序",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - 快速排序",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ca0cb8589582756050f5a93654898752",
+        "index": 1,
+        "text": [
+          "# 快速排序算法\\ndef quick_sort(arr):\\n    if len(arr) <= 1:\\n        return arr\\n\\n    pivot = arr[len(arr) // 2]\\n    left = [x for x in arr if x < pivot]\\n    middle = [x for x in arr if x == pivot]\\n    right = [x for x in arr if x > pivot]\\n\\n    return quick_sort(left) + middle + quick_sort(right)\\n\\n# 测试快速排序\\nnumbers = [64, 34, 25, 12, 22, 11, 90, 88, 45, 50]\\nprint(f\"排序前: {numbers}\")\\nsorted_numbers = quick_sort(numbers)\\nprint(f\"排序后: {sorted_numbers}\")\\n\\n# 时间复杂度说明\\nprint(\"\\n快速排序平均时间复杂度: O(n log n)\")\\nprint(\"最坏情况时间复杂度: O(n²)\")\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

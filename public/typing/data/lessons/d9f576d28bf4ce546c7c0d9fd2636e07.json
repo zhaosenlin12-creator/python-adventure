@@ -1,0 +1,83 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.564143+00:00",
+  "request": {
+    "lesson_id": "d9f576d28bf4ce546c7c0d9fd2636e07",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 7,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "d9f576d28bf4ce546c7c0d9fd2636e07",
+    "nextLessonId": "c2c2abb7e8b75e952ac1b973d21de245",
+    "lessonName": "韵母ai、ei",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母ai、ei的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "7c9129299a7eb50d1bcf8c9ef8eac8ca",
+        "index": 1,
+        "highlights": [
+          "ai"
+        ],
+        "text": [
+          "请输入按键 [ai]"
+        ],
+        "detail": "学习双拼按键 ai"
+      },
+      {
+        "chapterId": "9c6b28d58f5ea7ba110d5fabf1b2ea7d",
+        "index": 2,
+        "highlights": [
+          "ei"
+        ],
+        "text": [
+          "请输入按键 [ei]"
+        ],
+        "detail": "学习双拼按键 ei"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "b147c6e0fb7ac52f72c77099527ed646",
+        "index": 3,
+        "text": [
+          "aiaiaiaieieieieiaieiaieiaieiaiei"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "352e6607b64fd1e2ed97faada86560f1",
+        "index": 4,
+        "text": [
+          "海浪拍打着黑色的礁石，白色的贝壳散落在岸边。妹妹在海边采摘海带，准备做美味的海鲜煲。北风带来了北方的寒意，人们纷纷换上了厚棉衣。"
+        ],
+        "pinyin": "[[\"海\", \"hǎi\"], [\"浪\", \"làng\"], [\"拍\", \"pāi\"], [\"打\", \"dǎ\"], [\"着\", \"zhe\"], [\"黑\", \"hēi\"], [\"色\", \"sè\"], [\"的\", \"de\"], [\"礁\", \"jiāo\"], [\"石\", \"shí\"], [\"，\", \"\"], [\"白\", \"bái\"], [\"色\", \"sè\"], [\"的\", \"de\"], [\"贝\", \"bèi\"], [\"壳\", \"ké\"], [\"散\", \"sàn\"], [\"落\", \"luò\"], [\"在\", \"zài\"], [\"岸\", \"àn\"], [\"边\", \"biān\"], [\"。\", \"\"], [\"妹\", \"mèi\"], [\"妹\", \"mei\"], [\"在\", \"zài\"], [\"海\", \"hǎi\"], [\"边\", \"biān\"], [\"采\", \"cǎi\"], [\"摘\", \"zhāi\"], [\"海\", \"hǎi\"], [\"带\", \"dài\"], [\"，\", \"\"], [\"准\", \"zhǔn\"], [\"备\", \"bèi\"], [\"做\", \"zuò\"], [\"美\", \"měi\"], [\"味\", \"wèi\"], [\"的\", \"de\"], [\"海\", \"hǎi\"], [\"鲜\", \"xiān\"], [\"煲\", \"bāo\"], [\"。\", \"\"], [\"北\", \"běi\"], [\"风\", \"fēng\"], [\"带\", \"dài\"], [\"来\", \"lái\"], [\"了\", \"le\"], [\"北\", \"běi\"], [\"方\", \"fāng\"], [\"的\", \"de\"], [\"寒\", \"hán\"], [\"意\", \"yì\"], [\"，\", \"\"], [\"人\", \"rén\"], [\"们\", \"men\"], [\"纷\", \"fēn\"], [\"纷\", \"fēn\"], [\"换\", \"huàn\"], [\"上\", \"shàng\"], [\"了\", \"le\"], [\"厚\", \"hòu\"], [\"棉\", \"mián\"], [\"衣\", \"yī\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

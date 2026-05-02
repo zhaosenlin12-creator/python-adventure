@@ -1,0 +1,83 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.602129+00:00",
+  "request": {
+    "lesson_id": "98bf400f913945074b1d29325d069fd9",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 15,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "98bf400f913945074b1d29325d069fd9",
+    "nextLessonId": "21c43bff5956a74d23c1860ab5d7bd91",
+    "lessonName": "巩固练习：ui、ue",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母ui、ue的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "7778c60a5052cab4a71ae905df3929ce",
+        "index": 1,
+        "highlights": [
+          "ui"
+        ],
+        "text": [
+          "请输入按键 [ui]"
+        ],
+        "detail": "学习双拼按键 ui"
+      },
+      {
+        "chapterId": "d5e2e7ead96ebe0fd06f30c992a595b5",
+        "index": 2,
+        "highlights": [
+          "ue"
+        ],
+        "text": [
+          "请输入按键 [ue]"
+        ],
+        "detail": "学习双拼按键 ue"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "567187f12d78296e3dd5c5fc1db5a209",
+        "index": 3,
+        "text": [
+          "uiuiuiuiueueueueuiueuiueuiueuiue"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "0583bb78e5e08adc58098a23311efaa9",
+        "index": 4,
+        "text": [
+          "水位退后对垒，翠柳垂蕊。灰堆随水退，脆槐醉归。吹笛对月，归队追悔。"
+        ],
+        "pinyin": "[[\"水\", \"shuǐ\"], [\"位\", \"wèi\"], [\"退\", \"tuì\"], [\"后\", \"hòu\"], [\"对\", \"duì\"], [\"垒\", \"lěi\"], [\"，\", \"\"], [\"翠\", \"cuì\"], [\"柳\", \"liǔ\"], [\"垂\", \"chuí\"], [\"蕊\", \"ruǐ\"], [\"。\", \"\"], [\"灰\", \"huī\"], [\"堆\", \"duī\"], [\"随\", \"suí\"], [\"水\", \"shuǐ\"], [\"退\", \"tuì\"], [\"，\", \"\"], [\"脆\", \"cuì\"], [\"槐\", \"huái\"], [\"醉\", \"zuì\"], [\"归\", \"guī\"], [\"。\", \"\"], [\"吹\", \"chuī\"], [\"笛\", \"dí\"], [\"对\", \"duì\"], [\"月\", \"yuè\"], [\"，\", \"\"], [\"归\", \"guī\"], [\"队\", \"duì\"], [\"追\", \"zhuī\"], [\"悔\", \"huǐ\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

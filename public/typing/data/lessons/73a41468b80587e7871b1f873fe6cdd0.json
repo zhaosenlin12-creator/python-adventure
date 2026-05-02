@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:34.766802+00:00",
+  "request": {
+    "lesson_id": "73a41468b80587e7871b1f873fe6cdd0",
+    "course_id": "ecd651bc5180b531e2e6375c54e880fc",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "ecd651bc5180b531e2e6375c54e880fc",
+    "order": 240,
+    "nextCourseId": "ecd651bc5180b531e2e6375c54e880fc",
+    "courseName": "语文课内同步五年级下册",
+    "lessonId": "73a41468b80587e7871b1f873fe6cdd0",
+    "nextLessonId": "f2cc0fb039932a86f7634d0d81c96813",
+    "lessonName": "村晚",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "bc94e161dacc38a97fd520dc08cddc7d",
+        "index": 1,
+        "text": [
+          "草满池塘水满陂，\\n山衔落日浸寒漪。\\n牧童归去横牛背，\\n短笛无腔信口吹。"
+        ],
+        "pinyin": "[[\"草\", \"cǎo\"], [\"满\", \"mǎn\"], [\"池\", \"chí\"], [\"塘\", \"táng\"], [\"水\", \"shuǐ\"], [\"满\", \"mǎn\"], [\"陂\", \"bēi\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"山\", \"shān\"], [\"衔\", \"xián\"], [\"落\", \"luò\"], [\"日\", \"rì\"], [\"浸\", \"jìn\"], [\"寒\", \"hán\"], [\"漪\", \"yī\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"牧\", \"mù\"], [\"童\", \"tóng\"], [\"归\", \"guī\"], [\"去\", \"qù\"], [\"横\", \"héng\"], [\"牛\", \"niú\"], [\"背\", \"bèi\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"短\", \"duǎn\"], [\"笛\", \"dí\"], [\"无\", \"wú\"], [\"腔\", \"qiāng\"], [\"信\", \"xìn\"], [\"口\", \"kǒu\"], [\"吹\", \"chuī\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

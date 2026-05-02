@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.172392+00:00",
+  "request": {
+    "lesson_id": "da45070bcca085fb98723177e5f1a4b0",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 26,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "da45070bcca085fb98723177e5f1a4b0",
+    "nextLessonId": "a27556c4f0c53c28ff516710bef5f74b",
+    "lessonName": "2022年版 PEP-五年级-上册-3",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-五年级-上册 - 第3课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "126962e0a8368a6dc0ab12e7f3a79a39",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"often\",\"pronun\":\"[ˈɔːf(ə)n]\",\"translation\":\"adv. 常常，时常\",\"audio\":\"often.mp3\"},{\"word\":\"park\",\"pronun\":\"[pɑːrk]\",\"translation\":\"n. 公园；[交] 停车场\\nvt. 停放；放置；寄存\\nvi. 停放车辆\",\"audio\":\"park.mp3\"},{\"word\":\"tired\",\"pronun\":\"[ˈtaɪərd]\",\"translation\":\"v. 疲倦；对…腻烦（tire的过去分词形式）\\nadj. 疲倦的；厌倦的，厌烦的\",\"audio\":\"tired.mp3\"},{\"word\":\"sport\",\"pronun\":\"[spɔːrt]\",\"translation\":\"n. 运动；游戏；娱乐；运动会；玩笑\\nadj. 运动的\\nvt. 游戏；参加体育运动；夸耀\\nvi. 游戏\",\"audio\":\"sport.mp3\"},{\"word\":\"should\",\"pronun\":\"[ʃəd; ʃʊd]\",\"translation\":\"aux. 应该；就；可能；将要\",\"audio\":\"should.mp3\"},{\"word\":\"every\",\"pronun\":\"[ˈevri]\",\"translation\":\"adj. 每一的，每个的；每隔…的\",\"audio\":\"every.mp3\"},{\"word\":\"day\",\"pronun\":\"[deɪ]\",\"translation\":\"n. 一天；时期；白昼\\nadj. 日间的；逐日的\\nadv. 每天；经常在白天地\",\"audio\":\"day.mp3\"},{\"word\":\"schedule\",\"pronun\":\"[ˈskedʒuːl]\",\"translation\":\"n. 时间表；计划表；一览表\\nvt. 安排，计划；编制目录；将……列入计划表\",\"audio\":\"schedule.mp3\"},{\"word\":\"sandwich\",\"pronun\":\"[ˈsænwɪtʃ; ˈsænwɪdʒ]\",\"translation\":\"n. 三明治；夹心面包\\nvt. 夹入；挤进；把...做成三明治\",\"audio\":\"sandwich.mp3\"},{\"word\":\"salad\",\"pronun\":\"[ˈsæləd]\",\"translation\":\"n. 色拉；尤指莴苣\",\"audio\":\"salad.mp3\"},{\"word\":\"hamburger\",\"pronun\":\"[ˈhæmbɜːrɡər]\",\"translation\":\"n. 汉堡包，火腿汉堡；牛肉饼，肉饼；碎牛肉\",\"audio\":\"hamburger.mp3\"},{\"word\":\"ice\",\"pronun\":\"[aɪs]\",\"translation\":\"n. 冰；冰淇淋；矜持；（俚）钻石\\nadj. 冰的\\nvt. 冰镇；结冰\\nvi. 结冰\",\"audio\":\"ice.mp3\"},{\"word\":\"cream\",\"pronun\":\"[kriːm]\",\"translation\":\"n. 奶油，乳脂；精华；面霜；乳酪\",\"audio\":\"cream.mp3\"},{\"word\":\"tea\",\"pronun\":\"[tiː]\",\"translation\":\"n. 茶叶；茶树；茶点\\nvt. 给…沏茶\\nvi. 喝茶；进茶点\",\"audio\":\"tea.mp3\"},{\"word\":\"fresh\",\"pronun\":\"[freʃ]\",\"translation\":\"n. 开始；新生；泛滥\\nadj. 新鲜的；清新的；淡水的；无经验的\\nadv. 刚刚，才；最新地\",\"audio\":\"fresh.mp3\"},{\"word\":\"healthy\",\"pronun\":\"[ˈhelθi]\",\"translation\":\"adj. 健康的，健全的；有益于健康的\",\"audio\":\"healthy.mp3\"},{\"word\":\"delicious\",\"pronun\":\"[dɪˈlɪʃəs]\",\"translation\":\"adj. 美味的；可口的\",\"audio\":\"delicious.mp3\"},{\"word\":\"hot\",\"pronun\":\"[hɑːt]\",\"translation\":\"adj. 热的；辣的；热情的；激动的；紧迫的\\nvt. 增加；给…加温\\nadv. 热；紧迫地\\nvi. 变热\",\"audio\":\"hot.mp3\"},{\"word\":\"sweet\",\"pronun\":\"[swiːt]\",\"translation\":\"n. 糖果；乐趣；芳香；宝贝\\nadj. 甜的；悦耳的；芳香的；亲切的\\n（俚）酷毙了\",\"audio\":\"sweet.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

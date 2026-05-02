@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.851399+00:00",
+  "request": {
+    "lesson_id": "739b50a1b1ba4491e36a1ebb9c4ac8be",
+    "course_id": "c02abec1127900f16353dac5e0b02419",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "c02abec1127900f16353dac5e0b02419",
+    "order": 366,
+    "nextCourseId": "c02abec1127900f16353dac5e0b02419",
+    "courseName": "百科知识1",
+    "lessonId": "739b50a1b1ba4491e36a1ebb9c4ac8be",
+    "nextLessonId": "59310b35d3f02e585a38e1a66d570045",
+    "lessonName": "游戏：英文单词",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-duck.b036f0ad8f.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "2c0d8e67dee95a5fa35b9d8b58c7f171",
+        "index": 1,
+        "text": [
+          "asked haunted twined thought kingdom beautiful spirit there itself upright"
+        ],
+        "contentType": 3,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 30,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

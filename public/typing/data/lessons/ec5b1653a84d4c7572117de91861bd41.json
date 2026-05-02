@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.195394+00:00",
+  "request": {
+    "lesson_id": "ec5b1653a84d4c7572117de91861bd41",
+    "course_id": "b121644211bd274795ee5972ddf997a2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "b121644211bd274795ee5972ddf997a2",
+    "order": 313,
+    "nextCourseId": "b121644211bd274795ee5972ddf997a2",
+    "courseName": "小学必备古诗75首（1）",
+    "lessonId": "ec5b1653a84d4c7572117de91861bd41",
+    "nextLessonId": "d5480beee0c4a0f70616bc0f3696d1f4",
+    "lessonName": "咏柳",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5e67b26a6fee9aec54a575135f355ca3",
+        "index": 1,
+        "text": [
+          "咏柳\\n贺知章\\n碧玉妆成一树高，万条垂下绿丝绦。\\n不知细叶谁裁出，二月春风似剪刀。"
+        ],
+        "pinyin": "[[\"咏\", \"yǒng\"], [\"柳\", \"liǔ\"], [\"\\n\", \"\"], [\"贺\", \"hè\"], [\"知\", \"zhī\"], [\"章\", \"zhāng\"], [\"\\n\", \"\"], [\"碧\", \"bì\"], [\"玉\", \"yù\"], [\"妆\", \"zhuāng\"], [\"成\", \"chéng\"], [\"一\", \"yī\"], [\"树\", \"shù\"], [\"高\", \"gāo\"], [\"，\", \"\"], [\"万\", \"wàn\"], [\"条\", \"tiáo\"], [\"垂\", \"chuí\"], [\"下\", \"xià\"], [\"绿\", \"lǜ\"], [\"丝\", \"sī\"], [\"绦\", \"tāo\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"不\", \"bù\"], [\"知\", \"zhī\"], [\"细\", \"xì\"], [\"叶\", \"yè\"], [\"谁\", \"shuí\"], [\"裁\", \"cái\"], [\"出\", \"chū\"], [\"，\", \"\"], [\"二\", \"èr\"], [\"月\", \"yuè\"], [\"春\", \"chūn\"], [\"风\", \"fēng\"], [\"似\", \"sì\"], [\"剪\", \"jiǎn\"], [\"刀\", \"dāo\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

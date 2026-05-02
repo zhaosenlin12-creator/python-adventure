@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.771611+00:00",
+  "request": {
+    "lesson_id": "6e48faadbb28171fcc3e5302b864b8b0",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 148,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "6e48faadbb28171fcc3e5302b864b8b0",
+    "nextLessonId": "952f84195b475d52814606f9f72d863e",
+    "lessonName": "KET核心词-9",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第9课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a74eb8f219560884ad2030324595465b",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"both\",\"pronun\":\"[boʊθ]\",\"translation\":\"conj. 既…且…\\nadj. 两个的；两者的\\npron. 双方都；两者都\\nadv. 并；又；两者皆\",\"audio\":\"both.mp3\"},{\"word\":\"bother\",\"pronun\":\"[ˈbɑːðər]\",\"translation\":\"n. 麻烦；烦恼\\nvt. 烦扰，打扰；使……不安；使……恼怒\\nvi. 操心，麻烦；烦恼\",\"audio\":\"bother.mp3\"},{\"word\":\"bottle\",\"pronun\":\"[ˈbɑːtl]\",\"translation\":\"n. 瓶子；一瓶的容量\\nvt. 控制；把…装入瓶中\\nvi. （街头艺人演出后）收拢钱币\",\"audio\":\"bottle.mp3\"},{\"word\":\"bottom\",\"pronun\":\"[ˈbɑːtəm]\",\"translation\":\"n. 底部；末端；臀部；尽头\\nadj. 底部的\\nvt. 装底；测量深浅；查明真相\\nvi. 到达底部；建立基础\",\"audio\":\"bottom.mp3\"},{\"word\":\"bounce\",\"pronun\":\"[baʊns]\",\"translation\":\"n. 跳；弹力；活力\\nvt. 弹跳；使弹起\\nvi. 弹跳；弹起，反跳；弹回\",\"audio\":\"bounce.mp3\"},{\"word\":\"bowl\",\"pronun\":\"[boʊl]\",\"translation\":\"n. 碗；木球；大酒杯\\nvt. 投球；旋转；平稳快速移动\\nvi. 玩保龄球；滑动；平稳快速移动\",\"audio\":\"bowl.mp3\"},{\"word\":\"box\",\"pronun\":\"[bɑːks]\",\"translation\":\"n. 箱，盒子；包厢；一拳\\nvt. 拳击；装…入盒中；打耳光\\nvi. 拳击\",\"audio\":\"box.mp3\"},{\"word\":\"boy\",\"pronun\":\"[bɔɪ]\",\"translation\":\"n. 男孩；男人\",\"audio\":\"boy.mp3\"},{\"word\":\"boyfriend\",\"pronun\":\"[ˈbɔɪfrend]\",\"translation\":\"n. 男朋友，情郎\",\"audio\":\"boyfriend.mp3\"},{\"word\":\"brain\",\"pronun\":\"[breɪn]\",\"translation\":\"n. 头脑，智力；脑袋\\nvt. 猛击…的头部\",\"audio\":\"brain.mp3\"},{\"word\":\"brake\",\"pronun\":\"[breɪk]\",\"translation\":\"n. 闸，刹车；阻碍\\nvt. 刹车\\nvi. 刹车\",\"audio\":\"brake.mp3\"},{\"word\":\"brave\",\"pronun\":\"[breɪv]\",\"translation\":\"n. 勇士\\nadj. 勇敢的；华丽的\\nvt. 勇敢地面对\",\"audio\":\"brave.mp3\"},{\"word\":\"bread\",\"pronun\":\"[bred]\",\"translation\":\"n. 面包；生计\\nvt. 在…上洒面包屑\",\"audio\":\"bread.mp3\"},{\"word\":\"break\",\"pronun\":\"[breɪk]\",\"translation\":\"vi. 打破；折断；弄坏；削弱\\nvt. （使）破；打破（纪录）；（常指好天气）突变；开始\\nvi. （嗓音）突变；突破；破晓；（价格）突然下跌\\nn. 破裂；间断；（持续一段时间的状况的）改变；间歇\",\"audio\":\"break.mp3\"},{\"word\":\"breakfast\",\"pronun\":\"[ˈbrekfəst]\",\"translation\":\"n. 早餐；早饭\\nvt. 为…供应早餐\\nvi. 吃早餐\",\"audio\":\"breakfast.mp3\"},{\"word\":\"bridge\",\"pronun\":\"[brɪdʒ]\",\"translation\":\"n. 桥；桥牌；桥接器；船桥\\nvt. 架桥；渡过\",\"audio\":\"bridge.mp3\"},{\"word\":\"bright\",\"pronun\":\"[braɪt]\",\"translation\":\"n. 车头灯光\\nadj. 明亮的，鲜明的；聪明的；愉快的\\nadv. 明亮地；光明地；欢快地\",\"audio\":\"bright.mp3\"},{\"word\":\"brilliant\",\"pronun\":\"[ˈbrɪliənt]\",\"translation\":\"adj. 灿烂的，闪耀的；杰出的；有才气的；精彩的，绝妙的\",\"audio\":\"brilliant.mp3\"},{\"word\":\"bring\",\"pronun\":\"[brɪŋ]\",\"translation\":\"vt. 带来；促使；引起；使某人处于某种情况或境地\",\"audio\":\"bring.mp3\"},{\"word\":\"broom\",\"pronun\":\"[bruːm]\",\"translation\":\"n. 扫帚；金雀花\\nvt. 扫除\\nvi. 桩顶开花或开裂\",\"audio\":\"broom.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.761291+00:00",
+  "request": {
+    "lesson_id": "8d955fd91e214e4b789631abec9a032a",
+    "course_id": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "order": 60,
+    "nextCourseId": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "courseName": "声母组合练习",
+    "lessonId": "8d955fd91e214e4b789631abec9a032a",
+    "nextLessonId": "10c6839cc4fd4cb37b456fa623f5a804",
+    "lessonName": "声母组合q",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "练习声母q与各韵母的组合",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "624c7884ccb637523af9fe2be3adc675",
+        "index": 1,
+        "highlights": [
+          "q"
+        ],
+        "text": [
+          "请输入按键 [q]"
+        ],
+        "detail": "学习双拼按键 q"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "256b478aa38b99d895e24572ce2a676f",
+        "index": 2,
+        "text": [
+          "qqqqqqqq"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "90db3aa03d81b6577baec33d4069c611",
+        "index": 3,
+        "text": [
+          "秋天清晨，七只喜鹊轻轻落在墙头，巧巧地取起青虫。穷人请求前去取钱，亲戚却悄悄劝其放弃。全群气球飘向晴空，恰巧落在清泉边上。"
+        ],
+        "pinyin": "[[\"秋\",\"qiū\"],[\"天\",\"tiān\"],[\"清\",\"qīng\"],[\"晨\",\"chén\"],[\"，\",\"\"],[\"七\",\"qī\"],[\"只\",\"zhī\"],[\"喜\",\"xǐ\"],[\"鹊\",\"què\"],[\"轻\",\"qīng\"],[\"轻\",\"qīng\"],[\"落\",\"luò\"],[\"在\",\"zài\"],[\"墙\",\"qiáng\"],[\"头\",\"tóu\"],[\"，\",\"\"],[\"巧\",\"qiǎo\"],[\"巧\",\"qiǎo\"],[\"地\",\"de\"],[\"取\",\"qǔ\"],[\"起\",\"qǐ\"],[\"青\",\"qīng\"],[\"虫\",\"chóng\"],[\"。\",\"\"],[\"穷\",\"qióng\"],[\"人\",\"rén\"],[\"请\",\"qǐng\"],[\"求\",\"qiú\"],[\"前\",\"qián\"],[\"去\",\"qù\"],[\"取\",\"qǔ\"],[\"钱\",\"qián\"],[\"，\",\"\"],[\"亲\",\"qīn\"],[\"戚\",\"qī\"],[\"却\",\"què\"],[\"悄\",\"qiāo\"],[\"悄\",\"qiāo\"],[\"劝\",\"quàn\"],[\"其\",\"qí\"],[\"放\",\"fàng\"],[\"弃\",\"qì\"],[\"。\",\"\"],[\"全\",\"quán\"],[\"群\",\"qún\"],[\"气\",\"qì\"],[\"球\",\"qiú\"],[\"飘\",\"piāo\"],[\"向\",\"xiàng\"],[\"晴\",\"qíng\"],[\"空\",\"kōng\"],[\"，\",\"\"],[\"恰\",\"qià\"],[\"巧\",\"qiǎo\"],[\"落\",\"luò\"],[\"在\",\"zài\"],[\"清\",\"qīng\"],[\"泉\",\"quán\"],[\"边\",\"biān\"],[\"上\",\"shang\"],[\"。\",\"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 10,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

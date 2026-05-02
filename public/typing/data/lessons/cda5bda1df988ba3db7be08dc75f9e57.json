@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.023130+00:00",
+  "request": {
+    "lesson_id": "cda5bda1df988ba3db7be08dc75f9e57",
+    "course_id": "cd45306af9fe6ba99ad31ab2ab5006ba",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "cd45306af9fe6ba99ad31ab2ab5006ba",
+    "order": 373,
+    "nextCourseId": "cd45306af9fe6ba99ad31ab2ab5006ba",
+    "courseName": "实战演练-1万以内金额",
+    "lessonId": "cda5bda1df988ba3db7be08dc75f9e57",
+    "nextLessonId": "2285f3ad178a53b1e26bd5f5016f8668",
+    "lessonName": "综合练习一",
+    "icon": "data/assets/daziya.com/key-icon_num-jiangbei.44832ef16e.png",
+    "description": "数字输入练习 - 综合练习一",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ef5434f930b07e654cbfd9220ef27ed0",
+        "index": 1,
+        "text": [
+          "125634\\n236745\\n347856\\n458967\\n569178\\n671289\\n782391\\n893412\\n914523\\n158247\\n269358\\n371469\\n482571\\n593682\\n614793\\n725814\\n836925\\n947136\\n172839\\n283941\\n394152\\n415263\\n526374\\n637485\\n748596\\n859617\\n961728\\n185341\\n296452\\n317563"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

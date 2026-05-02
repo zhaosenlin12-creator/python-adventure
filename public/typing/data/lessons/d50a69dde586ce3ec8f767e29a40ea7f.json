@@ -1,0 +1,72 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.721061+00:00",
+  "request": {
+    "lesson_id": "d50a69dde586ce3ec8f767e29a40ea7f",
+    "course_id": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "order": 48,
+    "nextCourseId": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "courseName": "声母组合练习",
+    "lessonId": "d50a69dde586ce3ec8f767e29a40ea7f",
+    "nextLessonId": "42bd78e8176d4c4f779cea101f8b6079",
+    "lessonName": "声母组合b",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "练习声母b与各韵母的组合",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "818b596d9908c1360e30ddcd096bdaf5",
+        "index": 1,
+        "highlights": [
+          "b"
+        ],
+        "text": [
+          "请输入按键 [b]"
+        ],
+        "detail": "学习双拼按键 b"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "66baf32f8ed8ff88cc0aafbfd8385559",
+        "index": 2,
+        "text": [
+          "bbbbbbbb"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "ef7aff79bdbc4763c9dd99f456525eed",
+        "index": 3,
+        "text": [
+          "爸爸把白布包在背包上，宝贝抱着杯子喝冰水。北边有八百棵柏树，波浪拍打岸边。表弟不会滑冰，帮奶奶剥花生。广播播报比赛结果，标兵获得奖杯。"
+        ],
+        "pinyin": "[[\"爸\",\"bà\"],[\"爸\",\"ba\"],[\"把\",\"bǎ\"],[\"白\",\"bái\"],[\"布\",\"bù\"],[\"包\",\"bāo\"],[\"在\",\"zài\"],[\"背\",\"bēi\"],[\"包\",\"bāo\"],[\"上\",\"shang\"],[\"。\",\"\"],[\"宝\",\"bǎo\"],[\"贝\",\"bèi\"],[\"抱\",\"bào\"],[\"着\",\"zhe\"],[\"杯\",\"bēi\"],[\"子\",\"zi\"],[\"喝\",\"hē\"],[\"冰\",\"bīng\"],[\"水\",\"shuǐ\"],[\"。\",\"\"],[\"北\",\"běi\"],[\"边\",\"biān\"],[\"有\",\"yǒu\"],[\"八\",\"bā\"],[\"百\",\"bǎi\"],[\"棵\",\"kē\"],[\"柏\",\"bǎi\"],[\"树\",\"shù\"],[\"。\",\"\"],[\"波\",\"bō\"],[\"浪\",\"làng\"],[\"拍\",\"pāi\"],[\"打\",\"dǎ\"],[\"岸\",\"àn\"],[\"边\",\"biān\"],[\"。\",\"\"],[\"表\",\"biǎo\"],[\"弟\",\"dì\"],[\"不\",\"bù\"],[\"会\",\"huì\"],[\"滑\",\"huá\"],[\"冰\",\"bīng\"],[\"。\",\"\"],[\"帮\",\"bāng\"],[\"奶\",\"nǎi\"],[\"奶\",\"nai\"],[\"剥\",\"bāo\"],[\"花\",\"huā\"],[\"生\",\"shēng\"],[\"。\",\"\"],[\"广\",\"guǎng\"],[\"播\",\"bō\"],[\"播\",\"bō\"],[\"报\",\"bào\"],[\"比\",\"bǐ\"],[\"赛\",\"sài\"],[\"结\",\"jié\"],[\"果\",\"guǒ\"],[\"。\",\"\"],[\"标\",\"biāo\"],[\"兵\",\"bīng\"],[\"获\",\"huò\"],[\"得\",\"dé\"],[\"奖\",\"jiǎng\"],[\"杯\",\"bēi\"],[\"。\",\"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 10,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

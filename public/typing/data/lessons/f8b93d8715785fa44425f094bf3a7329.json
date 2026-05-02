@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:30.940099+00:00",
+  "request": {
+    "lesson_id": "f8b93d8715785fa44425f094bf3a7329",
+    "course_id": "21fe8d60de407da95e1abc33ac636014",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "21fe8d60de407da95e1abc33ac636014",
+    "order": 33,
+    "nextCourseId": "21fe8d60de407da95e1abc33ac636014",
+    "courseName": "上排字母",
+    "lessonId": "f8b93d8715785fa44425f094bf3a7329",
+    "nextLessonId": "537bed6ecf83e3f1ed0855b27330944f",
+    "lessonName": "练习q和y",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-practise-qy.45fbbb2919.png",
+    "description": "练习q和y",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3023cda4922e62df24dda61d0083c5ee",
+        "index": 2,
+        "text": [
+          "qa qqa qa qqa yh yyh yh yyh qaqa yhyh qqqa yyyh aqyh aqa hyh aqaqa hyhyh qqa yyh qqyy qyqy qyah qqa yyh"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "qa yh",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

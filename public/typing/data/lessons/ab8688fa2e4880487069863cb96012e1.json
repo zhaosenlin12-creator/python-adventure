@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.851295+00:00",
+  "request": {
+    "lesson_id": "ab8688fa2e4880487069863cb96012e1",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 384,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "ab8688fa2e4880487069863cb96012e1",
+    "nextLessonId": "d3d899273b7380cfb4cd6f347ed68bf3",
+    "lessonName": "六级词汇正序版-68",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第68课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b287266e39ca37c1b782e325b4a90bbd",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"masterpiece\",\"pronun\":\"[ˈmæstərpiːs]\",\"translation\":\"n. 杰作；绝无仅有的人\",\"audio\":\"masterpiece.mp3\"},{\"word\":\"materialism\",\"pronun\":\"[məˈtɪriəlɪzəm]\",\"translation\":\"n. 唯物主义；唯物论；物质主义\",\"audio\":\"materialism.mp3\"},{\"word\":\"mature\",\"pronun\":\"[məˈtʃʊr; məˈtʊr]\",\"translation\":\"adj. 成熟的；充分考虑的；到期的；成年人的\\nvi. 成熟；到期\\nvt. 使…成熟；使…长成；慎重作出\",\"audio\":\"mature.mp3\"},{\"word\":\"maturity\",\"pronun\":\"[məˈtʃʊrətiˌməˈtʊrəti]\",\"translation\":\"n. 成熟；到期；完备\",\"audio\":\"maturity.mp3\"},{\"word\":\"maximum\",\"pronun\":\"[ˈmæksɪməm]\",\"translation\":\"n. [数] 极大，最大限度；最大量\\nadj. 最高的；最多的；最大极限的\",\"audio\":\"maximum.mp3\"},{\"word\":\"meadow\",\"pronun\":\"[ˈmedoʊ]\",\"translation\":\"n. 草地；牧场\",\"audio\":\"meadow.mp3\"},{\"word\":\"mechanical\",\"pronun\":\"[məˈkænɪkl]\",\"translation\":\"adj. 机械的；力学的；呆板的；无意识的；手工操作的\",\"audio\":\"mechanical.mp3\"},{\"word\":\"mediate\",\"pronun\":\"[ˈmiːdieɪt]\",\"translation\":\"vi. 调解；斡旋；居中\\nvt. 调停；传达\\nadj. 间接的；居间的\",\"audio\":\"mediate.mp3\"},{\"word\":\"medication\",\"pronun\":\"[ˌmedɪˈkeɪʃn]\",\"translation\":\"n. 药物；药物治疗；药物处理\",\"audio\":\"medication.mp3\"},{\"word\":\"medieval\",\"pronun\":\"[ˌmediˈiːvlˌˌmiːdˈiːvl]\",\"translation\":\"adj. 中世纪的；原始的；仿中世纪的；老式的\",\"audio\":\"medieval.mp3\"},{\"word\":\"medium\",\"pronun\":\"[ˈmiːdiəm]\",\"translation\":\"adj. 中间的，中等的；半生熟的\\nn. 方法；媒体；媒介；中间物\",\"audio\":\"medium.mp3\"},{\"word\":\"melody\",\"pronun\":\"[ˈmelədi]\",\"translation\":\"n. 旋律；歌曲；美妙的音乐\",\"audio\":\"melody.mp3\"},{\"word\":\"melt\",\"pronun\":\"[melt]\",\"translation\":\"vi. 熔化，溶解；渐混\\nvt. 使融化；使熔化；使软化；使感动\\nn. 熔化；熔化物\",\"audio\":\"melt.mp3\"},{\"word\":\"memorize\",\"pronun\":\"[ˈmeməraɪz]\",\"translation\":\"vt. 记住，背熟；记忆\",\"audio\":\"memorize.mp3\"},{\"word\":\"menace\",\"pronun\":\"[ˈmenəs]\",\"translation\":\"n. 威胁；恐吓\\nvi. 恐吓；进行威胁\\nvt. 威胁；恐吓\",\"audio\":\"menace.mp3\"},{\"word\":\"mental\",\"pronun\":\"[ˈmentl]\",\"translation\":\"adj. 精神的；脑力的；疯的\\nn. 精神病患者\",\"audio\":\"mental.mp3\"},{\"word\":\"mercury\",\"pronun\":\"[ˈmɜːrkjəri]\",\"translation\":\"n. 水星\",\"audio\":\"mercury.mp3\"},{\"word\":\"mere\",\"pronun\":\"[mɪr]\",\"translation\":\"adj. 仅仅的；只不过的\\nn. 小湖；池塘\",\"audio\":\"mere.mp3\"},{\"word\":\"merely\",\"pronun\":\"[ˈmɪrli]\",\"translation\":\"adv. 仅仅，只不过；只是\",\"audio\":\"merely.mp3\"},{\"word\":\"merge\",\"pronun\":\"[mɜːrdʒ]\",\"translation\":\"vt. 合并；使合并；吞没\\nvi. 合并；融合\",\"audio\":\"merge.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

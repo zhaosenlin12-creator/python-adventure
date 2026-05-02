@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.364922+00:00",
+  "request": {
+    "lesson_id": "fd6d2e2bfe5482bcf9a458c1ac3d53d1",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 631,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "fd6d2e2bfe5482bcf9a458c1ac3d53d1",
+    "nextLessonId": "6ba3639a62b1e489a989f5f2a511e119",
+    "lessonName": " 三年级下-3",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点三年级下 - 第3课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f05a18fbe1a2f02dbf2f1aa9201de7af",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"under\",\"pronun\":\"[ˈʌndər]\",\"translation\":\"prep. 低于，少于；在...之下\\nadj. 下面的；从属的\\nadv. 在下面；在下方\",\"audio\":\"under.mp3\"},{\"word\":\"chair\",\"pronun\":\"[tʃer]\",\"translation\":\"n. 椅子；讲座；（会议的）主席位；大学教授的职位\\nvt. 担任（会议的）主席；使…入座；使就任要职\",\"audio\":\"chair.mp3\"},{\"word\":\"desk\",\"pronun\":\"[desk]\",\"translation\":\"n. 办公桌；服务台；编辑部；（美）讲道台；乐谱架\\nadj. 书桌的；桌上用的；伏案做的\",\"audio\":\"desk.mp3\"},{\"word\":\"cap\",\"pronun\":\"[kæp]\",\"translation\":\"n. 盖；帽子\\nvt. 覆盖；胜过；给…戴帽；加盖于\\nvi. 脱帽致意\",\"audio\":\"cap.mp3\"},{\"word\":\"ball\",\"pronun\":\"[bɔːl]\",\"translation\":\"n. 球；舞会\\nvt. 捏成球形\\nvi. 成团块\",\"audio\":\"ball.mp3\"},{\"word\":\"car\",\"pronun\":\"[kɑːr]\",\"translation\":\"n. 汽车；车厢\",\"audio\":\"car.mp3\"},{\"word\":\"boat\",\"pronun\":\"[boʊt]\",\"translation\":\"n. 小船；轮船\\nvi. 划船\",\"audio\":\"boat.mp3\"},{\"word\":\"map\",\"pronun\":\"[mæp]\",\"translation\":\"vt. 映射；计划；绘制地图；确定基因在染色体中的位置\\nn. 地图；示意图；染色体图\\nvi. 基因被安置\",\"audio\":\"map.mp3\"},{\"word\":\"toy\",\"pronun\":\"[tɔɪ]\",\"translation\":\"n. 玩具；小装饰品；不值钱的东西\\nadj. 作为玩具的；玩物似的\\nvi. 玩弄；调情；随随便便地对待\",\"audio\":\"toy.mp3\"},{\"word\":\"box\",\"pronun\":\"[bɑːks]\",\"translation\":\"n. 箱，盒子；包厢；一拳\\nvt. 拳击；装…入盒中；打耳光\\nvi. 拳击\",\"audio\":\"box.mp3\"},{\"word\":\"pear\",\"pronun\":\"[per]\",\"translation\":\"n. [园艺] 梨树；梨子\",\"audio\":\"pear.mp3\"},{\"word\":\"apple\",\"pronun\":\"[ˈæpl]\",\"translation\":\"n. 苹果，苹果树，苹果似的东西；[美俚]炸弹，手榴弹，（棒球的）球；[美俚]人，家伙。\",\"audio\":\"apple.mp3\"},{\"word\":\"orange\",\"pronun\":\"[ˈɔrɪndʒ]\",\"translation\":\"adj. 橙色的；橘色的\\nn. 橙；橙色；桔子\",\"audio\":\"orange.mp3\"},{\"word\":\"banana\",\"pronun\":\"[bəˈnænə]\",\"translation\":\"n. 香蕉；喜剧演员；大鹰钩鼻\",\"audio\":\"banana.mp3\"},{\"word\":\"watermelon\",\"pronun\":\"[ˈwɔːtərmelən]\",\"translation\":\"n. 西瓜\",\"audio\":\"watermelon.mp3\"},{\"word\":\"strawberry\",\"pronun\":\"[ˈstrɔːberi]\",\"translation\":\"n. 草莓；草莓色\",\"audio\":\"strawberry.mp3\"},{\"word\":\"grape\",\"pronun\":\"[ɡreɪp]\",\"translation\":\"n. 葡萄；葡萄酒；葡萄树；葡萄色\",\"audio\":\"grape.mp3\"},{\"word\":\"buy\",\"pronun\":\"[baɪ]\",\"translation\":\"n. 购买，买卖；所购的物品\\nvi. 买，采购\\nvt. 购买；获得；贿赂\",\"audio\":\"buy.mp3\"},{\"word\":\"fruit\",\"pronun\":\"[fruːt]\",\"translation\":\"n. 水果；产物\\nvt. 使……结果实\\nvi. 结果实\",\"audio\":\"fruit.mp3\"},{\"word\":\"eleven\",\"pronun\":\"[ɪˈlevn]\",\"translation\":\"num. 十一；十一个\\nn. 十一；十一个\\nadj. 十一的；十一个的\",\"audio\":\"eleven.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

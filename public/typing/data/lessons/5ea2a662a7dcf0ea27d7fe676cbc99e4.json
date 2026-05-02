@@ -1,0 +1,74 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.364563+00:00",
+  "request": {
+    "lesson_id": "5ea2a662a7dcf0ea27d7fe676cbc99e4",
+    "course_id": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "order": 14,
+    "nextCourseId": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "courseName": "基准键",
+    "lessonId": "5ea2a662a7dcf0ea27d7fe676cbc99e4",
+    "nextLessonId": "bc58c3d89472171566daaa21b6b0b42f",
+    "lessonName": "学习g和h",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-learn-gh.e88ae403d6.png",
+    "description": "学习g和h",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "bc30de2360a2f2f940f0e1558e2ccc96",
+        "index": 1,
+        "highlights": [
+          "g"
+        ],
+        "text": [
+          "请使用左手食指输入按健g，完成输入后将手指移回基准健"
+        ],
+        "detail": "新的字母键/请输入[g]键"
+      },
+      {
+        "chapterId": "5e6ef336c3335508f0847c32d8d38117",
+        "index": 2,
+        "highlights": [
+          "h"
+        ],
+        "text": [
+          "请使用右手食指输入按健h，完成输入后将手指移回基准健"
+        ],
+        "detail": "新的字母键/请输入[h]键"
+      },
+      {
+        "chapterId": "ac1ce1f8a94168fd3339b06475108a62",
+        "index": 3,
+        "highlights": [
+          " "
+        ],
+        "text": [
+          "接下来我们将练习如何输入[g]和[h]，请确保使用正确的指法输入，敲击 键开始"
+        ]
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "568b8c9ff7ac8c00ee46804c0c30e0e5",
+        "index": 4,
+        "text": [
+          "gggghhhhgggghhhhgghhgghhghghhghg"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.903941+00:00",
+  "request": {
+    "lesson_id": "663cb839ad0d577c241861a569b558b5",
+    "course_id": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "order": 67,
+    "nextCourseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "courseName": "C++",
+    "lessonId": "663cb839ad0d577c241861a569b558b5",
+    "nextLessonId": "8e97549e70353df1475d58916d1bdeca",
+    "lessonName": "字符串操作",
+    "icon": "data/assets/daziya.com/key-icon_key-cpp.b136419115.png",
+    "description": "C++编程练习 - 字符串操作",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "323e5cc73f35523e2272046fafaa1971",
+        "index": 1,
+        "text": [
+          "#include <iostream>\\n#include <string>\\nusing namespace std;\\n\\nint main() {\\n    string text = \"Hello C++\";\\n\\n    cout << \"原字符串: \" << text << endl;\\n    cout << \"字符串长度: \" << text.length() << endl;\\n    cout << \"子串: \" << text.substr(0, 5) << endl;\\n    cout << \"查找C++: \" << text.find(\"C++\") << endl;\\n\\n    text.replace(6, 3, \"World\");\\n    cout << \"替换后: \" << text << endl;\\n\\n    return 0;\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "cpp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

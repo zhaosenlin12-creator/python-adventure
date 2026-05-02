@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.415258+00:00",
+  "request": {
+    "lesson_id": "80c07c7064d49d0c28752a65dae6ff97",
+    "course_id": "30951c93875a1e260feda8cb699005df",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "30951c93875a1e260feda8cb699005df",
+    "order": 507,
+    "nextCourseId": "30951c93875a1e260feda8cb699005df",
+    "courseName": "英语每日故事（初级）32-61",
+    "lessonId": "80c07c7064d49d0c28752a65dae6ff97",
+    "nextLessonId": "d34a038eebc9348d1a43968be2cafbd0",
+    "lessonName": "Name a Baby",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a0a960dde609540888cbf4eaf4a84e1c",
+        "index": 1,
+        "text": [
+          "Emma is happy today. Her mom and dad are bringing home a new baby. Emma is going to have a brother. Mom and Dad tell her to think of a name for her new brother. What will his name be? She likes the name, Ben. It's a good name, she thinks. When I show my brother to my friends, I will say, 'This is my brother, Ben.'"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

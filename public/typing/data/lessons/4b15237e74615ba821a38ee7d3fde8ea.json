@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.334069+00:00",
+  "request": {
+    "lesson_id": "4b15237e74615ba821a38ee7d3fde8ea",
+    "course_id": "507208abf6b7416a5e11a3c2bcd62136",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "507208abf6b7416a5e11a3c2bcd62136",
+    "order": 282,
+    "nextCourseId": "507208abf6b7416a5e11a3c2bcd62136",
+    "courseName": "高中必备3500词-下",
+    "lessonId": "4b15237e74615ba821a38ee7d3fde8ea",
+    "nextLessonId": "12db645b5deb587f9e68ea67ff05b291",
+    "lessonName": "Chapter.19",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "cd048748a83c09a99f767f9050457b86",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"labour\",\"pronun\":\"\\/'le\\u026ab\\u0259(r)\\/\",\"translation\":\"n.\\u52b3\\u52a8\\u8005;\\u4f53\\u529b\\u52b3\\u52a8 vi.\\u594b\\u6597\"},{\"word\":\"leather\",\"pronun\":\"\\/\\u02c8le\\u00f0\\u0259(r)\\/\",\"translation\":\"n.\\u76ae\\u9769;[pl.]\\u76ae\\u8863;\\u76ae\\u5916\\u5957\"},{\"word\":\"lever\",\"pronun\":\"\\/\\u02c8li:v\\u0259(r)\\/\",\"translation\":\"n.\\u64cd\\u7eb5\\u6746;\\u6760\\u6746\"},{\"word\":\"panel\",\"pronun\":\"\\/\\u02c8p\\u00e6nl\\/\",\"translation\":\"n.\\u63a7\\u5236\\u677f;\\u4eea\\u8868\\u76d8;\\u4e13\\u5bb6\\u54a8\\u8be2\\u7ec4\"},{\"word\":\"inch\",\"pronun\":\"\\/\\u026ant\\u0283\\/\",\"translation\":\"n.\\u82f1\\u5bf8(\\u7b49\\u4e8e2.54\\u5398\\u7c73)\"},{\"word\":\"backwards\",\"pronun\":\"\\/\\u02c8b\\u00e6kw\\u0259dz\\/\",\"translation\":\"ad.\\u5411\\u540e;\\u5012\\u7740;\\u5f80\\u56de\"},{\"word\":\"grip\",\"pronun\":\"\\/gr\\u026ap\\/\",\"translation\":\"vt.&vi.\\u7d27\\u63e1;\\u6293\\u7d27\"},{\"word\":\"hazy\",\"pronun\":\"\\/\\u02c8he\\u026azi\\/\",\"translation\":\"a.\\u6a21\\u7cca\\u7684;\\u6726\\u80e7\\u7684;\\u56f0\\u60d1\\u7684\"},{\"word\":\"fetch\",\"pronun\":\"\\/fet\\u0283\\/\",\"translation\":\"vt.(\\u53bb)\\u62ff\\u6765;(\\u53bb)\\u8bf7\\u6765\"},{\"word\":\"pace\",\"pronun\":\"\\/pe\\u026as\\/\",\"translation\":\"n.\\u901f\\u5ea6;\\u6b65\\u4f10 v.\\u786e\\u5b9a\\u901f\\u5ea6\"},{\"word\":\"division\",\"pronun\":\"\\/d\\u026a\\u02c8v\\u026a\\u0292n\\/\",\"translation\":\"n.\\u5206\\u5f00;\\u5206\\u9694;\\u5dee\\u5f02;\\u9664(\\u6cd5)\"},{\"word\":\"puff\",\"pronun\":\"\\/p\\u028cf\\/\",\"translation\":\"n.(\\u70df\\/\\u6c14\\u7b49)\\u4e00\\u7f15;\\u5c11\\u91cf;\\u5598\\u606f\"},{\"word\":\"urge\",\"pronun\":\"\\/\\u025c:d\\u0292\\/\",\"translation\":\"n.\\u5f3a\\u70c8\\u7684\\u6b32\\u671b;\\u51b2\\u52a8 vt.\\u50ac\\u4fc3\"},{\"word\":\"random\",\"pronun\":\"\\/\\u02c8r\\u00e6nd\\u0259m\\/\",\"translation\":\"a.\\u968f\\u673a\\u7684;\\u4e0d\\u53ef\\u601d\\u8bae\\u7684\"},{\"word\":\"maximum\",\"pronun\":\"\\/\\u02c8m\\u00e6ks\\u026am\\u0259m\\/\",\"translation\":\"a.\\u6700\\u5927\\u6781\\u9650\\u7684 n.\\u6700\\u5927\\u91cf\"},{\"word\":\"explode\",\"pronun\":\"\\/\\u026ak\\u02c8spl\\u0259\\u028ad\\/\",\"translation\":\"vi.&vt.\\u7206\\u70b8;\\u7206\\u7834\"},{\"word\":\"jolt\",\"pronun\":\"\\/d\\u0292\\u0259\\u028alt\\/\",\"translation\":\"n.\\u9707\\u52a8;\\u6447\\u6643;\\u98a0\\u7c38 v.\\u4f7f\\u9707\\u52a8\"},{\"word\":\"flip\",\"pronun\":\"\\/fl\\u026ap\\/\",\"translation\":\"v.(\\u4f7f)\\u5feb\\u901f\\u7ffb\\u8f6c;(\\u624b\\u6307)\\u8f7b\\u629b\"},{\"word\":\"stun\",\"pronun\":\"\\/st\\u028cn\\/\",\"translation\":\"vt.\\u4f7f\\u9707\\u60ca\\uff0c\\u4f7f\\u660f\\u8ff7\"},{\"word\":\"mud\",\"pronun\":\"\\/m\\u028cd\\/\",\"translation\":\"n.\\u6ce5;\\u6ce5\\u6d46\"},{\"word\":\"iconic\",\"pronun\":\"\\/a\\u026a\\u02c8k\\u0252n\\u026ak\\/\",\"translation\":\"a.\\u7b26\\u53f7\\u7684;\\u56fe\\u6807\\u7684\"},{\"word\":\"foundation\",\"pronun\":\"\\/fa\\u028an\\u02c8de\\u026a\\u0283n\\/\",\"translation\":\"n.\\u521b\\u5efa;\\u57fa\\u7840;\\u5730\\u57fa\"},{\"word\":\"political\",\"pronun\":\"\\/p\\u0259\\u02c8l\\u026at\\u026akl\\/\",\"translation\":\"a.\\u653f\\u6cbb\\u7684\"},{\"word\":\"didgeridoo\",\"pronun\":\"\\/\\u02ccd\\u026ad\\u0292\\u0259ri'du\\u02d0\\/\",\"translation\":\"n.\\u8fea\\u5409\\u91cc\\u675c\\u7ba1\"},{\"word\":\"located\",\"pronun\":\"\\/l\\u0259\\u028a\\u02c8ke\\u026at\\u026ad\\/\",\"translation\":\"a.\\u4f4d\\u4e8e\"},{\"word\":\"barbecue\",\"pronun\":\"\\/\\u02c8b\\u0251:b\\u026akju:\\/\",\"translation\":\"n.(abbr.BBQ)\\u6237\\u5916\\u70e7\\u70e4;\\u70e4\\u67b6\"},{\"word\":\"bakery\",\"pronun\":\"\\/\\u02c8be\\u026ak\\u0259ri\\/\",\"translation\":\"n.\\u9762\\u5305(\\u7cd5\\u997c)\\u5e97;\\u9762\\u5305\\u5382\"},{\"word\":\"joint\",\"pronun\":\"\\/d\\u0292\\u0254\\u026ant\\/\",\"translation\":\"n.\\u516c\\u5171\\u573a\\u6240;\\u5173\\u8282 a.\\u8054\\u5408\\u7684\"},{\"word\":\"butcher\",\"pronun\":\"\\/\\u02c8b\\u028at\\u0283\\u0259(r)\\/\",\"translation\":\"n.\\u8089\\u8d29;\\u5c60\\u592b;\\u523d\\u5b50\\u624b\"},{\"word\":\"premier\",\"pronun\":\"\\/\\u02c8premi\\u0259(r)\\/\",\"translation\":\"a.\\u6700\\u8457\\u540d\\u7684;\\u7b2c\\u4e00\\u7684 n.\\u603b\\u7406\"},{\"word\":\"herb\",\"pronun\":\"\\/h\\u025c:b\\/\",\"translation\":\"n.\\u836f\\u8349;\\u9999\\u8349;\\u8349\\u672c\"},{\"word\":\"hollow\",\"pronun\":\"\\/\\u02c8h\\u0252l\\u0259\\u028a\\/\",\"translation\":\"a.\\u4e2d\\u7a7a\\u7684;\\u7a7a\\u5fc3\\u7684\"},{\"word\":\"vibrate\",\"pronun\":\"\\/va\\u026a\\u02c8bre\\u026at\\/\",\"translation\":\"vt.&vi.(\\u4f7f)\\u632f\\u52a8\"},{\"word\":\"horn\",\"pronun\":\"\\/h\\u0254:n\\/\",\"translation\":\"n.(\\u4e50\\u5668)\\u53f7\"},{\"word\":\"straightforward\",\"pronun\":\"\\/\\u02ccstre\\u026at\\u02c8f\\u0254:w\\u0259d\\/\",\"translation\":\"a.\\u5766\\u7387\\u7684;\\u7b80\\u5355\\u7684\"},{\"word\":\"slogan\",\"pronun\":\"\\/\\u02c8sl\\u0259\\u028ag\\u0259n\\/\",\"translation\":\"n.\\u6807\\u8bed;\\u53e3\\u53f7\"},{\"word\":\"arrow\",\"pronun\":\"\\/\\u02c8\\u00e6r\\u0259\\u028a\\/\",\"translation\":\"n.\\u7bad;\\u7bad\\u5934\"},{\"word\":\"entitle\",\"pronun\":\"\\/\\u026an\\u02c8ta\\u026atl\\/\",\"translation\":\"vt.\\u7ed9\\u2026\\u547d\\u540d;\\u4f7f\\u4eab\\u6709\\u6743\\u5229\"},{\"word\":\"getaway\",\"pronun\":\"\\/\\u02c8\\u0261et\\u0259we\\u026a\\/\",\"translation\":\"n.\\u9002\\u5408\\u5ea6\\u5047\\u7684\\u5730\\u65b9\"},{\"word\":\"kayaking\",\"pronun\":\"\\/\\u02c8ka\\u026a\\u00e6k\\u026a\\u014b\\/\",\"translation\":\"n.\\u5212\\u76ae\\u8247\"},{\"word\":\"freedom\",\"pronun\":\"\\/\\u02c8fri:d\\u0259m\\/\",\"translation\":\"n.\\u81ea\\u7531;\\u4e0d\\u53d7\\u2026\\u5f71\\u54cd\\u7684\\u72b6\\u6001\"},{\"word\":\"domain\",\"pronun\":\"\\/d\\u0259\\u02c8me\\u026an\\/\",\"translation\":\"n.\\u9886\\u57df;\\u9886\\u571f;\\u8303\\u56f4\"},{\"word\":\"sponsor\",\"pronun\":\"\\/\\u02c8sp\\u0252ns\\u0259(r)\\/\",\"translation\":\"vt.\\u5021\\u8bae;\\u8d5e\\u52a9 n.\\u6cd5\\u6848\\u5021\\u8bae\\u8005\"},{\"word\":\"liberty\",\"pronun\":\"\\/\\u02c8l\\u026ab\\u0259ti\\/\",\"translation\":\"n.\\u81ea\\u7531\"},{\"word\":\"golf\",\"pronun\":\"\\/g\\u0252lf\\/\",\"translation\":\"n.\\u9ad8\\u5c14\\u592b\\u7403\\u8fd0\\u52a8\"},{\"word\":\"strait\",\"pronun\":\"\\/stre\\u026at\\/\",\"translation\":\"n.\\u6d77\\u5ce1\"},{\"word\":\"sample\",\"pronun\":\"\\/\\u02c8s\\u0251:mpl\\/\",\"translation\":\"n.\\u6837\\u672c;\\u6837\\u54c1\"},{\"word\":\"monument\",\"pronun\":\"\\/\\u02c8m\\u0252njum\\u0259nt\\/\",\"translation\":\"n.\\u7eaa\\u5ff5\\u7891\\/\\u9986\\/\\u5802\\u7b49;\\u5386\\u53f2\\u9057\\u8ff9\"},{\"word\":\"kiwi\",\"pronun\":\"\\/\\u02c8ki:wi:\\/\",\"translation\":\"n.\\u51e0\\u7ef4(\\u65b0\\u897f\\u5170\\u9e1f)\"},{\"word\":\"geyser\",\"pronun\":\"\\/\\u02c8gi:z\\u0259(r)\\/\",\"translation\":\"n.\\u95f4\\u6b47\\u6cc9\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 26,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

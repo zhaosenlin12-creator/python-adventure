@@ -1,0 +1,62 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.658895+00:00",
+  "request": {
+    "lesson_id": "eb102bde9fb23ebd82967cb3e20c0a58",
+    "course_id": "5e52147dad246d64cba012617962b179",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "5e52147dad246d64cba012617962b179",
+    "order": 31,
+    "nextCourseId": "5e52147dad246d64cba012617962b179",
+    "courseName": "基础练习-中排数字",
+    "lessonId": "eb102bde9fb23ebd82967cb3e20c0a58",
+    "nextLessonId": "2ab7d63c4131edc88f74a4c56e5ec685",
+    "lessonName": "4指法练习",
+    "icon": "data/assets/daziya.com/key-icon_num-4.9cccaccc8e.png",
+    "description": "数字输入练习 - 4指法练习",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "acb63123de2b7fbd9985377f110d906a",
+        "index": 1,
+        "highlights": [
+          "4"
+        ],
+        "text": [
+          "请用右手食指输入数字4"
+        ],
+        "detail": "新的数字键[4]"
+      }
+    ],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4e645e40df8a5f09a4431c594a4d4f9e",
+        "index": 2,
+        "text": [
+          "44444444444444444444"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "4",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

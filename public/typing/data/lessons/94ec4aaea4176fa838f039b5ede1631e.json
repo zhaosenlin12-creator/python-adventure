@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.344889+00:00",
+  "request": {
+    "lesson_id": "94ec4aaea4176fa838f039b5ede1631e",
+    "course_id": "30951c93875a1e260feda8cb699005df",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "30951c93875a1e260feda8cb699005df",
+    "order": 491,
+    "nextCourseId": "30951c93875a1e260feda8cb699005df",
+    "courseName": "英语每日故事（初级）32-61",
+    "lessonId": "94ec4aaea4176fa838f039b5ede1631e",
+    "nextLessonId": "49362d27b4b66b4f073573806070bc05",
+    "lessonName": "Fun at School",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "bd2358dc4fb2a6606f6b606caa597fba",
+        "index": 1,
+        "text": [
+          "Cory goes to school three days a week. He learns about letters and numbers. He plays with his friends. They play inside when it rains and outside when it is sunny. It is fun! Next year, he will be five years old. He will go to school five days a week! He can't wait!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

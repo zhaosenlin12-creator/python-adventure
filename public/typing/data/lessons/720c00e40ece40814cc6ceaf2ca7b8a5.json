@@ -1,0 +1,83 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.587109+00:00",
+  "request": {
+    "lesson_id": "720c00e40ece40814cc6ceaf2ca7b8a5",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 12,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "720c00e40ece40814cc6ceaf2ca7b8a5",
+    "nextLessonId": "2628b50cbde67aed90c6780d49c25e7f",
+    "lessonName": "韵母iu、ie",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母iu、ie的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "2706eade8b7e7f3fc58b68601a3d6172",
+        "index": 1,
+        "highlights": [
+          "iu"
+        ],
+        "text": [
+          "请输入按键 [iu]"
+        ],
+        "detail": "学习双拼按键 iu"
+      },
+      {
+        "chapterId": "3e9199723aebd41f1d18066024ee5393",
+        "index": 2,
+        "highlights": [
+          "ie"
+        ],
+        "text": [
+          "请输入按键 [ie]"
+        ],
+        "detail": "学习双拼按键 ie"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "4cfd26efbd8b59d42893b401cb2a53b6",
+        "index": 3,
+        "text": [
+          "iuiuiuiuieieieieiuieiuieiuieiuie"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "dfbd49a6be0b4e24a9a35fce5580c089",
+        "index": 4,
+        "text": [
+          "柳枝轻舞，蝴蝶歇在绿叶间。\\n小鸟啾啾叫，姐姐教我叠纸飞机。\\n秋雨淅沥，铁匠铺里火花飞溅。\\n月牙儿弯弯，牛儿悠闲吃草。\\n喜鹊叽叽喳喳，秋天收获喜悦。"
+        ],
+        "pinyin": "[[\"柳\", \"liǔ\"], [\"枝\", \"zhī\"], [\"轻\", \"qīng\"], [\"舞\", \"wǔ\"], [\"，\", \"\"], [\"蝴\", \"hú\"], [\"蝶\", \"dié\"], [\"歇\", \"xiē\"], [\"在\", \"zài\"], [\"绿\", \"lǜ\"], [\"叶\", \"yè\"], [\"间\", \"jiān\"], [\"。\", \"\"], [\"小\", \"xiǎo\"], [\"鸟\", \"niǎo\"], [\"啾\", \"jiū\"], [\"啾\", \"jiū\"], [\"叫\", \"jiào\"], [\"，\", \"\"], [\"姐\", \"jiě\"], [\"姐\", \"jie\"], [\"教\", \"jiāo\"], [\"我\", \"wǒ\"], [\"叠\", \"dié\"], [\"纸\", \"zhǐ\"], [\"飞\", \"fēi\"], [\"机\", \"jī\"], [\"。\", \"\"], [\"秋\", \"qiū\"], [\"雨\", \"yǔ\"], [\"淅\", \"xī\"], [\"沥\", \"lì\"], [\"，\", \"\"], [\"铁\", \"tiě\"], [\"匠\", \"jiàng\"], [\"铺\", \"pù\"], [\"里\", \"lǐ\"], [\"火\", \"huǒ\"], [\"花\", \"huā\"], [\"飞\", \"fēi\"], [\"溅\", \"jiàn\"], [\"。\", \"\"], [\"月\", \"yuè\"], [\"牙\", \"yá\"], [\"儿\", \"er\"], [\"弯\", \"wān\"], [\"弯\", \"wān\"], [\"，\", \"\"], [\"牛\", \"niú\"], [\"儿\", \"er\"], [\"悠\", \"yōu\"], [\"闲\", \"xián\"], [\"吃\", \"chī\"], [\"草\", \"cǎo\"], [\"。\", \"\"], [\"喜\", \"xǐ\"], [\"鹊\", \"què\"], [\"叽\", \"jī\"], [\"叽\", \"jī\"], [\"喳\", \"zhā\"], [\"喳\", \"zhā\"], [\"，\", \"\"], [\"秋\", \"qiū\"], [\"天\", \"tiān\"], [\"收\", \"shōu\"], [\"获\", \"huò\"], [\"喜\", \"xǐ\"], [\"悦\", \"yuè\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.793399+00:00",
+  "request": {
+    "lesson_id": "cc5753a9f724c0ad46fa29089d27eac6",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 153,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "cc5753a9f724c0ad46fa29089d27eac6",
+    "nextLessonId": "5fc558968b08f00645bf84c3b6f58be3",
+    "lessonName": "KET核心词-24",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第24课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "12ab329aea251f5c209ca59029f94d4a",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"feast\",\"pronun\":\"[fiːst]\",\"translation\":\"n. 筵席，宴会；节日\\nvt. 享受；款待，宴请\\nvi. 享受；参加宴会\",\"audio\":\"feast.mp3\"},{\"word\":\"feed\",\"pronun\":\"[fiːd]\",\"translation\":\"n. 饲料；饲养；（动物或婴儿的）一餐\\nvt. 喂养；供给；放牧；抚养（家庭等）；靠…为生\\nvi. 吃东西；流入\",\"audio\":\"feed.mp3\"},{\"word\":\"feel\",\"pronun\":\"[fiːl]\",\"translation\":\"n. 感觉；触摸\\nvi. 觉得；摸索\\nvt. 感觉；认为；触摸；试探\",\"audio\":\"feel.mp3\"},{\"word\":\"festival\",\"pronun\":\"[ˈfestɪvl]\",\"translation\":\"n. 节日；庆祝，纪念活动；欢乐\\nadj. 节日的，喜庆的；快乐的\",\"audio\":\"festival.mp3\"},{\"word\":\"few\",\"pronun\":\"[fjuː]\",\"translation\":\"n. 很少数\\nadj. 很少的；几乎没有的\\npron. 很少\",\"audio\":\"few.mp3\"},{\"word\":\"field\",\"pronun\":\"[fiːld]\",\"translation\":\"n. 领域；牧场；旷野；战场；运动场\\nadj. 扫描场；田赛的；野生的\\nvt. 把暴晒于场上；使上场\\nvi. 担任场外队员\",\"audio\":\"field.mp3\"},{\"word\":\"file\",\"pronun\":\"[faɪl]\",\"translation\":\"n. 文件；档案；文件夹；锉刀\\nvt. 提出；锉；琢磨；把…归档\\nvi. 列队行进；用锉刀锉\",\"audio\":\"file.mp3\"},{\"word\":\"fill\",\"pronun\":\"[fɪl]\",\"translation\":\"n. 满足；填满的量；装填物\\nvt. 装满，使充满；满足；堵塞；任职\\nvi. 被充满，膨胀\",\"audio\":\"fill.mp3\"},{\"word\":\"film\",\"pronun\":\"[fɪlm]\",\"translation\":\"n. 电影；薄膜；胶卷；轻烟\\nvt. 在…上覆以薄膜；把…拍成电影\\nvi. 摄制电影；生薄膜；变得朦胧\",\"audio\":\"film.mp3\"},{\"word\":\"film-making\",\"pronun\":\"[ˈfɪlm meɪkɪŋ]\",\"translation\":\"n. 电影制作\",\"audio\":\"film-making.mp3\"},{\"word\":\"final\",\"pronun\":\"[ˈfaɪnl]\",\"translation\":\"n. 决赛；期末考试；当日报纸的末版\\nadj. 最终的；决定性的；不可更改的\",\"audio\":\"final.mp3\"},{\"word\":\"find\",\"pronun\":\"[faɪnd]\",\"translation\":\"n. 发现\\nvi. 裁决\\nvt. 查找，找到；发现；认为；感到；获得\",\"audio\":\"find.mp3\"},{\"word\":\"fine\",\"pronun\":\"[faɪn]\",\"translation\":\"n. 罚款\\nadj. 好的；优良的；细小的，精美的；健康的；晴朗的\\nvt. 罚款；澄清\\nadv. 很好地；精巧地\",\"audio\":\"fine.mp3\"},{\"word\":\"finger\",\"pronun\":\"[ˈfɪŋɡər]\",\"translation\":\"n. 手指；指针，指状物\\nvt. 伸出；用手指拨弄\\nvi. 用指触摸；拨弄\",\"audio\":\"finger.mp3\"},{\"word\":\"finish\",\"pronun\":\"[ˈfɪnɪʃ]\",\"translation\":\"n. 结束；完美；回味（葡萄酒）\\nvt. 完成；结束；用完\\nvi. 结束，终止；终结\",\"audio\":\"finish.mp3\"},{\"word\":\"fire\",\"pronun\":\"[ˈfaɪər]\",\"translation\":\"n. 火；火灾；炮火；炉火；热情；激情；磨难\\nvt. 点燃；解雇；开除；使发光；烧制；激动；放枪\\nvi. 着火；射击；开枪；激动；烧火\",\"audio\":\"fire.mp3\"},{\"word\":\"first\",\"pronun\":\"[fɜːrst]\",\"translation\":\"num. 第一\\nn. 第一；开始；冠军\\nadj. 第一的；基本的；最早的\\nadv. 第一；首先；优先；宁愿\",\"audio\":\"first.mp3\"},{\"word\":\"fisherman\",\"pronun\":\"[ˈfɪʃərmən]\",\"translation\":\"n. 渔夫；渔人\",\"audio\":\"fisherman.mp3\"},{\"word\":\"fishing\",\"pronun\":\"[ˈfɪʃɪŋ]\",\"translation\":\"n. 渔业；捕鱼（术）；试探；装配\\nadj. 钓鱼的；钓鱼用的\\nv. 捕鱼（fish的ing形式）\",\"audio\":\"fishing.mp3\"},{\"word\":\"fit\",\"pronun\":\"[fɪt]\",\"translation\":\"n. 合身；发作；痉挛\\nadj. 健康的；合适的；恰当的；准备好的\\nvt. 安装；使……适应；使……合身；与……相符\\nvi. 符合，配合；适合；合身\",\"audio\":\"fit.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

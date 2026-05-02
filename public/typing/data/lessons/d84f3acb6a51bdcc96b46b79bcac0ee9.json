@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:44.214845+00:00",
+  "request": {
+    "lesson_id": "d84f3acb6a51bdcc96b46b79bcac0ee9",
+    "course_id": "48d2e288e71b74e24ef61b93eddceda0",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "48d2e288e71b74e24ef61b93eddceda0",
+    "order": 181,
+    "nextCourseId": "48d2e288e71b74e24ef61b93eddceda0",
+    "courseName": "名人名言",
+    "lessonId": "d84f3acb6a51bdcc96b46b79bcac0ee9",
+    "nextLessonId": "ff514b7508ab0e0a21b652f07b8b47b1",
+    "lessonName": "裴多菲",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "裴多菲 - 名人名言双拼输入练习",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "bf8b194e63be0feae5a912b14bc6c14c",
+        "index": 1,
+        "text": [
+          "裴多菲说生命诚可贵，爱情价更高。若为自由故，两者皆可抛。这位匈牙利诗人的名言激励了无数追求理想的人们，成为千古传诵的经典之作。"
+        ],
+        "pinyin": "[[\"裴\", \"péi\"], [\"多\", \"duō\"], [\"菲\", \"fēi\"], [\"说\", \"shuō\"], [\"生\", \"shēng\"], [\"命\", \"mìng\"], [\"诚\", \"chéng\"], [\"可\", \"kě\"], [\"贵\", \"guì\"], [\"，\", \"\"], [\"爱\", \"ài\"], [\"情\", \"qíng\"], [\"价\", \"jià\"], [\"更\", \"gèng\"], [\"高\", \"gāo\"], [\"。\", \"\"], [\"若\", \"ruò\"], [\"为\", \"wèi\"], [\"自\", \"zì\"], [\"由\", \"yóu\"], [\"故\", \"gù\"], [\"，\", \"\"], [\"两\", \"liǎng\"], [\"者\", \"zhě\"], [\"皆\", \"jiē\"], [\"可\", \"kě\"], [\"抛\", \"pāo\"], [\"。\", \"\"], [\"这\", \"zhè\"], [\"位\", \"wèi\"], [\"匈\", \"xiōng\"], [\"牙\", \"yá\"], [\"利\", \"lì\"], [\"诗\", \"shī\"], [\"人\", \"rén\"], [\"的\", \"de\"], [\"名\", \"míng\"], [\"言\", \"yán\"], [\"激\", \"jī\"], [\"励\", \"lì\"], [\"了\", \"le\"], [\"无\", \"wú\"], [\"数\", \"shù\"], [\"追\", \"zhuī\"], [\"求\", \"qiú\"], [\"理\", \"lǐ\"], [\"想\", \"xiǎng\"], [\"的\", \"de\"], [\"人\", \"rén\"], [\"们\", \"men\"], [\"，\", \"\"], [\"成\", \"chéng\"], [\"为\", \"wéi\"], [\"千\", \"qiān\"], [\"古\", \"gǔ\"], [\"传\", \"chuán\"], [\"诵\", \"sòng\"], [\"的\", \"de\"], [\"经\", \"jīng\"], [\"典\", \"diǎn\"], [\"之\", \"zhī\"], [\"作\", \"zuò\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 10,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

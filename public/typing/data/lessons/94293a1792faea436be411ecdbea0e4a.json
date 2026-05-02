@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:30.425479+00:00",
+  "request": {
+    "lesson_id": "94293a1792faea436be411ecdbea0e4a",
+    "course_id": "21fe8d60de407da95e1abc33ac636014",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "21fe8d60de407da95e1abc33ac636014",
+    "order": 21,
+    "nextCourseId": "21fe8d60de407da95e1abc33ac636014",
+    "courseName": "上排字母",
+    "lessonId": "94293a1792faea436be411ecdbea0e4a",
+    "nextLessonId": "25f2bff601f750fcf1dc8560bd8eb876",
+    "lessonName": "回顾r和u",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-review-ru.f2465b10d5.png",
+    "description": "回顾r和u",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f63f10af52498f36823d28c3fcda96d7",
+        "index": 1,
+        "text": [
+          "ru ru fu du su au ju ku lu; ju ku lu fu du su la ru fa ja sa ka ru;"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "rufds ajkl;",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

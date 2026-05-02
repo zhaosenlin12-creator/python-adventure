@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.489014+00:00",
+  "request": {
+    "lesson_id": "85993a6dbb726d6661f8f90a7ff95ebe",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 319,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "85993a6dbb726d6661f8f90a7ff95ebe",
+    "nextLessonId": "07a9635374da12275076f07022676568",
+    "lessonName": "六级词汇正序版-10",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第10课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f9c973579d8f456051b13bbae81c5213",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"authorize\",\"pronun\":\"[ˈɔːθəraɪz]\",\"translation\":\"vt. 批准，认可；授权给；委托代替\",\"audio\":\"authorize.mp3\"},{\"word\":\"automatic\",\"pronun\":\"[ˌɔːtəˈmætɪk]\",\"translation\":\"n. 自动机械；自动手枪\\nadj. 自动的；无意识的；必然的\",\"audio\":\"automatic.mp3\"},{\"word\":\"autonomous\",\"pronun\":\"[ɔːˈtɑːnəməs]\",\"translation\":\"adj. 自治的；自主的；自发的\",\"audio\":\"autonomous.mp3\"},{\"word\":\"autonomy\",\"pronun\":\"[ɔːˈtɑːnəmi]\",\"translation\":\"n. 自治，自治权\",\"audio\":\"autonomy.mp3\"},{\"word\":\"avail\",\"pronun\":\"[əˈveɪl]\",\"translation\":\"vi. 有益于，有益于；使对某人有利。\\nvt. 有益于，有益于；使对某人有利。\\nn. 效用，利益\",\"audio\":\"avail.mp3\"},{\"word\":\"available\",\"pronun\":\"[əˈveɪləbl]\",\"translation\":\"adj. 可获得的；可购得的；可找到的；有空的\",\"audio\":\"available.mp3\"},{\"word\":\"avert\",\"pronun\":\"[əˈvɜːrt]\",\"translation\":\"vt. 避免，防止；转移\",\"audio\":\"avert.mp3\"},{\"word\":\"aviation\",\"pronun\":\"[ˌeɪviˈeɪʃn]\",\"translation\":\"n. 航空；飞行术；飞机制造业\",\"audio\":\"aviation.mp3\"},{\"word\":\"avoid\",\"pronun\":\"[əˈvɔɪd]\",\"translation\":\"vt. 避免；避开，躲避；消除\",\"audio\":\"avoid.mp3\"},{\"word\":\"award\",\"pronun\":\"[əˈwɔːrd]\",\"translation\":\"n. 奖品；判决\\nvt. 授予；判定\",\"audio\":\"award.mp3\"},{\"word\":\"aware\",\"pronun\":\"[əˈwer]\",\"translation\":\"adj. 意识到的；知道的；有…方面知识的；懂世故的\",\"audio\":\"aware.mp3\"},{\"word\":\"awkward\",\"pronun\":\"[ˈɔːkwərd]\",\"translation\":\"adj. 尴尬的；笨拙的；棘手的；不合适的\",\"audio\":\"awkward.mp3\"},{\"word\":\"axis\",\"pronun\":\"[ˈæksɪs]\",\"translation\":\"n. 轴；轴线；轴心国\",\"audio\":\"axis.mp3\"},{\"word\":\"background\",\"pronun\":\"[ˈbækɡraʊnd]\",\"translation\":\"n. 背景；隐蔽的位置\\nadj. 背景的；发布背景材料的\\nvt. 作…的背景\",\"audio\":\"background.mp3\"},{\"word\":\"bacteria\",\"pronun\":\"[bækˈtɪriə]\",\"translation\":\"n. [微] 细菌\",\"audio\":\"bacteria.mp3\"},{\"word\":\"ballet\",\"pronun\":\"[bæˈleɪ]\",\"translation\":\"n. 芭蕾舞剧；芭蕾舞乐曲\",\"audio\":\"ballet.mp3\"},{\"word\":\"bamboo\",\"pronun\":\"[ˌbæmˈbuː]\",\"translation\":\"n. 竹，竹子\\nadj. 竹制的；土著居民的\\nvt. 为…装上篾条\",\"audio\":\"bamboo.mp3\"},{\"word\":\"band\",\"pronun\":\"[bænd]\",\"translation\":\"n. 带，环；[物] 波段；(演奏流行音乐的) 乐队\\nn. n.乐队；队；一群\\nvi. 用带绑扎；给...镶边\",\"audio\":\"band.mp3\"},{\"word\":\"bandage\",\"pronun\":\"[ˈbændɪdʒ]\",\"translation\":\"n. 绷带\\nvt. 用绷带包扎\",\"audio\":\"bandage.mp3\"},{\"word\":\"bang\",\"pronun\":\"[bæŋ]\",\"translation\":\"n. 刘海；重击；突然巨响\\nvt. 重击；发巨响\\nadv. 直接地；砰然地；突然巨响地\",\"audio\":\"bang.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

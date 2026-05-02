@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.990813+00:00",
+  "request": {
+    "lesson_id": "2bb4337efcfe6f3e58210a0e21eaae9a",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 411,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "2bb4337efcfe6f3e58210a0e21eaae9a",
+    "nextLessonId": "49372e818a4f43a03c361054d67bb3f9",
+    "lessonName": "六级词汇正序版-12",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第12课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9b6270be93ccb61995c39aa927842892",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"bibliography\",\"pronun\":\"[ˌbɪbliˈɑːɡrəfi]\",\"translation\":\"n. 参考书目；文献目录\",\"audio\":\"bibliography.mp3\"},{\"word\":\"biography\",\"pronun\":\"[baɪˈɑːɡrəfi]\",\"translation\":\"n. 传记；档案；个人简介\",\"audio\":\"biography.mp3\"},{\"word\":\"bizarre\",\"pronun\":\"[bɪˈzɑːr]\",\"translation\":\"adj. 奇异的（指态度，容貌，款式等）\",\"audio\":\"bizarre.mp3\"},{\"word\":\"blank\",\"pronun\":\"[blæŋk]\",\"translation\":\"n. 空白；空虚；空白表格\\nadj. 空白的；空虚的；单调的\\nvt. 使…无效；使…模糊；封锁\\nvi. 消失；成为空白\",\"audio\":\"blank.mp3\"},{\"word\":\"blaze\",\"pronun\":\"[bleɪz]\",\"translation\":\"n. 火焰，烈火；光辉；情感爆发\\nvt. 在树皮上刻路标；公开宣布\\nvi. 燃烧；照耀，发光；激发\",\"audio\":\"blaze.mp3\"},{\"word\":\"bleed\",\"pronun\":\"[bliːd]\",\"translation\":\"vt. 使出血；榨取\\nvi. 流血；渗出；悲痛\",\"audio\":\"bleed.mp3\"},{\"word\":\"blink\",\"pronun\":\"[blɪŋk]\",\"translation\":\"n. 眨眼；瞬间；闪光\\nvt. 眨眼；使…闪烁\\nvi. 眨眼；闪烁\",\"audio\":\"blink.mp3\"},{\"word\":\"blossom\",\"pronun\":\"[ˈblɑːsəm]\",\"translation\":\"n. 花；开花期；兴旺期；花开的状态\\nvi. 开花；兴旺；发展成\",\"audio\":\"blossom.mp3\"},{\"word\":\"blunder\",\"pronun\":\"[ˈblʌndər]\",\"translation\":\"n. 大错\\nvt. 做错\\nvi. 跌跌撞撞地走；犯大错\",\"audio\":\"blunder.mp3\"},{\"word\":\"blunt\",\"pronun\":\"[blʌnt]\",\"translation\":\"adj. 钝的，不锋利的；生硬的；直率的\\nvt. 使迟钝\",\"audio\":\"blunt.mp3\"},{\"word\":\"blur\",\"pronun\":\"[blɜːr]\",\"translation\":\"n. 污迹；模糊不清的事物\\nvt. 涂污；使…模糊不清；使暗淡；玷污\\nvi. 沾上污迹；变模糊\",\"audio\":\"blur.mp3\"},{\"word\":\"blush\",\"pronun\":\"[blʌʃ]\",\"translation\":\"n. 脸红；红色；羞愧\\nvt. 红著脸表示；使成红色\\nvi. 脸红；感到惭愧\",\"audio\":\"blush.mp3\"},{\"word\":\"bonus\",\"pronun\":\"[ˈboʊnəs]\",\"translation\":\"n. 奖金；红利；额外津贴\",\"audio\":\"bonus.mp3\"},{\"word\":\"booklet\",\"pronun\":\"[ˈbʊklət]\",\"translation\":\"n. 小册子\",\"audio\":\"booklet.mp3\"},{\"word\":\"boom\",\"pronun\":\"[buːm]\",\"translation\":\"n. 繁荣；吊杆；隆隆声\\nvt. 使兴旺；发隆隆声\\nvi. 急速发展；发隆隆声\",\"audio\":\"boom.mp3\"},{\"word\":\"boost\",\"pronun\":\"[buːst]\",\"translation\":\"n. 推动；帮助；宣扬\\nvi. 宣扬；偷窃\\nvt. 促进；增加；支援\",\"audio\":\"boost.mp3\"},{\"word\":\"booth\",\"pronun\":\"[buːθ]\",\"translation\":\"n. 货摊；公用电话亭\",\"audio\":\"booth.mp3\"},{\"word\":\"border\",\"pronun\":\"[ˈbɔːrdər]\",\"translation\":\"n. 边境；边界；国界\\nvt. 接近；与…接壤；在…上镶边\\nvi. 接界；近似\",\"audio\":\"border.mp3\"},{\"word\":\"boring\",\"pronun\":\"[ˈbɔːrɪŋ]\",\"translation\":\"n. 钻孔\\nadj. 无聊的；令人厌烦的\\nv. 钻孔；使厌烦；挖空（bore的ing形式）\",\"audio\":\"boring.mp3\"},{\"word\":\"bounce\",\"pronun\":\"[baʊns]\",\"translation\":\"n. 跳；弹力；活力\\nvt. 弹跳；使弹起\\nvi. 弹跳；弹起，反跳；弹回\",\"audio\":\"bounce.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

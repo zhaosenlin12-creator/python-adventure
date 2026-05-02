@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.736387+00:00",
+  "request": {
+    "lesson_id": "84f5a0c7e94eeb10fb732bc3ce2d7150",
+    "course_id": "df7bf8b8c0456926de2c1fac14a741b2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "order": 442,
+    "nextCourseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "courseName": "宋词必备67首（1）",
+    "lessonId": "84f5a0c7e94eeb10fb732bc3ce2d7150",
+    "nextLessonId": "799252c7e9a225c08d3071f252a24930",
+    "lessonName": "小池",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "edf9c9551449a5329f049ed8cc46cee0",
+        "index": 1,
+        "text": [
+          "小池\\n杨万里\\n泉眼无声惜细流，树阴照水爱晴柔。\\n小荷才露尖尖角，早有蜻蜓立上头。"
+        ],
+        "pinyin": "[[\"小\", \"xiǎo\"], [\"池\", \"chí\"], [\"\\n\", \"\"], [\"杨\", \"yáng\"], [\"万\", \"wàn\"], [\"里\", \"lǐ\"], [\"\\n\", \"\"], [\"泉\", \"quán\"], [\"眼\", \"yǎn\"], [\"无\", \"wú\"], [\"声\", \"shēng\"], [\"惜\", \"xī\"], [\"细\", \"xì\"], [\"流\", \"liú\"], [\"，\", \"\"], [\"树\", \"shù\"], [\"阴\", \"yīn\"], [\"照\", \"zhào\"], [\"水\", \"shuǐ\"], [\"爱\", \"ài\"], [\"晴\", \"qíng\"], [\"柔\", \"róu\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"小\", \"xiǎo\"], [\"荷\", \"hé\"], [\"才\", \"cái\"], [\"露\", \"lù\"], [\"尖\", \"jiān\"], [\"尖\", \"jiān\"], [\"角\", \"jiǎo\"], [\"，\", \"\"], [\"早\", \"zǎo\"], [\"有\", \"yǒu\"], [\"蜻\", \"qīng\"], [\"蜓\", \"tíng\"], [\"立\", \"lì\"], [\"上\", \"shàng\"], [\"头\", \"tóu\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

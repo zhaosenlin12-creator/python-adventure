@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.772174+00:00",
+  "request": {
+    "lesson_id": "31e3605ab69be12dc747cc0c8558f0a3",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 31,
+    "nextCourseId": "ff61770b1da83313ceacb0a08aef6378",
+    "courseName": "Python",
+    "lessonId": "31e3605ab69be12dc747cc0c8558f0a3",
+    "nextLessonId": "5fc05d42fef21d475d39728a9d3b2a3e",
+    "lessonName": "变量和数据类型",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - 变量和数据类型",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f143dbafec5a740952b80d56bd7bdf17",
+        "index": 1,
+        "text": [
+          "# 定义不同类型的变量\\nname = \"Python\"\\nage = 30\\nheight = 1.75\\nis_student = True\\n\\n# 输出变量信息\\nprint(f\"姓名: {name}\")\\nprint(f\"年龄: {age}\")\\nprint(f\"身高: {height}米\")\\nprint(f\"是否学生: {is_student}\")\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

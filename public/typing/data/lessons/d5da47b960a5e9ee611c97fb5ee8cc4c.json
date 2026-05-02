@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.491028+00:00",
+  "request": {
+    "lesson_id": "d5da47b960a5e9ee611c97fb5ee8cc4c",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 658,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "d5da47b960a5e9ee611c97fb5ee8cc4c",
+    "nextLessonId": "dba4222f70db72d0681b1d54efc2cfef",
+    "lessonName": " 六年级上-2",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点六年级上 - 第2课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "cc181238f23b8e89e33bc932c2124e91",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"gave\",\"pronun\":\"[ɡeɪv]\",\"translation\":\"v. 给予（give的过去式）\",\"audio\":\"gave.mp3\"},{\"word\":\"feature\",\"pronun\":\"[ˈfiːtʃər]\",\"translation\":\"n. 特色，特征；容貌；特写或专题节目\\nvt. 特写；以…为特色；由…主演\\nvi. 起重要作用\",\"audio\":\"feature.mp3\"},{\"word\":\"follow\",\"pronun\":\"[ˈfɑːloʊ]\",\"translation\":\"n. 跟随；追随\\nvi. 跟随；接着\\nvt. 跟随；遵循；追求；密切注意，注视；注意；倾听\",\"audio\":\"follow.mp3\"},{\"word\":\"far\",\"pronun\":\"[fɑːr]\",\"translation\":\"n. 远方\\nadj. 远的；久远的\\nadv. 很；遥远地；久远地；到很远的距离；到很深的程度\",\"audio\":\"far.mp3\"},{\"word\":\"tell\",\"pronun\":\"[tel]\",\"translation\":\"vt. 告诉，说；辨别；吩咐；断定\\nvi. 讲述；告发，泄密；识别\",\"audio\":\"tell.mp3\"},{\"word\":\"on foot\",\"pronun\":\"\",\"translation\":\"na. 步行；在进行中；徒步\",\"audio\":\"on_foot.mp3\"},{\"word\":\"by\",\"pronun\":\"[baɪ]\",\"translation\":\"prep. 通过；被；依据；经由；在附近；在……之前\\nadv. 通过；经过；附近；[互联网] 白俄罗斯的国家代码顶级域名\",\"audio\":\"by.mp3\"},{\"word\":\"bus\",\"pronun\":\"[bʌs]\",\"translation\":\"n. 公共汽车\\n乘公共汽车\",\"audio\":\"bus.mp3\"},{\"word\":\"plane\",\"pronun\":\"[pleɪn]\",\"translation\":\"n. 飞机；平面；程度，水平\\nadj. 平的；平面的\\nvt. 刨平；用刨子刨；掠过水面\\nvi. 刨；乘飞机旅行；翱翔\",\"audio\":\"plane.mp3\"},{\"word\":\"taxi\",\"pronun\":\"[ˈtæksi]\",\"translation\":\"n. 出租汽车\\nvt. 使滑行；用出租车送\\nvi. 乘出租车；滑行\",\"audio\":\"taxi.mp3\"},{\"word\":\"ship\",\"pronun\":\"[ʃɪp]\",\"translation\":\"n. 船；舰；太空船\\nvt. 运送，乘船；以船运送\\nvi. 上船；乘船旅行；当船员\",\"audio\":\"ship.mp3\"},{\"word\":\"subway\",\"pronun\":\"[ˈsʌbweɪ]\",\"translation\":\"n. 地铁；地道\\nvi. 乘地铁\",\"audio\":\"subway.mp3\"},{\"word\":\"train\",\"pronun\":\"[treɪn]\",\"translation\":\"n. 火车；行列；长队；裙裾\\nv. 培养；训练；瞄准\",\"audio\":\"train.mp3\"},{\"word\":\"slow\",\"pronun\":\"[sloʊ]\",\"translation\":\"adj. 慢的；减速的；迟钝的\\nvt. 放慢；阻碍\\nvi. 变慢；变萧条\\nadv. 慢慢地；迟缓地\",\"audio\":\"slow.mp3\"},{\"word\":\"down\",\"pronun\":\"[daʊn]\",\"translation\":\"prep. 沿着，往下\\nn. 软毛，绒毛；[地质] 开阔的高地\\nadj. 向下的\\nvt. 打倒，击败\\nadv. 向下，下去；在下面\\nvi. 下降；下去\",\"audio\":\"down.mp3\"},{\"word\":\"slow down\",\"pronun\":\"\",\"translation\":\"na. 闲下来；减缓；放慢速度；减速\",\"audio\":\"slow_down.mp3\"},{\"word\":\"stop\",\"pronun\":\"[stɑːp]\",\"translation\":\"n. 停止；车站；障碍；逗留\\nvi. 停止；中止；逗留；被塞住\\nvt. 停止；堵塞；断绝\",\"audio\":\"stop.mp3\"},{\"word\":\"Mrs\",\"pronun\":\"[ˈmɪsɪz]\",\"translation\":\"n. 太太；夫人（用于已婚妇女姓名前的尊称）\",\"audio\":\"Mrs.mp3\"},{\"word\":\"early\",\"pronun\":\"[ˈɜːrli]\",\"translation\":\"adj. 早期的；早熟的\\nadv. 提早；在初期\",\"audio\":\"early.mp3\"},{\"word\":\"helmet\",\"pronun\":\"[ˈhelmɪt]\",\"translation\":\"n. 钢盔，头盔\",\"audio\":\"helmet.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.609402+00:00",
+  "request": {
+    "lesson_id": "3e8f297832fabbc2af8ac9af010257f8",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 112,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "3e8f297832fabbc2af8ac9af010257f8",
+    "nextLessonId": "81d5775bce5fd19542a1bc4ac5f4741b",
+    "lessonName": "KET核心词-38",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第38课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2678cf82545f60f3e32eee0620e9499f",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"lock\",\"pronun\":\"[lɑːk]\",\"translation\":\"vt. 锁，锁上；隐藏\\nvi. 锁；锁住；卡住\\nn. 锁；水闸；刹车\",\"audio\":\"lock.mp3\"},{\"word\":\"log\",\"pronun\":\"[lɔːɡ]\",\"translation\":\"vi. 伐木\\nvt. 切；伐木；航行\\nn. 记录；航行日志；原木\",\"audio\":\"log.mp3\"},{\"word\":\"long\",\"pronun\":\"[lɔːŋ]\",\"translation\":\"n. 长时间；[语] 长音节；（服装的）长尺寸；长裤\\nadj. 长的；过长的；做多头的；长时间的；冗长的，长音\\nvi. 渴望；热望\\nadv. 长期地；始终\",\"audio\":\"long.mp3\"},{\"word\":\"look\",\"pronun\":\"[lʊk]\",\"translation\":\"vt. 看；期待；注意；面向；看上去像\\nvi. 看；看起来；注意；面向\\nn. 看；样子；面容\",\"audio\":\"look.mp3\"},{\"word\":\"lorry\",\"pronun\":\"[ˈlɔːri]\",\"translation\":\"n. （英）卡车；[车辆] 货车；运料车\",\"audio\":\"lorry.mp3\"},{\"word\":\"lose\",\"pronun\":\"[luːz]\",\"translation\":\"vt. 浪费；使沉溺于；使迷路；遗失；错过\\nvi. 失败；受损失\",\"audio\":\"lose.mp3\"},{\"word\":\"lot\",\"pronun\":\"[lɑːt]\",\"translation\":\"n. 份额；许多；命运；阄\\nadv. （与形容词和副词连用）很，非常；（与动词连用）非常\\npron. 大量，许多\\nvt. 分组，把…划分（常与out连用）；把（土地）划分成块\\nvi. 抽签，拈阄\",\"audio\":\"lot.mp3\"},{\"word\":\"loud\",\"pronun\":\"[laʊd]\",\"translation\":\"adj. 大声的，高声的；不断的；喧吵的\\nadv. 大声地，高声地，响亮地\",\"audio\":\"loud.mp3\"},{\"word\":\"love\",\"pronun\":\"[lʌv]\",\"translation\":\"n. 恋爱；亲爱的；酷爱；喜爱的事物；爱情，爱意；疼爱；热爱；爱人，所爱之物\\nv. 爱，热爱；爱戴；赞美，称赞；喜爱；喜好；喜欢；爱慕\",\"audio\":\"love.mp3\"},{\"word\":\"lovely\",\"pronun\":\"[ˈlʌvli]\",\"translation\":\"adj. 可爱的；令人愉快的；爱恋的；秀丽的，优美的\\nn. 美女；可爱的东西\",\"audio\":\"lovely.mp3\"},{\"word\":\"low\",\"pronun\":\"[loʊ]\",\"translation\":\"adj. 低的，浅的；卑贱的；粗俗的；消沉的\\nadv. 低声地；谦卑地，低下地\\nn. 低；低价；低点；牛叫声\\nvi. 牛叫\",\"audio\":\"low.mp3\"},{\"word\":\"luck\",\"pronun\":\"[lʌk]\",\"translation\":\"n. 运气；幸运；带来好运的东西\\nvi. 靠运气，走运；凑巧碰上\",\"audio\":\"luck.mp3\"},{\"word\":\"lucky\",\"pronun\":\"[ˈlʌki]\",\"translation\":\"adj. 幸运的；侥幸的\",\"audio\":\"lucky.mp3\"},{\"word\":\"luggage\",\"pronun\":\"[ˈlʌɡɪdʒ]\",\"translation\":\"n. 行李；皮箱\",\"audio\":\"luggage.mp3\"},{\"word\":\"lunch\",\"pronun\":\"[lʌntʃ]\",\"translation\":\"n. 午餐\\nvt. 吃午餐；供给午餐\\nvi. 吃午餐；供给午餐\",\"audio\":\"lunch.mp3\"},{\"word\":\"lunchtime\",\"pronun\":\"[ˈlʌntʃtaɪm]\",\"translation\":\"n. 午餐时间\",\"audio\":\"lunchtime.mp3\"},{\"word\":\"machine\",\"pronun\":\"[məˈʃiːn]\",\"translation\":\"n. 机械，机器；机构；机械般工作的人\\nvt. 用机器制造\",\"audio\":\"machine.mp3\"},{\"word\":\"mad\",\"pronun\":\"[mæd]\",\"translation\":\"adj. 疯狂的；发疯的；愚蠢的；着迷的\\nn. 狂怒\",\"audio\":\"mad.mp3\"},{\"word\":\"magazine\",\"pronun\":\"[ˈmæɡəziːn]\",\"translation\":\"n. 杂志；弹药库；胶卷盒\",\"audio\":\"magazine.mp3\"},{\"word\":\"magic\",\"pronun\":\"[ˈmædʒɪk]\",\"translation\":\"n. 巫术；魔法；戏法\\nadj. 不可思议的；有魔力的；魔术的\",\"audio\":\"magic.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.844708+00:00",
+  "request": {
+    "lesson_id": "9cf1face8fa0c8142aa35751040c9ea5",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 162,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "9cf1face8fa0c8142aa35751040c9ea5",
+    "nextLessonId": "9ccf10339e377acaa2f356a2bf8995e5",
+    "lessonName": "KET核心词-51",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第51课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4c2baeea0f109bb29da575e566eca94b",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"price\",\"pronun\":\"[praɪs]\",\"translation\":\"n. 价格；价值；代价\\nvt. 给……定价；问……的价格\",\"audio\":\"price.mp3\"},{\"word\":\"primary\",\"pronun\":\"[ˈpraɪmeri]\",\"translation\":\"n. 原色；最主要者\\nadj. 主要的；初级的；基本的\",\"audio\":\"primary.mp3\"},{\"word\":\"prince\",\"pronun\":\"[prɪns]\",\"translation\":\"n. 王子，国君；亲王；贵族\",\"audio\":\"prince.mp3\"},{\"word\":\"print\",\"pronun\":\"[prɪnt]\",\"translation\":\"n. 印刷业；印花布；印刷字体；印章；印记\\nvt. 印刷；打印；刊载；用印刷体写；在…印花样\\nvi. 印刷；出版；用印刷体写\",\"audio\":\"print.mp3\"},{\"word\":\"prize\",\"pronun\":\"[praɪz]\",\"translation\":\"n. 奖品；奖赏；战利品\\nadj. 获奖的\\nvt. 珍视；捕获；估价\",\"audio\":\"prize.mp3\"},{\"word\":\"probably\",\"pronun\":\"[ˈprɑːbəbli]\",\"translation\":\"adv. 大概；或许；很可能\",\"audio\":\"probably.mp3\"},{\"word\":\"problem\",\"pronun\":\"[ˈprɑːbləm]\",\"translation\":\"n. 难题；引起麻烦的人\\nadj. 成问题的；难处理的\",\"audio\":\"problem.mp3\"},{\"word\":\"program\",\"pronun\":\"[ˈproʊɡræm]\",\"translation\":\"n. 程序；计划；大纲\\nvt. 用程序指令；为…制订计划；为…安排节目\\nvi. 编程序；安排节目；设计电脑程式\",\"audio\":\"program.mp3\"},{\"word\":\"programme\",\"pronun\":\"[ˈproʊɡræm]\",\"translation\":\"n. 计划，规划；节目；程序\\nvt. 规划；拟…计划\\nvi. 编程序；制作节目\",\"audio\":\"programme.mp3\"},{\"word\":\"project\",\"pronun\":\"[ˈprɑːdʒekt]\",\"translation\":\"n. 工程；计划；事业\\nvt. 设计；计划；发射；放映\\nvi. 设计；计划；表达；投射\",\"audio\":\"project.mp3\"},{\"word\":\"protect\",\"pronun\":\"[prəˈtekt]\",\"translation\":\"vt. 保护，防卫；警戒\",\"audio\":\"protect.mp3\"},{\"word\":\"proud\",\"pronun\":\"[praʊd]\",\"translation\":\"adj. 自豪的；得意的；自负的\",\"audio\":\"proud.mp3\"},{\"word\":\"public\",\"pronun\":\"[ˈpʌblɪk]\",\"translation\":\"n. 公众；社会；公共场所\\nadj. 公众的；政府的；公用的；公立的\",\"audio\":\"public.mp3\"},{\"word\":\"pudding\",\"pronun\":\"[ˈpʊdɪŋ]\",\"translation\":\"n. 布丁\",\"audio\":\"pudding.mp3\"},{\"word\":\"pull\",\"pronun\":\"[pʊl]\",\"translation\":\"n. 拉，拉绳；拉力，牵引力；拖\\nvt. 拉；拔；拖\\nvi. 拉，拖；拔\",\"audio\":\"pull.mp3\"},{\"word\":\"pupil\",\"pronun\":\"[ˈpjuːpl]\",\"translation\":\"n. 学生；[解剖] 瞳孔；未成年人\",\"audio\":\"pupil.mp3\"},{\"word\":\"puppy\",\"pronun\":\"[ˈpʌpi]\",\"translation\":\"n. 小狗，幼犬\",\"audio\":\"puppy.mp3\"},{\"word\":\"purple\",\"pronun\":\"[ˈpɜːrpl]\",\"translation\":\"n. 紫色；紫袍\\nadj. 紫色的；帝王的；华而不实的\\nvt. 使成紫色\\nvi. 变成紫色\",\"audio\":\"purple.mp3\"},{\"word\":\"purse\",\"pronun\":\"[pɜːrs]\",\"translation\":\"n. (女士)手提袋；(国家、家庭、团体等的) 财力\\nvt. （嘴巴）皱起，使缩拢；撅嘴\",\"audio\":\"purse.mp3\"},{\"word\":\"push\",\"pronun\":\"[pʊʃ]\",\"translation\":\"n. 推，决心；大规模攻势；矢志的追求\\nvi. 推进；增加；努力争取\\nvt. 推动，增加；对…施加压力，逼迫；按；说服\",\"audio\":\"push.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

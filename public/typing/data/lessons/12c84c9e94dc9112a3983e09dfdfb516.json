@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.519479+00:00",
+  "request": {
+    "lesson_id": "12c84c9e94dc9112a3983e09dfdfb516",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 533,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "12c84c9e94dc9112a3983e09dfdfb516",
+    "nextLessonId": "f5e85eba10d89e7970c61bb0eecd041b",
+    "lessonName": "Do Worms Sleep?",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "61790bb772d2cc046705cd99f52b368e",
+        "index": 1,
+        "text": [
+          "Hannah likes worms. She wants to know everything about them.\\nShe asks her mom, \"Do worms sleep?\"\\nMom says, \"I don't know. Let's search for the answer.\"\\nHannah and her mom read about worms.\\nThey learn that worms have no arms, no legs, and no eyes. They live in the ground and they eat leaves.\\nBut do they sleep? Yes, they do!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

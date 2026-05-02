@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.540319+00:00",
+  "request": {
+    "lesson_id": "e78f70d69871fb88ca3ca9fb70a10788",
+    "course_id": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "order": 396,
+    "nextCourseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "courseName": "初中必背古诗60首（1）",
+    "lessonId": "e78f70d69871fb88ca3ca9fb70a10788",
+    "nextLessonId": "e86ad617f01ed447876156928593a129",
+    "lessonName": "春望",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3238135a0f42f05edfe29d0817f2d362",
+        "index": 1,
+        "text": [
+          "春望\\n杜甫\\n国破山河在，城春草木深。\\n感时花溅泪，恨别鸟惊心。\\n烽火连三月，家书抵万金。\\n白头搔更短，浑欲不胜簪。"
+        ],
+        "pinyin": "[[\"春\", \"chūn\"], [\"望\", \"wàng\"], [\"\\n\", \"\"], [\"杜\", \"dù\"], [\"甫\", \"fǔ\"], [\"\\n\", \"\"], [\"国\", \"guó\"], [\"破\", \"pò\"], [\"山\", \"shān\"], [\"河\", \"hé\"], [\"在\", \"zài\"], [\"，\", \"\"], [\"城\", \"chéng\"], [\"春\", \"chūn\"], [\"草\", \"cǎo\"], [\"木\", \"mù\"], [\"深\", \"shēn\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"感\", \"gǎn\"], [\"时\", \"shí\"], [\"花\", \"huā\"], [\"溅\", \"jiàn\"], [\"泪\", \"lèi\"], [\"，\", \"\"], [\"恨\", \"hèn\"], [\"别\", \"bié\"], [\"鸟\", \"niǎo\"], [\"惊\", \"jīng\"], [\"心\", \"xīn\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"烽\", \"fēng\"], [\"火\", \"huǒ\"], [\"连\", \"lián\"], [\"三\", \"sān\"], [\"月\", \"yuè\"], [\"，\", \"\"], [\"家\", \"jiā\"], [\"书\", \"shū\"], [\"抵\", \"dǐ\"], [\"万\", \"wàn\"], [\"金\", \"jīn\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"白\", \"bái\"], [\"头\", \"tóu\"], [\"搔\", \"sāo\"], [\"更\", \"gèng\"], [\"短\", \"duǎn\"], [\"，\", \"\"], [\"浑\", \"hún\"], [\"欲\", \"yù\"], [\"不\", \"bù\"], [\"胜\", \"shèng\"], [\"簪\", \"zān\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

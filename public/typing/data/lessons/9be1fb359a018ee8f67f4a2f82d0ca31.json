@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.460818+00:00",
+  "request": {
+    "lesson_id": "9be1fb359a018ee8f67f4a2f82d0ca31",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 648,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "9be1fb359a018ee8f67f4a2f82d0ca31",
+    "nextLessonId": "b4abc1515ef832c2a924b6c03e1b32ea",
+    "lessonName": " 五年级上-7",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点五年级上 - 第7课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c86bb0089d37eeeaa312f4870849d09f",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"mountain\",\"pronun\":\"[ˈmaʊntn]\",\"translation\":\"n. 山；山脉\",\"audio\":\"mountain.mp3\"},{\"word\":\"hill\",\"pronun\":\"[hɪl]\",\"translation\":\"n. 小山；丘陵；斜坡；山冈\",\"audio\":\"hill.mp3\"},{\"word\":\"tree\",\"pronun\":\"[triː]\",\"translation\":\"n. 树；木料；树状物\\nvt. 把...赶上树\\nvi. 爬上树；逃上树\",\"audio\":\"tree.mp3\"},{\"word\":\"bridge\",\"pronun\":\"[brɪdʒ]\",\"translation\":\"n. 桥；桥牌；桥接器；船桥\\nvt. 架桥；渡过\",\"audio\":\"bridge.mp3\"},{\"word\":\"building\",\"pronun\":\"[ˈbɪldɪŋ]\",\"translation\":\"n. 建筑；建筑物\\nv. 建筑；建立；增加（build的ing形式）\",\"audio\":\"building.mp3\"},{\"word\":\"village\",\"pronun\":\"[ˈvɪlɪdʒ]\",\"translation\":\"n. 村庄；村民；（动物的）群落\",\"audio\":\"village.mp3\"},{\"word\":\"house\",\"pronun\":\"[haʊs]\",\"translation\":\"n. 住宅；家庭；机构；议会；某种用途的建筑物\\nvt. 覆盖；给…房子住；把…储藏在房内\\nvi. 住\",\"audio\":\"house.mp3\"},{\"word\":\"boating\",\"pronun\":\"[ˈboʊtɪŋ]\",\"translation\":\"n. 划船\\nv. 划船（boat的ing形式）\\nadj. 划船的\",\"audio\":\"boating.mp3\"},{\"word\":\"go boating\",\"pronun\":\"\",\"translation\":\"na. 乘船〔尤指划船〕游玩\",\"audio\":\"go_boating.mp3\"},{\"word\":\"aren't\",\"pronun\":\"\",\"translation\":\"abbr. 不是（are not）\",\"audio\":\"aren_t.mp3\"},{\"word\":\"are not\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"are_not.mp3\"},{\"word\":\"rabbit\",\"pronun\":\"[ˈræbɪt]\",\"translation\":\"n. 兔子，野兔\\nvt. 让…见鬼去吧\\nvi. 猎兔\",\"audio\":\"rabbit.mp3\"},{\"word\":\"high\",\"pronun\":\"[haɪ]\",\"translation\":\"n. 高水平；天空；由麻醉品引起的快感；高压地带\\nadj. 高的；高级的；崇高的；高音调的\\nadv. 高；奢侈地\",\"audio\":\"high.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

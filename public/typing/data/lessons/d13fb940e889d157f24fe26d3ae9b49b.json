@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.215643+00:00",
+  "request": {
+    "lesson_id": "d13fb940e889d157f24fe26d3ae9b49b",
+    "course_id": "9983508511f457b02ddcae4777acab15",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "9983508511f457b02ddcae4777acab15",
+    "order": 142,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "JAVA",
+    "lessonId": "d13fb940e889d157f24fe26d3ae9b49b",
+    "nextLessonId": "5bfb6052b27f7f481266fe75c136bd2c",
+    "lessonName": "阶乘计算",
+    "icon": "data/assets/daziya.com/key-icon_key-java.09b827febf.png",
+    "description": "Java编程练习 - 阶乘计算",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2c9ff96bcc5f2a1b5042e6e2a671f7b3",
+        "index": 1,
+        "text": [
+          "class Main {\\n    public static long factorialRecursive(int n) {\\n        if (n <= 1) return 1;\\n        return n * factorialRecursive(n - 1);\\n    }\\n\\n    public static long factorialIterative(int n) {\\n        long result = 1;\\n        for (int i = 2; i <= n; i++) {\\n            result *= i;\\n        }\\n        return result;\\n    }\\n\\n    public static void main(String[] args) {\\n        int[] numbers = {5, 6, 7, 8};\\n\\n        System.out.println(\"阶乘计算结果:\");\\n        for (int num : numbers) {\\n            System.out.println(num + \"! = \" + factorialRecursive(num));\\n        }\\n\\n        int n = 10;\\n        System.out.println(\"\\n递归方法: \" + n + \"! = \" + factorialRecursive(n));\\n        System.out.println(\"迭代方法: \" + n + \"! = \" + factorialIterative(n));\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "java",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

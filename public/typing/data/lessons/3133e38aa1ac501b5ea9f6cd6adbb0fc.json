@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.032994+00:00",
+  "request": {
+    "lesson_id": "3133e38aa1ac501b5ea9f6cd6adbb0fc",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 419,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "3133e38aa1ac501b5ea9f6cd6adbb0fc",
+    "nextLessonId": "2266c6c0b3f2fcd3df33f01ac602d581",
+    "lessonName": "六级词汇正序版-36",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第36课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "49c9d63314d93044dfc386d813238d6b",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"disregard\",\"pronun\":\"[ˌdɪsrɪˈɡɑːrd]\",\"translation\":\"n. 忽视；不尊重\\nvt. 忽视；不理；漠视；不顾\",\"audio\":\"disregard.mp3\"},{\"word\":\"disrupt\",\"pronun\":\"[dɪsˈrʌpt]\",\"translation\":\"vt. 破坏；使瓦解；使分裂；使中断；使陷于混乱\\nadj. 分裂的，中断的；分散的\",\"audio\":\"disrupt.mp3\"},{\"word\":\"dissipate\",\"pronun\":\"[ˈdɪsɪpeɪt]\",\"translation\":\"vi. 驱散；放荡\\nvt. 浪费；使…消散\",\"audio\":\"dissipate.mp3\"},{\"word\":\"distill\",\"pronun\":\"[dɪˈstɪl]\",\"translation\":\"vt. 提取；蒸馏；使滴下\\nvi. 蒸馏；滴下；作为精华产生（等于distil）\",\"audio\":\"distill.mp3\"},{\"word\":\"distinct\",\"pronun\":\"[dɪˈstɪŋkt]\",\"translation\":\"adj. 明显的；独特的；清楚的；有区别的\",\"audio\":\"distinct.mp3\"},{\"word\":\"distinguish\",\"pronun\":\"[dɪˈstɪŋɡwɪʃ]\",\"translation\":\"vi. 区别，区分；辨别\\nvt. 区分；辨别；使杰出，使表现突出\",\"audio\":\"distinguish.mp3\"},{\"word\":\"distort\",\"pronun\":\"[dɪˈstɔːrt]\",\"translation\":\"vt. 扭曲；使失真；曲解\\nvi. 扭曲；变形\",\"audio\":\"distort.mp3\"},{\"word\":\"distract\",\"pronun\":\"[dɪˈstrækt]\",\"translation\":\"vt. 转移；分心\",\"audio\":\"distract.mp3\"},{\"word\":\"distribution\",\"pronun\":\"[ˌdɪstrɪˈbjuːʃn]\",\"translation\":\"n. 分布；分配\",\"audio\":\"distribution.mp3\"},{\"word\":\"disturbance\",\"pronun\":\"[dɪˈstɜːrbəns]\",\"translation\":\"n. 干扰；骚乱；忧虑\",\"audio\":\"disturbance.mp3\"},{\"word\":\"diverse\",\"pronun\":\"[daɪˈvɜːrs]\",\"translation\":\"adj. 不同的；多种多样的；变化多的\",\"audio\":\"diverse.mp3\"},{\"word\":\"diversion\",\"pronun\":\"[daɪˈvɜːrʒn]\",\"translation\":\"n. 转移；消遣；分散注意力\",\"audio\":\"diversion.mp3\"},{\"word\":\"divert\",\"pronun\":\"[daɪˈvɜːrt]\",\"translation\":\"vt. 转移；使…欢娱；使…转向\\nvi. 转移\",\"audio\":\"divert.mp3\"},{\"word\":\"divine\",\"pronun\":\"[dɪˈvaɪn]\",\"translation\":\"n. 牧师；神学家\\nadj. 神圣的；非凡的；天赐的；极好的\\nvt. 占卜；预言；用占卜勘探\\nvi. 占卜；预言；使用占卜勘探矿\",\"audio\":\"divine.mp3\"},{\"word\":\"division\",\"pronun\":\"[dɪˈvɪʒn]\",\"translation\":\"n. [数] 除法；部门；分配；分割；师（军队）；赛区\",\"audio\":\"division.mp3\"},{\"word\":\"divorce\",\"pronun\":\"[dɪˈvɔːrs]\",\"translation\":\"n. 离婚；分离\\nvt. 使离婚，使分离；与…离婚\\nvi. 离婚\",\"audio\":\"divorce.mp3\"},{\"word\":\"dizzy\",\"pronun\":\"[ˈdɪzi]\",\"translation\":\"adj. 晕眩的；使人头晕的；昏乱的；心不在焉的；愚蠢的\\nvt. 使头晕眼花；使混乱；使茫然\",\"audio\":\"dizzy.mp3\"},{\"word\":\"dock\",\"pronun\":\"[dɑːk]\",\"translation\":\"n. 码头；船坞；被告席；尾巴的骨肉部分\\nvt. 使靠码头；剪短\\nvi. 入船坞\",\"audio\":\"dock.mp3\"},{\"word\":\"doctrine\",\"pronun\":\"[ˈdɑːktrɪn]\",\"translation\":\"n. 主义；学说；教义；信条\",\"audio\":\"doctrine.mp3\"},{\"word\":\"dodge\",\"pronun\":\"[dɑːdʒ]\",\"translation\":\"n. 躲闪；托词\\nvi. 躲避，避开\\nvt. 躲避，避开\\nn. 道奇（汽车品牌）\",\"audio\":\"dodge.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

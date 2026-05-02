@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.925608+00:00",
+  "request": {
+    "lesson_id": "8c0c7bc5a927d48523dd37b4e6f9754f",
+    "course_id": "421f70b408e75c66a6e8a5208e6fc7d1",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "421f70b408e75c66a6e8a5208e6fc7d1",
+    "order": 478,
+    "nextCourseId": "421f70b408e75c66a6e8a5208e6fc7d1",
+    "courseName": "宋词必备67首（2）",
+    "lessonId": "8c0c7bc5a927d48523dd37b4e6f9754f",
+    "nextLessonId": "ae941afc8a7055f5b84c572caab2d366",
+    "lessonName": "登飞来峰",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f33e5c26593cd03a0fbb1edfd0e96572",
+        "index": 1,
+        "text": [
+          "登飞来峰\\n王安石\\n飞来山上千寻塔，闻说鸡鸣见日升。\\n不畏浮云遮望眼，只缘身在最高层。"
+        ],
+        "pinyin": "[[\"登\", \"dēng\"], [\"飞\", \"fēi\"], [\"来\", \"lái\"], [\"峰\", \"fēng\"], [\"\\n\", \"\"], [\"王\", \"wáng\"], [\"安\", \"ān\"], [\"石\", \"shí\"], [\"\\n\", \"\"], [\"飞\", \"fēi\"], [\"来\", \"lái\"], [\"山\", \"shān\"], [\"上\", \"shàng\"], [\"千\", \"qiān\"], [\"寻\", \"xún\"], [\"塔\", \"tǎ\"], [\"，\", \"\"], [\"闻\", \"wén\"], [\"说\", \"shuō\"], [\"鸡\", \"jī\"], [\"鸣\", \"míng\"], [\"见\", \"jiàn\"], [\"日\", \"rì\"], [\"升\", \"shēng\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"不\", \"bù\"], [\"畏\", \"wèi\"], [\"浮\", \"fú\"], [\"云\", \"yún\"], [\"遮\", \"zhē\"], [\"望\", \"wàng\"], [\"眼\", \"yǎn\"], [\"，\", \"\"], [\"只\", \"zhǐ\"], [\"缘\", \"yuán\"], [\"身\", \"shēn\"], [\"在\", \"zài\"], [\"最\", \"zuì\"], [\"高\", \"gāo\"], [\"层\", \"céng\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

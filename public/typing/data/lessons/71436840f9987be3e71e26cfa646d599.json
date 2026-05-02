@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.752977+00:00",
+  "request": {
+    "lesson_id": "71436840f9987be3e71e26cfa646d599",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 365,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "71436840f9987be3e71e26cfa646d599",
+    "nextLessonId": "1b6178ed85c5d7d78fecf56288595c70",
+    "lessonName": "六级词汇正序版-11",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第11课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "39b06a1ddc6d6a98c647768af4f42783",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"banquet\",\"pronun\":\"[ˈbæŋkwɪt]\",\"translation\":\"n. 宴会，盛宴；宴请，款待\\nvt. 宴请，设宴款待\\nvi. 参加宴会\",\"audio\":\"banquet.mp3\"},{\"word\":\"barely\",\"pronun\":\"[ˈberli]\",\"translation\":\"adv. 仅仅，勉强；几乎不；公开地；贫乏地\",\"audio\":\"barely.mp3\"},{\"word\":\"bargain\",\"pronun\":\"[ˈbɑːrɡən]\",\"translation\":\"n. 交易；便宜货；契约\\nv. 讨价还价；议价；(谈价钱后)卖\",\"audio\":\"bargain.mp3\"},{\"word\":\"barren\",\"pronun\":\"[ˈbærən]\",\"translation\":\"n. 荒地\\nadj. 贫瘠的；不生育的；无益的；沉闷无趣的；空洞的\",\"audio\":\"barren.mp3\"},{\"word\":\"barricade\",\"pronun\":\"[ˈbærɪkeɪd]\",\"translation\":\"n. 街垒；路障；争论之处\\nvt. 设路障；阻碍\",\"audio\":\"barricade.mp3\"},{\"word\":\"barrier\",\"pronun\":\"[ˈbæriər]\",\"translation\":\"n. 障碍物，屏障；界线\\nvt. 把…关入栅栏\",\"audio\":\"barrier.mp3\"},{\"word\":\"basis\",\"pronun\":\"[ˈbeɪsɪs]\",\"translation\":\"n. 基础；底部；主要成分；基本原则或原理\",\"audio\":\"basis.mp3\"},{\"word\":\"batch\",\"pronun\":\"[bætʃ]\",\"translation\":\"n. 一批；一炉；一次所制之量\\nvt. 分批处理\",\"audio\":\"batch.mp3\"},{\"word\":\"batter\",\"pronun\":\"[ˈbætər]\",\"translation\":\"n. 击球手；（用鸡蛋、牛奶、面粉等调成的）糊状物；墙面的倾斜\\nvt. 猛击；打坏；使向上倾斜\\nvi. 接连猛击；向上倾斜\",\"audio\":\"batter.mp3\"},{\"word\":\"beam\",\"pronun\":\"[biːm]\",\"translation\":\"n. 横梁；光线；电波；船宽；[计量] 秤杆\\nvt. 发送；以梁支撑；用…照射；流露\\nvi. 照射；堆满笑容\",\"audio\":\"beam.mp3\"},{\"word\":\"beforehand\",\"pronun\":\"[bɪˈfɔːrhænd]\",\"translation\":\"adj. 提前的；预先准备好的\\nadv. 事先；预先\",\"audio\":\"beforehand.mp3\"},{\"word\":\"behave\",\"pronun\":\"[bɪˈheɪv]\",\"translation\":\"vi. 表现；（机器等）运转；举止端正；（事物）起某种作用\\nvt. 使守规矩；使表现得…\",\"audio\":\"behave.mp3\"},{\"word\":\"behavior\",\"pronun\":\"[bɪˈheɪvjər]\",\"translation\":\"n. 行为，举止；态度；反应\",\"audio\":\"behavior.mp3\"},{\"word\":\"belly\",\"pronun\":\"[ˈbeli]\",\"translation\":\"n. 腹部；胃；食欲\\nvt. 使鼓起\\nvi. 涨满；鼓起\",\"audio\":\"belly.mp3\"},{\"word\":\"beneficial\",\"pronun\":\"[ˌbenɪˈfɪʃl]\",\"translation\":\"adj. 有益的，有利的；可享利益的\",\"audio\":\"beneficial.mp3\"},{\"word\":\"benefit\",\"pronun\":\"[ˈbenɪfɪt]\",\"translation\":\"n. 利益，好处；救济金\\nvt. 有益于，对…有益\\nvi. 受益，得益\",\"audio\":\"benefit.mp3\"},{\"word\":\"betray\",\"pronun\":\"[bɪˈtreɪ]\",\"translation\":\"vt. 背叛；出卖；泄露（秘密）；露出…迹象\",\"audio\":\"betray.mp3\"},{\"word\":\"beverage\",\"pronun\":\"[ˈbevərɪdʒ]\",\"translation\":\"n. 饮料\",\"audio\":\"beverage.mp3\"},{\"word\":\"bewilder\",\"pronun\":\"[bɪˈwɪldər]\",\"translation\":\"vt. 使迷惑，使不知所措\",\"audio\":\"bewilder.mp3\"},{\"word\":\"beyond\",\"pronun\":\"[bɪˈjɑːnd]\",\"translation\":\"prep. 超过；越过；那一边；在...较远的一边\\nn. 远处\\nadv. 在远处；在更远处\",\"audio\":\"beyond.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

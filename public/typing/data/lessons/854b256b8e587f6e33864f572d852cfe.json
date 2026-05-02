@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.681121+00:00",
+  "request": {
+    "lesson_id": "854b256b8e587f6e33864f572d852cfe",
+    "course_id": "bff1f4acbe3c325f85571ee987d1bdd2",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "bff1f4acbe3c325f85571ee987d1bdd2",
+    "order": 96,
+    "nextCourseId": "bff1f4acbe3c325f85571ee987d1bdd2",
+    "courseName": "左右手练习",
+    "lessonId": "854b256b8e587f6e33864f572d852cfe",
+    "nextLessonId": "5e9067a7f37d3e292dbc2e40825005eb",
+    "lessonName": "右手练习-拼音",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-right-hand.8b4e761bff.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c635bbb4ea19f74e363f72dd2134e5ca",
+        "index": 1,
+        "text": [
+          "nu mi liu ku ji hui hou ni lou mo pi hu ku lu po ji"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "f",
+        "key": "numilkjhonp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 10,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

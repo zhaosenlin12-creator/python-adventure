@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.790746+00:00",
+  "request": {
+    "lesson_id": "fc245a2a03a2ae5f403ec40a83c31c70",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 372,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "fc245a2a03a2ae5f403ec40a83c31c70",
+    "nextLessonId": "37f41949afd484ab2e5b7964487f429d",
+    "lessonName": "六级词汇正序版-32",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第32课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "52de365cc9b124f92e23a491684325e7",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"depict\",\"pronun\":\"[dɪˈpɪkt]\",\"translation\":\"vt. 描述；描画\",\"audio\":\"depict.mp3\"},{\"word\":\"deport\",\"pronun\":\"[dɪˈpɔːrt]\",\"translation\":\"vt. 驱逐出境；举止；放逐\",\"audio\":\"deport.mp3\"},{\"word\":\"depress\",\"pronun\":\"[dɪˈpres]\",\"translation\":\"vt. 压抑；使沮丧；使萧条\",\"audio\":\"depress.mp3\"},{\"word\":\"depression\",\"pronun\":\"[dɪˈpreʃn]\",\"translation\":\"n. 沮丧；洼地；不景气；忧愁；低气压区\",\"audio\":\"depression.mp3\"},{\"word\":\"deprive\",\"pronun\":\"[dɪˈpraɪv]\",\"translation\":\"vt. 使丧失，剥夺\",\"audio\":\"deprive.mp3\"},{\"word\":\"derive\",\"pronun\":\"[dɪˈraɪv]\",\"translation\":\"vt. 源于；得自；获得\\nvi. 起源\",\"audio\":\"derive.mp3\"},{\"word\":\"descend\",\"pronun\":\"[dɪˈsend]\",\"translation\":\"vi. 下降；下去；下来；遗传；屈尊\\nvt. 下去；沿…向下\",\"audio\":\"descend.mp3\"},{\"word\":\"descendant\",\"pronun\":\"[dɪˈsendənt]\",\"translation\":\"n. 后裔；子孙\\nadj. 下降的；祖传的\",\"audio\":\"descendant.mp3\"},{\"word\":\"descent\",\"pronun\":\"[dɪˈsent]\",\"translation\":\"n. 下降；血统；袭击\\nvt. 除去…的气味；使…失去香味\",\"audio\":\"descent.mp3\"},{\"word\":\"describe\",\"pronun\":\"[dɪˈskraɪb]\",\"translation\":\"vt. 描述，形容；描绘\",\"audio\":\"describe.mp3\"},{\"word\":\"deserve\",\"pronun\":\"[dɪˈzɜːrv]\",\"translation\":\"vi. 应受，应得\\nvt. 应受，应得\",\"audio\":\"deserve.mp3\"},{\"word\":\"design\",\"pronun\":\"[dɪˈzaɪn]\",\"translation\":\"n. 设计；图案\\nvt. 设计；计划；构思\\nvi. 设计\",\"audio\":\"design.mp3\"},{\"word\":\"designate\",\"pronun\":\"[ˈdezɪɡneɪt]\",\"translation\":\"vt. 指定；指派；标出；把…定名为\\nadj. 指定的；选定的\",\"audio\":\"designate.mp3\"},{\"word\":\"desirable\",\"pronun\":\"[dɪˈzaɪərəbl]\",\"translation\":\"n. 合意的人或事物\\nadj. 令人满意的；值得要的\",\"audio\":\"desirable.mp3\"},{\"word\":\"desire\",\"pronun\":\"[dɪˈzaɪər]\",\"translation\":\"n. 欲望；要求，心愿；性欲\\nvt. 想要；要求；希望得到…\\nvi. 渴望\",\"audio\":\"desire.mp3\"},{\"word\":\"despise\",\"pronun\":\"[dɪˈspaɪz]\",\"translation\":\"vt. 轻视，鄙视\",\"audio\":\"despise.mp3\"},{\"word\":\"despite\",\"pronun\":\"[dɪˈspaɪt]\",\"translation\":\"prep. 尽管，不管\\nn. 轻视；憎恨；侮辱\",\"audio\":\"despite.mp3\"},{\"word\":\"destination\",\"pronun\":\"[ˌdestɪˈneɪʃn]\",\"translation\":\"n. 目的地，终点\",\"audio\":\"destination.mp3\"},{\"word\":\"destined\",\"pronun\":\"[ˈdestɪnd]\",\"translation\":\"v. 注定（destine的过去式和过去分词）\\nadj. 注定的；命定的；去往…的\",\"audio\":\"destined.mp3\"},{\"word\":\"destiny\",\"pronun\":\"[ˈdestəni]\",\"translation\":\"n. 命运，定数，天命\",\"audio\":\"destiny.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

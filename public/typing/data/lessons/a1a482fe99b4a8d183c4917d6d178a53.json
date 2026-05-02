@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.437576+00:00",
+  "request": {
+    "lesson_id": "a1a482fe99b4a8d183c4917d6d178a53",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 202,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "a1a482fe99b4a8d183c4917d6d178a53",
+    "nextLessonId": "e682ebb0cf7e246d936840149dc259bb",
+    "lessonName": "ALTER TABLE修改表",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - ALTER TABLE修改表",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a39f0fd6cdbb77b4d04867b796ed83a9",
+        "index": 1,
+        "text": [
+          "-- 添加新列\\nALTER TABLE users\\nADD COLUMN phone VARCHAR(20),\\nADD COLUMN address TEXT;\\n\\n-- 修改列定义\\nALTER TABLE users\\nMODIFY COLUMN email VARCHAR(300) NOT NULL;\\n\\n-- 删除列\\nALTER TABLE users\\nDROP COLUMN address;\\n\\n-- 添加索引\\nALTER TABLE users\\nADD INDEX idx_email (email),\\nADD INDEX idx_city_status (city, status);\\n\\n-- 添加外键约束\\nALTER TABLE orders\\nADD CONSTRAINT fk_user\\nFOREIGN KEY (user_id) REFERENCES users(id)\\nON DELETE CASCADE ON UPDATE CASCADE;\\n\\n-- 重命名表\\nALTER TABLE old_users RENAME TO users_backup;\\n\\n-- 修改列名\\nALTER TABLE users\\nCHANGE COLUMN old_name new_name VARCHAR(100);\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

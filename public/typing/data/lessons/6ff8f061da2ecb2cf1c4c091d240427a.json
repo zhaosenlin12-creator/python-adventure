@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.847460+00:00",
+  "request": {
+    "lesson_id": "6ff8f061da2ecb2cf1c4c091d240427a",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 51,
+    "nextCourseId": "ff61770b1da83313ceacb0a08aef6378",
+    "courseName": "Python",
+    "lessonId": "6ff8f061da2ecb2cf1c4c091d240427a",
+    "nextLessonId": "0b09004cd65057f03c26777ac5f89ca8",
+    "lessonName": "斐波那契数列",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - 斐波那契数列",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "222434ab2e1c0e859a29cf00c3a0675e",
+        "index": 1,
+        "text": [
+          "# 计算斐波那契数列\\ndef fibonacci_recursive(n):\\n    if n <= 1:\\n        return n\\n    return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)\\n\\ndef fibonacci_iterative(n):\\n    if n <= 1:\\n        return n\\n\\n    a, b = 0, 1\\n    for _ in range(2, n + 1):\\n        a, b = b, a + b\\n    return b\\n\\n# 生成斐波那契数列\\nprint(\"斐波那契数列前10项:\")\\nfib_sequence = [fibonacci_iterative(i) for i in range(10)]\\nprint(fib_sequence)\\n\\n# 测试递归方法\\nprint(f\"\\n第10项的值: {fibonacci_recursive(10)}\")\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

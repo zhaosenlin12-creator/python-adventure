@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.370911+00:00",
+  "request": {
+    "lesson_id": "26eb4909ec66ecdf18d693c47fe51a90",
+    "course_id": "30951c93875a1e260feda8cb699005df",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "30951c93875a1e260feda8cb699005df",
+    "order": 488,
+    "nextCourseId": "30951c93875a1e260feda8cb699005df",
+    "courseName": "英语每日故事（初级）32-61",
+    "lessonId": "26eb4909ec66ecdf18d693c47fe51a90",
+    "nextLessonId": "fcb29d671b56a891497f5e7c738f2125",
+    "lessonName": "What Colour Are Your Eyes?",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c577c70bbf8d2ece49cc32d60f6a3cd3",
+        "index": 1,
+        "text": [
+          "Brown, blue, green. What colour are your eyes? Brown? More than half the people in the world have brown eyes. People in Africa and Asia mostly have brown eyes. Some people have green eyes. Some have blue eyes. Why are your eyes the colour they are? You got that from your mom and your dad. My eyes are brown!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.462072+00:00",
+  "request": {
+    "lesson_id": "e8b50c435d4dd8576dda8bd5637b4755",
+    "course_id": "fa03ede610a7cc0a487ff4fca5942e36",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "fa03ede610a7cc0a487ff4fca5942e36",
+    "order": 273,
+    "nextCourseId": "fa03ede610a7cc0a487ff4fca5942e36",
+    "courseName": "汉字四级",
+    "lessonId": "e8b50c435d4dd8576dda8bd5637b4755",
+    "nextLessonId": "4ed201933bb7c36014db2730758c1faf",
+    "lessonName": "《江南的冬景》郁达夫",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-4.b52294a527.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "7374f87b7b7e876d0a4ef7b4f71868ab",
+        "index": 1,
+        "text": [
+          "凡在北国过过冬天的人，总都道围炉煮茗，或吃煊羊肉、剥花生米、饮白干的滋味。"
+        ],
+        "pinyin": "[[\"凡\", \"fán\"], [\"在\", \"zài\"], [\"北\", \"běi\"], [\"国\", \"guó\"], [\"过\", \"guò\"], [\"过\", \"guò\"], [\"冬\", \"dōng\"], [\"天\", \"tiān\"], [\"的\", \"de\"], [\"人\", \"rén\"], [\"，\", \"\"], [\"总\", \"zǒng\"], [\"都\", \"dōu\"], [\"道\", \"dào\"], [\"围\", \"wéi\"], [\"炉\", \"lú\"], [\"煮\", \"zhǔ\"], [\"茗\", \"míng\"], [\"，\", \"\"], [\"或\", \"huò\"], [\"吃\", \"chī\"], [\"煊\", \"xuān\"], [\"羊\", \"yáng\"], [\"肉\", \"ròu\"], [\"、\", \"\"], [\"剥\", \"bāo\"], [\"花\", \"huā\"], [\"生\", \"shēng\"], [\"米\", \"mǐ\"], [\"、\", \"\"], [\"饮\", \"yǐn\"], [\"白\", \"bái\"], [\"干\", \"gān\"], [\"的\", \"de\"], [\"滋\", \"zī\"], [\"味\", \"wèi\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 39,
+        "minSpeed": 25,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.889235+00:00",
+  "request": {
+    "lesson_id": "b39986641bb894c55552e347718d4d90",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 60,
+    "nextCourseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "courseName": "Python",
+    "lessonId": "b39986641bb894c55552e347718d4d90",
+    "nextLessonId": "f99a385c90a8afa7981cc1aefbb0aa9f",
+    "lessonName": "汉诺塔问题",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - 汉诺塔问题",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8699d31ccbcc9a610ac58ec4a28e4998",
+        "index": 1,
+        "text": [
+          "# 汉诺塔问题的递归解法\\ndef hanoi(n, source, target, auxiliary):\\n    if n == 1:\\n        print(f\"移动盘子 1 从 {source} 到 {target}\")\\n        return\\n\\n    # 将n-1个盘子从源柱移到辅助柱\\n    hanoi(n - 1, source, auxiliary, target)\\n\\n    # 将第n个盘子从源柱移到目标柱\\n    print(f\"移动盘子 {n} 从 {source} 到 {target}\")\\n\\n    # 将n-1个盘子从辅助柱移到目标柱\\n    hanoi(n - 1, auxiliary, target, source)\\n\\ndef count_moves(n):\\n    return 2 ** n - 1\\n\\n# 测试汉诺塔\\nn = 3\\nprint(f\"汉诺塔问题: {n} 个盘子\")\\nprint(f\"需要移动 {count_moves(n)} 次\\n\")\\nprint(\"移动步骤:\")\\nhanoi(n, \"A\", \"C\", \"B\")\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.923173+00:00",
+  "request": {
+    "lesson_id": "b770581b1de7564fed5d05c25242ffdf",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 402,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "b770581b1de7564fed5d05c25242ffdf",
+    "nextLessonId": "a0941c79fd4e4836ba00951e25142e46",
+    "lessonName": "六级词汇正序版-122",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第122课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f2b462ec18b92737d01cb5af8f36b6d6",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"encouragement\",\"pronun\":\"[ɪnˈkɜːrɪdʒmənt]\",\"translation\":\"n. 鼓励\",\"audio\":\"encouragement.mp3\"},{\"word\":\"enormously\",\"pronun\":\"[ɪˈnɔːrməsli]\",\"translation\":\"adv. 巨大地，庞大地；非常地，在极大程度上\",\"audio\":\"enormously.mp3\"},{\"word\":\"envious\",\"pronun\":\"[ˈenviəs]\",\"translation\":\"adj. 羡慕的；嫉妒的\",\"audio\":\"envious.mp3\"},{\"word\":\"eruption\",\"pronun\":\"[ɪˈrʌpʃn]\",\"translation\":\"n. 爆发，喷发；火山灰；出疹\",\"audio\":\"eruption.mp3\"},{\"word\":\"ethic\",\"pronun\":\"[ˈeθɪk]\",\"translation\":\"n. 伦理；道德规范\\nadj. 伦理的；道德的（等于ethical）\",\"audio\":\"ethic.mp3\"},{\"word\":\"ethical\",\"pronun\":\"[ˈeθɪkl]\",\"translation\":\"n. 处方药\\nadj. 伦理的；道德的；凭处方出售的\",\"audio\":\"ethical.mp3\"},{\"word\":\"excel\",\"pronun\":\"[ɪkˈsel]\",\"translation\":\"vt. 超过；擅长\\nvi. (在某方面)胜过(或超过)别人\",\"audio\":\"excel.mp3\"},{\"word\":\"exceptionally\",\"pronun\":\"[ɪkˈsepʃənəli]\",\"translation\":\"adv. 异常地；特殊地；例外地\",\"audio\":\"exceptionally.mp3\"},{\"word\":\"exclusively\",\"pronun\":\"[ɪkˈskluːsɪvli]\",\"translation\":\"adv. 唯一地；专有地；排外地\",\"audio\":\"exclusively.mp3\"},{\"word\":\"exhausted\",\"pronun\":\"[ɪɡˈzɔːstɪd]\",\"translation\":\"v. 耗尽；用尽；使…精疲力尽（exhaust的过去式）\\nadj. 疲惫的；耗尽的\",\"audio\":\"exhausted.mp3\"},{\"word\":\"expanding\",\"pronun\":\"[ɪkˈspændɪŋ]\",\"translation\":\"v. 扩大，扩展（expand的现在分词形式）；使膨胀，详述\\nadj. 扩大的；扩展的\",\"audio\":\"expanding.mp3\"},{\"word\":\"explicitly\",\"pronun\":\"[ɪkˈsplɪsɪtli]\",\"translation\":\"adv. 明确地；明白地\",\"audio\":\"explicitly.mp3\"},{\"word\":\"extinction\",\"pronun\":\"[ɪkˈstɪŋkʃn]\",\"translation\":\"n. 灭绝；消失；消灭；废止\",\"audio\":\"extinction.mp3\"},{\"word\":\"extravagantly\",\"pronun\":\"[ɪkˈstrævəɡəntli]\",\"translation\":\"adv. 挥霍无度地\",\"audio\":\"extravagantly.mp3\"},{\"word\":\"factual\",\"pronun\":\"[ˈfæktʃuəl]\",\"translation\":\"adj. 事实的；真实的\",\"audio\":\"factual.mp3\"},{\"word\":\"feudal\",\"pronun\":\"[ˈfjuːdl]\",\"translation\":\"adj. 封建制度的；领地的；世仇的\",\"audio\":\"feudal.mp3\"},{\"word\":\"fiber\",\"pronun\":\"[ˈfaɪbər]\",\"translation\":\"n. 纤维；光纤（等于fibre）\",\"audio\":\"fiber.mp3\"},{\"word\":\"fin\",\"pronun\":\"[fɪn]\",\"translation\":\"n. 鳍；鱼翅；鳍状物\\nvt. 切除鳍；装上翅\\nvi. 猛挥鳍；潜泳\",\"audio\":\"fin.mp3\"},{\"word\":\"forcibly\",\"pronun\":\"[ˈfɔːrsəbli]\",\"translation\":\"adv. 用力地；强制地；有说服力地\",\"audio\":\"forcibly.mp3\"},{\"word\":\"ford\",\"pronun\":\"[fɔːrd]\",\"translation\":\"n. 浅滩；Ford：福特汽车公司\\nvt. 涉过；徒涉\\nvi. 涉水而过\",\"audio\":\"ford.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

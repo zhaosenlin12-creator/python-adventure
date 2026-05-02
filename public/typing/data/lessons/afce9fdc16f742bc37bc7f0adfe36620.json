@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.164902+00:00",
+  "request": {
+    "lesson_id": "afce9fdc16f742bc37bc7f0adfe36620",
+    "course_id": "9983508511f457b02ddcae4777acab15",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "9983508511f457b02ddcae4777acab15",
+    "order": 125,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "JAVA",
+    "lessonId": "afce9fdc16f742bc37bc7f0adfe36620",
+    "nextLessonId": "bccb532afa83222db7e0a10cb89fac30",
+    "lessonName": "while循环",
+    "icon": "data/assets/daziya.com/key-icon_key-java.09b827febf.png",
+    "description": "Java编程练习 - while循环",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c6a3e37a881306e19198324c5182e56b",
+        "index": 1,
+        "text": [
+          "class Main {\\n    public static void main(String[] args) {\\n        int total = 0;\\n        int count = 1;\\n\\n        while (count <= 10) {\\n            total += count;\\n            count++;\\n        }\\n\\n        System.out.println(\"1到10的和是: \" + total);\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "java",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.417974+00:00",
+  "request": {
+    "lesson_id": "e78e240ad09d4d1c5ea7f2fd7a810947",
+    "course_id": "d47f40df8593ffe75da61fffca274131",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "d47f40df8593ffe75da61fffca274131",
+    "order": 262,
+    "nextCourseId": "d47f40df8593ffe75da61fffca274131",
+    "courseName": "汉字三级",
+    "lessonId": "e78e240ad09d4d1c5ea7f2fd7a810947",
+    "nextLessonId": "2e3276a69ad783161eece1f572424d4d",
+    "lessonName": "游戏：英文单词",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-duck.b036f0ad8f.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "5bc61069da85f698f6c94e9d812b4429",
+        "index": 1,
+        "text": [
+          "entire freezing detail nodded confessed surely across although thick cold confuse"
+        ],
+        "contentType": 3,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 1,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

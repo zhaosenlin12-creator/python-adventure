@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.121091+00:00",
+  "request": {
+    "lesson_id": "4f1fec93f7660c8c1824cdc210c1b709",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 438,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "4f1fec93f7660c8c1824cdc210c1b709",
+    "nextLessonId": "bed6d36e2b621fd8c805fd551fad42bf",
+    "lessonName": "六级词汇正序版-93",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第93课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "717bdc7d0aeab75fc8e6111e742496cd",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"residential\",\"pronun\":\"[ˌrezɪˈdenʃ(ə)l]\",\"translation\":\"adj. 住宅的；与居住有关的\",\"audio\":\"residential.mp3\"},{\"word\":\"resign\",\"pronun\":\"[rɪˈzaɪn]\",\"translation\":\"n. 辞去职务\\nvi. 辞职\\nvt. 辞职；放弃；委托；使听从\",\"audio\":\"resign.mp3\"},{\"word\":\"resistant\",\"pronun\":\"[rɪˈzɪstənt]\",\"translation\":\"n. 抵抗者\\nadj. 抵抗的，反抗的；顽固的\",\"audio\":\"resistant.mp3\"},{\"word\":\"resolve\",\"pronun\":\"[rɪˈzɑːlv]\",\"translation\":\"n. 坚决；决定要做的事\\nvt. 决定；溶解；使…分解；决心要做…\\nvi. 解决；决心；分解\",\"audio\":\"resolve.mp3\"},{\"word\":\"resort\",\"pronun\":\"[rɪˈzɔːrt]\",\"translation\":\"n. 凭借，手段；度假胜地；常去之地\\nvi. 求助，诉诸；常去；采取某手段或方法\",\"audio\":\"resort.mp3\"},{\"word\":\"respective\",\"pronun\":\"[rɪˈspektɪv]\",\"translation\":\"adj. 分别的，各自的\",\"audio\":\"respective.mp3\"},{\"word\":\"respond\",\"pronun\":\"[rɪˈspɑːnd]\",\"translation\":\"n. 应答；唱和\\nvi. 回答；作出反应；承担责任\\nvt. 以…回答\",\"audio\":\"respond.mp3\"},{\"word\":\"response\",\"pronun\":\"[rɪˈspɑːns]\",\"translation\":\"n. 响应；反应；回答\",\"audio\":\"response.mp3\"},{\"word\":\"responsible\",\"pronun\":\"[rɪˈspɑːnsəbl]\",\"translation\":\"adj. 负责的，可靠的；有责任的\",\"audio\":\"responsible.mp3\"},{\"word\":\"restore\",\"pronun\":\"[rɪˈstɔːr]\",\"translation\":\"vi. 恢复；还原\\nvt. 恢复；修复；归还\",\"audio\":\"restore.mp3\"},{\"word\":\"restrain\",\"pronun\":\"[rɪˈstreɪn]\",\"translation\":\"vt. 抑制，控制；约束；制止\",\"audio\":\"restrain.mp3\"},{\"word\":\"restraint\",\"pronun\":\"[rɪˈstreɪnt]\",\"translation\":\"n. 抑制，克制；约束\",\"audio\":\"restraint.mp3\"},{\"word\":\"restrict\",\"pronun\":\"[rɪˈstrɪkt]\",\"translation\":\"vt. 限制；约束；限定\",\"audio\":\"restrict.mp3\"},{\"word\":\"resultant\",\"pronun\":\"[rɪˈzʌltənt]\",\"translation\":\"n. 合力；结果；[化学] 生成物\\nadj. 结果的；合成的\",\"audio\":\"resultant.mp3\"},{\"word\":\"resume\",\"pronun\":\"[rɪˈzuːm]\",\"translation\":\"n. 摘要；[管理] 履历，简历\\nvi. 重新开始，继续\\nvt. 重新开始，继续；恢复，重新占用\",\"audio\":\"resume.mp3\"},{\"word\":\"retain\",\"pronun\":\"[rɪˈteɪn]\",\"translation\":\"vt. 保持；雇；记住\",\"audio\":\"retain.mp3\"},{\"word\":\"retention\",\"pronun\":\"[rɪˈtenʃn]\",\"translation\":\"n. 保留；扣留，滞留；记忆力；闭尿\",\"audio\":\"retention.mp3\"},{\"word\":\"retort\",\"pronun\":\"[rɪˈtɔːrt]\",\"translation\":\"n. 反驳，顶嘴；曲颈瓶\\nvi. 反驳，回嘴\\nvt. 反驳，反击\",\"audio\":\"retort.mp3\"},{\"word\":\"retrieve\",\"pronun\":\"[rɪˈtriːv]\",\"translation\":\"n. [计] 检索；恢复，取回\\nvt. [计] 检索；恢复；重新得到\\nvi. 找回猎物\",\"audio\":\"retrieve.mp3\"},{\"word\":\"retrospect\",\"pronun\":\"[ˈretrəspekt]\",\"translation\":\"n. 回顾，追溯\\nvt. 回顾；追忆\\nvi. 回顾，追溯；回想\",\"audio\":\"retrospect.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

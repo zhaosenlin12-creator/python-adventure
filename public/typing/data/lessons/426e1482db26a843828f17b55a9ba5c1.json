@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.763069+00:00",
+  "request": {
+    "lesson_id": "426e1482db26a843828f17b55a9ba5c1",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 144,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "426e1482db26a843828f17b55a9ba5c1",
+    "nextLessonId": "11507574db9b1adc7fcd2a92bc0924ec",
+    "lessonName": "KET核心词-134",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第134课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b78a3737bbb211e9a6667a33153cdc88",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"tram\",\"pronun\":\"[træm]\",\"translation\":\"n. 电车轨道；煤车\\nvt. 用煤车运载\\nvi. 乘电车\",\"audio\":\"tram.mp3\"},{\"word\":\"truck\",\"pronun\":\"[trʌk]\",\"translation\":\"n. 卡车；交易；手推车\\nadj. （美）运货汽车的\\nvt. 交易；以卡车运输\\nvi. 驾驶卡车；以物易物\",\"audio\":\"truck.mp3\"},{\"word\":\"tyre\",\"pronun\":\"[ˈtaɪər]\",\"translation\":\"n. [橡胶] 轮胎；轮箍\\nvt. 装轮胎于\",\"audio\":\"tyre.mp3\"},{\"word\":\"underground train\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"underground_train.mp3\"},{\"word\":\"wheel\",\"pronun\":\"[wiːl]\",\"translation\":\"n. 车轮；方向盘；转动\\nvt. 转动；使变换方向；给…装轮子\\nvi. 旋转；突然转变方向；盘旋飞行\",\"audio\":\"wheel.mp3\"},{\"word\":\"wing\",\"pronun\":\"[wɪŋ]\",\"translation\":\"n. 翼；翅膀；飞翔；派别；侧厅，耳房，厢房\\nvt. 使飞；飞过；空运；增加…速度；装以翼\\nvi. 飞行\",\"audio\":\"wing.mp3\"},{\"word\":\"bay\",\"pronun\":\"[beɪ]\",\"translation\":\"n. 海湾；狗吠声\\nvt. 向…吠叫\\nvi. 吠叫；大声叫嚷\",\"audio\":\"bay.mp3\"},{\"word\":\"capital\",\"pronun\":\"[ˈkæpɪt(ə)l]\",\"translation\":\"n. 首都，省会；资金；大写字母；资本家\\nadj. 首都的；重要的；大写的\",\"audio\":\"capital.mp3\"},{\"word\":\"coast\",\"pronun\":\"[koʊst]\",\"translation\":\"n. 海岸；滑坡\\nvt. 沿…岸航行\\nvi. 滑行；沿岸航行\",\"audio\":\"coast.mp3\"},{\"word\":\"desert\",\"pronun\":\"[ˈdezərt; dɪˈzɜːrt]\",\"translation\":\"n. 沙漠；荒原；应得的赏罚\\nvt. 遗弃；放弃；逃跑\\nadj. 沙漠的；荒凉的；不毛的\\nvi. 遗弃；开小差；逃掉\",\"audio\":\"desert.mp3\"},{\"word\":\"farmland\",\"pronun\":\"[ˈfɑːrmlænd]\",\"translation\":\"n. 农田\",\"audio\":\"farmland.mp3\"},{\"word\":\"forest\",\"pronun\":\"[ˈfɔːrɪst]\",\"translation\":\"n. 森林\\nvt. 植树于，使成为森林\",\"audio\":\"forest.mp3\"},{\"word\":\"island\",\"pronun\":\"[ˈaɪlənd]\",\"translation\":\"n. 岛；岛屿；安全岛；岛状物\\nadj. 岛的\\nvt. 孤立；使成岛状\",\"audio\":\"island.mp3\"},{\"word\":\"mountain\",\"pronun\":\"[ˈmaʊntn]\",\"translation\":\"n. 山；山脉\",\"audio\":\"mountain.mp3\"},{\"word\":\"ocean\",\"pronun\":\"[ˈoʊʃn]\",\"translation\":\"n. 海洋；大量；广阔\",\"audio\":\"ocean.mp3\"},{\"word\":\"river\",\"pronun\":\"[ˈrɪvər]\",\"translation\":\"n. 河，江\",\"audio\":\"river.mp3\"},{\"word\":\"Rocky\",\"pronun\":\"[ˈrɑːki]\",\"translation\":\"adj. 岩石的，多岩石的；坚如岩石的；摇晃的；头晕目眩的\",\"audio\":\"Rocky.mp3\"},{\"word\":\"Sandy\",\"pronun\":\"[ˈsændi]\",\"translation\":\"adj. 沙地的；多沙的；含沙的\",\"audio\":\"Sandy.mp3\"},{\"word\":\"sea\",\"pronun\":\"[siː]\",\"translation\":\"n. 海；海洋；许多；大量\",\"audio\":\"sea.mp3\"},{\"word\":\"soil\",\"pronun\":\"[sɔɪl]\",\"translation\":\"n. 土地；土壤；国家；粪便；务农；温床\\nvt. 弄脏；污辱\\nvi. 变脏\",\"audio\":\"soil.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

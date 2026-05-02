@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:42.895406+00:00",
+  "request": {
+    "lesson_id": "914996d31961075dbab8459564e4b725",
+    "course_id": "95ffe485e13ee14eb48fd57287df112d",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "95ffe485e13ee14eb48fd57287df112d",
+    "order": 346,
+    "nextCourseId": "95ffe485e13ee14eb48fd57287df112d",
+    "courseName": "实战演练-100以内金额",
+    "lessonId": "914996d31961075dbab8459564e4b725",
+    "nextLessonId": "d172501aadf5f486a1a790baec46cd3b",
+    "lessonName": "综合练习一",
+    "icon": "data/assets/daziya.com/key-icon_num-jiangpai.be9813a4d3.png",
+    "description": "数字输入练习 - 综合练习一",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b6fa8c210d4bb46636caee8b85d87c50",
+        "index": 1,
+        "text": [
+          "1256\\n2367\\n3478\\n4589\\n5691\\n6712\\n7823\\n8934\\n9145\\n1582\\n2693\\n3714\\n4825\\n5936\\n6147\\n7258\\n8369\\n9471\\n1728\\n2839\\n3941\\n4152\\n5263\\n6374\\n7485\\n8596\\n9617\\n1853\\n2964\\n3175"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

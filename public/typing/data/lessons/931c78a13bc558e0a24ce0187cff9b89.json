@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.460495+00:00",
+  "request": {
+    "lesson_id": "931c78a13bc558e0a24ce0187cff9b89",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 80,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "931c78a13bc558e0a24ce0187cff9b89",
+    "nextLessonId": "d5c3439ae1f8538555271e5765f2059f",
+    "lessonName": "KET核心词-79",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第79课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8da9f3a7f286ec7b9d4671cf453e54af",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"sandwich\",\"pronun\":\"[ˈsænwɪtʃ; ˈsænwɪdʒ]\",\"translation\":\"n. 三明治；夹心面包\\nvt. 夹入；挤进；把...做成三明治\",\"audio\":\"sandwich.mp3\"},{\"word\":\"sausage\",\"pronun\":\"[ˈsɔːsɪdʒ]\",\"translation\":\"n. 香肠；腊肠；装香肠的碎肉\",\"audio\":\"sausage.mp3\"},{\"word\":\"snack\",\"pronun\":\"[snæk]\",\"translation\":\"n. 小吃，快餐；一份，部分\\nvi. 吃快餐，吃点心\",\"audio\":\"snack.mp3\"},{\"word\":\"soft drink\",\"pronun\":\"\",\"translation\":\"n. 软饮料（不含酒精）\",\"audio\":\"soft_drink.mp3\"},{\"word\":\"soup\",\"pronun\":\"[suːp]\",\"translation\":\"n. 汤，羹；马力\\nvt. 加速；增加马力\",\"audio\":\"soup.mp3\"},{\"word\":\"steak\",\"pronun\":\"[steɪk]\",\"translation\":\"n. 牛排；肉排；鱼排\",\"audio\":\"steak.mp3\"},{\"word\":\"strawberry\",\"pronun\":\"[ˈstrɔːberi]\",\"translation\":\"n. 草莓；草莓色\",\"audio\":\"strawberry.mp3\"},{\"word\":\"sugar\",\"pronun\":\"[ˈʃʊɡər]\",\"translation\":\"n. 糖；食糖；甜言蜜语\\nvt. 加糖于；粉饰\\nvi. 形成糖\",\"audio\":\"sugar.mp3\"},{\"word\":\"tea\",\"pronun\":\"[tiː]\",\"translation\":\"n. 茶叶；茶树；茶点\\nvt. 给…沏茶\\nvi. 喝茶；进茶点\",\"audio\":\"tea.mp3\"},{\"word\":\"toast\",\"pronun\":\"[toʊst]\",\"translation\":\"n. 干杯；烤面包；接受敬酒的人；（在某领域）广受赞誉的人\\nvt. 向…祝酒，为…干杯\\nvi. 烤火，取暖；使暖和；烘烤（面包片等）\",\"audio\":\"toast.mp3\"},{\"word\":\"tomato\",\"pronun\":\"[təˈmeɪtoʊ]\",\"translation\":\"n. 番茄，西红柿\",\"audio\":\"tomato.mp3\"},{\"word\":\"turkey\",\"pronun\":\"[ˈtɜːrki]\",\"translation\":\"n. 土耳其（横跨欧亚两洲的国家）\",\"audio\":\"turkey.mp3\"},{\"word\":\"vegetable\",\"pronun\":\"[ˈvedʒtəbl]\",\"translation\":\"n. 蔬菜；植物；植物人\\nadj. 蔬菜的；植物的\",\"audio\":\"vegetable.mp3\"},{\"word\":\"yogurt\",\"pronun\":\"[ˈjoʊɡərt]\",\"translation\":\"n. 酸奶酪，[食品] 酸乳（等于yoghurt）\",\"audio\":\"yogurt.mp3\"},{\"word\":\"ball\",\"pronun\":\"[bɔːl]\",\"translation\":\"n. 球；舞会\\nvt. 捏成球形\\nvi. 成团块\",\"audio\":\"ball.mp3\"},{\"word\":\"badminton\",\"pronun\":\"[ˈbædmɪntən]\",\"translation\":\"n. 羽毛球\",\"audio\":\"badminton.mp3\"},{\"word\":\"baseball\",\"pronun\":\"[ˈbeɪsbɔːl]\",\"translation\":\"n. 棒球；棒球运动\",\"audio\":\"baseball.mp3\"},{\"word\":\"basketball\",\"pronun\":\"[ˈbæskɪtbɔːl]\",\"translation\":\"n. 篮球；篮球运动\",\"audio\":\"basketball.mp3\"},{\"word\":\"bat\",\"pronun\":\"[bæt]\",\"translation\":\"n. 蝙蝠；球棒；球拍；批处理文件的扩展名\\nvt. 用球棒击球；击球率达…\\nvi. 轮到击球；用球棒击球\",\"audio\":\"bat.mp3\"},{\"word\":\"boxing\",\"pronun\":\"[ˈbɑːksɪŋ]\",\"translation\":\"n. 拳击；装箱；围模；做箱的材料\\nv. 将…装入盒中（box的ing形式）\",\"audio\":\"boxing.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

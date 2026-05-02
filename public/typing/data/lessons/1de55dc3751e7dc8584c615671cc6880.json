@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.941511+00:00",
+  "request": {
+    "lesson_id": "1de55dc3751e7dc8584c615671cc6880",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 186,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "1de55dc3751e7dc8584c615671cc6880",
+    "nextLessonId": "ff83fe5d06f2f4135fa7af2431ef2964",
+    "lessonName": "KET核心词-123",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第123课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "84891700c858cfd64e179343ee6f4480",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"sunshine\",\"pronun\":\"[ˈsʌnʃaɪn]\",\"translation\":\"n. 阳光；愉快；晴天；快活\",\"audio\":\"sunshine.mp3\"},{\"word\":\"temperature\",\"pronun\":\"[ˈtemprətʃər; ˈtemprətʃʊr]\",\"translation\":\"n. 温度；体温；气温；发烧\",\"audio\":\"temperature.mp3\"},{\"word\":\"thunder\",\"pronun\":\"[ˈθʌndər]\",\"translation\":\"n. 雷；轰隆声；恐吓\\nvt. 轰隆地发出；大声喊出\\nvi. 打雷；怒喝\",\"audio\":\"thunder.mp3\"},{\"word\":\"thunderstorm\",\"pronun\":\"[ˈθʌndərstɔːrm]\",\"translation\":\"n. [气象] 雷暴；雷暴雨；大雷雨\",\"audio\":\"thunderstorm.mp3\"},{\"word\":\"warm\",\"pronun\":\"[wɔːrm]\",\"translation\":\"n. 取暖；加热\\nadj. 温暖的；热情的\\nvt. 使…兴奋；使…温暖；使…感兴趣\\nvi. 同情；激动；变温暖\",\"audio\":\"warm.mp3\"},{\"word\":\"wet\",\"pronun\":\"[wet]\",\"translation\":\"n. 雨天；湿气\\nadj. [气象][物] 潮湿的；有雨的\\nvt. 弄湿\\nvi. 变湿\",\"audio\":\"wet.mp3\"},{\"word\":\"wind\",\"pronun\":\"[wɪnd]\",\"translation\":\"vi. 缠绕；上发条；吹响号角\\nn. 风；呼吸；气味；卷绕\\nvt. 缠绕；上发条；使弯曲；吹号角；绕住或缠住某人\",\"audio\":\"wind.mp3\"},{\"word\":\"windy\",\"pronun\":\"[ˈwɪndi]\",\"translation\":\"adj. 多风的，有风的；腹胀的；吹牛的\",\"audio\":\"windy.mp3\"},{\"word\":\"climate change\",\"pronun\":\"[ˈklaɪmət tʃeɪndʒ]\",\"translation\":\"n. 气候变化\",\"audio\":\"climate_change.mp3\"},{\"word\":\"coal\",\"pronun\":\"[koʊl]\",\"translation\":\"n. 煤；煤块；木炭\\nvt. 给…加煤；把…烧成炭\\nvi. 上煤；加煤\",\"audio\":\"coal.mp3\"},{\"word\":\"countryside\",\"pronun\":\"[ˈkʌntrisaɪd]\",\"translation\":\"n. 农村，乡下；乡下的全体居民\",\"audio\":\"countryside.mp3\"},{\"word\":\"environment\",\"pronun\":\"[ɪnˈvaɪrənmənt]\",\"translation\":\"n. 环境，外界\",\"audio\":\"environment.mp3\"},{\"word\":\"flood\",\"pronun\":\"[flʌd]\",\"translation\":\"n. 洪水；泛滥；一大批\\nvt. 淹没；充满；溢出\\nvi. 涌出；涌进；为水淹没\",\"audio\":\"flood.mp3\"},{\"word\":\"fuel\",\"pronun\":\"[ˈfjuːəl]\",\"translation\":\"n. 燃料；刺激因素\\nvt. 供以燃料，加燃料\\nvi. 得到燃料\",\"audio\":\"fuel.mp3\"},{\"word\":\"glass\",\"pronun\":\"[ɡlæs]\",\"translation\":\"n. 玻璃；玻璃制品；镜子\\nvt. 反映；给某物加玻璃\\nvi. 成玻璃状\",\"audio\":\"glass.mp3\"},{\"word\":\"global warming\",\"pronun\":\"\",\"translation\":\"n. 全球（气候）变暖；地球大气层变暖\",\"audio\":\"global_warming.mp3\"},{\"word\":\"litter\",\"pronun\":\"[ˈlɪtər]\",\"translation\":\"n. 垃圾；轿，担架；一窝（动物的幼崽）；凌乱\\nvt. 乱丢；给…垫褥草；把…弄得乱七八糟\\nvi. 产仔；乱扔废弃物\",\"audio\":\"litter.mp3\"},{\"word\":\"metal\",\"pronun\":\"[ˈmetl]\",\"translation\":\"n. 金属；合金\\nvt. 以金属覆盖\\nadj. 金属制的\",\"audio\":\"metal.mp3\"},{\"word\":\"nature\",\"pronun\":\"[ˈneɪtʃər]\",\"translation\":\"n. 自然；性质；本性；种类\",\"audio\":\"nature.mp3\"},{\"word\":\"paper\",\"pronun\":\"[ˈpeɪpər]\",\"translation\":\"n. 纸；论文；文件；报纸\\nadj. 纸做的\\nvt. 用纸糊；用纸包装\\nvi. 贴糊墙纸；发交通违章传票\",\"audio\":\"paper.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.760833+00:00",
+  "request": {
+    "lesson_id": "489d7c99ef40820939b7bbb44a5d7395",
+    "course_id": "77cc7d3093a4e829cb2fb89b1788a0e1",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "77cc7d3093a4e829cb2fb89b1788a0e1",
+    "order": 121,
+    "nextCourseId": "77cc7d3093a4e829cb2fb89b1788a0e1",
+    "courseName": "拼音",
+    "lessonId": "489d7c99ef40820939b7bbb44a5d7395",
+    "nextLessonId": "848a3c017ede8ea5bc19c8925ecdc2ad",
+    "lessonName": "拼音组合 k",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-py-k.d59c5fe324.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4943a9de8898b9d3441048bcb4d91dde",
+        "index": 1,
+        "text": [
+          "ka kai kan kang kao ke ken keng kong kou ku kua kuai kuan kuang kui kun kuo"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "kaingoeu",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 33,
+        "minSpeed": 10,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

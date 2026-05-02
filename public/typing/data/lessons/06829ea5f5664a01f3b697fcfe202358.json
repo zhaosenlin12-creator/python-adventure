@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.522385+00:00",
+  "request": {
+    "lesson_id": "06829ea5f5664a01f3b697fcfe202358",
+    "course_id": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "order": 390,
+    "nextCourseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "courseName": "初中必背古诗60首（1）",
+    "lessonId": "06829ea5f5664a01f3b697fcfe202358",
+    "nextLessonId": "0fda5294bc77b9f89575bd4f95f81f9c",
+    "lessonName": "登幽州台歌",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "518638d34ba31e9da3e70230f2f38f81",
+        "index": 1,
+        "text": [
+          "登幽州台歌\\n陈子昂\\n前不见古人，后不见来者。\\n念天地之悠悠，独怆然而涕下。"
+        ],
+        "pinyin": "[[\"登\", \"dēng\"], [\"幽\", \"yōu\"], [\"州\", \"zhōu\"], [\"台\", \"tái\"], [\"歌\", \"gē\"], [\"\\n\", \"\"], [\"陈\", \"chén\"], [\"子\", \"zǐ\"], [\"昂\", \"áng\"], [\"\\n\", \"\"], [\"前\", \"qián\"], [\"不\", \"bù\"], [\"见\", \"jiàn\"], [\"古\", \"gǔ\"], [\"人\", \"rén\"], [\"，\", \"\"], [\"后\", \"hòu\"], [\"不\", \"bù\"], [\"见\", \"jiàn\"], [\"来\", \"lái\"], [\"者\", \"zhě\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"念\", \"niàn\"], [\"天\", \"tiān\"], [\"地\", \"dì\"], [\"之\", \"zhī\"], [\"悠\", \"yōu\"], [\"悠\", \"yōu\"], [\"，\", \"\"], [\"独\", \"dú\"], [\"怆\", \"chuàng\"], [\"然\", \"rán\"], [\"而\", \"ér\"], [\"涕\", \"tì\"], [\"下\", \"xià\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

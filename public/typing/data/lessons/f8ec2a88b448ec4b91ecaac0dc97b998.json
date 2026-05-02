@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.475261+00:00",
+  "request": {
+    "lesson_id": "f8ec2a88b448ec4b91ecaac0dc97b998",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 83,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "f8ec2a88b448ec4b91ecaac0dc97b998",
+    "nextLessonId": "2008a71fa8ad9a8d58036737fa515184",
+    "lessonName": "KET核心词-88",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第88课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9483ca87cc8c829049275ec0d6dd9906",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"medicine\",\"pronun\":\"[ˈmedɪsn]\",\"translation\":\"n. 药；医学；内科；巫术\\nvt. 用药物治疗；给…用药\",\"audio\":\"medicine.mp3\"},{\"word\":\"nurse\",\"pronun\":\"[nɜːrs]\",\"translation\":\"vt. 看护，护理；照顾；培养；给…喂奶\\nvi. 照料，护理；喂奶；当保姆\\nn. 护士；奶妈，保姆\",\"audio\":\"nurse.mp3\"},{\"word\":\"pain\",\"pronun\":\"[peɪn]\",\"translation\":\"n. 疼痛；努力\\nvt. 使…痛苦；使…烦恼\\nvi. 感到疼痛；引起疼痛\",\"audio\":\"pain.mp3\"},{\"word\":\"patient\",\"pronun\":\"[ˈpeɪʃnt]\",\"translation\":\"n. 病人；患者\\nadj. 有耐心的，能容忍的\",\"audio\":\"patient.mp3\"},{\"word\":\"prescription\",\"pronun\":\"[prɪˈskrɪpʃn]\",\"translation\":\"n. 药方；指示；惯例\\nadj. 凭处方方可购买的\",\"audio\":\"prescription.mp3\"},{\"word\":\"put on weight\",\"pronun\":\"\",\"translation\":\"v. 长肉；发胖；发福；体重增加\",\"audio\":\"put_on_weight.mp3\"},{\"word\":\"sick\",\"pronun\":\"[sɪk]\",\"translation\":\"adj. 厌恶的；病态的；不舒服；\",\"audio\":\"sick.mp3\"},{\"word\":\"stomach ache\",\"pronun\":\"[ˈstʌmək eɪk]\",\"translation\":\"n. 胃痛；腹痛\",\"audio\":\"stomach_ache.mp3\"},{\"word\":\"toothache\",\"pronun\":\"[ˈtuːθeɪk]\",\"translation\":\"n. [口腔] 牙痛\",\"audio\":\"toothache.mp3\"},{\"word\":\"address\",\"pronun\":\"[əˈdres; ˈædres]\",\"translation\":\"n. 地址；演讲；致辞；说话的技巧；称呼\\nvt. 演说；从事；忙于；写姓名地址；向…致辞；与…说话；提出；处理\",\"audio\":\"address.mp3\"},{\"word\":\"air-conditioning\",\"pronun\":\"[ˈer kəndɪʃənɪŋ]\",\"translation\":\"n. 空调系统；空气调节\",\"audio\":\"air-conditioning.mp3\"},{\"word\":\"alarm clock\",\"pronun\":\"\",\"translation\":\"n. 闹钟\",\"audio\":\"alarm_clock.mp3\"},{\"word\":\"apartment\",\"pronun\":\"[əˈpɑːrtmənt]\",\"translation\":\"n. 公寓；房间\",\"audio\":\"apartment.mp3\"},{\"word\":\"armchair\",\"pronun\":\"[ˈɑːrmtʃer]\",\"translation\":\"n. 扶手椅，单人沙发\\nadj. 不切实际的\",\"audio\":\"armchair.mp3\"},{\"word\":\"balcony\",\"pronun\":\"[ˈbælkəni]\",\"translation\":\"n. 阳台；包厢；戏院楼厅\",\"audio\":\"balcony.mp3\"},{\"word\":\"basement\",\"pronun\":\"[ˈbeɪsmənt]\",\"translation\":\"n. 地下室；地窖\",\"audio\":\"basement.mp3\"},{\"word\":\"basin\",\"pronun\":\"[ˈbeɪsn]\",\"translation\":\"n. 水池；流域；盆地；盆\",\"audio\":\"basin.mp3\"},{\"word\":\"bath\",\"pronun\":\"[bæθ]\",\"translation\":\"n. 沐浴；浴室；浴盆\\nvt. 洗澡\\nvi. 洗澡\",\"audio\":\"bath.mp3\"},{\"word\":\"bathroom\",\"pronun\":\"[ˈbæθruːm]\",\"translation\":\"n. 浴室；厕所；盥洗室\",\"audio\":\"bathroom.mp3\"},{\"word\":\"bed\",\"pronun\":\"[bed]\",\"translation\":\"n. 床；基础；河底， 海底\\nvt. 使睡觉；安置，嵌入；栽种\\nvi. 上床；分层\",\"audio\":\"bed.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

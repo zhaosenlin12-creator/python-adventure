@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.427393+00:00",
+  "request": {
+    "lesson_id": "52788d1577f93b44db3b1b07e98ffd75",
+    "course_id": "d47f40df8593ffe75da61fffca274131",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "d47f40df8593ffe75da61fffca274131",
+    "order": 266,
+    "nextCourseId": "d47f40df8593ffe75da61fffca274131",
+    "courseName": "汉字三级",
+    "lessonId": "52788d1577f93b44db3b1b07e98ffd75",
+    "nextLessonId": "f55d051b1acc0ba108ccd77e3df716b1",
+    "lessonName": "《秋夜》 鲁迅",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-3.f410710cf0.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "55fe5e899ef3ce3e045b398f0c04b76e",
+        "index": 1,
+        "text": [
+          "我打一个呵欠，点起一支纸烟，喷出烟来，对着灯默默地敬奠这些苍翠精致的英雄们。\\n一九二四年九月十五日。"
+        ],
+        "pinyin": "[[\"我\", \"wǒ\"], [\"打\", \"dǎ\"], [\"一\", \"yī\"], [\"个\", \"gè\"], [\"呵\", \"hā\"], [\"欠\", \"qiàn\"], [\"，\", \"\"], [\"点\", \"diǎn\"], [\"起\", \"qǐ\"], [\"一\", \"yī\"], [\"支\", \"zhī\"], [\"纸\", \"zhǐ\"], [\"烟\", \"yān\"], [\"，\", \"\"], [\"喷\", \"pēn\"], [\"出\", \"chū\"], [\"烟\", \"yān\"], [\"来\", \"lái\"], [\"，\", \"\"], [\"对\", \"duì\"], [\"着\", \"zhe\"], [\"灯\", \"dēng\"], [\"默\", \"mò\"], [\"默\", \"mò\"], [\"地\", \"de\"], [\"敬\", \"jìng\"], [\"奠\", \"diàn\"], [\"这\", \"zhè\"], [\"些\", \"xiē\"], [\"苍\", \"cāng\"], [\"翠\", \"cuì\"], [\"精\", \"jīng\"], [\"致\", \"zhì\"], [\"的\", \"de\"], [\"英\", \"yīng\"], [\"雄\", \"xióng\"], [\"们\", \"men\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"一\", \"yī\"], [\"九\", \"jiǔ\"], [\"二\", \"èr\"], [\"四\", \"sì\"], [\"年\", \"nián\"], [\"九\", \"jiǔ\"], [\"月\", \"yuè\"], [\"十\", \"shí\"], [\"五\", \"wǔ\"], [\"日\", \"rì\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 37,
+        "minSpeed": 29,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

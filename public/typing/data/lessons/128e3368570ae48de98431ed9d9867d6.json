@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.467747+00:00",
+  "request": {
+    "lesson_id": "128e3368570ae48de98431ed9d9867d6",
+    "course_id": "2ab9dc27a9350a9ff86633c542967f70",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "order": 50,
+    "nextCourseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "courseName": "下排字母",
+    "lessonId": "128e3368570ae48de98431ed9d9867d6",
+    "nextLessonId": "8cf9b88f9afed4acb8b785876bb58afa",
+    "lessonName": "游戏:vmc,",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-game-1.f714264f19.png",
+    "description": "游戏:vmc,",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "d1f7ced32a3639bfc7c6e0a22804c6ad",
+        "index": 1,
+        "text": [
+          "mucchulv,mecvuomcvhe"
+        ],
+        "contentType": 1,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.663713+00:00",
+  "request": {
+    "lesson_id": "a1458a5ae42c862a2da39485a17f7427",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 347,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "a1458a5ae42c862a2da39485a17f7427",
+    "nextLessonId": "d9aa9464dd48f60cde40775bac3d56b1",
+    "lessonName": "六级词汇正序版-94",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第94课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "0fb2e4df20b88b1f8871db5d2ae1c297",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"reunion\",\"pronun\":\"[ˌriːˈjuːniən]\",\"translation\":\"n. 重聚；（班级或学校的）同学会，同窗会\",\"audio\":\"reunion.mp3\"},{\"word\":\"reveal\",\"pronun\":\"[rɪˈviːl]\",\"translation\":\"n. 揭露；暴露；门侧，窗侧\\nvt. 显示；透露；揭露；泄露\",\"audio\":\"reveal.mp3\"},{\"word\":\"revelation\",\"pronun\":\"[ˌrevəˈleɪʃn]\",\"translation\":\"n. 启示；揭露；出乎意料的事；被揭露的真相\",\"audio\":\"revelation.mp3\"},{\"word\":\"revenge\",\"pronun\":\"[rɪˈvendʒ]\",\"translation\":\"n. 报复；复仇\\nvt. 报复；替…报仇；洗雪\\nvi. 报仇；雪耻\",\"audio\":\"revenge.mp3\"},{\"word\":\"revenue\",\"pronun\":\"[ˈrevənuː]\",\"translation\":\"n. 税收，国家的收入；收益\",\"audio\":\"revenue.mp3\"},{\"word\":\"reverse\",\"pronun\":\"[rɪˈvɜːrs]\",\"translation\":\"n. 背面；相反；倒退；失败\\nadj. 反面的；颠倒的；反身的\\nvt. 颠倒；倒转\\nvi. 倒退；逆叫\",\"audio\":\"reverse.mp3\"},{\"word\":\"revive\",\"pronun\":\"[rɪˈvaɪv]\",\"translation\":\"vt. 使复兴；使苏醒；回想起；重演，重播\\nvi. 复兴；复活；苏醒；恢复精神\",\"audio\":\"revive.mp3\"},{\"word\":\"revolutionary\",\"pronun\":\"[ˌrevəˈluːʃəneri]\",\"translation\":\"n. 革命者\\nadj. 革命的；旋转的；大变革的\",\"audio\":\"revolutionary.mp3\"},{\"word\":\"revolve\",\"pronun\":\"[rɪˈvɑːlv]\",\"translation\":\"n. 旋转；循环；旋转舞台\\nvt. 使…旋转；使…循环；反复考虑\\nvi. 旋转；循环出现；反复考虑\",\"audio\":\"revolve.mp3\"},{\"word\":\"reward\",\"pronun\":\"[rɪˈwɔːrd]\",\"translation\":\"n. [劳经] 报酬；报答；酬谢\\nvt. [劳经] 奖励；奖赏\",\"audio\":\"reward.mp3\"},{\"word\":\"rhythm\",\"pronun\":\"[ˈrɪðəm]\",\"translation\":\"n. 节奏；韵律\",\"audio\":\"rhythm.mp3\"},{\"word\":\"ridiculous\",\"pronun\":\"[rɪˈdɪkjələs]\",\"translation\":\"adj. 可笑的；荒谬的\",\"audio\":\"ridiculous.mp3\"},{\"word\":\"rig\",\"pronun\":\"[rɪɡ]\",\"translation\":\"n. 装备；钻探设备；服装；[船] 帆装\\nvt. 操纵；装配；装扮；装上索具\",\"audio\":\"rig.mp3\"},{\"word\":\"rigorous\",\"pronun\":\"[ˈrɪɡərəs]\",\"translation\":\"adj. 严格的，严厉的；严密的；严酷的\",\"audio\":\"rigorous.mp3\"},{\"word\":\"rim\",\"pronun\":\"[rɪm]\",\"translation\":\"n. 边，边缘；轮辋；圆圈\\nvt. 作…的边，装边于\\nvi. 作…的边，装边于\",\"audio\":\"rim.mp3\"},{\"word\":\"rip\",\"pronun\":\"[rɪp]\",\"translation\":\"n. 裂口，裂缝\\nvi. 裂开，被撕裂\\nvt. 撕；锯\",\"audio\":\"rip.mp3\"},{\"word\":\"ritual\",\"pronun\":\"[ˈrɪtʃuəl]\",\"translation\":\"n. 仪式；惯例；礼制\\nadj. 仪式的；例行的；礼节性的\",\"audio\":\"ritual.mp3\"},{\"word\":\"rival\",\"pronun\":\"[ˈraɪvl]\",\"translation\":\"n. 对手；竞争者\\nadj. 竞争的\\nvt. 与…竞争；比得上某人\\nvi. 竞争\",\"audio\":\"rival.mp3\"},{\"word\":\"rivalry\",\"pronun\":\"[ˈraɪvlri]\",\"translation\":\"n. 竞争；对抗；竞赛\",\"audio\":\"rivalry.mp3\"},{\"word\":\"robust\",\"pronun\":\"[roʊˈbʌst]\",\"translation\":\"adj. 强健的；健康的；粗野的；粗鲁的\",\"audio\":\"robust.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

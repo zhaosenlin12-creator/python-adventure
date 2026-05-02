@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.823655+00:00",
+  "request": {
+    "lesson_id": "934295c9063dcb48b63aa81248570326",
+    "course_id": "df7bf8b8c0456926de2c1fac14a741b2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "order": 462,
+    "nextCourseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "courseName": "宋词必备67首（1）",
+    "lessonId": "934295c9063dcb48b63aa81248570326",
+    "nextLessonId": "f5e72b0e72f93b3b279223d346e8c5d3",
+    "lessonName": "稚子弄冰",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ee63ac010f8c694de8eedc713d5c202d",
+        "index": 1,
+        "text": [
+          "稚子弄冰\\n杨万里\\n稚子金盆脱晓冰，彩丝穿取当银钲。\\n敲成玉磬穿林响，忽作玻璃碎地声。"
+        ],
+        "pinyin": "[[\"稚\", \"zhì\"], [\"子\", \"zǐ\"], [\"弄\", \"nòng\"], [\"冰\", \"bīng\"], [\"\\n\", \"\"], [\"杨\", \"yáng\"], [\"万\", \"wàn\"], [\"里\", \"lǐ\"], [\"\\n\", \"\"], [\"稚\", \"zhì\"], [\"子\", \"zǐ\"], [\"金\", \"jīn\"], [\"盆\", \"pén\"], [\"脱\", \"tuō\"], [\"晓\", \"xiǎo\"], [\"冰\", \"bīng\"], [\"，\", \"\"], [\"彩\", \"cǎi\"], [\"丝\", \"sī\"], [\"穿\", \"chuān\"], [\"取\", \"qǔ\"], [\"当\", \"dāng\"], [\"银\", \"yín\"], [\"钲\", \"zhēng\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"敲\", \"qiāo\"], [\"成\", \"chéng\"], [\"玉\", \"yù\"], [\"磬\", \"qìng\"], [\"穿\", \"chuān\"], [\"林\", \"lín\"], [\"响\", \"xiǎng\"], [\"，\", \"\"], [\"忽\", \"hū\"], [\"作\", \"zuò\"], [\"玻\", \"bō\"], [\"璃\", \"lí\"], [\"碎\", \"suì\"], [\"地\", \"dì\"], [\"声\", \"shēng\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

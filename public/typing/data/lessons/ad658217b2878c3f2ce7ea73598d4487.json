@@ -1,0 +1,50 @@
+{
+  "source": "speed-test",
+  "scrapedAt": "2026-05-02T06:08:44.873507+00:00",
+  "request": {
+    "lesson_id": "ad658217b2878c3f2ce7ea73598d4487",
+    "course_id": "c6bc39f4ba86486e20cc171fab797ea3",
+    "source": "speed-test"
+  },
+  "data": {
+    "level": "速度测试",
+    "courseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "order": 41,
+    "nextCourseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "courseName": "英文速度测试",
+    "lessonId": "ad658217b2878c3f2ce7ea73598d4487",
+    "nextLessonId": "4cfbe48be42c9894acc5724089772607",
+    "lessonName": "A Day at the Beach",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "84d3fc8f9b99cc33c1dcfa4f899b551c",
+        "index": 1,
+        "text": [
+          "Today, I'm at a beach with my family.\\nThe sun is shining. The sky is blue. The water is blue. The sand is brown and hot.\\nMy brother and I make a castle in the sand. My father helps us build the castle. My mother finds beautiful shells for us to put on top of our castle.\\nIt is a great day at the beach!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": 13,
+    "categoryTitle": "速度测试"
+  }
+}

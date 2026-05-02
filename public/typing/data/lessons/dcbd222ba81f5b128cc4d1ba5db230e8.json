@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.524998+00:00",
+  "request": {
+    "lesson_id": "dcbd222ba81f5b128cc4d1ba5db230e8",
+    "course_id": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "order": 9,
+    "nextCourseId": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "courseName": "基准键",
+    "lessonId": "dcbd222ba81f5b128cc4d1ba5db230e8",
+    "nextLessonId": "bea794d7ff171fc85e19ca852ad4b051",
+    "lessonName": "练习fjdksl",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-practise-star.533c8094ae.png",
+    "description": "练习fjdksl",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "fd45965c06b7177ca782d9d267c43838",
+        "index": 1,
+        "text": [
+          "klkfkjl sddds klskdf kdlfdlj ldflsl dkks ssddsss ksd sdfsd sl fss fkl ssk ssfsff fldk"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "fjdks l",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

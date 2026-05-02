@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.841703+00:00",
+  "request": {
+    "lesson_id": "3ae2d9674a83b4f8f606db30f2fd4f41",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 380,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "3ae2d9674a83b4f8f606db30f2fd4f41",
+    "nextLessonId": "5bf6ffc8abead03cf3cb7157eca4aca4",
+    "lessonName": "六级词汇正序版-56",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第56课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "94a19376170aeea55c4d7ec77dd77cd9",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"illegal\",\"pronun\":\"[ɪˈliːɡl]\",\"translation\":\"n. 非法移民，非法劳工\\nadj. [法] 非法的；违法的；违反规则的\",\"audio\":\"illegal.mp3\"},{\"word\":\"illuminate\",\"pronun\":\"[ɪˈluːmɪneɪt]\",\"translation\":\"vt. 阐明，说明；照亮；使灿烂；用灯装饰\\nvi. 照亮\",\"audio\":\"illuminate.mp3\"},{\"word\":\"illusion\",\"pronun\":\"[ɪˈluːʒn]\",\"translation\":\"n. 幻觉，错觉；错误的观念或信仰\",\"audio\":\"illusion.mp3\"},{\"word\":\"illustrate\",\"pronun\":\"[ˈɪləstreɪt]\",\"translation\":\"vi. 举例\\nvt. 阐明，举例说明；图解\",\"audio\":\"illustrate.mp3\"},{\"word\":\"imaginary\",\"pronun\":\"[ɪˈmædʒɪneri]\",\"translation\":\"adj. 虚构的，假想的；想像的；虚数的\",\"audio\":\"imaginary.mp3\"},{\"word\":\"imaginative\",\"pronun\":\"[ɪˈmædʒɪnətɪv]\",\"translation\":\"adj. 富于想象的；有创造力的\",\"audio\":\"imaginative.mp3\"},{\"word\":\"imitate\",\"pronun\":\"[ˈɪmɪteɪt]\",\"translation\":\"vt. 模仿，仿效；仿造，仿制\",\"audio\":\"imitate.mp3\"},{\"word\":\"imitation\",\"pronun\":\"[ˌɪmɪˈteɪʃn]\",\"translation\":\"n. 模仿，仿造；仿制品\\nadj. 人造的，仿制的\",\"audio\":\"imitation.mp3\"},{\"word\":\"immense\",\"pronun\":\"[ɪˈmens]\",\"translation\":\"adj. 巨大的，广大的；无边无际的；非常好的\",\"audio\":\"immense.mp3\"},{\"word\":\"immerse\",\"pronun\":\"[ɪˈmɜːrs]\",\"translation\":\"vt. 沉浸；使陷入\",\"audio\":\"immerse.mp3\"},{\"word\":\"immigrant\",\"pronun\":\"[ˈɪmɪɡrənt]\",\"translation\":\"n. 移民，侨民\\nadj. 移民的；迁入的\",\"audio\":\"immigrant.mp3\"},{\"word\":\"immune\",\"pronun\":\"[ɪˈmjuːn]\",\"translation\":\"n. 免疫者；免除者\\nadj. 免疫的；免于……的，免除的\",\"audio\":\"immune.mp3\"},{\"word\":\"impact\",\"pronun\":\"[ˈɪmpækt]\",\"translation\":\"vi. 影响；撞击；冲突；压紧（on，upon，with）\\nn. 影响；效果；碰撞；冲击力\\nvt. 挤入，压紧；撞击；对…产生影响\",\"audio\":\"impact.mp3\"},{\"word\":\"impair\",\"pronun\":\"[ɪmˈper]\",\"translation\":\"vt. 损害；削弱；减少\",\"audio\":\"impair.mp3\"},{\"word\":\"impart\",\"pronun\":\"[ɪmˈpɑːrt]\",\"translation\":\"vt. 给予（尤指抽象事物），传授；告知，透露\",\"audio\":\"impart.mp3\"},{\"word\":\"impatient\",\"pronun\":\"[ɪmˈpeɪʃnt]\",\"translation\":\"adj. 焦躁的；不耐心的\",\"audio\":\"impatient.mp3\"},{\"word\":\"imperative\",\"pronun\":\"[ɪmˈperətɪv]\",\"translation\":\"n. 必要的事；命令；需要；规则；[语]祈使语气\\nadj. 必要的，不可避免的；紧急的；命令的，专横的；势在必行的；[语]祈使的\",\"audio\":\"imperative.mp3\"},{\"word\":\"imperial\",\"pronun\":\"[ɪmˈpɪriəl]\",\"translation\":\"n. 纸张尺寸；特等品\\nadj. 帝国的；皇帝的；至高无上的；威严的\",\"audio\":\"imperial.mp3\"},{\"word\":\"impetus\",\"pronun\":\"[ˈɪmpɪtəs]\",\"translation\":\"n. 动力；促进；冲力\",\"audio\":\"impetus.mp3\"},{\"word\":\"implement\",\"pronun\":\"[ˈɪmplɪmənt; ˈɪmpləˌment]\",\"translation\":\"n. 工具，器具；手段\\nvt. 实施，执行；实现，使生效\",\"audio\":\"implement.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

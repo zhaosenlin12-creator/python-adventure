@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.921178+00:00",
+  "request": {
+    "lesson_id": "58703639702b0785127bc918c1024776",
+    "course_id": "421f70b408e75c66a6e8a5208e6fc7d1",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "421f70b408e75c66a6e8a5208e6fc7d1",
+    "order": 480,
+    "nextCourseId": "421f70b408e75c66a6e8a5208e6fc7d1",
+    "courseName": "宋词必备67首（2）",
+    "lessonId": "58703639702b0785127bc918c1024776",
+    "nextLessonId": "b81c0d1ac13577b74a4dde027987259a",
+    "lessonName": "过松源晨炊漆公店",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e77908d4e5707c4e60e66add2764212c",
+        "index": 1,
+        "text": [
+          "过松源晨炊漆公店\\n杨万里\\n莫言下岭便无难，赚得行人错喜欢。\\n政入万山围子里，一山放出一山拦。"
+        ],
+        "pinyin": "[[\"过\", \"guò\"], [\"松\", \"sōng\"], [\"源\", \"yuán\"], [\"晨\", \"chén\"], [\"炊\", \"chuī\"], [\"漆\", \"qī\"], [\"公\", \"gōng\"], [\"店\", \"diàn\"], [\"\\n\", \"\"], [\"杨\", \"yáng\"], [\"万\", \"wàn\"], [\"里\", \"lǐ\"], [\"\\n\", \"\"], [\"莫\", \"mò\"], [\"言\", \"yán\"], [\"下\", \"xià\"], [\"岭\", \"lǐng\"], [\"便\", \"biàn\"], [\"无\", \"wú\"], [\"难\", \"nán\"], [\"，\", \"\"], [\"赚\", \"zhuàn\"], [\"得\", \"dé\"], [\"行\", \"xíng\"], [\"人\", \"rén\"], [\"错\", \"cuò\"], [\"喜\", \"xǐ\"], [\"欢\", \"huān\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"政\", \"zhèng\"], [\"入\", \"rù\"], [\"万\", \"wàn\"], [\"山\", \"shān\"], [\"围\", \"wéi\"], [\"子\", \"zǐ\"], [\"里\", \"lǐ\"], [\"，\", \"\"], [\"一\", \"yī\"], [\"山\", \"shān\"], [\"放\", \"fàng\"], [\"出\", \"chū\"], [\"一\", \"yī\"], [\"山\", \"shān\"], [\"拦\", \"lán\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

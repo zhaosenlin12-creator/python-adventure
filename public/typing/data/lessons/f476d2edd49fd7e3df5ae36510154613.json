@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.858254+00:00",
+  "request": {
+    "lesson_id": "f476d2edd49fd7e3df5ae36510154613",
+    "course_id": "c02abec1127900f16353dac5e0b02419",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "c02abec1127900f16353dac5e0b02419",
+    "order": 371,
+    "nextCourseId": "6b7e28f9c51591c604dbd65a0dd6d5c4",
+    "courseName": "百科知识1",
+    "lessonId": "f476d2edd49fd7e3df5ae36510154613",
+    "nextLessonId": "db0ddf8a0449e1e24b31ce6449be76d5",
+    "lessonName": "游戏：英文单词",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-duck.b036f0ad8f.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "2cdf1d327d707e188aa9ed564756232b",
+        "index": 1,
+        "text": [
+          "humor tempt manner globe repress sign eternity inquiry"
+        ],
+        "contentType": 3,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 30,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

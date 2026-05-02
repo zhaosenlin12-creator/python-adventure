@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.603256+00:00",
+  "request": {
+    "lesson_id": "575fa85039eb58a7d8759e87ed638c5d",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 111,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "575fa85039eb58a7d8759e87ed638c5d",
+    "nextLessonId": "3e8f297832fabbc2af8ac9af010257f8",
+    "lessonName": "KET核心词-35",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第35课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8c9108da83aa7ac154c993255f887e52",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"kid\",\"pronun\":\"[kɪd]\",\"translation\":\"n. 小孩；小山羊\\nvt. 欺骗；取笑；戏弄\\nvi. 欺骗；取笑；戏弄\\nadj. 小山羊皮制的；较年幼的\",\"audio\":\"kid.mp3\"},{\"word\":\"kill\",\"pronun\":\"[kɪl]\",\"translation\":\"vt. 杀死；扼杀；使终止；抵消\\nvi. 杀死\\nn. 杀戮；屠杀\\nadj. 致命的；致死的\",\"audio\":\"kill.mp3\"},{\"word\":\"kilo\",\"pronun\":\"[ˈkilo]\",\"translation\":\"n. 千克\",\"audio\":\"kilo.mp3\"},{\"word\":\"kilometre\",\"pronun\":\"[kɪˈlɑːmɪtər]\",\"translation\":\"n. [计量] 公里；[计量] 千米\",\"audio\":\"kilometre.mp3\"},{\"word\":\"kind\",\"pronun\":\"[kaɪnd]\",\"translation\":\"n. 种类；性质\\nadj. 和蔼的；宽容的；令人感激的\",\"audio\":\"kind.mp3\"},{\"word\":\"king\",\"pronun\":\"[kɪŋ]\",\"translation\":\"n. 国王；最有势力者；王棋\\nvi. 统治；做国王\\nvt. 立…为王\\nadj. 主要的，最重要的，最大的\",\"audio\":\"king.mp3\"},{\"word\":\"kiss\",\"pronun\":\"[kɪs]\",\"translation\":\"vt. 吻；（风等）轻拂\\nvi. 接吻；（风等）轻触\\nn. 吻；轻拂\",\"audio\":\"kiss.mp3\"},{\"word\":\"kit\",\"pronun\":\"[kɪt]\",\"translation\":\"n. 工具箱；成套工具\\nvt. 装备\\nvi. 装备\",\"audio\":\"kit.mp3\"},{\"word\":\"kitchen\",\"pronun\":\"[ˈkɪtʃɪn]\",\"translation\":\"n. 厨房；炊具；炊事人员\",\"audio\":\"kitchen.mp3\"},{\"word\":\"kite\",\"pronun\":\"[kaɪt]\",\"translation\":\"n. 风筝\\nvi. 使用空头支票；像风筝一样飞；轻快地移动\\nvt. 骗钱；涂改（支票）\",\"audio\":\"kite.mp3\"},{\"word\":\"knife\",\"pronun\":\"[naɪf]\",\"translation\":\"n. 刀；匕首\\nvt. 用刀切；（口）伤害\\nvi. 劈开；划过\",\"audio\":\"knife.mp3\"},{\"word\":\"knock\",\"pronun\":\"[nɑːk]\",\"translation\":\"vi. 敲；打；敲击\\nvt. 敲；打；敲击；批评\\nn. 敲；敲打；爆震声\",\"audio\":\"knock.mp3\"},{\"word\":\"know\",\"pronun\":\"[noʊ]\",\"translation\":\"vt. 知道；认识；懂得\\nvi. 了解；熟悉；确信\",\"audio\":\"know.mp3\"},{\"word\":\"knowledge\",\"pronun\":\"[ˈnɑːlɪdʒ]\",\"translation\":\"n. 知识，学问；知道，认识；学科\",\"audio\":\"knowledge.mp3\"},{\"word\":\"lady\",\"pronun\":\"[ˈleɪdi]\",\"translation\":\"n. 女士，夫人；小姐；妻子\",\"audio\":\"lady.mp3\"},{\"word\":\"lake\",\"pronun\":\"[leɪk]\",\"translation\":\"n. 湖；深红色颜料；胭脂红\\nvt. （使）血球溶解\\nvi. （使）血球溶解\",\"audio\":\"lake.mp3\"},{\"word\":\"lamp\",\"pronun\":\"[læmp]\",\"translation\":\"n. 灯；照射器\\nvt. 照亮\\nvi. 发亮\",\"audio\":\"lamp.mp3\"},{\"word\":\"land\",\"pronun\":\"[lænd]\",\"translation\":\"n. 国土；陆地；地面\\nvt. 使…登陆；使…陷于；将…卸下\\nvi. 登陆；到达\",\"audio\":\"land.mp3\"},{\"word\":\"language\",\"pronun\":\"[ˈlæŋɡwɪdʒ]\",\"translation\":\"n. 语言；语言文字；表达能力\",\"audio\":\"language.mp3\"},{\"word\":\"laptop\",\"pronun\":\"[ˈlæptɑːp]\",\"translation\":\"n. 膝上型轻便电脑，笔记本电脑\",\"audio\":\"laptop.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

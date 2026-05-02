@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.386576+00:00",
+  "request": {
+    "lesson_id": "0a495e421c8a6b04a5afe70470daba9b",
+    "course_id": "d47f40df8593ffe75da61fffca274131",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "d47f40df8593ffe75da61fffca274131",
+    "order": 255,
+    "nextCourseId": "d47f40df8593ffe75da61fffca274131",
+    "courseName": "汉字三级",
+    "lessonId": "0a495e421c8a6b04a5afe70470daba9b",
+    "nextLessonId": "d62a9edbc672bd38ff75a98387c5ec62",
+    "lessonName": "《秋夜》 鲁迅",
+    "icon": " https://typing-web.oss-cn-shanghai.aliyuncs.com/key-icon/key-han-3.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "db8b6359474aea8e29af96589012bc5c",
+        "index": 1,
+        "text": [
+          "然而现在却非常之蓝，闪闪地䀹着几十个星星的眼，冷眼。他的口角上现出微笑，似乎自以为大有深意，而将繁霜洒在我的园里的野花上。"
+        ],
+        "pinyin": "[[\"然\", \"rán\"], [\"而\", \"ér\"], [\"现\", \"xiàn\"], [\"在\", \"zài\"], [\"却\", \"què\"], [\"非\", \"fēi\"], [\"常\", \"cháng\"], [\"之\", \"zhī\"], [\"蓝\", \"lán\"], [\"，\", \"\"], [\"闪\", \"shǎn\"], [\"闪\", \"shǎn\"], [\"地\", \"dì\"], [\"䀹\", \"shùn\"], [\"着\", \"zhe\"], [\"几\", \"jǐ\"], [\"十\", \"shí\"], [\"个\", \"gè\"], [\"星\", \"xīng\"], [\"星\", \"xīng\"], [\"的\", \"de\"], [\"眼\", \"yǎn\"], [\"，\", \"\"], [\"冷\", \"lěng\"], [\"眼\", \"yǎn\"], [\"。\", \"\"], [\"他\", \"tā\"], [\"的\", \"de\"], [\"口\", \"kǒu\"], [\"角\", \"jiǎo\"], [\"上\", \"shàng\"], [\"现\", \"xiàn\"], [\"出\", \"chū\"], [\"微\", \"wēi\"], [\"笑\", \"xiào\"], [\"，\", \"\"], [\"似\", \"sì\"], [\"乎\", \"hū\"], [\"自\", \"zì\"], [\"以\", \"yǐ\"], [\"为\", \"wéi\"], [\"大\", \"dà\"], [\"有\", \"yǒu\"], [\"深\", \"shēn\"], [\"意\", \"yì\"], [\"，\", \"\"], [\"而\", \"ér\"], [\"将\", \"jiāng\"], [\"繁\", \"fán\"], [\"霜\", \"shuāng\"], [\"洒\", \"sǎ\"], [\"在\", \"zài\"], [\"我\", \"wǒ\"], [\"的\", \"de\"], [\"园\", \"yuán\"], [\"里\", \"lǐ\"], [\"的\", \"de\"], [\"野\", \"yě\"], [\"花\", \"huā\"], [\"上\", \"shàng\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 32,
+        "minSpeed": 24,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

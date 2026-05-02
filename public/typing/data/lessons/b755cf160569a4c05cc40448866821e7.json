@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.349586+00:00",
+  "request": {
+    "lesson_id": "b755cf160569a4c05cc40448866821e7",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 628,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "b755cf160569a4c05cc40448866821e7",
+    "nextLessonId": "e98a77b9a1d53b22d6eb1e1cb4197ee5",
+    "lessonName": " 三年级上-3",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点三年级上 - 第3课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "949f84dec77e3ac6749a1f1eaf8da73d",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"tiger\",\"pronun\":\"[ˈtaɪɡər]\",\"translation\":\"n. 老虎；凶暴的人\",\"audio\":\"tiger.mp3\"},{\"word\":\"panda\",\"pronun\":\"[ˈpændə]\",\"translation\":\"n. 熊猫；猫熊\",\"audio\":\"panda.mp3\"},{\"word\":\"zoo\",\"pronun\":\"[zuː]\",\"translation\":\"n. 动物园; <美俚>（铁路货车的最后一节）守车; <美俚>核粒子园\",\"audio\":\"zoo.mp3\"},{\"word\":\"funny\",\"pronun\":\"[ˈfʌni]\",\"translation\":\"n. 滑稽人物；笑话，有趣的故事；滑稽连环漫画栏；（英）（比赛用）单人双桨小艇\\nadj. 有趣的，好笑的，滑稽的；（口）稀奇的，古怪的，奇异的；有病的，不舒服的；狡猾的，欺骗（性）的，可疑的，不光明\",\"audio\":\"funny.mp3\"},{\"word\":\"bread\",\"pronun\":\"[bred]\",\"translation\":\"n. 面包；生计\\nvt. 在…上洒面包屑\",\"audio\":\"bread.mp3\"},{\"word\":\"juice\",\"pronun\":\"[dʒuːs]\",\"translation\":\"n. （水果）汁，液；果汁\",\"audio\":\"juice.mp3\"},{\"word\":\"egg\",\"pronun\":\"[eɡ]\",\"translation\":\"n. 蛋；卵子；家伙；鸡蛋\\nvt. 煽动；怂恿\",\"audio\":\"egg.mp3\"},{\"word\":\"milk\",\"pronun\":\"[mɪlk]\",\"translation\":\"n. 牛奶；乳状物\\nvt. 榨取；挤…的奶\\nvi. 挤奶\",\"audio\":\"milk.mp3\"},{\"word\":\"water\",\"pronun\":\"[ˈwɔːtər]\",\"translation\":\"n. 水；海水；雨水；海域，大片的水\\nvt. 使湿；供以水；给…浇水\\nvi. 加水；流泪；流口水\",\"audio\":\"water.mp3\"},{\"word\":\"cake\",\"pronun\":\"[keɪk]\",\"translation\":\"n. 蛋糕；块状物；利益总额\\nvt. 使结块\\nvi. 结成块状\",\"audio\":\"cake.mp3\"},{\"word\":\"fish\",\"pronun\":\"[fɪʃ]\",\"translation\":\"n. 鱼，鱼类\\nvt. 钓鱼，捕鱼；搜寻\\nvi. 捕鱼，钓鱼；用钩捞取\",\"audio\":\"fish.mp3\"},{\"word\":\"rice\",\"pronun\":\"[raɪs]\",\"translation\":\"n. 稻；米饭\\nvt. 把…捣成米糊状\",\"audio\":\"rice.mp3\"},{\"word\":\"one\",\"pronun\":\"[wʌn]\",\"translation\":\"pron. 一个人；任何人\\nadj. 一的；唯一的\\nn. 一\\nnum. 一；一个\",\"audio\":\"one.mp3\"},{\"word\":\"two\",\"pronun\":\"[tuː]\",\"translation\":\"num. 二\\nn. 两个\\nadj. 两个的\",\"audio\":\"two.mp3\"},{\"word\":\"three\",\"pronun\":\"[θriː]\",\"translation\":\"num. 三\\nn. 三，三个\\nadj. 三的，三个的\",\"audio\":\"three.mp3\"},{\"word\":\"four\",\"pronun\":\"[fɔːr]\",\"translation\":\"num. 四；四个\\nadj. 四的；四个的\",\"audio\":\"four.mp3\"},{\"word\":\"five\",\"pronun\":\"[faɪv]\",\"translation\":\"num. 五，五个\\nn. 五，五个；五美元钞票\\nadj. 五的；五个的\",\"audio\":\"five.mp3\"},{\"word\":\"six\",\"pronun\":\"[sɪks]\",\"translation\":\"num. 六，六个\\nn. 六，六个\",\"audio\":\"six.mp3\"},{\"word\":\"seven\",\"pronun\":\"[ˈsev(ə)n]\",\"translation\":\"num. 七个，七\\nn. 七个，七\\nadj. 七的；七个的\",\"audio\":\"seven.mp3\"},{\"word\":\"eight\",\"pronun\":\"[eɪt]\",\"translation\":\"num. 八；八个；第八\\nn. 八字形\\nadj. 八的\",\"audio\":\"eight.mp3\"},{\"word\":\"nine\",\"pronun\":\"[naɪn]\",\"translation\":\"n. 九，九个\\nnum. 九；九个\\nadj. 九的，九个的\",\"audio\":\"nine.mp3\"},{\"word\":\"ten\",\"pronun\":\"[ten]\",\"translation\":\"num. 十个，十\",\"audio\":\"ten.mp3\"},{\"word\":\"brother\",\"pronun\":\"[ˈbrʌðər]\",\"translation\":\"n. 兄弟；同事；战友\\nint. 我的老兄！\",\"audio\":\"brother.mp3\"},{\"word\":\"plate\",\"pronun\":\"[pleɪt]\",\"translation\":\"n. 碟；金属板；金属牌；感光底片\\nvt. 电镀；给…装甲\",\"audio\":\"plate.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

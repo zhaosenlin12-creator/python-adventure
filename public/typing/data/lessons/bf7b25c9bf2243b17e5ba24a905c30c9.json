@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.019705+00:00",
+  "request": {
+    "lesson_id": "bf7b25c9bf2243b17e5ba24a905c30c9",
+    "course_id": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "order": 89,
+    "nextCourseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "courseName": "C++",
+    "lessonId": "bf7b25c9bf2243b17e5ba24a905c30c9",
+    "nextLessonId": "2ee9008fcf8e9eeb10e13099d33ebe15",
+    "lessonName": "单词计数",
+    "icon": "data/assets/daziya.com/key-icon_key-cpp.b136419115.png",
+    "description": "C++编程练习 - 单词计数",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "12caeb9d3cd083a2964651cc2bd86df5",
+        "index": 1,
+        "text": [
+          "#include <iostream>\\n#include <map>\\n#include <string>\\n#include <sstream>\\nusing namespace std;\\n\\nint main() {\\n    string text = \"C++ is great. C++ is powerful. I love C++ programming.\";\\n    map<string, int> wordCount;\\n\\n    stringstream ss(text);\\n    string word;\\n\\n    while (ss >> word) {\\n        string cleaned = \"\";\\n        for (char c : word) {\\n            if (isalnum(c)) {\\n                cleaned += tolower(c);\\n            }\\n        }\\n        if (!cleaned.empty()) {\\n            wordCount[cleaned]++;\\n        }\\n    }\\n\\n    cout << \"原文本: \" << text << endl;\\n    cout << \"\\n单词频率:\" << endl;\\n\\n    for (auto& pair : wordCount) {\\n        cout << pair.first << \": \" << pair.second << endl;\\n    }\\n\\n    return 0;\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "cpp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

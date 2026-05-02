@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.018777+00:00",
+  "request": {
+    "lesson_id": "933e45f71ed5df05a7e433ca4047ac4a",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 91,
+    "nextCourseId": "e13b6bae2990dd699f332f225dd1955b",
+    "courseName": "Javascript",
+    "lessonId": "933e45f71ed5df05a7e433ca4047ac4a",
+    "nextLessonId": "f72c5cbb0cd53fe3d3c29f327a23c752",
+    "lessonName": "变量和数据类型",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - 变量和数据类型",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "92955fd5f4faa7bed3298ddc36567611",
+        "index": 1,
+        "text": [
+          "// 定义不同类型的变量\\nconst name = \"JavaScript\";\\nlet age = 30;\\nconst height = 1.75;\\nlet isStudent = true;\\n\\n// 输出变量信息\\nconsole.log(`语言: ${name}`);\\nconsole.log(`年龄: ${age}`);\\nconsole.log(`身高: ${height}米`);\\nconsole.log(`是否学生: ${isStudent}`);\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.578141+00:00",
+  "request": {
+    "lesson_id": "3034e418358bb013d4dced717cf044e4",
+    "course_id": "f5e1caafe742206a7fc8abc95cf77b44",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "order": 305,
+    "nextCourseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "courseName": "诗词歌赋",
+    "lessonId": "3034e418358bb013d4dced717cf044e4",
+    "nextLessonId": "d5cbc9b40898971cfbe70513646ad49b",
+    "lessonName": "《将进酒》李白",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-poet-3.b618c00c95.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "70b4355b2807ec863872135281548c9e",
+        "index": 1,
+        "text": [
+          "烹羊宰牛且为乐，会须一饮三百杯。\\n岑夫子，丹丘生，将进酒，杯莫停。\\n与君歌一曲，请君为我倾耳听。"
+        ],
+        "pinyin": "[[\"烹\", \"pēng\"], [\"羊\", \"yáng\"], [\"宰\", \"zǎi\"], [\"牛\", \"niú\"], [\"且\", \"qiě\"], [\"为\", \"wéi\"], [\"乐\", \"lè\"], [\"，\", \"\"], [\"会\", \"huì\"], [\"须\", \"xū\"], [\"一\", \"yī\"], [\"饮\", \"yǐn\"], [\"三\", \"sān\"], [\"百\", \"bǎi\"], [\"杯\", \"bēi\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"岑\", \"cén\"], [\"夫\", \"fū\"], [\"子\", \"zǐ\"], [\"，\", \"\"], [\"丹\", \"dān\"], [\"丘\", \"qiū\"], [\"生\", \"shēng\"], [\"，\", \"\"], [\"将\", \"qiāng\"], [\"进\", \"jìn\"], [\"酒\", \"jiǔ\"], [\"，\", \"\"], [\"杯\", \"bēi\"], [\"莫\", \"mò\"], [\"停\", \"tíng\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"与\", \"yǔ\"], [\"君\", \"jūn\"], [\"歌\", \"gē\"], [\"一\", \"yī\"], [\"曲\", \"qǔ\"], [\"，\", \"\"], [\"请\", \"qǐng\"], [\"君\", \"jūn\"], [\"为\", \"wèi\"], [\"我\", \"wǒ\"], [\"倾\", \"qīng\"], [\"耳\", \"ěr\"], [\"听\", \"tīng\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 42,
+        "minSpeed": 27,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

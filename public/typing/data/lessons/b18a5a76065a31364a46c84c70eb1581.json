@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:42.266538+00:00",
+  "request": {
+    "lesson_id": "b18a5a76065a31364a46c84c70eb1581",
+    "course_id": "a8a4694fbfd46ab349c83ffa7fcecccf",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "a8a4694fbfd46ab349c83ffa7fcecccf",
+    "order": 182,
+    "nextCourseId": "a8a4694fbfd46ab349c83ffa7fcecccf",
+    "courseName": "进阶练习-整数小数混合输入",
+    "lessonId": "b18a5a76065a31364a46c84c70eb1581",
+    "nextLessonId": "a43a4344d7f63f40541fb4ae637ac16f",
+    "lessonName": "百以内混合二",
+    "icon": "data/assets/daziya.com/key-icon_key-number.b0e3a26267.png",
+    "description": "数字输入练习 - 百以内混合二",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "80ec77b0d65c642ac97ed890b1419503",
+        "index": 1,
+        "text": [
+          "6.2\\n15\\n27.5\\n38\\n46.8\\n59\\n61.4\\n72\\n83.6\\n94"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

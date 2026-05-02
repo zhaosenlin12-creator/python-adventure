@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.059458+00:00",
+  "request": {
+    "lesson_id": "2dea35342214cce1830984f71f8f9e02",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 430,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "2dea35342214cce1830984f71f8f9e02",
+    "nextLessonId": "3261362cd48689bbfce1153b39e56149",
+    "lessonName": "六级词汇正序版-69",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第69课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2fa34708d77f7a0098271265b1a9846f",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"merit\",\"pronun\":\"[ˈmerɪt]\",\"translation\":\"n. 优点，价值；功绩；功过\\nvt. 值得\\nvi. 应受报答\",\"audio\":\"merit.mp3\"},{\"word\":\"messenger\",\"pronun\":\"[ˈmesɪndʒər]\",\"translation\":\"n. 报信者，送信者；先驱\",\"audio\":\"messenger.mp3\"},{\"word\":\"metabolic\",\"pronun\":\"[ˌmetəˈbɑːlɪk]\",\"translation\":\"adj. 变化的；新陈代谢的\",\"audio\":\"metabolic.mp3\"},{\"word\":\"metallic\",\"pronun\":\"[məˈtælɪk]\",\"translation\":\"adj. 金属的，含金属的\",\"audio\":\"metallic.mp3\"},{\"word\":\"metropolitan\",\"pronun\":\"[ˌmetrəˈpɑːlɪtən]\",\"translation\":\"adj. 大都市的；大主教辖区的；宗主国的\\nn. 大城市人；大主教；宗主国的公民\",\"audio\":\"metropolitan.mp3\"},{\"word\":\"midst\",\"pronun\":\"[mɪdst]\",\"translation\":\"n. 当中，中间\\nprep. 在…中间（等于amidst）\",\"audio\":\"midst.mp3\"},{\"word\":\"migrant\",\"pronun\":\"[ˈmaɪɡrənt]\",\"translation\":\"n. 候鸟；移居者；随季节迁移的民工\\nadj. 移居的；流浪的\",\"audio\":\"migrant.mp3\"},{\"word\":\"migrate\",\"pronun\":\"[ˈmaɪɡreɪt]\",\"translation\":\"vi. 移动；随季节而移居；移往\\nvt. 使移居；使移植\",\"audio\":\"migrate.mp3\"},{\"word\":\"mild\",\"pronun\":\"[maɪld]\",\"translation\":\"adj. 温和的；轻微的；淡味的；文雅的；不含有害物质的的\\nn. （英国的一种）淡味麦芽啤酒\",\"audio\":\"mild.mp3\"},{\"word\":\"militant\",\"pronun\":\"[ˈmɪlɪtənt]\",\"translation\":\"adj. 好战的\\nn. 富有战斗性的人；好斗者；激进分子\",\"audio\":\"militant.mp3\"},{\"word\":\"military\",\"pronun\":\"[ˈmɪləteri]\",\"translation\":\"adj. 军事的；军人的；适于战争的\\nn. 军队；军人\",\"audio\":\"military.mp3\"},{\"word\":\"millionaire\",\"pronun\":\"[ˌmɪljəˈner]\",\"translation\":\"n. 百万富翁；大富豪\\nadj. 100万以上人口的\",\"audio\":\"millionaire.mp3\"},{\"word\":\"mingle\",\"pronun\":\"[ˈmɪŋɡl]\",\"translation\":\"vi. 混合；交往\\nvt. 使混合；使相混\",\"audio\":\"mingle.mp3\"},{\"word\":\"miniature\",\"pronun\":\"[ˈmɪnətʃərˌˈmɪnətʃʊr]\",\"translation\":\"adj. 微型的，小规模的\\nn. 缩图；微型画；微型图画绘画术\\nvt. 是…的缩影\",\"audio\":\"miniature.mp3\"},{\"word\":\"minibus\",\"pronun\":\"[ˈmɪnibʌs]\",\"translation\":\"n. 面包车（等于microbus）；小型公共汽车；中客车\\nvi. 乘中客车\",\"audio\":\"minibus.mp3\"},{\"word\":\"minimal\",\"pronun\":\"[ˈmɪnɪml]\",\"translation\":\"adj. 最低的；最小限度的\",\"audio\":\"minimal.mp3\"},{\"word\":\"minimize\",\"pronun\":\"[ˈmɪnɪmaɪz]\",\"translation\":\"vt. 使减到最少；小看，极度轻视\\nvi. 最小化\",\"audio\":\"minimize.mp3\"},{\"word\":\"minimum\",\"pronun\":\"[ˈmɪnɪməm]\",\"translation\":\"n. 最小值；最低限度；最小化；最小量\\nadj. 最小的；最低的\",\"audio\":\"minimum.mp3\"},{\"word\":\"minority\",\"pronun\":\"[maɪˈnɔːrəti]\",\"translation\":\"n. 少数民族；少数派；未成年\\nadj. 少数的；属于少数派的\",\"audio\":\"minority.mp3\"},{\"word\":\"misery\",\"pronun\":\"[ˈmɪzəri]\",\"translation\":\"n. 痛苦，悲惨；不幸；苦恼；穷困\",\"audio\":\"misery.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

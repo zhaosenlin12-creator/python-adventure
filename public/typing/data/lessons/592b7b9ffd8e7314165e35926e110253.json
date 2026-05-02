@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.566299+00:00",
+  "request": {
+    "lesson_id": "592b7b9ffd8e7314165e35926e110253",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 331,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "592b7b9ffd8e7314165e35926e110253",
+    "nextLessonId": "fef9336eea38215abddece5fdcbc1ee6",
+    "lessonName": "六级词汇正序版-46",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第46课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ff16ade282e4c817a5f57ac3b0f2bed1",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"fabricate\",\"pronun\":\"[ˈfæbrɪkeɪt]\",\"translation\":\"vt. 制造；伪造；装配\",\"audio\":\"fabricate.mp3\"},{\"word\":\"facet\",\"pronun\":\"[ˈfæsɪt]\",\"translation\":\"n. 面；方面；小平面\\nvt. 在…上琢面\",\"audio\":\"facet.mp3\"},{\"word\":\"facilitate\",\"pronun\":\"[fəˈsɪlɪteɪt]\",\"translation\":\"vt. 促进；帮助；使容易\",\"audio\":\"facilitate.mp3\"},{\"word\":\"factor\",\"pronun\":\"[ˈfæktər]\",\"translation\":\"n. 因素；要素；[物] 因数；代理人\\nvt. 把…作为因素计入；代理经营；把…分解成\\nvi. 做代理商\",\"audio\":\"factor.mp3\"},{\"word\":\"faculty\",\"pronun\":\"[ˈfæklti]\",\"translation\":\"n. 科，系；能力；全体教员\",\"audio\":\"faculty.mp3\"},{\"word\":\"faith\",\"pronun\":\"[feɪθ]\",\"translation\":\"n. 信仰；信念；信任；忠实\",\"audio\":\"faith.mp3\"},{\"word\":\"fake\",\"pronun\":\"[feɪk]\",\"translation\":\"n. 假货；骗子；假动作\\nadj. 伪造的\\nvt. 捏造；假装…的样子\\nvi. 假装；做假动作\",\"audio\":\"fake.mp3\"},{\"word\":\"falsehood\",\"pronun\":\"[ˈfɔːlshʊd]\",\"translation\":\"n. 说谎；假话；不真实；错误的信仰\",\"audio\":\"falsehood.mp3\"},{\"word\":\"famine\",\"pronun\":\"[ˈfæmɪn]\",\"translation\":\"n. 饥荒；饥饿，奇缺\",\"audio\":\"famine.mp3\"},{\"word\":\"fantastic\",\"pronun\":\"[fænˈtæstɪk]\",\"translation\":\"n. 古怪的人\\nadj. 奇异的；空想的；异想天开的；古怪的；极好的，极出色的；不可思议的；不切实际的\",\"audio\":\"fantastic.mp3\"},{\"word\":\"fantasy\",\"pronun\":\"[ˈfæntəsi]\",\"translation\":\"n. 幻想；白日梦；幻觉\\nadj. 虚幻的\\nvt. 空想；想像\\nvi. 耽于幻想；奏幻想曲（等于phantasy）\",\"audio\":\"fantasy.mp3\"},{\"word\":\"fascinate\",\"pronun\":\"[ˈfæsɪneɪt]\",\"translation\":\"vt. 使着迷，使神魂颠倒\\nvi. 入迷\",\"audio\":\"fascinate.mp3\"},{\"word\":\"fatal\",\"pronun\":\"[ˈfeɪtl]\",\"translation\":\"adj. 致命的；重大的；毁灭性的；命中注定的\",\"audio\":\"fatal.mp3\"},{\"word\":\"fatigue\",\"pronun\":\"[fəˈtiːɡ]\",\"translation\":\"n. 疲劳，疲乏；杂役\\nadj. 疲劳的\\nvt. 使疲劳；使心智衰弱\\nvi. 疲劳\",\"audio\":\"fatigue.mp3\"},{\"word\":\"feasible\",\"pronun\":\"[ˈfiːzəbl]\",\"translation\":\"adj. 可行的；可能的；可实行的\",\"audio\":\"feasible.mp3\"},{\"word\":\"feast\",\"pronun\":\"[fiːst]\",\"translation\":\"n. 筵席，宴会；节日\\nvt. 享受；款待，宴请\\nvi. 享受；参加宴会\",\"audio\":\"feast.mp3\"},{\"word\":\"feature\",\"pronun\":\"[ˈfiːtʃər]\",\"translation\":\"n. 特色，特征；容貌；特写或专题节目\\nvt. 特写；以…为特色；由…主演\\nvi. 起重要作用\",\"audio\":\"feature.mp3\"},{\"word\":\"federal\",\"pronun\":\"[ˈfedərəl]\",\"translation\":\"adv. 联邦政府地\\nadj. 联邦的；同盟的；联邦政府的； 联邦制的\",\"audio\":\"federal.mp3\"},{\"word\":\"federation\",\"pronun\":\"[ˌfedəˈreɪʃn]\",\"translation\":\"n. 联合；联邦；联盟；联邦政府\",\"audio\":\"federation.mp3\"},{\"word\":\"feeble\",\"pronun\":\"[ˈfiːbl]\",\"translation\":\"adj. 微弱的，无力的；虚弱的；薄弱的\",\"audio\":\"feeble.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

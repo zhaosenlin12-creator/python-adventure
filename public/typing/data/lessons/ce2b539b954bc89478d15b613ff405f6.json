@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.487413+00:00",
+  "request": {
+    "lesson_id": "ce2b539b954bc89478d15b613ff405f6",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 655,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "ce2b539b954bc89478d15b613ff405f6",
+    "nextLessonId": "dcfceca2850c980090f4a1c014fe4c1f",
+    "lessonName": " 五年级下-7",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点五年级下 - 第7课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a5218049553a5e78ec35fc679f987f94",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"ours\",\"pronun\":\"[ˈaʊərz]\",\"translation\":\"pron. 我们的\",\"audio\":\"ours.mp3\"},{\"word\":\"climbing\",\"pronun\":\"[ˈklaɪmɪŋ]\",\"translation\":\"n. 攀登\\nv. 爬（climb的ing形式）\\nadj. 上升的；攀缘而登的\",\"audio\":\"climbing.mp3\"},{\"word\":\"eating\",\"pronun\":\"[ˈiːtɪŋ]\",\"translation\":\"n. 吃；食物\\nv. 吃（eat的ing形式）\\nadj. 侵蚀的；可生食的；进餐用的\",\"audio\":\"eating.mp3\"},{\"word\":\"playing\",\"pronun\":\"[ˈpleɪɪŋ]\",\"translation\":\"n. 比赛；演奏\\nv. 玩耍（play的ing形式）\",\"audio\":\"playing.mp3\"},{\"word\":\"jumping\",\"pronun\":\"[ˈdʒʌmpɪŋ]\",\"translation\":\"adj. 跳跃的\\nn. 障碍\\nvi. 跳（jump的ing形式）\",\"audio\":\"jumping.mp3\"},{\"word\":\"drinking\",\"pronun\":\"[ˈdrɪŋkɪŋ]\",\"translation\":\"n. 喝，饮；喝酒\\nv. 饮（drink的ing形式）；喝\",\"audio\":\"drinking.mp3\"},{\"word\":\"sleeping\",\"pronun\":\"[ˈsliːpɪŋ]\",\"translation\":\"n. 睡眠\\nadj. 睡着的\",\"audio\":\"sleeping.mp3\"},{\"word\":\"each\",\"pronun\":\"[iːtʃ]\",\"translation\":\"adj. 每；各自的\\npron. 每个；各自\\nadv. 每个；各自\",\"audio\":\"each.mp3\"},{\"word\":\"other\",\"pronun\":\"[ˈʌðər]\",\"translation\":\"adj. 其他的，另外的\\npron. 另外一个\",\"audio\":\"other.mp3\"},{\"word\":\"each other\",\"pronun\":\"\",\"translation\":\"pron. 彼此\",\"audio\":\"each_other.mp3\"},{\"word\":\"excited\",\"pronun\":\"[ɪkˈsaɪtɪd]\",\"translation\":\"v. 激动；唤起（excite的过去分词）\\nadj. 兴奋的；激动的；活跃的\",\"audio\":\"excited.mp3\"},{\"word\":\"like\",\"pronun\":\"[laɪk]\",\"translation\":\"vt. 喜欢；想；愿意\\nvi. 喜欢；希望\\nprep. 像；如同\\nadj. 同样的；相似的\\nn. 爱好；同样的人或物\\nadv. 可能\\nconj. 好像\",\"audio\":\"like.mp3\"},{\"word\":\"doing morning exercises\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"doing_morning_exercises.mp3\"},{\"word\":\"having ... class\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"having_____class.mp3\"},{\"word\":\"eating lunch\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"eating_lunch.mp3\"},{\"word\":\"reading a book\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"reading_a_book.mp3\"},{\"word\":\"listening to music\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"listening_to_music.mp3\"},{\"word\":\"keep\",\"pronun\":\"[kiːp]\",\"translation\":\"vt. 保持；经营；遵守；饲养\\nvi. 保持；继续不断\\nn. 保持；生计；生活费\",\"audio\":\"keep.mp3\"},{\"word\":\"keep to the right\",\"pronun\":\"\",\"translation\":\"na. 靠右边走；走正路\",\"audio\":\"keep_to_the_right.mp3\"},{\"word\":\"keep your desk clean\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"keep_your_desk_clean.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

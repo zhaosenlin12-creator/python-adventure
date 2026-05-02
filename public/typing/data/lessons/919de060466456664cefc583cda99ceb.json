@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.733789+00:00",
+  "request": {
+    "lesson_id": "919de060466456664cefc583cda99ceb",
+    "course_id": "77cc7d3093a4e829cb2fb89b1788a0e1",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "77cc7d3093a4e829cb2fb89b1788a0e1",
+    "order": 113,
+    "nextCourseId": "77cc7d3093a4e829cb2fb89b1788a0e1",
+    "courseName": "拼音",
+    "lessonId": "919de060466456664cefc583cda99ceb",
+    "nextLessonId": "981848db7257961f674f440e1cd5e71a",
+    "lessonName": "拼音组合 c",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-py-c.b15c7ddef4.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e281706d46cc1a2866ee561f75efef55",
+        "index": 1,
+        "text": [
+          "ca cai can cang cao ce cen ceng cha chai chan chang chao che chen cheng chi"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "caingoeh",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 33,
+        "minSpeed": 10,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

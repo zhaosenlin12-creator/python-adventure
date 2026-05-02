@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.258404+00:00",
+  "request": {
+    "lesson_id": "2082ed7a9a087832b0e4edd1403ae506",
+    "course_id": "be2af5259ed993e6499f4c46d3f7e67e",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "be2af5259ed993e6499f4c46d3f7e67e",
+    "order": 435,
+    "nextCourseId": "be2af5259ed993e6499f4c46d3f7e67e",
+    "courseName": "实战演练-1亿以内金额",
+    "lessonId": "2082ed7a9a087832b0e4edd1403ae506",
+    "nextLessonId": "10f9ea2206af5672ea14a2609ee9822b",
+    "lessonName": "综合练习三",
+    "icon": "data/assets/daziya.com/key-icon_key-practise-star.b4ccc47d6d.png",
+    "description": "数字输入练习 - 综合练习三",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "bebb37b4db658f82218ba9e12738a8df",
+        "index": 1,
+        "text": [
+          "3624591728\\n4735612839\\n5846723941\\n6957834152\\n7168945263\\n8279156374\\n9381267485\\n1492378596\\n2513489617\\n3735612839\\n4846723941\\n5957834152\\n6168945263\\n7279156374\\n8381267485\\n9492378596\\n1513489617\\n2624591728\\n3846723941\\n4957834152\\n5168945263\\n6279156374\\n7381267485\\n8492378596\\n9513489617\\n1624591728\\n2735612839\\n3957834152\\n4168945263\\n5279156374"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.897488+00:00",
+  "request": {
+    "lesson_id": "e28f3f2379e3263d34a7bcbd10af0cde",
+    "course_id": "66724e53770af94715b9e0524520eb74",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "66724e53770af94715b9e0524520eb74",
+    "order": 89,
+    "nextCourseId": "66724e53770af94715b9e0524520eb74",
+    "courseName": "基础练习-上排数字",
+    "lessonId": "e28f3f2379e3263d34a7bcbd10af0cde",
+    "nextLessonId": "7e034256a5b98afd908fdf4825e4cfbe",
+    "lessonName": "综合提升七",
+    "icon": "data/assets/daziya.com/key-icon_num-jiangbei.44832ef16e.png",
+    "description": "数字输入练习 - 综合提升七",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f8ba74286338116a8434e4bf6772594c",
+        "index": 1,
+        "text": [
+          "789*87*9*78*987*79*8"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

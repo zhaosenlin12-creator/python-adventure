@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.259294+00:00",
+  "request": {
+    "lesson_id": "034c00c2950a3c6d2de1acaaebd466af",
+    "course_id": "be2af5259ed993e6499f4c46d3f7e67e",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "be2af5259ed993e6499f4c46d3f7e67e",
+    "order": 434,
+    "nextCourseId": "be2af5259ed993e6499f4c46d3f7e67e",
+    "courseName": "实战演练-1亿以内金额",
+    "lessonId": "034c00c2950a3c6d2de1acaaebd466af",
+    "nextLessonId": "2082ed7a9a087832b0e4edd1403ae506",
+    "lessonName": "综合练习二",
+    "icon": "data/assets/daziya.com/key-icon_key-practise-star.b4ccc47d6d.png",
+    "description": "数字输入练习 - 综合练习二",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "39ee8d2f2d7465944afc136af96a67c4",
+        "index": 1,
+        "text": [
+          "2547183658\\n3658294769\\n4769315871\\n5871426982\\n6982537193\\n7193648214\\n8214759325\\n9325861436\\n1436972547\\n2658294769\\n3769315871\\n4871426982\\n5982537193\\n6193648214\\n7214759325\\n8325861436\\n9436972547\\n1547183658\\n2769315871\\n3871426982\\n4982537193\\n5193648214\\n6214759325\\n7325861436\\n8436972547\\n9547183658\\n1658294769\\n2881426982\\n3992537193\\n4113648214"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

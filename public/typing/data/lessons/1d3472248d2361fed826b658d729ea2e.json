@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.359497+00:00",
+  "request": {
+    "lesson_id": "1d3472248d2361fed826b658d729ea2e",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 59,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "1d3472248d2361fed826b658d729ea2e",
+    "nextLessonId": "c9b7fac937e0fd28bad839076a45a692",
+    "lessonName": "KET核心词-16",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第16课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a14f3f3651a1eacff461fde2fe4ecf0b",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"count\",\"pronun\":\"[kaʊnt]\",\"translation\":\"n. 计数；计算；伯爵\\nvt. 计算；认为\\nvi. 计数；有价值\",\"audio\":\"count.mp3\"},{\"word\":\"country\",\"pronun\":\"[ˈkʌntri]\",\"translation\":\"n. 国家，国土；国民；乡下，农村；乡村；故乡\\nadj. 祖国的，故乡的；地方的，乡村的；国家的；粗鲁的；乡村音乐的\",\"audio\":\"country.mp3\"},{\"word\":\"countryside\",\"pronun\":\"[ˈkʌntrisaɪd]\",\"translation\":\"n. 农村，乡下；乡下的全体居民\",\"audio\":\"countryside.mp3\"},{\"word\":\"course\",\"pronun\":\"[kɔːrs]\",\"translation\":\"n. 科目；课程；过程；进程；道路；路线，航向；一道菜\\nvt. 追赶；跑过\\nvi. 指引航线；快跑\",\"audio\":\"course.mp3\"},{\"word\":\"coursebook\",\"pronun\":\"[ˈkɔːrsbʊk]\",\"translation\":\"n. 教科书\",\"audio\":\"coursebook.mp3\"},{\"word\":\"court\",\"pronun\":\"[kɔːrt]\",\"translation\":\"n. 法院；球场；朝廷；奉承\\nvt. 招致（失败、危险等）；向…献殷勤；设法获得\\nvi. 求爱\",\"audio\":\"court.mp3\"},{\"word\":\"cousin\",\"pronun\":\"[ˈkʌzn]\",\"translation\":\"n. 堂兄弟姊妹；表兄弟姊妹\",\"audio\":\"cousin.mp3\"},{\"word\":\"cover\",\"pronun\":\"[ˈkʌvər]\",\"translation\":\"n. 封面，封皮；盖子；掩蔽物;幌子，借口\\nvt. 包括；采访，报导；涉及\\nvi. 覆盖；代替\",\"audio\":\"cover.mp3\"},{\"word\":\"cow\",\"pronun\":\"[kaʊ]\",\"translation\":\"n. 奶牛，母牛；母兽\\nvt. 威胁，恐吓\",\"audio\":\"cow.mp3\"},{\"word\":\"crayon\",\"pronun\":\"[ˈkreɪən; ˈkreɪɑːn]\",\"translation\":\"n. 蜡笔，有色粉笔\\nvt. 以蜡笔作画，用颜色粉笔画\",\"audio\":\"crayon.mp3\"},{\"word\":\"crazy\",\"pronun\":\"[ˈkreɪzi]\",\"translation\":\"adj. 疯狂的；狂热的，着迷的\",\"audio\":\"crazy.mp3\"},{\"word\":\"cream\",\"pronun\":\"[kriːm]\",\"translation\":\"n. 奶油，乳脂；精华；面霜；乳酪\",\"audio\":\"cream.mp3\"},{\"word\":\"crew\",\"pronun\":\"[kruː]\",\"translation\":\"n. 队，组；全体人员，全体船员\\nvt. 使当船员\\nvi. 一起工作\",\"audio\":\"crew.mp3\"},{\"word\":\"crop\",\"pronun\":\"[krɑːp]\",\"translation\":\"n. 产量；农作物；庄稼；平头\\nvt. 种植；收割；修剪；剪短\\nvi. 收获\",\"audio\":\"crop.mp3\"},{\"word\":\"cross\",\"pronun\":\"[krɔːs]\",\"translation\":\"n. 交叉，十字；十字架，十字形物\\nadj. 交叉的，相反的；乖戾的；生气的\\nvt. 杂交；渡过；使相交\\nvi. 交叉；杂交；横过\",\"audio\":\"cross.mp3\"},{\"word\":\"crowd\",\"pronun\":\"[kraʊd]\",\"translation\":\"n. 群众,一伙;一堆,许多,大众\\nv. 拥挤,挤满,挤进\\nvt. 挤满,将...塞进;催促,催逼\\nvi. 挤,拥挤,聚集\",\"audio\":\"crowd.mp3\"},{\"word\":\"cry\",\"pronun\":\"[kraɪ]\",\"translation\":\"n. 叫喊；叫声；口号；呼叫\\nvi. 哭；叫；喊\\nvt. 叫喊；哭出；大声说\",\"audio\":\"cry.mp3\"},{\"word\":\"culture\",\"pronun\":\"[ˈkʌltʃər]\",\"translation\":\"n. 文化，文明；修养；栽培\\nvt. [细胞][微] 培养（等于cultivate）\",\"audio\":\"culture.mp3\"},{\"word\":\"cupboard\",\"pronun\":\"[ˈkʌbərd]\",\"translation\":\"n. 碗柜；食橱\",\"audio\":\"cupboard.mp3\"},{\"word\":\"curly\",\"pronun\":\"[ˈkɜːrli]\",\"translation\":\"adj. 卷曲的；卷毛的；（木材）有皱状纹理的；蜷缩的\",\"audio\":\"curly.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

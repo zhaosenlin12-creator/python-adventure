@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.577764+00:00",
+  "request": {
+    "lesson_id": "a9f2500ef42963cd4b7560f2323b6600",
+    "course_id": "a74c1aef61379ff4f0a2ca54be6ac56f",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "a74c1aef61379ff4f0a2ca54be6ac56f",
+    "order": 13,
+    "nextCourseId": "a74c1aef61379ff4f0a2ca54be6ac56f",
+    "courseName": "基础练习-下排数字",
+    "lessonId": "a9f2500ef42963cd4b7560f2323b6600",
+    "nextLessonId": "abb256df5b49152d87f6d06fac10747e",
+    "lessonName": "加号练习",
+    "icon": "data/assets/daziya.com/key-icon_num-jiahao.f43becc38f.png",
+    "description": "数字输入练习 - 加号练习",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2f2b4a71290df7622dbf43d4f3025008",
+        "index": 1,
+        "text": [
+          "1+2+3+1+2+3+1+2+3+12"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

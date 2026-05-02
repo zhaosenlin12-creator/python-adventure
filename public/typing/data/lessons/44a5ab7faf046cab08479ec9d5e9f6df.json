@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.091341+00:00",
+  "request": {
+    "lesson_id": "44a5ab7faf046cab08479ec9d5e9f6df",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 15,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "44a5ab7faf046cab08479ec9d5e9f6df",
+    "nextLessonId": "c7cfe5772d658d4ec15ac80ced00aaf9",
+    "lessonName": "2022年版 PEP-四年级-上册-4",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-四年级-上册 - 第4课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4c5a3a2c3e678d101f69732fbc15e7d6",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"police\",\"pronun\":\"[pəˈliːs]\",\"translation\":\"n. 警察，警方；治安\\nadj. 警察的；有关警察的\\nvt. 监督；管辖；维持治安；为…配备警察\",\"audio\":\"police.mp3\"},{\"word\":\"officer\",\"pronun\":\"[ˈɑːfɪsər]\",\"translation\":\"n. 军官，警官；公务员，政府官员；船长\\nvt. 指挥\",\"audio\":\"officer.mp3\"},{\"word\":\"a\",\"pronun\":\"[ə; eɪ]\",\"translation\":\"n. 字母A；第一流的；学业成绩达最高标准的评价符号\\nabbr. [物]安（ampere）\",\"audio\":\"a.mp3\"},{\"word\":\"lot\",\"pronun\":\"[lɑːt]\",\"translation\":\"n. 份额；许多；命运；阄\\nadv. （与形容词和副词连用）很，非常；（与动词连用）非常\\npron. 大量，许多\\nvt. 分组，把…划分（常与out连用）；把（土地）划分成块\\nvi. 抽签，拈阄\",\"audio\":\"lot.mp3\"},{\"word\":\"of\",\"pronun\":\"[əv; ʌv]\",\"translation\":\"prep. 关于；属于；…的；由…组成的\",\"audio\":\"of.mp3\"},{\"word\":\"now\",\"pronun\":\"[naʊ]\",\"translation\":\"adv. 现在；如今；立刻\\nadj. 现在的\\nn. 现在；目前\\nconj. 由于；既然\",\"audio\":\"now.mp3\"},{\"word\":\"make\",\"pronun\":\"[meɪk]\",\"translation\":\"vt. 使得；进行；布置，准备，整理；制造；认为；获得；形成；安排；引起；构成\\nvi. 开始；前进；增大；被制造\\nn. 制造；构造；性情\",\"audio\":\"make.mp3\"},{\"word\":\"the\",\"pronun\":\"[ðə; ði; ðiː]\",\"translation\":\"art. 这；那\\nadv. 更加（用于比较级，最高级前）\",\"audio\":\"the.mp3\"},{\"word\":\"bed\",\"pronun\":\"[bed]\",\"translation\":\"n. 床；基础；河底， 海底\\nvt. 使睡觉；安置，嵌入；栽种\\nvi. 上床；分层\",\"audio\":\"bed.mp3\"},{\"word\":\"old\",\"pronun\":\"[oʊld]\",\"translation\":\"adj. 陈旧的，古老的；年老的\\nn. 古时\",\"audio\":\"old.mp3\"},{\"word\":\"tell\",\"pronun\":\"[tel]\",\"translation\":\"vt. 告诉，说；辨别；吩咐；断定\\nvi. 讲述；告发，泄密；识别\",\"audio\":\"tell.mp3\"},{\"word\":\"everyone\",\"pronun\":\"[ˈevriwʌn]\",\"translation\":\"n. 每个人\\npron. 每个人；人人\",\"audio\":\"everyone.mp3\"},{\"word\":\"Ms\",\"pronun\":\"[mɪz]\",\"translation\":\"abbr. 存贮系统（Memory System）；主存储器（Main Storage）；主程序装置（Master Sequecer）；中速，平均速度（Medium Speed）；主（总）开关（Master Switch）\",\"audio\":\"Ms.mp3\"},{\"word\":\"speak\",\"pronun\":\"[spiːk]\",\"translation\":\"vi. 说话；演讲；表明；陈述\\nvt. 讲话；发言；讲演\",\"audio\":\"speak.mp3\"},{\"word\":\"weather\",\"pronun\":\"[ˈweðər]\",\"translation\":\"n. 天气；气象；气候；处境\\nvt. 经受住；使风化；侵蚀；使受风吹雨打\\nadj. 露天的；迎风的\\nvi. 风化；受侵蚀；经受风雨\",\"audio\":\"weather.mp3\"},{\"word\":\"sunny\",\"pronun\":\"[ˈsʌni]\",\"translation\":\"adj. 阳光充足的，和煦的；快活的；性情开朗的\",\"audio\":\"sunny.mp3\"},{\"word\":\"hot\",\"pronun\":\"[hɑːt]\",\"translation\":\"adj. 热的；辣的；热情的；激动的；紧迫的\\nvt. 增加；给…加温\\nadv. 热；紧迫地\\nvi. 变热\",\"audio\":\"hot.mp3\"},{\"word\":\"bad\",\"pronun\":\"[bæd]\",\"translation\":\"n. 坏事；坏人\\nadj. 坏的；严重的；劣质的\\nadv. 很，非常；坏地；邪恶地\",\"audio\":\"bad.mp3\"},{\"word\":\"cold\",\"pronun\":\"[kəʊld]\",\"translation\":\"n. 寒冷；感冒\\nadj. 寒冷的；冷淡的，不热情的；失去知觉的\\nadv. 完全地\",\"audio\":\"cold.mp3\"},{\"word\":\"windy\",\"pronun\":\"[ˈwɪndi]\",\"translation\":\"adj. 多风的，有风的；腹胀的；吹牛的\",\"audio\":\"windy.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

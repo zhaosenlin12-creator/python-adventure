@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.837537+00:00",
+  "request": {
+    "lesson_id": "45b37a07de2d5aa3caa2c3f253c761a6",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 160,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "45b37a07de2d5aa3caa2c3f253c761a6",
+    "nextLessonId": "8c9841d3992e13b390bcb16736323770",
+    "lessonName": "KET核心词-45",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第45课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "7de0bbb3892a390654153ccc849b65e7",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"Olympic\",\"pronun\":\"[əˈlɪmpɪk]\",\"translation\":\"adj. 奥林匹斯山的，奥林匹亚的；奥林匹克的\",\"audio\":\"Olympic.mp3\"},{\"word\":\"omelette\",\"pronun\":\"[ˈɑːmlət]\",\"translation\":\"n. 煎蛋卷\",\"audio\":\"omelette.mp3\"},{\"word\":\"on\",\"pronun\":\"[ɑːn]\",\"translation\":\"adv. 向前地；作用中，行动中；继续着\\nprep. 向，朝……；关于；在……之上；在……时候\\nadj. 开着的；发生着的，正在进行中\",\"audio\":\"on.mp3\"},{\"word\":\"once\",\"pronun\":\"[wʌns]\",\"translation\":\"adv. 一次；曾经\\nconj. 一旦\\nn. 一次，一回\",\"audio\":\"once.mp3\"},{\"word\":\"one\",\"pronun\":\"[wʌn]\",\"translation\":\"pron. 一个人；任何人\\nadj. 一的；唯一的\\nn. 一\\nnum. 一；一个\",\"audio\":\"one.mp3\"},{\"word\":\"onion\",\"pronun\":\"[ˈʌnjən]\",\"translation\":\"n. 洋葱；洋葱头\",\"audio\":\"onion.mp3\"},{\"word\":\"online\",\"pronun\":\"[ˌɑːnˈlaɪn]\",\"translation\":\"adj. 联机的；在线的\\nadv. 在线地\",\"audio\":\"online.mp3\"},{\"word\":\"only\",\"pronun\":\"[ˈoʊnli]\",\"translation\":\"adv. 只，仅仅；不料\\nadj. 唯一的，仅有的；最合适的\\nconj. 但是；不过；可是\",\"audio\":\"only.mp3\"},{\"word\":\"open\",\"pronun\":\"[ˈoʊpən]\",\"translation\":\"adj. 公开的；敞开的；空旷的；坦率的；营业着的\\nvi. 开始；展现\\nvt. 公开；打开\\nn. 公开；空旷；户外\",\"audio\":\"open.mp3\"},{\"word\":\"opera\",\"pronun\":\"[ˈɑːprə]\",\"translation\":\"n. 歌剧；歌剧院；歌剧团\",\"audio\":\"opera.mp3\"},{\"word\":\"opinion\",\"pronun\":\"[əˈpɪnjən]\",\"translation\":\"n. 意见；主张\",\"audio\":\"opinion.mp3\"},{\"word\":\"opposite\",\"pronun\":\"[ˈɑːpəzɪt]\",\"translation\":\"adj. 相反的；对面的；对立的\\nn. 对立面；反义词\\nprep. 在…的对面\\nadv. 在对面\",\"audio\":\"opposite.mp3\"},{\"word\":\"or\",\"pronun\":\"[ɔːr]\",\"translation\":\"conj. 或，或者；还是\",\"audio\":\"or.mp3\"},{\"word\":\"order\",\"pronun\":\"[ˈɔːrdər]\",\"translation\":\"n. 命令；顺序；规则；[贸易] 定单\\nvt. 命令；整理；定购\\nvi. 命令；定货\",\"audio\":\"order.mp3\"},{\"word\":\"other\",\"pronun\":\"[ˈʌðər]\",\"translation\":\"adj. 其他的，另外的\\npron. 另外一个\",\"audio\":\"other.mp3\"},{\"word\":\"out\",\"pronun\":\"[aʊt]\",\"translation\":\"adv. 出现；在外；出局；出声地；不流行地\\nadj. 外面的；出局的；下台的\\nn. 出局\\nprep. 向；离去\\nvi. 出来；暴露\\nvt. 使熄灭；驱逐\",\"audio\":\"out.mp3\"},{\"word\":\"outdoor\",\"pronun\":\"[ˈaʊtdɔːr]\",\"translation\":\"adj. 户外的；露天的；野外的（等于out-of-door）\",\"audio\":\"outdoor.mp3\"},{\"word\":\"outdoors\",\"pronun\":\"[ˌaʊtˈdɔːrz]\",\"translation\":\"adv. 在户外\\nn. 户外\\nadj. 户外的（等于outdoor）\",\"audio\":\"outdoors.mp3\"},{\"word\":\"outside\",\"pronun\":\"[ˌaʊtˈsaɪd]\",\"translation\":\"adj. 外面的，外部的；外来的\\nn. 外部；外观\\nadv. 在外面，向外面；在室外\\nprep. 在…范围之外\",\"audio\":\"outside.mp3\"},{\"word\":\"over\",\"pronun\":\"[ˈoʊvər]\",\"translation\":\"adv. 结束；越过；从头到尾\\nprep. 越过；在…之上；遍于…之上\\nadj. 结束的；上面的\\nvt. 越过\",\"audio\":\"over.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

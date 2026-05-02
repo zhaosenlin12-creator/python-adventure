@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.860318+00:00",
+  "request": {
+    "lesson_id": "1a6776671ecb3bd15555de623fd0de49",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 387,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "1a6776671ecb3bd15555de623fd0de49",
+    "nextLessonId": "bdfd6037eaf9e0936a4e9a96b0c137c7",
+    "lessonName": "六级词汇正序版-77",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第77课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a0bb78101307ff775bead35ac0e26bff",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"pact\",\"pronun\":\"[pækt]\",\"translation\":\"n. 协定；公约；条约；契约\",\"audio\":\"pact.mp3\"},{\"word\":\"pamphlet\",\"pronun\":\"[ˈpæmflət]\",\"translation\":\"n. 小册子\",\"audio\":\"pamphlet.mp3\"},{\"word\":\"panic\",\"pronun\":\"[ˈpænɪk]\",\"translation\":\"n. 恐慌，惊慌；大恐慌\\nadj. 恐慌的；没有理由的\\nvt. 使恐慌\\nvi. 十分惊慌\",\"audio\":\"panic.mp3\"},{\"word\":\"paperback\",\"pronun\":\"[ˈpeɪpərbæk]\",\"translation\":\"n. 平装本；廉价本\\nadj. 纸面装订的；纸面平装本书籍的\\nvt. 以平装本出版\",\"audio\":\"paperback.mp3\"},{\"word\":\"paradise\",\"pronun\":\"[ˈpærədaɪs]\",\"translation\":\"n. 天堂\\n至福境地\",\"audio\":\"paradise.mp3\"},{\"word\":\"paradox\",\"pronun\":\"[ˈpærədɑːks]\",\"translation\":\"n. 悖论，反论；似非而是的论点；自相矛盾的人或事\",\"audio\":\"paradox.mp3\"},{\"word\":\"paragraph\",\"pronun\":\"[ˈpærəɡræf]\",\"translation\":\"n. 段落；短评；段落符号\\nvt. 将…分段\",\"audio\":\"paragraph.mp3\"},{\"word\":\"parallel\",\"pronun\":\"[ˈpærəlel]\",\"translation\":\"n. 平行线；对比\\nadj. 平行的；类似的，相同的\\nvt. 使…与…平行\",\"audio\":\"parallel.mp3\"},{\"word\":\"paralysis\",\"pronun\":\"[pəˈræləsɪs]\",\"translation\":\"n. 麻痹；无力；停顿\",\"audio\":\"paralysis.mp3\"},{\"word\":\"paralyze\",\"pronun\":\"[ˈpærəˌlaɪz]\",\"translation\":\"vt. 使麻痹；使瘫痪\",\"audio\":\"paralyze.mp3\"},{\"word\":\"parameter\",\"pronun\":\"[pəˈræmɪtər]\",\"translation\":\"n. 参数；系数；参量\",\"audio\":\"parameter.mp3\"},{\"word\":\"parasite\",\"pronun\":\"[ˈpærəsaɪt]\",\"translation\":\"n. 寄生虫；食客\",\"audio\":\"parasite.mp3\"},{\"word\":\"partial\",\"pronun\":\"[ˈpɑːrʃl]\",\"translation\":\"adj. 局部的；偏爱的；不公平的\",\"audio\":\"partial.mp3\"},{\"word\":\"participant\",\"pronun\":\"[pɑːrˈtɪsɪpənt]\",\"translation\":\"n. 参与者；关系者\\nadj. 参与的；有关系的\",\"audio\":\"participant.mp3\"},{\"word\":\"partition\",\"pronun\":\"[pɑːrˈtɪʃn]\",\"translation\":\"n. 划分，分开；[数] 分割；隔墙；隔离物\\nvt. [数] 分割；分隔；区分\",\"audio\":\"partition.mp3\"},{\"word\":\"passion\",\"pronun\":\"[ˈpæʃ(ə)n]\",\"translation\":\"n. 激情；热情；酷爱；盛怒\",\"audio\":\"passion.mp3\"},{\"word\":\"passive\",\"pronun\":\"[ˈpæsɪv]\",\"translation\":\"n. 被动语态\\nadj. 被动的，消极的；被动语态的\",\"audio\":\"passive.mp3\"},{\"word\":\"pastime\",\"pronun\":\"[ˈpæstaɪm]\",\"translation\":\"n. 娱乐，消遣\",\"audio\":\"pastime.mp3\"},{\"word\":\"pastry\",\"pronun\":\"[ˈpeɪstri]\",\"translation\":\"n. 油酥点心；面粉糕饼\",\"audio\":\"pastry.mp3\"},{\"word\":\"pasture\",\"pronun\":\"[ˈpæstʃər]\",\"translation\":\"n. 草地；牧场；牧草\\nvt. 放牧；吃草\",\"audio\":\"pasture.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

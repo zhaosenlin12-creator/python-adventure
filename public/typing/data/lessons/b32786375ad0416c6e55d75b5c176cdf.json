@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.131270+00:00",
+  "request": {
+    "lesson_id": "b32786375ad0416c6e55d75b5c176cdf",
+    "course_id": "31f8b0bfdd5cf12de8374becadc88615",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "31f8b0bfdd5cf12de8374becadc88615",
+    "order": 402,
+    "nextCourseId": "31f8b0bfdd5cf12de8374becadc88615",
+    "courseName": "实战演练-100万以内金额",
+    "lessonId": "b32786375ad0416c6e55d75b5c176cdf",
+    "nextLessonId": "028f527aaee8edbf1732275ea1c881b3",
+    "lessonName": "角分混合二",
+    "icon": "data/assets/daziya.com/key-icon_num-dianzan.b4fa52ea4b.png",
+    "description": "数字输入练习 - 角分混合二",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5c13c411d462e9ff6deb4c8d8261914a",
+        "index": 1,
+        "text": [
+          "15235869\\n25346971\\n35457182\\n45568293\\n55679314\\n65781425\\n75892536\\n85913647\\n95124758\\n16245871\\n26356982\\n36467193\\n46578214\\n56689325\\n66791436\\n76812547\\n86923658\\n96134769\\n17255982\\n27366193\\n37477214\\n47588325\\n57699436\\n67711547\\n77822658\\n87933769\\n97144871\\n18266893\\n28377914\\n38488125"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.522236+00:00",
+  "request": {
+    "lesson_id": "a91756f30c528403f053586fd5b4632e",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 95,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "a91756f30c528403f053586fd5b4632e",
+    "nextLessonId": "867a980b1e3beb9751a98afb0d3c8de4",
+    "lessonName": "KET核心词-124",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第124课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "49efc10382b01ac827ca26d4f2c67734",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"petrol\",\"pronun\":\"[ˈpetrəl]\",\"translation\":\"n. （英）汽油\",\"audio\":\"petrol.mp3\"},{\"word\":\"plant\",\"pronun\":\"[plænt]\",\"translation\":\"n. 工厂，车间；植物；设备；庄稼\\nvt. 种植；培养；栽培；安置\\nvi. 种植\",\"audio\":\"plant.mp3\"},{\"word\":\"plastic\",\"pronun\":\"[ˈplæstɪk]\",\"translation\":\"n. 塑料制品；整形；可塑体\\nadj. 塑料的；（外科）造型的；可塑的\",\"audio\":\"plastic.mp3\"},{\"word\":\"pollution\",\"pronun\":\"[pəˈluːʃn]\",\"translation\":\"n. 污染\\n污染物\",\"audio\":\"pollution.mp3\"},{\"word\":\"public transport\",\"pronun\":\"\",\"translation\":\"n. 公共交通；公交车辆\",\"audio\":\"public_transport.mp3\"},{\"word\":\"rainforest\",\"pronun\":\"[ˈreɪnfɔːrɪst]\",\"translation\":\"n. （热带）雨林\",\"audio\":\"rainforest.mp3\"},{\"word\":\"rubbish\",\"pronun\":\"[ˈrʌbɪʃ]\",\"translation\":\"n. 垃圾，废物；废话\\nadj. 毫无价值的\",\"audio\":\"rubbish.mp3\"},{\"word\":\"tin\",\"pronun\":\"[tɪn]\",\"translation\":\"n. 锡；罐头，罐；马口铁\\nadj. 锡制的\\nvt. 涂锡于；给…包马口铁\",\"audio\":\"tin.mp3\"},{\"word\":\"transport\",\"pronun\":\"[ˈtrænspɔːrt]\",\"translation\":\"n. 运输；运输机；狂喜；流放犯\\nvt. 运输；流放；使狂喜\",\"audio\":\"transport.mp3\"},{\"word\":\"waste\",\"pronun\":\"[weɪst]\",\"translation\":\"n. 浪费；废物；荒地；损耗；地面风化物\\nadj. 废弃的；多余的；荒芜的\\nvt. 浪费；消耗；使荒芜\\nvi. 浪费；变消瘦；挥霍钱财\",\"audio\":\"waste.mp3\"},{\"word\":\"wildlife\",\"pronun\":\"[ˈwaɪldlaɪf]\",\"translation\":\"n. 野生动植物\\nadj. 野生动植物的\",\"audio\":\"wildlife.mp3\"},{\"word\":\"April\",\"pronun\":\"[ˈeɪprəl]\",\"translation\":\"n. 四月\",\"audio\":\"April.mp3\"},{\"word\":\"August\",\"pronun\":\"[ˈɔːɡəst]\",\"translation\":\"n. 八月（简写为Aug）\\nadj. 威严的；令人敬畏的\",\"audio\":\"August.mp3\"},{\"word\":\"autumn\",\"pronun\":\"[ˈɔːtəm; ˈɑːtəm]\",\"translation\":\"n. 秋天；成熟期；渐衰期，凋落期\\nadj. 秋天的，秋季的\",\"audio\":\"autumn.mp3\"},{\"word\":\"December\",\"pronun\":\"[dɪˈsembər]\",\"translation\":\"n. 十二月\",\"audio\":\"December.mp3\"},{\"word\":\"east\",\"pronun\":\"[iːst]\",\"translation\":\"n. 东方；东风；东方国家\\nadj. 东方的；向东的；从东方来的\\nadv. 向东方，在东方\",\"audio\":\"east.mp3\"},{\"word\":\"fall\",\"pronun\":\"[fɔːl]\",\"translation\":\"n. 下降；秋天；瀑布\\nadj. 秋天的\\nvi. 落下；变成；来临；减弱\\nvt. 砍倒；击倒\",\"audio\":\"fall.mp3\"},{\"word\":\"February\",\"pronun\":\"[ˈfebrueri]\",\"translation\":\"n. 二月\",\"audio\":\"February.mp3\"},{\"word\":\"January\",\"pronun\":\"[ˈdʒænjueri]\",\"translation\":\"n. 一月\",\"audio\":\"January.mp3\"},{\"word\":\"July\",\"pronun\":\"[dʒʊˈlaɪ]\",\"translation\":\"n. 七月\",\"audio\":\"July.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

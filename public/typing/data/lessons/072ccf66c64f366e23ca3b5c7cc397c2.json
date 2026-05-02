@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.213175+00:00",
+  "request": {
+    "lesson_id": "072ccf66c64f366e23ca3b5c7cc397c2",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 35,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "072ccf66c64f366e23ca3b5c7cc397c2",
+    "nextLessonId": "4d93e49586bdde221b466a3d5a84e768",
+    "lessonName": "2022年版 PEP-五年级-下册-5",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-五年级-下册 - 第5课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e3b129310bb737e5cf5fb0e5648e5258",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"December\",\"pronun\":\"[dɪˈsembər]\",\"translation\":\"n. 十二月\",\"audio\":\"December.mp3\"},{\"word\":\"few\",\"pronun\":\"[fjuː]\",\"translation\":\"n. 很少数\\nadj. 很少的；几乎没有的\\npron. 很少\",\"audio\":\"few.mp3\"},{\"word\":\"thing\",\"pronun\":\"[θɪŋ]\",\"translation\":\"n. 事情；东西；事物；情况\",\"audio\":\"thing.mp3\"},{\"word\":\"meet\",\"pronun\":\"[miːt]\",\"translation\":\"vt. 满足；遇见；对付\\nvi. 相遇；接触\\nn. 集会\\nadj. 合适的；适宜的\",\"audio\":\"meet.mp3\"},{\"word\":\"trip\",\"pronun\":\"[trɪp]\",\"translation\":\"n. 旅行；绊倒；差错\\nvt. 绊倒；使犯错\\nvi. 绊倒；远足；犯错误；轻快地走\",\"audio\":\"trip.mp3\"},{\"word\":\"year\",\"pronun\":\"[jɪr]\",\"translation\":\"n. 年；年度；历年；年纪；一年的期间；某年级的学生\",\"audio\":\"year.mp3\"},{\"word\":\"plant\",\"pronun\":\"[plænt]\",\"translation\":\"n. 工厂，车间；植物；设备；庄稼\\nvt. 种植；培养；栽培；安置\\nvi. 种植\",\"audio\":\"plant.mp3\"},{\"word\":\"contest\",\"pronun\":\"[ˈkɑːntest]\",\"translation\":\"n. 竞赛；争夺；争论\\nvt. 争辩；质疑\\nvi. 竞争；争辩\",\"audio\":\"contest.mp3\"},{\"word\":\"labour\",\"pronun\":\"[ˈleɪbər]\",\"translation\":\"n. （英国）工党\",\"audio\":\"labour.mp3\"},{\"word\":\"labour\",\"pronun\":\"[ˈleɪbər]\",\"translation\":\"n. （英国）工党\",\"audio\":\"labour.mp3\"},{\"word\":\"day\",\"pronun\":\"[deɪ]\",\"translation\":\"n. 一天；时期；白昼\\nadj. 日间的；逐日的\\nadv. 每天；经常在白天地\",\"audio\":\"day.mp3\"},{\"word\":\"the\",\"pronun\":\"[ðə; ði; ðiː]\",\"translation\":\"art. 这；那\\nadv. 更加（用于比较级，最高级前）\",\"audio\":\"the.mp3\"},{\"word\":\"great\",\"pronun\":\"[ɡreɪt]\",\"translation\":\"n. 大师；大人物；伟人们\\nadj. 伟大的，重大的；极好的，好的；主要的\",\"audio\":\"great.mp3\"},{\"word\":\"wall\",\"pronun\":\"[wɔːl]\",\"translation\":\"n. 墙壁，围墙；似墙之物\\nadj. 墙壁的\\nvt. 用墙围住，围以墙\",\"audio\":\"wall.mp3\"},{\"word\":\"national\",\"pronun\":\"[ˈnæʃnəl]\",\"translation\":\"adj. 国家的；国民的；民族的；国立的\\nn. 国民\",\"audio\":\"national.mp3\"},{\"word\":\"national\",\"pronun\":\"[ˈnæʃnəl]\",\"translation\":\"adj. 国家的；国民的；民族的；国立的\\nn. 国民\",\"audio\":\"national.mp3\"},{\"word\":\"American\",\"pronun\":\"[əˈmerɪkən]\",\"translation\":\"n. 美国人，美洲人；美国英语\\nadj. 美国的，美洲的；地道美国式的\",\"audio\":\"American.mp3\"},{\"word\":\"Thanksgiving\",\"pronun\":\"\",\"translation\":\"n. 感恩\",\"audio\":\"Thanksgiving.mp3\"},{\"word\":\"Christmas\",\"pronun\":\"[ˈkrɪsməs]\",\"translation\":\"n. 圣诞节；圣诞节期间\",\"audio\":\"Christmas.mp3\"},{\"word\":\"game\",\"pronun\":\"[ɡeɪm]\",\"translation\":\"n. 游戏；比赛\\nadj. 勇敢的\\nvi. 赌博\",\"audio\":\"game.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

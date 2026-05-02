@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.543482+00:00",
+  "request": {
+    "lesson_id": "2167701cc0852ef1573d41d169eb4cae",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 539,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "2167701cc0852ef1573d41d169eb4cae",
+    "nextLessonId": "771ed63468488fa5e10cb14cc1899e5b",
+    "lessonName": "Tomato Plants",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e9b5644ed7e36db64ed912df0be49620",
+        "index": 1,
+        "text": [
+          "In early spring, Uncle Ted planted a few tomato plants in his garden.\\nA few weeks passed. The plants were still the same.\\nUncle Ted said to me, \"My tomato plants are not growing. For the last two weeks, they're just sitting there, waiting.\"\\n\"Waiting?\" I asked, \"What are they waiting for?\"\\nMy uncle said, \"The sun! The heat!\""
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

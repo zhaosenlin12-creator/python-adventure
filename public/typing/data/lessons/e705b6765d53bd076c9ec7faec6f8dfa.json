@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.182577+00:00",
+  "request": {
+    "lesson_id": "e705b6765d53bd076c9ec7faec6f8dfa",
+    "course_id": "b121644211bd274795ee5972ddf997a2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "b121644211bd274795ee5972ddf997a2",
+    "order": 309,
+    "nextCourseId": "b121644211bd274795ee5972ddf997a2",
+    "courseName": "小学必备古诗75首（1）",
+    "lessonId": "e705b6765d53bd076c9ec7faec6f8dfa",
+    "nextLessonId": "86397833aa0a47677ab6436bde6baabb",
+    "lessonName": "长歌行",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "73e7efa335db9e7955847600d47f606b",
+        "index": 1,
+        "text": [
+          "长歌行\\n汉乐府\\n青青园中葵，朝露待日晞。\\n阳春布德泽，万物生光辉。\\n常恐秋节至，焜黄华叶衰。"
+        ],
+        "pinyin": "[[\"长\", \"cháng\"], [\"歌\", \"gē\"], [\"行\", \"xíng\"], [\"\\n\", \"\"], [\"汉\", \"hàn\"], [\"乐\", \"yuè\"], [\"府\", \"fǔ\"], [\"\\n\", \"\"], [\"青\", \"qīng\"], [\"青\", \"qīng\"], [\"园\", \"yuán\"], [\"中\", \"zhōng\"], [\"葵\", \"kuí\"], [\"，\", \"\"], [\"朝\", \"zhāo\"], [\"露\", \"lù\"], [\"待\", \"dài\"], [\"日\", \"rì\"], [\"晞\", \"xī\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"阳\", \"yáng\"], [\"春\", \"chūn\"], [\"布\", \"bù\"], [\"德\", \"dé\"], [\"泽\", \"zé\"], [\"，\", \"\"], [\"万\", \"wàn\"], [\"物\", \"wù\"], [\"生\", \"shēng\"], [\"光\", \"guāng\"], [\"辉\", \"huī\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"常\", \"cháng\"], [\"恐\", \"kǒng\"], [\"秋\", \"qiū\"], [\"节\", \"jié\"], [\"至\", \"zhì\"], [\"，\", \"\"], [\"焜\", \"kūn\"], [\"黄\", \"huáng\"], [\"华\", \"huá\"], [\"叶\", \"yè\"], [\"衰\", \"shuāi\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.610332+00:00",
+  "request": {
+    "lesson_id": "a1486baf8c8a1f053d010b69672079e3",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 557,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "a1486baf8c8a1f053d010b69672079e3",
+    "nextLessonId": "af45a1bbbfad1b455f3288e015c532dc",
+    "lessonName": "Baby Jessie",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3b482208d73b8393fa6e153f74ae17e8",
+        "index": 1,
+        "text": [
+          "Baby Jessie\\nEveryone was waiting for Jessie and her parents to arrive. \"They'll be here soon!\"\\n\"Can Jessie and I play games together?\" asked Laurie.\\n\"Not yet,\" answered Mom. \"Jessie is still a baby, you know.\"\\n\"It takes a long time for a baby to turn into a kid, doesn't it?\" asked Laurie. Mom laughed, \"Yes, it does.\"\\n\"Then she isn't good for much yet,\" said Laurie.\\nDad laughed, \"I don't think her parents would agree with that. They kind of like her.\"\\nA moment later, Jessie and her parents finally arrived.\\nJessie started crying because she didn't recognize Laurie and her family.\\n\"She really isn't worth much,\" thought Laurie. But she didn't say this out loud.\\nLaurie then showed Jessie the box of toys. She shook a rattle at her. Jessie laughed.\\n\"I guess maybe she is worth a little bit,\" thought Laurie as her eyes lit up."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.046625+00:00",
+  "request": {
+    "lesson_id": "4bbb5112fdca30573ae1b0123efc592d",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 97,
+    "nextCourseId": "e13b6bae2990dd699f332f225dd1955b",
+    "courseName": "Javascript",
+    "lessonId": "4bbb5112fdca30573ae1b0123efc592d",
+    "nextLessonId": "5e5f048b4524eef0982333a7c6d4429c",
+    "lessonName": "字符串操作",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - 字符串操作",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "572cd74bb33240574e276bed9b6c11c5",
+        "index": 1,
+        "text": [
+          "// 字符串的常用操作\\nconst text = \"Hello JavaScript\";\\n\\nconsole.log(`转大写: ${text.toUpperCase()}`);\\nconsole.log(`转小写: ${text.toLowerCase()}`);\\nconsole.log(`替换: ${text.replace(\"JavaScript\", \"World\")}`);\\nconsole.log(`分割: ${text.split(\" \")}`);\\nconsole.log(`字符串长度: ${text.length}`);\\nconsole.log(`是否以Hello开头: ${text.startsWith(\"Hello\")}`);\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

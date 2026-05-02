@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.581857+00:00",
+  "request": {
+    "lesson_id": "8a05b91bf80a8cb7c0d2f6fb04554e77",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 107,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "8a05b91bf80a8cb7c0d2f6fb04554e77",
+    "nextLessonId": "3b2ebe8bd303448029ea9d1f48f65509",
+    "lessonName": "KET核心词-23",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第23课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d52d775232225ff982cd8a92048991f6",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"extra\",\"pronun\":\"[ˈekstrə]\",\"translation\":\"n. 临时演员；号外；额外的事物；上等产品\\nadj. 额外的，另外收费的；特大的\\nadv. 特别地，非常；另外\",\"audio\":\"extra.mp3\"},{\"word\":\"eye\",\"pronun\":\"[aɪ]\",\"translation\":\"n. 眼睛；视力；眼光；见解，观点\\nvt. 注视，看\",\"audio\":\"eye.mp3\"},{\"word\":\"face\",\"pronun\":\"[feɪs]\",\"translation\":\"n. 脸；表面；面子；面容；外观；威信\\nvi. 向；朝\\nvt. 面对；面向；承认；抹盖\",\"audio\":\"face.mp3\"},{\"word\":\"fact\",\"pronun\":\"[fækt]\",\"translation\":\"n. 事实；实际；真相\",\"audio\":\"fact.mp3\"},{\"word\":\"factory\",\"pronun\":\"[ˈfæktri; ˈfæktəri]\",\"translation\":\"n. 工厂；制造厂；代理店\",\"audio\":\"factory.mp3\"},{\"word\":\"fail\",\"pronun\":\"[feɪl]\",\"translation\":\"n. 不及格\\nvi. 失败，不及格；破产；缺乏；衰退\\nvt. 不及格；使失望；忘记；舍弃\",\"audio\":\"fail.mp3\"},{\"word\":\"fair\",\"pronun\":\"[fer]\",\"translation\":\"n. 展览会；市集；美人\\nadj. 公平的；美丽的，白皙的；[气象] 晴朗的\\nvi. 转晴\\nadv. 公平地；直接地；清楚地\",\"audio\":\"fair.mp3\"},{\"word\":\"fall\",\"pronun\":\"[fɔːl]\",\"translation\":\"n. 下降；秋天；瀑布\\nadj. 秋天的\\nvi. 落下；变成；来临；减弱\\nvt. 砍倒；击倒\",\"audio\":\"fall.mp3\"},{\"word\":\"family\",\"pronun\":\"[ˈfæməli]\",\"translation\":\"n. 家庭；亲属；家族；子女；[生]科；语族；[化]族\\nadj. 家庭的；家族的；适合于全家的\",\"audio\":\"family.mp3\"},{\"word\":\"famous\",\"pronun\":\"[ˈfeɪməs]\",\"translation\":\"adj. 著名的；极好的，非常令人满意的\",\"audio\":\"famous.mp3\"},{\"word\":\"fan\",\"pronun\":\"[fæn]\",\"translation\":\"n. 迷；风扇；爱好者\\nvt. 煽动；刺激；吹拂\\nvi. 成扇形散开；飘动\",\"audio\":\"fan.mp3\"},{\"word\":\"fantastic\",\"pronun\":\"[fænˈtæstɪk]\",\"translation\":\"n. 古怪的人\\nadj. 奇异的；空想的；异想天开的；古怪的；极好的，极出色的；不可思议的；不切实际的\",\"audio\":\"fantastic.mp3\"},{\"word\":\"far\",\"pronun\":\"[fɑːr]\",\"translation\":\"n. 远方\\nadj. 远的；久远的\\nadv. 很；遥远地；久远地；到很远的距离；到很深的程度\",\"audio\":\"far.mp3\"},{\"word\":\"fare\",\"pronun\":\"[fer]\",\"translation\":\"n. 票价；费用；旅客；食物\\nvi. 经营；进展；遭遇；过活\",\"audio\":\"fare.mp3\"},{\"word\":\"farm\",\"pronun\":\"[fɑːrm]\",\"translation\":\"n. 农场；农家；畜牧场\\nvt. 养殖；耕种；佃出（土地）\\nvi. 种田，务农；经营农场\",\"audio\":\"farm.mp3\"},{\"word\":\"farmhouse\",\"pronun\":\"[ˈfɑːrmhaʊs]\",\"translation\":\"n. 农家，[农工] 农舍\",\"audio\":\"farmhouse.mp3\"},{\"word\":\"fashion\",\"pronun\":\"[ˈfæʃn]\",\"translation\":\"n. 时尚；时装；样式；时髦人物\\nvt. 使用；改变；做成…的形状\",\"audio\":\"fashion.mp3\"},{\"word\":\"fast\",\"pronun\":\"[fæst]\",\"translation\":\"n. 斋戒；绝食\\nadj. 快速的，迅速的；紧的，稳固的\\nadv. 迅速地；紧紧地；彻底地\\nvi. 禁食，斋戒\",\"audio\":\"fast.mp3\"},{\"word\":\"fast-food\",\"pronun\":\"[ˌfæst ˈfuːd]\",\"translation\":\"adj. 供应速食的\\nn. 快餐\",\"audio\":\"fast-food.mp3\"},{\"word\":\"favourite\",\"pronun\":\"[ˈfeɪvərɪt]\",\"translation\":\"n. 特别喜爱的人（或物）\\nadj. 特别受喜爱的\",\"audio\":\"favourite.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

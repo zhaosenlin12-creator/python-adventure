@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.323272+00:00",
+  "request": {
+    "lesson_id": "d294a046ce593242736e4cc8246a6071",
+    "course_id": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "order": 342,
+    "nextCourseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "courseName": "小学必备古诗75首（2）",
+    "lessonId": "d294a046ce593242736e4cc8246a6071",
+    "nextLessonId": "f158728efab6283b6d154dcf8212abcf",
+    "lessonName": "望洞庭",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "851e919cad9f74715622a9a3ca7abeee",
+        "index": 1,
+        "text": [
+          "望洞庭\\n刘禹锡\\n湖光秋月两相和，潭面无风镜未磨。\\n遥望洞庭山水色，白银盘里一青螺。"
+        ],
+        "pinyin": "[[\"望\", \"wàng\"], [\"洞\", \"dòng\"], [\"庭\", \"tíng\"], [\"\\n\", \"\"], [\"刘\", \"liú\"], [\"禹\", \"yǔ\"], [\"锡\", \"xī\"], [\"\\n\", \"\"], [\"湖\", \"hú\"], [\"光\", \"guāng\"], [\"秋\", \"qiū\"], [\"月\", \"yuè\"], [\"两\", \"liǎng\"], [\"相\", \"xiāng\"], [\"和\", \"hé\"], [\"，\", \"\"], [\"潭\", \"tán\"], [\"面\", \"miàn\"], [\"无\", \"wú\"], [\"风\", \"fēng\"], [\"镜\", \"jìng\"], [\"未\", \"wèi\"], [\"磨\", \"mó\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"遥\", \"yáo\"], [\"望\", \"wàng\"], [\"洞\", \"dòng\"], [\"庭\", \"tíng\"], [\"山\", \"shān\"], [\"水\", \"shuǐ\"], [\"色\", \"sè\"], [\"，\", \"\"], [\"白\", \"bái\"], [\"银\", \"yín\"], [\"盘\", \"pán\"], [\"里\", \"lǐ\"], [\"一\", \"yī\"], [\"青\", \"qīng\"], [\"螺\", \"luó\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

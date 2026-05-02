@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.480633+00:00",
+  "request": {
+    "lesson_id": "fa5c2790f0ff6c63e465da6a67f490ca",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 209,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "fa5c2790f0ff6c63e465da6a67f490ca",
+    "nextLessonId": "58ae2433385ebdd9c9a6db0e5f573646",
+    "lessonName": "复杂统计分析",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - 复杂统计分析",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "fc3bedb8552725b7c36198272c8e2623",
+        "index": 1,
+        "text": [
+          "-- 用户购买行为分析\\nSELECT\\n    u.id,\\n    u.name,\\n    COUNT(DISTINCT o.order_id) AS order_count,\\n    SUM(o.amount) AS total_spent,\\n    AVG(o.amount) AS avg_order_value,\\n    MIN(o.created_at) AS first_order,\\n    MAX(o.created_at) AS last_order,\\n    DATEDIFF(MAX(o.created_at), MIN(o.created_at)) AS customer_lifetime_days\\nFROM users u\\nINNER JOIN orders o ON u.id = o.user_id\\nWHERE o.status = 'completed'\\nGROUP BY u.id, u.name\\nHAVING order_count >= 3\\nORDER BY total_spent DESC\\nLIMIT 100;\\n\\n-- 产品销售趋势分析\\nSELECT\\n    DATE(o.created_at) AS sale_date,\\n    p.category_id,\\n    c.name AS category_name,\\n    COUNT(DISTINCT o.order_id) AS order_count,\\n    SUM(od.quantity) AS total_quantity,\\n    SUM(od.quantity * od.price) AS revenue\\nFROM orders o\\nINNER JOIN order_details od ON o.order_id = od.order_id\\nINNER JOIN products p ON od.product_id = p.id\\nINNER JOIN categories c ON p.category_id = c.id\\nWHERE o.created_at >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)\\nGROUP BY DATE(o.created_at), p.category_id, c.name\\nORDER BY sale_date DESC, revenue DESC;\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

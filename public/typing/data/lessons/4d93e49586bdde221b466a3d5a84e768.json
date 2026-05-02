@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.257141+00:00",
+  "request": {
+    "lesson_id": "4d93e49586bdde221b466a3d5a84e768",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 36,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "4d93e49586bdde221b466a3d5a84e768",
+    "nextLessonId": "65543ab0a43c0a90e81c39a922436007",
+    "lessonName": "2022年版 PEP-五年级-下册-6",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-五年级-下册 - 第6课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3bff20055c4a07057fc815e231a8aec6",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"riddle\",\"pronun\":\"[ˈrɪdl]\",\"translation\":\"n. 谜语；粗筛；谜一般的人、东西、事情等\\nvt. 解谜；给...出谜；充满于\\nvi. 出谜\",\"audio\":\"riddle.mp3\"},{\"word\":\"act\",\"pronun\":\"[ækt]\",\"translation\":\"n. 行为，行动；法令，法案；（戏剧，歌剧的）一幕，段；装腔作势\\nvt. 扮演；装作，举动像\\nvi. 行动；扮演，充当；表现，举止；假装，演戏；起作用，见效\",\"audio\":\"act.mp3\"},{\"word\":\"out\",\"pronun\":\"[aʊt]\",\"translation\":\"adv. 出现；在外；出局；出声地；不流行地\\nadj. 外面的；出局的；下台的\\nn. 出局\\nprep. 向；离去\\nvi. 出来；暴露\\nvt. 使熄灭；驱逐\",\"audio\":\"out.mp3\"},{\"word\":\"RSVP\",\"pronun\":\"[ˌɑːr es viː ˈpiː]\",\"translation\":\"abbr. 请回复 Répondez s'il vous plaît.（法语）\",\"audio\":\"RSVP.mp3\"},{\"word\":\"by\",\"pronun\":\"[baɪ]\",\"translation\":\"prep. 通过；被；依据；经由；在附近；在……之前\\nadv. 通过；经过；附近；[互联网] 白俄罗斯的国家代码顶级域名\",\"audio\":\"by.mp3\"},{\"word\":\"first\",\"pronun\":\"[fɜːrst]\",\"translation\":\"num. 第一\\nn. 第一；开始；冠军\\nadj. 第一的；基本的；最早的\\nadv. 第一；首先；优先；宁愿\",\"audio\":\"first.mp3\"},{\"word\":\"second\",\"pronun\":\"[ˈsekənd; sɪˈkɑːnd]\",\"translation\":\"num. 第二\\nn. 秒；第二名；瞬间；二等品\\nadj. 第二的；次要的；附加的\\nvt. 支持\\nadv. 第二；其次；居第二位\",\"audio\":\"second.mp3\"},{\"word\":\"third\",\"pronun\":\"[θɜːrd]\",\"translation\":\"num. 第三；三分之一\\nadj. 第三的；三分之一的\",\"audio\":\"third.mp3\"},{\"word\":\"fourth\",\"pronun\":\"[fɔːrθ]\",\"translation\":\"num. 第四\\nn. 第四，月的第四日；四分之一\\nadj. 第四的，第四个的；四分之一的\",\"audio\":\"fourth.mp3\"},{\"word\":\"fifth\",\"pronun\":\"[fɪfθ]\",\"translation\":\"num. 第五\\nn. 第五；五分之一\\nadj. 第五的；五分之一的\",\"audio\":\"fifth.mp3\"},{\"word\":\"twelfth\",\"pronun\":\"[twelfθ]\",\"translation\":\"n. 第十二；月的第十二日\\nadj. 第十二的，第十二个的；十二分之一的\",\"audio\":\"twelfth.mp3\"},{\"word\":\"twentieth\",\"pronun\":\"[ˈtwentiəθ]\",\"translation\":\"n. 二十分之一\\nnum. 第二十\\nadj. 第二十的；二十分之一的\",\"audio\":\"twentieth.mp3\"},{\"word\":\"twenty-first\",\"pronun\":\"[ˌtwenti ˈfɜːrst]\",\"translation\":\"num. 第二十一\",\"audio\":\"twenty-first.mp3\"},{\"word\":\"twenty-third\",\"pronun\":\"\",\"translation\":\"num. 第二十三\",\"audio\":\"twenty-third.mp3\"},{\"word\":\"thirtieth\",\"pronun\":\"[ˈθɜːrtiəθ]\",\"translation\":\"n. 第三十；三十分之一\\nadj. 第三十个的；三十分之一的\\nnum. 第三十；三十分之一\",\"audio\":\"thirtieth.mp3\"},{\"word\":\"other\",\"pronun\":\"[ˈʌðər]\",\"translation\":\"adj. 其他的，另外的\\npron. 另外一个\",\"audio\":\"other.mp3\"},{\"word\":\"special\",\"pronun\":\"[ˈspeʃl]\",\"translation\":\"n. 特使，特派人员；特刊；特色菜；专车；特价商品\\nadj. 特别的；专门的，专用的\",\"audio\":\"special.mp3\"},{\"word\":\"show\",\"pronun\":\"[ʃoʊ]\",\"translation\":\"n. 显示；表演；炫耀\\nvt. 显示；说明；演出；展出\\nvi. 显示；说明；指示\",\"audio\":\"show.mp3\"},{\"word\":\"festival\",\"pronun\":\"[ˈfestɪvl]\",\"translation\":\"n. 节日；庆祝，纪念活动；欢乐\\nadj. 节日的，喜庆的；快乐的\",\"audio\":\"festival.mp3\"},{\"word\":\"kitten\",\"pronun\":\"[ˈkɪt(ə)n]\",\"translation\":\"n. 小猫；小动物\\nvi. 产小猫\",\"audio\":\"kitten.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

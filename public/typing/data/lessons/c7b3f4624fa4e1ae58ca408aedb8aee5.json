@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.007460+00:00",
+  "request": {
+    "lesson_id": "c7b3f4624fa4e1ae58ca408aedb8aee5",
+    "course_id": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "order": 201,
+    "nextCourseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "courseName": "小升初必备单词",
+    "lessonId": "c7b3f4624fa4e1ae58ca408aedb8aee5",
+    "nextLessonId": "7b220c7d731a7e76fe14924dbd24c1a3",
+    "lessonName": "J",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1cbb13f4fc6734dda6733f34ce0e16d1",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"jam\",\"pronun\":\"[d\\u0292\\u00e6m]\",\"translation\":\"v. \\u5835\\u585e; \\u4f7f\\u5361\\u4f4f; \\u6324\\u6ee1 n. \\u62e5\\u6324...\"},{\"word\":\"January\",\"pronun\":\"[\\u02c8d\\u0292\\u00e6nju\\u0259ri]\",\"translation\":\"n. \\u4e00\\u6708; \\u6b63\\u6708\"},{\"word\":\"Japan\",\"pronun\":\"[d\\u0292\\u0259\\u02c8p\\u00e6n]\",\"translation\":\"n. \\u65e5\\u672c; \\u65e5\\u672c\\u56fd\"},{\"word\":\"jelly\",\"pronun\":\"[\\u02c8d\\u0292eli:]\",\"translation\":\"v. \\u7ed3\\u51bb n. \\u679c\\u51bb; \\u80f6\\u72b6\\u7269\"},{\"word\":\"job\",\"pronun\":\"[d\\u0292\\u0254b]\",\"translation\":\"n. \\u804c\\u4e1a; \\u5de5\\u4f5c\"},{\"word\":\"join\",\"pronun\":\"[d\\u0292\\u0254in]\",\"translation\":\"v. \\u53c2\\u52a0; \\u52a0\\u5165; \\u8054\\u5408; \\u8fde\\u63a5\"},{\"word\":\"juice\",\"pronun\":\"[d\\u0292u:s]\",\"translation\":\"n. \\u679c\\u6c41; \\u6c41; \\u6db2\"},{\"word\":\"July\",\"pronun\":\"[d\\u0292u:\\u02c8lai]\",\"translation\":\"n. \\u4e03\\u6708\"},{\"word\":\"jump\",\"pronun\":\"[d\\u0292\\u028cmp]\",\"translation\":\"v. \\u8df3; \\u8df3\\u8dc3 vt. \\u8df3\\u8fc7 vi. ...\"},{\"word\":\"June\",\"pronun\":\"[d\\u0292u:n]\",\"translation\":\"n. \\u516d\\u6708\"},{\"word\":\"jungle\",\"pronun\":\"[\\u02c8d\\u0292\\u028c\\u014b\\u0261l]\",\"translation\":\"n. \\u4e1b\\u6797; \\u5bc6\\u6797; \\u539f\\u59cb\\u6797; \\u70ed\\u5e26\\u4e1b\\u6797\"},{\"word\":\"just\",\"pronun\":\"[d\\u0292\\u028cst]\",\"translation\":\"adj. \\u516c\\u5e73\\u7684; \\u5e94\\u5f97\\u7684; \\u65b9\\u624d; \\u521a...\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 18,
+        "minSpeed": 10,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.107097+00:00",
+  "request": {
+    "lesson_id": "2d16a991a96acd2efa756dc70b390809",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 111,
+    "nextCourseId": "e13b6bae2990dd699f332f225dd1955b",
+    "courseName": "Javascript",
+    "lessonId": "2d16a991a96acd2efa756dc70b390809",
+    "nextLessonId": "3e103292b4488a32fea3ade44edcc05b",
+    "lessonName": "斐波那契数列",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - 斐波那契数列",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "faff9fc6cad61e4a652ee4dfdf435fef",
+        "index": 1,
+        "text": [
+          "// 计算斐波那契数列\\nfunction fibonacciRecursive(n) {\\n    if (n <= 1) return n;\\n    return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);\\n}\\n\\nfunction fibonacciIterative(n) {\\n    if (n <= 1) return n;\\n\\n    let a = 0, b = 1;\\n    for (let i = 2; i <= n; i++) {\\n        [a, b] = [b, a + b];\\n    }\\n    return b;\\n}\\n\\n// 生成斐波那契数列\\nconsole.log(\"斐波那契数列前10项:\");\\nconst fibSequence = Array.from({ length: 10 }, (_, i) => fibonacciIterative(i));\\nconsole.log(fibSequence.join(\", \"));\\n\\nconsole.log(`\\n第10项的值: ${fibonacciRecursive(10)}`);\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

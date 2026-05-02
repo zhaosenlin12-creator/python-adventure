@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.895256+00:00",
+  "request": {
+    "lesson_id": "6631c6ca643cf3ef0d2592a9c150cbf1",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 175,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "6631c6ca643cf3ef0d2592a9c150cbf1",
+    "nextLessonId": "68ca896ebf93accc9fca70108abc68d5",
+    "lessonName": "KET核心词-90",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第90课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "32975e8660fb77807763cddf543c7ff0",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"cupboard\",\"pronun\":\"[ˈkʌbərd]\",\"translation\":\"n. 碗柜；食橱\",\"audio\":\"cupboard.mp3\"},{\"word\":\"curtain\",\"pronun\":\"[ˈkɜːrtn]\",\"translation\":\"n. 幕；窗帘\\nvt. 遮蔽；装上门帘\",\"audio\":\"curtain.mp3\"},{\"word\":\"dining room\",\"pronun\":\"\",\"translation\":\"n. 饭厅；餐厅\",\"audio\":\"dining_room.mp3\"},{\"word\":\"door\",\"pronun\":\"[dɔːr]\",\"translation\":\"n. 门；家，户；门口；通道\",\"audio\":\"door.mp3\"},{\"word\":\"downstairs\",\"pronun\":\"[ˌdaʊnˈsterz]\",\"translation\":\"n. 楼下\\nadj. 楼下的\\nadv. 在楼下\",\"audio\":\"downstairs.mp3\"},{\"word\":\"drawer\",\"pronun\":\"[drɔːr]\",\"translation\":\"n. 抽屉；开票人；出票人；起草者；酒馆侍\",\"audio\":\"drawer.mp3\"},{\"word\":\"DVD\",\"pronun\":\"[ˌdiː viː ˈdiː]\",\"translation\":\"abbr. 数字化视频光盘（Digital Video Disk）\",\"audio\":\"DVD.mp3\"},{\"word\":\"DVD player\",\"pronun\":\"\",\"translation\":\"播放机；播放器；影碟机\",\"audio\":\"DVD_player.mp3\"},{\"word\":\"entrance\",\"pronun\":\"[ˈentrəns; ɪnˈtræns]\",\"translation\":\"n. 入口；进入\\nvt. 使出神，使入迷\",\"audio\":\"entrance.mp3\"},{\"word\":\"flat\",\"pronun\":\"[flæt]\",\"translation\":\"n. 平地；公寓；平面\\nadj. 平的；单调的；不景气的；干脆的；平坦的；扁平的；浅的\\nvi. 逐渐变平；[音乐]以降调唱（或奏）\\nvt. 使变平；[音乐]使（音调）下降，尤指降半音\\nadv. （尤指贴着另一表面）平直地；断然地；水平地；直接地，完全地\",\"audio\":\"flat.mp3\"},{\"word\":\"floor\",\"pronun\":\"[flɔːr]\",\"translation\":\"n. 地板，地面；楼层；基底；议员席\\nvt. 铺地板；打倒，击倒；（被困难）难倒\",\"audio\":\"floor.mp3\"},{\"word\":\"fridge\",\"pronun\":\"[frɪdʒ]\",\"translation\":\"n. 电冰箱\",\"audio\":\"fridge.mp3\"},{\"word\":\"frying pan\",\"pronun\":\"[ˈfraɪɪŋ pæn]\",\"translation\":\"n. 长柄平底煎锅\",\"audio\":\"frying_pan.mp3\"},{\"word\":\"furniture\",\"pronun\":\"[ˈfɜːrnɪtʃər]\",\"translation\":\"n. 家具；设备；储藏物\",\"audio\":\"furniture.mp3\"},{\"word\":\"garage\",\"pronun\":\"[ɡəˈrɑːʒ; ɡəˈrɑːdʒ]\",\"translation\":\"n. 车库；汽车修理厂；飞机库\\nvt. 把……送入车库；把（汽车）开进车库\",\"audio\":\"garage.mp3\"},{\"word\":\"garden\",\"pronun\":\"[ˈɡɑːrdn]\",\"translation\":\"n. 花园；菜园\\nvt. 栽培花木\\nvi. 从事园艺；在园中种植\",\"audio\":\"garden.mp3\"},{\"word\":\"gate\",\"pronun\":\"[ɡeɪt]\",\"translation\":\"n. 大门；出入口；门道\\nvt. 给…装大门\",\"audio\":\"gate.mp3\"},{\"word\":\"hall\",\"pronun\":\"[hɔːl]\",\"translation\":\"n. 过道，门厅，走廊；会堂；食堂；学生宿舍；大厅，前厅；娱乐中心，会所\",\"audio\":\"hall.mp3\"},{\"word\":\"heating\",\"pronun\":\"[ˈhiːtɪŋ]\",\"translation\":\"n. [热] 加热；[建] 供暖；暖气设备\\nv. [热] 加热（heat的现在分词）\\nadj. 加热的；供热的\",\"audio\":\"heating.mp3\"},{\"word\":\"key\",\"pronun\":\"[kiː]\",\"translation\":\"n. （打字机等的）键；关键；钥匙\\nvt. 键入；锁上；调节…的音调；提供线索\\nvi. 使用钥匙\\nadj. 关键的\",\"audio\":\"key.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.568560+00:00",
+  "request": {
+    "lesson_id": "81c8ddad728d1bf33f4f8e97a6c93386",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 105,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "81c8ddad728d1bf33f4f8e97a6c93386",
+    "nextLessonId": "f892f74b3de3c5fd919060661de48a4d",
+    "lessonName": "KET核心词-17",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第17课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "bd74579333c470fcd832cec08f6393e7",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"curry\",\"pronun\":\"[ˈkɜːri]\",\"translation\":\"n. 咖哩粉，咖喱；咖哩饭菜\\nvt. 用咖喱烧，给…加咖喱粉；梳刷；鞭打\",\"audio\":\"curry.mp3\"},{\"word\":\"curtain\",\"pronun\":\"[ˈkɜːrtn]\",\"translation\":\"n. 幕；窗帘\\nvt. 遮蔽；装上门帘\",\"audio\":\"curtain.mp3\"},{\"word\":\"customer\",\"pronun\":\"[ˈkʌstəmər]\",\"translation\":\"n. 顾客；家伙\",\"audio\":\"customer.mp3\"},{\"word\":\"cut\",\"pronun\":\"[kʌt]\",\"translation\":\"n. 伤口；切口；削减；（服装等的）式样；削球；切入\\nadj. 割下的；雕过的；缩减的\\nvt. [机] 切割；削减；缩短；刺痛\\nvi. [机] 切割；相交；切牌；停拍；不出席\",\"audio\":\"cut.mp3\"},{\"word\":\"cute\",\"pronun\":\"[kjuːt]\",\"translation\":\"adj. 可爱的；漂亮的；聪明的，伶俐的\",\"audio\":\"cute.mp3\"},{\"word\":\"cycle\",\"pronun\":\"[ˈsaɪkl]\",\"translation\":\"n. 循环；周期；自行车；整套；一段时间\\nvt. 使循环；使轮转\\nvi. 循环；骑自行车；轮转\",\"audio\":\"cycle.mp3\"},{\"word\":\"daily\",\"pronun\":\"[ˈdeɪli]\",\"translation\":\"n. 日报；朝来夜去的女佣\\nadj. 日常的；每日的\\nadv. 日常地；每日；天天\",\"audio\":\"daily.mp3\"},{\"word\":\"dance\",\"pronun\":\"[dæns]\",\"translation\":\"n. 舞蹈；舞会；舞曲\\nadj. 舞蹈的；用于跳舞的\\nvt. 跳舞；使跳跃\\nvi. 跳舞；跳跃；飘扬\",\"audio\":\"dance.mp3\"},{\"word\":\"danger\",\"pronun\":\"[ˈdeɪndʒər]\",\"translation\":\"n. 危险；危险物，威胁\",\"audio\":\"danger.mp3\"},{\"word\":\"dangerous\",\"pronun\":\"[ˈdeɪndʒərəs]\",\"translation\":\"adj. 危险的\\n危险地\",\"audio\":\"dangerous.mp3\"},{\"word\":\"dark\",\"pronun\":\"[dɑːrk]\",\"translation\":\"n. 黑暗；夜；黄昏；模糊\\nadj. 黑暗的，深色的；模糊的；无知的；忧郁的\",\"audio\":\"dark.mp3\"},{\"word\":\"date\",\"pronun\":\"[deɪt]\",\"translation\":\"n. 日期；约会；年代；枣椰子\\nvt. 确定…年代；和…约会\\nvi. 过时；注明日期；始于（某一历史时期）\",\"audio\":\"date.mp3\"},{\"word\":\"day\",\"pronun\":\"[deɪ]\",\"translation\":\"n. 一天；时期；白昼\\nadj. 日间的；逐日的\\nadv. 每天；经常在白天地\",\"audio\":\"day.mp3\"},{\"word\":\"dead\",\"pronun\":\"[ded]\",\"translation\":\"n. 死者\\nadj. 无生命的；呆板的；废弃了的\\nadv. 完全地\",\"audio\":\"dead.mp3\"},{\"word\":\"deaf\",\"pronun\":\"[def]\",\"translation\":\"adj. 聋的\",\"audio\":\"deaf.mp3\"},{\"word\":\"Dear\",\"pronun\":\"[dɪr]\",\"translation\":\"n. 亲爱的人\\nadj. 亲爱的；尊敬的；昂贵的\\nadv. 高价地；疼爱地\\nint. 哎呀\",\"audio\":\"Dear.mp3\"},{\"word\":\"decide\",\"pronun\":\"[dɪˈsaɪd]\",\"translation\":\"vi. 决定，下决心\\nvt. 决定；解决；判决\",\"audio\":\"decide.mp3\"},{\"word\":\"deep\",\"pronun\":\"[diːp]\",\"translation\":\"n. 深处；深渊\\nadj. 深的；低沉的；深奥的\\nadv. 深入地；深深地；迟\",\"audio\":\"deep.mp3\"},{\"word\":\"degree\",\"pronun\":\"[dɪˈɡriː]\",\"translation\":\"n. 程度，等级；度；学位；阶层\",\"audio\":\"degree.mp3\"},{\"word\":\"delay\",\"pronun\":\"[dɪˈleɪ]\",\"translation\":\"n. 延期；耽搁；被耽搁或推迟的时间\\nvt. 延期；耽搁\\nvi. 延期；耽搁\",\"audio\":\"delay.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.412503+00:00",
+  "request": {
+    "lesson_id": "5ba202c1dd51858fb189449a7980921f",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 70,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "5ba202c1dd51858fb189449a7980921f",
+    "nextLessonId": "36446f483add3f88b8bbd4f06d8da2a9",
+    "lessonName": "KET核心词-49",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第49课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "05a5c7b9831d20d8c9baabdb8cb177ae",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"plastic\",\"pronun\":\"[ˈplæstɪk]\",\"translation\":\"n. 塑料制品；整形；可塑体\\nadj. 塑料的；（外科）造型的；可塑的\",\"audio\":\"plastic.mp3\"},{\"word\":\"plate\",\"pronun\":\"[pleɪt]\",\"translation\":\"n. 碟；金属板；金属牌；感光底片\\nvt. 电镀；给…装甲\",\"audio\":\"plate.mp3\"},{\"word\":\"platform\",\"pronun\":\"[ˈplætfɔːrm]\",\"translation\":\"n. 平台；月台，站台；坛；讲台\",\"audio\":\"platform.mp3\"},{\"word\":\"play\",\"pronun\":\"[pleɪ]\",\"translation\":\"n. 游戏；比赛；剧本\\nvt. 游戏；扮演；演奏；播放；同…比赛\\nvi. 演奏；玩耍；上演；参加比赛\",\"audio\":\"play.mp3\"},{\"word\":\"player\",\"pronun\":\"[ˈpleɪər]\",\"translation\":\"n. 运动员，比赛者；游戏者，做游戏的人；演奏者，表演者；演员；播放器\",\"audio\":\"player.mp3\"},{\"word\":\"playground\",\"pronun\":\"[ˈpleɪɡraʊnd]\",\"translation\":\"n. 运动场，操场；游乐场\",\"audio\":\"playground.mp3\"},{\"word\":\"pleasant\",\"pronun\":\"[ˈpleznt]\",\"translation\":\"adj. 令人愉快的，舒适的；讨人喜欢的，和蔼可亲的\",\"audio\":\"pleasant.mp3\"},{\"word\":\"pleased\",\"pronun\":\"[pliːzd]\",\"translation\":\"adj. 高兴的；喜欢的；乐意做某事\\nv. 满意；愿意（please的\",\"audio\":\"pleased.mp3\"},{\"word\":\"plenty\",\"pronun\":\"[ˈplenti]\",\"translation\":\"n. 丰富，大量；充足\\nadj. 足够的，很多的\\nadv. 足够\",\"audio\":\"plenty.mp3\"},{\"word\":\"plus\",\"pronun\":\"[plʌs]\",\"translation\":\"prep. 加，加上\\nn. 正号，加号；好处；附加额\\nadj. 正的；附加的\",\"audio\":\"plus.mp3\"},{\"word\":\"pocket\",\"pronun\":\"[ˈpɑːkɪt]\",\"translation\":\"n. 口袋；钱；容器\\nadj. 小型的，袖珍的；金钱上的\\nvt. 隐藏；忍受；将…放入衣袋\\nvi. 形成袋或囊\",\"audio\":\"pocket.mp3\"},{\"word\":\"poet\",\"pronun\":\"[ˈpoʊət]\",\"translation\":\"n. 诗人\",\"audio\":\"poet.mp3\"},{\"word\":\"point\",\"pronun\":\"[pɔɪnt]\",\"translation\":\"n. 要点；得分；标点；[机] 尖端\\nvt. 指向；弄尖；加标点于\\nvi. 表明；指向\",\"audio\":\"point.mp3\"},{\"word\":\"police\",\"pronun\":\"[pəˈliːs]\",\"translation\":\"n. 警察，警方；治安\\nadj. 警察的；有关警察的\\nvt. 监督；管辖；维持治安；为…配备警察\",\"audio\":\"police.mp3\"},{\"word\":\"policeman\",\"pronun\":\"[pəˈliːsmən]\",\"translation\":\"n. 警察，警员；[分化] 淀帚（橡皮头玻璃搅棒）\",\"audio\":\"policeman.mp3\"},{\"word\":\"polite\",\"pronun\":\"[pəˈlaɪt]\",\"translation\":\"adj. 有礼貌的，客气的；文雅的；上流的；优雅的\",\"audio\":\"polite.mp3\"},{\"word\":\"pond\",\"pronun\":\"[pɑːnd]\",\"translation\":\"n. 池塘\\nvt. 筑成池塘\\nvi. 筑成池塘\",\"audio\":\"pond.mp3\"},{\"word\":\"pool\",\"pronun\":\"[puːl]\",\"translation\":\"n. 联营；撞球；水塘；共同资金\\nvt. 合伙经营\\nvi. 联营，合伙经营\",\"audio\":\"pool.mp3\"},{\"word\":\"poor\",\"pronun\":\"[pʊr; pɔːr]\",\"translation\":\"adj. 贫穷的；可怜的；贫乏的；卑鄙的\",\"audio\":\"poor.mp3\"},{\"word\":\"pop\",\"pronun\":\"[pɑːp]\",\"translation\":\"abbr. 卖点广告（Point of Purchase）\",\"audio\":\"pop.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

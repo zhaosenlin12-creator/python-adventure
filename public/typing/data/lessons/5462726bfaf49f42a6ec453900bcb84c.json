@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.238852+00:00",
+  "request": {
+    "lesson_id": "5462726bfaf49f42a6ec453900bcb84c",
+    "course_id": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "order": 465,
+    "nextCourseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "courseName": "英语每日故事（初级）1-31",
+    "lessonId": "5462726bfaf49f42a6ec453900bcb84c",
+    "nextLessonId": "ee8106908fc754b41a0576420b01afa4",
+    "lessonName": "I Can't Stop!",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c6c2f7a69c5f1950c9911e5aec57c781",
+        "index": 1,
+        "text": [
+          "Bob has a problem. At supper time, his mom puts out a lot of food on the table. He just can't stop eating. Soon, he eats too much.\\n\"Mom, what should I do?\" Bob asks.\\nHis mom says, \"I will make small meals from now on. That way, you won't have the problem of overeating.\"\\n\"Good idea, Mom,\" Bob says."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

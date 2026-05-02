@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.717530+00:00",
+  "request": {
+    "lesson_id": "6bf107215d927b419c112401df8564cc",
+    "course_id": "77cc7d3093a4e829cb2fb89b1788a0e1",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "77cc7d3093a4e829cb2fb89b1788a0e1",
+    "order": 108,
+    "nextCourseId": "77cc7d3093a4e829cb2fb89b1788a0e1",
+    "courseName": "拼音",
+    "lessonId": "6bf107215d927b419c112401df8564cc",
+    "nextLessonId": "ca76e959762919c669109812ed4d9bbd",
+    "lessonName": "声母",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-py-sm-bpmf.1ec58f9d13.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e98af842d9bf1dfe8db388711d17cadf",
+        "index": 1,
+        "text": [
+          "b p m f d t n l g k h j q x zh ch sh r z c s w y"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "bpmfdtnlgkhjqxzhcsrwy",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 33,
+        "minSpeed": 10,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

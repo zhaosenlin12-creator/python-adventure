@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.996904+00:00",
+  "request": {
+    "lesson_id": "1f2fc51895084b7f50a7fa8056060c65",
+    "course_id": "649abfd4e6da035acc06a37a3357166f",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "649abfd4e6da035acc06a37a3357166f",
+    "order": 114,
+    "nextCourseId": "649abfd4e6da035acc06a37a3357166f",
+    "courseName": "基础练习-全键位输入",
+    "lessonId": "1f2fc51895084b7f50a7fa8056060c65",
+    "nextLessonId": "65a45d48abfcfe176b1e152f1f33508b",
+    "lessonName": "综合提升二",
+    "icon": "data/assets/daziya.com/key-icon_num-jiangpai.be9813a4d3.png",
+    "description": "数字输入练习 - 综合提升二",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c47a77107743ea87c14ec44827cdbc5c",
+        "index": 1,
+        "text": [
+          "987-654+321*098/765"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

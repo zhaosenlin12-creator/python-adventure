@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.925632+00:00",
+  "request": {
+    "lesson_id": "c01c79d6e3e49b1589cda7073f86d60d",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 182,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "c01c79d6e3e49b1589cda7073f86d60d",
+    "nextLessonId": "14fd153ce6c30ab8e000dfde3a745700",
+    "lessonName": "KET核心词-111",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第111课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9664c76552730aa30ed2259718077b37",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"cent\",\"pronun\":\"[sent]\",\"translation\":\"n. 分；一分的硬币；森特（等于半音程的百分之一）\",\"audio\":\"cent.mp3\"},{\"word\":\"change\",\"pronun\":\"[tʃeɪndʒ]\",\"translation\":\"n. 变化；找回的零钱\\nvt. 改变；交换\\nvi. 改变；兑换\",\"audio\":\"change.mp3\"},{\"word\":\"charge\",\"pronun\":\"[tʃɑːrdʒ]\",\"translation\":\"n. 费用；电荷；掌管；控告；命令；负载\\nvt. 使充电；使承担；指责；装载；对…索费；向…冲去\\nvi. 充电；控告；索价；向前冲；记在账上\",\"audio\":\"charge.mp3\"},{\"word\":\"cheap\",\"pronun\":\"[tʃiːp]\",\"translation\":\"adj. 便宜的；小气的；不值钱的\\nadv. 便宜地\",\"audio\":\"cheap.mp3\"},{\"word\":\"close\",\"pronun\":\"[kloʊz; kloʊs]\",\"translation\":\"n. 结束\\nadj. 紧密的；亲密的；亲近的\\nvt. 关；结束；使靠近\\nvi. 关；结束；关闭\\nadv. 紧密地\",\"audio\":\"close.mp3\"},{\"word\":\"cost\",\"pronun\":\"[kɔːst]\",\"translation\":\"n. 费用，代价，成本；损失\\nvt. 花费；使付出；使花许多钱\\nvi. 花费\",\"audio\":\"cost.mp3\"},{\"word\":\"credit card\",\"pronun\":\"\",\"translation\":\"n. 【经】信用卡\",\"audio\":\"credit_card.mp3\"},{\"word\":\"customer\",\"pronun\":\"[ˈkʌstəmər]\",\"translation\":\"n. 顾客；家伙\",\"audio\":\"customer.mp3\"},{\"word\":\"department store\",\"pronun\":\"\",\"translation\":\"n. 百货公司；大百货商店\",\"audio\":\"department_store.mp3\"},{\"word\":\"dollar\",\"pronun\":\"[ˈdɑːlər]\",\"translation\":\"n. 美元\",\"audio\":\"dollar.mp3\"},{\"word\":\"discount\",\"pronun\":\"[ˈdɪskaʊnt]\",\"translation\":\"n. 折扣；贴现率\\nvt. 打折扣；将…贴现；贬损；低估；忽视\\nvi. 贴现；打折扣出售商品\",\"audio\":\"discount.mp3\"},{\"word\":\"dry-cleaner's\",\"pronun\":\"\",\"translation\":\"干洗店；乾洗店\",\"audio\":\"dry-cleaner_s.mp3\"},{\"word\":\"euro\",\"pronun\":\"[ˈjʊroʊ]\",\"translation\":\"n. 欧元（欧盟的统一货币单位）\",\"audio\":\"euro.mp3\"},{\"word\":\"expensive\",\"pronun\":\"[ɪkˈspensɪv]\",\"translation\":\"adj. 昂贵的；花钱的\",\"audio\":\"expensive.mp3\"},{\"word\":\"for sale\",\"pronun\":\"\",\"translation\":\"na. 出售(的)\",\"audio\":\"for_sale.mp3\"},{\"word\":\"go shopping\",\"pronun\":\"\",\"translation\":\"na. 去买东西\",\"audio\":\"go_shopping.mp3\"},{\"word\":\"grocery store\",\"pronun\":\"\",\"translation\":\"n. 杂货店\",\"audio\":\"grocery_store.mp3\"},{\"word\":\"hairdresser\",\"pronun\":\"[ˈherdresər]\",\"translation\":\"n. 美发师\",\"audio\":\"hairdresser.mp3\"},{\"word\":\"jeweller\",\"pronun\":\"[ˈdʒuːələr]\",\"translation\":\"n. 珠宝商；钟表匠，宝石匠\",\"audio\":\"jeweller.mp3\"},{\"word\":\"mall\",\"pronun\":\"[mɔːl]\",\"translation\":\"n. 购物商场；林荫路；铁圈球场\",\"audio\":\"mall.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

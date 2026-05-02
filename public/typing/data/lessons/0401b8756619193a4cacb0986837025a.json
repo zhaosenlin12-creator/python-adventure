@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.155043+00:00",
+  "request": {
+    "lesson_id": "0401b8756619193a4cacb0986837025a",
+    "course_id": "9983508511f457b02ddcae4777acab15",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "9983508511f457b02ddcae4777acab15",
+    "order": 123,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "JAVA",
+    "lessonId": "0401b8756619193a4cacb0986837025a",
+    "nextLessonId": "1bb658123faf013a01774d6f7f1f128d",
+    "lessonName": "条件判断",
+    "icon": "data/assets/daziya.com/key-icon_key-java.09b827febf.png",
+    "description": "Java编程练习 - 条件判断",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e9bb82e9832bfdc16edbcdec370b53fb",
+        "index": 1,
+        "text": [
+          "class Main {\\n    public static void main(String[] args) {\\n        int number = 15;\\n\\n        if (number > 0) {\\n            System.out.println(number + \" 是正数\");\\n        } else if (number < 0) {\\n            System.out.println(number + \" 是负数\");\\n        } else {\\n            System.out.println(\"这个数字是零\");\\n        }\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "java",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

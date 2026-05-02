@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.296828+00:00",
+  "request": {
+    "lesson_id": "5eb97a176737333fe31edb782d53c9e5",
+    "course_id": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "order": 336,
+    "nextCourseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "courseName": "小学必备古诗75首（2）",
+    "lessonId": "5eb97a176737333fe31edb782d53c9e5",
+    "nextLessonId": "fd9b56e460ef0a4b1424de8a32cff6bf",
+    "lessonName": "枫桥夜泊",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "fa095446ab40c40478f6ddcf431235ea",
+        "index": 1,
+        "text": [
+          "枫桥夜泊\\n张继\\n月落乌啼霜满天，江枫渔火对愁眠。\\n姑苏城外寒山寺，夜半钟声到客船。"
+        ],
+        "pinyin": "[[\"枫\", \"fēng\"], [\"桥\", \"qiáo\"], [\"夜\", \"yè\"], [\"泊\", \"bó\"], [\"\\n\", \"\"], [\"张\", \"zhāng\"], [\"继\", \"jì\"], [\"\\n\", \"\"], [\"月\", \"yuè\"], [\"落\", \"luò\"], [\"乌\", \"wū\"], [\"啼\", \"tí\"], [\"霜\", \"shuāng\"], [\"满\", \"mǎn\"], [\"天\", \"tiān\"], [\"，\", \"\"], [\"江\", \"jiāng\"], [\"枫\", \"fēng\"], [\"渔\", \"yú\"], [\"火\", \"huǒ\"], [\"对\", \"duì\"], [\"愁\", \"chóu\"], [\"眠\", \"mián\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"姑\", \"gū\"], [\"苏\", \"sū\"], [\"城\", \"chéng\"], [\"外\", \"wài\"], [\"寒\", \"hán\"], [\"山\", \"shān\"], [\"寺\", \"sì\"], [\"，\", \"\"], [\"夜\", \"yè\"], [\"半\", \"bàn\"], [\"钟\", \"zhōng\"], [\"声\", \"shēng\"], [\"到\", \"dào\"], [\"客\", \"kè\"], [\"船\", \"chuán\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

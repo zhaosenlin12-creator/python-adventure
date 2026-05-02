@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.212733+00:00",
+  "request": {
+    "lesson_id": "5ecf185976554026ba37a20abcc445ff",
+    "course_id": "9983508511f457b02ddcae4777acab15",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "9983508511f457b02ddcae4777acab15",
+    "order": 138,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "JAVA",
+    "lessonId": "5ecf185976554026ba37a20abcc445ff",
+    "nextLessonId": "5b9d7df7e1c459e1e44da883ded17ce5",
+    "lessonName": "插入排序",
+    "icon": "data/assets/daziya.com/key-icon_key-java.09b827febf.png",
+    "description": "Java编程练习 - 插入排序",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "59a0a3d84aab54e2a87b3b757036bef5",
+        "index": 1,
+        "text": [
+          "import java.util.Arrays;\\n\\nclass Main {\\n    public static void insertionSort(int[] arr) {\\n        for (int i = 1; i < arr.length; i++) {\\n            int key = arr[i];\\n            int j = i - 1;\\n\\n            while (j >= 0 && arr[j] > key) {\\n                arr[j + 1] = arr[j];\\n                j--;\\n            }\\n\\n            arr[j + 1] = key;\\n        }\\n    }\\n\\n    public static void main(String[] args) {\\n        int[] arr = {12, 11, 13, 5, 6};\\n        System.out.println(\"排序前: \" + Arrays.toString(arr));\\n        insertionSort(arr);\\n        System.out.println(\"排序后: \" + Arrays.toString(arr));\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "java",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

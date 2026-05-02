@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.493635+00:00",
+  "request": {
+    "lesson_id": "f6893083ffc460cfddc02d99afd4f16f",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 525,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "f6893083ffc460cfddc02d99afd4f16f",
+    "nextLessonId": "047ae5a0f4da370a61ef2863c8a3a46e",
+    "lessonName": "School Bus-1",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e860d569ee732253c9911c2f29afa448",
+        "index": 1,
+        "text": [
+          "Karen likes the big yellow school bus.\\nWhen Karen sees her sister get on it every morning for school, she wants to ride the bus too.\\nBut her mom says, \"Karen, you are too young.\\nYou need to eat more, sleep more and play more. Then you will grow big enough to ride that big school bus.\""
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.332847+00:00",
+  "request": {
+    "lesson_id": "fbdb84497e0bfc7c97e082998dedbe47",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 175,
+    "nextCourseId": "d7df026ff1d81047d30da28a958b118f",
+    "courseName": "golang",
+    "lessonId": "fbdb84497e0bfc7c97e082998dedbe47",
+    "nextLessonId": "39f69b15a4c6698a9d64870c8451cd58",
+    "lessonName": "队列的实现",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - 队列的实现",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6d977f3c53d6f26dcb9ad0019d5b1567",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport \"fmt\"\\n\\ntype Queue struct {\\n\titems []string\\n}\\n\\nfunc (q *Queue) Enqueue(item string) {\\n\tq.items = append(q.items, item)\\n}\\n\\nfunc (q *Queue) Dequeue() string {\\n\tif q.IsEmpty() {\\n\t\treturn \"\"\\n\t}\\n\titem := q.items[0]\\n\tq.items = q.items[1:]\\n\treturn item\\n}\\n\\nfunc (q *Queue) Front() string {\\n\tif q.IsEmpty() {\\n\t\treturn \"\"\\n\t}\\n\treturn q.items[0]\\n}\\n\\nfunc (q *Queue) IsEmpty() bool {\\n\treturn len(q.items) == 0\\n}\\n\\nfunc (q *Queue) Size() int {\\n\treturn len(q.items)\\n}\\n\\nfunc main() {\\n\tqueue := &Queue{}\\n\tqueue.Enqueue(\"客户A\")\\n\tqueue.Enqueue(\"客户B\")\\n\tqueue.Enqueue(\"客户C\")\\n\\n\tfmt.Println(\"队首:\", queue.Front())\\n\tfmt.Println(\"服务:\", queue.Dequeue())\\n\tfmt.Println(\"队列大小:\", queue.Size())\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

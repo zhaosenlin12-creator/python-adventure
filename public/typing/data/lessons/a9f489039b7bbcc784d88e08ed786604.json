@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.487664+00:00",
+  "request": {
+    "lesson_id": "a9f489039b7bbcc784d88e08ed786604",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 85,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "a9f489039b7bbcc784d88e08ed786604",
+    "nextLessonId": "ad4bc102aca8e5d76d0f24701f75ae42",
+    "lessonName": "KET核心词-94",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第94课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "709ceff19372ef669da3f40f33b9bc87",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"hat\",\"pronun\":\"[hæt]\",\"translation\":\"n. 帽子\\nvt. 给……戴上帽子\\nvi. 供应帽子；制造帽子\",\"audio\":\"hat.mp3\"},{\"word\":\"jacket\",\"pronun\":\"[ˈdʒækɪt]\",\"translation\":\"n. 羽绒滑雪衫；西装短外套；短上衣，夹克；土豆皮；书籍的护封；文件套，公文夹\\nvt. 给…穿夹克；给…装护套；给…包上护封；〈口〉打\",\"audio\":\"jacket.mp3\"},{\"word\":\"jeans\",\"pronun\":\"[dʒiːnz]\",\"translation\":\"n. 牛仔裤；工装裤\",\"audio\":\"jeans.mp3\"},{\"word\":\"jewellery\",\"pronun\":\"[ˈdʒuːəlri]\",\"translation\":\"n. 珠宝（等于jewelry）\",\"audio\":\"jewellery.mp3\"},{\"word\":\"jumper\",\"pronun\":\"[ˈdʒʌmpər]\",\"translation\":\"n. 跳高运动员；跳跃者；工作服；妇女穿的套头外衣\",\"audio\":\"jumper.mp3\"},{\"word\":\"kit\",\"pronun\":\"[kɪt]\",\"translation\":\"n. 工具箱；成套工具\\nvt. 装备\\nvi. 装备\",\"audio\":\"kit.mp3\"},{\"word\":\"leather\",\"pronun\":\"[ˈleðər]\",\"translation\":\"n. 皮革；皮革制品\\nvt. 用皮革包盖；抽打\\nadj. 皮的；皮革制的\",\"audio\":\"leather.mp3\"},{\"word\":\"lipstick\",\"pronun\":\"[ˈlɪpstɪk]\",\"translation\":\"n. 口红；唇膏\\nvt. 涂口红\\nvi. 涂口红\",\"audio\":\"lipstick.mp3\"},{\"word\":\"loose\",\"pronun\":\"[luːs]\",\"translation\":\"adj. 宽松的；散漫的；不牢固的；不精确的\\nvt. 释放；开船；放枪\\nvi. 变松；开火\\nadv. 松散地\\nn. 放纵；放任；发射\",\"audio\":\"loose.mp3\"},{\"word\":\"match\",\"pronun\":\"[mætʃ]\",\"translation\":\"vt. 使比赛；使相配；敌得过，比得上；相配；与…竞争\\nvi. 比赛；匹配；相配，相称；相比\\nn. 比赛，竞赛；匹配；对手；火柴\",\"audio\":\"match.mp3\"},{\"word\":\"necklace\",\"pronun\":\"[ˈnekləs]\",\"translation\":\"n. 项链\",\"audio\":\"necklace.mp3\"},{\"word\":\"old-fashioned\",\"pronun\":\"[ˌoʊld ˈfæʃnd]\",\"translation\":\"adj. 老式的；过时的；守旧的\",\"audio\":\"old-fashioned.mp3\"},{\"word\":\"pocket\",\"pronun\":\"[ˈpɑːkɪt]\",\"translation\":\"n. 口袋；钱；容器\\nadj. 小型的，袖珍的；金钱上的\\nvt. 隐藏；忍受；将…放入衣袋\\nvi. 形成袋或囊\",\"audio\":\"pocket.mp3\"},{\"word\":\"pullover\",\"pronun\":\"[ˈpʊloʊvər]\",\"translation\":\"n. 套衫\\nadj. 套领的\",\"audio\":\"pullover.mp3\"},{\"word\":\"purse\",\"pronun\":\"[pɜːrs]\",\"translation\":\"n. (女士)手提袋；(国家、家庭、团体等的) 财力\\nvt. （嘴巴）皱起，使缩拢；撅嘴\",\"audio\":\"purse.mp3\"},{\"word\":\"put on\",\"pronun\":\"[pʊt ɑːn]\",\"translation\":\"na. 假话\",\"audio\":\"put_on.mp3\"},{\"word\":\"raincoat\",\"pronun\":\"[ˈreɪnkoʊt]\",\"translation\":\"n. （美）雨衣\",\"audio\":\"raincoat.mp3\"},{\"word\":\"ring\",\"pronun\":\"[rɪŋ]\",\"translation\":\"n. 戒指；铃声，钟声；拳击场；环形物\\nvi. 按铃；敲钟；回响；成环形\\nvt. 按铃；包围；敲钟；套住\",\"audio\":\"ring.mp3\"},{\"word\":\"scarf\",\"pronun\":\"[skɑːrf]\",\"translation\":\"n. 围巾；嵌接，嵌接处；头巾领巾\\nvt. 披嵌接；用围巾围\",\"audio\":\"scarf.mp3\"},{\"word\":\"shirt\",\"pronun\":\"[ʃɜːrt]\",\"translation\":\"n. 衬衫；汗衫，内衣\",\"audio\":\"shirt.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

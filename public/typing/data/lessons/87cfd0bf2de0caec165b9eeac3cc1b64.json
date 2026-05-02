@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.097654+00:00",
+  "request": {
+    "lesson_id": "87cfd0bf2de0caec165b9eeac3cc1b64",
+    "course_id": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "order": 199,
+    "nextCourseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "courseName": "汉字一级",
+    "lessonId": "87cfd0bf2de0caec165b9eeac3cc1b64",
+    "nextLessonId": "d69efd50f4a5e580580aa011cfce4f47",
+    "lessonName": "大脑记忆",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-good.c7e935711e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "fd34ae984fbe13fb813d3e1cf6cb88e9",
+        "index": 1,
+        "text": [
+          "打字的时候，每个字符会在你的脑中形成固有的键盘排列，让你能够不假思索地输入同样的字符。"
+        ],
+        "pinyin": "[[\"打\", \"dǎ\"], [\"字\", \"zì\"], [\"的\", \"de\"], [\"时\", \"shí\"], [\"候\", \"hou\"], [\"，\", \"\"], [\"每\", \"měi\"], [\"个\", \"gè\"], [\"字\", \"zì\"], [\"符\", \"fú\"], [\"会\", \"huì\"], [\"在\", \"zài\"], [\"你\", \"nǐ\"], [\"的\", \"de\"], [\"脑\", \"nǎo\"], [\"中\", \"zhōng\"], [\"形\", \"xíng\"], [\"成\", \"chéng\"], [\"固\", \"gù\"], [\"有\", \"yǒu\"], [\"的\", \"de\"], [\"键\", \"jiàn\"], [\"盘\", \"pán\"], [\"排\", \"pái\"], [\"列\", \"liè\"], [\"，\", \"\"], [\"让\", \"ràng\"], [\"你\", \"nǐ\"], [\"能\", \"néng\"], [\"够\", \"gòu\"], [\"不\", \"bù\"], [\"假\", \"jiǎ\"], [\"思\", \"sī\"], [\"索\", \"suǒ\"], [\"地\", \"dì\"], [\"输\", \"shū\"], [\"入\", \"rù\"], [\"同\", \"tóng\"], [\"样\", \"yàng\"], [\"的\", \"de\"], [\"字\", \"zì\"], [\"符\", \"fú\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 16,
+        "minSpeed": 8,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

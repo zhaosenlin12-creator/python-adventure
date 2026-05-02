@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.304562+00:00",
+  "request": {
+    "lesson_id": "6b6befbe3b42201a1b8e205842a67e95",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 166,
+    "nextCourseId": "d7df026ff1d81047d30da28a958b118f",
+    "courseName": "golang",
+    "lessonId": "6b6befbe3b42201a1b8e205842a67e95",
+    "nextLessonId": "8bfc0c0e507051e618914ee1ab758411",
+    "lessonName": "冒泡排序",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - 冒泡排序",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "0bf851b7dd62bae9f4e1c2c8865d686c",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport \"fmt\"\\n\\nfunc bubbleSort(arr []int) {\\n\tn := len(arr)\\n\\n\tfor i := 0; i < n-1; i++ {\\n\t\tswapped := false\\n\\n\t\tfor j := 0; j < n-i-1; j++ {\\n\t\t\tif arr[j] > arr[j+1] {\\n\t\t\t\tarr[j], arr[j+1] = arr[j+1], arr[j]\\n\t\t\t\tswapped = true\\n\t\t\t}\\n\t\t}\\n\\n\t\tif !swapped {\\n\t\t\tbreak\\n\t\t}\\n\t}\\n}\\n\\nfunc main() {\\n\tarr := []int{64, 34, 25, 12, 22, 11, 90}\\n\tfmt.Println(\"排序前:\", arr)\\n\tbubbleSort(arr)\\n\tfmt.Println(\"排序后:\", arr)\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

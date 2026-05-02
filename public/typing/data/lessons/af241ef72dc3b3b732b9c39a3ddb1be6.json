@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.082867+00:00",
+  "request": {
+    "lesson_id": "af241ef72dc3b3b732b9c39a3ddb1be6",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 11,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "af241ef72dc3b3b732b9c39a3ddb1be6",
+    "nextLessonId": "95e59cc05fbdac5ba729220a0e2348f0",
+    "lessonName": "2022年版 PEP-三年级-下册-6",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-三年级-下册 - 第6课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f0adbd1a62256ddf4f8c5a1ccfe64e2b",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"still\",\"pronun\":\"[stɪl]\",\"translation\":\"conj. 仍然；但是；尽管如此\\nn. 寂静；剧照；蒸馏室\\nadj. 静止的，不动的；寂静的，平静的；不起泡的\\nadv. 仍然；更；静止地\\nvt. 蒸馏；使…静止；使…平静下来\\nvi. 静止；平静；蒸馏\",\"audio\":\"still.mp3\"},{\"word\":\"put\",\"pronun\":\"[pʊt]\",\"translation\":\"n. 掷；笨蛋；投击；怪人\\nadj. 固定不动的\\nvi. 出发；击；航行；发芽\\nvt. 放；表达；移动；安置；赋予\",\"audio\":\"put.mp3\"},{\"word\":\"fifteen\",\"pronun\":\"[ˌfɪfˈtiːn]\",\"translation\":\"n. 十五；十五个；十五人组成的橄榄球队\\nnum. 十五\\nadj. 十五的\",\"audio\":\"fifteen.mp3\"},{\"word\":\"twelve\",\"pronun\":\"[twelv]\",\"translation\":\"num. 十二；十二个\\nn. 十二；十二个\\nadj. 十二的；十二个的\",\"audio\":\"twelve.mp3\"},{\"word\":\"fourteen\",\"pronun\":\"[ˌfɔːrˈtiːn]\",\"translation\":\"num. 十四；十四个；第十四\\nn. 十四的记号；十四岁；十四点钟；十五世纪\",\"audio\":\"fourteen.mp3\"},{\"word\":\"thirteen\",\"pronun\":\"[ˌθɜːrˈtiːn]\",\"translation\":\"n. 十三；十三岁；十三个\\nnum. 十三\\nadj. 十三的；十三个的\",\"audio\":\"thirteen.mp3\"},{\"word\":\"eleven\",\"pronun\":\"[ɪˈlevn]\",\"translation\":\"num. 十一；十一个\\nn. 十一；十一个\\nadj. 十一的；十一个的\",\"audio\":\"eleven.mp3\"},{\"word\":\"twenty\",\"pronun\":\"[ˈtwenti]\",\"translation\":\"num. 二十\\nn. 二十；二十年代\\nadj. 二十的\",\"audio\":\"twenty.mp3\"},{\"word\":\"seventeen\",\"pronun\":\"[ˌsevnˈtiːn]\",\"translation\":\"n. 十七，十七个\\nnum. 十七\\nadj. 十七岁的；十七的，十七个的\",\"audio\":\"seventeen.mp3\"},{\"word\":\"sixteen\",\"pronun\":\"[ˌsɪksˈtiːn]\",\"translation\":\"num. 十六\\nadj. 十六的，十六个的\",\"audio\":\"sixteen.mp3\"},{\"word\":\"eighteen\",\"pronun\":\"[ˌeɪˈtiːn]\",\"translation\":\"n. 十八，十八个\\nnum. 十八\\nadj. 十八个的，十八的\",\"audio\":\"eighteen.mp3\"},{\"word\":\"nineteen\",\"pronun\":\"[ˌnaɪnˈtiːn]\",\"translation\":\"num. 十九\",\"audio\":\"nineteen.mp3\"},{\"word\":\"bank\",\"pronun\":\"[bæŋk]\",\"translation\":\"n. 银行；岸；浅滩；储库\\nvt. 将…存入银行；倾斜转弯\\nvi. 堆积；倾斜转弯\",\"audio\":\"bank.mp3\"},{\"word\":\"pay\",\"pronun\":\"[peɪ]\",\"translation\":\"n. 工资，薪水；付款；报答\\nvt. 支付，付；偿还，补偿；给予\\nvi. 付款；偿还\\nadj. 收费的；需付费的\",\"audio\":\"pay.mp3\"},{\"word\":\"back\",\"pronun\":\"[bæk]\",\"translation\":\"n. 后面；背部；靠背；足球等的后卫；书报等的末尾\\nadj. 后面的；过去的；拖欠的\\nvt. 支持；后退；背书；下赌注\\nadv. 以前；向后地；来回地；上溯；回来；回原处\\nvi. 后退；背靠；倒退\",\"audio\":\"back.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

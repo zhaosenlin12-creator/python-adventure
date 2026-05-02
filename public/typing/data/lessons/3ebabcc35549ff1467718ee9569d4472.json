@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.664038+00:00",
+  "request": {
+    "lesson_id": "3ebabcc35549ff1467718ee9569d4472",
+    "course_id": "f5e1caafe742206a7fc8abc95cf77b44",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "order": 323,
+    "nextCourseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "courseName": "诗词歌赋",
+    "lessonId": "3ebabcc35549ff1467718ee9569d4472",
+    "nextLessonId": "5829b2d665ebb32ef2071241be4492f5",
+    "lessonName": "《过故人庄》孟浩然",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-poet-4.6d792ca729.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1127d0e5702c64c13b2abc4029b01d64",
+        "index": 1,
+        "text": [
+          "《过故人庄》\\n孟浩然\\n\\n故人具鸡黍，邀我至田家。\\n绿树村边合，青山郭外斜。\\n开轩面场圃，把酒话桑麻。\\n待到重阳日，还来就菊花。"
+        ],
+        "pinyin": "[[\"《\", \"\"], [\"过\", \"guò\"], [\"故\", \"gù\"], [\"人\", \"rén\"], [\"庄\", \"zhuāng\"], [\"》\", \"\"], [\"\\n\", \"\"], [\"孟\", \"mèng\"], [\"浩\", \"hào\"], [\"然\", \"rán\"], [\"\\n\", \"\"], [\"\\n\", \"\"], [\"故\", \"gù\"], [\"人\", \"rén\"], [\"具\", \"jù\"], [\"鸡\", \"jī\"], [\"黍\", \"shǔ\"], [\"，\", \"\"], [\"邀\", \"yāo\"], [\"我\", \"wǒ\"], [\"至\", \"zhì\"], [\"田\", \"tián\"], [\"家\", \"jiā\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"绿\", \"lǜ\"], [\"树\", \"shù\"], [\"村\", \"cūn\"], [\"边\", \"biān\"], [\"合\", \"hé\"], [\"，\", \"\"], [\"青\", \"qīng\"], [\"山\", \"shān\"], [\"郭\", \"guō\"], [\"外\", \"wài\"], [\"斜\", \"xié\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"开\", \"kāi\"], [\"轩\", \"xuān\"], [\"面\", \"miàn\"], [\"场\", \"cháng\"], [\"圃\", \"pǔ\"], [\"，\", \"\"], [\"把\", \"bǎ\"], [\"酒\", \"jiǔ\"], [\"话\", \"huà\"], [\"桑\", \"sāng\"], [\"麻\", \"má\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"待\", \"dài\"], [\"到\", \"dào\"], [\"重\", \"chóng\"], [\"阳\", \"yáng\"], [\"日\", \"rì\"], [\"，\", \"\"], [\"还\", \"hái\"], [\"来\", \"lái\"], [\"就\", \"jiù\"], [\"菊\", \"jú\"], [\"花\", \"huā\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 45,
+        "minSpeed": 30,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

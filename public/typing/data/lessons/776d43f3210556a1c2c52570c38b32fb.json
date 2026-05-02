@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.476227+00:00",
+  "request": {
+    "lesson_id": "776d43f3210556a1c2c52570c38b32fb",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 652,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "776d43f3210556a1c2c52570c38b32fb",
+    "nextLessonId": "c24510a6461ddb2f730447b976236872",
+    "lessonName": " 五年级下-4",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点五年级下 - 第4课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b06115f0575d1cd9a5868ea94e3d8876",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"January\",\"pronun\":\"[ˈdʒænjueri]\",\"translation\":\"n. 一月\",\"audio\":\"January.mp3\"},{\"word\":\"February\",\"pronun\":\"[ˈfebrueri]\",\"translation\":\"n. 二月\",\"audio\":\"February.mp3\"},{\"word\":\"March\",\"pronun\":\"[mɑːrtʃ]\",\"translation\":\"n. 三月\",\"audio\":\"March.mp3\"},{\"word\":\"April\",\"pronun\":\"[ˈeɪprəl]\",\"translation\":\"n. 四月\",\"audio\":\"April.mp3\"},{\"word\":\"may\",\"pronun\":\"[meɪ]\",\"translation\":\"aux. 可以，能够；可能，也许；祝，愿；会，能\",\"audio\":\"may.mp3\"},{\"word\":\"June\",\"pronun\":\"[dʒuːn]\",\"translation\":\"n. 六月；琼（人名，来源于拉丁语，含义是“年轻气盛的六月”）\",\"audio\":\"June.mp3\"},{\"word\":\"July\",\"pronun\":\"[dʒʊˈlaɪ]\",\"translation\":\"n. 七月\",\"audio\":\"July.mp3\"},{\"word\":\"August\",\"pronun\":\"[ˈɔːɡəst]\",\"translation\":\"n. 八月（简写为Aug）\\nadj. 威严的；令人敬畏的\",\"audio\":\"August.mp3\"},{\"word\":\"September\",\"pronun\":\"[sepˈtembər]\",\"translation\":\"n. 九月\",\"audio\":\"September.mp3\"},{\"word\":\"October\",\"pronun\":\"[ɑːkˈtoʊbər]\",\"translation\":\"n. [天] 十月\",\"audio\":\"October.mp3\"},{\"word\":\"November\",\"pronun\":\"[noʊˈvembər]\",\"translation\":\"n. 十一月\",\"audio\":\"November.mp3\"},{\"word\":\"December\",\"pronun\":\"[dɪˈsembər]\",\"translation\":\"n. 十二月\",\"audio\":\"December.mp3\"},{\"word\":\"few\",\"pronun\":\"[fjuː]\",\"translation\":\"n. 很少数\\nadj. 很少的；几乎没有的\\npron. 很少\",\"audio\":\"few.mp3\"},{\"word\":\"a few\",\"pronun\":\"\",\"translation\":\"na. 几个；〔反语〕很多；〈俚〉一点点\",\"audio\":\"a_few.mp3\"},{\"word\":\"thing\",\"pronun\":\"[θɪŋ]\",\"translation\":\"n. 事情；东西；事物；情况\",\"audio\":\"thing.mp3\"},{\"word\":\"meet\",\"pronun\":\"[miːt]\",\"translation\":\"vt. 满足；遇见；对付\\nvi. 相遇；接触\\nn. 集会\\nadj. 合适的；适宜的\",\"audio\":\"meet.mp3\"},{\"word\":\"sports meet\",\"pronun\":\"\",\"translation\":\"un. 运动会\",\"audio\":\"sports_meet.mp3\"},{\"word\":\"Easter\",\"pronun\":\"[ˈiːstər]\",\"translation\":\"n. 复活节\",\"audio\":\"Easter.mp3\"},{\"word\":\"trip\",\"pronun\":\"[trɪp]\",\"translation\":\"n. 旅行；绊倒；差错\\nvt. 绊倒；使犯错\\nvi. 绊倒；远足；犯错误；轻快地走\",\"audio\":\"trip.mp3\"},{\"word\":\"year\",\"pronun\":\"[jɪr]\",\"translation\":\"n. 年；年度；历年；年纪；一年的期间；某年级的学生\",\"audio\":\"year.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

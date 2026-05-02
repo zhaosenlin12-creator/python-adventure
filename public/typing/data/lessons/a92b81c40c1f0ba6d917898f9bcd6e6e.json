@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.365597+00:00",
+  "request": {
+    "lesson_id": "a92b81c40c1f0ba6d917898f9bcd6e6e",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 184,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "a92b81c40c1f0ba6d917898f9bcd6e6e",
+    "nextLessonId": "0f9ba153680d9ab5e6fa2883630bd8f0",
+    "lessonName": "DISTINCT去重",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - DISTINCT去重",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5c27eba85922532bbfe5dd2e13d1755c",
+        "index": 1,
+        "text": [
+          "-- 查询所有不重复的城市\\nSELECT DISTINCT city FROM users;\\n\\n-- 查询不重复的状态\\nSELECT DISTINCT status FROM orders;\\n\\n-- 统计不重复城市的数量\\nSELECT COUNT(DISTINCT city) AS city_count\\nFROM users;\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "speed-test",
+  "scrapedAt": "2026-05-02T06:08:44.807405+00:00",
+  "request": {
+    "lesson_id": "71d43cb2ab25ee898196a9d48fa71c99",
+    "course_id": "c6bc39f4ba86486e20cc171fab797ea3",
+    "source": "speed-test"
+  },
+  "data": {
+    "level": "速度测试",
+    "courseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "order": 27,
+    "nextCourseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "courseName": "英文速度测试",
+    "lessonId": "71d43cb2ab25ee898196a9d48fa71c99",
+    "nextLessonId": "0fe726ac4449cd544439cc032599b1f3",
+    "lessonName": "Many Kinds of Milk",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5bc6464f38c651c6350c85ac92f5b2eb",
+        "index": 1,
+        "text": [
+          "At school, Joey's teacher says, \"Milk is good for you. It helps you grow strong.\"\\nThen she asks, \"Do you know where milk comes from?\"\\n\"Cows, of course!\" all the children say.\\n\"Yes, milk can come from cows. But around the world, people also drink milk from sheep, horses, and camels,\" says the teacher.\\nWow! Joey learns something new. Wow! He can drink a lot of milk!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": 13,
+    "categoryTitle": "速度测试"
+  }
+}

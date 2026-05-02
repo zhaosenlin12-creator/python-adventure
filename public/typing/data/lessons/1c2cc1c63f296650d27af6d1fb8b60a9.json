@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.202178+00:00",
+  "request": {
+    "lesson_id": "1c2cc1c63f296650d27af6d1fb8b60a9",
+    "course_id": "f81aeb9f7457592295d8d925c4358b36",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "f81aeb9f7457592295d8d925c4358b36",
+    "order": 215,
+    "nextCourseId": "f81aeb9f7457592295d8d925c4358b36",
+    "courseName": "汉字二级",
+    "lessonId": "1c2cc1c63f296650d27af6d1fb8b60a9",
+    "nextLessonId": "56bd3058097e7e001b83fe02ec990e27",
+    "lessonName": "《春》 朱自清",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-2.4d21a5bc2c.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "87ff81ecd5e1b527242cf124702e76c2",
+        "index": 1,
+        "text": [
+          "小草偷偷地从土里钻出来，嫩嫩的，绿绿的。园子里，田野里，瞧去，一大片一大片满是的。"
+        ],
+        "pinyin": "[[\"小\", \"xiǎo\"], [\"草\", \"cǎo\"], [\"偷\", \"tōu\"], [\"偷\", \"tōu\"], [\"地\", \"de\"], [\"从\", \"cóng\"], [\"土\", \"tǔ\"], [\"里\", \"lǐ\"], [\"钻\", \"zuān\"], [\"出\", \"chū\"], [\"来\", \"lái\"], [\"，\", \"\"], [\"嫩\", \"nèn\"], [\"嫩\", \"nèn\"], [\"的\", \"de\"], [\"，\", \"\"], [\"绿\", \"lǜ\"], [\"绿\", \"lǜ\"], [\"的\", \"de\"], [\"。\", \"\"], [\"园\", \"yuán\"], [\"子\", \"zi\"], [\"里\", \"lǐ\"], [\"，\", \"\"], [\"田\", \"tián\"], [\"野\", \"yě\"], [\"里\", \"lǐ\"], [\"，\", \"\"], [\"瞧\", \"qiáo\"], [\"去\", \"qù\"], [\"，\", \"\"], [\"一\", \"yī\"], [\"大\", \"dà\"], [\"片\", \"piàn\"], [\"一\", \"yī\"], [\"大\", \"dà\"], [\"片\", \"piàn\"], [\"满\", \"mǎn\"], [\"是\", \"shì\"], [\"的\", \"de\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 22,
+        "minSpeed": 12,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

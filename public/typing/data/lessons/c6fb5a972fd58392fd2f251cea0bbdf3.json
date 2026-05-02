@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.487179+00:00",
+  "request": {
+    "lesson_id": "c6fb5a972fd58392fd2f251cea0bbdf3",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 318,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "c6fb5a972fd58392fd2f251cea0bbdf3",
+    "nextLessonId": "85993a6dbb726d6661f8f90a7ff95ebe",
+    "lessonName": "六级词汇正序版-7",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第7课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ec754ac706d9ce51d6bd65b8b9d8b29d",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"appropriation\",\"pronun\":\"[əˌproʊpriˈeɪʃn]\",\"translation\":\"n. 拨款；挪用\",\"audio\":\"appropriation.mp3\"},{\"word\":\"approval\",\"pronun\":\"[əˈpruːvl]\",\"translation\":\"n. 批准；认可；赞成\",\"audio\":\"approval.mp3\"},{\"word\":\"approve\",\"pronun\":\"[əˈpruːv]\",\"translation\":\"vi. 批准；赞成；满意\\nvt. 批准；赞成；为…提供证据\",\"audio\":\"approve.mp3\"},{\"word\":\"apt\",\"pronun\":\"[æpt]\",\"translation\":\"adj. 恰当的；有…倾向的；灵敏的\",\"audio\":\"apt.mp3\"},{\"word\":\"arbitrary\",\"pronun\":\"[ˈɑːrbɪtreri]\",\"translation\":\"adj. [数] 任意的；武断的；专制的\",\"audio\":\"arbitrary.mp3\"},{\"word\":\"arc\",\"pronun\":\"[ɑːrk]\",\"translation\":\"n. 弧（度）；弧光（全称electric arc）；弧形物；天穹\\nadj. 圆弧的；反三角函数的\\nvt. 形成电弧；走弧线\",\"audio\":\"arc.mp3\"},{\"word\":\"arena\",\"pronun\":\"[əˈriːnə]\",\"translation\":\"n. 舞台；竞技场\",\"audio\":\"arena.mp3\"},{\"word\":\"argue\",\"pronun\":\"[ˈɑːrɡjuː]\",\"translation\":\"vi. 争论，辩论；提出理由\\nvt. 辩论，争论；证明；说服\",\"audio\":\"argue.mp3\"},{\"word\":\"armor\",\"pronun\":\"[ˈɑːrmər]\",\"translation\":\"n. [军] 装甲；盔甲\\nvt. 为…装甲\",\"audio\":\"armor.mp3\"},{\"word\":\"arouse\",\"pronun\":\"[əˈraʊz]\",\"translation\":\"vt. 引起；唤醒；鼓励\\nvi. 激发；醒来；发奋\",\"audio\":\"arouse.mp3\"},{\"word\":\"arrange\",\"pronun\":\"[əˈreɪndʒ]\",\"translation\":\"vi. 安排；排列；协商\\nvt. 安排；排列；整理\",\"audio\":\"arrange.mp3\"},{\"word\":\"arrangement\",\"pronun\":\"[əˈreɪndʒmənt]\",\"translation\":\"n. 布置；整理；准备\",\"audio\":\"arrangement.mp3\"},{\"word\":\"array\",\"pronun\":\"[əˈreɪ]\",\"translation\":\"n. 数组，阵列；排列，列阵；大批，一系列；衣服\\nvt. 排列，部署；打扮\",\"audio\":\"array.mp3\"},{\"word\":\"arrest\",\"pronun\":\"[əˈrest]\",\"translation\":\"n. 逮捕；监禁\\nvt. 逮捕；阻止；吸引\",\"audio\":\"arrest.mp3\"},{\"word\":\"arrogant\",\"pronun\":\"[ˈærəɡənt]\",\"translation\":\"adj. 自大的，傲慢的\",\"audio\":\"arrogant.mp3\"},{\"word\":\"artery\",\"pronun\":\"[ˈɑːrtəri]\",\"translation\":\"n. 动脉；干道；主流\",\"audio\":\"artery.mp3\"},{\"word\":\"articulate\",\"pronun\":\"[ɑːrˈtɪkjuleɪt]\",\"translation\":\"adj. 发音清晰的；口才好的；有关节的\\nvt. 清晰地发（音）；明确有力地表达；用关节连接；使相互连贯\\nvi. 发音；清楚地讲话；用关节连接起来\\nn. 【动物学】有节体的动物\",\"audio\":\"articulate.mp3\"},{\"word\":\"artificial\",\"pronun\":\"[ˌɑːrtɪˈfɪʃ(ə)l]\",\"translation\":\"adj. 人造的；仿造的；虚伪的；非原产地的；武断的\",\"audio\":\"artificial.mp3\"},{\"word\":\"artillery\",\"pronun\":\"[ɑːrˈtɪləri]\",\"translation\":\"n. 火炮；大炮；炮队；炮术\",\"audio\":\"artillery.mp3\"},{\"word\":\"ascend\",\"pronun\":\"[əˈsend]\",\"translation\":\"vi. 上升；登高；追溯\\nvt. 攀登，上升\",\"audio\":\"ascend.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

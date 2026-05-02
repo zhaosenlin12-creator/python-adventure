@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.168555+00:00",
+  "request": {
+    "lesson_id": "5a373b71e6172e9a7a0ba7e530a57765",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 28,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "5a373b71e6172e9a7a0ba7e530a57765",
+    "nextLessonId": "40d32d23a7e72cbd9ea45724038b8fd6",
+    "lessonName": "2022年版 PEP-五年级-上册-5",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-五年级-上册 - 第5课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4a6c5096e633f1e8c3fa37fcf84521c9",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"basketball\",\"pronun\":\"[ˈbæskɪtbɔːl]\",\"translation\":\"n. 篮球；篮球运动\",\"audio\":\"basketball.mp3\"},{\"word\":\"ping\",\"pronun\":\"[pɪŋ]\",\"translation\":\"n. 子弹飞过空中的声音；[电子] 声脉冲\\nvi. 发出撞击声；砰地发声\",\"audio\":\"ping.mp3\"},{\"word\":\"pong\",\"pronun\":\"[pɑːŋ]\",\"translation\":\"n. 乒乓球；恶臭；难闻的气味\\nadj. 乒乓的\\nvi. 发出难闻的气味\",\"audio\":\"pong.mp3\"},{\"word\":\"we\",\"pronun\":\"[wi]\",\"translation\":\"pron. 我们（主格）；笔者，本人（作者或演讲人使用）；朕，寡人\",\"audio\":\"we.mp3\"},{\"word\":\"party\",\"pronun\":\"[ˈpɑːrti]\",\"translation\":\"n. 政党，党派；聚会，派对；当事人 [复数 parties]\\nvi. 参加社交聚会 [ 过去式 partied 过去分词 partied 现在分词 partying ]\",\"audio\":\"party.mp3\"},{\"word\":\"next\",\"pronun\":\"[nekst]\",\"translation\":\"adv. 然后；下次；其次\\nadj. 下一个的；其次的；贴近的\\nn. 下一个\\nprep. 靠近；居于…之后\",\"audio\":\"next.mp3\"},{\"word\":\"wonderful\",\"pronun\":\"[ˈwʌndərf(ə)l]\",\"translation\":\"adj. 极好的，精彩的，绝妙的；奇妙的；美妙；胜；神妙\",\"audio\":\"wonderful.mp3\"},{\"word\":\"learn\",\"pronun\":\"[lɜːrn]\",\"translation\":\"vt. 学习；得知；认识到\\nvi. 学习；获悉\",\"audio\":\"learn.mp3\"},{\"word\":\"any\",\"pronun\":\"[ˈeni]\",\"translation\":\"adj. 任何的；所有的；丝毫\\npron. 任何；任何一个；若干\\nadv. 稍微；少许\",\"audio\":\"any.mp3\"},{\"word\":\"problem\",\"pronun\":\"[ˈprɑːbləm]\",\"translation\":\"n. 难题；引起麻烦的人\\nadj. 成问题的；难处理的\",\"audio\":\"problem.mp3\"},{\"word\":\"no\",\"pronun\":\"[noʊ]\",\"translation\":\"adv. 不\\nadj. 没有；不是\\nn. 不；否决票\\nabbr. 数字（number）；元素锘（nobelium）的符号\",\"audio\":\"no.mp3\"},{\"word\":\"want\",\"pronun\":\"[wɑːnt]\",\"translation\":\"n. 需要；缺乏；贫困；必需品\\nvt. 需要；希望；应该；缺少\\nvi. 需要；缺少\",\"audio\":\"want.mp3\"},{\"word\":\"send\",\"pronun\":\"[send]\",\"translation\":\"n. 上升运动\\nvi. 派人；寄信\\nvt. 发送，寄；派遣；使进入；发射\",\"audio\":\"send.mp3\"},{\"word\":\"email\",\"pronun\":\"[ˈiːmeɪl]\",\"translation\":\"n. 电子信函\\nvt. 给…发电子邮件\",\"audio\":\"email.mp3\"},{\"word\":\"at\",\"pronun\":\"[ət; æt]\",\"translation\":\"prep. 在（表示存在或出现的地点、场所、位置、空间）；以（某种价格、速度等）；向；达；因为；朝；忙于\\nn. 阿特（老挝货币基本单位att）；[化]砹（极不稳定放射性元素）\\nabbr. 密封的（airtight）；气温（air temperature）\",\"audio\":\"at.mp3\"},{\"word\":\"clock\",\"pronun\":\"[klɑːk]\",\"translation\":\"n. 时钟；计时器\\nvt. 记录；记时\\nvi. 打卡；记录时间\",\"audio\":\"clock.mp3\"},{\"word\":\"plant\",\"pronun\":\"[plænt]\",\"translation\":\"n. 工厂，车间；植物；设备；庄稼\\nvt. 种植；培养；栽培；安置\\nvi. 种植\",\"audio\":\"plant.mp3\"},{\"word\":\"bottle\",\"pronun\":\"[ˈbɑːtl]\",\"translation\":\"n. 瓶子；一瓶的容量\\nvt. 控制；把…装入瓶中\\nvi. （街头艺人演出后）收拢钱币\",\"audio\":\"bottle.mp3\"},{\"word\":\"water\",\"pronun\":\"[ˈwɔːtər]\",\"translation\":\"n. 水；海水；雨水；海域，大片的水\\nvt. 使湿；供以水；给…浇水\\nvi. 加水；流泪；流口水\",\"audio\":\"water.mp3\"},{\"word\":\"bike\",\"pronun\":\"[baɪk]\",\"translation\":\"n. 自行车；脚踏车\\nvi. 骑自行车（或摩托车）\",\"audio\":\"bike.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

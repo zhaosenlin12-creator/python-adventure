@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.402329+00:00",
+  "request": {
+    "lesson_id": "4c6fcf2820e80433636b0b2befdf9790",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 640,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "4c6fcf2820e80433636b0b2befdf9790",
+    "nextLessonId": "848f368d774b63237b0d4c3ea5041e93",
+    "lessonName": " 四年级下-4",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点四年级下 - 第4课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "acc0257a1cc06c21ae8847340ade07d5",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"hen\",\"pronun\":\"[hen]\",\"translation\":\"n. 母鸡；女人；雌禽\",\"audio\":\"hen.mp3\"},{\"word\":\"these\",\"pronun\":\"[ðiːz]\",\"translation\":\"adj. 这些的\\npron. 这些\",\"audio\":\"these.mp3\"},{\"word\":\"yum\",\"pronun\":\"[jʌm]\",\"translation\":\"int. 极好的；妙的；美味的\",\"audio\":\"yum.mp3\"},{\"word\":\"animal\",\"pronun\":\"[ˈænɪm(ə)l]\",\"translation\":\"n. 动物\\n动物的\",\"audio\":\"animal.mp3\"},{\"word\":\"those\",\"pronun\":\"[ðoʊz]\",\"translation\":\"adj. 那些的\\npron. 那些（that的复数）\",\"audio\":\"those.mp3\"},{\"word\":\"garden\",\"pronun\":\"[ˈɡɑːrdn]\",\"translation\":\"n. 花园；菜园\\nvt. 栽培花木\\nvi. 从事园艺；在园中种植\",\"audio\":\"garden.mp3\"},{\"word\":\"farm\",\"pronun\":\"[fɑːrm]\",\"translation\":\"n. 农场；农家；畜牧场\\nvt. 养殖；耕种；佃出（土地）\\nvi. 种田，务农；经营农场\",\"audio\":\"farm.mp3\"},{\"word\":\"goat\",\"pronun\":\"[goʊt]\",\"translation\":\"n. 山羊；替罪羊（美俚）；色鬼（美俚）\",\"audio\":\"goat.mp3\"},{\"word\":\"eat\",\"pronun\":\"[iːt]\",\"translation\":\"vt. 吃，喝；腐蚀；烦扰\\nvi. 进食；腐蚀，侵蚀\",\"audio\":\"eat.mp3\"},{\"word\":\"clothes\",\"pronun\":\"[kloʊðz; kloʊz]\",\"translation\":\"n. 衣服\",\"audio\":\"clothes.mp3\"},{\"word\":\"pants\",\"pronun\":\"[pænts]\",\"translation\":\"n. 裤子\",\"audio\":\"pants.mp3\"},{\"word\":\"hat\",\"pronun\":\"[hæt]\",\"translation\":\"n. 帽子\\nvt. 给……戴上帽子\\nvi. 供应帽子；制造帽子\",\"audio\":\"hat.mp3\"},{\"word\":\"dress\",\"pronun\":\"[dres]\",\"translation\":\"n. 连衣裙；女装\\nvt. 给…穿衣\\nvi. 穿衣\",\"audio\":\"dress.mp3\"},{\"word\":\"skirt\",\"pronun\":\"[skɜːrt]\",\"translation\":\"n. 裙子\\nvt. 绕过，回避；位于…边缘\\nvi. 沿边走，绕开；环绕\",\"audio\":\"skirt.mp3\"},{\"word\":\"coat\",\"pronun\":\"[koʊt]\",\"translation\":\"n. 外套\\nvt. 覆盖…的表面\",\"audio\":\"coat.mp3\"},{\"word\":\"sweater\",\"pronun\":\"[ˈswetər]\",\"translation\":\"n. 毛线衣，运动衫；大量出汗的人，发汗剂\",\"audio\":\"sweater.mp3\"},{\"word\":\"sock\",\"pronun\":\"[sɑːk]\",\"translation\":\"vt. 重击；给……穿袜\\nn. 短袜；一击\\nadv. 正着地；不偏不倚地\\nadj. 非常成功的\",\"audio\":\"sock.mp3\"},{\"word\":\"shorts\",\"pronun\":\"[ʃɔːrts]\",\"translation\":\"n. 短裤\",\"audio\":\"shorts.mp3\"},{\"word\":\"jacket\",\"pronun\":\"[ˈdʒækɪt]\",\"translation\":\"n. 羽绒滑雪衫；西装短外套；短上衣，夹克；土豆皮；书籍的护封；文件套，公文夹\\nvt. 给…穿夹克；给…装护套；给…包上护封；〈口〉打\",\"audio\":\"jacket.mp3\"},{\"word\":\"shirt\",\"pronun\":\"[ʃɜːrt]\",\"translation\":\"n. 衬衫；汗衫，内衣\",\"audio\":\"shirt.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

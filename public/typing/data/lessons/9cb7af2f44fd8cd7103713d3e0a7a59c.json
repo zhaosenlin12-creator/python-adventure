@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.324878+00:00",
+  "request": {
+    "lesson_id": "9cb7af2f44fd8cd7103713d3e0a7a59c",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 171,
+    "nextCourseId": "d7df026ff1d81047d30da28a958b118f",
+    "courseName": "golang",
+    "lessonId": "9cb7af2f44fd8cd7103713d3e0a7a59c",
+    "nextLessonId": "90508be6ebfbdb4688ca88c34867e4d2",
+    "lessonName": "斐波那契数列",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - 斐波那契数列",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "97d23d2a98db7934c16f39402ad13632",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport \"fmt\"\\n\\nfunc fibonacciRecursive(n int) int {\\n\tif n <= 1 {\\n\t\treturn n\\n\t}\\n\treturn fibonacciRecursive(n-1) + fibonacciRecursive(n-2)\\n}\\n\\nfunc fibonacciIterative(n int) int {\\n\tif n <= 1 {\\n\t\treturn n\\n\t}\\n\\n\ta, b := 0, 1\\n\tfor i := 2; i <= n; i++ {\\n\t\ta, b = b, a+b\\n\t}\\n\treturn b\\n}\\n\\nfunc main() {\\n\tfmt.Println(\"斐波那契数列前10项:\")\\n\tfor i := 0; i < 10; i++ {\\n\t\tfmt.Print(fibonacciIterative(i), \" \")\\n\t}\\n\\n\tfmt.Printf(\"\\n\\n第10项的值: %d\\n\", fibonacciRecursive(10))\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:36.248573+00:00",
+  "request": {
+    "lesson_id": "af044f46a85344a4a8ebaa2a075a57ae",
+    "course_id": "aaf391ebe3c578672e2811298ce699e2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "aaf391ebe3c578672e2811298ce699e2",
+    "order": 543,
+    "nextCourseId": "aaf391ebe3c578672e2811298ce699e2",
+    "courseName": "词语专项",
+    "lessonId": "af044f46a85344a4a8ebaa2a075a57ae",
+    "nextLessonId": "af9637de30311d2f12dc1c830eeb3322",
+    "lessonName": "拟人句3",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "60517d4ba06576268f37cd8ac0153710",
+        "index": 1,
+        "text": [
+          "狐狸真想哈哈大笑。它在地上打着滚，捧着肚子，竭力忍着不笑出声来。小狗感到受了委屈，低着头，含着泪水默默走开了。"
+        ],
+        "pinyin": "[[\"狐\", \"hú\"], [\"狸\", \"lí\"], [\"真\", \"zhēn\"], [\"想\", \"xiǎng\"], [\"哈\", \"hā\"], [\"哈\", \"hā\"], [\"大\", \"dà\"], [\"笑\", \"xiào\"], [\"。\", \"\"], [\"它\", \"tā\"], [\"在\", \"zài\"], [\"地\", \"dì\"], [\"上\", \"shàng\"], [\"打\", \"dǎ\"], [\"着\", \"zhe\"], [\"滚\", \"gǔn\"], [\"，\", \"\"], [\"捧\", \"pěng\"], [\"着\", \"zhe\"], [\"肚\", \"dù\"], [\"子\", \"zi\"], [\"，\", \"\"], [\"竭\", \"jié\"], [\"力\", \"lì\"], [\"忍\", \"rěn\"], [\"着\", \"zhe\"], [\"不\", \"bù\"], [\"笑\", \"xiào\"], [\"出\", \"chū\"], [\"声\", \"shēng\"], [\"来\", \"lái\"], [\"。\", \"\"], [\"小\", \"xiǎo\"], [\"狗\", \"gǒu\"], [\"感\", \"gǎn\"], [\"到\", \"dào\"], [\"受\", \"shòu\"], [\"了\", \"le\"], [\"委\", \"wěi\"], [\"屈\", \"qū\"], [\"，\", \"\"], [\"低\", \"dī\"], [\"着\", \"zhe\"], [\"头\", \"tóu\"], [\"，\", \"\"], [\"含\", \"hán\"], [\"着\", \"zhe\"], [\"泪\", \"lèi\"], [\"水\", \"shuǐ\"], [\"默\", \"mò\"], [\"默\", \"mò\"], [\"走\", \"zǒu\"], [\"开\", \"kāi\"], [\"了\", \"le\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

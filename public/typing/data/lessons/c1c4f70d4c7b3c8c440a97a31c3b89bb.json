@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.255978+00:00",
+  "request": {
+    "lesson_id": "c1c4f70d4c7b3c8c440a97a31c3b89bb",
+    "course_id": "b121644211bd274795ee5972ddf997a2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "b121644211bd274795ee5972ddf997a2",
+    "order": 327,
+    "nextCourseId": "b121644211bd274795ee5972ddf997a2",
+    "courseName": "小学必备古诗75首（1）",
+    "lessonId": "c1c4f70d4c7b3c8c440a97a31c3b89bb",
+    "nextLessonId": "f4699b73fb8c1316b7bc1813448a1994",
+    "lessonName": "赠汪伦",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c3d70911b8ec258d0ae54786c14b4cd6",
+        "index": 1,
+        "text": [
+          "赠汪伦\\n李白\\n李白乘舟将欲行，忽闻岸上踏歌声。\\n桃花潭水深千尺，不及汪伦送我情"
+        ],
+        "pinyin": "[[\"赠\", \"zèng\"], [\"汪\", \"wāng\"], [\"伦\", \"lún\"], [\"\\n\", \"\"], [\"李\", \"lǐ\"], [\"白\", \"bái\"], [\"\\n\", \"\"], [\"李\", \"lǐ\"], [\"白\", \"bái\"], [\"乘\", \"chéng\"], [\"舟\", \"zhōu\"], [\"将\", \"jiāng\"], [\"欲\", \"yù\"], [\"行\", \"xíng\"], [\"，\", \"\"], [\"忽\", \"hū\"], [\"闻\", \"wén\"], [\"岸\", \"àn\"], [\"上\", \"shàng\"], [\"踏\", \"tà\"], [\"歌\", \"gē\"], [\"声\", \"shēng\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"桃\", \"táo\"], [\"花\", \"huā\"], [\"潭\", \"tán\"], [\"水\", \"shuǐ\"], [\"深\", \"shēn\"], [\"千\", \"qiān\"], [\"尺\", \"chǐ\"], [\"，\", \"\"], [\"不\", \"bù\"], [\"及\", \"jí\"], [\"汪\", \"wāng\"], [\"伦\", \"lún\"], [\"送\", \"sòng\"], [\"我\", \"wǒ\"], [\"情\", \"qíng\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

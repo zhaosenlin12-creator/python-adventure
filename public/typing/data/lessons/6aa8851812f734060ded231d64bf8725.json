@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.885636+00:00",
+  "request": {
+    "lesson_id": "6aa8851812f734060ded231d64bf8725",
+    "course_id": "daccefd55478aba6657b64a604f8f971",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "daccefd55478aba6657b64a604f8f971",
+    "order": 151,
+    "nextCourseId": "daccefd55478aba6657b64a604f8f971",
+    "courseName": "注音练习1",
+    "lessonId": "6aa8851812f734060ded231d64bf8725",
+    "nextLessonId": "e1c973a7fdd8ece064985d1410c1533c",
+    "lessonName": "《望岳》",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-wen.691360af01.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "381774ebf6ace66b54be09e198c284dd",
+        "index": 1,
+        "text": [
+          "《望岳》\\n唐：杜甫\\n\\n岱宗夫如何？齐鲁青未了。\\n造化钟神秀，阴阳割昏晓。\\n荡胸生曾云，决眦入归鸟。\\n会当凌绝顶，一览众山小。"
+        ],
+        "pinyin": "[[\"《\", \"\"], [\"望\", \"wàng\"], [\"岳\", \"yuè\"], [\"》\", \"\"], [\"\\n\", \"\"], [\"唐\", \"táng\"], [\"：\", \"\"], [\"杜\", \"dù\"], [\"甫\", \"fǔ\"], [\"\\n\", \"\"], [\"\\n\", \"\"], [\"岱\", \"dài\"], [\"宗\", \"zōng\"], [\"夫\", \"fú\"], [\"如\", \"rú\"], [\"何\", \"hé\"], [\"？\", \"\"], [\"齐\", \"qí\"], [\"鲁\", \"lǔ\"], [\"青\", \"qīng\"], [\"未\", \"wèi\"], [\"了\", \"liǎo\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"造\", \"zào\"], [\"化\", \"huà\"], [\"钟\", \"zhōng\"], [\"神\", \"shén\"], [\"秀\", \"xiù\"], [\"，\", \"\"], [\"阴\", \"yīn\"], [\"阳\", \"yáng\"], [\"割\", \"gē\"], [\"昏\", \"hūn\"], [\"晓\", \"xiǎo\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"荡\", \"dàng\"], [\"胸\", \"xiōng\"], [\"生\", \"shēng\"], [\"曾\", \"céng\"], [\"云\", \"yún\"], [\"，\", \"\"], [\"决\", \"jué\"], [\"眦\", \"zì\"], [\"入\", \"rù\"], [\"归\", \"guī\"], [\"鸟\", \"niǎo\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"会\", \"huì\"], [\"当\", \"dāng\"], [\"凌\", \"líng\"], [\"绝\", \"jué\"], [\"顶\", \"dǐng\"], [\"，\", \"\"], [\"一\", \"yī\"], [\"览\", \"lǎn\"], [\"众\", \"zhòng\"], [\"山\", \"shān\"], [\"小\", \"xiǎo\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 17,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

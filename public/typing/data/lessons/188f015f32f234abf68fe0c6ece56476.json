@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.569212+00:00",
+  "request": {
+    "lesson_id": "188f015f32f234abf68fe0c6ece56476",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 104,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "188f015f32f234abf68fe0c6ece56476",
+    "nextLessonId": "81c8ddad728d1bf33f4f8e97a6c93386",
+    "lessonName": "KET核心词-14",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第14课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "764cccb785e24aa79d4778beac4f23ea",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"clip\",\"pronun\":\"[klɪp]\",\"translation\":\"vi. 剪；修剪；剪下报刊上的文章（或新闻、图片等）；迅速行动；用别针别在某物上，用夹子夹在某物上\\nn. （塑料或金属的）夹子；回纹针；修剪；剪报\\nvt. 剪；剪掉；缩短；给…剪毛（或发\",\"audio\":\"clip.mp3\"},{\"word\":\"clock\",\"pronun\":\"[klɑːk]\",\"translation\":\"n. 时钟；计时器\\nvt. 记录；记时\\nvi. 打卡；记录时间\",\"audio\":\"clock.mp3\"},{\"word\":\"close\",\"pronun\":\"[kloʊz; kloʊs]\",\"translation\":\"n. 结束\\nadj. 紧密的；亲密的；亲近的\\nvt. 关；结束；使靠近\\nvi. 关；结束；关闭\\nadv. 紧密地\",\"audio\":\"close.mp3\"},{\"word\":\"clothes\",\"pronun\":\"[kloʊðz; kloʊz]\",\"translation\":\"n. 衣服\",\"audio\":\"clothes.mp3\"},{\"word\":\"cloud\",\"pronun\":\"[klaʊd]\",\"translation\":\"n. 云；阴云；云状物；一大群；黑斑\\nvt. 使混乱；以云遮敝；使忧郁；玷污\\nvi. 阴沉；乌云密布\",\"audio\":\"cloud.mp3\"},{\"word\":\"clown\",\"pronun\":\"[klaʊn]\",\"translation\":\"n. 小丑；乡下人；粗鲁笨拙的人\\nvi. 扮小丑；装傻\",\"audio\":\"clown.mp3\"},{\"word\":\"club\",\"pronun\":\"[klʌb]\",\"translation\":\"n. 俱乐部，社团；夜总会；棍棒；（扑克牌中的）梅花\\nadj. 俱乐部的\\nvt. 用棍棒打；募集\\nvi. 集资；组成俱乐部\",\"audio\":\"club.mp3\"},{\"word\":\"coach\",\"pronun\":\"[koʊtʃ]\",\"translation\":\"n. 教练；旅客车厢；长途公车；四轮大马车\\nvt. 训练；指导\\nvi. 作指导；接受辅导；坐马车旅行\\nn.  蔻驰（皮革品牌）\",\"audio\":\"coach.mp3\"},{\"word\":\"coal\",\"pronun\":\"[koʊl]\",\"translation\":\"n. 煤；煤块；木炭\\nvt. 给…加煤；把…烧成炭\\nvi. 上煤；加煤\",\"audio\":\"coal.mp3\"},{\"word\":\"coast\",\"pronun\":\"[koʊst]\",\"translation\":\"n. 海岸；滑坡\\nvt. 沿…岸航行\\nvi. 滑行；沿岸航行\",\"audio\":\"coast.mp3\"},{\"word\":\"coffee\",\"pronun\":\"[ˈkɔːfi]\",\"translation\":\"n. 咖啡；咖啡豆；咖啡色\",\"audio\":\"coffee.mp3\"},{\"word\":\"coin\",\"pronun\":\"[kɔɪn]\",\"translation\":\"n. 硬币，钱币\\nvt. 铸造（货币）；杜撰，创造\",\"audio\":\"coin.mp3\"},{\"word\":\"cold\",\"pronun\":\"[kəʊld]\",\"translation\":\"n. 寒冷；感冒\\nadj. 寒冷的；冷淡的，不热情的；失去知觉的\\nadv. 完全地\",\"audio\":\"cold.mp3\"},{\"word\":\"colleague\",\"pronun\":\"[ˈkɑːliːɡ]\",\"translation\":\"n. 同事，同僚\",\"audio\":\"colleague.mp3\"},{\"word\":\"collect\",\"pronun\":\"[kəˈlekt]\",\"translation\":\"vt. 收集；募捐\\nadj. 由收件人付款的\\nvi. 收集；聚集；募捐\\nadv. 由收件人付款地\",\"audio\":\"collect.mp3\"},{\"word\":\"college\",\"pronun\":\"[ˈkɑːlɪdʒ]\",\"translation\":\"n. 大学；学院；学会\",\"audio\":\"college.mp3\"},{\"word\":\"colour\",\"pronun\":\"[ˈkʌlər]\",\"translation\":\"n. 颜色；风格；气色，面色；外貌\\nvt. 把…涂颜色，粉饰；歪曲；使脸红\\nvi. 变色\",\"audio\":\"colour.mp3\"},{\"word\":\"comb\",\"pronun\":\"[koʊm]\",\"translation\":\"n. 梳子；蜂巢；鸡冠\\nvt. 梳头发；梳毛\\nvi. （浪）涌起\",\"audio\":\"comb.mp3\"},{\"word\":\"come\",\"pronun\":\"[kʌm]\",\"translation\":\"vi. 来；开始；出现；发生；变成；到达\\nvt. 做；假装；将满（…岁）\\nint. 嗨！\",\"audio\":\"come.mp3\"},{\"word\":\"comedy\",\"pronun\":\"[ˈkɑːmədi]\",\"translation\":\"n. 喜剧；喜剧性；有趣的事情\",\"audio\":\"comedy.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

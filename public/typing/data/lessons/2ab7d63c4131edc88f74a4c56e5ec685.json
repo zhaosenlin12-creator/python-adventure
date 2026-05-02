@@ -1,0 +1,62 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.662867+00:00",
+  "request": {
+    "lesson_id": "2ab7d63c4131edc88f74a4c56e5ec685",
+    "course_id": "5e52147dad246d64cba012617962b179",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "5e52147dad246d64cba012617962b179",
+    "order": 32,
+    "nextCourseId": "5e52147dad246d64cba012617962b179",
+    "courseName": "基础练习-中排数字",
+    "lessonId": "2ab7d63c4131edc88f74a4c56e5ec685",
+    "nextLessonId": "a0d73011bdf58f3468349a5797f99f15",
+    "lessonName": "5指法练习",
+    "icon": "data/assets/daziya.com/key-icon_num-5.e8d5eb640a.png",
+    "description": "数字输入练习 - 5指法练习",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "881ce8d564c69b40a023edd8e577cee4",
+        "index": 1,
+        "highlights": [
+          "5"
+        ],
+        "text": [
+          "请用右手中指输入数字5"
+        ],
+        "detail": "新的数字键[5]"
+      }
+    ],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "fd2200a38c24fef19675cc7dd6307b26",
+        "index": 2,
+        "text": [
+          "55555555555555555555"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "5",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

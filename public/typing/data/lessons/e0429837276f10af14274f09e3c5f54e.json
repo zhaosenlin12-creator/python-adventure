@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.616070+00:00",
+  "request": {
+    "lesson_id": "e0429837276f10af14274f09e3c5f54e",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 559,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "e0429837276f10af14274f09e3c5f54e",
+    "nextLessonId": "8794e181ede5dd993bf70ac93e44a93e",
+    "lessonName": "The Party",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "347c24bca6662b67d79a76ef187b0abf",
+        "index": 1,
+        "text": [
+          "The Party\\nOne hot summer day, Mouse decided to have a party.\\nMouse walked over to Beaver's house. \"Beaver, please come to my party. I'll be serving bananas,\" said Mouse.\\n\"Bananas? I'll only come if you serve oranges,\" said Beaver.\\n\"Okay,\" said Mouse. \"My friends will like oranges. I'll make sure to pick some up.\"\\nNext, Mouse walked to Rabbit's house. \"Rabbit, please come to my party. I'll be serving oranges,\" said Mouse.\\n\"Oranges? I'll only come if you serve apples,\" said Rabbit.\\n\"Okay,\" said Mouse. But he was puzzled.\\nMouse then walked to Squirrel's house. \"Squirrel, please come to my party. I'll be serving apples,\" said Mouse.\\n\"Apples? I'll only come if you serve bananas,\" said Squirrel.\\n\"Alright!\" exclaimed Mouse.\\nMouse knew exactly what to do. He cut up bananas, oranges and apples. Then, he mixed them all in a bowl.\\n\"Now all of my guests will be happy!\""
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

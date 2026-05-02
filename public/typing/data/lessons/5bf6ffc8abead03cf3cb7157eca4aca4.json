@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.836840+00:00",
+  "request": {
+    "lesson_id": "5bf6ffc8abead03cf3cb7157eca4aca4",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 381,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "5bf6ffc8abead03cf3cb7157eca4aca4",
+    "nextLessonId": "770009cc162b8ad2dcb2799264111be0",
+    "lessonName": "六级词汇正序版-59",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第59课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "93363e0242e382e9ad396dcc403bf8c9",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"inherent\",\"pronun\":\"[ɪnˈherəntˌɪnˈhɪrənt]\",\"translation\":\"adj. 固有的；内在的；与生俱来的，遗传的\",\"audio\":\"inherent.mp3\"},{\"word\":\"inherit\",\"pronun\":\"[ɪnˈherɪt]\",\"translation\":\"vt. 继承；遗传而得\\nvi. 成为继承人\",\"audio\":\"inherit.mp3\"},{\"word\":\"inhibit\",\"pronun\":\"[ɪnˈhɪbɪt]\",\"translation\":\"vt. 抑制；禁止\",\"audio\":\"inhibit.mp3\"},{\"word\":\"initial\",\"pronun\":\"[ɪˈnɪʃl]\",\"translation\":\"n. 词首大写字母\\nadj. 最初的；字首的\\nvt. 用姓名的首字母签名\",\"audio\":\"initial.mp3\"},{\"word\":\"initiate\",\"pronun\":\"[ɪˈnɪʃieɪt]\",\"translation\":\"n. 开始；新加入者，接受初步知识者\\nvt. 开始，创始；发起；使初步了解\\nadj. 新加入的；接受初步知识的\",\"audio\":\"initiate.mp3\"},{\"word\":\"initiative\",\"pronun\":\"[ɪˈnɪʃətɪv]\",\"translation\":\"n. 主动权；首创精神\\nadj. 主动的；自发的；起始的\",\"audio\":\"initiative.mp3\"},{\"word\":\"inject\",\"pronun\":\"[ɪnˈdʒekt]\",\"translation\":\"vt. 注入；注射\",\"audio\":\"inject.mp3\"},{\"word\":\"inland\",\"pronun\":\"[ˌɪnˈlænd; ˈɪnlænd]\",\"translation\":\"n. 内地；内陆\\nadj. 内陆的；内地的；国内的\\nadv. 在内地；向内地；向内陆；在内陆\",\"audio\":\"inland.mp3\"},{\"word\":\"inlet\",\"pronun\":\"[ˈɪnlet]\",\"translation\":\"n. 入口，进口；插入物；水湾\\nv. 引进; 嵌入; 插入;\",\"audio\":\"inlet.mp3\"},{\"word\":\"innovation\",\"pronun\":\"[ˌɪnəˈveɪʃn]\",\"translation\":\"n. 创新，革新；新方法\",\"audio\":\"innovation.mp3\"},{\"word\":\"innumerable\",\"pronun\":\"[ɪˈnuːmərəbl]\",\"translation\":\"adj. 无数的，数不清的\",\"audio\":\"innumerable.mp3\"},{\"word\":\"input\",\"pronun\":\"[ˈɪnpʊt]\",\"translation\":\"n. 投入；输入电路\\nvt. [自][电子] 输入；将…输入电脑\",\"audio\":\"input.mp3\"},{\"word\":\"insane\",\"pronun\":\"[ɪnˈseɪn]\",\"translation\":\"adj. 疯狂的；精神病的；极愚蠢的\",\"audio\":\"insane.mp3\"},{\"word\":\"insect\",\"pronun\":\"[ˈɪnsekt]\",\"translation\":\"n. 昆虫；卑鄙的人\",\"audio\":\"insect.mp3\"},{\"word\":\"insert\",\"pronun\":\"[ɪnˈsɜːrt]\",\"translation\":\"n. 插入物；管芯；镶块；[机械]刀片\\nvt. 插入；嵌入\",\"audio\":\"insert.mp3\"},{\"word\":\"insight\",\"pronun\":\"[ˈɪnsaɪt]\",\"translation\":\"n. 洞察力；洞悉\",\"audio\":\"insight.mp3\"},{\"word\":\"insist\",\"pronun\":\"[ɪnˈsɪst]\",\"translation\":\"vi. 坚持，强调\\nvt. 坚持，强调\",\"audio\":\"insist.mp3\"},{\"word\":\"inspiration\",\"pronun\":\"[ˌɪnspəˈreɪʃn]\",\"translation\":\"n. 灵感；鼓舞；吸气；妙计\",\"audio\":\"inspiration.mp3\"},{\"word\":\"inspire\",\"pronun\":\"[ɪnˈspaɪər]\",\"translation\":\"vt. 激发；鼓舞；启示；产生；使生灵感\",\"audio\":\"inspire.mp3\"},{\"word\":\"install\",\"pronun\":\"[ɪnˈstɔːl]\",\"translation\":\"vt. 安装；任命；安顿\",\"audio\":\"install.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

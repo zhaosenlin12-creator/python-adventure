@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.838717+00:00",
+  "request": {
+    "lesson_id": "9ccf10339e377acaa2f356a2bf8995e5",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 163,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "9ccf10339e377acaa2f356a2bf8995e5",
+    "nextLessonId": "ce5f78d04dda3e7fdd4c85dd40748bf9",
+    "lessonName": "KET核心词-54",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第54课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2eae3b0f80702dbfda4a7935a7759e37",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"rest\",\"pronun\":\"[rest]\",\"translation\":\"n. 休息，静止；休息时间；剩余部分；支架\\nvt. 使休息，使轻松；把…寄托于\\nvi. 休息；静止；依赖；安置\",\"audio\":\"rest.mp3\"},{\"word\":\"restaurant\",\"pronun\":\"[ˈrestrɑːnt; ˈrestərɑːnt]\",\"translation\":\"n. 餐馆；[经] 饭店\",\"audio\":\"restaurant.mp3\"},{\"word\":\"retire\",\"pronun\":\"[rɪˈtaɪər]\",\"translation\":\"n. 退休；退隐；退兵信号\\nvi. 退休；撤退；退却\\nvt. 退休；离开；收回\",\"audio\":\"retire.mp3\"},{\"word\":\"return\",\"pronun\":\"[rɪˈtɜːrn]\",\"translation\":\"vi. 返回；报答\\nadj. 报答的；回程的；返回的\\nvt. 返回；报答\\nn. 返回；归还；回球\",\"audio\":\"return.mp3\"},{\"word\":\"reuse\",\"pronun\":\"[ˌriːˈjuːz]\",\"translation\":\"n. 重新使用，再用\\nvt. 再使用\",\"audio\":\"reuse.mp3\"},{\"word\":\"review\",\"pronun\":\"[rɪˈvjuː]\",\"translation\":\"n. 回顾；复习；评论；检讨；检阅\\nvt. 回顾；检查；复审\\nvi. 回顾；复习功课；写评论\",\"audio\":\"review.mp3\"},{\"word\":\"rice\",\"pronun\":\"[raɪs]\",\"translation\":\"n. 稻；米饭\\nvt. 把…捣成米糊状\",\"audio\":\"rice.mp3\"},{\"word\":\"rich\",\"pronun\":\"[rɪtʃ]\",\"translation\":\"adj. 富有的；肥沃的；昂贵的\\nadj. 油腻的，含有很多脂肪\",\"audio\":\"rich.mp3\"},{\"word\":\"riddle\",\"pronun\":\"[ˈrɪdl]\",\"translation\":\"n. 谜语；粗筛；谜一般的人、东西、事情等\\nvt. 解谜；给...出谜；充满于\\nvi. 出谜\",\"audio\":\"riddle.mp3\"},{\"word\":\"ride\",\"pronun\":\"[raɪd]\",\"translation\":\"n. 骑；乘坐；交通工具；可供骑行的路；（乘坐汽车等的）旅行；乘骑；（乘车或骑车的）短途旅程；供乘骑的游乐设施\\nvi. 骑马；乘车；依靠；漂浮\\nvt. 骑；乘；控制；（骑马、自行车等）穿越；搭乘；飘浮\",\"audio\":\"ride.mp3\"},{\"word\":\"right\",\"pronun\":\"[raɪt]\",\"translation\":\"n. 正确；右边；正义\\nadj. 正确的；直接的；右方的\\nvt. 纠正\\nadv. 正确地；恰当地；彻底地\\nvi. 复正；恢复平稳\",\"audio\":\"right.mp3\"},{\"word\":\"ring\",\"pronun\":\"[rɪŋ]\",\"translation\":\"n. 戒指；铃声，钟声；拳击场；环形物\\nvi. 按铃；敲钟；回响；成环形\\nvt. 按铃；包围；敲钟；套住\",\"audio\":\"ring.mp3\"},{\"word\":\"river\",\"pronun\":\"[ˈrɪvər]\",\"translation\":\"n. 河，江\",\"audio\":\"river.mp3\"},{\"word\":\"road\",\"pronun\":\"[roʊd]\",\"translation\":\"n. 公路，马路；道路；手段\\nadj. （美）巡回的\\nvt. （狗）沿臭迹追逐（猎物）\",\"audio\":\"road.mp3\"},{\"word\":\"robber\",\"pronun\":\"[ˈrɑːbər]\",\"translation\":\"n. 强盗；盗贼\",\"audio\":\"robber.mp3\"},{\"word\":\"robot\",\"pronun\":\"[ˈroʊbɑːt]\",\"translation\":\"n. 机器人；遥控设备，自动机械；机械般工作的人\",\"audio\":\"robot.mp3\"},{\"word\":\"rock\",\"pronun\":\"[rɑːk]\",\"translation\":\"n. 岩石；摇滚乐；暗礁\\nvt. 摇动；使摇晃\\nvi. 摇动；摇晃\",\"audio\":\"rock.mp3\"},{\"word\":\"rocket\",\"pronun\":\"[ˈrɑːkɪt]\",\"translation\":\"n. 火箭\\nvt. 用火箭运载\\nvi. 飞驰，飞快地移动；迅速增加\",\"audio\":\"rocket.mp3\"},{\"word\":\"role\",\"pronun\":\"[roʊl]\",\"translation\":\"n. 角色；任务\",\"audio\":\"role.mp3\"},{\"word\":\"roll\",\"pronun\":\"[roʊl]\",\"translation\":\"n. 卷，卷形物；名单；摇晃\\nvt. 卷；滚动，转动；辗\\nvi. 卷；滚动；转动；起伏，摇晃\",\"audio\":\"roll.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

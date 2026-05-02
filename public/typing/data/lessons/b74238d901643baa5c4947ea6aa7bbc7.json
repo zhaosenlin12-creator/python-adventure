@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.229167+00:00",
+  "request": {
+    "lesson_id": "b74238d901643baa5c4947ea6aa7bbc7",
+    "course_id": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "order": 463,
+    "nextCourseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "courseName": "英语每日故事（初级）1-31",
+    "lessonId": "b74238d901643baa5c4947ea6aa7bbc7",
+    "nextLessonId": "0a903e540730870ac1fbb79415b33217",
+    "lessonName": "Save the World",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1f9baa8377c9ea2f0a0cc770ed95ae9f",
+        "index": 1,
+        "text": [
+          "One day, Simon's mother asks him what he wants to do when he grows up.\\n\"Save the world!\" he says.\\nHis mother smiles and says, \"I'm glad to hear that. But can you save your world first?\"\\n\"What?\" asks Simon.\\n\"Yes... I can!\" says Simon."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

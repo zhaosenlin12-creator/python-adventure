@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.874383+00:00",
+  "request": {
+    "lesson_id": "afff6489320267f0aa6fe75549f66fe2",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 390,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "afff6489320267f0aa6fe75549f66fe2",
+    "nextLessonId": "f3bb7fc38e6ad2b6c8049a1985f69b03",
+    "lessonName": "六级词汇正序版-86",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第86课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "caa604512579722d793735b9fccc21d8",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"protein\",\"pronun\":\"[ˈproʊtiːn]\",\"translation\":\"n. 蛋白质；朊\\nadj. 蛋白质的\",\"audio\":\"protein.mp3\"},{\"word\":\"protest\",\"pronun\":\"[ˈproʊtest; prəˈtest]\",\"translation\":\"n. 抗议\\nadj. 表示抗议的；抗议性的\\nvt. 抗议；断言\\nvi. 抗议；断言\",\"audio\":\"protest.mp3\"},{\"word\":\"prototype\",\"pronun\":\"[ˈproʊtətaɪp]\",\"translation\":\"n. 原型；标准，模范\",\"audio\":\"prototype.mp3\"},{\"word\":\"provided\",\"pronun\":\"[prəˈvaɪdɪd]\",\"translation\":\"conj. 假如；倘若\\nv. 提供；给予（provide的过去式）\",\"audio\":\"provided.mp3\"},{\"word\":\"provision\",\"pronun\":\"[prəˈvɪʒn]\",\"translation\":\"n. 规定；条款；准备；[经] 供应品\\nvt. 供给…食物及必需品\",\"audio\":\"provision.mp3\"},{\"word\":\"provocative\",\"pronun\":\"[prəˈvɑːkətɪv]\",\"translation\":\"n. 刺激物，挑拨物；兴奋剂\\nadj. 刺激的，挑拨的；气人的\",\"audio\":\"provocative.mp3\"},{\"word\":\"provoke\",\"pronun\":\"[prəˈvoʊk]\",\"translation\":\"vt. 驱使；激怒；煽动；惹起\",\"audio\":\"provoke.mp3\"},{\"word\":\"proximity\",\"pronun\":\"\",\"translation\":\"\",\"audio\":\"proximity.mp3\"},{\"word\":\"prune\",\"pronun\":\"[pruːn]\",\"translation\":\"n. 深紫红色；傻瓜；李子干\\nvt. 修剪；删除；剪去\\nvi. 删除；减少\",\"audio\":\"prune.mp3\"},{\"word\":\"psychiatrist\",\"pronun\":\"[saɪˈkaɪətrɪst]\",\"translation\":\"n. 精神病学家，精神病医生\",\"audio\":\"psychiatrist.mp3\"},{\"word\":\"psychological\",\"pronun\":\"[ˌsaɪkəˈlɑːdʒɪkl]\",\"translation\":\"adj. 心理的；心理学的；精神上的\",\"audio\":\"psychological.mp3\"},{\"word\":\"pudding\",\"pronun\":\"[ˈpʊdɪŋ]\",\"translation\":\"n. 布丁\",\"audio\":\"pudding.mp3\"},{\"word\":\"pumpkin\",\"pronun\":\"[ˈpʌmpkɪn]\",\"translation\":\"n. 南瓜\",\"audio\":\"pumpkin.mp3\"},{\"word\":\"purchase\",\"pronun\":\"[ˈpɜːrtʃəs]\",\"translation\":\"n. 购买；紧握；起重装置\\nvt. 购买；赢得\\nvi. 购买东西\",\"audio\":\"purchase.mp3\"},{\"word\":\"purify\",\"pronun\":\"[ˈpjʊrɪfaɪ]\",\"translation\":\"vt. 净化；使纯净\\nvi. 净化；变纯净\",\"audio\":\"purify.mp3\"},{\"word\":\"purity\",\"pronun\":\"[ˈpjʊrəti]\",\"translation\":\"n. [化学] 纯度；纯洁；纯净；纯粹\",\"audio\":\"purity.mp3\"},{\"word\":\"pursue\",\"pronun\":\"[pərˈsuː]\",\"translation\":\"vi. 追赶；继续进行\\nvt. 继续；从事；追赶；纠缠\",\"audio\":\"pursue.mp3\"},{\"word\":\"pursuit\",\"pronun\":\"[pərˈsuːt]\",\"translation\":\"n. 追赶，追求；职业，工作\",\"audio\":\"pursuit.mp3\"},{\"word\":\"qualitative\",\"pronun\":\"[ˈkwɑːlɪteɪtɪv]\",\"translation\":\"adj. 定性的；质的，性质上的\",\"audio\":\"qualitative.mp3\"},{\"word\":\"quantify\",\"pronun\":\"[ˈkwɑːntɪfaɪ]\",\"translation\":\"vt. 量化；为…定量；确定数量\\nvi. 量化；定量\",\"audio\":\"quantify.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.693544+00:00",
+  "request": {
+    "lesson_id": "8f0a4c057848b8d5b0b03c5599712e9b",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 356,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "8f0a4c057848b8d5b0b03c5599712e9b",
+    "nextLessonId": "cbd9503dc11c53f8265c5e3c8b0e8f65",
+    "lessonName": "六级词汇正序版-121",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第121课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "fa4b372ce3ab7fc565cf00fc3714df28",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"demonstration\",\"pronun\":\"[ˌdemənˈstreɪʃn]\",\"translation\":\"n. 示范；证明；示威游行\",\"audio\":\"demonstration.mp3\"},{\"word\":\"deplore\",\"pronun\":\"[dɪˈplɔːr]\",\"translation\":\"vt. 谴责；悲悼；哀叹；对…深感遗憾\",\"audio\":\"deplore.mp3\"},{\"word\":\"depressed\",\"pronun\":\"[dɪˈprest]\",\"translation\":\"adj. 沮丧的；萧条的；压低的\\nv. 使沮丧；使萧条（depress的过去式和过去分词形式）；压低\",\"audio\":\"depressed.mp3\"},{\"word\":\"devastating\",\"pronun\":\"[ˈdevəsteɪtɪŋ]\",\"translation\":\"adj. 毁灭性的；全然的\\nv. 摧毁（devastate的ing形式）；毁坏\",\"audio\":\"devastating.mp3\"},{\"word\":\"devotion\",\"pronun\":\"[dɪˈvoʊʃn]\",\"translation\":\"n. 献身，奉献；忠诚；热爱\",\"audio\":\"devotion.mp3\"},{\"word\":\"diagnosis\",\"pronun\":\"[ˌdaɪəɡˈnoʊsɪs]\",\"translation\":\"n. 诊断\",\"audio\":\"diagnosis.mp3\"},{\"word\":\"disapprove\",\"pronun\":\"[ˌdɪsəˈpruːv]\",\"translation\":\"vi. 不赞成；不喜欢\\nvt. 不赞成；不同意\",\"audio\":\"disapprove.mp3\"},{\"word\":\"disconnect\",\"pronun\":\"[ˌdɪskəˈnekt]\",\"translation\":\"vt. 拆开，使分离\\nvi. 断开\",\"audio\":\"disconnect.mp3\"},{\"word\":\"discrimination\",\"pronun\":\"[dɪˌskrɪmɪˈneɪʃn]\",\"translation\":\"n. 歧视；区别，辨别；识别力\",\"audio\":\"discrimination.mp3\"},{\"word\":\"diverted\",\"pronun\":\"[daɪˈvɜːrt]\",\"translation\":\"v. 呼叫转移，释放（divert的过去分词形式）\",\"audio\":\"diverted.mp3\"},{\"word\":\"doubtfully\",\"pronun\":\"[ˈdaʊtfəli]\",\"translation\":\"adv. 怀疑地；含糊地\",\"audio\":\"doubtfully.mp3\"},{\"word\":\"downfall\",\"pronun\":\"[ˈdaʊnfɔːl]\",\"translation\":\"n. 垮台；衰败；落下；大雨\",\"audio\":\"downfall.mp3\"},{\"word\":\"dramatically\",\"pronun\":\"[drəˈmætɪkli]\",\"translation\":\"adv. 戏剧地；引人注目地\\nadv. 显著地，剧烈地\",\"audio\":\"dramatically.mp3\"},{\"word\":\"drastically\",\"pronun\":\"[ˈdræstɪkli]\",\"translation\":\"adv. 彻底地；激烈地\",\"audio\":\"drastically.mp3\"},{\"word\":\"dressing\",\"pronun\":\"[ˈdresɪŋ]\",\"translation\":\"n. 穿衣；加工；调味品；装饰；梳理\\nv. 给…穿衣；为…打扮（dress的现在分词）\",\"audio\":\"dressing.mp3\"},{\"word\":\"duke\",\"pronun\":\"[duːk]\",\"translation\":\"n. 公爵，（公国的）君主；公爵（种）樱桃\",\"audio\":\"duke.mp3\"},{\"word\":\"embryo\",\"pronun\":\"[ˈembrioʊ]\",\"translation\":\"n. [胚] 胚胎；胚芽；初期\\nadj. 胚胎的；初期的\",\"audio\":\"embryo.mp3\"},{\"word\":\"emergence\",\"pronun\":\"[ɪˈmɜːrdʒəns]\",\"translation\":\"n. 出现，浮现；发生；露头\",\"audio\":\"emergence.mp3\"},{\"word\":\"emission\",\"pronun\":\"[ɪˈmɪʃn]\",\"translation\":\"n. （光、热等的）发射，散发；喷射；发行\",\"audio\":\"emission.mp3\"},{\"word\":\"empirically\",\"pronun\":\"[ɪmˈpɪrɪkli]\",\"translation\":\"adv. 以经验为主地\",\"audio\":\"empirically.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

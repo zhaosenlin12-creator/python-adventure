@@ -1,0 +1,94 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.565119+00:00",
+  "request": {
+    "lesson_id": "8da4bc7b1170a01afd6ee23001659a74",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 5,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "8da4bc7b1170a01afd6ee23001659a74",
+    "nextLessonId": "74501b9861eb67b480f85728c042e71c",
+    "lessonName": "单韵母i、u、v",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母i、u、v的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "ffa94e8099f37ceab038f1d23d4a8bcd",
+        "index": 1,
+        "highlights": [
+          "i"
+        ],
+        "text": [
+          "请输入按键 [i]"
+        ],
+        "detail": "学习双拼按键 i"
+      },
+      {
+        "chapterId": "ed54df97153ac705060809df70a441ce",
+        "index": 2,
+        "highlights": [
+          "u"
+        ],
+        "text": [
+          "请输入按键 [u]"
+        ],
+        "detail": "学习双拼按键 u"
+      },
+      {
+        "chapterId": "ade1f9522ce944c484ef24c4858bdeb2",
+        "index": 3,
+        "highlights": [
+          "v"
+        ],
+        "text": [
+          "请输入按键 [v]"
+        ],
+        "detail": "学习双拼按键 v"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "a68667b264f6e5d732c354a14fe5879b",
+        "index": 4,
+        "text": [
+          "iiiiuuuuvvvviuviuviuviuv"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "67d0aacdd038458a493c1ee9b0d881a3",
+        "index": 5,
+        "text": [
+          "雨后的竹林里，翠绿的竹笋破土而出，露珠在叶尖闪烁，几只小鸟在枝头嬉戏，远处的溪流潺潺流淌。"
+        ],
+        "pinyin": "[[\"雨\", \"yǔ\"], [\"后\", \"hòu\"], [\"的\", \"de\"], [\"竹\", \"zhú\"], [\"林\", \"lín\"], [\"里\", \"lǐ\"], [\"，\", \"\"], [\"翠\", \"cuì\"], [\"绿\", \"lǜ\"], [\"的\", \"de\"], [\"竹\", \"zhú\"], [\"笋\", \"sǔn\"], [\"破\", \"pò\"], [\"土\", \"tǔ\"], [\"而\", \"ér\"], [\"出\", \"chū\"], [\"，\", \"\"], [\"露\", \"lù\"], [\"珠\", \"zhū\"], [\"在\", \"zài\"], [\"叶\", \"yè\"], [\"尖\", \"jiān\"], [\"闪\", \"shǎn\"], [\"烁\", \"shuò\"], [\"，\", \"\"], [\"几\", \"jǐ\"], [\"只\", \"zhī\"], [\"小\", \"xiǎo\"], [\"鸟\", \"niǎo\"], [\"在\", \"zài\"], [\"枝\", \"zhī\"], [\"头\", \"tóu\"], [\"嬉\", \"xī\"], [\"戏\", \"xì\"], [\"，\", \"\"], [\"远\", \"yuǎn\"], [\"处\", \"chù\"], [\"的\", \"de\"], [\"溪\", \"xī\"], [\"流\", \"liú\"], [\"潺\", \"chán\"], [\"潺\", \"chán\"], [\"流\", \"liú\"], [\"淌\", \"tǎng\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.631807+00:00",
+  "request": {
+    "lesson_id": "998a81522c2e6cb0d0e77af7ed871b0a",
+    "course_id": "3b877f6987801a51996848da3c925322",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "3b877f6987801a51996848da3c925322",
+    "order": 88,
+    "nextCourseId": "3b877f6987801a51996848da3c925322",
+    "courseName": "手指旅行",
+    "lessonId": "998a81522c2e6cb0d0e77af7ed871b0a",
+    "nextLessonId": "28ddfa1e27a323be1e94007de8fb1255",
+    "lessonName": "手指旅行 !",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-hand-travel.014c434abe.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "872fb8317b7746f11e303cd980d34544",
+        "index": 1,
+        "text": [
+          "A!Z!Q! Z!Q!A!Z!Q! Q!Z!A! Z!Q!A! A!Q!Z! Q!A!Z!Q!Z! Q!Z!A! Q!Z!Q!A!"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "A!Z Q",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

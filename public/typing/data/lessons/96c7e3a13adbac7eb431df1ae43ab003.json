@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.695112+00:00",
+  "request": {
+    "lesson_id": "96c7e3a13adbac7eb431df1ae43ab003",
+    "course_id": "f5e1caafe742206a7fc8abc95cf77b44",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "order": 332,
+    "nextCourseId": "c02abec1127900f16353dac5e0b02419",
+    "courseName": "诗词歌赋",
+    "lessonId": "96c7e3a13adbac7eb431df1ae43ab003",
+    "nextLessonId": "50beb417e7fcd6d7bba56e5bc7dc091f",
+    "lessonName": "游戏：英文单词",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-duck.b036f0ad8f.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "5a837d1e896604a2e78def055d56d48d",
+        "index": 1,
+        "text": [
+          "correct person again history avenue cannot sighed delight useful"
+        ],
+        "contentType": 3,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

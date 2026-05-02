@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.737217+00:00",
+  "request": {
+    "lesson_id": "799252c7e9a225c08d3071f252a24930",
+    "course_id": "df7bf8b8c0456926de2c1fac14a741b2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "order": 443,
+    "nextCourseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "courseName": "宋词必备67首（1）",
+    "lessonId": "799252c7e9a225c08d3071f252a24930",
+    "nextLessonId": "414e17c4d04ddf2d155f2e6c7833fd72",
+    "lessonName": "梅花",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ef3e8db2ba37982c97b88f3e30280101",
+        "index": 1,
+        "text": [
+          "梅花\\n王安石\\n墙角数枝梅，凌寒独自开。\\n遥知不是雪，为有暗香来。"
+        ],
+        "pinyin": "[[\"梅\", \"méi\"], [\"花\", \"huā\"], [\"\\n\", \"\"], [\"王\", \"sòng\"], [\"安\", \"wáng\"], [\"石\", \"ān\"], [\"\\n\", \"\"], [\"墙\", \"shí\"], [\"角\", \"qiáng\"], [\"数\", \"jiǎo\"], [\"枝\", \"shù\"], [\"梅\", \"zhī\"], [\"，\", \"\"], [\"凌\", \"méi\"], [\"寒\", \"líng\"], [\"独\", \"hán\"], [\"自\", \"dú\"], [\"开\", \"zì\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"遥\", \"kāi\"], [\"知\", \"yáo\"], [\"不\", \"zhī\"], [\"是\", \"bù\"], [\"雪\", \"shì\"], [\"，\", \"\"], [\"为\", \"xuě\"], [\"有\", \"wèi\"], [\"暗\", \"yǒu\"], [\"香\", \"àn\"], [\"来\", \"xiāng\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

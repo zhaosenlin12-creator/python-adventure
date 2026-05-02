@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.357491+00:00",
+  "request": {
+    "lesson_id": "eb4b67b475ecd5a2c1ce0dcc83441b0e",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 180,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "golang",
+    "lessonId": "eb4b67b475ecd5a2c1ce0dcc83441b0e",
+    "nextLessonId": "64ec62df20d3027362db4d74bf879d89",
+    "lessonName": "汉诺塔问题",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - 汉诺塔问题",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c204fe14a9453231d3a4bf2ac4349a87",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport (\\n\t\"fmt\"\\n\t\"math\"\\n)\\n\\nfunc hanoi(n int, source, target, auxiliary rune) {\\n\tif n == 1 {\\n\t\tfmt.Printf(\"移动盘子 1 从 %c 到 %c\\n\", source, target)\\n\t\treturn\\n\t}\\n\\n\thanoi(n-1, source, auxiliary, target)\\n\tfmt.Printf(\"移动盘子 %d 从 %c 到 %c\\n\", n, source, target)\\n\thanoi(n-1, auxiliary, target, source)\\n}\\n\\nfunc countMoves(n int) int {\\n\treturn int(math.Pow(2, float64(n))) - 1\\n}\\n\\nfunc main() {\\n\tn := 3\\n\\n\tfmt.Printf(\"汉诺塔问题: %d 个盘子\\n\", n)\\n\tfmt.Printf(\"需要移动 %d 次\\n\\n\", countMoves(n))\\n\tfmt.Println(\"移动步骤:\")\\n\thanoi(n, 'A', 'C', 'B')\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

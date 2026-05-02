@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.725860+00:00",
+  "request": {
+    "lesson_id": "7d8bef5ab1f23984bd031c2a08d5cd52",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 362,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "7d8bef5ab1f23984bd031c2a08d5cd52",
+    "nextLessonId": "efc41b96fe14545b439c90750221ba2f",
+    "lessonName": "六级词汇正序版-2",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第2课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "28cb8c3a0852c851981b710edaf54f2c",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"accompany\",\"pronun\":\"[əˈkʌmpəni]\",\"translation\":\"vt. 陪伴，伴随；伴奏\\nvi. 伴奏，伴唱\",\"audio\":\"accompany.mp3\"},{\"word\":\"accomplish\",\"pronun\":\"[əˈkɑːmplɪʃ]\",\"translation\":\"vt. 完成；实现；达到\",\"audio\":\"accomplish.mp3\"},{\"word\":\"accord\",\"pronun\":\"[əˈkɔːrd]\",\"translation\":\"n. 符合；一致；协议；自愿\\nvt. 使一致；给予\\nvi. 符合；一致\",\"audio\":\"accord.mp3\"},{\"word\":\"accordance\",\"pronun\":\"[əˈkɔːrdns]\",\"translation\":\"n. 一致；和谐\",\"audio\":\"accordance.mp3\"},{\"word\":\"account\",\"pronun\":\"[əˈkaʊnt]\",\"translation\":\"n. 账户；解释；账目，账单；理由；描述\\nvt. 认为；把…视为\\nvi. 解释；导致；报账\",\"audio\":\"account.mp3\"},{\"word\":\"accumulate\",\"pronun\":\"[əˈkjuːmjəleɪt]\",\"translation\":\"vt. 积攒\\nvi. 累积；积聚\",\"audio\":\"accumulate.mp3\"},{\"word\":\"accurate\",\"pronun\":\"[ˈækjərət]\",\"translation\":\"adj. 精确的\",\"audio\":\"accurate.mp3\"},{\"word\":\"accuse\",\"pronun\":\"[əˈkjuːz]\",\"translation\":\"vt. 控告，指控；谴责；归咎于\\nvi. 指责；控告\",\"audio\":\"accuse.mp3\"},{\"word\":\"accustomed\",\"pronun\":\"[əˈkʌstəmd]\",\"translation\":\"v. 使习惯于（accustom的过去分词）\\nadj. 习惯的；通常的；独有的\",\"audio\":\"accustomed.mp3\"},{\"word\":\"achievement\",\"pronun\":\"[əˈtʃiːvmənt]\",\"translation\":\"n. 成就；完成；达到；成绩\",\"audio\":\"achievement.mp3\"},{\"word\":\"acid\",\"pronun\":\"[ˈæsɪd]\",\"translation\":\"n. 酸；<俚>迷幻药\\nadj. 酸的；讽刺的；刻薄的\",\"audio\":\"acid.mp3\"},{\"word\":\"acknowledge\",\"pronun\":\"[əkˈnɑːlɪdʒ]\",\"translation\":\"vt. 承认；答谢；报偿；告知已收到\",\"audio\":\"acknowledge.mp3\"},{\"word\":\"acquaint\",\"pronun\":\"[əˈkweɪnt]\",\"translation\":\"vt. 使熟悉；使认识\",\"audio\":\"acquaint.mp3\"},{\"word\":\"acquaintance\",\"pronun\":\"[əˈkweɪntəns]\",\"translation\":\"n. 熟人；相识；了解；知道\",\"audio\":\"acquaintance.mp3\"},{\"word\":\"acquire\",\"pronun\":\"[əˈkwaɪər]\",\"translation\":\"vt. 获得；取得；学到；捕获\",\"audio\":\"acquire.mp3\"},{\"word\":\"activate\",\"pronun\":\"[ˈæktɪveɪt]\",\"translation\":\"vt. 刺激；使活动；使活泼；使产生放射性\\nvi. 激活；有活力\",\"audio\":\"activate.mp3\"},{\"word\":\"acute\",\"pronun\":\"[əˈkjuːt]\",\"translation\":\"adj. 严重的，[医] 急性的；敏锐的；激烈的；尖声的\",\"audio\":\"acute.mp3\"},{\"word\":\"adapt\",\"pronun\":\"[əˈdæpt]\",\"translation\":\"vi. 适应\\nvt. 使适应；改编\",\"audio\":\"adapt.mp3\"},{\"word\":\"addict\",\"pronun\":\"[ˈædɪkt]\",\"translation\":\"n. 有瘾的人；入迷的人\\nvt. 使沉溺；使上瘾\",\"audio\":\"addict.mp3\"},{\"word\":\"addition\",\"pronun\":\"[əˈdɪʃn]\",\"translation\":\"n. 添加；[数] 加法；增加物\",\"audio\":\"addition.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

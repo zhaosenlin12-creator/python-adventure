@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.544413+00:00",
+  "request": {
+    "lesson_id": "9e5713bd107a750714b33f29133d1016",
+    "course_id": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "order": 393,
+    "nextCourseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "courseName": "初中必背古诗60首（1）",
+    "lessonId": "9e5713bd107a750714b33f29133d1016",
+    "nextLessonId": "aa594c7e2e69bf13c141cd94c1e0e772",
+    "lessonName": "闻王昌龄左迁龙标遥有此寄",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3300443ab37dc6611d4709d53ee39c02",
+        "index": 1,
+        "text": [
+          "闻王昌龄左迁龙标遥有此寄\\n李白\\n杨花落尽子规啼，闻道龙标过五溪。\\n我寄愁心与明月，随风直到夜郎西。"
+        ],
+        "pinyin": "[[\"闻\", \"wén\"], [\"王\", \"wáng\"], [\"昌\", \"chāng\"], [\"龄\", \"líng\"], [\"左\", \"zuǒ\"], [\"迁\", \"qiān\"], [\"龙\", \"lóng\"], [\"标\", \"biāo\"], [\"遥\", \"yáo\"], [\"有\", \"yǒu\"], [\"此\", \"cǐ\"], [\"寄\", \"jì\"], [\"\\n\", \"\"], [\"李\", \"lǐ\"], [\"白\", \"bái\"], [\"\\n\", \"\"], [\"杨\", \"yáng\"], [\"花\", \"huā\"], [\"落\", \"luò\"], [\"尽\", \"jìn\"], [\"子\", \"zǐ\"], [\"规\", \"guī\"], [\"啼\", \"tí\"], [\"，\", \"\"], [\"闻\", \"wén\"], [\"道\", \"dào\"], [\"龙\", \"lóng\"], [\"标\", \"biāo\"], [\"过\", \"guò\"], [\"五\", \"wǔ\"], [\"溪\", \"xī\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"我\", \"wǒ\"], [\"寄\", \"jì\"], [\"愁\", \"chóu\"], [\"心\", \"xīn\"], [\"与\", \"yǔ\"], [\"明\", \"míng\"], [\"月\", \"yuè\"], [\"，\", \"\"], [\"随\", \"suí\"], [\"风\", \"fēng\"], [\"直\", \"zhí\"], [\"到\", \"dào\"], [\"夜\", \"yè\"], [\"郎\", \"láng\"], [\"西\", \"xī\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

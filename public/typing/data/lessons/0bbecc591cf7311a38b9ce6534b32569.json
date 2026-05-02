@@ -1,0 +1,73 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:33.576257+00:00",
+  "request": {
+    "lesson_id": "0bbecc591cf7311a38b9ce6534b32569",
+    "course_id": "c34575de8400552068ca0d9da0898f18",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "c34575de8400552068ca0d9da0898f18",
+    "order": 1,
+    "nextCourseId": "c34575de8400552068ca0d9da0898f18",
+    "courseName": "语文课内同步一年级上册",
+    "lessonId": "0bbecc591cf7311a38b9ce6534b32569",
+    "nextLessonId": "95670a8b796b1c628fef35046e18ec78",
+    "lessonName": "开始汉字练习",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-1.9469a0e56b.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "dccc0a85ef9fd5c904338a1e5553eff6",
+        "index": 1,
+        "highlights": [
+          " "
+        ],
+        "text": [
+          "真棒！恭喜您成功完成了基础训练。"
+        ],
+        "detail": "-"
+      },
+      {
+        "chapterId": "e488c553086858375b479dcc535baf69",
+        "index": 2,
+        "highlights": [
+          " "
+        ],
+        "text": [
+          "接下来我们将进行真正的汉字练习"
+        ],
+        "detail": "-"
+      }
+    ],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "dfe382348dc0047c1da49a15ac72eced",
+        "index": 3,
+        "text": [
+          "通过拼音来输入汉字"
+        ],
+        "pinyin": "[[\"通\", \"tōng\"], [\"过\", \"guò\"], [\"拼\", \"pīn\"], [\"音\", \"yīn\"], [\"来\", \"lái\"], [\"输\", \"shū\"], [\"入\", \"rù\"], [\"汉\", \"hàn\"], [\"字\", \"zì\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

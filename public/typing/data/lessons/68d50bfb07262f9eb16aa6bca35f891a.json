@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.949617+00:00",
+  "request": {
+    "lesson_id": "68d50bfb07262f9eb16aa6bca35f891a",
+    "course_id": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "order": 75,
+    "nextCourseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "courseName": "C++",
+    "lessonId": "68d50bfb07262f9eb16aa6bca35f891a",
+    "nextLessonId": "3bd1be91018832df8ff72cf8eb9f3aa4",
+    "lessonName": "判断素数",
+    "icon": "data/assets/daziya.com/key-icon_key-cpp.b136419115.png",
+    "description": "C++编程练习 - 判断素数",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "73e04b96da8f8259f32b528d34cc470f",
+        "index": 1,
+        "text": [
+          "#include <iostream>\\n#include <cmath>\\nusing namespace std;\\n\\nbool isPrime(int n) {\\n    if (n < 2) return false;\\n    for (int i = 2; i <= sqrt(n); i++) {\\n        if (n % i == 0) return false;\\n    }\\n    return true;\\n}\\n\\nint main() {\\n    int numbers[] = {2, 3, 4, 17, 20, 29};\\n\\n    for (int i = 0; i < 6; i++) {\\n        if (isPrime(numbers[i])) {\\n            cout << numbers[i] << \" 是素数\" << endl;\\n        } else {\\n            cout << numbers[i] << \" 不是素数\" << endl;\\n        }\\n    }\\n\\n    return 0;\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "cpp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

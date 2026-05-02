@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.559609+00:00",
+  "request": {
+    "lesson_id": "ff1e4758d50a69f4fc033b349154b64b",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 101,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "ff1e4758d50a69f4fc033b349154b64b",
+    "nextLessonId": "fedc754488df512ea23e3faaa4a2ca13",
+    "lessonName": "KET核心词-5",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第5课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "7525264ce75cc24ee1bdf4756a533d40",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"attention\",\"pronun\":\"[əˈtenʃn]\",\"translation\":\"n. 注意力；关心；立正！（口令）\",\"audio\":\"attention.mp3\"},{\"word\":\"attractive\",\"pronun\":\"[əˈtræktɪv]\",\"translation\":\"adj. 吸引人的；有魅力的；引人注目的\",\"audio\":\"attractive.mp3\"},{\"word\":\"audience\",\"pronun\":\"[ˈɔːdiəns]\",\"translation\":\"n. 观众；听众；读者；接见；正式会见；拜会\",\"audio\":\"audience.mp3\"},{\"word\":\"aunt\",\"pronun\":\"[ænt]\",\"translation\":\"n. 阿姨；姑妈；伯母；舅妈\",\"audio\":\"aunt.mp3\"},{\"word\":\"Australian\",\"pronun\":\"[ɔːˈstreɪliən]\",\"translation\":\"adj. 澳大利亚的，澳大利亚人的\\nn. 澳大利亚人\",\"audio\":\"Australian.mp3\"},{\"word\":\"available\",\"pronun\":\"[əˈveɪləbl]\",\"translation\":\"adj. 可获得的；可购得的；可找到的；有空的\",\"audio\":\"available.mp3\"},{\"word\":\"away\",\"pronun\":\"[əˈweɪ]\",\"translation\":\"adv. 离去，离开；在远处\",\"audio\":\"away.mp3\"},{\"word\":\"awesome\",\"pronun\":\"[ˈɔːsəm]\",\"translation\":\"adj. 令人敬畏的；使人畏惧的；可怕的；极好的\",\"audio\":\"awesome.mp3\"},{\"word\":\"awful\",\"pronun\":\"[ˈɔːf(ə)l]\",\"translation\":\"adj. 可怕的；极坏的；使人敬畏的\",\"audio\":\"awful.mp3\"},{\"word\":\"back\",\"pronun\":\"[bæk]\",\"translation\":\"n. 后面；背部；靠背；足球等的后卫；书报等的末尾\\nadj. 后面的；过去的；拖欠的\\nvt. 支持；后退；背书；下赌注\\nadv. 以前；向后地；来回地；上溯；回来；回原处\\nvi. 后退；背靠；倒退\",\"audio\":\"back.mp3\"},{\"word\":\"backpack\",\"pronun\":\"[ˈbækpæk]\",\"translation\":\"n. 双肩背包，背包；远足用的背包\\nvt. 挑运；把…放入背包\\nvi. 背负简便行李旅行；挑运\",\"audio\":\"backpack.mp3\"},{\"word\":\"bad\",\"pronun\":\"[bæd]\",\"translation\":\"n. 坏事；坏人\\nadj. 坏的；严重的；劣质的\\nadv. 很，非常；坏地；邪恶地\",\"audio\":\"bad.mp3\"},{\"word\":\"badminton\",\"pronun\":\"[ˈbædmɪntən]\",\"translation\":\"n. 羽毛球\",\"audio\":\"badminton.mp3\"},{\"word\":\"bake\",\"pronun\":\"[beɪk]\",\"translation\":\"n. 烤；烘烤食品\\nvi. 烘面包；被烤干；受热\\nvt. 烤，烘焙\",\"audio\":\"bake.mp3\"},{\"word\":\"balcony\",\"pronun\":\"[ˈbælkəni]\",\"translation\":\"n. 阳台；包厢；戏院楼厅\",\"audio\":\"balcony.mp3\"},{\"word\":\"ball\",\"pronun\":\"[bɔːl]\",\"translation\":\"n. 球；舞会\\nvt. 捏成球形\\nvi. 成团块\",\"audio\":\"ball.mp3\"},{\"word\":\"balloon\",\"pronun\":\"[bəˈluːn]\",\"translation\":\"n. 气球\\nadj. 像气球般鼓起的\\nvt. 使像气球般鼓起；使激增\\nvi. 激增；膨胀如气球\",\"audio\":\"balloon.mp3\"},{\"word\":\"bamboo\",\"pronun\":\"[ˌbæmˈbuː]\",\"translation\":\"n. 竹，竹子\\nadj. 竹制的；土著居民的\\nvt. 为…装上篾条\",\"audio\":\"bamboo.mp3\"},{\"word\":\"banana\",\"pronun\":\"[bəˈnænə]\",\"translation\":\"n. 香蕉；喜剧演员；大鹰钩鼻\",\"audio\":\"banana.mp3\"},{\"word\":\"band\",\"pronun\":\"[bænd]\",\"translation\":\"n. 带，环；[物] 波段；(演奏流行音乐的) 乐队\\nn. n.乐队；队；一群\\nvi. 用带绑扎；给...镶边\",\"audio\":\"band.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

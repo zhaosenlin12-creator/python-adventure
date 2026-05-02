@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.789739+00:00",
+  "request": {
+    "lesson_id": "a9ade6979950e8772886cd8170993ba0",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 150,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "a9ade6979950e8772886cd8170993ba0",
+    "nextLessonId": "c8cf3b6b336bfeef0a3c7c17dae03e39",
+    "lessonName": "KET核心词-15",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第15课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a82c40c37e316b9765d7590fc75f3604",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"congratulation\",\"pronun\":\"[kənˌɡrætʃuˈleɪʃn]\",\"translation\":\"n. 祝贺；贺辞\",\"audio\":\"congratulation.mp3\"},{\"word\":\"comfortable\",\"pronun\":\"[ˈkʌmftəbl; ˈkʌmfərtəbl]\",\"translation\":\"n. 盖被\\nadj. 舒适的，舒服的\",\"audio\":\"comfortable.mp3\"},{\"word\":\"comic\",\"pronun\":\"[ˈkɑːmɪk]\",\"translation\":\"n. 连环漫画；喜剧演员；滑稽人物\\nadj. 喜剧的；滑稽的；有趣的\",\"audio\":\"comic.mp3\"},{\"word\":\"company\",\"pronun\":\"[ˈkʌmpəni]\",\"translation\":\"n. 公司；陪伴，同伴；连队\\nvt. 陪伴\\nvi. 交往\",\"audio\":\"company.mp3\"},{\"word\":\"competition\",\"pronun\":\"[ˌkɑːmpəˈtɪʃn]\",\"translation\":\"n. 竞争；比赛，竞赛\",\"audio\":\"competition.mp3\"},{\"word\":\"complete\",\"pronun\":\"[kəmˈpliːt]\",\"translation\":\"adj. 完整的；完全的；彻底的\\nvt. 完成\",\"audio\":\"complete.mp3\"},{\"word\":\"computer\",\"pronun\":\"[kəmˈpjuːtər]\",\"translation\":\"n. 计算机；电脑；电子计算机\",\"audio\":\"computer.mp3\"},{\"word\":\"concert\",\"pronun\":\"[ˈkɑːnsərt]\",\"translation\":\"n. 音乐会；一致；和谐\\nadj. 音乐会用的；在音乐会上演出的\\nvt. 使协调；协同安排\\nvi. 协调；协力\",\"audio\":\"concert.mp3\"},{\"word\":\"contact\",\"pronun\":\"[ˈkɑːntækt]\",\"translation\":\"n. 接触，联系\\nvt. 使接触，联系\\nvi. 使接触，联系\",\"audio\":\"contact.mp3\"},{\"word\":\"continue\",\"pronun\":\"[kənˈtɪnjuː]\",\"translation\":\"vt. 继续说…；使…继续；使…延长\\nvi. 继续，延续；仍旧，连续\",\"audio\":\"continue.mp3\"},{\"word\":\"conversation\",\"pronun\":\"[ˌkɑːnvərˈseɪʃn]\",\"translation\":\"n. 交谈，会话；社交；交往，交际；会谈；（人与计算机的）人机对话\",\"audio\":\"conversation.mp3\"},{\"word\":\"cook\",\"pronun\":\"[kʊk]\",\"translation\":\"n. 厨师，厨子\\nvt. 烹调，煮\\nvi. 烹调，做菜\",\"audio\":\"cook.mp3\"},{\"word\":\"cooking\",\"pronun\":\"[ˈkʊkɪŋ]\",\"translation\":\"n. 烹饪\\nadj. 烹调的\\nv. 烹调；筹划（cook的ing形式）\",\"audio\":\"cooking.mp3\"},{\"word\":\"cool\",\"pronun\":\"[kuːl]\",\"translation\":\"n. 凉爽；凉爽的空气\\nadj. 凉爽的；冷静的；出色的\\nvt. 使…冷却；使…平静下来\\nvi. 变凉；平息\\nadv. 冷静地\",\"audio\":\"cool.mp3\"},{\"word\":\"copy\",\"pronun\":\"[ˈkɑːpi]\",\"translation\":\"n. 副本；一册；摹仿\\nvt. 复制；复印；抄袭\\nvi. 复制；复印；抄袭\",\"audio\":\"copy.mp3\"},{\"word\":\"corner\",\"pronun\":\"[ˈkɔːrnər]\",\"translation\":\"n. 角落，拐角处；地区，偏僻处；困境，窘境\\nvt. 垄断；迫至一隅；使陷入绝境；把…难住\\nvi. 囤积；相交成角\",\"audio\":\"corner.mp3\"},{\"word\":\"correct\",\"pronun\":\"[kəˈrekt]\",\"translation\":\"adj. 正确的；恰当的；端正的\\nvt. 改正；告诫\\nvi. 调整；纠正错误\",\"audio\":\"correct.mp3\"},{\"word\":\"cost\",\"pronun\":\"[kɔːst]\",\"translation\":\"n. 费用，代价，成本；损失\\nvt. 花费；使付出；使花许多钱\\nvi. 花费\",\"audio\":\"cost.mp3\"},{\"word\":\"costume\",\"pronun\":\"[ˈkɑːstuːm]\",\"translation\":\"n. 服装，装束；戏装，剧装\\nvt. 给…穿上服装\",\"audio\":\"costume.mp3\"},{\"word\":\"could\",\"pronun\":\"[kəd; kʊd]\",\"translation\":\"aux. 能够\\nv. 能（can的过去式）\",\"audio\":\"could.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.749149+00:00",
+  "request": {
+    "lesson_id": "b81c98fb0ebf9fe6164bd1043ef421ad",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 140,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "b81c98fb0ebf9fe6164bd1043ef421ad",
+    "nextLessonId": "c80828113dfa75518b321f3921c9c311",
+    "lessonName": "KET核心词-122",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第122课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b85776bd163d53e5f529ca96cfd4f67b",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"fog\",\"pronun\":\"[fɑːɡ]\",\"translation\":\"n. 雾；烟雾，尘雾；迷惑\\nvt. 使模糊；使困惑；以雾笼罩\\nvi. 被雾笼罩；变模糊\",\"audio\":\"fog.mp3\"},{\"word\":\"foggy\",\"pronun\":\"[ˈfɑːɡi]\",\"translation\":\"adj. 有雾的；模糊的，朦胧的\",\"audio\":\"foggy.mp3\"},{\"word\":\"heat\",\"pronun\":\"[hiːt]\",\"translation\":\"n. 高温；压力；热度；热烈\\nvt. 使激动；把…加热\",\"audio\":\"heat.mp3\"},{\"word\":\"heavy\",\"pronun\":\"[ˈhevi]\",\"translation\":\"n. 重物；严肃角色\\nadj. 沉重的；繁重的，巨大的；拥挤的；阴沉的\\nadv. 大量地；笨重地\",\"audio\":\"heavy.mp3\"},{\"word\":\"high\",\"pronun\":\"[haɪ]\",\"translation\":\"n. 高水平；天空；由麻醉品引起的快感；高压地带\\nadj. 高的；高级的；崇高的；高音调的\\nadv. 高；奢侈地\",\"audio\":\"high.mp3\"},{\"word\":\"hot\",\"pronun\":\"[hɑːt]\",\"translation\":\"adj. 热的；辣的；热情的；激动的；紧迫的\\nvt. 增加；给…加温\\nadv. 热；紧迫地\\nvi. 变热\",\"audio\":\"hot.mp3\"},{\"word\":\"ice\",\"pronun\":\"[aɪs]\",\"translation\":\"n. 冰；冰淇淋；矜持；（俚）钻石\\nadj. 冰的\\nvt. 冰镇；结冰\\nvi. 结冰\",\"audio\":\"ice.mp3\"},{\"word\":\"icy\",\"pronun\":\"[ˈaɪsi]\",\"translation\":\"adj. 冰冷的；冷淡的；结满冰的\",\"audio\":\"icy.mp3\"},{\"word\":\"light\",\"pronun\":\"[laɪt]\",\"translation\":\"n. 光；光线；灯；打火机；领悟；浅色；天窗\\nadj. 轻的；浅色的；明亮的；轻松的；容易的；清淡的\\nvi. 点着；变亮；着火\\nvt. 照亮；点燃；着火\\nadv. 轻地；清楚地；轻便地\",\"audio\":\"light.mp3\"},{\"word\":\"low\",\"pronun\":\"[loʊ]\",\"translation\":\"adj. 低的，浅的；卑贱的；粗俗的；消沉的\\nadv. 低声地；谦卑地，低下地\\nn. 低；低价；低点；牛叫声\\nvi. 牛叫\",\"audio\":\"low.mp3\"},{\"word\":\"mild\",\"pronun\":\"[maɪld]\",\"translation\":\"adj. 温和的；轻微的；淡味的；文雅的；不含有害物质的的\\nn. （英国的一种）淡味麦芽啤酒\",\"audio\":\"mild.mp3\"},{\"word\":\"rain\",\"pronun\":\"[reɪn]\",\"translation\":\"n. 雨；下雨；雨天；雨季\\nvt. 大量地给；使大量落下\\nvi. 下雨；降雨\",\"audio\":\"rain.mp3\"},{\"word\":\"rainy\",\"pronun\":\"[ˈreɪni]\",\"translation\":\"adj. 下雨的；多雨的\",\"audio\":\"rainy.mp3\"},{\"word\":\"snow\",\"pronun\":\"[snoʊ]\",\"translation\":\"n. 雪，积雪；下雪\\nvt. 使纷纷落下；使变白\\nvi. 降雪\",\"audio\":\"snow.mp3\"},{\"word\":\"snowy\",\"pronun\":\"[ˈsnoʊi]\",\"translation\":\"adj. 下雪的，多雪的；被雪覆盖的；洁白无瑕的\",\"audio\":\"snowy.mp3\"},{\"word\":\"storm\",\"pronun\":\"[stɔːrm]\",\"translation\":\"n. 暴风雨；大动荡\\nvt. 猛攻；怒骂\\nvi. 起风暴；横冲直撞；狂怒咆哮\",\"audio\":\"storm.mp3\"},{\"word\":\"stormy\",\"pronun\":\"[ˈstɔːrmi]\",\"translation\":\"adj. 暴风雨的；猛烈的；暴躁的\",\"audio\":\"stormy.mp3\"},{\"word\":\"strong\",\"pronun\":\"[strɔːŋ]\",\"translation\":\"adj. 坚强的；强壮的；牢固的；擅长的\\nadv. 强劲地；猛烈地\",\"audio\":\"strong.mp3\"},{\"word\":\"sun\",\"pronun\":\"[sʌn]\",\"translation\":\"n. 太阳\\nvt. 使晒\\nvi. 晒太阳\",\"audio\":\"sun.mp3\"},{\"word\":\"sunny\",\"pronun\":\"[ˈsʌni]\",\"translation\":\"adj. 阳光充足的，和煦的；快活的；性情开朗的\",\"audio\":\"sunny.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

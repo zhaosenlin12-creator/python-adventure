@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.240542+00:00",
+  "request": {
+    "lesson_id": "cf6e01b098e1b3fb43b955d632df07c1",
+    "course_id": "77636b47c0ae2f1a01e822bed50cbd42",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "77636b47c0ae2f1a01e822bed50cbd42",
+    "order": 256,
+    "nextCourseId": "77636b47c0ae2f1a01e822bed50cbd42",
+    "courseName": "高中必备3500词-上",
+    "lessonId": "cf6e01b098e1b3fb43b955d632df07c1",
+    "nextLessonId": "4c96c9e4105e38b2bc3786ede68f85a1",
+    "lessonName": "Chapter.14",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2adaf84e3bd2d39e9bf2dfb5d763f4bf",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"identity\",\"pronun\":\"\\/a\\u026a\\u02c8dent\\u0259ti\\/\",\"translation\":\"n.\\u8eab\\u4efd;\\u4e2a\\u6027\"},{\"word\":\"cash\",\"pronun\":\"\\/k\\u00e6\\u0283\\/\",\"translation\":\"n.\\u73b0\\u91d1;\\u91d1\\u94b1\"},{\"word\":\"update\",\"pronun\":\"\\/\\u02cc\\u028cp\\u02c8de\\u026at\\/\",\"translation\":\"vt.\\u66f4\\u65b0 n.\\u66f4\\u65b0;\\u6700\\u65b0\\u6d88\\u606f\"},{\"word\":\"database\",\"pronun\":\"\\/\\u02c8de\\u026at\\u0259be\\u026as\\/\",\"translation\":\"n.\\u6570\\u636e\\u5e93;\\u8d44\\u6599\\u5e93\"},{\"word\":\"software\",\"pronun\":\"\\/\\u02c8s\\u0252ftwe\\u0259(r)\\/\",\"translation\":\"n.\\u8f6f\\u4ef6\"},{\"word\":\"network\",\"pronun\":\"\\/\\u02c8netw\\u025c:k\\/\",\"translation\":\"n.\\u7f51\\u7edc vt.\\u5c06\\u2026\\u8fde\\u6210\\u7f51\"},{\"word\":\"stuck\",\"pronun\":\"\\/st\\u028ck\\/\",\"translation\":\"adj.\\u5361\\u4f4f;\\u9677(\\u5165);\\u56f0(\\u4e8e)\"},{\"word\":\"surf\",\"pronun\":\"\\/s\\u025c:f\\/\",\"translation\":\"vt.&vi.\\u6d4f\\u89c8;\\u51b2\\u6d6a\"},{\"word\":\"benefit\",\"pronun\":\"\\/\\u02c8ben\\u026af\\u026at\\/\",\"translation\":\"n.\\u76ca\\u5904 vt.\\u4f7f\\u53d7\\u76ca\"},{\"word\":\"distance\",\"pronun\":\"\\/\\u02c8d\\u026ast\\u0259ns\\/\",\"translation\":\"n.\\u8ddd\\u79bb\"},{\"word\":\"inspire\",\"pronun\":\"\\/\\u026an\\u02c8spa\\u026a\\u0259(r)\\/\",\"translation\":\"vt.\\u9f13\\u821e;\\u6fc0\\u52b1;\\u542f\\u53d1\\u601d\\u8003\"},{\"word\":\"access\",\"pronun\":\"\\/\\u02c8\\u00e6kses\\/\",\"translation\":\"n.\\u901a\\u9053;\\u673a\\u4f1a vt.\\u8fdb\\u5165;\\u4f7f\\u7528\"},{\"word\":\"charity\",\"pronun\":\"\\/\\u02c8t\\u0283\\u00e6r\\u0259ti\\/\",\"translation\":\"n.\\u6148\\u5584;\\u6148\\u5584\\u673a\\u6784(\\u6216\\u7ec4\\u7ec7)\"},{\"word\":\"tough\",\"pronun\":\"\\/t\\u028cf\\/\",\"translation\":\"adj.\\u8270\\u96be\\u7684;\\u4e25\\u5389\\u7684\"},{\"word\":\"conference\",\"pronun\":\"\\/\\u02c8k\\u0252nf\\u0259r\\u0259ns\\/\",\"translation\":\"n.\\u4f1a\\u8bae;\\u7814\\u8ba8\\u4f1a;\\u6b63\\u5f0f\\u4f1a\\u8c08\"},{\"word\":\"resident\",\"pronun\":\"\\/\\u02c8rez\\u026ad\\u0259nt\\/\",\"translation\":\"n.\\u5c45\\u6c11;(\\u7f8e\\u56fd\\u7684)\\u4f4f\\u9662\\u533b\\u751f\"},{\"word\":\"plus\",\"pronun\":\"\\/pl\\u028cs\\/\",\"translation\":\"conj.\\u800c\\u4e14;\\u6b64\\u5916 n.\\u52a0\\u53f7\"},{\"word\":\"function\",\"pronun\":\"\\/\\u02c8f\\u028c\\u014bk\\u0283n\\/\",\"translation\":\"n.\\u529f\\u80fd;\\u4f5c\\u7528 vi.\\u8d77\\u4f5c\\u7528\"},{\"word\":\"battery\",\"pronun\":\"\\/\\u02c8b\\u00e6tri\\/\",\"translation\":\"n.\\u7535\\u6c60\"},{\"word\":\"confirm\",\"pronun\":\"\\/k\\u0259n\\u02c8f\\u025c:m\\/\",\"translation\":\"vt.\\u786e\\u8ba4;\\u4f7f\\u786e\\u4fe1\"},{\"word\":\"Wi-Fi\",\"pronun\":\"\\/\\u02c8wa\\u026a fa\\u026a\\/\",\"translation\":\"n.\\u65e0\\u7ebf\\u4fdd\\u771f(\\u6570\\u636e\\u4f20\\u8f93\\u7cfb\\u7edf)\"},{\"word\":\"press\",\"pronun\":\"\\/pres\\/\",\"translation\":\"vt.\\u6309,\\u538b;\\u6566\\u4fc3\"},{\"word\":\"file\",\"pronun\":\"\\/fa\\u026al\\/\",\"translation\":\"n.\\u6587\\u4ef6;\\u6587\\u4ef6\\u5939;\\u6863\\u6848\"},{\"word\":\"discount\",\"pronun\":\"\\/\\u02c8d\\u026aska\\u028ant\\/\",\"translation\":\"n.\\u6298\\u6263 vt.\\u6253\\u6298\"},{\"word\":\"account\",\"pronun\":\"\\/\\u0259\\u02c8ka\\u028ant\\/\",\"translation\":\"n.\\u8d26\\u6237;\\u63cf\\u8ff0\"},{\"word\":\"click\",\"pronun\":\"\\/kl\\u026ak\\/\",\"translation\":\"vt.&vi.\\u70b9\\u51fb\"},{\"word\":\"privacy\",\"pronun\":\"\\/\\u02c8pr\\u026av\\u0259si\\/\",\"translation\":\"n.\\u9690\\u79c1;\\u79c1\\u5bc6\"},{\"word\":\"theft\",\"pronun\":\"\\/\\u03b8eft\\/\",\"translation\":\"n.\\u5077(\\u7a83);\\u76d7\\u7a83\\u7f6a\"},{\"word\":\"rude\",\"pronun\":\"\\/ru:d\\/\",\"translation\":\"adj.\\u7c97\\u9c81\\u7684;\\u65e0\\u793c\\u7684\"},{\"word\":\"target\",\"pronun\":\"\\/\\u02c8t\\u0251:g\\u026at\\/\",\"translation\":\"n.\\u76ee\\u6807;\\u5bf9\\u8c61;\\u9776\\u5b50\"},{\"word\":\"troll\",\"pronun\":\"\\/tr\\u0252l\\/\",\"translation\":\"n.\\u53d1\\u6311\\u8845\\u5e16\\u5b50\\u7684\\u4eba\"},{\"word\":\"cyberbully\",\"pronun\":\"\\/\\u02c8sa\\u026ab\\u0259rb\\u028ali\\/\",\"translation\":\"n.\\u7f51\\u9738 vt.&vi.\\u7f51\\u7edc\\u6b3a\\u51cc\"},{\"word\":\"false\",\"pronun\":\"\\/f\\u0254:ls\\/\",\"translation\":\"adj.\\u5047\\u7684;\\u9519\\u8bef\\u7684\"},{\"word\":\"particular\",\"pronun\":\"\\/p\\u0259\\u02c8t\\u026akj\\u0259l\\u0259(r)\\/\",\"translation\":\"adj.\\u7279\\u5b9a\\u7684;\\u7279\\u522b\\u7684;\\u8bb2\\u7a76\\u7684\"},{\"word\":\"guideline\",\"pronun\":\"\\/\\u02c8ga\\u026adla\\u026an\\/\",\"translation\":\"n.\\u51c6\\u5219;\\u6307\\u5bfc\\u539f\\u5219\"},{\"word\":\"author\",\"pronun\":\"\\/\\u02c8\\u0254:\\u03b8\\u0259(r)\\/\",\"translation\":\"n.\\u4f5c\\u8005;\\u4f5c\\u5bb6\"},{\"word\":\"tip\",\"pronun\":\"\\/t\\u026ap\\/\",\"translation\":\"n.\\u5fe0\\u544a;\\u8bc0\\u7a8d;\\u5b9e\\u7528\\u7684\\u63d0\\u793a\"},{\"word\":\"familiar\",\"pronun\":\"\\/f\\u0259\\u02c8m\\u026ali\\u0259(r)\\/\",\"translation\":\"adj.\\u719f\\u6089;\\u719f\\u77e5\"},{\"word\":\"define\",\"pronun\":\"\\/d\\u026a\\u02c8fa\\u026an\\/\",\"translation\":\"vt.\\u7ed9\\u2026\\u2026\\u4e0b\\u5b9a\\u4e49;\\u754c\\u5b9a;\\u89e3\\u91ca\"},{\"word\":\"Birmingham\",\"pronun\":\"\\/'b\\u025c:m\\u026a\\u014b\\u02cch\\u00e6m\\/\",\"translation\":\"\\u4f2f\\u660e\\u7ff0(\\u82f1\\u56fd\\u57ce\\u5e02)\"},{\"word\":\"Confucius\",\"pronun\":\"\\/k\\u0259n\\u02c8fju\\u02d0\\u0283\\u0259s\\/\",\"translation\":\"n.\\u5b54\\u5b50\"},{\"word\":\"mansion\",\"pronun\":\"\\/\\u02c8m\\u00e6n\\u0283n\\/\",\"translation\":\"n.\\u516c\\u9986;\\u5b85\\u7b2c\"},{\"word\":\"cemetery\",\"pronun\":\"\\/\\u02c8sem\\u0259tri\\/\",\"translation\":\"n.\\u5893\\u5730;\\u516c\\u5893\"},{\"word\":\"philosophy\",\"pronun\":\"\\/f\\u0259\\u02c8l\\u0252s\\u0259fi\\/\",\"translation\":\"n.\\u54f2\\u5b66\"},{\"word\":\"descendant\",\"pronun\":\"\\/d\\u026a\\u02c8send\\u0259nt\\/\",\"translation\":\"n.\\u540e\\u88d4;\\u540e\\u4ee3;\\u5b50\\u5b59\"},{\"word\":\"individual\",\"pronun\":\"\\/\\u02cc\\u026and\\u026a\\u02c8v\\u026ad\\u0292u\\u0259l\\/\",\"translation\":\"adj.\\u5355\\u72ec\\u7684;\\u4e2a\\u522b\\u7684 n.\\u4e2a\\u4eba\"},{\"word\":\"kingdom\",\"pronun\":\"\\/\\u02c8k\\u026a\\u014bd\\u0259m\\/\",\"translation\":\"n.\\u738b\\u56fd;\\u9886\\u57df\"},{\"word\":\"chief\",\"pronun\":\"\\/t\\u0283i:f\\/\",\"translation\":\"adj.\\u6700\\u91cd\\u8981\\u7684 n.(\\u673a\\u6784)\\u9996\\u9886\"},{\"word\":\"nearby\",\"pronun\":\"\\/\\u02ccn\\u026a\\u0259\\u02c8ba\\u026a\\/\",\"translation\":\"adj.\\u9644\\u8fd1\\u7684;\\u90bb\\u8fd1\\u7684\"},{\"word\":\"currency\",\"pronun\":\"\\/\\u02c8k\\u028cr\\u0259nsi\\/\",\"translation\":\"\\u901a\\u8d27;\\u8d27\\u5e01\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 24,
+        "minSpeed": 16,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

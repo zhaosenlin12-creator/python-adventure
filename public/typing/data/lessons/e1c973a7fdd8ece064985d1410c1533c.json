@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.900048+00:00",
+  "request": {
+    "lesson_id": "e1c973a7fdd8ece064985d1410c1533c",
+    "course_id": "daccefd55478aba6657b64a604f8f971",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "daccefd55478aba6657b64a604f8f971",
+    "order": 152,
+    "nextCourseId": "daccefd55478aba6657b64a604f8f971",
+    "courseName": "注音练习1",
+    "lessonId": "e1c973a7fdd8ece064985d1410c1533c",
+    "nextLessonId": "3ce15ffc8cb4f38a2f0fabf0c9b8d1e0",
+    "lessonName": "《送元二使安西》",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-wen.691360af01.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8db7de2784a9f7a81eaf93e505f5eed0",
+        "index": 1,
+        "text": [
+          "《送元二使安西》\\n唐：王之涣\\n\\n渭城朝雨浥轻尘，客舍青青柳色新。\\n劝君更尽一杯酒，西出阳关无故人。"
+        ],
+        "pinyin": "[[\"《\", \"\"], [\"送\", \"sòng\"], [\"元\", \"yuán\"], [\"二\", \"èr\"], [\"使\", \"shǐ\"], [\"安\", \"ān\"], [\"西\", \"xī\"], [\"》\", \"\"], [\"\\n\", \"\"], [\"唐\", \"táng\"], [\"：\", \"\"], [\"王\", \"wáng\"], [\"之\", \"zhī\"], [\"涣\", \"huàn\"], [\"\\n\", \"\"], [\"\\n\", \"\"], [\"渭\", \"wèi\"], [\"城\", \"chéng\"], [\"朝\", \"zhāo\"], [\"雨\", \"yǔ\"], [\"浥\", \"yì\"], [\"轻\", \"qīng\"], [\"尘\", \"chén\"], [\"，\", \"\"], [\"客\", \"kè\"], [\"舍\", \"shè\"], [\"青\", \"qīng\"], [\"青\", \"qīng\"], [\"柳\", \"liǔ\"], [\"色\", \"sè\"], [\"新\", \"xīn\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"劝\", \"quàn\"], [\"君\", \"jūn\"], [\"更\", \"gèng\"], [\"尽\", \"jìn\"], [\"一\", \"yī\"], [\"杯\", \"bēi\"], [\"酒\", \"jiǔ\"], [\"，\", \"\"], [\"西\", \"xī\"], [\"出\", \"chū\"], [\"阳\", \"yáng\"], [\"关\", \"guān\"], [\"无\", \"wú\"], [\"故\", \"gù\"], [\"人\", \"rén\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 18,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

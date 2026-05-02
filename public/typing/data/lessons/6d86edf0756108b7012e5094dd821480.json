@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.188899+00:00",
+  "request": {
+    "lesson_id": "6d86edf0756108b7012e5094dd821480",
+    "course_id": "9983508511f457b02ddcae4777acab15",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "9983508511f457b02ddcae4777acab15",
+    "order": 132,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "JAVA",
+    "lessonId": "6d86edf0756108b7012e5094dd821480",
+    "nextLessonId": "c5ec42f853e1b14e3e7e64221b6b1627",
+    "lessonName": "判断奇偶数",
+    "icon": "data/assets/daziya.com/key-icon_key-java.09b827febf.png",
+    "description": "Java编程练习 - 判断奇偶数",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e33146107bfa84ae08830bc1a9ab6cb9",
+        "index": 1,
+        "text": [
+          "class Main {\\n    public static boolean isEven(int number) {\\n        return number % 2 == 0;\\n    }\\n\\n    public static void main(String[] args) {\\n        int[] numbers = {10, 15, 22, 7, 30};\\n\\n        for (int num : numbers) {\\n            if (isEven(num)) {\\n                System.out.println(num + \" 是偶数\");\\n            } else {\\n                System.out.println(num + \" 是奇数\");\\n            }\\n        }\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "java",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

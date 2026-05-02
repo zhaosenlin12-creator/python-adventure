@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.731420+00:00",
+  "request": {
+    "lesson_id": "e693f7f598fb6f7a306a9766f5012f29",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 139,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "e693f7f598fb6f7a306a9766f5012f29",
+    "nextLessonId": "b81c98fb0ebf9fe6164bd1043ef421ad",
+    "lessonName": "KET核心词-119",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第119课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "83e4fd4de3f77b26af84807f62c25692",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"parents\",\"pronun\":\"['perənts]\",\"translation\":\"n. 父母；双亲（parent的复数）\\nv. 教养；引起（parent的三单形式）\",\"audio\":\"parents.mp3\"},{\"word\":\"penfriend\",\"pronun\":\"[ˈpenfrend]\",\"translation\":\"n. <英>笔友\",\"audio\":\"penfriend.mp3\"},{\"word\":\"sister\",\"pronun\":\"[ˈsɪstər]\",\"translation\":\"n. 姐妹；（称志同道合者）姐妹；修女；护士\\nadj. 姐妹般的；同类型的\",\"audio\":\"sister.mp3\"},{\"word\":\"son\",\"pronun\":\"[sʌn]\",\"translation\":\"n. 儿子；孩子（对年轻人的称呼）；男性后裔\",\"audio\":\"son.mp3\"},{\"word\":\"uncle\",\"pronun\":\"[ˈʌŋkl]\",\"translation\":\"n. 叔叔；伯父；伯伯；舅父；姨丈；姑父\",\"audio\":\"uncle.mp3\"},{\"word\":\"wife\",\"pronun\":\"[waɪf]\",\"translation\":\"n. 妻子，已婚妇女；夫人\",\"audio\":\"wife.mp3\"},{\"word\":\"Africa\",\"pronun\":\"[ˈæfrɪkə]\",\"translation\":\"n. 非洲\",\"audio\":\"Africa.mp3\"},{\"word\":\"American\",\"pronun\":\"[əˈmerɪkən]\",\"translation\":\"n. 美国人，美洲人；美国英语\\nadj. 美国的，美洲的；地道美国式的\",\"audio\":\"American.mp3\"},{\"word\":\"Arabic\",\"pronun\":\"[ˈærəbɪk]\",\"translation\":\"n. 阿拉伯语\\nadj. 阿拉伯的；阿拉伯人的\",\"audio\":\"Arabic.mp3\"},{\"word\":\"Argentina\",\"pronun\":\"[ˌɑːrdʒənˈtiːnə]\",\"translation\":\"n. 阿根廷（位于拉丁美洲）\",\"audio\":\"Argentina.mp3\"},{\"word\":\"Asia\",\"pronun\":\"[ˈeɪʒə]\",\"translation\":\"n. 亚洲\",\"audio\":\"Asia.mp3\"},{\"word\":\"Australia\",\"pronun\":\"[ɔːˈstreɪliə]\",\"translation\":\"n. 澳大利亚，澳洲\",\"audio\":\"Australia.mp3\"},{\"word\":\"Austria\",\"pronun\":\"[ˈɔːstriə]\",\"translation\":\"n. 奥地利\",\"audio\":\"Austria.mp3\"},{\"word\":\"Brazil\",\"pronun\":\"[brəˈzɪl]\",\"translation\":\"n. 巴西（拉丁美洲国家）\",\"audio\":\"Brazil.mp3\"},{\"word\":\"Canada\",\"pronun\":\"[ˈkænədə]\",\"translation\":\"n. 加拿大（北美洲国家）\",\"audio\":\"Canada.mp3\"},{\"word\":\"Canadian\",\"pronun\":\"[kəˈneɪdiən]\",\"translation\":\"n. 加拿大人\\nadj. 加拿大（人）的\",\"audio\":\"Canadian.mp3\"},{\"word\":\"Danish\",\"pronun\":\"[ˈdeɪnɪʃ]\",\"translation\":\"n. 丹麦语\\nadj. 丹麦的；丹麦人的；丹麦语（文）的\",\"audio\":\"Danish.mp3\"},{\"word\":\"Denmark\",\"pronun\":\"[ˈdenmɑːrk]\",\"translation\":\"n. 丹麦（欧洲国家）\",\"audio\":\"Denmark.mp3\"},{\"word\":\"Egypt\",\"pronun\":\"[ˈiːdʒɪpt]\",\"translation\":\"n. 埃及（非洲国家）\",\"audio\":\"Egypt.mp3\"},{\"word\":\"English\",\"pronun\":\"[ˈɪŋɡlɪʃ]\",\"translation\":\"n. 英语；英国人；英文；英格兰人\\nadj. 英国人的；英国的；英文的\\nvt. 把…译成英语\",\"audio\":\"English.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

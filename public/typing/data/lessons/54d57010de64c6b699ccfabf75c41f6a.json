@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.661885+00:00",
+  "request": {
+    "lesson_id": "54d57010de64c6b699ccfabf75c41f6a",
+    "course_id": "07e9ff923dd8a9eab06e26a8cfc4e593",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "07e9ff923dd8a9eab06e26a8cfc4e593",
+    "order": 421,
+    "nextCourseId": "07e9ff923dd8a9eab06e26a8cfc4e593",
+    "courseName": "初中必背古诗60首（2）",
+    "lessonId": "54d57010de64c6b699ccfabf75c41f6a",
+    "nextLessonId": "c182d13e99a8559a845766823b1489d1",
+    "lessonName": "己亥杂诗",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "02ddfcbd6a11be7d3db5a346c3f398c6",
+        "index": 1,
+        "text": [
+          "己亥杂诗\\n龚自珍\\n浩荡离愁白日斜，吟鞭东指即天涯。\\n落红不是无情物，化作春泥更护花。"
+        ],
+        "pinyin": "[[\"己\", \"jǐ\"], [\"亥\", \"hài\"], [\"杂\", \"zá\"], [\"诗\", \"shī\"], [\"\\n\", \"\"], [\"龚\", \"gōng\"], [\"自\", \"zì\"], [\"珍\", \"zhēn\"], [\"\\n\", \"\"], [\"浩\", \"hào\"], [\"荡\", \"dàng\"], [\"离\", \"lí\"], [\"愁\", \"chóu\"], [\"白\", \"bái\"], [\"日\", \"rì\"], [\"斜\", \"xiá\"], [\"，\", \"\"], [\"吟\", \"yín\"], [\"鞭\", \"biān\"], [\"东\", \"dōng\"], [\"指\", \"zhǐ\"], [\"即\", \"jí\"], [\"天\", \"tiān\"], [\"涯\", \"yá\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"落\", \"luò\"], [\"红\", \"hóng\"], [\"不\", \"bù\"], [\"是\", \"shì\"], [\"无\", \"wú\"], [\"情\", \"qíng\"], [\"物\", \"wù\"], [\"，\", \"\"], [\"化\", \"huà\"], [\"作\", \"zuò\"], [\"春\", \"chūn\"], [\"泥\", \"ní\"], [\"更\", \"gēng\"], [\"护\", \"hù\"], [\"花\", \"huā\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

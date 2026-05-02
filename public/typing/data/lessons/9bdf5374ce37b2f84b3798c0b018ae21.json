@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.075743+00:00",
+  "request": {
+    "lesson_id": "9bdf5374ce37b2f84b3798c0b018ae21",
+    "course_id": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "order": 190,
+    "nextCourseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "courseName": "汉字一级",
+    "lessonId": "9bdf5374ce37b2f84b3798c0b018ae21",
+    "nextLessonId": "71a118a0dd7ce577bcfa5ac8b281e963",
+    "lessonName": "休息一下",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-good.c7e935711e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "bbfdae67e3894dea1920fd0ae8d45da9",
+        "index": 1,
+        "text": [
+          "使用电脑时，每十五分钟把视线从电脑前移开一会儿，每隔一小时休息五分钟。"
+        ],
+        "pinyin": "[[\"使\", \"shǐ\"], [\"用\", \"yòng\"], [\"电\", \"diàn\"], [\"脑\", \"nǎo\"], [\"时\", \"shí\"], [\"，\", \"\"], [\"每\", \"měi\"], [\"十\", \"shí\"], [\"五\", \"wǔ\"], [\"分\", \"fēn\"], [\"钟\", \"zhōng\"], [\"把\", \"bǎ\"], [\"视\", \"shì\"], [\"线\", \"xiàn\"], [\"从\", \"cóng\"], [\"电\", \"diàn\"], [\"脑\", \"nǎo\"], [\"前\", \"qián\"], [\"移\", \"yí\"], [\"开\", \"kāi\"], [\"一\", \"yī\"], [\"会\", \"huì\"], [\"儿\", \"ér\"], [\"，\", \"\"], [\"每\", \"měi\"], [\"隔\", \"gé\"], [\"一\", \"yī\"], [\"小\", \"xiǎo\"], [\"时\", \"shí\"], [\"休\", \"xiū\"], [\"息\", \"xī\"], [\"五\", \"wǔ\"], [\"分\", \"fēn\"], [\"钟\", \"zhōng\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 12,
+        "minSpeed": 4,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

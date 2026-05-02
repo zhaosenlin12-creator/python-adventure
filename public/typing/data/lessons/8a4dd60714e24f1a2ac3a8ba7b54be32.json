@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.793427+00:00",
+  "request": {
+    "lesson_id": "8a4dd60714e24f1a2ac3a8ba7b54be32",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 37,
+    "nextCourseId": "ff61770b1da83313ceacb0a08aef6378",
+    "courseName": "Python",
+    "lessonId": "8a4dd60714e24f1a2ac3a8ba7b54be32",
+    "nextLessonId": "121fa453c1f80208ca54a68f04597002",
+    "lessonName": "字符串操作",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - 字符串操作",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "55d144376f80c6e6c619c063834896c9",
+        "index": 1,
+        "text": [
+          "# 字符串的常用操作\\ntext = \"Hello Python\"\\n\\nprint(f\"转大写: {text.upper()}\")\\nprint(f\"转小写: {text.lower()}\")\\nprint(f\"替换: {text.replace('Python', 'World')}\")\\nprint(f\"分割: {text.split()}\")\\nprint(f\"字符串长度: {len(text)}\")\\nprint(f\"是否以Hello开头: {text.startswith('Hello')}\")\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

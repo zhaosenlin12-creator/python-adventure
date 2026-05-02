@@ -1,0 +1,72 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.757744+00:00",
+  "request": {
+    "lesson_id": "a7b7b76e4b57c20c0188b6248bff8b36",
+    "course_id": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "order": 58,
+    "nextCourseId": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "courseName": "声母组合练习",
+    "lessonId": "a7b7b76e4b57c20c0188b6248bff8b36",
+    "nextLessonId": "cb0240652ecaf3885da002a1415a7f72",
+    "lessonName": "声母组合h",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "练习声母h与各韵母的组合",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "6c433f17fc1f46b1820340f9772d53b9",
+        "index": 1,
+        "highlights": [
+          "h"
+        ],
+        "text": [
+          "请输入按键 [h]"
+        ],
+        "detail": "学习双拼按键 h"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "b2055bf8993227caf516e620c7112e8a",
+        "index": 2,
+        "text": [
+          "hhhhhhhh"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "2371255a1850648aae811587fa6e2659",
+        "index": 3,
+        "text": [
+          "海风呼啸，荷花红艳。黄昏时分，仙鹤在湖面缓缓滑行，呼唤着伙伴回家。孩子欢呼着，手捧槐花，哼唱欢快的歌谣。火光映照海岸，温暖而美好。"
+        ],
+        "pinyin": "[[\"海\", \"hǎi\"], [\"风\", \"fēng\"], [\"呼\", \"hū\"], [\"啸\", \"xiào\"], [\"，\", \"\"], [\"荷\", \"hé\"], [\"花\", \"huā\"], [\"红\", \"hóng\"], [\"艳\", \"yàn\"], [\"。\", \"\"], [\"黄\", \"huáng\"], [\"昏\", \"hūn\"], [\"时\", \"shí\"], [\"分\", \"fēn\"], [\"，\", \"\"], [\"仙\", \"xiān\"], [\"鹤\", \"hè\"], [\"在\", \"zài\"], [\"湖\", \"hú\"], [\"面\", \"miàn\"], [\"缓\", \"huǎn\"], [\"缓\", \"huǎn\"], [\"滑\", \"huá\"], [\"行\", \"xíng\"], [\"，\", \"\"], [\"呼\", \"hū\"], [\"唤\", \"huàn\"], [\"着\", \"zhe\"], [\"伙\", \"huǒ\"], [\"伴\", \"bàn\"], [\"回\", \"huí\"], [\"家\", \"jiā\"], [\"。\", \"\"], [\"孩\", \"hái\"], [\"子\", \"zi\"], [\"欢\", \"huān\"], [\"呼\", \"hū\"], [\"着\", \"zhe\"], [\"，\", \"\"], [\"手\", \"shǒu\"], [\"捧\", \"pěng\"], [\"槐\", \"huái\"], [\"花\", \"huā\"], [\"，\", \"\"], [\"哼\", \"hēng\"], [\"唱\", \"chàng\"], [\"欢\", \"huān\"], [\"快\", \"kuài\"], [\"的\", \"de\"], [\"歌\", \"gē\"], [\"谣\", \"yáo\"], [\"。\", \"\"], [\"火\", \"huǒ\"], [\"光\", \"guāng\"], [\"映\", \"yìng\"], [\"照\", \"zhào\"], [\"海\", \"hǎi\"], [\"岸\", \"àn\"], [\"，\", \"\"], [\"温\", \"wēn\"], [\"暖\", \"nuǎn\"], [\"而\", \"ér\"], [\"美\", \"měi\"], [\"好\", \"hǎo\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 10,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

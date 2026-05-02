@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.037636+00:00",
+  "request": {
+    "lesson_id": "58ee6dcd55b3e7066b4909fb4cc537b8",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 423,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "58ee6dcd55b3e7066b4909fb4cc537b8",
+    "nextLessonId": "1d1a0883f60917e043a43c95233e3743",
+    "lessonName": "六级词汇正序版-48",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第48课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ac49efb89aa7123ae0a3e83f86dffad6",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"fling\",\"pronun\":\"[flɪŋ]\",\"translation\":\"n. 掷，抛；嘲弄；急冲\\nvt. 掷，抛；嘲笑；使陷入；轻蔑地投射；猛动\\nvi. 猛冲，急行\",\"audio\":\"fling.mp3\"},{\"word\":\"flip\",\"pronun\":\"[flɪp]\",\"translation\":\"n. 弹；筋斗\\nvi. 用指轻弹；蹦跳\\nadj. 无礼的；轻率的\\nvt. 掷；轻击\",\"audio\":\"flip.mp3\"},{\"word\":\"float\",\"pronun\":\"[floʊt]\",\"translation\":\"n. 彩车，花车；漂流物；浮舟；浮萍\\nvi. 浮动；飘动，散播；摇摆；付诸实施\\nvt. 使漂浮；实行\",\"audio\":\"float.mp3\"},{\"word\":\"fluctuate\",\"pronun\":\"[ˈflʌktʃueɪt]\",\"translation\":\"vi. 波动；涨落；动摇\\nvt. 使波动；使动摇\",\"audio\":\"fluctuate.mp3\"},{\"word\":\"fluorescent\",\"pronun\":\"[fləˈresnt]\",\"translation\":\"n. 荧光；日光灯\\nadj. 荧光的；萤光的；发亮的\",\"audio\":\"fluorescent.mp3\"},{\"word\":\"flush\",\"pronun\":\"[flʌʃ]\",\"translation\":\"n. 激动，洋溢；面红；萌芽；旺盛；奔流\\nadj. 大量的；齐平的；丰足的，洋溢的；挥霍的\\nvt. 使齐平；发红，使发亮；用水冲洗；使激动\\nvi. 发红，脸红；奔涌；被冲洗\",\"audio\":\"flush.mp3\"},{\"word\":\"flutter\",\"pronun\":\"[ˈflʌtər]\",\"translation\":\"n. 摆动；鼓翼；烦扰\\nvt. 拍；使焦急；使飘动\\nvi. 飘动；鼓翼；烦扰\",\"audio\":\"flutter.mp3\"},{\"word\":\"foam\",\"pronun\":\"[foʊm]\",\"translation\":\"n. 泡沫；水沫；灭火泡沫\\nvt. 使起泡沫；使成泡沫状物\\nvi. 起泡沫；吐白沫；起着泡沫流动\",\"audio\":\"foam.mp3\"},{\"word\":\"focus\",\"pronun\":\"[ˈfoʊkəs]\",\"translation\":\"n. 焦点；中心；清晰；焦距\\nvt. 使集中；使聚焦\\nvi. 集中；聚焦；调节焦距\",\"audio\":\"focus.mp3\"},{\"word\":\"foil\",\"pronun\":\"[fɔɪl]\",\"translation\":\"n. 箔，金属薄片；衬托，烘托；叶形片\\nabbr. 面向文件的翻译语言（file-Oriented interpretive language）\\nvt. 衬托；阻止，挡开；挫败；贴箔于\",\"audio\":\"foil.mp3\"},{\"word\":\"fold\",\"pronun\":\"[foʊld]\",\"translation\":\"n. 折痕；信徒；羊栏\\nvt. 折叠；合拢；抱住；笼罩\\nvi. 折叠起来；彻底失败\",\"audio\":\"fold.mp3\"},{\"word\":\"force\",\"pronun\":\"[fɔːrs]\",\"translation\":\"n. 力量；武力；军队；魄力\\nvt. 促使，推动；强迫；强加\",\"audio\":\"force.mp3\"},{\"word\":\"foremost\",\"pronun\":\"[ˈfɔːrmoʊst]\",\"translation\":\"adj. 最重要的；最先的\\nadv. 首先；居于首位地\",\"audio\":\"foremost.mp3\"},{\"word\":\"foresee\",\"pronun\":\"[fɔːrˈsiː]\",\"translation\":\"vt. 预见；预知\",\"audio\":\"foresee.mp3\"},{\"word\":\"forge\",\"pronun\":\"[fɔːrdʒ]\",\"translation\":\"n. 熔炉，锻铁炉；铁工厂\\nvt. 伪造；锻造；前进\\nvi. 伪造；做锻工；前进\",\"audio\":\"forge.mp3\"},{\"word\":\"formal\",\"pronun\":\"[ˈfɔːrml]\",\"translation\":\"n. 正式的社交活动；夜礼服\\nadj. 正式的；拘谨的；有条理的\",\"audio\":\"formal.mp3\"},{\"word\":\"format\",\"pronun\":\"[ˈfɔːrmæt]\",\"translation\":\"n. 格式；版式；开本\\nvt. 使格式化；规定…的格式\\nvi. 设计版式\",\"audio\":\"format.mp3\"},{\"word\":\"formidable\",\"pronun\":\"[ˈfɔːrmɪdəblˌfərˈmɪdəbl]\",\"translation\":\"adj. 强大的；可怕的；令人敬畏的；艰难的\",\"audio\":\"formidable.mp3\"},{\"word\":\"formula\",\"pronun\":\"[ˈfɔːrmjələ]\",\"translation\":\"n. [数] 公式，准则；配方；婴儿食品\",\"audio\":\"formula.mp3\"},{\"word\":\"formulate\",\"pronun\":\"[ˈfɔːrmjuleɪt]\",\"translation\":\"vt. 规划；用公式表示；明确地表达\",\"audio\":\"formulate.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.216328+00:00",
+  "request": {
+    "lesson_id": "5b9d7df7e1c459e1e44da883ded17ce5",
+    "course_id": "9983508511f457b02ddcae4777acab15",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "9983508511f457b02ddcae4777acab15",
+    "order": 139,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "JAVA",
+    "lessonId": "5b9d7df7e1c459e1e44da883ded17ce5",
+    "nextLessonId": "d8a7cc905b37b579c3f7650917292741",
+    "lessonName": "二分查找",
+    "icon": "data/assets/daziya.com/key-icon_key-java.09b827febf.png",
+    "description": "Java编程练习 - 二分查找",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a678feae914208cb492459d74d7e98f3",
+        "index": 1,
+        "text": [
+          "class Main {\\n    public static int binarySearch(int[] arr, int target) {\\n        int left = 0;\\n        int right = arr.length - 1;\\n\\n        while (left <= right) {\\n            int mid = left + (right - left) / 2;\\n\\n            if (arr[mid] == target) {\\n                return mid;\\n            } else if (arr[mid] < target) {\\n                left = mid + 1;\\n            } else {\\n                right = mid - 1;\\n            }\\n        }\\n\\n        return -1;\\n    }\\n\\n    public static void main(String[] args) {\\n        int[] arr = {2, 5, 8, 12, 16, 23, 38, 45, 56, 67, 78};\\n        int target = 23;\\n\\n        int result = binarySearch(arr, target);\\n        if (result != -1) {\\n            System.out.println(\"元素 \" + target + \" 在索引 \" + result + \" 处\");\\n        } else {\\n            System.out.println(\"元素 \" + target + \" 不在数组中\");\\n        }\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "java",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

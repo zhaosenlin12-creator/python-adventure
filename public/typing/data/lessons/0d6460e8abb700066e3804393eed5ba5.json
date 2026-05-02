@@ -1,0 +1,75 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.492798+00:00",
+  "request": {
+    "lesson_id": "0d6460e8abb700066e3804393eed5ba5",
+    "course_id": "2ab9dc27a9350a9ff86633c542967f70",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "order": 54,
+    "nextCourseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "courseName": "下排字母",
+    "lessonId": "0d6460e8abb700066e3804393eed5ba5",
+    "nextLessonId": "f97dd7cefd072a5af3ea230985542e25",
+    "lessonName": "学习z和/",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-learn-zslash.27d9905357.png",
+    "description": "学习z和/",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "849d6579d4651ff7fc46cec972dc5884",
+        "index": 1,
+        "highlights": [
+          "z"
+        ],
+        "text": [
+          "请使用左手小拇指输入按键z"
+        ],
+        "detail": "新的字母键/请输入[z]键"
+      },
+      {
+        "chapterId": "8f72e86276066e6663e17fc5903ea1a3",
+        "index": 2,
+        "highlights": [
+          "/"
+        ],
+        "text": [
+          "请使用右手小拇指输入按键/"
+        ],
+        "detail": "新的字母键/请输入[/]键"
+      },
+      {
+        "chapterId": "50f1cc5b4fde08e2a73740d323d6f527",
+        "index": 3,
+        "highlights": [
+          " "
+        ],
+        "text": [
+          "接下来我们将练习如何输入[z]和[/]，请确保使用正确的指法输入，敲击 键开始"
+        ],
+        "detail": "新的字母键/很好"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "70dfa2d72375ec832d5963fa6e68cadf",
+        "index": 4,
+        "text": [
+          "z/z/zz//z/zzzz/z///z/z/zzz/z/z/z"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

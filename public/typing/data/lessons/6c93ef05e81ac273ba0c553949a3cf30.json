@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.669978+00:00",
+  "request": {
+    "lesson_id": "6c93ef05e81ac273ba0c553949a3cf30",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 127,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "6c93ef05e81ac273ba0c553949a3cf30",
+    "nextLessonId": "d079dddd5d6442078ac1cf8cfdfb05f2",
+    "lessonName": "KET核心词-83",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第83课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "64f9f245f3b2b728c0602e80a0342296",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"airport\",\"pronun\":\"[ˈerpɔːrt]\",\"translation\":\"n. 机场；航空站\",\"audio\":\"airport.mp3\"},{\"word\":\"arrival\",\"pronun\":\"[əˈraɪvl]\",\"translation\":\"n. 到来；到达；到达者\",\"audio\":\"arrival.mp3\"},{\"word\":\"backpack\",\"pronun\":\"[ˈbækpæk]\",\"translation\":\"n. 双肩背包，背包；远足用的背包\\nvt. 挑运；把…放入背包\\nvi. 背负简便行李旅行；挑运\",\"audio\":\"backpack.mp3\"},{\"word\":\"baggage collection\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"baggage_collection.mp3\"},{\"word\":\"board\",\"pronun\":\"[bɔːrd]\",\"translation\":\"n. 董事会；木板；甲板；膳食\\nvt. 上（飞机、车、船等）；用板盖上；给提供膳宿\\nvi. 寄宿\",\"audio\":\"board.mp3\"},{\"word\":\"boarding pass\",\"pronun\":\"\",\"translation\":\"n. 【旅】登机牌；登机证；登机卡\",\"audio\":\"boarding_pass.mp3\"},{\"word\":\"by air\",\"pronun\":\"\",\"translation\":\"na. 用[坐]飞机；用无线电\",\"audio\":\"by_air.mp3\"},{\"word\":\"by land\",\"pronun\":\"\",\"translation\":\"n. 半岛\",\"audio\":\"by_land.mp3\"},{\"word\":\"by rail\",\"pronun\":\"\",\"translation\":\"na. 乘火车\",\"audio\":\"by_rail.mp3\"},{\"word\":\"by road\",\"pronun\":\"\",\"translation\":\"na. 经由公路(而非铁路,空路)\",\"audio\":\"by_road.mp3\"},{\"word\":\"by sea\",\"pronun\":\"\",\"translation\":\"adv. 乘船\",\"audio\":\"by_sea.mp3\"},{\"word\":\"check-in\",\"pronun\":\"[ˈtʃek ɪn]\",\"translation\":\"n. 签到；投宿登记手续；验票并领取登机卡\",\"audio\":\"check-in.mp3\"},{\"word\":\"comfortable\",\"pronun\":\"[ˈkʌmftəbl; ˈkʌmfərtəbl]\",\"translation\":\"n. 盖被\\nadj. 舒适的，舒服的\",\"audio\":\"comfortable.mp3\"},{\"word\":\"convenient\",\"pronun\":\"[kənˈviːniənt]\",\"translation\":\"adj. 方便的；[废语]适当的；[口语]近便的；实用的\",\"audio\":\"convenient.mp3\"},{\"word\":\"crowded\",\"pronun\":\"[ˈkraʊdɪd]\",\"translation\":\"adj. 拥挤的；塞满的\\nv. 拥挤（crowd的过去分词）\",\"audio\":\"crowded.mp3\"},{\"word\":\"dangerous\",\"pronun\":\"[ˈdeɪndʒərəs]\",\"translation\":\"adj. 危险的\\n危险地\",\"audio\":\"dangerous.mp3\"},{\"word\":\"delay\",\"pronun\":\"[dɪˈleɪ]\",\"translation\":\"n. 延期；耽搁；被耽搁或推迟的时间\\nvt. 延期；耽搁\\nvi. 延期；耽搁\",\"audio\":\"delay.mp3\"},{\"word\":\"driver\",\"pronun\":\"[ˈdraɪvər]\",\"translation\":\"n. 驾驶员；驱动程序；起子；传动器\",\"audio\":\"driver.mp3\"},{\"word\":\"empty\",\"pronun\":\"[ˈempti]\",\"translation\":\"n. 空车；空的东西\\nadj. 空的；无意义的；无知的；徒劳的\\nvt. 使失去；使…成为空的\\nvi. 成为空的；流空\",\"audio\":\"empty.mp3\"},{\"word\":\"fare\",\"pronun\":\"[fer]\",\"translation\":\"n. 票价；费用；旅客；食物\\nvi. 经营；进展；遭遇；过活\",\"audio\":\"fare.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

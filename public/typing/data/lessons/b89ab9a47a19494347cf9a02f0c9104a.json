@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.516555+00:00",
+  "request": {
+    "lesson_id": "b89ab9a47a19494347cf9a02f0c9104a",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 661,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "b89ab9a47a19494347cf9a02f0c9104a",
+    "nextLessonId": "3045d5c5c26ac64a984ecd0b5439e285",
+    "lessonName": " 六年级上-5",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点六年级上 - 第5课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "671e082c46fb026704df744a42896f0b",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"moon\",\"pronun\":\"[muːn]\",\"translation\":\"n. 月亮；月球；月光；卫星\\nvi. 闲荡；出神\\nvt. 虚度\",\"audio\":\"moon.mp3\"},{\"word\":\"studies\",\"pronun\":\"[ˈstʌdiz]\",\"translation\":\"n. 研究；学习；学业（study的复数）\\nv. 学习（study的第三人称单数形式）\",\"audio\":\"studies.mp3\"},{\"word\":\"puzzle\",\"pronun\":\"[ˈpʌzl]\",\"translation\":\"n. 谜；难题；迷惑\\nvt. 使…困惑；使…为难；苦思而得出\\nvi. 迷惑；冥思苦想\",\"audio\":\"puzzle.mp3\"},{\"word\":\"hiking\",\"pronun\":\"[ˈhaɪkɪŋ]\",\"translation\":\"n. 徒步旅行\",\"audio\":\"hiking.mp3\"},{\"word\":\"pen pal\",\"pronun\":\"[ˈpen pæl]\",\"translation\":\"abbr. (=pen-friend)\\nn. 笔友\",\"audio\":\"pen_pal.mp3\"},{\"word\":\"hobby\",\"pronun\":\"[ˈhɑːbi]\",\"translation\":\"n. 嗜好；业余爱好\",\"audio\":\"hobby.mp3\"},{\"word\":\"jasmine\",\"pronun\":\"[ˈdʒæzmɪn]\",\"translation\":\"n. 茉莉；淡黄色\",\"audio\":\"jasmine.mp3\"},{\"word\":\"idea\",\"pronun\":\"[aɪˈdiːə]\",\"translation\":\"n. 想法；主意；概念\",\"audio\":\"idea.mp3\"},{\"word\":\"Canberra\",\"pronun\":\"[ˈkænbərəˌˈkænberə]\",\"translation\":\"n. 堪培拉（澳大利亚的首都）\",\"audio\":\"Canberra.mp3\"},{\"word\":\"amazing\",\"pronun\":\"[əˈmeɪzɪŋ]\",\"translation\":\"adj. 令人惊异的\\nv. 使吃惊（amaze的ing形式）\",\"audio\":\"amazing.mp3\"},{\"word\":\"shall\",\"pronun\":\"[ʃəl; ʃæl]\",\"translation\":\"aux. 应；会；将；必须\",\"audio\":\"shall.mp3\"},{\"word\":\"goal\",\"pronun\":\"[ɡoʊl]\",\"translation\":\"n. 目标；球门，得分数；终点\\nvi. 攻门，射门得分\",\"audio\":\"goal.mp3\"},{\"word\":\"join\",\"pronun\":\"[dʒɔɪn]\",\"translation\":\"vt. 参加；结合；连接\\nvi. 加入；参加；结合\\nn. 结合；连接；接合点\",\"audio\":\"join.mp3\"},{\"word\":\"club\",\"pronun\":\"[klʌb]\",\"translation\":\"n. 俱乐部，社团；夜总会；棍棒；（扑克牌中的）梅花\\nadj. 俱乐部的\\nvt. 用棍棒打；募集\\nvi. 集资；组成俱乐部\",\"audio\":\"club.mp3\"},{\"word\":\"share\",\"pronun\":\"[ʃer]\",\"translation\":\"n. 份额；股份\\nvt. 分享，分担；分配\\nvi. 共享；分担\",\"audio\":\"share.mp3\"},{\"word\":\"factory\",\"pronun\":\"[ˈfæktri; ˈfæktəri]\",\"translation\":\"n. 工厂；制造厂；代理店\",\"audio\":\"factory.mp3\"},{\"word\":\"worker\",\"pronun\":\"[ˈwɜːrkər]\",\"translation\":\"n. 工人；劳动者；职蚁\",\"audio\":\"worker.mp3\"},{\"word\":\"postman\",\"pronun\":\"[ˈpoʊstmən]\",\"translation\":\"n. 邮递员；邮差\",\"audio\":\"postman.mp3\"},{\"word\":\"businessman\",\"pronun\":\"[ˈbɪznəsmæn]\",\"translation\":\"n. 商人\",\"audio\":\"businessman.mp3\"},{\"word\":\"police officer\",\"pronun\":\"[pəˈlis ˈɔfɪsɚ]\",\"translation\":\"n. 警官；警察；警务人员\",\"audio\":\"police_officer.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

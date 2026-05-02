@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.370411+00:00",
+  "request": {
+    "lesson_id": "6ba3639a62b1e489a989f5f2a511e119",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 632,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "6ba3639a62b1e489a989f5f2a511e119",
+    "nextLessonId": "38264016f087c84a836cef22993952f4",
+    "lessonName": " 三年级下-4",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点三年级下 - 第4课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "724b062fd0d1e9b329d104fc35395a81",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"twelve\",\"pronun\":\"[twelv]\",\"translation\":\"num. 十二；十二个\\nn. 十二；十二个\\nadj. 十二的；十二个的\",\"audio\":\"twelve.mp3\"},{\"word\":\"thirteen\",\"pronun\":\"[ˌθɜːrˈtiːn]\",\"translation\":\"n. 十三；十三岁；十三个\\nnum. 十三\\nadj. 十三的；十三个的\",\"audio\":\"thirteen.mp3\"},{\"word\":\"fourteen\",\"pronun\":\"[ˌfɔːrˈtiːn]\",\"translation\":\"num. 十四；十四个；第十四\\nn. 十四的记号；十四岁；十四点钟；十五世纪\",\"audio\":\"fourteen.mp3\"},{\"word\":\"fifteen\",\"pronun\":\"[ˌfɪfˈtiːn]\",\"translation\":\"n. 十五；十五个；十五人组成的橄榄球队\\nnum. 十五\\nadj. 十五的\",\"audio\":\"fifteen.mp3\"},{\"word\":\"sixteen\",\"pronun\":\"[ˌsɪksˈtiːn]\",\"translation\":\"num. 十六\\nadj. 十六的，十六个的\",\"audio\":\"sixteen.mp3\"},{\"word\":\"seventeen\",\"pronun\":\"[ˌsevnˈtiːn]\",\"translation\":\"n. 十七，十七个\\nnum. 十七\\nadj. 十七岁的；十七的，十七个的\",\"audio\":\"seventeen.mp3\"},{\"word\":\"eighteen\",\"pronun\":\"[ˌeɪˈtiːn]\",\"translation\":\"n. 十八，十八个\\nnum. 十八\\nadj. 十八个的，十八的\",\"audio\":\"eighteen.mp3\"},{\"word\":\"nineteen\",\"pronun\":\"[ˌnaɪnˈtiːn]\",\"translation\":\"num. 十九\",\"audio\":\"nineteen.mp3\"},{\"word\":\"twenty\",\"pronun\":\"[ˈtwenti]\",\"translation\":\"num. 二十\\nn. 二十；二十年代\\nadj. 二十的\",\"audio\":\"twenty.mp3\"},{\"word\":\"kite\",\"pronun\":\"[kaɪt]\",\"translation\":\"n. 风筝\\nvi. 使用空头支票；像风筝一样飞；轻快地移动\\nvt. 骗钱；涂改（支票）\",\"audio\":\"kite.mp3\"},{\"word\":\"beautiful\",\"pronun\":\"[ˈbjuːtɪf(ə)l]\",\"translation\":\"adj. 美丽的\\n出色地\\n出色的\\n迷人的\\n迷人地\",\"audio\":\"beautiful.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

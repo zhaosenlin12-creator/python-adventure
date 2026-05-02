@@ -1,0 +1,50 @@
+{
+  "source": "speed-test",
+  "scrapedAt": "2026-05-02T06:08:44.863502+00:00",
+  "request": {
+    "lesson_id": "30cfa5c016ff9c8aaa5ecddfb83d5d12",
+    "course_id": "c6bc39f4ba86486e20cc171fab797ea3",
+    "source": "speed-test"
+  },
+  "data": {
+    "level": "速度测试",
+    "courseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "order": 40,
+    "nextCourseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "courseName": "英文速度测试",
+    "lessonId": "30cfa5c016ff9c8aaa5ecddfb83d5d12",
+    "nextLessonId": "ad658217b2878c3f2ce7ea73598d4487",
+    "lessonName": "Why Do We Sleep?",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "0acc15308ece15f918ece803121ac948",
+        "index": 1,
+        "text": [
+          "Susan doesn't want to sleep. She says, \"I'm not sleepy.\"\\nMom tells her, \"Just lie on your bed, close your eyes. You will start to feel sleepy soon.\"\\nBut Susan still has a question, \"Why do I have to sleep?\"\\nMom says, \"You need to sleep to rest your body and mind. That way you will be strong and healthy.\""
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": 13,
+    "categoryTitle": "速度测试"
+  }
+}

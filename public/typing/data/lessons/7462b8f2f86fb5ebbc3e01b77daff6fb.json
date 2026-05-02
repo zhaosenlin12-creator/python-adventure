@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.076232+00:00",
+  "request": {
+    "lesson_id": "7462b8f2f86fb5ebbc3e01b77daff6fb",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 10,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "7462b8f2f86fb5ebbc3e01b77daff6fb",
+    "nextLessonId": "af241ef72dc3b3b732b9c39a3ddb1be6",
+    "lessonName": "2022年版 PEP-三年级-下册-5",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-三年级-下册 - 第5课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "60d24ec3628315cc4c8b90e754453725",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"soup\",\"pronun\":\"[suːp]\",\"translation\":\"n. 汤，羹；马力\\nvt. 加速；增加马力\",\"audio\":\"soup.mp3\"},{\"word\":\"fruit\",\"pronun\":\"[fruːt]\",\"translation\":\"n. 水果；产物\\nvt. 使……结果实\\nvi. 结果实\",\"audio\":\"fruit.mp3\"},{\"word\":\"colourful\",\"pronun\":\"[ˈkʌlərfl]\",\"translation\":\"adj. 鲜艳的；生动的；色彩丰富的；富有趣味的\",\"audio\":\"colourful.mp3\"},{\"word\":\"candy\",\"pronun\":\"[ˈkændi]\",\"translation\":\"n. 糖果（等于sweets）；冰糖（等于sugar candy，rock candy）；毒品\\nadj. 新潮的（服饰）；甜言蜜语的\\nvt. 用糖煮；使结晶为砂糖；美化\\nvi. 糖煮；成为结晶\",\"audio\":\"candy.mp3\"},{\"word\":\"yummy\",\"pronun\":\"[ˈjʌmi]\",\"translation\":\"n. 美味的东西；令人喜爱的东西\\nadj. 好吃的；美味的；愉快的\",\"audio\":\"yummy.mp3\"},{\"word\":\"at\",\"pronun\":\"[ət; æt]\",\"translation\":\"prep. 在（表示存在或出现的地点、场所、位置、空间）；以（某种价格、速度等）；向；达；因为；朝；忙于\\nn. 阿特（老挝货币基本单位att）；[化]砹（极不稳定放射性元素）\\nabbr. 密封的（airtight）；气温（air temperature）\",\"audio\":\"at.mp3\"},{\"word\":\"boat\",\"pronun\":\"[boʊt]\",\"translation\":\"n. 小船；轮船\\nvi. 划船\",\"audio\":\"boat.mp3\"},{\"word\":\"cool\",\"pronun\":\"[kuːl]\",\"translation\":\"n. 凉爽；凉爽的空气\\nadj. 凉爽的；冷静的；出色的\\nvt. 使…冷却；使…平静下来\\nvi. 变凉；平息\\nadv. 冷静地\",\"audio\":\"cool.mp3\"},{\"word\":\"keep\",\"pronun\":\"[kiːp]\",\"translation\":\"vt. 保持；经营；遵守；饲养\\nvi. 保持；继续不断\\nn. 保持；生计；生活费\",\"audio\":\"keep.mp3\"},{\"word\":\"home\",\"pronun\":\"[hoʊm]\",\"translation\":\"n. 家，住宅；产地；家乡；避难所\\nadj. 国内的，家庭的；有效的\\nvt. 归巢，回家\\nadv. 在家，回家；深入地\",\"audio\":\"home.mp3\"},{\"word\":\"ball\",\"pronun\":\"[bɔːl]\",\"translation\":\"n. 球；舞会\\nvt. 捏成球形\\nvi. 成团块\",\"audio\":\"ball.mp3\"},{\"word\":\"doll\",\"pronun\":\"[dɑːl]\",\"translation\":\"n. 洋娃娃；玩偶；无头脑的美丽女人\\nvt. 把…打扮得花枝招展\",\"audio\":\"doll.mp3\"},{\"word\":\"car\",\"pronun\":\"[kɑːr]\",\"translation\":\"n. 汽车；车厢\",\"audio\":\"car.mp3\"},{\"word\":\"on\",\"pronun\":\"[ɑːn]\",\"translation\":\"adv. 向前地；作用中，行动中；继续着\\nprep. 向，朝……；关于；在……之上；在……时候\\nadj. 开着的；发生着的，正在进行中\",\"audio\":\"on.mp3\"},{\"word\":\"shelf\",\"pronun\":\"[ʃelf]\",\"translation\":\"n. 架子；搁板；搁板状物；暗礁\",\"audio\":\"shelf.mp3\"},{\"word\":\"shelves\",\"pronun\":\"[ʃelvz]\",\"translation\":\"n. 架子（shelf 的复数）\\nv. 装架（shelve的第三人称单数形式）\",\"audio\":\"shelves.mp3\"},{\"word\":\"box\",\"pronun\":\"[bɑːks]\",\"translation\":\"n. 箱，盒子；包厢；一拳\\nvt. 拳击；装…入盒中；打耳光\\nvi. 拳击\",\"audio\":\"box.mp3\"},{\"word\":\"cap\",\"pronun\":\"[kæp]\",\"translation\":\"n. 盖；帽子\\nvt. 覆盖；胜过；给…戴帽；加盖于\\nvi. 脱帽致意\",\"audio\":\"cap.mp3\"},{\"word\":\"map\",\"pronun\":\"[mæp]\",\"translation\":\"vt. 映射；计划；绘制地图；确定基因在染色体中的位置\\nn. 地图；示意图；染色体图\\nvi. 基因被安置\",\"audio\":\"map.mp3\"},{\"word\":\"under\",\"pronun\":\"[ˈʌndər]\",\"translation\":\"prep. 低于，少于；在...之下\\nadj. 下面的；从属的\\nadv. 在下面；在下方\",\"audio\":\"under.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

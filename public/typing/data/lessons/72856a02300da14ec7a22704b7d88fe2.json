@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.653941+00:00",
+  "request": {
+    "lesson_id": "72856a02300da14ec7a22704b7d88fe2",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 568,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "72856a02300da14ec7a22704b7d88fe2",
+    "nextLessonId": "0cd496213f3a32d7cfd01557ce7c12c7",
+    "lessonName": "What to Be",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6a94fc50bf6a418de5b9e2452cd3a507",
+        "index": 1,
+        "text": [
+          "What to Be\\nOur teacher asked us to write a paper. \"I want everyone to write a paper for me,\" said the teacher. \"In the paper, tell me what you want to be when you grow up.\\n\"I want to work in a store and sell things,\" said Bill.\\n\"I want to coach a baseball team,\" cried Sam.\\n\"I want to be a writer and write books for people to read,\" said Cheryl.\\n\"I want to be a fireman,\" said Gerry. \"And maybe a policeman too.\"\\nAll of the children were excited—all except Joey.\\n\"I can't make up my mind,\" he said.\\n\"I want to be a lot of different things.\"\\nThe teacher smiled. \"Then that's what you should write,\" she told him.\\n\"Write about all the things you want to be. One day, you'll know which one to choose. For right now, wanting to be a lot of things is just right.\""
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

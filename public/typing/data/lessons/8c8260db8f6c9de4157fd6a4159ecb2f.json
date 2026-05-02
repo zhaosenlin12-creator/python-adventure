@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.075990+00:00",
+  "request": {
+    "lesson_id": "8c8260db8f6c9de4157fd6a4159ecb2f",
+    "course_id": "ee920473fc84aa54eb12b2498d3762ad",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "ee920473fc84aa54eb12b2498d3762ad",
+    "order": 218,
+    "nextCourseId": "ee920473fc84aa54eb12b2498d3762ad",
+    "courseName": "初中必备1200词",
+    "lessonId": "8c8260db8f6c9de4157fd6a4159ecb2f",
+    "nextLessonId": "4946cb146d77872a24842398a83b80b5",
+    "lessonName": "Chapter.1",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5aae442da5149d4db713ed23ee344915",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"hi\",\"pronun\":\"[ha\\u026a]\",\"translation\":\"int.(\\u7528\\u4e8e\\u6253\\u62db\\u547c)\\u55e8;\\u5582\"},{\"word\":\"hello\",\"pronun\":\"[h\\u0259'l\\u0259\\u028a]\",\"translation\":\"int.\\u4f60\\u597d;\\u5582\"},{\"word\":\"am\",\"pronun\":\"[\\u00e6m]\",\"translation\":\"v.\\u662f\"},{\"word\":\"OK\",\"pronun\":\"[\\u0259\\u028a\\u02c8ke\\u026a]\",\"translation\":\"int.\\uff06adv.\\u597d;\\u53ef\\u4ee5\"},{\"word\":\"HB\",\"pronun\":\"\",\"translation\":\"(\\u94c5\\u7b14\\u82af)\\u786c\\u9ed1\"},{\"word\":\"CD\",\"pronun\":\"[\\u02ccsi\\u02d0'di\\u02d0]\",\"translation\":\"\\u5149\\u76d8;\\u6fc0\\u5149\\u5531\\u7247\"},{\"word\":\"BBC\",\"pronun\":\"\",\"translation\":\"\\u82f1\\u56fd\\u5e7f\\u64ad\\u516c\\u53f8\"},{\"word\":\"jacket\",\"pronun\":\"['d\\u0292\\u00e6k\\u026at]\",\"translation\":\"n.\\u5939\\u514b\\u886b;\\u77ed\\u4e0a\\u8863\"},{\"word\":\"please.\",\"pronun\":\"\",\"translation\":\"int.(\\u7528\\u4e8e\\u5ba2\\u6c14\\u5730\\u8bf7\\u6c42\\u6216\\u5429\\u5490)\\u8bf7\"},{\"word\":\"NBA\",\"pronun\":\"\",\"translation\":\"(\\u7f8e\\u56fd)\\u5168\\u56fd\\u7bee\\u7403\\u534f\\u4f1a\"},{\"word\":\"parking\",\"pronun\":\"\",\"translation\":\"\\u505c\\u8f66\\u573a;\\u505c\\u8f66\\u4f4d\"},{\"word\":\"kilogram\",\"pronun\":\"\",\"translation\":\"\\u5343\\u514b;\\u516c\\u65a4\"},{\"word\":\"color\",\"pronun\":\"\",\"translation\":\"n.\\u989c\\u8272\"},{\"word\":\"blue\",\"pronun\":\"[blu\\u02d0]\",\"translation\":\"adj.\\uff06n.\\u84dd\\u8272(\\u7684)\"},{\"word\":\"black\",\"pronun\":\"[bl\\u00e6k]\",\"translation\":\"adj.\\uff06n.\\u9ed1\\u8272(\\u7684)\"},{\"word\":\"white\",\"pronun\":\"[hwa\\u026at]\",\"translation\":\"adj.\\uff06n.\\u767d\\u8272(\\u7684)\"},{\"word\":\"say\",\"pronun\":\"[se\\u026a]\",\"translation\":\"v.\\u8bf4;\\u8bb2\"},{\"word\":\"S\",\"pronun\":\"\",\"translation\":\"(\\u5c24\\u6307\\u670d\\u88c5\\u7684\\u5c3a\\u7801)\\u5c0f\\u53f7\\u7684\"},{\"word\":\"M\",\"pronun\":\"\",\"translation\":\"(\\u5c24\\u6307\\u670d\\u88c5\\u7684\\u5c3a\\u7801)\\u4e2d\\u53f7\\u7684\"},{\"word\":\"L\",\"pronun\":\"\",\"translation\":\"(\\u5c24\\u6307\\u670d\\u88c5\\u7684\\u5c3a\\u7801)\\u5927\\u53f7\\u7684\"},{\"word\":\"UFO\",\"pronun\":\"\",\"translation\":\"\\u4e0d\\u660e\\u98de\\u884c\\u7269\"},{\"word\":\"CCTV\",\"pronun\":\"\",\"translation\":\"\\u4e2d\\u56fd\\u4e2d\\u592e\\u7535\\u89c6\\u53f0\"},{\"word\":\"too\",\"pronun\":\"[tu\\u02d0]\",\"translation\":\"adv.\\u4e5f;\\u53c8;\\u592a\"},{\"word\":\"Ms.\",\"pronun\":\"[m\\u026az]\",\"translation\":\"(\\u7528\\u4e8e\\u5973\\u5b50\\u7684\\u59d3\\u6c0f\\u6216\\u59d3\\u540d\\u524d\\uff0c\\u4e0d\\u6307\\u660e\\u5a5a\\u5426)\\u5973\\u58eb\"},{\"word\":\"his\",\"pronun\":\"[h\\u026az]\",\"translation\":\"pron.\\u4ed6\\u7684\"},{\"word\":\"yes\",\"pronun\":\"[jes]\",\"translation\":\"int.\\u662f\\u7684;\\u53ef\\u4ee5\"},{\"word\":\"he\",\"pronun\":\"[hi\\u02d0]\",\"translation\":\"pron.\\u4ed6\"},{\"word\":\"zero\",\"pronun\":\"['z\\u026a\\u0259r\\u0259\\u028a]\",\"translation\":\"num.\\u96f6\"},{\"word\":\"friend\",\"pronun\":\"[frend]\",\"translation\":\"n.\\u670b\\u53cb\"},{\"word\":\"China\",\"pronun\":\"['t\\u0283a\\u026an\\u0259]\",\"translation\":\"\\u4e2d\\u56fd\"},{\"word\":\"middle\",\"pronun\":\"['m\\u026adl]\",\"translation\":\"adj.\\uff06n.\\u4e2d\\u95f4\\u7684;\\u4e2d\\u95f4\"},{\"word\":\"brother\",\"pronun\":\"['br\\u028c\\u00f0\\u0259]\",\"translation\":\"n.\\u5144;\\u5f1f\"},{\"word\":\"grandparent\",\"pronun\":\"[\\u00a0\\/\\u02c8\\u0261r\\u00e6nd\\u02ccpe\\u0259r\\u0259nt]\",\"translation\":\"n.\\u7956\\u7236(\\u6bcd);\\u5916\\u7956\\u7236(\\u6bcd)\"},{\"word\":\"who\",\"pronun\":\"[hu\\u02d0]\",\"translation\":\"pron.\\u8c01;\\u4ec0\\u4e48\\u4eba\"},{\"word\":\"oh\",\"pronun\":\"[\\u0259\\u028a]\",\"translation\":\"int.\\u54e6;\\u554a\"},{\"word\":\"have\",\"pronun\":\"[h\\u00e6v]\",\"translation\":\"v.\\u7ecf\\u53d7;\\u7ecf\\u5386\"},{\"word\":\"bye\",\"pronun\":\"\",\"translation\":\"int.\\u518d\\u89c1\"},{\"word\":\"cousin\",\"pronun\":\"['k\\u028czn]\",\"translation\":\"n.\\u5802(\\u8868)\\u5144(\\u5f1f\\u3001\\u59d0\\u3001\\u59b9)\"},{\"word\":\"grandpa\",\"pronun\":\"['gr\\u00e6ndp\\u0251\\u02d0]\",\"translation\":\"n.(\\u5916)\\u7956\\u7236;\\u7237\\u7237;\\u5916\\u516c;\\u59e5\\u7237\"},{\"word\":\"mom\",\"pronun\":\"\",\"translation\":\"n.\\u5988\\u5988\"},{\"word\":\"dad\",\"pronun\":\"[d\\u00e6d]\",\"translation\":\"n.\\u7238\\u7238\"},{\"word\":\"here\",\"pronun\":\"[h\\u026a\\u0259]\",\"translation\":\"adv.\\u8fd9\\u5c31\\u662f;\\u5728\\u8fd9\\u91cc\"},{\"word\":\"of\",\"pronun\":\"[\\u0252v]\",\"translation\":\"prep.\\u5c5e\\u4e8e(\\u67d0\\u4eba\\u6216\\u67d0\\u7269);\\u5173\\u4e8e(\\u67d0\\u4eba\\u6216\\u67d0\\u7269)\"},{\"word\":\"eraser\",\"pronun\":\"[\\u026a're\\u026as\\u0259]\",\"translation\":\"n.\\u6a61\\u76ae\"},{\"word\":\"schoolbag\",\"pronun\":\"['sku\\u02d0l\\u02ccb\\u00e6g]\",\"translation\":\"n.\\u4e66\\u5305\"},{\"word\":\"excuse\",\"pronun\":\"[\\u026aks'kju\\u02d0z]\",\"translation\":\"v.\\u539f\\u8c05;\\u5bbd\\u6055\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 4,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.262906+00:00",
+  "request": {
+    "lesson_id": "d7653d2b609632628b7450b1af5173aa",
+    "course_id": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "order": 469,
+    "nextCourseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "courseName": "英语每日故事（初级）1-31",
+    "lessonId": "d7653d2b609632628b7450b1af5173aa",
+    "nextLessonId": "bfe7d4ca49b59ddabe5b214192a259fb",
+    "lessonName": "Taking Turns",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c5f9d48b8a6463b744b9c28988889fea",
+        "index": 1,
+        "text": [
+          "Jake and Anna both want to ride the same tricycle. What should they do?\\n\"Let's take turns,\" says Jake.\\n\"Good idea, Jake. You can go first,\" says Anna.\\n\"I'll draw roads with chalk while I wait.\"\\n\"All right! I'll go for a ride and then it's your turn,\" says Jake.\\n\"Perfect! Taking turns is the best way to have fun with friends,\" says Anna."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

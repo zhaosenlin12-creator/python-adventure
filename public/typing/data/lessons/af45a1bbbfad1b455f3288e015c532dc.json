@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.616912+00:00",
+  "request": {
+    "lesson_id": "af45a1bbbfad1b455f3288e015c532dc",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 558,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "af45a1bbbfad1b455f3288e015c532dc",
+    "nextLessonId": "e0429837276f10af14274f09e3c5f54e",
+    "lessonName": "The Little Red Teapot",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "cc2de26cf9acdeb170b64d7cf54dfca8",
+        "index": 1,
+        "text": [
+          "The Little Red Teapot\\nLast winter, I had a bad cold. I could hardly breathe through my nose. In the morning, my mother brought me a little red teapot.\\n\"Tea? I don't like tea!\" | said.\\n\"I know,\" Mom said. \"But tea is one of the best things you can drink. It's very healthy. This is a special tea for when you are sick.\"\\nThere was no way out. I brought the cup to my lips and took a small sip. The tea was strong and bitter.\\nI knew my mom was trying to help me. So I took another sip. Within a few hours, I could breathe through my nose again!\\nWas it the tea? I don't know. But I do know that the next time l'm sick, I'll be looking for that little red teapot again!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

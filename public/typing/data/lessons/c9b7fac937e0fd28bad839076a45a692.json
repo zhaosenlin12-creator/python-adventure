@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.362751+00:00",
+  "request": {
+    "lesson_id": "c9b7fac937e0fd28bad839076a45a692",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 60,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "c9b7fac937e0fd28bad839076a45a692",
+    "nextLessonId": "dba56cfde99c850a690a37344681ccb1",
+    "lessonName": "KET核心词-19",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第19课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3d76703b1f6304f6d9aa17b170bd5fc5",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"disco\",\"pronun\":\"[ˈdɪskoʊ]\",\"translation\":\"n. 迪斯科舞厅；的士高\",\"audio\":\"disco.mp3\"},{\"word\":\"discount\",\"pronun\":\"[ˈdɪskaʊnt]\",\"translation\":\"n. 折扣；贴现率\\nvt. 打折扣；将…贴现；贬损；低估；忽视\\nvi. 贴现；打折扣出售商品\",\"audio\":\"discount.mp3\"},{\"word\":\"discuss\",\"pronun\":\"[dɪˈskʌs]\",\"translation\":\"vt. 讨论；论述，辩论\",\"audio\":\"discuss.mp3\"},{\"word\":\"dish\",\"pronun\":\"[dɪʃ]\",\"translation\":\"n. 盘；餐具；一盘食物；外貌有吸引力的人\\nvt. 盛于碟盘中；分发；使某人的希望破灭；说（某人）的闲话\\nvi. 成碟状；闲谈\",\"audio\":\"dish.mp3\"},{\"word\":\"dive\",\"pronun\":\"[daɪv]\",\"translation\":\"n. 潜水；跳水；俯冲；扑\\nvi. 潜水；跳水；俯冲；急剧下降\",\"audio\":\"dive.mp3\"},{\"word\":\"doctor\",\"pronun\":\"[ˈdɑːktər]\",\"translation\":\"vt. 修理；篡改，伪造；为…治病；授以博士学位\\nn. 医生；博士\\nvi. 就医；行医\",\"audio\":\"doctor.mp3\"},{\"word\":\"document\",\"pronun\":\"[ˈdɑːkjumənt]\",\"translation\":\"n. 文件，公文；[计] 文档；证件\\nvt. 用文件证明\",\"audio\":\"document.mp3\"},{\"word\":\"dot\",\"pronun\":\"[dɑːt]\",\"translation\":\"n. 点，圆点；嫁妆\\nvt. 加小点于\\nvi. 打上点\",\"audio\":\"dot.mp3\"},{\"word\":\"doll\",\"pronun\":\"[dɑːl]\",\"translation\":\"n. 洋娃娃；玩偶；无头脑的美丽女人\\nvt. 把…打扮得花枝招展\",\"audio\":\"doll.mp3\"},{\"word\":\"dollar\",\"pronun\":\"[ˈdɑːlər]\",\"translation\":\"n. 美元\",\"audio\":\"dollar.mp3\"},{\"word\":\"dolphin\",\"pronun\":\"[ˈdɑːlfɪn]\",\"translation\":\"n. 海豚\",\"audio\":\"dolphin.mp3\"},{\"word\":\"door\",\"pronun\":\"[dɔːr]\",\"translation\":\"n. 门；家，户；门口；通道\",\"audio\":\"door.mp3\"},{\"word\":\"double\",\"pronun\":\"[ˈdʌbl]\",\"translation\":\"n. 两倍；双精度型\\nadj. 双重的；两倍的\\nvt. 使加倍\\nadv. 双重地；两倍地；弓身地\\nvi. 加倍，加倍努力；快步走\",\"audio\":\"double.mp3\"},{\"word\":\"down\",\"pronun\":\"[daʊn]\",\"translation\":\"prep. 沿着，往下\\nn. 软毛，绒毛；[地质] 开阔的高地\\nadj. 向下的\\nvt. 打倒，击败\\nadv. 向下，下去；在下面\\nvi. 下降；下去\",\"audio\":\"down.mp3\"},{\"word\":\"download\",\"pronun\":\"[ˌdaʊnˈloʊd]\",\"translation\":\"vt. [计] 下载\",\"audio\":\"download.mp3\"},{\"word\":\"downstairs\",\"pronun\":\"[ˌdaʊnˈsterz]\",\"translation\":\"n. 楼下\\nadj. 楼下的\\nadv. 在楼下\",\"audio\":\"downstairs.mp3\"},{\"word\":\"dragon\",\"pronun\":\"[ˈdræɡən]\",\"translation\":\"n. 龙；凶暴的人，凶恶的人；严厉而有警觉性的女人\",\"audio\":\"dragon.mp3\"},{\"word\":\"draw\",\"pronun\":\"[drɔː]\",\"translation\":\"n. 平局；抽签\\nvi. 拉；拖\\nvt. 画；拉；吸引\",\"audio\":\"draw.mp3\"},{\"word\":\"dream\",\"pronun\":\"[driːm]\",\"translation\":\"n. 梦想，愿望；梦\\nadj. 梦的；理想的；不切实际的\\nvt. 梦想；做梦；想到\\nvi. 梦想；做梦，梦见；想到\",\"audio\":\"dream.mp3\"},{\"word\":\"dress\",\"pronun\":\"[dres]\",\"translation\":\"n. 连衣裙；女装\\nvt. 给…穿衣\\nvi. 穿衣\",\"audio\":\"dress.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

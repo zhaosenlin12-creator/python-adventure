@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.193761+00:00",
+  "request": {
+    "lesson_id": "f653ee2ed01fa104386a4ed1626e2690",
+    "course_id": "9983508511f457b02ddcae4777acab15",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "9983508511f457b02ddcae4777acab15",
+    "order": 134,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "JAVA",
+    "lessonId": "f653ee2ed01fa104386a4ed1626e2690",
+    "nextLessonId": "8dc943760d7995db65f37745685b49e3",
+    "lessonName": "求和与平均值",
+    "icon": "data/assets/daziya.com/key-icon_key-java.09b827febf.png",
+    "description": "Java编程练习 - 求和与平均值",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "656f5cfe8116bf70ce098aec37d2c3ef",
+        "index": 1,
+        "text": [
+          "class Main {\\n    public static void main(String[] args) {\\n        int[] scores = {85, 90, 78, 92, 88};\\n        int total = 0;\\n\\n        for (int score : scores) {\\n            total += score;\\n        }\\n\\n        double average = (double) total / scores.length;\\n\\n        System.out.println(\"总分: \" + total);\\n        System.out.printf(\"平均分: %.2f\\n\", average);\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "java",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

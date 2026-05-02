@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.400830+00:00",
+  "request": {
+    "lesson_id": "95ebbc75eddef1b3c6ad8f2251226361",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 66,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "95ebbc75eddef1b3c6ad8f2251226361",
+    "nextLessonId": "0ac274522ba3e58edab514c8804af548",
+    "lessonName": "KET核心词-37",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第37课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "13f7071492540415e0775bb5c7e6ee8d",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"lesson\",\"pronun\":\"[ˈlesn]\",\"translation\":\"n. 教训；课\\nvt. 教训；上课\",\"audio\":\"lesson.mp3\"},{\"word\":\"let\",\"pronun\":\"[let]\",\"translation\":\"vt. 允许，让；出租；假设；妨碍\\nvi. 出租；被承包\\nn. 障碍；出租屋\",\"audio\":\"let.mp3\"},{\"word\":\"letter\",\"pronun\":\"[ˈletər]\",\"translation\":\"n. 信；字母，文字；证书；文学，学问；字面意义\\nvt. 写字母于\\nvi. 写印刷体字母\",\"audio\":\"letter.mp3\"},{\"word\":\"level\",\"pronun\":\"[ˈlevl]\",\"translation\":\"n. 水平；标准；水平面\\nadj. 水平的；平坦的；同高的\\nvi. 瞄准；拉平；变得平坦\\nvt. 使同等；对准；弄平\",\"audio\":\"level.mp3\"},{\"word\":\"library\",\"pronun\":\"[ˈlaɪbreri]\",\"translation\":\"n. 图书馆，藏书室；文库\",\"audio\":\"library.mp3\"},{\"word\":\"licence\",\"pronun\":\"[ˈlaɪsns]\",\"translation\":\"n. 许可证，执照；特许\\nvt. 特许，许可；发给执照\",\"audio\":\"licence.mp3\"},{\"word\":\"lie\",\"pronun\":\"[laɪ]\",\"translation\":\"vi. 躺；说谎；位于；展现\\nvt. 谎骗\\nn. 谎言；位置\",\"audio\":\"lie.mp3\"},{\"word\":\"life\",\"pronun\":\"[laɪf]\",\"translation\":\"n. 生活，生存；寿命\",\"audio\":\"life.mp3\"},{\"word\":\"lift\",\"pronun\":\"[lɪft]\",\"translation\":\"vt. 举起；提升；鼓舞；空运；抄袭\\nvi. 消散；升起；耸立\\nn. 电梯；举起；起重机；搭车\",\"audio\":\"lift.mp3\"},{\"word\":\"light\",\"pronun\":\"[laɪt]\",\"translation\":\"n. 光；光线；灯；打火机；领悟；浅色；天窗\\nadj. 轻的；浅色的；明亮的；轻松的；容易的；清淡的\\nvi. 点着；变亮；着火\\nvt. 照亮；点燃；着火\\nadv. 轻地；清楚地；轻便地\",\"audio\":\"light.mp3\"},{\"word\":\"like\",\"pronun\":\"[laɪk]\",\"translation\":\"vt. 喜欢；想；愿意\\nvi. 喜欢；希望\\nprep. 像；如同\\nadj. 同样的；相似的\\nn. 爱好；同样的人或物\\nadv. 可能\\nconj. 好像\",\"audio\":\"like.mp3\"},{\"word\":\"line\",\"pronun\":\"[laɪn]\",\"translation\":\"n. 路线，航线；排；绳\\nvt. 排成一行；划线于；以线条标示；使…起皱纹\\nvi. 排队；站成一排\",\"audio\":\"line.mp3\"},{\"word\":\"lion\",\"pronun\":\"[ˈlaɪən]\",\"translation\":\"n. 狮子；名人；勇猛的人；社交场合的名流\",\"audio\":\"lion.mp3\"},{\"word\":\"list\",\"pronun\":\"[lɪst]\",\"translation\":\"n. [计] 列表；清单；目录\\nvi. 列于表上\\nvt. 列出；记入名单内\",\"audio\":\"list.mp3\"},{\"word\":\"listen\",\"pronun\":\"[ˈlɪsn]\",\"translation\":\"vi. 听，倾听；听从，听信\\nn. 听，倾听\",\"audio\":\"listen.mp3\"},{\"word\":\"litter\",\"pronun\":\"[ˈlɪtər]\",\"translation\":\"n. 垃圾；轿，担架；一窝（动物的幼崽）；凌乱\\nvt. 乱丢；给…垫褥草；把…弄得乱七八糟\\nvi. 产仔；乱扔废弃物\",\"audio\":\"litter.mp3\"},{\"word\":\"little\",\"pronun\":\"[ˈlɪtl]\",\"translation\":\"adj. 小的；很少的；短暂的；小巧可爱的\\nadv. 完全不\\nn. 少许；没有多少；短时间\",\"audio\":\"little.mp3\"},{\"word\":\"live\",\"pronun\":\"[lɪv; laɪv]\",\"translation\":\"adj. 活的；生动的；实况转播的；精力充沛的\\nvt. 经历；度过\\nvi. 活；居住；生存\",\"audio\":\"live.mp3\"},{\"word\":\"lizard\",\"pronun\":\"[ˈlɪzərd]\",\"translation\":\"n. 蜥蜴；类蜥蜴爬行动物\",\"audio\":\"lizard.mp3\"},{\"word\":\"local\",\"pronun\":\"[ˈloʊkl]\",\"translation\":\"n. [计] 局部；当地居民；本地新闻\\nadj. 当地的；局部的；地方性的；乡土的\",\"audio\":\"local.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

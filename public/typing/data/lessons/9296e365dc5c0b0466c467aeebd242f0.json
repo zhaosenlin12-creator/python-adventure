@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.636055+00:00",
+  "request": {
+    "lesson_id": "9296e365dc5c0b0466c467aeebd242f0",
+    "course_id": "f5e1caafe742206a7fc8abc95cf77b44",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "order": 319,
+    "nextCourseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "courseName": "诗词歌赋",
+    "lessonId": "9296e365dc5c0b0466c467aeebd242f0",
+    "nextLessonId": "c2b645579828784469bcb3e12576b48c",
+    "lessonName": "《山居秋暝》王维",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-poet-3.b618c00c95.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d86428fdfcfe216331ca401d4f3d46ec",
+        "index": 1,
+        "text": [
+          "《山居秋暝》\\n王维\\n\\n空山新雨后，天气晚来秋。\\n明月松间照，清泉石上流。\\n竹喧归浣女，莲动下渔舟。\\n随意春芳歇，王孙自可留。"
+        ],
+        "pinyin": "[[\"《\", \"\"], [\"山\", \"shān\"], [\"居\", \"jū\"], [\"秋\", \"qiū\"], [\"暝\", \"míng\"], [\"》\", \"\"], [\"\\n\", \"\"], [\"王\", \"wáng\"], [\"维\", \"wéi\"], [\"\\n\", \"\"], [\"\\n\", \"\"], [\"空\", \"kōng\"], [\"山\", \"shān\"], [\"新\", \"xīn\"], [\"雨\", \"yǔ\"], [\"后\", \"hòu\"], [\"，\", \"\"], [\"天\", \"tiān\"], [\"气\", \"qì\"], [\"晚\", \"wǎn\"], [\"来\", \"lái\"], [\"秋\", \"qiū\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"明\", \"míng\"], [\"月\", \"yuè\"], [\"松\", \"sōng\"], [\"间\", \"jiān\"], [\"照\", \"zhào\"], [\"，\", \"\"], [\"清\", \"qīng\"], [\"泉\", \"quán\"], [\"石\", \"shí\"], [\"上\", \"shàng\"], [\"流\", \"liú\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"竹\", \"zhú\"], [\"喧\", \"xuān\"], [\"归\", \"guī\"], [\"浣\", \"huàn\"], [\"女\", \"nǚ\"], [\"，\", \"\"], [\"莲\", \"lián\"], [\"动\", \"dòng\"], [\"下\", \"xià\"], [\"渔\", \"yú\"], [\"舟\", \"zhōu\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"随\", \"suí\"], [\"意\", \"yì\"], [\"春\", \"chūn\"], [\"芳\", \"fāng\"], [\"歇\", \"xiē\"], [\"，\", \"\"], [\"王\", \"wáng\"], [\"孙\", \"sūn\"], [\"自\", \"zì\"], [\"可\", \"kě\"], [\"留\", \"liú\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 45,
+        "minSpeed": 30,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

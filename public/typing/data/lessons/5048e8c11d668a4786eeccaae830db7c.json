@@ -1,0 +1,75 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:30.898152+00:00",
+  "request": {
+    "lesson_id": "5048e8c11d668a4786eeccaae830db7c",
+    "course_id": "21fe8d60de407da95e1abc33ac636014",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "21fe8d60de407da95e1abc33ac636014",
+    "order": 32,
+    "nextCourseId": "21fe8d60de407da95e1abc33ac636014",
+    "courseName": "上排字母",
+    "lessonId": "5048e8c11d668a4786eeccaae830db7c",
+    "nextLessonId": "f8b93d8715785fa44425f094bf3a7329",
+    "lessonName": "学习q和y",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-learn-qy.125f8c0d15.png",
+    "description": "学习q和y",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "40879817d2d16542efa4b2c2a324f2ae",
+        "index": 1,
+        "highlights": [
+          "q"
+        ],
+        "text": [
+          "请使用左手小拇指输入按键q"
+        ],
+        "detail": "新的字母键/请输入[q]键"
+      },
+      {
+        "chapterId": "e38ef808ed8237165170426c4ec2a116",
+        "index": 2,
+        "highlights": [
+          "y"
+        ],
+        "text": [
+          "请使用右手食指输入按键y"
+        ],
+        "detail": "新的字母键/请输入[y]键"
+      },
+      {
+        "chapterId": "c9a0b9214388b68ab1cfe437cef67dab",
+        "index": 3,
+        "highlights": [
+          " "
+        ],
+        "text": [
+          "接下来我们将练习如何输入[w]和[o]，请确保使用正确的指法输入，敲击 键开始"
+        ],
+        "detail": "新的字母键/很好"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "b2255096379b2f82f9a0bcd58f3d3c8c",
+        "index": 4,
+        "text": [
+          "qyyqyyyqyqqqyyyqyqyyqyyyqqqyyqyq"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

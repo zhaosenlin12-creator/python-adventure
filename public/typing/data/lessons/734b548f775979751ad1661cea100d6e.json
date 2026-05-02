@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.128854+00:00",
+  "request": {
+    "lesson_id": "734b548f775979751ad1661cea100d6e",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 442,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "734b548f775979751ad1661cea100d6e",
+    "nextLessonId": "4e2c3472c1d22e5038474a1aeee5974a",
+    "lessonName": "六级词汇正序版-105",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第105课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "dc35b73d6792d0ea7b6153fdbedf99e6",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"subscribe\",\"pronun\":\"[səbˈskraɪb]\",\"translation\":\"vt. 签署；赞成；捐助\\nvi. 订阅；捐款；认购；赞成；签署\",\"audio\":\"subscribe.mp3\"},{\"word\":\"subsequent\",\"pronun\":\"[ˈsʌbsɪkwənt]\",\"translation\":\"adj. 后来的，随后的\",\"audio\":\"subsequent.mp3\"},{\"word\":\"subsidiary\",\"pronun\":\"[səbˈsɪdieri]\",\"translation\":\"n. 子公司；辅助者\\nadj. 附属的；辅助的\",\"audio\":\"subsidiary.mp3\"},{\"word\":\"subsidy\",\"pronun\":\"[ˈsʌbsədi]\",\"translation\":\"n. 补贴；津贴；补助金\",\"audio\":\"subsidy.mp3\"},{\"word\":\"substance\",\"pronun\":\"[ˈsʌbstəns]\",\"translation\":\"n. 物质；实质；资产；主旨\",\"audio\":\"substance.mp3\"},{\"word\":\"substantial\",\"pronun\":\"[səbˈstænʃl]\",\"translation\":\"n. 本质；重要材料\\nadj. 大量的；实质的；内容充实的\",\"audio\":\"substantial.mp3\"},{\"word\":\"substitute\",\"pronun\":\"[ˈsʌbstɪtuːt]\",\"translation\":\"n. 代用品；代替者\\nvi. 替代\\nvt. 代替\",\"audio\":\"substitute.mp3\"},{\"word\":\"subtle\",\"pronun\":\"[ˈsʌtl]\",\"translation\":\"adj. 微妙的；精细的；敏感的；狡猾的；稀薄的\",\"audio\":\"subtle.mp3\"},{\"word\":\"subtract\",\"pronun\":\"[səbˈtrækt]\",\"translation\":\"vt. 减去；扣掉\",\"audio\":\"subtract.mp3\"},{\"word\":\"suburb\",\"pronun\":\"[ˈsʌbɜːrb]\",\"translation\":\"n. 郊区；边缘\",\"audio\":\"suburb.mp3\"},{\"word\":\"successive\",\"pronun\":\"[səkˈsesɪv]\",\"translation\":\"adj. 连续的；继承的；依次的；接替的\",\"audio\":\"successive.mp3\"},{\"word\":\"successor\",\"pronun\":\"[səkˈsesər]\",\"translation\":\"n. 继承者；后续的事物\",\"audio\":\"successor.mp3\"},{\"word\":\"Sue\",\"pronun\":\"[suː]\",\"translation\":\"vt. 控告；请求\\nvi. 控告；提出请求\",\"audio\":\"Sue.mp3\"},{\"word\":\"suffice\",\"pronun\":\"[səˈfaɪs]\",\"translation\":\"vt. 使满足；足够…用；合格\\nvi. 足够；有能力\",\"audio\":\"suffice.mp3\"},{\"word\":\"sufficient\",\"pronun\":\"[səˈfɪʃnt]\",\"translation\":\"adj. 足够的；充分的\",\"audio\":\"sufficient.mp3\"},{\"word\":\"suite\",\"pronun\":\"[swiːt]\",\"translation\":\"n. （一套）家具；套房；组曲；（一批）随员，随从\",\"audio\":\"suite.mp3\"},{\"word\":\"sulfur\",\"pronun\":\"[ˈsʌlfər]\",\"translation\":\"n. 硫磺；硫磺色\\nvt. 用硫磺处理\",\"audio\":\"sulfur.mp3\"},{\"word\":\"summit\",\"pronun\":\"[ˈsʌmɪt]\",\"translation\":\"n. 顶点；最高级会议；最高阶层\\nadj. 最高级的；政府首脑的\",\"audio\":\"summit.mp3\"},{\"word\":\"summon\",\"pronun\":\"[ˈsʌmən]\",\"translation\":\"vt. 召唤；召集；鼓起；振作\",\"audio\":\"summon.mp3\"},{\"word\":\"superficial\",\"pronun\":\"[ˌsuːpərˈfɪʃl]\",\"translation\":\"adj. 表面的；肤浅的 ；表面文章的；外表的；（人）浅薄的\",\"audio\":\"superficial.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

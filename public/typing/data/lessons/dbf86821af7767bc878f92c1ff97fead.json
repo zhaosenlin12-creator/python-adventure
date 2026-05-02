@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.537178+00:00",
+  "request": {
+    "lesson_id": "dbf86821af7767bc878f92c1ff97fead",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 667,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "dbf86821af7767bc878f92c1ff97fead",
+    "nextLessonId": "8b498dadc045c8660c22949b1955eed3",
+    "lessonName": " 六年级下-4",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点六年级下 - 第4课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4fdaef07eadc15973a870dcd32ae3dfb",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"Labour Day\",\"pronun\":\"\",\"translation\":\"na. (五一国际)劳动节\",\"audio\":\"Labour_Day.mp3\"},{\"word\":\"mule\",\"pronun\":\"[mjuːl]\",\"translation\":\"n. 骡；倔强之人，顽固的人；杂交种动物\",\"audio\":\"mule.mp3\"},{\"word\":\"Turpan\",\"pronun\":\"\",\"translation\":\"吐鲁番（新疆维吾尔自治区）（旧译Turfan）\",\"audio\":\"Turpan.mp3\"},{\"word\":\"could\",\"pronun\":\"[kəd; kʊd]\",\"translation\":\"aux. 能够\\nv. 能（can的过去式）\",\"audio\":\"could.mp3\"},{\"word\":\"till\",\"pronun\":\"[tɪl]\",\"translation\":\"prep. 直到\\nconj. 直到...为止\\nn. [地理][水文] 冰碛；放钱的抽屉；备用现金\\nvt. 耕种；犁\\nvi. 耕种；耕耘\",\"audio\":\"till.mp3\"},{\"word\":\"beach\",\"pronun\":\"[biːtʃ]\",\"translation\":\"n. 海滩；湖滨\\nvt. 将…拖上岸\\nvi. 搁浅；定居\",\"audio\":\"beach.mp3\"},{\"word\":\"basket\",\"pronun\":\"[ˈbæskɪt]\",\"translation\":\"n. 篮子；（篮球比赛的）得分；一篮之量；篮筐\\nvt. 装入篮\",\"audio\":\"basket.mp3\"},{\"word\":\"part\",\"pronun\":\"[pɑːrt]\",\"translation\":\"n. 部分；角色；零件；一些；片段\\nadj. 部分的\\nvt. 分离；分配；分开\\nadv. 部分地\\nvi. 断裂；分手\",\"audio\":\"part.mp3\"},{\"word\":\"licked\",\"pronun\":\"[lɪk]\",\"translation\":\"vt. 舔；卷过；鞭打\\nvt. （非正式）战胜\\nvi. 舔；轻轻拍打\\nn. 舔；打；少许\",\"audio\":\"licked.mp3\"},{\"word\":\"laughed\",\"pronun\":\"[læft]\",\"translation\":\"笑\\n为了开玩笑\\n有趣的事\\n嘲笑\",\"audio\":\"laughed.mp3\"},{\"word\":\"dining hall\",\"pronun\":\"[ˈdaɪnɪŋ hɔːl]\",\"translation\":\"na. 大餐厅\",\"audio\":\"dining_hall.mp3\"},{\"word\":\"grass\",\"pronun\":\"[ɡræs]\",\"translation\":\"n. 草；草地，草坪\\nvt. 放牧；使……长满草；使……吃草\\nvi. 长草\",\"audio\":\"grass.mp3\"},{\"word\":\"gym\",\"pronun\":\"[dʒɪm]\",\"translation\":\"n. 健身房；体育；体育馆\",\"audio\":\"gym.mp3\"},{\"word\":\"ago\",\"pronun\":\"[əˈɡoʊ]\",\"translation\":\"adj. 以前的；过去的\\nadv. 以前，以往\",\"audio\":\"ago.mp3\"},{\"word\":\"cycling\",\"pronun\":\"[ˈsaɪklɪŋ]\",\"translation\":\"n. 骑脚踏车消遣；骑脚踏车兜风\",\"audio\":\"cycling.mp3\"},{\"word\":\"go cycling\",\"pronun\":\"\",\"translation\":\"去骑自行车；去骑车；去骑单车\",\"audio\":\"go_cycling.mp3\"},{\"word\":\"ice-skate\",\"pronun\":\"[ˈaɪs skeɪt]\",\"translation\":\"v. 溜冰，滑冰\",\"audio\":\"ice-skate.mp3\"},{\"word\":\"badminton\",\"pronun\":\"[ˈbædmɪntən]\",\"translation\":\"n. 羽毛球\",\"audio\":\"badminton.mp3\"},{\"word\":\"star\",\"pronun\":\"[stɑːr]\",\"translation\":\"n. 星，恒星；明星；星形物\\nadj. 明星的，主角的；星形的\\nvt. 用星号标于；由…主演，由…担任主角\\nvi. 担任主角\",\"audio\":\"star.mp3\"},{\"word\":\"easy\",\"pronun\":\"[ˈiːzi]\",\"translation\":\"adj. 容易的；舒适的\\nvt. 发出停划命令\\nadv. 不费力地，从容地\\nvi. 停止划桨\",\"audio\":\"easy.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

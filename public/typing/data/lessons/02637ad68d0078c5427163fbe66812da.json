@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.770093+00:00",
+  "request": {
+    "lesson_id": "02637ad68d0078c5427163fbe66812da",
+    "course_id": "df7bf8b8c0456926de2c1fac14a741b2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "order": 448,
+    "nextCourseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "courseName": "宋词必备67首（1）",
+    "lessonId": "02637ad68d0078c5427163fbe66812da",
+    "nextLessonId": "c354fa95fe6422d95f70b97f1ed0ff46",
+    "lessonName": "惠崇春江晚景",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5c456c2c890d345535a473043e17f5e9",
+        "index": 1,
+        "text": [
+          "惠崇春江晚景\\n苏轼\\n竹外桃花三两枝，春江水暖鸭先知。\\n蒌蒿满地芦芽短，正是河豚欲上时。"
+        ],
+        "pinyin": "[[\"惠\", \"huì\"], [\"崇\", \"chóng\"], [\"春\", \"chūn\"], [\"江\", \"jiāng\"], [\"晚\", \"wǎn\"], [\"景\", \"jǐng\"], [\"\\n\", \"\"], [\"苏\", \"sū\"], [\"轼\", \"shì\"], [\"\\n\", \"\"], [\"竹\", \"zhú\"], [\"外\", \"wài\"], [\"桃\", \"táo\"], [\"花\", \"huā\"], [\"三\", \"sān\"], [\"两\", \"liǎng\"], [\"枝\", \"zhī\"], [\"，\", \"\"], [\"春\", \"chūn\"], [\"江\", \"jiāng\"], [\"水\", \"shuǐ\"], [\"暖\", \"nuǎn\"], [\"鸭\", \"yā\"], [\"先\", \"xiān\"], [\"知\", \"zhī\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"蒌\", \"lóu\"], [\"蒿\", \"hāo\"], [\"满\", \"mǎn\"], [\"地\", \"dì\"], [\"芦\", \"lú\"], [\"芽\", \"yá\"], [\"短\", \"duǎn\"], [\"，\", \"\"], [\"正\", \"zhèng\"], [\"是\", \"shì\"], [\"河\", \"hé\"], [\"豚\", \"tún\"], [\"欲\", \"yù\"], [\"上\", \"shàng\"], [\"时\", \"shí\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

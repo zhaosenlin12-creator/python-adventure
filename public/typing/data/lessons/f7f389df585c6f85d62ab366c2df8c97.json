@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:42.558055+00:00",
+  "request": {
+    "lesson_id": "f7f389df585c6f85d62ab366c2df8c97",
+    "course_id": "37a7adf23aab7533faea85ded4a73fdb",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "37a7adf23aab7533faea85ded4a73fdb",
+    "order": 261,
+    "nextCourseId": "37a7adf23aab7533faea85ded4a73fdb",
+    "courseName": "财务汇算-整数计算",
+    "lessonId": "f7f389df585c6f85d62ab366c2df8c97",
+    "nextLessonId": "99eca6c2d91c8358732156c3813c4ff9",
+    "lessonName": "两位数混合一",
+    "icon": "data/assets/daziya.com/key-icon_num-jiadeng.3722a47f6f.png",
+    "description": "数字输入练习 - 两位数混合一",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d6d5c0a4d34588b1f38412bab3f769f9",
+        "index": 1,
+        "text": [
+          "50+\\n25-\\n18+\\n32-\\n47+\\n15-\\n29+\\n36-\\n41+\\n28-\\n19+\\n33"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

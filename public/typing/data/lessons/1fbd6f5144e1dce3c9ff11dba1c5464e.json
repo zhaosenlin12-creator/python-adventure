@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.241211+00:00",
+  "request": {
+    "lesson_id": "1fbd6f5144e1dce3c9ff11dba1c5464e",
+    "course_id": "b121644211bd274795ee5972ddf997a2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "b121644211bd274795ee5972ddf997a2",
+    "order": 321,
+    "nextCourseId": "b121644211bd274795ee5972ddf997a2",
+    "courseName": "小学必备古诗75首（1）",
+    "lessonId": "1fbd6f5144e1dce3c9ff11dba1c5464e",
+    "nextLessonId": "719c8cc7c38c80a6da7798670c153b4d",
+    "lessonName": "鹿柴",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "67a49919635bc1a55f9f62fd42222ed9",
+        "index": 1,
+        "text": [
+          "鹿柴\\n王维\\n空山不见人，但闻人语响。\\n返景入深林，复照青苔上。"
+        ],
+        "pinyin": "[[\"鹿\", \"lù\"], [\"柴\", \"zhài\"], [\"\\n\", \"\"], [\"王\", \"wáng\"], [\"维\", \"wéi\"], [\"\\n\", \"\"], [\"空\", \"kōng\"], [\"山\", \"shān\"], [\"不\", \"bù\"], [\"见\", \"jiàn\"], [\"人\", \"rén\"], [\"，\", \"\"], [\"但\", \"dàn\"], [\"闻\", \"wén\"], [\"人\", \"rén\"], [\"语\", \"yǔ\"], [\"响\", \"xiǎng\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"返\", \"fǎn\"], [\"景\", \"yǐng\"], [\"入\", \"rù\"], [\"深\", \"shēn\"], [\"林\", \"lín\"], [\"，\", \"\"], [\"复\", \"fù\"], [\"照\", \"zhào\"], [\"青\", \"qīng\"], [\"苔\", \"tái\"], [\"上\", \"shàng\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

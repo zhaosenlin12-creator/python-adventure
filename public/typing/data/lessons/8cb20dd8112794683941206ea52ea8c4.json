@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.272766+00:00",
+  "request": {
+    "lesson_id": "8cb20dd8112794683941206ea52ea8c4",
+    "course_id": "b121644211bd274795ee5972ddf997a2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "b121644211bd274795ee5972ddf997a2",
+    "order": 330,
+    "nextCourseId": "b121644211bd274795ee5972ddf997a2",
+    "courseName": "小学必备古诗75首（1）",
+    "lessonId": "8cb20dd8112794683941206ea52ea8c4",
+    "nextLessonId": "61472d6b23cb1804478e49ac50fe629e",
+    "lessonName": "望天门山",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "50de9cef468932344613e82104622152",
+        "index": 1,
+        "text": [
+          "望天门山\\n李白\\n天门中断楚江开，碧水东流至此回。\\n两岸青山相对出，孤帆一片日边来。"
+        ],
+        "pinyin": "[[\"望\", \"wàng\"], [\"天\", \"tiān\"], [\"门\", \"mén\"], [\"山\", \"shān\"], [\"\\n\", \"\"], [\"李\", \"lǐ\"], [\"白\", \"bái\"], [\"\\n\", \"\"], [\"天\", \"tiān\"], [\"门\", \"mén\"], [\"中\", \"zhōng\"], [\"断\", \"duàn\"], [\"楚\", \"chǔ\"], [\"江\", \"jiāng\"], [\"开\", \"kāi\"], [\"，\", \"\"], [\"碧\", \"bì\"], [\"水\", \"shuǐ\"], [\"东\", \"dōng\"], [\"流\", \"liú\"], [\"至\", \"zhì\"], [\"此\", \"cǐ\"], [\"回\", \"huí\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"两\", \"liǎng\"], [\"岸\", \"àn\"], [\"青\", \"qīng\"], [\"山\", \"shān\"], [\"相\", \"xiāng\"], [\"对\", \"duì\"], [\"出\", \"chū\"], [\"，\", \"\"], [\"孤\", \"gū\"], [\"帆\", \"fān\"], [\"一\", \"yī\"], [\"片\", \"piàn\"], [\"日\", \"rì\"], [\"边\", \"biān\"], [\"来\", \"lái\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.324164+00:00",
+  "request": {
+    "lesson_id": "1ec73af8cd6e9c2ad2cf268c10f82a97",
+    "course_id": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "order": 483,
+    "nextCourseId": "30951c93875a1e260feda8cb699005df",
+    "courseName": "英语每日故事（初级）1-31",
+    "lessonId": "1ec73af8cd6e9c2ad2cf268c10f82a97",
+    "nextLessonId": "b54431a2611e64bfbb579e46a86e05de",
+    "lessonName": "Round and Round",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c584ad49ece7e1b49b9f05ddbd1dac80",
+        "index": 1,
+        "text": [
+          "One day in my class, our teacher said, \"Cars, buses, bicycles, trains, and even planes are all the same in one way. Does anyone know how?\"\\nJust then, my apple fell to the ground. It started to roll.\\n\"That's it!\" I put up my hand. \"They all have wheels.\"\\nThe teacher said, \"Very good! Now please put your apple away.\""
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

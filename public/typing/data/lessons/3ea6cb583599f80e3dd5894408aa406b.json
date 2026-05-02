@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.893599+00:00",
+  "request": {
+    "lesson_id": "3ea6cb583599f80e3dd5894408aa406b",
+    "course_id": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "order": 62,
+    "nextCourseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "courseName": "C++",
+    "lessonId": "3ea6cb583599f80e3dd5894408aa406b",
+    "nextLessonId": "c946bc22ba3652dbc9182dbcf65ebfe6",
+    "lessonName": "基本运算",
+    "icon": "data/assets/daziya.com/key-icon_key-cpp.b136419115.png",
+    "description": "C++编程练习 - 基本运算",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "871510993ec7fbbc56c153c6192332b1",
+        "index": 1,
+        "text": [
+          "#include <iostream>\\nusing namespace std;\\n\\nint main() {\\n    int a = 10, b = 3;\\n\\n    cout << \"加法: \" << a << \" + \" << b << \" = \" << a + b << endl;\\n    cout << \"减法: \" << a << \" - \" << b << \" = \" << a - b << endl;\\n    cout << \"乘法: \" << a << \" * \" << b << \" = \" << a * b << endl;\\n    cout << \"除法: \" << a << \" / \" << b << \" = \" << a / b << endl;\\n    cout << \"取余: \" << a << \" % \" << b << \" = \" << a % b << endl;\\n\\n    return 0;\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "cpp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

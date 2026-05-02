@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.536799+00:00",
+  "request": {
+    "lesson_id": "a808f96c7c7cdaa9b34e23eb849252a8",
+    "course_id": "fa03ede610a7cc0a487ff4fca5942e36",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "fa03ede610a7cc0a487ff4fca5942e36",
+    "order": 293,
+    "nextCourseId": "fa03ede610a7cc0a487ff4fca5942e36",
+    "courseName": "汉字四级",
+    "lessonId": "a808f96c7c7cdaa9b34e23eb849252a8",
+    "nextLessonId": "b1fe89ada5e861feffc16e3acfacdae2",
+    "lessonName": "《江南的冬景》郁达夫",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-4.b52294a527.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b802d859ebdefccb30457e91578e87c8",
+        "index": 1,
+        "text": [
+          "若再要点景致进去，则门前可以泊一只乌篷小船，茅屋里可以添几个喧哗的酒客，天垂暮了，还可以加一味红黄，在茅屋窗中画上一圈暗示着灯光的月晕。"
+        ],
+        "pinyin": "[[\"若\", \"ruò\"], [\"再\", \"zài\"], [\"要\", \"yào\"], [\"点\", \"diǎn\"], [\"景\", \"jǐng\"], [\"致\", \"zhì\"], [\"进\", \"jìn\"], [\"去\", \"qù\"], [\"，\", \"\"], [\"则\", \"zé\"], [\"门\", \"mén\"], [\"前\", \"qián\"], [\"可\", \"kě\"], [\"以\", \"yǐ\"], [\"泊\", \"bó\"], [\"一\", \"yī\"], [\"只\", \"zhī\"], [\"乌\", \"wū\"], [\"篷\", \"péng\"], [\"小\", \"xiǎo\"], [\"船\", \"chuán\"], [\"，\", \"\"], [\"茅\", \"máo\"], [\"屋\", \"wū\"], [\"里\", \"lǐ\"], [\"可\", \"kě\"], [\"以\", \"yǐ\"], [\"添\", \"tiān\"], [\"几\", \"jǐ\"], [\"个\", \"gè\"], [\"喧\", \"xuān\"], [\"哗\", \"huá\"], [\"的\", \"de\"], [\"酒\", \"jiǔ\"], [\"客\", \"kè\"], [\"，\", \"\"], [\"天\", \"tiān\"], [\"垂\", \"chuí\"], [\"暮\", \"mù\"], [\"了\", \"le\"], [\"，\", \"\"], [\"还\", \"hái\"], [\"可\", \"kě\"], [\"以\", \"yǐ\"], [\"加\", \"jiā\"], [\"一\", \"yī\"], [\"味\", \"wèi\"], [\"红\", \"hóng\"], [\"黄\", \"huáng\"], [\"，\", \"\"], [\"在\", \"zài\"], [\"茅\", \"máo\"], [\"屋\", \"wū\"], [\"窗\", \"chuāng\"], [\"中\", \"zhōng\"], [\"画\", \"huà\"], [\"上\", \"shàng\"], [\"一\", \"yī\"], [\"圈\", \"quān\"], [\"暗\", \"àn\"], [\"示\", \"shì\"], [\"着\", \"zhe\"], [\"灯\", \"dēng\"], [\"光\", \"guāng\"], [\"的\", \"de\"], [\"月\", \"yuè\"], [\"晕\", \"yùn\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 42,
+        "minSpeed": 28,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.645114+00:00",
+  "request": {
+    "lesson_id": "47617add4c38dea2ee827d5336c4fdcf",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 29,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "47617add4c38dea2ee827d5336c4fdcf",
+    "nextLessonId": "160ca36f362c8aa53b06c99e8d712454",
+    "lessonName": "韵母ian、iang",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母ian、iang的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "5e477b7a7b17db7d0e9a64dfccc13e1e",
+        "index": 1,
+        "highlights": [
+          "ian"
+        ],
+        "text": [
+          "请输入按键 [ian]"
+        ],
+        "detail": "学习双拼按键 ian"
+      },
+      {
+        "chapterId": "deb403ea8222e72772c9eccbff432a13",
+        "index": 2,
+        "highlights": [
+          "iang"
+        ],
+        "text": [
+          "请输入按键 [iang]"
+        ],
+        "detail": "学习双拼按键 iang"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "bb1d176a1bb0a52b05f1ccf4d6166aaf",
+        "index": 3,
+        "text": [
+          "ianianianianiangiangiangiangianiangianiangianiangianiang"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "4cee263506512e04f1a78751d75db873",
+        "index": 4,
+        "text": [
+          "天边亮着星光，江边渔船点点。青年向远方眺望，田野连着山梁。凉风穿过厅堂，帘子轻轻飘扬。"
+        ],
+        "pinyin": "[[\"天\",\"tiān\"],[\"边\",\"biān\"],[\"亮\",\"liàng\"],[\"着\",\"zhe\"],[\"星\",\"xīng\"],[\"光\",\"guāng\"],[\"，\",\"\"],[\"江\",\"jiāng\"],[\"边\",\"biān\"],[\"渔\",\"yú\"],[\"船\",\"chuán\"],[\"点\",\"diǎn\"],[\"点\",\"diǎn\"],[\"。\",\"\"],[\"青\",\"qīng\"],[\"年\",\"nián\"],[\"向\",\"xiàng\"],[\"远\",\"yuǎn\"],[\"方\",\"fāng\"],[\"眺\",\"tiào\"],[\"望\",\"wàng\"],[\"，\",\"\"],[\"田\",\"tián\"],[\"野\",\"yě\"],[\"连\",\"lián\"],[\"着\",\"zhe\"],[\"山\",\"shān\"],[\"梁\",\"liáng\"],[\"。\",\"\"],[\"凉\",\"liáng\"],[\"风\",\"fēng\"],[\"穿\",\"chuān\"],[\"过\",\"guò\"],[\"厅\",\"tīng\"],[\"堂\",\"táng\"],[\"，\",\"\"],[\"帘\",\"lián\"],[\"子\",\"zi\"],[\"轻\",\"qīng\"],[\"轻\",\"qīng\"],[\"飘\",\"piāo\"],[\"扬\",\"yáng\"],[\"。\",\"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

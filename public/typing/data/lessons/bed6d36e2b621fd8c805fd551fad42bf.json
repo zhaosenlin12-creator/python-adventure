@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.125342+00:00",
+  "request": {
+    "lesson_id": "bed6d36e2b621fd8c805fd551fad42bf",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 439,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "bed6d36e2b621fd8c805fd551fad42bf",
+    "nextLessonId": "530ccc03ef21a3ea5484a393d9d778ef",
+    "lessonName": "六级词汇正序版-96",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第96课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f28635271491b5c46186bdd4929bd36b",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"scandal\",\"pronun\":\"[ˈskændl]\",\"translation\":\"n. 丑闻；流言蜚语；诽谤；公愤\",\"audio\":\"scandal.mp3\"},{\"word\":\"scar\",\"pronun\":\"[skɑːr]\",\"translation\":\"n. 创伤；伤痕\\nvt. 伤害；给留下伤痕\\nvi. 结疤；痊愈\",\"audio\":\"scar.mp3\"},{\"word\":\"scary\",\"pronun\":\"[ˈskeri]\",\"translation\":\"adj. （事物）可怕的；恐怖的；吓人的；（人）提心吊胆的；引起惊慌的；胆小的\",\"audio\":\"scary.mp3\"},{\"word\":\"scatter\",\"pronun\":\"[ˈskætər]\",\"translation\":\"n. 分散；散播，撒播\\nvt. 使散射；使散开，使分散；使散播，使撒播\\nvi. 分散，散开；散射\",\"audio\":\"scatter.mp3\"},{\"word\":\"scent\",\"pronun\":\"[sent]\",\"translation\":\"n. 气味；嗅觉；痕迹；察觉能力\\nvt. 闻到；发觉；使充满…的气味；循着遗臭追踪\\nvi. 发出…的气味；有…的迹象；嗅着气味追赶\",\"audio\":\"scent.mp3\"},{\"word\":\"schedule\",\"pronun\":\"[ˈskedʒuːl]\",\"translation\":\"n. 时间表；计划表；一览表\\nvt. 安排，计划；编制目录；将……列入计划表\",\"audio\":\"schedule.mp3\"},{\"word\":\"scheme\",\"pronun\":\"[skiːm]\",\"translation\":\"n. 计划；组合；体制；诡计\\nvt. 计划；策划\\nvi. 搞阴谋；拟订计划\",\"audio\":\"scheme.mp3\"},{\"word\":\"scoop\",\"pronun\":\"[skuːp]\",\"translation\":\"n. 勺；铲子；独家新闻；凹处\\nvt. 掘；舀取；抢先获得；搜集\",\"audio\":\"scoop.mp3\"},{\"word\":\"scope\",\"pronun\":\"[skoʊp]\",\"translation\":\"n. 范围；余地；视野；眼界；导弹射程\\nvt. 审视\",\"audio\":\"scope.mp3\"},{\"word\":\"score\",\"pronun\":\"[skɔːr]\",\"translation\":\"n. 分数；二十；配乐；刻痕\\nvt. 获得；评价；划线，刻划；把…记下\\nvi. 得分；记分；刻痕\",\"audio\":\"score.mp3\"},{\"word\":\"scorn\",\"pronun\":\"[skɔːrn]\",\"translation\":\"n. 轻蔑；嘲笑；藐视的对象\\nvt. 轻蔑；藐视；不屑做\\nvi. 表示轻蔑；表示鄙视\",\"audio\":\"scorn.mp3\"},{\"word\":\"scramble\",\"pronun\":\"[ˈskræmbl]\",\"translation\":\"n. 抢夺，争夺；混乱，混乱的一团；爬行，攀登\\nvi. 爬行，攀登；不规则地生长；仓促行动\\nvt. 攀登；使混杂，仓促凑成；扰乱\",\"audio\":\"scramble.mp3\"},{\"word\":\"scrap\",\"pronun\":\"[skræp]\",\"translation\":\"n. 碎片；残余物；打架；少量\\nvt. 废弃；使解体；拆毁\\nadj. 废弃的；零碎的\\nvi. 吵架\",\"audio\":\"scrap.mp3\"},{\"word\":\"scrape\",\"pronun\":\"[skreɪp]\",\"translation\":\"n. 刮掉；擦痕；困境；刮擦声\\nvt. 刮；擦伤；挖成\\nvi. 刮掉；刮出刺耳声\",\"audio\":\"scrape.mp3\"},{\"word\":\"scratch\",\"pronun\":\"[skrætʃ]\",\"translation\":\"n. 擦伤；抓痕；刮擦声；乱写\\nadj. 打草稿用的；凑合的；碰巧的\\nvt. 抓；刮；挖出；乱涂\\nvi. 抓；搔；发刮擦声；勉强糊口；退出比赛\",\"audio\":\"scratch.mp3\"},{\"word\":\"screw\",\"pronun\":\"[skruː]\",\"translation\":\"n. 螺旋；螺丝钉；吝啬鬼\\nvt. 旋，拧；压榨；强迫\\nvi. 转动，拧\",\"audio\":\"screw.mp3\"},{\"word\":\"scrub\",\"pronun\":\"[skrʌb]\",\"translation\":\"n. 矮树；洗擦；擦洗者；矮小的人（或物）\\nvt. 用力擦洗；使净化\\nvi. 擦洗；进行手臂消毒\\nadj. 矮小的；临时凑合的；次等的\",\"audio\":\"scrub.mp3\"},{\"word\":\"scrutiny\",\"pronun\":\"[ˈskruːtəni]\",\"translation\":\"n. 详细审查；监视；细看；选票复查\",\"audio\":\"scrutiny.mp3\"},{\"word\":\"sculpture\",\"pronun\":\"[ˈskʌlptʃər]\",\"translation\":\"n. 雕塑；雕刻；刻蚀\\nvt. 雕塑；雕刻；刻蚀\\nvi. 从事雕刻\",\"audio\":\"sculpture.mp3\"},{\"word\":\"seam\",\"pronun\":\"[siːm]\",\"translation\":\"n. 缝；接缝\\nvt. 缝合；接合；使留下伤痕\\nvi. 裂开；产生裂缝\",\"audio\":\"seam.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

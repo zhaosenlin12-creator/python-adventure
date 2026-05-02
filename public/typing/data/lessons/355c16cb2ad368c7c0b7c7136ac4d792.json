@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.068459+00:00",
+  "request": {
+    "lesson_id": "355c16cb2ad368c7c0b7c7136ac4d792",
+    "course_id": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "order": 215,
+    "nextCourseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "courseName": "小升初必备单词",
+    "lessonId": "355c16cb2ad368c7c0b7c7136ac4d792",
+    "nextLessonId": "70f7657458b9c965c38ba7c1988ac3f2",
+    "lessonName": "X",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e383e5f64156cc2328909486de8aa462",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"X-ray\",\"pronun\":\"[\\u02c8eksrei]\",\"translation\":\"n. \\uff38\\u5c04\\u7ebf; \\uff38\\u5149; X\\u5c04\\u7ebf; X\\u5149(...\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "x",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 12,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

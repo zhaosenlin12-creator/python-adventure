@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.345982+00:00",
+  "request": {
+    "lesson_id": "bb4c168511548158c4f4312ec38eb591",
+    "course_id": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "order": 351,
+    "nextCourseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "courseName": "小学必备古诗75首（2）",
+    "lessonId": "bb4c168511548158c4f4312ec38eb591",
+    "nextLessonId": "5706e4ad635321c72c720b869c272a83",
+    "lessonName": "寻隐者不遇",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "33842cbc47cd9bd5b92dc5a189d2feb9",
+        "index": 1,
+        "text": [
+          "寻隐者不遇\\n贾岛\\n松下问童子，言师采药去。\\n只在此山中，云深不知处。"
+        ],
+        "pinyin": "[[\"寻\", \"xún\"], [\"隐\", \"yǐn\"], [\"者\", \"zhě\"], [\"不\", \"bù\"], [\"遇\", \"yù\"], [\"\\n\", \"\"], [\"贾\", \"jiǎ\"], [\"岛\", \"dǎo\"], [\"\\n\", \"\"], [\"松\", \"sōng\"], [\"下\", \"xià\"], [\"问\", \"wèn\"], [\"童\", \"tóng\"], [\"子\", \"zǐ\"], [\"，\", \"\"], [\"言\", \"yán\"], [\"师\", \"shī\"], [\"采\", \"cǎi\"], [\"药\", \"yào\"], [\"去\", \"qù\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"只\", \"zhǐ\"], [\"在\", \"zài\"], [\"此\", \"cǐ\"], [\"山\", \"shān\"], [\"中\", \"zhōng\"], [\"，\", \"\"], [\"云\", \"yún\"], [\"深\", \"shēn\"], [\"不\", \"bù\"], [\"知\", \"zhī\"], [\"处\", \"chù\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

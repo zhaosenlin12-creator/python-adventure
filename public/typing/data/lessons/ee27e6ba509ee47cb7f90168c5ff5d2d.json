@@ -1,0 +1,50 @@
+{
+  "source": "speed-test",
+  "scrapedAt": "2026-05-02T06:08:44.881484+00:00",
+  "request": {
+    "lesson_id": "ee27e6ba509ee47cb7f90168c5ff5d2d",
+    "course_id": "c6bc39f4ba86486e20cc171fab797ea3",
+    "source": "speed-test"
+  },
+  "data": {
+    "level": "速度测试",
+    "courseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "order": 48,
+    "nextCourseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "courseName": "英文速度测试",
+    "lessonId": "ee27e6ba509ee47cb7f90168c5ff5d2d",
+    "nextLessonId": "975e7ed61138e38699088a72a2d9263e",
+    "lessonName": "How Do You Get Around?",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b0cab1d2e07c8a1a45bda1f57cda3294",
+        "index": 1,
+        "text": [
+          "In the world today, people can travel by car, train, ship, or airplane.\\nBut do you know another way people get around? Yes, with animals.\\nSome people ride horses. Some people ride elephants. In some places, people ride camels. In other places, people ride donkeys.\\nThere are many ways to get around."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": 13,
+    "categoryTitle": "速度测试"
+  }
+}

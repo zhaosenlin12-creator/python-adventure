@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.308967+00:00",
+  "request": {
+    "lesson_id": "6eaf89c7163a2711d03b61eb8929f708",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 165,
+    "nextCourseId": "d7df026ff1d81047d30da28a958b118f",
+    "courseName": "golang",
+    "lessonId": "6eaf89c7163a2711d03b61eb8929f708",
+    "nextLessonId": "6b6befbe3b42201a1b8e205842a67e95",
+    "lessonName": "判断素数",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - 判断素数",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b5327ac4afd39201a119df92a43f25ad",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport (\\n\t\"fmt\"\\n\t\"math\"\\n)\\n\\nfunc isPrime(n int) bool {\\n\tif n < 2 {\\n\t\treturn false\\n\t}\\n\tfor i := 2; i <= int(math.Sqrt(float64(n))); i++ {\\n\t\tif n%i == 0 {\\n\t\t\treturn false\\n\t\t}\\n\t}\\n\treturn true\\n}\\n\\nfunc main() {\\n\tnumbers := []int{2, 3, 4, 17, 20, 29}\\n\\n\tfor _, num := range numbers {\\n\t\tif isPrime(num) {\\n\t\t\tfmt.Printf(\"%d 是素数\\n\", num)\\n\t\t} else {\\n\t\t\tfmt.Printf(\"%d 不是素数\\n\", num)\\n\t\t}\\n\t}\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

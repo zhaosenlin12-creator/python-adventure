@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:42.021415+00:00",
+  "request": {
+    "lesson_id": "526f5cb0c85de49c7a72b7b6b2486546",
+    "course_id": "649abfd4e6da035acc06a37a3357166f",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "649abfd4e6da035acc06a37a3357166f",
+    "order": 117,
+    "nextCourseId": "649abfd4e6da035acc06a37a3357166f",
+    "courseName": "基础练习-全键位输入",
+    "lessonId": "526f5cb0c85de49c7a72b7b6b2486546",
+    "nextLessonId": "c3f091db4f224de891821c9253d2e16e",
+    "lessonName": "手机号码练习一",
+    "icon": "data/assets/daziya.com/key-icon_num-9jian.4e4a2a4755.png",
+    "description": "数字输入练习 - 手机号码练习一",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "7887cfa6dd6e62eea6b0e3cf5827ba11",
+        "index": 1,
+        "text": [
+          "13912345678135791234"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

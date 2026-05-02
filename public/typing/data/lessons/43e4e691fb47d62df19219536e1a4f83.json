@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.242702+00:00",
+  "request": {
+    "lesson_id": "43e4e691fb47d62df19219536e1a4f83",
+    "course_id": "b121644211bd274795ee5972ddf997a2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "b121644211bd274795ee5972ddf997a2",
+    "order": 323,
+    "nextCourseId": "b121644211bd274795ee5972ddf997a2",
+    "courseName": "小学必备古诗75首（1）",
+    "lessonId": "43e4e691fb47d62df19219536e1a4f83",
+    "nextLessonId": "6b7a14474b9e26e7bf8bde7da9c9cadb",
+    "lessonName": "九月九日忆山东兄弟",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5fa9f94ffc19c70ba10851f3af7ed47a",
+        "index": 1,
+        "text": [
+          "九月九日忆山东兄弟\\n王维\\n独在异乡为异客，每逢佳节倍思亲。\\n遥知兄弟登高处，遍插茱萸少一人。"
+        ],
+        "pinyin": "[[\"九\", \"jiǔ\"], [\"月\", \"yuè\"], [\"九\", \"jiǔ\"], [\"日\", \"rì\"], [\"忆\", \"yì\"], [\"山\", \"shān\"], [\"东\", \"dōng\"], [\"兄\", \"xiōng\"], [\"弟\", \"dì\"], [\"\\n\", \"\"], [\"王\", \"wáng\"], [\"维\", \"wéi\"], [\"\\n\", \"\"], [\"独\", \"dú\"], [\"在\", \"zài\"], [\"异\", \"yì\"], [\"乡\", \"xiāng\"], [\"为\", \"wéi\"], [\"异\", \"yì\"], [\"客\", \"kè\"], [\"，\", \"\"], [\"每\", \"měi\"], [\"逢\", \"féng\"], [\"佳\", \"jiā\"], [\"节\", \"jié\"], [\"倍\", \"bèi\"], [\"思\", \"sī\"], [\"亲\", \"qīn\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"遥\", \"yáo\"], [\"知\", \"zhī\"], [\"兄\", \"xiōng\"], [\"弟\", \"dì\"], [\"登\", \"dēng\"], [\"高\", \"gāo\"], [\"处\", \"chù\"], [\"，\", \"\"], [\"遍\", \"biàn\"], [\"插\", \"chā\"], [\"茱\", \"zhū\"], [\"萸\", \"yú\"], [\"少\", \"shǎo\"], [\"一\", \"yī\"], [\"人\", \"rén\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

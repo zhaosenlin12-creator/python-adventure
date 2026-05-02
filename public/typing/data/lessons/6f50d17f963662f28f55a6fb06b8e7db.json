@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.070085+00:00",
+  "request": {
+    "lesson_id": "6f50d17f963662f28f55a6fb06b8e7db",
+    "course_id": "ee920473fc84aa54eb12b2498d3762ad",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "ee920473fc84aa54eb12b2498d3762ad",
+    "order": 220,
+    "nextCourseId": "ee920473fc84aa54eb12b2498d3762ad",
+    "courseName": "初中必备1200词",
+    "lessonId": "6f50d17f963662f28f55a6fb06b8e7db",
+    "nextLessonId": "495dabb4653a4ea140e60322dfbf5de0",
+    "lessonName": "Chapter.3",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "19acf303cf81cc7e590500a9ef9b1755",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"chicken\",\"pronun\":\"[\\u02c8t\\u0283\\u026ak\\u026an]\",\"translation\":\"n.\\u9e21\\u8089\"},{\"word\":\"so\",\"pronun\":\"[s\\u0259\\u028a]\",\"translation\":\"conj.(\\u5f15\\u51fa\\u8bc4\\u8bba\\u6216\\u95ee\\u9898)\\u90a3\\u4e48\"},{\"word\":\"habit\",\"pronun\":\"[\\u02c8h\\u00e6b\\u026at]\",\"translation\":\"n.\\u4e60\\u60ef\"},{\"word\":\"really\",\"pronun\":\"['r\\u026a\\u0259li]\",\"translation\":\"adv.\\u771f\\u6b63\\u5730\"},{\"word\":\"want\",\"pronun\":\"[w\\u0252nt]\",\"translation\":\"v.\\u9700\\u8981;\\u60f3\\u8981\"},{\"word\":\"be\",\"pronun\":\"[bi\\u02d0]\",\"translation\":\"v.\\u53d8\\u6210\"},{\"word\":\"much\",\"pronun\":\"[m\\u028ct\\u0283]\",\"translation\":\"pron.adj.\\u8bb8\\u591a;\\u5927\\u91cf;\\u591a\\u5c11\"},{\"word\":\"T-shirt\",\"pronun\":\"['ti\\u02d0\\u0283\\u025c\\u02d0t]\",\"translation\":\"n.T\\u6064\\u886b\"},{\"word\":\"sweater\",\"pronun\":\"['swet\\u0259]\",\"translation\":\"n.\\u6bdb\\u8863\"},{\"word\":\"trousers\",\"pronun\":\"['tra\\u028az\\u0259z]\",\"translation\":\"n.(pl.)\\u88e4\\u5b50\"},{\"word\":\"skirt\",\"pronun\":\"[sk\\u025c\\u02d0t]\",\"translation\":\"n.\\u88d9\\u5b50\"},{\"word\":\"dollar\",\"pronun\":\"[\\u02c8d\\u0252l\\u0259]\",\"translation\":\"n.\\u5143(\\u7f8e\\u56fd\\u3001\\u52a0\\u62ff\\u5927\\u8d27\\u5e01)\"},{\"word\":\"woman\",\"pronun\":\"\",\"translation\":\"n.\\u5973\\u5b50\"},{\"word\":\"need\",\"pronun\":\"[ni\\u02d0d]\",\"translation\":\"v.\\u9700\\u8981\"},{\"word\":\"pair\",\"pronun\":\"[pe\\u0259]\",\"translation\":\"n.\\u4e00\\u53cc;\\u4e00\\u5bf9\"},{\"word\":\"fifteen\",\"pronun\":\"['f\\u026af'ti\\u02d0n]\",\"translation\":\"num.\\u5341\\u4e94\"},{\"word\":\"eighteen\",\"pronun\":\"[\\u02c8e\\u026a\\u02c8ti\\u02d0n]\",\"translation\":\"num.\\u5341\\u516b\"},{\"word\":\"twenty\",\"pronun\":\"[\\u02c8twenti]\",\"translation\":\"num.\\u4e8c\\u5341\"},{\"word\":\"Mr.\",\"pronun\":\"[\\u02c8m\\u026ast\\u0259]\",\"translation\":\"(\\u7528\\u4e8e\\u7537\\u5b50\\u7684\\u59d3\\u6c0f\\u6216\\u59d3\\u540d\\u524d)\\u5148\\u751f\"},{\"word\":\"store\",\"pronun\":\"[st\\u0254\\u02d0]\",\"translation\":\"n.\\u5546\\u5e97\"},{\"word\":\"sale\",\"pronun\":\"[se\\u026al]\",\"translation\":\"n.\\u7279\\u4ef7\\u9500\\u552e;\\u51fa\\u552e\"},{\"word\":\"price\",\"pronun\":\"[pra\\u026as]\",\"translation\":\"n.\\u4ef7\\u683c\"},{\"word\":\"April\",\"pronun\":\"['e\\u026apr\\u0259l]\",\"translation\":\"n.\\u56db\\u6708\"},{\"word\":\"happy\",\"pronun\":\"['h\\u00e6pi]\",\"translation\":\"adj.\\u6109\\u5feb\\u7684;\\u9ad8\\u5174\\u7684\"},{\"word\":\"third\",\"pronun\":\"[\\u03b8\\u025c\\u02d0d]\",\"translation\":\"num.\\u7b2c\\u4e09\"},{\"word\":\"fifth\",\"pronun\":\"[f\\u026af\\u03b8]\",\"translation\":\"num.\\u7b2c\\u4e94\"},{\"word\":\"eighth\",\"pronun\":\"[e\\u026at\\u03b8]\",\"translation\":\"num.\\u7b2c\\u516b\"},{\"word\":\"ninth\",\"pronun\":\"[na\\u026an\\u03b8]\",\"translation\":\"num.\\u7b2c\\u4e5d\"},{\"word\":\"twelfth\",\"pronun\":\"[twelf\\u03b8]\",\"translation\":\"num.\\u7b2c\\u5341\\u4e8c\"},{\"word\":\"twentieth\",\"pronun\":\"['twenti\\u02d0\\u026a\\u03b8]\",\"translation\":\"num.\\u7b2c\\u4e8c\\u5341\"},{\"word\":\"test\",\"pronun\":\"[test]\",\"translation\":\"n.\\u6d4b\\u9a8c;\\u68c0\\u67e5\"},{\"word\":\"art\",\"pronun\":\"[\\u0251\\u02d0t]\",\"translation\":\"n.\\u827a\\u672f;\\u7f8e\\u672f\"},{\"word\":\"thing\",\"pronun\":\"[\\u03b8\\u026a\\u014b]\",\"translation\":\"n.\\u4e1c\\u897f;\\u4e8b\\u60c5\"},{\"word\":\"busy\",\"pronun\":\"['b\\u026azi]\",\"translation\":\"adj.\\u5fd9\\u788c\\u7684;\\u65e0\\u6687\\u7684\"},{\"word\":\"there\",\"pronun\":\"[\\u00f0e\\u0259]\",\"translation\":\"adv.(\\u5728)\\u90a3\\u91cc\"},{\"word\":\"favorite\",\"pronun\":\"\",\"translation\":\"adj.\\uff06 n.\\u7279\\u522b\\u559c\\u7231\\u7684(\\u4eba\\u6216\\u4e8b\\u7269)\"},{\"word\":\"P.E.\",\"pronun\":\"\",\"translation\":\"n.\\u4f53\\u80b2\"},{\"word\":\"math\",\"pronun\":\"[m\\u00e6\\u03b8]\",\"translation\":\"n.\\u6570\\u5b66\"},{\"word\":\"geography\",\"pronun\":\"[d\\u0292\\u026a\\u02c8\\u0252gr\\u0259fi]\",\"translation\":\"n.\\u5730\\u7406(\\u5b66)\"},{\"word\":\"why\",\"pronun\":\"[hwa\\u026a]\",\"translation\":\"adv.\\u4e3a\\u4ec0\\u4e48\"},{\"word\":\"free\",\"pronun\":\"[fri\\u02d0]\",\"translation\":\"adj.\\u7a7a\\u95f2\\u7684\"},{\"word\":\"A.M.\",\"pronun\":\"\",\"translation\":\"\\u4e0a\\u5348\"},{\"word\":\"P.M.\",\"pronun\":\"\",\"translation\":\"\\u4e0b\\u5348;\\u5348\\u540e\"},{\"word\":\"useful\",\"pronun\":\"['ju\\u02d0sf\\u0259l]\",\"translation\":\"adj.\\u6709\\u7528\\u7684;\\u6709\\u76ca\\u7684\"},{\"word\":\"Mrs.\",\"pronun\":\"[\\u02c8m\\u026as\\u026az]\",\"translation\":\"(\\u7528\\u4e8e\\u5973\\u5b50\\u7684\\u59d3\\u6c0f\\u6216\\u59d3\\u540d\\u524d)\\u592a\\u592a;\\u592b\\u4eba\"},{\"word\":\"chess\",\"pronun\":\"[t\\u0283es]\",\"translation\":\"n.\\u56fd\\u9645\\u8c61\\u68cb\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 11,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

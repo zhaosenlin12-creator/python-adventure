@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.432253+00:00",
+  "request": {
+    "lesson_id": "aee592ca901dae6e05fd99240093f2d2",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 73,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "aee592ca901dae6e05fd99240093f2d2",
+    "nextLessonId": "f6981810a25336e9f4d2930bfd503093",
+    "lessonName": "KET核心词-58",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第58课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c3e6a4ddcd846103798fbf71bc74e214",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"shelf\",\"pronun\":\"[ʃelf]\",\"translation\":\"n. 架子；搁板；搁板状物；暗礁\",\"audio\":\"shelf.mp3\"},{\"word\":\"shell\",\"pronun\":\"[ʃel]\",\"translation\":\"n. 壳，贝壳；炮弹；外形\\nvt. 剥皮；炮轰\\nvi. 剥落；设定命令行解释器的位置\",\"audio\":\"shell.mp3\"},{\"word\":\"shine\",\"pronun\":\"[ʃaɪn]\",\"translation\":\"vt. 照射，擦亮；把…的光投向；（口）通过擦拭使…变得有光泽或光\\nvi. 发出光；反射光，闪耀；出类拔萃，表现突出；露出；照耀；显露；出众\\nn. 光亮，光泽；好天气；擦亮；晴天；擦皮鞋；鬼把戏或诡计\",\"audio\":\"shine.mp3\"},{\"word\":\"shoot\",\"pronun\":\"[ʃuːt]\",\"translation\":\"n. 射击；摄影；狩猎；急流\\nvt. 射击，射中；拍摄；发芽；使爆炸；给…注射\\nvi. 射击；发芽；拍电影\",\"audio\":\"shoot.mp3\"},{\"word\":\"shop\",\"pronun\":\"[ʃɑːp]\",\"translation\":\"n. 商店；店铺\\nvt. 购物\\nvi. 购物；买东西\",\"audio\":\"shop.mp3\"},{\"word\":\"shorts\",\"pronun\":\"[ʃɔːrts]\",\"translation\":\"n. 短裤\",\"audio\":\"shorts.mp3\"},{\"word\":\"should\",\"pronun\":\"[ʃəd; ʃʊd]\",\"translation\":\"aux. 应该；就；可能；将要\",\"audio\":\"should.mp3\"},{\"word\":\"shoulder\",\"pronun\":\"[ˈʃoʊldər]\",\"translation\":\"n. 肩，肩膀；肩部\\nvi. 用肩推挤，用肩顶\\nvt. 肩负，承担\",\"audio\":\"shoulder.mp3\"},{\"word\":\"shout\",\"pronun\":\"[ʃaʊt]\",\"translation\":\"n. 呼喊；呼叫\\nvi. 呼喊；喊叫；大声说\\nvt. 呼喊；大声说\",\"audio\":\"shout.mp3\"},{\"word\":\"show\",\"pronun\":\"[ʃoʊ]\",\"translation\":\"n. 显示；表演；炫耀\\nvt. 显示；说明；演出；展出\\nvi. 显示；说明；指示\",\"audio\":\"show.mp3\"},{\"word\":\"shower\",\"pronun\":\"[ˈʃaʊər]\",\"translation\":\"n. 淋浴；（倾泻般出现的）一阵，一大批；阵雨\\nvt. 大量地给予；把……弄湿\\nvi. 淋浴；下阵雨\",\"audio\":\"shower.mp3\"},{\"word\":\"shut\",\"pronun\":\"[ʃʌt]\",\"translation\":\"n. 关闭\\nadj. 关闭的；围绕的\\nvi. 关上；停止营业\\nvt. 关闭；停业；幽禁\",\"audio\":\"shut.mp3\"},{\"word\":\"shy\",\"pronun\":\"[ʃaɪ]\",\"translation\":\"n. 投掷；惊跳\\nadj. 害羞的；畏缩的，胆怯的\\nvi. 投；畏缩；惊退；厌恶\\nvt. 投；乱掷\",\"audio\":\"shy.mp3\"},{\"word\":\"sick\",\"pronun\":\"[sɪk]\",\"translation\":\"adj. 厌恶的；病态的；不舒服；\",\"audio\":\"sick.mp3\"},{\"word\":\"side\",\"pronun\":\"[saɪd]\",\"translation\":\"n. 方面；侧面；旁边\\nadj. 旁的，侧的\\nvt. 同意，支持\\nvi. 支持；赞助；偏袒\",\"audio\":\"side.mp3\"},{\"word\":\"sightseeing\",\"pronun\":\"[ˈsaɪtsiːɪŋ]\",\"translation\":\"n. 观光；游览\\nv. 观光（sightsee的ing形式）；游览\\nadj. 观光的；游览的\",\"audio\":\"sightseeing.mp3\"},{\"word\":\"sign\",\"pronun\":\"[saɪn]\",\"translation\":\"n. 迹象；符号；记号；手势；指示牌\\nvt. 签署；示意\\nvi. 签署；签名\",\"audio\":\"sign.mp3\"},{\"word\":\"silk\",\"pronun\":\"[sɪlk]\",\"translation\":\"n. 丝绸；蚕丝；丝织物\\nadj. 丝的；丝绸的；丝制的\\nvi. （玉米）处于长须的阶段中\",\"audio\":\"silk.mp3\"},{\"word\":\"silly\",\"pronun\":\"[ˈsɪli]\",\"translation\":\"n. 傻瓜\\nadj. 愚蠢的；不明事理的；没头脑的\",\"audio\":\"silly.mp3\"},{\"word\":\"simple\",\"pronun\":\"[ˈsɪmpl]\",\"translation\":\"n. 笨蛋；愚蠢的行为；出身低微者\\nadj. 简单的；单纯的；天真的\",\"audio\":\"simple.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

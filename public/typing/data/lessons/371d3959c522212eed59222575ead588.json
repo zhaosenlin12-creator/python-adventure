@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.509766+00:00",
+  "request": {
+    "lesson_id": "371d3959c522212eed59222575ead588",
+    "course_id": "2ab9dc27a9350a9ff86633c542967f70",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "order": 59,
+    "nextCourseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "courseName": "下排字母",
+    "lessonId": "371d3959c522212eed59222575ead588",
+    "nextLessonId": "3f593cf883ac678e54f19fe7db364bd3",
+    "lessonName": "练习b和n",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-practise-bn.aebf961c9b.png",
+    "description": "练习b和n",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1b416b2a286c2d0b792817778e23fd85",
+        "index": 2,
+        "text": [
+          "bg bbg bg bbg nh nnh nh nnh bgbg nhnh bbbg nnnh gbnh gbg hnh gbgbg hnhnh bbg nnh bbnn bnbn bngh bbg nnh"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "bg nh",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

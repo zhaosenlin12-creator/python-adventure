@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.508495+00:00",
+  "request": {
+    "lesson_id": "179845dd9ac618156362664a734c4e04",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 90,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "179845dd9ac618156362664a734c4e04",
+    "nextLessonId": "d9076914f6bb9273b893e872392724b9",
+    "lessonName": "KET核心词-109",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第109课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "fb9048ce6021515360791e273c8ae0d3",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"bird\",\"pronun\":\"[bɜːrd]\",\"translation\":\"n. 鸟；家伙；羽毛球\\nvt. 向…喝倒彩；起哄\\nvi. 猎鸟；观察研究野鸟\",\"audio\":\"bird.mp3\"},{\"word\":\"bull\",\"pronun\":\"[bʊl]\",\"translation\":\"n. 公牛；看好股市者；粗壮如牛的人；胡说八道；印玺\\nadj. 大型的；公牛似的；雄性的\\nvt. 企图抬高证券价格；吓唬；强力实现\\nvi. 价格上涨；走运；猛推；吹牛\",\"audio\":\"bull.mp3\"},{\"word\":\"butterfly\",\"pronun\":\"[ˈbʌtərflaɪ]\",\"translation\":\"n. 蝴蝶；蝶泳；举止轻浮的人；追求享乐的人\",\"audio\":\"butterfly.mp3\"},{\"word\":\"camel\",\"pronun\":\"[ˈkæm(ə)l]\",\"translation\":\"n. [畜牧][脊椎] 骆驼；打捞浮筒；工作作风官僚\\nadj. 驼色的；暗棕色的\\nvi. 工作刻板平庸\",\"audio\":\"camel.mp3\"},{\"word\":\"cat\",\"pronun\":\"[kæt]\",\"translation\":\"n. 猫，猫科动物\",\"audio\":\"cat.mp3\"},{\"word\":\"chicken\",\"pronun\":\"[ˈtʃɪkɪn]\",\"translation\":\"n. 鸡肉；小鸡；胆小鬼，懦夫\\nadj. 鸡肉的；胆怯的；幼小的\",\"audio\":\"chicken.mp3\"},{\"word\":\"cow\",\"pronun\":\"[kaʊ]\",\"translation\":\"n. 奶牛，母牛；母兽\\nvt. 威胁，恐吓\",\"audio\":\"cow.mp3\"},{\"word\":\"dog\",\"pronun\":\"[dɔːɡ]\",\"translation\":\"n. 狗；卑鄙的人；(俚)朋友\\nvt. 跟踪；尾随\",\"audio\":\"dog.mp3\"},{\"word\":\"dolphin\",\"pronun\":\"[ˈdɑːlfɪn]\",\"translation\":\"n. 海豚\",\"audio\":\"dolphin.mp3\"},{\"word\":\"duck\",\"pronun\":\"[dʌk]\",\"translation\":\"n. 鸭子；鸭肉；（英）宝贝儿；零分\\nvt. 躲避；猛按…入水\\nvi. 闪避；没入水中\",\"audio\":\"duck.mp3\"},{\"word\":\"elephant\",\"pronun\":\"[ˈelɪfənt]\",\"translation\":\"n. 象；大号图画纸\",\"audio\":\"elephant.mp3\"},{\"word\":\"fish\",\"pronun\":\"[fɪʃ]\",\"translation\":\"n. 鱼，鱼类\\nvt. 钓鱼，捕鱼；搜寻\\nvi. 捕鱼，钓鱼；用钩捞取\",\"audio\":\"fish.mp3\"},{\"word\":\"fur\",\"pronun\":\"[fɜːr]\",\"translation\":\"n. 皮，皮子；毛皮；软毛\\nn. 水垢\\nvt. 用毛皮覆盖；使穿毛皮服装\",\"audio\":\"fur.mp3\"},{\"word\":\"giraffe\",\"pronun\":\"[dʒəˈræf]\",\"translation\":\"n. 长颈鹿\",\"audio\":\"giraffe.mp3\"},{\"word\":\"goat\",\"pronun\":\"[goʊt]\",\"translation\":\"n. 山羊；替罪羊（美俚）；色鬼（美俚）\",\"audio\":\"goat.mp3\"},{\"word\":\"horse\",\"pronun\":\"[hɔːrs]\",\"translation\":\"n. 马；骑兵；脚架；海洛因\\nvt. 使骑马；系马于；捉弄\\nvi. 骑马；作弄人\",\"audio\":\"horse.mp3\"},{\"word\":\"insect\",\"pronun\":\"[ˈɪnsekt]\",\"translation\":\"n. 昆虫；卑鄙的人\",\"audio\":\"insect.mp3\"},{\"word\":\"kitten\",\"pronun\":\"[ˈkɪt(ə)n]\",\"translation\":\"n. 小猫；小动物\\nvi. 产小猫\",\"audio\":\"kitten.mp3\"},{\"word\":\"lamb\",\"pronun\":\"[læm]\",\"translation\":\"n. 羔羊，小羊；羔羊肉\\nvt. 生小羊，产羔羊\\nvi. 生小羊，产羔羊\",\"audio\":\"lamb.mp3\"},{\"word\":\"lion\",\"pronun\":\"[ˈlaɪən]\",\"translation\":\"n. 狮子；名人；勇猛的人；社交场合的名流\",\"audio\":\"lion.mp3\"}]"
+        ],
+        "pinyin": "",
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

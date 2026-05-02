@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.413314+00:00",
+  "request": {
+    "lesson_id": "116da32d3aa5bc0863eb6ce41f330059",
+    "course_id": "8a269301536307f71deaab723e12c84d",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "8a269301536307f71deaab723e12c84d",
+    "order": 298,
+    "nextCourseId": "8a269301536307f71deaab723e12c84d",
+    "courseName": "英语四级词汇",
+    "lessonId": "116da32d3aa5bc0863eb6ce41f330059",
+    "nextLessonId": "4a834bab3a88d8a2546363ac776f9650",
+    "lessonName": "Chapter.13",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "60833413bb000f3387d99c97b41042ae",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"psychological\",\"pronun\":\".saik\\u0259'l\\u0254d\\u0292ik\\u0259l\",\"translation\":\" adj.\\u5fc3\\u7406\\u7684 \\u5fc3\\u7406\\u5b66\\u7684\"},{\"word\":\"necessity\",\"pronun\":\"ni'sesiti\",\"translation\":\" n.\\u5fc5\\u8981\\u6027 \\u5fc5\\u7136\\u6027 \\u9700\\u8981 \\u5fc5\\u9700\\u54c1\"},{\"word\":\"needless\",\"pronun\":\"'ni:dlis\",\"translation\":\" adj.\\u4e0d\\u9700\\u8981\\u7684 \\u65e0\\u7528\\u7684\"},{\"word\":\"upwards\",\"pronun\":\"'\\u028cpw\\u0259dz\",\"translation\":\" adv.\\u8d8b\\u5411\\u4e0a\\u5347 \\u4ee5\\u4e0a \\u5f80\\u4e0a \\u5411\\u4e0a\\u5730\"},{\"word\":\"similarly\",\"pronun\":\"'simil\\u0259li\",\"translation\":\" adv.\\u7c7b\\u4f3c\\u5730 \\u76f8\\u4f3c\\u5730\"},{\"word\":\"widow\",\"pronun\":\"'wid\\u0259u\",\"translation\":\" n.\\u5be1\\u5987 \\u9057\\u5b40 vt.\\u4f7f\\u4e27\\u5076\"},{\"word\":\"lame\",\"pronun\":\"leim\",\"translation\":\" adj.\\u8ddb\\u7684 \\u7638\\u7684 \\u6b8b\\u5e9f\\u7684 \\u65e0\\u8bf4\\u670d\\u529b\\u7684 vt.\\u4f7f...\\u6210\\u6b8b\\u5e9f \\u4f7f...\\u53d8\\u65e0\\u7528 n.\\u91d1\\u5c5e\\u8584\\u677f\"},{\"word\":\"anchor\",\"pronun\":\"'\\u00e6\\u014bk\\u0259\",\"translation\":\" n.\\u94c1\\u951a vi.\\u629b\\u951a \\u505c\\u6cca \\u7528\\u951a\\u7cfb\\u4f4f \\u62c5\\u4efb\\uff08\\u5e7f\\u64ad \\u7535\\u89c6\\u65b0\\u95fb\\u8282\\u76ee\\uff09\\u7684\\u4e3b\\u6301\\u4eba\"},{\"word\":\"tragedy\",\"pronun\":\"'tr\\u00e6d\\u0292idi\",\"translation\":\" n.\\u60b2\\u5267 \\u60e8\\u4e8b \\u60e8\\u6848 \\u707e\\u96be\"},{\"word\":\"socialism\",\"pronun\":\"'s\\u0259u\\u0283\\u0259liz\\u0259m\",\"translation\":\" n.\\u793e\\u4f1a\\u4e3b\\u4e49\"},{\"word\":\"helmet\",\"pronun\":\"'helmit\",\"translation\":\" n.\\u5934\\u76d4 \\u94a2\\u76d4 \\u906e\\u9633\\u5e3d \\u7532\"},{\"word\":\"meantime\",\"pronun\":\"'mi:n'taim\",\"translation\":\" n.\\u5176\\u65f6 \\u5176\\u95f4 adv.\\u5f53\\u65f6 \\u4e0e\\u6b64\\u540c\\u65f6\"},{\"word\":\"wreck\",\"pronun\":\"rek\",\"translation\":\" n.\\u5931\\u4e8b \\u6b8b\\u9ab8 vt.\\u7834\\u574f \\u4f7f\\u9047\\u96be \\u4f7f\\u5931\\u4e8b \\u9047\\u96be\"},{\"word\":\"terror\",\"pronun\":\"'ter\\u0259\",\"translation\":\" n.\\u6050\\u6016 \\u60ca\\u9a87 <\\u53e3>\\u4ee4\\u4eba\\u60e7\\u6015\\u6216\\u8ba8\\u538c\\u7684\\u4eba\\u6216\\u4e8b\\u7269\"},{\"word\":\"condemn\",\"pronun\":\"k\\u0259n'dem\",\"translation\":\" vt.\\u8c34\\u8d23 \\u6307\\u8d23 \\u5224\\u5211 \\u5b98\\u65b9\\u5ba3\\u79f0(\\u67d0\\u4e8b\\u7269)\\u6709\\u7f3a\\u9677\\u6216\\u4e0d\\u5b9c\\u4f7f\\u7528\"},{\"word\":\"hasten\",\"pronun\":\"'heisn\",\"translation\":\" vt.\\u50ac\\u4fc3 \\u8d76\\u5feb \\u6025\\u5fd9 vi.\\u8d76\\u7d27 \\u8d76\\u5feb \\u6025\\u5fd9\"},{\"word\":\"ultimate\",\"pronun\":\"'\\u028cltimit\",\"translation\":\" adj.\\u6700\\u540e\\u7684 \\u6700\\u7ec8\\u7684 \\u7ec8\\u6781\\u7684 \\u6839\\u672c\\u7684 \\u6781\\u9650\\u7684 n.\\u7ec8\\u6781 \\u6839\\u672c \\u7cbe\\u534e\"},{\"word\":\"complaint\",\"pronun\":\"k\\u0259m'pleint\",\"translation\":\" n.\\u62b1\\u6028 \\u6028\\u8a00 \\u63a7\\u544a\"},{\"word\":\"highly\",\"pronun\":\"'haili\",\"translation\":\" adv.\\u9ad8\\u5ea6\\u5730 \\u5f88 \\u975e\\u5e38\"},{\"word\":\"haste\",\"pronun\":\"heist\",\"translation\":\" n.\\u6025\\u901f \\u6025\\u5fd9 \\u8349\\u7387 v.\\u5306\\u5fd9 \\u8d76\\u5feb vi.\\u8d76\\u7d27 \\u8d76\\u5feb\"},{\"word\":\"foreigner\",\"pronun\":\"'f\\u0254:rin\\u0259\",\"translation\":\" n.\\u5916\\u56fd\\u4eba\"},{\"word\":\"reverse\",\"pronun\":\"ri'v\\u0259:s\",\"translation\":\" vt.\\u98a0\\u5012 \\u7ffb\\u8f6c \\u9006\\u8f6c \\u5012\\u9000 n.\\u80cc\\u9762 \\u76f8\\u53cd \\u5931\\u8d25 \\u632b\\u6298 adj.\\u53cd\\u9762\\u7684 \\u76f8\\u53cd\\u7684 \\u98a0\\u5012\\u7684\"},{\"word\":\"insure\",\"pronun\":\"in'\\u0283u\\u0259\",\"translation\":\" vt.\\u7ed9...\\u4fdd\\u9669 \\u786e\\u4fdd vi.\\u4e70\\u4fdd\\u9669\"},{\"word\":\"honeymoon\",\"pronun\":\"'h\\u028cnimu:n\",\"translation\":\" n.\\u871c\\u6708 vi.\\u5ea6\\u871c\\u6708\"},{\"word\":\"explosive\",\"pronun\":\"iks'pl\\u0259usiv\",\"translation\":\" n.\\u70b8\\u836f adj.\\u7206\\u70b8(\\u6027)\\u7684\"},{\"word\":\"vapour\",\"pronun\":\"'veip\\u0259\",\"translation\":\" n.\\u6c7d \\u84b8\\u6c14 \\u96fe\\u6c14 v.\\u84b8\\u53d1 \\u5439\\u5618 =vapor(\\u82f1)\"},{\"word\":\"amaze\",\"pronun\":\"\\u0259'meiz\",\"translation\":\" vt.\\u4f7f\\u60ca\\u5947 \\u4f7f\\u60ca\\u6115   \\u52a0\\u5fae\\u4fe1brcola\\u83b7\\u53d6\\u66f4\\u591a\\u514d\\u8d39\\u8d44\\u6599\"},{\"word\":\"dip\",\"pronun\":\"dip\",\"translation\":\" vt.\\u6d78 \\u8638 \\u7ed9...\\u6d17\\u836f\\u6d74 vi.\\u6d78\\u4e00\\u6d78 \\u4e0b\\u964d \\u5411\\u4e0b\\u503e\\u659c \\u7ffb\\u9605 \\u63d0\\u53d6(\\u6b3e\\u9879) n.\\u6e38 \\u4e0b\\u964d \\u51cf\\u5c11 \\u4f4e\\u6d3c\\u5904 \\u8c03\\u5473\\u9171 \\u836f\\u6d74\\u6db2\"},{\"word\":\"tractor\",\"pronun\":\"'tr\\u00e6kt\\u0259\",\"translation\":\" n.\\u62d6\\u62c9\\u673a \\u7275\\u5f15\\u8f66 \\u87ba\\u65cb\\u6868\\u98de\\u673a\"},{\"word\":\"muddy\",\"pronun\":\"'m\\u028cdi\",\"translation\":\" adj.\\u591a\\u6ce5\\u7684 \\u6ce5\\u6cde\\u7684 \\u80ae\\u810f\\u7684 \\u6df7\\u6d4a\\u7684 v.\\u5f04\\u810f \\u4f7f...\\u6df7\\u6d4a \\u4f7f\\u8ff7\\u60d1\"},{\"word\":\"whisky\",\"pronun\":\"'wiski\",\"translation\":\" n.\\u5a01\\u58eb\\u5fcc\\u9152 =whiskey\"},{\"word\":\"elaborate\",\"pronun\":\"i'l\\u00e6b\\u0259reit\",\"translation\":\" adj.\\u590d\\u6742\\u7684 \\u7cbe\\u5fc3\\u5236\\u4f5c\\u7684 \\u7cbe\\u7ec6\\u7684 \\u8be6\\u5c3d\\u7684 \\u7cbe\\u5fc3\\u7684 v.\\u8be6\\u7ec6\\u5730\\u8bf4\\u660e \\u7528\\u5fc3\\u5730\\u4f5c \\u63a8\\u6572\"},{\"word\":\"hedge\",\"pronun\":\"hed\\u0292\",\"translation\":\" n. \\u7bf1\\u7b06 \\u6811\\u7bf1 \\u969c\\u788d\\u7269 \\u9632\\u6b62\\u8d22\\u4ea7\\u635f\\u5931\\u7684\\u65b9\\u6cd5 vt. \\u5305\\u56f4 \\u9650\\u5236 vi. \\u79cd\\u6811\\u7bf1 \\u62d0\\u5f2f\\u62b9\\u89d2 \\u4fdd\\u62a4\\u81ea\\u5df1\\u4e0d\\u53d7\\u8d22\\u4ea7\\u635f\\u5931adj. \\u6811\\u7bf1\\u7684 \\u7bf1\\u7b06\\u8fb9\\u7684\"},{\"word\":\"rejoice\",\"pronun\":\"ri'd\\u0292\\u0254is\",\"translation\":\" vi.\\u4f7f...\\u6b23\\u559c \\u9ad8\\u5174\"},{\"word\":\"bullet\",\"pronun\":\"'bulit\",\"translation\":\" n.\\u67aa\\u5f39 \\u5b50\\u5f39 \\u5f39\\u4e38\"},{\"word\":\"quiz\",\"pronun\":\"kwiz\",\"translation\":\" n.\\u5c0f\\u578b\\u8003\\u8bd5 (\\u968f\\u5802)\\u6d4b\\u9a8c \\u6076\\u4f5c\\u5267 \\u53e4\\u602a\\u7684\\u4eba vt.\\u6076\\u4f5c\\u5267 \\u63d0\\u95ee\"},{\"word\":\"subtract\",\"pronun\":\"s\\u0259b'tr\\u00e6kt\",\"translation\":\" vt.\\u51cf \\u51cf\\u53bb \\u53bb\\u6389 \\u6263\\u6389 vi.\\u51cf\\u5c11\"},{\"word\":\"enlarge\",\"pronun\":\"in'l\\u0251:d\\u0292\",\"translation\":\" vt.\\u6269\\u5927 \\u6269\\u5c55 \\u589e\\u5927 \\u653e\\u5927\"},{\"word\":\"safely\",\"pronun\":\"'seifli\",\"translation\":\" adv.\\u5b89\\u5168\\u5730 \\u53ef\\u9760\\u5730\"},{\"word\":\"refusal\",\"pronun\":\"ri'fju:z\\u0259l\",\"translation\":\" n.\\u62d2\\u7edd \\u56de\\u7edd\"},{\"word\":\"spoil\",\"pronun\":\"sp\\u0254il\",\"translation\":\" vt.\\u635f\\u574f \\u7834\\u574f \\u7cdf\\u8e4b \\u5ba0\\u574f \\u6eba\\u7231 \\u8150\\u574f n.\\u6218\\u5229\\u54c1 \\u5956\\u54c1\"},{\"word\":\"lens\",\"pronun\":\"lenz\",\"translation\":\" n.\\u900f\\u955c \\u955c\\u7247 \\u955c\\u5934\"},{\"word\":\"lord\",\"pronun\":\"l\\u0254:d\",\"translation\":\" n.\\u8d35\\u65cf \\u4e0a\\u5e1d \\u57fa\\u7763 \\u4e3b\"},{\"word\":\"spontaneous\",\"pronun\":\"sp\\u0254n'teini\\u0259s\",\"translation\":\" adj.\\u81ea\\u53d1\\u7684 \\u81ea\\u7136\\u4ea7\\u751f\\u7684 \\u672c\\u80fd\\u7684\"},{\"word\":\"exhibit\",\"pronun\":\"ig'zibit\",\"translation\":\" vt.\\u663e\\u793a(\\u611f\\u60c5\\u6216\\u54c1\\u8d28) \\u9648\\u5217 \\u5c55\\u89c8 \\u5c55\\u73b0 \\u63d0\\u51fa\\u8bc1\\u636e vi.\\u5c55\\u89c8 n.\\u5c55\\u89c8\\u54c1 \\u5c55\\u89c8 \\u7269\\u8bc1\"},{\"word\":\"exact\",\"pronun\":\"ig'z\\u00e6kt\",\"translation\":\" adj.\\u786e\\u5207\\u7684 \\u7cbe\\u786e\\u7684 vt.\\u5f3a\\u6c42 \\u8981\\u6c42 \\u7d22\\u53d6\"},{\"word\":\"sharpen\",\"pronun\":\"'\\u0283\\u0251:p\\u0259n\",\"translation\":\" vt.\\u524a\\u5c16 \\u4f7f\\u654f\\u9510 \\u4f7f...\\u5c16\\u9510 \\u53d8\\u4e3a\\u9510\\u5229 \\u52a0\\u5267(\\u82e6\\u75db\\u7b49)\"},{\"word\":\"stool\",\"pronun\":\"stu:l\",\"translation\":\" n.\\u51f3\\u5b50 \\u6401\\u811a\\u51f3 \\u4fbf\\u6876 \\u6839\\u682a vi.\\u5f15\\u8bf1\"},{\"word\":\"cordial\",\"pronun\":\"'k\\u0254:dj\\u0259l\",\"translation\":\" adj.\\u771f\\u8bda\\u7684 \\u8bda\\u6073\\u7684 \\u70ed\\u5ff1\\u7684 \\u5174\\u594b\\u7684 n.\\u5174\\u594b\\u5242 \\u8865\\u54c1\"},{\"word\":\"apparent\",\"pronun\":\"\\u0259'p\\u00e6r\\u0259nt\",\"translation\":\" adj.\\u8868\\u9762\\u4e0a\\u7684 \\u660e\\u663e\\u7684\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 24,
+        "minSpeed": 18,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

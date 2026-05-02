@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.102149+00:00",
+  "request": {
+    "lesson_id": "c492a29c3063cecc3fac9460eb1b7a0e",
+    "course_id": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "order": 195,
+    "nextCourseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "courseName": "汉字一级",
+    "lessonId": "c492a29c3063cecc3fac9460eb1b7a0e",
+    "nextLessonId": "05a94d18110c04dd98a460845f549103",
+    "lessonName": "良好的姿势",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-good.c7e935711e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c8c3bc43532b330acc093c70ac9884cd",
+        "index": 1,
+        "text": [
+          "正确的姿势可以防止肌肉酸痛，也会让我们更专注，从而提高工作效率。"
+        ],
+        "pinyin": "[[\"正\", \"zhèng\"], [\"确\", \"què\"], [\"的\", \"de\"], [\"姿\", \"zī\"], [\"势\", \"shì\"], [\"可\", \"kě\"], [\"以\", \"yǐ\"], [\"防\", \"fáng\"], [\"止\", \"zhǐ\"], [\"肌\", \"jī\"], [\"肉\", \"ròu\"], [\"酸\", \"suān\"], [\"痛\", \"tòng\"], [\"，\", \"\"], [\"也\", \"yě\"], [\"会\", \"huì\"], [\"让\", \"ràng\"], [\"我\", \"wǒ\"], [\"们\", \"men\"], [\"更\", \"gèng\"], [\"专\", \"zhuān\"], [\"注\", \"zhù\"], [\"，\", \"\"], [\"从\", \"cóng\"], [\"而\", \"ér\"], [\"提\", \"tí\"], [\"高\", \"gāo\"], [\"工\", \"gōng\"], [\"作\", \"zuò\"], [\"效\", \"xiào\"], [\"率\", \"lǜ\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 14,
+        "minSpeed": 6,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

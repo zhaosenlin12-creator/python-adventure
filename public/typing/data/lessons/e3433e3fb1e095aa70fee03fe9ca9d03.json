@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.822024+00:00",
+  "request": {
+    "lesson_id": "e3433e3fb1e095aa70fee03fe9ca9d03",
+    "course_id": "daccefd55478aba6657b64a604f8f971",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "daccefd55478aba6657b64a604f8f971",
+    "order": 136,
+    "nextCourseId": "daccefd55478aba6657b64a604f8f971",
+    "courseName": "注音练习1",
+    "lessonId": "e3433e3fb1e095aa70fee03fe9ca9d03",
+    "nextLessonId": "dc2a2de09f5c6a868d9d156145a2f986",
+    "lessonName": "《登鹳雀楼》",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-wen.691360af01.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6fbeeadc12144f7e11072215a202f8c5",
+        "index": 1,
+        "text": [
+          "《登鹳雀楼》\\n唐：王之涣\\n\\n白日依山尽，\\n黄河入海流。\\n欲穷千里目，\\n更上一层楼。"
+        ],
+        "pinyin": "[[\"《\", \"\"], [\"登\", \"dēng\"], [\"鹳\", \"guàn\"], [\"雀\", \"què\"], [\"楼\", \"lóu\"], [\"》\", \"\"], [\"\\n\", \"\"], [\"唐\", \"táng\"], [\"：\", \"\"], [\"王\", \"wáng\"], [\"之\", \"zhī\"], [\"涣\", \"huàn\"], [\"\\n\", \"\"], [\"\\n\", \"\"], [\"白\", \"bái\"], [\"日\", \"rì\"], [\"依\", \"yī\"], [\"山\", \"shān\"], [\"尽\", \"jìn\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"黄\", \"huáng\"], [\"河\", \"hé\"], [\"入\", \"rù\"], [\"海\", \"hǎi\"], [\"流\", \"liú\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"欲\", \"yù\"], [\"穷\", \"qióng\"], [\"千\", \"qiān\"], [\"里\", \"lǐ\"], [\"目\", \"mù\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"更\", \"gèng\"], [\"上\", \"shàng\"], [\"一\", \"yī\"], [\"层\", \"céng\"], [\"楼\", \"lóu\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.021697+00:00",
+  "request": {
+    "lesson_id": "2266c6c0b3f2fcd3df33f01ac602d581",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 420,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "2266c6c0b3f2fcd3df33f01ac602d581",
+    "nextLessonId": "b4bce134e282a04d68715d69137a7fc7",
+    "lessonName": "六级词汇正序版-39",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第39课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6c8028e336667323aa3bea60833cec30",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"effective\",\"pronun\":\"[ɪˈfektɪv]\",\"translation\":\"adj. 有效的，起作用的；实际的，实在的；给人深刻印象\",\"audio\":\"effective.mp3\"},{\"word\":\"efficiency\",\"pronun\":\"[ɪˈfɪʃnsi]\",\"translation\":\"n. 效率；效能；功效\",\"audio\":\"efficiency.mp3\"},{\"word\":\"efficient\",\"pronun\":\"[ɪˈfɪʃnt]\",\"translation\":\"adj. 有效率的；有能力的；生效的\",\"audio\":\"efficient.mp3\"},{\"word\":\"ego\",\"pronun\":\"[ˈiːɡoʊ]\",\"translation\":\"n. 自我；自负；自我意识\",\"audio\":\"ego.mp3\"},{\"word\":\"eject\",\"pronun\":\"[ɪˈdʒekt]\",\"translation\":\"vt. 喷射；驱逐，逐出\",\"audio\":\"eject.mp3\"},{\"word\":\"elaborate\",\"pronun\":\"[ɪˈlæbərət; ɪˈlæbəreɪt; ɪˈlæbərɪt]\",\"translation\":\"adj. 精心制作的；详尽的；煞费苦心的\\nvi. 详细描述；变复杂\\nvt. 精心制作；详细阐述；从简单成分合成（复杂有机物）\",\"audio\":\"elaborate.mp3\"},{\"word\":\"elapse\",\"pronun\":\"[ɪˈlæps]\",\"translation\":\"n. 流逝；时间的过去\\nvi. 消逝；时间过去\",\"audio\":\"elapse.mp3\"},{\"word\":\"elastic\",\"pronun\":\"[ɪˈlæstɪk]\",\"translation\":\"n. 松紧带；橡皮圈\\nadj. 有弹性的；灵活的；易伸缩的\",\"audio\":\"elastic.mp3\"},{\"word\":\"electric\",\"pronun\":\"[ɪˈlektrɪk]\",\"translation\":\"n. 电；电气车辆；带电体\\nadj. 电的；电动的；发电的；导电的；令人震惊的\",\"audio\":\"electric.mp3\"},{\"word\":\"electrical\",\"pronun\":\"[ɪˈlektrɪkl]\",\"translation\":\"adj. 有关电的；电气科学的\",\"audio\":\"electrical.mp3\"},{\"word\":\"electrician\",\"pronun\":\"[ɪˌlekˈtrɪʃn]\",\"translation\":\"n. 电工；电气技师\",\"audio\":\"electrician.mp3\"},{\"word\":\"electricity\",\"pronun\":\"[ɪˌlekˈtrɪsəti]\",\"translation\":\"n. 电力；电流；强烈的紧张情绪\",\"audio\":\"electricity.mp3\"},{\"word\":\"electrify\",\"pronun\":\"[ɪˈlektrɪfaɪ]\",\"translation\":\"vt. 使电气化；使充电；使触电；使激动\",\"audio\":\"electrify.mp3\"},{\"word\":\"electron\",\"pronun\":\"[ɪˈlektrɑːn]\",\"translation\":\"n. 电子\",\"audio\":\"electron.mp3\"},{\"word\":\"electronic\",\"pronun\":\"[ɪˌlekˈtrɑːnɪk]\",\"translation\":\"adj. 电子的\\nn. 电子电路；电子器件\",\"audio\":\"electronic.mp3\"},{\"word\":\"elegant\",\"pronun\":\"[ˈelɪɡənt]\",\"translation\":\"adj. 高雅的，优雅的；讲究的；简炼的；简洁的\",\"audio\":\"elegant.mp3\"},{\"word\":\"element\",\"pronun\":\"[ˈelɪmənt]\",\"translation\":\"n. 元素；要素；原理；成分；自然环境\",\"audio\":\"element.mp3\"},{\"word\":\"elementary\",\"pronun\":\"[ˌelɪˈmentri]\",\"translation\":\"adj. 基本的；初级的；[化学] 元素的\",\"audio\":\"elementary.mp3\"},{\"word\":\"elevate\",\"pronun\":\"[ˈelɪveɪt]\",\"translation\":\"vt. 提升；举起；振奋情绪等；提升…的职位\",\"audio\":\"elevate.mp3\"},{\"word\":\"elicit\",\"pronun\":\"[ɪˈlɪsɪt]\",\"translation\":\"vt. 抽出，引出；引起\",\"audio\":\"elicit.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

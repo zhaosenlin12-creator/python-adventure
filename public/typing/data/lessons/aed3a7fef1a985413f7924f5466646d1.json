@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.445549+00:00",
+  "request": {
+    "lesson_id": "aed3a7fef1a985413f7924f5466646d1",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 514,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "aed3a7fef1a985413f7924f5466646d1",
+    "nextLessonId": "a72a9c0b7a6a2791051de9eafb6182be",
+    "lessonName": "World of Light",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c82a7236ec302a5bb8650faf28fe9ae9",
+        "index": 1,
+        "text": [
+          "Long ago, people used candles to see at night, but now we have electric lights.\\nIt seems like our whole world is filled with lights.\\nThere are lights of all colours. There are big lights that light up soccer fields, and there are little flashlights too.\\nWe have so many lights that you can see them from space!\\nMaybe we should turn out a few lights?"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

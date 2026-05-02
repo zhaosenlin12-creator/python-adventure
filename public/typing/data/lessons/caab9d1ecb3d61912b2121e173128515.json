@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.208223+00:00",
+  "request": {
+    "lesson_id": "caab9d1ecb3d61912b2121e173128515",
+    "course_id": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "order": 461,
+    "nextCourseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "courseName": "英语每日故事（初级）1-31",
+    "lessonId": "caab9d1ecb3d61912b2121e173128515",
+    "nextLessonId": "a3ae1473ecfcf5ef16e64f9b9c118423",
+    "lessonName": "A Windy Christmas",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "97e6f789901f3dcab9ad7e9f70e01b42",
+        "index": 1,
+        "text": [
+          "Christmas was very different this year. On Christmas Day, there was no snow or ice. It was a windy day.\\nThe wind was so strong, I could not even walk on the street. I had to run!\\nThe strong wind pushed me all the way home. I think the wind pushed Santa Claus home too. Wow! It's a windy day!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

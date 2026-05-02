@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.110741+00:00",
+  "request": {
+    "lesson_id": "27a0bbf7482b29fdfd95785ece91ffed",
+    "course_id": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "order": 201,
+    "nextCourseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "courseName": "汉字一级",
+    "lessonId": "27a0bbf7482b29fdfd95785ece91ffed",
+    "nextLessonId": "950e576c99dec386b735d5cb852a2494",
+    "lessonName": "继续练习",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-good.c7e935711e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "bdb3b987e89f8229760b3b983d14a687",
+        "index": 1,
+        "text": [
+          "为了确保不再使用错误的指法打字，掌握正确的指法后，还需要一段时间的练习来逐渐适应。"
+        ],
+        "pinyin": "[[\"为\", \"wèi\"], [\"了\", \"le\"], [\"确\", \"què\"], [\"保\", \"bǎo\"], [\"不\", \"bù\"], [\"再\", \"zài\"], [\"使\", \"shǐ\"], [\"用\", \"yòng\"], [\"错\", \"cuò\"], [\"误\", \"wù\"], [\"的\", \"de\"], [\"指\", \"zhǐ\"], [\"法\", \"fǎ\"], [\"打\", \"dǎ\"], [\"字\", \"zì\"], [\"，\", \"\"], [\"掌\", \"zhǎng\"], [\"握\", \"wò\"], [\"正\", \"zhèng\"], [\"确\", \"què\"], [\"的\", \"de\"], [\"指\", \"zhǐ\"], [\"法\", \"fǎ\"], [\"后\", \"hòu\"], [\"，\", \"\"], [\"还\", \"hái\"], [\"需\", \"xū\"], [\"要\", \"yào\"], [\"一\", \"yī\"], [\"段\", \"duàn\"], [\"时\", \"shí\"], [\"间\", \"jiān\"], [\"的\", \"de\"], [\"练\", \"liàn\"], [\"习\", \"xí\"], [\"来\", \"lái\"], [\"逐\", \"zhú\"], [\"渐\", \"jiàn\"], [\"适\", \"shì\"], [\"应\", \"yìng\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 17,
+        "minSpeed": 9,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

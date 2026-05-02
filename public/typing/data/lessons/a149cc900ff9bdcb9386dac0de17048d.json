@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.106090+00:00",
+  "request": {
+    "lesson_id": "a149cc900ff9bdcb9386dac0de17048d",
+    "course_id": "df148decfeeb55dca1e38526c60baec7",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "df148decfeeb55dca1e38526c60baec7",
+    "order": 298,
+    "nextCourseId": "df148decfeeb55dca1e38526c60baec7",
+    "courseName": "语文课内同步六年级下册",
+    "lessonId": "a149cc900ff9bdcb9386dac0de17048d",
+    "nextLessonId": "0ff5cc12e004372f454b1992951a2c26",
+    "lessonName": "石灰吟",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8fbdf88626e194ca299481d6cbe91563",
+        "index": 1,
+        "text": [
+          "千锤万凿出深山，\\n烈火焚烧若等闲。\\n粉骨碎身浑不怕，\\n要留清白在人间。"
+        ],
+        "pinyin": "[[\"千\", \"qiān\"], [\"锤\", \"chuí\"], [\"万\", \"wàn\"], [\"凿\", \"záo\"], [\"出\", \"chū\"], [\"深\", \"shēn\"], [\"山\", \"shān\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"烈\", \"liè\"], [\"火\", \"huǒ\"], [\"焚\", \"fén\"], [\"烧\", \"shāo\"], [\"若\", \"ruò\"], [\"等\", \"děng\"], [\"闲\", \"xián\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"粉\", \"fěn\"], [\"骨\", \"gǔ\"], [\"碎\", \"suì\"], [\"身\", \"shēn\"], [\"浑\", \"hún\"], [\"不\", \"bù\"], [\"怕\", \"pà\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"要\", \"yào\"], [\"留\", \"liú\"], [\"清\", \"qīng\"], [\"白\", \"bái\"], [\"在\", \"zài\"], [\"人\", \"rén\"], [\"间\", \"jiān\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.562686+00:00",
+  "request": {
+    "lesson_id": "9b0ad30ffcb1937dbd527133259fa889",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 330,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "9b0ad30ffcb1937dbd527133259fa889",
+    "nextLessonId": "592b7b9ffd8e7314165e35926e110253",
+    "lessonName": "六级词汇正序版-43",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第43课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b4d800a88da01272e71b7ab2fe8bf826",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"ethnic\",\"pronun\":\"[ˈeθnɪk]\",\"translation\":\"adj. 种族的；人种的\",\"audio\":\"ethnic.mp3\"},{\"word\":\"evaluate\",\"pronun\":\"[ɪˈvæljueɪt]\",\"translation\":\"vt. 评价；估价；求…的值\\nvi. 评价；估价\",\"audio\":\"evaluate.mp3\"},{\"word\":\"evidence\",\"pronun\":\"[ˈevɪdəns]\",\"translation\":\"n. 证据，证明；迹象；明显\\nvt. 证明\",\"audio\":\"evidence.mp3\"},{\"word\":\"evident\",\"pronun\":\"[ˈevɪdənt]\",\"translation\":\"adj. 明显的；明白的\",\"audio\":\"evident.mp3\"},{\"word\":\"evil\",\"pronun\":\"[ˈiːvl]\",\"translation\":\"n. 罪恶，邪恶；不幸\\nadj. 邪恶的；不幸的；有害的；讨厌的\",\"audio\":\"evil.mp3\"},{\"word\":\"evoke\",\"pronun\":\"[ɪˈvoʊk]\",\"translation\":\"vt. 引起，唤起；博得\",\"audio\":\"evoke.mp3\"},{\"word\":\"evolution\",\"pronun\":\"[ˌevəˈluːʃn]\",\"translation\":\"n. 演变；进化论；进展\",\"audio\":\"evolution.mp3\"},{\"word\":\"exaggerate\",\"pronun\":\"[ɪɡˈzædʒəreɪt]\",\"translation\":\"vt. 使扩大；使增大\\nvi. 夸大；夸张\",\"audio\":\"exaggerate.mp3\"},{\"word\":\"exaggeration\",\"pronun\":\"[ɪɡˌzædʒəˈreɪʃn]\",\"translation\":\"n. 夸张；夸大之词；夸张的手法\",\"audio\":\"exaggeration.mp3\"},{\"word\":\"exceed\",\"pronun\":\"[ɪkˈsiːd]\",\"translation\":\"vt. 超过；胜过\\nvi. 超过其他\",\"audio\":\"exceed.mp3\"},{\"word\":\"exceedingly\",\"pronun\":\"[ɪkˈsiːdɪŋli]\",\"translation\":\"adv. 非常；极其；极度地；极端\",\"audio\":\"exceedingly.mp3\"},{\"word\":\"exception\",\"pronun\":\"[ɪkˈsepʃn]\",\"translation\":\"n. 例外；异议\",\"audio\":\"exception.mp3\"},{\"word\":\"exceptional\",\"pronun\":\"[ɪkˈsepʃənl]\",\"translation\":\"n. 超常的学生\\nadj. 异常的，例外的\",\"audio\":\"exceptional.mp3\"},{\"word\":\"excess\",\"pronun\":\"[ɪkˈses]\",\"translation\":\"n. 超过，超额；过度，过量；无节制\\nadj. 额外的，过量的；附加的\",\"audio\":\"excess.mp3\"},{\"word\":\"excessive\",\"pronun\":\"[ɪkˈsesɪv]\",\"translation\":\"adj. 过多的，极度的；过分的\",\"audio\":\"excessive.mp3\"},{\"word\":\"exchange\",\"pronun\":\"[ɪksˈtʃeɪndʒ]\",\"translation\":\"n. 交换；交流；交易所；兑换\\nvt. 交换；交易；兑换\\nvi. 交换；交易；兑换\",\"audio\":\"exchange.mp3\"},{\"word\":\"exclaim\",\"pronun\":\"[ɪkˈskleɪm]\",\"translation\":\"vt. 大声说出\\nvi. 呼喊，惊叫；大声叫嚷\",\"audio\":\"exclaim.mp3\"},{\"word\":\"exclude\",\"pronun\":\"[ɪkˈskluːd]\",\"translation\":\"vt. 排除；排斥；拒绝接纳；逐出\",\"audio\":\"exclude.mp3\"},{\"word\":\"exclusive\",\"pronun\":\"[ɪkˈskluːsɪv]\",\"translation\":\"n. 独家新闻；独家经营的项目；排外者\\nadj. 独有的；排外的；专一的\",\"audio\":\"exclusive.mp3\"},{\"word\":\"excursion\",\"pronun\":\"[ɪkˈskɜːrʒn]\",\"translation\":\"n. 偏移；远足；短程旅行；离题；游览，游览团\",\"audio\":\"excursion.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

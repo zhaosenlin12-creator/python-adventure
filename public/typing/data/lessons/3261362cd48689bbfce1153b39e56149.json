@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.063324+00:00",
+  "request": {
+    "lesson_id": "3261362cd48689bbfce1153b39e56149",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 431,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "3261362cd48689bbfce1153b39e56149",
+    "nextLessonId": "e02389edfb3fd1def6d27f6a49e243b6",
+    "lessonName": "六级词汇正序版-72",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第72课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ddecd5ff0417acb51473bb5a3f0ee098",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"napkin\",\"pronun\":\"[ˈnæpkɪn]\",\"translation\":\"n. 餐巾；餐巾纸；尿布\",\"audio\":\"napkin.mp3\"},{\"word\":\"narrative\",\"pronun\":\"[ˈnærətɪv]\",\"translation\":\"n. 叙述；故事；讲述\\nadj. 叙事的，叙述的；叙事体的\",\"audio\":\"narrative.mp3\"},{\"word\":\"nasty\",\"pronun\":\"[ˈnæsti]\",\"translation\":\"adj. 下流的；肮脏的；脾气不好的；险恶的\\nn. 令人不快的事物\\n性的吸引力\",\"audio\":\"nasty.mp3\"},{\"word\":\"navigation\",\"pronun\":\"[ˌnævɪˈɡeɪʃn]\",\"translation\":\"n. 航行；航海\",\"audio\":\"navigation.mp3\"},{\"word\":\"necessitate\",\"pronun\":\"[nəˈsesɪteɪt]\",\"translation\":\"vt. 使成为必需，需要；迫使\",\"audio\":\"necessitate.mp3\"},{\"word\":\"negative\",\"pronun\":\"[ˈneɡətɪv]\",\"translation\":\"adj. [数] 负的；消极的；否定的；阴性的\\nn. 否定；负数；[摄] 底片\\nvt. 否定；拒绝\",\"audio\":\"negative.mp3\"},{\"word\":\"neglect\",\"pronun\":\"[nɪˈɡlekt]\",\"translation\":\"vt. 疏忽，忽视；忽略\\nn. 疏忽，忽视；怠慢\",\"audio\":\"neglect.mp3\"},{\"word\":\"negligible\",\"pronun\":\"[ˈneɡlɪdʒəbl]\",\"translation\":\"adj. 微不足道的，可以忽略的\",\"audio\":\"negligible.mp3\"},{\"word\":\"negotiate\",\"pronun\":\"[nɪˈɡoʊʃieɪt]\",\"translation\":\"vt. 谈判，商议；转让；越过\\nvi. 谈判，交涉\",\"audio\":\"negotiate.mp3\"},{\"word\":\"neutral\",\"pronun\":\"[ˈnuːtrəl]\",\"translation\":\"adj. 中立的，中性的；中立国的；非彩色的\\nn. 中立国；中立者；非彩色；齿轮的空档\",\"audio\":\"neutral.mp3\"},{\"word\":\"nickel\",\"pronun\":\"[ˈnɪk(ə)l]\",\"translation\":\"n. 镍；镍币；五分镍币\\nvt. 镀镍于\",\"audio\":\"nickel.mp3\"},{\"word\":\"nickname\",\"pronun\":\"[ˈnɪkneɪm]\",\"translation\":\"n. 绰号；昵称\\nvt. 给……取绰号；叫错名字\",\"audio\":\"nickname.mp3\"},{\"word\":\"nil\",\"pronun\":\"[nɪl]\",\"translation\":\"n. 无，零\",\"audio\":\"nil.mp3\"},{\"word\":\"nominal\",\"pronun\":\"[ˈnɑːmɪnl]\",\"translation\":\"adj. 名义上的；有名无实的；[会计] 票面上的\\nn. [语] 名词性词\",\"audio\":\"nominal.mp3\"},{\"word\":\"nominate\",\"pronun\":\"[ˈnɑːmɪneɪt]\",\"translation\":\"vt. 推荐；提名；任命；指定\",\"audio\":\"nominate.mp3\"},{\"word\":\"nonetheless\",\"pronun\":\"[ˌnʌnðəˈles]\",\"translation\":\"adv. 尽管如此，但是\",\"audio\":\"nonetheless.mp3\"},{\"word\":\"norm\",\"pronun\":\"[nɔːrm]\",\"translation\":\"n. 标准，规范\",\"audio\":\"norm.mp3\"},{\"word\":\"notable\",\"pronun\":\"[ˈnoʊtəbl]\",\"translation\":\"adj. 值得注意的，显著的；著名的\\nn. 名人，显要人物\",\"audio\":\"notable.mp3\"},{\"word\":\"notation\",\"pronun\":\"[noʊˈteɪʃn]\",\"translation\":\"n. 符号；乐谱；注释；记号法\",\"audio\":\"notation.mp3\"},{\"word\":\"notification\",\"pronun\":\"[ˌnoʊtɪfɪˈkeɪʃn]\",\"translation\":\"n. 通知；通告；[法] 告示\",\"audio\":\"notification.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

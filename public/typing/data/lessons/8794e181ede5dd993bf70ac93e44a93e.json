@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.622679+00:00",
+  "request": {
+    "lesson_id": "8794e181ede5dd993bf70ac93e44a93e",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 560,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "8794e181ede5dd993bf70ac93e44a93e",
+    "nextLessonId": "6624eafa2f91f0270efe3cf161026aee",
+    "lessonName": "The Three Sisters",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "044049690f5f32ea5b6ade5bdc752562",
+        "index": 1,
+        "text": [
+          "The Three Sisters\\nEddy and Casey did not like eating vegetables. They liked meat and fish. They liked rice and bread. They even liked apples, grapes and bananas. But they did not like vegetables.\\nOne day, their mom told them a story.\\nLong ago, the Native people in Canada grew three special vegetables. They planted corn, beans and pumpkins very close to each other in the garden.\\nThe corn grew strong and tall. The beans climbed up the big strong corn stems. The pumpkins made big leaves as they grew. The leaves kept the ground cool and wet.\\nThe three vegetables helped each other. They were like three sisters in a family.\\nThat is why the Native people call these vegetables the three sisters. They are very special. Little kids grow big and strong by eating corn, beans and pumpkins.\\nNow, Eddy and Casey eat their vegetables every day."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

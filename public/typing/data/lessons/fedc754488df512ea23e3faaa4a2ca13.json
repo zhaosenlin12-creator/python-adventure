@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.560260+00:00",
+  "request": {
+    "lesson_id": "fedc754488df512ea23e3faaa4a2ca13",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 102,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "fedc754488df512ea23e3faaa4a2ca13",
+    "nextLessonId": "71d063b857882163e0426a18969fcc5c",
+    "lessonName": "KET核心词-8",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第8课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "aaf66d290071dded3bf0207187f06783",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"bite\",\"pronun\":\"[baɪt]\",\"translation\":\"n. 咬；一口；咬伤；刺痛\\nabbr. 机内测试设备（Built-In Test Equipment）\\nvt. 咬；刺痛\\nvi. 咬；刺痛\",\"audio\":\"bite.mp3\"},{\"word\":\"blanket\",\"pronun\":\"[ˈblæŋkɪt]\",\"translation\":\"n. 毛毯，毯子；毯状物，覆盖层\\nadj. 总括的，全体的；没有限制的\\nvt. 覆盖，掩盖；用毯覆盖\",\"audio\":\"blanket.mp3\"},{\"word\":\"blind\",\"pronun\":\"[blaɪnd]\",\"translation\":\"n. 掩饰，借口；百叶窗\\nadj. 盲目的；瞎的\\nvt. 使失明；使失去理智\\nadv. 盲目地；看不见地\",\"audio\":\"blind.mp3\"},{\"word\":\"block\",\"pronun\":\"[blɑːk]\",\"translation\":\"n. 块；街区；大厦；障碍物\\nadj. 成批的，大块的；交通堵塞的\\nvt. 阻止；阻塞；限制；封盖\",\"audio\":\"block.mp3\"},{\"word\":\"blood\",\"pronun\":\"[blʌd]\",\"translation\":\"n. 血，血液；血统\\nvt. 从…抽血；使先取得经验\",\"audio\":\"blood.mp3\"},{\"word\":\"blow\",\"pronun\":\"[bloʊ]\",\"translation\":\"n. 吹；打击；殴打\\nvt. 风吹\\nvi. 风吹；喘气\",\"audio\":\"blow.mp3\"},{\"word\":\"board\",\"pronun\":\"[bɔːrd]\",\"translation\":\"n. 董事会；木板；甲板；膳食\\nvt. 上（飞机、车、船等）；用板盖上；给提供膳宿\\nvi. 寄宿\",\"audio\":\"board.mp3\"},{\"word\":\"boat\",\"pronun\":\"[boʊt]\",\"translation\":\"n. 小船；轮船\\nvi. 划船\",\"audio\":\"boat.mp3\"},{\"word\":\"body\",\"pronun\":\"[ˈbɑːdi]\",\"translation\":\"n. 身体；主体；大量；团体；主要部分\\nvt. 赋以形体\",\"audio\":\"body.mp3\"},{\"word\":\"boil\",\"pronun\":\"[bɔɪl]\",\"translation\":\"n. 沸腾，煮沸；疖子\\nvt. 煮沸，烧开；使…激动；使…蒸发\\nvi. 煮沸，沸腾；激动，激昂\",\"audio\":\"boil.mp3\"},{\"word\":\"book\",\"pronun\":\"[bʊk]\",\"translation\":\"n. 书籍；卷；帐簿；名册；工作簿\\nvt. 预订；登记\",\"audio\":\"book.mp3\"},{\"word\":\"booklet\",\"pronun\":\"[ˈbʊklət]\",\"translation\":\"n. 小册子\",\"audio\":\"booklet.mp3\"},{\"word\":\"bookshelf\",\"pronun\":\"[ˈbʊkʃelf]\",\"translation\":\"n. 书架\",\"audio\":\"bookshelf.mp3\"},{\"word\":\"bookshop\",\"pronun\":\"[ˈbʊkʃɑːp]\",\"translation\":\"n. 书店\",\"audio\":\"bookshop.mp3\"},{\"word\":\"boot\",\"pronun\":\"[buːt]\",\"translation\":\"n. 靴子；踢；汽车行李箱\\nvt. 引导；踢；解雇；使穿靴\",\"audio\":\"boot.mp3\"},{\"word\":\"bored\",\"pronun\":\"[bɔːrd]\",\"translation\":\"v. 使厌烦（bore的过去式）；烦扰\\nadj. 无聊的；无趣的；烦人的\",\"audio\":\"bored.mp3\"},{\"word\":\"boring\",\"pronun\":\"[ˈbɔːrɪŋ]\",\"translation\":\"n. 钻孔\\nadj. 无聊的；令人厌烦的\\nv. 钻孔；使厌烦；挖空（bore的ing形式）\",\"audio\":\"boring.mp3\"},{\"word\":\"born\",\"pronun\":\"[bɔːrn]\",\"translation\":\"v. 出世（bear的过去分词）\\nadj. 天生的\",\"audio\":\"born.mp3\"},{\"word\":\"borrow\",\"pronun\":\"[ˈbɔːroʊ]\",\"translation\":\"vt. 借；借用\\nvi. 借；借用；从其他语言中引入\",\"audio\":\"borrow.mp3\"},{\"word\":\"boss\",\"pronun\":\"[bɔːs]\",\"translation\":\"n. 老板；首领；工头\\nvt. 指挥，调遣；当…的领导\\nvi. 当首领，发号施令\",\"audio\":\"boss.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

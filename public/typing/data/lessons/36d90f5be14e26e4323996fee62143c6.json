@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.236733+00:00",
+  "request": {
+    "lesson_id": "36d90f5be14e26e4323996fee62143c6",
+    "course_id": "9983508511f457b02ddcae4777acab15",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "9983508511f457b02ddcae4777acab15",
+    "order": 148,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "JAVA",
+    "lessonId": "36d90f5be14e26e4323996fee62143c6",
+    "nextLessonId": "8521fd0f503d937885587a079933a964",
+    "lessonName": "矩阵转置",
+    "icon": "data/assets/daziya.com/key-icon_key-java.09b827febf.png",
+    "description": "Java编程练习 - 矩阵转置",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a33a95935a317ea4323ad08d2e817176",
+        "index": 1,
+        "text": [
+          "class Main {\\n    public static int[][] transposeMatrix(int[][] matrix) {\\n        int rows = matrix.length;\\n        int cols = matrix[0].length;\\n        int[][] result = new int[cols][rows];\\n\\n        for (int i = 0; i < rows; i++) {\\n            for (int j = 0; j < cols; j++) {\\n                result[j][i] = matrix[i][j];\\n            }\\n        }\\n\\n        return result;\\n    }\\n\\n    public static void printMatrix(int[][] matrix) {\\n        for (int[] row : matrix) {\\n            for (int val : row) {\\n                System.out.printf(\"%3d \", val);\\n            }\\n            System.out.println();\\n        }\\n    }\\n\\n    public static void main(String[] args) {\\n        int[][] matrix = {\\n            {1, 2, 3},\\n            {4, 5, 6},\\n            {7, 8, 9}\\n        };\\n\\n        System.out.println(\"原矩阵:\");\\n        printMatrix(matrix);\\n\\n        int[][] transposed = transposeMatrix(matrix);\\n        System.out.println(\"\\n转置后:\");\\n        printMatrix(transposed);\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "java",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

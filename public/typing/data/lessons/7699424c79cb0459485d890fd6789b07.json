@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.023846+00:00",
+  "request": {
+    "lesson_id": "7699424c79cb0459485d890fd6789b07",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 1,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "7699424c79cb0459485d890fd6789b07",
+    "nextLessonId": "6f24b184021767b18f66a22cb75c23a0",
+    "lessonName": "2022年版 PEP-三年级-上册-1",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-三年级-上册 - 第1课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6d81c3e4bac162b9ec7c8e5c571b28c5",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"name\",\"pronun\":\"[neɪm]\",\"translation\":\"n. 名称，名字；姓名；名誉\\nvt. 命名，任命；指定；称呼；提名；叫出\\nadj. 姓名的；据以取名的\",\"audio\":\"name.mp3\"},{\"word\":\"nice\",\"pronun\":\"[naɪs]\",\"translation\":\"adj. 精密的；美好的；细微的；和蔼的\",\"audio\":\"nice.mp3\"},{\"word\":\"ear\",\"pronun\":\"[ɪr]\",\"translation\":\"n. 耳朵；穗；听觉；倾听\\nvi. （美俚）听见；抽穗\",\"audio\":\"ear.mp3\"},{\"word\":\"hand\",\"pronun\":\"[hænd]\",\"translation\":\"n. 手，手艺；帮助；指针；插手\\nvt. 传递，交给；支持；搀扶\",\"audio\":\"hand.mp3\"},{\"word\":\"eye\",\"pronun\":\"[aɪ]\",\"translation\":\"n. 眼睛；视力；眼光；见解，观点\\nvt. 注视，看\",\"audio\":\"eye.mp3\"},{\"word\":\"mouth\",\"pronun\":\"[maʊθ]\",\"translation\":\"n. 口，嘴；河口\\nvt. 做作地说，装腔作势地说；喃喃地说出\\nvi. 装腔作势说话\",\"audio\":\"mouth.mp3\"},{\"word\":\"arm\",\"pronun\":\"[ɑːrm]\",\"translation\":\"n. 手臂；武器；袖子；装备；部门\\nvt. 武装；备战\\nvi. 武装起来\",\"audio\":\"arm.mp3\"},{\"word\":\"can\",\"pronun\":\"[kən; kæn]\",\"translation\":\"aux. 能； 能够； 可以； 可能\\nn. 罐头； （用金属或塑料制作的）容器； （马口铁或其他金属制作的）食品罐头\\nvt. 将…装入密封罐中保存\",\"audio\":\"can.mp3\"},{\"word\":\"share\",\"pronun\":\"[ʃer]\",\"translation\":\"n. 份额；股份\\nvt. 分享，分担；分配\\nvi. 共享；分担\",\"audio\":\"share.mp3\"},{\"word\":\"smile\",\"pronun\":\"[smaɪl]\",\"translation\":\"n. 微笑；笑容；喜色\\nvt. 微笑着表示\\nvi. 微笑\",\"audio\":\"smile.mp3\"},{\"word\":\"listen\",\"pronun\":\"[ˈlɪsn]\",\"translation\":\"vi. 听，倾听；听从，听信\\nn. 听，倾听\",\"audio\":\"listen.mp3\"},{\"word\":\"help\",\"pronun\":\"[help]\",\"translation\":\"n. 帮助；补救办法；帮忙者；有益的东西\\nvt. 帮助；促进；治疗；补救\\nvi. 帮助；有用；招待\",\"audio\":\"help.mp3\"},{\"word\":\"say\",\"pronun\":\"[seɪ]\",\"translation\":\"vt. 讲；说明；例如；声称；假设；指明\\nvi. 讲；表示；念；假定；背诵\",\"audio\":\"say.mp3\"},{\"word\":\"friend\",\"pronun\":\"[frend]\",\"translation\":\"n. 朋友；助手；赞助者\",\"audio\":\"friend.mp3\"},{\"word\":\"good\",\"pronun\":\"[ɡʊd]\",\"translation\":\"n. 好处；善行；慷慨的行为\\nadj. 好的；优良的；愉快的；虔诚的\\nadv. 好\",\"audio\":\"good.mp3\"},{\"word\":\"grandmother\",\"pronun\":\"[ˈɡrænmʌðər]\",\"translation\":\"n. 祖母；女祖先\\nvt. 当…的祖母\\nvi. 当祖母\",\"audio\":\"grandmother.mp3\"},{\"word\":\"mother\",\"pronun\":\"[ˈmʌðər]\",\"translation\":\"n. 母亲；大娘；女修道院院长\\nvt. 生下；养育；像母亲般关怀或照管\\nadj. 母亲的；出生地的\",\"audio\":\"mother.mp3\"},{\"word\":\"father\",\"pronun\":\"[ˈfɑːðər]\",\"translation\":\"n. 父亲，爸爸；神父；祖先；前辈\\nvt. 发明，创立；当…的父亲\",\"audio\":\"father.mp3\"},{\"word\":\"me\",\"pronun\":\"[mi; miː]\",\"translation\":\"pron. 我（宾格）\\nn. 自我；极端自私的人；自我的一部分\",\"audio\":\"me.mp3\"},{\"word\":\"sister\",\"pronun\":\"[ˈsɪstər]\",\"translation\":\"n. 姐妹；（称志同道合者）姐妹；修女；护士\\nadj. 姐妹般的；同类型的\",\"audio\":\"sister.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.641282+00:00",
+  "request": {
+    "lesson_id": "a8e5ae5835a5002d8bd30f6492f2f184",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 28,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "a8e5ae5835a5002d8bd30f6492f2f184",
+    "nextLessonId": "47617add4c38dea2ee827d5336c4fdcf",
+    "lessonName": "巩固练习：iao、uai",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母iao、uai的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "2a6603357c927ead23cb6f29b753cbb6",
+        "index": 1,
+        "highlights": [
+          "iao"
+        ],
+        "text": [
+          "请输入按键 [iao]"
+        ],
+        "detail": "学习双拼按键 iao"
+      },
+      {
+        "chapterId": "f52a75c9919771f4cd6140abb2579cf9",
+        "index": 2,
+        "highlights": [
+          "uai"
+        ],
+        "text": [
+          "请输入按键 [uai]"
+        ],
+        "detail": "学习双拼按键 uai"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "24df5489ff947ae77ecdc9de29cb738a",
+        "index": 3,
+        "text": [
+          "iaoiaoiaoiaouaiuaiuaiuaiiaouaiiaouaiiaouaiiaouai"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "49351b5f5cab949704d8fcf0e4dc6d8e",
+        "index": 4,
+        "text": [
+          "小猫跳到窗台外面晒太阳。\\n快把摔坏的筷子收起来。\\n这位帅小伙爱好跳高和赛跑。\\n水彩颜料洒在白衬衫上了。\\n小鸟在柳条间欢快叫闹。"
+        ],
+        "pinyin": "[[\"小\",\"xiǎo\"],[\"猫\",\"māo\"],[\"跳\",\"tiào\"],[\"到\",\"dào\"],[\"窗\",\"chuāng\"],[\"台\",\"tái\"],[\"外\",\"wài\"],[\"面\",\"miàn\"],[\"晒\",\"shài\"],[\"太\",\"tài\"],[\"阳\",\"yáng\"],[\"。\",\"\"],[\"快\",\"kuài\"],[\"把\",\"bǎ\"],[\"摔\",\"shuāi\"],[\"坏\",\"huài\"],[\"的\",\"de\"],[\"筷\",\"kuài\"],[\"子\",\"zi\"],[\"收\",\"shōu\"],[\"起\",\"qǐ\"],[\"来\",\"lái\"],[\"。\",\"\"],[\"这\",\"zhè\"],[\"位\",\"wèi\"],[\"帅\",\"shuài\"],[\"小\",\"xiǎo\"],[\"伙\",\"huǒ\"],[\"爱\",\"ài\"],[\"好\",\"hào\"],[\"跳\",\"tiào\"],[\"高\",\"gāo\"],[\"和\",\"hé\"],[\"赛\",\"sài\"],[\"跑\",\"pǎo\"],[\"。\",\"\"],[\"水\",\"shuǐ\"],[\"彩\",\"cǎi\"],[\"颜\",\"yán\"],[\"料\",\"liào\"],[\"洒\",\"sǎ\"],[\"在\",\"zài\"],[\"白\",\"bái\"],[\"衬\",\"chèn\"],[\"衫\",\"shān\"],[\"上\",\"shàng\"],[\"了\",\"le\"],[\"。\",\"\"],[\"小\",\"xiǎo\"],[\"鸟\",\"niǎo\"],[\"在\",\"zài\"],[\"柳\",\"liǔ\"],[\"条\",\"tiáo\"],[\"间\",\"jiān\"],[\"欢\",\"huān\"],[\"快\",\"kuài\"],[\"叫\",\"jiào\"],[\"闹\",\"nào\"],[\"。\",\"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

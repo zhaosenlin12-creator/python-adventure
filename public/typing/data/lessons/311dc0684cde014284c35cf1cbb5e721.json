@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.363668+00:00",
+  "request": {
+    "lesson_id": "311dc0684cde014284c35cf1cbb5e721",
+    "course_id": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "order": 355,
+    "nextCourseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "courseName": "小学必备古诗75首（2）",
+    "lessonId": "311dc0684cde014284c35cf1cbb5e721",
+    "nextLessonId": "64a878e161281e6671340075ffaddaf5",
+    "lessonName": "蜂",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "fd5d6c2d586cdf8ea6c34135f43ead14",
+        "index": 1,
+        "text": [
+          "蜂\\n罗隐\\n不论平地与山尖，无限风光尽被占。\\n采得百花成蜜后，为谁辛苦为谁甜。"
+        ],
+        "pinyin": "[[\"蜂\", \"fēng\"], [\"\\n\", \"\"], [\"罗\", \"luó\"], [\"隐\", \"yǐn\"], [\"\\n\", \"\"], [\"不\", \"bù\"], [\"论\", \"lùn\"], [\"平\", \"píng\"], [\"地\", \"dì\"], [\"与\", \"yǔ\"], [\"山\", \"shān\"], [\"尖\", \"jiān\"], [\"，\", \"\"], [\"无\", \"wú\"], [\"限\", \"xiàn\"], [\"风\", \"fēng\"], [\"光\", \"guāng\"], [\"尽\", \"jìn\"], [\"被\", \"bèi\"], [\"占\", \"zhàn\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"采\", \"cǎi\"], [\"得\", \"dé\"], [\"百\", \"bǎi\"], [\"花\", \"huā\"], [\"成\", \"chéng\"], [\"蜜\", \"mì\"], [\"后\", \"hòu\"], [\"，\", \"\"], [\"为\", \"wèi\"], [\"谁\", \"shuí\"], [\"辛\", \"xīn\"], [\"苦\", \"kǔ\"], [\"为\", \"wèi\"], [\"谁\", \"shuí\"], [\"甜\", \"tián\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

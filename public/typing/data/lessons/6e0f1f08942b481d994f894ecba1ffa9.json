@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.871659+00:00",
+  "request": {
+    "lesson_id": "6e0f1f08942b481d994f894ecba1ffa9",
+    "course_id": "305e1352051511f2dff62dc198c6af98",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "305e1352051511f2dff62dc198c6af98",
+    "order": 88,
+    "nextCourseId": "305e1352051511f2dff62dc198c6af98",
+    "courseName": "1000个日常汉字",
+    "lessonId": "6e0f1f08942b481d994f894ecba1ffa9",
+    "nextLessonId": "7f98ddca5a59f69597b4a2d480886024",
+    "lessonName": "常见汉字18",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "1000个日常汉字 - 第18组（851-900字）",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "23bbc8fadf81cbda93a7753fdc2d6aea",
+        "index": 1,
+        "text": [
+          "九冰既状乱景席珍童顶派素脱农疑练野按犯拍征坏骨余承置臓彩灯巨琴免环姆暗换技翻束增忍餐洛塞缺忆判欧层付"
+        ],
+        "pinyin": "[[\"九\",\"jiǔ\"],[\"冰\",\"bīng\"],[\"既\",\"jì\"],[\"状\",\"zhuàng\"],[\"乱\",\"luàn\"],[\"景\",\"jǐng\"],[\"席\",\"xí\"],[\"珍\",\"zhēn\"],[\"童\",\"tóng\"],[\"顶\",\"dǐng\"],[\"派\",\"pài\"],[\"素\",\"sù\"],[\"脱\",\"tuō\"],[\"农\",\"nóng\"],[\"疑\",\"yí\"],[\"练\",\"liàn\"],[\"野\",\"yě\"],[\"按\",\"àn\"],[\"犯\",\"fàn\"],[\"拍\",\"pāi\"],[\"征\",\"zhēng\"],[\"坏\",\"huài\"],[\"骨\",\"gǔ\"],[\"余\",\"yú\"],[\"承\",\"chéng\"],[\"置\",\"zhì\"],[\"臓\",\"zàng\"],[\"彩\",\"cǎi\"],[\"灯\",\"dēng\"],[\"巨\",\"jù\"],[\"琴\",\"qín\"],[\"免\",\"miǎn\"],[\"环\",\"huán\"],[\"姆\",\"mǔ\"],[\"暗\",\"àn\"],[\"换\",\"huàn\"],[\"技\",\"jì\"],[\"翻\",\"fān\"],[\"束\",\"shù\"],[\"增\",\"zēng\"],[\"忍\",\"rěn\"],[\"餐\",\"cān\"],[\"洛\",\"luò\"],[\"塞\",\"sāi\"],[\"缺\",\"quē\"],[\"忆\",\"yì\"],[\"判\",\"pàn\"],[\"欧\",\"ōu\"],[\"层\",\"céng\"],[\"付\",\"fù\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 10,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

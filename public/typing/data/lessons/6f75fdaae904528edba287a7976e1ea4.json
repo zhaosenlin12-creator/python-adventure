@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.557415+00:00",
+  "request": {
+    "lesson_id": "6f75fdaae904528edba287a7976e1ea4",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 100,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "6f75fdaae904528edba287a7976e1ea4",
+    "nextLessonId": "ff1e4758d50a69f4fc033b349154b64b",
+    "lessonName": "KET核心词-2",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第2课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "541554e4b33e1a6d19729e908a27f06c",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"adventure\",\"pronun\":\"[ədˈventʃər]\",\"translation\":\"n. 冒险；冒险精神；投机活动\\nvt. 冒险；大胆说出\\nvi. 冒险\",\"audio\":\"adventure.mp3\"},{\"word\":\"advertisement\",\"pronun\":\"[ˌædvərˈtaɪzmənt]\",\"translation\":\"n. 广告，宣传\",\"audio\":\"advertisement.mp3\"},{\"word\":\"ad\",\"pronun\":\"[æd]\",\"translation\":\"n. 公元；广告（ad）\",\"audio\":\"ad.mp3\"},{\"word\":\"advice\",\"pronun\":\"[ədˈvaɪs]\",\"translation\":\"n. 建议；忠告；劝告；通知\",\"audio\":\"advice.mp3\"},{\"word\":\"aeroplane\",\"pronun\":\"[ˈerəpleɪn]\",\"translation\":\"n. 飞机（等于airplane）\",\"audio\":\"aeroplane.mp3\"},{\"word\":\"afford\",\"pronun\":\"[əˈfɔːrd]\",\"translation\":\"vt. 给予，提供；买得起\",\"audio\":\"afford.mp3\"},{\"word\":\"afraid\",\"pronun\":\"[əˈfreɪd]\",\"translation\":\"adj. 害怕的；恐怕；担心的\",\"audio\":\"afraid.mp3\"},{\"word\":\"Africa\",\"pronun\":\"[ˈæfrɪkə]\",\"translation\":\"n. 非洲\",\"audio\":\"Africa.mp3\"},{\"word\":\"afternoon\",\"pronun\":\"[ˌæftərˈnuːn]\",\"translation\":\"n. 午后，下午\",\"audio\":\"afternoon.mp3\"},{\"word\":\"afterwards\",\"pronun\":\"[ˈæftərwərdz]\",\"translation\":\"adv. 后来；然后\",\"audio\":\"afterwards.mp3\"},{\"word\":\"again\",\"pronun\":\"[əˈɡen; əˈɡeɪn]\",\"translation\":\"adv. 又，此外；再一次；再说；增加\\nn. （英、保）阿盖恩\",\"audio\":\"again.mp3\"},{\"word\":\"against\",\"pronun\":\"[əˈɡenst; əˈɡeɪnst]\",\"translation\":\"prep. 反对，违反；靠；倚；防备\\nadj. 不利的；对立的\",\"audio\":\"against.mp3\"},{\"word\":\"age\",\"pronun\":\"[eɪdʒ]\",\"translation\":\"n. 年龄；时代；寿命，使用年限；阶段\\nvt. 使成熟；使变老，使上年纪\\nvi. 成熟；变老\",\"audio\":\"age.mp3\"},{\"word\":\"agent\",\"pronun\":\"[ˈeɪdʒənt]\",\"translation\":\"n. 代理人，代理商；药剂；特工\\nadj. 代理的\\nvt. 由…作中介；由…代理\",\"audio\":\"agent.mp3\"},{\"word\":\"ago\",\"pronun\":\"[əˈɡoʊ]\",\"translation\":\"adj. 以前的；过去的\\nadv. 以前，以往\",\"audio\":\"ago.mp3\"},{\"word\":\"agree\",\"pronun\":\"[əˈɡriː]\",\"translation\":\"vi. vi. 同意，意见一致；约定，商定\\nvt. 同意，赞成；承认；约定，商定\",\"audio\":\"agree.mp3\"},{\"word\":\"ahead\",\"pronun\":\"[əˈhed]\",\"translation\":\"adj. 向前；在前的；领先\\nadv. 向前地；领先地；在（某人或某事物的）前面；预先；在将来，为未来\",\"audio\":\"ahead.mp3\"},{\"word\":\"air\",\"pronun\":\"[er]\",\"translation\":\"n. 空气，大气；天空；样子；曲调\\nvt. 使通风，晾干；夸耀\\nvi. 通风\",\"audio\":\"air.mp3\"},{\"word\":\"airport\",\"pronun\":\"[ˈerpɔːrt]\",\"translation\":\"n. 机场；航空站\",\"audio\":\"airport.mp3\"},{\"word\":\"album\",\"pronun\":\"[ˈælbəm]\",\"translation\":\"n. 相簿；唱片集；集邮簿；签名纪念册\",\"audio\":\"album.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

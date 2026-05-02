@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.524826+00:00",
+  "request": {
+    "lesson_id": "58ae2433385ebdd9c9a6db0e5f573646",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 210,
+    "nextCourseId": "e22bc4218a485f29edeedf729586a38c",
+    "courseName": "SQL",
+    "lessonId": "58ae2433385ebdd9c9a6db0e5f573646",
+    "nextLessonId": "e2e9f309d4a951e7ef8c30012e1a83de",
+    "lessonName": "性能优化查询",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - 性能优化查询",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "97328ba6b18bcf007a3d5216246b34be",
+        "index": 1,
+        "text": [
+          "-- 使用EXPLAIN分析查询性能\\nEXPLAIN SELECT u.*, COUNT(o.order_id) AS order_count\\nFROM users u\\nLEFT JOIN orders o ON u.id = o.user_id\\nWHERE u.status = 'active'\\nGROUP BY u.id;\\n\\n-- 优化子查询为JOIN\\n-- 优化前（慢）\\nSELECT * FROM users WHERE id IN (SELECT user_id FROM orders WHERE amount > 1000);\\n\\n-- 优化后（快）\\nSELECT DISTINCT u.* FROM users u\\nINNER JOIN orders o ON u.id = o.user_id\\nWHERE o.amount > 1000;\\n\\n-- 使用索引提示\\nSELECT * FROM users USE INDEX (idx_city_status)\\nWHERE city = '北京' AND status = 'active';\\n\\n-- 批量插入优化\\nINSERT INTO logs (user_id, action, created_at)\\nVALUES\\n    (1, 'login', NOW()),\\n    (2, 'logout', NOW()),\\n    (3, 'purchase', NOW());\\n\\n-- 分页查询优化\\nSELECT * FROM orders\\nWHERE id > 1000\\nORDER BY id\\nLIMIT 20;\\n\\n-- 避免SELECT *，只查询需要的字段\\nSELECT id, name, email FROM users WHERE city = '上海';\\n\\n-- 使用覆盖索引\\nCREATE INDEX idx_user_email_name ON users(email, name);\\nSELECT email, name FROM users WHERE email LIKE '%@gmail.com';\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

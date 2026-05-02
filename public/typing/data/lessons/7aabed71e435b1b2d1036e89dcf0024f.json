@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.655095+00:00",
+  "request": {
+    "lesson_id": "7aabed71e435b1b2d1036e89dcf0024f",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 565,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "7aabed71e435b1b2d1036e89dcf0024f",
+    "nextLessonId": "7dce7b443f3a32c065edd61cf6e28558",
+    "lessonName": "How Old Are You?",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "812e495cdd80755715ba094e91c890c0",
+        "index": 1,
+        "text": [
+          "How Old Are You?\\nOne day, some friends were talking. They were talking about how old they were.\\nJames said, \"I am seven years old. My brother is older. He is twice as old as me. How old is my brother?\"\\n\"That's easy,\" said Ellen. \"You are seven. He is twice as old as you. So, your brother is seven plus seven. He is fourteen years old.\"\\nThen Jane said, \"I am eight. I have a baby sister. She is half my age. How old is my sister?\"\\n\"That's so easy!\" yelled James. \"She is half of eight.\\nSo, your sister is four years old.\"\\nChris was thinking hard. There was something on his mind. Then, he asked, \"How old is a dinosaur?\"\\n\"A dinosaur?!\" said the puzzled children.\\n\"Yes, how old is a dinosaur?\" said Chris again.\\nThe children thought really hard.\\n\"A dinosaur is old-very old,\" said Ellen. \"A dinosaur is millions of years old. A dinosaur is old, old, old!\"\\nThe children laughed. James said, \"A dinosaur is older than all of us combined!\""
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.111181+00:00",
+  "request": {
+    "lesson_id": "1dcc78baabdc357095b9ecaed525c6f4",
+    "course_id": "21fe8d60de407da95e1abc33ac636014",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "21fe8d60de407da95e1abc33ac636014",
+    "order": 37,
+    "nextCourseId": "21fe8d60de407da95e1abc33ac636014",
+    "courseName": "上排字母",
+    "lessonId": "1dcc78baabdc357095b9ecaed525c6f4",
+    "nextLessonId": "ce89443aa52ff9f8004e9b0ce7c18fed",
+    "lessonName": "回顾t和p",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-review-tp.4a7c997371.png",
+    "description": "回顾t和p",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a44414c23961d09194a3320bfb433662",
+        "index": 1,
+        "text": [
+          "; pu tu tui pi po tou ti pei pai; tao pao piao tiao; pie pei tai te tie ta pa tu po;"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "ptg; uiouea",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

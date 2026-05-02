@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.499856+00:00",
+  "request": {
+    "lesson_id": "642474032245b271a3fc91f8a2a6c7e8",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 527,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "642474032245b271a3fc91f8a2a6c7e8",
+    "nextLessonId": "f0fbe685bd4387b9d48912e410d0dbe4",
+    "lessonName": "A Day All Green!",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "157a7552a75659ed181547ed5feede98",
+        "index": 1,
+        "text": [
+          "Today, I see many people wearing green. I see some men wearing green hats. I see some girls wearing green skirts and some boys wearing green T-shirts. Why?\\nMy mom tells me that it's an Irish holiday today.\\nIt's called St. Patrick's Day. Why do they choose the colour green?\\nWell, that's a long story. Mom says she will tell me about it later. I can't wait!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

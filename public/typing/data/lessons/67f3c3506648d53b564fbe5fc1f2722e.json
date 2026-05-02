@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.748078+00:00",
+  "request": {
+    "lesson_id": "67f3c3506648d53b564fbe5fc1f2722e",
+    "course_id": "c02abec1127900f16353dac5e0b02419",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "c02abec1127900f16353dac5e0b02419",
+    "order": 346,
+    "nextCourseId": "c02abec1127900f16353dac5e0b02419",
+    "courseName": "百科知识1",
+    "lessonId": "67f3c3506648d53b564fbe5fc1f2722e",
+    "nextLessonId": "02f3889bd95451ad0f402dfa88bba99e",
+    "lessonName": "游戏：英文单词",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-duck.b036f0ad8f.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "9bf3fac651a1c8cf44b233b6f7fce467",
+        "index": 1,
+        "text": [
+          "before little ladies lovely others mother himself sunshine"
+        ],
+        "contentType": 3,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 30,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

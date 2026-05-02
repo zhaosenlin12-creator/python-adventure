@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.194046+00:00",
+  "request": {
+    "lesson_id": "c6f86eb2991b5fe063a9fe2964ce5908",
+    "course_id": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "order": 211,
+    "nextCourseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "courseName": "汉字一级",
+    "lessonId": "c6f86eb2991b5fe063a9fe2964ce5908",
+    "nextLessonId": "c4bd255fb4c658e9498d6ef84687698b",
+    "lessonName": "专业打字员",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-good.c7e935711e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d5f69ec8e73d92fb453cf2febcf4e2b2",
+        "index": 1,
+        "text": [
+          "优秀的打字员在打字时会忘记自己的手指正在敲击键盘，就好像是他们身体的自然反应。通过练习，你也将体会到同样的感受。"
+        ],
+        "pinyin": "[[\"优\", \"yōu\"], [\"秀\", \"xiù\"], [\"的\", \"de\"], [\"打\", \"dǎ\"], [\"字\", \"zì\"], [\"员\", \"yuán\"], [\"在\", \"zài\"], [\"打\", \"dǎ\"], [\"字\", \"zì\"], [\"时\", \"shí\"], [\"会\", \"huì\"], [\"忘\", \"wàng\"], [\"记\", \"jì\"], [\"自\", \"zì\"], [\"己\", \"jǐ\"], [\"的\", \"de\"], [\"手\", \"shǒu\"], [\"指\", \"zhǐ\"], [\"正\", \"zhèng\"], [\"在\", \"zài\"], [\"敲\", \"qiāo\"], [\"击\", \"jī\"], [\"键\", \"jiàn\"], [\"盘\", \"pán\"], [\"，\", \"\"], [\"就\", \"jiù\"], [\"好\", \"hǎo\"], [\"像\", \"xiàng\"], [\"是\", \"shì\"], [\"他\", \"tā\"], [\"们\", \"men\"], [\"身\", \"shēn\"], [\"体\", \"tǐ\"], [\"的\", \"de\"], [\"自\", \"zì\"], [\"然\", \"rán\"], [\"反\", \"fǎn\"], [\"应\", \"yìng\"], [\"。\", \"\"], [\"通\", \"tōng\"], [\"过\", \"guò\"], [\"练\", \"liàn\"], [\"习\", \"xí\"], [\"，\", \"\"], [\"你\", \"nǐ\"], [\"也\", \"yě\"], [\"将\", \"jiāng\"], [\"体\", \"tǐ\"], [\"会\", \"huì\"], [\"到\", \"dào\"], [\"同\", \"tóng\"], [\"样\", \"yàng\"], [\"的\", \"de\"], [\"感\", \"gǎn\"], [\"受\", \"shòu\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 21,
+        "minSpeed": 13,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

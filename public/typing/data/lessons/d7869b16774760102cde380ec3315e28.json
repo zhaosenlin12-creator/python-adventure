@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.041870+00:00",
+  "request": {
+    "lesson_id": "d7869b16774760102cde380ec3315e28",
+    "course_id": "df148decfeeb55dca1e38526c60baec7",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "df148decfeeb55dca1e38526c60baec7",
+    "order": 288,
+    "nextCourseId": "df148decfeeb55dca1e38526c60baec7",
+    "courseName": "语文课内同步六年级下册",
+    "lessonId": "d7869b16774760102cde380ec3315e28",
+    "nextLessonId": "00e3f0fec428ea8d56f80b8644d2077e",
+    "lessonName": "十五夜望月",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "264376f109cd92d5ca070a2ae21306f8",
+        "index": 1,
+        "text": [
+          "中庭地白树栖鸦，\\n冷露无声湿桂花。\\n今夜月明人尽望，\\n不知秋思落谁家。"
+        ],
+        "pinyin": "[[\"中\", \"zhōng\"], [\"庭\", \"tíng\"], [\"地\", \"dì\"], [\"白\", \"bái\"], [\"树\", \"shù\"], [\"栖\", \"qī\"], [\"鸦\", \"yā\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"冷\", \"lěng\"], [\"露\", \"lù\"], [\"无\", \"wú\"], [\"声\", \"shēng\"], [\"湿\", \"shī\"], [\"桂\", \"guì\"], [\"花\", \"huā\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"今\", \"jīn\"], [\"夜\", \"yè\"], [\"月\", \"yuè\"], [\"明\", \"míng\"], [\"人\", \"rén\"], [\"尽\", \"jìn\"], [\"望\", \"wàng\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"不\", \"bù\"], [\"知\", \"zhī\"], [\"秋\", \"qiū\"], [\"思\", \"sī\"], [\"落\", \"luò\"], [\"谁\", \"shuí\"], [\"家\", \"jiā\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

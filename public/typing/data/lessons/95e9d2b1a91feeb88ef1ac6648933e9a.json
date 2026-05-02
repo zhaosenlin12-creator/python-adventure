@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.170155+00:00",
+  "request": {
+    "lesson_id": "95e9d2b1a91feeb88ef1ac6648933e9a",
+    "course_id": "ee920473fc84aa54eb12b2498d3762ad",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "ee920473fc84aa54eb12b2498d3762ad",
+    "order": 240,
+    "nextCourseId": "ee920473fc84aa54eb12b2498d3762ad",
+    "courseName": "初中必备1200词",
+    "lessonId": "95e9d2b1a91feeb88ef1ac6648933e9a",
+    "nextLessonId": "8dbf97923a413a7ee0a4c0a0aceeaebb",
+    "lessonName": "Chapter.23",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d7309b5dd26b9101f86f9ac6ca530ce4",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"victory\",\"pronun\":\"[\\u02c8v\\u026akt\\u0259ri]\",\"translation\":\"\\u80dc\\u5229\\uff1b\\u6210\\u529f\"},{\"word\":\"enemy\",\"pronun\":\"[\\u02c8en\\u026ami]\",\"translation\":\"\\u654c\\u4eba\\uff1b\\u4ec7\\u4eba\"},{\"word\":\"period\",\"pronun\":\"[\\u02c8p\\u026a\\u0259r\\u026a\\u0259d]\",\"translation\":\"\\u4e00\\u6bb5\\u65f6\\u95f4\\uff1b\\u65f6\\u671f\"},{\"word\":\"mystery\",\"pronun\":\"[\\u02c8m\\u026ast\\u0259ri]\",\"translation\":\"\\u5965\\u79d8\\uff1b\\u795e\\u79d8\\u4e8b\\u7269\"},{\"word\":\"prefer\",\"pronun\":\"[pr\\u026a'f\\u025c\\u02d0]\",\"translation\":\"\\u66f4\\u559c\\u6b22\"},{\"word\":\"lyrics\",\"pronun\":\"\",\"translation\":\"\\u6b4c\\u8bcd\"},{\"word\":\"Australian\",\"pronun\":\"[\\u0254\\u02d0s'tre\\u026al\\u026a\\u0259n]\",\"translation\":\"\\u6fb3\\u5927\\u5229\\u4e9a\\u7684\\uff1b\\u6fb3\\u5927\\u5229\\u4e9a\\u4eba\\u7684n.\"},{\"word\":\"electronic\",\"pronun\":\"[\\u026alek\\u02c8tr\\u0252n\\u026ak]\",\"translation\":\"\\u7535\\u5b50\\u7684\\uff1b\\u7535\\u5b50\\u8bbe\\u5907\\u7684\"},{\"word\":\"suppose\",\"pronun\":\"[s\\u0259'p\\u0259\\u028az]\",\"translation\":\"\\u63a8\\u65ad\\uff1b\\u6599\\u60f3\"},{\"word\":\"spare\",\"pronun\":\"[spe\\u0259]\",\"translation\":\"\\u7a7a\\u95f2\\u7684\\uff1b\\u4e0d\\u7528\\u7684\"},{\"word\":\"case\",\"pronun\":\"[ke\\u026as]\",\"translation\":\"\\u60c5\\u51b5\\uff1b\\u5b9e\\u60c5\"},{\"word\":\"war\",\"pronun\":\"[w\\u0254\\u02d0]\",\"translation\":\"\\u6218\\u4e89\\uff1b\\u6218\\u4e89\\u72b6\\u6001\"},{\"word\":\"director\",\"pronun\":\"[d\\u026a\\u02c8rekt\\u0259]\",\"translation\":\"n.\\u5bfc\\u6f14\\uff1b\\u90e8\\u95e8\\u8d1f\\u8d23\\u4eba\"},{\"word\":\"dialogue\",\"pronun\":\"\",\"translation\":\"\\u5bf9\\u8bdd\\uff1b\\u5bf9\\u767d\"},{\"word\":\"documentary\",\"pronun\":\"[\\u02ccd\\u0252kj\\u028a\\u02c8ment\\u0259ri]\",\"translation\":\"\\u7eaa\\u5f55\\u7247\"},{\"word\":\"drama\",\"pronun\":\"\",\"translation\":\"\\u620f\\uff1b\\u5267\"},{\"word\":\"plenty\",\"pronun\":\"[pli\\u02d0zd]\",\"translation\":\"\\u5927\\u91cf\\uff1b\\u4f17\\u591a\"},{\"word\":\"superhero\",\"pronun\":\"\",\"translation\":\"n.\\u8d85\\u7ea7\\u82f1\\u96c4\"},{\"word\":\"horror\",\"pronun\":\"\",\"translation\":\"\\u9707\\u60ca\\uff1b\\u6050\\u60e7\"},{\"word\":\"thriller\",\"pronun\":\"[\\u02c8\\u03b8r\\u026al\\u0259]\",\"translation\":\"n.\\u60ca\\u9669\\u7535\\u5f71\\uff08\\u5c0f\\u8bf4\\u3001\\u620f\\u5267\\uff09\"},{\"word\":\"intelligent\",\"pronun\":\"\",\"translation\":\"adj.\\u6709\\u624d\\u667a\\u7684\\uff1b\\u806a\\u660e\\u7684\"},{\"word\":\"sense\",\"pronun\":\"[sens]\",\"translation\":\"\\u611f\\u89c9\\u5230\\uff1b\\u610f\\u8bc6\\u5230n.\"},{\"word\":\"pain\",\"pronun\":\"[pe\\u026an]\",\"translation\":\"\\u75db\\u82e6\\uff1b\\u82e6\\u607c\"},{\"word\":\"reflect\",\"pronun\":\"[r\\u026a\\u02c8flekt]\",\"translation\":\"\\u53cd\\u6620\\uff1b\\u6620\\u51fa\"},{\"word\":\"perform\",\"pronun\":\"[p\\u0259\\u02c8f\\u0254\\u02d0m]\",\"translation\":\"\\u8868\\u6f14\\uff1b\\u6267\\u884c\"},{\"word\":\"pity\",\"pronun\":\"['p\\u026ati]\",\"translation\":\"\\u9057\\u61be\\uff1b\\u601c\\u60af\"},{\"word\":\"total\",\"pronun\":\"[\\u02c8t\\u0259\\u028at(\\u0259)l]\",\"translation\":\"\\u603b\\u6570\\uff1b\\u5408\\u8ba1adj. \\u603b\\u7684\\uff1b\\u5168\\u4f53\\u7684\"},{\"word\":\"master\",\"pronun\":\"[\\u02c8m\\u0251\\u02d0st\\u0259]\",\"translation\":\"\\u80fd\\u624b\\uff1b\\u4e3b\\u4eba \\u638c\\u63e1\"},{\"word\":\"praise\",\"pronun\":\"[pre\\u026az]\",\"translation\":\"\\u8868\\u626c\\uff1b\\u8d5e\\u626c\"},{\"word\":\"national\",\"pronun\":\"[\\u02c8n\\u00e6\\u0283\\u0259n(\\u0259)l]\",\"translation\":\"\\u56fd\\u5bb6\\u7684\\uff1b\\u6c11\\u65cf\\u7684\"},{\"word\":\"recall\",\"pronun\":\"\",\"translation\":\"\\u56de\\u5fc6\\u8d77\\uff1b\\u56de\\u60f3\\u8d77\"},{\"word\":\"wound\",\"pronun\":\"[wu\\u02d0nd]\",\"translation\":\"\\u4f24\\uff1b\\u4f24\\u53e3\\uff1b\\u521b\\u4f24\"},{\"word\":\"custom\",\"pronun\":\"[\\u02c8k\\u028cst\\u0259m]\",\"translation\":\"\\u98ce\\u4fd7\\uff1b\\u4e60\\u4fd7\"},{\"word\":\"kiss\",\"pronun\":\"[k\\u026as]\",\"translation\":\"\\u4eb2\\u543b\\uff1b\\u63a5\\u543b\"},{\"word\":\"greet\",\"pronun\":\"[gri\\u02d0t]\",\"translation\":\"\\u548c\\u22ef\\u22ef\\u6253\\u62db\\u547c\\uff1b\\u8fce\\u63a5\"},{\"word\":\"value\",\"pronun\":\"[\\u02c8v\\u00e6lju\\u02d0]\",\"translation\":\"\\u91cd\\u89c6\\uff1b\\u73cd\\u89c6n.\\u4ef7\\u503c\"},{\"word\":\"everyday\",\"pronun\":\"[\\u02c8evr\\u026ab\\u0252di]\",\"translation\":\"\\u6bcf\\u5929\\u7684\\uff1b\\u65e5\\u5e38\\u7684\"},{\"word\":\"capital\",\"pronun\":\"['k\\u00e6p\\u026atl]\",\"translation\":\"\\u9996\\u90fd\\uff1b\\u56fd\\u90fd\"},{\"word\":\"mad\",\"pronun\":\"[m\\u00e6d]\",\"translation\":\"\\u5f88\\u751f\\u6c14\\uff1b\\u75af\\u7684\"},{\"word\":\"passport\",\"pronun\":\"[\\u02c8p\\u0251\\u02d0sp\\u0254\\u02d0t]\",\"translation\":\"\\u62a4\\u7167\"},{\"word\":\"chalk\",\"pronun\":\"[t\\u0283\\u0254\\u02d0k]\",\"translation\":\"\\u7c89\\u7b14\"},{\"word\":\"northern\",\"pronun\":\"['n\\u0254\\u02d0\\u00f0\\u0259n]\",\"translation\":\"\\u5317\\u65b9\\u7684\\uff1b\\u5317\\u90e8\\u7684\"},{\"word\":\"coast\",\"pronun\":\"[k\\u0259\\u028ast]\",\"translation\":\"\\u6d77\\u5cb8\\uff1b\\u6d77\\u6ee8\"},{\"word\":\"knock\",\"pronun\":\"[n\\u0252k]\",\"translation\":\"\\u6572\\uff1b\\u51fb\"},{\"word\":\"eastern\",\"pronun\":\"[\\u02c8i\\u02d0st(\\u0259)n]\",\"translation\":\"\\u4e1c\\u65b9\\u7684\\uff1b\\u4e1c\\u90e8\\u7684\"},{\"word\":\"worth\",\"pronun\":\"[w\\u025c\\u02d0\\u03b8]\",\"translation\":\"\\u503c\\u5f97\\uff1b\\u6709\\u22ef\\u22ef\\u4ef7\\u503c\\uff08\\u7684\\uff09\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 22,
+        "minSpeed": 16,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.119807+00:00",
+  "request": {
+    "lesson_id": "31fb45d177f9181f9ba124ecf95492c8",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 441,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "31fb45d177f9181f9ba124ecf95492c8",
+    "nextLessonId": "734b548f775979751ad1661cea100d6e",
+    "lessonName": "六级词汇正序版-102",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第102课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "85c6cb521688bd2a0a0e6a19b42c6c8f",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"spice\",\"pronun\":\"[spaɪs]\",\"translation\":\"n. 香料；情趣；调味品；少许\\nvt. 加香料于…；使…增添趣味\",\"audio\":\"spice.mp3\"},{\"word\":\"spine\",\"pronun\":\"[spaɪn]\",\"translation\":\"n. 脊柱，脊椎；刺；书脊\",\"audio\":\"spine.mp3\"},{\"word\":\"spiral\",\"pronun\":\"[ˈspaɪrəl]\",\"translation\":\"n. 螺旋；旋涡；螺旋形之物\\nadj. 螺旋形的；盘旋的\\nvt. 使成螺旋形；使作螺旋形上升\\nvi. 盘旋；成螺旋形；螺旋形上升（过去式spiraled\\/spiralled，过去分词spiraled\\/spiralled，现在分词spiraling\\/spiralling，第三人称单数spirals，副词spirally）\",\"audio\":\"spiral.mp3\"},{\"word\":\"spite\",\"pronun\":\"[spaɪt]\",\"translation\":\"n. 不顾；恶意；怨恨\\nvt. 刁难；使恼怒\",\"audio\":\"spite.mp3\"},{\"word\":\"splash\",\"pronun\":\"[splæʃ]\",\"translation\":\"n. 飞溅的水；污点；卖弄\\nvt. 溅，泼；用...使液体飞溅\\nvi. 溅湿；溅开\",\"audio\":\"splash.mp3\"},{\"word\":\"spoil\",\"pronun\":\"[spɔɪl]\",\"translation\":\"n. 次品；奖品\\nvt. 溺爱；糟蹋；破坏；掠夺\\nvi. 掠夺；变坏；腐败\",\"audio\":\"spoil.mp3\"},{\"word\":\"sponge\",\"pronun\":\"[spʌndʒ]\",\"translation\":\"n. 海绵；海绵状物\\nvt. 抹掉；用海绵擦拭；讨得\\nvi. 采集海绵；过寄生生活；海绵般地吸收\",\"audio\":\"sponge.mp3\"},{\"word\":\"spontaneous\",\"pronun\":\"[spɑːnˈteɪniəs]\",\"translation\":\"adj. 自发的；自然的；无意识的\",\"audio\":\"spontaneous.mp3\"},{\"word\":\"spouse\",\"pronun\":\"[spaʊsˌspaʊz]\",\"translation\":\"n. 配偶\\nvt. 和…结婚\",\"audio\":\"spouse.mp3\"},{\"word\":\"sprinkle\",\"pronun\":\"[ˈsprɪŋkl]\",\"translation\":\"n. 撒，洒；少量\\nvt. 洒；微雨；散置\\nvi. 洒，撒；下稀疏小雨；喷撒\",\"audio\":\"sprinkle.mp3\"},{\"word\":\"spy\",\"pronun\":\"[spaɪ]\",\"translation\":\"n. 间谍；密探\\nvt. 侦察；发现；暗中监视\\nvi. 侦察；当间谍\",\"audio\":\"spy.mp3\"},{\"word\":\"squad\",\"pronun\":\"[skwɑːd]\",\"translation\":\"n. 班；小队；五人组（篮球队的非正式说法）\\nvt. 把…编成班；把…编入班\",\"audio\":\"squad.mp3\"},{\"word\":\"squeeze\",\"pronun\":\"[skwiːz]\",\"translation\":\"n. 压榨；紧握；拥挤；佣金\\nvt. 挤；紧握；勒索\\nvi. 压榨\",\"audio\":\"squeeze.mp3\"},{\"word\":\"stab\",\"pronun\":\"[stæb]\",\"translation\":\"n. 刺；戳；尝试；突发的一阵\\nvt. 刺；刺伤；戳；刺穿；直入\\nvi. 刺；刺伤；戳；刺痛\",\"audio\":\"stab.mp3\"},{\"word\":\"stability\",\"pronun\":\"[stəˈbɪləti]\",\"translation\":\"n. 稳定性；坚定，恒心\",\"audio\":\"stability.mp3\"},{\"word\":\"stabilize\",\"pronun\":\"[ˈsteɪbəlaɪz]\",\"translation\":\"vt. 使稳固，使安定\\nvi. 稳定，安定\",\"audio\":\"stabilize.mp3\"},{\"word\":\"stable\",\"pronun\":\"[ˈsteɪbl]\",\"translation\":\"n. 马厩；牛棚\\nadj. 稳定的；牢固的；坚定的\\nvt. 赶入马房\\nvi. 被关在马厩\",\"audio\":\"stable.mp3\"},{\"word\":\"stack\",\"pronun\":\"[stæk]\",\"translation\":\"n. 堆；堆叠\\nvt. 使堆叠；把…堆积起来\\nvi. 堆积，堆叠\",\"audio\":\"stack.mp3\"},{\"word\":\"stagger\",\"pronun\":\"[ˈstæɡər]\",\"translation\":\"n. 蹒跚；交错安排\\nvt. 蹒跚；使交错；使犹豫\\nadj. 交错的；错开的\\nvi. 蹒跚；犹豫\",\"audio\":\"stagger.mp3\"},{\"word\":\"staircase\",\"pronun\":\"[ˈsterkeɪs]\",\"translation\":\"n. 楼梯\",\"audio\":\"staircase.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

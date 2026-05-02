@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.516015+00:00",
+  "request": {
+    "lesson_id": "036cbc607e88980c8a174b5c63836ee1",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 324,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "036cbc607e88980c8a174b5c63836ee1",
+    "nextLessonId": "4d1ef4eba3a596c035a387435b93df3e",
+    "lessonName": "六级词汇正序版-25",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第25课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "cf96dfa4c43bac1656d603941f7ad8e5",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"construct\",\"pronun\":\"[kənˈstrʌkt]\",\"translation\":\"n. 构想，概念\\nvt. 建造，构造；创立\",\"audio\":\"construct.mp3\"},{\"word\":\"consult\",\"pronun\":\"[kənˈsʌlt]\",\"translation\":\"vi. 请教；商议；当顾问\\nvt. 查阅；商量；向…请教\",\"audio\":\"consult.mp3\"},{\"word\":\"consultancy\",\"pronun\":\"[kənˈsʌltənsi]\",\"translation\":\"n. 咨询公司；顾问工作\",\"audio\":\"consultancy.mp3\"},{\"word\":\"consultant\",\"pronun\":\"[kənˈsʌltənt]\",\"translation\":\"n. 顾问；咨询者；会诊医生\",\"audio\":\"consultant.mp3\"},{\"word\":\"consume\",\"pronun\":\"[kənˈsuːm]\",\"translation\":\"vt. 消耗，消费；使…着迷；挥霍\\nvi. 耗尽，毁灭；耗尽生命\",\"audio\":\"consume.mp3\"},{\"word\":\"consumer\",\"pronun\":\"[kənˈsuːmər]\",\"translation\":\"n. 消费者；用户，顾客\",\"audio\":\"consumer.mp3\"},{\"word\":\"consumption\",\"pronun\":\"[kənˈsʌmpʃn]\",\"translation\":\"n. 消费；消耗；肺痨\",\"audio\":\"consumption.mp3\"},{\"word\":\"contact\",\"pronun\":\"[ˈkɑːntækt]\",\"translation\":\"n. 接触，联系\\nvt. 使接触，联系\\nvi. 使接触，联系\",\"audio\":\"contact.mp3\"},{\"word\":\"contaminate\",\"pronun\":\"[kənˈtæmɪneɪt]\",\"translation\":\"vt. 污染，弄脏\",\"audio\":\"contaminate.mp3\"},{\"word\":\"contemplate\",\"pronun\":\"[ˈkɑːntəmpleɪt]\",\"translation\":\"vt. 沉思；注视；思忖；预期\\nvi. 冥思苦想；深思熟虑\",\"audio\":\"contemplate.mp3\"},{\"word\":\"contemporary\",\"pronun\":\"[kənˈtempəreri]\",\"translation\":\"n. 同时代的人；同时期的东西\\nadj. 当代的；同时代的；属于同一时期的\",\"audio\":\"contemporary.mp3\"},{\"word\":\"contempt\",\"pronun\":\"[kənˈtempt]\",\"translation\":\"n. 轻视，蔑视；耻辱\",\"audio\":\"contempt.mp3\"},{\"word\":\"contend\",\"pronun\":\"[kənˈtend]\",\"translation\":\"vi. 竞争；奋斗；斗争；争论\\nvt. 主张；为...斗争\",\"audio\":\"contend.mp3\"},{\"word\":\"contention\",\"pronun\":\"[kənˈtenʃn]\",\"translation\":\"n. 争论，争辩；争夺；论点\",\"audio\":\"contention.mp3\"},{\"word\":\"contest\",\"pronun\":\"[ˈkɑːntest]\",\"translation\":\"n. 竞赛；争夺；争论\\nvt. 争辩；质疑\\nvi. 竞争；争辩\",\"audio\":\"contest.mp3\"},{\"word\":\"continual\",\"pronun\":\"[kənˈtɪnjuəl]\",\"translation\":\"adj. 持续不断的；频繁的\",\"audio\":\"continual.mp3\"},{\"word\":\"continuity\",\"pronun\":\"[ˌkɑːntɪˈnuːəti]\",\"translation\":\"n. 连续性；一连串；分镜头剧本\",\"audio\":\"continuity.mp3\"},{\"word\":\"contract\",\"pronun\":\"[ˈkɑːntrækt; kənˈtrækt]\",\"translation\":\"n. 合同；婚约\\nvt. 感染；订约；使缩短\\nvi. 收缩；感染；订约\",\"audio\":\"contract.mp3\"},{\"word\":\"contradict\",\"pronun\":\"[ˌkɑːntrəˈdɪkt]\",\"translation\":\"vt. 反驳；否定；与…矛盾；与…抵触\\nvi. 反驳；否认；发生矛盾\",\"audio\":\"contradict.mp3\"},{\"word\":\"contradiction\",\"pronun\":\"[ˌkɑːntrəˈdɪkʃn]\",\"translation\":\"n. 矛盾；否认；反驳\",\"audio\":\"contradiction.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

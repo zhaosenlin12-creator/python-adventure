@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:36.223377+00:00",
+  "request": {
+    "lesson_id": "196f0f302bcea0847d6c51477da0ce8b",
+    "course_id": "aaf391ebe3c578672e2811298ce699e2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "aaf391ebe3c578672e2811298ce699e2",
+    "order": 539,
+    "nextCourseId": "aaf391ebe3c578672e2811298ce699e2",
+    "courseName": "词语专项",
+    "lessonId": "196f0f302bcea0847d6c51477da0ce8b",
+    "nextLessonId": "11e79a5e762631c0ea4863970ea9fcdd",
+    "lessonName": "排比句1",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f3327fb45ec4f848f9207248860aa21b",
+        "index": 1,
+        "text": [
+          "同学们向在校园里欢唱的小鸟打招呼,向敬爱的老师问好,向高高飘扬的国旗敬礼。"
+        ],
+        "pinyin": "[[\"同\", \"tóng\"], [\"学\", \"xué\"], [\"们\", \"men\"], [\"向\", \"xiàng\"], [\"在\", \"zài\"], [\"校\", \"xiào\"], [\"园\", \"yuán\"], [\"里\", \"lǐ\"], [\"欢\", \"huān\"], [\"唱\", \"chàng\"], [\"的\", \"de\"], [\"小\", \"xiǎo\"], [\"鸟\", \"niǎo\"], [\"打\", \"dǎ\"], [\"招\", \"zhāo\"], [\"呼\", \"hū\"], [\",\", \"\"], [\"向\", \"xiàng\"], [\"敬\", \"jìng\"], [\"爱\", \"ài\"], [\"的\", \"de\"], [\"老\", \"lǎo\"], [\"师\", \"shī\"], [\"问\", \"wèn\"], [\"好\", \"hǎo\"], [\",\", \"\"], [\"向\", \"xiàng\"], [\"高\", \"gāo\"], [\"高\", \"gāo\"], [\"飘\", \"piāo\"], [\"扬\", \"yáng\"], [\"的\", \"de\"], [\"国\", \"guó\"], [\"旗\", \"qí\"], [\"敬\", \"jìng\"], [\"礼\", \"lǐ\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

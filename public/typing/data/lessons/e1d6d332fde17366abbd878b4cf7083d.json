@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.047246+00:00",
+  "request": {
+    "lesson_id": "e1d6d332fde17366abbd878b4cf7083d",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 425,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "e1d6d332fde17366abbd878b4cf7083d",
+    "nextLessonId": "83843e4ac58da15e7c9337f80a277490",
+    "lessonName": "六级词汇正序版-54",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第54课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3759bc9312a05313ce0c1dee95e4b166",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"heritage\",\"pronun\":\"[ˈherɪtɪdʒ]\",\"translation\":\"n. 遗产；传统；继承物；继承权\",\"audio\":\"heritage.mp3\"},{\"word\":\"hesitate\",\"pronun\":\"[ˈhezɪteɪt]\",\"translation\":\"vt. 踌躇，犹豫；有疑虑，不愿意\\nvi. 踌躇，犹豫；不愿\",\"audio\":\"hesitate.mp3\"},{\"word\":\"hierarchy\",\"pronun\":\"[ˈhaɪərɑːrki]\",\"translation\":\"n. 层级；等级制度\",\"audio\":\"hierarchy.mp3\"},{\"word\":\"highlight\",\"pronun\":\"[ˈhaɪlaɪt]\",\"translation\":\"n. 最精彩的部分；最重要的事情；加亮区\\nvt. 突出；强调；使显著；加亮\",\"audio\":\"highlight.mp3\"},{\"word\":\"hike\",\"pronun\":\"[haɪk]\",\"translation\":\"n. 远足；徒步旅行；涨价\\nvt. 提高；拉起；使…高涨\\nvi. 远足；徒步旅行；上升\",\"audio\":\"hike.mp3\"},{\"word\":\"hinder\",\"pronun\":\"[ˈhɪndər]\",\"translation\":\"vt. 阻碍；打扰\\nadj. 后面的\\nvi. 成为阻碍\",\"audio\":\"hinder.mp3\"},{\"word\":\"hinge\",\"pronun\":\"[hɪndʒ]\",\"translation\":\"n. 铰链，折叶；关键，转折点；枢要，中枢\\nv. 用铰链连接；依…为转移；给…安装铰链；（门等）装有蝶铰\",\"audio\":\"hinge.mp3\"},{\"word\":\"historian\",\"pronun\":\"[hɪˈstɔːriən]\",\"translation\":\"n. 历史学家\",\"audio\":\"historian.mp3\"},{\"word\":\"hitherto\",\"pronun\":\"[ˌhɪðərˈtuː]\",\"translation\":\"adv. 迄今；至今\",\"audio\":\"hitherto.mp3\"},{\"word\":\"hoist\",\"pronun\":\"[hɔɪst]\",\"translation\":\"n. 起重机；升起，吊起\\nvt. （用绳索，起重机等）使升起\\nvi. 升起；吊起\",\"audio\":\"hoist.mp3\"},{\"word\":\"homogeneous\",\"pronun\":\"[ˌhoʊməˈdʒiːniəs]\",\"translation\":\"adj. 均匀的；[数] 齐次的；同种的；同类的，同质的\",\"audio\":\"homogeneous.mp3\"},{\"word\":\"hop\",\"pronun\":\"[hɑːp]\",\"translation\":\"vt. 搭乘\\nv. 单足跳跃〔跳行〕\\nvi. 双足或齐足跳行\\nn. 蹦跳,跳跃；跳舞；一次飞行的距离\",\"audio\":\"hop.mp3\"},{\"word\":\"hose\",\"pronun\":\"[hoʊz]\",\"translation\":\"n. 软管；长筒袜；男性穿的紧身裤\\nvt. 用软管浇水；痛打\",\"audio\":\"hose.mp3\"},{\"word\":\"hospitality\",\"pronun\":\"[ˌhɑːspɪˈtæləti]\",\"translation\":\"n. 好客；殷勤\",\"audio\":\"hospitality.mp3\"},{\"word\":\"hostage\",\"pronun\":\"[ˈhɑːstɪdʒ]\",\"translation\":\"n. 人质；抵押品\",\"audio\":\"hostage.mp3\"},{\"word\":\"hostile\",\"pronun\":\"[ˈhɑːstlˌˈhɑːstaɪl]\",\"translation\":\"n. 敌对\\nadj. 敌对的，敌方的；怀敌意的\",\"audio\":\"hostile.mp3\"},{\"word\":\"hound\",\"pronun\":\"[haʊnd]\",\"translation\":\"n. 猎犬；卑劣的人\\nvt. 追猎；烦扰；激励\",\"audio\":\"hound.mp3\"},{\"word\":\"household\",\"pronun\":\"[ˈhaʊshoʊld]\",\"translation\":\"n. 全家人，一家人；(包括佣工在内的)家庭，户\\nadj. 家庭的；日常的；王室的\",\"audio\":\"household.mp3\"},{\"word\":\"hover\",\"pronun\":\"[ˈhʌvər]\",\"translation\":\"n. 徘徊；盘旋；犹豫\\nvi. 盘旋，翱翔；徘徊\\nvt. 孵；徘徊在…近旁\",\"audio\":\"hover.mp3\"},{\"word\":\"howl\",\"pronun\":\"[haʊl]\",\"translation\":\"n. 嗥叫；怒号；嚎哭\\nvt. 狂喊着说；对…吼叫\\nvi. 咆哮；怒吼；狂吠\",\"audio\":\"howl.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.827137+00:00",
+  "request": {
+    "lesson_id": "01736fb9ef7e1afcf2acc6305015f648",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 377,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "01736fb9ef7e1afcf2acc6305015f648",
+    "nextLessonId": "81ef912eff5fcb21f4b0234e19afad5c",
+    "lessonName": "六级词汇正序版-47",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第47课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "0f345e2cc4f6381da8b854de21c6831a",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"fellowship\",\"pronun\":\"[ˈfeloʊʃɪp]\",\"translation\":\"n. 团体；友谊；奖学金；研究员职位\",\"audio\":\"fellowship.mp3\"},{\"word\":\"feminine\",\"pronun\":\"[ˈfemənɪn]\",\"translation\":\"adj. 女性的；妇女（似）的；阴性的；娇柔的\",\"audio\":\"feminine.mp3\"},{\"word\":\"femininity\",\"pronun\":\"[ˌfeməˈnɪnəti]\",\"translation\":\"n. 温柔；柔弱性；女子本性\",\"audio\":\"femininity.mp3\"},{\"word\":\"ferry\",\"pronun\":\"[ˈferi]\",\"translation\":\"n. 渡船；摆渡；渡口\\nvt. （乘渡船）渡过；用渡船运送；空运\\nvi. 摆渡；来往行驶\",\"audio\":\"ferry.mp3\"},{\"word\":\"fertilizer\",\"pronun\":\"[ˈfɜːrtəlaɪzər]\",\"translation\":\"n. [肥料] 肥料；受精媒介物；促进发展者\",\"audio\":\"fertilizer.mp3\"},{\"word\":\"fiction\",\"pronun\":\"[ˈfɪkʃn]\",\"translation\":\"n. 小说；虚构，编造；谎言\",\"audio\":\"fiction.mp3\"},{\"word\":\"figure\",\"pronun\":\"[ˈfɪɡjər]\",\"translation\":\"n. 数字；人物；图形；价格；（人的）体形；画像\\nvt. 计算；认为；描绘；象征\\nvi. 计算；出现；扮演角色\",\"audio\":\"figure.mp3\"},{\"word\":\"finance\",\"pronun\":\"[ˈfaɪnæns; faɪˈnæns; fəˈnæns]\",\"translation\":\"n. 财政，财政学；金融\\nvt. 负担经费，供给…经费\\nvi. 筹措资金\",\"audio\":\"finance.mp3\"},{\"word\":\"financial\",\"pronun\":\"[faɪˈnænʃl; fəˈnænʃl]\",\"translation\":\"adj. 金融的；财政的，财务的\",\"audio\":\"financial.mp3\"},{\"word\":\"finite\",\"pronun\":\"[ˈfaɪnaɪt]\",\"translation\":\"n. 有限之物\\nadj. 有限的；限定的\",\"audio\":\"finite.mp3\"},{\"word\":\"fitting\",\"pronun\":\"[ˈfɪtɪŋ]\",\"translation\":\"n. 装配，装置；试穿，试衣\\nadj. 适合的，适宜的；相称的\",\"audio\":\"fitting.mp3\"},{\"word\":\"fixture\",\"pronun\":\"[ˈfɪkstʃər]\",\"translation\":\"n. 设备；固定装置；固定于某处不大可能移动之物\",\"audio\":\"fixture.mp3\"},{\"word\":\"flank\",\"pronun\":\"[flæŋk]\",\"translation\":\"n. 侧面；侧翼；侧腹\\nvt. 守侧面；位于…的侧面；攻击侧面\\nvi. 侧面与…相接\\nadv. 在左右两边\",\"audio\":\"flank.mp3\"},{\"word\":\"flap\",\"pronun\":\"[flæp]\",\"translation\":\"n. 拍打，拍打声；神经紧张；[航] 襟翼\\nvt. 拍打；扔；拉下帽边；飘动\\nvi. 拍动；神经紧张；鼓翼而飞；（帽边等）垂下\",\"audio\":\"flap.mp3\"},{\"word\":\"flare\",\"pronun\":\"[fler]\",\"translation\":\"n. 加剧，恶化；底部展开；（鼻孔）张开的意思；闪光，闪耀；耀斑；爆发；照明弹\\nvi. 闪耀，闪光；燃烧；突然发怒\\nvt. 使闪耀；使张开；用发光信号发出；使外倾\",\"audio\":\"flare.mp3\"},{\"word\":\"flask\",\"pronun\":\"[flæsk]\",\"translation\":\"n. [分化] 烧瓶；长颈瓶，细颈瓶；酒瓶，携带瓶\",\"audio\":\"flask.mp3\"},{\"word\":\"flat\",\"pronun\":\"[flæt]\",\"translation\":\"n. 平地；公寓；平面\\nadj. 平的；单调的；不景气的；干脆的；平坦的；扁平的；浅的\\nvi. 逐渐变平；[音乐]以降调唱（或奏）\\nvt. 使变平；[音乐]使（音调）下降，尤指降半音\\nadv. （尤指贴着另一表面）平直地；断然地；水平地；直接地，完全地\",\"audio\":\"flat.mp3\"},{\"word\":\"flatter\",\"pronun\":\"[ˈflætər]\",\"translation\":\"vt. 奉承；谄媚；使高兴\",\"audio\":\"flatter.mp3\"},{\"word\":\"flaw\",\"pronun\":\"[flɔː]\",\"translation\":\"n. 瑕疵，缺点；一阵狂风；短暂的风暴；裂缝，裂纹\\nv. 使生裂缝，使有裂纹；使无效；使有缺陷\\nvi. 生裂缝；变的有缺陷\",\"audio\":\"flaw.mp3\"},{\"word\":\"flexible\",\"pronun\":\"[ˈfleksəbl]\",\"translation\":\"adj. 灵活的；柔韧的；易弯曲的\",\"audio\":\"flexible.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

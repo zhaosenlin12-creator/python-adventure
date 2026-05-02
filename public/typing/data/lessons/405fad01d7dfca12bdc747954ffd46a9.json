@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.402290+00:00",
+  "request": {
+    "lesson_id": "405fad01d7dfca12bdc747954ffd46a9",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 68,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "405fad01d7dfca12bdc747954ffd46a9",
+    "nextLessonId": "52231e86723e6c3b410f011ac522590d",
+    "lessonName": "KET核心词-43",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第43课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "47a95d23e243e9b1637c40178b982315",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"near\",\"pronun\":\"[nɪr]\",\"translation\":\"adj. 近的；亲近的；近似的\\nadv. 近；接近\\nprep. 靠近；近似于\",\"audio\":\"near.mp3\"},{\"word\":\"nearby\",\"pronun\":\"[ˌnɪrˈbaɪ]\",\"translation\":\"adj. 附近的，邻近的\\nadv. 在附近\\nprep. 在…附近\",\"audio\":\"nearby.mp3\"},{\"word\":\"nearly\",\"pronun\":\"[ˈnɪrli]\",\"translation\":\"adv. 差不多，几乎；密切地\",\"audio\":\"nearly.mp3\"},{\"word\":\"neck\",\"pronun\":\"[nek]\",\"translation\":\"n. 脖子；衣领；海峡\\nvi. 搂著脖子亲吻；变狭窄\\nvt. 使变细；与…搂著脖子亲吻\",\"audio\":\"neck.mp3\"},{\"word\":\"necklace\",\"pronun\":\"[ˈnekləs]\",\"translation\":\"n. 项链\",\"audio\":\"necklace.mp3\"},{\"word\":\"need\",\"pronun\":\"[niːd]\",\"translation\":\"n. 需要，要求；缺乏；必要之物\\nvt. 需要\\nvi. 需要\",\"audio\":\"need.mp3\"},{\"word\":\"neighbour\",\"pronun\":\"[ˈneɪbər]\",\"translation\":\"n. n. 邻居;同胞；仁慈的人\\nvt. 邻接\\nvi. 住在邻近；毗邻；友善，和睦\\nadj. 邻居的；邻近的\",\"audio\":\"neighbour.mp3\"},{\"word\":\"neither\",\"pronun\":\"[ˈniːðər; ˈnaɪðər]\",\"translation\":\"conj. 也不；既不\\nadv. 两个都不；既不……也不\\nadj. 两者都不的\\npron. 两者都不\",\"audio\":\"neither.mp3\"},{\"word\":\"nervous\",\"pronun\":\"[ˈnɜːrvəs]\",\"translation\":\"adj. 神经的；紧张不安的；强健有力的\",\"audio\":\"nervous.mp3\"},{\"word\":\"nest\",\"pronun\":\"[nest]\",\"translation\":\"n. 巢，窝；安乐窝；温床\\nvt. 筑巢；嵌套\\nvi. 筑巢；找鸟巢\",\"audio\":\"nest.mp3\"},{\"word\":\"net\",\"pronun\":\"[net]\",\"translation\":\"n. 网；网络；净利；实价\\nvi. 编网\\nvt. 得到；净赚；用网捕\\nadj. 纯粹的；净余的\",\"audio\":\"net.mp3\"},{\"word\":\"never\",\"pronun\":\"[ˈnevər]\",\"translation\":\"adv. 从未；决不\",\"audio\":\"never.mp3\"},{\"word\":\"new\",\"pronun\":\"[nuː]\",\"translation\":\"adj. 新的，新鲜的；更新的；初见的\\nadv. 新近\",\"audio\":\"new.mp3\"},{\"word\":\"news\",\"pronun\":\"[nuːz]\",\"translation\":\"n. 新闻，消息；新闻报导\",\"audio\":\"news.mp3\"},{\"word\":\"newsagent\",\"pronun\":\"[ˈnuːzeɪdʒənt]\",\"translation\":\"n. 报刊经销商\",\"audio\":\"newsagent.mp3\"},{\"word\":\"newspaper\",\"pronun\":\"[ˈnuːzpeɪpər]\",\"translation\":\"n. 报纸\\n报社\\n旧报纸\",\"audio\":\"newspaper.mp3\"},{\"word\":\"next\",\"pronun\":\"[nekst]\",\"translation\":\"adv. 然后；下次；其次\\nadj. 下一个的；其次的；贴近的\\nn. 下一个\\nprep. 靠近；居于…之后\",\"audio\":\"next.mp3\"},{\"word\":\"nice\",\"pronun\":\"[naɪs]\",\"translation\":\"adj. 精密的；美好的；细微的；和蔼的\",\"audio\":\"nice.mp3\"},{\"word\":\"no\",\"pronun\":\"[noʊ]\",\"translation\":\"adv. 不\\nadj. 没有；不是\\nn. 不；否决票\\nabbr. 数字（number）；元素锘（nobelium）的符号\",\"audio\":\"no.mp3\"},{\"word\":\"nobody\",\"pronun\":\"[ˈnoʊbədi]\",\"translation\":\"pron. 无人，没有人；没有任何人\\nn. 无名小卒；小人物\",\"audio\":\"nobody.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.945827+00:00",
+  "request": {
+    "lesson_id": "605279cdbbd7b987a2eacfac64284c52",
+    "course_id": "c965d44766237ddfb0947c82570af65d",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "c965d44766237ddfb0947c82570af65d",
+    "order": 167,
+    "nextCourseId": "c965d44766237ddfb0947c82570af65d",
+    "courseName": "注音练习2",
+    "lessonId": "605279cdbbd7b987a2eacfac64284c52",
+    "nextLessonId": "55fb8cb417d28505fcf5ad65538b9a0c",
+    "lessonName": "操场上",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-zhang.73c290cc69.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "cd5684b81dbb6ee46c4a05c6b9581b76",
+        "index": 1,
+        "text": [
+          "打球，拔河，拍皮球。\\n跳高，跑步，踢足球。\\n铃声响，下课了。\\n操场上，真热闹。"
+        ],
+        "pinyin": "[[\"打\", \"dǎ\"], [\"球\", \"qiú\"], [\"，\", \"\"], [\"拔\", \"bá\"], [\"河\", \"hé\"], [\"，\", \"\"], [\"拍\", \"pāi\"], [\"皮\", \"pí\"], [\"球\", \"qiú\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"跳\", \"tiào\"], [\"高\", \"gāo\"], [\"，\", \"\"], [\"跑\", \"pǎo\"], [\"步\", \"bù\"], [\"，\", \"\"], [\"踢\", \"tī\"], [\"足\", \"zú\"], [\"球\", \"qiú\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"铃\", \"líng\"], [\"声\", \"shēng\"], [\"响\", \"xiǎng\"], [\"，\", \"\"], [\"下\", \"xià\"], [\"课\", \"kè\"], [\"了\", \"le\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"操\", \"cāo\"], [\"场\", \"chǎng\"], [\"上\", \"shàng\"], [\"，\", \"\"], [\"真\", \"zhēn\"], [\"热\", \"rè\"], [\"闹\", \"nào\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 14,
+        "minSpeed": 6,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

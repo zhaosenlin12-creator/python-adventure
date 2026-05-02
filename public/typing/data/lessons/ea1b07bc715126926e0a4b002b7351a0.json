@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.472967+00:00",
+  "request": {
+    "lesson_id": "ea1b07bc715126926e0a4b002b7351a0",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 651,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "ea1b07bc715126926e0a4b002b7351a0",
+    "nextLessonId": "776d43f3210556a1c2c52570c38b32fb",
+    "lessonName": " 五年级下-3",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点五年级下 - 第3课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9f86c0371f6ec144b6e736c5cafa2054",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"season\",\"pronun\":\"[ˈsiːzn]\",\"translation\":\"n. 时期；季节；赛季\\nvt. 给…调味；使适应\\nvi. 变得成熟；变干燥\",\"audio\":\"season.mp3\"},{\"word\":\"picnic\",\"pronun\":\"[ˈpɪknɪk]\",\"translation\":\"n. 野餐\\nvi. 去野餐\",\"audio\":\"picnic.mp3\"},{\"word\":\"go on a picnic\",\"pronun\":\"\",\"translation\":\"去野餐；去野炊；搞野餐\",\"audio\":\"go_on_a_picnic.mp3\"},{\"word\":\"pick\",\"pronun\":\"[pɪk]\",\"translation\":\"n. 选择；鹤嘴锄；挖；掩护\\nvi. 挑选；采摘；挖\\nvt. 拾取；精选；采摘；掘\",\"audio\":\"pick.mp3\"},{\"word\":\"pick apples\",\"pronun\":\"\",\"translation\":\"摘苹果；就像去摘苹果；采摘苹果\",\"audio\":\"pick_apples.mp3\"},{\"word\":\"snowman\",\"pronun\":\"[ˈsnoʊmæn]\",\"translation\":\"n. 雪人\",\"audio\":\"snowman.mp3\"},{\"word\":\"make a snowman\",\"pronun\":\"\",\"translation\":\"堆雪人；做雪人；堆一个雪人\",\"audio\":\"make_a_snowman.mp3\"},{\"word\":\"go swimming\",\"pronun\":\"\",\"translation\":\"na. 去游泳\",\"audio\":\"go_swimming.mp3\"},{\"word\":\"which\",\"pronun\":\"[wɪtʃ]\",\"translation\":\"adj. 哪一个；哪一些\\npron. 哪\\/那一个；哪\\/那一些\",\"audio\":\"which.mp3\"},{\"word\":\"best\",\"pronun\":\"[best]\",\"translation\":\"n. 最好的人，最好的事物；最佳状态\\nadj. 最好的\\nvt. 打败，胜过\\nadv. 最好地\",\"audio\":\"best.mp3\"},{\"word\":\"snow\",\"pronun\":\"[snoʊ]\",\"translation\":\"n. 雪，积雪；下雪\\nvt. 使纷纷落下；使变白\\nvi. 降雪\",\"audio\":\"snow.mp3\"},{\"word\":\"good job\",\"pronun\":\"\",\"translation\":\"做得好；干得好；干的好\",\"audio\":\"good_job.mp3\"},{\"word\":\"because\",\"pronun\":\"[bɪˈkəz]\",\"translation\":\"conj. 因为\",\"audio\":\"because.mp3\"},{\"word\":\"vacation\",\"pronun\":\"[veɪˈkeɪʃn; vəˈkeɪʃn]\",\"translation\":\"n. 假期；（房屋）搬出\\nvi. 休假，度假\",\"audio\":\"vacation.mp3\"},{\"word\":\"all\",\"pronun\":\"[ɔːl]\",\"translation\":\"n. 全部\\nadj. 全部的\\nadv. 全然地；越发\\npron. 全部\",\"audio\":\"all.mp3\"},{\"word\":\"pink\",\"pronun\":\"[pɪŋk]\",\"translation\":\"n. 粉红色；化身，典范；石竹花；头面人物\\nadj. 粉红的；比较激进的；石竹科的；脸色发红的\\nvt. 扎，刺，戳；使…变粉红色；使…面红耳赤\\nvi. 变粉红色\",\"audio\":\"pink.mp3\"},{\"word\":\"lovely\",\"pronun\":\"[ˈlʌvli]\",\"translation\":\"adj. 可爱的；令人愉快的；爱恋的；秀丽的，优美的\\nn. 美女；可爱的东西\",\"audio\":\"lovely.mp3\"},{\"word\":\"leaf\",\"pronun\":\"[liːf]\",\"translation\":\"n. 叶子；（书籍等的）一张；扇页\\nvi. 生叶；翻书页\\nvt. 翻…的页，匆匆翻阅\",\"audio\":\"leaf.mp3\"},{\"word\":\"fall\",\"pronun\":\"[fɔːl]\",\"translation\":\"n. 下降；秋天；瀑布\\nadj. 秋天的\\nvi. 落下；变成；来临；减弱\\nvt. 砍倒；击倒\",\"audio\":\"fall.mp3\"},{\"word\":\"paint\",\"pronun\":\"[peɪnt]\",\"translation\":\"vt. 油漆；绘画；装饰；涂色于；描绘；（用语言，文字等）描写；擦脂粉等\\nvi. 油漆；描绘；绘画；化妆\\nn. 油漆；颜料，涂料；绘画作品；胭脂等化妆品；色彩，装饰\",\"audio\":\"paint.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

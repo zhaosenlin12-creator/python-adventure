@@ -1,0 +1,50 @@
+{
+  "source": "speed-test",
+  "scrapedAt": "2026-05-02T06:08:44.800691+00:00",
+  "request": {
+    "lesson_id": "3a7e8589758b3a743a7266d8f4736f31",
+    "course_id": "c6bc39f4ba86486e20cc171fab797ea3",
+    "source": "speed-test"
+  },
+  "data": {
+    "level": "速度测试",
+    "courseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "order": 23,
+    "nextCourseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "courseName": "英文速度测试",
+    "lessonId": "3a7e8589758b3a743a7266d8f4736f31",
+    "nextLessonId": "e554f36e85c32908a4cb693d9c4c5e26",
+    "lessonName": "Report Card",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1d3dc87cbffc273e26f360419caf0fe8",
+        "index": 1,
+        "text": [
+          "Pat stopped working and came out of his office. He wanted to see what others were doing in the next room.\\nHe told them that his 95-year-old mother still kept his kindergarten report card.\\n\"What did the report card say?\" asked one of his friends.\\n\"Stop visiting your neighbours!\" said Pat."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": 13,
+    "categoryTitle": "速度测试"
+  }
+}

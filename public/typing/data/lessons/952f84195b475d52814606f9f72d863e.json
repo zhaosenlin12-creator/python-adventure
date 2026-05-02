@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.788973+00:00",
+  "request": {
+    "lesson_id": "952f84195b475d52814606f9f72d863e",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 149,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "952f84195b475d52814606f9f72d863e",
+    "nextLessonId": "a9ade6979950e8772886cd8170993ba0",
+    "lessonName": "KET核心词-12",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第12课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "66034422304ecab8e5720d20f9e1513d",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"celebrate\",\"pronun\":\"[ˈselɪbreɪt]\",\"translation\":\"vt. 庆祝；举行；赞美；祝贺；宣告\\nvi. 庆祝；过节；举行宗教仪式\",\"audio\":\"celebrate.mp3\"},{\"word\":\"cell phone\",\"pronun\":\"[sɛl fon]\",\"translation\":\"n. 手机；移动电话\",\"audio\":\"cell_phone.mp3\"},{\"word\":\"centre\",\"pronun\":\"[ˈsentər]\",\"translation\":\"n. 中心\\nadj. 中央的\\nvt. 集中；将…放在中央\\nvi. 以…为中心\",\"audio\":\"centre.mp3\"},{\"word\":\"century\",\"pronun\":\"[ˈsentʃəri]\",\"translation\":\"n. 世纪，百年；（板球）一百分\",\"audio\":\"century.mp3\"},{\"word\":\"certain\",\"pronun\":\"[ˈsɜːrtn]\",\"translation\":\"adj. 某一；必然的；确信；无疑的；有把握的\\npron. 某些；某几个\",\"audio\":\"certain.mp3\"},{\"word\":\"chain\",\"pronun\":\"[tʃeɪn]\",\"translation\":\"n. 链；束缚；枷锁\\nvt. 束缚；囚禁；用铁链锁住\",\"audio\":\"chain.mp3\"},{\"word\":\"chair\",\"pronun\":\"[tʃer]\",\"translation\":\"n. 椅子；讲座；（会议的）主席位；大学教授的职位\\nvt. 担任（会议的）主席；使…入座；使就任要职\",\"audio\":\"chair.mp3\"},{\"word\":\"chance\",\"pronun\":\"[tʃæns]\",\"translation\":\"n. 机会，际遇；运气，侥幸；可能性\\nvt. 偶然发生；冒……的险\\nvi. 碰巧；偶然被发现\",\"audio\":\"chance.mp3\"},{\"word\":\"change\",\"pronun\":\"[tʃeɪndʒ]\",\"translation\":\"n. 变化；找回的零钱\\nvt. 改变；交换\\nvi. 改变；兑换\",\"audio\":\"change.mp3\"},{\"word\":\"channel\",\"pronun\":\"[ˈtʃænl]\",\"translation\":\"n. 通道；频道；海峡\\nvt. 引导，开导；形成河道\",\"audio\":\"channel.mp3\"},{\"word\":\"chat\",\"pronun\":\"[tʃæt]\",\"translation\":\"n. 聊天；闲谈\\nvt. 与…搭讪；与…攀谈\\nvi. 聊天；闲谈\",\"audio\":\"chat.mp3\"},{\"word\":\"chatroom\",\"pronun\":\"[ˈtʃætˌruːm; ˈtʃætˌrʊm]\",\"translation\":\"（电脑网络上的）聊天室，交谈室\",\"audio\":\"chatroom.mp3\"},{\"word\":\"cheap\",\"pronun\":\"[tʃiːp]\",\"translation\":\"adj. 便宜的；小气的；不值钱的\\nadv. 便宜地\",\"audio\":\"cheap.mp3\"},{\"word\":\"check\",\"pronun\":\"[tʃek]\",\"translation\":\"n. <美>支票；制止，抑制；检验，核对\\nvi. 核实，查核；中止；打勾；[象棋]将一军\\nvt. 检查，核对；制止，抑制；在…上打勾\",\"audio\":\"check.mp3\"},{\"word\":\"cheer\",\"pronun\":\"[tʃɪr]\",\"translation\":\"n. 欢呼；愉快；心情；令人愉快的事\\nvt. 欢呼；使高兴；为…加油\\nvi. 欢呼；感到高兴\",\"audio\":\"cheer.mp3\"},{\"word\":\"cheese\",\"pronun\":\"[tʃiːz]\",\"translation\":\"n. [食品] 奶酪；干酪；要人\\nadj. 叛变的；胆小的\\nvt. 停止\",\"audio\":\"cheese.mp3\"},{\"word\":\"cheeseburger\",\"pronun\":\"[ˈtʃiːzbɜːrɡər]\",\"translation\":\"n. 牛肉饼；干酪汉堡包；杀伤炸弹\",\"audio\":\"cheeseburger.mp3\"},{\"word\":\"chemist\",\"pronun\":\"[ˈkemɪst]\",\"translation\":\"n. 化学家；化学工作者；药剂师；炼金术士\",\"audio\":\"chemist.mp3\"},{\"word\":\"chemistry\",\"pronun\":\"[ˈkemɪstri]\",\"translation\":\"n. 化学；化学过程\",\"audio\":\"chemistry.mp3\"},{\"word\":\"cheque\",\"pronun\":\"[tʃek]\",\"translation\":\"n. 支票\",\"audio\":\"cheque.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

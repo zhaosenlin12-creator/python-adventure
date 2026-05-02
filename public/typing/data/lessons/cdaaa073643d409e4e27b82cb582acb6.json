@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:42.814929+00:00",
+  "request": {
+    "lesson_id": "cdaaa073643d409e4e27b82cb582acb6",
+    "course_id": "95ffe485e13ee14eb48fd57287df112d",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "95ffe485e13ee14eb48fd57287df112d",
+    "order": 332,
+    "nextCourseId": "95ffe485e13ee14eb48fd57287df112d",
+    "courseName": "实战演练-100以内金额",
+    "lessonId": "cdaaa073643d409e4e27b82cb582acb6",
+    "nextLessonId": "929cfd50bea148d5b42572949a990abc",
+    "lessonName": "个位数货币二",
+    "icon": "data/assets/daziya.com/key-icon_num-jiangpai.be9813a4d3.png",
+    "description": "数字输入练习 - 个位数货币二",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "fab642dc9a67b5b0351e586f948f8879",
+        "index": 1,
+        "text": [
+          "0188\\n0288\\n0388\\n0488\\n0588\\n0688\\n0788\\n0888\\n0988\\n0199\\n0299\\n0399\\n0499\\n0599\\n0699\\n0799\\n0899\\n0999\\n0166\\n0266\\n0366\\n0466\\n0566\\n0666\\n0766\\n0866\\n0966\\n0133\\n0233\\n0333"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

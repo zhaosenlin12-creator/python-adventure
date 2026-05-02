@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.777011+00:00",
+  "request": {
+    "lesson_id": "a7763fda5b0b02e057d501e8d27a1997",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 147,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "a7763fda5b0b02e057d501e8d27a1997",
+    "nextLessonId": "6e48faadbb28171fcc3e5302b864b8b0",
+    "lessonName": "KET核心词-6",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第6课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b7bd2acc695697d4818f46091c9931e8",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"bank\",\"pronun\":\"[bæŋk]\",\"translation\":\"n. 银行；岸；浅滩；储库\\nvt. 将…存入银行；倾斜转弯\\nvi. 堆积；倾斜转弯\",\"audio\":\"bank.mp3\"},{\"word\":\"bar\",\"pronun\":\"[bɑːr]\",\"translation\":\"n. 条，棒；酒吧；障碍；法庭\\nprep. 除……外\\nvt. 禁止；阻拦\",\"audio\":\"bar.mp3\"},{\"word\":\"barbecue\",\"pronun\":\"[ˈbɑːrbɪkjuː]\",\"translation\":\"n. 烤肉；吃烤肉的野宴\\nvt. 烧烤；烤肉\",\"audio\":\"barbecue.mp3\"},{\"word\":\"baseball\",\"pronun\":\"[ˈbeɪsbɔːl]\",\"translation\":\"n. 棒球；棒球运动\",\"audio\":\"baseball.mp3\"},{\"word\":\"basket\",\"pronun\":\"[ˈbæskɪt]\",\"translation\":\"n. 篮子；（篮球比赛的）得分；一篮之量；篮筐\\nvt. 装入篮\",\"audio\":\"basket.mp3\"},{\"word\":\"basketball\",\"pronun\":\"[ˈbæskɪtbɔːl]\",\"translation\":\"n. 篮球；篮球运动\",\"audio\":\"basketball.mp3\"},{\"word\":\"bat\",\"pronun\":\"[bæt]\",\"translation\":\"n. 蝙蝠；球棒；球拍；批处理文件的扩展名\\nvt. 用球棒击球；击球率达…\\nvi. 轮到击球；用球棒击球\",\"audio\":\"bat.mp3\"},{\"word\":\"bath\",\"pronun\":\"[bæθ]\",\"translation\":\"n. 沐浴；浴室；浴盆\\nvt. 洗澡\\nvi. 洗澡\",\"audio\":\"bath.mp3\"},{\"word\":\"bathroom\",\"pronun\":\"[ˈbæθruːm]\",\"translation\":\"n. 浴室；厕所；盥洗室\",\"audio\":\"bathroom.mp3\"},{\"word\":\"battery\",\"pronun\":\"[ˈbætəri]\",\"translation\":\"n. [电] 电池，蓄电池\\nn. [法]殴打\\nn. [军]炮台，炮位\",\"audio\":\"battery.mp3\"},{\"word\":\"beach\",\"pronun\":\"[biːtʃ]\",\"translation\":\"n. 海滩；湖滨\\nvt. 将…拖上岸\\nvi. 搁浅；定居\",\"audio\":\"beach.mp3\"},{\"word\":\"bear\",\"pronun\":\"[ber]\",\"translation\":\"n. 熊\\nvt. 结果实，开花（正式）\\nvt. 忍受；承受；具有；支撑\",\"audio\":\"bear.mp3\"},{\"word\":\"beard\",\"pronun\":\"[bɪrd]\",\"translation\":\"n. 胡须；颌毛\\nvt. 公然反对；抓…的胡须\\nvi. 充当掩护；充当男随员\",\"audio\":\"beard.mp3\"},{\"word\":\"beautiful\",\"pronun\":\"[ˈbjuːtɪf(ə)l]\",\"translation\":\"adj. 美丽的\\n出色地\\n出色的\\n迷人的\\n迷人地\",\"audio\":\"beautiful.mp3\"},{\"word\":\"because\",\"pronun\":\"[bɪˈkəz]\",\"translation\":\"conj. 因为\",\"audio\":\"because.mp3\"},{\"word\":\"become\",\"pronun\":\"[bɪˈkʌm]\",\"translation\":\"vt. 适合；相称\\nvi. 成为；变得；变成\",\"audio\":\"become.mp3\"},{\"word\":\"bedroom\",\"pronun\":\"[ˈbedruːm; ˈbedrʊm]\",\"translation\":\"n. 卧室\\nadj. 两性关系的；城郊住宅区的\",\"audio\":\"bedroom.mp3\"},{\"word\":\"begin\",\"pronun\":\"[bɪˈɡɪn]\",\"translation\":\"vi. 开始；首先\\nvt. 开始\",\"audio\":\"begin.mp3\"},{\"word\":\"beginner\",\"pronun\":\"[bɪˈɡɪnər]\",\"translation\":\"n. 初学者；新手；创始人\",\"audio\":\"beginner.mp3\"},{\"word\":\"beginning\",\"pronun\":\"[bɪˈɡɪnɪŋ]\",\"translation\":\"n. 开始；起点\\nv. 开始；创建（begin的ing形式）\",\"audio\":\"beginning.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

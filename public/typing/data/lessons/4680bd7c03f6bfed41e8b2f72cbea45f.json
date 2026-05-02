@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.246755+00:00",
+  "request": {
+    "lesson_id": "4680bd7c03f6bfed41e8b2f72cbea45f",
+    "course_id": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "order": 467,
+    "nextCourseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "courseName": "英语每日故事（初级）1-31",
+    "lessonId": "4680bd7c03f6bfed41e8b2f72cbea45f",
+    "nextLessonId": "352bdf4b2340711983e969d1bee0aae4",
+    "lessonName": "Uncle John Loves to Ski",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5b5aedbf2b16f71934d4d86989939bd5",
+        "index": 1,
+        "text": [
+          "Uncle John loves to ski. In winter, he goes skiing on the snow. It's his favourite sport.\\nWhat does he love to do in summer? He likes to ski too. How can he ski in summer? He goes water skiing. It's a lot of fun.\\nSummer or winter, on snow or water, Uncle John loves to ski."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

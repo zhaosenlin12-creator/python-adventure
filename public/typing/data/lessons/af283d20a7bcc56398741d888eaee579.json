@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.392354+00:00",
+  "request": {
+    "lesson_id": "af283d20a7bcc56398741d888eaee579",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 64,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "af283d20a7bcc56398741d888eaee579",
+    "nextLessonId": "7c9ffb44c7ea843884fdfcb9117df47d",
+    "lessonName": "KET核心词-31",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第31课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a6902a5331f5d8093f0093dca1bab4ac",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"hit\",\"pronun\":\"[hɪt]\",\"translation\":\"n. 打；打击；（演出等）成功；讽刺\\nvt. 打击；袭击；碰撞；偶然发现；伤…的感情\\nvi. 打；打击；碰撞；偶然碰上\",\"audio\":\"hit.mp3\"},{\"word\":\"hobby\",\"pronun\":\"[ˈhɑːbi]\",\"translation\":\"n. 嗜好；业余爱好\",\"audio\":\"hobby.mp3\"},{\"word\":\"hockey\",\"pronun\":\"[ˈhɑːki]\",\"translation\":\"n. 曲棍球；冰球\",\"audio\":\"hockey.mp3\"},{\"word\":\"hold\",\"pronun\":\"[hoʊld]\",\"translation\":\"n. 控制；保留\\nvi. 支持；有效；持续\\nvt. 持有；拥有；保存；拘留；约束或控制\\n又作“Hold住”使用，中英混用词汇，表示轻松掌控全局。\\n[ 过去式 held 过去分词 held或holden 现在分词 holding ]\",\"audio\":\"hold.mp3\"},{\"word\":\"holder\",\"pronun\":\"[ˈhoʊldər]\",\"translation\":\"n. 持有人；所有人；固定器；（台、架等）支持物\",\"audio\":\"holder.mp3\"},{\"word\":\"hole\",\"pronun\":\"[hoʊl]\",\"translation\":\"n. 洞，孔；洞穴，穴；突破口\\nvt. 凿洞\\nvi. 凿洞，穿孔；（高尔夫球等）进洞\",\"audio\":\"hole.mp3\"},{\"word\":\"holiday\",\"pronun\":\"[ˈhɑːlədeɪ]\",\"translation\":\"n. 假日；节日；休息日\\nvi. 外出度假\",\"audio\":\"holiday.mp3\"},{\"word\":\"homework\",\"pronun\":\"[ˈhoʊmwɜːrk]\",\"translation\":\"n. 家庭作业，课外作业\",\"audio\":\"homework.mp3\"},{\"word\":\"honest\",\"pronun\":\"[ˈɑːnɪst]\",\"translation\":\"adj. 诚实的，实在的；可靠的；坦率的\",\"audio\":\"honest.mp3\"},{\"word\":\"hope\",\"pronun\":\"[hoʊp]\",\"translation\":\"n. 希望；期望；信心\\nvi. 希望；期待；信赖\\nvt. 希望；期望\",\"audio\":\"hope.mp3\"},{\"word\":\"horn\",\"pronun\":\"[hɔːrn]\",\"translation\":\"n. 喇叭，号角；角\\nvt. 装角于\",\"audio\":\"horn.mp3\"},{\"word\":\"horrible\",\"pronun\":\"[ˈhɔːrəbl]\",\"translation\":\"adj. 可怕的；极讨厌的\",\"audio\":\"horrible.mp3\"},{\"word\":\"horror\",\"pronun\":\"[ˈhɔːrər]\",\"translation\":\"n. 惊骇；惨状；极端厌恶；令人恐怖的事物\",\"audio\":\"horror.mp3\"},{\"word\":\"horse\",\"pronun\":\"[hɔːrs]\",\"translation\":\"n. 马；骑兵；脚架；海洛因\\nvt. 使骑马；系马于；捉弄\\nvi. 骑马；作弄人\",\"audio\":\"horse.mp3\"},{\"word\":\"horse-riding\",\"pronun\":\"[ˈhɔːrs raɪdɪŋ]\",\"translation\":\"骑马\",\"audio\":\"horse-riding.mp3\"},{\"word\":\"horseshoe\",\"pronun\":\"[ˈhɔːrʃʃuː; ˈhɔːrsʃuː]\",\"translation\":\"n. 马蹄铁；U形物\\nvt. 装蹄铁于\",\"audio\":\"horseshoe.mp3\"},{\"word\":\"hospital\",\"pronun\":\"[ˈhɑːspɪtl]\",\"translation\":\"n. 医院\",\"audio\":\"hospital.mp3\"},{\"word\":\"hot\",\"pronun\":\"[hɑːt]\",\"translation\":\"adj. 热的；辣的；热情的；激动的；紧迫的\\nvt. 增加；给…加温\\nadv. 热；紧迫地\\nvi. 变热\",\"audio\":\"hot.mp3\"},{\"word\":\"hotel\",\"pronun\":\"[hoʊˈtel]\",\"translation\":\"n. 旅馆，饭店；客栈\\nvt. 使…在饭店下榻\\nvi. 进行旅馆式办公\",\"audio\":\"hotel.mp3\"},{\"word\":\"hour\",\"pronun\":\"[ˈaʊər]\",\"translation\":\"n. 小时；钟头；课时；…点钟\",\"audio\":\"hour.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

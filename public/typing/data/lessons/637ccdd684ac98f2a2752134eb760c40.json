@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.746344+00:00",
+  "request": {
+    "lesson_id": "637ccdd684ac98f2a2752134eb760c40",
+    "course_id": "df7bf8b8c0456926de2c1fac14a741b2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "order": 447,
+    "nextCourseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "courseName": "宋词必备67首（1）",
+    "lessonId": "637ccdd684ac98f2a2752134eb760c40",
+    "nextLessonId": "02637ad68d0078c5427163fbe66812da",
+    "lessonName": "饮湖上初晴后雨二首 其二",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b8d8bbac71d2e0d02807a068b05c918d",
+        "index": 1,
+        "text": [
+          "饮湖上初晴后雨二首 其二\\n苏轼\\n水光潋滟晴方好，山色空蒙雨亦奇。\\n欲把西湖比西子，淡妆浓抹总相宜。"
+        ],
+        "pinyin": "[[\"饮\",\"yǐn\"],[\"湖\",\"hú\"],[\"上\",\"shàng\"],[\"初\",\"chū\"],[\"晴\",\"qíng\"],[\"后\",\"hòu\"],[\"雨\",\"yǔ\"],[\"二\",\"èr\"],[\"首\",\"shǒu\"],[\" \",\"\"],[\"其\",\"qí\"],[\"二\",\"èr\"],[\"\\n\",\"\"],[\"苏\",\"sū\"],[\"轼\",\"shì\"],[\"\\n\",\"\"],[\"水\",\"shuǐ\"],[\"光\",\"guāng\"],[\"潋\",\"liàn\"],[\"滟\",\"yàn\"],[\"晴\",\"qíng\"],[\"方\",\"fāng\"],[\"好\",\"hǎo\"],[\"，\",\"\"],[\"山\",\"shān\"],[\"色\",\"sè\"],[\"空\",\"kōng\"],[\"蒙\",\"méng\"],[\"雨\",\"yǔ\"],[\"亦\",\"yì\"],[\"奇\",\"qí\"],[\"。\",\"\"],[\"\\n\",\"\"],[\"欲\",\"yù\"],[\"把\",\"bǎ\"],[\"西\",\"xī\"],[\"湖\",\"hú\"],[\"比\",\"bǐ\"],[\"西\",\"xī\"],[\"子\",\"zǐ\"],[\"，\",\"\"],[\"淡\",\"dàn\"],[\"妆\",\"zhuāng\"],[\"浓\",\"nóng\"],[\"抹\",\"mǒ\"],[\"总\",\"zǒng\"],[\"相\",\"xiāng\"],[\"宜\",\"yí\"],[\"。\",\"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

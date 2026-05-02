@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.622280+00:00",
+  "request": {
+    "lesson_id": "f69ed9069e3d90f083d2c5c6473b68d0",
+    "course_id": "f5e1caafe742206a7fc8abc95cf77b44",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "order": 313,
+    "nextCourseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "courseName": "诗词歌赋",
+    "lessonId": "f69ed9069e3d90f083d2c5c6473b68d0",
+    "nextLessonId": "f699adc7ed5177cd489f32542f825333",
+    "lessonName": "《春望》杜甫",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-poet-2.b9d8aeb0b2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "591dfc51146f4e5a8d7f9985414b846d",
+        "index": 1,
+        "text": [
+          "《春望》\\n唐：杜甫\\n国破山河在，城春草木深。\\n感时花溅泪，恨别鸟惊心。\\n烽火连三月，家书抵万金。\\n白头搔更短，浑欲不胜簪。"
+        ],
+        "pinyin": "[[\"《\", \"\"], [\"春\", \"chūn\"], [\"望\", \"wàng\"], [\"》\", \"\"], [\"\\n\", \"\"], [\"唐\", \"táng\"], [\"：\", \"\"], [\"杜\", \"dù\"], [\"甫\", \"fǔ\"], [\"\\n\", \"\"], [\"国\", \"guó\"], [\"破\", \"pò\"], [\"山\", \"shān\"], [\"河\", \"hé\"], [\"在\", \"zài\"], [\"，\", \"\"], [\"城\", \"chéng\"], [\"春\", \"chūn\"], [\"草\", \"cǎo\"], [\"木\", \"mù\"], [\"深\", \"shēn\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"感\", \"gǎn\"], [\"时\", \"shí\"], [\"花\", \"huā\"], [\"溅\", \"jiàn\"], [\"泪\", \"lèi\"], [\"，\", \"\"], [\"恨\", \"hèn\"], [\"别\", \"bié\"], [\"鸟\", \"niǎo\"], [\"惊\", \"jīng\"], [\"心\", \"xīn\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"烽\", \"fēng\"], [\"火\", \"huǒ\"], [\"连\", \"lián\"], [\"三\", \"sān\"], [\"月\", \"yuè\"], [\"，\", \"\"], [\"家\", \"jiā\"], [\"书\", \"shū\"], [\"抵\", \"dǐ\"], [\"万\", \"wàn\"], [\"金\", \"jīn\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"白\", \"bái\"], [\"头\", \"tóu\"], [\"搔\", \"sāo\"], [\"更\", \"gēng\"], [\"短\", \"duǎn\"], [\"，\", \"\"], [\"浑\", \"hún\"], [\"欲\", \"yù\"], [\"不\", \"bù\"], [\"胜\", \"shēng\"], [\"簪\", \"zān\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 43,
+        "minSpeed": 28,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

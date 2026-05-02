@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.814467+00:00",
+  "request": {
+    "lesson_id": "ca28427853214998294af2f752657d73",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 43,
+    "nextCourseId": "ff61770b1da83313ceacb0a08aef6378",
+    "courseName": "Python",
+    "lessonId": "ca28427853214998294af2f752657d73",
+    "nextLessonId": "f1bd65ccfffef60b0e17516d90b0a880",
+    "lessonName": "字符串反转",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - 字符串反转",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "795ee6b710c41dd8c48dcbf815c5a914",
+        "index": 1,
+        "text": [
+          "# 反转字符串\\ndef reverse_string(text):\\n    return text[::-1]\\n\\n# 测试字符串反转\\noriginal = \"Hello World\"\\nreversed_text = reverse_string(original)\\n\\nprint(f\"原字符串: {original}\")\\nprint(f\"反转后: {reversed_text}\")\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

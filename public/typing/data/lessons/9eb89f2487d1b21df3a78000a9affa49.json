@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.865387+00:00",
+  "request": {
+    "lesson_id": "9eb89f2487d1b21df3a78000a9affa49",
+    "course_id": "305e1352051511f2dff62dc198c6af98",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "305e1352051511f2dff62dc198c6af98",
+    "order": 84,
+    "nextCourseId": "305e1352051511f2dff62dc198c6af98",
+    "courseName": "1000个日常汉字",
+    "lessonId": "9eb89f2487d1b21df3a78000a9affa49",
+    "nextLessonId": "2b9cae855bfe2b089cecf9a616caae6b",
+    "lessonName": "常见汉字14",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "1000个日常汉字 - 第14组（651-700字）",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8102fc355238f062eac41f177f0dc494",
+        "index": 1,
+        "text": [
+          "急庭创区奥器谢弟店否害草排背止组州朝封睛板角况曲馆育忙质河续哥呼若推境遇雨标姐充围案伦护冷警贝著雪索"
+        ],
+        "pinyin": "[[\"急\",\"jí\"],[\"庭\",\"tíng\"],[\"创\",\"chuàng\"],[\"区\",\"qū\"],[\"奥\",\"ào\"],[\"器\",\"qì\"],[\"谢\",\"xiè\"],[\"弟\",\"dì\"],[\"店\",\"diàn\"],[\"否\",\"fǒu\"],[\"害\",\"hài\"],[\"草\",\"cǎo\"],[\"排\",\"pái\"],[\"背\",\"bèi\"],[\"止\",\"zhǐ\"],[\"组\",\"zǔ\"],[\"州\",\"zhōu\"],[\"朝\",\"cháo\"],[\"封\",\"fēng\"],[\"睛\",\"jīng\"],[\"板\",\"bǎn\"],[\"角\",\"jiǎo\"],[\"况\",\"kuàng\"],[\"曲\",\"qǔ\"],[\"馆\",\"guǎn\"],[\"育\",\"yù\"],[\"忙\",\"máng\"],[\"质\",\"zhì\"],[\"河\",\"hé\"],[\"续\",\"xù\"],[\"哥\",\"gē\"],[\"呼\",\"hū\"],[\"若\",\"ruò\"],[\"推\",\"tuī\"],[\"境\",\"jìng\"],[\"遇\",\"yù\"],[\"雨\",\"yǔ\"],[\"标\",\"biāo\"],[\"姐\",\"jiě\"],[\"充\",\"chōng\"],[\"围\",\"wéi\"],[\"案\",\"àn\"],[\"伦\",\"lún\"],[\"护\",\"hù\"],[\"冷\",\"lěng\"],[\"警\",\"jǐng\"],[\"贝\",\"bèi\"],[\"著\",\"zhù\"],[\"雪\",\"xuě\"],[\"索\",\"suǒ\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 10,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

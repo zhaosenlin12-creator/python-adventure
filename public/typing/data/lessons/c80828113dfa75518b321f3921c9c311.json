@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.737230+00:00",
+  "request": {
+    "lesson_id": "c80828113dfa75518b321f3921c9c311",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 141,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "c80828113dfa75518b321f3921c9c311",
+    "nextLessonId": "a9a2aaf3c8b7382b736a6b81cd88319b",
+    "lessonName": "KET核心词-125",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第125课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "39335f68ba836f38201f564437c8536a",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"June\",\"pronun\":\"[dʒuːn]\",\"translation\":\"n. 六月；琼（人名，来源于拉丁语，含义是“年轻气盛的六月”）\",\"audio\":\"June.mp3\"},{\"word\":\"March\",\"pronun\":\"[mɑːrtʃ]\",\"translation\":\"n. 三月\",\"audio\":\"March.mp3\"},{\"word\":\"may\",\"pronun\":\"[meɪ]\",\"translation\":\"aux. 可以，能够；可能，也许；祝，愿；会，能\",\"audio\":\"may.mp3\"},{\"word\":\"north\",\"pronun\":\"[nɔːrθ]\",\"translation\":\"n. 北，北方\\nadj. 北方的；朝北的\\nadv. 在北方，向北方\",\"audio\":\"north.mp3\"},{\"word\":\"northeast\",\"pronun\":\"[ˌnɔːrθˈiːst]\",\"translation\":\"adj. 东北的；向东北的；来自东北的\\nn. 东北\\nadv. 向东北；来自东北\",\"audio\":\"northeast.mp3\"},{\"word\":\"northwest\",\"pronun\":\"[ˌnɔːrθˈwest]\",\"translation\":\"adj. 西北的；向西北的；来自西北的\\nn. 西北\\nadv. 在西北；向西北；来自西北\",\"audio\":\"northwest.mp3\"},{\"word\":\"November\",\"pronun\":\"[noʊˈvembər]\",\"translation\":\"n. 十一月\",\"audio\":\"November.mp3\"},{\"word\":\"October\",\"pronun\":\"[ɑːkˈtoʊbər]\",\"translation\":\"n. [天] 十月\",\"audio\":\"October.mp3\"},{\"word\":\"September\",\"pronun\":\"[sepˈtembər]\",\"translation\":\"n. 九月\",\"audio\":\"September.mp3\"},{\"word\":\"south\",\"pronun\":\"[saʊθ]\",\"translation\":\"n. 南方，南边；南部\\nadj. 南的，南方的\\nadv. 在南方，向南方\",\"audio\":\"south.mp3\"},{\"word\":\"southeast\",\"pronun\":\"[ˌsaʊθˈiːst]\",\"translation\":\"n. 东南；东南地区\\nadj. 东南的；来自东南的\\nadv. 来自东南\",\"audio\":\"southeast.mp3\"},{\"word\":\"southwest\",\"pronun\":\"[ˌsaʊθˈwest]\",\"translation\":\"n. 西南方\\nadj. 西南的\\nadv. 往西南；来自西南\",\"audio\":\"southwest.mp3\"},{\"word\":\"spring\",\"pronun\":\"[sprɪŋ]\",\"translation\":\"n. 春天；弹簧；泉水；活力；跳跃\\nadj. 春天的\\nvt. 使跳起；使爆炸；突然提出；使弹开\\nvi. 生长；涌出；跃出；裂开\",\"audio\":\"spring.mp3\"},{\"word\":\"summer\",\"pronun\":\"[ˈsʌmər]\",\"translation\":\"n. 夏季；全盛时期\\nadj. 夏季的\\nvi. 避暑；过夏天\",\"audio\":\"summer.mp3\"},{\"word\":\"west\",\"pronun\":\"[west]\",\"translation\":\"n. 西；西方；西部\\nadj. 西方的；朝西的\\nadv. 在西方；向西方；自西方\",\"audio\":\"west.mp3\"},{\"word\":\"winter\",\"pronun\":\"[ˈwɪntər]\",\"translation\":\"n. 冬季；年岁；萧条期\\nadj. 冬天的；越冬的\\nvi. 过冬\",\"audio\":\"winter.mp3\"},{\"word\":\"after\",\"pronun\":\"[ˈæftər]\",\"translation\":\"conj. 在……之后\\nprep. 在……之后\\nadj. 以后的\\nadv. 后来，以后\",\"audio\":\"after.mp3\"},{\"word\":\"afternoon\",\"pronun\":\"[ˌæftərˈnuːn]\",\"translation\":\"n. 午后，下午\",\"audio\":\"afternoon.mp3\"},{\"word\":\"a.m.\",\"pronun\":\"[ˌeɪ ˈem]\",\"translation\":\"abbr. 上午，午前（ante meridiem）\",\"audio\":\"a_m_.mp3\"},{\"word\":\"before\",\"pronun\":\"[bɪˈfɔːr]\",\"translation\":\"prep. 在…之前，先于\\nconj. 在…以前；在…之前\\nadv. 以前；在前\",\"audio\":\"before.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

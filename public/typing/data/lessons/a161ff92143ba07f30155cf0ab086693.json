@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.594976+00:00",
+  "request": {
+    "lesson_id": "a161ff92143ba07f30155cf0ab086693",
+    "course_id": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "order": 405,
+    "nextCourseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "courseName": "初中必背古诗60首（1）",
+    "lessonId": "a161ff92143ba07f30155cf0ab086693",
+    "nextLessonId": "d808de94f5a4684182102c40e0a6bdf7",
+    "lessonName": "泊秦淮",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "aa1158565ff24bf868bb5edf60c9773e",
+        "index": 1,
+        "text": [
+          "泊秦淮\\n杜牧\\n烟笼寒水月笼沙，夜泊秦淮近酒家。\\n商女不知亡国恨，隔江犹唱后庭花。"
+        ],
+        "pinyin": "[[\"泊\", \"bó\"], [\"秦\", \"qín\"], [\"淮\", \"huái\"], [\"\\n\", \"\"], [\"杜\", \"dù\"], [\"牧\", \"mù\"], [\"\\n\", \"\"], [\"烟\", \"yān\"], [\"笼\", \"lǒng\"], [\"寒\", \"hán\"], [\"水\", \"shuǐ\"], [\"月\", \"yuè\"], [\"笼\", \"lǒng\"], [\"沙\", \"shā\"], [\"，\", \"\"], [\"夜\", \"yè\"], [\"泊\", \"bó\"], [\"秦\", \"qín\"], [\"淮\", \"huái\"], [\"近\", \"jìn\"], [\"酒\", \"jiǔ\"], [\"家\", \"jiā\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"商\", \"shāng\"], [\"女\", \"nǚ\"], [\"不\", \"bù\"], [\"知\", \"zhī\"], [\"亡\", \"wáng\"], [\"国\", \"guó\"], [\"恨\", \"hèn\"], [\"，\", \"\"], [\"隔\", \"gé\"], [\"江\", \"jiāng\"], [\"犹\", \"yóu\"], [\"唱\", \"chàng\"], [\"后\", \"hòu\"], [\"庭\", \"tíng\"], [\"花\", \"huā\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.239159+00:00",
+  "request": {
+    "lesson_id": "9cecb026faa8d1450c81f0087c263bb3",
+    "course_id": "f81aeb9f7457592295d8d925c4358b36",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "f81aeb9f7457592295d8d925c4358b36",
+    "order": 219,
+    "nextCourseId": "f81aeb9f7457592295d8d925c4358b36",
+    "courseName": "汉字二级",
+    "lessonId": "9cecb026faa8d1450c81f0087c263bb3",
+    "nextLessonId": "6eba3d4389c2cffc52478e7bbb4c0c69",
+    "lessonName": "《春》 朱自清",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-2.4d21a5bc2c.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9dc2d23bebd57fc63e0a5bf01dc93da7",
+        "index": 1,
+        "text": [
+          "花下成千成百的蜜蜂嗡嗡地闹着，大小的蝴蝶飞来飞去。野花遍地是：杂样儿，有名字的，没名字的，散在草丛里，像眼睛，像星星，还眨呀眨的。"
+        ],
+        "pinyin": "[[\"花\", \"huā\"], [\"下\", \"xià\"], [\"成\", \"chéng\"], [\"千\", \"qiān\"], [\"成\", \"chéng\"], [\"百\", \"bǎi\"], [\"的\", \"de\"], [\"蜜\", \"mì\"], [\"蜂\", \"fēng\"], [\"嗡\", \"wēng\"], [\"嗡\", \"wēng\"], [\"地\", \"de\"], [\"闹\", \"nào\"], [\"着\", \"zhe\"], [\"，\", \"\"], [\"大\", \"dà\"], [\"小\", \"xiǎo\"], [\"的\", \"de\"], [\"蝴\", \"hú\"], [\"蝶\", \"dié\"], [\"飞\", \"fēi\"], [\"来\", \"lái\"], [\"飞\", \"fēi\"], [\"去\", \"qù\"], [\"。\", \"\"], [\"野\", \"yě\"], [\"花\", \"huā\"], [\"遍\", \"biàn\"], [\"地\", \"dì\"], [\"是\", \"shì\"], [\"：\", \"\"], [\"杂\", \"zá\"], [\"样\", \"yàng\"], [\"儿\", \"r\"], [\"，\", \"\"], [\"有\", \"yǒu\"], [\"名\", \"míng\"], [\"字\", \"zì\"], [\"的\", \"de\"], [\"，\", \"\"], [\"没\", \"méi\"], [\"名\", \"míng\"], [\"字\", \"zì\"], [\"的\", \"de\"], [\"，\", \"\"], [\"散\", \"sàn\"], [\"在\", \"zài\"], [\"草\", \"cǎo\"], [\"丛\", \"cóng\"], [\"里\", \"lǐ\"], [\"，\", \"\"], [\"像\", \"xiàng\"], [\"眼\", \"yǎn\"], [\"睛\", \"jīng\"], [\"，\", \"\"], [\"像\", \"xiàng\"], [\"星\", \"xīng\"], [\"星\", \"xīng\"], [\"，\", \"\"], [\"还\", \"hái\"], [\"眨\", \"zhǎ\"], [\"呀\", \"ya\"], [\"眨\", \"zhǎ\"], [\"的\", \"de\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 23,
+        "minSpeed": 13,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

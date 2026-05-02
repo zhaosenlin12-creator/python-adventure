@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.505464+00:00",
+  "request": {
+    "lesson_id": "0a759193a35e10adc1f43a7d645934f9",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 322,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "0a759193a35e10adc1f43a7d645934f9",
+    "nextLessonId": "e806fbd85fd4f116995f1c0d1e7015d5",
+    "lessonName": "六级词汇正序版-19",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第19课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d3cc8294e8c33ed6e6ecb89f0fe55a92",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"cluster\",\"pronun\":\"[ˈklʌstər]\",\"translation\":\"n. 群；簇；丛；串\\nvt. 使聚集；聚集在某人的周围\\nvi. 群聚；丛生\",\"audio\":\"cluster.mp3\"},{\"word\":\"clutch\",\"pronun\":\"[klʌtʃ]\",\"translation\":\"n. 离合器；控制；手；紧急关头\\nvt. 抓住；紧握\\nadj. 没有手提带或背带的；紧要关头的\\nvi. 攫；企图抓住\",\"audio\":\"clutch.mp3\"},{\"word\":\"coalition\",\"pronun\":\"[ˌkoʊəˈlɪʃ(ə)n]\",\"translation\":\"n. 联合；结合，合并\",\"audio\":\"coalition.mp3\"},{\"word\":\"coarse\",\"pronun\":\"[kɔːrs]\",\"translation\":\"adj. 粗糙的；粗俗的；下等的\",\"audio\":\"coarse.mp3\"},{\"word\":\"cocaine\",\"pronun\":\"[koʊˈkeɪn]\",\"translation\":\"n. [药] 可卡因\",\"audio\":\"cocaine.mp3\"},{\"word\":\"cocktail\",\"pronun\":\"[ˈkɑːkteɪl]\",\"translation\":\"n. 鸡尾酒；开胃食品\\nn. 混合物\\nadj. 鸡尾酒的\",\"audio\":\"cocktail.mp3\"},{\"word\":\"cognitive\",\"pronun\":\"[ˈkɑːɡnətɪv]\",\"translation\":\"adj. 认知的，认识的\",\"audio\":\"cognitive.mp3\"},{\"word\":\"coherent\",\"pronun\":\"[koʊˈhɪrənt]\",\"translation\":\"adj. 连贯的，一致的；明了的；清晰的；凝聚性的；互相耦合的；粘在一起的\",\"audio\":\"coherent.mp3\"},{\"word\":\"coincide\",\"pronun\":\"[ˌkoʊɪnˈsaɪd]\",\"translation\":\"vi. 一致，符合；同时发生\\nvi. (在性格、品质等方面)完全一致，相符\",\"audio\":\"coincide.mp3\"},{\"word\":\"coincidence\",\"pronun\":\"[koʊˈɪnsɪdəns]\",\"translation\":\"n. 巧合；一致；同时发生\",\"audio\":\"coincidence.mp3\"},{\"word\":\"collaboration\",\"pronun\":\"[kəˌlæbəˈreɪʃn]\",\"translation\":\"n. 合作；勾结；通敌\",\"audio\":\"collaboration.mp3\"},{\"word\":\"collapse\",\"pronun\":\"[kəˈlæps]\",\"translation\":\"n. 倒塌；失败；衰竭\\nvt. 使倒塌，使崩溃；使萎陷；折叠\\nvi. 倒塌；瓦解；暴跌\",\"audio\":\"collapse.mp3\"},{\"word\":\"colleague\",\"pronun\":\"[ˈkɑːliːɡ]\",\"translation\":\"n. 同事，同僚\",\"audio\":\"colleague.mp3\"},{\"word\":\"collide\",\"pronun\":\"[kəˈlaɪd]\",\"translation\":\"vi. 碰撞；抵触，冲突\\nvt. 使碰撞；使相撞\",\"audio\":\"collide.mp3\"},{\"word\":\"collision\",\"pronun\":\"[kəˈlɪʒn]\",\"translation\":\"n. 碰撞；冲突；（意见，看法）的抵触；（政党等的）倾轧\",\"audio\":\"collision.mp3\"},{\"word\":\"colonial\",\"pronun\":\"[kəˈloʊniəl]\",\"translation\":\"n. 殖民地居民\\nadj. 殖民地的，殖民的\",\"audio\":\"colonial.mp3\"},{\"word\":\"combat\",\"pronun\":\"[ˈkɑːmbæt]\",\"translation\":\"n. 战斗；争论\\nadj. 战斗的；为…斗争的\\nvi. 战斗；搏斗\\nvt. 反对；与…战斗\",\"audio\":\"combat.mp3\"},{\"word\":\"combination\",\"pronun\":\"[ˌkɑːmbɪˈneɪʃn]\",\"translation\":\"n. 结合；组合；联合；[化学] 化合\",\"audio\":\"combination.mp3\"},{\"word\":\"combine\",\"pronun\":\"[kəmˈbaɪn]\",\"translation\":\"n. 联合收割机；联合企业\\nvt. 使化合；使联合，使结合\\nvi. 联合，结合；化合\",\"audio\":\"combine.mp3\"},{\"word\":\"comet\",\"pronun\":\"[ˈkɑːmɪt]\",\"translation\":\"n. [天] 彗星\",\"audio\":\"comet.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

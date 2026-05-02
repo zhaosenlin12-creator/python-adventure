@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.366910+00:00",
+  "request": {
+    "lesson_id": "4592d63aa791a5420dc6276f3385d043",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 186,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "4592d63aa791a5420dc6276f3385d043",
+    "nextLessonId": "677b61b3557346e24f6b29c2b82710a8",
+    "lessonName": "SUM求和",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - SUM求和",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ec781e256397791c59073f61d125efb5",
+        "index": 1,
+        "text": [
+          "-- 计算订单总金额\\nSELECT SUM(amount) AS total_amount FROM orders;\\n\\n-- 计算每个用户的订单总额\\nSELECT user_id, SUM(amount) AS total\\nFROM orders\\nGROUP BY user_id;\\n\\n-- 计算已完成订单的总金额\\nSELECT SUM(amount) AS completed_total\\nFROM orders WHERE status = 'completed';\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.403588+00:00",
+  "request": {
+    "lesson_id": "7c9ffb44c7ea843884fdfcb9117df47d",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 65,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "7c9ffb44c7ea843884fdfcb9117df47d",
+    "nextLessonId": "95ebbc75eddef1b3c6ad8f2251226361",
+    "lessonName": "KET核心词-34",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第34课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c8392ac9e22230f1ee7f7e2031395c18",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"island\",\"pronun\":\"[ˈaɪlənd]\",\"translation\":\"n. 岛；岛屿；安全岛；岛状物\\nadj. 岛的\\nvt. 孤立；使成岛状\",\"audio\":\"island.mp3\"},{\"word\":\"jacket\",\"pronun\":\"[ˈdʒækɪt]\",\"translation\":\"n. 羽绒滑雪衫；西装短外套；短上衣，夹克；土豆皮；书籍的护封；文件套，公文夹\\nvt. 给…穿夹克；给…装护套；给…包上护封；〈口〉打\",\"audio\":\"jacket.mp3\"},{\"word\":\"jam\",\"pronun\":\"[dʒæm]\",\"translation\":\"n. 果酱；拥挤；困境；扣篮\\nvt. 使堵塞；挤进，使塞满；混杂；压碎\\nvi. 堵塞；轧住\",\"audio\":\"jam.mp3\"},{\"word\":\"Japanese\",\"pronun\":\"[ˌdʒæpəˈniːz]\",\"translation\":\"n. 日本人；日语\\nadj. 日本（人）的；日语的\",\"audio\":\"Japanese.mp3\"},{\"word\":\"jeans\",\"pronun\":\"[dʒiːnz]\",\"translation\":\"n. 牛仔裤；工装裤\",\"audio\":\"jeans.mp3\"},{\"word\":\"job\",\"pronun\":\"[dʒɑːb]\",\"translation\":\"n. 工作；职业\\nvt. 承包；代客买卖\\nvi. 做零工\",\"audio\":\"job.mp3\"},{\"word\":\"join\",\"pronun\":\"[dʒɔɪn]\",\"translation\":\"vt. 参加；结合；连接\\nvi. 加入；参加；结合\\nn. 结合；连接；接合点\",\"audio\":\"join.mp3\"},{\"word\":\"joke\",\"pronun\":\"[dʒoʊk]\",\"translation\":\"n. 玩笑，笑话；笑柄\\nvt. 开…的玩笑\\nvi. 开玩笑\",\"audio\":\"joke.mp3\"},{\"word\":\"journalist\",\"pronun\":\"[ˈdʒɜːrnəlɪst]\",\"translation\":\"n. 新闻工作者；报人；记日志者\",\"audio\":\"journalist.mp3\"},{\"word\":\"journey\",\"pronun\":\"[ˈdʒɜːrni]\",\"translation\":\"n. 旅行；行程\\nvi. 旅行\",\"audio\":\"journey.mp3\"},{\"word\":\"joy\",\"pronun\":\"[dʒɔɪ]\",\"translation\":\"n. 欢乐，快乐；乐趣；高兴\\nvi. 欣喜，欢喜\\nvt. 高兴，使快乐\",\"audio\":\"joy.mp3\"},{\"word\":\"juice\",\"pronun\":\"[dʒuːs]\",\"translation\":\"n. （水果）汁，液；果汁\",\"audio\":\"juice.mp3\"},{\"word\":\"jump\",\"pronun\":\"[dʒʌmp]\",\"translation\":\"n. 跳跃；暴涨；惊跳\\nvt. 跳跃；使跳跃；跳过；突升\\nvi. 跳跃；暴涨；猛增\",\"audio\":\"jump.mp3\"},{\"word\":\"jumper\",\"pronun\":\"[ˈdʒʌmpər]\",\"translation\":\"n. 跳高运动员；跳跃者；工作服；妇女穿的套头外衣\",\"audio\":\"jumper.mp3\"},{\"word\":\"jungle\",\"pronun\":\"[ˈdʒʌŋɡl]\",\"translation\":\"n. 丛林，密林；危险地带\\nadj. 丛林的；蛮荒的\",\"audio\":\"jungle.mp3\"},{\"word\":\"just\",\"pronun\":\"[dʒʌst]\",\"translation\":\"adv. 只是，仅仅；刚才，刚刚；正好，恰好；实在；刚要\\nadj. 公正的，合理的；正直的，正义的；正确的；公平的；应得的\",\"audio\":\"just.mp3\"},{\"word\":\"keep\",\"pronun\":\"[kiːp]\",\"translation\":\"vt. 保持；经营；遵守；饲养\\nvi. 保持；继续不断\\nn. 保持；生计；生活费\",\"audio\":\"keep.mp3\"},{\"word\":\"key\",\"pronun\":\"[kiː]\",\"translation\":\"n. （打字机等的）键；关键；钥匙\\nvt. 键入；锁上；调节…的音调；提供线索\\nvi. 使用钥匙\\nadj. 关键的\",\"audio\":\"key.mp3\"},{\"word\":\"keyboard\",\"pronun\":\"[ˈkiːbɔːrd]\",\"translation\":\"n. 键盘\\nvt. 键入；用键盘式排字机排字\\nvi. 用键盘进行操作；作键盘式排字机排字\",\"audio\":\"keyboard.mp3\"},{\"word\":\"kick\",\"pronun\":\"[kɪk]\",\"translation\":\"vt. 踢；反冲，朝后座\\nn. 踢；反冲，后座力\\nvi. 踢；反冲\",\"audio\":\"kick.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

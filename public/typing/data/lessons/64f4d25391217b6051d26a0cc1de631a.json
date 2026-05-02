@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.088470+00:00",
+  "request": {
+    "lesson_id": "64f4d25391217b6051d26a0cc1de631a",
+    "course_id": "cd45306af9fe6ba99ad31ab2ab5006ba",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "cd45306af9fe6ba99ad31ab2ab5006ba",
+    "order": 390,
+    "nextCourseId": "31f8b0bfdd5cf12de8374becadc88615",
+    "courseName": "实战演练-1万以内金额",
+    "lessonId": "64f4d25391217b6051d26a0cc1de631a",
+    "nextLessonId": "7a813da98e9c8659aff4147d508a20c3",
+    "lessonName": "终极挑战",
+    "icon": "data/assets/daziya.com/key-icon_num-jiangbei.44832ef16e.png",
+    "description": "数字输入练习 - 终极挑战",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d48c91d69c8a20a429a2ac5f44718332",
+        "index": 1,
+        "text": [
+          "987165\\n876254\\n765343\\n654432\\n543521\\n432619\\n321718\\n210827\\n192936\\n997346\\n886435\\n775524\\n664613\\n553712\\n442821\\n331929\\n221138\\n113247\\n918537\\n827646\\n736755\\n645864\\n554973\\n464182\\n373291\\n282319\\n191428\\n928748\\n837857\\n746966"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

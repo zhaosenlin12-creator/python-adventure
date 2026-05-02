@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.265741+00:00",
+  "request": {
+    "lesson_id": "8f1bc55079f8a1796cb2d16bf74983e8",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 154,
+    "nextCourseId": "d7df026ff1d81047d30da28a958b118f",
+    "courseName": "golang",
+    "lessonId": "8f1bc55079f8a1796cb2d16bf74983e8",
+    "nextLessonId": "083217fbec3d6a2a305bd65ab4e34f56",
+    "lessonName": "for循环遍历",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - for循环遍历",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3747a8642a11f23f55eae998d31013db",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport \"fmt\"\\n\\nfunc main() {\\n\tfruits := []string{\"苹果\", \"香蕉\", \"橙子\", \"葡萄\"}\\n\\n\tfor _, fruit := range fruits {\\n\t\tfmt.Println(\"我喜欢吃\" + fruit)\\n\t}\\n\\n\tfmt.Println()\\n\tfor i := 1; i <= 5; i++ {\\n\t\tfmt.Printf(\"第%d次循环\\n\", i)\\n\t}\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

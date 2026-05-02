@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.409471+00:00",
+  "request": {
+    "lesson_id": "0ac274522ba3e58edab514c8804af548",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 67,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "0ac274522ba3e58edab514c8804af548",
+    "nextLessonId": "405fad01d7dfca12bdc747954ffd46a9",
+    "lessonName": "KET核心词-40",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第40课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "588595d9a12c9e4ff5fc8cd5e33f64e0",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"mean\",\"pronun\":\"[miːn]\",\"translation\":\"adj. 平均的；卑鄙的；低劣的；吝啬的\\nvt. 意味；想要；意欲\\nn. 平均值\\nvi. 用意\",\"audio\":\"mean.mp3\"},{\"word\":\"meaning\",\"pronun\":\"[ˈmiːnɪŋ]\",\"translation\":\"n. 意义；含义；意图\\nadj. 意味深长的\\nv. 意味；意思是（mean的ing形式）\",\"audio\":\"meaning.mp3\"},{\"word\":\"meat\",\"pronun\":\"[miːt]\",\"translation\":\"n. 肉，肉类（食用）\",\"audio\":\"meat.mp3\"},{\"word\":\"mechanic\",\"pronun\":\"[məˈkænɪk]\",\"translation\":\"n. 技工，机修工\\nadj. 手工的\",\"audio\":\"mechanic.mp3\"},{\"word\":\"medal\",\"pronun\":\"[ˈmedl]\",\"translation\":\"n. 勋章，奖章；纪念章\",\"audio\":\"medal.mp3\"},{\"word\":\"medicine\",\"pronun\":\"[ˈmedɪsn]\",\"translation\":\"n. 药；医学；内科；巫术\\nvt. 用药物治疗；给…用药\",\"audio\":\"medicine.mp3\"},{\"word\":\"meet\",\"pronun\":\"[miːt]\",\"translation\":\"vt. 满足；遇见；对付\\nvi. 相遇；接触\\nn. 集会\\nadj. 合适的；适宜的\",\"audio\":\"meet.mp3\"},{\"word\":\"member\",\"pronun\":\"[ˈmembər]\",\"translation\":\"n. 成员；会员；议员\",\"audio\":\"member.mp3\"},{\"word\":\"menu\",\"pronun\":\"[ˈmenjuː]\",\"translation\":\"n. 菜单\\n饭菜\",\"audio\":\"menu.mp3\"},{\"word\":\"merry\",\"pronun\":\"[ˈmeri]\",\"translation\":\"adj. 愉快的；微醉的；嬉戏作乐的\\nn. 甜樱桃\",\"audio\":\"merry.mp3\"},{\"word\":\"mess\",\"pronun\":\"[mes]\",\"translation\":\"n. 混乱；食堂，伙食团；困境；脏乱的东西\\nvt. 弄乱，弄脏；毁坏；使就餐\\nvi. 把事情弄糟；制造脏乱；玩弄\",\"audio\":\"mess.mp3\"},{\"word\":\"message\",\"pronun\":\"[ˈmesɪdʒ]\",\"translation\":\"n. 消息；差使；启示；预言；广告词\\nvi. 报信，报告；[通信] 报文\\nvt. 通知\",\"audio\":\"message.mp3\"},{\"word\":\"metal\",\"pronun\":\"[ˈmetl]\",\"translation\":\"n. 金属；合金\\nvt. 以金属覆盖\\nadj. 金属制的\",\"audio\":\"metal.mp3\"},{\"word\":\"metre\",\"pronun\":\"[ˈmiːtər]\",\"translation\":\"n. 米；公尺；韵律\",\"audio\":\"metre.mp3\"},{\"word\":\"Mexican\",\"pronun\":\"[ˈmeksɪkən]\",\"translation\":\"adj. 墨西哥的；墨西哥人的\\nn. 墨西哥人；墨西哥语\",\"audio\":\"Mexican.mp3\"},{\"word\":\"midday\",\"pronun\":\"[ˌmɪdˈdeɪ]\",\"translation\":\"n. 中午；正午\\nadj. 正午的\",\"audio\":\"midday.mp3\"},{\"word\":\"middle\",\"pronun\":\"[ˈmɪd(ə)l]\",\"translation\":\"adj. 中间的，中部的；中级的，中等的\\nn. 中间，中央；腰部\",\"audio\":\"middle.mp3\"},{\"word\":\"midnight\",\"pronun\":\"[ˈmɪdnaɪt]\",\"translation\":\"n. 午夜，半夜12点钟\\nadj. 半夜的；漆黑的\",\"audio\":\"midnight.mp3\"},{\"word\":\"mile\",\"pronun\":\"[maɪl]\",\"translation\":\"n. 英里；一英里赛跑；较大的距离\",\"audio\":\"mile.mp3\"},{\"word\":\"milk\",\"pronun\":\"[mɪlk]\",\"translation\":\"n. 牛奶；乳状物\\nvt. 榨取；挤…的奶\\nvi. 挤奶\",\"audio\":\"milk.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

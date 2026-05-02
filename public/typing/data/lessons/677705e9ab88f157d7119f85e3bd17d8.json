@@ -1,0 +1,50 @@
+{
+  "source": "speed-test",
+  "scrapedAt": "2026-05-02T06:08:44.827401+00:00",
+  "request": {
+    "lesson_id": "677705e9ab88f157d7119f85e3bd17d8",
+    "course_id": "c6bc39f4ba86486e20cc171fab797ea3",
+    "source": "speed-test"
+  },
+  "data": {
+    "level": "速度测试",
+    "courseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "order": 29,
+    "nextCourseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "courseName": "英文速度测试",
+    "lessonId": "677705e9ab88f157d7119f85e3bd17d8",
+    "nextLessonId": "1fc9f7e3cd9c1938417fddf3d1a31962",
+    "lessonName": "A Windy Christmas",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1e4471fdba0d05d270e905b64bf5b83b",
+        "index": 1,
+        "text": [
+          "Christmas was very different this year. On Christmas Day, there was no snow or ice. It was a windy day.\\nThe wind was so strong, I could not even walk on the street. I had to run!\\nThe strong wind pushed me all the way home. I think the wind pushed Santa Claus home too. Wow! It's a windy day!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": 13,
+    "categoryTitle": "速度测试"
+  }
+}

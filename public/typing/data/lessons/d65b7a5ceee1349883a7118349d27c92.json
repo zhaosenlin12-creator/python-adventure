@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.649751+00:00",
+  "request": {
+    "lesson_id": "d65b7a5ceee1349883a7118349d27c92",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 346,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "d65b7a5ceee1349883a7118349d27c92",
+    "nextLessonId": "a1458a5ae42c862a2da39485a17f7427",
+    "lessonName": "六级词汇正序版-91",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第91课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3b1fd6a54ed79e0584b074aedbd4eeb2",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"reinforce\",\"pronun\":\"[ˌriːɪnˈfɔːrs]\",\"translation\":\"n. 加强；加固物；加固材料\\nvt. 加强，加固；强化；补充\\nvi. 求援；得到增援；给予更多的支持\",\"audio\":\"reinforce.mp3\"},{\"word\":\"reject\",\"pronun\":\"[rɪˈdʒekt]\",\"translation\":\"n. 被弃之物或人；次品\\nvt. 拒绝；排斥；抵制；丢弃\",\"audio\":\"reject.mp3\"},{\"word\":\"rejection\",\"pronun\":\"[rɪˈdʒekʃn]\",\"translation\":\"n. 抛弃；拒绝；被抛弃的东西；盖帽\",\"audio\":\"rejection.mp3\"},{\"word\":\"rejoice\",\"pronun\":\"[rɪˈdʒɔɪs]\",\"translation\":\"vi. 高兴；庆祝\\nvt. 使高兴\",\"audio\":\"rejoice.mp3\"},{\"word\":\"relative\",\"pronun\":\"[ˈrelətɪv]\",\"translation\":\"n. 亲戚；相关物；[语] 关系词；亲缘植物\\nadj. 相对的；有关系的；成比例的\",\"audio\":\"relative.mp3\"},{\"word\":\"relay\",\"pronun\":\"[ˈriːleɪ; rɪˈleɪ]\",\"translation\":\"n. [电] 继电器；接替，接替人员；驿马\\nvt. 转播；使接替；分程传递\\nvi. 转播；接替\",\"audio\":\"relay.mp3\"},{\"word\":\"release\",\"pronun\":\"[rɪˈliːs]\",\"translation\":\"n. 释放；发布；让与\\nvt. 释放；发射；让与；允许发表\",\"audio\":\"release.mp3\"},{\"word\":\"relegate\",\"pronun\":\"[ˈrelɪɡeɪt]\",\"translation\":\"vt. 把降低到；归入；提交\",\"audio\":\"relegate.mp3\"},{\"word\":\"relevant\",\"pronun\":\"[ˈreləvənt]\",\"translation\":\"adj. 相关的；切题的；中肯的；有重大关系的；有意义的，目的明确的\",\"audio\":\"relevant.mp3\"},{\"word\":\"reliable\",\"pronun\":\"[rɪˈlaɪəbl]\",\"translation\":\"n. 可靠的人\\nadj. 可靠的；可信赖的\",\"audio\":\"reliable.mp3\"},{\"word\":\"reliance\",\"pronun\":\"[rɪˈlaɪəns]\",\"translation\":\"n. 信赖；信心；受信赖的人或物\",\"audio\":\"reliance.mp3\"},{\"word\":\"relief\",\"pronun\":\"[rɪˈliːf]\",\"translation\":\"n. 救济；减轻，解除；安慰；浮雕\",\"audio\":\"relief.mp3\"},{\"word\":\"relieve\",\"pronun\":\"[rɪˈliːv]\",\"translation\":\"vt. 解除，减轻；使不单调乏味；换…的班；解围；使放心\",\"audio\":\"relieve.mp3\"},{\"word\":\"religion\",\"pronun\":\"[rɪˈlɪdʒən]\",\"translation\":\"n. 宗教；宗教信仰\",\"audio\":\"religion.mp3\"},{\"word\":\"religious\",\"pronun\":\"[rɪˈlɪdʒəs]\",\"translation\":\"n. 修道士；尼姑\\nadj. 宗教的；虔诚的；严谨的；修道的\",\"audio\":\"religious.mp3\"},{\"word\":\"relish\",\"pronun\":\"[ˈrelɪʃ]\",\"translation\":\"n. 滋味；风味；食欲；开胃小菜；含义；调味品\\nvt. 盼望;期待;享受; 品味；喜爱；给…加佐料\\nvi. 有特定意味；味道可口\",\"audio\":\"relish.mp3\"},{\"word\":\"reluctance\",\"pronun\":\"[rɪˈlʌktəns]\",\"translation\":\"n. [电磁] 磁阻；勉强；不情愿\",\"audio\":\"reluctance.mp3\"},{\"word\":\"reluctant\",\"pronun\":\"[rɪˈlʌktənt]\",\"translation\":\"adj. 不情愿的；勉强的；顽抗的\",\"audio\":\"reluctant.mp3\"},{\"word\":\"rely\",\"pronun\":\"[rɪˈlaɪ]\",\"translation\":\"vi. 依靠；信赖\",\"audio\":\"rely.mp3\"},{\"word\":\"remain\",\"pronun\":\"[rɪˈmeɪn]\",\"translation\":\"n. 遗迹；剩余物，残骸\\nvi. 保持；依然；留下；剩余；逗留；残存\",\"audio\":\"remain.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

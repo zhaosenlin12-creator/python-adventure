@@ -1,0 +1,50 @@
+{
+  "source": "speed-test",
+  "scrapedAt": "2026-05-02T06:08:44.828117+00:00",
+  "request": {
+    "lesson_id": "1fc9f7e3cd9c1938417fddf3d1a31962",
+    "course_id": "c6bc39f4ba86486e20cc171fab797ea3",
+    "source": "speed-test"
+  },
+  "data": {
+    "level": "速度测试",
+    "courseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "order": 30,
+    "nextCourseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "courseName": "英文速度测试",
+    "lessonId": "1fc9f7e3cd9c1938417fddf3d1a31962",
+    "nextLessonId": "af4c183c04683f0bc7acddc8350b6077",
+    "lessonName": "Everything Is New!",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "fde907c6dd1d88f06c2855cef31cdcc7",
+        "index": 1,
+        "text": [
+          "When the first baby is born, everything is new. With a new baby, there is a new mother and new father. There is also a new grandfather and grandmother, a new uncle and new aunt.\\nThe new parents have to prepare a new bed and new clothes and new toys for the new baby. Everything is new!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": 13,
+    "categoryTitle": "速度测试"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.648378+00:00",
+  "request": {
+    "lesson_id": "44c88a773669f5172243a605b62aa986",
+    "course_id": "07e9ff923dd8a9eab06e26a8cfc4e593",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "07e9ff923dd8a9eab06e26a8cfc4e593",
+    "order": 419,
+    "nextCourseId": "07e9ff923dd8a9eab06e26a8cfc4e593",
+    "courseName": "初中必背古诗60首（2）",
+    "lessonId": "44c88a773669f5172243a605b62aa986",
+    "nextLessonId": "532fb83200b0a83b5ae351589a7aba45",
+    "lessonName": "天净沙·秋思",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "fad7de6b253a32cb58cdc263a7c0e387",
+        "index": 1,
+        "text": [
+          "天净沙·秋思\\n马致远\\n枯藤老树昏鸦，小桥流水人家，古道西风瘦马。夕阳西下，断肠人在天涯。"
+        ],
+        "pinyin": "[[\"天\", \"tiān\"], [\"净\", \"jìng\"], [\"沙\", \"shā\"], [\"·\", \"\"], [\"秋\", \"qiū\"], [\"思\", \"sī\"], [\"\\n\", \"\"], [\"马\", \"mǎ\"], [\"致\", \"zhì\"], [\"远\", \"yuǎn\"], [\"\\n\", \"\"], [\"枯\", \"kū\"], [\"藤\", \"téng\"], [\"老\", \"lǎo\"], [\"树\", \"shù\"], [\"昏\", \"hūn\"], [\"鸦\", \"yā\"], [\"，\", \"\"], [\"小\", \"xiǎo\"], [\"桥\", \"qiáo\"], [\"流\", \"liú\"], [\"水\", \"shuǐ\"], [\"人\", \"rén\"], [\"家\", \"jiā\"], [\"，\", \"\"], [\"古\", \"gǔ\"], [\"道\", \"dào\"], [\"西\", \"xī\"], [\"风\", \"fēng\"], [\"瘦\", \"shòu\"], [\"马\", \"mǎ\"], [\"。\", \"\"], [\"夕\", \"xī\"], [\"阳\", \"yáng\"], [\"西\", \"xī\"], [\"下\", \"xià\"], [\"，\", \"\"], [\"断\", \"duàn\"], [\"肠\", \"cháng\"], [\"人\", \"rén\"], [\"在\", \"zài\"], [\"天\", \"tiān\"], [\"涯\", \"yá\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

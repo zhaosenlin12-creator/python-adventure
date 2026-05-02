@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.678617+00:00",
+  "request": {
+    "lesson_id": "27263fb9469f3434886c328f961752fa",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 352,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "27263fb9469f3434886c328f961752fa",
+    "nextLessonId": "4687a5a00c44528b72e2eaa189ee64d1",
+    "lessonName": "六级词汇正序版-109",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第109课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "720d25833e394a482cfba231b7431f8a",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"Thanksgiving\",\"pronun\":\"\",\"translation\":\"n. 感恩\",\"audio\":\"Thanksgiving.mp3\"},{\"word\":\"theft\",\"pronun\":\"[θeft]\",\"translation\":\"n. 盗窃；偷；赃物\",\"audio\":\"theft.mp3\"},{\"word\":\"theme\",\"pronun\":\"[θiːm]\",\"translation\":\"n. 主题；主旋律；题目\\nadj. 以奇想主题布置的\",\"audio\":\"theme.mp3\"},{\"word\":\"thereafter\",\"pronun\":\"[ˌðerˈæftər]\",\"translation\":\"adv. 其后；从那时以后\",\"audio\":\"thereafter.mp3\"},{\"word\":\"therefore\",\"pronun\":\"[ˈðerfɔːr]\",\"translation\":\"adv. 因此；所以\",\"audio\":\"therefore.mp3\"},{\"word\":\"thermal\",\"pronun\":\"[ˈθɜːrm(ə)l]\",\"translation\":\"n. 上升的热气流\\nadj. 热的；热量的；保热的\",\"audio\":\"thermal.mp3\"},{\"word\":\"thesis\",\"pronun\":\"[ˈθiːsɪs]\",\"translation\":\"n. 论文；论点\",\"audio\":\"thesis.mp3\"},{\"word\":\"thigh\",\"pronun\":\"[θaɪ]\",\"translation\":\"n. 大腿，股\",\"audio\":\"thigh.mp3\"},{\"word\":\"thorn\",\"pronun\":\"[θɔːrn]\",\"translation\":\"n. 刺；[植] 荆棘\",\"audio\":\"thorn.mp3\"},{\"word\":\"threaten\",\"pronun\":\"[ˈθret(ə)n]\",\"translation\":\"vt. 威胁；恐吓；预示\\nvi. 威胁；可能来临\",\"audio\":\"threaten.mp3\"},{\"word\":\"threshold\",\"pronun\":\"[ˈθreʃhoʊld]\",\"translation\":\"n. 入口；门槛；开始；极限；临界值\",\"audio\":\"threshold.mp3\"},{\"word\":\"thrill\",\"pronun\":\"[θrɪl]\",\"translation\":\"n. 激动；震颤；紧张\\nvt. 使…颤动；使…紧张；使…感到兴奋或激动\\nvi. 颤抖；感到兴奋；感到紧张\",\"audio\":\"thrill.mp3\"},{\"word\":\"thrive\",\"pronun\":\"[θraɪv]\",\"translation\":\"vi. 繁荣，兴旺；茁壮成长\",\"audio\":\"thrive.mp3\"},{\"word\":\"throne\",\"pronun\":\"[θroʊn]\",\"translation\":\"n. 王座；君主；王权\\nvt. 使登王位\\nvi. 登上王座\",\"audio\":\"throne.mp3\"},{\"word\":\"tick\",\"pronun\":\"[tɪk]\",\"translation\":\"n. 滴答声；扁虱；记号；赊欠\\nvt. 标记号于；滴答地记录\\nvi. 发出滴答声；标以记号\",\"audio\":\"tick.mp3\"},{\"word\":\"tickle\",\"pronun\":\"[ˈtɪkl]\",\"translation\":\"n. 胳肢；痒感；使人发痒、高兴的东西\\nvt. 使发痒；使高兴；使满足\\nvi. 觉得痒；（东西）使人发痒\",\"audio\":\"tickle.mp3\"},{\"word\":\"tile\",\"pronun\":\"[taɪl]\",\"translation\":\"n. 瓷砖，瓦片\\nvt. 铺以瓦；铺以瓷砖\",\"audio\":\"tile.mp3\"},{\"word\":\"tilt\",\"pronun\":\"[tɪlt]\",\"translation\":\"n. 倾斜\\nvt. 使倾斜；使翘起\\nvi. 倾斜；翘起；以言词或文字抨击\",\"audio\":\"tilt.mp3\"},{\"word\":\"timely\",\"pronun\":\"[ˈtaɪmli]\",\"translation\":\"adj. 及时的；适时的\\nadv. 及时地；早\",\"audio\":\"timely.mp3\"},{\"word\":\"timid\",\"pronun\":\"[ˈtɪmɪd]\",\"translation\":\"adj. 胆小的；羞怯的\",\"audio\":\"timid.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

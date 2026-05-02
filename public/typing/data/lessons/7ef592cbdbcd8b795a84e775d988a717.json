@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.902747+00:00",
+  "request": {
+    "lesson_id": "7ef592cbdbcd8b795a84e775d988a717",
+    "course_id": "daccefd55478aba6657b64a604f8f971",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "daccefd55478aba6657b64a604f8f971",
+    "order": 157,
+    "nextCourseId": "daccefd55478aba6657b64a604f8f971",
+    "courseName": "注音练习1",
+    "lessonId": "7ef592cbdbcd8b795a84e775d988a717",
+    "nextLessonId": "84d1d8d03bfa17c1421e04e9e699abe0",
+    "lessonName": "《九月九日忆山东兄弟》",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-wen.691360af01.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9d769301bf311a49d5553c371f34c035",
+        "index": 1,
+        "text": [
+          "《九月九日忆山东兄弟》\\n唐：王维\\n\\n独在异乡为异客，每逢佳节倍思亲。\\n遥知兄弟登高处，遍插茱萸少一人。"
+        ],
+        "pinyin": "[[\"《\", \"\"], [\"九\", \"jiǔ\"], [\"月\", \"yuè\"], [\"九\", \"jiǔ\"], [\"日\", \"rì\"], [\"忆\", \"yì\"], [\"山\", \"shān\"], [\"东\", \"dōng\"], [\"兄\", \"xiōng\"], [\"弟\", \"dì\"], [\"》\", \"\"], [\"\\n\", \"\"], [\"唐\", \"táng\"], [\"：\", \"\"], [\"王\", \"wáng\"], [\"维\", \"wéi\"], [\"\\n\", \"\"], [\"\\n\", \"\"], [\"独\", \"dú\"], [\"在\", \"zài\"], [\"异\", \"yì\"], [\"乡\", \"xiāng\"], [\"为\", \"wéi\"], [\"异\", \"yì\"], [\"客\", \"kè\"], [\"，\", \"\"], [\"每\", \"měi\"], [\"逢\", \"féng\"], [\"佳\", \"jiā\"], [\"节\", \"jié\"], [\"倍\", \"bèi\"], [\"思\", \"sī\"], [\"亲\", \"qīn\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"遥\", \"yáo\"], [\"知\", \"zhī\"], [\"兄\", \"xiōng\"], [\"弟\", \"dì\"], [\"登\", \"dēng\"], [\"高\", \"gāo\"], [\"处\", \"chù\"], [\"，\", \"\"], [\"遍\", \"biàn\"], [\"插\", \"chā\"], [\"茱\", \"zhū\"], [\"萸\", \"yú\"], [\"少\", \"shǎo\"], [\"一\", \"yī\"], [\"人\", \"rén\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 19,
+        "minSpeed": 6,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

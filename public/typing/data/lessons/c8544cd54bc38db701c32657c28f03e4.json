@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.392121+00:00",
+  "request": {
+    "lesson_id": "c8544cd54bc38db701c32657c28f03e4",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 637,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "c8544cd54bc38db701c32657c28f03e4",
+    "nextLessonId": "37117f87fada2a59184fcac0080301d2",
+    "lessonName": " 四年级下-1",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点四年级下 - 第1课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c5969aaf05dcd75fe429e8414faac66a",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"first floor\",\"pronun\":\"[fɝ​st flɔr]\",\"translation\":\"n. 地面以上的一层；底层\",\"audio\":\"first_floor.mp3\"},{\"word\":\"second floor\",\"pronun\":\"\",\"translation\":\"na. 〈美〉二楼；〈英〉三楼\",\"audio\":\"second_floor.mp3\"},{\"word\":\"teacher's office\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"teacher_s_office.mp3\"},{\"word\":\"library\",\"pronun\":\"[ˈlaɪbreri]\",\"translation\":\"n. 图书馆，藏书室；文库\",\"audio\":\"library.mp3\"},{\"word\":\"playground\",\"pronun\":\"[ˈpleɪɡraʊnd]\",\"translation\":\"n. 运动场，操场；游乐场\",\"audio\":\"playground.mp3\"},{\"word\":\"computer room\",\"pronun\":\"\",\"translation\":\"un. 计算机机房；计算机室\",\"audio\":\"computer_room.mp3\"},{\"word\":\"art room\",\"pronun\":\"\",\"translation\":\"绘画教室；美术室；美术教室\",\"audio\":\"art_room.mp3\"},{\"word\":\"music room\",\"pronun\":\"\",\"translation\":\"音乐教室；音乐室；音乐厅\",\"audio\":\"music_room.mp3\"},{\"word\":\"next to\",\"pronun\":\"\",\"translation\":\"prep. 紧邻；在…近旁；仅次于；紧接\",\"audio\":\"next_to.mp3\"},{\"word\":\"homework\",\"pronun\":\"[ˈhoʊmwɜːrk]\",\"translation\":\"n. 家庭作业，课外作业\",\"audio\":\"homework.mp3\"},{\"word\":\"class\",\"pronun\":\"[klæs]\",\"translation\":\"n. 阶级；班级；种类；班；等级\\nadj. 极好的；很好的，优秀的，出色的\\nvt. 分类；把…分等级；把…归入某等级，把…看作（或分类、归类）；把…编入某一班级\\nvi. 属于…类（或等级），被列为某类（或某级）\",\"audio\":\"class.mp3\"},{\"word\":\"forty\",\"pronun\":\"[ˈfɔːrti]\",\"translation\":\"n. 四十\\nadj. 四十的；四十个的\",\"audio\":\"forty.mp3\"},{\"word\":\"way\",\"pronun\":\"[weɪ]\",\"translation\":\"n. 方法；道路；方向；行业；习惯\\nadj. 途中的\\nadv. 大大地；远远地\",\"audio\":\"way.mp3\"},{\"word\":\"breakfast\",\"pronun\":\"[ˈbrekfəst]\",\"translation\":\"n. 早餐；早饭\\nvt. 为…供应早餐\\nvi. 吃早餐\",\"audio\":\"breakfast.mp3\"},{\"word\":\"English class\",\"pronun\":\"\",\"translation\":\"英语课；英文课；英语课程\",\"audio\":\"English_class.mp3\"},{\"word\":\"lunch\",\"pronun\":\"[lʌntʃ]\",\"translation\":\"n. 午餐\\nvt. 吃午餐；供给午餐\\nvi. 吃午餐；供给午餐\",\"audio\":\"lunch.mp3\"},{\"word\":\"music class\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"music_class.mp3\"},{\"word\":\"PE class\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"PE_class.mp3\"},{\"word\":\"dinner\",\"pronun\":\"[ˈdɪnər]\",\"translation\":\"n. 晚餐，晚宴；宴会；正餐\",\"audio\":\"dinner.mp3\"},{\"word\":\"get up\",\"pronun\":\"[ɡet ʌp]\",\"translation\":\"na. 起床；起身；站起来；叫…起床\",\"audio\":\"get_up.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.688787+00:00",
+  "request": {
+    "lesson_id": "2e4683d0cdd6551850ec25fbe8e270bc",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 355,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "2e4683d0cdd6551850ec25fbe8e270bc",
+    "nextLessonId": "8f0a4c057848b8d5b0b03c5599712e9b",
+    "lessonName": "六级词汇正序版-118",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第118课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "47c6e9b34cae292b5d63b858742cbebb",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"yacht\",\"pronun\":\"[jɑːt]\",\"translation\":\"n. 游艇，快艇；轻舟\\nvi. 乘游艇，驾游艇\",\"audio\":\"yacht.mp3\"},{\"word\":\"yell\",\"pronun\":\"[jel]\",\"translation\":\"n. 喊声，叫声\\nvi. 大叫，叫喊\\nvt. 喊叫着说\",\"audio\":\"yell.mp3\"},{\"word\":\"yield\",\"pronun\":\"[jiːld]\",\"translation\":\"n. 产量；收益\\nvt. 屈服；出产，产生；放弃\\nvi. 屈服，投降\",\"audio\":\"yield.mp3\"},{\"word\":\"yoke\",\"pronun\":\"[joʊk]\",\"translation\":\"n. 轭；束缚；牛轭\\nvt. 结合；给…上轭\\nvi. 结合；匹配\",\"audio\":\"yoke.mp3\"},{\"word\":\"zinc\",\"pronun\":\"[zɪŋk]\",\"translation\":\"n. [化]锌\\nvt. 镀锌于…; 在…上镀锌\",\"audio\":\"zinc.mp3\"},{\"word\":\"abut\",\"pronun\":\"[əˈbʌt]\",\"translation\":\"vt. 邻接；毗邻；紧靠\\nvi. 邻接；毗邻；紧靠\",\"audio\":\"abut.mp3\"},{\"word\":\"accessible\",\"pronun\":\"[əkˈsesəbl]\",\"translation\":\"adj. 易接近的；可进入的；可理解的\",\"audio\":\"accessible.mp3\"},{\"word\":\"accusation\",\"pronun\":\"[ˌækjuˈzeɪʃn]\",\"translation\":\"n. 控告，指控；谴责\",\"audio\":\"accusation.mp3\"},{\"word\":\"advent\",\"pronun\":\"[ˈædvent]\",\"translation\":\"n. 到来；出现；基督降临；基督降临节\",\"audio\":\"advent.mp3\"},{\"word\":\"affluent\",\"pronun\":\"[ˈæfluənt]\",\"translation\":\"n. 支流；富人\\nadj. 富裕的；丰富的；流畅的\",\"audio\":\"affluent.mp3\"},{\"word\":\"allegiance\",\"pronun\":\"[əˈliːdʒəns]\",\"translation\":\"n. 效忠，忠诚；忠贞\",\"audio\":\"allegiance.mp3\"},{\"word\":\"analyst\",\"pronun\":\"[ˈænəlɪst]\",\"translation\":\"n. 分析者；精神分析医师；分解者\",\"audio\":\"analyst.mp3\"},{\"word\":\"announcement\",\"pronun\":\"[əˈnaʊnsmənt]\",\"translation\":\"n. 公告；宣告；发表；通告\",\"audio\":\"announcement.mp3\"},{\"word\":\"antenna\",\"pronun\":\"[ænˈtenə]\",\"translation\":\"n. [电讯] 天线；[动] 触角，[昆] 触须\",\"audio\":\"antenna.mp3\"},{\"word\":\"appreciable\",\"pronun\":\"[əˈpriːʃəbl]\",\"translation\":\"adj. 可感知的；可评估的；相当可观的\",\"audio\":\"appreciable.mp3\"},{\"word\":\"aroma\",\"pronun\":\"[əˈroʊmə]\",\"translation\":\"n. 芳香\",\"audio\":\"aroma.mp3\"},{\"word\":\"arson\",\"pronun\":\"[ˈɑːrs(ə)n]\",\"translation\":\"n. 纵火；纵火罪\",\"audio\":\"arson.mp3\"},{\"word\":\"aspire\",\"pronun\":\"[əˈspaɪər]\",\"translation\":\"vi. 渴望；立志；追求\",\"audio\":\"aspire.mp3\"},{\"word\":\"assessment\",\"pronun\":\"[əˈsesmənt]\",\"translation\":\"n. 评定；估价\",\"audio\":\"assessment.mp3\"},{\"word\":\"assessor\",\"pronun\":\"[əˈsesər]\",\"translation\":\"n. 评审员；确定税款的人；顾问\",\"audio\":\"assessor.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

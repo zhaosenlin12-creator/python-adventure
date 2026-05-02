@@ -1,0 +1,83 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.609207+00:00",
+  "request": {
+    "lesson_id": "f8247815f1289a0018213c843ed8afa2",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 18,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "f8247815f1289a0018213c843ed8afa2",
+    "nextLessonId": "9ba509f50b2a83053f12ba2d4dc59bee",
+    "lessonName": "巩固练习：an、en",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母an、en的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "c7578ec825f85387721ec54f186b0681",
+        "index": 1,
+        "highlights": [
+          "an"
+        ],
+        "text": [
+          "请输入按键 [an]"
+        ],
+        "detail": "学习双拼按键 an"
+      },
+      {
+        "chapterId": "f1676b87ebcd43b0316f5e3df0fbf073",
+        "index": 2,
+        "highlights": [
+          "en"
+        ],
+        "text": [
+          "请输入按键 [en]"
+        ],
+        "detail": "学习双拼按键 en"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "05e237f2bf415f05aa62f501e38d271a",
+        "index": 3,
+        "text": [
+          "ananananenenenenanenanenanenanen"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "fcd2df40c4fed86088ef4a70127cf9dc",
+        "index": 4,
+        "text": [
+          "安全门很沉，搬进门真费劲。\\n暗沉天色，深山人未还。\\n晨间散步，河边看帆。\\n真认真的人，半天能看完。\\n前门安新灯，温暖又安神。"
+        ],
+        "pinyin": "[[\"安\",\"ān\"],[\"全\",\"quán\"],[\"门\",\"mén\"],[\"很\",\"hěn\"],[\"沉\",\"chén\"],[\"，\",\"\"],[\"搬\",\"bān\"],[\"进\",\"jìn\"],[\"门\",\"mén\"],[\"真\",\"zhēn\"],[\"费\",\"fèi\"],[\"劲\",\"jìn\"],[\"。\",\"\"],[\"暗\",\"àn\"],[\"沉\",\"chén\"],[\"天\",\"tiān\"],[\"色\",\"sè\"],[\"，\",\"\"],[\"深\",\"shēn\"],[\"山\",\"shān\"],[\"人\",\"rén\"],[\"未\",\"wèi\"],[\"还\",\"huán\"],[\"。\",\"\"],[\"晨\",\"chén\"],[\"间\",\"jiān\"],[\"散\",\"sàn\"],[\"步\",\"bù\"],[\"，\",\"\"],[\"河\",\"hé\"],[\"边\",\"biān\"],[\"看\",\"kàn\"],[\"帆\",\"fān\"],[\"。\",\"\"],[\"真\",\"zhēn\"],[\"认\",\"rèn\"],[\"真\",\"zhēn\"],[\"的\",\"de\"],[\"人\",\"rén\"],[\"，\",\"\"],[\"半\",\"bàn\"],[\"天\",\"tiān\"],[\"能\",\"néng\"],[\"看\",\"kàn\"],[\"完\",\"wán\"],[\"。\",\"\"],[\"前\",\"qián\"],[\"门\",\"mén\"],[\"安\",\"ān\"],[\"新\",\"xīn\"],[\"灯\",\"dēng\"],[\"，\",\"\"],[\"温\",\"wēn\"],[\"暖\",\"nuǎn\"],[\"又\",\"yòu\"],[\"安\",\"ān\"],[\"神\",\"shén\"],[\"。\",\"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

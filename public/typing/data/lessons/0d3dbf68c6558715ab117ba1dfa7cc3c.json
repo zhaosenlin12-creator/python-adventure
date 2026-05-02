@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.644730+00:00",
+  "request": {
+    "lesson_id": "0d3dbf68c6558715ab117ba1dfa7cc3c",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 119,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "0d3dbf68c6558715ab117ba1dfa7cc3c",
+    "nextLessonId": "549769314408338b39d808cbea2682af",
+    "lessonName": "KET核心词-59",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第59课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8ef80b48415f18b87e039262028a33d3",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"silver\",\"pronun\":\"[ˈsɪlvər]\",\"translation\":\"n. 银；银器；银币；银质奖章；餐具；银灰色\\nadj. 银的；含银的；有银色光泽的；口才流利的；第二十五周年的婚姻\\nvt. 镀银；使有银色光泽\\nvi. 变成银色\",\"audio\":\"silver.mp3\"},{\"word\":\"similar\",\"pronun\":\"[ˈsɪmələr]\",\"translation\":\"n. 类似物\\nadj. 相似的\",\"audio\":\"similar.mp3\"},{\"word\":\"since\",\"pronun\":\"[sɪns]\",\"translation\":\"conj. 因为；由于；既然；自…以来；自…以后\\nprep. 自…以来；自…以后\\nadv. 后来\",\"audio\":\"since.mp3\"},{\"word\":\"sing\",\"pronun\":\"[sɪŋ]\",\"translation\":\"n. 演唱；鸣声；呼啸声\\nvt. 唱；用诗赞颂；唱着使\\nvi. 唱歌；歌颂；鸣叫；呼号\",\"audio\":\"sing.mp3\"},{\"word\":\"singer\",\"pronun\":\"[ˈsɪŋər]\",\"translation\":\"n. 歌手，歌唱家\",\"audio\":\"singer.mp3\"},{\"word\":\"single\",\"pronun\":\"[ˈsɪŋɡl]\",\"translation\":\"n. 一个；单打；单程票\\nadj. 单一的；单身的；单程的\\nvt. 选出\\nvi. 击出一垒安打\",\"audio\":\"single.mp3\"},{\"word\":\"sit\",\"pronun\":\"[sɪt]\",\"translation\":\"vi. 坐；位于\\nvt. 使就座\",\"audio\":\"sit.mp3\"},{\"word\":\"site\",\"pronun\":\"[saɪt]\",\"translation\":\"n. 地点；位置；场所\\nvt. 设置；为…选址\",\"audio\":\"site.mp3\"},{\"word\":\"size\",\"pronun\":\"[saɪz]\",\"translation\":\"n. 大小；尺寸\\nadj. 一定尺寸的\\nvt. 依大小排列\\nvi. 可比拟\",\"audio\":\"size.mp3\"},{\"word\":\"skateboard\",\"pronun\":\"[ˈskeɪtbɔːrd]\",\"translation\":\"n. 溜冰板\\nvi. 用滑板滑行\",\"audio\":\"skateboard.mp3\"},{\"word\":\"skating\",\"pronun\":\"[ˈskeɪtɪŋ]\",\"translation\":\"n. 溜冰，滑冰\\nv. 滑冰（skate的ing形式）\",\"audio\":\"skating.mp3\"},{\"word\":\"skiing\",\"pronun\":\"[ˈskiːɪŋ]\",\"translation\":\"n. 滑雪运动；滑雪术\\nv. 滑雪（ski的ing形式）\",\"audio\":\"skiing.mp3\"},{\"word\":\"skin\",\"pronun\":\"[skɪn]\",\"translation\":\"n. 皮肤；外皮\\nvt. 剥皮\\nvi. 愈合；长皮\",\"audio\":\"skin.mp3\"},{\"word\":\"sleep\",\"pronun\":\"[sliːp]\",\"translation\":\"n. 睡眠\\nvi. 睡，睡觉\",\"audio\":\"sleep.mp3\"},{\"word\":\"slice\",\"pronun\":\"[slaɪs]\",\"translation\":\"n. 薄片；部分；菜刀，火铲\\nvt. 切下；把…分成部分；将…切成薄片\\nvi. 切开；割破\",\"audio\":\"slice.mp3\"},{\"word\":\"slide\",\"pronun\":\"[slaɪd]\",\"translation\":\"n. 滑动；幻灯片；滑梯；雪崩\\nvt. 滑动；使滑动；悄悄地迅速放置\\nvi. 滑动；滑落；不知不觉陷入\",\"audio\":\"slide.mp3\"},{\"word\":\"slim\",\"pronun\":\"[slɪm]\",\"translation\":\"adj. 苗条的；修长的；微小的；差的\\nvt. 使…体重减轻；使…苗条\\nvi. 减轻体重；变细\",\"audio\":\"slim.mp3\"},{\"word\":\"slip\",\"pronun\":\"[slɪp]\",\"translation\":\"n. 滑，滑倒；片，纸片；错误；下跌；事故\\nabbr. 串行线路接口协议，是旧式的协议（Serial Line Interface Protocol）\\nadj. 滑动的；有活结的；活络的\\nvt. 使滑动；滑过；摆脱；塞入；闪开\\nvi. 滑动；滑倒；犯错；失足；减退\",\"audio\":\"slip.mp3\"},{\"word\":\"slow\",\"pronun\":\"[sloʊ]\",\"translation\":\"adj. 慢的；减速的；迟钝的\\nvt. 放慢；阻碍\\nvi. 变慢；变萧条\\nadv. 慢慢地；迟缓地\",\"audio\":\"slow.mp3\"},{\"word\":\"small\",\"pronun\":\"[smɔːl]\",\"translation\":\"n. 小件物品；矮小的人\\nadj. 少的，小的；微弱的；几乎没有的；不重要的；幼小的\\nadv. 小小地；卑鄙地\",\"audio\":\"small.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

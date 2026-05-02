@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.393988+00:00",
+  "request": {
+    "lesson_id": "bf964fa654ac110993d79c1f541645a9",
+    "course_id": "30951c93875a1e260feda8cb699005df",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "30951c93875a1e260feda8cb699005df",
+    "order": 502,
+    "nextCourseId": "30951c93875a1e260feda8cb699005df",
+    "courseName": "英语每日故事（初级）32-61",
+    "lessonId": "bf964fa654ac110993d79c1f541645a9",
+    "nextLessonId": "bc4ba21a94aa38ce297eaf2e302120ad",
+    "lessonName": "The Turtle Race",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "316fda66636737a117a2cdfe58c9414d",
+        "index": 1,
+        "text": [
+          "Sea turtles lay their eggs on land. Then they leave them alone to grow. When the baby sea turtles hatch, they make their way to the water. It's a long and dangerous path for them, so they have to move quickly. It's like a race! Which one will reach the water first? Many people come to see the tiny turtles race to the water."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

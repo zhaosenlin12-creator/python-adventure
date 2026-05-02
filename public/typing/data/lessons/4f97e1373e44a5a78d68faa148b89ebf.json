@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.161212+00:00",
+  "request": {
+    "lesson_id": "4f97e1373e44a5a78d68faa148b89ebf",
+    "course_id": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "order": 205,
+    "nextCourseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "courseName": "汉字一级",
+    "lessonId": "4f97e1373e44a5a78d68faa148b89ebf",
+    "nextLessonId": "3fb2cf2efe5ba9629def4a4ec14f9f86",
+    "lessonName": "自由移动",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-good.c7e935711e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3863bdfbc36f421d2ac62a61f0f0e347",
+        "index": 1,
+        "text": [
+          "使用正确的指法，可以提高你的打字速度，因为其它所有的按键都在基准键附近，从一个按键到另一个按键，手指不需要移动太远的距离。"
+        ],
+        "pinyin": "[[\"使\", \"shǐ\"], [\"用\", \"yòng\"], [\"正\", \"zhèng\"], [\"确\", \"què\"], [\"的\", \"de\"], [\"指\", \"zhǐ\"], [\"法\", \"fǎ\"], [\"，\", \"\"], [\"可\", \"kě\"], [\"以\", \"yǐ\"], [\"提\", \"tí\"], [\"高\", \"gāo\"], [\"你\", \"nǐ\"], [\"的\", \"de\"], [\"打\", \"dǎ\"], [\"字\", \"zì\"], [\"速\", \"sù\"], [\"度\", \"dù\"], [\"，\", \"\"], [\"因\", \"yīn\"], [\"为\", \"wèi\"], [\"其\", \"qí\"], [\"它\", \"tā\"], [\"所\", \"suǒ\"], [\"有\", \"yǒu\"], [\"的\", \"de\"], [\"按\", \"àn\"], [\"键\", \"jiàn\"], [\"都\", \"dōu\"], [\"在\", \"zài\"], [\"基\", \"jī\"], [\"准\", \"zhǔn\"], [\"键\", \"jiàn\"], [\"附\", \"fù\"], [\"近\", \"jìn\"], [\"，\", \"\"], [\"从\", \"cóng\"], [\"一\", \"yī\"], [\"个\", \"gè\"], [\"按\", \"àn\"], [\"键\", \"jiàn\"], [\"到\", \"dào\"], [\"另\", \"lìng\"], [\"一\", \"yī\"], [\"个\", \"gè\"], [\"按\", \"àn\"], [\"键\", \"jiàn\"], [\"，\", \"\"], [\"手\", \"shǒu\"], [\"指\", \"zhǐ\"], [\"不\", \"bù\"], [\"需\", \"xū\"], [\"要\", \"yào\"], [\"移\", \"yí\"], [\"动\", \"dòng\"], [\"太\", \"tài\"], [\"远\", \"yuǎn\"], [\"的\", \"de\"], [\"距\", \"jù\"], [\"离\", \"lí\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 18,
+        "minSpeed": 10,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

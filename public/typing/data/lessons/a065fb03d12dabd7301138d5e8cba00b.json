@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.492711+00:00",
+  "request": {
+    "lesson_id": "a065fb03d12dabd7301138d5e8cba00b",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 523,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "a065fb03d12dabd7301138d5e8cba00b",
+    "nextLessonId": "c32b1dd8e6f55506905e8958d729969f",
+    "lessonName": "Farm Animals",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3bcd85191898304ec7eef7d0d215f5af",
+        "index": 1,
+        "text": [
+          "I live on a farm. I'm only 8 years old, but I can do many things.\\nWhen I get up in the morning, I feed the chickens. I open the gate for the sheep. I give the goats water. In the afternoon, I gather the eggs and I brush the horses. In the evening, I bring the sheep back.\\nOnce, I saw a baby goat being born. That was amazing! I love my life on the farm."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

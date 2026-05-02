@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.788573+00:00",
+  "request": {
+    "lesson_id": "5958970804f2f16a934b9e03723434a4",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 34,
+    "nextCourseId": "ff61770b1da83313ceacb0a08aef6378",
+    "courseName": "Python",
+    "lessonId": "5958970804f2f16a934b9e03723434a4",
+    "nextLessonId": "fe350454ae4927d58ad722421fbfe7d9",
+    "lessonName": "for循环遍历",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - for循环遍历",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d9166f958571b564f4389250cd238efa",
+        "index": 1,
+        "text": [
+          "# 使用for循环遍历列表\\nfruits = [\"苹果\", \"香蕉\", \"橙子\", \"葡萄\"]\\n\\nfor fruit in fruits:\\n    print(f\"我喜欢吃{fruit}\")\\n\\n# 使用range生成数字序列\\nfor i in range(1, 6):\\n    print(f\"第{i}次循环\")\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

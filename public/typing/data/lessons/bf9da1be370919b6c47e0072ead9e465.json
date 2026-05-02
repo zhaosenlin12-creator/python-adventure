@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.091579+00:00",
+  "request": {
+    "lesson_id": "bf9da1be370919b6c47e0072ead9e465",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 434,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "bf9da1be370919b6c47e0072ead9e465",
+    "nextLessonId": "1e9800e0ca16bfe21641dd60347065f8",
+    "lessonName": "六级词汇正序版-81",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第81课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ee03ca0aa69d91380a84a41aa8280df3",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"poke\",\"pronun\":\"[poʊk]\",\"translation\":\"n. 戳；刺；袋子；懒汉\\nvt. 刺，捅；戳；拨开\\nvi. 刺，捅；戳；伸出；刺探；闲荡\",\"audio\":\"poke.mp3\"},{\"word\":\"polar\",\"pronun\":\"[ˈpoʊlər]\",\"translation\":\"n. 极面；极线\\nadj. 极地的；两极的；正好相反的\",\"audio\":\"polar.mp3\"},{\"word\":\"pole\",\"pronun\":\"[poʊl]\",\"translation\":\"n. 杆；极点；电极\\nvt. 用竿支撑\",\"audio\":\"pole.mp3\"},{\"word\":\"polish\",\"pronun\":\"[ˈpoʊlɪʃ]\",\"translation\":\"n. 磨光，擦亮；上光剂，擦亮剂；优雅，精良\\nvi. 擦亮，变光滑\\nvt. 磨光，使发亮\\nadj. 波兰的\",\"audio\":\"polish.mp3\"},{\"word\":\"pollutant\",\"pronun\":\"[pəˈluːtənt]\",\"translation\":\"n. 污染物\",\"audio\":\"pollutant.mp3\"},{\"word\":\"ponder\",\"pronun\":\"[ˈpɑːndər]\",\"translation\":\"vi. 考虑；沉思\\nvt. 仔细考虑；衡量\",\"audio\":\"ponder.mp3\"},{\"word\":\"pope\",\"pronun\":\"[poʊp]\",\"translation\":\"n. 教皇，罗马教皇；权威，大师\",\"audio\":\"pope.mp3\"},{\"word\":\"popularity\",\"pronun\":\"[ˌpɑːpjuˈlærəti]\",\"translation\":\"n. 普及，流行；名气；受大众欢迎\",\"audio\":\"popularity.mp3\"},{\"word\":\"porch\",\"pronun\":\"[pɔːrtʃ]\",\"translation\":\"n. 门廊；走廊\",\"audio\":\"porch.mp3\"},{\"word\":\"pore\",\"pronun\":\"[pɔːr]\",\"translation\":\"n. 气孔；小孔\\nvt. 使注视\\nvi. 细想；凝视；熟读\",\"audio\":\"pore.mp3\"},{\"word\":\"portray\",\"pronun\":\"[pɔːrˈtreɪ]\",\"translation\":\"vt. 描绘；扮演\",\"audio\":\"portray.mp3\"},{\"word\":\"pose\",\"pronun\":\"[poʊz]\",\"translation\":\"vi. 摆姿势；佯装；矫揉造作\\nvt. 造成，形成；摆姿势；装模作样；提出…讨论\\nn. 姿势，姿态；装模作样\",\"audio\":\"pose.mp3\"},{\"word\":\"positive\",\"pronun\":\"[ˈpɑːzətɪv]\",\"translation\":\"n. 正数；[摄] 正片\\nadj. 积极的；[数] 正的，[医][化学] 阳性的；确定的，肯定的；实际的，真实的；绝对的\",\"audio\":\"positive.mp3\"},{\"word\":\"possess\",\"pronun\":\"[pəˈzes]\",\"translation\":\"vt. 控制；使掌握；持有；迷住；拥有，具备\",\"audio\":\"possess.mp3\"},{\"word\":\"posture\",\"pronun\":\"[ˈpɑːstʃər]\",\"translation\":\"n. 姿势；态度；情形\\nvt. 作…的姿势\\nvi. 摆姿势\",\"audio\":\"posture.mp3\"},{\"word\":\"potential\",\"pronun\":\"[pəˈtenʃl]\",\"translation\":\"n. 潜能；可能性；[电] 电势\\nadj. 潜在的；可能的；势的\",\"audio\":\"potential.mp3\"},{\"word\":\"poverty\",\"pronun\":\"[ˈpɑːvərti]\",\"translation\":\"n. 贫困；困难；缺少；低劣\",\"audio\":\"poverty.mp3\"},{\"word\":\"practicable\",\"pronun\":\"[ˈpræktɪkəbl]\",\"translation\":\"adj. 可用的；行得通的；可实行的\",\"audio\":\"practicable.mp3\"},{\"word\":\"preach\",\"pronun\":\"[priːtʃ]\",\"translation\":\"n. 说教\\nvt. 说教；讲道；鼓吹；传道；反复灌输\\nvi. 说教；讲道；鼓吹；宣扬\",\"audio\":\"preach.mp3\"},{\"word\":\"precede\",\"pronun\":\"[prɪˈsiːd]\",\"translation\":\"vt. 领先，在…之前；优于，高于\\nvi. 领先，在前面\",\"audio\":\"precede.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

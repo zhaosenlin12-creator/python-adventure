@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.052431+00:00",
+  "request": {
+    "lesson_id": "610029af6df6cf398e7f90a2cd62b9c7",
+    "course_id": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "order": 189,
+    "nextCourseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "courseName": "汉字一级",
+    "lessonId": "610029af6df6cf398e7f90a2cd62b9c7",
+    "nextLessonId": "9bdf5374ce37b2f84b3798c0b018ae21",
+    "lessonName": "盯着显示器",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-good.c7e935711e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1afcf89e139d5d8186af52fe84742369",
+        "index": 1,
+        "text": [
+          "我们盯着显示屏时，眨眼的次数会减少，导致眼睛干涩，从而伤害眼睛。"
+        ],
+        "pinyin": "[[\"我\", \"wǒ\"], [\"们\", \"men\"], [\"盯\", \"dīng\"], [\"着\", \"zhe\"], [\"显\", \"xiǎn\"], [\"示\", \"shì\"], [\"屏\", \"píng\"], [\"时\", \"shí\"], [\"，\", \"\"], [\"眨\", \"zhǎ\"], [\"眼\", \"yǎn\"], [\"的\", \"de\"], [\"次\", \"cì\"], [\"数\", \"shù\"], [\"会\", \"huì\"], [\"减\", \"jiǎn\"], [\"少\", \"shǎo\"], [\"，\", \"\"], [\"导\", \"dǎo\"], [\"致\", \"zhì\"], [\"眼\", \"yǎn\"], [\"睛\", \"jīng\"], [\"干\", \"gān\"], [\"涩\", \"sè\"], [\"，\", \"\"], [\"从\", \"cóng\"], [\"而\", \"ér\"], [\"伤\", \"shāng\"], [\"害\", \"hài\"], [\"眼\", \"yǎn\"], [\"睛\", \"jīng\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 12,
+        "minSpeed": 4,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

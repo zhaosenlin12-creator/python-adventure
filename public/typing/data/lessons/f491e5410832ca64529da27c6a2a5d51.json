@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.522723+00:00",
+  "request": {
+    "lesson_id": "f491e5410832ca64529da27c6a2a5d51",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 664,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "f491e5410832ca64529da27c6a2a5d51",
+    "nextLessonId": "dac49255d550fd9c0a85133a4566116c",
+    "lessonName": " 六年级下-1",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点六年级下 - 第1课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f5df67ca97091465c02c71c4300d7c14",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"younger\",\"pronun\":\"[ˈjʌŋɡər]\",\"translation\":\"n. 年纪较小者；幼辈\\nadj. 较年轻的\",\"audio\":\"younger.mp3\"},{\"word\":\"older\",\"pronun\":\"[ˈoʊldər]\",\"translation\":\"adj. 年长的；较旧的\",\"audio\":\"older.mp3\"},{\"word\":\"taller\",\"pronun\":\"[ˈtɔːlər]\",\"translation\":\"adj. 更高的；高一点的\",\"audio\":\"taller.mp3\"},{\"word\":\"shorter\",\"pronun\":\"[ˈʃɔːrtər]\",\"translation\":\"adj. 较短的；更短的；更矮的（short的比较级）\",\"audio\":\"shorter.mp3\"},{\"word\":\"longer\",\"pronun\":\"[lɔːŋɡər]\",\"translation\":\"长的（long的比较级）\",\"audio\":\"longer.mp3\"},{\"word\":\"thinner\",\"pronun\":\"[ˈθɪnər]\",\"translation\":\"adj. 较薄的；较瘦的；较细的（thin的比较级）\\nn. （油漆的）稀释剂；冲淡剂；使变稀薄者，加稀料的制漆工\",\"audio\":\"thinner.mp3\"},{\"word\":\"heavier\",\"pronun\":\"[ˈhevɪərðənˈer]\",\"translation\":\"adj. 沉重的；巨大的\",\"audio\":\"heavier.mp3\"},{\"word\":\"bigger\",\"pronun\":\"[bɪgə(r)]\",\"translation\":\"adj. 更大的（big的比较级）\",\"audio\":\"bigger.mp3\"},{\"word\":\"smaller\",\"pronun\":\"[ˈsmɔːlər]\",\"translation\":\"adj. 较小，更小的\",\"audio\":\"smaller.mp3\"},{\"word\":\"stronger\",\"pronun\":\"[strɔːŋər]\",\"translation\":\"adj. 更强壮的\",\"audio\":\"stronger.mp3\"},{\"word\":\"dinosaur\",\"pronun\":\"[ˈdaɪnəsɔːr]\",\"translation\":\"n. 恐龙；过时、落伍的人或事物\",\"audio\":\"dinosaur.mp3\"},{\"word\":\"hall\",\"pronun\":\"[hɔːl]\",\"translation\":\"n. 过道，门厅，走廊；会堂；食堂；学生宿舍；大厅，前厅；娱乐中心，会所\",\"audio\":\"hall.mp3\"},{\"word\":\"metre\",\"pronun\":\"[ˈmiːtər]\",\"translation\":\"n. 米；公尺；韵律\",\"audio\":\"metre.mp3\"},{\"word\":\"meter\",\"pronun\":\"[ˈmiːtər]\",\"translation\":\"n. 米；仪表；[计量] 公尺；韵律\\nvt. 用仪表测量\\nvi. 用表计量\",\"audio\":\"meter.mp3\"},{\"word\":\"than\",\"pronun\":\"[ðən; ðæn]\",\"translation\":\"conj. 比（用于形容词、副词的比较级之后）；除…外（用于other等之后）；与其…（用于 rather等之后）；一…就（用于 no sooner等之后）\\nprep. 比；超过\",\"audio\":\"than.mp3\"},{\"word\":\"both\",\"pronun\":\"[boʊθ]\",\"translation\":\"conj. 既…且…\\nadj. 两个的；两者的\\npron. 双方都；两者都\\nadv. 并；又；两者皆\",\"audio\":\"both.mp3\"},{\"word\":\"kilogram\",\"pronun\":\"[ˈkɪləɡræm]\",\"translation\":\"n. 公斤；千克\",\"audio\":\"kilogram.mp3\"},{\"word\":\"countryside\",\"pronun\":\"[ˈkʌntrisaɪd]\",\"translation\":\"n. 农村，乡下；乡下的全体居民\",\"audio\":\"countryside.mp3\"},{\"word\":\"lower\",\"pronun\":\"[ˈloʊər]\",\"translation\":\"vt. 减弱，减少；放下，降下；贬低\\nvi. 降低；减弱；跌落\\nadj. 下游的；下级的；下等的\",\"audio\":\"lower.mp3\"},{\"word\":\"shadow\",\"pronun\":\"[ˈʃædoʊ]\",\"translation\":\"n. 阴影；影子；幽灵；庇护；隐蔽处\\nadj. 影子内阁的\\nvt. 遮蔽；使朦胧；尾随；预示\\nvi. 渐变；变阴暗\",\"audio\":\"shadow.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

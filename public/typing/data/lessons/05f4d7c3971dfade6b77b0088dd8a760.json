@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.588426+00:00",
+  "request": {
+    "lesson_id": "05f4d7c3971dfade6b77b0088dd8a760",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 333,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "05f4d7c3971dfade6b77b0088dd8a760",
+    "nextLessonId": "3e292a591e1b0c1126679fb3e3df74a6",
+    "lessonName": "六级词汇正序版-52",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第52课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "86862a2c516c506ea3d56572f0bb1218",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"graduate\",\"pronun\":\"[ˈɡrædʒuət]\",\"translation\":\"n. 研究生；毕业生\\nadj. 毕业的；研究生的\\nvt. 授予…学位；分等级；标上刻度\\nvi. 毕业；渐变\",\"audio\":\"graduate.mp3\"},{\"word\":\"grain\",\"pronun\":\"[ɡreɪn]\",\"translation\":\"n. 粮食；颗粒；[作物] 谷物；纹理\\nvt. 使成谷粒\\nvi. 成谷粒\",\"audio\":\"grain.mp3\"},{\"word\":\"Grant\",\"pronun\":\"\",\"translation\":\"n. 拨款；[法] 授予物\\nvt. 授予；允许；承认\\nvi. 同意\",\"audio\":\"Grant.mp3\"},{\"word\":\"graphic\",\"pronun\":\"[ˈɡræfɪk]\",\"translation\":\"adj. 形象的；图表的；绘画似的\",\"audio\":\"graphic.mp3\"},{\"word\":\"grave\",\"pronun\":\"[ɡreɪv; ɡrɑːv]\",\"translation\":\"n. 墓穴，坟墓；死亡\\nadj. 重大的；严肃的；黯淡的\\nvt. 雕刻；铭记\",\"audio\":\"grave.mp3\"},{\"word\":\"graze\",\"pronun\":\"[ɡreɪz]\",\"translation\":\"n. 放牧；轻擦\\nvi. 吃草；擦伤\\nvt. 放牧；擦伤\",\"audio\":\"graze.mp3\"},{\"word\":\"grease\",\"pronun\":\"[ɡriːs]\",\"translation\":\"n. 油脂；贿赂\\nvt. 涂脂于；贿赂\",\"audio\":\"grease.mp3\"},{\"word\":\"grief\",\"pronun\":\"[ɡriːf]\",\"translation\":\"n. 悲痛；忧伤；不幸\",\"audio\":\"grief.mp3\"},{\"word\":\"grieve\",\"pronun\":\"[ɡriːv]\",\"translation\":\"vi. 悲痛，哀悼\\nvt. 使悲伤，使苦恼\",\"audio\":\"grieve.mp3\"},{\"word\":\"grim\",\"pronun\":\"[ɡrɪm]\",\"translation\":\"adj. 冷酷的；糟糕的；残忍的\",\"audio\":\"grim.mp3\"},{\"word\":\"grin\",\"pronun\":\"[ɡrɪn]\",\"translation\":\"n. 露齿笑\\nv. 露齿而笑，咧着嘴笑\",\"audio\":\"grin.mp3\"},{\"word\":\"grip\",\"pronun\":\"[ɡrɪp]\",\"translation\":\"n. 紧握；柄；支配；握拍方式；拍柄绷带\\nvt. 紧握；夹紧\\nvi. 抓住\",\"audio\":\"grip.mp3\"},{\"word\":\"groan\",\"pronun\":\"[ɡroʊn]\",\"translation\":\"n. 呻吟；叹息；吱嘎声\\nvt. 呻吟；抱怨\\nvi. 呻吟；抱怨；发吱嘎声\",\"audio\":\"groan.mp3\"},{\"word\":\"groove\",\"pronun\":\"[ɡruːv]\",\"translation\":\"n. [建] 凹槽，槽；最佳状态；惯例\\nvt. 开槽于\\nvi. 形成沟槽\",\"audio\":\"groove.mp3\"},{\"word\":\"grope\",\"pronun\":\"[ɡroʊp]\",\"translation\":\"n. 摸索；触摸\\nvt. 摸索\\nvi. 摸索；探索\",\"audio\":\"grope.mp3\"},{\"word\":\"gross\",\"pronun\":\"[ɡroʊs]\",\"translation\":\"n. 总额，总数\\nadj. 总共的；粗野的；恶劣的；显而易见的\\nvt. 总共收入\",\"audio\":\"gross.mp3\"},{\"word\":\"guarantee\",\"pronun\":\"[ˌɡærənˈtiː]\",\"translation\":\"n. 保证；担保；保证人；保证书；抵押品\\nvt. 保证；担保\",\"audio\":\"guarantee.mp3\"},{\"word\":\"guardian\",\"pronun\":\"[ˈɡɑːrdiən]\",\"translation\":\"n. [法] 监护人，保护人；守护者\\nadj. 守护的\",\"audio\":\"guardian.mp3\"},{\"word\":\"hamper\",\"pronun\":\"[ˈhæmpər]\",\"translation\":\"n. 食盒，食篮；阻碍物\\nvt. 妨碍；束缚；使困累\",\"audio\":\"hamper.mp3\"},{\"word\":\"handbook\",\"pronun\":\"[ˈhændbʊk]\",\"translation\":\"n. 手册；指南\",\"audio\":\"handbook.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

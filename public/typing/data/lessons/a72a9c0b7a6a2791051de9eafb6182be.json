@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.454870+00:00",
+  "request": {
+    "lesson_id": "a72a9c0b7a6a2791051de9eafb6182be",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 515,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "a72a9c0b7a6a2791051de9eafb6182be",
+    "nextLessonId": "8452cdd7544919a36bd4e406726c3d1a",
+    "lessonName": "Our Moon",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2ba2a0dcb9ee1ef28d83eaf34bd88ad1",
+        "index": 1,
+        "text": [
+          "Let's go to the moon! What do we need to take?\\nWe need to take air to breathe. There is no air on the moon. We need to take water to drink. There is no water on the moon. We need special clothes too. Why? It is cold on the moon.\\nWhen we get there, we will look back to Earth and say, \"Wow! What a beautiful place we live in.\""
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

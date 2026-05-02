@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.622844+00:00",
+  "request": {
+    "lesson_id": "f9df7c48bddcb892458f866da999662a",
+    "course_id": "a74c1aef61379ff4f0a2ca54be6ac56f",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "a74c1aef61379ff4f0a2ca54be6ac56f",
+    "order": 22,
+    "nextCourseId": "a74c1aef61379ff4f0a2ca54be6ac56f",
+    "courseName": "基础练习-下排数字",
+    "lessonId": "f9df7c48bddcb892458f866da999662a",
+    "nextLessonId": "37bce6df7f98fec6933bb2f190bce31a",
+    "lessonName": "混合巩固五",
+    "icon": "data/assets/daziya.com/key-icon_key-number.b0e3a26267.png",
+    "description": "数字输入练习 - 混合巩固五",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4c830797035192cd5cffcbf3b77a41d9",
+        "index": 1,
+        "text": [
+          "13+31+22+11+33+123+2"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.253190+00:00",
+  "request": {
+    "lesson_id": "8533b84c665a038787a7ce7902178e06",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 151,
+    "nextCourseId": "d7df026ff1d81047d30da28a958b118f",
+    "courseName": "golang",
+    "lessonId": "8533b84c665a038787a7ce7902178e06",
+    "nextLessonId": "018436386dac762729d903ca19430333",
+    "lessonName": "变量和数据类型",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - 变量和数据类型",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9200f918428aff4d5683c5dfbfbc3a42",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport \"fmt\"\\n\\nfunc main() {\\n\t// 定义不同类型的变量\\n\tname := \"Go\"\\n\tage := 30\\n\theight := 1.75\\n\tisStudent := true\\n\\n\tfmt.Println(\"语言:\", name)\\n\tfmt.Println(\"年龄:\", age)\\n\tfmt.Println(\"身高:\", height, \"米\")\\n\tfmt.Println(\"是否学生:\", isStudent)\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

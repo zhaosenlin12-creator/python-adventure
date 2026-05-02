@@ -1,0 +1,72 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.804861+00:00",
+  "request": {
+    "lesson_id": "455dd4a4a2331eac39f634d02b52736d",
+    "course_id": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "order": 70,
+    "nextCourseId": "305e1352051511f2dff62dc198c6af98",
+    "courseName": "声母组合练习",
+    "lessonId": "455dd4a4a2331eac39f634d02b52736d",
+    "nextLessonId": "a3b32f6c01aad965be190e04a1fe2b3d",
+    "lessonName": "声母组合w",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "练习声母w与各韵母的组合",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "694f51fc0f50585408e15b81579494a1",
+        "index": 1,
+        "highlights": [
+          "w"
+        ],
+        "text": [
+          "请输入按键 [w]"
+        ],
+        "detail": "学习双拼按键 w"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "f5c81c6fb2b2d30ed49e9ffd6ab6197e",
+        "index": 2,
+        "text": [
+          "wwwwwwww"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "822d604fcbf1dcf0739453338c2ddc50",
+        "index": 3,
+        "text": [
+          "王伟晚上外出，温度温和无风。他弯腰挖土，为外婆种碗莲。蛙声哇哇，万物苏醒。王伟望着蔚蓝天空，微笑许愿：愿万事顺遂，温暖常伴。"
+        ],
+        "pinyin": "[[\"王\", \"wáng\"], [\"伟\", \"wěi\"], [\"晚\", \"wǎn\"], [\"上\", \"shàng\"], [\"外\", \"wài\"], [\"出\", \"chū\"], [\"，\", \"\"], [\"温\", \"wēn\"], [\"度\", \"dù\"], [\"温\", \"wēn\"], [\"和\", \"hé\"], [\"无\", \"wú\"], [\"风\", \"fēng\"], [\"。\", \"\"], [\"他\", \"tā\"], [\"弯\", \"wān\"], [\"腰\", \"yāo\"], [\"挖\", \"wā\"], [\"土\", \"tǔ\"], [\"，\", \"\"], [\"为\", \"wèi\"], [\"外\", \"wài\"], [\"婆\", \"pó\"], [\"种\", \"zhòng\"], [\"碗\", \"wǎn\"], [\"莲\", \"lián\"], [\"。\", \"\"], [\"蛙\", \"wā\"], [\"声\", \"shēng\"], [\"哇\", \"wā\"], [\"哇\", \"wā\"], [\"，\", \"\"], [\"万\", \"wàn\"], [\"物\", \"wù\"], [\"苏\", \"sū\"], [\"醒\", \"xǐng\"], [\"。\", \"\"], [\"王\", \"wáng\"], [\"伟\", \"wěi\"], [\"望\", \"wàng\"], [\"着\", \"zhe\"], [\"蔚\", \"wèi\"], [\"蓝\", \"lán\"], [\"天\", \"tiān\"], [\"空\", \"kōng\"], [\"，\", \"\"], [\"微\", \"wēi\"], [\"笑\", \"xiào\"], [\"许\", \"xǔ\"], [\"愿\", \"yuàn\"], [\"：\", \"\"], [\"愿\", \"yuàn\"], [\"万\", \"wàn\"], [\"事\", \"shì\"], [\"顺\", \"shùn\"], [\"遂\", \"suì\"], [\"，\", \"\"], [\"温\", \"wēn\"], [\"暖\", \"nuǎn\"], [\"常\", \"cháng\"], [\"伴\", \"bàn\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 10,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

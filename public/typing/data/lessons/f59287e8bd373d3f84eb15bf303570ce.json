@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.048155+00:00",
+  "request": {
+    "lesson_id": "f59287e8bd373d3f84eb15bf303570ce",
+    "course_id": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "order": 209,
+    "nextCourseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "courseName": "小升初必备单词",
+    "lessonId": "f59287e8bd373d3f84eb15bf303570ce",
+    "nextLessonId": "797e8e9688f5e62d4e1dd84faaab5a41",
+    "lessonName": "R",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5c67720aebae378582f462d3059b9ed3",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"rabbit\",\"pronun\":\"[\\u02c8r\\u00e6bit]\",\"translation\":\"n. \\u5154\\u5b50; \\u91ce\\u5154\"},{\"word\":\"race\",\"pronun\":\"[reis]\",\"translation\":\"n. \\u7ade\\u8d5b\"},{\"word\":\"radio\",\"pronun\":\"[\\u02c8reidi\\u0259u]\",\"translation\":\"v. \\u7528\\u65e0\\u7ebf\\u7535\\u901a\\u8baf n. \\u65e0\\u7ebf\\u7535; \\u6536\\u97f3...\"},{\"word\":\"railway\",\"pronun\":\"[\\u02c8reilwei]\",\"translation\":\"n. \\u94c1\\u8def; \\u94c1\\u9053\\u90e8\\u95e8\"},{\"word\":\"rain\",\"pronun\":\"[rein]\",\"translation\":\"v. \\u4e0b\\u96e8; \\u964d\\u96e8 n. \\u96e8\"},{\"word\":\"rainbow\",\"pronun\":\"[\\u02c8reinb\\u0259u]\",\"translation\":\"n. \\u5f69\\u8679\"},{\"word\":\"raindrop\",\"pronun\":\"[\\u02c8re\\u026an\\u02ccdr\\u0254p]\",\"translation\":\"n. \\u96e8\\u70b9; \\u96e8\\u6ef4\"},{\"word\":\"rainy\",\"pronun\":\"[\\u02c8reini]\",\"translation\":\"adj. \\u4e0b\\u96e8\\u7684; \\u591a\\u96e8\\u7684\"},{\"word\":\"rat\",\"pronun\":\"[r\\u00e6t]\",\"translation\":\"n. \\u8001\\u9f20; \\u9f20; \\u5351\\u9119\\u7684\\u4eba; \\u53db\\u5f92\"},{\"word\":\"raw\",\"pronun\":\"[r\\u0254:]\",\"translation\":\"adj. \\u751f\\u7684; \\u672a\\u716e\\u7684\"},{\"word\":\"read\",\"pronun\":\"[ri:d]\",\"translation\":\"v. \\u9605\\u8bfb; \\u6717\\u8bfb\"},{\"word\":\"recorder\",\"pronun\":\"[ri\\u02c8k\\u0254:d\\u0259]\",\"translation\":\"\\u5f55\\u97f3(\\u50cf)\\u673a n. \\u5f55\\u97f3\\u673a; \\u8bb0\\u5f55\\u5668; ...\"},{\"word\":\"red\",\"pronun\":\"[red]\",\"translation\":\"adj. \\u7ea2\\u8272\\u7684 n. \\u7ea2\\u8272; \\u7ea2\\u8863\\u670d\"},{\"word\":\"relative\",\"pronun\":\"[\\u02c8rel\\u0259tiv]\",\"translation\":\"adj. \\u76f8\\u5bf9\\u7684; \\u6bd4\\u8f83\\u7684 n. \\u4eb2\\u5c5e;...\"},{\"word\":\"remember\",\"pronun\":\"[ri\\u02c8memb\\u0259]\",\"translation\":\"v. \\u8bb0\\u5f97; \\u8bb0\\u4f4f; \\u8bb0\\u8d77\"},{\"word\":\"reservoir\",\"pronun\":\"[\\u02c8rez\\u0259vw\\u0251:]\",\"translation\":\"n. \\u8d2e\\u6c34\\u6c60; \\u6c34\\u5e93; \\u84c4\\u6c34\\u6c60\"},{\"word\":\"rest\",\"pronun\":\"[rest]\",\"translation\":\"n. \\u5269\\u4f59\\u90e8\\u5206; \\u5176\\u4f59\\u7684(\\u4eba\\u6216\\u7269)\"},{\"word\":\"restaurant\",\"pronun\":\"[\\u02c8rest\\u0259r\\u0259nt]\",\"translation\":\"n. \\u9152\\u5e97; \\u9910\\u9986\"},{\"word\":\"rice\",\"pronun\":\"[rais]\",\"translation\":\"n. \\u7c73\\u996d; \\u7a3b; \\u7c73; \\u996d\"},{\"word\":\"rich\",\"pronun\":\"[rit\\u0283]\",\"translation\":\"adj. \\u6709\\u94b1\\u7684; \\u5bcc\\u88d5\\u7684; \\u5bcc\\u6709\\u7684; ...\"},{\"word\":\"ride\",\"pronun\":\"[raid]\",\"translation\":\"v. \\u5750\\u8f66; \\u4e58\\u8f66; \\u9a91(\\u9a6c\\u3001\\u81ea\\u884c\\u8f66\\u3001\\u6469...\"},{\"word\":\"right\",\"pronun\":\"[rait]\",\"translation\":\"adv. \\u76f4\\u63a5\\u5730; \\u6070\\u597d; \\u7acb\\u5373 adj...\"},{\"word\":\"rise\",\"pronun\":\"[raiz]\",\"translation\":\"v. \\u5347\\u9ad8; \\u4e0a\\u6da8\"},{\"word\":\"river\",\"pronun\":\"[\\u02c8riv\\u0259]\",\"translation\":\"n. \\u6c5f; \\u6cb3; \\u6c34\\u9053\"},{\"word\":\"road\",\"pronun\":\"[ro\\u028ad]\",\"translation\":\"n. \\u9053\\u8def; \\u516c\\u8def\"},{\"word\":\"robot\",\"pronun\":\"[\\u02c8r\\u0259ub\\u0254t]\",\"translation\":\"n. \\u673a\\u5668\\u4eba; \\u81ea\\u52a8\\u673a\"},{\"word\":\"rock\",\"pronun\":\"[r\\u0254k]\",\"translation\":\"n. \\u5ca9\\u77f3; \\u5927\\u77f3\\u5934\"},{\"word\":\"roll\",\"pronun\":\"[r\\u0259ul]\",\"translation\":\"v. \\u6eda\\u52a8; \\u6253\\u6eda; (\\u4f7f)\\u6eda\\u52a8\"},{\"word\":\"roof\",\"pronun\":\"[ru:f]\",\"translation\":\"vt. \\u7ed9\\u2026\\u8986\\u4ee5\\u5c4b\\u9876; \\u8986\\u76d6 n. \\u623f\\u9876...\"},{\"word\":\"room\",\"pronun\":\"[ru:m]\",\"translation\":\"n. \\u623f\\u95f4; \\u5367\\u5ba4; \\u7a7a\\u95f4; \\u5730\\u65b9\"},{\"word\":\"root\",\"pronun\":\"[ru:t]\",\"translation\":\"n. (\\u690d\\u7269\\u7684)\\u6839\"},{\"word\":\"rope\",\"pronun\":\"[r\\u0259up]\",\"translation\":\"vt. \\u7528\\u7ef3\\u6346\\u6216\\u624e n. \\u7ef3\\u5b50; \\u7ef3; ...\"},{\"word\":\"rough\",\"pronun\":\"[r\\u028cf]\",\"translation\":\"adj. \\u8868\\u9762\\u4e0d\\u5e73\\u7684; \\u7c97\\u7565\\u7684; \\u7c97\\u7cd9\\u7684...\"},{\"word\":\"round\",\"pronun\":\"[raund]\",\"translation\":\"adv. \\u5468\\u56f4 adj. \\u5706\\u7684; \\u7403\\u5f62\\u7684\"},{\"word\":\"rubber\",\"pronun\":\"[\\u02c8r\\u028cb\\u0259]\",\"translation\":\"n. \\u6a61\\u76ae\\u64e6\"},{\"word\":\"rubbish\",\"pronun\":\"[\\u02c8r\\u028cbi\\u0283]\",\"translation\":\"n. \\u5783\\u573e; \\u5e9f\\u7269; \\u5e9f\\u8bdd; \\u80e1\\u8bf4\\u516b\\u9053\"},{\"word\":\"rug\",\"pronun\":\"[r\\u028c\\u0261]\",\"translation\":\"n. \\u5c0f\\u5730\\u6bef; \\u539a\\u6bdb\\u6bef\"},{\"word\":\"rule\",\"pronun\":\"[ru:l]\",\"translation\":\"n. \\u89c4\\u5219; \\u89c4\\u5b9a\"},{\"word\":\"ruler\",\"pronun\":\"[\\u02c8ru:l\\u0259]\",\"translation\":\"n. \\u7edf\\u6cbb\\u8005; \\u5c3a\\u5b50; \\u76f4\\u5c3a\"},{\"word\":\"run\",\"pronun\":\"[r\\u028cn]\",\"translation\":\"v. (\\u4f7f)\\u8dd1; \\u5954\\u8dd1; \\u884c\\u9a76; \\u8fd0\\u8f6c\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "r",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 12,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

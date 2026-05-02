@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.848173+00:00",
+  "request": {
+    "lesson_id": "ce5f78d04dda3e7fdd4c85dd40748bf9",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 164,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "ce5f78d04dda3e7fdd4c85dd40748bf9",
+    "nextLessonId": "8acdd8e0b6acb68728fcee3e53987ccb",
+    "lessonName": "KET核心词-57",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第57课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b760d80312557a510fd3af7de9379cfc",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"secret\",\"pronun\":\"[ˈsiːkrət]\",\"translation\":\"n. 秘密；秘诀；机密\\nadj. 秘密的；机密的\",\"audio\":\"secret.mp3\"},{\"word\":\"secretary\",\"pronun\":\"[ˈsekrəteri]\",\"translation\":\"n. 秘书；书记；部长；大臣\",\"audio\":\"secretary.mp3\"},{\"word\":\"seed\",\"pronun\":\"[siːd]\",\"translation\":\"n. 种子；根据；精液；萌芽；子孙；原由\\nvt. 播种；结实；成熟；去…籽\\nvi. 播种；（植物）结实\",\"audio\":\"seed.mp3\"},{\"word\":\"seek\",\"pronun\":\"[siːk]\",\"translation\":\"vt. 寻求；寻找；探索；搜索\\nvi. 寻找；探索；搜索\",\"audio\":\"seek.mp3\"},{\"word\":\"seem\",\"pronun\":\"[siːm]\",\"translation\":\"vi. 似乎；像是；装作\",\"audio\":\"seem.mp3\"},{\"word\":\"sell\",\"pronun\":\"[sel]\",\"translation\":\"n. 销售；失望；推销术\\nvt. 销售；推销；出卖；欺骗\\nvi. 卖；出售；受欢迎；有销路\",\"audio\":\"sell.mp3\"},{\"word\":\"send\",\"pronun\":\"[send]\",\"translation\":\"n. 上升运动\\nvi. 派人；寄信\\nvt. 发送，寄；派遣；使进入；发射\",\"audio\":\"send.mp3\"},{\"word\":\"sentence\",\"pronun\":\"[ˈsentəns]\",\"translation\":\"n. [语][计] 句子，命题；宣判，判决\\nvt. 判决，宣判\",\"audio\":\"sentence.mp3\"},{\"word\":\"serious\",\"pronun\":\"[ˈsɪriəs]\",\"translation\":\"adj. 严肃的，严重的；认真的；庄重的；危急的\",\"audio\":\"serious.mp3\"},{\"word\":\"serve\",\"pronun\":\"[sɜːrv]\",\"translation\":\"n. 发球，轮到发球\\nvi. 服役，服务；适合，足够；发球；招待，侍候\\nvt. 招待，供应；为…服务；对…有用；可作…用\",\"audio\":\"serve.mp3\"},{\"word\":\"set\",\"pronun\":\"[set]\",\"translation\":\"n. [数] 集合；一套；布景；[机] 装置\\nadj. 固定的；规定的；固执的\\nvi. (日,月)落沉；凝固；结果\\nvt. 树立；点燃；点缀；\",\"audio\":\"set.mp3\"},{\"word\":\"several\",\"pronun\":\"[ˈsevrəl]\",\"translation\":\"adj. 几个的；各自的\\npron. 几个；数个\",\"audio\":\"several.mp3\"},{\"word\":\"shake\",\"pronun\":\"[ʃeɪk]\",\"translation\":\"n. 摇动；哆嗦\\nvt. 动摇；摇动；震动；握手\\nvi. 动摇；摇动；发抖\",\"audio\":\"shake.mp3\"},{\"word\":\"shall\",\"pronun\":\"[ʃəl; ʃæl]\",\"translation\":\"aux. 应；会；将；必须\",\"audio\":\"shall.mp3\"},{\"word\":\"shame\",\"pronun\":\"[ʃeɪm]\",\"translation\":\"n. 羞耻，羞愧；憾事，带来耻辱的人\\nvt. 使丢脸，使羞愧\",\"audio\":\"shame.mp3\"},{\"word\":\"shampoo\",\"pronun\":\"[ʃæmˈpuː]\",\"translation\":\"n. 洗发；洗发精\\nvt. 洗发\",\"audio\":\"shampoo.mp3\"},{\"word\":\"shape\",\"pronun\":\"[ʃeɪp]\",\"translation\":\"n. 形状；模型；身材；具体化\\nvt. 形成；塑造，使成形；使符合\\nvi. 形成；成形；成长\",\"audio\":\"shape.mp3\"},{\"word\":\"share\",\"pronun\":\"[ʃer]\",\"translation\":\"n. 份额；股份\\nvt. 分享，分担；分配\\nvi. 共享；分担\",\"audio\":\"share.mp3\"},{\"word\":\"sheep\",\"pronun\":\"[ʃiːp]\",\"translation\":\"n. 羊，绵羊；胆小鬼\",\"audio\":\"sheep.mp3\"},{\"word\":\"sheet\",\"pronun\":\"[ʃiːt]\",\"translation\":\"n. 薄片，纸张；薄板；床单\\nadj. 片状的\\nvt. 覆盖；盖上被单；使成大片\\nvi. 成片流动；大片落下\",\"audio\":\"sheet.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

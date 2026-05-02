@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.749951+00:00",
+  "request": {
+    "lesson_id": "3715296747a04e6a827dff8d46bfd154",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 143,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "3715296747a04e6a827dff8d46bfd154",
+    "nextLessonId": "426e1482db26a843828f17b55a9ba5c1",
+    "lessonName": "KET核心词-131",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第131课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b02dbe24d738a2188c40ba57b6929ed3",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"describe\",\"pronun\":\"[dɪˈskraɪb]\",\"translation\":\"vt. 描述，形容；描绘\",\"audio\":\"describe.mp3\"},{\"word\":\"explain\",\"pronun\":\"[ɪkˈspleɪn]\",\"translation\":\"v. 说明；解释\",\"audio\":\"explain.mp3\"},{\"word\":\"review\",\"pronun\":\"[rɪˈvjuː]\",\"translation\":\"n. 回顾；复习；评论；检讨；检阅\\nvt. 回顾；检查；复审\\nvi. 回顾；复习功课；写评论\",\"audio\":\"review.mp3\"},{\"word\":\"suggest\",\"pronun\":\"[səˈdʒestˌsəɡˈdʒest]\",\"translation\":\"vt. 提议，建议；启发；使人想起；显示；暗示\",\"audio\":\"suggest.mp3\"},{\"word\":\"warn\",\"pronun\":\"[wɔːrn]\",\"translation\":\"vt. 警告，提醒；通知\\nvi. 发出警告，发出预告\",\"audio\":\"warn.mp3\"},{\"word\":\"good night\",\"pronun\":\"\",\"translation\":\"un. 连夜；告辞；晚上好\",\"audio\":\"good_night.mp3\"},{\"word\":\"hello\",\"pronun\":\"[həˈləʊ]\",\"translation\":\"n. 表示问候， 惊奇或唤起注意时的用语\\nint. 喂；哈罗\",\"audio\":\"hello.mp3\"},{\"word\":\"hey\",\"pronun\":\"[heɪ]\",\"translation\":\"n. 干草（等于hay）\\nint. 喂！（引起注意等）；你好！（表示问候）\",\"audio\":\"hey.mp3\"},{\"word\":\"hi\",\"pronun\":\"[haɪ]\",\"translation\":\"int. 嗨！（表示问候或用以唤起注意）\",\"audio\":\"hi.mp3\"},{\"word\":\"oh\",\"pronun\":\"[oʊ]\",\"translation\":\"int. 哦；哎呀（表示惊讶或恐惧等）\",\"audio\":\"oh.mp3\"},{\"word\":\"oh dear!\",\"pronun\":\"\",\"translation\":\"哎呀；天呐；天啊\",\"audio\":\"oh_dear_.mp3\"},{\"word\":\"OK\",\"pronun\":\"[ˌoʊ'keɪ]\",\"translation\":\"adj. 好的；不错的\\nadv. 行；很好\\nint. 好；可以\\nvt. 对…表示同意\\nn. 同意\",\"audio\":\"OK.mp3\"},{\"word\":\"okay\",\"pronun\":\"[oʊˈkeɪ]\",\"translation\":\"adv. 可以；对；很好地\\nadj. 可以；对；不错\\nn. 同意，批准\\nint. 好；行\",\"audio\":\"okay.mp3\"},{\"word\":\"wow\",\"pronun\":\"[waʊ]\",\"translation\":\"n. 极大的成功；一鸣惊人之举；魔兽世界(World of Warcraft)；失真\\nint. （表示极大的惊奇或钦佩）哇，呀\",\"audio\":\"wow.mp3\"},{\"word\":\"yeah\",\"pronun\":\"[jeə]\",\"translation\":\"adv. 是\\nint. 是\",\"audio\":\"yeah.mp3\"},{\"word\":\"adult\",\"pronun\":\"[əˈdʌlt; ˈædʌlt]\",\"translation\":\"n. 成年人\\nadj. 成年的；成熟的\",\"audio\":\"adult.mp3\"},{\"word\":\"baby\",\"pronun\":\"[ˈbeɪbi]\",\"translation\":\"n. 婴儿，婴孩；孩子气的人\\nadj. 婴儿的；幼小的\\nvt. 纵容，娇纵；把……当婴儿般对待\",\"audio\":\"baby.mp3\"},{\"word\":\"beautiful\",\"pronun\":\"[ˈbjuːtɪf(ə)l]\",\"translation\":\"adj. 美丽的\\n出色地\\n出色的\\n迷人的\\n迷人地\",\"audio\":\"beautiful.mp3\"},{\"word\":\"blond\",\"pronun\":\"[blɑːnd]\",\"translation\":\"adj. 金发的\\nn. 白肤碧眼金发的人\",\"audio\":\"blond.mp3\"},{\"word\":\"blonde\",\"pronun\":\"[blɑːnd]\",\"translation\":\"n. 白肤金发碧眼的女人\\nadj. 亚麻色的；金色的；白皙的；白肤金发碧眼的\",\"audio\":\"blonde.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

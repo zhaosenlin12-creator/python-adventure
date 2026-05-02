@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.228156+00:00",
+  "request": {
+    "lesson_id": "2b50275b242d0570f41ee19b124b17b4",
+    "course_id": "9983508511f457b02ddcae4777acab15",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "9983508511f457b02ddcae4777acab15",
+    "order": 145,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "JAVA",
+    "lessonId": "2b50275b242d0570f41ee19b124b17b4",
+    "nextLessonId": "512d9446f75ab8cd05c89529213e8ff1",
+    "lessonName": "队列的实现",
+    "icon": "data/assets/daziya.com/key-icon_key-java.09b827febf.png",
+    "description": "Java编程练习 - 队列的实现",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "700bfb6b1940af6a888fe11875ef4c67",
+        "index": 1,
+        "text": [
+          "import java.util.LinkedList;\\n\\nclass Queue {\\n    private LinkedList<String> items;\\n\\n    public Queue() {\\n        items = new LinkedList<>();\\n    }\\n\\n    public void enqueue(String item) {\\n        items.addLast(item);\\n    }\\n\\n    public String dequeue() {\\n        if (!isEmpty()) {\\n            return items.removeFirst();\\n        }\\n        return null;\\n    }\\n\\n    public String front() {\\n        if (!isEmpty()) {\\n            return items.getFirst();\\n        }\\n        return null;\\n    }\\n\\n    public boolean isEmpty() {\\n        return items.isEmpty();\\n    }\\n\\n    public int size() {\\n        return items.size();\\n    }\\n}\\n\\nclass Main {\\n    public static void main(String[] args) {\\n        Queue queue = new Queue();\\n        queue.enqueue(\"客户A\");\\n        queue.enqueue(\"客户B\");\\n        queue.enqueue(\"客户C\");\\n\\n        System.out.println(\"队首: \" + queue.front());\\n        System.out.println(\"服务: \" + queue.dequeue());\\n        System.out.println(\"队列大小: \" + queue.size());\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "java",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

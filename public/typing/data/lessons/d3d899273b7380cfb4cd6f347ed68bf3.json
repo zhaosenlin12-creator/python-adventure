@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.850141+00:00",
+  "request": {
+    "lesson_id": "d3d899273b7380cfb4cd6f347ed68bf3",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 385,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "d3d899273b7380cfb4cd6f347ed68bf3",
+    "nextLessonId": "7dd3bd6aaab3429011ea02f59e32435d",
+    "lessonName": "六级词汇正序版-71",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第71课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "01577e368390f4dde3b98bc715da3e7a",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"morality\",\"pronun\":\"[məˈræləti]\",\"translation\":\"n. 道德；品行，美德\",\"audio\":\"morality.mp3\"},{\"word\":\"moreover\",\"pronun\":\"[mɔːrˈoʊvər]\",\"translation\":\"adv. 而且；此外\",\"audio\":\"moreover.mp3\"},{\"word\":\"mortal\",\"pronun\":\"[ˈmɔːrtl]\",\"translation\":\"adj. 凡人的；致死的；终有一死的；不共戴天的\\nn. 人类，凡人\",\"audio\":\"mortal.mp3\"},{\"word\":\"mortgage\",\"pronun\":\"[ˈmɔːrɡɪdʒ]\",\"translation\":\"vt. 抵押\\nn. 抵押\\n房屋抵押贷款\",\"audio\":\"mortgage.mp3\"},{\"word\":\"motel\",\"pronun\":\"[moʊˈtel]\",\"translation\":\"n. 汽车旅馆\",\"audio\":\"motel.mp3\"},{\"word\":\"motivate\",\"pronun\":\"[ˈmoʊtɪveɪt]\",\"translation\":\"vt. 刺激；使有动机；激发…的积极性\",\"audio\":\"motivate.mp3\"},{\"word\":\"motive\",\"pronun\":\"[ˈməʊtɪv]\",\"translation\":\"n. 动机，目的；主题\\nadj. 发动的；成为动机的\\nvt. 使产生动机，激起\",\"audio\":\"motive.mp3\"},{\"word\":\"mourn\",\"pronun\":\"[mɔːrn]\",\"translation\":\"v. 哀悼；忧伤；服丧\",\"audio\":\"mourn.mp3\"},{\"word\":\"muddy\",\"pronun\":\"[ˈmʌdi]\",\"translation\":\"adj. 泥泞的；模糊的；混乱的\\nvt. 使污浊；使沾上泥；把…弄糊涂\\nvi. 变得泥泞；沾满烂泥\",\"audio\":\"muddy.mp3\"},{\"word\":\"multiple\",\"pronun\":\"[ˈmʌltɪpl]\",\"translation\":\"adj. 多重的；多样的；许多的\\nn. 倍数；[电] 并联\",\"audio\":\"multiple.mp3\"},{\"word\":\"multiply\",\"pronun\":\"[ˈmʌltɪplaɪ]\",\"translation\":\"vt. 乘；使增加；使繁殖；使相乘\\nvi. 乘；繁殖；增加\\nadv. 多样地；复合地\\nadj. 多层的；多样的\",\"audio\":\"multiply.mp3\"},{\"word\":\"multitude\",\"pronun\":\"[ˈmʌltɪtuːd]\",\"translation\":\"n. 群众；多数\",\"audio\":\"multitude.mp3\"},{\"word\":\"municipal\",\"pronun\":\"[mjuːˈnɪsɪpl]\",\"translation\":\"adj. 市政的，市的；地方自治的\",\"audio\":\"municipal.mp3\"},{\"word\":\"murmur\",\"pronun\":\"[ˈmɜːrmər]\",\"translation\":\"n. 低语；低语声；低声抱怨；潺潺声\\nvi. 低声说；私下抱怨；发出轻柔持续的声音\\nvt. 低声说\",\"audio\":\"murmur.mp3\"},{\"word\":\"muscular\",\"pronun\":\"[ˈmʌskjələr]\",\"translation\":\"adj. 肌肉的；肌肉发达的；强健的\",\"audio\":\"muscular.mp3\"},{\"word\":\"mute\",\"pronun\":\"[mjuːt]\",\"translation\":\"adj. 哑的；沉默的；无声的\\nvt. 减弱……的声音；使……柔和\\nn. 哑巴；弱音器；闭锁音\",\"audio\":\"mute.mp3\"},{\"word\":\"mutter\",\"pronun\":\"[ˈmʌtər]\",\"translation\":\"vi. 咕哝；喃喃自语\\nvt. 咕哝；抱怨地说；低声含糊地说\\nn. 咕哝；喃喃低语\",\"audio\":\"mutter.mp3\"},{\"word\":\"mutual\",\"pronun\":\"[ˈmjuːtʃuəl]\",\"translation\":\"adj. 共同的；相互的，彼此的\",\"audio\":\"mutual.mp3\"},{\"word\":\"myth\",\"pronun\":\"[mɪθ]\",\"translation\":\"n. 神话；虚构的人，虚构的事\",\"audio\":\"myth.mp3\"},{\"word\":\"naive\",\"pronun\":\"[naɪˈiːv]\",\"translation\":\"adj. 天真的,幼稚的\",\"audio\":\"naive.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

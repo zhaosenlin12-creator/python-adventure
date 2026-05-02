@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.818709+00:00",
+  "request": {
+    "lesson_id": "eb7f5a0fbc768b925af61ff3ee33df63",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 376,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "eb7f5a0fbc768b925af61ff3ee33df63",
+    "nextLessonId": "01736fb9ef7e1afcf2acc6305015f648",
+    "lessonName": "六级词汇正序版-44",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第44课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "cebd6d8b01f659df76a57bba871c9cc9",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"execute\",\"pronun\":\"[ˈeksɪkjuːt]\",\"translation\":\"vt. 实行；执行；处死\",\"audio\":\"execute.mp3\"},{\"word\":\"execution\",\"pronun\":\"[ˌeksɪˈkjuːʃn]\",\"translation\":\"n. 执行，实行；完成；死刑\",\"audio\":\"execution.mp3\"},{\"word\":\"executive\",\"pronun\":\"[ɪɡˈzekjətɪv]\",\"translation\":\"n. 总经理；执行委员会；执行者；经理主管人员\\nadj. 行政的；经营的；执行的，经营管理的\",\"audio\":\"executive.mp3\"},{\"word\":\"exemplary\",\"pronun\":\"[ɪɡˈzempləri]\",\"translation\":\"adj. 典范的；惩戒性的；可仿效的\",\"audio\":\"exemplary.mp3\"},{\"word\":\"exemplify\",\"pronun\":\"[ɪɡˈzemplɪfaɪ]\",\"translation\":\"vt. 例证；例示\",\"audio\":\"exemplify.mp3\"},{\"word\":\"exempt\",\"pronun\":\"[ɪɡˈzempt]\",\"translation\":\"n. 免税者；被免除义务者\\nadj. 被免除的；被豁免的\\nvt. 免除；豁免\",\"audio\":\"exempt.mp3\"},{\"word\":\"exert\",\"pronun\":\"[ɪɡˈzɜːrt]\",\"translation\":\"vt. 运用，发挥；施以影响\",\"audio\":\"exert.mp3\"},{\"word\":\"exhaust\",\"pronun\":\"[ɪɡˈzɔːst]\",\"translation\":\"n. 排气；废气；排气装置\\nvt. 排出；耗尽；使精疲力尽；彻底探讨\\nvi. 排气\",\"audio\":\"exhaust.mp3\"},{\"word\":\"exhibit\",\"pronun\":\"[ɪɡˈzɪbɪt]\",\"translation\":\"n. 展览品；证据；展示会\\nvt. 展览；显示；提出（证据等）\\nvi. 展出；开展览会\",\"audio\":\"exhibit.mp3\"},{\"word\":\"exile\",\"pronun\":\"[ˈeksaɪlˌˈeɡzaɪl]\",\"translation\":\"n. 流放，充军；放逐，被放逐者；流犯\\nvt. 放逐，流放；使背井离乡\",\"audio\":\"exile.mp3\"},{\"word\":\"existence\",\"pronun\":\"[ɪɡˈzɪstəns]\",\"translation\":\"n. 存在，实在；生存，生活；存在物，实在物\",\"audio\":\"existence.mp3\"},{\"word\":\"exotic\",\"pronun\":\"[ɪɡˈzɑːtɪk]\",\"translation\":\"adj. 异国的；外来的；异国情调的\",\"audio\":\"exotic.mp3\"},{\"word\":\"expand\",\"pronun\":\"[ɪkˈspænd]\",\"translation\":\"vt. 扩张；使膨胀；详述\\nvi. 发展；张开，展开\",\"audio\":\"expand.mp3\"},{\"word\":\"expansion\",\"pronun\":\"[ɪkˈspænʃn]\",\"translation\":\"n. 膨胀；阐述；扩张物\",\"audio\":\"expansion.mp3\"},{\"word\":\"expectancy\",\"pronun\":\"[ɪkˈspektənsi]\",\"translation\":\"n. 期望，期待\",\"audio\":\"expectancy.mp3\"},{\"word\":\"expedition\",\"pronun\":\"[ˌekspəˈdɪʃn]\",\"translation\":\"n. 远征；探险队；迅速\",\"audio\":\"expedition.mp3\"},{\"word\":\"expel\",\"pronun\":\"[ɪkˈspel]\",\"translation\":\"vt. 驱逐；开除\",\"audio\":\"expel.mp3\"},{\"word\":\"expend\",\"pronun\":\"[ɪkˈspend]\",\"translation\":\"vt. 花费；消耗；用光；耗尽\",\"audio\":\"expend.mp3\"},{\"word\":\"expenditure\",\"pronun\":\"[ɪkˈspendɪtʃər]\",\"translation\":\"n. 支出，花费；经费，消费额\",\"audio\":\"expenditure.mp3\"},{\"word\":\"expense\",\"pronun\":\"[ɪkˈspens]\",\"translation\":\"n. 损失，代价；消费；开支\\nvt. 向…收取费用\\nvi. 被花掉\",\"audio\":\"expense.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.791824+00:00",
+  "request": {
+    "lesson_id": "caec9defabad06643098e79ff3ed2d52",
+    "course_id": "66724e53770af94715b9e0524520eb74",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "66724e53770af94715b9e0524520eb74",
+    "order": 64,
+    "nextCourseId": "66724e53770af94715b9e0524520eb74",
+    "courseName": "基础练习-上排数字",
+    "lessonId": "caec9defabad06643098e79ff3ed2d52",
+    "nextLessonId": "d6ffab7b8269833d783e85ceadc7ecc0",
+    "lessonName": "7&8组合练习",
+    "icon": "data/assets/daziya.com/key-icon_num-7a8.4a9b49a3ef.png",
+    "description": "数字输入练习 - 7&8组合练习",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "0f43704c8904c360a52e96f721f04d12",
+        "index": 1,
+        "text": [
+          "77887788778877887788"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

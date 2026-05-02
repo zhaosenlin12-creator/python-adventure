@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.202018+00:00",
+  "request": {
+    "lesson_id": "276caae1dee3dbcc4bacb8ef9f9f464c",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 33,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "276caae1dee3dbcc4bacb8ef9f9f464c",
+    "nextLessonId": "2f736588776d856a59ededf9b7598958",
+    "lessonName": "2022年版 PEP-五年级-下册-3",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-五年级-下册 - 第3课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a67a07252d89dd5c89074f6cd2fb073a",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"always\",\"pronun\":\"[ˈɔːlweɪz]\",\"translation\":\"adv. 永远，一直；总是；常常\",\"audio\":\"always.mp3\"},{\"word\":\"cave\",\"pronun\":\"[keɪv]\",\"translation\":\"n. 洞穴，窑洞\\nvi. 凹陷，塌落；投降\\nvt. 使凹陷，使塌落；在…挖洞穴\",\"audio\":\"cave.mp3\"},{\"word\":\"swimming\",\"pronun\":\"[ˈswɪmɪŋ]\",\"translation\":\"n. 游泳；目眩\\nadj. 游泳的；游泳用的；善于游泳的；晕眩的\\nv. 游泳；漂浮；旋转（swim的ing形式）\",\"audio\":\"swimming.mp3\"},{\"word\":\"win\",\"pronun\":\"[wɪn]\",\"translation\":\"n. 赢；胜利\\nvt. 赢得；在…中获胜；劝诱\\nvi. 赢；获胜；成功\",\"audio\":\"win.mp3\"},{\"word\":\"spring\",\"pronun\":\"[sprɪŋ]\",\"translation\":\"n. 春天；弹簧；泉水；活力；跳跃\\nadj. 春天的\\nvt. 使跳起；使爆炸；突然提出；使弹开\\nvi. 生长；涌出；跃出；裂开\",\"audio\":\"spring.mp3\"},{\"word\":\"summer\",\"pronun\":\"[ˈsʌmər]\",\"translation\":\"n. 夏季；全盛时期\\nadj. 夏季的\\nvi. 避暑；过夏天\",\"audio\":\"summer.mp3\"},{\"word\":\"autumn\",\"pronun\":\"[ˈɔːtəm; ˈɑːtəm]\",\"translation\":\"n. 秋天；成熟期；渐衰期，凋落期\\nadj. 秋天的，秋季的\",\"audio\":\"autumn.mp3\"},{\"word\":\"winter\",\"pronun\":\"[ˈwɪntər]\",\"translation\":\"n. 冬季；年岁；萧条期\\nadj. 冬天的；越冬的\\nvi. 过冬\",\"audio\":\"winter.mp3\"},{\"word\":\"season\",\"pronun\":\"[ˈsiːzn]\",\"translation\":\"n. 时期；季节；赛季\\nvt. 给…调味；使适应\\nvi. 变得成熟；变干燥\",\"audio\":\"season.mp3\"},{\"word\":\"picnic\",\"pronun\":\"[ˈpɪknɪk]\",\"translation\":\"n. 野餐\\nvi. 去野餐\",\"audio\":\"picnic.mp3\"},{\"word\":\"on\",\"pronun\":\"[ɑːn]\",\"translation\":\"adv. 向前地；作用中，行动中；继续着\\nprep. 向，朝……；关于；在……之上；在……时候\\nadj. 开着的；发生着的，正在进行中\",\"audio\":\"on.mp3\"},{\"word\":\"pick\",\"pronun\":\"[pɪk]\",\"translation\":\"n. 选择；鹤嘴锄；挖；掩护\\nvi. 挑选；采摘；挖\\nvt. 拾取；精选；采摘；掘\",\"audio\":\"pick.mp3\"},{\"word\":\"snowman\",\"pronun\":\"[ˈsnoʊmæn]\",\"translation\":\"n. 雪人\",\"audio\":\"snowman.mp3\"},{\"word\":\"make\",\"pronun\":\"[meɪk]\",\"translation\":\"vt. 使得；进行；布置，准备，整理；制造；认为；获得；形成；安排；引起；构成\\nvi. 开始；前进；增大；被制造\\nn. 制造；构造；性情\",\"audio\":\"make.mp3\"},{\"word\":\"which\",\"pronun\":\"[wɪtʃ]\",\"translation\":\"adj. 哪一个；哪一些\\npron. 哪\\/那一个；哪\\/那一些\",\"audio\":\"which.mp3\"},{\"word\":\"best\",\"pronun\":\"[best]\",\"translation\":\"n. 最好的人，最好的事物；最佳状态\\nadj. 最好的\\nvt. 打败，胜过\\nadv. 最好地\",\"audio\":\"best.mp3\"},{\"word\":\"snow\",\"pronun\":\"[snoʊ]\",\"translation\":\"n. 雪，积雪；下雪\\nvt. 使纷纷落下；使变白\\nvi. 降雪\",\"audio\":\"snow.mp3\"},{\"word\":\"good\",\"pronun\":\"[ɡʊd]\",\"translation\":\"n. 好处；善行；慷慨的行为\\nadj. 好的；优良的；愉快的；虔诚的\\nadv. 好\",\"audio\":\"good.mp3\"},{\"word\":\"job\",\"pronun\":\"[dʒɑːb]\",\"translation\":\"n. 工作；职业\\nvt. 承包；代客买卖\\nvi. 做零工\",\"audio\":\"job.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

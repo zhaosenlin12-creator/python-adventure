@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.060606+00:00",
+  "request": {
+    "lesson_id": "974f4e5a04612c0db029884e61d37ed1",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 428,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "974f4e5a04612c0db029884e61d37ed1",
+    "nextLessonId": "573b5024d260dbe27d9500749977bff1",
+    "lessonName": "六级词汇正序版-63",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第63课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c5915c2a4ee008f76ea0a0c9c83bfd41",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"item\",\"pronun\":\"[ˈaɪtəm]\",\"translation\":\"n. 条款，项目；一则；一件商品（或物品）\\nadj. 又，同上\\nv. 记下；逐条列出\",\"audio\":\"item.mp3\"},{\"word\":\"ivory\",\"pronun\":\"[ˈaɪvəri]\",\"translation\":\"n. 象牙；乳白色；长牙\\nadj. 乳白色的；象牙制的\",\"audio\":\"ivory.mp3\"},{\"word\":\"jeopardize\",\"pronun\":\"[ˈdʒepərdaɪz]\",\"translation\":\"vt. 危害；使陷危地；使受危困\",\"audio\":\"jeopardize.mp3\"},{\"word\":\"jerk\",\"pronun\":\"[dʒɜːrk]\",\"translation\":\"n. 肌肉抽搐；性情古怪的人；蠢人；急拉\\nvi. 痉挛；急拉；颠簸地行进\\nvt. 猛拉\",\"audio\":\"jerk.mp3\"},{\"word\":\"jog\",\"pronun\":\"[dʒɑːɡ]\",\"translation\":\"vt. 慢跑；轻推；蹒跚行进；使颠簸\\nvi. 慢跑；轻推；蹒跚行进；颠簸着移动\\nn. 慢跑；轻推，轻撞\",\"audio\":\"jog.mp3\"},{\"word\":\"junction\",\"pronun\":\"[ˈdʒʌŋkʃn]\",\"translation\":\"n. 连接，接合；交叉点；接合点\",\"audio\":\"junction.mp3\"},{\"word\":\"junk\",\"pronun\":\"[dʒʌŋk]\",\"translation\":\"n. 垃圾，废物；舢板\",\"audio\":\"junk.mp3\"},{\"word\":\"jury\",\"pronun\":\"[ˈdʒʊri]\",\"translation\":\"n. [法] 陪审团；评判委员会\\nadj. 应急的\",\"audio\":\"jury.mp3\"},{\"word\":\"justification\",\"pronun\":\"[ˌdʒʌstɪfɪˈkeɪʃn]\",\"translation\":\"n. 理由；辩护；认为有理，认为正当；释罪\",\"audio\":\"justification.mp3\"},{\"word\":\"justify\",\"pronun\":\"[ˈdʒʌstɪfaɪ]\",\"translation\":\"vi. 证明合法；整理版面\\nvt. 证明…是正当的；替…辩护\",\"audio\":\"justify.mp3\"},{\"word\":\"juvenile\",\"pronun\":\"[ˈdʒuːvənl]\",\"translation\":\"adj. 青少年的；幼稚的\\nn. 青少年；少年读物\",\"audio\":\"juvenile.mp3\"},{\"word\":\"keen\",\"pronun\":\"[kiːn]\",\"translation\":\"adj. 敏锐的，敏捷的；渴望的；强烈的；热心的；锐利的\\nn. 痛哭，挽歌\",\"audio\":\"keen.mp3\"},{\"word\":\"kidnap\",\"pronun\":\"[ˈkɪdnæp]\",\"translation\":\"vt. 绑架；诱拐；拐骗\",\"audio\":\"kidnap.mp3\"},{\"word\":\"kidney\",\"pronun\":\"[ˈkɪdni]\",\"translation\":\"n. [解剖] 肾脏；腰子；个性\",\"audio\":\"kidney.mp3\"},{\"word\":\"kit\",\"pronun\":\"[kɪt]\",\"translation\":\"n. 工具箱；成套工具\\nvt. 装备\\nvi. 装备\",\"audio\":\"kit.mp3\"},{\"word\":\"knit\",\"pronun\":\"[nɪt]\",\"translation\":\"vi. 编织；结合；皱眉\\nvt. 编织；结合\\nn. 编织衣物；编织法\",\"audio\":\"knit.mp3\"},{\"word\":\"knob\",\"pronun\":\"[nɑːb]\",\"translation\":\"n. 把手；瘤；球形突出物\\nvi. 鼓起\\nvt. 使有球形突出物\",\"audio\":\"knob.mp3\"},{\"word\":\"label\",\"pronun\":\"[ˈleɪbl]\",\"translation\":\"vt. 标注；贴标签于\\nn. 标签；商标；签条\",\"audio\":\"label.mp3\"},{\"word\":\"lace\",\"pronun\":\"[leɪs]\",\"translation\":\"n. 花边；鞋带；饰带；少量烈酒\\nvt. 饰以花边；结带子\\nvi. 系带子\",\"audio\":\"lace.mp3\"},{\"word\":\"lame\",\"pronun\":\"[leɪm]\",\"translation\":\"adj. 跛足的；僵痛的；不完全的；无说服力的；差劲的，蹩脚的\\nvi. 变跛\\nvt. 使跛；使成残废\",\"audio\":\"lame.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

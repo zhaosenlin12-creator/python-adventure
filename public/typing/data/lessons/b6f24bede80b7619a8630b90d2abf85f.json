@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.699035+00:00",
+  "request": {
+    "lesson_id": "b6f24bede80b7619a8630b90d2abf85f",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 132,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "b6f24bede80b7619a8630b90d2abf85f",
+    "nextLessonId": "89d306af3d605421a0bb844d18e66962",
+    "lessonName": "KET核心词-98",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第98课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a9f6fee271f8b930412743eb0f459be5",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"hate\",\"pronun\":\"[heɪt]\",\"translation\":\"n. 憎恨；反感\\nvt. 憎恨；厌恶；遗憾\\nvi. 仇恨\",\"audio\":\"hate.mp3\"},{\"word\":\"look forward to\",\"pronun\":\"\",\"translation\":\"na. 盼望\",\"audio\":\"look_forward_to.mp3\"},{\"word\":\"love\",\"pronun\":\"[lʌv]\",\"translation\":\"n. 恋爱；亲爱的；酷爱；喜爱的事物；爱情，爱意；疼爱；热爱；爱人，所爱之物\\nv. 爱，热爱；爱戴；赞美，称赞；喜爱；喜好；喜欢；爱慕\",\"audio\":\"love.mp3\"},{\"word\":\"lucky\",\"pronun\":\"[ˈlʌki]\",\"translation\":\"adj. 幸运的；侥幸的\",\"audio\":\"lucky.mp3\"},{\"word\":\"miserable\",\"pronun\":\"[ˈmɪzrəbl]\",\"translation\":\"adj. 悲惨的；痛苦的；卑鄙的\",\"audio\":\"miserable.mp3\"},{\"word\":\"pleased\",\"pronun\":\"[pliːzd]\",\"translation\":\"adj. 高兴的；喜欢的；乐意做某事\\nv. 满意；愿意（please的\",\"audio\":\"pleased.mp3\"},{\"word\":\"relaxed\",\"pronun\":\"[rɪˈlækst]\",\"translation\":\"v. relax的过去式和过去分词\\nadj. 松懈的，放松的；悠闲的，自在的；不严格的，不拘束的\",\"audio\":\"relaxed.mp3\"},{\"word\":\"satisfied\",\"pronun\":\"[ˈsætɪsfaɪd]\",\"translation\":\"v. 使满意（satisfy的过去式）\\nadj. 感到满意的\",\"audio\":\"satisfied.mp3\"},{\"word\":\"sorry\",\"pronun\":\"[ˈsɑːri]\",\"translation\":\"adj. 遗憾的；对不起的，抱歉的\\nint. 对不起，抱歉（表示委婉的拒绝等）\",\"audio\":\"sorry.mp3\"},{\"word\":\"sure\",\"pronun\":\"[ʃʊr]\",\"translation\":\"adj. 确信的；可靠的；必定的\\nadv. 当然；的确\",\"audio\":\"sure.mp3\"},{\"word\":\"surprised\",\"pronun\":\"[sərˈpraɪzd]\",\"translation\":\"v. 使惊奇（surprise的过去分词形式）\\nadj. 感到惊讶的，出人意料的\",\"audio\":\"surprised.mp3\"},{\"word\":\"terrible\",\"pronun\":\"[ˈterəbl]\",\"translation\":\"adj. 可怕的；很糟的；令人讨厌的\\nadv. 很，非常\",\"audio\":\"terrible.mp3\"},{\"word\":\"unhappy\",\"pronun\":\"[ʌnˈhæpi]\",\"translation\":\"adj. 不快乐的；不幸福的；不适当的\",\"audio\":\"unhappy.mp3\"},{\"word\":\"upset\",\"pronun\":\"[ˌʌpˈset]\",\"translation\":\"n. 混乱；翻倒；颠覆\\nadj. 心烦的；混乱的；弄翻的\\nvt. 使心烦；颠覆；扰乱\\nvi. 翻倒\",\"audio\":\"upset.mp3\"},{\"word\":\"worried\",\"pronun\":\"[ˈwɜːrid]\",\"translation\":\"adj. 担心的\",\"audio\":\"worried.mp3\"},{\"word\":\"build\",\"pronun\":\"[bɪld]\",\"translation\":\"n. 构造；体形；体格\\nvi. 建筑；建造\\nvt. 建立；建筑\",\"audio\":\"build.mp3\"},{\"word\":\"buy\",\"pronun\":\"[baɪ]\",\"translation\":\"n. 购买，买卖；所购的物品\\nvi. 买，采购\\nvt. 购买；获得；贿赂\",\"audio\":\"buy.mp3\"},{\"word\":\"collect\",\"pronun\":\"[kəˈlekt]\",\"translation\":\"vt. 收集；募捐\\nadj. 由收件人付款的\\nvi. 收集；聚集；募捐\\nadv. 由收件人付款地\",\"audio\":\"collect.mp3\"},{\"word\":\"cooking\",\"pronun\":\"[ˈkʊkɪŋ]\",\"translation\":\"n. 烹饪\\nadj. 烹调的\\nv. 烹调；筹划（cook的ing形式）\",\"audio\":\"cooking.mp3\"},{\"word\":\"cycling\",\"pronun\":\"[ˈsaɪklɪŋ]\",\"translation\":\"n. 骑脚踏车消遣；骑脚踏车兜风\",\"audio\":\"cycling.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

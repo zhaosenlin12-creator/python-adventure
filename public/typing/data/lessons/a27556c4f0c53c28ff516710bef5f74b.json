@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.180014+00:00",
+  "request": {
+    "lesson_id": "a27556c4f0c53c28ff516710bef5f74b",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 27,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "a27556c4f0c53c28ff516710bef5f74b",
+    "nextLessonId": "5a373b71e6172e9a7a0ba7e530a57765",
+    "lessonName": "2022年版 PEP-五年级-上册-4",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-五年级-上册 - 第4课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f4164f91111a82842ecbd52a2e1b4d7f",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"drink\",\"pronun\":\"[drɪŋk]\",\"translation\":\"n. 酒，饮料；喝酒\\nvt. 喝，饮；吸收；举杯庆贺\\nvi. 喝酒；饮水；干杯\",\"audio\":\"drink.mp3\"},{\"word\":\"thirsty\",\"pronun\":\"[ˈθɜːrsti]\",\"translation\":\"adj. 口渴的，口干的；渴望的，热望的\",\"audio\":\"thirsty.mp3\"},{\"word\":\"favourite\",\"pronun\":\"[ˈfeɪvərɪt]\",\"translation\":\"n. 特别喜爱的人（或物）\\nadj. 特别受喜爱的\",\"audio\":\"favourite.mp3\"},{\"word\":\"food\",\"pronun\":\"[fuːd]\",\"translation\":\"n. 食物；养料\",\"audio\":\"food.mp3\"},{\"word\":\"Dear\",\"pronun\":\"[dɪr]\",\"translation\":\"n. 亲爱的人\\nadj. 亲爱的；尊敬的；昂贵的\\nadv. 高价地；疼爱地\\nint. 哎呀\",\"audio\":\"Dear.mp3\"},{\"word\":\"onion\",\"pronun\":\"[ˈʌnjən]\",\"translation\":\"n. 洋葱；洋葱头\",\"audio\":\"onion.mp3\"},{\"word\":\"sing\",\"pronun\":\"[sɪŋ]\",\"translation\":\"n. 演唱；鸣声；呼啸声\\nvt. 唱；用诗赞颂；唱着使\\nvi. 唱歌；歌颂；鸣叫；呼号\",\"audio\":\"sing.mp3\"},{\"word\":\"song\",\"pronun\":\"[sɔŋ]\",\"translation\":\"n. 歌曲；歌唱；诗歌；鸣声\",\"audio\":\"song.mp3\"},{\"word\":\"English\",\"pronun\":\"[ˈɪŋɡlɪʃ]\",\"translation\":\"n. 英语；英国人；英文；英格兰人\\nadj. 英国人的；英国的；英文的\\nvt. 把…译成英语\",\"audio\":\"English.mp3\"},{\"word\":\"the\",\"pronun\":\"[ðə; ði; ðiː]\",\"translation\":\"art. 这；那\\nadv. 更加（用于比较级，最高级前）\",\"audio\":\"the.mp3\"},{\"word\":\"dance\",\"pronun\":\"[dæns]\",\"translation\":\"n. 舞蹈；舞会；舞曲\\nadj. 舞蹈的；用于跳舞的\\nvt. 跳舞；使跳跃\\nvi. 跳舞；跳跃；飘扬\",\"audio\":\"dance.mp3\"},{\"word\":\"draw\",\"pronun\":\"[drɔː]\",\"translation\":\"n. 平局；抽签\\nvi. 拉；拖\\nvt. 画；拉；吸引\",\"audio\":\"draw.mp3\"},{\"word\":\"cartoon\",\"pronun\":\"[kɑːrˈtuːn]\",\"translation\":\"n. 卡通片，[电影] 动画片；连环漫画\\nvt. 为…画漫画\\nvi. 画漫画\",\"audio\":\"cartoon.mp3\"},{\"word\":\"cook\",\"pronun\":\"[kʊk]\",\"translation\":\"n. 厨师，厨子\\nvt. 烹调，煮\\nvi. 烹调，做菜\",\"audio\":\"cook.mp3\"},{\"word\":\"swim\",\"pronun\":\"[swɪm]\",\"translation\":\"n. 游泳；漂浮；眩晕\\nadj. 游泳时穿戴的\\nvi. 游泳；漂浮；浸；眩晕\\nvt. 游过；使浮起\",\"audio\":\"swim.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

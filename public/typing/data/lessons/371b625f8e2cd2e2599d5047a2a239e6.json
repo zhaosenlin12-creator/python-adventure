@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.687575+00:00",
+  "request": {
+    "lesson_id": "371b625f8e2cd2e2599d5047a2a239e6",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 130,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "371b625f8e2cd2e2599d5047a2a239e6",
+    "nextLessonId": "a2664022dd201e53869ea35b4b290918",
+    "lessonName": "KET核心词-92",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第92课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4924d4c3660f34354d29549e8b8c4d54",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"sitting room\",\"pronun\":\"\",\"translation\":\"na. 起居室\",\"audio\":\"sitting_room.mp3\"},{\"word\":\"sofa\",\"pronun\":\"[ˈsoʊfə]\",\"translation\":\"n. 沙发；长椅\",\"audio\":\"sofa.mp3\"},{\"word\":\"space\",\"pronun\":\"[speɪs]\",\"translation\":\"n. 空间；太空；距离\\nvt. 隔开\\nvi. 留间隔\",\"audio\":\"space.mp3\"},{\"word\":\"switch\",\"pronun\":\"[swɪtʃ]\",\"translation\":\"n. 开关；转换；鞭子\\nvi. 转换；抽打；换防\\nvt. 转换；用鞭子等抽打\",\"audio\":\"switch.mp3\"},{\"word\":\"table\",\"pronun\":\"[ˈteɪbl]\",\"translation\":\"n. 桌子；表格；平地层\\nvt. 制表；搁置；嵌合\\nadj. 桌子的\",\"audio\":\"table.mp3\"},{\"word\":\"tap\",\"pronun\":\"[tæp]\",\"translation\":\"n. 水龙头；轻打\\nvt. 轻敲；轻打；装上嘴子\\nvi. 轻拍；轻击；轻叩\\nvt. 采用，利用\",\"audio\":\"tap.mp3\"},{\"word\":\"tidy\",\"pronun\":\"[ˈtaɪdi]\",\"translation\":\"n. 椅子的背罩\\nadj. 整齐的；相当大的\\nvi. 整理；收拾\\nvt. 整理；收拾；弄整齐\",\"audio\":\"tidy.mp3\"},{\"word\":\"toilet\",\"pronun\":\"[ˈtɔɪlət]\",\"translation\":\"n. 厕所，盥洗室；梳妆，打扮\\nvt. 给…梳妆打扮\\nvi. 梳妆，打扮\",\"audio\":\"toilet.mp3\"},{\"word\":\"tool\",\"pronun\":\"[tuːl]\",\"translation\":\"n. 工具，用具；器械，机床；手段\\nvt. 用工具给……加工\\nvi. 使用工具；用机床装备工厂\",\"audio\":\"tool.mp3\"},{\"word\":\"toothpaste\",\"pronun\":\"[ˈtuːθpeɪst]\",\"translation\":\"n. 牙膏\",\"audio\":\"toothpaste.mp3\"},{\"word\":\"towel\",\"pronun\":\"[ˈtaʊəl]\",\"translation\":\"n. 毛巾，手巾；[纸] 纸巾\\nvi. 用毛巾擦干身体\\nvt. 用毛巾擦\",\"audio\":\"towel.mp3\"},{\"word\":\"toy\",\"pronun\":\"[tɔɪ]\",\"translation\":\"n. 玩具；小装饰品；不值钱的东西\\nadj. 作为玩具的；玩物似的\\nvi. 玩弄；调情；随随便便地对待\",\"audio\":\"toy.mp3\"},{\"word\":\"video recorder\",\"pronun\":\"\",\"translation\":\"n. 录像机\",\"audio\":\"video_recorder.mp3\"},{\"word\":\"wall\",\"pronun\":\"[wɔːl]\",\"translation\":\"n. 墙壁，围墙；似墙之物\\nadj. 墙壁的\\nvt. 用墙围住，围以墙\",\"audio\":\"wall.mp3\"},{\"word\":\"wardrobe\",\"pronun\":\"[ˈwɔːrdroʊb]\",\"translation\":\"n. 衣柜；行头；全部戏装\",\"audio\":\"wardrobe.mp3\"},{\"word\":\"washing machine\",\"pronun\":\"\",\"translation\":\"n. 洗衣机\",\"audio\":\"washing_machine.mp3\"},{\"word\":\"bag\",\"pronun\":\"[bæɡ]\",\"translation\":\"n. 袋；猎获物；（俚）一瓶啤酒\\nvt. 猎获；把…装入袋中；占据，私吞；使膨大\\nvi. 松垂\",\"audio\":\"bag.mp3\"},{\"word\":\"bathing suit\",\"pronun\":\"\",\"translation\":\"na. 泳装；“bathing clothes”的变体\",\"audio\":\"bathing_suit.mp3\"},{\"word\":\"belt\",\"pronun\":\"[belt]\",\"translation\":\"n. 带；腰带；地带\\nvt. 用带子系住；用皮带抽打\\nvi. 猛击\",\"audio\":\"belt.mp3\"},{\"word\":\"blouse\",\"pronun\":\"[blaʊs]\",\"translation\":\"n. 宽松的上衣；女装衬衫\\nvt. 使…宽松下垂\\nvi. 宽松下垂\",\"audio\":\"blouse.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

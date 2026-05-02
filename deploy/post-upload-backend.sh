@@ -77,6 +77,7 @@ run_pm2_command "pm2 save"
 
 sleep 3
 curl --max-time 5 http://127.0.0.1:8000/health
+curl --max-time 5 http://127.0.0.1:8000/api/typing/health
 
 echo "========================================="
 echo "DONE: backend post-upload deploy finished"

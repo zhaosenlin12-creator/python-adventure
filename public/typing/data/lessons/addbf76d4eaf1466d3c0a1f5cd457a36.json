@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.002409+00:00",
+  "request": {
+    "lesson_id": "addbf76d4eaf1466d3c0a1f5cd457a36",
+    "course_id": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "order": 199,
+    "nextCourseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "courseName": "小升初必备单词",
+    "lessonId": "addbf76d4eaf1466d3c0a1f5cd457a36",
+    "nextLessonId": "83cd74fe5847cc448127a357d897f947",
+    "lessonName": "H",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "03b1aa03848c8f9bf5c0c09b6ce7bdc9",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"hair\",\"pronun\":\"[h\\u025b\\u0259]\",\"translation\":\"n. \\u5934\\u53d1; (\\u52a8\\u7269\\u7684)\\u6bdb\\u53d1\"},{\"word\":\"hall\",\"pronun\":\"[h\\u0254:l]\",\"translation\":\"n. \\u5927\\u5385; \\u793c\\u5802; \\u4f1a\\u5802; \\u529e\\u516c\\u5927\\u697c\"},{\"word\":\"ham\",\"pronun\":\"[h\\u00e6m]\",\"translation\":\"n. \\u706b\\u817f; \\u65e0\\u7ebf\\u7535\\u6536\\u53d1\\u62a5\\u4e1a\\u4f59\\u7231\\u597d\\u8005\"},{\"word\":\"hammer\",\"pronun\":\"[\\u02c8h\\u00e6m\\u0259]\",\"translation\":\"n. \\u9524; \\u6994\\u5934; \\u9524\\u5b50; \\u9523\\u9524\"},{\"word\":\"hand\",\"pronun\":\"[h\\u00e6nd]\",\"translation\":\"n. \\u624b\"},{\"word\":\"handkerchief\",\"pronun\":\"[\\u02c8h\\u00e6\\u014bk\\u0259t\\u0283if]\",\"translation\":\"n. \\u624b\\u5e15; \\u624b\\u7ee2\"},{\"word\":\"happen\",\"pronun\":\"[\\u02c8h\\u00e6p\\u0259n]\",\"translation\":\"vi. \\u53d1\\u751f; \\u78b0\\u5de7; \\u6070\\u597d\"},{\"word\":\"harbour\",\"pronun\":\"[\\u02c8h\\u0251:b\\u0259]\",\"translation\":\"n. \\u6e2f\\u53e3; \\u505c\\u6cca\\u5904\"},{\"word\":\"hard\",\"pronun\":\"[h\\u0251rd]\",\"translation\":\"adv. \\u52aa\\u529b\\u5730; \\u52e4\\u52b3\\u5730; \\u731b\\u70c8\\u5730; ...\"},{\"word\":\"hardworking\",\"pronun\":\"[h\\u0251\\u02d0d'w\\u025c\\u02d0k\\u026a\\u014b]\",\"translation\":\"adj. \\u52aa\\u529b\\u5de5\\u4f5c\\u7684\"},{\"word\":\"hay\",\"pronun\":\"[hei]\",\"translation\":\"n. \\u5e72\\u8349\\u5806; (\\u7528\\u4f5c\\u9972\\u6599\\u7684)\\u5e72\\u8349\"},{\"word\":\"head\",\"pronun\":\"[hed]\",\"translation\":\"v. \\u5411\\u67d0\\u5904\\u8d70\\u53bb n. \\u5934; \\u5934\\u90e8\"},{\"word\":\"healthy\",\"pronun\":\"[\\u02c8hel\\u03b8i]\",\"translation\":\"adj. \\u5065\\u5eb7\\u7684; \\u5065\\u58ee\\u7684; \\u6709\\u76ca\\u5065\\u5eb7\\u7684\"},{\"word\":\"heat\",\"pronun\":\"[hi:t]\",\"translation\":\"vt. \\u628a\\u2026\\u52a0\\u70ed n. \\u70ed\\u91cf; \\u70ed\"},{\"word\":\"heavily\",\"pronun\":\"[hev\\u0259li:]\",\"translation\":\"adv. \\u91cd\\u91cd\\u5730; \\u6c89\\u91cd\\u5730\"},{\"word\":\"heavy\",\"pronun\":\"[\\u02c8hevi]\",\"translation\":\"adj. \\u7c97\\u5927\\u7684; \\u6c89\\u91cd\\u7684\"},{\"word\":\"height\",\"pronun\":\"[hait]\",\"translation\":\"n. \\u9ad8; \\u9ad8\\u5ea6; \\u8eab\\u9ad8; \\u9876\\u70b9\"},{\"word\":\"helicopter\",\"pronun\":\"[\\u02c8helik\\u0254pt\\u0259]\",\"translation\":\"n. \\u76f4\\u5347\\u98de\\u673a; \\u76f4\\u5347\\u673a\"},{\"word\":\"help\",\"pronun\":\"[help]\",\"translation\":\"v. \\u5e2e\\u52a9\"},{\"word\":\"helpful\",\"pronun\":\"[\\u02c8helpful]\",\"translation\":\"adj. \\u6709\\u7528\\u7684; \\u6709\\u5e2e\\u52a9\\u7684; \\u6709\\u76ca\\u7684\"},{\"word\":\"hen\",\"pronun\":\"[hen]\",\"translation\":\"n. \\u6bcd\\u9e21; \\u96cc\\u79bd\"},{\"word\":\"her\",\"pronun\":\"[h\\u0259:]\",\"translation\":\"pron. \\u5979\\u7684; \\u5979(\\u5bbe\\u683c)\"},{\"word\":\"hers\",\"pronun\":\"[h\\u0259:z]\",\"translation\":\"pron. \\u5979\\u7684(\\u4e1c\\u897f)\"},{\"word\":\"high\",\"pronun\":\"[hai]\",\"translation\":\"adv. \\u9ad8\\u9ad8\\u5730 adj. \\u9ad8\\u7684; \\u9ad8\\u5ea6...\"},{\"word\":\"hill\",\"pronun\":\"[hil]\",\"translation\":\"n. \\u5c0f\\u5c71; \\u4e18\\u9675; \\u571f\\u5806\"},{\"word\":\"history\",\"pronun\":\"[\\u02c8hist\\u0259ri]\",\"translation\":\"n. \\u5386\\u53f2; \\u5386\\u53f2\\u5b66; \\u6765\\u5386; \\u7ecf\\u5386\"},{\"word\":\"hit\",\"pronun\":\"[hit]\",\"translation\":\"v. \\u51fb; \\u6253 vt. \\u51fb; \\u78b0\\u649e\"},{\"word\":\"hole\",\"pronun\":\"[h\\u0259ul]\",\"translation\":\"n. \\u6d1e; \\u5b54\\u773c; \\u88c2\\u5f00\\u5904\"},{\"word\":\"holiday\",\"pronun\":\"[\\u02c8h\\u0254l\\u0259di]\",\"translation\":\"n. \\u5047\\u65e5; \\u8282\\u65e5; \\u5047\\u671f\"},{\"word\":\"home\",\"pronun\":\"[h\\u0259um]\",\"translation\":\"adv. \\u56de\\u5bb6; \\u5728\\u5bb6 n. \\u5bb6\\u5ead; \\u5bb6\"},{\"word\":\"homework\",\"pronun\":\"[\\u02c8h\\u0259umw\\u0259:k]\",\"translation\":\"n. \\u5bb6\\u5ead\\u4f5c\\u4e1a\"},{\"word\":\"hoop\",\"pronun\":\"[hu:p]\",\"translation\":\"n. \\u7403; \\u5708; \\u7b8d; (\\u5b69\\u5b50\\u73a9\\u7684)\\u94c1\\u73af\"},{\"word\":\"hot\",\"pronun\":\"[h\\u0254t]\",\"translation\":\"adj. \\u70ed\\u7684; \\u708e\\u70ed\\u7684; \\u8fa3\\u7684; \\u6025\\u8e81...\"},{\"word\":\"hotel\",\"pronun\":\"[h\\u0259u\\u02c8tel]\",\"translation\":\"n. \\u65c5\\u9986; \\u5bbe\\u9986\"},{\"word\":\"hour\",\"pronun\":\"[\\u02c8au\\u0259]\",\"translation\":\"n. \\u5c0f\\u65f6; \\u949f\\u70b9; \\u65f6\\u523b; \\u8bfe\\u65f6\"},{\"word\":\"how\",\"pronun\":\"[hau]\",\"translation\":\"adv. \\u600e\\u6837; \\u5982\\u4f55; \\u591a\\u5c11\"},{\"word\":\"however\",\"pronun\":\"[hau\\u02c8ev\\u0259]\",\"translation\":\"adv. \\u7136\\u800c conj. \\u7136\\u800c; \\u53ef\\u662f...\"},{\"word\":\"hundred\",\"pronun\":\"[\\u02c8h\\u028cndr\\u0259d]\",\"translation\":\"num. \\u4e00\\u767e\"},{\"word\":\"hurt\",\"pronun\":\"[h\\u0259:t]\",\"translation\":\"vt. \\u4f24\\u5bb3 vi. \\u75bc\\u75db\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 8,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

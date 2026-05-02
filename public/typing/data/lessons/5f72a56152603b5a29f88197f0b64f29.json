@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.629571+00:00",
+  "request": {
+    "lesson_id": "5f72a56152603b5a29f88197f0b64f29",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 562,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "5f72a56152603b5a29f88197f0b64f29",
+    "nextLessonId": "d625b7ac22e10a414e5121da8da6c192",
+    "lessonName": "The Missing Gloves",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "96f59bb093e21eb9cbe01743aaaab7be",
+        "index": 1,
+        "text": [
+          "The Missing Gloves\\nThis year, my mom made me a new pair of gloves for my birthday. That day, I wore them to the skating rink.\\nIt got quite warm. Everyone took off their heavy coats and hats. I took off my new gloves. I put them safely in my jacket and skated around in my sweater.\\nWhen it was time to go home, I picked up my jacket.\\nBut my gloves were gone!\\nI could not believe it. I went home and told my parents. They were upset with me. I felt terrible.\\nLater that evening, the doorbell rang. It was a boy from school. He had the exact same jacket as me. I had accidentally picked up the wrong jacket!\\n\"Missing these?\" he asked as he handed me my gloves and jacket. I had never been so happy to see a pair of gloves in my whole life!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

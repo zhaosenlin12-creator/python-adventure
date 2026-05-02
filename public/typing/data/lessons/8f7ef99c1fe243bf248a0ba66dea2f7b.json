@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.001597+00:00",
+  "request": {
+    "lesson_id": "8f7ef99c1fe243bf248a0ba66dea2f7b",
+    "course_id": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "order": 86,
+    "nextCourseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "courseName": "C++",
+    "lessonId": "8f7ef99c1fe243bf248a0ba66dea2f7b",
+    "nextLessonId": "fa4e699996543933c8787a30e03266a1",
+    "lessonName": "字符统计",
+    "icon": "data/assets/daziya.com/key-icon_key-cpp.b136419115.png",
+    "description": "C++编程练习 - 字符统计",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "30b3b2e5925d1b186c6f89bb843fa353",
+        "index": 1,
+        "text": [
+          "#include <iostream>\\n#include <map>\\n#include <string>\\nusing namespace std;\\n\\nint main() {\\n    string text = \"Hello World! How are you?\";\\n    map<char, int> charCount;\\n\\n    for (char c : text) {\\n        if (isalnum(c)) {\\n            c = tolower(c);\\n            charCount[c]++;\\n        }\\n    }\\n\\n    cout << \"原文本: \" << text << endl;\\n    cout << \"\\n字符出现频率:\" << endl;\\n\\n    for (auto& pair : charCount) {\\n        cout << \"'\" << pair.first << \"': \" << pair.second << endl;\\n    }\\n\\n    char mostCommon = charCount.begin()->first;\\n    int maxCount = charCount.begin()->second;\\n    for (auto& pair : charCount) {\\n        if (pair.second > maxCount) {\\n            mostCommon = pair.first;\\n            maxCount = pair.second;\\n        }\\n    }\\n\\n    cout << \"\\n出现最多的字符: '\" << mostCommon << \"' (\" << maxCount << \"次)\" << endl;\\n\\n    return 0;\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "cpp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

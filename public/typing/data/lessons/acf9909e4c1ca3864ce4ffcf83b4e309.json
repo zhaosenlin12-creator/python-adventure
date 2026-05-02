@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.069156+00:00",
+  "request": {
+    "lesson_id": "acf9909e4c1ca3864ce4ffcf83b4e309",
+    "course_id": "21fe8d60de407da95e1abc33ac636014",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "21fe8d60de407da95e1abc33ac636014",
+    "order": 36,
+    "nextCourseId": "21fe8d60de407da95e1abc33ac636014",
+    "courseName": "上排字母",
+    "lessonId": "acf9909e4c1ca3864ce4ffcf83b4e309",
+    "nextLessonId": "1dcc78baabdc357095b9ecaed525c6f4",
+    "lessonName": "练习t和p",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-practise-tp.2464160e9f.png",
+    "description": "练习t和p",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "09a9fa6c804c720223f27272a3047689",
+        "index": 2,
+        "text": [
+          "tg ttg tg ttg p; pp; p; pp; tgtg p;p; tttg ppp; gtp; gtg ;p; gtgtg ;p;p; ttg pp; ttpp tptp tpg; ttg pp;"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "ptg;",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

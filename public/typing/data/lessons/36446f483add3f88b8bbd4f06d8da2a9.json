@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.431305+00:00",
+  "request": {
+    "lesson_id": "36446f483add3f88b8bbd4f06d8da2a9",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 71,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "36446f483add3f88b8bbd4f06d8da2a9",
+    "nextLessonId": "dcb5b1c154082612fd5279215caa7a2c",
+    "lessonName": "KET核心词-52",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第52课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "07f31ead5f2377bf35911921969026c0",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"put\",\"pronun\":\"[pʊt]\",\"translation\":\"n. 掷；笨蛋；投击；怪人\\nadj. 固定不动的\\nvi. 出发；击；航行；发芽\\nvt. 放；表达；移动；安置；赋予\",\"audio\":\"put.mp3\"},{\"word\":\"puzzle\",\"pronun\":\"[ˈpʌzl]\",\"translation\":\"n. 谜；难题；迷惑\\nvt. 使…困惑；使…为难；苦思而得出\\nvi. 迷惑；冥思苦想\",\"audio\":\"puzzle.mp3\"},{\"word\":\"quarter\",\"pronun\":\"[ˈkwɔːrtər]\",\"translation\":\"num. 四分之一\\nn. 四分之一；地区；季度；一刻钟；两角五分；节\\nvt. 将…四等分；供某人住宿\\nvi. 住宿；驻扎\",\"audio\":\"quarter.mp3\"},{\"word\":\"queen\",\"pronun\":\"[kwiːn]\",\"translation\":\"n. 女王，王后；（纸牌中的）皇后；（蜜蜂等的）蜂王\\nvt. 使…成为女王或王后\\nvi. 做女王\",\"audio\":\"queen.mp3\"},{\"word\":\"question\",\"pronun\":\"[ˈkwestʃən]\",\"translation\":\"n. 问题，疑问；询问；疑问句\\nvt. 询问；怀疑；审问\\nvi. 询问；怀疑；审问\",\"audio\":\"question.mp3\"},{\"word\":\"queue\",\"pronun\":\"[kjuː]\",\"translation\":\"n. 队列；长队；辫子\\nvt. 将…梳成辫子；使…排队\\nvi. 排队；排队等候\",\"audio\":\"queue.mp3\"},{\"word\":\"quick\",\"pronun\":\"[kwɪk]\",\"translation\":\"n. 核心；伤口的嫩肉\\nadj. 快的；迅速的，敏捷的；灵敏的\\nadv. 迅速地，快\",\"audio\":\"quick.mp3\"},{\"word\":\"quiet\",\"pronun\":\"[ˈkwaɪət]\",\"translation\":\"n. 安静；和平\\nadj. 安静的；安定的；不动的；温顺的\\nvt. 使平息；安慰\\nvi. 平静下来\",\"audio\":\"quiet.mp3\"},{\"word\":\"quite\",\"pronun\":\"[kwaɪt]\",\"translation\":\"adv. 很；相当；完全\",\"audio\":\"quite.mp3\"},{\"word\":\"quiz\",\"pronun\":\"[kwɪz]\",\"translation\":\"n. 考查；恶作剧；课堂测验\\nvt. 挖苦；张望；对…进行测验\",\"audio\":\"quiz.mp3\"},{\"word\":\"race\",\"pronun\":\"[reɪs]\",\"translation\":\"n. 属，种；种族，人种；家庭，门第\\nvt. 使参加比赛；和…竞赛；使急走，使全速行进\\nvi. 比速度，参加竞赛；全速行进\",\"audio\":\"race.mp3\"},{\"word\":\"racket\",\"pronun\":\"[ˈrækɪt]\",\"translation\":\"n. 球拍；吵闹，喧闹\\nvt. 过着花天酒地的生活\\nvi. 过着花天酒地的生活\",\"audio\":\"racket.mp3\"},{\"word\":\"radio\",\"pronun\":\"[ˈreɪdioʊ]\",\"translation\":\"n. 收音机；无线电广播设备\\nvt. 用无线电发送\\nvi. 用无线电进行通信\",\"audio\":\"radio.mp3\"},{\"word\":\"rail\",\"pronun\":\"[reɪl]\",\"translation\":\"n. 铁轨；扶手；横杆；围栏\\nvt. 铺铁轨；以横木围栏\\nvi. 抱怨；责骂\",\"audio\":\"rail.mp3\"},{\"word\":\"railway\",\"pronun\":\"[ˈreɪlweɪ]\",\"translation\":\"n. （英）铁路；轨道；铁道部门\\nvi. 乘火车旅行\",\"audio\":\"railway.mp3\"},{\"word\":\"rain\",\"pronun\":\"[reɪn]\",\"translation\":\"n. 雨；下雨；雨天；雨季\\nvt. 大量地给；使大量落下\\nvi. 下雨；降雨\",\"audio\":\"rain.mp3\"},{\"word\":\"rainbow\",\"pronun\":\"[ˈreɪnboʊ]\",\"translation\":\"n. 彩虹；五彩缤纷的排列；幻想\\nadj. 五彩缤纷的；彩虹状的\\nvt. 使呈彩虹状；如彩虹般装饰\\nvi. 呈彩虹状\",\"audio\":\"rainbow.mp3\"},{\"word\":\"raincoat\",\"pronun\":\"[ˈreɪnkoʊt]\",\"translation\":\"n. （美）雨衣\",\"audio\":\"raincoat.mp3\"},{\"word\":\"rainforest\",\"pronun\":\"[ˈreɪnfɔːrɪst]\",\"translation\":\"n. （热带）雨林\",\"audio\":\"rainforest.mp3\"},{\"word\":\"rap\",\"pronun\":\"[ræp]\",\"translation\":\"n. 轻敲\\nvi. 敲击；交谈\\nvt. 抢走；轻敲；敲击致使；使着迷\",\"audio\":\"rap.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

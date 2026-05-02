@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.618788+00:00",
+  "request": {
+    "lesson_id": "f18bedc0ab173e697b3c46b0f8feb05f",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 114,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "f18bedc0ab173e697b3c46b0f8feb05f",
+    "nextLessonId": "e5221bb647d15dd0f442504d0f924fc7",
+    "lessonName": "KET核心词-44",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第44课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c2c542715220a79ea5a14b928929a877",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"noise\",\"pronun\":\"[nɔɪz]\",\"translation\":\"n. [环境] 噪音；响声；杂音\\nvt. 谣传\\nvi. 发出声音；大声议论\",\"audio\":\"noise.mp3\"},{\"word\":\"noisy\",\"pronun\":\"[ˈnɔɪzi]\",\"translation\":\"adj. .嘈杂的；喧闹的；聒噪的\",\"audio\":\"noisy.mp3\"},{\"word\":\"noodle\",\"pronun\":\"[ˈnuːd(ə)l]\",\"translation\":\"n. 面条；笨蛋\",\"audio\":\"noodle.mp3\"},{\"word\":\"normal\",\"pronun\":\"[ˈnɔːrml]\",\"translation\":\"adj. 正常的；正规的，标准的\\nn. 正常；标准；常态\",\"audio\":\"normal.mp3\"},{\"word\":\"not\",\"pronun\":\"[nɑːt]\",\"translation\":\"adv. 表示否定，不\\nn. “非”（计算机中逻辑运算的一种）\",\"audio\":\"not.mp3\"},{\"word\":\"note\",\"pronun\":\"[noʊt]\",\"translation\":\"n. 笔记；音符；票据；注解；纸币；便笺；照会；调子\\nvt. 注意；记录；注解\",\"audio\":\"note.mp3\"},{\"word\":\"notebook\",\"pronun\":\"[ˈnoʊtbʊk]\",\"translation\":\"n. 笔记本，笔记簿；手册\",\"audio\":\"notebook.mp3\"},{\"word\":\"nothing\",\"pronun\":\"[ˈnʌθɪŋ]\",\"translation\":\"neg. 没什么；毫不\\nn. 无；零；不关紧要之事\\nadv. 毫不；决不\\npron. 无事；无物\\nint. 什么也没有\",\"audio\":\"nothing.mp3\"},{\"word\":\"notice\",\"pronun\":\"[ˈnoʊtɪs]\",\"translation\":\"n. 通知，布告；注意；公告\\nvt. 通知；注意到；留心\\nvi. 引起注意\",\"audio\":\"notice.mp3\"},{\"word\":\"number\",\"pronun\":\"[ˈnʌmbər]\",\"translation\":\"n. 数；（杂志等的）期；号码；数字；算术\\nvi. 计入；总数达到\\nvt. 编号；计入；数…的数目；使为数有限\",\"audio\":\"number.mp3\"},{\"word\":\"nurse\",\"pronun\":\"[nɜːrs]\",\"translation\":\"vt. 看护，护理；照顾；培养；给…喂奶\\nvi. 照料，护理；喂奶；当保姆\\nn. 护士；奶妈，保姆\",\"audio\":\"nurse.mp3\"},{\"word\":\"nut\",\"pronun\":\"[nʌt]\",\"translation\":\"n. 螺母，螺帽；坚果；难对付的人，难解的问题\\nvi. 采坚果\",\"audio\":\"nut.mp3\"},{\"word\":\"occupation\",\"pronun\":\"[ˌɑːkjuˈpeɪʃn]\",\"translation\":\"n. 职业；占有；消遣；占有期\",\"audio\":\"occupation.mp3\"},{\"word\":\"of\",\"pronun\":\"[əv; ʌv]\",\"translation\":\"prep. 关于；属于；…的；由…组成的\",\"audio\":\"of.mp3\"},{\"word\":\"off\",\"pronun\":\"[ɔːf]\",\"translation\":\"prep. 离开；脱落\\nadv. 切断；走开\\nadj. 远离的；空闲的\",\"audio\":\"off.mp3\"},{\"word\":\"offer\",\"pronun\":\"[ˈɔːfər]\",\"translation\":\"vt. 提供；出价；试图\\nn. 提议；出价；意图；录取通知书\\nvi. 提议；出现；献祭；求婚\",\"audio\":\"offer.mp3\"},{\"word\":\"office\",\"pronun\":\"[ˈɑːfɪs]\",\"translation\":\"n. 办公室；政府机关；官职；营业处\",\"audio\":\"office.mp3\"},{\"word\":\"officer\",\"pronun\":\"[ˈɑːfɪsər]\",\"translation\":\"n. 军官，警官；公务员，政府官员；船长\\nvt. 指挥\",\"audio\":\"officer.mp3\"},{\"word\":\"often\",\"pronun\":\"[ˈɔːf(ə)n]\",\"translation\":\"adv. 常常，时常\",\"audio\":\"often.mp3\"},{\"word\":\"oil\",\"pronun\":\"[ɔɪl]\",\"translation\":\"n. 油；石油；油画颜料\\nvt. 加油；涂油；使融化\\nvi. 融化；加燃油\",\"audio\":\"oil.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

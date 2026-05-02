@@ -1,0 +1,62 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.781172+00:00",
+  "request": {
+    "lesson_id": "8440eabbf40fe1e263d37cd99c165ac7",
+    "course_id": "66724e53770af94715b9e0524520eb74",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "66724e53770af94715b9e0524520eb74",
+    "order": 63,
+    "nextCourseId": "66724e53770af94715b9e0524520eb74",
+    "courseName": "基础练习-上排数字",
+    "lessonId": "8440eabbf40fe1e263d37cd99c165ac7",
+    "nextLessonId": "caec9defabad06643098e79ff3ed2d52",
+    "lessonName": "9指法练习",
+    "icon": "data/assets/daziya.com/key-icon_num-9.73682490a3.png",
+    "description": "数字输入练习 - 9指法练习",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "9b445860754018ad9bcc27b7ed06fa8f",
+        "index": 1,
+        "highlights": [
+          "9"
+        ],
+        "text": [
+          "请用右手无名指输入数字9"
+        ],
+        "detail": "新的数字键[9]"
+      }
+    ],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c5242f6102d17ed9d53669b60c93deee",
+        "index": 2,
+        "text": [
+          "99999999999999999999"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "9",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

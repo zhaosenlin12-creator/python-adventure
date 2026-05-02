@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.773681+00:00",
+  "request": {
+    "lesson_id": "03f226a3f46a1946fd32319ab8ce06c1",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 146,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "03f226a3f46a1946fd32319ab8ce06c1",
+    "nextLessonId": "a7763fda5b0b02e057d501e8d27a1997",
+    "lessonName": "KET核心词-3",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第3课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "add2835d76213e6c3a350a5caa1ac600",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"all\",\"pronun\":\"[ɔːl]\",\"translation\":\"n. 全部\\nadj. 全部的\\nadv. 全然地；越发\\npron. 全部\",\"audio\":\"all.mp3\"},{\"word\":\"allow\",\"pronun\":\"[əˈlaʊ]\",\"translation\":\"vi. 容许；考虑\\nvt. 允许；给予；认可\",\"audio\":\"allow.mp3\"},{\"word\":\"almost\",\"pronun\":\"[ˈɔːlmoʊst]\",\"translation\":\"adv. 差不多，几乎\",\"audio\":\"almost.mp3\"},{\"word\":\"alone\",\"pronun\":\"[əˈloʊn]\",\"translation\":\"adj. 独自的；单独的；孤独的\\nadv. 独自地；单独地\",\"audio\":\"alone.mp3\"},{\"word\":\"along\",\"pronun\":\"[əˈlɔːŋ]\",\"translation\":\"prep. 沿着；顺着\\nadv. 一起；向前；来到\",\"audio\":\"along.mp3\"},{\"word\":\"already\",\"pronun\":\"[ɔːlˈredi]\",\"translation\":\"adv. 已经，早已；先前\",\"audio\":\"already.mp3\"},{\"word\":\"also\",\"pronun\":\"[ˈɔːlsoʊ]\",\"translation\":\"conj. 并且；另外\\nadv. 也；而且；同样\",\"audio\":\"also.mp3\"},{\"word\":\"always\",\"pronun\":\"[ˈɔːlweɪz]\",\"translation\":\"adv. 永远，一直；总是；常常\",\"audio\":\"always.mp3\"},{\"word\":\"amazing\",\"pronun\":\"[əˈmeɪzɪŋ]\",\"translation\":\"adj. 令人惊异的\\nv. 使吃惊（amaze的ing形式）\",\"audio\":\"amazing.mp3\"},{\"word\":\"ambulance\",\"pronun\":\"[ˈæmbjələns]\",\"translation\":\"n. [车辆][医] 救护车；战时流动医院\",\"audio\":\"ambulance.mp3\"},{\"word\":\"among\",\"pronun\":\"[əˈmʌŋ]\",\"translation\":\"prep. 在…中间；在…之中\",\"audio\":\"among.mp3\"},{\"word\":\"angry\",\"pronun\":\"[ˈæŋɡri]\",\"translation\":\"adj. 生气的；愤怒的；狂暴的；（伤口等）发炎的\",\"audio\":\"angry.mp3\"},{\"word\":\"animal\",\"pronun\":\"[ˈænɪm(ə)l]\",\"translation\":\"n. 动物\\n动物的\",\"audio\":\"animal.mp3\"},{\"word\":\"another\",\"pronun\":\"[əˈnʌðər]\",\"translation\":\"prep. 另一个；另一个人\\nadj. 又一，另一；另外的；不同的\\npron. 另一个；又一个\",\"audio\":\"another.mp3\"},{\"word\":\"answer\",\"pronun\":\"[ˈænsər]\",\"translation\":\"n. 回答；答案；答辩\\nvt. 回答；符合\\nvi. 回答；符合\",\"audio\":\"answer.mp3\"},{\"word\":\"any\",\"pronun\":\"[ˈeni]\",\"translation\":\"adj. 任何的；所有的；丝毫\\npron. 任何；任何一个；若干\\nadv. 稍微；少许\",\"audio\":\"any.mp3\"},{\"word\":\"anymore\",\"pronun\":\"[ˌeniˈmɔːr]\",\"translation\":\"adv. 再也不，不再\",\"audio\":\"anymore.mp3\"},{\"word\":\"anyone\",\"pronun\":\"[ˈeniwʌn]\",\"translation\":\"pron. 任何人；任何一个\",\"audio\":\"anyone.mp3\"},{\"word\":\"anything\",\"pronun\":\"[ˈeniθɪŋ]\",\"translation\":\"pron. 任何事\",\"audio\":\"anything.mp3\"},{\"word\":\"anyway\",\"pronun\":\"[ˈeniweɪ]\",\"translation\":\"adv. 无论如何，不管怎样；总之\",\"audio\":\"anyway.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

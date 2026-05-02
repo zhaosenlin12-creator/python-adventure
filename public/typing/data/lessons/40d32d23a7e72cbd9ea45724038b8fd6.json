@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.170515+00:00",
+  "request": {
+    "lesson_id": "40d32d23a7e72cbd9ea45724038b8fd6",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 29,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "40d32d23a7e72cbd9ea45724038b8fd6",
+    "nextLessonId": "dc859e27a9055ab36244440ad06fca88",
+    "lessonName": "2022年版 PEP-五年级-上册-6",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-五年级-上册 - 第6课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "89f6c40628a45e720c205776d7eba456",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"photo\",\"pronun\":\"[ˈfoʊtoʊ]\",\"translation\":\"n. 照片\",\"audio\":\"photo.mp3\"},{\"word\":\"front\",\"pronun\":\"[frʌnt]\",\"translation\":\"n. 前面；正面；前线\\nadj. 前面的；正面的\\nvt. 面对；朝向；对付\\nvi. 朝向\\nadv. 在前面；向前\",\"audio\":\"front.mp3\"},{\"word\":\"in\",\"pronun\":\"[ɪn]\",\"translation\":\"prep. 按照（表示方式）；从事于；在…之内\\nn. 执政者；门路；知情者\\nadj. 在里面的；时髦的\\nadv. 进入；当选；（服装等）时髦；在屋里\",\"audio\":\"in.mp3\"},{\"word\":\"of\",\"pronun\":\"[əv; ʌv]\",\"translation\":\"prep. 关于；属于；…的；由…组成的\",\"audio\":\"of.mp3\"},{\"word\":\"between\",\"pronun\":\"[bɪˈtwiːn]\",\"translation\":\"prep. 在…之间\\nadv. 在中间\",\"audio\":\"between.mp3\"},{\"word\":\"above\",\"pronun\":\"[əˈbʌv]\",\"translation\":\"prep. 超过；在……上面；在……之上\\nn. 上文\\nadj. 上文的\\nadv. 在上面；在上文\",\"audio\":\"above.mp3\"},{\"word\":\"beside\",\"pronun\":\"[bɪˈsaɪd]\",\"translation\":\"prep. 在旁边；与…相比；和…无关\",\"audio\":\"beside.mp3\"},{\"word\":\"behind\",\"pronun\":\"[bɪˈhaɪnd]\",\"translation\":\"prep. 落后于；支持；晚于\\nn. 屁股\\nadv. 在后地；在原处\",\"audio\":\"behind.mp3\"},{\"word\":\"there\",\"pronun\":\"[ðer]\",\"translation\":\"n. 那个地方\\nadv. 在那里；在那边；在那点上\\nint. 你瞧\",\"audio\":\"there.mp3\"},{\"word\":\"grandparent\",\"pronun\":\"[ˈɡrænperənt]\",\"translation\":\"n. 祖父母；祖父或祖母；外祖父母；外祖父或外祖母\",\"audio\":\"grandparent.mp3\"},{\"word\":\"their\",\"pronun\":\"[ðer]\",\"translation\":\"pron. 他们的，她们的；它们的\",\"audio\":\"their.mp3\"},{\"word\":\"house\",\"pronun\":\"[haʊs]\",\"translation\":\"n. 住宅；家庭；机构；议会；某种用途的建筑物\\nvt. 覆盖；给…房子住；把…储藏在房内\\nvi. 住\",\"audio\":\"house.mp3\"},{\"word\":\"lot\",\"pronun\":\"[lɑːt]\",\"translation\":\"n. 份额；许多；命运；阄\\nadv. （与形容词和副词连用）很，非常；（与动词连用）非常\\npron. 大量，许多\\nvt. 分组，把…划分（常与out连用）；把（土地）划分成块\\nvi. 抽签，拈阄\",\"audio\":\"lot.mp3\"},{\"word\":\"flower\",\"pronun\":\"[ˈflaʊər]\",\"translation\":\"n. 花；精华；开花植物\\nvt. 使开花；用花装饰\\nvi. 成熟，发育；开花；繁荣；旺盛\",\"audio\":\"flower.mp3\"},{\"word\":\"move\",\"pronun\":\"[muːv]\",\"translation\":\"n. 移动；步骤；迁居；策略\\nvi. 移动；搬家，迁移；离开\\nvt. 移动；感动\",\"audio\":\"move.mp3\"},{\"word\":\"dirty\",\"pronun\":\"[ˈdɜːrti]\",\"translation\":\"adj. 下流的，卑鄙的；肮脏的；恶劣的；暗淡的\\nvt. 弄脏\\nvi. 变脏\",\"audio\":\"dirty.mp3\"},{\"word\":\"everywhere\",\"pronun\":\"[ˈevriwer]\",\"translation\":\"n. 每个地方\\nadv. 到处\",\"audio\":\"everywhere.mp3\"},{\"word\":\"mouse\",\"pronun\":\"[maʊs]\",\"translation\":\"n. 鼠标；老鼠；胆小羞怯的人\\nvt. 探出\\nvi. 捕鼠；窥探\",\"audio\":\"mouse.mp3\"},{\"word\":\"live\",\"pronun\":\"[lɪv; laɪv]\",\"translation\":\"adj. 活的；生动的；实况转播的；精力充沛的\\nvt. 经历；度过\\nvi. 活；居住；生存\",\"audio\":\"live.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

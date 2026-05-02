@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.782933+00:00",
+  "request": {
+    "lesson_id": "e7023aa5c0a34eca196f34c8a2ea70d5",
+    "course_id": "df7bf8b8c0456926de2c1fac14a741b2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "order": 454,
+    "nextCourseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "courseName": "宋词必备67首（1）",
+    "lessonId": "e7023aa5c0a34eca196f34c8a2ea70d5",
+    "nextLessonId": "0273e90b54f70f365c07251d6cb2f53e",
+    "lessonName": "四时田园杂兴 其二十五",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8618abb71ea5ffc156128e5415a858bd",
+        "index": 1,
+        "text": [
+          "四时田园杂兴 其二十五\\n范成大\\n梅子金黄杏子肥，麦花雪白菜花稀。\\n日长篱落无人过，惟有蜻蜓蛱蝶飞。"
+        ],
+        "pinyin": "[[\"四\",\"sì\"],[\"时\",\"shí\"],[\"田\",\"tián\"],[\"园\",\"yuán\"],[\"杂\",\"zá\"],[\"兴\",\"xìng\"],[\" \",\"\"],[\"其\",\"qí\"],[\"二\",\"èr\"],[\"十\",\"shí\"],[\"五\",\"wǔ\"],[\"\\n\",\"\"],[\"范\",\"fàn\"],[\"成\",\"chéng\"],[\"大\",\"dà\"],[\"\\n\",\"\"],[\"梅\",\"méi\"],[\"子\",\"zǐ\"],[\"金\",\"jīn\"],[\"黄\",\"huáng\"],[\"杏\",\"xìng\"],[\"子\",\"zǐ\"],[\"肥\",\"féi\"],[\"，\",\"\"],[\"麦\",\"mài\"],[\"花\",\"huā\"],[\"雪\",\"xuě\"],[\"白\",\"bái\"],[\"菜\",\"cài\"],[\"花\",\"huā\"],[\"稀\",\"xī\"],[\"。\",\"\"],[\"\\n\",\"\"],[\"日\",\"rì\"],[\"长\",\"zhǎng\"],[\"篱\",\"lí\"],[\"落\",\"luò\"],[\"无\",\"wú\"],[\"人\",\"rén\"],[\"过\",\"guò\"],[\"，\",\"\"],[\"惟\",\"wéi\"],[\"有\",\"yǒu\"],[\"蜻\",\"qīng\"],[\"蜓\",\"tíng\"],[\"蛱\",\"jiá\"],[\"蝶\",\"dié\"],[\"飞\",\"fēi\"],[\"。\",\"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

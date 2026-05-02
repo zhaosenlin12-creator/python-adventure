@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.567087+00:00",
+  "request": {
+    "lesson_id": "218ed8ac7c719a9eb077ada1ec2b1e79",
+    "course_id": "fa03ede610a7cc0a487ff4fca5942e36",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "fa03ede610a7cc0a487ff4fca5942e36",
+    "order": 302,
+    "nextCourseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "courseName": "汉字四级",
+    "lessonId": "218ed8ac7c719a9eb077ada1ec2b1e79",
+    "nextLessonId": "fd10eabffeb95028e4d6c8016e839e00",
+    "lessonName": "游戏：英文单词",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-duck.b036f0ad8f.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "c9aab1dc3931155957937c502485d55a",
+        "index": 1,
+        "text": [
+          "afraid boil church strange should unknown himself nature repeat person"
+        ],
+        "contentType": 3,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 1,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

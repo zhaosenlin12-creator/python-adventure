@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.045679+00:00",
+  "request": {
+    "lesson_id": "0dd0150e1411021e348694a54aff91e7",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 422,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "0dd0150e1411021e348694a54aff91e7",
+    "nextLessonId": "58ee6dcd55b3e7066b4909fb4cc537b8",
+    "lessonName": "六级词汇正序版-45",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第45课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "539eecc214a57ada28a22ec21a9d310a",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"expert\",\"pronun\":\"[ˈekspɜːrt]\",\"translation\":\"n. 专家；行家；能手\\nadj. 熟练的；内行的；老练的\\nvt. 当专家；在…中当行家\",\"audio\":\"expert.mp3\"},{\"word\":\"expertise\",\"pronun\":\"[ˌekspɜːrˈtiːz]\",\"translation\":\"n. 专门知识；专门技术；专家的意见\",\"audio\":\"expertise.mp3\"},{\"word\":\"expire\",\"pronun\":\"[ɪkˈspaɪər]\",\"translation\":\"vi. 期满；终止；死亡；呼气\\nvt. 呼出（空气）\",\"audio\":\"expire.mp3\"},{\"word\":\"explicit\",\"pronun\":\"[ɪkˈsplɪsɪt]\",\"translation\":\"adj. 明确的；清楚的；直率的；详述的\",\"audio\":\"explicit.mp3\"},{\"word\":\"exploit\",\"pronun\":\"[ɪkˈsplɔɪt]\",\"translation\":\"n. 勋绩；功绩\\nvt. 开发，开拓；剥削；开采\",\"audio\":\"exploit.mp3\"},{\"word\":\"explore\",\"pronun\":\"[ɪkˈsplɔːr]\",\"translation\":\"vi. 探索；探测；探险\\nvt. 探索；探测；探险\",\"audio\":\"explore.mp3\"},{\"word\":\"expose\",\"pronun\":\"[ɪkˈspoʊz]\",\"translation\":\"vt. 揭露，揭发；使曝光；显示\",\"audio\":\"expose.mp3\"},{\"word\":\"exposition\",\"pronun\":\"[ˌekspəˈzɪʃn]\",\"translation\":\"n. 博览会；阐述；展览会\",\"audio\":\"exposition.mp3\"},{\"word\":\"expression\",\"pronun\":\"[ɪkˈspreʃn]\",\"translation\":\"n. 表现，表示，表达；表情，脸色，态度，腔调，声调；式，符号；词句，语句，措辞，说法\",\"audio\":\"expression.mp3\"},{\"word\":\"exquisite\",\"pronun\":\"[ɪkˈskwɪzɪtˌˈekskwɪzɪt]\",\"translation\":\"n. 服饰过于讲究的男子\\nadj. 精致的；细腻的；优美的，高雅的；异常的；剧烈的\",\"audio\":\"exquisite.mp3\"},{\"word\":\"extensive\",\"pronun\":\"[ɪkˈstensɪv]\",\"translation\":\"adj. 广泛的；大量的；广阔的\",\"audio\":\"extensive.mp3\"},{\"word\":\"extent\",\"pronun\":\"[ɪkˈstent]\",\"translation\":\"n. 程度；范围；长度\",\"audio\":\"extent.mp3\"},{\"word\":\"external\",\"pronun\":\"[ɪkˈstɜːrnl]\",\"translation\":\"n. 外部；外观；外面\\nadj. 外部的；表面的；[药] 外用的；外国的；外面的\",\"audio\":\"external.mp3\"},{\"word\":\"extinct\",\"pronun\":\"[ɪkˈstɪŋkt]\",\"translation\":\"adj. 灭绝的，绝种的；熄灭的\\nvt. 使熄灭\",\"audio\":\"extinct.mp3\"},{\"word\":\"extinguish\",\"pronun\":\"[ɪkˈstɪŋɡwɪʃ]\",\"translation\":\"vt. 熄灭；压制；偿清\",\"audio\":\"extinguish.mp3\"},{\"word\":\"extract\",\"pronun\":\"[ˈekstrækt]\",\"translation\":\"n. 汁；摘录；榨出物；选粹\\nvt. 提取；取出；摘录；榨取\",\"audio\":\"extract.mp3\"},{\"word\":\"extraordinary\",\"pronun\":\"[ɪkˈstrɔːrdəneri]\",\"translation\":\"adj. 非凡的；特别的；离奇的；临时的；特派的\",\"audio\":\"extraordinary.mp3\"},{\"word\":\"extravagant\",\"pronun\":\"[ɪkˈstrævəɡənt]\",\"translation\":\"adj. 奢侈的；浪费的；过度的；放纵的\",\"audio\":\"extravagant.mp3\"},{\"word\":\"extreme\",\"pronun\":\"[ɪkˈstriːm]\",\"translation\":\"n. 极端；末端；最大程度；极端的事物\\nadj. 极端的；极度的；偏激的；尽头的\",\"audio\":\"extreme.mp3\"},{\"word\":\"fabric\",\"pronun\":\"[ˈfæbrɪk]\",\"translation\":\"n. 织物；布；组织；构造；建筑物\",\"audio\":\"fabric.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

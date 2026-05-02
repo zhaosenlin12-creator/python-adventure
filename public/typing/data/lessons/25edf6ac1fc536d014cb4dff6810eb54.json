@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.588656+00:00",
+  "request": {
+    "lesson_id": "25edf6ac1fc536d014cb4dff6810eb54",
+    "course_id": "3b877f6987801a51996848da3c925322",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "3b877f6987801a51996848da3c925322",
+    "order": 77,
+    "nextCourseId": "3b877f6987801a51996848da3c925322",
+    "courseName": "手指旅行",
+    "lessonId": "25edf6ac1fc536d014cb4dff6810eb54",
+    "nextLessonId": "f2f535d3b17df664acc1cac3d6f4c34c",
+    "lessonName": "右手食指旅行",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-hand-travel.014c434abe.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9c891a45fd1a1e63e99b0754658c672f",
+        "index": 1,
+        "text": [
+          "muj umju mumj jmuj mju ujjum jum ujmm ujmj umj mju jmuj"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "mu j",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

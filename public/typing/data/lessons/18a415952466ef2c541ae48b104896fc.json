@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.270198+00:00",
+  "request": {
+    "lesson_id": "18a415952466ef2c541ae48b104896fc",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 42,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "18a415952466ef2c541ae48b104896fc",
+    "nextLessonId": "ebb81016a681188eb2580f8d48dcb58a",
+    "lessonName": "2022年版 PEP-六年级-上册-3",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-六年级-上册 - 第3课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4b93afbb0cbdc9afc3d007240b11d8a6",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"early\",\"pronun\":\"[ˈɜːrli]\",\"translation\":\"adj. 早期的；早熟的\\nadv. 提早；在初期\",\"audio\":\"early.mp3\"},{\"word\":\"helmet\",\"pronun\":\"[ˈhelmɪt]\",\"translation\":\"n. 钢盔，头盔\",\"audio\":\"helmet.mp3\"},{\"word\":\"must\",\"pronun\":\"[məst; mʌst]\",\"translation\":\"aux. 必须，一定；可以，应当；很可能\\nn. 绝对必要的事物；未发酵葡萄汁\",\"audio\":\"must.mp3\"},{\"word\":\"wear\",\"pronun\":\"[wer]\",\"translation\":\"n. 衣物；磨损；耐久性\\nv. 穿着；用旧；耗损；面露\",\"audio\":\"wear.mp3\"},{\"word\":\"attention\",\"pronun\":\"[əˈtenʃn]\",\"translation\":\"n. 注意力；关心；立正！（口令）\",\"audio\":\"attention.mp3\"},{\"word\":\"pay\",\"pronun\":\"[peɪ]\",\"translation\":\"n. 工资，薪水；付款；报答\\nvt. 支付，付；偿还，补偿；给予\\nvi. 付款；偿还\\nadj. 收费的；需付费的\",\"audio\":\"pay.mp3\"},{\"word\":\"traffic\",\"pronun\":\"[ˈtræfɪk]\",\"translation\":\"n. 交通；运输；贸易；[通信] 通信量\\nvt. 用…作交换；在…通行\\nvi. 交易，买卖\",\"audio\":\"traffic.mp3\"},{\"word\":\"Munich\",\"pronun\":\"[ˈmjuːnɪk]\",\"translation\":\"n. 慕尼黑（联邦德国城市）\",\"audio\":\"Munich.mp3\"},{\"word\":\"Germany\",\"pronun\":\"[ˈdʒɜːrməni]\",\"translation\":\"n. 德国\",\"audio\":\"Germany.mp3\"},{\"word\":\"Alaska\",\"pronun\":\"[əˈlæskə]\",\"translation\":\"n. 阿拉斯加州\",\"audio\":\"Alaska.mp3\"},{\"word\":\"sled\",\"pronun\":\"[sled]\",\"translation\":\"n. 雪橇\\nvt. 用摘棉机摘；用雪橇运\\nvi. 乘雪橇；用雪橇运\",\"audio\":\"sled.mp3\"},{\"word\":\"fast\",\"pronun\":\"[fæst]\",\"translation\":\"n. 斋戒；绝食\\nadj. 快速的，迅速的；紧的，稳固的\\nadv. 迅速地；紧紧地；彻底地\\nvi. 禁食，斋戒\",\"audio\":\"fast.mp3\"},{\"word\":\"ferry\",\"pronun\":\"[ˈferi]\",\"translation\":\"n. 渡船；摆渡；渡口\\nvt. （乘渡船）渡过；用渡船运送；空运\\nvi. 摆渡；来往行驶\",\"audio\":\"ferry.mp3\"},{\"word\":\"papa\",\"pronun\":\"[ˈpɑːpə]\",\"translation\":\"n. 爸爸（儿语，等于poppa）\",\"audio\":\"papa.mp3\"},{\"word\":\"Scotland\",\"pronun\":\"[ˈskɑːtlənd]\",\"translation\":\"n. 苏格兰\",\"audio\":\"Scotland.mp3\"},{\"word\":\"visit\",\"pronun\":\"[ˈvɪzɪt]\",\"translation\":\"n. 访问；参观；逗留\\nvt. 访问；参观；视察\\nvi. 访问；暂住；闲谈\",\"audio\":\"visit.mp3\"},{\"word\":\"film\",\"pronun\":\"[fɪlm]\",\"translation\":\"n. 电影；薄膜；胶卷；轻烟\\nvt. 在…上覆以薄膜；把…拍成电影\\nvi. 摄制电影；生薄膜；变得朦胧\",\"audio\":\"film.mp3\"},{\"word\":\"see\",\"pronun\":\"[siː]\",\"translation\":\"vi. 看；看见；领会\\nvt. 看见；理解；领会\",\"audio\":\"see.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

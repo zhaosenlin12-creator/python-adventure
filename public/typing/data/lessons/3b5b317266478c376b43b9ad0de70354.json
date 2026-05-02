@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:33.589702+00:00",
+  "request": {
+    "lesson_id": "3b5b317266478c376b43b9ad0de70354",
+    "course_id": "c34575de8400552068ca0d9da0898f18",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "c34575de8400552068ca0d9da0898f18",
+    "order": 5,
+    "nextCourseId": "c34575de8400552068ca0d9da0898f18",
+    "courseName": "语文课内同步一年级上册",
+    "lessonId": "3b5b317266478c376b43b9ad0de70354",
+    "nextLessonId": "ccab6a814c83eaaca67da5504046cdac",
+    "lessonName": "金木水火土",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "de3cd4756de345685cdf6c9e9249aba5",
+        "index": 1,
+        "text": [
+          "一二三四五，\\n金木水火土。\\n天地分上下，\\n日月照今古。"
+        ],
+        "pinyin": "[[\"一\", \"yī\"], [\"二\", \"èr\"], [\"三\", \"sān\"], [\"四\", \"sì\"], [\"五\", \"wǔ\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"金\", \"jīn\"], [\"木\", \"mù\"], [\"水\", \"shuǐ\"], [\"火\", \"huǒ\"], [\"土\", \"tǔ\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"天\", \"tiān\"], [\"地\", \"dì\"], [\"分\", \"fēn\"], [\"上\", \"shàng\"], [\"下\", \"xià\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"日\", \"rì\"], [\"月\", \"yuè\"], [\"照\", \"zhào\"], [\"今\", \"jīn\"], [\"古\", \"gǔ\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

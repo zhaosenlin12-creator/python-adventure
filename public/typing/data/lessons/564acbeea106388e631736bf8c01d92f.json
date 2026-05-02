@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.553861+00:00",
+  "request": {
+    "lesson_id": "564acbeea106388e631736bf8c01d92f",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 541,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "564acbeea106388e631736bf8c01d92f",
+    "nextLessonId": "c24e232bf10e13fc39540d4cec5abe05",
+    "lessonName": "Where Does Milk Come from?",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b2e5fd21899a11e5a1b83220e3611c33",
+        "index": 1,
+        "text": [
+          "Where Does Milk Come from?\\n\\nBilly is six years old. He visits his uncle and aunt every summer. They live on a farm.\\nThey have cows, chickens, sheep, and a big horse on the farm. Billy loves al the animals.\\nThis summer, he is going to learn how to milk a cow.\\nWow! His friends cannot believe it.\\n“We get our milk from the store,” they say. “But our friend is going to get it from a cow.”\\nBilly laughs. “Milk does not come from the store,” he says. “Milk comes from a cow.”\\nHis friends do not believe him. But his teacher says, “Yes, milk comes from cows. Cows eat grass. They change the grass into milk. The farmer sells the milk. And we buy it in the stores.”\\nThe teacher tells them one more thing. “Did you know that cows have four stomachs?” The kids are surprised. But it's true!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

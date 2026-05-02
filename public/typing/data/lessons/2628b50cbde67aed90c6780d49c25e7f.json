@@ -1,0 +1,83 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.586044+00:00",
+  "request": {
+    "lesson_id": "2628b50cbde67aed90c6780d49c25e7f",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 13,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "2628b50cbde67aed90c6780d49c25e7f",
+    "nextLessonId": "3c1a0651e1a6aae6a305fa41b85a0069",
+    "lessonName": "巩固练习：iu、ie",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母iu、ie的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "9c3643a2332a24921bacf1991df2bd45",
+        "index": 1,
+        "highlights": [
+          "iu"
+        ],
+        "text": [
+          "请输入按键 [iu]"
+        ],
+        "detail": "学习双拼按键 iu"
+      },
+      {
+        "chapterId": "414aad92e883a7170dce7a2ce709fe75",
+        "index": 2,
+        "highlights": [
+          "ie"
+        ],
+        "text": [
+          "请输入按键 [ie]"
+        ],
+        "detail": "学习双拼按键 ie"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "d931dc469eb7422c9798d6c270d5d9ab",
+        "index": 3,
+        "text": [
+          "iuiuiuiuieieieieiuieiuieiuieiuie"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "4ba11c8ef590c0568535f24174e84937",
+        "index": 4,
+        "text": [
+          "柳枝轻摆，蝴蝶飞舞。\\n秋夜微凉，月色如水。\\n姐姐绣花，弟弟读书。\\n小鸟啾啾，落叶飘飘。\\n流水潺潺，野菊飘香。"
+        ],
+        "pinyin": "[[\"柳\", \"liǔ\"], [\"枝\", \"zhī\"], [\"轻\", \"qīng\"], [\"摆\", \"bǎi\"], [\"，\", \"\"], [\"蝴\", \"hú\"], [\"蝶\", \"dié\"], [\"飞\", \"fēi\"], [\"舞\", \"wǔ\"], [\"。\", \"\"], [\"秋\", \"qiū\"], [\"夜\", \"yè\"], [\"微\", \"wēi\"], [\"凉\", \"liáng\"], [\"，\", \"\"], [\"月\", \"yuè\"], [\"色\", \"sè\"], [\"如\", \"rú\"], [\"水\", \"shuǐ\"], [\"。\", \"\"], [\"姐\", \"jiě\"], [\"姐\", \"jie\"], [\"绣\", \"xiù\"], [\"花\", \"huā\"], [\"，\", \"\"], [\"弟\", \"dì\"], [\"弟\", \"di\"], [\"读\", \"dú\"], [\"书\", \"shū\"], [\"。\", \"\"], [\"小\", \"xiǎo\"], [\"鸟\", \"niǎo\"], [\"啾\", \"jiū\"], [\"啾\", \"jiū\"], [\"，\", \"\"], [\"落\", \"luò\"], [\"叶\", \"yè\"], [\"飘\", \"piāo\"], [\"飘\", \"piāo\"], [\"。\", \"\"], [\"流\", \"liú\"], [\"水\", \"shuǐ\"], [\"潺\", \"chán\"], [\"潺\", \"chán\"], [\"，\", \"\"], [\"野\", \"yě\"], [\"菊\", \"jú\"], [\"飘\", \"piāo\"], [\"香\", \"xiāng\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

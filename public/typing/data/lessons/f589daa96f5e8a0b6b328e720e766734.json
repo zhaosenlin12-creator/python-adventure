@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.538847+00:00",
+  "request": {
+    "lesson_id": "f589daa96f5e8a0b6b328e720e766734",
+    "course_id": "a74c1aef61379ff4f0a2ca54be6ac56f",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "a74c1aef61379ff4f0a2ca54be6ac56f",
+    "order": 6,
+    "nextCourseId": "a74c1aef61379ff4f0a2ca54be6ac56f",
+    "courseName": "基础练习-下排数字",
+    "lessonId": "f589daa96f5e8a0b6b328e720e766734",
+    "nextLessonId": "24be73573c9b40f9a82c3d5a641e59ee",
+    "lessonName": "1&3组合练习",
+    "icon": "data/assets/daziya.com/key-icon_num-1a3.6a77995882.png",
+    "description": "数字输入练习 - 1&3组合练习",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "42a9798b6ab7c54ece22394c38713269",
+        "index": 1,
+        "text": [
+          "11331133113311331133"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

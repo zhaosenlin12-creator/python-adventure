@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.577012+00:00",
+  "request": {
+    "lesson_id": "abb256df5b49152d87f6d06fac10747e",
+    "course_id": "a74c1aef61379ff4f0a2ca54be6ac56f",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "a74c1aef61379ff4f0a2ca54be6ac56f",
+    "order": 14,
+    "nextCourseId": "a74c1aef61379ff4f0a2ca54be6ac56f",
+    "courseName": "基础练习-下排数字",
+    "lessonId": "abb256df5b49152d87f6d06fac10747e",
+    "nextLessonId": "f17b0a17a1b1d77193a9c5e89d1d0ea4",
+    "lessonName": "加法巩固一",
+    "icon": "data/assets/daziya.com/key-icon_num-jifagonggu.fdc0e59810.png",
+    "description": "数字输入练习 - 加法巩固一",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "90f1fd3e89d9dc338f5e2a1a5237fdeb",
+        "index": 1,
+        "text": [
+          "11+22+33+11+22+33+11"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

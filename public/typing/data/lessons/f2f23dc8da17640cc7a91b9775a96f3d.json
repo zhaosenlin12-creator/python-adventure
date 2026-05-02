@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.826060+00:00",
+  "request": {
+    "lesson_id": "f2f23dc8da17640cc7a91b9775a96f3d",
+    "course_id": "77cc7d3093a4e829cb2fb89b1788a0e1",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "77cc7d3093a4e829cb2fb89b1788a0e1",
+    "order": 135,
+    "nextCourseId": "daccefd55478aba6657b64a604f8f971",
+    "courseName": "拼音",
+    "lessonId": "f2f23dc8da17640cc7a91b9775a96f3d",
+    "nextLessonId": "e3433e3fb1e095aa70fee03fe9ca9d03",
+    "lessonName": "拼音组合 z",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-py-z.a90c387e0c.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "bd623d160f5d8f6f9c7163cac34b7764",
+        "index": 1,
+        "text": [
+          "za zai zan zang zao ze zei zen zeng zha zhai zhan zhang zhao zhe zhei zhen zheng zhi zhong"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "zaingoeh",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 33,
+        "minSpeed": 10,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

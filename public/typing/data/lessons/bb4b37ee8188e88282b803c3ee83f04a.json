@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.896392+00:00",
+  "request": {
+    "lesson_id": "bb4b37ee8188e88282b803c3ee83f04a",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 177,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "bb4b37ee8188e88282b803c3ee83f04a",
+    "nextLessonId": "d21c4c947c683759dc0a782d90de33c4",
+    "lessonName": "KET核心词-96",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第96课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1163bfc32fb415ea303ad710489036e9",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"woolen\",\"pronun\":\"[ˈwʊlən]\",\"translation\":\"n. 毛织品\\nadj. 羊毛的；羊毛制的\",\"audio\":\"woolen.mp3\"},{\"word\":\"black\",\"pronun\":\"[blæk]\",\"translation\":\"n. 黑色；黑人；黑颜料\\nadj. 黑色的；黑人的；邪恶的\\nvt. 使变黑；把鞋油等涂在…上；把（眼眶）打成青肿\\nvi. 变黑\",\"audio\":\"black.mp3\"},{\"word\":\"blue\",\"pronun\":\"[bluː]\",\"translation\":\"adj. 蓝色的；沮丧的，忧郁的；下流的\\nn. 蓝色；[复数]（美国海、陆、空三军穿的）蓝色制服；蓝颜料；[the blue(s)][用作单数或复数]布鲁斯（歌曲）（一种伤感的美国黑人民歌\\nvi. 变成蓝色，呈蓝色\\nvt. 把…染成蓝色；使成蓝色；给…用上蓝剂；用上蓝剂于\",\"audio\":\"blue.mp3\"},{\"word\":\"brown\",\"pronun\":\"[braʊn]\",\"translation\":\"n. 褐色，棕色\\nadj. 棕色的，褐色的；太阳晒黑的\\nvt. 使变成褐色\\nvi. 变成褐色\",\"audio\":\"brown.mp3\"},{\"word\":\"dark\",\"pronun\":\"[dɑːrk]\",\"translation\":\"n. 黑暗；夜；黄昏；模糊\\nadj. 黑暗的，深色的；模糊的；无知的；忧郁的\",\"audio\":\"dark.mp3\"},{\"word\":\"golden\",\"pronun\":\"[ˈɡoʊldən]\",\"translation\":\"adj. 金色的，黄金般的；珍贵的；金制的\",\"audio\":\"golden.mp3\"},{\"word\":\"green\",\"pronun\":\"[ɡriːn]\",\"translation\":\"n. 绿色；青春\\nadj. 绿色的；青春的\\nvt. 使…变绿色\\nvi. 变绿色\",\"audio\":\"green.mp3\"},{\"word\":\"grey\",\"pronun\":\"[ɡreɪ]\",\"translation\":\"n. 灰色\\nadj. 灰色的；灰白的\\nvt. 使变成灰色；使变老\\nvi. 变成灰色；老化\",\"audio\":\"grey.mp3\"},{\"word\":\"light\",\"pronun\":\"[laɪt]\",\"translation\":\"n. 光；光线；灯；打火机；领悟；浅色；天窗\\nadj. 轻的；浅色的；明亮的；轻松的；容易的；清淡的\\nvi. 点着；变亮；着火\\nvt. 照亮；点燃；着火\\nadv. 轻地；清楚地；轻便地\",\"audio\":\"light.mp3\"},{\"word\":\"orange\",\"pronun\":\"[ˈɔrɪndʒ]\",\"translation\":\"adj. 橙色的；橘色的\\nn. 橙；橙色；桔子\",\"audio\":\"orange.mp3\"},{\"word\":\"pale\",\"pronun\":\"[peɪl]\",\"translation\":\"n. 前哨；栅栏；范围\\nadj. 苍白的；无力的；暗淡的\\nvt. 使失色；使变苍白；用栅栏围\\nvi. 失色；变苍白；变得暗淡\",\"audio\":\"pale.mp3\"},{\"word\":\"pink\",\"pronun\":\"[pɪŋk]\",\"translation\":\"n. 粉红色；化身，典范；石竹花；头面人物\\nadj. 粉红的；比较激进的；石竹科的；脸色发红的\\nvt. 扎，刺，戳；使…变粉红色；使…面红耳赤\\nvi. 变粉红色\",\"audio\":\"pink.mp3\"},{\"word\":\"purple\",\"pronun\":\"[ˈpɜːrpl]\",\"translation\":\"n. 紫色；紫袍\\nadj. 紫色的；帝王的；华而不实的\\nvt. 使成紫色\\nvi. 变成紫色\",\"audio\":\"purple.mp3\"},{\"word\":\"red\",\"pronun\":\"[red]\",\"translation\":\"n. 红色，红颜料；赤字\\nadj. 红色的；红肿的，充血的\",\"audio\":\"red.mp3\"},{\"word\":\"silver\",\"pronun\":\"[ˈsɪlvər]\",\"translation\":\"n. 银；银器；银币；银质奖章；餐具；银灰色\\nadj. 银的；含银的；有银色光泽的；口才流利的；第二十五周年的婚姻\\nvt. 镀银；使有银色光泽\\nvi. 变成银色\",\"audio\":\"silver.mp3\"},{\"word\":\"white\",\"pronun\":\"[waɪt]\",\"translation\":\"n. 白色；洁白；白种人\\nadj. 白色的；白种的；纯洁的\",\"audio\":\"white.mp3\"},{\"word\":\"yellow\",\"pronun\":\"[ˈjeloʊ]\",\"translation\":\"n. 黄色；黄种人；黄色颜料\\nadj. 黄色的；黄皮肤的\\nvt. 使变黄或发黄\\nvi. 变黄或发黄\",\"audio\":\"yellow.mp3\"},{\"word\":\"afraid\",\"pronun\":\"[əˈfreɪd]\",\"translation\":\"adj. 害怕的；恐怕；担心的\",\"audio\":\"afraid.mp3\"},{\"word\":\"alone\",\"pronun\":\"[əˈloʊn]\",\"translation\":\"adj. 独自的；单独的；孤独的\\nadv. 独自地；单独地\",\"audio\":\"alone.mp3\"},{\"word\":\"amazed\",\"pronun\":\"[əˈmeɪzd]\",\"translation\":\"v. 使…吃惊；把…弄糊涂（amaze的过去分词）\\nadj. 惊奇的，吃惊的\",\"audio\":\"amazed.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.981015+00:00",
+  "request": {
+    "lesson_id": "c8196d5c0ce27485eb9882bccd49ec42",
+    "course_id": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "order": 80,
+    "nextCourseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "courseName": "C++",
+    "lessonId": "c8196d5c0ce27485eb9882bccd49ec42",
+    "nextLessonId": "8b97b8a8ea7d279e906faf388791bcf0",
+    "lessonName": "快速排序",
+    "icon": "data/assets/daziya.com/key-icon_key-cpp.b136419115.png",
+    "description": "C++编程练习 - 快速排序",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "7ee8a84c3f32e236d8fb0ee9054d6bb2",
+        "index": 1,
+        "text": [
+          "#include <iostream>\\nusing namespace std;\\n\\nint partition(int arr[], int low, int high) {\\n    int pivot = arr[high];\\n    int i = low - 1;\\n\\n    for (int j = low; j < high; j++) {\\n        if (arr[j] < pivot) {\\n            i++;\\n            swap(arr[i], arr[j]);\\n        }\\n    }\\n    swap(arr[i + 1], arr[high]);\\n    return i + 1;\\n}\\n\\nvoid quickSort(int arr[], int low, int high) {\\n    if (low < high) {\\n        int pi = partition(arr, low, high);\\n        quickSort(arr, low, pi - 1);\\n        quickSort(arr, pi + 1, high);\\n    }\\n}\\n\\nint main() {\\n    int arr[] = {64, 34, 25, 12, 22, 11, 90};\\n    int n = 7;\\n\\n    cout << \"排序前: \";\\n    for (int i = 0; i < n; i++) cout << arr[i] << \" \";\\n\\n    quickSort(arr, 0, n - 1);\\n\\n    cout << \"\\n排序后: \";\\n    for (int i = 0; i < n; i++) cout << arr[i] << \" \";\\n    cout << endl;\\n\\n    return 0;\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "cpp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

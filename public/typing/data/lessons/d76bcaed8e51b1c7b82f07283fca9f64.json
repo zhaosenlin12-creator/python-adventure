@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.946273+00:00",
+  "request": {
+    "lesson_id": "d76bcaed8e51b1c7b82f07283fca9f64",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 184,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "d76bcaed8e51b1c7b82f07283fca9f64",
+    "nextLessonId": "f0feccead16816e73fca7c40c470cb51",
+    "lessonName": "KET核心词-117",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第117课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e757c6e05024a982a1bffd729f193932",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"subject\",\"pronun\":\"[ˈsʌbdʒɪkt; ˈsʌbdʒekt]\",\"translation\":\"n. 主题；科目；[语] 主语；国民\\nadj. 服从的；易患…的；受制于…的\\nvt. 使…隶属；使屈从于…\",\"audio\":\"subject.mp3\"},{\"word\":\"take an exam\",\"pronun\":\"\",\"translation\":\"参加考试；应试；进行考试\",\"audio\":\"take_an_exam.mp3\"},{\"word\":\"teach\",\"pronun\":\"[tiːtʃ]\",\"translation\":\"vt. 教；教授；教导\\nvi. 教授；讲授；当老师\",\"audio\":\"teach.mp3\"},{\"word\":\"teacher\",\"pronun\":\"[ˈtiːtʃər]\",\"translation\":\"n. 教师；导师\",\"audio\":\"teacher.mp3\"},{\"word\":\"term\",\"pronun\":\"[tɜːrm]\",\"translation\":\"n. 术语；学期；期限；条款；(代数式等的)项\\nvt. 把…叫做\",\"audio\":\"term.mp3\"},{\"word\":\"test\",\"pronun\":\"[test]\",\"translation\":\"n. 试验；检验\\nvt. 试验；测试\\nvi. 试验；测试\",\"audio\":\"test.mp3\"},{\"word\":\"textbook\",\"pronun\":\"[ˈtekstbʊk]\",\"translation\":\"n. 教科书，课本\",\"audio\":\"textbook.mp3\"},{\"word\":\"trainer\",\"pronun\":\"[ˈtreɪnər]\",\"translation\":\"n. 助理教练；训练员；驯马师；飞行练习器；运动鞋\",\"audio\":\"trainer.mp3\"},{\"word\":\"university\",\"pronun\":\"[ˌjuːnɪˈvɜːrsəti]\",\"translation\":\"n. 大学；综合性大学；大学校舍\",\"audio\":\"university.mp3\"},{\"word\":\"aunt\",\"pronun\":\"[ænt]\",\"translation\":\"n. 阿姨；姑妈；伯母；舅妈\",\"audio\":\"aunt.mp3\"},{\"word\":\"bring up\",\"pronun\":\"\",\"translation\":\"na. 抚养；教导；教育；在…长大\",\"audio\":\"bring_up.mp3\"},{\"word\":\"brother\",\"pronun\":\"[ˈbrʌðər]\",\"translation\":\"n. 兄弟；同事；战友\\nint. 我的老兄！\",\"audio\":\"brother.mp3\"},{\"word\":\"cousin\",\"pronun\":\"[ˈkʌzn]\",\"translation\":\"n. 堂兄弟姊妹；表兄弟姊妹\",\"audio\":\"cousin.mp3\"},{\"word\":\"dad\",\"pronun\":\"[dæd]\",\"translation\":\"n. 爸爸；爹爹\",\"audio\":\"dad.mp3\"},{\"word\":\"daughter\",\"pronun\":\"[ˈdɔːtər]\",\"translation\":\"n. 女儿；[遗][农学] 子代\\nadj. 女儿的；子代的\",\"audio\":\"daughter.mp3\"},{\"word\":\"father\",\"pronun\":\"[ˈfɑːðər]\",\"translation\":\"n. 父亲，爸爸；神父；祖先；前辈\\nvt. 发明，创立；当…的父亲\",\"audio\":\"father.mp3\"},{\"word\":\"friend\",\"pronun\":\"[frend]\",\"translation\":\"n. 朋友；助手；赞助者\",\"audio\":\"friend.mp3\"},{\"word\":\"get on\",\"pronun\":\"\",\"translation\":\"na. 上马；安上；过日子；相投 (with together)\",\"audio\":\"get_on.mp3\"},{\"word\":\"get up\",\"pronun\":\"[ɡet ʌp]\",\"translation\":\"na. 起床；起身；站起来；叫…起床\",\"audio\":\"get_up.mp3\"},{\"word\":\"give up\",\"pronun\":\"\",\"translation\":\"na. 放弃；断绝；投降；自首\",\"audio\":\"give_up.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

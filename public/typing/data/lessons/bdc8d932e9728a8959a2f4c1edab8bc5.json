@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.359321+00:00",
+  "request": {
+    "lesson_id": "bdc8d932e9728a8959a2f4c1edab8bc5",
+    "course_id": "30951c93875a1e260feda8cb699005df",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "30951c93875a1e260feda8cb699005df",
+    "order": 493,
+    "nextCourseId": "30951c93875a1e260feda8cb699005df",
+    "courseName": "英语每日故事（初级）32-61",
+    "lessonId": "bdc8d932e9728a8959a2f4c1edab8bc5",
+    "nextLessonId": "f6b68d60bf0cc41c213744925b536455",
+    "lessonName": "Helping at Home",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "92ce827047761f6ee7f03f0e94767e77",
+        "index": 1,
+        "text": [
+          "Lisa likes to help out at home. When she gets home from school, she often babysits her little brother. She plays with him and reads books to him too. Her mom says, 'You are such a great help. One day, you will have your own home. Helping around the house is good for you too.' Lisa is happy to help. It makes her feel good."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

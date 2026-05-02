@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.598766+00:00",
+  "request": {
+    "lesson_id": "91098b322ee078cc7fd29d998dfbea7f",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 552,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "91098b322ee078cc7fd29d998dfbea7f",
+    "nextLessonId": "abf5c3b0940d21c141f08cdd2d13e658",
+    "lessonName": "Needles Don’t Hurt",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "7c2db0fd4585c09bc4be18f51a8eaa44",
+        "index": 1,
+        "text": [
+          "Needles Don't Hurt\\nGena is scared. Today, she is going to see the doctor.\\nShe is going to get a needle.\\nGena does not like needles. \"It will hurt,\" she cries. \"I don't want to get a needle.\"\\nMom says, \"Getting a needle is good for you. It will help you stay healthy.\"\\nThe doctor is wearing a white coat. She has a nice smile. The doctor looks at Gena and says, \"Don't be atraid. The needle will not hurt. Everyone gets needles.\"\\nGena holds out her arm. She is still scared.\\n\"Close your eyes and think of something funny,\" says the doctor. Gena closes her eyes, thinking. She feels a small pinch on her arm.\\n\"There now,\" says the doctor. \"You are a good girl.\"\\nIt is over. Gena laughs. She is not scared of needles anymore."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

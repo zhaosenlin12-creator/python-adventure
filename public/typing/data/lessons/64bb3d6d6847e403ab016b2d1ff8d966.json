@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.054977+00:00",
+  "request": {
+    "lesson_id": "64bb3d6d6847e403ab016b2d1ff8d966",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 100,
+    "nextCourseId": "e13b6bae2990dd699f332f225dd1955b",
+    "courseName": "Javascript",
+    "lessonId": "64bb3d6d6847e403ab016b2d1ff8d966",
+    "nextLessonId": "4e1c5d9d5a3cdd31b052a51cd9e0c8f5",
+    "lessonName": "对象操作",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - 对象操作",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f2a053110e363ee2b8355bf20c1d1a3c",
+        "index": 1,
+        "text": [
+          "// 对象的基本操作\\nconst student = {\\n    name: \"张三\",\\n    age: 20,\\n    grade: \"大二\"\\n};\\n\\nstudent.major = \"计算机\";  // 添加新属性\\nconsole.log(\"学生信息:\", student);\\nconsole.log(`姓名: ${student.name}`);\\nconsole.log(`所有键: ${Object.keys(student)}`);\\nconsole.log(`所有值: ${Object.values(student)}`);\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

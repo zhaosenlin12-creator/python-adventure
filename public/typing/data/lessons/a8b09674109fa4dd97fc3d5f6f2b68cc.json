@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.358207+00:00",
+  "request": {
+    "lesson_id": "a8b09674109fa4dd97fc3d5f6f2b68cc",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 179,
+    "nextCourseId": "d7df026ff1d81047d30da28a958b118f",
+    "courseName": "golang",
+    "lessonId": "a8b09674109fa4dd97fc3d5f6f2b68cc",
+    "nextLessonId": "eb4b67b475ecd5a2c1ce0dcc83441b0e",
+    "lessonName": "单词计数",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - 单词计数",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4b1dca9b3e8d604b3b13c3d3e95386f4",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport (\\n\t\"fmt\"\\n\t\"strings\"\\n\t\"unicode\"\\n)\\n\\nfunc main() {\\n\ttext := \"Go is great. Go is powerful. I love Go programming.\"\\n\twordCount := make(map[string]int)\\n\\n\twords := strings.Fields(text)\\n\\n\tfor _, word := range words {\\n\t\tcleaned := strings.Map(func(r rune) rune {\\n\t\t\tif unicode.IsLetter(r) || unicode.IsDigit(r) {\\n\t\t\t\treturn unicode.ToLower(r)\\n\t\t\t}\\n\t\t\treturn -1\\n\t\t}, word)\\n\\n\t\tif cleaned != \"\" {\\n\t\t\twordCount[cleaned]++\\n\t\t}\\n\t}\\n\\n\tfmt.Println(\"原文本:\", text)\\n\tfmt.Println(\"\\n单词频率:\")\\n\\n\tfor word, count := range wordCount {\\n\t\tfmt.Printf(\"%s: %d\\n\", word, count)\\n\t}\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

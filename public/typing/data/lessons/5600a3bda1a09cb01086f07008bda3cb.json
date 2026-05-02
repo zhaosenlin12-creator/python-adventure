@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.189120+00:00",
+  "request": {
+    "lesson_id": "5600a3bda1a09cb01086f07008bda3cb",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 452,
+    "nextCourseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "courseName": "六级词汇-3",
+    "lessonId": "5600a3bda1a09cb01086f07008bda3cb",
+    "nextLessonId": "0f28e149c7473ba86996955e39607289",
+    "lessonName": "六级词汇正序版-135",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第135课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a87b82b15d1d50f7dbf88338301ec9ac",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"plain\",\"pronun\":\"[pleɪn]\",\"translation\":\"n. 平原；无格式；朴实无华的东西\\nadj. 平的；简单的；朴素的；清晰的\\nadv. 清楚地；平易地\",\"audio\":\"plain.mp3\"},{\"word\":\"plane\",\"pronun\":\"[pleɪn]\",\"translation\":\"n. 飞机；平面；程度，水平\\nadj. 平的；平面的\\nvt. 刨平；用刨子刨；掠过水面\\nvi. 刨；乘飞机旅行；翱翔\",\"audio\":\"plane.mp3\"},{\"word\":\"plant\",\"pronun\":\"[plænt]\",\"translation\":\"n. 工厂，车间；植物；设备；庄稼\\nvt. 种植；培养；栽培；安置\\nvi. 种植\",\"audio\":\"plant.mp3\"},{\"word\":\"plate\",\"pronun\":\"[pleɪt]\",\"translation\":\"n. 碟；金属板；金属牌；感光底片\\nvt. 电镀；给…装甲\",\"audio\":\"plate.mp3\"},{\"word\":\"pool\",\"pronun\":\"[puːl]\",\"translation\":\"n. 联营；撞球；水塘；共同资金\\nvt. 合伙经营\\nvi. 联营，合伙经营\",\"audio\":\"pool.mp3\"},{\"word\":\"post\",\"pronun\":\"[poʊst]\",\"translation\":\"n. 岗位；邮件；标杆\\nvt. 张贴；公布；邮递；布置\\nvi. 快速行进\",\"audio\":\"post.mp3\"},{\"word\":\"pound\",\"pronun\":\"[paʊnd]\",\"translation\":\"n. 英镑；重击，重击声；兽栏；拘留所\\nvt. 捣烂；敲打；监禁，拘留\\nvi. 连续重击，猛击\",\"audio\":\"pound.mp3\"},{\"word\":\"power\",\"pronun\":\"[ˈpaʊər]\",\"translation\":\"n. 力量，能力；电力，功率；政权，势力；[数] 幂\\nadj. 借影响有权势人物以操纵权力的\\nvt. 激励；供以动力；使…有力量\\nvi. 快速前进\",\"audio\":\"power.mp3\"},{\"word\":\"present\",\"pronun\":\"[ˈpreznt]\",\"translation\":\"n. 现在；礼物；瞄准\\nadj. 现在的；出席的\\nvt. 提出；介绍；呈现；赠送\\nvi. 举枪瞄准\",\"audio\":\"present.mp3\"},{\"word\":\"press\",\"pronun\":\"[pres]\",\"translation\":\"n. 压；按；新闻；出版社；[印刷] 印刷机\\nvt. 压；按；逼迫；紧抱\\nvi. 压；逼；重压\",\"audio\":\"press.mp3\"},{\"word\":\"pretty\",\"pronun\":\"[ˈprɪti]\",\"translation\":\"n. 有吸引力的事物（尤指饰品）；漂亮的人\\nadj. 漂亮的；可爱的；优美的\\nadv. 相当地；颇\",\"audio\":\"pretty.mp3\"},{\"word\":\"pride\",\"pronun\":\"[praɪd]\",\"translation\":\"n. 自豪；骄傲；自尊心\\nvt. 使得意，以…自豪\\nvi. 自豪\",\"audio\":\"pride.mp3\"},{\"word\":\"prize\",\"pronun\":\"[praɪz]\",\"translation\":\"n. 奖品；奖赏；战利品\\nadj. 获奖的\\nvt. 珍视；捕获；估价\",\"audio\":\"prize.mp3\"},{\"word\":\"program\",\"pronun\":\"[ˈproʊɡræm]\",\"translation\":\"n. 程序；计划；大纲\\nvt. 用程序指令；为…制订计划；为…安排节目\\nvi. 编程序；安排节目；设计电脑程式\",\"audio\":\"program.mp3\"},{\"word\":\"pronounce\",\"pronun\":\"[prəˈnaʊns]\",\"translation\":\"vt. 发音；宣判；断言\\nvi. 发音；作出判断\",\"audio\":\"pronounce.mp3\"},{\"word\":\"pupil\",\"pronun\":\"[ˈpjuːpl]\",\"translation\":\"n. 学生；[解剖] 瞳孔；未成年人\",\"audio\":\"pupil.mp3\"},{\"word\":\"race\",\"pronun\":\"[reɪs]\",\"translation\":\"n. 属，种；种族，人种；家庭，门第\\nvt. 使参加比赛；和…竞赛；使急走，使全速行进\\nvi. 比速度，参加竞赛；全速行进\",\"audio\":\"race.mp3\"},{\"word\":\"rapid\",\"pronun\":\"[ˈræpɪd]\",\"translation\":\"n. 急流；高速交通工具，高速交通网\\nadj. 迅速的，急促的；飞快的；险峻的\",\"audio\":\"rapid.mp3\"},{\"word\":\"reason\",\"pronun\":\"[ˈriːzn]\",\"translation\":\"n. 理由；理性；动机\\nvt. 说服；推论；辩论\\nvi. 推论；劝说\",\"audio\":\"reason.mp3\"},{\"word\":\"receive\",\"pronun\":\"[rɪˈsiːv]\",\"translation\":\"vt. 收到；接待；接纳\\nvi. 接收\",\"audio\":\"receive.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:36.291646+00:00",
+  "request": {
+    "lesson_id": "438abc4d8685d4b3db1413f7f0ead2ae",
+    "course_id": "46dff26f3e5db32bab9d36f154c40d25",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "46dff26f3e5db32bab9d36f154c40d25",
+    "order": 554,
+    "nextCourseId": "46dff26f3e5db32bab9d36f154c40d25",
+    "courseName": "近代名著-徐志摩",
+    "lessonId": "438abc4d8685d4b3db1413f7f0ead2ae",
+    "nextLessonId": "f126eed81613b48c45d84af10a9bd9e8",
+    "lessonName": "沙扬娜拉",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "93e833ab3e383a425c9774ffffae123c",
+        "index": 1,
+        "text": [
+          "最是那一低头的温柔，\\n像一朵水莲花不胜凉风的娇羞，\\n道一声珍重，道一声珍重，\\n那一声珍重里有蜜甜的忧愁——\\n沙扬娜拉！"
+        ],
+        "pinyin": "[[\"最\", \"zuì\"], [\"是\", \"shì\"], [\"那\", \"nà\"], [\"一\", \"yī\"], [\"低\", \"dī\"], [\"头\", \"tóu\"], [\"的\", \"de\"], [\"温\", \"wēn\"], [\"柔\", \"róu\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"像\", \"xiàng\"], [\"一\", \"yī\"], [\"朵\", \"duǒ\"], [\"水\", \"shuǐ\"], [\"莲\", \"lián\"], [\"花\", \"huā\"], [\"不\", \"bù\"], [\"胜\", \"shèng\"], [\"凉\", \"liáng\"], [\"风\", \"fēng\"], [\"的\", \"de\"], [\"娇\", \"jiāo\"], [\"羞\", \"xiū\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"道\", \"dào\"], [\"一\", \"yī\"], [\"声\", \"shēng\"], [\"珍\", \"zhēn\"], [\"重\", \"zhòng\"], [\"，\", \"\"], [\"道\", \"dào\"], [\"一\", \"yī\"], [\"声\", \"shēng\"], [\"珍\", \"zhēn\"], [\"重\", \"zhòng\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"那\", \"nà\"], [\"一\", \"yī\"], [\"声\", \"shēng\"], [\"珍\", \"zhēn\"], [\"重\", \"zhòng\"], [\"里\", \"lǐ\"], [\"有\", \"yǒu\"], [\"蜜\", \"mì\"], [\"甜\", \"tián\"], [\"的\", \"de\"], [\"忧\", \"yōu\"], [\"愁\", \"chóu\"], [\"—\", \"\"], [\"—\", \"\"], [\"\\n\", \"\"], [\"沙\", \"shā\"], [\"扬\", \"yáng\"], [\"娜\", \"nà\"], [\"拉\", \"lā\"], [\"！\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

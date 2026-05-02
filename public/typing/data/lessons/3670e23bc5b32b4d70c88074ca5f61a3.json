@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.758283+00:00",
+  "request": {
+    "lesson_id": "3670e23bc5b32b4d70c88074ca5f61a3",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 364,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "3670e23bc5b32b4d70c88074ca5f61a3",
+    "nextLessonId": "71436840f9987be3e71e26cfa646d599",
+    "lessonName": "六级词汇正序版-8",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第8课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a0ae569d67d9bde7d5cd15cc86c7f6e1",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"ascertain\",\"pronun\":\"[ˌæsərˈteɪn]\",\"translation\":\"vt. 确定；查明；探知\",\"audio\":\"ascertain.mp3\"},{\"word\":\"ascribe\",\"pronun\":\"[əˈskraɪb]\",\"translation\":\"vt. 归因于；归咎于\",\"audio\":\"ascribe.mp3\"},{\"word\":\"aspect\",\"pronun\":\"[ˈæspekt]\",\"translation\":\"n. 方面；方向；形势；外貌\",\"audio\":\"aspect.mp3\"},{\"word\":\"aspiration\",\"pronun\":\"[ˌæspəˈreɪʃn]\",\"translation\":\"n. 渴望；抱负；送气；吸气；吸引术\",\"audio\":\"aspiration.mp3\"},{\"word\":\"assassination\",\"pronun\":\"[əˌsæsɪˈneɪʃn]\",\"translation\":\"n. 暗杀，行刺\",\"audio\":\"assassination.mp3\"},{\"word\":\"assault\",\"pronun\":\"[əˈsɔːlt]\",\"translation\":\"n. 攻击；袭击\\nvt. 攻击；袭击\\nvi. 袭击；动武\",\"audio\":\"assault.mp3\"},{\"word\":\"assemble\",\"pronun\":\"[əˈsembl]\",\"translation\":\"vt. 集合，聚集；装配；收集\\nvi. 集合，聚集\",\"audio\":\"assemble.mp3\"},{\"word\":\"assert\",\"pronun\":\"[əˈsɜːrt]\",\"translation\":\"vt. 维护，坚持；断言；主张；声称\",\"audio\":\"assert.mp3\"},{\"word\":\"assertive\",\"pronun\":\"[əˈsɜːrtɪv]\",\"translation\":\"adj. 肯定的；独断的；坚定而自信的\",\"audio\":\"assertive.mp3\"},{\"word\":\"assess\",\"pronun\":\"[əˈses]\",\"translation\":\"vt. 评定；估价；对…征税\",\"audio\":\"assess.mp3\"},{\"word\":\"asset\",\"pronun\":\"[ˈæset]\",\"translation\":\"n. 资产；优点；有用的东西；有利条件；财产；有价值的人或物\",\"audio\":\"asset.mp3\"},{\"word\":\"assign\",\"pronun\":\"[əˈsaɪn]\",\"translation\":\"vt. 分配；指派；[计][数] 赋值\\nvi. 将财产过户（尤指过户给债权人）\",\"audio\":\"assign.mp3\"},{\"word\":\"assignment\",\"pronun\":\"[əˈsaɪnmənt]\",\"translation\":\"n. 分配；任务；作业；功课\",\"audio\":\"assignment.mp3\"},{\"word\":\"assimilate\",\"pronun\":\"[əˈsɪməleɪt]\",\"translation\":\"vt. 吸收；使同化；把…比作；使相似\\nvi. 吸收；同化\",\"audio\":\"assimilate.mp3\"},{\"word\":\"assimilation\",\"pronun\":\"[əˌsɪməˈleɪʃn]\",\"translation\":\"n. 同化；吸收；[生化] 同化作用\",\"audio\":\"assimilation.mp3\"},{\"word\":\"assistance\",\"pronun\":\"[əˈsɪstəns]\",\"translation\":\"n. 援助，帮助；辅助设备\",\"audio\":\"assistance.mp3\"},{\"word\":\"associate\",\"pronun\":\"[əˈsoʊsieɪt; əˈsoʊʃieɪt]\",\"translation\":\"n. 同事，伙伴；关联的事物\\nadj. 副的；联合的\\nvt. 联想；使联合；使发生联系\\nvi. 交往；结交\",\"audio\":\"associate.mp3\"},{\"word\":\"association\",\"pronun\":\"[əˌsoʊsiˈeɪʃn; əˌsoʊʃiˈeɪʃn]\",\"translation\":\"n. 协会，联盟，社团；联合；联想\",\"audio\":\"association.mp3\"},{\"word\":\"assume\",\"pronun\":\"[əˈsuːm]\",\"translation\":\"vt. 僭取；篡夺；夺取；擅用；侵占\\nvi. 假定；设想；承担；采取\",\"audio\":\"assume.mp3\"},{\"word\":\"assumption\",\"pronun\":\"[əˈsʌmpʃn]\",\"translation\":\"n. 假定；设想；担任；采取\",\"audio\":\"assumption.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

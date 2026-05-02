@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.624325+00:00",
+  "request": {
+    "lesson_id": "bc6a889ec4cf07c7ec61e517f2dc5d59",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 341,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "bc6a889ec4cf07c7ec61e517f2dc5d59",
+    "nextLessonId": "0855cc09f2f4a52ca8f5bcc155b3ff2f",
+    "lessonName": "六级词汇正序版-76",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第76课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4d94bb4a367cdf3eed8fd91af3b04d11",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"outset\",\"pronun\":\"[ˈaʊtset]\",\"translation\":\"n. 开始；开端\",\"audio\":\"outset.mp3\"},{\"word\":\"outward\",\"pronun\":\"[ˈaʊtwərd]\",\"translation\":\"adj. 向外的；外面的；公开的；外服的；肉体的\\nadv. 向外（等于outwards）；在外；显而易见地\\nn. 外表；外面；物质世界\",\"audio\":\"outward.mp3\"},{\"word\":\"overcome\",\"pronun\":\"[ˌoʊvərˈkʌm]\",\"translation\":\"vt. 克服；胜过\\nvi. 克服；得胜\",\"audio\":\"overcome.mp3\"},{\"word\":\"overflow\",\"pronun\":\"[ˌoʊvərˈfloʊ]\",\"translation\":\"vi. 溢出；泛滥；充溢\\nn. 充满，洋溢；泛滥；超值；溢值\\nvt. 使溢出；使泛滥；使充溢\",\"audio\":\"overflow.mp3\"},{\"word\":\"overhead\",\"pronun\":\"[ˌoʊvərˈhed; ˈoʊvərˌhed]\",\"translation\":\"adv. 在头顶上；在空中；在高处\\nadj. 高架的；在头上的；在头顶上的\\nn. 天花板；[会计] 经常费用；间接费用；吊脚架空层\",\"audio\":\"overhead.mp3\"},{\"word\":\"overhear\",\"pronun\":\"[ˌoʊvərˈhɪr]\",\"translation\":\"vt. 无意中听到；偷听\\nvi. 无意中听到；偷听到\",\"audio\":\"overhear.mp3\"},{\"word\":\"overlap\",\"pronun\":\"[ˌoʊvərˈlæp]\",\"translation\":\"n. 重叠；重复\\nvi. 部分重叠；部分的同时发生\\nvt. 与…重叠；与…同时发生\",\"audio\":\"overlap.mp3\"},{\"word\":\"overlook\",\"pronun\":\"[ˌoʊvərˈlʊk]\",\"translation\":\"vt. 忽略；俯瞰；远眺；检查；高耸于…之上\\nn. 忽视；眺望\",\"audio\":\"overlook.mp3\"},{\"word\":\"overpass\",\"pronun\":\"[ˈoʊvərpæs]\",\"translation\":\"vt. 超越；胜过；忽略\\nn. 天桥；陆桥\",\"audio\":\"overpass.mp3\"},{\"word\":\"overt\",\"pronun\":\"[oʊˈvɜːrtˌˈoʊvɜːrt]\",\"translation\":\"adj. 明显的；公然的；蓄意的\",\"audio\":\"overt.mp3\"},{\"word\":\"overthrow\",\"pronun\":\"[ˌoʊvərˈθroʊ; ˈoʊvərθroʊ]\",\"translation\":\"n. 推翻；倾覆；瓦解\\nvt. 推翻；打倒；倾覆\",\"audio\":\"overthrow.mp3\"},{\"word\":\"overturn\",\"pronun\":\"[ˌoʊvərˈtɜːrn]\",\"translation\":\"vt. 推翻；倾覆；破坏\\nvi. 推翻；倾覆\\nn. 倾覆；周转；破灭\",\"audio\":\"overturn.mp3\"},{\"word\":\"overwhelm\",\"pronun\":\"[ˌoʊvərˈwelm]\",\"translation\":\"vt. 淹没；压倒；受打击；覆盖；压垮\",\"audio\":\"overwhelm.mp3\"},{\"word\":\"overwhelming\",\"pronun\":\"[ˌoʊvərˈwelmɪŋ]\",\"translation\":\"adj. 压倒性的；势不可挡的\\nv. 压倒；淹没（overwhelm的ing形式）；制服\",\"audio\":\"overwhelming.mp3\"},{\"word\":\"owe\",\"pronun\":\"[oʊ]\",\"translation\":\"vt. 欠；感激；应给予；应该把……归功于\\nvi. 欠钱\",\"audio\":\"owe.mp3\"},{\"word\":\"owl\",\"pronun\":\"[aʊl]\",\"translation\":\"n. 猫头鹰；枭；惯于晚上活动的人\",\"audio\":\"owl.mp3\"},{\"word\":\"oxide\",\"pronun\":\"[ˈɑːksaɪd]\",\"translation\":\"n. [化学] 氧化物\",\"audio\":\"oxide.mp3\"},{\"word\":\"oxygen\",\"pronun\":\"[ˈɑːksɪdʒən]\",\"translation\":\"n. [化学] 氧气，[化学] 氧\",\"audio\":\"oxygen.mp3\"},{\"word\":\"ozone\",\"pronun\":\"[ˈoʊzoʊn]\",\"translation\":\"n. [化学] 臭氧；新鲜的空气\",\"audio\":\"ozone.mp3\"},{\"word\":\"package\",\"pronun\":\"[ˈpækɪdʒ]\",\"translation\":\"n. 包，包裹；套装软件，[计] 程序包\\nadj. 一揽子的\\nvt. 打包；将…包装\",\"audio\":\"package.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

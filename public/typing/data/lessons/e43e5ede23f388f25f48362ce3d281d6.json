@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.062816+00:00",
+  "request": {
+    "lesson_id": "e43e5ede23f388f25f48362ce3d281d6",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 102,
+    "nextCourseId": "e13b6bae2990dd699f332f225dd1955b",
+    "courseName": "Javascript",
+    "lessonId": "e43e5ede23f388f25f48362ce3d281d6",
+    "nextLessonId": "4481599280ba3163f96c34ee2aec176a",
+    "lessonName": "判断奇偶数",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - 判断奇偶数",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "11a2a9c8b66355fe4fd04a91b00fe4cf",
+        "index": 1,
+        "text": [
+          "// 判断一个数是奇数还是偶数\\nconst isEven = (number) => number % 2 === 0;\\n\\n// 测试多个数字\\nconst numbers = [10, 15, 22, 7, 30];\\n\\nfor (const num of numbers) {\\n    if (isEven(num)) {\\n        console.log(`${num} 是偶数`);\\n    } else {\\n        console.log(`${num} 是奇数`);\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

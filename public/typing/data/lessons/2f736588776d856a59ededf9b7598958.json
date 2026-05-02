@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.205173+00:00",
+  "request": {
+    "lesson_id": "2f736588776d856a59ededf9b7598958",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 34,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "2f736588776d856a59ededf9b7598958",
+    "nextLessonId": "072ccf66c64f366e23ca3b5c7cc397c2",
+    "lessonName": "2022年版 PEP-五年级-下册-4",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-五年级-下册 - 第4课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "24966d270d8e98b44d3a3f18deff2df3",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"because\",\"pronun\":\"[bɪˈkəz]\",\"translation\":\"conj. 因为\",\"audio\":\"because.mp3\"},{\"word\":\"vacation\",\"pronun\":\"[veɪˈkeɪʃn; vəˈkeɪʃn]\",\"translation\":\"n. 假期；（房屋）搬出\\nvi. 休假，度假\",\"audio\":\"vacation.mp3\"},{\"word\":\"all\",\"pronun\":\"[ɔːl]\",\"translation\":\"n. 全部\\nadj. 全部的\\nadv. 全然地；越发\\npron. 全部\",\"audio\":\"all.mp3\"},{\"word\":\"pink\",\"pronun\":\"[pɪŋk]\",\"translation\":\"n. 粉红色；化身，典范；石竹花；头面人物\\nadj. 粉红的；比较激进的；石竹科的；脸色发红的\\nvt. 扎，刺，戳；使…变粉红色；使…面红耳赤\\nvi. 变粉红色\",\"audio\":\"pink.mp3\"},{\"word\":\"lovely\",\"pronun\":\"[ˈlʌvli]\",\"translation\":\"adj. 可爱的；令人愉快的；爱恋的；秀丽的，优美的\\nn. 美女；可爱的东西\",\"audio\":\"lovely.mp3\"},{\"word\":\"leaf\",\"pronun\":\"[liːf]\",\"translation\":\"n. 叶子；（书籍等的）一张；扇页\\nvi. 生叶；翻书页\\nvt. 翻…的页，匆匆翻阅\",\"audio\":\"leaf.mp3\"},{\"word\":\"leaves\",\"pronun\":\"[liːvz]\",\"translation\":\"n. 树叶；花瓣（leaf的复数）\\nv. 离开（leave的第三人称单数）\",\"audio\":\"leaves.mp3\"},{\"word\":\"fall\",\"pronun\":\"[fɔːl]\",\"translation\":\"n. 下降；秋天；瀑布\\nadj. 秋天的\\nvi. 落下；变成；来临；减弱\\nvt. 砍倒；击倒\",\"audio\":\"fall.mp3\"},{\"word\":\"paint\",\"pronun\":\"[peɪnt]\",\"translation\":\"vt. 油漆；绘画；装饰；涂色于；描绘；（用语言，文字等）描写；擦脂粉等\\nvi. 油漆；描绘；绘画；化妆\\nn. 油漆；颜料，涂料；绘画作品；胭脂等化妆品；色彩，装饰\",\"audio\":\"paint.mp3\"},{\"word\":\"January\",\"pronun\":\"[ˈdʒænjueri]\",\"translation\":\"n. 一月\",\"audio\":\"January.mp3\"},{\"word\":\"February\",\"pronun\":\"[ˈfebrueri]\",\"translation\":\"n. 二月\",\"audio\":\"February.mp3\"},{\"word\":\"March\",\"pronun\":\"[mɑːrtʃ]\",\"translation\":\"n. 三月\",\"audio\":\"March.mp3\"},{\"word\":\"April\",\"pronun\":\"[ˈeɪprəl]\",\"translation\":\"n. 四月\",\"audio\":\"April.mp3\"},{\"word\":\"may\",\"pronun\":\"[meɪ]\",\"translation\":\"aux. 可以，能够；可能，也许；祝，愿；会，能\",\"audio\":\"may.mp3\"},{\"word\":\"June\",\"pronun\":\"[dʒuːn]\",\"translation\":\"n. 六月；琼（人名，来源于拉丁语，含义是“年轻气盛的六月”）\",\"audio\":\"June.mp3\"},{\"word\":\"July\",\"pronun\":\"[dʒʊˈlaɪ]\",\"translation\":\"n. 七月\",\"audio\":\"July.mp3\"},{\"word\":\"August\",\"pronun\":\"[ˈɔːɡəst]\",\"translation\":\"n. 八月（简写为Aug）\\nadj. 威严的；令人敬畏的\",\"audio\":\"August.mp3\"},{\"word\":\"September\",\"pronun\":\"[sepˈtembər]\",\"translation\":\"n. 九月\",\"audio\":\"September.mp3\"},{\"word\":\"October\",\"pronun\":\"[ɑːkˈtoʊbər]\",\"translation\":\"n. [天] 十月\",\"audio\":\"October.mp3\"},{\"word\":\"November\",\"pronun\":\"[noʊˈvembər]\",\"translation\":\"n. 十一月\",\"audio\":\"November.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

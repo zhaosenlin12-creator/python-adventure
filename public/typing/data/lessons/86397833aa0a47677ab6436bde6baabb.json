@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.181889+00:00",
+  "request": {
+    "lesson_id": "86397833aa0a47677ab6436bde6baabb",
+    "course_id": "b121644211bd274795ee5972ddf997a2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "b121644211bd274795ee5972ddf997a2",
+    "order": 310,
+    "nextCourseId": "b121644211bd274795ee5972ddf997a2",
+    "courseName": "小学必备古诗75首（1）",
+    "lessonId": "86397833aa0a47677ab6436bde6baabb",
+    "nextLessonId": "06885b40a0b60d312f019e6a562d7f59",
+    "lessonName": "敕勒歌",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ca9b11797c505b6ff3302b6dd61dad56",
+        "index": 1,
+        "text": [
+          "敕勒歌\\n北朝民歌\\n敕勒川，阴山下。天似穹庐，笼盖四野。天苍苍，野茫茫，风吹草低见牛羊。"
+        ],
+        "pinyin": "[[\"敕\", \"chì\"], [\"勒\", \"lè\"], [\"歌\", \"gē\"], [\"\\n\", \"\"], [\"北\", \"běi\"], [\"朝\", \"cháo\"], [\"民\", \"mín\"], [\"歌\", \"gē\"], [\"\\n\", \"\"], [\"敕\", \"chì\"], [\"勒\", \"lè\"], [\"川\", \"chuān\"], [\"，\", \"\"], [\"阴\", \"yīn\"], [\"山\", \"shān\"], [\"下\", \"xià\"], [\"。\", \"\"], [\"天\", \"tiān\"], [\"似\", \"sì\"], [\"穹\", \"qióng\"], [\"庐\", \"lú\"], [\"，\", \"\"], [\"笼\", \"lǒng\"], [\"盖\", \"gài\"], [\"四\", \"sì\"], [\"野\", \"yě\"], [\"。\", \"\"], [\"天\", \"tiān\"], [\"苍\", \"cāng\"], [\"苍\", \"cāng\"], [\"，\", \"\"], [\"野\", \"yě\"], [\"茫\", \"máng\"], [\"茫\", \"máng\"], [\"，\", \"\"], [\"风\", \"fēng\"], [\"吹\", \"chuī\"], [\"草\", \"cǎo\"], [\"低\", \"dī\"], [\"见\", \"xiàn\"], [\"牛\", \"niú\"], [\"羊\", \"yáng\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

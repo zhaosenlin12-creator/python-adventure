@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.604834+00:00",
+  "request": {
+    "lesson_id": "ef7d150ae42a4d86180f3c87becb7938",
+    "course_id": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "order": 410,
+    "nextCourseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "courseName": "初中必背古诗60首（1）",
+    "lessonId": "ef7d150ae42a4d86180f3c87becb7938",
+    "nextLessonId": "784026d9f2e159f36a9d2ab0b8a6729d",
+    "lessonName": "浣溪沙",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8e4a6fa7703c43b76e29f61d354a7e07",
+        "index": 1,
+        "text": [
+          "浣溪沙\\n晏殊\\n一曲新词酒一杯，去年天气旧亭台。夕阳西下几时回。\\n无可奈何花落去，似曾相识燕归来。小园香径独徘徊。"
+        ],
+        "pinyin": "[[\"浣\", \"huàn\"], [\"溪\", \"xī\"], [\"沙\", \"shā\"], [\"\\n\", \"\"], [\"晏\", \"yàn\"], [\"殊\", \"shū\"], [\"\\n\", \"\"], [\"一\", \"yī\"], [\"曲\", \"qǔ\"], [\"新\", \"xīn\"], [\"词\", \"cí\"], [\"酒\", \"jiǔ\"], [\"一\", \"yī\"], [\"杯\", \"bēi\"], [\"，\", \"\"], [\"去\", \"qù\"], [\"年\", \"nián\"], [\"天\", \"tiān\"], [\"气\", \"qì\"], [\"旧\", \"jiù\"], [\"亭\", \"tíng\"], [\"台\", \"tái\"], [\"。\", \"\"], [\"夕\", \"xī\"], [\"阳\", \"yáng\"], [\"西\", \"xī\"], [\"下\", \"xià\"], [\"几\", \"jǐ\"], [\"时\", \"shí\"], [\"回\", \"huí\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"无\", \"wú\"], [\"可\", \"kě\"], [\"奈\", \"nài\"], [\"何\", \"hé\"], [\"花\", \"huā\"], [\"落\", \"luò\"], [\"去\", \"qù\"], [\"，\", \"\"], [\"似\", \"sì\"], [\"曾\", \"céng\"], [\"相\", \"xiāng\"], [\"识\", \"shí\"], [\"燕\", \"yàn\"], [\"归\", \"guī\"], [\"来\", \"lái\"], [\"。\", \"\"], [\"小\", \"xiǎo\"], [\"园\", \"yuán\"], [\"香\", \"xiāng\"], [\"径\", \"jìng\"], [\"独\", \"dú\"], [\"徘\", \"pái\"], [\"徊\", \"huái\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

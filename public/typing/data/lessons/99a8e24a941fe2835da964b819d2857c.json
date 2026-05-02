@@ -1,0 +1,62 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:42.068008+00:00",
+  "request": {
+    "lesson_id": "99a8e24a941fe2835da964b819d2857c",
+    "course_id": "a74c1aef61379ff4f0a2ca54be6ac56f",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "a74c1aef61379ff4f0a2ca54be6ac56f",
+    "order": 3,
+    "nextCourseId": "a74c1aef61379ff4f0a2ca54be6ac56f",
+    "courseName": "基础练习-下排数字",
+    "lessonId": "99a8e24a941fe2835da964b819d2857c",
+    "nextLessonId": "9691c3ef3bcb6d4333ecadca11f57749",
+    "lessonName": "3指法练习",
+    "icon": "data/assets/daziya.com/key-icon_num-3.6e4d5dfdba.png",
+    "description": "数字输入练习 - 3指法练习",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "75d13255946bcd4aeda287c6bf57d678",
+        "index": 1,
+        "highlights": [
+          "3"
+        ],
+        "text": [
+          "请用右手无名指输入数字3"
+        ],
+        "detail": "新的数字键"
+      }
+    ],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "7c796c63d7b102b25b442cb75e82d706",
+        "index": 2,
+        "text": [
+          "33333333333333333333"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "3",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

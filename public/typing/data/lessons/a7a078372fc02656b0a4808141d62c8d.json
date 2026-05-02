@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.112610+00:00",
+  "request": {
+    "lesson_id": "a7a078372fc02656b0a4808141d62c8d",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 114,
+    "nextCourseId": "e13b6bae2990dd699f332f225dd1955b",
+    "courseName": "Javascript",
+    "lessonId": "a7a078372fc02656b0a4808141d62c8d",
+    "nextLessonId": "70d8bc4358f5ca914ef24b8bed1e049d",
+    "lessonName": "栈的实现",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - 栈的实现",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "750a6125a84ed06a46eeb1d493c5402b",
+        "index": 1,
+        "text": [
+          "// 使用类实现栈数据结构\\nclass Stack {\\n    constructor() {\\n        this.items = [];\\n    }\\n\\n    push(item) {\\n        this.items.push(item);\\n    }\\n\\n    pop() {\\n        if (!this.isEmpty()) {\\n            return this.items.pop();\\n        }\\n        return null;\\n    }\\n\\n    peek() {\\n        if (!this.isEmpty()) {\\n            return this.items[this.items.length - 1];\\n        }\\n        return null;\\n    }\\n\\n    isEmpty() {\\n        return this.items.length === 0;\\n    }\\n\\n    size() {\\n        return this.items.length;\\n    }\\n}\\n\\n// 测试栈操作\\nconst stack = new Stack();\\nstack.push(1);\\nstack.push(2);\\nstack.push(3);\\nconsole.log(`栈顶元素: ${stack.peek()}`);\\nconsole.log(`弹出元素: ${stack.pop()}`);\\nconsole.log(`栈的大小: ${stack.size()}`);\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

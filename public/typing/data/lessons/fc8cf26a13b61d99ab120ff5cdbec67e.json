@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.144659+00:00",
+  "request": {
+    "lesson_id": "fc8cf26a13b61d99ab120ff5cdbec67e",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 119,
+    "nextCourseId": "e13b6bae2990dd699f332f225dd1955b",
+    "courseName": "Javascript",
+    "lessonId": "fc8cf26a13b61d99ab120ff5cdbec67e",
+    "nextLessonId": "b37bba9390ab6a5cc0c752fed76157ff",
+    "lessonName": "单词计数",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - 单词计数",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b5a4799016a923657bcea58aba20f57c",
+        "index": 1,
+        "text": [
+          "// 统计文本中单词出现的频率\\nfunction countWords(text) {\\n    const words = text.toLowerCase().split(/\\s+/);\\n    const wordCount = {};\\n\\n    for (const word of words) {\\n        const cleaned = word.replace(/[^a-z0-9]/g, \"\");\\n\\n        if (cleaned) {\\n            wordCount[cleaned] = (wordCount[cleaned] || 0) + 1;\\n        }\\n    }\\n\\n    return wordCount;\\n}\\n\\n// 测试单词统计\\nconst text = \"JavaScript is great. JavaScript is powerful. I love JavaScript programming.\";\\nconst wordFreq = countWords(text);\\n\\nconsole.log(`原文本: ${text}\\n`);\\nconsole.log(\"单词频率:\");\\nconst sorted = Object.entries(wordFreq).sort((a, b) => b[1] - a[1]);\\nfor (const [word, count] of sorted) {\\n    console.log(`${word}: ${count}`);\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

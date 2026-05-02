@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.521661+00:00",
+  "request": {
+    "lesson_id": "0fda5294bc77b9f89575bd4f95f81f9c",
+    "course_id": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "order": 391,
+    "nextCourseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "courseName": "初中必背古诗60首（1）",
+    "lessonId": "0fda5294bc77b9f89575bd4f95f81f9c",
+    "nextLessonId": "9159615a7daf567b978170f0dc4cb33b",
+    "lessonName": "次北固山下",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "fb7dba61ccc993d65ca4e3305b78ec27",
+        "index": 1,
+        "text": [
+          "次北固山下\\n王湾\\n客路青山外，行舟绿水前。\\n潮平两岸阔，风正一帆悬。\\n海日生残夜，江春入旧年。\\n乡书何处达，归雁洛阳边。"
+        ],
+        "pinyin": "[[\"次\", \"cì\"], [\"北\", \"běi\"], [\"固\", \"gù\"], [\"山\", \"shān\"], [\"下\", \"xià\"], [\"\\n\", \"\"], [\"王\", \"wáng\"], [\"湾\", \"wān\"], [\"\\n\", \"\"], [\"客\", \"kè\"], [\"路\", \"lù\"], [\"青\", \"qīng\"], [\"山\", \"shān\"], [\"外\", \"wài\"], [\"，\", \"\"], [\"行\", \"xíng\"], [\"舟\", \"zhōu\"], [\"绿\", \"lǜ\"], [\"水\", \"shuǐ\"], [\"前\", \"qián\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"潮\", \"cháo\"], [\"平\", \"píng\"], [\"两\", \"liǎng\"], [\"岸\", \"àn\"], [\"阔\", \"kuò\"], [\"，\", \"\"], [\"风\", \"fēng\"], [\"正\", \"zhèng\"], [\"一\", \"yī\"], [\"帆\", \"fān\"], [\"悬\", \"xuán\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"海\", \"hǎi\"], [\"日\", \"rì\"], [\"生\", \"shēng\"], [\"残\", \"cán\"], [\"夜\", \"yè\"], [\"，\", \"\"], [\"江\", \"jiāng\"], [\"春\", \"chūn\"], [\"入\", \"rù\"], [\"旧\", \"jiù\"], [\"年\", \"nián\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"乡\", \"xiāng\"], [\"书\", \"shū\"], [\"何\", \"hé\"], [\"处\", \"chù\"], [\"达\", \"dá\"], [\"，\", \"\"], [\"归\", \"guī\"], [\"雁\", \"yàn\"], [\"洛\", \"luò\"], [\"阳\", \"yáng\"], [\"边\", \"biān\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.285205+00:00",
+  "request": {
+    "lesson_id": "27ca4e66e2582dde9a8db3405c3f054a",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 162,
+    "nextCourseId": "d7df026ff1d81047d30da28a958b118f",
+    "courseName": "golang",
+    "lessonId": "27ca4e66e2582dde9a8db3405c3f054a",
+    "nextLessonId": "fdf68581186483756828949f5988b1da",
+    "lessonName": "判断奇偶数",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - 判断奇偶数",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d405d0182746448bf8276fe7a360a0cc",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport \"fmt\"\\n\\nfunc isEven(number int) bool {\\n\treturn number%2 == 0\\n}\\n\\nfunc main() {\\n\tnumbers := []int{10, 15, 22, 7, 30}\\n\\n\tfor _, num := range numbers {\\n\t\tif isEven(num) {\\n\t\t\tfmt.Printf(\"%d 是偶数\\n\", num)\\n\t\t} else {\\n\t\t\tfmt.Printf(\"%d 是奇数\\n\", num)\\n\t\t}\\n\t}\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

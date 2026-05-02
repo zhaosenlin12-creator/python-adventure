@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.617421+00:00",
+  "request": {
+    "lesson_id": "e5221bb647d15dd0f442504d0f924fc7",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 115,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "e5221bb647d15dd0f442504d0f924fc7",
+    "nextLessonId": "a1147c1960b186508ff2e16af150800c",
+    "lessonName": "KET核心词-47",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第47课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "fe6a17f16be99858c851c0d5ef91f0f8",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"passport\",\"pronun\":\"[ˈpæspɔːrt]\",\"translation\":\"n. 护照，通行证；手段\",\"audio\":\"passport.mp3\"},{\"word\":\"password\",\"pronun\":\"[ˈpæswɜːrd]\",\"translation\":\"n. 密码；口令\",\"audio\":\"password.mp3\"},{\"word\":\"past\",\"pronun\":\"[pæst]\",\"translation\":\"n. 过去；往事\\nprep. 越过；晚于\\nadj. 过去的；结束的\\nadv. 过；经过\",\"audio\":\"past.mp3\"},{\"word\":\"pasta\",\"pronun\":\"[ˈpɑːstə]\",\"translation\":\"n. 意大利面食；面团\",\"audio\":\"pasta.mp3\"},{\"word\":\"path\",\"pronun\":\"[pæθ]\",\"translation\":\"n. 道路；小路；轨道\",\"audio\":\"path.mp3\"},{\"word\":\"pay\",\"pronun\":\"[peɪ]\",\"translation\":\"n. 工资，薪水；付款；报答\\nvt. 支付，付；偿还，补偿；给予\\nvi. 付款；偿还\\nadj. 收费的；需付费的\",\"audio\":\"pay.mp3\"},{\"word\":\"peace\",\"pronun\":\"[piːs]\",\"translation\":\"n. 和平；平静；和睦；秩序\",\"audio\":\"peace.mp3\"},{\"word\":\"peanut\",\"pronun\":\"[ˈpiːnʌt]\",\"translation\":\"n. 花生\",\"audio\":\"peanut.mp3\"},{\"word\":\"pearl\",\"pronun\":\"[pɜːrl]\",\"translation\":\"n. 珍珠；珍珠色；杰出者；珍品\\nadj. 镶珍珠的；珍珠状的\\nvt. 使成珠状；用珍珠装饰；使呈珍珠色\\nvi. 采珍珠；成珍珠状\",\"audio\":\"pearl.mp3\"},{\"word\":\"pen\",\"pronun\":\"[pen]\",\"translation\":\"n. 钢笔；作家；围栏\\nvt. 写；关入栏中\",\"audio\":\"pen.mp3\"},{\"word\":\"pencil\",\"pronun\":\"[ˈpensl]\",\"translation\":\"n. 铅笔；笔状物\\nvt. 用铅笔写；用眉笔涂\\nvi. 成铅笔状\",\"audio\":\"pencil.mp3\"},{\"word\":\"penfriend\",\"pronun\":\"[ˈpenfrend]\",\"translation\":\"n. <英>笔友\",\"audio\":\"penfriend.mp3\"},{\"word\":\"penny\",\"pronun\":\"[ˈpeni]\",\"translation\":\"n. （美）分；便士\",\"audio\":\"penny.mp3\"},{\"word\":\"people\",\"pronun\":\"[ˈpiːpl]\",\"translation\":\"n. 人；人类；民族；公民\\nvt. 居住于；使住满人\",\"audio\":\"people.mp3\"},{\"word\":\"per\",\"pronun\":\"[pər; pɜːr]\",\"translation\":\"prep. 每；经；按照；每一\",\"audio\":\"per.mp3\"},{\"word\":\"perfect\",\"pronun\":\"[ˈpɜːrfɪkt]\",\"translation\":\"n. 完成式\\nadj. 完美的；最好的；精通的\\nvt. 使完美；使熟练\",\"audio\":\"perfect.mp3\"},{\"word\":\"perfume\",\"pronun\":\"[pərˈfjuːm]\",\"translation\":\"n. 香水；香味\\nvt. 洒香水于…；使…带香味\\nvi. 散发香气\",\"audio\":\"perfume.mp3\"},{\"word\":\"perhaps\",\"pronun\":\"[pərˈhæps]\",\"translation\":\"n. 假定；猜想；未定之事\\nadv. 或许；（表示不确定）也许；（用于粗略的估计）或许；（表示勉强同意或其实不赞成）也许；可能\",\"audio\":\"perhaps.mp3\"},{\"word\":\"person\",\"pronun\":\"[ˈpɜːrsn]\",\"translation\":\"n. 人；身体；容貌，外表；人称\",\"audio\":\"person.mp3\"},{\"word\":\"pet\",\"pronun\":\"[pet]\",\"translation\":\"n. 宠物；生气；受宠爱的人\\nadj. 宠爱的\\nvt. 宠爱\\nvi. 生气；爱抚\",\"audio\":\"pet.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

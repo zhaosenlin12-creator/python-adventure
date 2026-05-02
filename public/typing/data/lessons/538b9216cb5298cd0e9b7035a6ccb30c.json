@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:30.384141+00:00",
+  "request": {
+    "lesson_id": "538b9216cb5298cd0e9b7035a6ccb30c",
+    "course_id": "21fe8d60de407da95e1abc33ac636014",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "21fe8d60de407da95e1abc33ac636014",
+    "order": 20,
+    "nextCourseId": "21fe8d60de407da95e1abc33ac636014",
+    "courseName": "上排字母",
+    "lessonId": "538b9216cb5298cd0e9b7035a6ccb30c",
+    "nextLessonId": "94293a1792faea436be411ecdbea0e4a",
+    "lessonName": "练习r和u",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-practise-ru.0b377b3a75.png",
+    "description": "练习r和u",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f4ec24d60527a4a6ceea1cdf85a7207a",
+        "index": 2,
+        "text": [
+          "rf rrf rf rrf uj uuj uj uuj rfrf ujuj rrrf uuuj fruj frf juj frfrf jujuj rrf uuj rruu ruru rufj rrf uuj"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "rf uj",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

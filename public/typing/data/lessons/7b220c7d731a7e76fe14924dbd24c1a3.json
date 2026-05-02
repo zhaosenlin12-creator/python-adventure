@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.004309+00:00",
+  "request": {
+    "lesson_id": "7b220c7d731a7e76fe14924dbd24c1a3",
+    "course_id": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "order": 202,
+    "nextCourseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "courseName": "小升初必备单词",
+    "lessonId": "7b220c7d731a7e76fe14924dbd24c1a3",
+    "nextLessonId": "4fbcea3219e8eca53892e409ca13ea89",
+    "lessonName": "K",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ca12208fffa16e67a8801155b09a8fda",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"keep\",\"pronun\":\"[ki:p]\",\"translation\":\"v. \\u4fdd\\u6301; \\u7559\\u4f4f\"},{\"word\":\"key\",\"pronun\":\"[ki:]\",\"translation\":\"adj. \\u57fa\\u672c\\u7684 n. \\u7b54\\u6848; \\u94a5\\u5319; ...\"},{\"word\":\"kill\",\"pronun\":\"[kil]\",\"translation\":\"v. \\u6740\\u6b7b; \\u7834\\u574f; \\u6bc1\\u6389; \\u6d88\\u78e8(\\u65f6\\u95f4...\"},{\"word\":\"kilogramme\",\"pronun\":\"[\\u02c8kil\\u0259u\\u0261r\\u00e6m]\",\"translation\":\"n. \\u5343\\u514b; \\u516c\\u65a4\"},{\"word\":\"kilometre\",\"pronun\":\"[\\u02c8k\\u026al\\u0259mi\\u02d0t\\u0259(r)]\",\"translation\":\"n.\"},{\"word\":\"kind\",\"pronun\":\"[kaind]\",\"translation\":\"adj. \\u4ec1\\u6148\\u7684; \\u4eb2\\u5207\\u7684; \\u53cb\\u597d\\u7684 n...\"},{\"word\":\"kindergarten\",\"pronun\":\"[\\u02c8kind\\u0259\\u02cc\\u0261\\u0251:t\\u0259n]\",\"translation\":\"n. \\u5e7c\\u513f\\u56ed; \\u5e7c\\u7a1a\\u56ed\"},{\"word\":\"kitchen\",\"pronun\":\"[\\u02c8kit\\u0283in]\",\"translation\":\"n. \\u53a8\\u623f; \\u7076\\u95f4\"},{\"word\":\"kite\",\"pronun\":\"[kait]\",\"translation\":\"n. \\u98ce\\u7b5d; \\u7a7a\\u5934\\u652f\\u7968\"},{\"word\":\"knee\",\"pronun\":\"[ni:]\",\"translation\":\"n. \\u819d\\u90e8; \\u819d\\u76d6\"},{\"word\":\"knife\",\"pronun\":\"[naif]\",\"translation\":\"n. \\u5200\\u5b50; \\u5c0f\\u5200\"},{\"word\":\"know\",\"pronun\":\"[n\\u0259\\u028a]\",\"translation\":\"vt. \\u77e5\\u9053; \\u61c2\\u5f97; \\u8ba4\\u8bc6; \\u4e86\\u89e3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 18,
+        "minSpeed": 10,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

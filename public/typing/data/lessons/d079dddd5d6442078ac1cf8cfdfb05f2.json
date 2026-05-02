@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.667996+00:00",
+  "request": {
+    "lesson_id": "d079dddd5d6442078ac1cf8cfdfb05f2",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 128,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "d079dddd5d6442078ac1cf8cfdfb05f2",
+    "nextLessonId": "150b8759b0aaac5b4400432249074f55",
+    "lessonName": "KET核心词-86",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第86课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a6fa65877a42ae5bbd414a404e70aa32",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"easy\",\"pronun\":\"[ˈiːzi]\",\"translation\":\"adj. 容易的；舒适的\\nvt. 发出停划命令\\nadv. 不费力地，从容地\\nvi. 停止划桨\",\"audio\":\"easy.mp3\"},{\"word\":\"English\",\"pronun\":\"[ˈɪŋɡlɪʃ]\",\"translation\":\"n. 英语；英国人；英文；英格兰人\\nadj. 英国人的；英国的；英文的\\nvt. 把…译成英语\",\"audio\":\"English.mp3\"},{\"word\":\"enjoyable\",\"pronun\":\"[ɪnˈdʒɔɪəbl]\",\"translation\":\"adj. 快乐的；有乐趣的；令人愉快的\",\"audio\":\"enjoyable.mp3\"},{\"word\":\"geography\",\"pronun\":\"[dʒiˈɑːɡrəfi]\",\"translation\":\"n. 地理；地形\",\"audio\":\"geography.mp3\"},{\"word\":\"hard\",\"pronun\":\"[hɑːrd]\",\"translation\":\"adj. 努力的；硬的；困难的；辛苦的；确实的；严厉的；猛烈的；冷酷无情的\\nadv. 努力地；困难地；辛苦地；接近地；猛烈地；牢固地\",\"audio\":\"hard.mp3\"},{\"word\":\"history\",\"pronun\":\"[ˈhɪstri]\",\"translation\":\"n. 历史，历史学；历史记录；来历\",\"audio\":\"history.mp3\"},{\"word\":\"important\",\"pronun\":\"[ɪmˈpɔːrtnt]\",\"translation\":\"adj. 重要的，重大的；有地位的；有权力的\",\"audio\":\"important.mp3\"},{\"word\":\"information technology\",\"pronun\":\"\",\"translation\":\"n. 信息技术\",\"audio\":\"information_technology.mp3\"},{\"word\":\"interesting\",\"pronun\":\"[ˈɪntrəstɪŋ; ˈɪntrestɪŋ]\",\"translation\":\"adj. 有趣的；引起兴趣的，令人关注的\",\"audio\":\"interesting.mp3\"},{\"word\":\"language\",\"pronun\":\"[ˈlæŋɡwɪdʒ]\",\"translation\":\"n. 语言；语言文字；表达能力\",\"audio\":\"language.mp3\"},{\"word\":\"literature\",\"pronun\":\"[ˈlɪtrətʃər; ˈlɪtrətʃʊr; ˈlɪtərətʃʊr]\",\"translation\":\"n. 文学；文献；文艺；著作\",\"audio\":\"literature.mp3\"},{\"word\":\"maths\",\"pronun\":\"[mæθs]\",\"translation\":\"n. 数学（等于mathematics）\",\"audio\":\"maths.mp3\"},{\"word\":\"mathematics\",\"pronun\":\"[ˌmæθəˈmætɪks]\",\"translation\":\"n. 数学；数学运算\",\"audio\":\"mathematics.mp3\"},{\"word\":\"music\",\"pronun\":\"[ˈmjuːzɪk]\",\"translation\":\"n. 音乐，乐曲\",\"audio\":\"music.mp3\"},{\"word\":\"physics\",\"pronun\":\"[ˈfɪzɪks]\",\"translation\":\"n. 物理学；物理现象\",\"audio\":\"physics.mp3\"},{\"word\":\"science\",\"pronun\":\"[ˈsaɪəns]\",\"translation\":\"n. 科学；技术；学科；理科\",\"audio\":\"science.mp3\"},{\"word\":\"sport\",\"pronun\":\"[spɔːrt]\",\"translation\":\"n. 运动；游戏；娱乐；运动会；玩笑\\nadj. 运动的\\nvt. 游戏；参加体育运动；夸耀\\nvi. 游戏\",\"audio\":\"sport.mp3\"},{\"word\":\"useful\",\"pronun\":\"[ˈjuːsfl]\",\"translation\":\"adj. 有用的，有益的；有帮助的\",\"audio\":\"useful.mp3\"},{\"word\":\"useless\",\"pronun\":\"[ˈjuːsləs]\",\"translation\":\"adj. 无用的；无效的\",\"audio\":\"useless.mp3\"},{\"word\":\"accident\",\"pronun\":\"[ˈæksɪdənt]\",\"translation\":\"n. 事故；意外；[法] 意外事件；机遇\",\"audio\":\"accident.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

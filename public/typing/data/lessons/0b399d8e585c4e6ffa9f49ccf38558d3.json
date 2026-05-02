@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.566101+00:00",
+  "request": {
+    "lesson_id": "0b399d8e585c4e6ffa9f49ccf38558d3",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 545,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "0b399d8e585c4e6ffa9f49ccf38558d3",
+    "nextLessonId": "61f8761e7c69fac3c1e9bf3e1b018a79",
+    "lessonName": "Do Fish Breathe Water?",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ffa40197c02b12088763f5cf2ad4bf7c",
+        "index": 1,
+        "text": [
+          "Do Fish Breathe Water?\\nJoey has a pet. Her name is Goldie. She lives in a bowl.\\nGoldie is a fish—a shiny goldfish.\\nOnce a week, Joey takes Goldie out of her bowl. He cleans her bowl so she can grow strong and healthy.\\nWhen Joey's parents gave him Goldie, they said, \"You will have to learn to take care of her.\" So, Joey started learning a lot about fish.\\nJoey used to think fish did not breathe. \"How can they breathe in the water?\" he thought. \"When I swim, I cannot breathe if I put my head under the water!\"\\nBut fish get air in a different way. They have \"gills\" on the sides of their heads.Joey learned that water has oxygen in it. The water passes through the gills. The fish get their oxygen from the water.\\nWhen Joey cleans the fish bowl, he puts Goldie in a small glass of water. That way, she can breathe while he cleans her home."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

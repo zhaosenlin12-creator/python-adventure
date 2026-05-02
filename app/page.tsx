@@ -19,7 +19,7 @@ import { Level } from "@/lib/levels";
 import { getLearningChapter, getLearningCopy, type LearningSubjectId } from "@/lib/learningHub";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Trophy, LogOut, User, Volume2, VolumeX, Languages, Globe2, BrainCircuit, ExternalLink } from "lucide-react";
+import { Trophy, LogOut, User, Volume2, VolumeX, Languages, Globe2, BrainCircuit, ExternalLink, Keyboard } from "lucide-react";
 import Footer from "@/components/Footer";
 import CoinBalance from "@/components/ui/CoinBalance";
 import CoinHistory from "@/components/ui/CoinHistory";
@@ -30,6 +30,7 @@ import AchievementPanel from "@/components/pet/AchievementPanel";
 
 type ViewState = 'home' | 'map' | 'level';
 const AI_RESEARCH_URL = "https://research.google/ai-quests/intl/en_us/quest/market-marshes";
+const TYPING_URL = process.env.NEXT_PUBLIC_TYPING_URL || "/typing/index.html";
 
 export default function Home() {
     const router = useRouter();
@@ -197,6 +198,19 @@ export default function Home() {
         window.open(AI_RESEARCH_URL, '_blank', 'noopener,noreferrer');
     };
 
+    const handleOpenTyping = () => {
+        if (typeof window === 'undefined') return;
+        const target = new URL(TYPING_URL, window.location.origin);
+        target.searchParams.set('source', 'game-google');
+        target.searchParams.set('apiBase', '/api/typing');
+        target.searchParams.set('returnUrl', window.location.href);
+        if (token) target.searchParams.set('token', token);
+        if (user?.id) target.searchParams.set('userId', String(user.id));
+        if (user?.username) target.searchParams.set('username', user.username);
+        if (userLevel) target.searchParams.set('level', String(userLevel));
+        window.location.href = target.toString();
+    };
+
     return (
         <main className="min-h-screen bg-gradient-to-b from-[#0a0e27] via-[#1a1e3e] to-[#0a0e27] text-white">
             {/* 🔒 进度同步状态指示器 */}
@@ -241,13 +255,24 @@ export default function Home() {
                         <SystemUpdateAnnouncement triggerVariant="toolbar" />
                     )}
                     <button
+                        data-testid="typing-entry-button"
+                        onClick={handleOpenTyping}
+                        className="top-action-cta top-action-typing group inline-flex min-h-[44px] transform-gpu items-center gap-2 rounded-full border border-yellow-300/40 bg-yellow-400/15 px-3 py-2 text-yellow-50 shadow-lg shadow-yellow-500/10 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02] hover:border-yellow-100 hover:bg-yellow-300 hover:text-slate-950 hover:shadow-xl hover:shadow-yellow-300/25 hover:ring-2 hover:ring-yellow-100/80 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-300/70"
+                        title="进入乐启享打字训练中心"
+                    >
+                        <Keyboard className="h-4 w-4 text-yellow-300 transition-all duration-200 group-hover:-rotate-6 group-hover:scale-110 group-hover:text-slate-950" />
+                        <span className="hidden text-sm font-medium sm:inline">享打字</span>
+                        <ExternalLink className="h-3.5 w-3.5 text-yellow-100/80 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-slate-950" />
+                    </button>
+                    <button
+                        data-testid="ai-research-button"
                         onClick={handleOpenAiResearch}
-                        className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-3 py-2 text-cyan-100 transition-colors hover:bg-cyan-500/18"
+                        className="top-action-cta top-action-ai group inline-flex min-h-[44px] transform-gpu items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-3 py-2 text-cyan-100 shadow-lg shadow-cyan-500/10 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02] hover:border-cyan-100 hover:bg-cyan-300 hover:text-slate-950 hover:shadow-xl hover:shadow-cyan-300/25 hover:ring-2 hover:ring-cyan-100/80 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70"
                         title="国外资源：需要调整网络环境"
                     >
-                        <BrainCircuit className="h-4 w-4 text-cyan-300" />
+                        <BrainCircuit className="h-4 w-4 text-cyan-300 transition-all duration-200 group-hover:scale-110 group-hover:rotate-6 group-hover:text-slate-950" />
                         <span className="hidden text-sm font-medium sm:inline">AI Research</span>
-                        <ExternalLink className="h-3.5 w-3.5 text-cyan-200/80" />
+                        <ExternalLink className="h-3.5 w-3.5 text-cyan-200/80 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-slate-950" />
                     </button>
                     <button
                         onClick={handleToggleMute}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.444066+00:00",
+  "request": {
+    "lesson_id": "ee0e70d6087e3df8b915acca3dfc908a",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 513,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "ee0e70d6087e3df8b915acca3dfc908a",
+    "nextLessonId": "aed3a7fef1a985413f7924f5466646d1",
+    "lessonName": "Grandma's Chicks",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "63698b087b120a71c27fd64d05a55835",
+        "index": 1,
+        "text": [
+          "My grandma loved little chicks. When the salesman came to our village with his little chicks, she carefully picked ten chicks to bring home.\\nSomehow, she had a way of choosing the chicks that would grow up to be hens, not roosters.\\nWe loved to help her take care of the baby chicks too. Day by day, the little chicks grew bigger.\\nAfter eight months, they laid their first eggs!Cluck, cluck!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

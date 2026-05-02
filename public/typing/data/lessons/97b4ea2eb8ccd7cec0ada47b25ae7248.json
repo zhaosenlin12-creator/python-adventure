@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.717917+00:00",
+  "request": {
+    "lesson_id": "97b4ea2eb8ccd7cec0ada47b25ae7248",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 358,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "97b4ea2eb8ccd7cec0ada47b25ae7248",
+    "nextLessonId": "4d7465ad55e28cfb4e87282915b95239",
+    "lessonName": "六级词汇正序版-127",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第127课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "57936e8a9aa4c9f81f62872b34f01871",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"originality\",\"pronun\":\"[əˌrɪdʒəˈnæləti]\",\"translation\":\"n. 创意；独创性，创造力；原始；新奇\",\"audio\":\"originality.mp3\"},{\"word\":\"outwardly\",\"pronun\":\"[ˈaʊtwərdli]\",\"translation\":\"adv. 表面上；向外；外观上地\",\"audio\":\"outwardly.mp3\"},{\"word\":\"participation\",\"pronun\":\"[pɑːrˌtɪsɪˈpeɪʃn]\",\"translation\":\"n. 参与；分享；参股\",\"audio\":\"participation.mp3\"},{\"word\":\"partnership\",\"pronun\":\"[ˈpɑːrtnərʃɪp]\",\"translation\":\"n. 合伙；[经管] 合伙企业；合作关系；合伙契约\",\"audio\":\"partnership.mp3\"},{\"word\":\"permanence\",\"pronun\":\"[ˈpɜːrmənəns]\",\"translation\":\"n. 持久；永久\",\"audio\":\"permanence.mp3\"},{\"word\":\"persistence\",\"pronun\":\"[pərˈsɪstəns]\",\"translation\":\"n. 持续；固执；存留；坚持不懈；毅力\",\"audio\":\"persistence.mp3\"},{\"word\":\"pertinent\",\"pronun\":\"[ˈpɜːrtnənt]\",\"translation\":\"adj. 相关的，相干的；中肯的；切题的\",\"audio\":\"pertinent.mp3\"},{\"word\":\"pertinently\",\"pronun\":\"[ˈpɜːrtnəntli]\",\"translation\":\"adv. 适切地\",\"audio\":\"pertinently.mp3\"},{\"word\":\"pesticide\",\"pronun\":\"[ˈpestɪsaɪd]\",\"translation\":\"n. 杀虫剂\",\"audio\":\"pesticide.mp3\"},{\"word\":\"pinpoint\",\"pronun\":\"[ˈpɪnpɔɪnt]\",\"translation\":\"n. 针尖；精确位置；极小之物\\nvt. 查明；精确地找到；准确描述\\nadj. 精确的；详尽的\",\"audio\":\"pinpoint.mp3\"},{\"word\":\"poultry\",\"pronun\":\"[ˈpoʊltri]\",\"translation\":\"n. 家禽\\n家禽肉\",\"audio\":\"poultry.mp3\"},{\"word\":\"predominantly\",\"pronun\":\"[prɪˈdɑːmɪnəntli]\",\"translation\":\"adv. 主要地；显著地\",\"audio\":\"predominantly.mp3\"},{\"word\":\"prevailing\",\"pronun\":\"[prɪˈveɪlɪŋ]\",\"translation\":\"adj. 流行的；一般的，最普通的；占优势的；盛行很广的\\nv. 盛行，流行（prevail的现在分词形式）；获胜\",\"audio\":\"prevailing.mp3\"},{\"word\":\"pristine\",\"pronun\":\"\",\"translation\":\"\",\"audio\":\"pristine.mp3\"},{\"word\":\"probation\",\"pronun\":\"[proʊˈbeɪʃn]\",\"translation\":\"n. 试用；缓刑；查验\",\"audio\":\"probation.mp3\"},{\"word\":\"proficient\",\"pronun\":\"[prəˈfɪʃnt]\",\"translation\":\"n. 精通；专家，能手\\nadj. 熟练的，精通的\",\"audio\":\"proficient.mp3\"},{\"word\":\"prosper\",\"pronun\":\"[ˈprɑːspər]\",\"translation\":\"vi. 繁荣，昌盛；成功\\nvt. 使……成功；使……昌盛；使……繁荣\",\"audio\":\"prosper.mp3\"},{\"word\":\"quaint\",\"pronun\":\"[kweɪnt]\",\"translation\":\"adj. 古雅的；奇怪的；离奇有趣的；做得很精巧的\",\"audio\":\"quaint.mp3\"},{\"word\":\"radically\",\"pronun\":\"[ˈrædɪkli]\",\"translation\":\"adv. 根本上；彻底地；以激进的方式\",\"audio\":\"radically.mp3\"},{\"word\":\"ramp\",\"pronun\":\"[ræmp]\",\"translation\":\"n. 斜坡，坡道；敲诈\\nvt. 敲诈；使有斜面\\nvi. 蔓延；狂跳乱撞；敲诈\",\"audio\":\"ramp.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

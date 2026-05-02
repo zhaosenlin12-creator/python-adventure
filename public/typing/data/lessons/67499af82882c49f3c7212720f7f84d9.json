@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.486853+00:00",
+  "request": {
+    "lesson_id": "67499af82882c49f3c7212720f7f84d9",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 522,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "67499af82882c49f3c7212720f7f84d9",
+    "nextLessonId": "a065fb03d12dabd7301138d5e8cba00b",
+    "lessonName": "Colours of the Rainbow",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "673fab7ce1596f399ae025c1a58b2329",
+        "index": 1,
+        "text": [
+          "See that rainbow in the sky? It's red, orange, yellow, green, blue, indigo, and purple.\\nRed on the top, then orange, yellow, green, blue, indigo, and then purple at the bottom.\\nEvery rainbow has these seven colours. These colours are always in the same order. Red on the top, purple on the bottom."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

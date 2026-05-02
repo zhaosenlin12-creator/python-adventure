@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.334152+00:00",
+  "request": {
+    "lesson_id": "89f1013085b4929aeda798f6c722989c",
+    "course_id": "30951c93875a1e260feda8cb699005df",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "30951c93875a1e260feda8cb699005df",
+    "order": 485,
+    "nextCourseId": "30951c93875a1e260feda8cb699005df",
+    "courseName": "英语每日故事（初级）32-61",
+    "lessonId": "89f1013085b4929aeda798f6c722989c",
+    "nextLessonId": "b9fd8f11c2676927e03a608d41bc5817",
+    "lessonName": "My Little Red Wagon",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3cdcdafc701fc6d413b6cfd657c37f33",
+        "index": 1,
+        "text": [
+          "I have a little red wagon. It has four wheels. It has a long handle. I take my red wagon everywhere. Sometimes I take my little sister for a ride. She likes to go fast. 'Go fast! Go!' she says. I pull and run. My sister laughs. We have a lot of fun with my little red wagon."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

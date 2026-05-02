@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.883119+00:00",
+  "request": {
+    "lesson_id": "2bce22a3c203552deed2b069a613af9c",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 59,
+    "nextCourseId": "ff61770b1da83313ceacb0a08aef6378",
+    "courseName": "Python",
+    "lessonId": "2bce22a3c203552deed2b069a613af9c",
+    "nextLessonId": "b39986641bb894c55552e347718d4d90",
+    "lessonName": "单词计数",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - 单词计数",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ed4d9a17be204173b9b0457f5c3cfd82",
+        "index": 1,
+        "text": [
+          "# 统计文本中单词出现的频率\\ndef count_words(text):\\n    # 转换为小写并分割单词\\n    words = text.lower().split()\\n    word_count = {}\\n\\n    for word in words:\\n        # 移除标点符号\\n        cleaned_word = ''.join(c for c in word if c.isalnum())\\n\\n        if cleaned_word:\\n            if cleaned_word in word_count:\\n                word_count[cleaned_word] += 1\\n            else:\\n                word_count[cleaned_word] = 1\\n\\n    return word_count\\n\\n# 测试单词统计\\ntext = \"Python is great. Python is powerful. I love Python programming.\"\\nword_freq = count_words(text)\\n\\nprint(f\"原文本: {text}\\n\")\\nprint(\"单词频率:\")\\nfor word, count in sorted(word_freq.items(), key=lambda x: x[1], reverse=True):\\n    print(f\"{word}: {count}\")\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

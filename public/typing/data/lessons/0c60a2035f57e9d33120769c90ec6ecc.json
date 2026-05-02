@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.349844+00:00",
+  "request": {
+    "lesson_id": "0c60a2035f57e9d33120769c90ec6ecc",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 178,
+    "nextCourseId": "d7df026ff1d81047d30da28a958b118f",
+    "courseName": "golang",
+    "lessonId": "0c60a2035f57e9d33120769c90ec6ecc",
+    "nextLessonId": "a8b09674109fa4dd97fc3d5f6f2b68cc",
+    "lessonName": "矩阵转置",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - 矩阵转置",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b3ec0dbfc3a6169a9ef0d787465a0ae6",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport \"fmt\"\\n\\nfunc transposeMatrix(matrix [][]int) [][]int {\\n\trows := len(matrix)\\n\tcols := len(matrix[0])\\n\tresult := make([][]int, cols)\\n\\n\tfor i := 0; i < cols; i++ {\\n\t\tresult[i] = make([]int, rows)\\n\t}\\n\\n\tfor i := 0; i < rows; i++ {\\n\t\tfor j := 0; j < cols; j++ {\\n\t\t\tresult[j][i] = matrix[i][j]\\n\t\t}\\n\t}\\n\\n\treturn result\\n}\\n\\nfunc printMatrix(matrix [][]int) {\\n\tfor _, row := range matrix {\\n\t\tfor _, val := range row {\\n\t\t\tfmt.Printf(\"%3d \", val)\\n\t\t}\\n\t\tfmt.Println()\\n\t}\\n}\\n\\nfunc main() {\\n\tmatrix := [][]int{\\n\t\t{1, 2, 3},\\n\t\t{4, 5, 6},\\n\t\t{7, 8, 9},\\n\t}\\n\\n\tfmt.Println(\"原矩阵:\")\\n\tprintMatrix(matrix)\\n\\n\ttransposed := transposeMatrix(matrix)\\n\tfmt.Println(\"\\n转置后:\")\\n\tprintMatrix(transposed)\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

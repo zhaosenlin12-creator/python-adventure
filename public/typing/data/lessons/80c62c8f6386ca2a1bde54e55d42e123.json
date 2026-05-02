@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.411192+00:00",
+  "request": {
+    "lesson_id": "80c62c8f6386ca2a1bde54e55d42e123",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 196,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "80c62c8f6386ca2a1bde54e55d42e123",
+    "nextLessonId": "8f8bdf8a7811e3de497af151018ebe7b",
+    "lessonName": "INNER JOIN内连接",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - INNER JOIN内连接",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "0cc25f478b8d30b463233afd1b6c9c3a",
+        "index": 1,
+        "text": [
+          "-- 查询用户及其订单信息\\nSELECT u.id, u.name, o.order_id, o.amount, o.created_at\\nFROM users u\\nINNER JOIN orders o ON u.id = o.user_id\\nWHERE o.status = 'completed'\\nORDER BY o.created_at DESC;\\n\\n-- 查询产品及其分类信息\\nSELECT p.name AS product_name, c.name AS category_name, p.price\\nFROM products p\\nINNER JOIN categories c ON p.category_id = c.id\\nWHERE p.price > 100;\\n\\n-- 多表连接查询订单详情\\nSELECT\\n    u.name AS customer_name,\\n    o.order_id,\\n    p.name AS product_name,\\n    od.quantity,\\n    od.price\\nFROM orders o\\nINNER JOIN users u ON o.user_id = u.id\\nINNER JOIN order_details od ON o.order_id = od.order_id\\nINNER JOIN products p ON od.product_id = p.id\\nWHERE o.status = 'completed';\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

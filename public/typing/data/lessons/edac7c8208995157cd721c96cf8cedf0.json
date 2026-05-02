@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.924752+00:00",
+  "request": {
+    "lesson_id": "edac7c8208995157cd721c96cf8cedf0",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 401,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "edac7c8208995157cd721c96cf8cedf0",
+    "nextLessonId": "b770581b1de7564fed5d05c25242ffdf",
+    "lessonName": "六级词汇正序版-119",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第119课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c251af474e8f211e3f0a4ddd565746a2",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"astronomer\",\"pronun\":\"[əˈstrɑːnəmər]\",\"translation\":\"n. 天文学家\",\"audio\":\"astronomer.mp3\"},{\"word\":\"audible\",\"pronun\":\"[ˈɔːdəb(ə)l]\",\"translation\":\"adj. 听得见的\\n听得见地\",\"audio\":\"audible.mp3\"},{\"word\":\"audit\",\"pronun\":\"[ˈɔːdɪt]\",\"translation\":\"n. 审计；[审计] 查账\\nvt. （美）旁听\\nvi. 审计；[审计] 查账\",\"audio\":\"audit.mp3\"},{\"word\":\"auditorium\",\"pronun\":\"[ˌɔːdɪˈtɔːriəm]\",\"translation\":\"n. 礼堂，会堂；观众席\",\"audio\":\"auditorium.mp3\"},{\"word\":\"auditory\",\"pronun\":\"[ˈɔːdətɔːri]\",\"translation\":\"n. 听众；礼堂\\nadj. 听觉的；耳朵的\",\"audio\":\"auditory.mp3\"},{\"word\":\"automated\",\"pronun\":\"[ˈɔːtəmeɪtɪd]\",\"translation\":\"adj. 自动化的；机械化的\\nv. 自动化（automate的过去分词）；自动操作\",\"audio\":\"automated.mp3\"},{\"word\":\"benevolent\",\"pronun\":\"[bəˈnevələnt]\",\"translation\":\"adj. 仁慈的；慈善的；亲切的\",\"audio\":\"benevolent.mp3\"},{\"word\":\"benign\",\"pronun\":\"\",\"translation\":\"\",\"audio\":\"benign.mp3\"},{\"word\":\"betrayal\",\"pronun\":\"[bɪˈtreɪəl]\",\"translation\":\"n. 背叛；辜负；暴露\",\"audio\":\"betrayal.mp3\"},{\"word\":\"brittle\",\"pronun\":\"[ˈbrɪt(ə)l]\",\"translation\":\"adj. 易碎的，脆弱的；易生气的\",\"audio\":\"brittle.mp3\"},{\"word\":\"budge\",\"pronun\":\"[bʌdʒ]\",\"translation\":\"n. 羔羊皮\\nvt. 使让步；移动；使改变态度或意见\\nvi. 挪动；微微移动；改变态度或意见；服从\",\"audio\":\"budge.mp3\"},{\"word\":\"canteen\",\"pronun\":\"[kænˈtiːn]\",\"translation\":\"n. 食堂，小卖部；水壶\",\"audio\":\"canteen.mp3\"},{\"word\":\"capability\",\"pronun\":\"[ˌkeɪpəˈbɪləti]\",\"translation\":\"n. 才能，能力；性能，容量\",\"audio\":\"capability.mp3\"},{\"word\":\"carcass\",\"pronun\":\"[ˈkɑːrkəs]\",\"translation\":\"n. （人或动物的）尸体；残骸；（除脏去头备食用的）畜体\",\"audio\":\"carcass.mp3\"},{\"word\":\"chancellor\",\"pronun\":\"[ˈtʃænsələr]\",\"translation\":\"n. 总理（德、奥等的）；（英）大臣；校长（美国某些大学的）；（英）大法官；（美）首席法官\",\"audio\":\"chancellor.mp3\"},{\"word\":\"clinical\",\"pronun\":\"[ˈklɪnɪkl]\",\"translation\":\"adj. 临床的；诊所的\",\"audio\":\"clinical.mp3\"},{\"word\":\"collaborate\",\"pronun\":\"[kəˈlæbəreɪt]\",\"translation\":\"vi. 合作；勾结，通敌\",\"audio\":\"collaborate.mp3\"},{\"word\":\"combustion\",\"pronun\":\"[kəmˈbʌstʃən]\",\"translation\":\"n. 燃烧，氧化；骚动\",\"audio\":\"combustion.mp3\"},{\"word\":\"compactness\",\"pronun\":\"[kəmˈpæktnəsˌˈkɑːmpæktnəs]\",\"translation\":\"n. 简洁；紧密；密实度；紧密度\",\"audio\":\"compactness.mp3\"},{\"word\":\"compassion\",\"pronun\":\"[kəmˈpæʃn]\",\"translation\":\"n. 同情；怜悯\",\"audio\":\"compassion.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

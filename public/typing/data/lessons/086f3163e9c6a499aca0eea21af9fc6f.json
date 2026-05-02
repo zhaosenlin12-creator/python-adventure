@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.304905+00:00",
+  "request": {
+    "lesson_id": "086f3163e9c6a499aca0eea21af9fc6f",
+    "course_id": "507208abf6b7416a5e11a3c2bcd62136",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "507208abf6b7416a5e11a3c2bcd62136",
+    "order": 273,
+    "nextCourseId": "507208abf6b7416a5e11a3c2bcd62136",
+    "courseName": "高中必备3500词-下",
+    "lessonId": "086f3163e9c6a499aca0eea21af9fc6f",
+    "nextLessonId": "9f1fdccbca6fef4dd5d6b3501268eb05",
+    "lessonName": "Chapter.10",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "93fc72f6e0a63b6070a7c211d602d696",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"cuisine\",\"pronun\":\"\\/kw\\u026a\\u02c8zi:n\\/\",\"translation\":\"n.\\u83dc\\u80b4;\\u98ce\\u5473;\\u70f9\\u996a\"},{\"word\":\"prior\",\"pronun\":\"\\/\\u02c8pra\\u026a\\u0259(r)\\/\",\"translation\":\"a.\\u5148\\u524d\\u7684;\\u4f18\\u5148\\u7684\"},{\"word\":\"consist\",\"pronun\":\"\\/k\\u0259n\\u02c8s\\u026ast\\/\",\"translation\":\"vi.\\u7ec4\\u6210;\\u6784\\u6210\"},{\"word\":\"recipe\",\"pronun\":\"\\/\\u02c8res\\u0259pi\\/\",\"translation\":\"n.\\u70f9\\u996a\\u6cd5;\\u98df\\u8c31\"},{\"word\":\"bold\",\"pronun\":\"\\/b\\u0259\\u028ald\\/\",\"translation\":\"a.\\u5927\\u80c6\\u81ea\\u4fe1\\u7684;\\u6562\\u4e8e\\u5192\\u9669\\u7684\"},{\"word\":\"chef\",\"pronun\":\"\\/\\u0283ef\\/\",\"translation\":\"n.\\u53a8\\u5e08;\\u4e3b\\u53a8\"},{\"word\":\"peppercorn\",\"pronun\":\"\\/\\u02c8pep\\u0259k\\u0254\\u02d0n\\/\",\"translation\":\"n.\\u80e1\\u6912\\u7c92\"},{\"word\":\"vinegar\",\"pronun\":\"\\/\\u02c8v\\u026an\\u026ag\\u0259(r)\\/\",\"translation\":\"n.\\u918b\"},{\"word\":\"stuff\",\"pronun\":\"\\/st\\u028cf\\/\",\"translation\":\"vt.\\u586b\\u6ee1;\\u628a\\u2026\\u585e\\u8fdb n.\\u4e1c\\u897f\"},{\"word\":\"lamb\",\"pronun\":\"\\/l\\u00e6m\\/\",\"translation\":\"n.\\u7f8a\\u7f94\\u8089;\\u7f94\\u7f8a\"},{\"word\":\"elegant\",\"pronun\":\"\\/\\u02c8el\\u026ag\\u0259nt\\/\",\"translation\":\"a.\\u7cbe\\u7f8e\\u7684;\\u8bb2\\u7a76\\u7684;\\u6587\\u96c5\\u7684\"},{\"word\":\"exceptional\",\"pronun\":\"\\/\\u026ak\\u02c8sep\\u0283\\u0259nl\\/\",\"translation\":\"a.\\u7279\\u522b\\u7684;\\u7f55\\u89c1\\u7684\"},{\"word\":\"minimum\",\"pronun\":\"\\/\\u02c8m\\u026an\\u026am\\u0259m\\/\",\"translation\":\"n.\\u6700\\u5c0f\\u503c;\\u6700\\u5c11\\u91cf a.\\u6700\\u4f4e\\u7684\"},{\"word\":\"consume\",\"pronun\":\"\\/k\\u0259n\\u02c8sju:m\\/\",\"translation\":\"v.\\u5403;\\u559d;\\u996e;\\u6d88\\u8017\"},{\"word\":\"temper\",\"pronun\":\"\\/\\u02c8temp\\u0259(r)\\/\",\"translation\":\"n.\\u813e\\u6c14;\\u706b\\u6c14\"},{\"word\":\"vegetarian\",\"pronun\":\"\\/\\u02ccved\\u0292\\u0259\\u02c8te\\u0259ri\\u0259n\\/\",\"translation\":\"n.\\u7d20\\u98df\\u8005\"},{\"word\":\"garlic\",\"pronun\":\"\\/\\u02c8g\\u0251:l\\u026ak\\/\",\"translation\":\"n.\\u849c\"},{\"word\":\"bacon\",\"pronun\":\"\\/\\u02c8be\\u026ak\\u0259n\\/\",\"translation\":\"n.\\u718f\\u732a\\u8089;\\u54b8\\u8089\"},{\"word\":\"olive\",\"pronun\":\"\\/\\u02c8\\u0252l\\u026av\\/\",\"translation\":\"n.\\u6cb9\\u6a44\\u6984;\\u6a44\\u6984\\u6811\"},{\"word\":\"fig\",\"pronun\":\"\\/f\\u026ag\\/\",\"translation\":\"n.\\u65e0\\u82b1\\u679c\"},{\"word\":\"ingredient\",\"pronun\":\"\\/\\u026an\\u02c8gri:di\\u0259nt\\/\",\"translation\":\"n.(\\u5c24\\u6307\\u70f9\\u996a)\\u6750\\u6599;\\u6210\\u5206\"},{\"word\":\"dough\",\"pronun\":\"\\/d\\u0259\\u028a\\/\",\"translation\":\"n.\\u751f\\u9762\\u56e2\"},{\"word\":\"stable\",\"pronun\":\"\\/\\u02c8ste\\u026abl\\/\",\"translation\":\"a.\\u7a33\\u5b9a\\u7684;\\u7a33\\u91cd\\u7684\"},{\"word\":\"haggis\",\"pronun\":\"\\/\\u02c8h\\u00e6\\u0261\\u026as\\/\",\"translation\":\"n.(\\u82cf\\u683c\\u5170)\\u7f8a\\u6742\\u788e\\u809a\"},{\"word\":\"canteen\",\"pronun\":\"\\/k\\u00e6n\\u02c8ti:n\\/\",\"translation\":\"n.\\u98df\\u5802;\\u9910\\u5385\"},{\"word\":\"cafeteria\",\"pronun\":\"\\/\\u02cck\\u00e6f\\u0259\\u02c8t\\u026a\\u0259ri\\u0259\\/\",\"translation\":\"n.\\u81ea\\u52a9\\u9910\\u5385;\\u81ea\\u52a9\\u98df\\u5802\"},{\"word\":\"bun\",\"pronun\":\"\\/b\\u028cn\\/\",\"translation\":\"n.\\u5706\\u9762\\u5305;\\u5c0f\\u5706\\u751c\\u997c\"},{\"word\":\"chilli\",\"pronun\":\"\\/'t\\u0283\\u026al\\u026a\\/\",\"translation\":\"n.\\u8fa3\\u6912\"},{\"word\":\"pork\",\"pronun\":\"\\/p\\u0254:k\\/\",\"translation\":\"n.\\u732a\\u8089\"},{\"word\":\"pearl\",\"pronun\":\"\\/p\\u025c:l\\/\",\"translation\":\"n.\\u73cd\\u73e0\"},{\"word\":\"somewhat\",\"pronun\":\"\\/\\u02c8s\\u028cmw\\u0252t\\/\",\"translation\":\"ad.\\u6709\\u70b9;\\u7a0d\\u5fae\"},{\"word\":\"calorie\",\"pronun\":\"\\/\\u02c8k\\u00e6l\\u0259ri\\/\",\"translation\":\"n.\\u5361\\u8def\\u91cc(\\u70ed\\u91cf\\u5355\\u4f4d)\"},{\"word\":\"association\",\"pronun\":\"\\/\\u0259\\u02ccs\\u0259\\u028a\\u0283i\\u02c8e\\u026a\\u0283n\\/\",\"translation\":\"n.\\u534f\\u4f1a;\\u5173\\u8054\"},{\"word\":\"regardless\",\"pronun\":\"\\/r\\u026a\\u02c8g\\u0251:dl\\u0259s\\/\",\"translation\":\"ad.\\u4e0d\\u987e;\\u4e0d\\u52a0\\u7406\\u4f1a\"},{\"word\":\"category\",\"pronun\":\"\\/\\u02c8k\\u00e6t\\u0259g\\u0259ri\\/\",\"translation\":\"n.\\u7c7b\\u522b;\\u79cd\\u7c7b\"},{\"word\":\"vitamin\",\"pronun\":\"\\/\\u02c8v\\u026at\\u0259m\\u026an\\/\",\"translation\":\"n.\\u7ef4\\u751f\\u7d20\"},{\"word\":\"fibre\",\"pronun\":\"\\/\\u02c8fa\\u026ab\\u0259(r)\\/\",\"translation\":\"n.\\u7ea4\\u7ef4;\\u7ea4\\u7ef4\\u5236\\u54c1\"},{\"word\":\"quantity\",\"pronun\":\"\\/\\u02c8kw\\u0252nt\\u0259ti\\/\",\"translation\":\"n.\\u6570\\u91cf;\\u6570\\u989d\"},{\"word\":\"dairy\",\"pronun\":\"\\/\\u02c8de\\u0259ri\\/\",\"translation\":\"a.\\u5976\\u5236\\u7684;\\u4e73\\u54c1\\u7684 n.\\u4e73\\u5236\\u54c1\"},{\"word\":\"moderation\",\"pronun\":\"\\/\\u02ccm\\u0252d\\u0259\\u02c8re\\u026a\\u0283n\\/\",\"translation\":\"n.\\u9002\\u5ea6;\\u5408\\u7406\"},{\"word\":\"ideal\",\"pronun\":\"\\/a\\u026a\\u02c8di:\\u0259l\\/\",\"translation\":\"a.\\u5b8c\\u7f8e\\u7684;\\u7406\\u60f3\\u7684 n.\\u7406\\u60f3\"},{\"word\":\"fundamental\",\"pronun\":\"\\/\\u02ccf\\u028cnd\\u0259\\u02c8mentl\\/\",\"translation\":\"a.\\u6839\\u672c\\u7684;\\u57fa\\u7840\\u7684n.\\u57fa\\u672c\\u89c4\\u5f8b\"},{\"word\":\"chew\",\"pronun\":\"\\/t\\u0283u:\\/\",\"translation\":\"vi.&vt.\\u5480\\u56bc;\\u56bc\\u788e n.\\u5480\\u56bc.\"},{\"word\":\"consistent\",\"pronun\":\"\\/k\\u0259n\\u02c8s\\u026ast\\u0259nt\\/\",\"translation\":\"a.\\u4e00\\u81f4\\u7684;\\u8fde\\u7eed\\u7684\"},{\"word\":\"modest\",\"pronun\":\"\\/\\u02c8m\\u0252d\\u026ast\\/\",\"translation\":\"a.\\u4e9b\\u8bb8\\u7684;\\u8c26\\u865a\\u7684;\\u6734\\u7d20\\u7684\"},{\"word\":\"overall\",\"pronun\":\"\\/\\u02cc\\u0259\\u028av\\u0259r\\u02c8\\u0254:l\\/\",\"translation\":\"ad.\\u603b\\u4f53\\u4e0a;\\u5927\\u81f4\\u4e0a a.\\u5168\\u9762\\u7684\"},{\"word\":\"Kazak\",\"pronun\":\"\",\"translation\":\"a.\\u54c8\\u8428\\u514b\\u65cf\\u7684 n.\\u54c8\\u8428\\u514b\\u65cf\\u4eba\"},{\"word\":\"airline\",\"pronun\":\"\\/\\u02c8e\\u0259la\\u026an\\/\",\"translation\":\"n.\\u822a\\u7a7a\\u516c\\u53f8\"},{\"word\":\"bay\",\"pronun\":\"\\/be\\u026a\\/\",\"translation\":\"n.(\\u6d77\\u6216\\u6e56\\u7684)\\u6e7e\"},{\"word\":\"craft\",\"pronun\":\"\\/kr\\u0251:ft\\/\",\"translation\":\"n.\\u624b\\u827a;\\u5de5\\u827a;\\u6280\\u827a\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 22,
+        "minSpeed": 16,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

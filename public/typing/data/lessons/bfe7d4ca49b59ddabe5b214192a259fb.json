@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.261823+00:00",
+  "request": {
+    "lesson_id": "bfe7d4ca49b59ddabe5b214192a259fb",
+    "course_id": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "order": 470,
+    "nextCourseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "courseName": "英语每日故事（初级）1-31",
+    "lessonId": "bfe7d4ca49b59ddabe5b214192a259fb",
+    "nextLessonId": "56e0436450489094b92e53a9a64d0e08",
+    "lessonName": "Lights in the House",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ad1d4d0261c4569c4c3ad9d49530dec2",
+        "index": 1,
+        "text": [
+          "My mother was mad!\\nWhat was wrong? She saw all the lights in the house were on and no one was home.\\nMom said, \"When you turn off the lights, you save energy, you save money and you save the environment. Is that hard to do?\"\\n\"No, of course not,\" said my brother.\\n\"Please, let's not forget again,\" said my mother."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

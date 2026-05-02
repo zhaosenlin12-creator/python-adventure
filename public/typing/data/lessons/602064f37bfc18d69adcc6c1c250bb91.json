@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.674369+00:00",
+  "request": {
+    "lesson_id": "602064f37bfc18d69adcc6c1c250bb91",
+    "course_id": "f5e1caafe742206a7fc8abc95cf77b44",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "order": 325,
+    "nextCourseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "courseName": "诗词歌赋",
+    "lessonId": "602064f37bfc18d69adcc6c1c250bb91",
+    "nextLessonId": "43b8600bdb68ce393af3c4a2d9aa02ef",
+    "lessonName": "《如梦令·常记溪亭日暮》李清照",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-poet-4.6d792ca729.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e9519d81cdbce4878768f25f96497c69",
+        "index": 1,
+        "text": [
+          "《如梦令·常记溪亭日暮》\\n李清照\\n\\n常记溪亭日暮，沉醉不知归路。\\n兴尽晚回舟，误入藕花深处。\\n争渡，争渡，惊起一滩鸥鹭。"
+        ],
+        "pinyin": "[[\"《\", \"\"], [\"如\", \"rú\"], [\"梦\", \"mèng\"], [\"令\", \"lìng\"], [\"·\", \"\"], [\"常\", \"cháng\"], [\"记\", \"jì\"], [\"溪\", \"xī\"], [\"亭\", \"tíng\"], [\"日\", \"rì\"], [\"暮\", \"mù\"], [\"》\", \"\"], [\"\\n\", \"\"], [\"李\", \"lǐ\"], [\"清\", \"qīng\"], [\"照\", \"zhào\"], [\"\\n\", \"\"], [\"\\n\", \"\"], [\"常\", \"cháng\"], [\"记\", \"jì\"], [\"溪\", \"xī\"], [\"亭\", \"tíng\"], [\"日\", \"rì\"], [\"暮\", \"mù\"], [\"，\", \"\"], [\"沉\", \"chén\"], [\"醉\", \"zuì\"], [\"不\", \"bù\"], [\"知\", \"zhī\"], [\"归\", \"guī\"], [\"路\", \"lù\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"兴\", \"xìng\"], [\"尽\", \"jìn\"], [\"晚\", \"wǎn\"], [\"回\", \"huí\"], [\"舟\", \"zhōu\"], [\"，\", \"\"], [\"误\", \"wù\"], [\"入\", \"rù\"], [\"藕\", \"ǒu\"], [\"花\", \"huā\"], [\"深\", \"shēn\"], [\"处\", \"chù\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"争\", \"zhēng\"], [\"渡\", \"dù\"], [\"，\", \"\"], [\"争\", \"zhēng\"], [\"渡\", \"dù\"], [\"，\", \"\"], [\"惊\", \"jīng\"], [\"起\", \"qǐ\"], [\"一\", \"yī\"], [\"滩\", \"tān\"], [\"鸥\", \"ōu\"], [\"鹭\", \"lù\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 45,
+        "minSpeed": 30,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

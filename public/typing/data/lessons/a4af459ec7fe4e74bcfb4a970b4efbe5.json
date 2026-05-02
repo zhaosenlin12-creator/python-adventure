@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.483594+00:00",
+  "request": {
+    "lesson_id": "a4af459ec7fe4e74bcfb4a970b4efbe5",
+    "course_id": "007ef7afc48bb0178d2f077a23bc898d",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "007ef7afc48bb0178d2f077a23bc898d",
+    "order": 382,
+    "nextCourseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "courseName": "小学必备古诗75首（3）",
+    "lessonId": "a4af459ec7fe4e74bcfb4a970b4efbe5",
+    "nextLessonId": "472039f358ff91b6db715cf83c6e21e7",
+    "lessonName": "己亥杂诗",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2cf059685bf9fac407b36fe0eda8cc1d",
+        "index": 1,
+        "text": [
+          "己亥杂诗\\n龚自珍\\n九州生气恃风雷，万马齐喑究可哀。\\n我劝天公重抖擞，不拘一格降人才。"
+        ],
+        "pinyin": "[[\"己\", \"jǐ\"], [\"亥\", \"hài\"], [\"杂\", \"zá\"], [\"诗\", \"shī\"], [\"\\n\", \"\"], [\"龚\", \"gōng\"], [\"自\", \"zì\"], [\"珍\", \"zhēn\"], [\"\\n\", \"\"], [\"九\", \"jiǔ\"], [\"州\", \"zhōu\"], [\"生\", \"shēng\"], [\"气\", \"qì\"], [\"恃\", \"shì\"], [\"风\", \"fēng\"], [\"雷\", \"léi\"], [\"，\", \"\"], [\"万\", \"wàn\"], [\"马\", \"mǎ\"], [\"齐\", \"qí\"], [\"喑\", \"yīn\"], [\"究\", \"jiū\"], [\"可\", \"kě\"], [\"哀\", \"āi\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"我\", \"wǒ\"], [\"劝\", \"quàn\"], [\"天\", \"tiān\"], [\"公\", \"gōng\"], [\"重\", \"chóng\"], [\"抖\", \"dǒu\"], [\"擞\", \"sǒu\"], [\"，\", \"\"], [\"不\", \"bù\"], [\"拘\", \"jū\"], [\"一\", \"yī\"], [\"格\", \"gé\"], [\"降\", \"jiàng\"], [\"人\", \"rén\"], [\"才\", \"cái\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

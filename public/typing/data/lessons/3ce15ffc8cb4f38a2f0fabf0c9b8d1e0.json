@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.883954+00:00",
+  "request": {
+    "lesson_id": "3ce15ffc8cb4f38a2f0fabf0c9b8d1e0",
+    "course_id": "daccefd55478aba6657b64a604f8f971",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "daccefd55478aba6657b64a604f8f971",
+    "order": 153,
+    "nextCourseId": "daccefd55478aba6657b64a604f8f971",
+    "courseName": "注音练习1",
+    "lessonId": "3ce15ffc8cb4f38a2f0fabf0c9b8d1e0",
+    "nextLessonId": "99ad403825772b4ef7c47c34a9cad08f",
+    "lessonName": "《黄鹤楼送孟浩然之广陵》",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-wen.691360af01.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "18c05087f5efd1185dcf50dcd0154f29",
+        "index": 1,
+        "text": [
+          "《黄鹤楼送孟浩然之广陵》\\n唐：杜甫\\n\\n故人西辞黄鹤楼，烟花三月下扬州。\\n孤帆远影碧空尽，唯见长江天际流。"
+        ],
+        "pinyin": "[[\"《\", \"\"], [\"黄\", \"huáng\"], [\"鹤\", \"hè\"], [\"楼\", \"lóu\"], [\"送\", \"sòng\"], [\"孟\", \"mèng\"], [\"浩\", \"hào\"], [\"然\", \"rán\"], [\"之\", \"zhī\"], [\"广\", \"guǎng\"], [\"陵\", \"líng\"], [\"》\", \"\"], [\"\\n\", \"\"], [\"唐\", \"táng\"], [\"：\", \"\"], [\"杜\", \"dù\"], [\"甫\", \"fǔ\"], [\"\\n\", \"\"], [\"\\n\", \"\"], [\"故\", \"gù\"], [\"人\", \"rén\"], [\"西\", \"xī\"], [\"辞\", \"cí\"], [\"黄\", \"huáng\"], [\"鹤\", \"hè\"], [\"楼\", \"lóu\"], [\"，\", \"\"], [\"烟\", \"yān\"], [\"花\", \"huā\"], [\"三\", \"sān\"], [\"月\", \"yuè\"], [\"下\", \"xià\"], [\"扬\", \"yáng\"], [\"州\", \"zhōu\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"孤\", \"gū\"], [\"帆\", \"fān\"], [\"远\", \"yuǎn\"], [\"影\", \"yǐng\"], [\"碧\", \"bì\"], [\"空\", \"kōng\"], [\"尽\", \"jìn\"], [\"，\", \"\"], [\"唯\", \"wéi\"], [\"见\", \"jiàn\"], [\"长\", \"cháng\"], [\"江\", \"jiāng\"], [\"天\", \"tiān\"], [\"际\", \"jì\"], [\"流\", \"liú\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 18,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

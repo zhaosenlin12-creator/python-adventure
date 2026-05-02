@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.622877+00:00",
+  "request": {
+    "lesson_id": "cd32add8ec44e1ddec8b7983ce75be67",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 118,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "cd32add8ec44e1ddec8b7983ce75be67",
+    "nextLessonId": "0d3dbf68c6558715ab117ba1dfa7cc3c",
+    "lessonName": "KET核心词-56",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第56课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "141d236c4eb02e40a3c91c415dcf32a1",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"satellite\",\"pronun\":\"[ˈsætəlaɪt]\",\"translation\":\"n. 卫星；人造卫星；随从；卫星国家\",\"audio\":\"satellite.mp3\"},{\"word\":\"sauce\",\"pronun\":\"[sɔːs]\",\"translation\":\"n. 酱油；沙司；调味汁\\nvt. 使增加趣味；给…调味\",\"audio\":\"sauce.mp3\"},{\"word\":\"sausage\",\"pronun\":\"[ˈsɔːsɪdʒ]\",\"translation\":\"n. 香肠；腊肠；装香肠的碎肉\",\"audio\":\"sausage.mp3\"},{\"word\":\"save\",\"pronun\":\"[seɪv]\",\"translation\":\"prep. 除...之外\\nn. 救援\\nvi. 节省；挽救\\nvt. 节省；保存；储蓄；解救\",\"audio\":\"save.mp3\"},{\"word\":\"say\",\"pronun\":\"[seɪ]\",\"translation\":\"vt. 讲；说明；例如；声称；假设；指明\\nvi. 讲；表示；念；假定；背诵\",\"audio\":\"say.mp3\"},{\"word\":\"scared\",\"pronun\":\"[skerd]\",\"translation\":\"v. 使害怕（scare的过去分词）\\nadj. 害怕的\",\"audio\":\"scared.mp3\"},{\"word\":\"scarf\",\"pronun\":\"[skɑːrf]\",\"translation\":\"n. 围巾；嵌接，嵌接处；头巾领巾\\nvt. 披嵌接；用围巾围\",\"audio\":\"scarf.mp3\"},{\"word\":\"scary\",\"pronun\":\"[ˈskeri]\",\"translation\":\"adj. （事物）可怕的；恐怖的；吓人的；（人）提心吊胆的；引起惊慌的；胆小的\",\"audio\":\"scary.mp3\"},{\"word\":\"school\",\"pronun\":\"[skuːl]\",\"translation\":\"n. 学校；学院；学派；鱼群\\nvt. 教育\",\"audio\":\"school.mp3\"},{\"word\":\"schoolchild\",\"pronun\":\"[ˈskuːltʃaɪld]\",\"translation\":\"n. 学童\",\"audio\":\"schoolchild.mp3\"},{\"word\":\"schoolmate\",\"pronun\":\"[ˈskuːlmeɪt]\",\"translation\":\"n. 同学；同窗\",\"audio\":\"schoolmate.mp3\"},{\"word\":\"science\",\"pronun\":\"[ˈsaɪəns]\",\"translation\":\"n. 科学；技术；学科；理科\",\"audio\":\"science.mp3\"},{\"word\":\"scissors\",\"pronun\":\"[ˈsɪzərz]\",\"translation\":\"n. 剪刀；剪式跳法\\nv. 剪开；删除（scissor的第三人称单数）\",\"audio\":\"scissors.mp3\"},{\"word\":\"screen\",\"pronun\":\"[skriːn]\",\"translation\":\"n. 屏，幕；屏风\\nvt. 筛；拍摄；放映；掩蔽\\nvi. 拍电影\",\"audio\":\"screen.mp3\"},{\"word\":\"seafood\",\"pronun\":\"[ˈsiːfuːd]\",\"translation\":\"n. 海鲜；海味；海产食品\",\"audio\":\"seafood.mp3\"},{\"word\":\"search\",\"pronun\":\"[sɜːrtʃ]\",\"translation\":\"n. 搜寻；探究，查究\\nvt. 搜索；搜寻；调查；搜查；探求\\nvi. 搜寻；调查；探求\",\"audio\":\"search.mp3\"},{\"word\":\"season\",\"pronun\":\"[ˈsiːzn]\",\"translation\":\"n. 时期；季节；赛季\\nvt. 给…调味；使适应\\nvi. 变得成熟；变干燥\",\"audio\":\"season.mp3\"},{\"word\":\"see\",\"pronun\":\"[siː]\",\"translation\":\"vi. 看；看见；领会\\nvt. 看见；理解；领会\",\"audio\":\"see.mp3\"},{\"word\":\"seat\",\"pronun\":\"[siːt]\",\"translation\":\"n. 座位；所在地；职位\\nvt. 使…坐下；可容纳…的；使就职\",\"audio\":\"seat.mp3\"},{\"word\":\"second\",\"pronun\":\"[ˈsekənd; sɪˈkɑːnd]\",\"translation\":\"num. 第二\\nn. 秒；第二名；瞬间；二等品\\nadj. 第二的；次要的；附加的\\nvt. 支持\\nadv. 第二；其次；居第二位\",\"audio\":\"second.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

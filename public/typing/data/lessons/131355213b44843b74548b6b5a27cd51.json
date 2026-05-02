@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.383383+00:00",
+  "request": {
+    "lesson_id": "131355213b44843b74548b6b5a27cd51",
+    "course_id": "30951c93875a1e260feda8cb699005df",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "30951c93875a1e260feda8cb699005df",
+    "order": 498,
+    "nextCourseId": "30951c93875a1e260feda8cb699005df",
+    "courseName": "英语每日故事（初级）32-61",
+    "lessonId": "131355213b44843b74548b6b5a27cd51",
+    "nextLessonId": "ebe17be005d4efeea85aa15ae27dd04c",
+    "lessonName": "Spider Webs",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1b901e0e5f7c1b248c5a384702a26150",
+        "index": 1,
+        "text": [
+          "There are many kinds of spiders, but they all have one thing in common. They all make silk. Spider silk is very strong. Some spiders use it to build spider webs and to help them climb. What do they use these webs for? To catch other insects. Spiders catch insects in their silky webs. That's the way they get their food."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

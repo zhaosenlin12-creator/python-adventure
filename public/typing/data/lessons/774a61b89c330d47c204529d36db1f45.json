@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.275849+00:00",
+  "request": {
+    "lesson_id": "774a61b89c330d47c204529d36db1f45",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 45,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "774a61b89c330d47c204529d36db1f45",
+    "nextLessonId": "3994de50c52e964ef0c091277a6b768f",
+    "lessonName": "2022年版 PEP-六年级-上册-6",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-六年级-上册 - 第6课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3df9e2ab229a4382f95d0f123e1cab04",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"share\",\"pronun\":\"[ʃer]\",\"translation\":\"n. 份额；股份\\nvt. 分享，分担；分配\\nvi. 共享；分担\",\"audio\":\"share.mp3\"},{\"word\":\"factory\",\"pronun\":\"[ˈfæktri; ˈfæktəri]\",\"translation\":\"n. 工厂；制造厂；代理店\",\"audio\":\"factory.mp3\"},{\"word\":\"worker\",\"pronun\":\"[ˈwɜːrkər]\",\"translation\":\"n. 工人；劳动者；职蚁\",\"audio\":\"worker.mp3\"},{\"word\":\"postman\",\"pronun\":\"[ˈpoʊstmən]\",\"translation\":\"n. 邮递员；邮差\",\"audio\":\"postman.mp3\"},{\"word\":\"businessman\",\"pronun\":\"[ˈbɪznəsmæn]\",\"translation\":\"n. 商人\",\"audio\":\"businessman.mp3\"},{\"word\":\"police\",\"pronun\":\"[pəˈliːs]\",\"translation\":\"n. 警察，警方；治安\\nadj. 警察的；有关警察的\\nvt. 监督；管辖；维持治安；为…配备警察\",\"audio\":\"police.mp3\"},{\"word\":\"officer\",\"pronun\":\"[ˈɑːfɪsər]\",\"translation\":\"n. 军官，警官；公务员，政府官员；船长\\nvt. 指挥\",\"audio\":\"officer.mp3\"},{\"word\":\"fisherman\",\"pronun\":\"[ˈfɪʃərmən]\",\"translation\":\"n. 渔夫；渔人\",\"audio\":\"fisherman.mp3\"},{\"word\":\"scientist\",\"pronun\":\"[ˈsaɪəntɪst]\",\"translation\":\"n. 科学家\",\"audio\":\"scientist.mp3\"},{\"word\":\"pilot\",\"pronun\":\"[ˈpaɪlət]\",\"translation\":\"n. 飞行员；领航员\\nadj. 试点的\\nv. 驾驶；领航；试用\",\"audio\":\"pilot.mp3\"},{\"word\":\"coach\",\"pronun\":\"[koʊtʃ]\",\"translation\":\"n. 教练；旅客车厢；长途公车；四轮大马车\\nvt. 训练；指导\\nvi. 作指导；接受辅导；坐马车旅行\\nn.  蔻驰（皮革品牌）\",\"audio\":\"coach.mp3\"},{\"word\":\"country\",\"pronun\":\"[ˈkʌntri]\",\"translation\":\"n. 国家，国土；国民；乡下，农村；乡村；故乡\\nadj. 祖国的，故乡的；地方的，乡村的；国家的；粗鲁的；乡村音乐的\",\"audio\":\"country.mp3\"},{\"word\":\"head\",\"pronun\":\"[hed]\",\"translation\":\"n. 头；头痛；上端；最前的部分；理解力\\nadj. 头的；主要的；在顶端的\\nvt. 前进；用头顶；作为…\",\"audio\":\"head.mp3\"},{\"word\":\"teacher\",\"pronun\":\"[ˈtiːtʃər]\",\"translation\":\"n. 教师；导师\",\"audio\":\"teacher.mp3\"},{\"word\":\"sea\",\"pronun\":\"[siː]\",\"translation\":\"n. 海；海洋；许多；大量\",\"audio\":\"sea.mp3\"},{\"word\":\"stay\",\"pronun\":\"[steɪ]\",\"translation\":\"n. 逗留；停止；支柱\\nvi. 停留；坚持；暂住；停下\\nvt. 坚持；暂住；抑制\",\"audio\":\"stay.mp3\"},{\"word\":\"university\",\"pronun\":\"[ˌjuːnɪˈvɜːrsəti]\",\"translation\":\"n. 大学；综合性大学；大学校舍\",\"audio\":\"university.mp3\"},{\"word\":\"gym\",\"pronun\":\"[dʒɪm]\",\"translation\":\"n. 健身房；体育；体育馆\",\"audio\":\"gym.mp3\"},{\"word\":\"if\",\"pronun\":\"[ɪf]\",\"translation\":\"conj. （表条件）如果；即使；是否；（表假设）假如\\nn. 条件；设想\",\"audio\":\"if.mp3\"},{\"word\":\"reporter\",\"pronun\":\"[rɪˈpɔːrtər]\",\"translation\":\"n. 记者\",\"audio\":\"reporter.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

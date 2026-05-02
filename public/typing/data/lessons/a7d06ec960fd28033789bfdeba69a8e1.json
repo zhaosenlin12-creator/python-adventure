@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.999115+00:00",
+  "request": {
+    "lesson_id": "a7d06ec960fd28033789bfdeba69a8e1",
+    "course_id": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "order": 82,
+    "nextCourseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "courseName": "C++",
+    "lessonId": "a7d06ec960fd28033789bfdeba69a8e1",
+    "nextLessonId": "f89fc5d3c6264dc5954c8f214e0b6333",
+    "lessonName": "阶乘计算",
+    "icon": "data/assets/daziya.com/key-icon_key-cpp.b136419115.png",
+    "description": "C++编程练习 - 阶乘计算",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "77d5f0b32cd6dc65b841dccf0200649b",
+        "index": 1,
+        "text": [
+          "#include <iostream>\\nusing namespace std;\\n\\nlong long factorialRecursive(int n) {\\n    if (n <= 1) return 1;\\n    return n * factorialRecursive(n - 1);\\n}\\n\\nlong long factorialIterative(int n) {\\n    long long result = 1;\\n    for (int i = 2; i <= n; i++) {\\n        result *= i;\\n    }\\n    return result;\\n}\\n\\nint main() {\\n    int numbers[] = {5, 6, 7, 8};\\n\\n    cout << \"阶乘计算结果:\" << endl;\\n    for (int i = 0; i < 4; i++) {\\n        cout << numbers[i] << \"! = \" << factorialRecursive(numbers[i]) << endl;\\n    }\\n\\n    int n = 10;\\n    cout << \"\\n递归方法: \" << n << \"! = \" << factorialRecursive(n) << endl;\\n    cout << \"迭代方法: \" << n << \"! = \" << factorialIterative(n) << endl;\\n\\n    return 0;\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "cpp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

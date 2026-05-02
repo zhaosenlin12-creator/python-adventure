@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.795498+00:00",
+  "request": {
+    "lesson_id": "39dca8d988687e322e625e61a8453ae1",
+    "course_id": "df7bf8b8c0456926de2c1fac14a741b2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "order": 457,
+    "nextCourseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "courseName": "宋词必备67首（1）",
+    "lessonId": "39dca8d988687e322e625e61a8453ae1",
+    "nextLessonId": "51edb17534c5ad954bfd4b125095c279",
+    "lessonName": "示儿",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "35b2a2bd3fd034abdc7f60b1433f1118",
+        "index": 1,
+        "text": [
+          "示儿\\n陆游\\n死去元知万事空，但悲不见九州同。\\n王师北定中原日，家祭无忘告乃翁。"
+        ],
+        "pinyin": "[[\"示\", \"shì\"], [\"儿\", \"ér\"], [\"\\n\", \"\"], [\"陆\", \"lù\"], [\"游\", \"yóu\"], [\"\\n\", \"\"], [\"死\", \"sǐ\"], [\"去\", \"qù\"], [\"元\", \"yuán\"], [\"知\", \"zhī\"], [\"万\", \"wàn\"], [\"事\", \"shì\"], [\"空\", \"kōng\"], [\"，\", \"\"], [\"但\", \"dàn\"], [\"悲\", \"bēi\"], [\"不\", \"bù\"], [\"见\", \"jiàn\"], [\"九\", \"jiǔ\"], [\"州\", \"zhōu\"], [\"同\", \"tóng\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"王\", \"wáng\"], [\"师\", \"shī\"], [\"北\", \"běi\"], [\"定\", \"dìng\"], [\"中\", \"zhōng\"], [\"原\", \"yuán\"], [\"日\", \"rì\"], [\"，\", \"\"], [\"家\", \"jiā\"], [\"祭\", \"jì\"], [\"无\", \"wú\"], [\"忘\", \"wàng\"], [\"告\", \"gào\"], [\"乃\", \"nǎi\"], [\"翁\", \"wēng\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.486441+00:00",
+  "request": {
+    "lesson_id": "0eb0090bdeb632133f9d583e63a87b66",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 317,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "0eb0090bdeb632133f9d583e63a87b66",
+    "nextLessonId": "c6fb5a972fd58392fd2f251cea0bbdf3",
+    "lessonName": "六级词汇正序版-4",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第4课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "74f9a74a7e3a2411741c30119dd82d94",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"afflict\",\"pronun\":\"[əˈflɪkt]\",\"translation\":\"vt. 折磨；使痛苦；使苦恼\",\"audio\":\"afflict.mp3\"},{\"word\":\"afford\",\"pronun\":\"[əˈfɔːrd]\",\"translation\":\"vt. 给予，提供；买得起\",\"audio\":\"afford.mp3\"},{\"word\":\"agenda\",\"pronun\":\"[əˈdʒendə]\",\"translation\":\"n. 议程；日常工作事项；日程表\",\"audio\":\"agenda.mp3\"},{\"word\":\"agent\",\"pronun\":\"[ˈeɪdʒənt]\",\"translation\":\"n. 代理人，代理商；药剂；特工\\nadj. 代理的\\nvt. 由…作中介；由…代理\",\"audio\":\"agent.mp3\"},{\"word\":\"aggravate\",\"pronun\":\"[ˈæɡrəveɪt]\",\"translation\":\"vt. 加重；使恶化；激怒\",\"audio\":\"aggravate.mp3\"},{\"word\":\"aggregate\",\"pronun\":\"[ˈæɡrɪɡət]\",\"translation\":\"n. 合计；集合体；总计\\nadj. 聚合的；集合的；合计的\\nvt. 集合；聚集；合计\\nvi. 集合；聚集；合计\",\"audio\":\"aggregate.mp3\"},{\"word\":\"aggressive\",\"pronun\":\"[əˈɡresɪv]\",\"translation\":\"adj. 侵略性的；好斗的；有进取心的；有闯劲的\",\"audio\":\"aggressive.mp3\"},{\"word\":\"agony\",\"pronun\":\"[ˈæɡəni]\",\"translation\":\"n. 苦恼；极大的痛苦；临死的挣扎\",\"audio\":\"agony.mp3\"},{\"word\":\"agreeable\",\"pronun\":\"[əˈɡriːəbl]\",\"translation\":\"adj. 令人愉快的；适合的；和蔼可亲的\",\"audio\":\"agreeable.mp3\"},{\"word\":\"aid\",\"pronun\":\"[eɪd]\",\"translation\":\"n. 援助；帮助；助手；帮助者\\nvt. 援助；帮助；有助于\\nvi. 帮助\",\"audio\":\"aid.mp3\"},{\"word\":\"air-conditioning\",\"pronun\":\"[ˈer kəndɪʃənɪŋ]\",\"translation\":\"n. 空调系统；空气调节\",\"audio\":\"air-conditioning.mp3\"},{\"word\":\"aisle\",\"pronun\":\"[aɪl]\",\"translation\":\"n. 通道，走道；侧廊\",\"audio\":\"aisle.mp3\"},{\"word\":\"alarm\",\"pronun\":\"[əˈlɑːrm]\",\"translation\":\"n. 闹钟；警报，警告器；惊慌\\nvt. 警告；使惊恐\",\"audio\":\"alarm.mp3\"},{\"word\":\"album\",\"pronun\":\"[ˈælbəm]\",\"translation\":\"n. 相簿；唱片集；集邮簿；签名纪念册\",\"audio\":\"album.mp3\"},{\"word\":\"alcohol\",\"pronun\":\"[ˈælkəhɔːl]\",\"translation\":\"n. 酒精，乙醇\",\"audio\":\"alcohol.mp3\"},{\"word\":\"alert\",\"pronun\":\"[əˈlɜːrt]\",\"translation\":\"n. 警戒，警惕；警报\\nadj. 警惕的，警觉的；留心的\\nvt. 警告；使警觉，使意识到\",\"audio\":\"alert.mp3\"},{\"word\":\"alien\",\"pronun\":\"[ˈeɪliən]\",\"translation\":\"n. 外国人，外侨；外星人\\nadj. 外国的；相异的，性质不同的；不相容的\\nvt. 让渡，转让\",\"audio\":\"alien.mp3\"},{\"word\":\"alienate\",\"pronun\":\"[ˈeɪliəneɪt]\",\"translation\":\"vt. 使疏远，离间；让与\",\"audio\":\"alienate.mp3\"},{\"word\":\"allege\",\"pronun\":\"[əˈledʒ]\",\"translation\":\"vt. 宣称，断言；提出…作为理由\",\"audio\":\"allege.mp3\"},{\"word\":\"alleviate\",\"pronun\":\"[əˈliːvieɪt]\",\"translation\":\"vt. 减轻，缓和\",\"audio\":\"alleviate.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.034945+00:00",
+  "request": {
+    "lesson_id": "febb47451717b9e3ffe06c7f64b299d4",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 5,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "febb47451717b9e3ffe06c7f64b299d4",
+    "nextLessonId": "34148b517e8f522247cdcb0e8d44a673",
+    "lessonName": "2022年版 PEP-三年级-上册-5",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-三年级-上册 - 第5课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a5ab5447052aca5193e970107948c5fa",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"bear\",\"pronun\":\"[ber]\",\"translation\":\"n. 熊\\nvt. 结果实，开花（正式）\\nvt. 忍受；承受；具有；支撑\",\"audio\":\"bear.mp3\"},{\"word\":\"yellow\",\"pronun\":\"[ˈjeloʊ]\",\"translation\":\"n. 黄色；黄种人；黄色颜料\\nadj. 黄色的；黄皮肤的\\nvt. 使变黄或发黄\\nvi. 变黄或发黄\",\"audio\":\"yellow.mp3\"},{\"word\":\"duck\",\"pronun\":\"[dʌk]\",\"translation\":\"n. 鸭子；鸭肉；（英）宝贝儿；零分\\nvt. 躲避；猛按…入水\\nvi. 闪避；没入水中\",\"audio\":\"duck.mp3\"},{\"word\":\"sea\",\"pronun\":\"[siː]\",\"translation\":\"n. 海；海洋；许多；大量\",\"audio\":\"sea.mp3\"},{\"word\":\"some\",\"pronun\":\"[sʌm; səm]\",\"translation\":\"adj. 一些；某个；大约；相当多的\\npron. 一些；若干；其中的一部分；（数量不确切时用）有些人\\nadv. 非常；相当；<美>稍微\",\"audio\":\"some.mp3\"},{\"word\":\"pink\",\"pronun\":\"[pɪŋk]\",\"translation\":\"n. 粉红色；化身，典范；石竹花；头面人物\\nadj. 粉红的；比较激进的；石竹科的；脸色发红的\\nvt. 扎，刺，戳；使…变粉红色；使…面红耳赤\\nvi. 变粉红色\",\"audio\":\"pink.mp3\"},{\"word\":\"draw\",\"pronun\":\"[drɔː]\",\"translation\":\"n. 平局；抽签\\nvi. 拉；拖\\nvt. 画；拉；吸引\",\"audio\":\"draw.mp3\"},{\"word\":\"white\",\"pronun\":\"[waɪt]\",\"translation\":\"n. 白色；洁白；白种人\\nadj. 白色的；白种的；纯洁的\",\"audio\":\"white.mp3\"},{\"word\":\"black\",\"pronun\":\"[blæk]\",\"translation\":\"n. 黑色；黑人；黑颜料\\nadj. 黑色的；黑人的；邪恶的\\nvt. 使变黑；把鞋油等涂在…上；把（眼眶）打成青肿\\nvi. 变黑\",\"audio\":\"black.mp3\"},{\"word\":\"old\",\"pronun\":\"[oʊld]\",\"translation\":\"adj. 陈旧的，古老的；年老的\\nn. 古时\",\"audio\":\"old.mp3\"},{\"word\":\"five\",\"pronun\":\"[faɪv]\",\"translation\":\"num. 五，五个\\nn. 五，五个；五美元钞票\\nadj. 五的；五个的\",\"audio\":\"five.mp3\"},{\"word\":\"year\",\"pronun\":\"[jɪr]\",\"translation\":\"n. 年；年度；历年；年纪；一年的期间；某年级的学生\",\"audio\":\"year.mp3\"},{\"word\":\"one\",\"pronun\":\"[wʌn]\",\"translation\":\"pron. 一个人；任何人\\nadj. 一的；唯一的\\nn. 一\\nnum. 一；一个\",\"audio\":\"one.mp3\"},{\"word\":\"two\",\"pronun\":\"[tuː]\",\"translation\":\"num. 二\\nn. 两个\\nadj. 两个的\",\"audio\":\"two.mp3\"},{\"word\":\"three\",\"pronun\":\"[θriː]\",\"translation\":\"num. 三\\nn. 三，三个\\nadj. 三的，三个的\",\"audio\":\"three.mp3\"},{\"word\":\"four\",\"pronun\":\"[fɔːr]\",\"translation\":\"num. 四；四个\\nadj. 四的；四个的\",\"audio\":\"four.mp3\"},{\"word\":\"ten\",\"pronun\":\"[ten]\",\"translation\":\"num. 十个，十\",\"audio\":\"ten.mp3\"},{\"word\":\"six\",\"pronun\":\"[sɪks]\",\"translation\":\"num. 六，六个\\nn. 六，六个\",\"audio\":\"six.mp3\"},{\"word\":\"seven\",\"pronun\":\"[ˈsev(ə)n]\",\"translation\":\"num. 七个，七\\nn. 七个，七\\nadj. 七的；七个的\",\"audio\":\"seven.mp3\"},{\"word\":\"eight\",\"pronun\":\"[eɪt]\",\"translation\":\"num. 八；八个；第八\\nn. 八字形\\nadj. 八的\",\"audio\":\"eight.mp3\"},{\"word\":\"nine\",\"pronun\":\"[naɪn]\",\"translation\":\"n. 九，九个\\nnum. 九；九个\\nadj. 九的，九个的\",\"audio\":\"nine.mp3\"},{\"word\":\"o'clock\",\"pronun\":\"\",\"translation\":\"abbr. …点钟（等于of the clock）\",\"audio\":\"o_clock.mp3\"},{\"word\":\"cut\",\"pronun\":\"[kʌt]\",\"translation\":\"n. 伤口；切口；削减；（服装等的）式样；削球；切入\\nadj. 割下的；雕过的；缩减的\\nvt. [机] 切割；削减；缩短；刺痛\\nvi. [机] 切割；相交；切牌；停拍；不出席\",\"audio\":\"cut.mp3\"},{\"word\":\"eat\",\"pronun\":\"[iːt]\",\"translation\":\"vt. 吃，喝；腐蚀；烦扰\\nvi. 进食；腐蚀，侵蚀\",\"audio\":\"eat.mp3\"},{\"word\":\"cake\",\"pronun\":\"[keɪk]\",\"translation\":\"n. 蛋糕；块状物；利益总额\\nvt. 使结块\\nvi. 结成块状\",\"audio\":\"cake.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

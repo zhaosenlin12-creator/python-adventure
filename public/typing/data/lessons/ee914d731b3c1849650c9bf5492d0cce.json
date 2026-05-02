@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:30.554884+00:00",
+  "request": {
+    "lesson_id": "ee914d731b3c1849650c9bf5492d0cce",
+    "course_id": "21fe8d60de407da95e1abc33ac636014",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "21fe8d60de407da95e1abc33ac636014",
+    "order": 24,
+    "nextCourseId": "21fe8d60de407da95e1abc33ac636014",
+    "courseName": "上排字母",
+    "lessonId": "ee914d731b3c1849650c9bf5492d0cce",
+    "nextLessonId": "81dfd78bb57ac1d4c5d416ac7221d67a",
+    "lessonName": "回顾e和i",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-review-ei.de5111bf37.png",
+    "description": "回顾e和i",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3627fa02fa1e1353b45dfe891e30312b",
+        "index": 1,
+        "text": [
+          "he hei ke le li; ge fei dai sai she shi je fei de se si di fa sa gai gei ga kai lai gai lei lie"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "heikl;gfda ishj",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:33.627069+00:00",
+  "request": {
+    "lesson_id": "0172d9efeb23d4b0ce3578d6253fe44a",
+    "course_id": "c34575de8400552068ca0d9da0898f18",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "c34575de8400552068ca0d9da0898f18",
+    "order": 12,
+    "nextCourseId": "c34575de8400552068ca0d9da0898f18",
+    "courseName": "语文课内同步一年级上册",
+    "lessonId": "0172d9efeb23d4b0ce3578d6253fe44a",
+    "nextLessonId": "79d0853e4557f275985558b549b838a0",
+    "lessonName": "绕口令",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "7519d2a1f566b80b84e8dca41b75db66",
+        "index": 1,
+        "text": [
+          "四是四，\\n十是十。\\n十四是十四，\\n四十是四十。\\n四十不是十四，\\n十四不是四十。"
+        ],
+        "pinyin": "[[\"四\", \"sì\"], [\"是\", \"shì\"], [\"四\", \"sì\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"十\", \"shí\"], [\"是\", \"shì\"], [\"十\", \"shí\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"十\", \"shí\"], [\"四\", \"sì\"], [\"是\", \"shì\"], [\"十\", \"shí\"], [\"四\", \"sì\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"四\", \"sì\"], [\"十\", \"shí\"], [\"是\", \"shì\"], [\"四\", \"sì\"], [\"十\", \"shí\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"四\", \"sì\"], [\"十\", \"shí\"], [\"不\", \"bù\"], [\"是\", \"shì\"], [\"十\", \"shí\"], [\"四\", \"sì\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"十\", \"shí\"], [\"四\", \"sì\"], [\"不\", \"bù\"], [\"是\", \"shì\"], [\"四\", \"sì\"], [\"十\", \"shí\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

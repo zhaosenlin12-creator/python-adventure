@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.003224+00:00",
+  "request": {
+    "lesson_id": "edb5cbcff6f8ad5e6253c16f56e6e7a1",
+    "course_id": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "order": 198,
+    "nextCourseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "courseName": "小升初必备单词",
+    "lessonId": "edb5cbcff6f8ad5e6253c16f56e6e7a1",
+    "nextLessonId": "addbf76d4eaf1466d3c0a1f5cd457a36",
+    "lessonName": "G",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "21788f3a598fc5c207917b08b8dc41ca",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"garden\",\"pronun\":\"[\\u02c8\\u0261\\u0251:dn]\",\"translation\":\"n. \\u82b1\\u56ed; \\u83dc\\u56ed; \\u516c\\u56ed\"},{\"word\":\"gas\",\"pronun\":\"[\\u0261\\u00e6s]\",\"translation\":\"n. \\u7164\\u6c14; \\u6c7d\\u6cb9; \\u5929\\u7136\\u6c14; \\u6c14\\u4f53\"},{\"word\":\"gate\",\"pronun\":\"[\\u0261eit]\",\"translation\":\"n. \\u5927\\u95e8; \\u57ce\\u95e8; \\u51fa\\u5165\\u53e3\"},{\"word\":\"gently\",\"pronun\":\"[\\u02c8d\\u0292entl\\u026a]\",\"translation\":\"adv. \\u6e29\\u67d4\\u5730; \\u8f7b\\u8f7b\\u5730\"},{\"word\":\"get\",\"pronun\":\"[\\u0261et]\",\"translation\":\"v. \\u6709; \\u5f97\\u5230; \\u4e70\\u5230; \\u6536\\u5230\"},{\"word\":\"giant\",\"pronun\":\"[\\u02c8d\\u0292ai\\u0259nt]\",\"translation\":\"adj. \\u5de8\\u5927\\u7684 n. \\u5de8\\u4eba\"},{\"word\":\"girl\",\"pronun\":\"[\\u0261\\u0259:l]\",\"translation\":\"n. \\u5973\\u5b69\\u5b50; \\u59d1\\u5a18; \\u5973\\u513f\"},{\"word\":\"give\",\"pronun\":\"[\\u0261iv]\",\"translation\":\"v. \\u7ed9; \\u4ea7\\u751f\"},{\"word\":\"glass\",\"pronun\":\"[\\u0261l\\u0251:s]\",\"translation\":\"n. \\u73bb\\u7483\\u676f; \\u73bb\\u7483\"},{\"word\":\"glasses\",\"pronun\":\"[\\u02c8gl\\u0251:s\\u026az]\",\"translation\":\"n. \\u773c\\u955c\"},{\"word\":\"glove\",\"pronun\":\"[\\u0261l\\u028cv]\",\"translation\":\"n. (\\u4e00\\u53ea)\\u624b\\u5957\"},{\"word\":\"glue\",\"pronun\":\"[\\u0261lu:]\",\"translation\":\"vt. \\u80f6\\u5408 n. \\u80f6; \\u80f6\\u6c34\"},{\"word\":\"go\",\"pronun\":\"[\\u0261\\u0259u]\",\"translation\":\"v. \\u53bb; \\u5230\"},{\"word\":\"goal\",\"pronun\":\"[\\u0261\\u0259ul]\",\"translation\":\"n. \\u5f97\\u5206\"},{\"word\":\"good\",\"pronun\":\"[\\u0261ud]\",\"translation\":\"adj. \\u597d\\u7684; \\u5584\\u826f\\u7684; \\u64c5\\u957f\\u2026\\u7684 n...\"},{\"word\":\"goodbye\",\"pronun\":\"[\\u02cc\\u0261\\u028ad\\u02c8ba\\u026a]\",\"translation\":\"\\u518d\\u89c1(\\u5168)\"},{\"word\":\"goose\",\"pronun\":\"[\\u0261u:s]\",\"translation\":\"n. \\u9e45; \\u9e45\\u8089\"},{\"word\":\"granddaughter\",\"pronun\":\"[\\u02c8gr\\u00e6n\\u02ccd\\u0254:t\\u0259]\",\"translation\":\"n. \\u5b59\\u5973; \\u5916\\u5b59\\u5973\"},{\"word\":\"grandfather\",\"pronun\":\"[\\u02c8\\u0261r\\u00e6nd\\u02ccf\\u0251:\\u00f0\\u0259]\",\"translation\":\"n. \\u7956\\u7236; \\u5916\\u7956\\u7236\"},{\"word\":\"grandma\",\"pronun\":\"[\\u02c8\\u0261r\\u00e6nm\\u0251:]\",\"translation\":\"n. \\u7956\\u6bcd(\\u5976\\u5976); \\u5916\\u7956\\u6bcd(\\u5916\\u5a46)\"},{\"word\":\"grandmother\",\"pronun\":\"[\\u02c8\\u0261r\\u00e6nd\\u02ccm\\u028c\\u00f0\\u0259]\",\"translation\":\"n. \\u7956\\u6bcd; \\u5916\\u7956\\u6bcd\"},{\"word\":\"grandson\",\"pronun\":\"[\\u02c8gr\\u00e6nd\\u02ccs\\u028cn]\",\"translation\":\"n. \\u5b59\\u5b50; \\u5916\\u5b59\"},{\"word\":\"grape\",\"pronun\":\"[\\u0261reip]\",\"translation\":\"n. \\u8461\\u8404; \\u8461\\u8404\\u85e4\"},{\"word\":\"grass\",\"pronun\":\"[\\u0261r\\u0251:s]\",\"translation\":\"n. \\u9752\\u8349; \\u8349; \\u8349\\u5730\"},{\"word\":\"green\",\"pronun\":\"[\\u0261ri:n]\",\"translation\":\"adj. \\u7eff\\u8272\\u7684; \\u9752\\u8272\\u7684\"},{\"word\":\"grey\",\"pronun\":\"[\\u0261rei]\",\"translation\":\"adj. \\u7070\\u8272\\u7684 vi. \\u53d8\\u6210\\u7070\\u8272 n....\"},{\"word\":\"grow\",\"pronun\":\"[\\u0261r\\u0259u]\",\"translation\":\"v. \\u6210\\u957f; \\u79cd\\u690d\"},{\"word\":\"guitar\",\"pronun\":\"[\\u0261i\\u02c8t\\u0251:]\",\"translation\":\"n. \\u5409\\u4ed6; \\u516d\\u5f26\\u7434\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 14,
+        "minSpeed": 7,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

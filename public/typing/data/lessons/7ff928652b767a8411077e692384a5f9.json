@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.315682+00:00",
+  "request": {
+    "lesson_id": "7ff928652b767a8411077e692384a5f9",
+    "course_id": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "order": 481,
+    "nextCourseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "courseName": "英语每日故事（初级）1-31",
+    "lessonId": "7ff928652b767a8411077e692384a5f9",
+    "nextLessonId": "884bf60e58e22d0edf32be258a9ca660",
+    "lessonName": "What Do Birds Eat?",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "20458e0c7b675afe343cc2d9aad33fae",
+        "index": 1,
+        "text": [
+          "My grandpa likes birds. He often tells me what different birds eat.\\nBirds eat many things. Some birds eat worms. Some birds eat seeds and nuts.\\nDo you want to know something funny? Birds eat many different things, but they don't have teeth!\\nHow do they chew their food? I wonder."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

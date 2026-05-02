@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.094507+00:00",
+  "request": {
+    "lesson_id": "491438afc36d5f7269e6967aaff52320",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 17,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "491438afc36d5f7269e6967aaff52320",
+    "nextLessonId": "49fa58567cbc8c901d3a6850dfdee1e9",
+    "lessonName": "2022年版 PEP-四年级-上册-6",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-四年级-上册 - 第6课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c5c26b49b72d744cc34ecc821665a04d",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"mine\",\"pronun\":\"[maɪn]\",\"translation\":\"n. 矿，矿藏；矿山，矿井；地雷，水雷\\nvt. 开采，采掘；在…布雷\\nvi. 开矿，采矿；埋设地雷\\npron. 我的\",\"audio\":\"mine.mp3\"},{\"word\":\"wear\",\"pronun\":\"[wer]\",\"translation\":\"n. 衣物；磨损；耐久性\\nv. 穿着；用旧；耗损；面露\",\"audio\":\"wear.mp3\"},{\"word\":\"shirt\",\"pronun\":\"[ʃɜːrt]\",\"translation\":\"n. 衬衫；汗衫，内衣\",\"audio\":\"shirt.mp3\"},{\"word\":\"coat\",\"pronun\":\"[koʊt]\",\"translation\":\"n. 外套\\nvt. 覆盖…的表面\",\"audio\":\"coat.mp3\"},{\"word\":\"dress\",\"pronun\":\"[dres]\",\"translation\":\"n. 连衣裙；女装\\nvt. 给…穿衣\\nvi. 穿衣\",\"audio\":\"dress.mp3\"},{\"word\":\"which\",\"pronun\":\"[wɪtʃ]\",\"translation\":\"adj. 哪一个；哪一些\\npron. 哪\\/那一个；哪\\/那一些\",\"audio\":\"which.mp3\"},{\"word\":\"season\",\"pronun\":\"[ˈsiːzn]\",\"translation\":\"n. 时期；季节；赛季\\nvt. 给…调味；使适应\\nvi. 变得成熟；变干燥\",\"audio\":\"season.mp3\"},{\"word\":\"winter\",\"pronun\":\"[ˈwɪntər]\",\"translation\":\"n. 冬季；年岁；萧条期\\nadj. 冬天的；越冬的\\nvi. 过冬\",\"audio\":\"winter.mp3\"},{\"word\":\"snow\",\"pronun\":\"[snoʊ]\",\"translation\":\"n. 雪，积雪；下雪\\nvt. 使纷纷落下；使变白\\nvi. 降雪\",\"audio\":\"snow.mp3\"},{\"word\":\"get\",\"pronun\":\"[ɡet]\",\"translation\":\"n. 生殖；幼兽\\nvi. 成为；变得；到达\\nvt. 使得；获得；受到；变成\",\"audio\":\"get.mp3\"},{\"word\":\"spring\",\"pronun\":\"[sprɪŋ]\",\"translation\":\"n. 春天；弹簧；泉水；活力；跳跃\\nadj. 春天的\\nvt. 使跳起；使爆炸；突然提出；使弹开\\nvi. 生长；涌出；跃出；裂开\",\"audio\":\"spring.mp3\"},{\"word\":\"summer\",\"pronun\":\"[ˈsʌmər]\",\"translation\":\"n. 夏季；全盛时期\\nadj. 夏季的\\nvi. 避暑；过夏天\",\"audio\":\"summer.mp3\"},{\"word\":\"autumn\",\"pronun\":\"[ˈɔːtəm; ˈɑːtəm]\",\"translation\":\"n. 秋天；成熟期；渐衰期，凋落期\\nadj. 秋天的，秋季的\",\"audio\":\"autumn.mp3\"},{\"word\":\"T-shirt\",\"pronun\":\"[ˈtiː ʃɜːrt]\",\"translation\":\"n. 短袖圆领汗衫\",\"audio\":\"T-shirt.mp3\"},{\"word\":\"fall\",\"pronun\":\"[fɔːl]\",\"translation\":\"n. 下降；秋天；瀑布\\nadj. 秋天的\\nvi. 落下；变成；来临；减弱\\nvt. 砍倒；击倒\",\"audio\":\"fall.mp3\"},{\"word\":\"leaf\",\"pronun\":\"[liːf]\",\"translation\":\"n. 叶子；（书籍等的）一张；扇页\\nvi. 生叶；翻书页\\nvt. 翻…的页，匆匆翻阅\",\"audio\":\"leaf.mp3\"},{\"word\":\"leaves\",\"pronun\":\"[liːvz]\",\"translation\":\"n. 树叶；花瓣（leaf的复数）\\nv. 离开（leave的第三人称单数）\",\"audio\":\"leaves.mp3\"},{\"word\":\"glove\",\"pronun\":\"[ɡlʌv]\",\"translation\":\"n. 手套\\nvt. 给…戴手套\",\"audio\":\"glove.mp3\"},{\"word\":\"then\",\"pronun\":\"[ðen]\",\"translation\":\"conj. 然后，当时\\nn. 那时\\nadv. 然后；那么；于是；当时；此外\",\"audio\":\"then.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

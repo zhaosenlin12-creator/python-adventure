@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.112049+00:00",
+  "request": {
+    "lesson_id": "b3c5bed7dd1f72e750a35edea4909f84",
+    "course_id": "ee920473fc84aa54eb12b2498d3762ad",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "ee920473fc84aa54eb12b2498d3762ad",
+    "order": 225,
+    "nextCourseId": "ee920473fc84aa54eb12b2498d3762ad",
+    "courseName": "初中必备1200词",
+    "lessonId": "b3c5bed7dd1f72e750a35edea4909f84",
+    "nextLessonId": "5042f0e6566c17034edeea5c4e463652",
+    "lessonName": "Chapter.8",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4d7032c654f0c6581557844ace2bc817",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"health\",\"pronun\":\"[hel\\u03b8]\",\"translation\":\"n.\\u5065\\u5eb7;\\u4eba\\u7684\\u8eab\\u4f53;(\\u6216\\u7cbe\\u795e)\\u72b6\\u6001\"},{\"word\":\"result\",\"pronun\":\"[r\\u026a'z\\u028clt]\",\"translation\":\"n.\\u7ed3\\u679c;\\u540e\\u679c\"},{\"word\":\"percent\",\"pronun\":\"\",\"translation\":\"n.\\u767e\\u5206\\u4e4b\\u2026\"},{\"word\":\"online\",\"pronun\":\"[\\u02cc\\u0252n\\u02c8la\\u026an]\",\"translation\":\"adj.&adv.\\u5728\\u7ebf(\\u7684);\\u8054\\u7f51(\\u7684)\"},{\"word\":\"although\",\"pronun\":\"[\\u0254\\u02d0l'\\u00f0\\u0259\\u028a]\",\"translation\":\"conj.\\u867d\\u7136;\\u5c3d\\u7ba1;\\u5373\\u4f7f\"},{\"word\":\"mind\",\"pronun\":\"[ma\\u026and]\",\"translation\":\"n.\\u5934\\u8111;\\u5fc3\\u667a\"},{\"word\":\"body\",\"pronun\":\"[\\u02c8b\\u0252di]\",\"translation\":\"n.\\u8eab\\u4f53\"},{\"word\":\"such\",\"pronun\":\"[s\\u028ct\\u0283]\",\"translation\":\"adj.&pron.\\u8fd9\\u6837\\u7684;\\u90a3\\u6837\\u7684;\\u7c7b\\u4f3c\\u7684\"},{\"word\":\"die\",\"pronun\":\"[da\\u026a]\",\"translation\":\"v.\\u6d88\\u5931;\\u706d\\u4ea1;\\u6b7b\\u4ea1\"},{\"word\":\"writer\",\"pronun\":\"['ra\\u026at\\u0259]\",\"translation\":\"n.\\u4f5c\\u8005;\\u4f5c\\u5bb6\"},{\"word\":\"magazine\",\"pronun\":\"[\\u02ccm\\u00e6g\\u0259'zi\\u02d0n]\",\"translation\":\"n.\\u6742\\u5fd7;\\u671f\\u520a\"},{\"word\":\"almost\",\"pronun\":\"['\\u0254\\u02d0lm\\u0259\\u028ast]\",\"translation\":\"adv.\\u51e0\\u4e4e;\\u5dee\\u4e0d\\u591a\"},{\"word\":\"none\",\"pronun\":\"[n\\u028cn]\",\"translation\":\"pron.\\u6ca1\\u6709\\u4e00\\u4e2a;\\u6beb\\u65e0\"},{\"word\":\"less\",\"pronun\":\"[les]\",\"translation\":\"adv.adj.\\u8f83\\u5c11;\\u8f83\\u5c0f;\\u8f83\\u5c11\\u7684;\\u66f4\\u5c11\\u7684\"},{\"word\":\"outgoing\",\"pronun\":\"[\\u02c8a\\u028at\\u0261\\u0259\\u028a\\u026a\\u014b]\",\"translation\":\"adj.\\u7231\\u4ea4\\u9645\\u7684;\\u53cb\\u597d\\u7684;\\u5916\\u5411\\u7684\"},{\"word\":\"better\",\"pronun\":\"['bet\\u0259]\",\"translation\":\"adj.&adv.(good\\u548cwell\\u7684\\u6bd4\\u8f83\\u7ea7)\\u8f83\\u597d\\u7684(\\u5730);\\u66f4\\u597d\\u7684(\\u5730)\"},{\"word\":\"hard-working\",\"pronun\":\"\",\"translation\":\"adj.\\u5de5\\u4f5c\\u52aa\\u529b\\u7684;\\u8f9b\\u52e4\\u7684\"},{\"word\":\"competition\",\"pronun\":\"[\\u02cck\\u0252mp\\u026a\\u02c8t\\u026a\\u0283\\u0259n]\",\"translation\":\"n.\\u6bd4\\u8d5b;\\u7ade\\u8d5b;\\u7ade\\u4e89\"},{\"word\":\"fantastic\",\"pronun\":\"[f\\u00e6n't\\u00e6st\\u026ak]\",\"translation\":\"adj.\\u6781\\u597d\\u7684;\\u4e86\\u4e0d\\u8d77\\u7684\"},{\"word\":\"which\",\"pronun\":\"[hw\\u026at\\u0283]\",\"translation\":\"pron.&adj.\\u54ea\\u4e00\\u4e2a;\\u54ea\\u4e00\\u4e9b\"},{\"word\":\"clearly\",\"pronun\":\"['kl\\u026a\\u0259li]\",\"translation\":\"adv.\\u6e05\\u695a\\u7684;\\u6e05\\u6670\\u5730;\\u660e\\u767d\\u7684\"},{\"word\":\"win\",\"pronun\":\"[w\\u026an]\",\"translation\":\"v.\\u83b7\\u80dc;\\u8d62;\\u8d62\\u5f97\"},{\"word\":\"though\",\"pronun\":\"[\\u00f0\\u0259\\u028a]\",\"translation\":\"adv.&conj.\\u4e0d\\u8fc7;\\u53ef\\u662f;\\u7136\\u800c;\\u867d\\u7136;\\u5c3d\\u7ba1;\\u4e0d\\u8fc7\"},{\"word\":\"talented\",\"pronun\":\"['t\\u00e6l\\u0259nt\\u026ad]\",\"translation\":\"adj.\\u6709\\u624d\\u80fd\\u7684;\\u6709\\u624d\\u5e72\\u7684\"},{\"word\":\"truly\",\"pronun\":\"[\\u02c8tru\\u02d0li]\",\"translation\":\"adv.\\u771f\\u6b63;\\u786e\\u5b9e\"},{\"word\":\"care\",\"pronun\":\"[ke\\u0259]\",\"translation\":\"v.\\u5728\\u610f;\\u62c5\\u5fe7;\\u5173\\u5fc3\"},{\"word\":\"serious\",\"pronun\":\"['s\\u026a\\u0259r\\u026a\\u0259s]\",\"translation\":\"adj.\\u4e25\\u8083\\u7684;\\u7a33\\u91cd\\u7684\"},{\"word\":\"kid\",\"pronun\":\"[k\\u026ad]\",\"translation\":\"n.\\u5c0f\\u5b69;\\u5e74\\u8f7b\\u4eba\"},{\"word\":\"necessary\",\"pronun\":\"['nes\\u0259\\u02ccs\\u0259ri]\",\"translation\":\"adj.\\u5fc5\\u9700\\u7684;\\u5fc5\\u8981\\u7684\"},{\"word\":\"both\",\"pronun\":\"[b\\u0259\\u028a\\u03b8]\",\"translation\":\"adj.&pron.\\u4e24\\u4e2a;\\u4e24\\u4e2a\\u90fd\"},{\"word\":\"grade\",\"pronun\":\"[gre\\u026ad]\",\"translation\":\"n.\\u6210\\u7ee9\\u7b49\\u7ea7;\\u8bc4\\u5206\\u7b49\\u7ea7\"},{\"word\":\"saying\",\"pronun\":\"[\\u02c8se\\u026a\\u026a\\u014b]\",\"translation\":\"n.\\u8c1a\\u8bed;\\u683c\\u8a00;\\u8b66\\u53e5\"},{\"word\":\"reach\",\"pronun\":\"[ri\\u02d0t\\u0283]\",\"translation\":\"v.\\u4f38\\u624b;\\u5230\\u8fbe;\\u62b5\\u8fbe\"},{\"word\":\"heart\",\"pronun\":\"[h\\u0251\\u02d0t]\",\"translation\":\"n.\\u5185\\u5fc3;\\u5fc3\\u810f\"},{\"word\":\"fact\",\"pronun\":\"[f\\u00e6kt]\",\"translation\":\"n.\\u73b0\\u5b9e;\\u4e8b\\u5b9e\"},{\"word\":\"arm\",\"pronun\":\"[\\u0251\\u02d0m]\",\"translation\":\"n.\\u624b\\u81c2;\\u4e0a\\u80a2\"},{\"word\":\"similar\",\"pronun\":\"[\\u02c8s\\u026am\\u026al\\u0259]\",\"translation\":\"adj.\\u76f8\\u50cf\\u7684;\\u7c7b\\u4f3c\\u7684\"},{\"word\":\"primary\",\"pronun\":\"[\\u02c8pra\\u026am\\u0259ri]\",\"translation\":\"adj.\\u6700\\u521d\\u7684;\\u6700\\u65e9\\u7684\"},{\"word\":\"theater\",\"pronun\":\"\",\"translation\":\"n.\\u620f\\u9662;\\u5267\\u573a\"},{\"word\":\"comfortable\",\"pronun\":\"['k\\u028cmf\\u0259t\\u0259bl]\",\"translation\":\"adj.\\u4f7f\\u4eba\\u8212\\u670d\\u7684;\\u8212\\u9002\\u7684\"},{\"word\":\"seat\",\"pronun\":\"[si\\u02d0t]\",\"translation\":\"n.\\u5ea7\\u4f4d;\\u5750\\u5904(\\u5982\\u6905\\u5b50\\u7b49)\"},{\"word\":\"screen\",\"pronun\":\"[skri\\u02d0n]\",\"translation\":\"n.\\u94f6\\u5e55;\\u5c4f\\u5e55\"},{\"word\":\"worst\",\"pronun\":\"[w\\u025c\\u02d0st]\",\"translation\":\"adj.&adv.(bad\\u548cbadly\\u7684\\u6700\\u9ad8\\u7ea7)\\u6700\\u5dee(\\u7684);\\u6700\\u574f(\\u7684);\\u6700\\u7cdf(\\u7684)\"},{\"word\":\"cheaply\",\"pronun\":\"\",\"translation\":\"adv.\\u4fbf\\u5b9c\\u7684;\\u4f4e\\u5ec9\\u7684\"},{\"word\":\"song\",\"pronun\":\"[s\\u0252\\u014b]\",\"translation\":\"n.\\u6b4c;\\u6b4c\\u66f2\"},{\"word\":\"DJ\",\"pronun\":\"\",\"translation\":\"\\u97f3\\u4e50\\u8282\\u76ee\\u4e3b\\u6301\\u4eba\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 9,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

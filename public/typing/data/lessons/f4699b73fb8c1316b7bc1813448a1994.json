@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.264077+00:00",
+  "request": {
+    "lesson_id": "f4699b73fb8c1316b7bc1813448a1994",
+    "course_id": "b121644211bd274795ee5972ddf997a2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "b121644211bd274795ee5972ddf997a2",
+    "order": 328,
+    "nextCourseId": "b121644211bd274795ee5972ddf997a2",
+    "courseName": "小学必备古诗75首（1）",
+    "lessonId": "f4699b73fb8c1316b7bc1813448a1994",
+    "nextLessonId": "e92a6d072d9fc16800c02bdf7d1c2df8",
+    "lessonName": "黄鹤楼送孟浩然之广陵",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d1620bd18eb0495474f37d6882989e5f",
+        "index": 1,
+        "text": [
+          "黄鹤楼送孟浩然之广陵\\n李白\\n故人西辞黄鹤楼，烟花三月下扬州。\\n孤帆远影碧空尽，唯见长江天际流。"
+        ],
+        "pinyin": "[[\"黄\", \"huáng\"], [\"鹤\", \"hè\"], [\"楼\", \"lóu\"], [\"送\", \"sòng\"], [\"孟\", \"mèng\"], [\"浩\", \"hào\"], [\"然\", \"rán\"], [\"之\", \"zhī\"], [\"广\", \"guǎng\"], [\"陵\", \"líng\"], [\"\\n\", \"\"], [\"李\", \"lǐ\"], [\"白\", \"bái\"], [\"\\n\", \"\"], [\"故\", \"gù\"], [\"人\", \"rén\"], [\"西\", \"xī\"], [\"辞\", \"cí\"], [\"黄\", \"huáng\"], [\"鹤\", \"hè\"], [\"楼\", \"lóu\"], [\"，\", \"\"], [\"烟\", \"yān\"], [\"花\", \"huā\"], [\"三\", \"sān\"], [\"月\", \"yuè\"], [\"下\", \"xià\"], [\"扬\", \"yáng\"], [\"州\", \"zhōu\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"孤\", \"gū\"], [\"帆\", \"fān\"], [\"远\", \"yuǎn\"], [\"影\", \"yǐng\"], [\"碧\", \"bì\"], [\"空\", \"kōng\"], [\"尽\", \"jìn\"], [\"，\", \"\"], [\"唯\", \"wéi\"], [\"见\", \"jiàn\"], [\"长\", \"cháng\"], [\"江\", \"jiāng\"], [\"天\", \"tiān\"], [\"际\", \"jì\"], [\"流\", \"liú\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

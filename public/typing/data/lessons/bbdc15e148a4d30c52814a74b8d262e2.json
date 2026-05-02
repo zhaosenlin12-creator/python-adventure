@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.797856+00:00",
+  "request": {
+    "lesson_id": "bbdc15e148a4d30c52814a74b8d262e2",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 33,
+    "nextCourseId": "ff61770b1da83313ceacb0a08aef6378",
+    "courseName": "Python",
+    "lessonId": "bbdc15e148a4d30c52814a74b8d262e2",
+    "nextLessonId": "5958970804f2f16a934b9e03723434a4",
+    "lessonName": "条件判断",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - 条件判断",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a3153ecb06089af2368cb4b6f6586835",
+        "index": 1,
+        "text": [
+          "# 判断数字的正负\\nnumber = 15\\n\\nif number > 0:\\n\\tprint(f\"{number} 是正数\")\\nelif number < 0:\\n\\tprint(f\"{number} 是负数\")\\nelse:\\n\\tprint(\"这个数字是零\")"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

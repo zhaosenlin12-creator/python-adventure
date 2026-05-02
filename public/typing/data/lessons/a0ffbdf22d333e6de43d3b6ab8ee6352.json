@@ -1,0 +1,105 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.656727+00:00",
+  "request": {
+    "lesson_id": "a0ffbdf22d333e6de43d3b6ab8ee6352",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 31,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "a0ffbdf22d333e6de43d3b6ab8ee6352",
+    "nextLessonId": "646622f476de3e6b5a8bfea1e6d36af1",
+    "lessonName": "巩固练习：iao、uai、ian、iang",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母iao、uai、ian、iang的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "7d4ee9242d9b8c5d23f4f0413e5ddb1c",
+        "index": 1,
+        "highlights": [
+          "iao"
+        ],
+        "text": [
+          "请输入按键 [iao]"
+        ],
+        "detail": "学习双拼按键 iao"
+      },
+      {
+        "chapterId": "584c613217f91904d6dce5912d472049",
+        "index": 2,
+        "highlights": [
+          "uai"
+        ],
+        "text": [
+          "请输入按键 [uai]"
+        ],
+        "detail": "学习双拼按键 uai"
+      },
+      {
+        "chapterId": "5d97123fc4b6ffee0fcf3a0374c803fb",
+        "index": 3,
+        "highlights": [
+          "ian"
+        ],
+        "text": [
+          "请输入按键 [ian]"
+        ],
+        "detail": "学习双拼按键 ian"
+      },
+      {
+        "chapterId": "96846a719bb58039b59b2c7a65996dbe",
+        "index": 4,
+        "highlights": [
+          "iang"
+        ],
+        "text": [
+          "请输入按键 [iang]"
+        ],
+        "detail": "学习双拼按键 iang"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "15eede1b24b2773ea89f892e5beb013c",
+        "index": 5,
+        "text": [
+          "iaoiaoiaoiaouaiuaiuaiuaiianianianianiangiangiangiangiaouaiianiangiaouaiianiangiaouaiianiangiaouaiianiang"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "0668cb3b1070c59bc9d74a7af43b9a6a",
+        "index": 6,
+        "text": [
+          "小苗在边疆快速生长，蓝天外白杨摇晃。海边姑娘穿花衣裳，笑脸像阳光一样亮。"
+        ],
+        "pinyin": "[[\"小\", \"xiǎo\"], [\"苗\", \"miáo\"], [\"在\", \"zài\"], [\"边\", \"biān\"], [\"疆\", \"jiāng\"], [\"快\", \"kuài\"], [\"速\", \"sù\"], [\"生\", \"shēng\"], [\"长\", \"zhǎng\"], [\"，\", \"\"], [\"蓝\", \"lán\"], [\"天\", \"tiān\"], [\"外\", \"wài\"], [\"白\", \"bái\"], [\"杨\", \"yáng\"], [\"摇\", \"yáo\"], [\"晃\", \"huàng\"], [\"。\", \"\"], [\"海\", \"hǎi\"], [\"边\", \"biān\"], [\"姑\", \"gū\"], [\"娘\", \"niáng\"], [\"穿\", \"chuān\"], [\"花\", \"huā\"], [\"衣\", \"yī\"], [\"裳\", \"shang\"], [\"，\", \"\"], [\"笑\", \"xiào\"], [\"脸\", \"liǎn\"], [\"像\", \"xiàng\"], [\"阳\", \"yáng\"], [\"光\", \"guāng\"], [\"一\", \"yí\"], [\"样\", \"yàng\"], [\"亮\", \"liàng\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

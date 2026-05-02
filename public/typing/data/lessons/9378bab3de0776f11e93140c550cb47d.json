@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.066714+00:00",
+  "request": {
+    "lesson_id": "9378bab3de0776f11e93140c550cb47d",
+    "course_id": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "order": 217,
+    "nextCourseId": "ee920473fc84aa54eb12b2498d3762ad",
+    "courseName": "小升初必备单词",
+    "lessonId": "9378bab3de0776f11e93140c550cb47d",
+    "nextLessonId": "8c8260db8f6c9de4157fd6a4159ecb2f",
+    "lessonName": "Z",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b0201703598cdd24a1b050c3df86e37a",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"zebra\",\"pronun\":\"[\\u02c8zi:br\\u0259]\",\"translation\":\"n. \\u6591\\u9a6c; \\u4eba\\u884c\\u9053\"},{\"word\":\"zoo\",\"pronun\":\"[zu:]\",\"translation\":\"n. \\u52a8\\u7269\\u56ed\"},{\"word\":\"zoo-keeper\",\"pronun\":\"[zu:\\u02c8ki:p\\u0259]\",\"translation\":\"n. \\u52a8\\u7269\\u56ed\\u7ba1\\u7406\\u5458\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "z",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 12,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

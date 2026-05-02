@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.643978+00:00",
+  "request": {
+    "lesson_id": "d625b7ac22e10a414e5121da8da6c192",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 563,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "d625b7ac22e10a414e5121da8da6c192",
+    "nextLessonId": "07e3a453f9a2f17b66499bd570ebfcea",
+    "lessonName": "The Gentle Giant",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3d290f8de545f687e250363aa9d163e0",
+        "index": 1,
+        "text": [
+          "The Gentle Giant\\nYou probably already know that elephants are the largest land animals.\\nSome people think that, next to humans, elephants are the smartest creatures on earth.\\nIn some ways, they are just like us: they live in groups to be about the same age as a human. The oldest elephant was 82 years old.\\nJust how big can elephants get? Well, there was once a male elephant that weighed 11,000 kilograms. That' s as much as ten cars!\\nElephants have been known to knock down trees and carry them out of forests. There are even reports of elephants pushing trains oft railway tracks.\\nBut for all their size and strength, elephants can be very gentle. And any creature that's as big as a house deserves respect!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

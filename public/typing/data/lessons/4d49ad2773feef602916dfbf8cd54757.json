@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.389088+00:00",
+  "request": {
+    "lesson_id": "4d49ad2773feef602916dfbf8cd54757",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 63,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "4d49ad2773feef602916dfbf8cd54757",
+    "nextLessonId": "af283d20a7bcc56398741d888eaee579",
+    "lessonName": "KET核心词-28",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第28课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "60c1670667d3464c8cd01bee3e7e109e",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"granddad\",\"pronun\":\"[ˈɡrændæd]\",\"translation\":\"n. 爷爷；外公\",\"audio\":\"granddad.mp3\"},{\"word\":\"grandma\",\"pronun\":\"[ˈɡrænmɑː]\",\"translation\":\"n. 奶奶；外婆\",\"audio\":\"grandma.mp3\"},{\"word\":\"grandparent\",\"pronun\":\"[ˈɡrænperənt]\",\"translation\":\"n. 祖父母；祖父或祖母；外祖父母；外祖父或外祖母\",\"audio\":\"grandparent.mp3\"},{\"word\":\"grape\",\"pronun\":\"[ɡreɪp]\",\"translation\":\"n. 葡萄；葡萄酒；葡萄树；葡萄色\",\"audio\":\"grape.mp3\"},{\"word\":\"grass\",\"pronun\":\"[ɡræs]\",\"translation\":\"n. 草；草地，草坪\\nvt. 放牧；使……长满草；使……吃草\\nvi. 长草\",\"audio\":\"grass.mp3\"},{\"word\":\"great\",\"pronun\":\"[ɡreɪt]\",\"translation\":\"n. 大师；大人物；伟人们\\nadj. 伟大的，重大的；极好的，好的；主要的\",\"audio\":\"great.mp3\"},{\"word\":\"Greece\",\"pronun\":\"[ɡriːs]\",\"translation\":\"希腊（欧洲南部国家）\",\"audio\":\"Greece.mp3\"},{\"word\":\"green\",\"pronun\":\"[ɡriːn]\",\"translation\":\"n. 绿色；青春\\nadj. 绿色的；青春的\\nvt. 使…变绿色\\nvi. 变绿色\",\"audio\":\"green.mp3\"},{\"word\":\"greet\",\"pronun\":\"[ɡriːt]\",\"translation\":\"vt. 欢迎，迎接；致敬，致意；映入眼帘\",\"audio\":\"greet.mp3\"},{\"word\":\"grey\",\"pronun\":\"[ɡreɪ]\",\"translation\":\"n. 灰色\\nadj. 灰色的；灰白的\\nvt. 使变成灰色；使变老\\nvi. 变成灰色；老化\",\"audio\":\"grey.mp3\"},{\"word\":\"grilled\",\"pronun\":\"[ɡrɪld]\",\"translation\":\"adj. 烤的；有格子的\\nv. 炙烤（grill的过去式和过去分词）\",\"audio\":\"grilled.mp3\"},{\"word\":\"ground\",\"pronun\":\"[ɡraʊnd]\",\"translation\":\"n. 地面；土地；范围；战场;根据\\nv. 研磨（grind的过去分词）；压迫\\nadj. 土地的；地面上的；磨碎的；磨过的\\nvt. 使接触地面；打基础；使搁浅\\nvi. 着陆；搁浅\",\"audio\":\"ground.mp3\"},{\"word\":\"group\",\"pronun\":\"[ɡruːp]\",\"translation\":\"n. 组；团体\\nadj. 群的；团体的\\nvt. 把…聚集；把…分组\\nvi. 聚合\",\"audio\":\"group.mp3\"},{\"word\":\"grow\",\"pronun\":\"[ɡroʊ]\",\"translation\":\"vi. 发展；生长；渐渐变得…\\nvt. 使生长；种植；扩展\",\"audio\":\"grow.mp3\"},{\"word\":\"guess\",\"pronun\":\"[ɡes]\",\"translation\":\"n. 猜测；推测\\nvi. 猜；推测；猜中\\nvt. 猜测；认为；推测；猜中\\nn. 盖尔斯（美国服装品牌）\",\"audio\":\"guess.mp3\"},{\"word\":\"guest\",\"pronun\":\"[ɡest]\",\"translation\":\"n. 客人，宾客；顾客\\nadj. 客人的；特邀的，客座的\\nvt. 款待，招待\\nvi. 作客，寄宿\",\"audio\":\"guest.mp3\"},{\"word\":\"guest-house\",\"pronun\":\"\",\"translation\":\"n. 高级寄宿舍，宾馆，招待所\",\"audio\":\"guest-house.mp3\"},{\"word\":\"guide\",\"pronun\":\"[ɡaɪd]\",\"translation\":\"n. 指南；向导；入门书\\nvt. 引导；带领；操纵\\nvi. 担任向导\",\"audio\":\"guide.mp3\"},{\"word\":\"guidebook\",\"pronun\":\"[ˈɡaɪdbʊk]\",\"translation\":\"n. 旅行指南；指导手册\",\"audio\":\"guidebook.mp3\"},{\"word\":\"guitar\",\"pronun\":\"[ɡɪˈtɑːr]\",\"translation\":\"n. 吉他，六弦琴\\nvi. 弹吉他\",\"audio\":\"guitar.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

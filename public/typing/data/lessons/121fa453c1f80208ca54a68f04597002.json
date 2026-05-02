@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.798650+00:00",
+  "request": {
+    "lesson_id": "121fa453c1f80208ca54a68f04597002",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 38,
+    "nextCourseId": "ff61770b1da83313ceacb0a08aef6378",
+    "courseName": "Python",
+    "lessonId": "121fa453c1f80208ca54a68f04597002",
+    "nextLessonId": "542aba0f1232b9e9de327f5893c82a44",
+    "lessonName": "函数定义",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - 函数定义",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "cdb7a81bf8207cb66606309fba946095",
+        "index": 1,
+        "text": [
+          "# 定义一个简单的函数\\ndef greet(name):\\n    return f\"你好, {name}!\"\\n\\ndef add_numbers(a, b):\\n    return a + b\\n\\n# 调用函数\\nmessage = greet(\"小明\")\\nresult = add_numbers(5, 3)\\n\\nprint(message)\\nprint(f\"5 + 3 = {result}\")\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

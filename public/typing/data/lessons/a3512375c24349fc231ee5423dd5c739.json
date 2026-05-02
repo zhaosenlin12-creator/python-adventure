@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.233072+00:00",
+  "request": {
+    "lesson_id": "a3512375c24349fc231ee5423dd5c739",
+    "course_id": "b121644211bd274795ee5972ddf997a2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "b121644211bd274795ee5972ddf997a2",
+    "order": 318,
+    "nextCourseId": "b121644211bd274795ee5972ddf997a2",
+    "courseName": "小学必备古诗75首（1）",
+    "lessonId": "a3512375c24349fc231ee5423dd5c739",
+    "nextLessonId": "39449245e327b007e30e174dc59701b0",
+    "lessonName": "凉州词",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "33b7a737a8589f9cbc75a881c89476ad",
+        "index": 1,
+        "text": [
+          "凉州词\\n王翰\\n葡萄美酒夜光杯，欲饮琵琶马上催。\\n醉卧沙场君莫笑，古来征战几人回？"
+        ],
+        "pinyin": "[[\"凉\", \"liáng\"], [\"州\", \"zhōu\"], [\"词\", \"cí\"], [\"\\n\", \"\"], [\"王\", \"wáng\"], [\"翰\", \"hàn\"], [\"\\n\", \"\"], [\"葡\", \"pú\"], [\"萄\", \"táo\"], [\"美\", \"měi\"], [\"酒\", \"jiǔ\"], [\"夜\", \"yè\"], [\"光\", \"guāng\"], [\"杯\", \"bēi\"], [\"，\", \"\"], [\"欲\", \"yù\"], [\"饮\", \"yǐn\"], [\"琵\", \"pí\"], [\"琶\", \"pá\"], [\"马\", \"mǎ\"], [\"上\", \"shàng\"], [\"催\", \"cuī\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"醉\", \"zuì\"], [\"卧\", \"wò\"], [\"沙\", \"shā\"], [\"场\", \"chǎng\"], [\"君\", \"jūn\"], [\"莫\", \"mò\"], [\"笑\", \"xiào\"], [\"，\", \"\"], [\"古\", \"gǔ\"], [\"来\", \"lái\"], [\"征\", \"zhēng\"], [\"战\", \"zhàn\"], [\"几\", \"jǐ\"], [\"人\", \"rén\"], [\"回\", \"huí\"], [\"？\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.823786+00:00",
+  "request": {
+    "lesson_id": "31e074a6406315aa9ce4ef037f69d9bf",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 45,
+    "nextCourseId": "ff61770b1da83313ceacb0a08aef6378",
+    "courseName": "Python",
+    "lessonId": "31e074a6406315aa9ce4ef037f69d9bf",
+    "nextLessonId": "1f80db45ccd6652a670c9cac79c8736f",
+    "lessonName": "判断素数",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - 判断素数",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f79340c6c4ff1887b0af91193d237a1b",
+        "index": 1,
+        "text": [
+          "# 判断一个数是否为素数\\ndef is_prime(n):\\n    if n < 2:\\n        return False\\n    for i in range(2, int(n ** 0.5) + 1):\\n        if n % i == 0:\\n            return False\\n    return True\\n\\n# 测试素数判断\\ntest_numbers = [2, 3, 4, 17, 20, 29]\\nfor num in test_numbers:\\n    if is_prime(num):\\n        print(f\"{num} 是素数\")\\n    else:\\n        print(f\"{num} 不是素数\")\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

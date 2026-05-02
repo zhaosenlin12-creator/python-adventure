@@ -1,0 +1,50 @@
+{
+  "source": "speed-test",
+  "scrapedAt": "2026-05-02T06:08:44.850071+00:00",
+  "request": {
+    "lesson_id": "b8a01a9f59c938c42170755e5a6366be",
+    "course_id": "c6bc39f4ba86486e20cc171fab797ea3",
+    "source": "speed-test"
+  },
+  "data": {
+    "level": "速度测试",
+    "courseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "order": 38,
+    "nextCourseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "courseName": "英文速度测试",
+    "lessonId": "b8a01a9f59c938c42170755e5a6366be",
+    "nextLessonId": "19320cb2ca807c784ed6ab5d8c265498",
+    "lessonName": "Lights in the House",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c1b745a992cc9b09c0796026576884bb",
+        "index": 1,
+        "text": [
+          "My mother was mad!\\nWhat was wrong? She saw all the lights in the house were on and no one was home.\\nMom said, \"When you turn off the lights, you save energy, you save money and you save the environment. Is that hard to do?\"\\n\"No, of course not,\" said my brother.\\n\"Please, let's not forget again,\" said my mother."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": 13,
+    "categoryTitle": "速度测试"
+  }
+}

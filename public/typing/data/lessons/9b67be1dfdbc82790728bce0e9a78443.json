@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.576337+00:00",
+  "request": {
+    "lesson_id": "9b67be1dfdbc82790728bce0e9a78443",
+    "course_id": "f5e1caafe742206a7fc8abc95cf77b44",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "order": 304,
+    "nextCourseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "courseName": "诗词歌赋",
+    "lessonId": "9b67be1dfdbc82790728bce0e9a78443",
+    "nextLessonId": "3034e418358bb013d4dced717cf044e4",
+    "lessonName": "《将进酒》李白",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-poet-2.b9d8aeb0b2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "37322b38f546a59c8715a2510982ebce",
+        "index": 1,
+        "text": [
+          "人生得意须尽欢，莫使金樽空对月。\\n天生我材必有用，千金散尽还复来。"
+        ],
+        "pinyin": "[[\"人\", \"rén\"], [\"生\", \"shēng\"], [\"得\", \"dé\"], [\"意\", \"yì\"], [\"须\", \"xū\"], [\"尽\", \"jìn\"], [\"欢\", \"huān\"], [\"，\", \"\"], [\"莫\", \"mò\"], [\"使\", \"shǐ\"], [\"金\", \"jīn\"], [\"樽\", \"zūn\"], [\"空\", \"kōng\"], [\"对\", \"duì\"], [\"月\", \"yuè\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"天\", \"tiān\"], [\"生\", \"shēng\"], [\"我\", \"wǒ\"], [\"材\", \"cái\"], [\"必\", \"bì\"], [\"有\", \"yǒu\"], [\"用\", \"yòng\"], [\"，\", \"\"], [\"千\", \"qiān\"], [\"金\", \"jīn\"], [\"散\", \"sàn\"], [\"尽\", \"jìn\"], [\"还\", \"huán\"], [\"复\", \"fù\"], [\"来\", \"lái\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 42,
+        "minSpeed": 27,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

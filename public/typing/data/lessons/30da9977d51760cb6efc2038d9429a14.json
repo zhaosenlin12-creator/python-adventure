@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.884565+00:00",
+  "request": {
+    "lesson_id": "30da9977d51760cb6efc2038d9429a14",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 392,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "30da9977d51760cb6efc2038d9429a14",
+    "nextLessonId": "eaef4df1c12b4f7a1deab43ca674b13a",
+    "lessonName": "六级词汇正序版-92",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第92课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "60378526785f72068b1cf0ab622e9af2",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"remainder\",\"pronun\":\"[rɪˈmeɪndər]\",\"translation\":\"n. [数] 余数，残余；剩余物；其余的人\\nadj. 剩余的；吃剩的\\nvt. 廉价出售；削价出售\\nvi. 廉价出售；削价出售\",\"audio\":\"remainder.mp3\"},{\"word\":\"remedy\",\"pronun\":\"[ˈremədi]\",\"translation\":\"n. 补救；治疗；赔偿\\nvt. 补救；治疗；纠正\",\"audio\":\"remedy.mp3\"},{\"word\":\"remnant\",\"pronun\":\"[ˈremnənt]\",\"translation\":\"n. 剩余\\nadj. 剩余的\",\"audio\":\"remnant.mp3\"},{\"word\":\"remote\",\"pronun\":\"[rɪˈmoʊt]\",\"translation\":\"n. 远程\\nadj. 遥远的；偏僻的；疏远的\",\"audio\":\"remote.mp3\"},{\"word\":\"renaissance\",\"pronun\":\"[ˈrenəsɑːns]\",\"translation\":\"n. 文艺复兴（欧洲14至17世纪）\",\"audio\":\"renaissance.mp3\"},{\"word\":\"render\",\"pronun\":\"[ˈrendər]\",\"translation\":\"n. 打底；交纳；粉刷\\nvt. 致使；提出；实施；着色；以…回报\\nvi. 给予补偿\",\"audio\":\"render.mp3\"},{\"word\":\"repay\",\"pronun\":\"[rɪˈpeɪ]\",\"translation\":\"vt. 回报；报复；付还\\nvi. 偿还；报答；报复\",\"audio\":\"repay.mp3\"},{\"word\":\"repel\",\"pronun\":\"[rɪˈpel]\",\"translation\":\"vt. 击退；抵制；使厌恶；使不愉快\",\"audio\":\"repel.mp3\"},{\"word\":\"repertoire\",\"pronun\":\"[ˈrepərtwɑːr]\",\"translation\":\"n. 全部节目；计算机指令系统；（美）某人或机器的全部技能\",\"audio\":\"repertoire.mp3\"},{\"word\":\"repetitive\",\"pronun\":\"[rɪˈpetətɪv]\",\"translation\":\"adj. 重复的\",\"audio\":\"repetitive.mp3\"},{\"word\":\"represent\",\"pronun\":\"[ˌreprɪˈzent]\",\"translation\":\"vt. 代表；表现；描绘；回忆；再赠送\\nvi. 代表；提出异议\",\"audio\":\"represent.mp3\"},{\"word\":\"repression\",\"pronun\":\"[rɪˈpreʃn]\",\"translation\":\"n. 抑制，[心理] 压抑；镇压\",\"audio\":\"repression.mp3\"},{\"word\":\"reproach\",\"pronun\":\"[rɪˈproʊtʃ]\",\"translation\":\"n. 责备；耻辱\\nvt. 责备；申斥\",\"audio\":\"reproach.mp3\"},{\"word\":\"reputation\",\"pronun\":\"[ˌrepjuˈteɪʃn]\",\"translation\":\"n. 名声，名誉；声望\",\"audio\":\"reputation.mp3\"},{\"word\":\"resemblance\",\"pronun\":\"[rɪˈzembləns]\",\"translation\":\"n. 相似；相似之处；相似物；肖像\",\"audio\":\"resemblance.mp3\"},{\"word\":\"resent\",\"pronun\":\"[rɪˈzent]\",\"translation\":\"vt. 怨恨；愤恨；厌恶\",\"audio\":\"resent.mp3\"},{\"word\":\"reservation\",\"pronun\":\"[ˌrezərˈveɪʃn]\",\"translation\":\"n. 预约，预订；保留\",\"audio\":\"reservation.mp3\"},{\"word\":\"reserve\",\"pronun\":\"[rɪˈzɜːrv]\",\"translation\":\"n. 储备，储存；自然保护区；预备队；缄默；[金融] 储备金\\nvt. 储备；保留；预约\\nvi. 预订\",\"audio\":\"reserve.mp3\"},{\"word\":\"reside\",\"pronun\":\"[rɪˈzaɪd]\",\"translation\":\"vi. 住，居住；属于\",\"audio\":\"reside.mp3\"},{\"word\":\"resident\",\"pronun\":\"[ˈrezɪdənt]\",\"translation\":\"n. 居民；住院医生\\nadj. 居住的；定居的\",\"audio\":\"resident.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

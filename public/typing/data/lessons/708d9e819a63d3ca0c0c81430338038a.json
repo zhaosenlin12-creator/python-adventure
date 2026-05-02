@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.415848+00:00",
+  "request": {
+    "lesson_id": "708d9e819a63d3ca0c0c81430338038a",
+    "course_id": "2ab9dc27a9350a9ff86633c542967f70",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "order": 48,
+    "nextCourseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "courseName": "下排字母",
+    "lessonId": "708d9e819a63d3ca0c0c81430338038a",
+    "nextLessonId": "c24784e8f4d7469a3910726b4e555638",
+    "lessonName": "练习c和,",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-practise-ccomma.806a26158f.png",
+    "description": "练习c和,",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "bbfb68c530f7b974f7cad4bf9c31e05d",
+        "index": 2,
+        "text": [
+          "cd ccd cd ccd ,k ,,k ,k ,,k cdcd ,k,k cccd ,,,k dc,k dcd k,k dcdcd k,k,k ccd ,,k cc,, c,c, c,dk ccd ,,k"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "cd ,k",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

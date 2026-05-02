@@ -1,0 +1,83 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.581372+00:00",
+  "request": {
+    "lesson_id": "9c571cd2359bf2b5a49062d97810cc21",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 10,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "9c571cd2359bf2b5a49062d97810cc21",
+    "nextLessonId": "a3bf3b83505d4245a7aabbfed1e0ad6b",
+    "lessonName": "巩固练习ao、ou",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母ao、ou的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "835564e92ca19032a4406a2b5bc22d4e",
+        "index": 1,
+        "highlights": [
+          "ao"
+        ],
+        "text": [
+          "请输入按键 [ao]"
+        ],
+        "detail": "学习双拼按键 ao"
+      },
+      {
+        "chapterId": "aabeb07bd3bc1569d903599cfabed057",
+        "index": 2,
+        "highlights": [
+          "ou"
+        ],
+        "text": [
+          "请输入按键 [ou]"
+        ],
+        "detail": "学习双拼按键 ou"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "d8f57ac5c62a11c255679f55f3811bf1",
+        "index": 3,
+        "text": [
+          "aoaoaoaoououououaoouaoouaoouaoou"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "06908fce168fc576070528098af4dd5e",
+        "index": 4,
+        "text": [
+          "小狗跑去找肉骨头，好朋友在桥头招手。老猫跳到高树上，小猴捞月亮。海鸥飞过海岛，少年穿着厚棉袄。"
+        ],
+        "pinyin": "[[\"小\", \"xiǎo\"], [\"狗\", \"gǒu\"], [\"跑\", \"pǎo\"], [\"去\", \"qù\"], [\"找\", \"zhǎo\"], [\"肉\", \"ròu\"], [\"骨\", \"gǔ\"], [\"头\", \"tou\"], [\"，\", \"\"], [\"好\", \"hǎo\"], [\"朋\", \"péng\"], [\"友\", \"you\"], [\"在\", \"zài\"], [\"桥\", \"qiáo\"], [\"头\", \"tóu\"], [\"招\", \"zhāo\"], [\"手\", \"shǒu\"], [\"。\", \"\"], [\"老\", \"lǎo\"], [\"猫\", \"māo\"], [\"跳\", \"tiào\"], [\"到\", \"dào\"], [\"高\", \"gāo\"], [\"树\", \"shù\"], [\"上\", \"shàng\"], [\"，\", \"\"], [\"小\", \"xiǎo\"], [\"猴\", \"hóu\"], [\"捞\", \"lāo\"], [\"月\", \"yuè\"], [\"亮\", \"liang\"], [\"。\", \"\"], [\"海\", \"hǎi\"], [\"鸥\", \"ōu\"], [\"飞\", \"fēi\"], [\"过\", \"guò\"], [\"海\", \"hǎi\"], [\"岛\", \"dǎo\"], [\"，\", \"\"], [\"少\", \"shào\"], [\"年\", \"nián\"], [\"穿\", \"chuān\"], [\"着\", \"zhe\"], [\"厚\", \"hòu\"], [\"棉\", \"mián\"], [\"袄\", \"ǎo\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

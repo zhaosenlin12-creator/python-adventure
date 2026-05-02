@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.096905+00:00",
+  "request": {
+    "lesson_id": "f325d742afa9fa690d70815f6e0e984f",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 109,
+    "nextCourseId": "e13b6bae2990dd699f332f225dd1955b",
+    "courseName": "Javascript",
+    "lessonId": "f325d742afa9fa690d70815f6e0e984f",
+    "nextLessonId": "fb3588fab6d3986b80c329234e0d6663",
+    "lessonName": "二分查找",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - 二分查找",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6017d00dc4d52009588dffe3bef94612",
+        "index": 1,
+        "text": [
+          "// 二分查找算法\\nfunction binarySearch(arr, target) {\\n    let left = 0;\\n    let right = arr.length - 1;\\n\\n    while (left <= right) {\\n        const mid = Math.floor((left + right) / 2);\\n\\n        if (arr[mid] === target) {\\n            return mid;\\n        } else if (arr[mid] < target) {\\n            left = mid + 1;\\n        } else {\\n            right = mid - 1;\\n        }\\n    }\\n\\n    return -1;\\n}\\n\\n// 测试二分查找\\nconst sortedArray = [2, 5, 8, 12, 16, 23, 38, 45, 56, 67, 78];\\nconst target = 23;\\n\\nconst result = binarySearch(sortedArray, target);\\nif (result !== -1) {\\n    console.log(`元素 ${target} 在索引 ${result} 处`);\\n} else {\\n    console.log(`元素 ${target} 不在数组中`);\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

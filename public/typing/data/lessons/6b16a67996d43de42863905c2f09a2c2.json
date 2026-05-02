@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.179437+00:00",
+  "request": {
+    "lesson_id": "6b16a67996d43de42863905c2f09a2c2",
+    "course_id": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "order": 210,
+    "nextCourseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "courseName": "汉字一级",
+    "lessonId": "6b16a67996d43de42863905c2f09a2c2",
+    "nextLessonId": "c6f86eb2991b5fe063a9fe2964ce5908",
+    "lessonName": "小横杆",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-good.c7e935711e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c390eb66ece14b0c229c96920f8db980",
+        "index": 1,
+        "text": [
+          "F键和J键上都有一个突起小横杠，你的食指可以通过这个找到基准键位。"
+        ],
+        "pinyin": "[[\"F\", \"\"], [\"键\", \"jiàn\"], [\"和\", \"hé\"], [\"J\", \"\"], [\"键\", \"jiàn\"], [\"上\", \"shàng\"], [\"都\", \"dōu\"], [\"有\", \"yǒu\"], [\"一\", \"yī\"], [\"个\", \"gè\"], [\"突\", \"tū\"], [\"起\", \"qǐ\"], [\"小\", \"xiǎo\"], [\"横\", \"héng\"], [\"杠\", \"gàng\"], [\"，\", \"\"], [\"你\", \"nǐ\"], [\"的\", \"de\"], [\"食\", \"shí\"], [\"指\", \"zhǐ\"], [\"可\", \"kě\"], [\"以\", \"yǐ\"], [\"通\", \"tōng\"], [\"过\", \"guò\"], [\"这\", \"zhè\"], [\"个\", \"gè\"], [\"找\", \"zhǎo\"], [\"到\", \"dào\"], [\"基\", \"jī\"], [\"准\", \"zhǔn\"], [\"键\", \"jiàn\"], [\"位\", \"wèi\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 12,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

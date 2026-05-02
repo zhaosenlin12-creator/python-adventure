@@ -1,0 +1,83 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.610124+00:00",
+  "request": {
+    "lesson_id": "9ba509f50b2a83053f12ba2d4dc59bee",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 19,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "9ba509f50b2a83053f12ba2d4dc59bee",
+    "nextLessonId": "cea20ee711ddf396f195f1582d1f0c01",
+    "lessonName": "韵母in、ia",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母in、ia的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "dde2d24308b71a227f2056da8540634f",
+        "index": 1,
+        "highlights": [
+          "in"
+        ],
+        "text": [
+          "请输入按键 [in]"
+        ],
+        "detail": "学习双拼按键 in"
+      },
+      {
+        "chapterId": "4b082d4180a4ce556f9b4daa1ae17dcc",
+        "index": 2,
+        "highlights": [
+          "ia"
+        ],
+        "text": [
+          "请输入按键 [ia]"
+        ],
+        "detail": "学习双拼按键 ia"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "43d1a17c3c2fe72b24e94300b7ff0d4a",
+        "index": 3,
+        "text": [
+          "ininininiaiaiaiainiainiainiainia"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "8b31882b89d65fc562e8399d047bead7",
+        "index": 4,
+        "text": [
+          "林边小径，野花点缀，天边霞光映照心田。清晨品茶，静听琴音，闲暇时光悠然自得。远山如黛，近水含烟，画中人影渐隐渐现。"
+        ],
+        "pinyin": "[[\"林\", \"lín\"], [\"边\", \"biān\"], [\"小\", \"xiǎo\"], [\"径\", \"jìng\"], [\"，\", \"\"], [\"野\", \"yě\"], [\"花\", \"huā\"], [\"点\", \"diǎn\"], [\"缀\", \"zhuì\"], [\"，\", \"\"], [\"天\", \"tiān\"], [\"边\", \"biān\"], [\"霞\", \"xiá\"], [\"光\", \"guāng\"], [\"映\", \"yìng\"], [\"照\", \"zhào\"], [\"心\", \"xīn\"], [\"田\", \"tián\"], [\"。\", \"\"], [\"清\", \"qīng\"], [\"晨\", \"chén\"], [\"品\", \"pǐn\"], [\"茶\", \"chá\"], [\"，\", \"\"], [\"静\", \"jìng\"], [\"听\", \"tīng\"], [\"琴\", \"qín\"], [\"音\", \"yīn\"], [\"，\", \"\"], [\"闲\", \"xián\"], [\"暇\", \"xiá\"], [\"时\", \"shí\"], [\"光\", \"guāng\"], [\"悠\", \"yōu\"], [\"然\", \"rán\"], [\"自\", \"zì\"], [\"得\", \"dé\"], [\"。\", \"\"], [\"远\", \"yuǎn\"], [\"山\", \"shān\"], [\"如\", \"rú\"], [\"黛\", \"dài\"], [\"，\", \"\"], [\"近\", \"jìn\"], [\"水\", \"shuǐ\"], [\"含\", \"hán\"], [\"烟\", \"yān\"], [\"，\", \"\"], [\"画\", \"huà\"], [\"中\", \"zhōng\"], [\"人\", \"rén\"], [\"影\", \"yǐng\"], [\"渐\", \"jiàn\"], [\"隐\", \"yǐn\"], [\"渐\", \"jiàn\"], [\"现\", \"xiàn\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

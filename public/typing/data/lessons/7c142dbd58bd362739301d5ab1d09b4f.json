@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.854449+00:00",
+  "request": {
+    "lesson_id": "7c142dbd58bd362739301d5ab1d09b4f",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 53,
+    "nextCourseId": "ff61770b1da83313ceacb0a08aef6378",
+    "courseName": "Python",
+    "lessonId": "7c142dbd58bd362739301d5ab1d09b4f",
+    "nextLessonId": "8e2b762926b9c6cb8385b18e2e908fa1",
+    "lessonName": "回文判断",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - 回文判断",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6351fd5dd68d738aed84d30d0802093f",
+        "index": 1,
+        "text": [
+          "# 判断字符串是否为回文\\ndef is_palindrome(text):\\n    # 转换为小写并去除空格\\n    cleaned = text.lower().replace(\" \", \"\")\\n    return cleaned == cleaned[::-1]\\n\\ndef is_palindrome_two_pointers(text):\\n    text = text.lower().replace(\" \", \"\")\\n    left = 0\\n    right = len(text) - 1\\n\\n    while left < right:\\n        if text[left] != text[right]:\\n            return False\\n        left += 1\\n        right -= 1\\n\\n    return True\\n\\n# 测试回文判断\\ntest_strings = [\"radar\", \"hello\", \"level\", \"A man a plan a canal Panama\"]\\nfor s in test_strings:\\n    result = is_palindrome(s)\\n    print(f\"'{s}' 是回文: {result}\")\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

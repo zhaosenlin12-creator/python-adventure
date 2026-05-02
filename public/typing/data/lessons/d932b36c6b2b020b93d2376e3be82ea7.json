@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.269554+00:00",
+  "request": {
+    "lesson_id": "d932b36c6b2b020b93d2376e3be82ea7",
+    "course_id": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "order": 472,
+    "nextCourseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "courseName": "英语每日故事（初级）1-31",
+    "lessonId": "d932b36c6b2b020b93d2376e3be82ea7",
+    "nextLessonId": "4a9b61fc0b59225602f10d0d4eb6df0b",
+    "lessonName": "Why Do We Sleep?",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3452c7bc3e23f7ed5da67d460334c9cb",
+        "index": 1,
+        "text": [
+          "Susan doesn't want to sleep. She says, \"I'm not sleepy.\"\\nMom tells her, \"Just lie on your bed, close your eyes. You will start to feel sleepy soon.\"\\nBut Susan still has a question, \"Why do I have to sleep?\"\\nMom says, \"You need to sleep to rest your body and mind. That way you will be strong and healthy.\""
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

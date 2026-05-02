@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.816216+00:00",
+  "request": {
+    "lesson_id": "f1bd65ccfffef60b0e17516d90b0a880",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 44,
+    "nextCourseId": "ff61770b1da83313ceacb0a08aef6378",
+    "courseName": "Python",
+    "lessonId": "f1bd65ccfffef60b0e17516d90b0a880",
+    "nextLessonId": "31e074a6406315aa9ce4ef037f69d9bf",
+    "lessonName": "求和与平均值",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - 求和与平均值",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d7f558ebd96fe9151628eeb99ce628f8",
+        "index": 1,
+        "text": [
+          "# 计算列表的总和和平均值\\ndef calculate_stats(numbers):\\n    total = sum(numbers)\\n    average = total / len(numbers)\\n    return total, average\\n\\nscores = [85, 90, 78, 92, 88]\\ntotal_score, avg_score = calculate_stats(scores)\\n\\nprint(f\"成绩列表: {scores}\")\\nprint(f\"总分: {total_score}\")\\nprint(f\"平均分: {avg_score:.2f}\")\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

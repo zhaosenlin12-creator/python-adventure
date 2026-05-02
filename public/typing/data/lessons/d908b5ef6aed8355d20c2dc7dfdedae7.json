@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.493182+00:00",
+  "request": {
+    "lesson_id": "d908b5ef6aed8355d20c2dc7dfdedae7",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 87,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "d908b5ef6aed8355d20c2dc7dfdedae7",
+    "nextLessonId": "4b929d06755c5feacad8834c0b36d46b",
+    "lessonName": "KET核心词-100",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第100课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "13d4317d1a4d7b7073010ed822bb1dc2",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"sailing\",\"pronun\":\"[ˈseɪlɪŋ]\",\"translation\":\"n. 航行，航海；启航；航海术\\nv. 航行，起航（sail的现在分词形式）\\nadj. 航行的\",\"audio\":\"sailing.mp3\"},{\"word\":\"society\",\"pronun\":\"[səˈsaɪəti]\",\"translation\":\"n. 社会；交往；社团；社交界\",\"audio\":\"society.mp3\"},{\"word\":\"swimming costume\",\"pronun\":\"\",\"translation\":\"na. 游泳衣\",\"audio\":\"swimming_costume.mp3\"},{\"word\":\"tent\",\"pronun\":\"[tent]\",\"translation\":\"n. 帐篷；住处；帷幕\\nvt. 用帐篷遮盖；使在帐篷里住宿\\nvi. 住帐蓬；暂时居住\",\"audio\":\"tent.mp3\"},{\"word\":\"advertisement\",\"pronun\":\"[ˌædvərˈtaɪzmənt]\",\"translation\":\"n. 广告，宣传\",\"audio\":\"advertisement.mp3\"},{\"word\":\"ad\",\"pronun\":\"[æd]\",\"translation\":\"n. 公元；广告（ad）\",\"audio\":\"ad.mp3\"},{\"word\":\"article\",\"pronun\":\"[ˈɑːrtɪk(ə)l]\",\"translation\":\"n. 文章；物品；条款；[语] 冠词\\nvt. 订约将…收为学徒或见习生；使…受协议条款的约束\\nvi. 签订协议；进行控告\",\"audio\":\"article.mp3\"},{\"word\":\"card\",\"pronun\":\"[kɑːrd]\",\"translation\":\"n. 卡片；纸牌；明信片\\nvt. 记于卡片上\",\"audio\":\"card.mp3\"},{\"word\":\"comic\",\"pronun\":\"[ˈkɑːmɪk]\",\"translation\":\"n. 连环漫画；喜剧演员；滑稽人物\\nadj. 喜剧的；滑稽的；有趣的\",\"audio\":\"comic.mp3\"},{\"word\":\"diary\",\"pronun\":\"[ˈdaɪəri]\",\"translation\":\"n. 日志，日记；日记簿\",\"audio\":\"diary.mp3\"},{\"word\":\"diploma\",\"pronun\":\"[dɪˈploʊmə]\",\"translation\":\"n. 毕业证书，学位证书；公文，文书；奖状\\nvt. 发给…毕业文凭\",\"audio\":\"diploma.mp3\"},{\"word\":\"form\",\"pronun\":\"[fɔːrm]\",\"translation\":\"n. 形式，形状；形态，外形；方式；表格\\nvt. 构成，组成；排列，组织；产生，塑造\\nvi. 形成，构成；排列\",\"audio\":\"form.mp3\"},{\"word\":\"licence\",\"pronun\":\"[ˈlaɪsns]\",\"translation\":\"n. 许可证，执照；特许\\nvt. 特许，许可；发给执照\",\"audio\":\"licence.mp3\"},{\"word\":\"menu\",\"pronun\":\"[ˈmenjuː]\",\"translation\":\"n. 菜单\\n饭菜\",\"audio\":\"menu.mp3\"},{\"word\":\"message\",\"pronun\":\"[ˈmesɪdʒ]\",\"translation\":\"n. 消息；差使；启示；预言；广告词\\nvi. 报信，报告；[通信] 报文\\nvt. 通知\",\"audio\":\"message.mp3\"},{\"word\":\"passport\",\"pronun\":\"[ˈpæspɔːrt]\",\"translation\":\"n. 护照，通行证；手段\",\"audio\":\"passport.mp3\"},{\"word\":\"postcard\",\"pronun\":\"[ˈpoʊstkɑːrd]\",\"translation\":\"n. 明信片\",\"audio\":\"postcard.mp3\"},{\"word\":\"text\",\"pronun\":\"[tekst]\",\"translation\":\"n. [计] 文本；课文；主题\\nvt. 发短信\",\"audio\":\"text.mp3\"},{\"word\":\"reading\",\"pronun\":\"[ˈriːdɪŋ]\",\"translation\":\"n. 阅读，朗读；读物；读数\\nv. 阅读（read的ing形式）\\nadj. 阅读的\",\"audio\":\"reading.mp3\"},{\"word\":\"say\",\"pronun\":\"[seɪ]\",\"translation\":\"vt. 讲；说明；例如；声称；假设；指明\\nvi. 讲；表示；念；假定；背诵\",\"audio\":\"say.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.146918+00:00",
+  "request": {
+    "lesson_id": "7f46c478cc0c18b63f5abe8145b7db6e",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 449,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "7f46c478cc0c18b63f5abe8145b7db6e",
+    "nextLessonId": "7b40bb574def979ece7af853f023e6e3",
+    "lessonName": "六级词汇正序版-126",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第126课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e379f6ffac8fa93837d26e0e346c71df",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"manure\",\"pronun\":\"[məˈnʊr]\",\"translation\":\"vt. 施肥于；耕种\\nn. 肥料；粪肥\",\"audio\":\"manure.mp3\"},{\"word\":\"mar\",\"pronun\":\"[mɑːr]\",\"translation\":\"vt. 损毁；损伤；糟蹋；玷污\\nn. 污点；瑕疵\",\"audio\":\"mar.mp3\"},{\"word\":\"mash\",\"pronun\":\"[mæʃ]\",\"translation\":\"n. 饲料；糊状物；麦芽浆\\nvt. 捣碎；调情\",\"audio\":\"mash.mp3\"},{\"word\":\"mason\",\"pronun\":\"[ˈmeɪsn]\",\"translation\":\"n. 梅森（男子名）\",\"audio\":\"mason.mp3\"},{\"word\":\"mechanize\",\"pronun\":\"[ˈmekənaɪz]\",\"translation\":\"vt. 使机械化；机动化；用机械装置\",\"audio\":\"mechanize.mp3\"},{\"word\":\"mentality\",\"pronun\":\"[menˈtæləti]\",\"translation\":\"n. 心态；[心理] 智力；精神力；头脑作用\",\"audio\":\"mentality.mp3\"},{\"word\":\"merciful\",\"pronun\":\"[ˈmɜːrsɪfl]\",\"translation\":\"adj. 仁慈的；慈悲的；宽容的\",\"audio\":\"merciful.mp3\"},{\"word\":\"meteorite\",\"pronun\":\"[ˈmiːtiəraɪt]\",\"translation\":\"n. 陨星；流星\",\"audio\":\"meteorite.mp3\"},{\"word\":\"migration\",\"pronun\":\"[maɪˈɡreɪʃn]\",\"translation\":\"n. 迁移；移民；移动\",\"audio\":\"migration.mp3\"},{\"word\":\"modernize\",\"pronun\":\"[ˈmɑːdərnaɪz]\",\"translation\":\"vt. 使…现代化\\nvi. 现代化\",\"audio\":\"modernize.mp3\"},{\"word\":\"modification\",\"pronun\":\"[ˌmɑːdɪfɪˈkeɪʃn]\",\"translation\":\"n. 修改，修正；改变\",\"audio\":\"modification.mp3\"},{\"word\":\"molten\",\"pronun\":\"[ˈmoʊltən]\",\"translation\":\"adj. 熔化的；铸造的；炽热的\\nv. 换毛；脱毛（molt的过去分词）\",\"audio\":\"molten.mp3\"},{\"word\":\"monologue\",\"pronun\":\"[ˈmɑːnəlɔːɡ]\",\"translation\":\"n. 独白\",\"audio\":\"monologue.mp3\"},{\"word\":\"motto\",\"pronun\":\"[ˈmɑːtoʊ]\",\"translation\":\"n. 座右铭，格言；箴言\",\"audio\":\"motto.mp3\"},{\"word\":\"neatly\",\"pronun\":\"[ˈniːtli]\",\"translation\":\"adv. 整洁地；熟练地；灵巧地\",\"audio\":\"neatly.mp3\"},{\"word\":\"negligence\",\"pronun\":\"[ˈneɡlɪdʒəns]\",\"translation\":\"n. 疏忽；忽视；粗心大意\",\"audio\":\"negligence.mp3\"},{\"word\":\"obsession\",\"pronun\":\"[əbˈseʃn]\",\"translation\":\"n. 痴迷；困扰；[内科][心理] 强迫观念\",\"audio\":\"obsession.mp3\"},{\"word\":\"occupancy\",\"pronun\":\"[ˈɑːkjəpənsi]\",\"translation\":\"n. 居住；占有；占用\",\"audio\":\"occupancy.mp3\"},{\"word\":\"optimist\",\"pronun\":\"[ˈɑːptɪmɪst]\",\"translation\":\"n. 乐观主义者；乐天派\",\"audio\":\"optimist.mp3\"},{\"word\":\"optimistically\",\"pronun\":\"[ˌɑːptɪˈmɪstɪkli]\",\"translation\":\"adv. 乐观地；乐天地\",\"audio\":\"optimistically.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.626052+00:00",
+  "request": {
+    "lesson_id": "e81e4ba6811c636b6c871378f4df1a08",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 22,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "e81e4ba6811c636b6c871378f4df1a08",
+    "nextLessonId": "e4b5cd1bfed248c1ad19e08e93d07899",
+    "lessonName": "韵母ve、ua",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母ve、ua的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "f8262aeb1d8dedcebe670d3bd67f4a02",
+        "index": 1,
+        "highlights": [
+          "ve"
+        ],
+        "text": [
+          "请输入按键 [ve]"
+        ],
+        "detail": "学习双拼按键 ve"
+      },
+      {
+        "chapterId": "1e73afe0bb3bb563567b6718f09c7b6a",
+        "index": 2,
+        "highlights": [
+          "ua"
+        ],
+        "text": [
+          "请输入按键 [ua]"
+        ],
+        "detail": "学习双拼按键 ua"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "aff74901d2be7cedfdd38b397691fbc2",
+        "index": 3,
+        "text": [
+          "veveveveuauauauaveuaveuaveuaveua"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "996b6f8d4a3e09e1f0317e6d22aad046",
+        "index": 4,
+        "text": [
+          "雪花飘落月儿缺，落花流水去谁家。喜鹊学歌说笑话，绿叶红花满山野。学生约我喝茶去，月色如水照华发。"
+        ],
+        "pinyin": "[[\"雪\", \"xuě\"], [\"花\", \"huā\"], [\"飘\", \"piāo\"], [\"落\", \"luò\"], [\"月\", \"yuè\"], [\"儿\", \"ér\"], [\"缺\", \"quē\"], [\"，\", \"\"], [\"落\", \"luò\"], [\"花\", \"huā\"], [\"流\", \"liú\"], [\"水\", \"shuǐ\"], [\"去\", \"qù\"], [\"谁\", \"shuí\"], [\"家\", \"jiā\"], [\"。\", \"\"], [\"喜\", \"xǐ\"], [\"鹊\", \"què\"], [\"学\", \"xué\"], [\"歌\", \"gē\"], [\"说\", \"shuō\"], [\"笑\", \"xiào\"], [\"话\", \"huà\"], [\"，\", \"\"], [\"绿\", \"lǜ\"], [\"叶\", \"yè\"], [\"红\", \"hóng\"], [\"花\", \"huā\"], [\"满\", \"mǎn\"], [\"山\", \"shān\"], [\"野\", \"yě\"], [\"。\", \"\"], [\"学\", \"xué\"], [\"生\", \"shēng\"], [\"约\", \"yuē\"], [\"我\", \"wǒ\"], [\"喝\", \"hē\"], [\"茶\", \"chá\"], [\"去\", \"qù\"], [\"，\", \"\"], [\"月\", \"yuè\"], [\"色\", \"sè\"], [\"如\", \"rú\"], [\"水\", \"shuǐ\"], [\"照\", \"zhào\"], [\"华\", \"huá\"], [\"发\", \"fà\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

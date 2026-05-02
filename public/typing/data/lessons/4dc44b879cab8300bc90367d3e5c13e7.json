@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.687559+00:00",
+  "request": {
+    "lesson_id": "4dc44b879cab8300bc90367d3e5c13e7",
+    "course_id": "bff1f4acbe3c325f85571ee987d1bdd2",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "bff1f4acbe3c325f85571ee987d1bdd2",
+    "order": 101,
+    "nextCourseId": "bff1f4acbe3c325f85571ee987d1bdd2",
+    "courseName": "左右手练习",
+    "lessonId": "4dc44b879cab8300bc90367d3e5c13e7",
+    "nextLessonId": "7726bd29ecb71a9225993f784e1276db",
+    "lessonName": "英文左手-英文",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-left-hand.932779dcca.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "27c55a6e36e359ea006472dccb87d1bb",
+        "index": 1,
+        "text": [
+          "tea set fee fax cat read sea star car ear grass"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "j",
+        "key": "teastfxcrdg",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 10,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

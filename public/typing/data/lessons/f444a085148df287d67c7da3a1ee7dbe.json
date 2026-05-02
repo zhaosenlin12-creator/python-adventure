@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.677557+00:00",
+  "request": {
+    "lesson_id": "f444a085148df287d67c7da3a1ee7dbe",
+    "course_id": "bff1f4acbe3c325f85571ee987d1bdd2",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "bff1f4acbe3c325f85571ee987d1bdd2",
+    "order": 95,
+    "nextCourseId": "bff1f4acbe3c325f85571ee987d1bdd2",
+    "courseName": "左右手练习",
+    "lessonId": "f444a085148df287d67c7da3a1ee7dbe",
+    "nextLessonId": "854b256b8e587f6e33864f572d852cfe",
+    "lessonName": "左手练习-拼音",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-left-hand.932779dcca.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "23ee6f7174e5ac46292a10130f3942b8",
+        "index": 1,
+        "text": [
+          "da de sa ce re ba be se ca ze za ta te fa wa ca sa"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "j",
+        "key": "daescrztfw",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 10,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.840257+00:00",
+  "request": {
+    "lesson_id": "8c9841d3992e13b390bcb16736323770",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 161,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "8c9841d3992e13b390bcb16736323770",
+    "nextLessonId": "9cf1face8fa0c8142aa35751040c9ea5",
+    "lessonName": "KET核心词-48",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第48课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e8f98c5dbfd557950a99cead3527e0db",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"petrol\",\"pronun\":\"[ˈpetrəl]\",\"translation\":\"n. （英）汽油\",\"audio\":\"petrol.mp3\"},{\"word\":\"phone\",\"pronun\":\"[foʊn]\",\"translation\":\"n. 电话；耳机，听筒\\nvt. 打电话\\nvi. 打电话\",\"audio\":\"phone.mp3\"},{\"word\":\"photo\",\"pronun\":\"[ˈfoʊtoʊ]\",\"translation\":\"n. 照片\",\"audio\":\"photo.mp3\"},{\"word\":\"photograph\",\"pronun\":\"[ˈfoʊtəɡræf]\",\"translation\":\"n. 照片，相片\\nvt. 为…拍照；使深深印入\\nvi. 拍照；在照片上显得\",\"audio\":\"photograph.mp3\"},{\"word\":\"photography\",\"pronun\":\"[fəˈtɑːɡrəfi]\",\"translation\":\"n. 摄影；摄影术\",\"audio\":\"photography.mp3\"},{\"word\":\"phrase\",\"pronun\":\"[freɪz]\",\"translation\":\"n. 短语, 习语, 措辞, 乐句\\nvt. 措词, 将(乐曲)分成乐句\",\"audio\":\"phrase.mp3\"},{\"word\":\"pick\",\"pronun\":\"[pɪk]\",\"translation\":\"n. 选择；鹤嘴锄；挖；掩护\\nvi. 挑选；采摘；挖\\nvt. 拾取；精选；采摘；掘\",\"audio\":\"pick.mp3\"},{\"word\":\"picnic\",\"pronun\":\"[ˈpɪknɪk]\",\"translation\":\"n. 野餐\\nvi. 去野餐\",\"audio\":\"picnic.mp3\"},{\"word\":\"picture\",\"pronun\":\"[ˈpɪktʃər]\",\"translation\":\"n. 照片，图画；影片；景色；化身\\nvt. 画；想像；描写\",\"audio\":\"picture.mp3\"},{\"word\":\"piece\",\"pronun\":\"[piːs]\",\"translation\":\"n. 块；件；篇；硬币\\nvt. 修补；接合；凑合\",\"audio\":\"piece.mp3\"},{\"word\":\"pillow\",\"pronun\":\"[ˈpɪloʊ]\",\"translation\":\"n. 枕头\\nvt. 垫；枕于…；使…靠在\\nvi. 枕着头；靠在枕上\",\"audio\":\"pillow.mp3\"},{\"word\":\"pilot\",\"pronun\":\"[ˈpaɪlət]\",\"translation\":\"n. 飞行员；领航员\\nadj. 试点的\\nv. 驾驶；领航；试用\",\"audio\":\"pilot.mp3\"},{\"word\":\"pink\",\"pronun\":\"[pɪŋk]\",\"translation\":\"n. 粉红色；化身，典范；石竹花；头面人物\\nadj. 粉红的；比较激进的；石竹科的；脸色发红的\\nvt. 扎，刺，戳；使…变粉红色；使…面红耳赤\\nvi. 变粉红色\",\"audio\":\"pink.mp3\"},{\"word\":\"pity\",\"pronun\":\"[ˈpɪti]\",\"translation\":\"n. 怜悯，同情；遗憾\\nvt. 对……表示怜悯；对……感到同情\",\"audio\":\"pity.mp3\"},{\"word\":\"pizza\",\"pronun\":\"[ˈpiːtsə]\",\"translation\":\"n. 比萨饼（一种涂有乳酪核番茄酱的意大利式有馅烘饼）\",\"audio\":\"pizza.mp3\"},{\"word\":\"place\",\"pronun\":\"[pleɪs]\",\"translation\":\"n. 地方；住所；座位\\nvt. 放置；任命；寄予\\nvi. 名列前茅；取得名次\",\"audio\":\"place.mp3\"},{\"word\":\"plan\",\"pronun\":\"[plæn]\",\"translation\":\"n. 计划；平面图\\nvt. 计划；设计；打算\\nvi. 计划；打算\",\"audio\":\"plan.mp3\"},{\"word\":\"plane\",\"pronun\":\"[pleɪn]\",\"translation\":\"n. 飞机；平面；程度，水平\\nadj. 平的；平面的\\nvt. 刨平；用刨子刨；掠过水面\\nvi. 刨；乘飞机旅行；翱翔\",\"audio\":\"plane.mp3\"},{\"word\":\"planet\",\"pronun\":\"[ˈplænɪt]\",\"translation\":\"n. 行星\",\"audio\":\"planet.mp3\"},{\"word\":\"plant\",\"pronun\":\"[plænt]\",\"translation\":\"n. 工厂，车间；植物；设备；庄稼\\nvt. 种植；培养；栽培；安置\\nvi. 种植\",\"audio\":\"plant.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

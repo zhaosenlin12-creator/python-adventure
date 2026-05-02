@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.772448+00:00",
+  "request": {
+    "lesson_id": "1d4e81af2190bee3e86a618bba8e03b8",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 368,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "1d4e81af2190bee3e86a618bba8e03b8",
+    "nextLessonId": "aee7e43bdf4dd21c90178967739ad4b3",
+    "lessonName": "六级词汇正序版-20",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第20课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1061a81fea48dbacf7f38b8c70cb8f52",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"comic\",\"pronun\":\"[ˈkɑːmɪk]\",\"translation\":\"n. 连环漫画；喜剧演员；滑稽人物\\nadj. 喜剧的；滑稽的；有趣的\",\"audio\":\"comic.mp3\"},{\"word\":\"command\",\"pronun\":\"[kəˈmænd]\",\"translation\":\"n. 指挥，控制；命令；司令部\\nvt. 命令，指挥；控制；远望\\nvi. 命令，指挥；控制\",\"audio\":\"command.mp3\"},{\"word\":\"commemorate\",\"pronun\":\"[kəˈmeməreɪt]\",\"translation\":\"vt. 庆祝，纪念；成为…的纪念\",\"audio\":\"commemorate.mp3\"},{\"word\":\"commence\",\"pronun\":\"[kəˈmens]\",\"translation\":\"v. 开始；着手；<英>获得学位\",\"audio\":\"commence.mp3\"},{\"word\":\"commend\",\"pronun\":\"[kəˈmend]\",\"translation\":\"vt. 推荐；称赞；把…委托\\nvi. 称赞；表扬\",\"audio\":\"commend.mp3\"},{\"word\":\"commentary\",\"pronun\":\"[ˈkɑːmənteri]\",\"translation\":\"n. 评论；注释；评注；说明\",\"audio\":\"commentary.mp3\"},{\"word\":\"commercial\",\"pronun\":\"[kəˈmɜːrʃl]\",\"translation\":\"n. 商业广告\\nadj. 商业的；营利的；靠广告收入的\",\"audio\":\"commercial.mp3\"},{\"word\":\"commission\",\"pronun\":\"[kəˈmɪʃn]\",\"translation\":\"n. 委员会；佣金；犯；委任；委任状\\nvt. 委任；使服役；委托制作\",\"audio\":\"commission.mp3\"},{\"word\":\"commit\",\"pronun\":\"[kəˈmɪt]\",\"translation\":\"vt. 犯罪，做错事；把...交托给；指派…作战；使…承担义务\",\"audio\":\"commit.mp3\"},{\"word\":\"commitment\",\"pronun\":\"[kəˈmɪtmənt]\",\"translation\":\"n. 承诺，保证；委托；承担义务；献身\",\"audio\":\"commitment.mp3\"},{\"word\":\"committee\",\"pronun\":\"[kəˈmɪti]\",\"translation\":\"n. 委员会\",\"audio\":\"committee.mp3\"},{\"word\":\"commodity\",\"pronun\":\"[kəˈmɑːdəti]\",\"translation\":\"n. 商品，货物；日用品\",\"audio\":\"commodity.mp3\"},{\"word\":\"commonplace\",\"pronun\":\"[ˈkɑːmənpleɪs]\",\"translation\":\"n. 老生常谈；司空见惯的事；普通的东西\\nadj. 平凡的；陈腐的\",\"audio\":\"commonplace.mp3\"},{\"word\":\"commonwealth\",\"pronun\":\"[ˈkɑːmənwelθ]\",\"translation\":\"n. 联邦；共和国；国民整体\",\"audio\":\"commonwealth.mp3\"},{\"word\":\"communicate\",\"pronun\":\"[kəˈmjuːnɪkeɪt]\",\"translation\":\"vi. 通讯，传达；相通；交流；感染\\nvt. 传达；感染；显露\",\"audio\":\"communicate.mp3\"},{\"word\":\"communication\",\"pronun\":\"[kəˌmjuːnɪˈkeɪʃn]\",\"translation\":\"n. 通讯，[通信] 通信；交流；信函\",\"audio\":\"communication.mp3\"},{\"word\":\"community\",\"pronun\":\"[kəˈmjuːnəti]\",\"translation\":\"n. 社区；[生态] 群落；共同体；团体\",\"audio\":\"community.mp3\"},{\"word\":\"commute\",\"pronun\":\"[kəˈmjuːt]\",\"translation\":\"n. 通勤（口语）\\nvt. 减刑；交换；用……交换；使……变成\\nvi. （搭乘车、船等）通勤；代偿\",\"audio\":\"commute.mp3\"},{\"word\":\"compact\",\"pronun\":\"[kəmˈpækt；ˈkɑːmpækt]\",\"translation\":\"n. 合同，契约；小粉盒\\nadj. 紧凑的，紧密的；简洁的\\nvt. 使简洁；使紧密结合\",\"audio\":\"compact.mp3\"},{\"word\":\"companion\",\"pronun\":\"[kəmˈpænjən]\",\"translation\":\"n. 同伴；朋友；指南；手册\\nvt. 陪伴\",\"audio\":\"companion.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

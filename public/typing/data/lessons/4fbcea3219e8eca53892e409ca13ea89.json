@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.000957+00:00",
+  "request": {
+    "lesson_id": "4fbcea3219e8eca53892e409ca13ea89",
+    "course_id": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "order": 203,
+    "nextCourseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "courseName": "小升初必备单词",
+    "lessonId": "4fbcea3219e8eca53892e409ca13ea89",
+    "nextLessonId": "6f98c03901460d94bc0e5aaf2f957b0c",
+    "lessonName": "L",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "35621877fd21fc9b4e11356e2849663e",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"lady\",\"pronun\":\"[\\u02c8leidi]\",\"translation\":\"n. \\u5973\\u58eb; \\u592b\\u4eba; \\u5c0f\\u59d0\"},{\"word\":\"ladybird\",\"pronun\":\"[\\u02c8le\\u026adi:\\u02ccb\\u025c:d]\",\"translation\":\"n. \\u74e2\\u866b\"},{\"word\":\"lamp\",\"pronun\":\"[l\\u00e6mp]\",\"translation\":\"n. \\u706f; \\u6cb9\\u706f; \\u5149\\u6e90\"},{\"word\":\"land\",\"pronun\":\"[l\\u00e6nd]\",\"translation\":\"v. \\u7740\\u9646; \\u767b\\u9646 n. \\u9646\\u5730; \\u571f\\u5730\"},{\"word\":\"large\",\"pronun\":\"[l\\u0251:d\\u0292]\",\"translation\":\"adj. \\u5927\\u7684; \\u5de8\\u5927\\u7684\"},{\"word\":\"last\",\"pronun\":\"[l\\u0251:st]\",\"translation\":\"adv. \\u6700\\u540e\\u7684(\\u5730); \\u6700\\u8fd1\\u7684; \\u6700\\u540e...\"},{\"word\":\"late\",\"pronun\":\"[leit]\",\"translation\":\"adj. \\u8fdf\\u7684; \\u665a\\u7684\"},{\"word\":\"laugh\",\"pronun\":\"[l\\u0251:f]\",\"translation\":\"v. \\u5927\\u7b11; \\u53d1\\u7b11\"},{\"word\":\"lay\",\"pronun\":\"[lei]\",\"translation\":\"v. \\u653e\\u7f6e; \\u751f\\u86cb\"},{\"word\":\"leaf\",\"pronun\":\"[li:f]\",\"translation\":\"n. \\u6811\\u53f6; \\u53f6\\u5b50\"},{\"word\":\"learn\",\"pronun\":\"[l\\u0259:n]\",\"translation\":\"v. \\u5b66\\u4e60; \\u5b66; \\u5b66\\u4f1a\"},{\"word\":\"leave\",\"pronun\":\"[li:v]\",\"translation\":\"vt. \\u79bb\\u5f00; \\u628a\\u2026\\u7559\\u7ed9\"},{\"word\":\"left\",\"pronun\":\"[left]\",\"translation\":\"adj. \\u5de6\\u8fb9\\u7684; \\u5de6\\u9762\\u7684; \\u5728\\u5de6\\u65b9\\u7684 ...\"},{\"word\":\"leg\",\"pronun\":\"[le\\u0261]\",\"translation\":\"n. \\u817f; \\u817f\\u90e8; \\u652f\\u67f1; (\\u65c5\\u7a0b\\u7684)\\u4e00...\"},{\"word\":\"lemon\",\"pronun\":\"[\\u02c8lem\\u0259n]\",\"translation\":\"n. \\u67e0\\u6aac(\\u6811); \\u67e0\\u6aac\\u9ec4; \\u6de1\\u9ec4\\u8272\"},{\"word\":\"lemonade\",\"pronun\":\"[\\u02cclem\\u0259\\u02c8neid]\",\"translation\":\"n. \\u67e0\\u6aac\\u6c34; \\u67e0\\u6aac\\u6c7d\\u6c34\"},{\"word\":\"length\",\"pronun\":\"[le\\u014b\\u03b8]\",\"translation\":\"n. \\u957f; \\u957f\\u5ea6; \\u4e00\\u6bb5; \\u4e00\\u622a\"},{\"word\":\"lesson\",\"pronun\":\"[\\u02c8les\\u0259n]\",\"translation\":\"n. \\u529f\\u8bfe; \\u8bfe\\u7a0b; \\u6559\\u8bad; \\u4e00\\u8282\\u8bfe\"},{\"word\":\"letter\",\"pronun\":\"[\\u02c8let\\u0259]\",\"translation\":\"n. \\u4fe1; \\u5b57\\u6bcd\"},{\"word\":\"lettuce\",\"pronun\":\"[\\u02c8letis]\",\"translation\":\"n. \\u83b4\\u82e3; \\u751f\\u83dc\"},{\"word\":\"library\",\"pronun\":\"[\\u02c8laibr\\u0259ri]\",\"translation\":\"n. \\u56fe\\u4e66\\u9986; \\u85cf\\u4e66; \\u6587\\u5e93\"},{\"word\":\"lie\",\"pronun\":\"[lai]\",\"translation\":\"v. \\u8bf4\\u8c0e; \\u6b3a\\u9a97\"},{\"word\":\"lift\",\"pronun\":\"[lift]\",\"translation\":\"v. \\u4e3e\\u8d77; \\u62ac\\u8d77; (\\u4e91\\u7b49)\\u6d88\\u6563 n....\"},{\"word\":\"light\",\"pronun\":\"[lait]\",\"translation\":\"adj. \\u5149; \\u5149\\u7ebf; \\u70b9\\u71c3; \\u8f7b\\u7684\"},{\"word\":\"like\",\"pronun\":\"[laik]\",\"translation\":\"v. \\u5e0c\\u671b; \\u60f3\\u8981 vt. \\u559c\\u6b22; \\u559c\\u7231...\"},{\"word\":\"lion\",\"pronun\":\"[\\u02c8lai\\u0259n]\",\"translation\":\"n. \\u72ee\\u5b50\"},{\"word\":\"list\",\"pronun\":\"[list]\",\"translation\":\"n. \\u6e05\\u5355; \\u4e00\\u89c8\\u8868; \\u540d\\u5355; \\u76ee\\u5f55\"},{\"word\":\"listen\",\"pronun\":\"[\\u02c8lisn]\",\"translation\":\"vi. \\u542c; \\u542c\\u4ece\"},{\"word\":\"litre\",\"pronun\":\"[\\u02c8li:t\\u0259]\",\"translation\":\"n. \\u516c\\u5347\"},{\"word\":\"litter\",\"pronun\":\"[\\u02c8lit\\u0259]\",\"translation\":\"v. \\u4e71\\u4e22\\u6742\\u7269 n. \\u5783\\u573e; \\u5e9f\\u7269; \\u6742...\"},{\"word\":\"little\",\"pronun\":\"[\\u02c8litl]\",\"translation\":\"adj. \\u5c0f\\u7684; \\u5e74\\u5e7c\\u7684\"},{\"word\":\"lizard\",\"pronun\":\"[\\u02c8l\\u026az\\u0259d]\",\"translation\":\"n. \\u8725\\u8734; \\u58c1\\u864e\"},{\"word\":\"log\",\"pronun\":\"[l\\u0254\\u0261]\",\"translation\":\"n. \\u5706\\u6728; \\u5e72\\u67f4\"},{\"word\":\"long\",\"pronun\":\"[l\\u0254\\u014b]\",\"translation\":\"adj. \\u957f\\u7684; \\u957f\\u4e45; \\u957f\\u65f6\\u95f4\\u7684; \\u957f...\"},{\"word\":\"look\",\"pronun\":\"[luk]\",\"translation\":\"vi. \\u770b; \\u77a7; \\u6253\\u91cf; \\u770b\\u8d77\\u6765 n....\"},{\"word\":\"lorry\",\"pronun\":\"[\\u02c8l\\u0254ri]\",\"translation\":\"n. \\u8d27\\u8f66\"},{\"word\":\"lost\",\"pronun\":\"[l\\u0254:st]\",\"translation\":\"adj. \\u8ff7\\u8def\\u7684\"},{\"word\":\"lot\",\"pronun\":\"[l\\u0254t]\",\"translation\":\"n. \\u8bb8\\u591a; \\u5927\\u91cf; \\u7b7e; \\u62bd\\u7b7e\"},{\"word\":\"loud\",\"pronun\":\"[laud]\",\"translation\":\"adj. \\u5927\\u58f0\\u7684; \\u54cd\\u4eae\\u7684; \\u5435\\u95f9\\u7684; ...\"},{\"word\":\"loudly\",\"pronun\":\"[\\u02c8la\\u028adl\\u026a]\",\"translation\":\"adv. \\u5927\\u58f0\\u5730\"},{\"word\":\"love\",\"pronun\":\"[l\\u028cv]\",\"translation\":\"n. \\u7231\\u60c5; \\u7231; \\u7231\\u597d\"},{\"word\":\"lunch\",\"pronun\":\"[l\\u028cnt\\u0283]\",\"translation\":\"n. \\u5348\\u9910; \\u5348\\u996d; \\u4fbf\\u9910\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 12,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

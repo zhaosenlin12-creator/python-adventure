@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.495534+00:00",
+  "request": {
+    "lesson_id": "7e2a22eafbb50eb88ae2446cba319ca8",
+    "course_id": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "order": 387,
+    "nextCourseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "courseName": "初中必背古诗60首（1）",
+    "lessonId": "7e2a22eafbb50eb88ae2446cba319ca8",
+    "nextLessonId": "d3a6c2a78a44cdeee65345bc1c58a0f8",
+    "lessonName": "饮酒",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f5dcc16c8ec966c3516e20158e05e8f4",
+        "index": 1,
+        "text": [
+          "饮酒\\n陶渊明\\n结庐在人境，而无车马喧。\\n问君何能尔？心远地自偏。\\n采菊东篱下，悠然见南山。\\n山气日夕佳，飞鸟相与还。"
+        ],
+        "pinyin": "[[\"饮\", \"yǐn\"], [\"酒\", \"jiǔ\"], [\"\\n\", \"\"], [\"陶\", \"táo\"], [\"渊\", \"yuān\"], [\"明\", \"míng\"], [\"\\n\", \"\"], [\"结\", \"jié\"], [\"庐\", \"lú\"], [\"在\", \"zài\"], [\"人\", \"rén\"], [\"境\", \"jìng\"], [\"，\", \"\"], [\"而\", \"ér\"], [\"无\", \"wú\"], [\"车\", \"chē\"], [\"马\", \"mǎ\"], [\"喧\", \"xuān\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"问\", \"wèn\"], [\"君\", \"jūn\"], [\"何\", \"hé\"], [\"能\", \"néng\"], [\"尔\", \"ěr\"], [\"？\", \"\"], [\"心\", \"xīn\"], [\"远\", \"yuǎn\"], [\"地\", \"dì\"], [\"自\", \"zì\"], [\"偏\", \"piān\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"采\", \"cǎi\"], [\"菊\", \"jú\"], [\"东\", \"dōng\"], [\"篱\", \"lí\"], [\"下\", \"xià\"], [\"，\", \"\"], [\"悠\", \"yōu\"], [\"然\", \"rán\"], [\"见\", \"jiàn\"], [\"南\", \"nán\"], [\"山\", \"shān\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"山\", \"shān\"], [\"气\", \"qì\"], [\"日\", \"rì\"], [\"夕\", \"xī\"], [\"佳\", \"jiā\"], [\"，\", \"\"], [\"飞\", \"fēi\"], [\"鸟\", \"niǎo\"], [\"相\", \"xiāng\"], [\"与\", \"yǔ\"], [\"还\", \"huán\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

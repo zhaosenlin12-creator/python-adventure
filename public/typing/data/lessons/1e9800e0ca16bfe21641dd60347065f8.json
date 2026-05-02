@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.090431+00:00",
+  "request": {
+    "lesson_id": "1e9800e0ca16bfe21641dd60347065f8",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 435,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "1e9800e0ca16bfe21641dd60347065f8",
+    "nextLessonId": "976628fe0e24177e88f2bbec6735dcad",
+    "lessonName": "六级词汇正序版-84",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第84课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6eb17893c29eaf0413ce1fb45b2c06e7",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"principal\",\"pronun\":\"[ˈprɪnsəpl]\",\"translation\":\"adj. 主要的；资本的\\nn. 首长；校长；资本；当事人\",\"audio\":\"principal.mp3\"},{\"word\":\"principle\",\"pronun\":\"[ˈprɪnsəpl]\",\"translation\":\"n. 原理，原则；主义，道义；本质，本义；根源，源泉\",\"audio\":\"principle.mp3\"},{\"word\":\"priority\",\"pronun\":\"[praɪˈɔːrəti]\",\"translation\":\"n. 优先；优先权；[数] 优先次序；优先考虑的事\",\"audio\":\"priority.mp3\"},{\"word\":\"privacy\",\"pronun\":\"[ˈpraɪvəsi]\",\"translation\":\"n. 隐私；秘密；隐居；隐居处\",\"audio\":\"privacy.mp3\"},{\"word\":\"privilege\",\"pronun\":\"[ˈprɪvəlɪdʒ]\",\"translation\":\"n. 特权；优待\\nvt. 给与…特权；特免\",\"audio\":\"privilege.mp3\"},{\"word\":\"probability\",\"pronun\":\"[ˌprɑːbəˈbɪləti]\",\"translation\":\"n. 可能性；机率；[数] 或然率\",\"audio\":\"probability.mp3\"},{\"word\":\"probe\",\"pronun\":\"[proʊb]\",\"translation\":\"n. 探针；调查\\nvi. 调查；探测\\nvt. 探查；用探针探测\",\"audio\":\"probe.mp3\"},{\"word\":\"procedure\",\"pronun\":\"[prəˈsiːdʒər]\",\"translation\":\"n. 程序，手续；步骤\",\"audio\":\"procedure.mp3\"},{\"word\":\"proceeding\",\"pronun\":\"[prəˈsiːdɪŋ]\",\"translation\":\"n. 进行；程序；诉讼；事项\\nv. 开始；继续做；行进（proceed的ing形式）\",\"audio\":\"proceeding.mp3\"},{\"word\":\"process\",\"pronun\":\"[prəˈses；ˈprɑːses]\",\"translation\":\"n. 过程，进行；方法，步骤；作用；程序；推移\\nadj. 经过特殊加工（或处理）的\\nvt. 处理；加工\\nvi. 列队前进\",\"audio\":\"process.mp3\"},{\"word\":\"processing\",\"pronun\":\"[ˈprɑːsesɪŋ]\",\"translation\":\"v. 加工；[自] 处理；对…起诉（process的ing形式）\",\"audio\":\"processing.mp3\"},{\"word\":\"proclaim\",\"pronun\":\"[prəˈkleɪm]\",\"translation\":\"vt. 宣告，公布；声明；表明；赞扬\",\"audio\":\"proclaim.mp3\"},{\"word\":\"productive\",\"pronun\":\"[prəˈdʌktɪv]\",\"translation\":\"adj. 能生产的；生产的，生产性的；多产的；富有成效的\",\"audio\":\"productive.mp3\"},{\"word\":\"productivity\",\"pronun\":\"[ˌproʊdʌkˈtɪvətiˌˌprɑːdʌkˈtɪvəti]\",\"translation\":\"n. 生产力；生产率；生产能力\",\"audio\":\"productivity.mp3\"},{\"word\":\"profess\",\"pronun\":\"[prəˈfes]\",\"translation\":\"vt. 自称；公开表示；宣称信奉；正式准予加入\\nvi. 声称；承认；当教授\",\"audio\":\"profess.mp3\"},{\"word\":\"profession\",\"pronun\":\"[prəˈfeʃn]\",\"translation\":\"n. 职业，专业；声明，宣布，表白\",\"audio\":\"profession.mp3\"},{\"word\":\"professional\",\"pronun\":\"[prəˈfeʃənl]\",\"translation\":\"n. 专业人员；职业运动员\\nadj. 专业的；职业的；职业性的\",\"audio\":\"professional.mp3\"},{\"word\":\"proficiency\",\"pronun\":\"[prəˈfɪʃnsi]\",\"translation\":\"n. 精通，熟练\",\"audio\":\"proficiency.mp3\"},{\"word\":\"profitable\",\"pronun\":\"[ˈprɑːfɪtəbl]\",\"translation\":\"adj. 有利可图的；赚钱的；有益的\",\"audio\":\"profitable.mp3\"},{\"word\":\"profound\",\"pronun\":\"[prəˈfaʊnd]\",\"translation\":\"adj. 深厚的；意义深远的；渊博的\",\"audio\":\"profound.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.754565+00:00",
+  "request": {
+    "lesson_id": "f109d3fda99b0b3a21a2abf74615993c",
+    "course_id": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "order": 57,
+    "nextCourseId": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "courseName": "声母组合练习",
+    "lessonId": "f109d3fda99b0b3a21a2abf74615993c",
+    "nextLessonId": "a7b7b76e4b57c20c0188b6248bff8b36",
+    "lessonName": "声母组合k",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "练习声母k与各韵母的组合",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "46c6fcd3e6c8ed92136f39177c1bc9c1",
+        "index": 1,
+        "highlights": [
+          "k"
+        ],
+        "text": [
+          "请输入按键 [k]"
+        ],
+        "detail": "学习双拼按键 k"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "abca92b94dbfb7b2958b23b5a9060f14",
+        "index": 2,
+        "text": [
+          "kkkkkkkk"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "973f59e732fa55347c14beea565624ea",
+        "index": 3,
+        "text": [
+          "开口看见天空蓝，可爱小狗跑得快。客人送来可口蛋糕，我们开心看电影。科学课上做实验，克服困难真勇敢。"
+        ],
+        "pinyin": "[[\"开\", \"kāi\"], [\"口\", \"kǒu\"], [\"看\", \"kàn\"], [\"见\", \"jiàn\"], [\"天\", \"tiān\"], [\"空\", \"kōng\"], [\"蓝\", \"lán\"], [\"，\", \"\"], [\"可\", \"kě\"], [\"爱\", \"ài\"], [\"小\", \"xiǎo\"], [\"狗\", \"gǒu\"], [\"跑\", \"pǎo\"], [\"得\", \"de\"], [\"快\", \"kuài\"], [\"。\", \"\"], [\"客\", \"kè\"], [\"人\", \"rén\"], [\"送\", \"sòng\"], [\"来\", \"lái\"], [\"可\", \"kě\"], [\"口\", \"kǒu\"], [\"蛋\", \"dàn\"], [\"糕\", \"gāo\"], [\"，\", \"\"], [\"我\", \"wǒ\"], [\"们\", \"men\"], [\"开\", \"kāi\"], [\"心\", \"xīn\"], [\"看\", \"kàn\"], [\"电\", \"diàn\"], [\"影\", \"yǐng\"], [\"。\", \"\"], [\"科\", \"kē\"], [\"学\", \"xué\"], [\"课\", \"kè\"], [\"上\", \"shàng\"], [\"做\", \"zuò\"], [\"实\", \"shí\"], [\"验\", \"yàn\"], [\"，\", \"\"], [\"克\", \"kè\"], [\"服\", \"fú\"], [\"困\", \"kùn\"], [\"难\", \"nán\"], [\"真\", \"zhēn\"], [\"勇\", \"yǒng\"], [\"敢\", \"gǎn\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 10,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

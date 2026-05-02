@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.542608+00:00",
+  "request": {
+    "lesson_id": "a325367563fd74d6547fce61c653d289",
+    "course_id": "059d1050da5fdf5c469f0cab1d245527",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "059d1050da5fdf5c469f0cab1d245527",
+    "order": 65,
+    "nextCourseId": "059d1050da5fdf5c469f0cab1d245527",
+    "courseName": "特殊符号",
+    "lessonId": "a325367563fd74d6547fce61c653d289",
+    "nextLessonId": "955a29aa332a32e4b7e02831ffcc26b1",
+    "lessonName": "Tab键",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-tab.0afca88002.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "aadc7b60298f90dd8ad554c65315eda0",
+        "index": 1,
+        "text": [
+          "\\tyi ge huan dang jian\\n\\t\\tliang ge huan dang jian\\n    si ge kong ge jian\\n\\t\\t\\tsan ge huan dang jian\\n yi ge kong ge jian"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "\\t",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

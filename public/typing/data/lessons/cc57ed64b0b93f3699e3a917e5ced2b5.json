@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:34.027942+00:00",
+  "request": {
+    "lesson_id": "cc57ed64b0b93f3699e3a917e5ced2b5",
+    "course_id": "d1e52222f52ce949c9eb8f2cd978f270",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "d1e52222f52ce949c9eb8f2cd978f270",
+    "order": 100,
+    "nextCourseId": "d1e52222f52ce949c9eb8f2cd978f270",
+    "courseName": "语文课内同步二年级下册",
+    "lessonId": "cc57ed64b0b93f3699e3a917e5ced2b5",
+    "nextLessonId": "935d113bc2bf6f81cea9a64707603118",
+    "lessonName": "古诗二首 晓出净慈寺送林子方",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9ad51acdc2c9a49c677b61a4bd119b31",
+        "index": 1,
+        "text": [
+          "毕竟西湖六月中，\\n风光不与四时同。\\n接天莲叶无穷碧，\\n映日荷花别样红。"
+        ],
+        "pinyin": "[[\"毕\", \"bì\"], [\"竟\", \"jìng\"], [\"西\", \"xī\"], [\"湖\", \"hú\"], [\"六\", \"liù\"], [\"月\", \"yuè\"], [\"中\", \"zhōng\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"风\", \"fēng\"], [\"光\", \"guāng\"], [\"不\", \"bù\"], [\"与\", \"yǔ\"], [\"四\", \"sì\"], [\"时\", \"shí\"], [\"同\", \"tóng\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"接\", \"jiē\"], [\"天\", \"tiān\"], [\"莲\", \"lián\"], [\"叶\", \"yè\"], [\"无\", \"wú\"], [\"穷\", \"qióng\"], [\"碧\", \"bì\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"映\", \"yìng\"], [\"日\", \"rì\"], [\"荷\", \"hé\"], [\"花\", \"huā\"], [\"别\", \"bié\"], [\"样\", \"yàng\"], [\"红\", \"hóng\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

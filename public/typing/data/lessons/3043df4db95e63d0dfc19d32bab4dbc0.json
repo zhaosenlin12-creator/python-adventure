@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.716275+00:00",
+  "request": {
+    "lesson_id": "3043df4db95e63d0dfc19d32bab4dbc0",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 135,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "3043df4db95e63d0dfc19d32bab4dbc0",
+    "nextLessonId": "b58879aca7bfd3b0f9b25a5800230e89",
+    "lessonName": "KET核心词-107",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第107课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "84b4cb937f142c51890b1c34dcf54159",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"farmer\",\"pronun\":\"[ˈfɑːrmər]\",\"translation\":\"n. 农夫，农民\",\"audio\":\"farmer.mp3\"},{\"word\":\"film star\",\"pronun\":\"\",\"translation\":\"n. 电影明星\",\"audio\":\"film_star.mp3\"},{\"word\":\"fire fighter\",\"pronun\":\"[faɪər ˈfaɪtər]\",\"translation\":\"na. 〈美〉消防人员；〈美〉(空袭时的)临时消防员\",\"audio\":\"fire_fighter.mp3\"},{\"word\":\"flight attendant\",\"pronun\":\"[ˈflaɪt ətendənt]\",\"translation\":\"n. 空中乘务员；机上乘务员\",\"audio\":\"flight_attendant.mp3\"},{\"word\":\"football player\",\"pronun\":\"\",\"translation\":\"足球运动员；球员；足球队员\",\"audio\":\"football_player.mp3\"},{\"word\":\"hairdresser\",\"pronun\":\"[ˈherdresər]\",\"translation\":\"n. 美发师\",\"audio\":\"hairdresser.mp3\"},{\"word\":\"income\",\"pronun\":\"[ˈɪnkʌm; ˈɪnkəm]\",\"translation\":\"n. 收入，收益；所得\",\"audio\":\"income.mp3\"},{\"word\":\"journalist\",\"pronun\":\"[ˈdʒɜːrnəlɪst]\",\"translation\":\"n. 新闻工作者；报人；记日志者\",\"audio\":\"journalist.mp3\"},{\"word\":\"judge\",\"pronun\":\"[dʒʌdʒ]\",\"translation\":\"vt. 判断；审判\\nn. 法官；裁判员\\nvi. 审判；判决\",\"audio\":\"judge.mp3\"},{\"word\":\"lawyer\",\"pronun\":\"[ˈlɔɪər]\",\"translation\":\"n. 律师；法学家\",\"audio\":\"lawyer.mp3\"},{\"word\":\"librarian\",\"pronun\":\"[laɪˈbreriən]\",\"translation\":\"n. 图书馆员；图书管理员\",\"audio\":\"librarian.mp3\"},{\"word\":\"mechanic\",\"pronun\":\"[məˈkænɪk]\",\"translation\":\"n. 技工，机修工\\nadj. 手工的\",\"audio\":\"mechanic.mp3\"},{\"word\":\"novelist\",\"pronun\":\"[ˈnɑːvəlɪst]\",\"translation\":\"n. 小说家\",\"audio\":\"novelist.mp3\"},{\"word\":\"nurse\",\"pronun\":\"[nɜːrs]\",\"translation\":\"vt. 看护，护理；照顾；培养；给…喂奶\\nvi. 照料，护理；喂奶；当保姆\\nn. 护士；奶妈，保姆\",\"audio\":\"nurse.mp3\"},{\"word\":\"occupation\",\"pronun\":\"[ˌɑːkjuˈpeɪʃn]\",\"translation\":\"n. 职业；占有；消遣；占有期\",\"audio\":\"occupation.mp3\"},{\"word\":\"painter\",\"pronun\":\"[ˈpeɪntər]\",\"translation\":\"n. 画家；油漆匠\",\"audio\":\"painter.mp3\"},{\"word\":\"pay\",\"pronun\":\"[peɪ]\",\"translation\":\"n. 工资，薪水；付款；报答\\nvt. 支付，付；偿还，补偿；给予\\nvi. 付款；偿还\\nadj. 收费的；需付费的\",\"audio\":\"pay.mp3\"},{\"word\":\"photographer\",\"pronun\":\"[fəˈtɑːɡrəfər]\",\"translation\":\"n. 摄影师；照相师\",\"audio\":\"photographer.mp3\"},{\"word\":\"physician\",\"pronun\":\"[fɪˈzɪʃn]\",\"translation\":\"n. [医] 医师；内科医师\",\"audio\":\"physician.mp3\"},{\"word\":\"poet\",\"pronun\":\"[ˈpoʊət]\",\"translation\":\"n. 诗人\",\"audio\":\"poet.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

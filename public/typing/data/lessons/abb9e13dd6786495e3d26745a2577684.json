@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.746948+00:00",
+  "request": {
+    "lesson_id": "abb9e13dd6786495e3d26745a2577684",
+    "course_id": "df7bf8b8c0456926de2c1fac14a741b2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "order": 445,
+    "nextCourseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "courseName": "宋词必备67首（1）",
+    "lessonId": "abb9e13dd6786495e3d26745a2577684",
+    "nextLessonId": "299cdccdd95b94ad5e0660147ea100d4",
+    "lessonName": "赠刘景文",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5357f8383fcaf85befcdfa3ae673308f",
+        "index": 1,
+        "text": [
+          "赠刘景文\\n苏轼\\n荷尽已无擎雨盖，菊残犹有傲霜枝。\\n一年好景君须记，最是橙黄橘绿时。"
+        ],
+        "pinyin": "[[\"赠\", \"zèng\"], [\"刘\", \"liú\"], [\"景\", \"jǐng\"], [\"文\", \"wén\"], [\"\\n\", \"\"], [\"苏\", \"sū\"], [\"轼\", \"shì\"], [\"\\n\", \"\"], [\"荷\", \"hé\"], [\"尽\", \"jìn\"], [\"已\", \"yǐ\"], [\"无\", \"wú\"], [\"擎\", \"qíng\"], [\"雨\", \"yǔ\"], [\"盖\", \"gài\"], [\"，\", \"\"], [\"菊\", \"jú\"], [\"残\", \"cán\"], [\"犹\", \"yóu\"], [\"有\", \"yǒu\"], [\"傲\", \"ào\"], [\"霜\", \"shuāng\"], [\"枝\", \"zhī\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"一\", \"yī\"], [\"年\", \"nián\"], [\"好\", \"hǎo\"], [\"景\", \"jǐng\"], [\"君\", \"jūn\"], [\"须\", \"xū\"], [\"记\", \"jì\"], [\"，\", \"\"], [\"最\", \"zuì\"], [\"是\", \"shì\"], [\"橙\", \"chéng\"], [\"黄\", \"huáng\"], [\"橘\", \"jú\"], [\"绿\", \"lǜ\"], [\"时\", \"shí\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

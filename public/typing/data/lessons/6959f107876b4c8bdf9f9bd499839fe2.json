@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.469327+00:00",
+  "request": {
+    "lesson_id": "6959f107876b4c8bdf9f9bd499839fe2",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 647,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "6959f107876b4c8bdf9f9bd499839fe2",
+    "nextLessonId": "9be1fb359a018ee8f67f4a2f82d0ca31",
+    "lessonName": " 五年级上-6",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点五年级上 - 第6课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "797eab80605adc53f98eb114528ef9bd",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"between\",\"pronun\":\"[bɪˈtwiːn]\",\"translation\":\"prep. 在…之间\\nadv. 在中间\",\"audio\":\"between.mp3\"},{\"word\":\"above\",\"pronun\":\"[əˈbʌv]\",\"translation\":\"prep. 超过；在……上面；在……之上\\nn. 上文\\nadj. 上文的\\nadv. 在上面；在上文\",\"audio\":\"above.mp3\"},{\"word\":\"beside\",\"pronun\":\"[bɪˈsaɪd]\",\"translation\":\"prep. 在旁边；与…相比；和…无关\",\"audio\":\"beside.mp3\"},{\"word\":\"behind\",\"pronun\":\"[bɪˈhaɪnd]\",\"translation\":\"prep. 落后于；支持；晚于\\nn. 屁股\\nadv. 在后地；在原处\",\"audio\":\"behind.mp3\"},{\"word\":\"there\",\"pronun\":\"[ðer]\",\"translation\":\"n. 那个地方\\nadv. 在那里；在那边；在那点上\\nint. 你瞧\",\"audio\":\"there.mp3\"},{\"word\":\"grandparent\",\"pronun\":\"[ˈɡrænperənt]\",\"translation\":\"n. 祖父母；祖父或祖母；外祖父母；外祖父或外祖母\",\"audio\":\"grandparent.mp3\"},{\"word\":\"their\",\"pronun\":\"[ðer]\",\"translation\":\"pron. 他们的，她们的；它们的\",\"audio\":\"their.mp3\"},{\"word\":\"house\",\"pronun\":\"[haʊs]\",\"translation\":\"n. 住宅；家庭；机构；议会；某种用途的建筑物\\nvt. 覆盖；给…房子住；把…储藏在房内\\nvi. 住\",\"audio\":\"house.mp3\"},{\"word\":\"lot\",\"pronun\":\"[lɑːt]\",\"translation\":\"n. 份额；许多；命运；阄\\nadv. （与形容词和副词连用）很，非常；（与动词连用）非常\\npron. 大量，许多\\nvt. 分组，把…划分（常与out连用）；把（土地）划分成块\\nvi. 抽签，拈阄\",\"audio\":\"lot.mp3\"},{\"word\":\"lots of\",\"pronun\":\"\",\"translation\":\"adj. 许多；很多\",\"audio\":\"lots_of.mp3\"},{\"word\":\"flower\",\"pronun\":\"[ˈflaʊər]\",\"translation\":\"n. 花；精华；开花植物\\nvt. 使开花；用花装饰\\nvi. 成熟，发育；开花；繁荣；旺盛\",\"audio\":\"flower.mp3\"},{\"word\":\"move\",\"pronun\":\"[muːv]\",\"translation\":\"n. 移动；步骤；迁居；策略\\nvi. 移动；搬家，迁移；离开\\nvt. 移动；感动\",\"audio\":\"move.mp3\"},{\"word\":\"dirty\",\"pronun\":\"[ˈdɜːrti]\",\"translation\":\"adj. 下流的，卑鄙的；肮脏的；恶劣的；暗淡的\\nvt. 弄脏\\nvi. 变脏\",\"audio\":\"dirty.mp3\"},{\"word\":\"everywhere\",\"pronun\":\"[ˈevriwer]\",\"translation\":\"n. 每个地方\\nadv. 到处\",\"audio\":\"everywhere.mp3\"},{\"word\":\"mouse\",\"pronun\":\"[maʊs]\",\"translation\":\"n. 鼠标；老鼠；胆小羞怯的人\\nvt. 探出\\nvi. 捕鼠；窥探\",\"audio\":\"mouse.mp3\"},{\"word\":\"live\",\"pronun\":\"[lɪv; laɪv]\",\"translation\":\"adj. 活的；生动的；实况转播的；精力充沛的\\nvt. 经历；度过\\nvi. 活；居住；生存\",\"audio\":\"live.mp3\"},{\"word\":\"nature\",\"pronun\":\"[ˈneɪtʃər]\",\"translation\":\"n. 自然；性质；本性；种类\",\"audio\":\"nature.mp3\"},{\"word\":\"forest\",\"pronun\":\"[ˈfɔːrɪst]\",\"translation\":\"n. 森林\\nvt. 植树于，使成为森林\",\"audio\":\"forest.mp3\"},{\"word\":\"river\",\"pronun\":\"[ˈrɪvər]\",\"translation\":\"n. 河，江\",\"audio\":\"river.mp3\"},{\"word\":\"lake\",\"pronun\":\"[leɪk]\",\"translation\":\"n. 湖；深红色颜料；胭脂红\\nvt. （使）血球溶解\\nvi. （使）血球溶解\",\"audio\":\"lake.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

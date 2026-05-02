@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.138849+00:00",
+  "request": {
+    "lesson_id": "028f527aaee8edbf1732275ea1c881b3",
+    "course_id": "31f8b0bfdd5cf12de8374becadc88615",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "31f8b0bfdd5cf12de8374becadc88615",
+    "order": 403,
+    "nextCourseId": "31f8b0bfdd5cf12de8374becadc88615",
+    "courseName": "实战演练-100万以内金额",
+    "lessonId": "028f527aaee8edbf1732275ea1c881b3",
+    "nextLessonId": "086d83e9aade5dc97b9c48f43a7521cf",
+    "lessonName": "综合练习一",
+    "icon": "data/assets/daziya.com/key-icon_num-dianzan.b4fa52ea4b.png",
+    "description": "数字输入练习 - 综合练习一",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "551102de3dfaae6ab0213d8893f6467c",
+        "index": 1,
+        "text": [
+          "12563478\\n23674589\\n34785691\\n45896712\\n56917823\\n67128934\\n78239145\\n89341256\\n91452367\\n15824758\\n26935869\\n37146971\\n48257182\\n59368293\\n61479314\\n72581425\\n83692536\\n94713647\\n17283948\\n28394159\\n39415261\\n41526372\\n52637483\\n63748594\\n74859615\\n85961726\\n96172837\\n18534159\\n29645261\\n31756372"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

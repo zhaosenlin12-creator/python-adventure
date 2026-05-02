@@ -1,0 +1,50 @@
+{
+  "source": "speed-test",
+  "scrapedAt": "2026-05-02T06:08:44.899088+00:00",
+  "request": {
+    "lesson_id": "28455999ed460cbc2c9c8f58e6c5e108",
+    "course_id": "c6bc39f4ba86486e20cc171fab797ea3",
+    "source": "speed-test"
+  },
+  "data": {
+    "level": "速度测试",
+    "courseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "order": 51,
+    "nextCourseId": "aeb5721cbd1fe1fc50d69a070cb41ef4",
+    "courseName": "英文速度测试",
+    "lessonId": "28455999ed460cbc2c9c8f58e6c5e108",
+    "nextLessonId": "cd32b7a2c14e00fd90ba1307f8966634",
+    "lessonName": "Round and Round",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "847ebfbf5111149d6d64f08d05b3eb29",
+        "index": 1,
+        "text": [
+          "One day in my class, our teacher said, \"Cars, buses, bicycles, trains, and even planes are all the same in one way. Does anyone know how?\"\\nJust then, my apple fell to the ground. It started to roll.\\n\"That's it!\" I put up my hand. \"They all have wheels.\"\\nThe teacher said, \"Very good! Now please put your apple away.\""
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": 13,
+    "categoryTitle": "速度测试"
+  }
+}

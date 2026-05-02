@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.122419+00:00",
+  "request": {
+    "lesson_id": "7aea05cf9a1014fa99ed8e4a831b566f",
+    "course_id": "31f8b0bfdd5cf12de8374becadc88615",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "31f8b0bfdd5cf12de8374becadc88615",
+    "order": 400,
+    "nextCourseId": "31f8b0bfdd5cf12de8374becadc88615",
+    "courseName": "实战演练-100万以内金额",
+    "lessonId": "7aea05cf9a1014fa99ed8e4a831b566f",
+    "nextLessonId": "3303c271fcb2aac29d7f2875047d0eae",
+    "lessonName": "小数分练习二",
+    "icon": "data/assets/daziya.com/key-icon_num-dianzan.b4fa52ea4b.png",
+    "description": "数字输入练习 - 小数分练习二",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "dd3c299ed3c0d2a08fa0fb8d687acf6e",
+        "index": 1,
+        "text": [
+          "10000010\\n10000020\\n10000030\\n10000040\\n10000050\\n10000060\\n10000070\\n10000080\\n10000090\\n20000010\\n20000020\\n20000030\\n20000040\\n20000050\\n20000060\\n20000070\\n20000080\\n20000090\\n30000010\\n30000020\\n30000030\\n30000040\\n30000050\\n30000060\\n30000070\\n30000080\\n30000090\\n40000010\\n40000020\\n40000030"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

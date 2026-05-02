@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.679399+00:00",
+  "request": {
+    "lesson_id": "30403669dd43722397fcab6a4eea179d",
+    "course_id": "f81aeb9f7457592295d8d925c4358b36",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "f81aeb9f7457592295d8d925c4358b36",
+    "order": 213,
+    "nextCourseId": "f81aeb9f7457592295d8d925c4358b36",
+    "courseName": "汉字二级",
+    "lessonId": "30403669dd43722397fcab6a4eea179d",
+    "nextLessonId": "b7ab6c59e5c542bc48e94ca6944c02e9",
+    "lessonName": "《春》 朱自清",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-2.4d21a5bc2c.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e99adc66c8db31e9c3ca6b98eed160ce",
+        "index": 1,
+        "text": [
+          "盼望着，盼望着，东风来了，春天的脚步近了。"
+        ],
+        "pinyin": "[[\"盼\", \"pàn\"], [\"望\", \"wàng\"], [\"着\", \"zhe\"], [\"，\", \"\"], [\"盼\", \"pàn\"], [\"望\", \"wàng\"], [\"着\", \"zhe\"], [\"，\", \"\"], [\"东\", \"dōng\"], [\"风\", \"fēng\"], [\"来\", \"lái\"], [\"了\", \"le\"], [\"，\", \"\"], [\"春\", \"chūn\"], [\"天\", \"tiān\"], [\"的\", \"de\"], [\"脚\", \"jiǎo\"], [\"步\", \"bù\"], [\"近\", \"jìn\"], [\"了\", \"le\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 21,
+        "minSpeed": 11,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

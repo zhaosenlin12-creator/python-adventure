@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:34.253850+00:00",
+  "request": {
+    "lesson_id": "a6676015f9c88c9d76d507173a0c17c2",
+    "course_id": "f3c1e8f8ddcadf882453261a12533994",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "f3c1e8f8ddcadf882453261a12533994",
+    "order": 147,
+    "nextCourseId": "f3c1e8f8ddcadf882453261a12533994",
+    "courseName": "语文课内同步三年级下册",
+    "lessonId": "a6676015f9c88c9d76d507173a0c17c2",
+    "nextLessonId": "e08942169cb4d496e7c21058a3a43140",
+    "lessonName": "清明",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "30537a98291955d0e525bf315ecbf735",
+        "index": 1,
+        "text": [
+          "清明时节雨纷纷，路上行人欲断魂。\\n借问酒家何处有？牧童遥指杏花村。"
+        ],
+        "pinyin": "[[\"清\", \"qīng\"], [\"明\", \"míng\"], [\"时\", \"shí\"], [\"节\", \"jié\"], [\"雨\", \"yǔ\"], [\"纷\", \"fēn\"], [\"纷\", \"fēn\"], [\"，\", \"\"], [\"路\", \"lù\"], [\"上\", \"shàng\"], [\"行\", \"xíng\"], [\"人\", \"rén\"], [\"欲\", \"yù\"], [\"断\", \"duàn\"], [\"魂\", \"hún\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"借\", \"jiè\"], [\"问\", \"wèn\"], [\"酒\", \"jiǔ\"], [\"家\", \"jiā\"], [\"何\", \"hé\"], [\"处\", \"chù\"], [\"有\", \"yǒu\"], [\"？\", \"\"], [\"牧\", \"mù\"], [\"童\", \"tóng\"], [\"遥\", \"yáo\"], [\"指\", \"zhǐ\"], [\"杏\", \"xìng\"], [\"花\", \"huā\"], [\"村\", \"cūn\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

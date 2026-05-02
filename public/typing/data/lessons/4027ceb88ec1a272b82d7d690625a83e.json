@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.285903+00:00",
+  "request": {
+    "lesson_id": "4027ceb88ec1a272b82d7d690625a83e",
+    "course_id": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "order": 477,
+    "nextCourseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "courseName": "英语每日故事（初级）1-31",
+    "lessonId": "4027ceb88ec1a272b82d7d690625a83e",
+    "nextLessonId": "30a4c0f73e169ae61bde0f1bcd04e0b6",
+    "lessonName": "My Cat",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4b4458fbc233ef1bdfd1dcddbac2df03",
+        "index": 1,
+        "text": [
+          "I have a cat. Her name is Spot. She is big and soft. She is white with black spots. She likes milk.\\nShe drinks milk from a bowl.\\nShe likes to sit at the window and look outside.\\nShe likes to watch the birds in the trees.\\nSometimes, she sleeps all day.\\nDoes a cat dream? Maybe."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

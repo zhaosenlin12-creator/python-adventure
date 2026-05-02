@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.092993+00:00",
+  "request": {
+    "lesson_id": "976628fe0e24177e88f2bbec6735dcad",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 436,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "976628fe0e24177e88f2bbec6735dcad",
+    "nextLessonId": "ca2785527f8ff28fad41c659aebfeb8e",
+    "lessonName": "六级词汇正序版-87",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第87课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d5b8fc0d83110f11f0d713372da199d1",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"quantitative\",\"pronun\":\"[ˈkwɑːntəteɪtɪv]\",\"translation\":\"adj. 定量的；量的，数量的\",\"audio\":\"quantitative.mp3\"},{\"word\":\"quart\",\"pronun\":\"[kwɔːrt]\",\"translation\":\"n. 夸脱（容量单位）；一夸脱的容器\",\"audio\":\"quart.mp3\"},{\"word\":\"quarterly\",\"pronun\":\"[ˈkwɔːrtərli]\",\"translation\":\"n. 季刊\\nadj. 季度的，按季度的；一年四次的\\nadv. 按季度，[农] 一季一次地；纵横四分地\",\"audio\":\"quarterly.mp3\"},{\"word\":\"quartz\",\"pronun\":\"[kwɔːrts]\",\"translation\":\"n. 石英\",\"audio\":\"quartz.mp3\"},{\"word\":\"queer\",\"pronun\":\"[kwɪr]\",\"translation\":\"n. 同性恋者；怪人；伪造的货币\\nadj. 奇怪的；同性恋的；不舒服的；心智不平衡的\\nvt. 搞糟；使陷于不利地位\",\"audio\":\"queer.mp3\"},{\"word\":\"quench\",\"pronun\":\"[kwentʃ]\",\"translation\":\"vt. 熄灭，[机] 淬火；解渴；结束；冷浸\\nvi. 熄灭；平息\",\"audio\":\"quench.mp3\"},{\"word\":\"quest\",\"pronun\":\"[kwest]\",\"translation\":\"n. 追求；寻找\\nvt. 探索\\nvi. 追求；寻找\",\"audio\":\"quest.mp3\"},{\"word\":\"questionnaire\",\"pronun\":\"[ˌkwestʃəˈner]\",\"translation\":\"n. 问卷；调查表\",\"audio\":\"questionnaire.mp3\"},{\"word\":\"quiver\",\"pronun\":\"[ˈkwɪvər]\",\"translation\":\"n. 颤抖；箭袋；震动\\nvi. 颤抖；振动\\nvt. 使…颤动；抖动\",\"audio\":\"quiver.mp3\"},{\"word\":\"quota\",\"pronun\":\"[ˈkwoʊtə]\",\"translation\":\"n. 配额；定额；限额\",\"audio\":\"quota.mp3\"},{\"word\":\"racial\",\"pronun\":\"[ˈreɪʃl]\",\"translation\":\"adj. 种族的；人种的\",\"audio\":\"racial.mp3\"},{\"word\":\"racket\",\"pronun\":\"[ˈrækɪt]\",\"translation\":\"n. 球拍；吵闹，喧闹\\nvt. 过着花天酒地的生活\\nvi. 过着花天酒地的生活\",\"audio\":\"racket.mp3\"},{\"word\":\"radiant\",\"pronun\":\"[ˈreɪdiənt]\",\"translation\":\"n. 光点；发光的物体\\nadj. 辐射的；容光焕发的；光芒四射的\",\"audio\":\"radiant.mp3\"},{\"word\":\"radiate\",\"pronun\":\"[ˈreɪdieɪt]\",\"translation\":\"adj. 辐射状的，有射线的\\nvi. 辐射；流露；发光；从中心向各方伸展\\nvt. 辐射；传播；流露；发射；广播\",\"audio\":\"radiate.mp3\"},{\"word\":\"radical\",\"pronun\":\"[ˈrædɪkl]\",\"translation\":\"n. 基础；激进分子；[物化] 原子团；[数] 根数\\nadj. 激进的；根本的；彻底的\",\"audio\":\"radical.mp3\"},{\"word\":\"radioactive\",\"pronun\":\"[ˌreɪdioʊˈæktɪv]\",\"translation\":\"adj. [核] 放射性的；有辐射的\",\"audio\":\"radioactive.mp3\"},{\"word\":\"radius\",\"pronun\":\"[ˈreɪdiəs]\",\"translation\":\"n. 半径，半径范围；[解剖] 桡骨；辐射光线；有效航程\",\"audio\":\"radius.mp3\"},{\"word\":\"random\",\"pronun\":\"[ˈrændəm]\",\"translation\":\"n. 随意\\nadj. [数] 随机的；任意的；胡乱的\\nadv. 胡乱地\",\"audio\":\"random.mp3\"},{\"word\":\"rank\",\"pronun\":\"[ræŋk]\",\"translation\":\"n. 排；等级；军衔；队列\\nadj. 讨厌的；恶臭的；繁茂的\\nvt. 排列；把…分等\\nvi. 列为；列队\",\"audio\":\"rank.mp3\"},{\"word\":\"rap\",\"pronun\":\"[ræp]\",\"translation\":\"n. 轻敲\\nvi. 敲击；交谈\\nvt. 抢走；轻敲；敲击致使；使着迷\",\"audio\":\"rap.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

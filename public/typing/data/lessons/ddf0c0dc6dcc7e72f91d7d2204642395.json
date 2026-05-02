@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.046861+00:00",
+  "request": {
+    "lesson_id": "ddf0c0dc6dcc7e72f91d7d2204642395",
+    "course_id": "cd45306af9fe6ba99ad31ab2ab5006ba",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "cd45306af9fe6ba99ad31ab2ab5006ba",
+    "order": 378,
+    "nextCourseId": "cd45306af9fe6ba99ad31ab2ab5006ba",
+    "courseName": "实战演练-1万以内金额",
+    "lessonId": "ddf0c0dc6dcc7e72f91d7d2204642395",
+    "nextLessonId": "dae61cf682f5abe82319042c4fd5cd55",
+    "lessonName": "零角零分一",
+    "icon": "data/assets/daziya.com/key-icon_num-jiangbei.44832ef16e.png",
+    "description": "数字输入练习 - 零角零分一",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a1ff65b2d784b6f4cab510366fa1b476",
+        "index": 1,
+        "text": [
+          "010000\\n010001\\n010002\\n010003\\n010004\\n010005\\n020000\\n020001\\n020002\\n020003\\n020004\\n020005\\n030000\\n030001\\n030002\\n030003\\n030004\\n030005\\n040000\\n040001\\n040002\\n040003\\n040004\\n040005\\n050000\\n050001\\n050002\\n050003\\n050004\\n050005"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

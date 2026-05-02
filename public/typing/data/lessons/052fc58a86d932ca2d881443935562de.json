@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.140159+00:00",
+  "request": {
+    "lesson_id": "052fc58a86d932ca2d881443935562de",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 446,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "052fc58a86d932ca2d881443935562de",
+    "nextLessonId": "e5665e11130ee97684a0ae14650b19b1",
+    "lessonName": "六级词汇正序版-117",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第117课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f04c0de4eb2d49501dd9e118fdd36eac",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"weary\",\"pronun\":\"[ˈwɪri]\",\"translation\":\"adj. 疲倦的；厌烦的；令人厌烦的\\nvt. 使疲倦；使厌烦\\nvi. 疲倦；厌烦\",\"audio\":\"weary.mp3\"},{\"word\":\"web\",\"pronun\":\"[web]\",\"translation\":\"n. 网；卷筒纸；蹼；织物；圈套\\nvt. 用网缠住；使中圈套\\nvi. 形成网\",\"audio\":\"web.mp3\"},{\"word\":\"wedge\",\"pronun\":\"[wedʒ]\",\"translation\":\"n. 楔子；楔形物；导致分裂的东西\\nvt. 楔入；挤进；楔住\\nvi. 楔入；挤进\",\"audio\":\"wedge.mp3\"},{\"word\":\"weird\",\"pronun\":\"[wɪrd]\",\"translation\":\"n. （苏格兰）命运；预言\\nadj. 怪异的；不可思议的；超自然的\",\"audio\":\"weird.mp3\"},{\"word\":\"whereas\",\"pronun\":\"[ˌwerˈæz]\",\"translation\":\"conj. 然而；鉴于；反之\",\"audio\":\"whereas.mp3\"},{\"word\":\"whereby\",\"pronun\":\"[werˈbaɪ]\",\"translation\":\"adv. 凭借；通过…；借以；与…一致\",\"audio\":\"whereby.mp3\"},{\"word\":\"whirl\",\"pronun\":\"[wɜːrl]\",\"translation\":\"n. 旋转，回旋；昏乱；一连串的事；短暂的旅行\\nvt. 使旋转；卷走，飞快地带走\\nvi. 旋转，回旋；急走；头晕眼花\",\"audio\":\"whirl.mp3\"},{\"word\":\"widespread\",\"pronun\":\"[ˈwaɪdspred]\",\"translation\":\"adj. 普遍的，广泛的；分布广的\",\"audio\":\"widespread.mp3\"},{\"word\":\"willful\",\"pronun\":\"[ˈwɪlf(ə)l]\",\"translation\":\"adj. 有意的；任性的；故意的\",\"audio\":\"willful.mp3\"},{\"word\":\"withdraw\",\"pronun\":\"[wɪðˈdrɔː]\",\"translation\":\"vt. 撤退；收回；撤消；拉开\\nvi. 撤退；离开\",\"audio\":\"withdraw.mp3\"},{\"word\":\"withhold\",\"pronun\":\"[wɪðˈhoʊld]\",\"translation\":\"vt. 保留，不给；隐瞒；抑制\\nvi. 忍住；克制\",\"audio\":\"withhold.mp3\"},{\"word\":\"witness\",\"pronun\":\"[ˈwɪtnəs]\",\"translation\":\"n. 证人；目击者；证据\\nvt. 目击；证明；为…作证\\nvi. 作证人\",\"audio\":\"witness.mp3\"},{\"word\":\"workshop\",\"pronun\":\"[ˈwɜːrkʃɑːp]\",\"translation\":\"n. 车间；研讨会；工场；讲习班\",\"audio\":\"workshop.mp3\"},{\"word\":\"worthwhile\",\"pronun\":\"[ˌwɜːrθˈwaɪl]\",\"translation\":\"adj. 值得做的，值得花时间的\",\"audio\":\"worthwhile.mp3\"},{\"word\":\"worthy\",\"pronun\":\"[ˈwɜːrði]\",\"translation\":\"n. 杰出人物；知名人士\\nadj. 值得的；有价值的；配得上的，相称的；可尊敬的；应…的\",\"audio\":\"worthy.mp3\"},{\"word\":\"wreck\",\"pronun\":\"[rek]\",\"translation\":\"n. 破坏；失事；残骸；失去健康的人\\nvt. 破坏；使失事；拆毁\\nvi. 失事；营救失事船只\",\"audio\":\"wreck.mp3\"},{\"word\":\"wrench\",\"pronun\":\"[rentʃ]\",\"translation\":\"n. 扳手，扳钳；扭伤；痛苦；歪曲；猛扭\\nvt. 扭伤；猛扭；曲解；折磨\\nvi. 扭伤；猛扭；猛绞\",\"audio\":\"wrench.mp3\"},{\"word\":\"wrestle\",\"pronun\":\"[ˈresl]\",\"translation\":\"n. 摔跤；搏斗；斗争\\nvi. 摔跤；斗争；斟酌\\nvt. 与摔跤；与…搏斗；使劲搬动\",\"audio\":\"wrestle.mp3\"},{\"word\":\"wretched\",\"pronun\":\"[ˈretʃɪd]\",\"translation\":\"adj. 可怜的；卑鄙的；令人苦恼或难受的\",\"audio\":\"wretched.mp3\"},{\"word\":\"wrinkle\",\"pronun\":\"[ˈrɪŋkl]\",\"translation\":\"n. 皱纹\\nvi. 起皱\\nvt. 使起皱纹\",\"audio\":\"wrinkle.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

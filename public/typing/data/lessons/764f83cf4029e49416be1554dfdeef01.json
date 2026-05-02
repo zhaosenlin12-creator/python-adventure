@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.080208+00:00",
+  "request": {
+    "lesson_id": "764f83cf4029e49416be1554dfdeef01",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 14,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "764f83cf4029e49416be1554dfdeef01",
+    "nextLessonId": "44a5ab7faf046cab08479ec9d5e9f6df",
+    "lessonName": "2022年版 PEP-四年级-上册-3",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-四年级-上册 - 第3课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3f171d22a736d05596a2243dbd527d3a",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"over\",\"pronun\":\"[ˈoʊvər]\",\"translation\":\"adv. 结束；越过；从头到尾\\nprep. 越过；在…之上；遍于…之上\\nadj. 结束的；上面的\\nvt. 越过\",\"audio\":\"over.mp3\"},{\"word\":\"hospital\",\"pronun\":\"[ˈhɑːspɪtl]\",\"translation\":\"n. 医院\",\"audio\":\"hospital.mp3\"},{\"word\":\"shop\",\"pronun\":\"[ʃɑːp]\",\"translation\":\"n. 商店；店铺\\nvt. 购物\\nvi. 购物；买东西\",\"audio\":\"shop.mp3\"},{\"word\":\"toilet\",\"pronun\":\"[ˈtɔɪlət]\",\"translation\":\"n. 厕所，盥洗室；梳妆，打扮\\nvt. 给…梳妆打扮\\nvi. 梳妆，打扮\",\"audio\":\"toilet.mp3\"},{\"word\":\"bus\",\"pronun\":\"[bʌs]\",\"translation\":\"n. 公共汽车\\n乘公共汽车\",\"audio\":\"bus.mp3\"},{\"word\":\"stop\",\"pronun\":\"[stɑːp]\",\"translation\":\"n. 停止；车站；障碍；逗留\\nvi. 停止；中止；逗留；被塞住\\nvt. 停止；堵塞；断绝\",\"audio\":\"stop.mp3\"},{\"word\":\"library\",\"pronun\":\"[ˈlaɪbreri]\",\"translation\":\"n. 图书馆，藏书室；文库\",\"audio\":\"library.mp3\"},{\"word\":\"sport\",\"pronun\":\"[spɔːrt]\",\"translation\":\"n. 运动；游戏；娱乐；运动会；玩笑\\nadj. 运动的\\nvt. 游戏；参加体育运动；夸耀\\nvi. 游戏\",\"audio\":\"sport.mp3\"},{\"word\":\"walk\",\"pronun\":\"[wɔːk]\",\"translation\":\"n. 步行，走；散步\\nvi. 走，步行；散步\\nvt. 散步；走过\",\"audio\":\"walk.mp3\"},{\"word\":\"community\",\"pronun\":\"[kəˈmjuːnəti]\",\"translation\":\"n. 社区；[生态] 群落；共同体；团体\",\"audio\":\"community.mp3\"},{\"word\":\"favourite\",\"pronun\":\"[ˈfeɪvərɪt]\",\"translation\":\"n. 特别喜爱的人（或物）\\nadj. 特别受喜爱的\",\"audio\":\"favourite.mp3\"},{\"word\":\"place\",\"pronun\":\"[pleɪs]\",\"translation\":\"n. 地方；住所；座位\\nvt. 放置；任命；寄予\\nvi. 名列前茅；取得名次\",\"audio\":\"place.mp3\"},{\"word\":\"photo\",\"pronun\":\"[ˈfoʊtoʊ]\",\"translation\":\"n. 照片\",\"audio\":\"photo.mp3\"},{\"word\":\"story\",\"pronun\":\"[ˈstɔːri]\",\"translation\":\"n. 故事；小说；新闻报道；来历；假话\\nvt. 用历史故事画装饰\\nvi. 说谎\",\"audio\":\"story.mp3\"},{\"word\":\"buy\",\"pronun\":\"[baɪ]\",\"translation\":\"n. 购买，买卖；所购的物品\\nvi. 买，采购\\nvt. 购买；获得；贿赂\",\"audio\":\"buy.mp3\"},{\"word\":\"firefighter\",\"pronun\":\"[ˈfaɪərfaɪtər]\",\"translation\":\"n. 消防队员\",\"audio\":\"firefighter.mp3\"},{\"word\":\"why\",\"pronun\":\"[waɪ]\",\"translation\":\"int. 哎呀！什么？\\nadv. 为什么\",\"audio\":\"why.mp3\"},{\"word\":\"driver\",\"pronun\":\"[ˈdraɪvər]\",\"translation\":\"n. 驾驶员；驱动程序；起子；传动器\",\"audio\":\"driver.mp3\"},{\"word\":\"cleaner\",\"pronun\":\"[ˈkliːnər]\",\"translation\":\"n. [化工] 清洁剂；清洁工；干洗店；干洗商；洗洁器\",\"audio\":\"cleaner.mp3\"},{\"word\":\"delivery\",\"pronun\":\"[dɪˈlɪvəri]\",\"translation\":\"n. [贸易] 交付；分娩；递送\",\"audio\":\"delivery.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

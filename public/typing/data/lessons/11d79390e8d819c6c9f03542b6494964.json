@@ -1,0 +1,50 @@
+{
+  "source": "speed-test",
+  "scrapedAt": "2026-05-02T06:08:44.849371+00:00",
+  "request": {
+    "lesson_id": "11d79390e8d819c6c9f03542b6494964",
+    "course_id": "c6bc39f4ba86486e20cc171fab797ea3",
+    "source": "speed-test"
+  },
+  "data": {
+    "level": "速度测试",
+    "courseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "order": 37,
+    "nextCourseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "courseName": "英文速度测试",
+    "lessonId": "11d79390e8d819c6c9f03542b6494964",
+    "nextLessonId": "b8a01a9f59c938c42170755e5a6366be",
+    "lessonName": "Taking Turns",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1f4e438607d08494513997f34d13a1ea",
+        "index": 1,
+        "text": [
+          "Jake and Anna both want to ride the same tricycle. What should they do?\\n\"Let's take turns,\" says Jake.\\n\"Good idea, Jake. You can go first,\" says Anna.\\n\"I'll draw roads with chalk while I wait.\"\\n\"All right! I'll go for a ride and then it's your turn,\" says Jake.\\n\"Perfect! Taking turns is the best way to have fun with friends,\" says Anna."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": 13,
+    "categoryTitle": "速度测试"
+  }
+}

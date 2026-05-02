@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.120548+00:00",
+  "request": {
+    "lesson_id": "d280df0a1f353ff12d269589819805b7",
+    "course_id": "31f8b0bfdd5cf12de8374becadc88615",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "31f8b0bfdd5cf12de8374becadc88615",
+    "order": 396,
+    "nextCourseId": "31f8b0bfdd5cf12de8374becadc88615",
+    "courseName": "实战演练-100万以内金额",
+    "lessonId": "d280df0a1f353ff12d269589819805b7",
+    "nextLessonId": "d0f6821760c41ef1361e9a7a5be5ed84",
+    "lessonName": "随机百万二",
+    "icon": "data/assets/daziya.com/key-icon_num-dianzan.b4fa52ea4b.png",
+    "description": "数字输入练习 - 随机百万二",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "32e05cf4d12648ac2dcc4ce64644cb39",
+        "index": 1,
+        "text": [
+          "15283647\\n26394758\\n37415869\\n48526971\\n59637182\\n61748293\\n72859314\\n83961425\\n94172536\\n16293748\\n27314859\\n38425961\\n49536172\\n51647283\\n62758394\\n73869415\\n84971526\\n95182637\\n17364859\\n28475961\\n39586172\\n41697283\\n52718394\\n63829415\\n74931526\\n85142637\\n96253748\\n18435961\\n29546172\\n31657283"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

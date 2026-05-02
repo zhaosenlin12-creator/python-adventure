@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.075225+00:00",
+  "request": {
+    "lesson_id": "47fcdbf2cafceef6742f7c7c0631c60f",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 104,
+    "nextCourseId": "e13b6bae2990dd699f332f225dd1955b",
+    "courseName": "Javascript",
+    "lessonId": "47fcdbf2cafceef6742f7c7c0631c60f",
+    "nextLessonId": "e58929b90ac441ae03851abeb89f450f",
+    "lessonName": "求和与平均值",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - 求和与平均值",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5cddfb15c8292d13be66b7fc6e3d88bf",
+        "index": 1,
+        "text": [
+          "// 计算数组的总和和平均值\\nfunction calculateStats(numbers) {\\n    const total = numbers.reduce((sum, num) => sum + num, 0);\\n    const average = total / numbers.length;\\n    return { total, average };\\n}\\n\\nconst scores = [85, 90, 78, 92, 88];\\nconst stats = calculateStats(scores);\\n\\nconsole.log(`成绩列表: ${scores}`);\\nconsole.log(`总分: ${stats.total}`);\\nconsole.log(`平均分: ${stats.average.toFixed(2)}`);\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

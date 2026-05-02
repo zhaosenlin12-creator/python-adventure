@@ -1,0 +1,105 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.579906+00:00",
+  "request": {
+    "lesson_id": "a3bf3b83505d4245a7aabbfed1e0ad6b",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 11,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "a3bf3b83505d4245a7aabbfed1e0ad6b",
+    "nextLessonId": "720c00e40ece40814cc6ceaf2ca7b8a5",
+    "lessonName": "巩固练习：ai、ei、ao、ou",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母ai、ei、ao、ou的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "50b1c61b98f25da320e753f2f0a8cec3",
+        "index": 1,
+        "highlights": [
+          "ai"
+        ],
+        "text": [
+          "请输入按键 [ai]"
+        ],
+        "detail": "学习双拼按键 ai"
+      },
+      {
+        "chapterId": "dc94ef7d6cc3a91310e002452fe4a233",
+        "index": 2,
+        "highlights": [
+          "ei"
+        ],
+        "text": [
+          "请输入按键 [ei]"
+        ],
+        "detail": "学习双拼按键 ei"
+      },
+      {
+        "chapterId": "dcdd65dce06016bc37289e34858899d8",
+        "index": 3,
+        "highlights": [
+          "ao"
+        ],
+        "text": [
+          "请输入按键 [ao]"
+        ],
+        "detail": "学习双拼按键 ao"
+      },
+      {
+        "chapterId": "c2e17e1e83b352bd51309d8bfb1dbfc0",
+        "index": 4,
+        "highlights": [
+          "ou"
+        ],
+        "text": [
+          "请输入按键 [ou]"
+        ],
+        "detail": "学习双拼按键 ou"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "314715253399575a87a3ac0d1881e1e1",
+        "index": 5,
+        "text": [
+          "aiaiaiaieieieieiaoaoaoaoououououaieiaoouaieiaoouaieiaoouaieiaoou"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "ef4b1c407550bb1b9b6f6de75c38d05d",
+        "index": 6,
+        "text": [
+          "海鸥在海边徘徊，朋友买来葡萄和草莓。老师批改作业后，带学生去爬山。"
+        ],
+        "pinyin": "[[\"海\", \"hǎi\"], [\"鸥\", \"ōu\"], [\"在\", \"zài\"], [\"海\", \"hǎi\"], [\"边\", \"biān\"], [\"徘\", \"pái\"], [\"徊\", \"huái\"], [\"，\", \"\"], [\"朋\", \"péng\"], [\"友\", \"yǒu\"], [\"买\", \"mǎi\"], [\"来\", \"lái\"], [\"葡\", \"pú\"], [\"萄\", \"táo\"], [\"和\", \"hé\"], [\"草\", \"cǎo\"], [\"莓\", \"méi\"], [\"。\", \"\"], [\"老\", \"lǎo\"], [\"师\", \"shī\"], [\"批\", \"pī\"], [\"改\", \"gǎi\"], [\"作\", \"zuò\"], [\"业\", \"yè\"], [\"后\", \"hòu\"], [\"，\", \"\"], [\"带\", \"dài\"], [\"学\", \"xué\"], [\"生\", \"shēng\"], [\"去\", \"qù\"], [\"爬\", \"pá\"], [\"山\", \"shān\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

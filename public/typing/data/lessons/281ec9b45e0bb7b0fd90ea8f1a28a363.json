@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.647707+00:00",
+  "request": {
+    "lesson_id": "281ec9b45e0bb7b0fd90ea8f1a28a363",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 567,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "281ec9b45e0bb7b0fd90ea8f1a28a363",
+    "nextLessonId": "72856a02300da14ec7a22704b7d88fe2",
+    "lessonName": "Working with Dad",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "59efe18509ab4a0ec5b616cf37b95e3a",
+        "index": 1,
+        "text": [
+          "Working with Dad\\nOne Saturday morning, my dad got me up early and said to me, \"Can you help me in the workshop today?\"\\n\"Sure!\" I said. I was always willing to help Dad in his workshop. But he never asked me. I thought it was because I am a girl. But today was different. He actually asked for my help!\\nMy dad had a drawing of his plans. We followed the plans and cut some wood. Soon, all the pieces were the right size and length.\\nWe started to put the pieces together. It was a chair! We glued the pieces and used big clamps to hold them in place. Dad said we had to wait 24 hours for the glue to dry.\\nThe next day, we went downstairs. \"Go ahead,\" my dad said.\\nI sat down. It didn't fall apart!\\nI hope I will have a daughter one day. I will teach her how to make her own chair too."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

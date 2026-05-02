@@ -1,0 +1,75 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.416664+00:00",
+  "request": {
+    "lesson_id": "72561f5254dfdfb1cdf47696c9705e50",
+    "course_id": "2ab9dc27a9350a9ff86633c542967f70",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "order": 47,
+    "nextCourseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "courseName": "下排字母",
+    "lessonId": "72561f5254dfdfb1cdf47696c9705e50",
+    "nextLessonId": "708d9e819a63d3ca0c0c81430338038a",
+    "lessonName": "学习c和,",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-learn-ccomma.2d354b7af4.png",
+    "description": "学习c和,",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "ec4d83a73e497d8f3012ab3d153afa71",
+        "index": 1,
+        "highlights": [
+          "c"
+        ],
+        "text": [
+          "请使用左手中指输入按键c"
+        ],
+        "detail": "新的字母键/请输入[c]键"
+      },
+      {
+        "chapterId": "d1c7d6bb3ed6d53e8b940c4c4fe07760",
+        "index": 2,
+        "highlights": [
+          ","
+        ],
+        "text": [
+          "请使用右手中指输入按键,"
+        ],
+        "detail": "新的字母键/请输入[,]键"
+      },
+      {
+        "chapterId": "679e8de732f20ecb075a2322a0f7f516",
+        "index": 3,
+        "highlights": [
+          " "
+        ],
+        "text": [
+          "接下来我们将练习如何输入[c]和[,]，请确保使用正确的指法输入，敲击 键开始"
+        ],
+        "detail": "新的字母键/很好"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "717ca2b76000519099dbb4f55ef07931",
+        "index": 4,
+        "text": [
+          "c,c,cc,,c,cccc,c,,,c,c,ccc,c,c,c"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

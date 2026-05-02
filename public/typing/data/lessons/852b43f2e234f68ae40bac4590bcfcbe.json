@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.277413+00:00",
+  "request": {
+    "lesson_id": "852b43f2e234f68ae40bac4590bcfcbe",
+    "course_id": "b121644211bd274795ee5972ddf997a2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "b121644211bd274795ee5972ddf997a2",
+    "order": 332,
+    "nextCourseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "courseName": "小学必备古诗75首（1）",
+    "lessonId": "852b43f2e234f68ae40bac4590bcfcbe",
+    "nextLessonId": "f156ceb48819a85bc7706e79462e89e6",
+    "lessonName": "绝句",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b046e5d675ec055930284495c2a818db",
+        "index": 1,
+        "text": [
+          "绝句\\n杜甫\\n两个黄鹂鸣翠柳，一行白鹭上青天。\\n窗含西岭千秋雪，门泊东吴万里船。"
+        ],
+        "pinyin": "[[\"绝\", \"jué\"], [\"句\", \"jù\"], [\"\\n\", \"\"], [\"杜\", \"dù\"], [\"甫\", \"fǔ\"], [\"\\n\", \"\"], [\"两\", \"liǎng\"], [\"个\", \"gè\"], [\"黄\", \"huáng\"], [\"鹂\", \"lí\"], [\"鸣\", \"míng\"], [\"翠\", \"cuì\"], [\"柳\", \"liǔ\"], [\"，\", \"\"], [\"一\", \"yī\"], [\"行\", \"háng\"], [\"白\", \"bái\"], [\"鹭\", \"lù\"], [\"上\", \"shàng\"], [\"青\", \"qīng\"], [\"天\", \"tiān\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"窗\", \"chuāng\"], [\"含\", \"hán\"], [\"西\", \"xī\"], [\"岭\", \"lǐng\"], [\"千\", \"qiān\"], [\"秋\", \"qiū\"], [\"雪\", \"xuě\"], [\"，\", \"\"], [\"门\", \"mén\"], [\"泊\", \"bó\"], [\"东\", \"dōng\"], [\"吴\", \"wú\"], [\"万\", \"wàn\"], [\"里\", \"lǐ\"], [\"船\", \"chuán\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

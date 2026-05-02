@@ -1,0 +1,83 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.672827+00:00",
+  "request": {
+    "lesson_id": "d7f60ff45072386bb928f6229b207a2e",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 34,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "d7f60ff45072386bb928f6229b207a2e",
+    "nextLessonId": "fa7762a21719e4a2448537e5f3551a09",
+    "lessonName": "韵母iong、ing",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母iong、ing的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "f3041ebd318cf0782f50ecc94192eaac",
+        "index": 1,
+        "highlights": [
+          "iong"
+        ],
+        "text": [
+          "请输入按键 [iong]"
+        ],
+        "detail": "学习双拼按键 iong"
+      },
+      {
+        "chapterId": "7fe8e7a15f79349c182b0bc22b97216d",
+        "index": 2,
+        "highlights": [
+          "ing"
+        ],
+        "text": [
+          "请输入按键 [ing]"
+        ],
+        "detail": "学习双拼按键 ing"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "e6403b39b4d144e0e10cd8a0b387859e",
+        "index": 3,
+        "text": [
+          "iongiongiongiongingingingingiongingiongingiongingionging"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "94f9589b6a5f2d065db9d72725951209",
+        "index": 4,
+        "text": [
+          "雄鹰迎着狂风飞向苍穹，晶莹的冰凌映着霓虹灯光。年轻英雄胸怀雄心壮志，倾听松涛汹涌回响。"
+        ],
+        "pinyin": "[[\"雄\",\"xióng\"],[\"鹰\",\"yīng\"],[\"迎\",\"yíng\"],[\"着\",\"zhe\"],[\"狂\",\"kuáng\"],[\"风\",\"fēng\"],[\"飞\",\"fēi\"],[\"向\",\"xiàng\"],[\"苍\",\"cāng\"],[\"穹\",\"qióng\"],[\"，\",\"\"],[\"晶\",\"jīng\"],[\"莹\",\"yíng\"],[\"的\",\"de\"],[\"冰\",\"bīng\"],[\"凌\",\"líng\"],[\"映\",\"yìng\"],[\"着\",\"zhe\"],[\"霓\",\"ní\"],[\"虹\",\"hóng\"],[\"灯\",\"dēng\"],[\"光\",\"guāng\"],[\"。\",\"\"],[\"年\",\"nián\"],[\"轻\",\"qīng\"],[\"英\",\"yīng\"],[\"雄\",\"xióng\"],[\"胸\",\"xiōng\"],[\"怀\",\"huái\"],[\"雄\",\"xióng\"],[\"心\",\"xīn\"],[\"壮\",\"zhuàng\"],[\"志\",\"zhì\"],[\"，\",\"\"],[\"倾\",\"qīng\"],[\"听\",\"tīng\"],[\"松\",\"sōng\"],[\"涛\",\"tāo\"],[\"汹\",\"xiōng\"],[\"涌\",\"yǒng\"],[\"回\",\"huí\"],[\"响\",\"xiǎng\"],[\"。\",\"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

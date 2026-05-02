@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:42.704733+00:00",
+  "request": {
+    "lesson_id": "b601afe0ce1e64bf47d5596916c3b689",
+    "course_id": "3d8843cc8aae77f0342b8831e23d52c3",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "3d8843cc8aae77f0342b8831e23d52c3",
+    "order": 300,
+    "nextCourseId": "3b436d88c7785396f3166b0266ec9f71",
+    "courseName": "财务汇算-小数计算",
+    "lessonId": "b601afe0ce1e64bf47d5596916c3b689",
+    "nextLessonId": "47352cd7110920462fa045ca906bfbdf",
+    "lessonName": "小数四则混合二",
+    "icon": "data/assets/daziya.com/key-icon_num-jiadeng.3722a47f6f.png",
+    "description": "数字输入练习 - 小数四则混合二",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "651a7882d876c267bba3209e399f68e6",
+        "index": 1,
+        "text": [
+          "1000.0-\\n500.5+\\n100.8*\\n5.2/\\n10.5-\\n200.6+\\n150.3/\\n3.5*\\n8.2-\\n400.7+\\n80.4/\\n2.5"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

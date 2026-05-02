@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.430575+00:00",
+  "request": {
+    "lesson_id": "dcb5b1c154082612fd5279215caa7a2c",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 72,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "dcb5b1c154082612fd5279215caa7a2c",
+    "nextLessonId": "aee592ca901dae6e05fd99240093f2d2",
+    "lessonName": "KET核心词-55",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第55课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "af56e9a5904084291cfda39fdfa6e7c4",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"roof\",\"pronun\":\"[ruːf]\",\"translation\":\"n. 屋顶；最高处，顶部；最高限度\\nvt. 给…盖屋顶，覆盖\",\"audio\":\"roof.mp3\"},{\"word\":\"room\",\"pronun\":\"[ruːm; rʊm]\",\"translation\":\"n. 房间；空间；余地；机会；房间里所有的人\\nvt. 为…提供住处；租房，合住；投宿，住宿；留…住宿\\nvi. 居住；住宿\",\"audio\":\"room.mp3\"},{\"word\":\"rooster\",\"pronun\":\"[ˈruːstər]\",\"translation\":\"n. 公鸡；狂妄自负的人\",\"audio\":\"rooster.mp3\"},{\"word\":\"rope\",\"pronun\":\"[roʊp]\",\"translation\":\"n. 绳，绳索\\nvt. 捆，绑\\nvi. 拧成绳状\",\"audio\":\"rope.mp3\"},{\"word\":\"round\",\"pronun\":\"[raʊnd]\",\"translation\":\"n. 圆；循环；一回合；圆形物\\nprep. 附近；绕过；大约；在…周围\\nadj. 圆的；完全的；大概的；肥胖的\\nvt. 完成；围捕；绕行；弄圆\\nadv. 在周围；迂回地；朝反方向；挨个\\nvi. 进展；变圆；环行；发胖\",\"audio\":\"round.mp3\"},{\"word\":\"roundabout\",\"pronun\":\"[ˈraʊndəbaʊt]\",\"translation\":\"n. 迂回路线；环状交叉路口\\nadj. 迂回的，绕道的；圆滚滚的\",\"audio\":\"roundabout.mp3\"},{\"word\":\"row\",\"pronun\":\"[roʊ; raʊ]\",\"translation\":\"n. 行，排；划船；街道；吵闹\\nvt. 划船；使……成排\\nvi. 划船；争吵\",\"audio\":\"row.mp3\"},{\"word\":\"rubbish\",\"pronun\":\"[ˈrʌbɪʃ]\",\"translation\":\"n. 垃圾，废物；废话\\nadj. 毫无价值的\",\"audio\":\"rubbish.mp3\"},{\"word\":\"run\",\"pronun\":\"[rʌn]\",\"translation\":\"n. 奔跑；赛跑；趋向；奔跑的路程\\nvt. 管理，经营；运行；参赛\\nvi. 经营；奔跑；运转\",\"audio\":\"run.mp3\"},{\"word\":\"ruin\",\"pronun\":\"[ˈruːɪn]\",\"translation\":\"n. 废墟；毁坏；灭亡\\nvt. 毁灭；使破产\\nvi. 破产；堕落；被毁灭\",\"audio\":\"ruin.mp3\"},{\"word\":\"sad\",\"pronun\":\"[sæd]\",\"translation\":\"adj. 难过的；悲哀的，令人悲痛的；凄惨的，阴郁的（形容颜色）\",\"audio\":\"sad.mp3\"},{\"word\":\"safe\",\"pronun\":\"[seɪf]\",\"translation\":\"n. 保险箱；冷藏室；纱橱\\nadj. 安全的；可靠的；平安的\",\"audio\":\"safe.mp3\"},{\"word\":\"sail\",\"pronun\":\"[seɪl]\",\"translation\":\"n. 帆，篷；航行\\nvi. 航行；启航，开船\\nvt. 航行\",\"audio\":\"sail.mp3\"},{\"word\":\"salad\",\"pronun\":\"[ˈsæləd]\",\"translation\":\"n. 色拉；尤指莴苣\",\"audio\":\"salad.mp3\"},{\"word\":\"sale\",\"pronun\":\"[seɪl]\",\"translation\":\"n. 销售；出售；拍卖；销售额；廉价出售\",\"audio\":\"sale.mp3\"},{\"word\":\"salt\",\"pronun\":\"[sɔːlt]\",\"translation\":\"n. 盐；风趣，刺激性\\nadj. 咸水的；含盐的，咸味的；盐腌的；猥亵的\\nvt. 用盐腌；给…加盐；将盐撒在道路上使冰或雪融化\",\"audio\":\"salt.mp3\"},{\"word\":\"same\",\"pronun\":\"[seɪm]\",\"translation\":\"adj. 相同的；同一的；上述的（通常与the连用）；无变化的\\nadv. 同样地（通常与the连用）\\npron. 同样的事物或人（通常与the连用）\",\"audio\":\"same.mp3\"},{\"word\":\"sand\",\"pronun\":\"[sænd]\",\"translation\":\"n. 沙；沙地；沙洲；沙滩；沙子\\nvt. 撒沙于；以沙掩盖；用砂纸等擦平或磨光某物；使撒沙似地布满；给…掺沙子\\nvi. 被沙堵塞\",\"audio\":\"sand.mp3\"},{\"word\":\"sandcastle\",\"pronun\":\"[ˈsændkæsl]\",\"translation\":\"n. 沙塔\",\"audio\":\"sandcastle.mp3\"},{\"word\":\"sandwich\",\"pronun\":\"[ˈsænwɪtʃ; ˈsænwɪdʒ]\",\"translation\":\"n. 三明治；夹心面包\\nvt. 夹入；挤进；把...做成三明治\",\"audio\":\"sandwich.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

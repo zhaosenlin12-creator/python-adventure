@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.387919+00:00",
+  "request": {
+    "lesson_id": "6c201af92e23a34c1b7657f47493772d",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 634,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "6c201af92e23a34c1b7657f47493772d",
+    "nextLessonId": "27f9abd5bb65129e65411d7a63b1a7cf",
+    "lessonName": " 四年级上-2",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点四年级上 - 第2课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d3469300b6df4248fcbf7674c08fa207",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"storybook\",\"pronun\":\"[ˈstɔːribʊk]\",\"translation\":\"n. 故事书；小说\",\"audio\":\"storybook.mp3\"},{\"word\":\"candy\",\"pronun\":\"[ˈkændi]\",\"translation\":\"n. 糖果（等于sweets）；冰糖（等于sugar candy，rock candy）；毒品\\nadj. 新潮的（服饰）；甜言蜜语的\\nvt. 用糖煮；使结晶为砂糖；美化\\nvi. 糖煮；成为结晶\",\"audio\":\"candy.mp3\"},{\"word\":\"notebook\",\"pronun\":\"[ˈnoʊtbʊk]\",\"translation\":\"n. 笔记本，笔记簿；手册\",\"audio\":\"notebook.mp3\"},{\"word\":\"toy\",\"pronun\":\"[tɔɪ]\",\"translation\":\"n. 玩具；小装饰品；不值钱的东西\\nadj. 作为玩具的；玩物似的\\nvi. 玩弄；调情；随随便便地对待\",\"audio\":\"toy.mp3\"},{\"word\":\"key\",\"pronun\":\"[kiː]\",\"translation\":\"n. （打字机等的）键；关键；钥匙\\nvt. 键入；锁上；调节…的音调；提供线索\\nvi. 使用钥匙\\nadj. 关键的\",\"audio\":\"key.mp3\"},{\"word\":\"wow\",\"pronun\":\"[waʊ]\",\"translation\":\"n. 极大的成功；一鸣惊人之举；魔兽世界(World of Warcraft)；失真\\nint. （表示极大的惊奇或钦佩）哇，呀\",\"audio\":\"wow.mp3\"},{\"word\":\"lost\",\"pronun\":\"[lɔːst]\",\"translation\":\"adj. 失去的；丧失的；迷惑的\\nv. 遗失（lose的过去分词）；失败\",\"audio\":\"lost.mp3\"},{\"word\":\"so much\",\"pronun\":\"[soʊ mʌtʃ]\",\"translation\":\"na. 和…一样多；就只那么多；多少\",\"audio\":\"so_much.mp3\"},{\"word\":\"cute\",\"pronun\":\"[kjuːt]\",\"translation\":\"adj. 可爱的；漂亮的；聪明的，伶俐的\",\"audio\":\"cute.mp3\"},{\"word\":\"strong\",\"pronun\":\"[strɔːŋ]\",\"translation\":\"adj. 坚强的；强壮的；牢固的；擅长的\\nadv. 强劲地；猛烈地\",\"audio\":\"strong.mp3\"},{\"word\":\"friendly\",\"pronun\":\"[ˈfrendli]\",\"translation\":\"adj. 友好的；亲切的；支持的；融洽的，和睦的\\nadv. 友善地；温和地\",\"audio\":\"friendly.mp3\"},{\"word\":\"quiet\",\"pronun\":\"[ˈkwaɪət]\",\"translation\":\"n. 安静；和平\\nadj. 安静的；安定的；不动的；温顺的\\nvt. 使平息；安慰\\nvi. 平静下来\",\"audio\":\"quiet.mp3\"},{\"word\":\"hair\",\"pronun\":\"[her]\",\"translation\":\"n. 头发；毛发；些微\\nadj. 毛发的；护理毛发的；用毛发制成的\\nvt. 除去…的毛发\\nvi. 生长毛发；形成毛状纤维\",\"audio\":\"hair.mp3\"},{\"word\":\"shoe\",\"pronun\":\"[ʃuː]\",\"translation\":\"n. 鞋；蹄铁；外胎\\nvt. 给……穿上鞋；穿……鞋\",\"audio\":\"shoe.mp3\"},{\"word\":\"glasses\",\"pronun\":\"[ˈɡlæsɪz]\",\"translation\":\"n. [轻] 眼镜；玻璃（glass的复数形式）；双筒望远镜\\nv. 把…装入玻璃容器内；给…装上玻璃（glass的第三人称单数形式）\",\"audio\":\"glasses.mp3\"},{\"word\":\"his\",\"pronun\":\"[hɪz; ɪz]\",\"translation\":\"pron. 他的\",\"audio\":\"his.mp3\"},{\"word\":\"or\",\"pronun\":\"[ɔːr]\",\"translation\":\"conj. 或，或者；还是\",\"audio\":\"or.mp3\"},{\"word\":\"right\",\"pronun\":\"[raɪt]\",\"translation\":\"n. 正确；右边；正义\\nadj. 正确的；直接的；右方的\\nvt. 纠正\\nadv. 正确地；恰当地；彻底地\\nvi. 复正；恢复平稳\",\"audio\":\"right.mp3\"},{\"word\":\"hat\",\"pronun\":\"[hæt]\",\"translation\":\"n. 帽子\\nvt. 给……戴上帽子\\nvi. 供应帽子；制造帽子\",\"audio\":\"hat.mp3\"},{\"word\":\"her\",\"pronun\":\"[hər; ɜːr; ər; hɜːr]\",\"translation\":\"pron. 她（she的宾格）；她的（she的所有格）；她（指某个国家；一艘船）\",\"audio\":\"her.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

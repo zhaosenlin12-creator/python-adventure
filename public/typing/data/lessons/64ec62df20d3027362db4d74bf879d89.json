@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.358768+00:00",
+  "request": {
+    "lesson_id": "64ec62df20d3027362db4d74bf879d89",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 181,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "64ec62df20d3027362db4d74bf879d89",
+    "nextLessonId": "702f5ff62dd4875383a944e450096813",
+    "lessonName": "基本SELECT查询",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - 基本SELECT查询",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c755c080261688a14bcebd56f623e3cd",
+        "index": 1,
+        "text": [
+          "-- 查询所有用户信息\\nSELECT * FROM users;\\n\\n-- 查询指定字段\\nSELECT id, name, email FROM users;\\n\\n-- 查询前10条记录\\nSELECT * FROM users LIMIT 10;\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

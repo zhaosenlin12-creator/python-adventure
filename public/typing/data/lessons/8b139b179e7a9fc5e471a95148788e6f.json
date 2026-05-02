@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.777496+00:00",
+  "request": {
+    "lesson_id": "8b139b179e7a9fc5e471a95148788e6f",
+    "course_id": "df7bf8b8c0456926de2c1fac14a741b2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "order": 453,
+    "nextCourseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "courseName": "宋词必备67首（1）",
+    "lessonId": "8b139b179e7a9fc5e471a95148788e6f",
+    "nextLessonId": "e7023aa5c0a34eca196f34c8a2ea70d5",
+    "lessonName": "夏日绝句",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1328337cd75efb968f5bb79135f2cafd",
+        "index": 1,
+        "text": [
+          "夏日绝句\\n李清照\\n生当作人杰，死亦为鬼雄。\\n至今思项羽，不肯过江东。"
+        ],
+        "pinyin": "[[\"夏\", \"xià\"], [\"日\", \"rì\"], [\"绝\", \"jué\"], [\"句\", \"jù\"], [\"\\n\", \"\"], [\"李\", \"lǐ\"], [\"清\", \"qīng\"], [\"照\", \"zhào\"], [\"\\n\", \"\"], [\"生\", \"shēng\"], [\"当\", \"dāng\"], [\"作\", \"zuò\"], [\"人\", \"rén\"], [\"杰\", \"jié\"], [\"，\", \"\"], [\"死\", \"sǐ\"], [\"亦\", \"yì\"], [\"为\", \"wéi\"], [\"鬼\", \"guǐ\"], [\"雄\", \"xióng\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"至\", \"zhì\"], [\"今\", \"jīn\"], [\"思\", \"sī\"], [\"项\", \"xiàng\"], [\"羽\", \"yǔ\"], [\"，\", \"\"], [\"不\", \"bù\"], [\"肯\", \"kěn\"], [\"过\", \"guò\"], [\"江\", \"jiāng\"], [\"东\", \"dōng\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

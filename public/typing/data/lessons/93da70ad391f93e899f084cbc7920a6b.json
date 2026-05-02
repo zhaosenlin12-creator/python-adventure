@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.178309+00:00",
+  "request": {
+    "lesson_id": "93da70ad391f93e899f084cbc7920a6b",
+    "course_id": "9983508511f457b02ddcae4777acab15",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "9983508511f457b02ddcae4777acab15",
+    "order": 130,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "JAVA",
+    "lessonId": "93da70ad391f93e899f084cbc7920a6b",
+    "nextLessonId": "ec020d8e432db86ef252d8683a8f4ec7",
+    "lessonName": "类和对象",
+    "icon": "data/assets/daziya.com/key-icon_key-java.09b827febf.png",
+    "description": "Java编程练习 - 类和对象",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "dc3085e3340d3a06535d14a49fb577ce",
+        "index": 1,
+        "text": [
+          "class Student {\\n    String name;\\n    int age;\\n\\n    Student(String name, int age) {\\n        this.name = name;\\n        this.age = age;\\n    }\\n}\\n\\nclass Main {\\n    public static void main(String[] args) {\\n        Student stu = new Student(\"张三\", 20);\\n\\n        System.out.println(\"学生信息:\");\\n        System.out.println(\"姓名: \" + stu.name);\\n        System.out.println(\"年龄: \" + stu.age);\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "java",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

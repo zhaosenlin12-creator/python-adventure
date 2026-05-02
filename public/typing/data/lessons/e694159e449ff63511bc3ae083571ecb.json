@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.980796+00:00",
+  "request": {
+    "lesson_id": "e694159e449ff63511bc3ae083571ecb",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 414,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "e694159e449ff63511bc3ae083571ecb",
+    "nextLessonId": "fff6d0f118f09340870fb1022fe50b07",
+    "lessonName": "六级词汇正序版-21",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第21课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "76ec4c037d68c2e2c5538d63af0c9db8",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"comparable\",\"pronun\":\"[ˈkɑːmpərəbl]\",\"translation\":\"adj. 可比较的；比得上的\",\"audio\":\"comparable.mp3\"},{\"word\":\"compare\",\"pronun\":\"[kəmˈper]\",\"translation\":\"vi. 相比，匹敌；比较，区别；比拟（常与to连用）\\nvt. 比拟，喻为；[语]构成\\nn. 比较\",\"audio\":\"compare.mp3\"},{\"word\":\"comparison\",\"pronun\":\"[kəmˈpærɪsn]\",\"translation\":\"n. 比较；对照；比喻；比较关系\",\"audio\":\"comparison.mp3\"},{\"word\":\"compartment\",\"pronun\":\"[kəmˈpɑːrtmənt]\",\"translation\":\"n. [建] 隔间；区划；卧车上的小客房\\nvt. 分隔；划分\",\"audio\":\"compartment.mp3\"},{\"word\":\"compatible\",\"pronun\":\"[kəmˈpætəbl]\",\"translation\":\"adj. 兼容的；能共处的；可并立的\",\"audio\":\"compatible.mp3\"},{\"word\":\"compel\",\"pronun\":\"[kəmˈpel]\",\"translation\":\"vt. 强迫，迫使；强使发生\",\"audio\":\"compel.mp3\"},{\"word\":\"compensate\",\"pronun\":\"[ˈkɑːmpenseɪt]\",\"translation\":\"vt. 补偿，赔偿；付报酬\\nvi. 补偿，赔偿；抵消\",\"audio\":\"compensate.mp3\"},{\"word\":\"compete\",\"pronun\":\"[kəmˈpiːt]\",\"translation\":\"vi. 竞争；比赛；对抗\",\"audio\":\"compete.mp3\"},{\"word\":\"competence\",\"pronun\":\"[ˈkɑːmpɪtəns]\",\"translation\":\"n. 能力，胜任；权限；作证能力；足以过舒适生活的收入\",\"audio\":\"competence.mp3\"},{\"word\":\"competition\",\"pronun\":\"[ˌkɑːmpəˈtɪʃn]\",\"translation\":\"n. 竞争；比赛，竞赛\",\"audio\":\"competition.mp3\"},{\"word\":\"competitive\",\"pronun\":\"[kəmˈpetətɪv]\",\"translation\":\"adj. 竞争的；比赛的；求胜心切的\",\"audio\":\"competitive.mp3\"},{\"word\":\"compile\",\"pronun\":\"[kəmˈpaɪl]\",\"translation\":\"vt. 编译；编制；编辑；[图情] 汇编\",\"audio\":\"compile.mp3\"},{\"word\":\"complain\",\"pronun\":\"[kəmˈpleɪn]\",\"translation\":\"vi. 投诉；发牢骚；诉说\\nvt. 抱怨；控诉\",\"audio\":\"complain.mp3\"},{\"word\":\"complaint\",\"pronun\":\"[kəmˈpleɪnt]\",\"translation\":\"n. 抱怨；诉苦；疾病；委屈\",\"audio\":\"complaint.mp3\"},{\"word\":\"complement\",\"pronun\":\"[ˈkɑːmplɪment; ˈkɑːmplɪmənt]\",\"translation\":\"n. 补语；余角；补足物\\nvt. 补足，补助\",\"audio\":\"complement.mp3\"},{\"word\":\"complex\",\"pronun\":\"[kəmˈpleks; ˈkɑːmpleks]\",\"translation\":\"n. 复合体；综合设施\\nadj. 复杂的；合成的\",\"audio\":\"complex.mp3\"},{\"word\":\"complexion\",\"pronun\":\"[kəmˈplekʃn]\",\"translation\":\"n. 肤色；面色；情况；局面\\nvt. 使增添色彩\",\"audio\":\"complexion.mp3\"},{\"word\":\"complicated\",\"pronun\":\"[ˈkɑːmplɪkeɪtɪd]\",\"translation\":\"adj. 难懂的，复杂的\",\"audio\":\"complicated.mp3\"},{\"word\":\"complication\",\"pronun\":\"[ˌkɑːmplɪˈkeɪʃn]\",\"translation\":\"n. 并发症；复杂；复杂化；混乱\",\"audio\":\"complication.mp3\"},{\"word\":\"compliment\",\"pronun\":\"[ˈkɑːmplɪmənt]\",\"translation\":\"n. 恭维；称赞；问候；致意；道贺\\nvt. 恭维；称赞\",\"audio\":\"compliment.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

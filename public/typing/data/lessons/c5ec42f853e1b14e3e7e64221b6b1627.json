@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.186847+00:00",
+  "request": {
+    "lesson_id": "c5ec42f853e1b14e3e7e64221b6b1627",
+    "course_id": "9983508511f457b02ddcae4777acab15",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "9983508511f457b02ddcae4777acab15",
+    "order": 133,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "JAVA",
+    "lessonId": "c5ec42f853e1b14e3e7e64221b6b1627",
+    "nextLessonId": "f653ee2ed01fa104386a4ed1626e2690",
+    "lessonName": "字符串反转",
+    "icon": "data/assets/daziya.com/key-icon_key-java.09b827febf.png",
+    "description": "Java编程练习 - 字符串反转",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9b69c1ed9a907c2dd30fd93b0b875632",
+        "index": 1,
+        "text": [
+          "class Main {\\n    public static String reverseString(String text) {\\n        return new StringBuilder(text).reverse().toString();\\n    }\\n\\n    public static void main(String[] args) {\\n        String original = \"Hello World\";\\n        String reversed = reverseString(original);\\n\\n        System.out.println(\"原字符串: \" + original);\\n        System.out.println(\"反转后: \" + reversed);\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "java",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

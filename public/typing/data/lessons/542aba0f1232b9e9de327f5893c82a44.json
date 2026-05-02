@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.801106+00:00",
+  "request": {
+    "lesson_id": "542aba0f1232b9e9de327f5893c82a44",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 39,
+    "nextCourseId": "ff61770b1da83313ceacb0a08aef6378",
+    "courseName": "Python",
+    "lessonId": "542aba0f1232b9e9de327f5893c82a44",
+    "nextLessonId": "9e2f38378f1c04dde3fa272614232db1",
+    "lessonName": "列表推导式",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - 列表推导式",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5b2a67d6aec78122b6856e37a53851a5",
+        "index": 1,
+        "text": [
+          "# 使用列表推导式创建新列表\\nnumbers = [1, 2, 3, 4, 5]\\n\\n# 创建平方数列表\\nsquares = [x ** 2 for x in numbers]\\n\\n# 筛选偶数\\nevens = [x for x in numbers if x % 2 == 0]\\n\\nprint(f\"原列表: {numbers}\")\\nprint(f\"平方数: {squares}\")\\nprint(f\"偶数: {evens}\")\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

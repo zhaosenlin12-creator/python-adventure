@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.982576+00:00",
+  "request": {
+    "lesson_id": "da378a2d3d8601124539378eb47dcfa5",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 407,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-2",
+    "lessonId": "da378a2d3d8601124539378eb47dcfa5",
+    "nextLessonId": "3e3249e4e0c0efcf4eb7c2ae57ba1f00",
+    "lessonName": "六级词汇正序版-137",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第137课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b37bd66e573a3822829210f9e442c681",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"soil\",\"pronun\":\"[sɔɪl]\",\"translation\":\"n. 土地；土壤；国家；粪便；务农；温床\\nvt. 弄脏；污辱\\nvi. 变脏\",\"audio\":\"soil.mp3\"},{\"word\":\"sort\",\"pronun\":\"[sɔːrt]\",\"translation\":\"n. 种类；方式；品质\\nvt. 将…分类；将…排序；挑选出某物\\nvi. 分类；协调；交往\",\"audio\":\"sort.mp3\"},{\"word\":\"sound\",\"pronun\":\"[saʊnd]\",\"translation\":\"n. 声音，语音；噪音；海峡；吵闹；听力范围；[医] 探条\\nadj. 健全的，健康的；合理的；可靠的；有效彻底的\\nvt. 听（诊）；测量，测…深；使发声；试探；宣告\\nvi. 听起来；发\",\"audio\":\"sound.mp3\"},{\"word\":\"spare\",\"pronun\":\"[sper]\",\"translation\":\"n. 剩余；备用零件\\nvt. 节约，吝惜；饶恕；分出，分让\\nadj. 多余的；瘦的；少量的\\nvi. 饶恕，宽恕；节约\",\"audio\":\"spare.mp3\"},{\"word\":\"spring\",\"pronun\":\"[sprɪŋ]\",\"translation\":\"n. 春天；弹簧；泉水；活力；跳跃\\nadj. 春天的\\nvt. 使跳起；使爆炸；突然提出；使弹开\\nvi. 生长；涌出；跃出；裂开\",\"audio\":\"spring.mp3\"},{\"word\":\"stage\",\"pronun\":\"[steɪdʒ]\",\"translation\":\"n. 阶段；舞台；戏剧；驿站\\nvt. 举行；上演；筹划\\nvi. 举行；适于上演；乘驿车旅行\",\"audio\":\"stage.mp3\"},{\"word\":\"stamp\",\"pronun\":\"[stæmp]\",\"translation\":\"n. 邮票；印记；标志；跺脚\\nvt. 铭记；标出；盖章于…；贴邮票于…；用脚踩踏\\nvi. 跺脚；捣碎；毁掉\",\"audio\":\"stamp.mp3\"},{\"word\":\"stomach\",\"pronun\":\"[ˈstʌmək]\",\"translation\":\"n. 胃；腹部；胃口\\nvt. 忍受；吃下\\nvi. 忍受\",\"audio\":\"stomach.mp3\"},{\"word\":\"student\",\"pronun\":\"[ˈstuːdnt]\",\"translation\":\"n. 学生；学者\",\"audio\":\"student.mp3\"},{\"word\":\"succeed\",\"pronun\":\"[səkˈsiːd]\",\"translation\":\"vi. 成功；继承；继任；兴旺\\nvt. 继承；接替；继…之后\",\"audio\":\"succeed.mp3\"},{\"word\":\"suggest\",\"pronun\":\"[səˈdʒestˌsəɡˈdʒest]\",\"translation\":\"vt. 提议，建议；启发；使人想起；显示；暗示\",\"audio\":\"suggest.mp3\"},{\"word\":\"suit\",\"pronun\":\"[suːt]\",\"translation\":\"n. 诉讼；恳求；套装，西装；一套外衣\\nvt. 适合；使适应\\nvi. 合适；相称\",\"audio\":\"suit.mp3\"},{\"word\":\"sunny\",\"pronun\":\"[ˈsʌni]\",\"translation\":\"adj. 阳光充足的，和煦的；快活的；性情开朗的\",\"audio\":\"sunny.mp3\"},{\"word\":\"table\",\"pronun\":\"[ˈteɪbl]\",\"translation\":\"n. 桌子；表格；平地层\\nvt. 制表；搁置；嵌合\\nadj. 桌子的\",\"audio\":\"table.mp3\"},{\"word\":\"tablet\",\"pronun\":\"[ˈtæblət]\",\"translation\":\"n. 碑；药片；写字板；小块；平板电脑\\nvt. 用碑牌纪念；将(备忘录等)写在板上；将…制成小片或小块\",\"audio\":\"tablet.mp3\"},{\"word\":\"tank\",\"pronun\":\"[tæŋk]\",\"translation\":\"n. 坦克；水槽；池塘\\nvt. 把…贮放在柜内；打败\\nvi. 乘坦克行进\",\"audio\":\"tank.mp3\"},{\"word\":\"tap\",\"pronun\":\"[tæp]\",\"translation\":\"n. 水龙头；轻打\\nvt. 轻敲；轻打；装上嘴子\\nvi. 轻拍；轻击；轻叩\\nvt. 采用，利用\",\"audio\":\"tap.mp3\"},{\"word\":\"ticket\",\"pronun\":\"[ˈtɪkɪt]\",\"translation\":\"vt. 加标签于；指派；对…开出交通违规罚单\",\"audio\":\"ticket.mp3\"},{\"word\":\"tower\",\"pronun\":\"[ˈtaʊər]\",\"translation\":\"n. 塔；高楼；堡垒\\nvi. 高耸；超越\",\"audio\":\"tower.mp3\"},{\"word\":\"treasure\",\"pronun\":\"[ˈtreʒər]\",\"translation\":\"n. 财富，财产；财宝；珍品\\nvt. 珍爱；珍藏\",\"audio\":\"treasure.mp3\"},{\"word\":\"try\",\"pronun\":\"[traɪ]\",\"translation\":\"n. 尝试；努力；试验\\nvt. 试图，努力；试验；审判；考验\\nvi. 尝试；努力；试验\",\"audio\":\"try.mp3\"},{\"word\":\"uniform\",\"pronun\":\"[ˈjuːnɪfɔːrm]\",\"translation\":\"n. 制服\\nadj. 统一的；一致的；相同的；均衡的；始终如一的\\nvt. 使穿制服；使成一样\",\"audio\":\"uniform.mp3\"},{\"word\":\"wage\",\"pronun\":\"[weɪdʒ]\",\"translation\":\"n. 工资；代价；报偿\\nvt. 进行；开展\\nvi. 进行；发动；从事\",\"audio\":\"wage.mp3\"},{\"word\":\"want\",\"pronun\":\"[wɑːnt]\",\"translation\":\"n. 需要；缺乏；贫困；必需品\\nvt. 需要；希望；应该；缺少\\nvi. 需要；缺少\",\"audio\":\"want.mp3\"},{\"word\":\"wind\",\"pronun\":\"[wɪnd]\",\"translation\":\"vi. 缠绕；上发条；吹响号角\\nn. 风；呼吸；气味；卷绕\\nvt. 缠绕；上发条；使弯曲；吹号角；绕住或缠住某人\",\"audio\":\"wind.mp3\"},{\"word\":\"world\",\"pronun\":\"[wɜːrld]\",\"translation\":\"n. 世界；领域；世俗；全人类；物质生活\",\"audio\":\"world.mp3\"},{\"word\":\"wound\",\"pronun\":\"[wuːnd]\",\"translation\":\"n. 创伤，伤口\\nvt. 使受伤\\nvi. 受伤，伤害\",\"audio\":\"wound.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

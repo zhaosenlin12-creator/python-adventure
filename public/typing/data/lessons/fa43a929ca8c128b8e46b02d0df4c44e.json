@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.870789+00:00",
+  "request": {
+    "lesson_id": "fa43a929ca8c128b8e46b02d0df4c44e",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 389,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "fa43a929ca8c128b8e46b02d0df4c44e",
+    "nextLessonId": "afff6489320267f0aa6fe75549f66fe2",
+    "lessonName": "六级词汇正序版-83",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第83课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d3c77fd1f2b5dd55e038b7a182eeebc2",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"prescription\",\"pronun\":\"[prɪˈskrɪpʃn]\",\"translation\":\"n. 药方；指示；惯例\\nadj. 凭处方方可购买的\",\"audio\":\"prescription.mp3\"},{\"word\":\"presentation\",\"pronun\":\"[ˌpriːzenˈteɪʃn]\",\"translation\":\"n. 展示；描述，陈述；介绍；赠送\",\"audio\":\"presentation.mp3\"},{\"word\":\"preserve\",\"pronun\":\"[prɪˈzɜːrv]\",\"translation\":\"n. 保护区；禁猎地；加工成的食品\\nvt. 保存；保护；维持；腌；禁猎\",\"audio\":\"preserve.mp3\"},{\"word\":\"preside\",\"pronun\":\"[prɪˈzaɪd]\",\"translation\":\"vi. 主持，担任会议主席\\nvt. 管理\",\"audio\":\"preside.mp3\"},{\"word\":\"pressure\",\"pronun\":\"[ˈpreʃər]\",\"translation\":\"n. 压力；压迫，[物] 压强\\nvt. 迫使；密封；使……增压\",\"audio\":\"pressure.mp3\"},{\"word\":\"prestige\",\"pronun\":\"[preˈstiːʒ]\",\"translation\":\"n. 威望，声望；声誉\",\"audio\":\"prestige.mp3\"},{\"word\":\"presumably\",\"pronun\":\"[prɪˈzuːməbli]\",\"translation\":\"adv. 大概；推测起来；可假定\",\"audio\":\"presumably.mp3\"},{\"word\":\"presume\",\"pronun\":\"[prɪˈzuːm]\",\"translation\":\"vi. 相信；擅自行为\\nvt. 假定；推测；擅自；意味着\",\"audio\":\"presume.mp3\"},{\"word\":\"pretext\",\"pronun\":\"[ˈpriːtekst]\",\"translation\":\"n. 借口；托辞\\nvt. 以…为借口\",\"audio\":\"pretext.mp3\"},{\"word\":\"prevail\",\"pronun\":\"[prɪˈveɪl]\",\"translation\":\"vi. 盛行，流行；战胜，获胜\",\"audio\":\"prevail.mp3\"},{\"word\":\"prevalence\",\"pronun\":\"[ˈprevələns]\",\"translation\":\"n. 流行；普遍；广泛\",\"audio\":\"prevalence.mp3\"},{\"word\":\"prevalent\",\"pronun\":\"[ˈprevələnt]\",\"translation\":\"adj. 流行的；普遍的，广传的\",\"audio\":\"prevalent.mp3\"},{\"word\":\"preview\",\"pronun\":\"[ˈpriːvjuː]\",\"translation\":\"n. 预览；试映；事先查看\\nvt. 预览；预演；事先查看\",\"audio\":\"preview.mp3\"},{\"word\":\"previous\",\"pronun\":\"[ˈpriːviəs]\",\"translation\":\"adj. 以前的；早先的；过早的\\nadv. 在先；在…以前\",\"audio\":\"previous.mp3\"},{\"word\":\"prey\",\"pronun\":\"[preɪ]\",\"translation\":\"n. 捕食；牺牲者；被捕食的动物\\nvi. 捕食；掠夺；折磨\",\"audio\":\"prey.mp3\"},{\"word\":\"priest\",\"pronun\":\"[priːst]\",\"translation\":\"n. 牧师；神父；教士\\nvt. 使成为神职人员；任命…为祭司\",\"audio\":\"priest.mp3\"},{\"word\":\"primarily\",\"pronun\":\"[praɪˈmerəli]\",\"translation\":\"adv. 首先；主要地，根本上\",\"audio\":\"primarily.mp3\"},{\"word\":\"primary\",\"pronun\":\"[ˈpraɪmeri]\",\"translation\":\"n. 原色；最主要者\\nadj. 主要的；初级的；基本的\",\"audio\":\"primary.mp3\"},{\"word\":\"prime\",\"pronun\":\"[praɪm]\",\"translation\":\"n. 初期；青年；精华；全盛时期\\nadj. 主要的；最好的；基本的\\nvt. 使准备好；填装\\nvi. 作准备\\nadv. 极好地\",\"audio\":\"prime.mp3\"},{\"word\":\"primitive\",\"pronun\":\"[ˈprɪmətɪv]\",\"translation\":\"n. 原始人\\nadj. 原始的，远古的；简单的，粗糙的\",\"audio\":\"primitive.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.229767+00:00",
+  "request": {
+    "lesson_id": "6a7dc4e89b3f4a9d519e2cbfb587d120",
+    "course_id": "be2af5259ed993e6499f4c46d3f7e67e",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "be2af5259ed993e6499f4c46d3f7e67e",
+    "order": 428,
+    "nextCourseId": "be2af5259ed993e6499f4c46d3f7e67e",
+    "courseName": "实战演练-1亿以内金额",
+    "lessonId": "6a7dc4e89b3f4a9d519e2cbfb587d120",
+    "nextLessonId": "1d98b3d01a226f318022efd1603671f0",
+    "lessonName": "随机亿元四",
+    "icon": "data/assets/daziya.com/key-icon_key-practise-star.b4ccc47d6d.png",
+    "description": "数字输入练习 - 随机亿元四",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9896c427b7b470b2a28b637a57295bc4",
+        "index": 1,
+        "text": [
+          "2547365847\\n3658476958\\n4769587169\\n5871698271\\n6982719382\\n7193821493\\n8214932514\\n9325143625\\n1436254736\\n2648476958\\n3759587169\\n4861698271\\n5972719382\\n6183821493\\n7294932514\\n8315143625\\n9426254736\\n1537365847\\n2749587169\\n3851698271\\n4962719382\\n5173821493\\n6284932514\\n7395143625\\n8416254736\\n9527365847\\n1638476958\\n2841698271\\n3952719382\\n4163821493"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

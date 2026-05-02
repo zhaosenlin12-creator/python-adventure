@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.651658+00:00",
+  "request": {
+    "lesson_id": "7dce7b443f3a32c065edd61cf6e28558",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 566,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "7dce7b443f3a32c065edd61cf6e28558",
+    "nextLessonId": "281ec9b45e0bb7b0fd90ea8f1a28a363",
+    "lessonName": "Molly Can’t Fall Asleep",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "0770455041f326d0e55b8fd70fe2d594",
+        "index": 1,
+        "text": [
+          "Molly Can't Fall Asleep\\nLittle Molly goes to bed, but she cannot fall asleep. She sits up. She lies down again. Still, she cannot sleep. It is not fun at all. Molly wants to sleep. What can she do?\\nMommy teaches Molly a trick. It will help her fall asleep. It is fun and easy. What is it? Counting sheep! Close your eyes and try it.\\nImagine a small wall-not too high and not too low— just right for sheep to jump over. Now imagine a flock of sheep. How many are there? Let's count them. Count the sheep as they jump over the wall.\\nOne sheep, two sheep, three sheep, tour...\\nMolly begins to count the sheep. Ten, eleven, twelve...\\nKeep your eyes closed. Keep counting, Molly. Watch the sheep and count.\\nOne hundred, one hundred and one, one hundred and two... Count, count, count. What's that sound? It's the sound of Molly sleeping."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

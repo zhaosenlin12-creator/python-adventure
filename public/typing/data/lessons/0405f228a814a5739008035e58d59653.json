@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.047895+00:00",
+  "request": {
+    "lesson_id": "0405f228a814a5739008035e58d59653",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 96,
+    "nextCourseId": "e13b6bae2990dd699f332f225dd1955b",
+    "courseName": "Javascript",
+    "lessonId": "0405f228a814a5739008035e58d59653",
+    "nextLessonId": "4bbb5112fdca30573ae1b0123efc592d",
+    "lessonName": "数组操作",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - 数组操作",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3cb9452b7eddb059564722bd0c9eb482",
+        "index": 1,
+        "text": [
+          "// 数组的基本操作\\nconst numbers = [1, 2, 3, 4, 5];\\n\\nnumbers.push(6);  // 添加元素\\nnumbers.unshift(0);  // 在开头插入\\nnumbers.splice(numbers.indexOf(3), 1);  // 删除指定元素\\n\\nconsole.log(`数组内容: ${numbers}`);\\nconsole.log(`数组长度: ${numbers.length}`);\\nconsole.log(`最大值: ${Math.max(...numbers)}`);\\nconsole.log(`最小值: ${Math.min(...numbers)}`);\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:33.650123+00:00",
+  "request": {
+    "lesson_id": "499f4a0e66624e356bef7a584bf47992",
+    "course_id": "c34575de8400552068ca0d9da0898f18",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "c34575de8400552068ca0d9da0898f18",
+    "order": 16,
+    "nextCourseId": "c34575de8400552068ca0d9da0898f18",
+    "courseName": "语文课内同步一年级上册",
+    "lessonId": "499f4a0e66624e356bef7a584bf47992",
+    "nextLessonId": "d360fc94278a326c07a60337709852a1",
+    "lessonName": "江南",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "179046372b16b3d0c503e75e0e55b7be",
+        "index": 1,
+        "text": [
+          "江南可采莲，\\n莲叶何田田。\\n鱼戏莲叶间。\\n鱼戏莲叶东，\\n鱼戏莲叶西，\\n鱼戏莲叶南，\\n鱼戏莲叶北。"
+        ],
+        "pinyin": "[[\"江\", \"jiāng\"], [\"南\", \"nán\"], [\"可\", \"kě\"], [\"采\", \"cǎi\"], [\"莲\", \"lián\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"莲\", \"lián\"], [\"叶\", \"yè\"], [\"何\", \"hé\"], [\"田\", \"tián\"], [\"田\", \"tián\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"鱼\", \"yú\"], [\"戏\", \"xì\"], [\"莲\", \"lián\"], [\"叶\", \"yè\"], [\"间\", \"jiān\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"鱼\", \"yú\"], [\"戏\", \"xì\"], [\"莲\", \"lián\"], [\"叶\", \"yè\"], [\"东\", \"dōng\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"鱼\", \"yú\"], [\"戏\", \"xì\"], [\"莲\", \"lián\"], [\"叶\", \"yè\"], [\"西\", \"xī\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"鱼\", \"yú\"], [\"戏\", \"xì\"], [\"莲\", \"lián\"], [\"叶\", \"yè\"], [\"南\", \"nán\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"鱼\", \"yú\"], [\"戏\", \"xì\"], [\"莲\", \"lián\"], [\"叶\", \"yè\"], [\"北\", \"běi\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

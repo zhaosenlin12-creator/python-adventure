@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:34.935246+00:00",
+  "request": {
+    "lesson_id": "f1ec1b0796d4fedacdbeb0c7692c30d4",
+    "course_id": "6438643cafd3c77c5d22d3a650b739e3",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "6438643cafd3c77c5d22d3a650b739e3",
+    "order": 270,
+    "nextCourseId": "6438643cafd3c77c5d22d3a650b739e3",
+    "courseName": "语文课内同步六年级上册",
+    "lessonId": "f1ec1b0796d4fedacdbeb0c7692c30d4",
+    "nextLessonId": "215a63934462530bc7b10cb5972a2141",
+    "lessonName": "浪淘沙（其一）",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3277ed105f290b28161a9363c17448a3",
+        "index": 1,
+        "text": [
+          "九曲黄河万里沙，浪淘风簸自天涯。如今直上银河去，同到牵牛织女家。"
+        ],
+        "pinyin": "[[\"九\", \"jiǔ\"], [\"曲\", \"qū\"], [\"黄\", \"huáng\"], [\"河\", \"hé\"], [\"万\", \"wàn\"], [\"里\", \"lǐ\"], [\"沙\", \"shā\"], [\"，\", \"\"], [\"浪\", \"làng\"], [\"淘\", \"táo\"], [\"风\", \"fēng\"], [\"簸\", \"bǒ\"], [\"自\", \"zì\"], [\"天\", \"tiān\"], [\"涯\", \"yá\"], [\"。\", \"\"], [\"如\", \"rú\"], [\"今\", \"jīn\"], [\"直\", \"zhí\"], [\"上\", \"shàng\"], [\"银\", \"yín\"], [\"河\", \"hé\"], [\"去\", \"qù\"], [\"，\", \"\"], [\"同\", \"tóng\"], [\"到\", \"dào\"], [\"牵\", \"qiān\"], [\"牛\", \"niú\"], [\"织\", \"zhī\"], [\"女\", \"nǚ\"], [\"家\", \"jiā\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

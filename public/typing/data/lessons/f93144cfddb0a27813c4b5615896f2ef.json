@@ -1,0 +1,72 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.728341+00:00",
+  "request": {
+    "lesson_id": "f93144cfddb0a27813c4b5615896f2ef",
+    "course_id": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "order": 50,
+    "nextCourseId": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "courseName": "声母组合练习",
+    "lessonId": "f93144cfddb0a27813c4b5615896f2ef",
+    "nextLessonId": "90e2fb83a7dd9f5b84e1b5f4845e7a29",
+    "lessonName": "声母组合m",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "练习声母m与各韵母的组合",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "198baff2e44b318c863f393150d291d7",
+        "index": 1,
+        "highlights": [
+          "m"
+        ],
+        "text": [
+          "请输入按键 [m]"
+        ],
+        "detail": "学习双拼按键 m"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "18356a3162ec7c2acf645aaa128bba35",
+        "index": 2,
+        "text": [
+          "mmmmmmmm"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "23cb371474c7a3a2ec57eab9939484b6",
+        "index": 3,
+        "text": [
+          "妈妈买米，妹妹磨面。门没关，猫慢慢进门。明天没雨，美满美满。梦里面，马儿鸣叫，木棉花开满门前。忙吗？忙，忙得很美满。"
+        ],
+        "pinyin": "[[\"妈\", \"mā\"], [\"妈\", \"ma\"], [\"买\", \"mǎi\"], [\"米\", \"mǐ\"], [\"，\", \"\"], [\"妹\", \"mèi\"], [\"妹\", \"mei\"], [\"磨\", \"mó\"], [\"面\", \"miàn\"], [\"。\", \"\"], [\"门\", \"mén\"], [\"没\", \"méi\"], [\"关\", \"guān\"], [\"，\", \"\"], [\"猫\", \"māo\"], [\"慢\", \"màn\"], [\"慢\", \"man\"], [\"进\", \"jìn\"], [\"门\", \"mén\"], [\"。\", \"\"], [\"明\", \"míng\"], [\"天\", \"tiān\"], [\"没\", \"méi\"], [\"雨\", \"yǔ\"], [\"，\", \"\"], [\"美\", \"měi\"], [\"满\", \"mǎn\"], [\"美\", \"měi\"], [\"满\", \"mǎn\"], [\"。\", \"\"], [\"梦\", \"mèng\"], [\"里\", \"lǐ\"], [\"面\", \"miàn\"], [\"，\", \"\"], [\"马\", \"mǎ\"], [\"儿\", \"ér\"], [\"鸣\", \"míng\"], [\"叫\", \"jiào\"], [\"，\", \"\"], [\"木\", \"mù\"], [\"棉\", \"mián\"], [\"花\", \"huā\"], [\"开\", \"kāi\"], [\"满\", \"mǎn\"], [\"门\", \"mén\"], [\"前\", \"qián\"], [\"。\", \"\"], [\"忙\", \"máng\"], [\"吗\", \"ma\"], [\"？\", \"\"], [\"忙\", \"máng\"], [\"，\", \"\"], [\"忙\", \"máng\"], [\"得\", \"de\"], [\"很\", \"hěn\"], [\"美\", \"měi\"], [\"满\", \"mǎn\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 10,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.532895+00:00",
+  "request": {
+    "lesson_id": "bf3c374077924cb8e210e306e776e41c",
+    "course_id": "fa03ede610a7cc0a487ff4fca5942e36",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "fa03ede610a7cc0a487ff4fca5942e36",
+    "order": 292,
+    "nextCourseId": "fa03ede610a7cc0a487ff4fca5942e36",
+    "courseName": "汉字四级",
+    "lessonId": "bf3c374077924cb8e210e306e776e41c",
+    "nextLessonId": "a808f96c7c7cdaa9b34e23eb849252a8",
+    "lessonName": "\t 游戏：英文单词",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-duck.b036f0ad8f.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "93944575562b3f370d15c089d4b89b8e",
+        "index": 1,
+        "text": [
+          "otherwise anniversary people holding people clothes unnecessary headache unnecessary freedom mistake"
+        ],
+        "contentType": 3,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 1,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

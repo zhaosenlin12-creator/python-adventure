@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.609945+00:00",
+  "request": {
+    "lesson_id": "81d5775bce5fd19542a1bc4ac5f4741b",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 113,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "81d5775bce5fd19542a1bc4ac5f4741b",
+    "nextLessonId": "f18bedc0ab173e697b3c46b0f8feb05f",
+    "lessonName": "KET核心词-41",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第41课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2e9ef9759d15f40efd36fd51678a6b5b",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"million\",\"pronun\":\"[ˈmɪljən]\",\"translation\":\"n. 百万；无数\\nadj. 百万的；无数的\\nnum. 百万\",\"audio\":\"million.mp3\"},{\"word\":\"mind\",\"pronun\":\"[maɪnd]\",\"translation\":\"n. 理智，精神；意见；智力；记忆力\\nvt. 介意；专心于；照料\\nvi. 介意；注意\",\"audio\":\"mind.mp3\"},{\"word\":\"mineral\",\"pronun\":\"[ˈmɪnərəl]\",\"translation\":\"n. 矿物；（英）矿泉水；无机物；苏打水（常用复数表示）\\nadj. 矿物的；矿质的\",\"audio\":\"mineral.mp3\"},{\"word\":\"minimum\",\"pronun\":\"[ˈmɪnɪməm]\",\"translation\":\"n. 最小值；最低限度；最小化；最小量\\nadj. 最小的；最低的\",\"audio\":\"minimum.mp3\"},{\"word\":\"minus\",\"pronun\":\"[ˈmaɪnəs]\",\"translation\":\"prep. 减，减去\\nn. 负号，减号；不足；负数\\nadj. 减的；负的\",\"audio\":\"minus.mp3\"},{\"word\":\"minute\",\"pronun\":\"[ˈmɪnɪt]\",\"translation\":\"n. 分，分钟；片刻，一会儿；备忘录，笔记；会议记录\\nvt. 将…记录下来\\nadj. 微小的，详细的 [maɪˈnjuːt; US -ˈnuːt; maɪˋnut]\",\"audio\":\"minute.mp3\"},{\"word\":\"mirror\",\"pronun\":\"[ˈmɪrər]\",\"translation\":\"n. 镜子；真实的写照；榜样\\nvt. 反射；反映\",\"audio\":\"mirror.mp3\"},{\"word\":\"miss\",\"pronun\":\"[mɪs]\",\"translation\":\"n. 女士，小姐，年轻未婚女子\\nvt. 错过，想念，缺（勤）\",\"audio\":\"miss.mp3\"},{\"word\":\"miss\",\"pronun\":\"[mɪs]\",\"translation\":\"n. 女士，小姐，年轻未婚女子\\nvt. 错过，想念，缺（勤）\",\"audio\":\"miss.mp3\"},{\"word\":\"mistake\",\"pronun\":\"[mɪˈsteɪk]\",\"translation\":\"n. 错误；误会；过失\\nvt. 弄错；误解\\nvi. 弄错；误解\",\"audio\":\"mistake.mp3\"},{\"word\":\"mix\",\"pronun\":\"[mɪks]\",\"translation\":\"vt. 配制；混淆；使混和；使结交\\nvi. 参与；相混合；交往\\nn. 混合；混合物；混乱\",\"audio\":\"mix.mp3\"},{\"word\":\"mobile\",\"pronun\":\"[ˈmoʊbl]\",\"translation\":\"adj. 可移动的；机动的；易变的；非固定的\\nn. 运动物体\",\"audio\":\"mobile.mp3\"},{\"word\":\"model\",\"pronun\":\"[ˈmɑːdl]\",\"translation\":\"n. 模型；典型；模范；模特儿；样式\\nvt. 模拟；塑造；模仿\\nvi. 做模型；做模特儿\\nadj. 模范的；作模型用的\",\"audio\":\"model.mp3\"},{\"word\":\"modern\",\"pronun\":\"[ˈmɑːdərn]\",\"translation\":\"adj. 现代的，近代的；时髦的\\nn. 现代人；有思想的人\",\"audio\":\"modern.mp3\"},{\"word\":\"moment\",\"pronun\":\"[ˈmoʊmənt]\",\"translation\":\"n. 片刻，瞬间，时刻；重要，契机\",\"audio\":\"moment.mp3\"},{\"word\":\"money\",\"pronun\":\"[ˈmʌni]\",\"translation\":\"n. 钱；货币；财富\",\"audio\":\"money.mp3\"},{\"word\":\"monkey\",\"pronun\":\"[ˈmʌŋki]\",\"translation\":\"n. 猴子；顽童\\nvi. 胡闹；捣蛋\\nvt. 嘲弄\",\"audio\":\"monkey.mp3\"},{\"word\":\"monster\",\"pronun\":\"[ˈmɑːnstər]\",\"translation\":\"n. 怪物；巨人，巨兽；残忍的人\\nadj. 巨大的，庞大的\",\"audio\":\"monster.mp3\"},{\"word\":\"month\",\"pronun\":\"[mʌnθ]\",\"translation\":\"n. 月，一个月的时间\",\"audio\":\"month.mp3\"},{\"word\":\"moon\",\"pronun\":\"[muːn]\",\"translation\":\"n. 月亮；月球；月光；卫星\\nvi. 闲荡；出神\\nvt. 虚度\",\"audio\":\"moon.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

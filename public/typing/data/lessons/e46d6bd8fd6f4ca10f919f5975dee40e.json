@@ -1,0 +1,75 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.507066+00:00",
+  "request": {
+    "lesson_id": "e46d6bd8fd6f4ca10f919f5975dee40e",
+    "course_id": "2ab9dc27a9350a9ff86633c542967f70",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "order": 58,
+    "nextCourseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "courseName": "下排字母",
+    "lessonId": "e46d6bd8fd6f4ca10f919f5975dee40e",
+    "nextLessonId": "371d3959c522212eed59222575ead588",
+    "lessonName": "学习b和n",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-learn-bn.9adc2d3563.png",
+    "description": "学习b和n",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "214038935c5df0d16f8ee3b9fda08169",
+        "index": 1,
+        "highlights": [
+          "b"
+        ],
+        "text": [
+          "请使用左手食指输入按键b"
+        ],
+        "detail": "新的字母键/请输入[b]键"
+      },
+      {
+        "chapterId": "3f7bee489ccd3d7f1ee910f71db76ab8",
+        "index": 2,
+        "highlights": [
+          "n"
+        ],
+        "text": [
+          "请使用右手食指输入按键n"
+        ],
+        "detail": "新的字母键/请输入[n]键"
+      },
+      {
+        "chapterId": "0eb2e9723ee4a0e9fd4c13d47df35e6c",
+        "index": 3,
+        "highlights": [
+          " "
+        ],
+        "text": [
+          "接下来我们将练习如何输入[b]和[n]，请确保使用正确的指法输入，敲击 键开始"
+        ],
+        "detail": "新的字母键/很好"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "d1d0cab2152a438918c5c815b3bb94a0",
+        "index": 4,
+        "text": [
+          "bnbnbbnnbbbnnnbnnnbnnbnbnbnbnbnn"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

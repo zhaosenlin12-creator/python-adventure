@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.601549+00:00",
+  "request": {
+    "lesson_id": "56a11c766fa73359e12b5ed9baf06a24",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 555,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "56a11c766fa73359e12b5ed9baf06a24",
+    "nextLessonId": "437948759ad024aed8194124f7136a13",
+    "lessonName": "The Picture",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8badb77d3666683d67fa9b32d2d56998",
+        "index": 1,
+        "text": [
+          "The Picture\\nMy uncle took a picture during his trip to Asia. It was taken on the sidewalk of a busy street.\\nIn the picture is a boy with a pencil and a notebook.\\nHe is working on his homework. There is no desk and no chair. He is using a stool as his desk.\\nAround the boy are his father and mother. The father is pointing to the book, trying to help. The mother is smiling and watching them closely. Beside them is their family business—a bicycle repair stand.\\nIt seems that the parents do not have much education.\\nBut you can see that they care strongly about their son's school work. Their eyes are filled with hope.\\nBicycles, cars, buses and people are passing by in the picture. But this family is not disturbed by the noise.\\nTo the family, the son's studies seem to be the centre of the world.\\nI was really touched by this picture."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

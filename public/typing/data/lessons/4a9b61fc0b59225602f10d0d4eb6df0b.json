@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.273305+00:00",
+  "request": {
+    "lesson_id": "4a9b61fc0b59225602f10d0d4eb6df0b",
+    "course_id": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "order": 473,
+    "nextCourseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "courseName": "英语每日故事（初级）1-31",
+    "lessonId": "4a9b61fc0b59225602f10d0d4eb6df0b",
+    "nextLessonId": "cafd535ec36ee52e5ad4054886abea56",
+    "lessonName": "A Day at the Beach",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6eeb826262257d0928703b60f6b5e5ee",
+        "index": 1,
+        "text": [
+          "Today, I'm at a beach with my family.\\nThe sun is shining. The sky is blue. The water is blue. The sand is brown and hot.\\nMy brother and I make a castle in the sand. My father helps us build the castle. My mother finds beautiful shells for us to put on top of our castle.\\nIt is a great day at the beach!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

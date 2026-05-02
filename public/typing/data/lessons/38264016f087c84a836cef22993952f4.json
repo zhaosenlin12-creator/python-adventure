@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.375199+00:00",
+  "request": {
+    "lesson_id": "38264016f087c84a836cef22993952f4",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 633,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "38264016f087c84a836cef22993952f4",
+    "nextLessonId": "6c201af92e23a34c1b7657f47493772d",
+    "lessonName": " 四年级上-1",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点四年级上 - 第1课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "93ca526de12ff407e4e281171fd664be",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"classroom\",\"pronun\":\"[ˈklæsruːm; ˈklæsrʊm]\",\"translation\":\"n. 教室\",\"audio\":\"classroom.mp3\"},{\"word\":\"window\",\"pronun\":\"[ˈwɪndoʊ]\",\"translation\":\"n. 窗；窗口；窗户\",\"audio\":\"window.mp3\"},{\"word\":\"blackboard\",\"pronun\":\"[ˈblækbɔːrd]\",\"translation\":\"n. 黑板\",\"audio\":\"blackboard.mp3\"},{\"word\":\"light\",\"pronun\":\"[laɪt]\",\"translation\":\"n. 光；光线；灯；打火机；领悟；浅色；天窗\\nadj. 轻的；浅色的；明亮的；轻松的；容易的；清淡的\\nvi. 点着；变亮；着火\\nvt. 照亮；点燃；着火\\nadv. 轻地；清楚地；轻便地\",\"audio\":\"light.mp3\"},{\"word\":\"picture\",\"pronun\":\"[ˈpɪktʃər]\",\"translation\":\"n. 照片，图画；影片；景色；化身\\nvt. 画；想像；描写\",\"audio\":\"picture.mp3\"},{\"word\":\"door\",\"pronun\":\"[dɔːr]\",\"translation\":\"n. 门；家，户；门口；通道\",\"audio\":\"door.mp3\"},{\"word\":\"teacher's desk\",\"pronun\":\"\",\"translation\":\"讲台；讲桌；讲台桌\",\"audio\":\"teacher_s_desk.mp3\"},{\"word\":\"computer\",\"pronun\":\"[kəmˈpjuːtər]\",\"translation\":\"n. 计算机；电脑；电子计算机\",\"audio\":\"computer.mp3\"},{\"word\":\"fan\",\"pronun\":\"[fæn]\",\"translation\":\"n. 迷；风扇；爱好者\\nvt. 煽动；刺激；吹拂\\nvi. 成扇形散开；飘动\",\"audio\":\"fan.mp3\"},{\"word\":\"wall\",\"pronun\":\"[wɔːl]\",\"translation\":\"n. 墙壁，围墙；似墙之物\\nadj. 墙壁的\\nvt. 用墙围住，围以墙\",\"audio\":\"wall.mp3\"},{\"word\":\"floor\",\"pronun\":\"[flɔːr]\",\"translation\":\"n. 地板，地面；楼层；基底；议员席\\nvt. 铺地板；打倒，击倒；（被困难）难倒\",\"audio\":\"floor.mp3\"},{\"word\":\"really\",\"pronun\":\"[ˈriːəli]\",\"translation\":\"adv. 实际上，事实上；真正地，真实地；真的吗？（表语气）\",\"audio\":\"really.mp3\"},{\"word\":\"near\",\"pronun\":\"[nɪr]\",\"translation\":\"adj. 近的；亲近的；近似的\\nadv. 近；接近\\nprep. 靠近；近似于\",\"audio\":\"near.mp3\"},{\"word\":\"TV\",\"pronun\":\"[ˌtiː ˈviː]\",\"translation\":\"abbr. 电视（television）\",\"audio\":\"TV.mp3\"},{\"word\":\"clean\",\"pronun\":\"[kliːn]\",\"translation\":\"n. 打扫\\nadj. 清洁的，干净的；清白的\\nvt. 使干净\\nvi. 打扫，清扫\\nadv. 完全地\",\"audio\":\"clean.mp3\"},{\"word\":\"help\",\"pronun\":\"[help]\",\"translation\":\"n. 帮助；补救办法；帮忙者；有益的东西\\nvt. 帮助；促进；治疗；补救\\nvi. 帮助；有用；招待\",\"audio\":\"help.mp3\"},{\"word\":\"schoolbag\",\"pronun\":\"[ˈskuːlˌbæɡ]\",\"translation\":\"n. 书包\",\"audio\":\"schoolbag.mp3\"},{\"word\":\"maths book\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"maths_book.mp3\"},{\"word\":\"English book\",\"pronun\":\"\",\"translation\":\"英语书；英文书；数学书\",\"audio\":\"English_book.mp3\"},{\"word\":\"Chinese book\",\"pronun\":\"\",\"translation\":\"语文书；中文书；英语书\",\"audio\":\"Chinese_book.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.168576+00:00",
+  "request": {
+    "lesson_id": "e83a86bedd309630956aa121a7ddb18e",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 451,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "e83a86bedd309630956aa121a7ddb18e",
+    "nextLessonId": "5600a3bda1a09cb01086f07008bda3cb",
+    "lessonName": "六级词汇正序版-132",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第132课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b43930fa9c5dd1130f3c736e2b259cb7",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"course\",\"pronun\":\"[kɔːrs]\",\"translation\":\"n. 科目；课程；过程；进程；道路；路线，航向；一道菜\\nvt. 追赶；跑过\\nvi. 指引航线；快跑\",\"audio\":\"course.mp3\"},{\"word\":\"crop\",\"pronun\":\"[krɑːp]\",\"translation\":\"n. 产量；农作物；庄稼；平头\\nvt. 种植；收割；修剪；剪短\\nvi. 收获\",\"audio\":\"crop.mp3\"},{\"word\":\"custom\",\"pronun\":\"[ˈkʌstəm]\",\"translation\":\"n. 习惯，惯例；风俗；海关，关税；经常光顾；[总称]（经常性的）顾客\\nadj. （衣服等）定做的，定制的\",\"audio\":\"custom.mp3\"},{\"word\":\"deal\",\"pronun\":\"[diːl]\",\"translation\":\"n. 交易；（美）政策；待遇；份量\\nvi. 处理；讨论；对待；做生意\\nvt. 处理；给予；分配；发牌\",\"audio\":\"deal.mp3\"},{\"word\":\"deed\",\"pronun\":\"[diːd]\",\"translation\":\"n. 行动；功绩；证书；[法] 契据\\nvt. 立契转让\",\"audio\":\"deed.mp3\"},{\"word\":\"degree\",\"pronun\":\"[dɪˈɡriː]\",\"translation\":\"n. 程度，等级；度；学位；阶层\",\"audio\":\"degree.mp3\"},{\"word\":\"deliver\",\"pronun\":\"[dɪˈlɪvər]\",\"translation\":\"n. 投球\\nvt. 交付；发表；递送；释放；给予（打击）；给…接生\\nvi. 实现；传送；履行；投递\",\"audio\":\"deliver.mp3\"},{\"word\":\"description\",\"pronun\":\"[dɪˈskrɪpʃn]\",\"translation\":\"n. 描述，描写；类型；说明书\",\"audio\":\"description.mp3\"},{\"word\":\"desert\",\"pronun\":\"[ˈdezərt; dɪˈzɜːrt]\",\"translation\":\"n. 沙漠；荒原；应得的赏罚\\nvt. 遗弃；放弃；逃跑\\nadj. 沙漠的；荒凉的；不毛的\\nvi. 遗弃；开小差；逃掉\",\"audio\":\"desert.mp3\"},{\"word\":\"dividend\",\"pronun\":\"[ˈdɪvɪdend]\",\"translation\":\"n. 红利；股息；[数] 被除数；奖金\",\"audio\":\"dividend.mp3\"},{\"word\":\"edge\",\"pronun\":\"[edʒ]\",\"translation\":\"n. 边缘；优势；刀刃；锋利\\nvt. 使锐利；将…开刃；给…加上边\\nvi. 缓缓移动；侧着移动\",\"audio\":\"edge.mp3\"},{\"word\":\"employ\",\"pronun\":\"[ɪmˈplɔɪ]\",\"translation\":\"n. 使用；雇用\\nvt. 使用，采用；雇用；使忙于，使从事于\",\"audio\":\"employ.mp3\"},{\"word\":\"even\",\"pronun\":\"[ˈiːvn]\",\"translation\":\"adj. [数] 偶数的；平坦的；相等的\\nadv. 甚至；即使；还；实际上\\nvt. 使平坦；使相等\\nvi. 变平；变得可比较；成为相等\",\"audio\":\"even.mp3\"},{\"word\":\"express\",\"pronun\":\"[ɪkˈspres]\",\"translation\":\"n. 快车，快递，专使；捷运公司\\nvt. 表达；快递\\nadj. 明确的；迅速的；专门的\",\"audio\":\"express.mp3\"},{\"word\":\"fair\",\"pronun\":\"[fer]\",\"translation\":\"n. 展览会；市集；美人\\nadj. 公平的；美丽的，白皙的；[气象] 晴朗的\\nvi. 转晴\\nadv. 公平地；直接地；清楚地\",\"audio\":\"fair.mp3\"},{\"word\":\"familiar\",\"pronun\":\"[fəˈmɪliər]\",\"translation\":\"n. 常客；密友\\nadj. 熟悉的；常见的；亲近的\",\"audio\":\"familiar.mp3\"},{\"word\":\"file\",\"pronun\":\"[faɪl]\",\"translation\":\"n. 文件；档案；文件夹；锉刀\\nvt. 提出；锉；琢磨；把…归档\\nvi. 列队行进；用锉刀锉\",\"audio\":\"file.mp3\"},{\"word\":\"film\",\"pronun\":\"[fɪlm]\",\"translation\":\"n. 电影；薄膜；胶卷；轻烟\\nvt. 在…上覆以薄膜；把…拍成电影\\nvi. 摄制电影；生薄膜；变得朦胧\",\"audio\":\"film.mp3\"},{\"word\":\"fine\",\"pronun\":\"[faɪn]\",\"translation\":\"n. 罚款\\nadj. 好的；优良的；细小的，精美的；健康的；晴朗的\\nvt. 罚款；澄清\\nadv. 很好地；精巧地\",\"audio\":\"fine.mp3\"},{\"word\":\"firm\",\"pronun\":\"[fɜːrm]\",\"translation\":\"n. 公司；商号\\nadj. 坚定的；牢固的；严格的；结实的\\nvt. 使坚定；使牢固\\nadv. 稳固地\\nvi. 变坚实；变稳固\",\"audio\":\"firm.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

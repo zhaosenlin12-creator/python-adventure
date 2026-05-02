@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.961516+00:00",
+  "request": {
+    "lesson_id": "c1dc70b9418c84a4637a4f3fbd93804a",
+    "course_id": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "order": 192,
+    "nextCourseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "courseName": "小升初必备单词",
+    "lessonId": "c1dc70b9418c84a4637a4f3fbd93804a",
+    "nextLessonId": "22e19bc70390150f923573c8e609527b",
+    "lessonName": "A",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6643e51a33e02c1daed009ca13ff805a",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"a\",\"pronun\":\"[ei]\",\"translation\":\"art. \\u4e00; \\u4e00\\u4e2a; \\u4ef6\"},{\"word\":\"able\",\"pronun\":\"[\\u02c8eibl]\",\"translation\":\"adj. \\u80fd; \\u80fd\\u591f; \\u6709\\u80fd\\u529b\\u7684; \\u80fd\\u5e72...\"},{\"word\":\"act\",\"pronun\":\"[\\u00e6kt]\",\"translation\":\"v. \\u884c\\u52a8; \\u505a\\u52a8\\u4f5c vt. \\u626e\\u6f14 vi...\"},{\"word\":\"adult\",\"pronun\":\"[\\u02c8\\u00e6d\\u028clt]\",\"translation\":\"adj. \\u6210\\u5e74\\u7684; \\u6210\\u719f\\u7684; \\u5145\\u5206\\u957f\\u6210\\u7684...\"},{\"word\":\"afternoon\",\"pronun\":\"[\\u02cc\\u0251:ft\\u0259\\u02c8nu:n]\",\"translation\":\"n. \\u4e0b\\u5348; \\u5348\\u540e\"},{\"word\":\"age\",\"pronun\":\"[eid\\u0292]\",\"translation\":\"v. \\u53d8\\u8001; \\u8001\\u5e74; \\u957f\\u65f6\\u95f4; (\\u4f7f)\\u53d8...\"},{\"word\":\"air\",\"pronun\":\"[e\\u0259(r)]\",\"translation\":\"v. \\u667e; \\u667e\\u5e72; \\u5fae\\u98ce; \\u53e3\\u6c14 vt....\"},{\"word\":\"alive\",\"pronun\":\"[\\u0259\\u02c8laiv]\",\"translation\":\"adj. \\u6d3b\\u7740\\u7684; \\u5b58\\u5728\\u7684; \\u6d3b\\u8dc3\\u7684; ...\"},{\"word\":\"all\",\"pronun\":\"[\\u0254:l]\",\"translation\":\"adj. \\u4e00\\u5207\\u7684; \\u6240\\u6709\\u7684; \\u5168\\u90e8\\u7684 p...\"},{\"word\":\"always\",\"pronun\":\"[\\u02c8\\u0254:lweiz]\",\"translation\":\"adv. \\u603b\\u662f; \\u4e00\\u76f4\"},{\"word\":\"and\",\"pronun\":\"[\\u00e6nd]\",\"translation\":\"conj. \\u548c; \\u4e0e\"},{\"word\":\"angry\",\"pronun\":\"[\\u02c8\\u00e6\\u014b\\u0261ri]\",\"translation\":\"adj. \\u751f\\u6c14\\u7684; \\u6124\\u6012\\u7684\"},{\"word\":\"answer\",\"pronun\":\"[\\u02c8\\u0251:ns\\u0259]\",\"translation\":\"v. \\u56de\\u7b54; \\u54cd\\u5e94; \\u7b26\\u5408; \\u89e3\\u7b54 n....\"},{\"word\":\"apple\",\"pronun\":\"[\\u02c8\\u00e6pl]\",\"translation\":\"n. \\u82f9\\u679c; \\u82f9\\u679c\\u6811\"},{\"word\":\"are\",\"pronun\":\"[\\u0251:]\",\"translation\":\"v. \\u662f(be\\u7684\\u7b2c\\u4e8c\\u4eba\\u79f0\\u5355\\u6570\\u73b0\\u5728\\u65f6)\"},{\"word\":\"arrive\",\"pronun\":\"[\\u0259\\u02c8raiv]\",\"translation\":\"v. \\u5230\\u8fbe; \\u6765\\u4e34\"},{\"word\":\"ask\",\"pronun\":\"[\\u0251:sk]\",\"translation\":\"v. \\u95ee\\uff1a\\u8981\\u6c42 vt. \\u95ee; \\u8be2\\u95ee; \\u8bf7...\"},{\"word\":\"asleep\",\"pronun\":\"[\\u0259\\u02c8sli:p]\",\"translation\":\"adj. \\u7761\\u7740\\u7684; \\u719f\\u7761\\u7684\"},{\"word\":\"at\",\"pronun\":\"[\\u00e6t]\",\"translation\":\"prep. \\u5728\\u2026\\u65b9\\u9762; \\u5728; \\u4e8e; \\u5411\"},{\"word\":\"August\",\"pronun\":\"[\\u0254:\\u02c8\\u0261\\u028cst]\",\"translation\":\"n. \\u516b\\u6708\"},{\"word\":\"aunt\",\"pronun\":\"[\\u0251:nt]\",\"translation\":\"n. \\u963f\\u59e8; \\u59d1\\u5988\\u7b49\"},{\"word\":\"autumn\",\"pronun\":\"[\\u02c8\\u0254:t\\u0259m]\",\"translation\":\"n. \\u79cb\\u5929; \\u79cb\\u5b63\"},{\"word\":\"awake\",\"pronun\":\"[\\u0259\\u02c8weik]\",\"translation\":\"adj. \\u9192\\u7740\\u7684 v. \\u5524\\u9192; \\u4f7f\\u89c9\\u9192\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

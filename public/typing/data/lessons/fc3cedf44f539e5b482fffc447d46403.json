@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.329143+00:00",
+  "request": {
+    "lesson_id": "fc3cedf44f539e5b482fffc447d46403",
+    "course_id": "f81aeb9f7457592295d8d925c4358b36",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "f81aeb9f7457592295d8d925c4358b36",
+    "order": 242,
+    "nextCourseId": "d47f40df8593ffe75da61fffca274131",
+    "courseName": "汉字二级",
+    "lessonId": "fc3cedf44f539e5b482fffc447d46403",
+    "nextLessonId": "73c10df8bc90e84ec292fae01b8601e1",
+    "lessonName": "游戏：英文单词",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-duck.b036f0ad8f.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "4aa2fa22fefa25692869500cb10bc9ae",
+        "index": 1,
+        "text": [
+          "credit pocket houses bed street houses pocket because pulled change played marked"
+        ],
+        "contentType": 3,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 1,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.341646+00:00",
+  "request": {
+    "lesson_id": "73c10df8bc90e84ec292fae01b8601e1",
+    "course_id": "d47f40df8593ffe75da61fffca274131",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "d47f40df8593ffe75da61fffca274131",
+    "order": 243,
+    "nextCourseId": "d47f40df8593ffe75da61fffca274131",
+    "courseName": "汉字三级",
+    "lessonId": "73c10df8bc90e84ec292fae01b8601e1",
+    "nextLessonId": "2c85faa4eece7f4b439041ba3426ea71",
+    "lessonName": "《荷叶·母亲》 冰心",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-3.f410710cf0.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "528a0105aaf7539496637691dd4611c8",
+        "index": 1,
+        "text": [
+          "父亲的朋友送给我们两缸莲花，一缸是红的，一缸是白的，都摆在院子里。"
+        ],
+        "pinyin": "[[\"父\", \"fù\"], [\"亲\", \"qīn\"], [\"的\", \"de\"], [\"朋\", \"péng\"], [\"友\", \"yǒu\"], [\"送\", \"sòng\"], [\"给\", \"gěi\"], [\"我\", \"wǒ\"], [\"们\", \"men\"], [\"两\", \"liǎng\"], [\"缸\", \"gāng\"], [\"莲\", \"lián\"], [\"花\", \"huā\"], [\"，\", \"\"], [\"一\", \"yī\"], [\"缸\", \"gāng\"], [\"是\", \"shì\"], [\"红\", \"hóng\"], [\"的\", \"de\"], [\"，\", \"\"], [\"一\", \"yī\"], [\"缸\", \"gāng\"], [\"是\", \"shì\"], [\"白\", \"bái\"], [\"的\", \"de\"], [\"，\", \"\"], [\"都\", \"dōu\"], [\"摆\", \"bǎi\"], [\"在\", \"zài\"], [\"院\", \"yuàn\"], [\"子\", \"zi\"], [\"里\", \"lǐ\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 29,
+        "minSpeed": 21,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

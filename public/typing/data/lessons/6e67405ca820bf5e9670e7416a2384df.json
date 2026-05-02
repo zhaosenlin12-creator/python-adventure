@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.668228+00:00",
+  "request": {
+    "lesson_id": "6e67405ca820bf5e9670e7416a2384df",
+    "course_id": "5e52147dad246d64cba012617962b179",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "5e52147dad246d64cba012617962b179",
+    "order": 34,
+    "nextCourseId": "5e52147dad246d64cba012617962b179",
+    "courseName": "基础练习-中排数字",
+    "lessonId": "6e67405ca820bf5e9670e7416a2384df",
+    "nextLessonId": "2bff1d41cb32a480f15a9d78e595b82e",
+    "lessonName": "4&5组合练习",
+    "icon": "data/assets/daziya.com/key-icon_num-4a5.be20628718.png",
+    "description": "数字输入练习 - 4&5组合练习",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5ad756e95a9f03d769ef83daf4362297",
+        "index": 1,
+        "text": [
+          "44554455445544554455"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

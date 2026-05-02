@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.892036+00:00",
+  "request": {
+    "lesson_id": "2152a9dea02a9078c62e4c7a2727befc",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 173,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "2152a9dea02a9078c62e4c7a2727befc",
+    "nextLessonId": "d5bb0fbbda008e7418b186e13e57bd2b",
+    "lessonName": "KET核心词-84",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第84课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c3559770b3b3835baf697bf0fddb4001",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"fasten one's safety belt\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"fasten_one_s_safety_belt.mp3\"},{\"word\":\"flight\",\"pronun\":\"[flaɪt]\",\"translation\":\"n. 飞行；班机；逃走\\nvt. 射击；使惊飞\\nvi. 迁徙\",\"audio\":\"flight.mp3\"},{\"word\":\"flight attendant\",\"pronun\":\"[ˈflaɪt ətendənt]\",\"translation\":\"n. 空中乘务员；机上乘务员\",\"audio\":\"flight_attendant.mp3\"},{\"word\":\"gate\",\"pronun\":\"[ɡeɪt]\",\"translation\":\"n. 大门；出入口；门道\\nvt. 给…装大门\",\"audio\":\"gate.mp3\"},{\"word\":\"journey\",\"pronun\":\"[ˈdʒɜːrni]\",\"translation\":\"n. 旅行；行程\\nvi. 旅行\",\"audio\":\"journey.mp3\"},{\"word\":\"land\",\"pronun\":\"[lænd]\",\"translation\":\"n. 国土；陆地；地面\\nvt. 使…登陆；使…陷于；将…卸下\\nvi. 登陆；到达\",\"audio\":\"land.mp3\"},{\"word\":\"leave\",\"pronun\":\"[liːv]\",\"translation\":\"vt. 离开；留下；遗忘；委托\\nvi. 离开，出发；留下\\nn. 许可，同意；休假\",\"audio\":\"leave.mp3\"},{\"word\":\"lost property\",\"pronun\":\"\",\"translation\":\"n. （丢弃在公共场所的）失物；失物招领处\",\"audio\":\"lost_property.mp3\"},{\"word\":\"lounge\",\"pronun\":\"[laʊndʒ]\",\"translation\":\"n. 休息室；闲逛；躺椅；（英）酒吧间\\nvi. 闲逛；懒洋洋地躺卧；闲混\\nvt. 虚度光阴\",\"audio\":\"lounge.mp3\"},{\"word\":\"luggage\",\"pronun\":\"[ˈlʌɡɪdʒ]\",\"translation\":\"n. 行李；皮箱\",\"audio\":\"luggage.mp3\"},{\"word\":\"map\",\"pronun\":\"[mæp]\",\"translation\":\"vt. 映射；计划；绘制地图；确定基因在染色体中的位置\\nn. 地图；示意图；染色体图\\nvi. 基因被安置\",\"audio\":\"map.mp3\"},{\"word\":\"noisy\",\"pronun\":\"[ˈnɔɪzi]\",\"translation\":\"adj. .嘈杂的；喧闹的；聒噪的\",\"audio\":\"noisy.mp3\"},{\"word\":\"passenger\",\"pronun\":\"[ˈpæsɪndʒər]\",\"translation\":\"n. 旅客；乘客；过路人；碍手碍脚的人\",\"audio\":\"passenger.mp3\"},{\"word\":\"pilot\",\"pronun\":\"[ˈpaɪlət]\",\"translation\":\"n. 飞行员；领航员\\nadj. 试点的\\nv. 驾驶；领航；试用\",\"audio\":\"pilot.mp3\"},{\"word\":\"platform\",\"pronun\":\"[ˈplætfɔːrm]\",\"translation\":\"n. 平台；月台，站台；坛；讲台\",\"audio\":\"platform.mp3\"},{\"word\":\"return\",\"pronun\":\"[rɪˈtɜːrn]\",\"translation\":\"vi. 返回；报答\\nadj. 报答的；回程的；返回的\\nvt. 返回；报答\\nn. 返回；归还；回球\",\"audio\":\"return.mp3\"},{\"word\":\"quiet\",\"pronun\":\"[ˈkwaɪət]\",\"translation\":\"n. 安静；和平\\nadj. 安静的；安定的；不动的；温顺的\\nvt. 使平息；安慰\\nvi. 平静下来\",\"audio\":\"quiet.mp3\"},{\"word\":\"safe\",\"pronun\":\"[seɪf]\",\"translation\":\"n. 保险箱；冷藏室；纱橱\\nadj. 安全的；可靠的；平安的\",\"audio\":\"safe.mp3\"},{\"word\":\"safety\",\"pronun\":\"[ˈseɪfti]\",\"translation\":\"n. 安全；保险；安全设备；保险装置；安打\",\"audio\":\"safety.mp3\"},{\"word\":\"seat\",\"pronun\":\"[siːt]\",\"translation\":\"n. 座位；所在地；职位\\nvt. 使…坐下；可容纳…的；使就职\",\"audio\":\"seat.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

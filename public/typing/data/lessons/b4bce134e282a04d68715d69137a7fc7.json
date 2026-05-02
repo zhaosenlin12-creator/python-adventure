@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.027987+00:00",
+  "request": {
+    "lesson_id": "b4bce134e282a04d68715d69137a7fc7",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 421,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "b4bce134e282a04d68715d69137a7fc7",
+    "nextLessonId": "0dd0150e1411021e348694a54aff91e7",
+    "lessonName": "六级词汇正序版-42",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第42课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "77739d0abb91002b8b1c20cdb5261b7d",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"entrepreneur\",\"pronun\":\"[ˌɑːntrəprəˈnɜːr]\",\"translation\":\"n. 企业家；承包人；主办者\",\"audio\":\"entrepreneur.mp3\"},{\"word\":\"environment\",\"pronun\":\"[ɪnˈvaɪrənmənt]\",\"translation\":\"n. 环境，外界\",\"audio\":\"environment.mp3\"},{\"word\":\"envisage\",\"pronun\":\"[ɪnˈvɪzɪdʒ]\",\"translation\":\"vt. 正视，面对；想像\",\"audio\":\"envisage.mp3\"},{\"word\":\"epoch\",\"pronun\":\"[ˈepək]\",\"translation\":\"n. [地质] 世；新纪元；新时代；时间上的一点\",\"audio\":\"epoch.mp3\"},{\"word\":\"equality\",\"pronun\":\"[iˈkwɑːləti]\",\"translation\":\"n. 平等；相等；[数] 等式\",\"audio\":\"equality.mp3\"},{\"word\":\"equator\",\"pronun\":\"[ɪˈkweɪtər]\",\"translation\":\"n. 赤道\",\"audio\":\"equator.mp3\"},{\"word\":\"equip\",\"pronun\":\"[ɪˈkwɪp]\",\"translation\":\"vt. 装备，配备\",\"audio\":\"equip.mp3\"},{\"word\":\"equivalent\",\"pronun\":\"[ɪˈkwɪvələnt]\",\"translation\":\"n. 等价物，相等物\\nadj. 等价的，相等的；同意义的\",\"audio\":\"equivalent.mp3\"},{\"word\":\"erect\",\"pronun\":\"[ɪˈrekt]\",\"translation\":\"vt. 使竖立；建造；安装\\nadj. 竖立的；笔直的；因性刺激而勃起的\\nvi. 直立；勃起\",\"audio\":\"erect.mp3\"},{\"word\":\"erosion\",\"pronun\":\"[ɪˈroʊʒn]\",\"translation\":\"n. 侵蚀，腐蚀\",\"audio\":\"erosion.mp3\"},{\"word\":\"erroneous\",\"pronun\":\"[ɪˈroʊniəs]\",\"translation\":\"adj. 错误的；不正确的\",\"audio\":\"erroneous.mp3\"},{\"word\":\"erupt\",\"pronun\":\"[ɪˈrʌpt]\",\"translation\":\"vi. 爆发；喷出；发疹；长牙\\nvt. 爆发；喷出\",\"audio\":\"erupt.mp3\"},{\"word\":\"escort\",\"pronun\":\"[ˈeskɔːrt]\",\"translation\":\"n. 陪同；护航舰；护卫队；护送者\\nvt. 护送；陪同；为…护航\",\"audio\":\"escort.mp3\"},{\"word\":\"essence\",\"pronun\":\"[ˈesns]\",\"translation\":\"n. 本质，实质；精华；香精\",\"audio\":\"essence.mp3\"},{\"word\":\"essential\",\"pronun\":\"[ɪˈsenʃl]\",\"translation\":\"n. 本质；要素；要点；必需品\\nadj. 基本的；必要的；本质的；精华的\",\"audio\":\"essential.mp3\"},{\"word\":\"establish\",\"pronun\":\"[ɪˈstæblɪʃ]\",\"translation\":\"vi. 植物定植\\nvt. 建立；创办；安置\",\"audio\":\"establish.mp3\"},{\"word\":\"estate\",\"pronun\":\"[ɪˈsteɪt]\",\"translation\":\"n. 房地产；财产；身份\",\"audio\":\"estate.mp3\"},{\"word\":\"esthetic\",\"pronun\":\"[esˈθetɪk]\",\"translation\":\"n. 美学；审美家；唯美主义者\\nadj. 审美的（等于aesthetic）；感觉的\",\"audio\":\"esthetic.mp3\"},{\"word\":\"estimate\",\"pronun\":\"[ˈestɪmeɪt]\",\"translation\":\"n. 估计，估价；判断，看法\\nvt. 估计，估量；判断，评价\\nvi. 估计，估价\",\"audio\":\"estimate.mp3\"},{\"word\":\"eternal\",\"pronun\":\"[ɪˈtɜːrnl]\",\"translation\":\"adj. 永恒的；不朽的\",\"audio\":\"eternal.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

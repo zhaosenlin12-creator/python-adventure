@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.534122+00:00",
+  "request": {
+    "lesson_id": "967cf7883186b81c67b6d7b81363dc33",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 535,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "967cf7883186b81c67b6d7b81363dc33",
+    "nextLessonId": "6703e9a9bd74d9b8dc9d82bae3f4515e",
+    "lessonName": "Cat Adventure-1",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "74a8f2498250a75940e28a4eb29f6dab",
+        "index": 1,
+        "text": [
+          "My mom was worried. She had not seen our cat all day, but she could hear her meowing.\\nWe looked all over the house. We looked in the kitchen, in the bedroom, and even in the bathroom.\\nThe whole time we could hear her meowing, but the cat wasn't anywhere in the house.\\nFinally, I looked outside and there she was. Our cat was on the roof!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

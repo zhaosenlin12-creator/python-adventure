@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.423339+00:00",
+  "request": {
+    "lesson_id": "5dff1ff41417ae434e5491fd29bd467d",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 198,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "5dff1ff41417ae434e5491fd29bd467d",
+    "nextLessonId": "5b1cd593ba609159ea1d739f400b0d4d",
+    "lessonName": "RIGHT JOIN和FULL JOIN",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - RIGHT JOIN和FULL JOIN",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "59e3b6c760c84558d98950fa3d55c769",
+        "index": 1,
+        "text": [
+          "-- RIGHT JOIN: 查询所有订单及其用户信息\\nSELECT o.order_id, o.amount, u.name, u.email\\nFROM users u\\nRIGHT JOIN orders o ON u.id = o.user_id\\nWHERE o.status = 'pending';\\n\\n-- 查询订单和支付记录\\nSELECT\\n    o.order_id,\\n    o.amount AS order_amount,\\n    p.payment_id,\\n    p.amount AS payment_amount,\\n    p.payment_method\\nFROM orders o\\nRIGHT JOIN payments p ON o.order_id = p.order_id;\\n\\n-- FULL OUTER JOIN（部分数据库支持）\\n-- 查询所有用户和所有订单的完整关系\\nSELECT\\n    u.id AS user_id,\\n    u.name,\\n    o.order_id,\\n    o.amount\\nFROM users u\\nFULL OUTER JOIN orders o ON u.id = o.user_id;\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

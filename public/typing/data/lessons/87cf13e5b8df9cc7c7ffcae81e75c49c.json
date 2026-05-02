@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.273198+00:00",
+  "request": {
+    "lesson_id": "87cf13e5b8df9cc7c7ffcae81e75c49c",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 158,
+    "nextCourseId": "d7df026ff1d81047d30da28a958b118f",
+    "courseName": "golang",
+    "lessonId": "87cf13e5b8df9cc7c7ffcae81e75c49c",
+    "nextLessonId": "c3506dc085a79e335f7f4d44b9fe193a",
+    "lessonName": "函数定义",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - 函数定义",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "57240d413f51dac8a9dcc99a70adbb2d",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport \"fmt\"\\n\\nfunc greet(name string) string {\\n\treturn \"你好, \" + name + \"!\"\\n}\\n\\nfunc addNumbers(a, b int) int {\\n\treturn a + b\\n}\\n\\nfunc main() {\\n\tmessage := greet(\"小明\")\\n\tresult := addNumbers(5, 3)\\n\\n\tfmt.Println(message)\\n\tfmt.Printf(\"5 + 3 = %d\\n\", result)\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

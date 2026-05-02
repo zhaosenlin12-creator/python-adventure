@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:34.942720+00:00",
+  "request": {
+    "lesson_id": "215a63934462530bc7b10cb5972a2141",
+    "course_id": "6438643cafd3c77c5d22d3a650b739e3",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "6438643cafd3c77c5d22d3a650b739e3",
+    "order": 271,
+    "nextCourseId": "6438643cafd3c77c5d22d3a650b739e3",
+    "courseName": "语文课内同步六年级上册",
+    "lessonId": "215a63934462530bc7b10cb5972a2141",
+    "nextLessonId": "282ec9d551cc042f7f99fd602466e99e",
+    "lessonName": "江南春",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f9904cbb9a07d03a887d95b9b1b227a2",
+        "index": 1,
+        "text": [
+          "千里莺啼绿映红，水村山郭酒旗风。南朝四百八十寺，多少楼台烟雨中。"
+        ],
+        "pinyin": "[[\"千\", \"qiān\"], [\"里\", \"lǐ\"], [\"莺\", \"yīng\"], [\"啼\", \"tí\"], [\"绿\", \"lǜ\"], [\"映\", \"yìng\"], [\"红\", \"hóng\"], [\"，\", \"\"], [\"水\", \"shuǐ\"], [\"村\", \"cūn\"], [\"山\", \"shān\"], [\"郭\", \"guō\"], [\"酒\", \"jiǔ\"], [\"旗\", \"qí\"], [\"风\", \"fēng\"], [\"。\", \"\"], [\"南\", \"nán\"], [\"朝\", \"cháo\"], [\"四\", \"sì\"], [\"百\", \"bǎi\"], [\"八\", \"bā\"], [\"十\", \"shí\"], [\"寺\", \"sì\"], [\"，\", \"\"], [\"多\", \"duō\"], [\"少\", \"shǎo\"], [\"楼\", \"lóu\"], [\"台\", \"tái\"], [\"烟\", \"yān\"], [\"雨\", \"yǔ\"], [\"中\", \"zhōng\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

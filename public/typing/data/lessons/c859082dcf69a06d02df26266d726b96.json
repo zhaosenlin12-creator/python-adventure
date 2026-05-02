@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.548180+00:00",
+  "request": {
+    "lesson_id": "c859082dcf69a06d02df26266d726b96",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 537,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "c859082dcf69a06d02df26266d726b96",
+    "nextLessonId": "2d4a9fbd2457d3a195630b7e988aa467",
+    "lessonName": "Want an Apple?",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6d613f82ec882a8744ad5911676a7265",
+        "index": 1,
+        "text": [
+          "Jack brings his lunch to school every day.\\nHis mom makes his lunch for him. She puts a sandwich, an apple, and a banana in his lunch bag.\\nJack does not like apples. \"Who wants this apple?\" he asks.\\n\"Me!\" his friend Kate says.\\n\"Here you are!\" Jack gives the apple to her.\\n\"Thanks!\" Kate smiles. \"One apple a day keeps the doctor away.\" she says."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.599611+00:00",
+  "request": {
+    "lesson_id": "30aea873341b485509b79590dfb46cbb",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 549,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "30aea873341b485509b79590dfb46cbb",
+    "nextLessonId": "1f2bdccdc7d5bca477e14f4929900d27",
+    "lessonName": "My Mother’s Chair",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "cf1c878f3cd8de1341b69c7737237625",
+        "index": 1,
+        "text": [
+          "My Mother's Chair\\nMy mother has a favourite chair. She got it from her mother. This chair is very old. It is the only one of its kind because my grandfather made it.\\nOne day, my brother pushed me when we were running through the house. I started to slip and ran right into the chair. One of the legs came off!\\nWe were shocked. We could not speak. I called my dad at work. He came home and glued it together. He put a clamp on it to hold it in place while the glue dried.\\nMy mom came home. We hoped she wouldn't notice, but she saw the clamp on the chair.\\nWe told her what had happened.\\nShe was very upset.\\nLuckily, the chair was fixed.\\nEven though that old chair is much stronger now, we are not allowed to run in the house anymore!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

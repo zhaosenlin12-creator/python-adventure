@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.082818+00:00",
+  "request": {
+    "lesson_id": "71a118a0dd7ce577bcfa5ac8b281e963",
+    "course_id": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "order": 191,
+    "nextCourseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "courseName": "汉字一级",
+    "lessonId": "71a118a0dd7ce577bcfa5ac8b281e963",
+    "nextLessonId": "21b2f05e4f684d974f5c74f7e38a6534",
+    "lessonName": "保护视力",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-good.c7e935711e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "47f695b96e76e2872fec99a360d9306f",
+        "index": 1,
+        "text": [
+          "完成本次闯关后，请让眼睛休息一会儿，再查看结果。"
+        ],
+        "pinyin": "[[\"完\", \"wán\"], [\"成\", \"chéng\"], [\"本\", \"běn\"], [\"次\", \"cì\"], [\"闯\", \"chuǎng\"], [\"关\", \"guān\"], [\"后\", \"hòu\"], [\"，\", \"\"], [\"请\", \"qǐng\"], [\"让\", \"ràng\"], [\"眼\", \"yǎn\"], [\"睛\", \"jīng\"], [\"休\", \"xiū\"], [\"息\", \"xī\"], [\"一\", \"yī\"], [\"会\", \"huì\"], [\"儿\", \"ér\"], [\"，\", \"\"], [\"再\", \"zài\"], [\"查\", \"chá\"], [\"看\", \"kàn\"], [\"结\", \"jié\"], [\"果\", \"guǒ\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 13,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

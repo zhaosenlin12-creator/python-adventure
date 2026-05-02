@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.665825+00:00",
+  "request": {
+    "lesson_id": "b4d8b05961d6d7f4e6bc621f3c1af54e",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 349,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "b4d8b05961d6d7f4e6bc621f3c1af54e",
+    "nextLessonId": "fde5eef7564348abe344a80f04748e3a",
+    "lessonName": "六级词汇正序版-100",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第100课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "731714191237dc8f101f8dff1e3c0ffd",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"slight\",\"pronun\":\"[slaɪt]\",\"translation\":\"n. 怠慢；轻蔑\\nadj. 轻微的，少量的；脆弱的；细长的；不重要的\\nvt. 轻视，忽略；怠慢\",\"audio\":\"slight.mp3\"},{\"word\":\"slip\",\"pronun\":\"[slɪp]\",\"translation\":\"n. 滑，滑倒；片，纸片；错误；下跌；事故\\nabbr. 串行线路接口协议，是旧式的协议（Serial Line Interface Protocol）\\nadj. 滑动的；有活结的；活络的\\nvt. 使滑动；滑过；摆脱；塞入；闪开\\nvi. 滑动；滑倒；犯错；失足；减退\",\"audio\":\"slip.mp3\"},{\"word\":\"slippery\",\"pronun\":\"[ˈslɪpəri]\",\"translation\":\"adj. 滑的；狡猾的；不稳定的\",\"audio\":\"slippery.mp3\"},{\"word\":\"slogan\",\"pronun\":\"[ˈsloʊɡən]\",\"translation\":\"n. 标语；呐喊声\",\"audio\":\"slogan.mp3\"},{\"word\":\"slope\",\"pronun\":\"[sloʊp]\",\"translation\":\"n. 斜坡；倾斜；斜率；扛枪姿势\\nvt. 倾斜；使倾斜；扛\\nvi. 倾斜；逃走\",\"audio\":\"slope.mp3\"},{\"word\":\"slot\",\"pronun\":\"[slɑːt]\",\"translation\":\"n. 位置；狭槽；水沟；硬币投币口\\nvt. 跟踪；开槽于\",\"audio\":\"slot.mp3\"},{\"word\":\"slum\",\"pronun\":\"[slʌm]\",\"translation\":\"n. 贫民窟；陋巷；脏乱的地方\\nvi. （为猎奇或救济等）去贫民窟\",\"audio\":\"slum.mp3\"},{\"word\":\"slump\",\"pronun\":\"[slʌmp]\",\"translation\":\"vt. 使降低；使衰落；使倒下\\nn. 衰退；暴跌；消沉\\nvi. 下降，衰落；倒下；大幅度下降，暴跌\",\"audio\":\"slump.mp3\"},{\"word\":\"smash\",\"pronun\":\"[smæʃ]\",\"translation\":\"n. 破碎；扣球；冲突；大败\\nvt. 粉碎；使破产；溃裂\\nadj. 了不起的；非常轰动的；出色的\\nvi. 粉碎；打碎\",\"audio\":\"smash.mp3\"},{\"word\":\"smuggle\",\"pronun\":\"[ˈsmʌɡl]\",\"translation\":\"vt. 走私；偷运\\nvi. 走私，私运；偷带\",\"audio\":\"smuggle.mp3\"},{\"word\":\"snack\",\"pronun\":\"[snæk]\",\"translation\":\"n. 小吃，快餐；一份，部分\\nvi. 吃快餐，吃点心\",\"audio\":\"snack.mp3\"},{\"word\":\"snatch\",\"pronun\":\"[snætʃ]\",\"translation\":\"n. 抢夺；抓举；小量\\nvt. 夺得；抽空做；及时救助\\nvi. 抢走；很快接受\",\"audio\":\"snatch.mp3\"},{\"word\":\"sneak\",\"pronun\":\"[sniːk]\",\"translation\":\"n. 鬼鬼祟祟的人；偷偷摸摸的行为；告密者\\nadj. 暗中进行的\\nvi. 溜；鬼鬼祟祟做事；向老师打小报告\\nvt. 偷偷地做；偷偷取得\",\"audio\":\"sneak.mp3\"},{\"word\":\"sniff\",\"pronun\":\"[snɪf]\",\"translation\":\"vt. 嗅；闻；用力吸；发觉\\nvi. 嗅；嗤之以鼻\\nn. 吸，闻；嗤之以鼻；气味；以鼻吸气；吸气声\",\"audio\":\"sniff.mp3\"},{\"word\":\"soar\",\"pronun\":\"[sɔːr]\",\"translation\":\"n. 高飞；高涨\\nvi. 高飞；高耸；往上飞舞\",\"audio\":\"soar.mp3\"},{\"word\":\"sober\",\"pronun\":\"[ˈsoʊbər]\",\"translation\":\"adj. 冷静的，清醒的；未醉的\\nvt. 使严肃；使醒酒，使清醒\",\"audio\":\"sober.mp3\"},{\"word\":\"sociology\",\"pronun\":\"[ˌsoʊsiˈɑːlədʒi]\",\"translation\":\"n. 社会学；群体生态学\",\"audio\":\"sociology.mp3\"},{\"word\":\"solemn\",\"pronun\":\"[ˈsɑːləm]\",\"translation\":\"adj. 庄严的，严肃的；隆重的，郑重的\",\"audio\":\"solemn.mp3\"},{\"word\":\"solicitor\",\"pronun\":\"[səˈlɪsɪtər]\",\"translation\":\"n. 律师；法务官；募捐者；掮客\",\"audio\":\"solicitor.mp3\"},{\"word\":\"solidarity\",\"pronun\":\"[ˌsɑːlɪˈdærəti]\",\"translation\":\"n. 团结，团结一致\",\"audio\":\"solidarity.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

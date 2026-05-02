@@ -87,6 +87,19 @@ class Settings(BaseSettings):
     DEBUG: bool = False
     INTERNAL_REWARD_TOKEN: str = ""
 
+    # Typing trainer runtime data and TTS providers.
+    TYPING_DATA_DIR: str = ""
+    MINIMAX_API_KEY: str = ""
+    MINIMAX_TTS_ENDPOINT: str = "https://api.minimax.io/v1/t2a_v2"
+    MINIMAX_GROUP_ID: str = ""
+    MINIMAX_TTS_MODEL: str = "speech-2.8-hd"
+    MINIMAX_TTS_VOICE: str = "female-shaonv"
+    QWEN_API_KEY: str = ""
+    DASHSCOPE_API_KEY: str = ""
+    QWEN_TTS_ENDPOINT: str = "https://dashscope.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation"
+    QWEN_TTS_MODEL: str = "qwen3-tts-flash"
+    QWEN_TTS_VOICE: str = "Cherry"
+
     model_config = SettingsConfigDict(
         env_file=str(BACKEND_DIR / ".env"),
         env_file_encoding="utf-8",

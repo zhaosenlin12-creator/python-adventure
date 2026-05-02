@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.294187+00:00",
+  "request": {
+    "lesson_id": "fd9b56e460ef0a4b1424de8a32cff6bf",
+    "course_id": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "order": 337,
+    "nextCourseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "courseName": "小学必备古诗75首（2）",
+    "lessonId": "fd9b56e460ef0a4b1424de8a32cff6bf",
+    "nextLessonId": "5956a3387c0a56423cc30a36bdc49673",
+    "lessonName": "滁州西涧",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8959f81d378fa63cd65faf525deb7eba",
+        "index": 1,
+        "text": [
+          "滁州西涧\\n韦应物\\n独怜幽草涧边生，上有黄鹂深树鸣。\\n春潮带雨晚来急，野渡无人舟自横。"
+        ],
+        "pinyin": "[[\"滁\", \"chú\"], [\"州\", \"zhōu\"], [\"西\", \"xī\"], [\"涧\", \"jiàn\"], [\"\\n\", \"\"], [\"韦\", \"wéi\"], [\"应\", \"yīng\"], [\"物\", \"wù\"], [\"\\n\", \"\"], [\"独\", \"dú\"], [\"怜\", \"lián\"], [\"幽\", \"yōu\"], [\"草\", \"cǎo\"], [\"涧\", \"jiàn\"], [\"边\", \"biān\"], [\"生\", \"shēng\"], [\"，\", \"\"], [\"上\", \"shàng\"], [\"有\", \"yǒu\"], [\"黄\", \"huáng\"], [\"鹂\", \"lí\"], [\"深\", \"shēn\"], [\"树\", \"shù\"], [\"鸣\", \"míng\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"春\", \"chūn\"], [\"潮\", \"cháo\"], [\"带\", \"dài\"], [\"雨\", \"yǔ\"], [\"晚\", \"wǎn\"], [\"来\", \"lái\"], [\"急\", \"jí\"], [\"，\", \"\"], [\"野\", \"yě\"], [\"渡\", \"dù\"], [\"无\", \"wú\"], [\"人\", \"rén\"], [\"舟\", \"zhōu\"], [\"自\", \"zì\"], [\"横\", \"héng\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.408484+00:00",
+  "request": {
+    "lesson_id": "046f3241bb58f803ee49a2d31dcd7698",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 195,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "046f3241bb58f803ee49a2d31dcd7698",
+    "nextLessonId": "80c62c8f6386ca2a1bde54e55d42e123",
+    "lessonName": "IN和BETWEEN",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - IN和BETWEEN",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "7fe8fe2a3c7e620e5127a183b281b8fc",
+        "index": 1,
+        "text": [
+          "-- 查询指定城市的用户\\nSELECT * FROM users\\nWHERE city IN ('北京', '上海', '深圳');\\n\\n-- 查询年龄在20到30之间的用户\\nSELECT * FROM users\\nWHERE age BETWEEN 20 AND 30;\\n\\n-- 查询特定状态的订单\\nSELECT * FROM orders\\nWHERE status IN ('pending', 'processing', 'shipped');\\n\\n-- 组合使用\\nSELECT * FROM products\\nWHERE category IN ('电子', '家电') AND price BETWEEN 1000 AND 5000;\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

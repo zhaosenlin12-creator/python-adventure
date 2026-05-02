@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.916521+00:00",
+  "request": {
+    "lesson_id": "3d2c4309fec3e3cbd316c222247b76a8",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 400,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "3d2c4309fec3e3cbd316c222247b76a8",
+    "nextLessonId": "edac7c8208995157cd721c96cf8cedf0",
+    "lessonName": "六级词汇正序版-116",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第116课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "65360b97a5a9996e142b4da4549daceb",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"vivid\",\"pronun\":\"[ˈvɪvɪd]\",\"translation\":\"adj. 生动的；鲜明的；鲜艳的\",\"audio\":\"vivid.mp3\"},{\"word\":\"vocal\",\"pronun\":\"[ˈvoʊkl]\",\"translation\":\"adj. 直言不讳的\\nadj. 歌唱的；声音的，有声的\\nn. 声乐作品；元音\",\"audio\":\"vocal.mp3\"},{\"word\":\"vocational\",\"pronun\":\"[voʊˈkeɪʃənl]\",\"translation\":\"adj. 职业的，行业的\",\"audio\":\"vocational.mp3\"},{\"word\":\"void\",\"pronun\":\"[vɔɪd]\",\"translation\":\"n. 空虚；空间；空隙\\nadj. 空的；无效的；无人的\\nvt. 使无效；排放\",\"audio\":\"void.mp3\"},{\"word\":\"volume\",\"pronun\":\"[ˈvɑːljuːmˌˈvɑːljəm]\",\"translation\":\"n. 量；体积；卷；音量；大量；册\\nadj. 大量的\\nvt. 把…收集成卷\\nvi. 成团卷起\",\"audio\":\"volume.mp3\"},{\"word\":\"voluntary\",\"pronun\":\"[ˈvɑːlənteri]\",\"translation\":\"n. 志愿者；自愿行动\\nadj. 自愿的；志愿的；自发的；故意的\",\"audio\":\"voluntary.mp3\"},{\"word\":\"volunteer\",\"pronun\":\"[ˌvɑːlənˈtɪr]\",\"translation\":\"n. 志愿者；志愿兵\\nadj. 志愿的\\nvt. 自愿\\nvi. 自愿\",\"audio\":\"volunteer.mp3\"},{\"word\":\"vulgar\",\"pronun\":\"[ˈvʌlɡər]\",\"translation\":\"n. 平民，百姓\\nadj. 粗俗的；通俗的；本土的\",\"audio\":\"vulgar.mp3\"},{\"word\":\"vulnerable\",\"pronun\":\"[ˈvʌlnərəbl]\",\"translation\":\"adj. 易受攻击的，易受…的攻击；易受伤害的；有弱点的\",\"audio\":\"vulnerable.mp3\"},{\"word\":\"wallet\",\"pronun\":\"[ˈwɑːlɪt]\",\"translation\":\"n. 钱包，皮夹\",\"audio\":\"wallet.mp3\"},{\"word\":\"ward\",\"pronun\":\"[wɔːrd]\",\"translation\":\"n. 病房；保卫；监视\\nvt. 避开；保卫；守护\",\"audio\":\"ward.mp3\"},{\"word\":\"wardrobe\",\"pronun\":\"[ˈwɔːrdroʊb]\",\"translation\":\"n. 衣柜；行头；全部戏装\",\"audio\":\"wardrobe.mp3\"},{\"word\":\"warehouse\",\"pronun\":\"[ˈwerhaʊs]\",\"translation\":\"n. 仓库；货栈；大商店\",\"audio\":\"warehouse.mp3\"},{\"word\":\"warfare\",\"pronun\":\"[ˈwɔːrfer]\",\"translation\":\"n. 战争；冲突\",\"audio\":\"warfare.mp3\"},{\"word\":\"warrant\",\"pronun\":\"[ˈwɔːrənt]\",\"translation\":\"n. 根据；证明；正当理由；委任状\\nvt. 保证；担保；批准；辩解\",\"audio\":\"warrant.mp3\"},{\"word\":\"watertight\",\"pronun\":\"[ˈwɔːtərtaɪt]\",\"translation\":\"adj. 水密的；不漏水的；无懈可击的\",\"audio\":\"watertight.mp3\"},{\"word\":\"watt\",\"pronun\":\"[wɑːt]\",\"translation\":\"n. 瓦特\",\"audio\":\"watt.mp3\"},{\"word\":\"wax\",\"pronun\":\"[wæks]\",\"translation\":\"n. 蜡；蜡状物\\nadj. 蜡制的；似蜡的\\nvt. 给…上蜡\\nvi. 月亮渐满；增大\",\"audio\":\"wax.mp3\"},{\"word\":\"wealth\",\"pronun\":\"[welθ]\",\"translation\":\"n. 财富；大量；富有\",\"audio\":\"wealth.mp3\"},{\"word\":\"wealthy\",\"pronun\":\"[ˈwelθi]\",\"translation\":\"n. 富人\\nadj. 富有的；充分的；丰裕的\",\"audio\":\"wealthy.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

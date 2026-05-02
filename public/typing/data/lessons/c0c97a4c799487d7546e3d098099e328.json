@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.914104+00:00",
+  "request": {
+    "lesson_id": "c0c97a4c799487d7546e3d098099e328",
+    "course_id": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "order": 70,
+    "nextCourseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "courseName": "C++",
+    "lessonId": "c0c97a4c799487d7546e3d098099e328",
+    "nextLessonId": "eb0d494624e664c4c2be769614760b09",
+    "lessonName": "结构体定义",
+    "icon": "data/assets/daziya.com/key-icon_key-cpp.b136419115.png",
+    "description": "C++编程练习 - 结构体定义",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f2762531c94664be4026f1c745032d1c",
+        "index": 1,
+        "text": [
+          "#include <iostream>\\nusing namespace std;\\n\\nstruct Student {\\n    string name;\\n    int age;\\n    double score;\\n};\\n\\nint main() {\\n    Student stu = {\"张三\", 20, 95.5};\\n\\n    cout << \"学生信息:\" << endl;\\n    cout << \"姓名: \" << stu.name << endl;\\n    cout << \"年龄: \" << stu.age << endl;\\n    cout << \"成绩: \" << stu.score << endl;\\n\\n    return 0;\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "cpp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

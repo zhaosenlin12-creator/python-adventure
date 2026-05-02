@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.578740+00:00",
+  "request": {
+    "lesson_id": "bf19175f5bfacbd91d58b59dcb3859a0",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 548,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "bf19175f5bfacbd91d58b59dcb3859a0",
+    "nextLessonId": "30aea873341b485509b79590dfb46cbb",
+    "lessonName": "Just the Way You Are",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "22ef1f493e93cea4f865ca569b86985f",
+        "index": 1,
+        "text": [
+          "Just the Way You Are\\nSometimes, it is fun being tall. Sometimes, it is not.\\nSure, I can always reach things for my mom, dad, sister or teacher. But sometimes, I would rather be short.\\nI am always the tallest one in pictures. Sometimes, I wish people didn't notice me as much.\\nAnother boy, John, is the shortest kid in our class. He told me that he wished people didn't notice him as much either!\\nWe became friends because we feel the same, in a strange way.\\nWhen we play basketball together, people say, \"It's a lot fun to watch a game with the school's tallest and shortest boys on the same team.\"\\nIt's true, you know. You can't be too tall or too short.\\nIt's just the way you are."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

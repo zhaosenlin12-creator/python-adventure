@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.846896+00:00",
+  "request": {
+    "lesson_id": "5457594ee1032c07ade15dd2bca4ed32",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 383,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "5457594ee1032c07ade15dd2bca4ed32",
+    "nextLessonId": "ab8688fa2e4880487069863cb96012e1",
+    "lessonName": "六级词汇正序版-65",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第65课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6658a5d97da52a07dc765d9d47c2f6ca",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"liberal\",\"pronun\":\"[ˈlɪbərəl]\",\"translation\":\"adj. 自由主义的；慷慨的；不拘泥的；宽大的\\nn. 自由主义者\",\"audio\":\"liberal.mp3\"},{\"word\":\"lieutenant\",\"pronun\":\"[luːˈtenənt]\",\"translation\":\"n. 中尉；副官；助理人员\",\"audio\":\"lieutenant.mp3\"},{\"word\":\"likelihood\",\"pronun\":\"[ˈlaɪklihʊd]\",\"translation\":\"n. 可能性，可能\",\"audio\":\"likelihood.mp3\"},{\"word\":\"limb\",\"pronun\":\"[lɪm]\",\"translation\":\"n. 肢，臂；分支；枝干\\nvt. 切断…的手足；从…上截下树枝\",\"audio\":\"limb.mp3\"},{\"word\":\"limitation\",\"pronun\":\"[ˌlɪmɪˈteɪʃn]\",\"translation\":\"n. 限制；限度；极限；追诉时效；有效期限；缺陷\",\"audio\":\"limitation.mp3\"},{\"word\":\"limp\",\"pronun\":\"[lɪmp]\",\"translation\":\"adj. 柔软的，无力的；软弱的\\nvi. 跛行，一拐一拐地走；缓慢费力地前进\\nn. 跛行\",\"audio\":\"limp.mp3\"},{\"word\":\"linear\",\"pronun\":\"[ˈlɪniər]\",\"translation\":\"adj. 线的，线型的；直线的，线状的；长度的\",\"audio\":\"linear.mp3\"},{\"word\":\"linen\",\"pronun\":\"[ˈlɪnɪn]\",\"translation\":\"n. 亚麻布，亚麻线；亚麻制品\\nadj. 亚麻的；亚麻布制的\",\"audio\":\"linen.mp3\"},{\"word\":\"liner\",\"pronun\":\"[ˈlaɪnər]\",\"translation\":\"n. 班轮，班机；衬垫；画线者\",\"audio\":\"liner.mp3\"},{\"word\":\"linger\",\"pronun\":\"[ˈlɪŋɡər]\",\"translation\":\"vi. 徘徊；苟延残喘；磨蹭\\nvt. 消磨；缓慢度过\",\"audio\":\"linger.mp3\"},{\"word\":\"literacy\",\"pronun\":\"[ˈlɪtərəsi]\",\"translation\":\"n. 读写能力；精通文学\",\"audio\":\"literacy.mp3\"},{\"word\":\"literal\",\"pronun\":\"[ˈlɪtərəl]\",\"translation\":\"adj. 文字的；逐字的；无夸张的\",\"audio\":\"literal.mp3\"},{\"word\":\"literary\",\"pronun\":\"[ˈlɪtəreri]\",\"translation\":\"adj. 文学的；书面的；精通文学的\",\"audio\":\"literary.mp3\"},{\"word\":\"literature\",\"pronun\":\"[ˈlɪtrətʃər; ˈlɪtrətʃʊr; ˈlɪtərətʃʊr]\",\"translation\":\"n. 文学；文献；文艺；著作\",\"audio\":\"literature.mp3\"},{\"word\":\"litter\",\"pronun\":\"[ˈlɪtər]\",\"translation\":\"n. 垃圾；轿，担架；一窝（动物的幼崽）；凌乱\\nvt. 乱丢；给…垫褥草；把…弄得乱七八糟\\nvi. 产仔；乱扔废弃物\",\"audio\":\"litter.mp3\"},{\"word\":\"locality\",\"pronun\":\"[loʊˈkæləti]\",\"translation\":\"n. 所在；位置；地点\",\"audio\":\"locality.mp3\"},{\"word\":\"locomotive\",\"pronun\":\"[ˌloʊkəˈmoʊtɪv]\",\"translation\":\"adj. 火车头的；运动的；移动的\\nn. 机车；火车头\",\"audio\":\"locomotive.mp3\"},{\"word\":\"lofty\",\"pronun\":\"[ˈlɔːfti]\",\"translation\":\"adj. 高的；崇高的；高级的；高傲的\",\"audio\":\"lofty.mp3\"},{\"word\":\"logical\",\"pronun\":\"[ˈlɑːdʒɪkl]\",\"translation\":\"adj. 合逻辑的，合理的；逻辑学的\",\"audio\":\"logical.mp3\"},{\"word\":\"longevity\",\"pronun\":\"[lɔːnˈdʒevəti]\",\"translation\":\"n. 长寿，长命；寿命\",\"audio\":\"longevity.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

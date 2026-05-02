@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.510034+00:00",
+  "request": {
+    "lesson_id": "6c2d33c6124cb05f57ada3105ec76fe3",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 321,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "6c2d33c6124cb05f57ada3105ec76fe3",
+    "nextLessonId": "0a759193a35e10adc1f43a7d645934f9",
+    "lessonName": "六级词汇正序版-16",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第16课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c6c4f5ba8b74a23327906ba202bc5efb",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"casual\",\"pronun\":\"[ˈkæʒuəl]\",\"translation\":\"n. 便装；临时工人；待命士兵\\nadj. 随便的；非正式的；临时的；偶然的\",\"audio\":\"casual.mp3\"},{\"word\":\"casualty\",\"pronun\":\"[ˈkæʒuəlti]\",\"translation\":\"n. 意外事故；伤亡人员；急诊室\",\"audio\":\"casualty.mp3\"},{\"word\":\"catastrophe\",\"pronun\":\"[kəˈtæstrəfi]\",\"translation\":\"n. 大灾难；大祸；惨败\",\"audio\":\"catastrophe.mp3\"},{\"word\":\"cater\",\"pronun\":\"[ˈkeɪtər]\",\"translation\":\"vt. 投合，迎合；满足需要；提供饮食及服务\",\"audio\":\"cater.mp3\"},{\"word\":\"cathedral\",\"pronun\":\"[kəˈθiːdrəl]\",\"translation\":\"n. 大教堂\",\"audio\":\"cathedral.mp3\"},{\"word\":\"Catholic\",\"pronun\":\"[ˈkæθlɪk]\",\"translation\":\"n. 天主教徒；罗马天主教\\nadj. 天主教的；宽宏大量的\",\"audio\":\"Catholic.mp3\"},{\"word\":\"caution\",\"pronun\":\"[ˈkɔːʃn]\",\"translation\":\"n. 小心，谨慎；警告，警示\\nvt. 警告\",\"audio\":\"caution.mp3\"},{\"word\":\"cautious\",\"pronun\":\"[ˈkɔːʃəs]\",\"translation\":\"adj. 谨慎的；十分小心的\",\"audio\":\"cautious.mp3\"},{\"word\":\"cavity\",\"pronun\":\"[ˈkævəti]\",\"translation\":\"n. 腔；洞，凹处\",\"audio\":\"cavity.mp3\"},{\"word\":\"cellar\",\"pronun\":\"[ˈselər]\",\"translation\":\"n. 地窖；酒窖；地下室\\nvt. 把…藏入地窖\",\"audio\":\"cellar.mp3\"},{\"word\":\"cemetery\",\"pronun\":\"[ˈseməteri]\",\"translation\":\"n. 墓地；公墓\",\"audio\":\"cemetery.mp3\"},{\"word\":\"census\",\"pronun\":\"[ˈsensəs]\",\"translation\":\"n. 人口普查，人口调查\\nvt. 实施统计调查\",\"audio\":\"census.mp3\"},{\"word\":\"ceramic\",\"pronun\":\"[səˈræmɪk]\",\"translation\":\"n. 陶瓷；陶瓷制品\\nadj. 陶瓷的；陶器的；制陶艺术的\",\"audio\":\"ceramic.mp3\"},{\"word\":\"cereal\",\"pronun\":\"[ˈsɪriəl]\",\"translation\":\"n. 谷类，谷物；谷类食品；谷类植物\\nadj. 谷类的；谷类制成的\",\"audio\":\"cereal.mp3\"},{\"word\":\"certainty\",\"pronun\":\"[ˈsɜːrtnti]\",\"translation\":\"n. 必然；确实；确实的事情\",\"audio\":\"certainty.mp3\"},{\"word\":\"certify\",\"pronun\":\"[ˈsɜːrtɪfaɪ]\",\"translation\":\"v. 证明；保证\",\"audio\":\"certify.mp3\"},{\"word\":\"challenge\",\"pronun\":\"[ˈtʃælɪndʒ]\",\"translation\":\"n. 挑战；怀疑\\nvt. 向…挑战；对…质疑\",\"audio\":\"challenge.mp3\"},{\"word\":\"champagne\",\"pronun\":\"[ʃæmˈpeɪn]\",\"translation\":\"n. 香槟酒；香槟酒色\",\"audio\":\"champagne.mp3\"},{\"word\":\"champion\",\"pronun\":\"[ˈtʃæmpiən]\",\"translation\":\"n. 冠军；拥护者；战士\\nadj. 优胜的；第一流的\\nvt. 支持；拥护\",\"audio\":\"champion.mp3\"},{\"word\":\"chant\",\"pronun\":\"[tʃænt]\",\"translation\":\"n. 圣歌；赞美诗\\nvt. 唱；诵扬\\nvi. 唱歌；反复地唱歌\",\"audio\":\"chant.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:36.269837+00:00",
+  "request": {
+    "lesson_id": "f60baccef60fd4151f6be09b5fb26046",
+    "course_id": "aaf391ebe3c578672e2811298ce699e2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "aaf391ebe3c578672e2811298ce699e2",
+    "order": 550,
+    "nextCourseId": "46dff26f3e5db32bab9d36f154c40d25",
+    "courseName": "词语专项",
+    "lessonId": "f60baccef60fd4151f6be09b5fb26046",
+    "nextLessonId": "3dc40931cafab25fa2926b51b93b0e83",
+    "lessonName": "比喻句6",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1f1535e30abebcd62fcbf125e38f6fd5",
+        "index": 1,
+        "text": [
+          "蝠就像没头苍蝇似的到处乱撞，挂在绳子上的铃铛响个不停。"
+        ],
+        "pinyin": "[[\"蝠\", \"fú\"], [\"就\", \"jiù\"], [\"像\", \"xiàng\"], [\"没\", \"méi\"], [\"头\", \"tóu\"], [\"苍\", \"cāng\"], [\"蝇\", \"yíng\"], [\"似\", \"shì\"], [\"的\", \"de\"], [\"到\", \"dào\"], [\"处\", \"chù\"], [\"乱\", \"luàn\"], [\"撞\", \"zhuàng\"], [\"，\", \"\"], [\"挂\", \"guà\"], [\"在\", \"zài\"], [\"绳\", \"shéng\"], [\"子\", \"zi\"], [\"上\", \"shàng\"], [\"的\", \"de\"], [\"铃\", \"líng\"], [\"铛\", \"dāng\"], [\"响\", \"xiǎng\"], [\"个\", \"gè\"], [\"不\", \"bù\"], [\"停\", \"tíng\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.735987+00:00",
+  "request": {
+    "lesson_id": "f7270fdc16dd8f969e8b31194d0ce072",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 360,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "f7270fdc16dd8f969e8b31194d0ce072",
+    "nextLessonId": "e7e0368930508c5ddb2fbbea6526931b",
+    "lessonName": "六级词汇正序版-133",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第133课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "73f056af7c9c84136d8a0e2a8dfcd00f",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"flow\",\"pronun\":\"[floʊ]\",\"translation\":\"n. 流动；流量；涨潮，泛滥\\nvt. 淹没，溢过\\nvi. 流动，涌流；川流不息；飘扬\",\"audio\":\"flow.mp3\"},{\"word\":\"garage\",\"pronun\":\"[ɡəˈrɑːʒ; ɡəˈrɑːdʒ]\",\"translation\":\"n. 车库；汽车修理厂；飞机库\\nvt. 把……送入车库；把（汽车）开进车库\",\"audio\":\"garage.mp3\"},{\"word\":\"general\",\"pronun\":\"[ˈdʒen(ə)rəl]\",\"translation\":\"n. 一般；将军，上将；常规\\nadj. 一般的，普通的；综合的；大体的\",\"audio\":\"general.mp3\"},{\"word\":\"gift\",\"pronun\":\"[ɡɪft]\",\"translation\":\"n. 礼物；天赋；赠品\\nvt. 赋予；向…赠送\",\"audio\":\"gift.mp3\"},{\"word\":\"goal\",\"pronun\":\"[ɡoʊl]\",\"translation\":\"n. 目标；球门，得分数；终点\\nvi. 攻门，射门得分\",\"audio\":\"goal.mp3\"},{\"word\":\"golden\",\"pronun\":\"[ˈɡoʊldən]\",\"translation\":\"adj. 金色的，黄金般的；珍贵的；金制的\",\"audio\":\"golden.mp3\"},{\"word\":\"hail\",\"pronun\":\"[heɪl]\",\"translation\":\"n. 冰雹；致敬；招呼；一阵\\nvt. 致敬；招呼；向...欢呼；猛发；使像下雹样落下（过去式hailed，过去分词hailed，现在分词hailing，第三人称单数hails）\\nint. 万岁；欢迎\\nvi. 招呼；下雹\",\"audio\":\"hail.mp3\"},{\"word\":\"hand\",\"pronun\":\"[hænd]\",\"translation\":\"n. 手，手艺；帮助；指针；插手\\nvt. 传递，交给；支持；搀扶\",\"audio\":\"hand.mp3\"},{\"word\":\"handsome\",\"pronun\":\"[ˈhænsəm]\",\"translation\":\"adj. （男子）英俊的；可观的；大方的，慷慨的；健美而端庄的\",\"audio\":\"handsome.mp3\"},{\"word\":\"harp\",\"pronun\":\"[hɑːrp]\",\"translation\":\"n. 竖琴\\nvi. 弹奏竖琴；喋喋不休；不停地说\",\"audio\":\"harp.mp3\"},{\"word\":\"hear\",\"pronun\":\"[hɪr]\",\"translation\":\"vi. 听；听见\\nvt. 听到，听；听说；审理\",\"audio\":\"hear.mp3\"},{\"word\":\"hero\",\"pronun\":\"[ˈhɪroʊˌˈhiːroʊ]\",\"translation\":\"n. 英雄；男主角，男主人公\",\"audio\":\"hero.mp3\"},{\"word\":\"house\",\"pronun\":\"[haʊs]\",\"translation\":\"n. 住宅；家庭；机构；议会；某种用途的建筑物\\nvt. 覆盖；给…房子住；把…储藏在房内\\nvi. 住\",\"audio\":\"house.mp3\"},{\"word\":\"immediate\",\"pronun\":\"[ɪˈmiːdiət]\",\"translation\":\"adj. 立即的；直接的；最接近的\",\"audio\":\"immediate.mp3\"},{\"word\":\"industry\",\"pronun\":\"[ˈɪndəstri]\",\"translation\":\"n. 产业；工业；勤勉\",\"audio\":\"industry.mp3\"},{\"word\":\"iron\",\"pronun\":\"[ˈaɪərn]\",\"translation\":\"n. 熨斗；烙铁；坚强\\nadj. 铁的；残酷的；刚强的\\nvt. 熨；用铁铸成\\nvi. 熨衣；烫平\",\"audio\":\"iron.mp3\"},{\"word\":\"kill\",\"pronun\":\"[kɪl]\",\"translation\":\"vt. 杀死；扼杀；使终止；抵消\\nvi. 杀死\\nn. 杀戮；屠杀\\nadj. 致命的；致死的\",\"audio\":\"kill.mp3\"},{\"word\":\"last\",\"pronun\":\"[læst]\",\"translation\":\"n. 末尾，最后；上个；鞋楦（做鞋的模型）\\nadj. 最后的；最近的，最新的；仅剩的；最不可能…的\\nvi. 持续；维持，够用；持久\\nvt. 度过，拖过；使维持\\nadv. 最后地；上次，最近；最后一点\",\"audio\":\"last.mp3\"},{\"word\":\"lead\",\"pronun\":\"[liːd; led]\",\"translation\":\"n. 领导；铅；导线；榜样\\nvt. 领导；致使；引导；指挥\\nvi. 领导；导致；用水砣测深\\nadj. 带头的；最重要的\",\"audio\":\"lead.mp3\"},{\"word\":\"letter\",\"pronun\":\"[ˈletər]\",\"translation\":\"n. 信；字母，文字；证书；文学，学问；字面意义\\nvt. 写字母于\\nvi. 写印刷体字母\",\"audio\":\"letter.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.822219+00:00",
+  "request": {
+    "lesson_id": "460b5430e750b8fb5caf2f4122a6d3e6",
+    "course_id": "df7bf8b8c0456926de2c1fac14a741b2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "order": 465,
+    "nextCourseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "courseName": "宋词必备67首（1）",
+    "lessonId": "460b5430e750b8fb5caf2f4122a6d3e6",
+    "nextLessonId": "c134b2f3439ce5f1c791df2524aebfda",
+    "lessonName": "乡村四月",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9ad63609b0c4a0ce067e69db2fd71484",
+        "index": 1,
+        "text": [
+          "乡村四月\\n翁卷\\n绿遍山原白满川，子规声里雨如烟。\\n乡村四月闲人少，才了蚕桑又插田。"
+        ],
+        "pinyin": "[[\"乡\", \"xiāng\"], [\"村\", \"cūn\"], [\"四\", \"sì\"], [\"月\", \"yuè\"], [\"\\n\", \"\"], [\"翁\", \"wēng\"], [\"卷\", \"juǎn\"], [\"\\n\", \"\"], [\"绿\", \"lǜ\"], [\"遍\", \"biàn\"], [\"山\", \"shān\"], [\"原\", \"yuán\"], [\"白\", \"bái\"], [\"满\", \"mǎn\"], [\"川\", \"chuān\"], [\"，\", \"\"], [\"子\", \"zǐ\"], [\"规\", \"guī\"], [\"声\", \"shēng\"], [\"里\", \"lǐ\"], [\"雨\", \"yǔ\"], [\"如\", \"rú\"], [\"烟\", \"yān\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"乡\", \"xiāng\"], [\"村\", \"cūn\"], [\"四\", \"sì\"], [\"月\", \"yuè\"], [\"闲\", \"xián\"], [\"人\", \"rén\"], [\"少\", \"shǎo\"], [\"，\", \"\"], [\"才\", \"cái\"], [\"了\", \"liǎo\"], [\"蚕\", \"cán\"], [\"桑\", \"sāng\"], [\"又\", \"yòu\"], [\"插\", \"chā\"], [\"田\", \"tián\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

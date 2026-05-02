@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:30.513180+00:00",
+  "request": {
+    "lesson_id": "a93a0b5d493f9b30a8c63e20b366c649",
+    "course_id": "21fe8d60de407da95e1abc33ac636014",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "21fe8d60de407da95e1abc33ac636014",
+    "order": 23,
+    "nextCourseId": "21fe8d60de407da95e1abc33ac636014",
+    "courseName": "上排字母",
+    "lessonId": "a93a0b5d493f9b30a8c63e20b366c649",
+    "nextLessonId": "ee914d731b3c1849650c9bf5492d0cce",
+    "lessonName": "练习e和i",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-practise-ei.40611d1a55.png",
+    "description": "练习e和i",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "97667ef88d032232ae8943b0833bbec5",
+        "index": 2,
+        "text": [
+          "ed eed ed eed ik iik ik iik eded ikik eeed iiik deik ded kik deded kikik eed iik eeii eiei eidk eed iik"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "ei dk",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

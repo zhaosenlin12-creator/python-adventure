@@ -1,0 +1,75 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.456118+00:00",
+  "request": {
+    "lesson_id": "8cf9b88f9afed4acb8b785876bb58afa",
+    "course_id": "2ab9dc27a9350a9ff86633c542967f70",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "order": 51,
+    "nextCourseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "courseName": "下排字母",
+    "lessonId": "8cf9b88f9afed4acb8b785876bb58afa",
+    "nextLessonId": "18bed5457193ebc2ab3549d4f8e69790",
+    "lessonName": "学习x和.",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-learn-xdot.02c0b8376a.png",
+    "description": "学习x和.",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "b6e2653d071716a48ff8c3338eafe130",
+        "index": 1,
+        "highlights": [
+          "x"
+        ],
+        "text": [
+          "请使用左手无名指输入按键x"
+        ],
+        "detail": "新的字母键/请输入[x]键"
+      },
+      {
+        "chapterId": "53eb8ea2453bd7fd085db8a1aa9efb0b",
+        "index": 2,
+        "highlights": [
+          "."
+        ],
+        "text": [
+          "请使用右手无名指输入按键."
+        ],
+        "detail": "新的字母键/请输入[.]键"
+      },
+      {
+        "chapterId": "b00c975e23392d9c18e10b914021da67",
+        "index": 3,
+        "highlights": [
+          " "
+        ],
+        "text": [
+          "接下来我们将练习如何输入[x]和[.]，请确保使用正确的指法输入，敲击 键开始"
+        ],
+        "detail": "新的字母键/很好"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "81f0411e15fe062fc3998762e03f0da7",
+        "index": 4,
+        "text": [
+          "x.x.xx..x.xxxx.x...x.x.xxx.x.x.x"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

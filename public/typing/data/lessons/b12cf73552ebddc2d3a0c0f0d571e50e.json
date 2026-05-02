@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.075953+00:00",
+  "request": {
+    "lesson_id": "b12cf73552ebddc2d3a0c0f0d571e50e",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 433,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "b12cf73552ebddc2d3a0c0f0d571e50e",
+    "nextLessonId": "bf9da1be370919b6c47e0072ead9e465",
+    "lessonName": "六级词汇正序版-78",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第78课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "aaf1733e192cbbfb78cbd8da994aac39",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"patent\",\"pronun\":\"[ˈpætnt; ˈpeɪtnt]\",\"translation\":\"n. 专利权；执照；专利品\\nadj. 专利的；新奇的；显然的\\nvt. 授予专利；取得…的专利权\",\"audio\":\"patent.mp3\"},{\"word\":\"paternity\",\"pronun\":\"[pəˈtɜːrnəti]\",\"translation\":\"n. 父权；父系；父系后裔\",\"audio\":\"paternity.mp3\"},{\"word\":\"pathetic\",\"pronun\":\"[pəˈθetɪk]\",\"translation\":\"adj. 可怜的，悲哀的；感伤的；乏味的\",\"audio\":\"pathetic.mp3\"},{\"word\":\"patriot\",\"pronun\":\"[ˈpeɪtriət]\",\"translation\":\"n. 爱国者\",\"audio\":\"patriot.mp3\"},{\"word\":\"patriotic\",\"pronun\":\"[ˌpeɪtriˈɑːtɪk]\",\"translation\":\"adj. 爱国的\",\"audio\":\"patriotic.mp3\"},{\"word\":\"patrol\",\"pronun\":\"[pəˈtroʊl]\",\"translation\":\"n. 巡逻；巡逻队；侦察队\\nvt. 巡逻；巡查\\nvi. 巡逻；巡查\",\"audio\":\"patrol.mp3\"},{\"word\":\"patron\",\"pronun\":\"[ˈpeɪtrən]\",\"translation\":\"n. 赞助人；保护人；主顾\",\"audio\":\"patron.mp3\"},{\"word\":\"pattern\",\"pronun\":\"[ˈpætərn]\",\"translation\":\"n. 模式；图案；样品\\nvt. 模仿；以图案装饰\\nvi. 形成图案\",\"audio\":\"pattern.mp3\"},{\"word\":\"pave\",\"pronun\":\"[peɪv]\",\"translation\":\"vt. 铺设；安排；作铺设之用\",\"audio\":\"pave.mp3\"},{\"word\":\"peak\",\"pronun\":\"[piːk]\",\"translation\":\"n. 山峰；最高点；顶点；帽舌\\nadj. 最高的；最大值的\\nvt. 使达到最高点；使竖起\\nvi. 消瘦；到达最高点；变憔悴\",\"audio\":\"peak.mp3\"},{\"word\":\"pearl\",\"pronun\":\"[pɜːrl]\",\"translation\":\"n. 珍珠；珍珠色；杰出者；珍品\\nadj. 镶珍珠的；珍珠状的\\nvt. 使成珠状；用珍珠装饰；使呈珍珠色\\nvi. 采珍珠；成珍珠状\",\"audio\":\"pearl.mp3\"},{\"word\":\"peculiar\",\"pronun\":\"[pɪˈkjuːliər]\",\"translation\":\"n. 特权；特有财产\\nadj. 特殊的；独特的；奇怪的；罕见的\",\"audio\":\"peculiar.mp3\"},{\"word\":\"pedal\",\"pronun\":\"[ˈpedl]\",\"translation\":\"n. 踏板；脚蹬子\\nvi. 踩踏板；骑车\\nvt. 骑（自行车）；踩……的踏板\\nadj. 脚的；脚踏的\",\"audio\":\"pedal.mp3\"},{\"word\":\"pedestrian\",\"pronun\":\"[pəˈdestriən]\",\"translation\":\"n. 行人；步行者\\nadj. 徒步的；缺乏想像力的\",\"audio\":\"pedestrian.mp3\"},{\"word\":\"peel\",\"pronun\":\"[piːl]\",\"translation\":\"n. 皮\\nv. 剥，剥落；削\",\"audio\":\"peel.mp3\"},{\"word\":\"peg\",\"pronun\":\"[peɡ]\",\"translation\":\"n. 钉；桩；借口；琴栓\\nvt. 限制；钉木钉\\nadj. 越往下端越细的\\nvi. 疾行；孜孜不倦地做某事\",\"audio\":\"peg.mp3\"},{\"word\":\"penalty\",\"pronun\":\"[ˈpenəlti]\",\"translation\":\"n. 罚款，罚金；处罚\",\"audio\":\"penalty.mp3\"},{\"word\":\"pendulum\",\"pronun\":\"[ˈpendʒələm]\",\"translation\":\"n. 钟摆；摇锤；摇摆不定的事态\",\"audio\":\"pendulum.mp3\"},{\"word\":\"penguin\",\"pronun\":\"[ˈpeŋɡwɪn]\",\"translation\":\"n. 企鹅；空军地勤人员\",\"audio\":\"penguin.mp3\"},{\"word\":\"peninsula\",\"pronun\":\"[pɪˈnɪnsələr]\",\"translation\":\"n. 半岛\",\"audio\":\"peninsula.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

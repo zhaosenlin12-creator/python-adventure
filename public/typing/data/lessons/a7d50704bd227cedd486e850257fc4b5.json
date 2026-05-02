@@ -1,0 +1,83 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.658836+00:00",
+  "request": {
+    "lesson_id": "a7d50704bd227cedd486e850257fc4b5",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 33,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "a7d50704bd227cedd486e850257fc4b5",
+    "nextLessonId": "d7f60ff45072386bb928f6229b207a2e",
+    "lessonName": "巩固练习：uan、uang",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母uan、uang的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "3ca8ebb6e7be3c38d635176fc8e9a106",
+        "index": 1,
+        "highlights": [
+          "uan"
+        ],
+        "text": [
+          "请输入按键 [uan]"
+        ],
+        "detail": "学习双拼按键 uan"
+      },
+      {
+        "chapterId": "2d02c1e90b04a1989bbdad26684b0278",
+        "index": 2,
+        "highlights": [
+          "uang"
+        ],
+        "text": [
+          "请输入按键 [uang]"
+        ],
+        "detail": "学习双拼按键 uang"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "7003bd6855b0b692ca6e4fb91cd2de8d",
+        "index": 3,
+        "text": [
+          "uanuanuanuanuanguanguanguanguanuanguanuanguanuanguanuang"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "feaae48383b67d60458178a496f98393",
+        "index": 4,
+        "text": [
+          "宽广的黄河穿过壮观的黄土高原。\\n温暖的阳光照亮了窗外的花园。\\n端庄的状元穿着传统的长衫。"
+        ],
+        "pinyin": "[[\"宽\",\"kuān\"],[\"广\",\"guǎng\"],[\"的\",\"de\"],[\"黄\",\"huáng\"],[\"河\",\"hé\"],[\"穿\",\"chuān\"],[\"过\",\"guò\"],[\"壮\",\"zhuàng\"],[\"观\",\"guān\"],[\"的\",\"de\"],[\"黄\",\"huáng\"],[\"土\",\"tǔ\"],[\"高\",\"gāo\"],[\"原\",\"yuán\"],[\"。\",\"\"],[\"温\",\"wēn\"],[\"暖\",\"nuǎn\"],[\"的\",\"de\"],[\"阳\",\"yáng\"],[\"光\",\"guāng\"],[\"照\",\"zhào\"],[\"亮\",\"liàng\"],[\"了\",\"le\"],[\"窗\",\"chuāng\"],[\"外\",\"wài\"],[\"的\",\"de\"],[\"花\",\"huā\"],[\"园\",\"yuán\"],[\"。\",\"\"],[\"端\",\"duān\"],[\"庄\",\"zhuāng\"],[\"的\",\"de\"],[\"状\",\"zhuàng\"],[\"元\",\"yuán\"],[\"穿\",\"chuān\"],[\"着\",\"zhe\"],[\"传\",\"chuán\"],[\"统\",\"tǒng\"],[\"的\",\"de\"],[\"长\",\"cháng\"],[\"衫\",\"shān\"],[\"。\",\"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

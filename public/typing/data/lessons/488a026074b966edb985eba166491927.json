@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.313521+00:00",
+  "request": {
+    "lesson_id": "488a026074b966edb985eba166491927",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 168,
+    "nextCourseId": "d7df026ff1d81047d30da28a958b118f",
+    "courseName": "golang",
+    "lessonId": "488a026074b966edb985eba166491927",
+    "nextLessonId": "4e2142c237220721661fd72612480e88",
+    "lessonName": "插入排序",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - 插入排序",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f37c4f419d977503db9ab6e3780a278b",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport \"fmt\"\\n\\nfunc insertionSort(arr []int) {\\n\tfor i := 1; i < len(arr); i++ {\\n\t\tkey := arr[i]\\n\t\tj := i - 1\\n\\n\t\tfor j >= 0 && arr[j] > key {\\n\t\t\tarr[j+1] = arr[j]\\n\t\t\tj--\\n\t\t}\\n\\n\t\tarr[j+1] = key\\n\t}\\n}\\n\\nfunc main() {\\n\tarr := []int{12, 11, 13, 5, 6}\\n\tfmt.Println(\"排序前:\", arr)\\n\tinsertionSort(arr)\\n\tfmt.Println(\"排序后:\", arr)\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

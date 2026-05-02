@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.781961+00:00",
+  "request": {
+    "lesson_id": "c8a30db8c9d680e356a814136bad4628",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 371,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "c8a30db8c9d680e356a814136bad4628",
+    "nextLessonId": "fc245a2a03a2ae5f403ec40a83c31c70",
+    "lessonName": "六级词汇正序版-29",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第29课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f19c1a95d436d8f369aa9d577786213d",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"crush\",\"pronun\":\"[krʌʃ]\",\"translation\":\"n. 粉碎；迷恋；压榨；拥挤的人群\\nvt. 压碎；弄皱，变形；使…挤入\\nvi. 挤；被压碎\",\"audio\":\"crush.mp3\"},{\"word\":\"crystallize\",\"pronun\":\"[ˈkrɪstəlaɪz]\",\"translation\":\"vt. 使结晶；明确；使具体化；做成蜜饯\\nvi. 结晶，形成结晶；明确；具体化\",\"audio\":\"crystallize.mp3\"},{\"word\":\"cucumber\",\"pronun\":\"[ˈkjuːkʌmbər]\",\"translation\":\"n. 黄瓜；胡瓜\",\"audio\":\"cucumber.mp3\"},{\"word\":\"culminate\",\"pronun\":\"[ˈkʌlmɪneɪt]\",\"translation\":\"vt. 使结束；使达到高潮\\nvi. 到绝顶；达到高潮；达到顶点\",\"audio\":\"culminate.mp3\"},{\"word\":\"culture\",\"pronun\":\"[ˈkʌltʃər]\",\"translation\":\"n. 文化，文明；修养；栽培\\nvt. [细胞][微] 培养（等于cultivate）\",\"audio\":\"culture.mp3\"},{\"word\":\"cumulative\",\"pronun\":\"[ˈkjuːmjəleɪtɪv]\",\"translation\":\"adj. 累积的\",\"audio\":\"cumulative.mp3\"},{\"word\":\"curb\",\"pronun\":\"[kɜːrb]\",\"translation\":\"n. 抑制；路边；勒马绳\\nvt. 控制；勒住\",\"audio\":\"curb.mp3\"},{\"word\":\"current\",\"pronun\":\"[ˈkɜːrənt]\",\"translation\":\"n. （水，气，电）流；趋势；涌流\\nadj. 现在的；流通的，通用的；最近的；草写的\",\"audio\":\"current.mp3\"},{\"word\":\"curse\",\"pronun\":\"[kɜːrs]\",\"translation\":\"n. 诅咒；咒骂\\nvt. 诅咒；咒骂\\nvi. 诅咒；咒骂\",\"audio\":\"curse.mp3\"},{\"word\":\"customary\",\"pronun\":\"[ˈkʌstəmeri]\",\"translation\":\"n. 习惯法汇编\\nadj. 习惯的；通常的\",\"audio\":\"customary.mp3\"},{\"word\":\"cute\",\"pronun\":\"[kjuːt]\",\"translation\":\"adj. 可爱的；漂亮的；聪明的，伶俐的\",\"audio\":\"cute.mp3\"},{\"word\":\"cycle\",\"pronun\":\"[ˈsaɪkl]\",\"translation\":\"n. 循环；周期；自行车；整套；一段时间\\nvt. 使循环；使轮转\\nvi. 循环；骑自行车；轮转\",\"audio\":\"cycle.mp3\"},{\"word\":\"cylinder\",\"pronun\":\"[ˈsɪlɪndər]\",\"translation\":\"n. 圆筒；汽缸；[数] 柱面；圆柱状物\",\"audio\":\"cylinder.mp3\"},{\"word\":\"cynical\",\"pronun\":\"[ˈsɪnɪkl]\",\"translation\":\"adj. 愤世嫉俗的；冷嘲的\",\"audio\":\"cynical.mp3\"},{\"word\":\"dart\",\"pronun\":\"[dɑːrt]\",\"translation\":\"vt. 投掷，投射；使迅速突然移动\\nvi. 向前冲，飞奔\\nn. 飞镖，标枪；急驰，飞奔；（虫的）螯；飞快的移动\",\"audio\":\"dart.mp3\"},{\"word\":\"database\",\"pronun\":\"[ˈdeɪtəbeɪs; ˈdætəbeɪs]\",\"translation\":\"n. 数据库，资料库\",\"audio\":\"database.mp3\"},{\"word\":\"dazzle\",\"pronun\":\"[ˈdæzl]\",\"translation\":\"n. 耀眼的光；灿烂\\nvt. 使……目眩；使……眼花\\nvi. 眼花缭乱；炫耀\",\"audio\":\"dazzle.mp3\"},{\"word\":\"deadline\",\"pronun\":\"[ˈdedlaɪn]\",\"translation\":\"n. 截止期限，最后期限\",\"audio\":\"deadline.mp3\"},{\"word\":\"deadly\",\"pronun\":\"[ˈdedli]\",\"translation\":\"adj. 致命的；非常的；死一般的\\nadv. 非常；如死一般地\",\"audio\":\"deadly.mp3\"},{\"word\":\"Dean\",\"pronun\":\"\",\"translation\":\"n. 院长；系主任；教务长；主持牧师\",\"audio\":\"Dean.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

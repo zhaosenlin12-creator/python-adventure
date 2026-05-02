@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:37.397047+00:00",
+  "request": {
+    "lesson_id": "b1ae426405beb98b4e611ca627fb4424",
+    "course_id": "080aa640e5f820c887b06c95eded7890",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "080aa640e5f820c887b06c95eded7890",
+    "order": 764,
+    "nextCourseId": "080aa640e5f820c887b06c95eded7890",
+    "courseName": "国学经典2",
+    "lessonId": "b1ae426405beb98b4e611ca627fb4424",
+    "nextLessonId": "37ae0e1179ead9662a6bd7d0d0f06ed1",
+    "lessonName": "诗经3 桃夭",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-4.cd3573ff4d.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "7737c4f989d55297b6f2ea863fdc8a3d",
+        "index": 1,
+        "text": [
+          "桃之夭夭，灼灼其华。\\n之子于归，宜其室家。\\n桃之夭夭，有蕡其实。\\n之子于归，宜其家室。\\n桃之夭夭，其叶蓁蓁。"
+        ],
+        "pinyin": "[[\"桃\", \"táo\"], [\"之\", \"zhī\"], [\"夭\", \"yāo\"], [\"夭\", \"yāo\"], [\"，\", \"\"], [\"灼\", \"zhuó\"], [\"灼\", \"zhuó\"], [\"其\", \"qí\"], [\"华\", \"huá\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"之\", \"zhī\"], [\"子\", \"zǐ\"], [\"于\", \"yú\"], [\"归\", \"guī\"], [\"，\", \"\"], [\"宜\", \"yí\"], [\"其\", \"qí\"], [\"室\", \"shì\"], [\"家\", \"jiā\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"桃\", \"táo\"], [\"之\", \"zhī\"], [\"夭\", \"yāo\"], [\"夭\", \"yāo\"], [\"，\", \"\"], [\"有\", \"yǒu\"], [\"蕡\", \"fén\"], [\"其\", \"qí\"], [\"实\", \"shí\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"之\", \"zhī\"], [\"子\", \"zǐ\"], [\"于\", \"yú\"], [\"归\", \"guī\"], [\"，\", \"\"], [\"宜\", \"yí\"], [\"其\", \"qí\"], [\"家\", \"jiā\"], [\"室\", \"shì\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"桃\", \"táo\"], [\"之\", \"zhī\"], [\"夭\", \"yāo\"], [\"夭\", \"yāo\"], [\"，\", \"\"], [\"其\", \"qí\"], [\"叶\", \"yè\"], [\"蓁\", \"zhēn\"], [\"蓁\", \"zhēn\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.688111+00:00",
+  "request": {
+    "lesson_id": "a2664022dd201e53869ea35b4b290918",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 131,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "a2664022dd201e53869ea35b4b290918",
+    "nextLessonId": "b6f24bede80b7619a8630b90d2abf85f",
+    "lessonName": "KET核心词-95",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第95课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "7021abf5bf99f09c0c346be982070b77",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"shoes\",\"pronun\":\"[ʃuːz]\",\"translation\":\"n. 鞋子（shoe的复数）\\nv. 穿鞋（shoe的第三人称单数）\",\"audio\":\"shoes.mp3\"},{\"word\":\"shorts\",\"pronun\":\"[ʃɔːrts]\",\"translation\":\"n. 短裤\",\"audio\":\"shorts.mp3\"},{\"word\":\"silk\",\"pronun\":\"[sɪlk]\",\"translation\":\"n. 丝绸；蚕丝；丝织物\\nadj. 丝的；丝绸的；丝制的\\nvi. （玉米）处于长须的阶段中\",\"audio\":\"silk.mp3\"},{\"word\":\"silver\",\"pronun\":\"[ˈsɪlvər]\",\"translation\":\"n. 银；银器；银币；银质奖章；餐具；银灰色\\nadj. 银的；含银的；有银色光泽的；口才流利的；第二十五周年的婚姻\\nvt. 镀银；使有银色光泽\\nvi. 变成银色\",\"audio\":\"silver.mp3\"},{\"word\":\"skirt\",\"pronun\":\"[skɜːrt]\",\"translation\":\"n. 裙子\\nvt. 绕过，回避；位于…边缘\\nvi. 沿边走，绕开；环绕\",\"audio\":\"skirt.mp3\"},{\"word\":\"sock\",\"pronun\":\"[sɑːk]\",\"translation\":\"vt. 重击；给……穿袜\\nn. 短袜；一击\\nadv. 正着地；不偏不倚地\\nadj. 非常成功的\",\"audio\":\"sock.mp3\"},{\"word\":\"suit\",\"pronun\":\"[suːt]\",\"translation\":\"n. 诉讼；恳求；套装，西装；一套外衣\\nvt. 适合；使适应\\nvi. 合适；相称\",\"audio\":\"suit.mp3\"},{\"word\":\"sunglasses\",\"pronun\":\"[ˈsʌnɡlæsɪz]\",\"translation\":\"n. 太阳镜；凸透镜（sunglass的复数）\",\"audio\":\"sunglasses.mp3\"},{\"word\":\"sweater\",\"pronun\":\"[ˈswetər]\",\"translation\":\"n. 毛线衣，运动衫；大量出汗的人，发汗剂\",\"audio\":\"sweater.mp3\"},{\"word\":\"take off\",\"pronun\":\"[ˈteɪk ɔːf]\",\"translation\":\"v. (飞机)起飞；出去；拿掉；移送\",\"audio\":\"take_off.mp3\"},{\"word\":\"tie\",\"pronun\":\"[taɪ]\",\"translation\":\"n. 领带；平局；鞋带；领结；不分胜负\\nvi. 打结；不分胜负；被用带（或绳子等）系住\\nvt. 系；约束；打结；与…成平局\",\"audio\":\"tie.mp3\"},{\"word\":\"tight\",\"pronun\":\"[taɪt]\",\"translation\":\"adj. 紧的；密封的；绷紧的；麻烦的；严厉的；没空的；吝啬的\\nadv. 紧紧地；彻底地\",\"audio\":\"tight.mp3\"},{\"word\":\"trainer\",\"pronun\":\"[ˈtreɪnər]\",\"translation\":\"n. 助理教练；训练员；驯马师；飞行练习器；运动鞋\",\"audio\":\"trainer.mp3\"},{\"word\":\"trousers\",\"pronun\":\"[ˈtraʊzərz]\",\"translation\":\"n. 裤子，长裤\",\"audio\":\"trousers.mp3\"},{\"word\":\"try on\",\"pronun\":\"\",\"translation\":\"na. 试穿；〈非正式〉搞恶作剧(以试探能否被容忍)；〈非正式〉耍花招\",\"audio\":\"try_on.mp3\"},{\"word\":\"T-shirt\",\"pronun\":\"[ˈtiː ʃɜːrt]\",\"translation\":\"n. 短袖圆领汗衫\",\"audio\":\"T-shirt.mp3\"},{\"word\":\"uniform\",\"pronun\":\"[ˈjuːnɪfɔːrm]\",\"translation\":\"n. 制服\\nadj. 统一的；一致的；相同的；均衡的；始终如一的\\nvt. 使穿制服；使成一样\",\"audio\":\"uniform.mp3\"},{\"word\":\"valuable\",\"pronun\":\"[ˈvæljuəbl]\",\"translation\":\"n. 贵重物品\\nadj. 有价值的；贵重的；可估价的\",\"audio\":\"valuable.mp3\"},{\"word\":\"wear\",\"pronun\":\"[wer]\",\"translation\":\"n. 衣物；磨损；耐久性\\nv. 穿着；用旧；耗损；面露\",\"audio\":\"wear.mp3\"},{\"word\":\"wear out\",\"pronun\":\"\",\"translation\":\"na. 精疲力尽；用坏；穿破；磨破\",\"audio\":\"wear_out.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

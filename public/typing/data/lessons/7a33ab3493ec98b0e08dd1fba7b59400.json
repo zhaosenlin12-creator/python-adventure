@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.518067+00:00",
+  "request": {
+    "lesson_id": "7a33ab3493ec98b0e08dd1fba7b59400",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 92,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "7a33ab3493ec98b0e08dd1fba7b59400",
+    "nextLessonId": "d0b31140f6c6614a75ded2a41963dd98",
+    "lessonName": "KET核心词-115",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第115课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5237ec407d9051b3233240f1bbb1b36d",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"classroom\",\"pronun\":\"[ˈklæsruːm; ˈklæsrʊm]\",\"translation\":\"n. 教室\",\"audio\":\"classroom.mp3\"},{\"word\":\"clever\",\"pronun\":\"[ˈklevər]\",\"translation\":\"adj. 聪明的；机灵的；熟练的\\n[ 比较级cleverer 最高级 cleverest ]\",\"audio\":\"clever.mp3\"},{\"word\":\"college\",\"pronun\":\"[ˈkɑːlɪdʒ]\",\"translation\":\"n. 大学；学院；学会\",\"audio\":\"college.mp3\"},{\"word\":\"course\",\"pronun\":\"[kɔːrs]\",\"translation\":\"n. 科目；课程；过程；进程；道路；路线，航向；一道菜\\nvt. 追赶；跑过\\nvi. 指引航线；快跑\",\"audio\":\"course.mp3\"},{\"word\":\"desk\",\"pronun\":\"[desk]\",\"translation\":\"n. 办公桌；服务台；编辑部；（美）讲道台；乐谱架\\nadj. 书桌的；桌上用的；伏案做的\",\"audio\":\"desk.mp3\"},{\"word\":\"dictionary\",\"pronun\":\"[ˈdɪkʃəneri]\",\"translation\":\"n. 字典；词典\",\"audio\":\"dictionary.mp3\"},{\"word\":\"eraser\",\"pronun\":\"[ɪˈreɪsər]\",\"translation\":\"n. 橡皮；擦除器；[计] 清除器\",\"audio\":\"eraser.mp3\"},{\"word\":\"fail an exam\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"fail_an_exam.mp3\"},{\"word\":\"failure\",\"pronun\":\"[ˈfeɪljər]\",\"translation\":\"n. 失败；故障；失败者；破产\",\"audio\":\"failure.mp3\"},{\"word\":\"fair\",\"pronun\":\"[fer]\",\"translation\":\"n. 展览会；市集；美人\\nadj. 公平的；美丽的，白皙的；[气象] 晴朗的\\nvi. 转晴\\nadv. 公平地；直接地；清楚地\",\"audio\":\"fair.mp3\"},{\"word\":\"grade\",\"pronun\":\"[ɡreɪd]\",\"translation\":\"n. 年级；等级；成绩；级别；阶段\\nvt. 评分；把…分等级\\nvi. 分等级；逐渐变化\",\"audio\":\"grade.mp3\"},{\"word\":\"hand in homework\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"hand_in_homework.mp3\"},{\"word\":\"homework\",\"pronun\":\"[ˈhoʊmwɜːrk]\",\"translation\":\"n. 家庭作业，课外作业\",\"audio\":\"homework.mp3\"},{\"word\":\"intelligent\",\"pronun\":\"[ɪnˈtelɪdʒənt]\",\"translation\":\"adj. 智能的；聪明的；理解力强的\",\"audio\":\"intelligent.mp3\"},{\"word\":\"kind\",\"pronun\":\"[kaɪnd]\",\"translation\":\"n. 种类；性质\\nadj. 和蔼的；宽容的；令人感激的\",\"audio\":\"kind.mp3\"},{\"word\":\"laboratory\",\"pronun\":\"[ˈlæbrətɔːri]\",\"translation\":\"n. 实验室，研究室\",\"audio\":\"laboratory.mp3\"},{\"word\":\"learn\",\"pronun\":\"[lɜːrn]\",\"translation\":\"vt. 学习；得知；认识到\\nvi. 学习；获悉\",\"audio\":\"learn.mp3\"},{\"word\":\"lesson\",\"pronun\":\"[ˈlesn]\",\"translation\":\"n. 教训；课\\nvt. 教训；上课\",\"audio\":\"lesson.mp3\"},{\"word\":\"library\",\"pronun\":\"[ˈlaɪbreri]\",\"translation\":\"n. 图书馆，藏书室；文库\",\"audio\":\"library.mp3\"},{\"word\":\"make progress\",\"pronun\":\"\",\"translation\":\"na. 前进；进展\",\"audio\":\"make_progress.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

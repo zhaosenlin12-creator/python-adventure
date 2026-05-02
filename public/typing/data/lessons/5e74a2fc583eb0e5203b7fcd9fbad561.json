@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.504390+00:00",
+  "request": {
+    "lesson_id": "5e74a2fc583eb0e5203b7fcd9fbad561",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 208,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "5e74a2fc583eb0e5203b7fcd9fbad561",
+    "nextLessonId": "fa5c2790f0ff6c63e465da6a67f490ca",
+    "lessonName": "窗口函数",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - 窗口函数",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "625a1b464adf48e2778b8ca9aeb88077",
+        "index": 1,
+        "text": [
+          "-- 使用ROW_NUMBER排名\\nSELECT\\n    name,\\n    city,\\n    age,\\n    ROW_NUMBER() OVER (ORDER BY age DESC) AS rank_num\\nFROM users;\\n\\n-- 按分组排名\\nSELECT\\n    name,\\n    city,\\n    age,\\n    RANK() OVER (PARTITION BY city ORDER BY age DESC) AS city_rank\\nFROM users;\\n\\n-- 计算累计总和\\nSELECT\\n    order_id,\\n    user_id,\\n    amount,\\n    SUM(amount) OVER (PARTITION BY user_id ORDER BY created_at) AS running_total\\nFROM orders;\\n\\n-- 使用LEAD和LAG函数\\nSELECT\\n    order_id,\\n    amount,\\n    created_at,\\n    LAG(amount) OVER (ORDER BY created_at) AS prev_amount,\\n    LEAD(amount) OVER (ORDER BY created_at) AS next_amount\\nFROM orders;\\n\\n-- 使用NTILE分组\\nSELECT\\n    name,\\n    amount,\\n    NTILE(4) OVER (ORDER BY amount DESC) AS quartile\\nFROM orders;\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

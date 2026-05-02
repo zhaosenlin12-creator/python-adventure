@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.326293+00:00",
+  "request": {
+    "lesson_id": "0988a1a877705d295d58cc2b7f474d44",
+    "course_id": "be2af5259ed993e6499f4c46d3f7e67e",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "be2af5259ed993e6499f4c46d3f7e67e",
+    "order": 450,
+    "nextCourseId": "a74c1aef61379ff4f0a2ca54be6ac56f",
+    "courseName": "实战演练-1亿以内金额",
+    "lessonId": "0988a1a877705d295d58cc2b7f474d44",
+    "nextLessonId": "dc9e2687c7820b4e006c981f44df8bf1",
+    "lessonName": "终极挑战",
+    "icon": "data/assets/daziya.com/key-icon_key-practise-star.b4ccc47d6d.png",
+    "description": "数字输入练习 - 终极挑战",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "84fd80dcc23addc8ccb055117abc279a",
+        "index": 1,
+        "text": [
+          "9871654738\\n8762543829\\n7653432921\\n6544321812\\n5435211713\\n4326192614\\n3217183515\\n2108274416\\n1929365317\\n9973465829\\n8864354921\\n7755243812\\n6646132713\\n5537122614\\n4428213515\\n3319294416\\n2211385317\\n1132476218\\n9185376931\\n8276465829\\n7367554721\\n6458643612\\n5549732513\\n4641823414\\n3732914315\\n2823195216\\n1914286117\\n9287487182\\n8378576173\\n7469665164"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

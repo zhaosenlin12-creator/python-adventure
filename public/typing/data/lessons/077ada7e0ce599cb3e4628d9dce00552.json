@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.859843+00:00",
+  "request": {
+    "lesson_id": "077ada7e0ce599cb3e4628d9dce00552",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 57,
+    "nextCourseId": "ff61770b1da83313ceacb0a08aef6378",
+    "courseName": "Python",
+    "lessonId": "077ada7e0ce599cb3e4628d9dce00552",
+    "nextLessonId": "4737c0c0fb2222c76418a7fc1ba7b19f",
+    "lessonName": "最大公约数",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - 最大公约数",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "813d9fd43bb0cff8e55a489a76edfda4",
+        "index": 1,
+        "text": [
+          "# 计算两个数的最大公约数\\ndef gcd_euclidean(a, b):\\n    while b:\\n        a, b = b, a % b\\n    return a\\n\\ndef gcd_recursive(a, b):\\n    if b == 0:\\n        return a\\n    return gcd_recursive(b, a % b)\\n\\ndef lcm(a, b):\\n    return abs(a * b) // gcd_euclidean(a, b)\\n\\n# 测试最大公约数和最小公倍数\\npairs = [(48, 18), (100, 75), (17, 19)]\\n\\nprint(\"最大公约数和最小公倍数:\")\\nfor a, b in pairs:\\n    print(f\"GCD({a}, {b}) = {gcd_euclidean(a, b)}\")\\n    print(f\"LCM({a}, {b}) = {lcm(a, b)}\")\\n    print()\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

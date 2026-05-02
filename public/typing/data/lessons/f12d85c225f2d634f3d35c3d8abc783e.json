@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.459146+00:00",
+  "request": {
+    "lesson_id": "f12d85c225f2d634f3d35c3d8abc783e",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 78,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "f12d85c225f2d634f3d35c3d8abc783e",
+    "nextLessonId": "66c62638a39f2592108629c63f20cb35",
+    "lessonName": "KET核心词-73",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第73课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4868689755c0437706ea99ed9548e634",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"weight\",\"pronun\":\"[weɪt]\",\"translation\":\"n. 重量，重力；负担；砝码；重要性\\nvt. 加重量于，使变重\",\"audio\":\"weight.mp3\"},{\"word\":\"welcome\",\"pronun\":\"[ˈwelkəm]\",\"translation\":\"n. 欢迎\\nvt. 欢迎\\nadj. 受欢迎的\\nint. 欢迎\",\"audio\":\"welcome.mp3\"},{\"word\":\"well\",\"pronun\":\"[wel]\",\"translation\":\"n. 井；源泉\\nadj. 良好的；健康的；适宜的\\nadv. 很好地；充分地；满意地；适当地\\nv. 涌出\",\"audio\":\"well.mp3\"},{\"word\":\"well-known\",\"pronun\":\"[ˌwel ˈnoʊn]\",\"translation\":\"adj. 著名的；众所周知的；清楚明白的\",\"audio\":\"well-known.mp3\"},{\"word\":\"Western\",\"pronun\":\"[ˈwestərn]\",\"translation\":\"n. 西方人；西部片，西部小说\\nadj. 西方的，西部的；有西方特征的\",\"audio\":\"Western.mp3\"},{\"word\":\"wet\",\"pronun\":\"[wet]\",\"translation\":\"n. 雨天；湿气\\nadj. [气象][物] 潮湿的；有雨的\\nvt. 弄湿\\nvi. 变湿\",\"audio\":\"wet.mp3\"},{\"word\":\"whale\",\"pronun\":\"[weɪl]\",\"translation\":\"n. 鲸；巨大的东西\\nvt. 猛揍；使惨败\\nvi. 捕鲸\",\"audio\":\"whale.mp3\"},{\"word\":\"what\",\"pronun\":\"[wʌt]\",\"translation\":\"pron. 什么；多么；多少\\nadv. 到什么程度，在哪一方面\\nadj. 什么；多么；何等\\nint. 什么；多么\",\"audio\":\"what.mp3\"},{\"word\":\"wheel\",\"pronun\":\"[wiːl]\",\"translation\":\"n. 车轮；方向盘；转动\\nvt. 转动；使变换方向；给…装轮子\\nvi. 旋转；突然转变方向；盘旋飞行\",\"audio\":\"wheel.mp3\"},{\"word\":\"when\",\"pronun\":\"[wen]\",\"translation\":\"conj. 考虑到；既然；当…时；在…时；如果\\nn. 时间，时候；日期；场合\\nadv. 什么时候，何时；（用于时间的表达方式之后）在那时；其时；当时\\npron. 那时；什么时侯\",\"audio\":\"when.mp3\"},{\"word\":\"where\",\"pronun\":\"[wer]\",\"translation\":\"conj. 在…的地方\\nn. 地点\\nadv. 在哪里\\npron. 哪里\",\"audio\":\"where.mp3\"},{\"word\":\"which\",\"pronun\":\"[wɪtʃ]\",\"translation\":\"adj. 哪一个；哪一些\\npron. 哪\\/那一个；哪\\/那一些\",\"audio\":\"which.mp3\"},{\"word\":\"while\",\"pronun\":\"[waɪl]\",\"translation\":\"conj. 虽然；然而；当……的时候\\nn. 一会儿；一段时间\\nvt. 消磨；轻松地度过\",\"audio\":\"while.mp3\"},{\"word\":\"white\",\"pronun\":\"[waɪt]\",\"translation\":\"n. 白色；洁白；白种人\\nadj. 白色的；白种的；纯洁的\",\"audio\":\"white.mp3\"},{\"word\":\"who\",\"pronun\":\"[huː]\",\"translation\":\"pron. 谁；什么人\",\"audio\":\"who.mp3\"},{\"word\":\"whole\",\"pronun\":\"[hoʊl]\",\"translation\":\"n. 整体；全部\\nadj. 完整的；纯粹的\",\"audio\":\"whole.mp3\"},{\"word\":\"whose\",\"pronun\":\"[huːz]\",\"translation\":\"pron. 谁的（疑问代词）\",\"audio\":\"whose.mp3\"},{\"word\":\"why\",\"pronun\":\"[waɪ]\",\"translation\":\"int. 哎呀！什么？\\nadv. 为什么\",\"audio\":\"why.mp3\"},{\"word\":\"wide\",\"pronun\":\"[waɪd]\",\"translation\":\"n. 大千世界\\nadj. 广泛的；宽的，广阔的；张大的；远离目标的\\nadv. 广泛地；广阔地；充分地\",\"audio\":\"wide.mp3\"},{\"word\":\"WiFi\",\"pronun\":\"[ˈwaɪfaɪ]\",\"translation\":\"abbr. 基于IEEE 802.11b标准的无线局域网（Wireless Fidelity）；无线网络模块\",\"audio\":\"WiFi.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

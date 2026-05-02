@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.859090+00:00",
+  "request": {
+    "lesson_id": "27ebadd19e44c3fb75f4f60d7755e008",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 56,
+    "nextCourseId": "ff61770b1da83313ceacb0a08aef6378",
+    "courseName": "Python",
+    "lessonId": "27ebadd19e44c3fb75f4f60d7755e008",
+    "nextLessonId": "077ada7e0ce599cb3e4628d9dce00552",
+    "lessonName": "字符统计",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - 字符统计",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f1adffcff52a39006ce0dbc4bcf0d179",
+        "index": 1,
+        "text": [
+          "# 统计字符串中字符出现的频率\\ndef count_characters(text):\\n    char_count = {}\\n\\n    for char in text:\\n        if char.isalnum():\\n            char = char.lower()\\n            if char in char_count:\\n                char_count[char] += 1\\n            else:\\n                char_count[char] = 1\\n\\n    return char_count\\n\\n# 测试字符统计\\ntext = \"Hello World! How are you?\"\\nfrequency = count_characters(text)\\n\\nprint(f\"原文本: {text}\")\\nprint(\"\\n字符出现频率:\")\\nfor char, count in sorted(frequency.items()):\\n    print(f\"'{char}': {count}\")\\n\\n# 找出出现最多的字符\\nmost_common = max(frequency.items(), key=lambda x: x[1])\\nprint(f\"\\n出现最多的字符: '{most_common[0]}' ({most_common[1]}次)\")\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

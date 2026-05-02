@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.946866+00:00",
+  "request": {
+    "lesson_id": "ff83fe5d06f2f4135fa7af2431ef2964",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 187,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "ff83fe5d06f2f4135fa7af2431ef2964",
+    "nextLessonId": "532e43659d85fa0ed38972290cccd409",
+    "lessonName": "KET核心词-126",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第126课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c54d4f045d79c60ada70721e8e28554c",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"calendar\",\"pronun\":\"[ˈkælɪndər]\",\"translation\":\"n. 日历；[天] 历法；日程表\\nvt. 将…列入表中；将…排入日程表\",\"audio\":\"calendar.mp3\"},{\"word\":\"century\",\"pronun\":\"[ˈsentʃəri]\",\"translation\":\"n. 世纪，百年；（板球）一百分\",\"audio\":\"century.mp3\"},{\"word\":\"clock\",\"pronun\":\"[klɑːk]\",\"translation\":\"n. 时钟；计时器\\nvt. 记录；记时\\nvi. 打卡；记录时间\",\"audio\":\"clock.mp3\"},{\"word\":\"date\",\"pronun\":\"[deɪt]\",\"translation\":\"n. 日期；约会；年代；枣椰子\\nvt. 确定…年代；和…约会\\nvi. 过时；注明日期；始于（某一历史时期）\",\"audio\":\"date.mp3\"},{\"word\":\"day\",\"pronun\":\"[deɪ]\",\"translation\":\"n. 一天；时期；白昼\\nadj. 日间的；逐日的\\nadv. 每天；经常在白天地\",\"audio\":\"day.mp3\"},{\"word\":\"evening\",\"pronun\":\"[ˈiːvnɪŋ]\",\"translation\":\"n. 晚上；傍晚；（联欢性的）晚会；后期\\nadj. 在晚上的；为晚上的；晚上用的\\nint. 晚上好（等于good evening）\",\"audio\":\"evening.mp3\"},{\"word\":\"half\",\"pronun\":\"[hæf]\",\"translation\":\"n. 一半；半场；半学年\\nadj. 一半的；不完全的；半途的\\nadv. 一半地；部分地\",\"audio\":\"half.mp3\"},{\"word\":\"hour\",\"pronun\":\"[ˈaʊər]\",\"translation\":\"n. 小时；钟头；课时；…点钟\",\"audio\":\"hour.mp3\"},{\"word\":\"midnight\",\"pronun\":\"[ˈmɪdnaɪt]\",\"translation\":\"n. 午夜，半夜12点钟\\nadj. 半夜的；漆黑的\",\"audio\":\"midnight.mp3\"},{\"word\":\"minute\",\"pronun\":\"[ˈmɪnɪt]\",\"translation\":\"n. 分，分钟；片刻，一会儿；备忘录，笔记；会议记录\\nvt. 将…记录下来\\nadj. 微小的，详细的 [maɪˈnjuːt; US -ˈnuːt; maɪˋnut]\",\"audio\":\"minute.mp3\"},{\"word\":\"moment\",\"pronun\":\"[ˈmoʊmənt]\",\"translation\":\"n. 片刻，瞬间，时刻；重要，契机\",\"audio\":\"moment.mp3\"},{\"word\":\"month\",\"pronun\":\"[mʌnθ]\",\"translation\":\"n. 月，一个月的时间\",\"audio\":\"month.mp3\"},{\"word\":\"morning\",\"pronun\":\"[ˈmɔːrnɪŋ]\",\"translation\":\"n. 早晨；黎明；初期\",\"audio\":\"morning.mp3\"},{\"word\":\"night\",\"pronun\":\"[naɪt]\",\"translation\":\"n. 夜晚，晚上；黑暗，黑夜\\nadj. 夜晚的，夜间的\",\"audio\":\"night.mp3\"},{\"word\":\"noon\",\"pronun\":\"[nuːn]\",\"translation\":\"n. 中午；正午；全盛期\",\"audio\":\"noon.mp3\"},{\"word\":\"now\",\"pronun\":\"[naʊ]\",\"translation\":\"adv. 现在；如今；立刻\\nadj. 现在的\\nn. 现在；目前\\nconj. 由于；既然\",\"audio\":\"now.mp3\"},{\"word\":\"o'clock\",\"pronun\":\"\",\"translation\":\"abbr. …点钟（等于of the clock）\",\"audio\":\"o_clock.mp3\"},{\"word\":\"p.m.\",\"pronun\":\"[ˌpiː ˈem]\",\"translation\":\"abbr. (=prime minister)总理；首相；午后\\nn. 总理（全写为 prime minister）\",\"audio\":\"p_m_.mp3\"},{\"word\":\"quarter\",\"pronun\":\"[ˈkwɔːrtər]\",\"translation\":\"num. 四分之一\\nn. 四分之一；地区；季度；一刻钟；两角五分；节\\nvt. 将…四等分；供某人住宿\\nvi. 住宿；驻扎\",\"audio\":\"quarter.mp3\"},{\"word\":\"second\",\"pronun\":\"[ˈsekənd; sɪˈkɑːnd]\",\"translation\":\"num. 第二\\nn. 秒；第二名；瞬间；二等品\\nadj. 第二的；次要的；附加的\\nvt. 支持\\nadv. 第二；其次；居第二位\",\"audio\":\"second.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

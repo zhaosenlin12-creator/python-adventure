@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.915089+00:00",
+  "request": {
+    "lesson_id": "17f5939f3645c56c16eb59516ff3e526",
+    "course_id": "421f70b408e75c66a6e8a5208e6fc7d1",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "421f70b408e75c66a6e8a5208e6fc7d1",
+    "order": 477,
+    "nextCourseId": "421f70b408e75c66a6e8a5208e6fc7d1",
+    "courseName": "宋词必备67首（2）",
+    "lessonId": "17f5939f3645c56c16eb59516ff3e526",
+    "nextLessonId": "8c0c7bc5a927d48523dd37b4e6f9754f",
+    "lessonName": "十一月四日风雨大作 其二",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3efb9f20d6de324a220467306a271d41",
+        "index": 1,
+        "text": [
+          "十一月四日风雨大作 其二\\n陆游\\n僵卧孤村不自哀，尚思为国戍轮台。\\n夜阑卧听风吹雨，铁马冰河入梦来。"
+        ],
+        "pinyin": "[[\"十\",\"shí\"],[\"一\",\"yī\"],[\"月\",\"yuè\"],[\"四\",\"sì\"],[\"日\",\"rì\"],[\"风\",\"fēng\"],[\"雨\",\"yǔ\"],[\"大\",\"dà\"],[\"作\",\"zuò\"],[\" \",\"\"],[\"其\",\"qí\"],[\"二\",\"èr\"],[\"\\n\",\"\"],[\"陆\",\"lù\"],[\"游\",\"yóu\"],[\"\\n\",\"\"],[\"僵\",\"jiāng\"],[\"卧\",\"wò\"],[\"孤\",\"gū\"],[\"村\",\"cūn\"],[\"不\",\"bù\"],[\"自\",\"zì\"],[\"哀\",\"āi\"],[\"，\",\"\"],[\"尚\",\"shàng\"],[\"思\",\"sī\"],[\"为\",\"wèi\"],[\"国\",\"guó\"],[\"戍\",\"shù\"],[\"轮\",\"lún\"],[\"台\",\"tái\"],[\"。\",\"\"],[\"\\n\",\"\"],[\"夜\",\"yè\"],[\"阑\",\"lán\"],[\"卧\",\"wò\"],[\"听\",\"tīng\"],[\"风\",\"fēng\"],[\"吹\",\"chuī\"],[\"雨\",\"yǔ\"],[\"，\",\"\"],[\"铁\",\"tiě\"],[\"马\",\"mǎ\"],[\"冰\",\"bīng\"],[\"河\",\"hé\"],[\"入\",\"rù\"],[\"梦\",\"mèng\"],[\"来\",\"lái\"],[\"。\",\"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

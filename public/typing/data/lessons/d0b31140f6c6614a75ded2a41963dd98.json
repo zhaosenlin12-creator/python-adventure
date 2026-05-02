@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.523614+00:00",
+  "request": {
+    "lesson_id": "d0b31140f6c6614a75ded2a41963dd98",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 93,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "d0b31140f6c6614a75ded2a41963dd98",
+    "nextLessonId": "6e7846c95f0a9e998754e8f0f27df74b",
+    "lessonName": "KET核心词-118",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第118课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c966604d21a3b18795b1707935a8eb0d",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"grandchild\",\"pronun\":\"[ˈɡræntʃaɪld]\",\"translation\":\"n. 孙子；孙女；外孙；外孙女\",\"audio\":\"grandchild.mp3\"},{\"word\":\"grandad\",\"pronun\":\"[ˈɡrændæd]\",\"translation\":\"n. 爷爷；外公\",\"audio\":\"grandad.mp3\"},{\"word\":\"granddad\",\"pronun\":\"[ˈɡrændæd]\",\"translation\":\"n. 爷爷；外公\",\"audio\":\"granddad.mp3\"},{\"word\":\"granddaughter\",\"pronun\":\"[ˈɡrændɔːtər]\",\"translation\":\"n. 孙女；外孙女\",\"audio\":\"granddaughter.mp3\"},{\"word\":\"grandfather\",\"pronun\":\"[ˈɡrænfɑːðər]\",\"translation\":\"n. 祖父；始祖\\nvt. 不受新规定限制\",\"audio\":\"grandfather.mp3\"},{\"word\":\"grandma\",\"pronun\":\"[ˈɡrænmɑː]\",\"translation\":\"n. 奶奶；外婆\",\"audio\":\"grandma.mp3\"},{\"word\":\"grandmother\",\"pronun\":\"[ˈɡrænmʌðər]\",\"translation\":\"n. 祖母；女祖先\\nvt. 当…的祖母\\nvi. 当祖母\",\"audio\":\"grandmother.mp3\"},{\"word\":\"grandpa\",\"pronun\":\"[ˈɡrænpɑː]\",\"translation\":\"n. 爷爷；外公\",\"audio\":\"grandpa.mp3\"},{\"word\":\"grandparent\",\"pronun\":\"[ˈɡrænperənt]\",\"translation\":\"n. 祖父母；祖父或祖母；外祖父母；外祖父或外祖母\",\"audio\":\"grandparent.mp3\"},{\"word\":\"grandson\",\"pronun\":\"[ˈɡrænsʌn]\",\"translation\":\"n. 孙子；外孙\",\"audio\":\"grandson.mp3\"},{\"word\":\"granny\",\"pronun\":\"[ˈɡræni]\",\"translation\":\"n. 奶奶；外婆；婆婆妈妈的人\",\"audio\":\"granny.mp3\"},{\"word\":\"grow up\",\"pronun\":\"[ɡroʊ ʌp]\",\"translation\":\"na. 长大\",\"audio\":\"grow_up.mp3\"},{\"word\":\"guy\",\"pronun\":\"[ɡaɪ]\",\"translation\":\"n. 男人，家伙\\nvt. 嘲弄，取笑\\nvi. 逃跑\",\"audio\":\"guy.mp3\"},{\"word\":\"husband\",\"pronun\":\"[ˈhʌzbənd]\",\"translation\":\"n. 丈夫\\nvt. 节约地使用（或管理）\",\"audio\":\"husband.mp3\"},{\"word\":\"look after\",\"pronun\":\"[lʊk ˈæftər]\",\"translation\":\"na. 照看；照顾；看管；对…负责\",\"audio\":\"look_after.mp3\"},{\"word\":\"look forward to\",\"pronun\":\"\",\"translation\":\"na. 盼望\",\"audio\":\"look_forward_to.mp3\"},{\"word\":\"mother\",\"pronun\":\"[ˈmʌðər]\",\"translation\":\"n. 母亲；大娘；女修道院院长\\nvt. 生下；养育；像母亲般关怀或照管\\nadj. 母亲的；出生地的\",\"audio\":\"mother.mp3\"},{\"word\":\"mum\",\"pronun\":\"[mʌm]\",\"translation\":\"adj. 沉默的\\nn. 妈妈（口语）；沉默；菊花\\nvi. 演哑剧\\nint. 别说话\",\"audio\":\"mum.mp3\"},{\"word\":\"nephew\",\"pronun\":\"[ˈnefjuː; ˈnevjuː]\",\"translation\":\"n. 侄子；外甥\",\"audio\":\"nephew.mp3\"},{\"word\":\"niece\",\"pronun\":\"[niːs]\",\"translation\":\"n. 外甥女，侄女\",\"audio\":\"niece.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

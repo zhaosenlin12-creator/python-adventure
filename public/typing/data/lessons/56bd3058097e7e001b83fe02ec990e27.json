@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.217282+00:00",
+  "request": {
+    "lesson_id": "56bd3058097e7e001b83fe02ec990e27",
+    "course_id": "f81aeb9f7457592295d8d925c4358b36",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "f81aeb9f7457592295d8d925c4358b36",
+    "order": 216,
+    "nextCourseId": "f81aeb9f7457592295d8d925c4358b36",
+    "courseName": "汉字二级",
+    "lessonId": "56bd3058097e7e001b83fe02ec990e27",
+    "nextLessonId": "5202b954cb3d310231d97fa314b7f300",
+    "lessonName": "《春》 朱自清",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-2.4d21a5bc2c.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4f40253937dd1e62554c0f32aa7e2fcc",
+        "index": 1,
+        "text": [
+          "坐着，躺着，打两个滚，踢几脚球，赛几趟跑，捉几回迷藏。风轻悄悄的，草软绵绵的。"
+        ],
+        "pinyin": "[[\"坐\", \"zuò\"], [\"着\", \"zhe\"], [\"，\", \"\"], [\"躺\", \"tǎng\"], [\"着\", \"zhe\"], [\"，\", \"\"], [\"打\", \"dǎ\"], [\"两\", \"liǎng\"], [\"个\", \"gè\"], [\"滚\", \"gǔn\"], [\"，\", \"\"], [\"踢\", \"tī\"], [\"几\", \"jǐ\"], [\"脚\", \"jiǎo\"], [\"球\", \"qiú\"], [\"，\", \"\"], [\"赛\", \"sài\"], [\"几\", \"jǐ\"], [\"趟\", \"tàng\"], [\"跑\", \"pǎo\"], [\"，\", \"\"], [\"捉\", \"zhuō\"], [\"几\", \"jǐ\"], [\"回\", \"huí\"], [\"迷\", \"mí\"], [\"藏\", \"cáng\"], [\"。\", \"\"], [\"风\", \"fēng\"], [\"轻\", \"qīng\"], [\"悄\", \"qiāo\"], [\"悄\", \"qiāo\"], [\"的\", \"de\"], [\"，\", \"\"], [\"草\", \"cǎo\"], [\"软\", \"ruǎn\"], [\"绵\", \"mián\"], [\"绵\", \"mián\"], [\"的\", \"de\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 22,
+        "minSpeed": 12,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

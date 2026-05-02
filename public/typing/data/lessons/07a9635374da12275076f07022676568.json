@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.490782+00:00",
+  "request": {
+    "lesson_id": "07a9635374da12275076f07022676568",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 320,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "07a9635374da12275076f07022676568",
+    "nextLessonId": "6c2d33c6124cb05f57ada3105ec76fe3",
+    "lessonName": "六级词汇正序版-13",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第13课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "7ebe9a74677593ad201a8b3a8422bca5",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"bound\",\"pronun\":\"[baʊnd]\",\"translation\":\"n. 范围；跳跃\\nadj. 有义务的；必定的；受约束的；装有封面的\\nvt. 束缚；使跳跃\\nvi. 限制；弹起\",\"audio\":\"bound.mp3\"},{\"word\":\"bowel\",\"pronun\":\"[ˈbaʊəl]\",\"translation\":\"n. 肠；内部；同情\\nvt. 将……的肚肠取出\",\"audio\":\"bowel.mp3\"},{\"word\":\"boycott\",\"pronun\":\"[ˈbɔɪkɑːt]\",\"translation\":\"n. 联合抵制\\nvt. 联合抵制；拒绝参加\",\"audio\":\"boycott.mp3\"},{\"word\":\"brace\",\"pronun\":\"[breɪs]\",\"translation\":\"n. 支柱；[语] 大括号；曲柄\\nvt. 支撑；振作起来；激励；撑牢\\nadj. 曲柄的\\nvi. 支持；打起精神\",\"audio\":\"brace.mp3\"},{\"word\":\"bracket\",\"pronun\":\"[ˈbrækɪt]\",\"translation\":\"n. 支架；括号；墙上凸出的托架\\nvt. 括在一起；把…归入同一类；排除\",\"audio\":\"bracket.mp3\"},{\"word\":\"brand\",\"pronun\":\"[brænd]\",\"translation\":\"n. 商标，牌子；烙印\\nvt. 铭刻于，铭记；打烙印于；印…商标于\",\"audio\":\"brand.mp3\"},{\"word\":\"breach\",\"pronun\":\"[briːtʃ]\",\"translation\":\"n. 违背，违反；缺口\\nvt. 违反，破坏；打破\",\"audio\":\"breach.mp3\"},{\"word\":\"breakdown\",\"pronun\":\"[ˈbreɪkdaʊn]\",\"translation\":\"n. 故障；崩溃；分解；分类；衰弱；跺脚曳步舞\",\"audio\":\"breakdown.mp3\"},{\"word\":\"breakthrough\",\"pronun\":\"[ˈbreɪkθruː]\",\"translation\":\"n. 突破；突破性进展\",\"audio\":\"breakthrough.mp3\"},{\"word\":\"breed\",\"pronun\":\"[briːd]\",\"translation\":\"n. [生物] 品种；种类，类型\\nvt. 繁殖；饲养；养育，教育；引起\\nvi. 繁殖；饲养；产生\",\"audio\":\"breed.mp3\"},{\"word\":\"brew\",\"pronun\":\"[bruː]\",\"translation\":\"n. 啤酒；质地\\nvi. 酿酒；被冲泡；即将发生\\nvt. 酿造；酝酿\",\"audio\":\"brew.mp3\"},{\"word\":\"bribe\",\"pronun\":\"[braɪb]\",\"translation\":\"n. 贿赂\\nvt. 贿赂，收买\\nvi. 行贿\",\"audio\":\"bribe.mp3\"},{\"word\":\"brief\",\"pronun\":\"[briːf]\",\"translation\":\"n. 摘要，简报；概要，诉书\\nadj. 简短的，简洁的；短暂的，草率的\\nvt. 简报，摘要；作…的提要\",\"audio\":\"brief.mp3\"},{\"word\":\"briefcase\",\"pronun\":\"[ˈbriːfkeɪs]\",\"translation\":\"n. 公文包\",\"audio\":\"briefcase.mp3\"},{\"word\":\"brilliant\",\"pronun\":\"[ˈbrɪliənt]\",\"translation\":\"adj. 灿烂的，闪耀的；杰出的；有才气的；精彩的，绝妙的\",\"audio\":\"brilliant.mp3\"},{\"word\":\"brink\",\"pronun\":\"[brɪŋk]\",\"translation\":\"n. （峭壁的）边缘\",\"audio\":\"brink.mp3\"},{\"word\":\"brisk\",\"pronun\":\"[brɪsk]\",\"translation\":\"adj. 敏锐的，活泼的，轻快的；凛冽的\\nvt. 使……活泼；使……轻快；使……兴旺\\nvi. 活跃起来；变得轻快\",\"audio\":\"brisk.mp3\"},{\"word\":\"brochure\",\"pronun\":\"[broʊˈʃʊr]\",\"translation\":\"n. 手册，小册子\",\"audio\":\"brochure.mp3\"},{\"word\":\"bronze\",\"pronun\":\"[brɑːnz]\",\"translation\":\"n. 青铜；古铜色；青铜制品\\nadj. 青铜色的；青铜制的\\nvt. 镀青铜于\\nvi. 变成青铜色，被晒黑\",\"audio\":\"bronze.mp3\"},{\"word\":\"brood\",\"pronun\":\"[bruːd]\",\"translation\":\"n. 一窝；一伙\\nvt. 孵；沉思\",\"audio\":\"brood.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

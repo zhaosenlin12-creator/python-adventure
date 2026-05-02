@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.809151+00:00",
+  "request": {
+    "lesson_id": "2945c46f5aa27d34f49531e83a4ff58f",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 155,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "2945c46f5aa27d34f49531e83a4ff58f",
+    "nextLessonId": "6d4c13a9f4ddc67e88a686a46d56f374",
+    "lessonName": "KET核心词-30",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第30课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8a2cbf83b41d7686ff351745e6765bda",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"headteacher\",\"pronun\":\"['hedti:tʃə]\",\"translation\":\"n. 中小学的校长\",\"audio\":\"headteacher.mp3\"},{\"word\":\"healthy\",\"pronun\":\"[ˈhelθi]\",\"translation\":\"adj. 健康的，健全的；有益于健康的\",\"audio\":\"healthy.mp3\"},{\"word\":\"hear\",\"pronun\":\"[hɪr]\",\"translation\":\"vi. 听；听见\\nvt. 听到，听；听说；审理\",\"audio\":\"hear.mp3\"},{\"word\":\"heart\",\"pronun\":\"[hɑːrt]\",\"translation\":\"n. 心脏；感情；勇气；心形；要点\\nvt. 鼓励；铭记\\nvi. 结心\",\"audio\":\"heart.mp3\"},{\"word\":\"heat\",\"pronun\":\"[hiːt]\",\"translation\":\"n. 高温；压力；热度；热烈\\nvt. 使激动；把…加热\",\"audio\":\"heat.mp3\"},{\"word\":\"heating\",\"pronun\":\"[ˈhiːtɪŋ]\",\"translation\":\"n. [热] 加热；[建] 供暖；暖气设备\\nv. [热] 加热（heat的现在分词）\\nadj. 加热的；供热的\",\"audio\":\"heating.mp3\"},{\"word\":\"heavy\",\"pronun\":\"[ˈhevi]\",\"translation\":\"n. 重物；严肃角色\\nadj. 沉重的；繁重的，巨大的；拥挤的；阴沉的\\nadv. 大量地；笨重地\",\"audio\":\"heavy.mp3\"},{\"word\":\"helicopter\",\"pronun\":\"[ˈhelɪkɑːptər]\",\"translation\":\"n. [航] 直升飞机\\nvt. 由直升机运送\\nvi. [航] 乘直升飞机\",\"audio\":\"helicopter.mp3\"},{\"word\":\"help\",\"pronun\":\"[help]\",\"translation\":\"n. 帮助；补救办法；帮忙者；有益的东西\\nvt. 帮助；促进；治疗；补救\\nvi. 帮助；有用；招待\",\"audio\":\"help.mp3\"},{\"word\":\"helpful\",\"pronun\":\"[ˈhelpfl]\",\"translation\":\"adj. 有帮助的；有益的\",\"audio\":\"helpful.mp3\"},{\"word\":\"herd\",\"pronun\":\"[hɜːrd]\",\"translation\":\"n. 兽群，畜群；放牧人\\nvt. 放牧；使成群\\nvi. 成群，聚在一起\",\"audio\":\"herd.mp3\"},{\"word\":\"here\",\"pronun\":\"[hɪr]\",\"translation\":\"n. 这里\\nadv. 在这里；此时\\nint. 嘿！；喂！\",\"audio\":\"here.mp3\"},{\"word\":\"hero\",\"pronun\":\"[ˈhɪroʊˌˈhiːroʊ]\",\"translation\":\"n. 英雄；男主角，男主人公\",\"audio\":\"hero.mp3\"},{\"word\":\"herself\",\"pronun\":\"[hɜːrˈself; hərˈself]\",\"translation\":\"pron. 她自己（she的反身代词）；她亲自\",\"audio\":\"herself.mp3\"},{\"word\":\"hide\",\"pronun\":\"[haɪd]\",\"translation\":\"n. 躲藏；兽皮；躲藏处\\nvt. 隐藏；隐瞒；鞭打\\nvi. 隐藏\",\"audio\":\"hide.mp3\"},{\"word\":\"hike\",\"pronun\":\"[haɪk]\",\"translation\":\"n. 远足；徒步旅行；涨价\\nvt. 提高；拉起；使…高涨\\nvi. 远足；徒步旅行；上升\",\"audio\":\"hike.mp3\"},{\"word\":\"hill\",\"pronun\":\"[hɪl]\",\"translation\":\"n. 小山；丘陵；斜坡；山冈\",\"audio\":\"hill.mp3\"},{\"word\":\"himself\",\"pronun\":\"[hɪmˈself]\",\"translation\":\"pron. 他自己；他亲自，他本人\",\"audio\":\"himself.mp3\"},{\"word\":\"hip hop\",\"pronun\":\"\",\"translation\":\"n. 嘻哈音乐（由美国黑人兴起，包括说唱和电子乐器演奏）\",\"audio\":\"hip_hop.mp3\"},{\"word\":\"history\",\"pronun\":\"[ˈhɪstri]\",\"translation\":\"n. 历史，历史学；历史记录；来历\",\"audio\":\"history.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

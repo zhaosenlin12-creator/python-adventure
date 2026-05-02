@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.593228+00:00",
+  "request": {
+    "lesson_id": "eb67b5e082c04aedcaf4a31ab7f5ec19",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 336,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "eb67b5e082c04aedcaf4a31ab7f5ec19",
+    "nextLessonId": "2f9efa2d51b5224af5529a1c98f910cf",
+    "lessonName": "六级词汇正序版-61",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第61课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "0d648dd1a7284a2e404ad55e7affe0a8",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"intense\",\"pronun\":\"[ɪnˈtens]\",\"translation\":\"adj. 强烈的；紧张的；非常的；热情的\",\"audio\":\"intense.mp3\"},{\"word\":\"intensify\",\"pronun\":\"[ɪnˈtensɪfaɪ]\",\"translation\":\"vt. 使加强，使强化；使变激烈\\nvi. 增强，强化；变激烈\",\"audio\":\"intensify.mp3\"},{\"word\":\"intensive\",\"pronun\":\"[ɪnˈtensɪv]\",\"translation\":\"n. 加强器\\nadj. 加强的；集中的；透彻的；加强语气的\",\"audio\":\"intensive.mp3\"},{\"word\":\"intent\",\"pronun\":\"[ɪnˈtent]\",\"translation\":\"n. 意图；目的；含义\\nadj. 专心的；急切的；坚决的\",\"audio\":\"intent.mp3\"},{\"word\":\"interact\",\"pronun\":\"[ˌɪntərˈækt]\",\"translation\":\"n. 幕间剧；幕间休息\\nvt. 互相影响；互相作用\\nvi. 互相影响；互相作用\",\"audio\":\"interact.mp3\"},{\"word\":\"interaction\",\"pronun\":\"[ˌɪntərˈækʃn]\",\"translation\":\"n. 相互作用；[数] 交互作用\\nn. 互动\",\"audio\":\"interaction.mp3\"},{\"word\":\"intercourse\",\"pronun\":\"[ˈɪntərkɔːrs]\",\"translation\":\"n. 性交；交往；交流\",\"audio\":\"intercourse.mp3\"},{\"word\":\"interfere\",\"pronun\":\"[ˌɪntərˈfɪr]\",\"translation\":\"vi. 干涉；妨碍；打扰\\nvt. 冲突；介入\",\"audio\":\"interfere.mp3\"},{\"word\":\"interim\",\"pronun\":\"[ˈɪntərɪm]\",\"translation\":\"n. 过渡时期，中间时期；暂定\\nadj. 临时的，暂时的；中间的；间歇的\",\"audio\":\"interim.mp3\"},{\"word\":\"intermittent\",\"pronun\":\"[ˌɪntərˈmɪtənt]\",\"translation\":\"adj. 间歇的；断断续续的；间歇性\",\"audio\":\"intermittent.mp3\"},{\"word\":\"internal\",\"pronun\":\"[ɪnˈtɜːrnl]\",\"translation\":\"n. 内脏；本质\\nadj. 内部的；里面的；体内的；（机构）内部的\",\"audio\":\"internal.mp3\"},{\"word\":\"interpersonal\",\"pronun\":\"[ˌɪntərˈpɜːrsənl]\",\"translation\":\"adj. 人际的；人与人之间的\",\"audio\":\"interpersonal.mp3\"},{\"word\":\"interpret\",\"pronun\":\"[ɪnˈtɜːrprət]\",\"translation\":\"vi. 解释；翻译\\nvt. 说明；口译\",\"audio\":\"interpret.mp3\"},{\"word\":\"interrupt\",\"pronun\":\"[ˌɪntəˈrʌpt]\",\"translation\":\"n. 中断\\nvt. 中断；打断；插嘴；妨碍\\nvi. 打断；打扰\",\"audio\":\"interrupt.mp3\"},{\"word\":\"intersection\",\"pronun\":\"[ˌɪntərˈsekʃn]\",\"translation\":\"n. 交叉；十字路口；交集；交叉点\",\"audio\":\"intersection.mp3\"},{\"word\":\"intervene\",\"pronun\":\"[ˌɪntərˈviːn]\",\"translation\":\"vi. 干涉；调停；插入\",\"audio\":\"intervene.mp3\"},{\"word\":\"intimate\",\"pronun\":\"[ˈɪntɪmət; ˈɪntəmət; ˈɪntɪmeɪt]\",\"translation\":\"n. 知己；至交\\nadj. 亲密的；私人的；精通的；有性关系的\\nvt. 暗示；通知；宣布\",\"audio\":\"intimate.mp3\"},{\"word\":\"intimidate\",\"pronun\":\"[ɪnˈtɪmɪdeɪt]\",\"translation\":\"vt. 恐吓，威胁；胁迫\",\"audio\":\"intimidate.mp3\"},{\"word\":\"intricacy\",\"pronun\":\"[ˈɪntrɪkəsi]\",\"translation\":\"n. 错综，复杂；难以理解\",\"audio\":\"intricacy.mp3\"},{\"word\":\"intricate\",\"pronun\":\"[ˈɪntrɪkət; ˈɪntrɪkɪt]\",\"translation\":\"adj. 复杂的；错综的，缠结的\",\"audio\":\"intricate.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

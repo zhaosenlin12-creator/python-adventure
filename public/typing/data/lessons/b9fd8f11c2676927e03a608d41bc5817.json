@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.339542+00:00",
+  "request": {
+    "lesson_id": "b9fd8f11c2676927e03a608d41bc5817",
+    "course_id": "30951c93875a1e260feda8cb699005df",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "30951c93875a1e260feda8cb699005df",
+    "order": 486,
+    "nextCourseId": "30951c93875a1e260feda8cb699005df",
+    "courseName": "英语每日故事（初级）32-61",
+    "lessonId": "b9fd8f11c2676927e03a608d41bc5817",
+    "nextLessonId": "3ddc36089500ce7f30e5ddec715c0d4a",
+    "lessonName": "It's My Birthday!",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3b76a79fa8b07bb00a1f5de8616de8a5",
+        "index": 1,
+        "text": [
+          "Today, I am six years old. I love having my birthday. There is a party. All my friends come. There is a cake. On top of the cake, there are six candles. Mom lights the candles. I close my eyes. I make a wish. Then, I blow out all of the candles. I hope my wish comes true. What do I wish for? I wish to have friends from all over the world. I wish to have more friends."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

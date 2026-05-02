@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.068679+00:00",
+  "request": {
+    "lesson_id": "70f7657458b9c965c38ba7c1988ac3f2",
+    "course_id": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "order": 216,
+    "nextCourseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "courseName": "小升初必备单词",
+    "lessonId": "70f7657458b9c965c38ba7c1988ac3f2",
+    "nextLessonId": "9378bab3de0776f11e93140c550cb47d",
+    "lessonName": "Y",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "7042f5b492036cb663ae0e961a86bb3f",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"yellow\",\"pronun\":\"[\\u02c8jel\\u0259u]\",\"translation\":\"adj. \\u9ec4\\u7684; \\u9ec4\\u8272\\u7684 n. \\u9ec4\\u8272\"},{\"word\":\"yesterday\",\"pronun\":\"[\\u02c8jest\\u0259di]\",\"translation\":\"n.&adv. \\u6628\\u5929\"},{\"word\":\"yet\",\"pronun\":\"[jet]\",\"translation\":\"adv. \\u5230\\u76ee\\u524d\\u4e3a\\u6b62; \\u8fd8; \\u4ecd\\u7136\"},{\"word\":\"yoghurt\",\"pronun\":\"[\\u02c8j\\u0259ug\\u0259:t]\",\"translation\":\"n. \\u9178\\u5976; \\u9178\\u4e73\\u916a\"},{\"word\":\"you\",\"pronun\":\"[ju:]\",\"translation\":\"pron. \\u4f60; \\u4f60\\u4eec; \\u4e00\\u4e2a\\u4eba; \\u4efb\\u4f55...\"},{\"word\":\"young\",\"pronun\":\"[j\\u028c\\u014b]\",\"translation\":\"adj. \\u5e74\\u8f7b\\u7684; \\u5e7c\\u5c0f\\u7684\"},{\"word\":\"your\",\"pronun\":\"[j\\u0254:]\",\"translation\":\"pron. \\u4f60\\u7684; \\u4f60\\u4eec\\u7684\"},{\"word\":\"yours\",\"pronun\":\"[j\\u0254:z]\",\"translation\":\"pron. \\u4f60\\u7684; \\u4f60\\u4eec\\u7684(\\u540d\\u8bcd\\u6027)\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "y",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 12,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

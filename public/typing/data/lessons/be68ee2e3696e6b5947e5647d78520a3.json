@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:34.428222+00:00",
+  "request": {
+    "lesson_id": "be68ee2e3696e6b5947e5647d78520a3",
+    "course_id": "57aea9c1aab1ba9db4a3ad9a5c5a1618",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "57aea9c1aab1ba9db4a3ad9a5c5a1618",
+    "order": 180,
+    "nextCourseId": "57aea9c1aab1ba9db4a3ad9a5c5a1618",
+    "courseName": "语文课内同步四年级上册",
+    "lessonId": "be68ee2e3696e6b5947e5647d78520a3",
+    "nextLessonId": "b59164a51640e3d78b9cd4c9366556fa",
+    "lessonName": "精卫填海",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a89862de7a1dcd53eaaeda96fd015390",
+        "index": 1,
+        "text": [
+          "炎帝之少女，名曰女娃。女娃游于东海，溺而不返，故为精卫，常衔西山之木石，以堙于东海。"
+        ],
+        "pinyin": "[[\"炎\", \"yán\"], [\"帝\", \"dì\"], [\"之\", \"zhī\"], [\"少\", \"shào\"], [\"女\", \"nǚ\"], [\"，\", \"\"], [\"名\", \"míng\"], [\"曰\", \"yuē\"], [\"女\", \"nǚ\"], [\"娃\", \"wá\"], [\"。\", \"\"], [\"女\", \"nǚ\"], [\"娃\", \"wá\"], [\"游\", \"yóu\"], [\"于\", \"yú\"], [\"东\", \"dōng\"], [\"海\", \"hǎi\"], [\"，\", \"\"], [\"溺\", \"nì\"], [\"而\", \"ér\"], [\"不\", \"bù\"], [\"返\", \"fǎn\"], [\"，\", \"\"], [\"故\", \"gù\"], [\"为\", \"wéi\"], [\"精\", \"jīng\"], [\"卫\", \"wèi\"], [\"，\", \"\"], [\"常\", \"cháng\"], [\"衔\", \"xián\"], [\"西\", \"xī\"], [\"山\", \"shān\"], [\"之\", \"zhī\"], [\"木\", \"mù\"], [\"石\", \"shí\"], [\"，\", \"\"], [\"以\", \"yǐ\"], [\"堙\", \"yīn\"], [\"于\", \"yú\"], [\"东\", \"dōng\"], [\"海\", \"hǎi\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

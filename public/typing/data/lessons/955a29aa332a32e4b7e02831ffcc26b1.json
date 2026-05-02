@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.548294+00:00",
+  "request": {
+    "lesson_id": "955a29aa332a32e4b7e02831ffcc26b1",
+    "course_id": "059d1050da5fdf5c469f0cab1d245527",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "059d1050da5fdf5c469f0cab1d245527",
+    "order": 66,
+    "nextCourseId": "059d1050da5fdf5c469f0cab1d245527",
+    "courseName": "特殊符号",
+    "lessonId": "955a29aa332a32e4b7e02831ffcc26b1",
+    "nextLessonId": "c899de980ddcf8968804dff6926533bf",
+    "lessonName": "Shift键",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-shift.1572af49da.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2c446d39eea7e2718d3c885f2c26a2fe",
+        "index": 1,
+        "text": [
+          "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "Shift",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

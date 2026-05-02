@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:37.501669+00:00",
+  "request": {
+    "lesson_id": "49cff5cbfeb4ad95ecc0762fa4a37ab2",
+    "course_id": "9cbf79a23f01834dea97d22e3899cba9",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "9cbf79a23f01834dea97d22e3899cba9",
+    "order": 786,
+    "nextCourseId": "9cbf79a23f01834dea97d22e3899cba9",
+    "courseName": "古代名著1",
+    "lessonId": "49cff5cbfeb4ad95ecc0762fa4a37ab2",
+    "nextLessonId": "77546a2bd4a1b0706a647f8adac173fd",
+    "lessonName": "三国演义7",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5438293d261b418fc58a4725955a1141",
+        "index": 1,
+        "text": [
+          "肃从其言，遂同周瑜来见孙权。权甚敬之，与之谈论，终日不倦。一日，众官皆散，权留鲁肃共饮，至晚同榻抵足而卧。"
+        ],
+        "pinyin": "[[\"肃\", \"sù\"], [\"从\", \"cóng\"], [\"其\", \"qí\"], [\"言\", \"yán\"], [\"，\", \"\"], [\"遂\", \"suì\"], [\"同\", \"tóng\"], [\"周\", \"zhōu\"], [\"瑜\", \"yú\"], [\"来\", \"lái\"], [\"见\", \"jiàn\"], [\"孙\", \"sūn\"], [\"权\", \"quán\"], [\"。\", \"\"], [\"权\", \"quán\"], [\"甚\", \"shèn\"], [\"敬\", \"jìng\"], [\"之\", \"zhī\"], [\"，\", \"\"], [\"与\", \"yǔ\"], [\"之\", \"zhī\"], [\"谈\", \"tán\"], [\"论\", \"lùn\"], [\"，\", \"\"], [\"终\", \"zhōng\"], [\"日\", \"rì\"], [\"不\", \"bù\"], [\"倦\", \"juàn\"], [\"。\", \"\"], [\"一\", \"yī\"], [\"日\", \"rì\"], [\"，\", \"\"], [\"众\", \"zhòng\"], [\"官\", \"guān\"], [\"皆\", \"jiē\"], [\"散\", \"sàn\"], [\"，\", \"\"], [\"权\", \"quán\"], [\"留\", \"liú\"], [\"鲁\", \"lǔ\"], [\"肃\", \"sù\"], [\"共\", \"gòng\"], [\"饮\", \"yǐn\"], [\"，\", \"\"], [\"至\", \"zhì\"], [\"晚\", \"wǎn\"], [\"同\", \"tóng\"], [\"榻\", \"tà\"], [\"抵\", \"dǐ\"], [\"足\", \"zú\"], [\"而\", \"ér\"], [\"卧\", \"wò\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

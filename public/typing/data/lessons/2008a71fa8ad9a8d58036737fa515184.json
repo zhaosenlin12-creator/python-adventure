@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.478114+00:00",
+  "request": {
+    "lesson_id": "2008a71fa8ad9a8d58036737fa515184",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 84,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "2008a71fa8ad9a8d58036737fa515184",
+    "nextLessonId": "a9f489039b7bbcc784d88e08ed786604",
+    "lessonName": "KET核心词-91",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第91课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9c5675c94d4d88099cdc324378686c15",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"kitchen\",\"pronun\":\"[ˈkɪtʃɪn]\",\"translation\":\"n. 厨房；炊具；炊事人员\",\"audio\":\"kitchen.mp3\"},{\"word\":\"knife\",\"pronun\":\"[naɪf]\",\"translation\":\"n. 刀；匕首\\nvt. 用刀切；（口）伤害\\nvi. 劈开；划过\",\"audio\":\"knife.mp3\"},{\"word\":\"lamp\",\"pronun\":\"[læmp]\",\"translation\":\"n. 灯；照射器\\nvt. 照亮\\nvi. 发亮\",\"audio\":\"lamp.mp3\"},{\"word\":\"lawn\",\"pronun\":\"[lɔːn]\",\"translation\":\"n. 草地；草坪\",\"audio\":\"lawn.mp3\"},{\"word\":\"living room\",\"pronun\":\"[ˈlɪvɪŋ ruːm]\",\"translation\":\"n. 客厅；起居室\",\"audio\":\"living_room.mp3\"},{\"word\":\"microwave\",\"pronun\":\"[ˈmaɪkrəweɪv]\",\"translation\":\"n. 微波\",\"audio\":\"microwave.mp3\"},{\"word\":\"mirror\",\"pronun\":\"[ˈmɪrər]\",\"translation\":\"n. 镜子；真实的写照；榜样\\nvt. 反射；反映\",\"audio\":\"mirror.mp3\"},{\"word\":\"MP3 player\",\"pronun\":\"\",\"translation\":\"MP3 播放器\",\"audio\":\"MP3_player.mp3\"},{\"word\":\"mug\",\"pronun\":\"[mʌɡ]\",\"translation\":\"n. 杯子；脸；苦读者\\nvi. 扮鬼脸，做怪相\\nvt. 行凶抢劫\",\"audio\":\"mug.mp3\"},{\"word\":\"neat\",\"pronun\":\"[niːt]\",\"translation\":\"adj. 灵巧的；整洁的；优雅的；齐整的；未搀水的；平滑的\",\"audio\":\"neat.mp3\"},{\"word\":\"oven\",\"pronun\":\"[ˈʌvn]\",\"translation\":\"n. 炉，灶；烤炉，烤箱\",\"audio\":\"oven.mp3\"},{\"word\":\"pillow\",\"pronun\":\"[ˈpɪloʊ]\",\"translation\":\"n. 枕头\\nvt. 垫；枕于…；使…靠在\\nvi. 枕着头；靠在枕上\",\"audio\":\"pillow.mp3\"},{\"word\":\"radio\",\"pronun\":\"[ˈreɪdioʊ]\",\"translation\":\"n. 收音机；无线电广播设备\\nvt. 用无线电发送\\nvi. 用无线电进行通信\",\"audio\":\"radio.mp3\"},{\"word\":\"refrigerator\",\"pronun\":\"[rɪˈfrɪdʒəreɪtər]\",\"translation\":\"n. 冰箱，冷藏库\",\"audio\":\"refrigerator.mp3\"},{\"word\":\"roof\",\"pronun\":\"[ruːf]\",\"translation\":\"n. 屋顶；最高处，顶部；最高限度\\nvt. 给…盖屋顶，覆盖\",\"audio\":\"roof.mp3\"},{\"word\":\"room\",\"pronun\":\"[ruːm; rʊm]\",\"translation\":\"n. 房间；空间；余地；机会；房间里所有的人\\nvt. 为…提供住处；租房，合住；投宿，住宿；留…住宿\\nvi. 居住；住宿\",\"audio\":\"room.mp3\"},{\"word\":\"sheet\",\"pronun\":\"[ʃiːt]\",\"translation\":\"n. 薄片，纸张；薄板；床单\\nadj. 片状的\\nvt. 覆盖；盖上被单；使成大片\\nvi. 成片流动；大片落下\",\"audio\":\"sheet.mp3\"},{\"word\":\"shelf\",\"pronun\":\"[ʃelf]\",\"translation\":\"n. 架子；搁板；搁板状物；暗礁\",\"audio\":\"shelf.mp3\"},{\"word\":\"shower\",\"pronun\":\"[ˈʃaʊər]\",\"translation\":\"n. 淋浴；（倾泻般出现的）一阵，一大批；阵雨\\nvt. 大量地给予；把……弄湿\\nvi. 淋浴；下阵雨\",\"audio\":\"shower.mp3\"},{\"word\":\"sink\",\"pronun\":\"[sɪŋk]\",\"translation\":\"n. 水槽；洗涤槽；污水坑\\nvi. 下沉；消沉；渗透\\nvt. 使下沉；挖掘；使低落\",\"audio\":\"sink.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

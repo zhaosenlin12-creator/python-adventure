@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.670682+00:00",
+  "request": {
+    "lesson_id": "fde5eef7564348abe344a80f04748e3a",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 350,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "fde5eef7564348abe344a80f04748e3a",
+    "nextLessonId": "ec79aa6e0ae5efb6abb932c3b0bdb015",
+    "lessonName": "六级词汇正序版-103",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第103课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "aca23e5d5f9a94bc7c9be34a40baf28b",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"stalk\",\"pronun\":\"[stɔːk]\",\"translation\":\"n. （植物的）茎，秆；（支持叶子、果实和花的）梗，柄；追踪；高视阔步\\nvt. 追踪，潜近；高视阔步\\nvi. 高视阔步地走；潜近，偷偷接近\",\"audio\":\"stalk.mp3\"},{\"word\":\"stall\",\"pronun\":\"[stɔːl]\",\"translation\":\"n. 货摊；畜栏；托辞\\nvt. 拖延；使停转；使陷于泥中\\nvi. 停止，停转；拖延\",\"audio\":\"stall.mp3\"},{\"word\":\"standpoint\",\"pronun\":\"[ˈstændpɔɪnt]\",\"translation\":\"n. 立场；观点\",\"audio\":\"standpoint.mp3\"},{\"word\":\"staple\",\"pronun\":\"[ˈsteɪpl]\",\"translation\":\"n. 主要产品；订书钉；主题；主食\\nadj. 主要的，大宗生产的；常用的；纺织纤维的\\nvt. 把…分级；钉住\",\"audio\":\"staple.mp3\"},{\"word\":\"startle\",\"pronun\":\"[ˈstɑːrtl]\",\"translation\":\"n. 惊愕；惊恐\\nvt. 使吓一跳；使惊奇\\nvi. 惊吓；惊跳；惊奇\",\"audio\":\"startle.mp3\"},{\"word\":\"statement\",\"pronun\":\"[ˈsteɪtmənt]\",\"translation\":\"n. 声明；陈述，叙述；报表，清单\",\"audio\":\"statement.mp3\"},{\"word\":\"statesman\",\"pronun\":\"[ˈsteɪtsmən]\",\"translation\":\"n. 政治家；国务活动家\",\"audio\":\"statesman.mp3\"},{\"word\":\"stationary\",\"pronun\":\"[ˈsteɪʃəneri]\",\"translation\":\"n. 不动的人；驻军\\nadj. 固定的；静止的；定居的；常备军的\",\"audio\":\"stationary.mp3\"},{\"word\":\"statistics\",\"pronun\":\"[stəˈtɪstɪks]\",\"translation\":\"n. 统计；统计学；[统计] 统计资料\",\"audio\":\"statistics.mp3\"},{\"word\":\"status\",\"pronun\":\"[ˈsteɪtəs; ˈstætəs]\",\"translation\":\"n. 地位；状态；情形；重要身份\",\"audio\":\"status.mp3\"},{\"word\":\"stereo\",\"pronun\":\"[ˈsterioʊ]\",\"translation\":\"n. 立体声；立体声系统；铅版；立体照片\\nadj. 立体的；立体声的；立体感觉的\",\"audio\":\"stereo.mp3\"},{\"word\":\"stereotype\",\"pronun\":\"[ˈsteriətaɪp]\",\"translation\":\"n. 陈腔滥调，老套；铅版\\nvt. 使用铅版；套用老套，使一成不变\",\"audio\":\"stereotype.mp3\"},{\"word\":\"stern\",\"pronun\":\"[stɜːrn]\",\"translation\":\"n. 船尾；末端\\nadj. 严厉的；坚定的\",\"audio\":\"stern.mp3\"},{\"word\":\"sticky\",\"pronun\":\"[ˈstɪki]\",\"translation\":\"adj. 粘的；粘性的\",\"audio\":\"sticky.mp3\"},{\"word\":\"stimulus\",\"pronun\":\"[ˈstɪmjələs]\",\"translation\":\"n. 刺激；激励；刺激物\",\"audio\":\"stimulus.mp3\"},{\"word\":\"stitch\",\"pronun\":\"[stɪtʃ]\",\"translation\":\"n. 针脚，线迹；一针\\nvt. 缝，缝合\\nvi. 缝，缝合\",\"audio\":\"stitch.mp3\"},{\"word\":\"stock\",\"pronun\":\"[stɑːk]\",\"translation\":\"n. 股份，股票；库存；血统；树干；家畜\\nadj. 存货的，常备的；平凡的\\nvt. 进货；备有；装把手于…\\nvi. 囤积；办货；出新芽\",\"audio\":\"stock.mp3\"},{\"word\":\"straightforward\",\"pronun\":\"[ˌstreɪtˈfɔːrwərd]\",\"translation\":\"adj. 简单的；坦率的；明确的；径直的\\nadv. 直截了当地；坦率地\",\"audio\":\"straightforward.mp3\"},{\"word\":\"strain\",\"pronun\":\"[streɪn]\",\"translation\":\"n. 张力；拉紧；负担；扭伤；血缘\\nvt. 拉紧；滥用；滤去；竭力\\nvi. 拉紧；尽力\\nn. （植物、动物的）品种；种类\",\"audio\":\"strain.mp3\"},{\"word\":\"strand\",\"pronun\":\"[strænd]\",\"translation\":\"n. 线；串；海滨\\nvt. 使搁浅；使陷于困境；弄断；使落后\\nvi. 搁浅\",\"audio\":\"strand.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

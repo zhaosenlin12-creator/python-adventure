@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.485558+00:00",
+  "request": {
+    "lesson_id": "0d837c2a990dd03478c4dd1526c9ee9e",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 316,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "0d837c2a990dd03478c4dd1526c9ee9e",
+    "nextLessonId": "0eb0090bdeb632133f9d583e63a87b66",
+    "lessonName": "六级词汇正序版-1",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第1课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "970483ff46b5fa30f684cee38111f9ed",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"abandon\",\"pronun\":\"[əˈbændən]\",\"translation\":\"n. 放任；狂热\\nvt. 遗弃；放弃\",\"audio\":\"abandon.mp3\"},{\"word\":\"abnormal\",\"pronun\":\"[æbˈnɔːrml]\",\"translation\":\"adj. 反常的，不规则的；变态的\",\"audio\":\"abnormal.mp3\"},{\"word\":\"abolish\",\"pronun\":\"[əˈbɑːlɪʃ]\",\"translation\":\"vt. 废除，废止；取消，革除\",\"audio\":\"abolish.mp3\"},{\"word\":\"abortion\",\"pronun\":\"[əˈbɔːrʃn]\",\"translation\":\"n. 流产，堕胎，小产；流产的胎儿；（计划等）失败，夭折\",\"audio\":\"abortion.mp3\"},{\"word\":\"abrupt\",\"pronun\":\"[əˈbrʌpt]\",\"translation\":\"adj. 生硬的；突然的；唐突的；陡峭的\",\"audio\":\"abrupt.mp3\"},{\"word\":\"absence\",\"pronun\":\"[ˈæbsəns]\",\"translation\":\"n. 没有；缺乏；缺席；不注意\",\"audio\":\"absence.mp3\"},{\"word\":\"absorb\",\"pronun\":\"[əbˈzɔːrb; əbˈsɔːrb]\",\"translation\":\"vt. 吸收；吸引；承受；理解；使…全神贯注\",\"audio\":\"absorb.mp3\"},{\"word\":\"abstract\",\"pronun\":\"[ˈæbstrækt]\",\"translation\":\"n. 摘要；抽象；抽象的概念\\nadj. 抽象的；深奥的\\nvt. 摘要；提取；使……抽象化；转移(注意力、兴趣等)；使心不在焉\\nvi. 做摘要；写梗概\",\"audio\":\"abstract.mp3\"},{\"word\":\"absurd\",\"pronun\":\"[əbˈsɜːrd]\",\"translation\":\"n. 荒诞；荒诞作品\\nadj. 荒谬的；可笑的\",\"audio\":\"absurd.mp3\"},{\"word\":\"abundance\",\"pronun\":\"[əˈbʌndəns]\",\"translation\":\"n. 充裕，丰富\",\"audio\":\"abundance.mp3\"},{\"word\":\"abundant\",\"pronun\":\"[əˈbʌndənt]\",\"translation\":\"adj. 丰富的；充裕的；盛产\",\"audio\":\"abundant.mp3\"},{\"word\":\"abuse\",\"pronun\":\"[əˈbjuːs]\",\"translation\":\"n. 滥用；虐待；辱骂；弊端；恶习，陋习\\nvt. 滥用；虐待；辱骂\",\"audio\":\"abuse.mp3\"},{\"word\":\"academic\",\"pronun\":\"[ˌækəˈdemɪk]\",\"translation\":\"n. 大学生，大学教师；学者\\nadj. 学术的；理论的；学院的\",\"audio\":\"academic.mp3\"},{\"word\":\"accelerate\",\"pronun\":\"[əkˈseləreɪt]\",\"translation\":\"vt. 使……加快；使……增速\\nvi. 加速；促进；增加\",\"audio\":\"accelerate.mp3\"},{\"word\":\"acceptance\",\"pronun\":\"[əkˈseptəns]\",\"translation\":\"n. 接纳；赞同；容忍\",\"audio\":\"acceptance.mp3\"},{\"word\":\"access\",\"pronun\":\"[ˈækses]\",\"translation\":\"n. 进入；使用权；通路\\nvt. 使用；存取；接近\",\"audio\":\"access.mp3\"},{\"word\":\"accessory\",\"pronun\":\"[əkˈsesəri]\",\"translation\":\"n. 配件；附件；[法] 从犯\\nadj. 副的；同谋的；附属的\",\"audio\":\"accessory.mp3\"},{\"word\":\"accident\",\"pronun\":\"[ˈæksɪdənt]\",\"translation\":\"n. 事故；意外；[法] 意外事件；机遇\",\"audio\":\"accident.mp3\"},{\"word\":\"accommodate\",\"pronun\":\"[əˈkɑːmədeɪt]\",\"translation\":\"vi. 适应；调解\\nvt. 容纳；使适应；供应；调解\",\"audio\":\"accommodate.mp3\"},{\"word\":\"accommodation\",\"pronun\":\"[əˌkɑːməˈdeɪʃn]\",\"translation\":\"n. 住处，膳宿；调节；和解；预订铺位\",\"audio\":\"accommodation.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

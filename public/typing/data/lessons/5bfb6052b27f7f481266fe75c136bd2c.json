@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.228688+00:00",
+  "request": {
+    "lesson_id": "5bfb6052b27f7f481266fe75c136bd2c",
+    "course_id": "9983508511f457b02ddcae4777acab15",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "9983508511f457b02ddcae4777acab15",
+    "order": 143,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "JAVA",
+    "lessonId": "5bfb6052b27f7f481266fe75c136bd2c",
+    "nextLessonId": "b72acd77c842fbe50bf53307b8512cf4",
+    "lessonName": "回文判断",
+    "icon": "data/assets/daziya.com/key-icon_key-java.09b827febf.png",
+    "description": "Java编程练习 - 回文判断",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "cd59b3abcd1bdba4e85fdb0d1ee23134",
+        "index": 1,
+        "text": [
+          "class Main {\\n    public static boolean isPalindrome(String text) {\\n        String cleaned = text.toLowerCase().replaceAll(\"\\\\s+\", \"\");\\n        String reversed = new StringBuilder(cleaned).reverse().toString();\\n        return cleaned.equals(reversed);\\n    }\\n\\n    public static boolean isPalindromeTwoPointers(String text) {\\n        String cleaned = text.toLowerCase().replaceAll(\"\\\\s+\", \"\");\\n        int left = 0;\\n        int right = cleaned.length() - 1;\\n\\n        while (left < right) {\\n            if (cleaned.charAt(left) != cleaned.charAt(right)) {\\n                return false;\\n            }\\n            left++;\\n            right--;\\n        }\\n\\n        return true;\\n    }\\n\\n    public static void main(String[] args) {\\n        String[] testStrings = {\"radar\", \"hello\", \"level\", \"A man a plan a canal Panama\"};\\n\\n        for (String str : testStrings) {\\n            boolean result = isPalindrome(str);\\n            System.out.println(\"'\" + str + \"' 是回文: \" + result);\\n        }\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "java",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

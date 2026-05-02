@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:36.266879+00:00",
+  "request": {
+    "lesson_id": "8a99653586df4c5ce0fc51484aa1ec25",
+    "course_id": "aaf391ebe3c578672e2811298ce699e2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "aaf391ebe3c578672e2811298ce699e2",
+    "order": 549,
+    "nextCourseId": "aaf391ebe3c578672e2811298ce699e2",
+    "courseName": "词语专项",
+    "lessonId": "8a99653586df4c5ce0fc51484aa1ec25",
+    "nextLessonId": "f60baccef60fd4151f6be09b5fb26046",
+    "lessonName": "比喻句5",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5576e8de68c2185338342ebe3fe8451f",
+        "index": 1,
+        "text": [
+          "苔把它裹起来，它躺在那儿真可以说成了一个囚犯。"
+        ],
+        "pinyin": "[[\"苔\", \"tái\"], [\"把\", \"bǎ\"], [\"它\", \"tā\"], [\"裹\", \"guǒ\"], [\"起\", \"qǐ\"], [\"来\", \"lái\"], [\"，\", \"\"], [\"它\", \"tā\"], [\"躺\", \"tǎng\"], [\"在\", \"zài\"], [\"那\", \"nà\"], [\"儿\", \"r\"], [\"真\", \"zhēn\"], [\"可\", \"kě\"], [\"以\", \"yǐ\"], [\"说\", \"shuō\"], [\"成\", \"chéng\"], [\"了\", \"le\"], [\"一\", \"yī\"], [\"个\", \"gè\"], [\"囚\", \"qiú\"], [\"犯\", \"fàn\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

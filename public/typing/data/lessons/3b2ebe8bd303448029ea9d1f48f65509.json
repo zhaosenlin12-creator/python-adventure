@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.579516+00:00",
+  "request": {
+    "lesson_id": "3b2ebe8bd303448029ea9d1f48f65509",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 108,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "3b2ebe8bd303448029ea9d1f48f65509",
+    "nextLessonId": "074b05718343908bd91256ea54208a83",
+    "lessonName": "KET核心词-26",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第26课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "178d5e3b7cb6ebda9c070eba8e0ca922",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"France\",\"pronun\":\"[fræns]\",\"translation\":\"n. 法国；法郎士（姓氏）\",\"audio\":\"France.mp3\"},{\"word\":\"free\",\"pronun\":\"[friː]\",\"translation\":\"adj. 免费的；自由的，不受约束的；[化学] 游离的\\nvt. 使自由，解放；释放\\nadv. 自由地；免费\",\"audio\":\"free.mp3\"},{\"word\":\"fresh\",\"pronun\":\"[freʃ]\",\"translation\":\"n. 开始；新生；泛滥\\nadj. 新鲜的；清新的；淡水的；无经验的\\nadv. 刚刚，才；最新地\",\"audio\":\"fresh.mp3\"},{\"word\":\"fridge\",\"pronun\":\"[frɪdʒ]\",\"translation\":\"n. 电冰箱\",\"audio\":\"fridge.mp3\"},{\"word\":\"friend\",\"pronun\":\"[frend]\",\"translation\":\"n. 朋友；助手；赞助者\",\"audio\":\"friend.mp3\"},{\"word\":\"front\",\"pronun\":\"[frʌnt]\",\"translation\":\"n. 前面；正面；前线\\nadj. 前面的；正面的\\nvt. 面对；朝向；对付\\nvi. 朝向\\nadv. 在前面；向前\",\"audio\":\"front.mp3\"},{\"word\":\"fruit\",\"pronun\":\"[fruːt]\",\"translation\":\"n. 水果；产物\\nvt. 使……结果实\\nvi. 结果实\",\"audio\":\"fruit.mp3\"},{\"word\":\"fry\",\"pronun\":\"[fraɪ]\",\"translation\":\"n. 鱼苗；油炸食物\\nvt. 油炸；油煎\\nvi. 油炸；油煎\",\"audio\":\"fry.mp3\"},{\"word\":\"fried\",\"pronun\":\"[fraɪd]\",\"translation\":\"adj. 油炸的，油煎的；喝醉了的\\nv. 油炸（fry的过去分词）\",\"audio\":\"fried.mp3\"},{\"word\":\"from\",\"pronun\":\"[frəm; frʌm; frɑːm]\",\"translation\":\"prep. 来自，从；由于；今后\",\"audio\":\"from.mp3\"},{\"word\":\"full\",\"pronun\":\"[fʊl]\",\"translation\":\"n. 全部；完整\\nadj. 完全的，完整的；满的，充满的；丰富的；完美的；丰满的；详尽的\\nvt. 把衣服缝得宽大\\nadv. 十分，非常；完全地；整整\",\"audio\":\"full.mp3\"},{\"word\":\"fun\",\"pronun\":\"[fʌn]\",\"translation\":\"n. 乐趣；玩笑；有趣的人或事\\nadj. 供娱乐用的\\nvi. 开玩笑\",\"audio\":\"fun.mp3\"},{\"word\":\"furniture\",\"pronun\":\"[ˈfɜːrnɪtʃər]\",\"translation\":\"n. 家具；设备；储藏物\",\"audio\":\"furniture.mp3\"},{\"word\":\"future\",\"pronun\":\"[ˈfjuːtʃər]\",\"translation\":\"n. 未来；前途；期货；将来时\\nadj. 将来的，未来的\",\"audio\":\"future.mp3\"},{\"word\":\"game\",\"pronun\":\"[ɡeɪm]\",\"translation\":\"n. 游戏；比赛\\nadj. 勇敢的\\nvi. 赌博\",\"audio\":\"game.mp3\"},{\"word\":\"garage\",\"pronun\":\"[ɡəˈrɑːʒ; ɡəˈrɑːdʒ]\",\"translation\":\"n. 车库；汽车修理厂；飞机库\\nvt. 把……送入车库；把（汽车）开进车库\",\"audio\":\"garage.mp3\"},{\"word\":\"garden\",\"pronun\":\"[ˈɡɑːrdn]\",\"translation\":\"n. 花园；菜园\\nvt. 栽培花木\\nvi. 从事园艺；在园中种植\",\"audio\":\"garden.mp3\"},{\"word\":\"gas\",\"pronun\":\"[ɡæs]\",\"translation\":\"n. 气体；[矿业] 瓦斯；汽油；毒气\\nvt. 加油；毒（死）\\nvi. 加油；放出气体；空谈\",\"audio\":\"gas.mp3\"},{\"word\":\"gate\",\"pronun\":\"[ɡeɪt]\",\"translation\":\"n. 大门；出入口；门道\\nvt. 给…装大门\",\"audio\":\"gate.mp3\"},{\"word\":\"gentleman\",\"pronun\":\"[ˈdʒent(ə)lmən]\",\"translation\":\"n. 先生；绅士；有身份的人\",\"audio\":\"gentleman.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.572285+00:00",
+  "request": {
+    "lesson_id": "61f8761e7c69fac3c1e9bf3e1b018a79",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 546,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "61f8761e7c69fac3c1e9bf3e1b018a79",
+    "nextLessonId": "b7ef401997d13ef8f31f275aa6d155a2",
+    "lessonName": "Where Is My Pen?",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "22d381c8a38f99851e6aacd007f7ede8",
+        "index": 1,
+        "text": [
+          "Where Is My Pen?\\nAmy is not happy. She cannot find her favourite pen!\\nShe looks all over the house. She looks under the bed. She looks in her desk. She looks in the kitchen and in her book bag. But she cannot find it.\\nAmy is really upset. Amy wants to cry. She cries to her mother,\\n\"Mom, my pen is lost!\"\\nMom says, \"Don't cry.\\nI will help you look for it.\" When Mom goes downstairs, she laughs.\\n\"Why are you laughing,Mom?\"Mom says, \"Check behind your ear.\" And as Amy checks her ear, she finds her pen. She had put it there earlier.\\nNow she is happy."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

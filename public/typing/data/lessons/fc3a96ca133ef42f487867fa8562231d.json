@@ -1,0 +1,94 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.553112+00:00",
+  "request": {
+    "lesson_id": "fc3a96ca133ef42f487867fa8562231d",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 4,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "fc3a96ca133ef42f487867fa8562231d",
+    "nextLessonId": "8da4bc7b1170a01afd6ee23001659a74",
+    "lessonName": "单韵母a、o、e",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母a、o、e的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "1038035c04d92a01db4c618e9a138d9c",
+        "index": 1,
+        "highlights": [
+          "a"
+        ],
+        "text": [
+          "请输入按键 [a]"
+        ],
+        "detail": "学习双拼按键 a"
+      },
+      {
+        "chapterId": "23dd1180af454d8834e2a8b76e79c18c",
+        "index": 2,
+        "highlights": [
+          "o"
+        ],
+        "text": [
+          "请输入按键 [o]"
+        ],
+        "detail": "学习双拼按键 o"
+      },
+      {
+        "chapterId": "ad67cf9eebc3dadd6f718f97a6ba18ad",
+        "index": 3,
+        "highlights": [
+          "e"
+        ],
+        "text": [
+          "请输入按键 [e]"
+        ],
+        "detail": "学习双拼按键 e"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "f224a194690f33471ae866360e43458f",
+        "index": 4,
+        "text": [
+          "aaaaooooeeeeaoeaoeaoeaoe"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "5f9577b742ea3eb5dd7cc5d72ebc4b72",
+        "index": 5,
+        "text": [
+          "阿妈剥菠萝，哥哥喝可乐。\\n鹅过河，波哥摸耳朵。\\n婆婆做馍馍，饿得直打嗝。"
+        ],
+        "pinyin": "[[\"阿\", \"ā\"], [\"妈\", \"mā\"], [\"剥\", \"bāo\"], [\"菠\", \"bō\"], [\"萝\", \"luó\"], [\"，\", \"\"], [\"哥\", \"gē\"], [\"哥\", \"ge\"], [\"喝\", \"hē\"], [\"可\", \"kě\"], [\"乐\", \"lè\"], [\"。\", \"\"], [\"鹅\", \"é\"], [\"过\", \"guò\"], [\"河\", \"hé\"], [\"，\", \"\"], [\"波\", \"bō\"], [\"哥\", \"gē\"], [\"摸\", \"mō\"], [\"耳\", \"ěr\"], [\"朵\", \"duo\"], [\"。\", \"\"], [\"婆\", \"pó\"], [\"婆\", \"po\"], [\"做\", \"zuò\"], [\"馍\", \"mó\"], [\"馍\", \"mo\"], [\"，\", \"\"], [\"饿\", \"è\"], [\"得\", \"de\"], [\"直\", \"zhí\"], [\"打\", \"dǎ\"], [\"嗝\", \"gé\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

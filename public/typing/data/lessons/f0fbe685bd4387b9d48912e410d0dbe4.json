@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.497951+00:00",
+  "request": {
+    "lesson_id": "f0fbe685bd4387b9d48912e410d0dbe4",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 528,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "f0fbe685bd4387b9d48912e410d0dbe4",
+    "nextLessonId": "dafb90e250f4bf1b65b8a1b7eba1d33b",
+    "lessonName": "All Aboard!",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "50ab5889b9b2b80e05af144ba3b797b4",
+        "index": 1,
+        "text": [
+          "In school today we learned about a train that travels to the \"roof of the world\".\\nIt travels from Beijing to Lhasa, high in the Himalayan Mountains.\\nThat would be the greatest train trip of all. If I had one wish, it would be to take that train to the roof of the world. What a train ride!\\nImagine the sights and the things I would see!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

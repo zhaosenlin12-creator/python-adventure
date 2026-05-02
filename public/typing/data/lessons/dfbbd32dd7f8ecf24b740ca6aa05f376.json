@@ -1,0 +1,50 @@
+{
+  "source": "speed-test",
+  "scrapedAt": "2026-05-02T06:08:44.832950+00:00",
+  "request": {
+    "lesson_id": "dfbbd32dd7f8ecf24b740ca6aa05f376",
+    "course_id": "c6bc39f4ba86486e20cc171fab797ea3",
+    "source": "speed-test"
+  },
+  "data": {
+    "level": "速度测试",
+    "courseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "order": 33,
+    "nextCourseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "courseName": "英文速度测试",
+    "lessonId": "dfbbd32dd7f8ecf24b740ca6aa05f376",
+    "nextLessonId": "3bf96a4954051186ecbc100f7f476a44",
+    "lessonName": "I Can't Stop!",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f6a5d385d44418c866775eb8202ba808",
+        "index": 1,
+        "text": [
+          "Bob has a problem. At supper time, his mom puts out a lot of food on the table. He just can't stop eating. Soon, he eats too much.\\n\"Mom, what should I do?\" Bob asks.\\nHis mom says, \"I will make small meals from now on. That way, you won't have the problem of overeating.\"\\n\"Good idea, Mom,\" Bob says."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": 13,
+    "categoryTitle": "速度测试"
+  }
+}

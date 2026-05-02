@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.233679+00:00",
+  "request": {
+    "lesson_id": "512d9446f75ab8cd05c89529213e8ff1",
+    "course_id": "9983508511f457b02ddcae4777acab15",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "9983508511f457b02ddcae4777acab15",
+    "order": 146,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "JAVA",
+    "lessonId": "512d9446f75ab8cd05c89529213e8ff1",
+    "nextLessonId": "25ca42427fa7e18969dc9870341dcb37",
+    "lessonName": "字符统计",
+    "icon": "data/assets/daziya.com/key-icon_key-java.09b827febf.png",
+    "description": "Java编程练习 - 字符统计",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a55892c27e36d8742f6a9577f27d5c62",
+        "index": 1,
+        "text": [
+          "import java.util.HashMap;\\nimport java.util.Map;\\n\\nclass Main {\\n    public static void main(String[] args) {\\n        String text = \"Hello World! How are you?\";\\n        Map<Character, Integer> charCount = new HashMap<>();\\n\\n        for (char c : text.toCharArray()) {\\n            if (Character.isLetterOrDigit(c)) {\\n                c = Character.toLowerCase(c);\\n                charCount.put(c, charCount.getOrDefault(c, 0) + 1);\\n            }\\n        }\\n\\n        System.out.println(\"原文本: \" + text);\\n        System.out.println(\"\\n字符出现频率:\");\\n\\n        for (Map.Entry<Character, Integer> entry : charCount.entrySet()) {\\n            System.out.println(\"'\" + entry.getKey() + \"': \" + entry.getValue());\\n        }\\n\\n        char mostCommon = ' ';\\n        int maxCount = 0;\\n        for (Map.Entry<Character, Integer> entry : charCount.entrySet()) {\\n            if (entry.getValue() > maxCount) {\\n                mostCommon = entry.getKey();\\n                maxCount = entry.getValue();\\n            }\\n        }\\n\\n        System.out.println(\"\\n出现最多的字符: '\" + mostCommon + \"' (\" + maxCount + \"次)\");\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "java",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

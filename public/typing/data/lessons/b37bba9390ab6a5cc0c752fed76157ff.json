@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.147353+00:00",
+  "request": {
+    "lesson_id": "b37bba9390ab6a5cc0c752fed76157ff",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 120,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "Javascript",
+    "lessonId": "b37bba9390ab6a5cc0c752fed76157ff",
+    "nextLessonId": "01091221b191703aa546805b65152613",
+    "lessonName": "汉诺塔问题",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - 汉诺塔问题",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "39018fdd412eeea796ee91cb067d488a",
+        "index": 1,
+        "text": [
+          "// 汉诺塔问题的递归解法\\nfunction hanoi(n, source, target, auxiliary) {\\n    if (n === 1) {\\n        console.log(`移动盘子 1 从 ${source} 到 ${target}`);\\n        return;\\n    }\\n\\n    hanoi(n - 1, source, auxiliary, target);\\n    console.log(`移动盘子 ${n} 从 ${source} 到 ${target}`);\\n    hanoi(n - 1, auxiliary, target, source);\\n}\\n\\nfunction countMoves(n) {\\n    return Math.pow(2, n) - 1;\\n}\\n\\n// 测试汉诺塔\\nconst n = 3;\\nconsole.log(`汉诺塔问题: ${n} 个盘子`);\\nconsole.log(`需要移动 ${countMoves(n)} 次\\n`);\\nconsole.log(\"移动步骤:\");\\nhanoi(n, \"A\", \"C\", \"B\");\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

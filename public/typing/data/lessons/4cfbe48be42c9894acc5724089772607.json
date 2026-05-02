@@ -1,0 +1,50 @@
+{
+  "source": "speed-test",
+  "scrapedAt": "2026-05-02T06:08:44.875932+00:00",
+  "request": {
+    "lesson_id": "4cfbe48be42c9894acc5724089772607",
+    "course_id": "c6bc39f4ba86486e20cc171fab797ea3",
+    "source": "speed-test"
+  },
+  "data": {
+    "level": "速度测试",
+    "courseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "order": 42,
+    "nextCourseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "courseName": "英文速度测试",
+    "lessonId": "4cfbe48be42c9894acc5724089772607",
+    "nextLessonId": "52257e736e45fc4f4e3d7baa81b3254d",
+    "lessonName": "A Lot of Socks",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "633a82fd81a61e9dabf3eacb0f2619a1",
+        "index": 1,
+        "text": [
+          "Have you ever thought about socks? Did you know they have been around for thousands of years?\\nThey keep our feet warm and cozy. We wash them, dry them, and sometimes fix them.\\nTake a look at how many socks you have at home. Now, think about how many socks there must be in the world!\\nThere must be a lot of feet!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": 13,
+    "categoryTitle": "速度测试"
+  }
+}

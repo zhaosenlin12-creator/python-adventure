@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.550627+00:00",
+  "request": {
+    "lesson_id": "8b498dadc045c8660c22949b1955eed3",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 668,
+    "nextCourseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "8b498dadc045c8660c22949b1955eed3",
+    "nextLessonId": "c1dc70b9418c84a4637a4f3fbd93804a",
+    "lessonName": " 六年级下-5",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点六年级下 - 第5课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "48028d866614ebef619eeacfd12a78f9",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"look up\",\"pronun\":\"\",\"translation\":\"v. 查找；查阅；探望；看望\",\"audio\":\"look_up.mp3\"},{\"word\":\"Internet\",\"pronun\":\"[ˈɪntərnet]\",\"translation\":\"n. 因特网\",\"audio\":\"Internet.mp3\"},{\"word\":\"different\",\"pronun\":\"[ˈdɪfrənt]\",\"translation\":\"adj. 不同的；个别的，与众不同的\",\"audio\":\"different.mp3\"},{\"word\":\"active\",\"pronun\":\"[ˈæktɪv]\",\"translation\":\"n. 主动语态；积极分子\\nadj. 积极的；活跃的；主动的；有效的；现役的\",\"audio\":\"active.mp3\"},{\"word\":\"race\",\"pronun\":\"[reɪs]\",\"translation\":\"n. 属，种；种族，人种；家庭，门第\\nvt. 使参加比赛；和…竞赛；使急走，使全速行进\\nvi. 比速度，参加竞赛；全速行进\",\"audio\":\"race.mp3\"},{\"word\":\"nothing\",\"pronun\":\"[ˈnʌθɪŋ]\",\"translation\":\"neg. 没什么；毫不\\nn. 无；零；不关紧要之事\\nadv. 毫不；决不\\npron. 无事；无物\\nint. 什么也没有\",\"audio\":\"nothing.mp3\"},{\"word\":\"thought\",\"pronun\":\"[θɔːt]\",\"translation\":\"n. 思想；思考；想法；关心\\nv. 想，思考；认为（think的过去式和过去分词）\",\"audio\":\"thought.mp3\"},{\"word\":\"felt\",\"pronun\":\"[felt]\",\"translation\":\"n. 毡；毡制品\\nv. 感觉（feel的过去式）\\nvi. 粘结\\nvt. 使粘结；把…制成毡\",\"audio\":\"felt.mp3\"},{\"word\":\"cheetah\",\"pronun\":\"[ˈtʃiːtə]\",\"translation\":\"n. [脊椎] 猎豹\",\"audio\":\"cheetah.mp3\"},{\"word\":\"trip\",\"pronun\":\"[trɪp]\",\"translation\":\"n. 旅行；绊倒；差错\\nvt. 绊倒；使犯错\\nvi. 绊倒；远足；犯错误；轻快地走\",\"audio\":\"trip.mp3\"},{\"word\":\"woke\",\"pronun\":\"[woʊk]\",\"translation\":\"v. 唤醒；激发；使…复活（wake的过去式）\",\"audio\":\"woke.mp3\"},{\"word\":\"dream\",\"pronun\":\"[driːm]\",\"translation\":\"n. 梦想，愿望；梦\\nadj. 梦的；理想的；不切实际的\\nvt. 梦想；做梦；想到\\nvi. 梦想；做梦，梦见；想到\",\"audio\":\"dream.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

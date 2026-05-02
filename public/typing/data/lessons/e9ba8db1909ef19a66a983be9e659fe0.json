@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.843335+00:00",
+  "request": {
+    "lesson_id": "e9ba8db1909ef19a66a983be9e659fe0",
+    "course_id": "66724e53770af94715b9e0524520eb74",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "66724e53770af94715b9e0524520eb74",
+    "order": 76,
+    "nextCourseId": "66724e53770af94715b9e0524520eb74",
+    "courseName": "基础练习-上排数字",
+    "lessonId": "e9ba8db1909ef19a66a983be9e659fe0",
+    "nextLessonId": "090702b7b978df3b958a1d7c30f4aeb7",
+    "lessonName": "乘法巩固三",
+    "icon": "data/assets/daziya.com/key-icon_num-chengfagonggu.2c32173289.png",
+    "description": "数字输入练习 - 乘法巩固三",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1e9eb92ea6817506aadedf3df8c03194",
+        "index": 1,
+        "text": [
+          "78*89*97*78*89*97*78"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

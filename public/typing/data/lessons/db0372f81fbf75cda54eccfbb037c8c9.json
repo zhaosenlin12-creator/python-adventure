@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.489061+00:00",
+  "request": {
+    "lesson_id": "db0372f81fbf75cda54eccfbb037c8c9",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 206,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "db0372f81fbf75cda54eccfbb037c8c9",
+    "nextLessonId": "a07e626a75dbccec5b03ed52909ca6d9",
+    "lessonName": "存储过程",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - 存储过程",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6da6b681202b019c99adae8043793cdc",
+        "index": 1,
+        "text": [
+          "-- 创建简单存储过程\\nDELIMITER //\\nCREATE PROCEDURE get_user_orders(IN user_id_param INT)\\nBEGIN\\n    SELECT * FROM orders WHERE user_id = user_id_param;\\nEND //\\nDELIMITER ;\\n\\n-- 调用存储过程\\nCALL get_user_orders(1);\\n\\n-- 带输出参数的存储过程\\nDELIMITER //\\nCREATE PROCEDURE calculate_user_total(\\n    IN user_id_param INT,\\n    OUT total_amount DECIMAL(10,2),\\n    OUT order_count INT\\n)\\nBEGIN\\n    SELECT\\n        COALESCE(SUM(amount), 0),\\n        COUNT(*)\\n    INTO total_amount, order_count\\n    FROM orders\\n    WHERE user_id = user_id_param;\\nEND //\\nDELIMITER ;\\n\\n-- 调用带输出参数的存储过程\\nCALL calculate_user_total(1, @total, @count);\\nSELECT @total, @count;\\n\\n-- 删除存储过程\\nDROP PROCEDURE IF EXISTS get_user_orders;\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

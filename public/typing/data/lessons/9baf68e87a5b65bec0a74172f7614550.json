@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.818597+00:00",
+  "request": {
+    "lesson_id": "9baf68e87a5b65bec0a74172f7614550",
+    "course_id": "305e1352051511f2dff62dc198c6af98",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "305e1352051511f2dff62dc198c6af98",
+    "order": 74,
+    "nextCourseId": "305e1352051511f2dff62dc198c6af98",
+    "courseName": "1000个日常汉字",
+    "lessonId": "9baf68e87a5b65bec0a74172f7614550",
+    "nextLessonId": "050fc81f521c25529f6066c51cdbfe65",
+    "lessonName": "常见汉字4",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "1000个日常汉字 - 第4组（151-200字）",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "912b8dd4b2427deb20867b4613feec06",
+        "index": 1,
+        "text": [
+          "本公特做外孩相西果走将月十实向声车全信重三机工物气每并别真打太新比才便夫再书部水像眼等体却加电主界门"
+        ],
+        "pinyin": "[[\"本\",\"běn\"],[\"公\",\"gōng\"],[\"特\",\"tè\"],[\"做\",\"zuò\"],[\"外\",\"wài\"],[\"孩\",\"hái\"],[\"相\",\"xiāng\"],[\"西\",\"xī\"],[\"果\",\"guǒ\"],[\"走\",\"zǒu\"],[\"将\",\"jiāng\"],[\"月\",\"yuè\"],[\"十\",\"shí\"],[\"实\",\"shí\"],[\"向\",\"xiàng\"],[\"声\",\"shēng\"],[\"车\",\"chē\"],[\"全\",\"quán\"],[\"信\",\"xìn\"],[\"重\",\"zhòng\"],[\"三\",\"sān\"],[\"机\",\"jī\"],[\"工\",\"gōng\"],[\"物\",\"wù\"],[\"气\",\"qì\"],[\"每\",\"měi\"],[\"并\",\"bìng\"],[\"别\",\"bié\"],[\"真\",\"zhēn\"],[\"打\",\"dǎ\"],[\"太\",\"tài\"],[\"新\",\"xīn\"],[\"比\",\"bǐ\"],[\"才\",\"cái\"],[\"便\",\"biàn\"],[\"夫\",\"fū\"],[\"再\",\"zài\"],[\"书\",\"shū\"],[\"部\",\"bù\"],[\"水\",\"shuǐ\"],[\"像\",\"xiàng\"],[\"眼\",\"yǎn\"],[\"等\",\"děng\"],[\"体\",\"tǐ\"],[\"却\",\"què\"],[\"加\",\"jiā\"],[\"电\",\"diàn\"],[\"主\",\"zhǔ\"],[\"界\",\"jiè\"],[\"门\",\"mén\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 10,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

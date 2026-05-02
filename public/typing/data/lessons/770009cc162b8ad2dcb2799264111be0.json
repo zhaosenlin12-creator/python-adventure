@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.855252+00:00",
+  "request": {
+    "lesson_id": "770009cc162b8ad2dcb2799264111be0",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 382,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "770009cc162b8ad2dcb2799264111be0",
+    "nextLessonId": "5457594ee1032c07ade15dd2bca4ed32",
+    "lessonName": "六级词汇正序版-62",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第62课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5afe3bb46aff8933bd5563ed36814f41",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"intrigue\",\"pronun\":\"[ɪnˈtriːɡ]\",\"translation\":\"n. 阴谋；诡计；复杂的事；私通\\nvt. 用诡计取得；激起...的兴趣\\nvi. 私通；密谋\",\"audio\":\"intrigue.mp3\"},{\"word\":\"intrinsic\",\"pronun\":\"[ɪnˈtrɪnzɪkˌɪnˈtrɪnsɪk]\",\"translation\":\"adj. 本质的，固有的\",\"audio\":\"intrinsic.mp3\"},{\"word\":\"intuition\",\"pronun\":\"[ˌɪntuˈɪʃn]\",\"translation\":\"n. 直觉；直觉力；直觉的知识\",\"audio\":\"intuition.mp3\"},{\"word\":\"invalid\",\"pronun\":\"[ɪnˈvælɪd]\",\"translation\":\"n. 病人；残疾者\\nadj. 无效的；有病的；残疾的\\nvt. 使伤残；使退役\\nvi. 变得病弱；因病而奉命退役\",\"audio\":\"invalid.mp3\"},{\"word\":\"invaluable\",\"pronun\":\"[ɪnˈvæljuəbl]\",\"translation\":\"adj. 无价的；非常贵重的\",\"audio\":\"invaluable.mp3\"},{\"word\":\"invariably\",\"pronun\":\"[ɪnˈveriəbli]\",\"translation\":\"adv. 总是；不变地；一定地\",\"audio\":\"invariably.mp3\"},{\"word\":\"inventory\",\"pronun\":\"[ˈɪnvəntɔːri]\",\"translation\":\"n. 存货，存货清单；详细目录；财产清册\",\"audio\":\"inventory.mp3\"},{\"word\":\"invert\",\"pronun\":\"[ɪnˈvɜːrt]\",\"translation\":\"n. 颠倒的事物；倒置物；倒悬者\\nadj. 转化的\\nvt. 使…转化；使…颠倒；使…反转；使…前后倒置\",\"audio\":\"invert.mp3\"},{\"word\":\"invest\",\"pronun\":\"[ɪnˈvest]\",\"translation\":\"vi. 投资，入股；花钱买\\nvt. 投资；覆盖；耗费；授予；包围\",\"audio\":\"invest.mp3\"},{\"word\":\"investigate\",\"pronun\":\"[ɪnˈvestɪɡeɪt]\",\"translation\":\"v. 调查；研究\",\"audio\":\"investigate.mp3\"},{\"word\":\"invisible\",\"pronun\":\"[ɪnˈvɪzəbl]\",\"translation\":\"adj. 无形的，看不见的；无形的；不显眼的，暗藏的\",\"audio\":\"invisible.mp3\"},{\"word\":\"involve\",\"pronun\":\"[ɪnˈvɑːlv]\",\"translation\":\"vt. 包含；牵涉；使陷于；潜心于\",\"audio\":\"involve.mp3\"},{\"word\":\"involvement\",\"pronun\":\"[ɪnˈvɑːlvmənt]\",\"translation\":\"n. 牵连；包含；混乱；财政困难\",\"audio\":\"involvement.mp3\"},{\"word\":\"irony\",\"pronun\":\"[ˈaɪrəni]\",\"translation\":\"n. 讽刺；反语；具有讽刺意味的事\\nadj. 铁的；似铁的\",\"audio\":\"irony.mp3\"},{\"word\":\"irrespective\",\"pronun\":\"[ˌɪrɪˈspektɪv]\",\"translation\":\"adj. 无关的；不考虑的；不顾的\",\"audio\":\"irrespective.mp3\"},{\"word\":\"irrigation\",\"pronun\":\"[ˌɪrɪˈɡeɪʃn]\",\"translation\":\"n. 灌溉；[临床] 冲洗；冲洗法\",\"audio\":\"irrigation.mp3\"},{\"word\":\"irritate\",\"pronun\":\"[ˈɪrɪteɪt]\",\"translation\":\"vt. 刺激，使兴奋；激怒\\nvi. 引起恼怒，引起不愉快\",\"audio\":\"irritate.mp3\"},{\"word\":\"isle\",\"pronun\":\"[aɪl]\",\"translation\":\"n. 岛\\nvt. 使成为岛屿\\nvi. 住在岛屿上\",\"audio\":\"isle.mp3\"},{\"word\":\"isolate\",\"pronun\":\"[ˈaɪsəleɪt]\",\"translation\":\"n. [生物] 隔离种群\\nvt. 使隔离；使孤立；使绝缘\\nadj. 隔离的；孤立的\\nvi. 隔离；孤立\",\"audio\":\"isolate.mp3\"},{\"word\":\"issue\",\"pronun\":\"[ˈɪʃuː]\",\"translation\":\"n. 问题；流出；期号；发行物\\nvt. 发行，发布；发给；放出，排出\\nvi. 发行；流出；造成…结果；传下\",\"audio\":\"issue.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

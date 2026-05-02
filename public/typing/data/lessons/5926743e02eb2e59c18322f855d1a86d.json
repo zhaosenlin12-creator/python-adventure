@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.061180+00:00",
+  "request": {
+    "lesson_id": "5926743e02eb2e59c18322f855d1a86d",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 99,
+    "nextCourseId": "e13b6bae2990dd699f332f225dd1955b",
+    "courseName": "Javascript",
+    "lessonId": "5926743e02eb2e59c18322f855d1a86d",
+    "nextLessonId": "64bb3d6d6847e403ab016b2d1ff8d966",
+    "lessonName": "数组方法",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - 数组方法",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "622e04717194ce697a5bb5a99dd6419f",
+        "index": 1,
+        "text": [
+          "// 使用数组的高阶函数\\nconst numbers = [1, 2, 3, 4, 5];\\n\\n// 映射：创建平方数数组\\nconst squares = numbers.map(x => x ** 2);\\n\\n// 过滤：筛选偶数\\nconst evens = numbers.filter(x => x % 2 === 0);\\n\\nconsole.log(`原数组: ${numbers}`);\\nconsole.log(`平方数: ${squares}`);\\nconsole.log(`偶数: ${evens}`);\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

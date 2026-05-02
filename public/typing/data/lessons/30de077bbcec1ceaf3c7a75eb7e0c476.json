@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:42.067263+00:00",
+  "request": {
+    "lesson_id": "30de077bbcec1ceaf3c7a75eb7e0c476",
+    "course_id": "36c10bddab6d2ba030357f873942fd90",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "36c10bddab6d2ba030357f873942fd90",
+    "order": 129,
+    "nextCourseId": "36c10bddab6d2ba030357f873942fd90",
+    "courseName": "进阶练习-整数输入",
+    "lessonId": "30de077bbcec1ceaf3c7a75eb7e0c476",
+    "nextLessonId": "65915babbca522c601193b08feb0d811",
+    "lessonName": "百以内综合一",
+    "icon": "data/assets/daziya.com/key-icon_num-9.73682490a3.png",
+    "description": "数字输入练习 - 百以内综合一",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a0beda5e710232339a03eec289e7e121",
+        "index": 1,
+        "text": [
+          "5\\n18\\n27\\n39\\n46\\n55\\n64\\n73\\n82\\n91"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

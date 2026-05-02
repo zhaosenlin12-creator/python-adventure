@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.952038+00:00",
+  "request": {
+    "lesson_id": "a772ee980fc9544c2db4af1b96bf37ba",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 189,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "a772ee980fc9544c2db4af1b96bf37ba",
+    "nextLessonId": "912a200fbb36a2ac3464f949508c4fb0",
+    "lessonName": "KET核心词-132",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第132课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f9ca86403e59581899c3f6f4e4b7a7d9",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"bright\",\"pronun\":\"[braɪt]\",\"translation\":\"n. 车头灯光\\nadj. 明亮的，鲜明的；聪明的；愉快的\\nadv. 明亮地；光明地；欢快地\",\"audio\":\"bright.mp3\"},{\"word\":\"child\",\"pronun\":\"[tʃaɪld]\",\"translation\":\"n. 儿童，小孩，孩子；产物；子孙；幼稚的人；弟子\",\"audio\":\"child.mp3\"},{\"word\":\"curly\",\"pronun\":\"[ˈkɜːrli]\",\"translation\":\"adj. 卷曲的；卷毛的；（木材）有皱状纹理的；蜷缩的\",\"audio\":\"curly.mp3\"},{\"word\":\"dark\",\"pronun\":\"[dɑːrk]\",\"translation\":\"n. 黑暗；夜；黄昏；模糊\\nadj. 黑暗的，深色的；模糊的；无知的；忧郁的\",\"audio\":\"dark.mp3\"},{\"word\":\"elderly\",\"pronun\":\"[ˈeldərli]\",\"translation\":\"adj. 上了年纪的；过了中年的；稍老的\",\"audio\":\"elderly.mp3\"},{\"word\":\"fat\",\"pronun\":\"[fæt]\",\"translation\":\"n. 脂肪，肥肉\\nadj. 肥的，胖的；油腻的；丰满的\\nvt. 养肥；在…中加入脂肪\\nvi. 长肥\",\"audio\":\"fat.mp3\"},{\"word\":\"good-looking\",\"pronun\":\"[ˌɡʊd ˈlʊkɪŋ]\",\"translation\":\"adj. 好看的；美貌的\",\"audio\":\"good-looking.mp3\"},{\"word\":\"handsome\",\"pronun\":\"[ˈhænsəm]\",\"translation\":\"adj. （男子）英俊的；可观的；大方的，慷慨的；健美而端庄的\",\"audio\":\"handsome.mp3\"},{\"word\":\"light\",\"pronun\":\"[laɪt]\",\"translation\":\"n. 光；光线；灯；打火机；领悟；浅色；天窗\\nadj. 轻的；浅色的；明亮的；轻松的；容易的；清淡的\\nvi. 点着；变亮；着火\\nvt. 照亮；点燃；着火\\nadv. 轻地；清楚地；轻便地\",\"audio\":\"light.mp3\"},{\"word\":\"long\",\"pronun\":\"[lɔːŋ]\",\"translation\":\"n. 长时间；[语] 长音节；（服装的）长尺寸；长裤\\nadj. 长的；过长的；做多头的；长时间的；冗长的，长音\\nvi. 渴望；热望\\nadv. 长期地；始终\",\"audio\":\"long.mp3\"},{\"word\":\"middle-aged\",\"pronun\":\"[ˌmɪdl ˈeɪdʒd]\",\"translation\":\"adj. 中年的；具有中年人特点的；适合于中年人的\",\"audio\":\"middle-aged.mp3\"},{\"word\":\"old\",\"pronun\":\"[oʊld]\",\"translation\":\"adj. 陈旧的，古老的；年老的\\nn. 古时\",\"audio\":\"old.mp3\"},{\"word\":\"pretty\",\"pronun\":\"[ˈprɪti]\",\"translation\":\"n. 有吸引力的事物（尤指饰品）；漂亮的人\\nadj. 漂亮的；可爱的；优美的\\nadv. 相当地；颇\",\"audio\":\"pretty.mp3\"},{\"word\":\"short\",\"pronun\":\"[ʃɔːrt]\",\"translation\":\"n. 短；缺乏；短路；短裤\\nadj. 短的；不足的；矮的，低的\\nadv. 不足；突然；唐突地\",\"audio\":\"short.mp3\"},{\"word\":\"slim\",\"pronun\":\"[slɪm]\",\"translation\":\"adj. 苗条的；修长的；微小的；差的\\nvt. 使…体重减轻；使…苗条\\nvi. 减轻体重；变细\",\"audio\":\"slim.mp3\"},{\"word\":\"smart\",\"pronun\":\"[smɑːrt]\",\"translation\":\"adj. 聪明的；巧妙的；敏捷的；厉害的；潇洒的；剧烈的；时髦的\",\"audio\":\"smart.mp3\"},{\"word\":\"straight\",\"pronun\":\"[streɪt]\",\"translation\":\"n. 直；直线；直男，直女，异性恋者\\nadj. 直的；连续的；笔直的；正直的；整齐的；异性恋的\\nadv. 直接地；不断地；立即；坦率地\",\"audio\":\"straight.mp3\"},{\"word\":\"tall\",\"pronun\":\"[tɔːl]\",\"translation\":\"adj. 高的；长的；过分的；夸大的\\nadv. 夸大地\",\"audio\":\"tall.mp3\"},{\"word\":\"teenage\",\"pronun\":\"[ˈtiːneɪdʒ]\",\"translation\":\"n. 青少年时期\\nadj. 青少年的；十几岁的\",\"audio\":\"teenage.mp3\"},{\"word\":\"teenager\",\"pronun\":\"[ˈtiːneɪdʒər]\",\"translation\":\"n. 十几岁的青少年；十三岁到十九岁的少年\",\"audio\":\"teenager.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

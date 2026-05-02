@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.030011+00:00",
+  "request": {
+    "lesson_id": "f5e0e3de76f461b140e479bc8f0c786d",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 4,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "f5e0e3de76f461b140e479bc8f0c786d",
+    "nextLessonId": "febb47451717b9e3ffe06c7f64b299d4",
+    "lessonName": "2022年版 PEP-三年级-上册-4",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-三年级-上册 - 第4课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2c358c7018bb6750a423b3e8c97fd605",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"orange\",\"pronun\":\"[ˈɔrɪndʒ]\",\"translation\":\"adj. 橙色的；橘色的\\nn. 橙；橙色；桔子\",\"audio\":\"orange.mp3\"},{\"word\":\"grape\",\"pronun\":\"[ɡreɪp]\",\"translation\":\"n. 葡萄；葡萄酒；葡萄树；葡萄色\",\"audio\":\"grape.mp3\"},{\"word\":\"school\",\"pronun\":\"[skuːl]\",\"translation\":\"n. 学校；学院；学派；鱼群\\nvt. 教育\",\"audio\":\"school.mp3\"},{\"word\":\"garden\",\"pronun\":\"[ˈɡɑːrdn]\",\"translation\":\"n. 花园；菜园\\nvt. 栽培花木\\nvi. 从事园艺；在园中种植\",\"audio\":\"garden.mp3\"},{\"word\":\"need\",\"pronun\":\"[niːd]\",\"translation\":\"n. 需要，要求；缺乏；必要之物\\nvt. 需要\\nvi. 需要\",\"audio\":\"need.mp3\"},{\"word\":\"water\",\"pronun\":\"[ˈwɔːtər]\",\"translation\":\"n. 水；海水；雨水；海域，大片的水\\nvt. 使湿；供以水；给…浇水\\nvi. 加水；流泪；流口水\",\"audio\":\"water.mp3\"},{\"word\":\"flower\",\"pronun\":\"[ˈflaʊər]\",\"translation\":\"n. 花；精华；开花植物\\nvt. 使开花；用花装饰\\nvi. 成熟，发育；开花；繁荣；旺盛\",\"audio\":\"flower.mp3\"},{\"word\":\"grass\",\"pronun\":\"[ɡræs]\",\"translation\":\"n. 草；草地，草坪\\nvt. 放牧；使……长满草；使……吃草\\nvi. 长草\",\"audio\":\"grass.mp3\"},{\"word\":\"plant\",\"pronun\":\"[plænt]\",\"translation\":\"n. 工厂，车间；植物；设备；庄稼\\nvt. 种植；培养；栽培；安置\\nvi. 种植\",\"audio\":\"plant.mp3\"},{\"word\":\"new\",\"pronun\":\"[nuː]\",\"translation\":\"adj. 新的，新鲜的；更新的；初见的\\nadv. 新近\",\"audio\":\"new.mp3\"},{\"word\":\"tree\",\"pronun\":\"[triː]\",\"translation\":\"n. 树；木料；树状物\\nvt. 把...赶上树\\nvi. 爬上树；逃上树\",\"audio\":\"tree.mp3\"},{\"word\":\"sun\",\"pronun\":\"[sʌn]\",\"translation\":\"n. 太阳\\nvt. 使晒\\nvi. 晒太阳\",\"audio\":\"sun.mp3\"},{\"word\":\"give\",\"pronun\":\"[ɡɪv]\",\"translation\":\"n. 弹性；弯曲；伸展性\\nvi. 捐赠；面向；有弹性；气候转暖\\nvt. 给；产生；让步；举办；授予\",\"audio\":\"give.mp3\"},{\"word\":\"them\",\"pronun\":\"[ðəm; ðem]\",\"translation\":\"pron. 他们；它们；她们\",\"audio\":\"them.mp3\"},{\"word\":\"colour\",\"pronun\":\"[ˈkʌlər]\",\"translation\":\"n. 颜色；风格；气色，面色；外貌\\nvt. 把…涂颜色，粉饰；歪曲；使脸红\\nvi. 变色\",\"audio\":\"colour.mp3\"},{\"word\":\"green\",\"pronun\":\"[ɡriːn]\",\"translation\":\"n. 绿色；青春\\nadj. 绿色的；青春的\\nvt. 使…变绿色\\nvi. 变绿色\",\"audio\":\"green.mp3\"},{\"word\":\"blue\",\"pronun\":\"[bluː]\",\"translation\":\"adj. 蓝色的；沮丧的，忧郁的；下流的\\nn. 蓝色；[复数]（美国海、陆、空三军穿的）蓝色制服；蓝颜料；[the blue(s)][用作单数或复数]布鲁斯（歌曲）（一种伤感的美国黑人民歌\\nvi. 变成蓝色，呈蓝色\\nvt. 把…染成蓝色；使成蓝色；给…用上蓝剂；用上蓝剂于\",\"audio\":\"blue.mp3\"},{\"word\":\"make\",\"pronun\":\"[meɪk]\",\"translation\":\"vt. 使得；进行；布置，准备，整理；制造；认为；获得；形成；安排；引起；构成\\nvi. 开始；前进；增大；被制造\\nn. 制造；构造；性情\",\"audio\":\"make.mp3\"},{\"word\":\"purple\",\"pronun\":\"[ˈpɜːrpl]\",\"translation\":\"n. 紫色；紫袍\\nadj. 紫色的；帝王的；华而不实的\\nvt. 使成紫色\\nvi. 变成紫色\",\"audio\":\"purple.mp3\"},{\"word\":\"brown\",\"pronun\":\"[braʊn]\",\"translation\":\"n. 褐色，棕色\\nadj. 棕色的，褐色的；太阳晒黑的\\nvt. 使变成褐色\\nvi. 变成褐色\",\"audio\":\"brown.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

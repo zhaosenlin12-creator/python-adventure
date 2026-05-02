@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.459841+00:00",
+  "request": {
+    "lesson_id": "9e3dd43c79350cf1233cdabfab3e2de6",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 517,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "9e3dd43c79350cf1233cdabfab3e2de6",
+    "nextLessonId": "3c7d80e053020caa4595456c61c26af1",
+    "lessonName": "Want to Fly?",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "142225470b8408fdd762336c03809efd",
+        "index": 1,
+        "text": [
+          "Birds can fly. Bees can fly. Many kinds of insects can fly too. But people can't fly.\\nLong ago, people tried many ways to fly. But people are not birds. People are not insects.\\nWhat did they do? They made a big balloon. They put a basket on the balloon. They filled the balloon with hot air, and up they went.\\nLook! Look way up in the sky. What's that? It is people flying in a hot air balloon."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

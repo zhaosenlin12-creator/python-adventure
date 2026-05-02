@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:37.463523+00:00",
+  "request": {
+    "lesson_id": "4cadb86bfa0a9ef94e92c319e4152039",
+    "course_id": "080aa640e5f820c887b06c95eded7890",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "080aa640e5f820c887b06c95eded7890",
+    "order": 777,
+    "nextCourseId": "080aa640e5f820c887b06c95eded7890",
+    "courseName": "国学经典2",
+    "lessonId": "4cadb86bfa0a9ef94e92c319e4152039",
+    "nextLessonId": "83d1deb8d92ff18a09ea682bc1f53fb5",
+    "lessonName": "诗经16 采蘋（节选）",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-4.cd3573ff4d.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3a461ff3670a4d250c5bd5d4e230a4dd",
+        "index": 1,
+        "text": [
+          "于以采蘋？南涧之滨；于以采藻？于彼行潦。\\n于以盛之？维筐及筥；于以湘之？维锜及釜。\\n于以奠之？宗室牖下。"
+        ],
+        "pinyin": "[[\"于\", \"yú\"], [\"以\", \"yǐ\"], [\"采\", \"cǎi\"], [\"蘋\", \"pín\"], [\"？\", \"\"], [\"南\", \"nán\"], [\"涧\", \"jiàn\"], [\"之\", \"zhī\"], [\"滨\", \"bīn\"], [\"；\", \"\"], [\"于\", \"yú\"], [\"以\", \"yǐ\"], [\"采\", \"cǎi\"], [\"藻\", \"zǎo\"], [\"？\", \"\"], [\"于\", \"yú\"], [\"彼\", \"bǐ\"], [\"行\", \"xíng\"], [\"潦\", \"lǎo\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"于\", \"yú\"], [\"以\", \"yǐ\"], [\"盛\", \"chéng\"], [\"之\", \"zhī\"], [\"？\", \"\"], [\"维\", \"wéi\"], [\"筐\", \"kuāng\"], [\"及\", \"jí\"], [\"筥\", \"jǔ\"], [\"；\", \"\"], [\"于\", \"yú\"], [\"以\", \"yǐ\"], [\"湘\", \"xiāng\"], [\"之\", \"zhī\"], [\"？\", \"\"], [\"维\", \"wéi\"], [\"锜\", \"qí\"], [\"及\", \"jí\"], [\"釜\", \"fǔ\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"于\", \"yú\"], [\"以\", \"yǐ\"], [\"奠\", \"diàn\"], [\"之\", \"zhī\"], [\"？\", \"\"], [\"宗\", \"zōng\"], [\"室\", \"shì\"], [\"牖\", \"yǒu\"], [\"下\", \"xià\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

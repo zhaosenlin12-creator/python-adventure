@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.973568+00:00",
+  "request": {
+    "lesson_id": "98b243fa09ec4380ea8492e71d876d24",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 410,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "98b243fa09ec4380ea8492e71d876d24",
+    "nextLessonId": "2bb4337efcfe6f3e58210a0e21eaae9a",
+    "lessonName": "六级词汇正序版-9",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第9课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "663635ab002635e964121872b99a0a20",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"assurance\",\"pronun\":\"[əˈʃʊrəns]\",\"translation\":\"n. 保证，担保；（人寿）保险；确信；断言；厚脸皮，无耻\",\"audio\":\"assurance.mp3\"},{\"word\":\"assure\",\"pronun\":\"[əˈʃʊr]\",\"translation\":\"vt. 保证；担保；使确信；弄清楚\",\"audio\":\"assure.mp3\"},{\"word\":\"athlete\",\"pronun\":\"[ˈæθliːt]\",\"translation\":\"n. 运动员，体育家；身强力壮的人\",\"audio\":\"athlete.mp3\"},{\"word\":\"atlas\",\"pronun\":\"[ˈætləs]\",\"translation\":\"n. 地图集；寰椎\",\"audio\":\"atlas.mp3\"},{\"word\":\"atmosphere\",\"pronun\":\"[ˈætməsfɪr]\",\"translation\":\"n. 气氛；大气；空气\",\"audio\":\"atmosphere.mp3\"},{\"word\":\"attach\",\"pronun\":\"[əˈtætʃ]\",\"translation\":\"vi. 附加；附属；伴随\\nvt. 使依附；贴上；系上；使依恋\",\"audio\":\"attach.mp3\"},{\"word\":\"attack\",\"pronun\":\"[əˈtæk]\",\"translation\":\"n. 攻击；抨击；疾病发作\\nvt. 攻击；抨击；动手干\\nvi. 攻击；腐蚀\",\"audio\":\"attack.mp3\"},{\"word\":\"attain\",\"pronun\":\"[əˈteɪn]\",\"translation\":\"n. 成就\\nvt. 达到，实现；获得；到达\\nvi. 达到；获得；到达\",\"audio\":\"attain.mp3\"},{\"word\":\"attempt\",\"pronun\":\"[əˈtempt]\",\"translation\":\"n. 企图，试图；攻击\\nvt. 企图，试图；尝试\",\"audio\":\"attempt.mp3\"},{\"word\":\"attendant\",\"pronun\":\"[əˈtendənt]\",\"translation\":\"n. 服务员，侍者；随员，陪从\\nadj. 伴随的；侍候的\",\"audio\":\"attendant.mp3\"},{\"word\":\"attitude\",\"pronun\":\"[ˈætɪtuːd]\",\"translation\":\"n. 态度；看法；意见；姿势\",\"audio\":\"attitude.mp3\"},{\"word\":\"attract\",\"pronun\":\"[əˈtrækt]\",\"translation\":\"vt. 吸引；引起\\nvi. 吸引；有吸引力\",\"audio\":\"attract.mp3\"},{\"word\":\"attractive\",\"pronun\":\"[əˈtræktɪv]\",\"translation\":\"adj. 吸引人的；有魅力的；引人注目的\",\"audio\":\"attractive.mp3\"},{\"word\":\"attribute\",\"pronun\":\"[əˈtrɪbjuːt]\",\"translation\":\"n. 属性；特质\\nvt. 归属；把…归于\",\"audio\":\"attribute.mp3\"},{\"word\":\"auction\",\"pronun\":\"[ˈɔːkʃn]\",\"translation\":\"n. 拍卖\\nvt. 拍卖；竞卖\",\"audio\":\"auction.mp3\"},{\"word\":\"audience\",\"pronun\":\"[ˈɔːdiəns]\",\"translation\":\"n. 观众；听众；读者；接见；正式会见；拜会\",\"audio\":\"audience.mp3\"},{\"word\":\"authentic\",\"pronun\":\"[ɔːˈθentɪk]\",\"translation\":\"adj. 真正的，真实的；可信的\",\"audio\":\"authentic.mp3\"},{\"word\":\"author\",\"pronun\":\"[ˈɔːθər]\",\"translation\":\"n. 作者；作家；创始人\\nvt. 创作出版\",\"audio\":\"author.mp3\"},{\"word\":\"authoritative\",\"pronun\":\"[əˈθɔːrəteɪtɪv]\",\"translation\":\"adj. 有权威的；命令式的；当局的\",\"audio\":\"authoritative.mp3\"},{\"word\":\"authority\",\"pronun\":\"[əˈθɔːrəti]\",\"translation\":\"n. 权威；权力；当局\",\"audio\":\"authority.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

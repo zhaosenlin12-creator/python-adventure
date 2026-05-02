@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.788801+00:00",
+  "request": {
+    "lesson_id": "0273e90b54f70f365c07251d6cb2f53e",
+    "course_id": "df7bf8b8c0456926de2c1fac14a741b2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "order": 455,
+    "nextCourseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "courseName": "宋词必备67首（1）",
+    "lessonId": "0273e90b54f70f365c07251d6cb2f53e",
+    "nextLessonId": "79db01830d03534c897668da953ec1cf",
+    "lessonName": "宿新市徐公店",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1d3dfc70281508b21bcf11c08c407bd5",
+        "index": 1,
+        "text": [
+          "宿新市徐公店\\n杨万里\\n篱落疏疏一径深，树头新绿未成阴。\\n儿童急走追黄蝶，飞入菜花无处寻。"
+        ],
+        "pinyin": "[[\"宿\", \"sù\"], [\"新\", \"xīn\"], [\"市\", \"shì\"], [\"徐\", \"xú\"], [\"公\", \"gōng\"], [\"店\", \"diàn\"], [\"\\n\", \"\"], [\"杨\", \"yáng\"], [\"万\", \"wàn\"], [\"里\", \"lǐ\"], [\"\\n\", \"\"], [\"篱\", \"lí\"], [\"落\", \"luò\"], [\"疏\", \"shū\"], [\"疏\", \"shū\"], [\"一\", \"yī\"], [\"径\", \"jìng\"], [\"深\", \"shēn\"], [\"，\", \"\"], [\"树\", \"shù\"], [\"头\", \"tóu\"], [\"新\", \"xīn\"], [\"绿\", \"lǜ\"], [\"未\", \"wèi\"], [\"成\", \"chéng\"], [\"阴\", \"yīn\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"儿\", \"ér\"], [\"童\", \"tóng\"], [\"急\", \"jí\"], [\"走\", \"zǒu\"], [\"追\", \"zhuī\"], [\"黄\", \"huáng\"], [\"蝶\", \"dié\"], [\"，\", \"\"], [\"飞\", \"fēi\"], [\"入\", \"rù\"], [\"菜\", \"cài\"], [\"花\", \"huā\"], [\"无\", \"wú\"], [\"处\", \"chù\"], [\"寻\", \"xún\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

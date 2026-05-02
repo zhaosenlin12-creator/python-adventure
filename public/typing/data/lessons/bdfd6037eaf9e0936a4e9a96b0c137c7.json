@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.858989+00:00",
+  "request": {
+    "lesson_id": "bdfd6037eaf9e0936a4e9a96b0c137c7",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 388,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "bdfd6037eaf9e0936a4e9a96b0c137c7",
+    "nextLessonId": "fa43a929ca8c128b8e46b02d0df4c44e",
+    "lessonName": "六级词汇正序版-80",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第80课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3d46736043e3d4378dc9ca1df83cb572",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"petty\",\"pronun\":\"[ˈpeti]\",\"translation\":\"adj. 琐碎的；小气的；小规模的\",\"audio\":\"petty.mp3\"},{\"word\":\"phase\",\"pronun\":\"[feɪz]\",\"translation\":\"n. 月相\\nn. （月亮的）盈亏\\nn. 时期\",\"audio\":\"phase.mp3\"},{\"word\":\"phenomenon\",\"pronun\":\"[fəˈnɑːmɪnən]\",\"translation\":\"n. 现象；奇迹；杰出的人才\",\"audio\":\"phenomenon.mp3\"},{\"word\":\"physiological\",\"pronun\":\"[ˌfɪziəˈlɑːdʒɪkl]\",\"translation\":\"adj. 生理学的，生理的\",\"audio\":\"physiological.mp3\"},{\"word\":\"pilgrim\",\"pronun\":\"[ˈpɪlɡrɪm]\",\"translation\":\"n. 朝圣者；漫游者；（美）最初的移民\\nvi. 去朝圣；漫游\",\"audio\":\"pilgrim.mp3\"},{\"word\":\"pirate\",\"pronun\":\"[ˈpaɪrət]\",\"translation\":\"n. 海盗；盗版；侵犯专利权者\\nvt. 掠夺；翻印；剽窃\\nvi. 做海盗；从事劫掠\",\"audio\":\"pirate.mp3\"},{\"word\":\"pistol\",\"pronun\":\"[ˈpɪstl]\",\"translation\":\"n. 手枪；信号枪\\nvt. 用手枪射击\",\"audio\":\"pistol.mp3\"},{\"word\":\"pitch\",\"pronun\":\"[pɪtʃ]\",\"translation\":\"n. 沥青；音高；程度；树脂；倾斜；投掷；球场\\nvt. 投；掷；定位于；用沥青涂；扎营；向前倾跌\\nvi. 倾斜；投掷；搭帐篷；坠落\",\"audio\":\"pitch.mp3\"},{\"word\":\"plague\",\"pronun\":\"[pleɪɡ]\",\"translation\":\"n. 瘟疫；灾祸；麻烦；讨厌的人\\nvt. 折磨；使苦恼；使得灾祸\",\"audio\":\"plague.mp3\"},{\"word\":\"planet\",\"pronun\":\"[ˈplænɪt]\",\"translation\":\"n. 行星\",\"audio\":\"planet.mp3\"},{\"word\":\"planetary\",\"pronun\":\"[ˈplænəteri]\",\"translation\":\"adj. 行星的\",\"audio\":\"planetary.mp3\"},{\"word\":\"plaster\",\"pronun\":\"[ˈplæstər]\",\"translation\":\"n. 石膏；灰泥；膏药\\nvt. 减轻；粘贴；涂以灰泥；敷以膏药；使平服\",\"audio\":\"plaster.mp3\"},{\"word\":\"plateau\",\"pronun\":\"[plæˈtoʊ]\",\"translation\":\"n. 高原\\nn. [地名] [肯尼亚、美国] 普拉托\\nn. （活动或进程中的）稳定阶段，停滞时期\\nadj. 高原印第安人的\",\"audio\":\"plateau.mp3\"},{\"word\":\"plausible\",\"pronun\":\"[ˈplɔːzəbl]\",\"translation\":\"adj. 貌似可信的，花言巧语的；貌似真实的，貌似有理的\",\"audio\":\"plausible.mp3\"},{\"word\":\"plea\",\"pronun\":\"[pliː]\",\"translation\":\"n. 恳求，请求；辩解，辩护；借口，托辞\",\"audio\":\"plea.mp3\"},{\"word\":\"plead\",\"pronun\":\"[pliːd]\",\"translation\":\"vt. 借口；为...辩护；托称\\nvi. 恳求；辩护\",\"audio\":\"plead.mp3\"},{\"word\":\"pledge\",\"pronun\":\"[pledʒ]\",\"translation\":\"n. 保证，誓言；抵押；抵押品，典当物\\nvt. 保证，许诺；用……抵押；举杯祝……健康\",\"audio\":\"pledge.mp3\"},{\"word\":\"plunge\",\"pronun\":\"[plʌndʒ]\",\"translation\":\"n. 投入；跳进\\nvt. 使陷入；使投入；使插入\\nvi. 突然地下降；投入；陷入；跳进\",\"audio\":\"plunge.mp3\"},{\"word\":\"poetry\",\"pronun\":\"[ˈpoʊətri]\",\"translation\":\"n. 诗；诗意，诗情；诗歌艺术\",\"audio\":\"poetry.mp3\"},{\"word\":\"poisonous\",\"pronun\":\"[ˈpɔɪzənəs]\",\"translation\":\"adj. 有毒的；恶毒的；讨厌的\",\"audio\":\"poisonous.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

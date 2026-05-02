@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.164150+00:00",
+  "request": {
+    "lesson_id": "bccb532afa83222db7e0a10cb89fac30",
+    "course_id": "9983508511f457b02ddcae4777acab15",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "9983508511f457b02ddcae4777acab15",
+    "order": 126,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "JAVA",
+    "lessonId": "bccb532afa83222db7e0a10cb89fac30",
+    "nextLessonId": "3b5b669ce60040e81a77935e8b37c944",
+    "lessonName": "数组操作",
+    "icon": "data/assets/daziya.com/key-icon_key-java.09b827febf.png",
+    "description": "Java编程练习 - 数组操作",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ce6fb0590ff8e438062e72fef6e384d4",
+        "index": 1,
+        "text": [
+          "import java.util.Arrays;\\n\\nclass Main {\\n    public static void main(String[] args) {\\n        int[] numbers = {5, 2, 8, 1, 9};\\n\\n        System.out.println(\"原数组: \" + Arrays.toString(numbers));\\n        Arrays.sort(numbers);\\n        System.out.println(\"排序后: \" + Arrays.toString(numbers));\\n\\n        System.out.println(\"数组长度: \" + numbers.length);\\n        System.out.println(\"第一个元素: \" + numbers[0]);\\n        System.out.println(\"最后元素: \" + numbers[numbers.length - 1]);\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "java",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

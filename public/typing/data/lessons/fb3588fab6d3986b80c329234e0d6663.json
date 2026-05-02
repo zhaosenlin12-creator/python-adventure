@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.099658+00:00",
+  "request": {
+    "lesson_id": "fb3588fab6d3986b80c329234e0d6663",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 110,
+    "nextCourseId": "e13b6bae2990dd699f332f225dd1955b",
+    "courseName": "Javascript",
+    "lessonId": "fb3588fab6d3986b80c329234e0d6663",
+    "nextLessonId": "2d16a991a96acd2efa756dc70b390809",
+    "lessonName": "快速排序",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - 快速排序",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8cbd93b48560b82f6e307d7d3a7fa1f7",
+        "index": 1,
+        "text": [
+          "// 快速排序算法\\nfunction quickSort(arr) {\\n    if (arr.length <= 1) return arr;\\n\\n    const pivot = arr[Math.floor(arr.length / 2)];\\n    const left = arr.filter(x => x < pivot);\\n    const middle = arr.filter(x => x === pivot);\\n    const right = arr.filter(x => x > pivot);\\n\\n    return [...quickSort(left), ...middle, ...quickSort(right)];\\n}\\n\\n// 测试快速排序\\nconst numbers = [64, 34, 25, 12, 22, 11, 90, 88, 45, 50];\\nconsole.log(`排序前: ${numbers}`);\\nconst sorted = quickSort(numbers);\\nconsole.log(`排序后: ${sorted}`);\\n\\n// 时间复杂度说明\\nconsole.log(\"\\n快速排序平均时间复杂度: O(n log n)\");\\nconsole.log(\"最坏情况时间复杂度: O(n²)\");\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

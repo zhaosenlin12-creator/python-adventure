@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.506003+00:00",
+  "request": {
+    "lesson_id": "dafb90e250f4bf1b65b8a1b7eba1d33b",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 529,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "dafb90e250f4bf1b65b8a1b7eba1d33b",
+    "nextLessonId": "b67e4caaf689cdd70bd9f91d1a687b3d",
+    "lessonName": "The Cat Family",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6a3634f21cd023f445fa5bf2155f49a9",
+        "index": 1,
+        "text": [
+          "The cat family is very big. The cute little cats we have in our homes are part of this family.\\nBut there are many other cats in the cat family.\\nLions are cats. Tigers are cats too. Leopards are cats, and so are cheetahs.\\nCats can be big or small. They can be fast or slow. They can be one colour or they can have spots or stripes on them.\\nYou can see cats all over the world."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

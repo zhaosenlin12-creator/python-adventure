@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.110828+00:00",
+  "request": {
+    "lesson_id": "d6addd4bf594ff4880a7035f7731af5a",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 20,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "d6addd4bf594ff4880a7035f7731af5a",
+    "nextLessonId": "11a4d9c6fd122acb5ef498dacd3c838a",
+    "lessonName": "2022年版 PEP-四年级-下册-3",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-四年级-下册 - 第3课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d1ed5d4c34fb46f8b4dc24cec5066d96",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"home\",\"pronun\":\"[hoʊm]\",\"translation\":\"n. 家，住宅；产地；家乡；避难所\\nadj. 国内的，家庭的；有效的\\nvt. 归巢，回家\\nadv. 在家，回家；深入地\",\"audio\":\"home.mp3\"},{\"word\":\"cold\",\"pronun\":\"[kəʊld]\",\"translation\":\"n. 寒冷；感冒\\nadj. 寒冷的；冷淡的，不热情的；失去知觉的\\nadv. 完全地\",\"audio\":\"cold.mp3\"},{\"word\":\"cool\",\"pronun\":\"[kuːl]\",\"translation\":\"n. 凉爽；凉爽的空气\\nadj. 凉爽的；冷静的；出色的\\nvt. 使…冷却；使…平静下来\\nvi. 变凉；平息\\nadv. 冷静地\",\"audio\":\"cool.mp3\"},{\"word\":\"warm\",\"pronun\":\"[wɔːrm]\",\"translation\":\"n. 取暖；加热\\nadj. 温暖的；热情的\\nvt. 使…兴奋；使…温暖；使…感兴趣\\nvi. 同情；激动；变温暖\",\"audio\":\"warm.mp3\"},{\"word\":\"hot\",\"pronun\":\"[hɑːt]\",\"translation\":\"adj. 热的；辣的；热情的；激动的；紧迫的\\nvt. 增加；给…加温\\nadv. 热；紧迫地\\nvi. 变热\",\"audio\":\"hot.mp3\"},{\"word\":\"sunny\",\"pronun\":\"[ˈsʌni]\",\"translation\":\"adj. 阳光充足的，和煦的；快活的；性情开朗的\",\"audio\":\"sunny.mp3\"},{\"word\":\"windy\",\"pronun\":\"[ˈwɪndi]\",\"translation\":\"adj. 多风的，有风的；腹胀的；吹牛的\",\"audio\":\"windy.mp3\"},{\"word\":\"cloudy\",\"pronun\":\"[ˈklaʊdi]\",\"translation\":\"adj. 多云的；阴天的；愁容满面的\",\"audio\":\"cloudy.mp3\"},{\"word\":\"snowy\",\"pronun\":\"[ˈsnoʊi]\",\"translation\":\"adj. 下雪的，多雪的；被雪覆盖的；洁白无瑕的\",\"audio\":\"snowy.mp3\"},{\"word\":\"rainy\",\"pronun\":\"[ˈreɪni]\",\"translation\":\"adj. 下雨的；多雨的\",\"audio\":\"rainy.mp3\"},{\"word\":\"outside\",\"pronun\":\"[ˌaʊtˈsaɪd]\",\"translation\":\"adj. 外面的，外部的；外来的\\nn. 外部；外观\\nadv. 在外面，向外面；在室外\\nprep. 在…范围之外\",\"audio\":\"outside.mp3\"},{\"word\":\"be\",\"pronun\":\"[bi; biː]\",\"translation\":\"vt. 是； 有，存在； 做，成为； 发生\",\"audio\":\"be.mp3\"},{\"word\":\"careful\",\"pronun\":\"[ˈkerfl]\",\"translation\":\"adj. 仔细的，小心的\",\"audio\":\"careful.mp3\"},{\"word\":\"weather\",\"pronun\":\"[ˈweðər]\",\"translation\":\"n. 天气；气象；气候；处境\\nvt. 经受住；使风化；侵蚀；使受风吹雨打\\nadj. 露天的；迎风的\\nvi. 风化；受侵蚀；经受风雨\",\"audio\":\"weather.mp3\"},{\"word\":\"new\",\"pronun\":\"[nuː]\",\"translation\":\"adj. 新的，新鲜的；更新的；初见的\\nadv. 新近\",\"audio\":\"new.mp3\"},{\"word\":\"how\",\"pronun\":\"[haʊ]\",\"translation\":\"adv. 如何；多少；多么\\nn. 方法；方式\\nconj. 如何\",\"audio\":\"how.mp3\"},{\"word\":\"about\",\"pronun\":\"[əˈbaʊt]\",\"translation\":\"prep. 关于；大约\\nn. 大致；粗枝大叶；不拘小节的人\\nadj. 在附近的；四处走动的；在起作用的\\nadv. 大约；周围；到处\",\"audio\":\"about.mp3\"},{\"word\":\"degree\",\"pronun\":\"[dɪˈɡriː]\",\"translation\":\"n. 程度，等级；度；学位；阶层\",\"audio\":\"degree.mp3\"},{\"word\":\"world\",\"pronun\":\"[wɜːrld]\",\"translation\":\"n. 世界；领域；世俗；全人类；物质生活\",\"audio\":\"world.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

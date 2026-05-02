@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.913704+00:00",
+  "request": {
+    "lesson_id": "b81c0d1ac13577b74a4dde027987259a",
+    "course_id": "421f70b408e75c66a6e8a5208e6fc7d1",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "421f70b408e75c66a6e8a5208e6fc7d1",
+    "order": 481,
+    "nextCourseId": "421f70b408e75c66a6e8a5208e6fc7d1",
+    "courseName": "宋词必备67首（2）",
+    "lessonId": "b81c0d1ac13577b74a4dde027987259a",
+    "nextLessonId": "105c4cf2f3fc0f82a06ae270f1148fbb",
+    "lessonName": "约客",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "daa56ac0dd737e543b20f34168607c92",
+        "index": 1,
+        "text": [
+          "约客\\n赵师秀\\n黄梅时节家家雨，青草池塘处处蛙。\\n有约不来过夜半，闲敲棋子落灯花。"
+        ],
+        "pinyin": "[[\"约\", \"yuē\"], [\"客\", \"kè\"], [\"\\n\", \"\"], [\"赵\", \"zhào\"], [\"师\", \"shī\"], [\"秀\", \"xiù\"], [\"\\n\", \"\"], [\"黄\", \"huáng\"], [\"梅\", \"méi\"], [\"时\", \"shí\"], [\"节\", \"jié\"], [\"家\", \"jiā\"], [\"家\", \"jiā\"], [\"雨\", \"yǔ\"], [\"，\", \"\"], [\"青\", \"qīng\"], [\"草\", \"cǎo\"], [\"池\", \"chí\"], [\"塘\", \"táng\"], [\"处\", \"chù\"], [\"处\", \"chù\"], [\"蛙\", \"wā\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"有\", \"yǒu\"], [\"约\", \"yuē\"], [\"不\", \"bù\"], [\"来\", \"lái\"], [\"过\", \"guò\"], [\"夜\", \"yè\"], [\"半\", \"bàn\"], [\"，\", \"\"], [\"闲\", \"xián\"], [\"敲\", \"qiāo\"], [\"棋\", \"qí\"], [\"子\", \"zǐ\"], [\"落\", \"luò\"], [\"灯\", \"dēng\"], [\"花\", \"huā\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

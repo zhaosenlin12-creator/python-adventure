@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.321065+00:00",
+  "request": {
+    "lesson_id": "c88c67454405ab6651c54bf91597b8be",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 173,
+    "nextCourseId": "d7df026ff1d81047d30da28a958b118f",
+    "courseName": "golang",
+    "lessonId": "c88c67454405ab6651c54bf91597b8be",
+    "nextLessonId": "e170fdd014dbc7949bf768fb1b531fee",
+    "lessonName": "回文判断",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - 回文判断",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5e7fd85e695b26a05221954757e9370c",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport (\\n\t\"fmt\"\\n\t\"strings\"\\n)\\n\\nfunc isPalindrome(text string) bool {\\n\tcleaned := strings.ToLower(strings.ReplaceAll(text, \" \", \"\"))\\n\trunes := []rune(cleaned)\\n\\n\tfor i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {\\n\t\tif runes[i] != runes[j] {\\n\t\t\treturn false\\n\t\t}\\n\t}\\n\\n\treturn true\\n}\\n\\nfunc main() {\\n\ttestStrings := []string{\"radar\", \"hello\", \"level\", \"A man a plan a canal Panama\"}\\n\\n\tfor _, str := range testStrings {\\n\t\tresult := isPalindrome(str)\\n\t\tfmt.Printf(\"'%s' 是回文: %t\\n\", str, result)\\n\t}\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

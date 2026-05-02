@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.482237+00:00",
+  "request": {
+    "lesson_id": "fbd2a048676a471639063360b5c0cb63",
+    "course_id": "007ef7afc48bb0178d2f077a23bc898d",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "007ef7afc48bb0178d2f077a23bc898d",
+    "order": 380,
+    "nextCourseId": "007ef7afc48bb0178d2f077a23bc898d",
+    "courseName": "小学必备古诗75首（3）",
+    "lessonId": "fbd2a048676a471639063360b5c0cb63",
+    "nextLessonId": "1e67558e7e44a20b51690d9a698e0328",
+    "lessonName": "所见",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "07f5c5923be6d8d8235d6d053bf51e4d",
+        "index": 1,
+        "text": [
+          "所见\\n袁枚\\n牧童骑黄牛，歌声振林樾。\\n意欲捕鸣蝉，忽然闭口立。"
+        ],
+        "pinyin": "[[\"所\", \"suǒ\"], [\"见\", \"jiàn\"], [\"\\n\", \"\"], [\"袁\", \"yuán\"], [\"枚\", \"méi\"], [\"\\n\", \"\"], [\"牧\", \"mù\"], [\"童\", \"tóng\"], [\"骑\", \"qí\"], [\"黄\", \"huáng\"], [\"牛\", \"niú\"], [\"，\", \"\"], [\"歌\", \"gē\"], [\"声\", \"shēng\"], [\"振\", \"zhèn\"], [\"林\", \"lín\"], [\"樾\", \"yuè\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"意\", \"yì\"], [\"欲\", \"yù\"], [\"捕\", \"bǔ\"], [\"鸣\", \"míng\"], [\"蝉\", \"chán\"], [\"，\", \"\"], [\"忽\", \"hū\"], [\"然\", \"rán\"], [\"闭\", \"bì\"], [\"口\", \"kǒu\"], [\"立\", \"lì\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

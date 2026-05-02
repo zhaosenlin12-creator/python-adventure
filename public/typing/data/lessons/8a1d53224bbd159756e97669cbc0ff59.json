@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.369655+00:00",
+  "request": {
+    "lesson_id": "8a1d53224bbd159756e97669cbc0ff59",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 183,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "8a1d53224bbd159756e97669cbc0ff59",
+    "nextLessonId": "a92b81c40c1f0ba6d917898f9bcd6e6e",
+    "lessonName": "ORDER BY排序",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - ORDER BY排序",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e62f852b2713133952eb2ed88b47c3d3",
+        "index": 1,
+        "text": [
+          "-- 按年龄升序排序\\nSELECT * FROM users ORDER BY age ASC;\\n\\n-- 按创建时间降序排序\\nSELECT * FROM users ORDER BY created_at DESC;\\n\\n-- 多字段排序\\nSELECT * FROM users\\nORDER BY city ASC, age DESC;\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

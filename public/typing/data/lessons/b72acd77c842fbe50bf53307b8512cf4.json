@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.226124+00:00",
+  "request": {
+    "lesson_id": "b72acd77c842fbe50bf53307b8512cf4",
+    "course_id": "9983508511f457b02ddcae4777acab15",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "9983508511f457b02ddcae4777acab15",
+    "order": 144,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "JAVA",
+    "lessonId": "b72acd77c842fbe50bf53307b8512cf4",
+    "nextLessonId": "2b50275b242d0570f41ee19b124b17b4",
+    "lessonName": "栈的实现",
+    "icon": "data/assets/daziya.com/key-icon_key-java.09b827febf.png",
+    "description": "Java编程练习 - 栈的实现",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "15be6392171fc5e44fa5518a09dc92bc",
+        "index": 1,
+        "text": [
+          "import java.util.ArrayList;\\n\\nclass Stack {\\n    private ArrayList<Integer> items;\\n\\n    public Stack() {\\n        items = new ArrayList<>();\\n    }\\n\\n    public void push(int item) {\\n        items.add(item);\\n    }\\n\\n    public Integer pop() {\\n        if (!isEmpty()) {\\n            return items.remove(items.size() - 1);\\n        }\\n        return null;\\n    }\\n\\n    public Integer peek() {\\n        if (!isEmpty()) {\\n            return items.get(items.size() - 1);\\n        }\\n        return null;\\n    }\\n\\n    public boolean isEmpty() {\\n        return items.isEmpty();\\n    }\\n\\n    public int size() {\\n        return items.size();\\n    }\\n}\\n\\nclass Main {\\n    public static void main(String[] args) {\\n        Stack stack = new Stack();\\n        stack.push(1);\\n        stack.push(2);\\n        stack.push(3);\\n\\n        System.out.println(\"栈顶元素: \" + stack.peek());\\n        System.out.println(\"弹出元素: \" + stack.pop());\\n        System.out.println(\"栈的大小: \" + stack.size());\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "java",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.518487+00:00",
+  "request": {
+    "lesson_id": "ba4c97fd76baf791f2f671ba2725f2eb",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 204,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "ba4c97fd76baf791f2f671ba2725f2eb",
+    "nextLessonId": "9515be4e3f9574cd83a37c23c4c878eb",
+    "lessonName": "创建视图",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - 创建视图",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "89020cc77d343025164ff1eafb1aceda",
+        "index": 1,
+        "text": [
+          "-- 创建用户订单汇总视图\\nCREATE VIEW user_order_summary AS\\nSELECT\\n    u.id,\\n    u.name,\\n    u.email,\\n    COUNT(o.order_id) AS total_orders,\\n    COALESCE(SUM(o.amount), 0) AS total_amount,\\n    MAX(o.created_at) AS last_order_date\\nFROM users u\\nLEFT JOIN orders o ON u.id = o.user_id\\nGROUP BY u.id, u.name, u.email;\\n\\n-- 创建活跃用户视图\\nCREATE VIEW active_users AS\\nSELECT id, name, email, city, created_at\\nFROM users\\nWHERE status = 'active' AND last_login > DATE_SUB(NOW(), INTERVAL 30 DAY);\\n\\n-- 查询视图\\nSELECT * FROM user_order_summary WHERE total_orders > 5;\\n\\n-- 更新视图\\nCREATE OR REPLACE VIEW user_order_summary AS\\nSELECT\\n    u.id,\\n    u.name,\\n    u.email,\\n    COUNT(o.order_id) AS total_orders,\\n    COALESCE(SUM(o.amount), 0) AS total_amount\\nFROM users u\\nLEFT JOIN orders o ON u.id = o.user_id AND o.status = 'completed'\\nGROUP BY u.id, u.name, u.email;\\n\\n-- 删除视图\\nDROP VIEW IF EXISTS active_users;\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

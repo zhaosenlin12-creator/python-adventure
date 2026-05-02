@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.584660+00:00",
+  "request": {
+    "lesson_id": "1f2bdccdc7d5bca477e14f4929900d27",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 550,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "1f2bdccdc7d5bca477e14f4929900d27",
+    "nextLessonId": "5d70f8aac3f232984bff26508256b599",
+    "lessonName": "Where Is Danny?",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "887b338fd3dcc369be81e51e92198821",
+        "index": 1,
+        "text": [
+          "Where Is Danny?\\nDanny is hiding from his friends today. Usually, Danny and his friends, Jenny and Eddy, play on the playground after school. But not today.\\nWhen classes ended, Jenny and Eddy came to meet Danny as usual. But he was not there. Where was he?\\nOn Danny's desk, they found a piece of paper with some writing on it.\\nThey picked up the note and read it.\\n\"Hello my friends. I'm going to a place Where we have lunch every day. Find me there.\"\\nEddy scratched his head. \"Where is that?\" he asked.\\n\"It's the place where we eat,\" said Jenny. \"It's the cafeteria!\"\\nThey ran to the school cafeteria. And yes, there he was! Danny was sweeping the floor, and a few other boys and girls were washing the tables, chairs, and counters!\\nRight away, they rolled up their sleeves and joined the cleaning with Danny."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

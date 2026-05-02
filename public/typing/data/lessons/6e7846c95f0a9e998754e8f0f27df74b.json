@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.526369+00:00",
+  "request": {
+    "lesson_id": "6e7846c95f0a9e998754e8f0f27df74b",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 94,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "6e7846c95f0a9e998754e8f0f27df74b",
+    "nextLessonId": "a91756f30c528403f053586fd5b4632e",
+    "lessonName": "KET核心词-121",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第121课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "859e41ea1daeba1fd95778157fc4fcc5",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"Russian\",\"pronun\":\"[ˈrʌʃ(ə)n]\",\"translation\":\"n. 俄语；俄国人\\nadj. 俄国的；俄语的\",\"audio\":\"Russian.mp3\"},{\"word\":\"South America\",\"pronun\":\"[ˌsaʊθ əˈmerɪkə]\",\"translation\":\"n. 南美洲\",\"audio\":\"South_America.mp3\"},{\"word\":\"South Korea\",\"pronun\":\"\",\"translation\":\"n. 南韩；【国】韩国；位于东亚的国家\",\"audio\":\"South_Korea.mp3\"},{\"word\":\"Spain\",\"pronun\":\"[speɪn]\",\"translation\":\"n. 西班牙\",\"audio\":\"Spain.mp3\"},{\"word\":\"Spanish\",\"pronun\":\"[ˈspænɪʃ]\",\"translation\":\"n. 西班牙语；西班牙人\\nadj. 西班牙的；西班牙人的；西班牙语的\",\"audio\":\"Spanish.mp3\"},{\"word\":\"Sweden\",\"pronun\":\"[ˈswiːd(ə)n]\",\"translation\":\"n. 瑞典（欧洲国家）\",\"audio\":\"Sweden.mp3\"},{\"word\":\"Swedish\",\"pronun\":\"[ˈswiːdɪʃ]\",\"translation\":\"n. 瑞典语；瑞典人\\nadj. 瑞典的；瑞典语的；瑞典人的\",\"audio\":\"Swedish.mp3\"},{\"word\":\"Swiss\",\"pronun\":\"[swɪs]\",\"translation\":\"n. 瑞士人；瑞士腔调\\nadj. 瑞士的；瑞士人的；瑞士风格的\",\"audio\":\"Swiss.mp3\"},{\"word\":\"Switzerland\",\"pronun\":\"[ˈswɪtsərlənd]\",\"translation\":\"n. 瑞士（欧洲国家）\",\"audio\":\"Switzerland.mp3\"},{\"word\":\"Thailand\",\"pronun\":\"[ˈtaɪlænd]\",\"translation\":\"n. 泰国（东南亚国家名）\",\"audio\":\"Thailand.mp3\"},{\"word\":\"the Arctic\",\"pronun\":\"\",\"translation\":\"北极；北极地区；北极圈\",\"audio\":\"the_Arctic.mp3\"},{\"word\":\"the Netherlands\",\"pronun\":\"\",\"translation\":\"荷兰；尼德兰；荷兰女王日\",\"audio\":\"the_Netherlands.mp3\"},{\"word\":\"the USA\",\"pronun\":\"\",\"translation\":\"美国；美利坚合众国；现在我们有美国的大哥\",\"audio\":\"the_USA.mp3\"},{\"word\":\"turkey\",\"pronun\":\"[ˈtɜːrki]\",\"translation\":\"n. 土耳其（横跨欧亚两洲的国家）\",\"audio\":\"turkey.mp3\"},{\"word\":\"bright\",\"pronun\":\"[braɪt]\",\"translation\":\"n. 车头灯光\\nadj. 明亮的，鲜明的；聪明的；愉快的\\nadv. 明亮地；光明地；欢快地\",\"audio\":\"bright.mp3\"},{\"word\":\"clear\",\"pronun\":\"[klɪr]\",\"translation\":\"n. 清除；空隙\\nadj. 清楚的；清澈的；晴朗的；无罪的\\nvt. 通过；清除；使干净；跳过\\nvi. 放晴；变清澈\\nadv. 清晰地；完全地\",\"audio\":\"clear.mp3\"},{\"word\":\"cloudy\",\"pronun\":\"[ˈklaʊdi]\",\"translation\":\"adj. 多云的；阴天的；愁容满面的\",\"audio\":\"cloudy.mp3\"},{\"word\":\"cold\",\"pronun\":\"[kəʊld]\",\"translation\":\"n. 寒冷；感冒\\nadj. 寒冷的；冷淡的，不热情的；失去知觉的\\nadv. 完全地\",\"audio\":\"cold.mp3\"},{\"word\":\"cool\",\"pronun\":\"[kuːl]\",\"translation\":\"n. 凉爽；凉爽的空气\\nadj. 凉爽的；冷静的；出色的\\nvt. 使…冷却；使…平静下来\\nvi. 变凉；平息\\nadv. 冷静地\",\"audio\":\"cool.mp3\"},{\"word\":\"dry\",\"pronun\":\"[draɪ]\",\"translation\":\"n. 干涸\\nadj. 干的；口渴的；枯燥无味的；禁酒的\\nvt. 把…弄干\\nvi. 变干\",\"audio\":\"dry.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

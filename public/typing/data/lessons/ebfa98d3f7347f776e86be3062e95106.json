@@ -1,0 +1,50 @@
+{
+  "source": "speed-test",
+  "scrapedAt": "2026-05-02T06:08:44.877990+00:00",
+  "request": {
+    "lesson_id": "ebfa98d3f7347f776e86be3062e95106",
+    "course_id": "c6bc39f4ba86486e20cc171fab797ea3",
+    "source": "speed-test"
+  },
+  "data": {
+    "level": "速度测试",
+    "courseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "order": 46,
+    "nextCourseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "courseName": "英文速度测试",
+    "lessonId": "ebfa98d3f7347f776e86be3062e95106",
+    "nextLessonId": "dd7a610942bcbb45712e1f0709fdd85b",
+    "lessonName": "My Apple Tree",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "bede151a29dd89edee4b708a6d4de2ba",
+        "index": 1,
+        "text": [
+          "When I was born, my dad planted an apple tree in the backyard.\\nNow I am six years old and so is my apple tree.\\nWe have both grown a lot. I am tall. But my apple tree is much taller.\\nI love my apple tree. It gives me apples in the fall. It's my special friend."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": 13,
+    "categoryTitle": "速度测试"
+  }
+}

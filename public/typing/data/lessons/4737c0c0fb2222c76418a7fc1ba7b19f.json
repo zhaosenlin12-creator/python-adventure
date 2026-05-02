@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.875896+00:00",
+  "request": {
+    "lesson_id": "4737c0c0fb2222c76418a7fc1ba7b19f",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 58,
+    "nextCourseId": "ff61770b1da83313ceacb0a08aef6378",
+    "courseName": "Python",
+    "lessonId": "4737c0c0fb2222c76418a7fc1ba7b19f",
+    "nextLessonId": "2bce22a3c203552deed2b069a613af9c",
+    "lessonName": "矩阵转置",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - 矩阵转置",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "543ed730d72dc728b5f63a17cc772581",
+        "index": 1,
+        "text": [
+          "# 矩阵转置操作\\ndef transpose_matrix(matrix):\\n    rows = len(matrix)\\n    cols = len(matrix[0])\\n\\n    result = [[0 for _ in range(rows)] for _ in range(cols)]\\n\\n    for i in range(rows):\\n        for j in range(cols):\\n            result[j][i] = matrix[i][j]\\n\\n    return result\\n\\ndef print_matrix(matrix):\\n    for row in matrix:\\n        print(\" \".join(f\"{val:3}\" for val in row))\\n\\n# 测试矩阵转置\\nmatrix = [\\n    [1, 2, 3],\\n    [4, 5, 6],\\n    [7, 8, 9]\\n]\\n\\nprint(\"原矩阵:\")\\nprint_matrix(matrix)\\n\\ntransposed = transpose_matrix(matrix)\\nprint(\"\\n转置后:\")\\nprint_matrix(transposed)\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

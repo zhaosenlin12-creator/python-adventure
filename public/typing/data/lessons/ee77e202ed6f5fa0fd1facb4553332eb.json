@@ -1,0 +1,105 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.636684+00:00",
+  "request": {
+    "lesson_id": "ee77e202ed6f5fa0fd1facb4553332eb",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 26,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "ee77e202ed6f5fa0fd1facb4553332eb",
+    "nextLessonId": "5a486d95d95e79a873e68cc20b63649b",
+    "lessonName": "巩固:ve、ua、uo、un",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母ve、ua、uo、un的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "0093fae6c5844936ec466420b0cd54f6",
+        "index": 1,
+        "highlights": [
+          "ve"
+        ],
+        "text": [
+          "请输入按键 [ve]"
+        ],
+        "detail": "学习双拼按键 ve"
+      },
+      {
+        "chapterId": "e1351664ea9a474ee19355c9ebfb3f14",
+        "index": 2,
+        "highlights": [
+          "ua"
+        ],
+        "text": [
+          "请输入按键 [ua]"
+        ],
+        "detail": "学习双拼按键 ua"
+      },
+      {
+        "chapterId": "0e46beb736045f49c72acf8c82a9410c",
+        "index": 3,
+        "highlights": [
+          "uo"
+        ],
+        "text": [
+          "请输入按键 [uo]"
+        ],
+        "detail": "学习双拼按键 uo"
+      },
+      {
+        "chapterId": "b6c63062d5a7c77006d8fdfeb6f4e510",
+        "index": 4,
+        "highlights": [
+          "un"
+        ],
+        "text": [
+          "请输入按键 [un]"
+        ],
+        "detail": "学习双拼按键 un"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "0f380886fa0afe00f5b9746d21aba02f",
+        "index": 5,
+        "text": [
+          "veveveveuauauauauouououoununununveuauounveuauounveuauounveuauoun"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "555e6df76342ff8967c6cd5f58926fcf",
+        "index": 6,
+        "text": [
+          "春风掠过村落，云朵飘过山川。\\n学生温习课文，月亮圆又亮。\\n花朵绚烂多彩，河水缓缓流动。"
+        ],
+        "pinyin": "[[\"春\", \"chūn\"], [\"风\", \"fēng\"], [\"掠\", \"lüè\"], [\"过\", \"guò\"], [\"村\", \"cūn\"], [\"落\", \"luò\"], [\"，\", \"\"], [\"云\", \"yún\"], [\"朵\", \"duǒ\"], [\"飘\", \"piāo\"], [\"过\", \"guò\"], [\"山\", \"shān\"], [\"川\", \"chuān\"], [\"。\", \"\"], [\"学\", \"xué\"], [\"生\", \"shēng\"], [\"温\", \"wēn\"], [\"习\", \"xí\"], [\"课\", \"kè\"], [\"文\", \"wén\"], [\"，\", \"\"], [\"月\", \"yuè\"], [\"亮\", \"liàng\"], [\"圆\", \"yuán\"], [\"又\", \"yòu\"], [\"亮\", \"liàng\"], [\"。\", \"\"], [\"花\", \"huā\"], [\"朵\", \"duǒ\"], [\"绚\", \"xuàn\"], [\"烂\", \"làn\"], [\"多\", \"duō\"], [\"彩\", \"cǎi\"], [\"，\", \"\"], [\"河\", \"hé\"], [\"水\", \"shuǐ\"], [\"缓\", \"huǎn\"], [\"缓\", \"huǎn\"], [\"流\", \"liú\"], [\"动\", \"dòng\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

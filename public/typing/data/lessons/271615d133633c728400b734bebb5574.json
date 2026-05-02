@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.370556+00:00",
+  "request": {
+    "lesson_id": "271615d133633c728400b734bebb5574",
+    "course_id": "d47f40df8593ffe75da61fffca274131",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "d47f40df8593ffe75da61fffca274131",
+    "order": 253,
+    "nextCourseId": "d47f40df8593ffe75da61fffca274131",
+    "courseName": "汉字三级",
+    "lessonId": "271615d133633c728400b734bebb5574",
+    "nextLessonId": "1ae13e223a2e563fe16e904f6d959fff",
+    "lessonName": "《秋夜》 鲁迅",
+    "icon": " https://typing-web.oss-cn-shanghai.aliyuncs.com/key-icon/key-han-3.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5e8a7fff175a13ae98401b0ea43e9c16",
+        "index": 1,
+        "text": [
+          "在我的后园，可以看见墙外有两株树，一株是枣树，还有一株也是枣树。"
+        ],
+        "pinyin": "[[\"在\", \"zài\"], [\"我\", \"wǒ\"], [\"的\", \"de\"], [\"后\", \"hòu\"], [\"园\", \"yuán\"], [\"，\", \"\"], [\"可\", \"kě\"], [\"以\", \"yǐ\"], [\"看\", \"kàn\"], [\"见\", \"jiàn\"], [\"墙\", \"qiáng\"], [\"外\", \"wài\"], [\"有\", \"yǒu\"], [\"两\", \"liǎng\"], [\"株\", \"zhū\"], [\"树\", \"shù\"], [\"，\", \"\"], [\"一\", \"yī\"], [\"株\", \"zhū\"], [\"是\", \"shì\"], [\"枣\", \"zǎo\"], [\"树\", \"shù\"], [\"，\", \"\"], [\"还\", \"hái\"], [\"有\", \"yǒu\"], [\"一\", \"yī\"], [\"株\", \"zhū\"], [\"也\", \"yě\"], [\"是\", \"shì\"], [\"枣\", \"zǎo\"], [\"树\", \"shù\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 33,
+        "minSpeed": 25,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

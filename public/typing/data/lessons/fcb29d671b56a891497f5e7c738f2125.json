@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.334907+00:00",
+  "request": {
+    "lesson_id": "fcb29d671b56a891497f5e7c738f2125",
+    "course_id": "30951c93875a1e260feda8cb699005df",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "30951c93875a1e260feda8cb699005df",
+    "order": 489,
+    "nextCourseId": "30951c93875a1e260feda8cb699005df",
+    "courseName": "英语每日故事（初级）32-61",
+    "lessonId": "fcb29d671b56a891497f5e7c738f2125",
+    "nextLessonId": "d394a8384da43dfaefc1f0dd81bf3a03",
+    "lessonName": "Travel by Train",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9b6f6bfa4a4a9cad9976801964fc2891",
+        "index": 1,
+        "text": [
+          "Mr. Judge loves trains. If possible, he likes to go everywhere by train. He doesn't like to travel by airplane. His dream is to travel from Europe to China by train. Do you know the name of the train? It's the Orient Express. It goes from Europe, through Russia, then to China. What a great train trip that would be!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

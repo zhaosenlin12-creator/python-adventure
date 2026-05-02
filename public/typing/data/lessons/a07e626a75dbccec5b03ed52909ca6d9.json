@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.483150+00:00",
+  "request": {
+    "lesson_id": "a07e626a75dbccec5b03ed52909ca6d9",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 207,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "a07e626a75dbccec5b03ed52909ca6d9",
+    "nextLessonId": "5e74a2fc583eb0e5203b7fcd9fbad561",
+    "lessonName": "触发器",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - 触发器",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "abbdc89b31e2c9f6a7403c9bf975bb67",
+        "index": 1,
+        "text": [
+          "-- 创建插入触发器（记录日志）\\nDELIMITER //\\nCREATE TRIGGER after_user_insert\\nAFTER INSERT ON users\\nFOR EACH ROW\\nBEGIN\\n    INSERT INTO user_logs (user_id, action, created_at)\\n    VALUES (NEW.id, 'created', NOW());\\nEND //\\nDELIMITER ;\\n\\n-- 创建更新触发器（更新修改时间）\\nDELIMITER //\\nCREATE TRIGGER before_user_update\\nBEFORE UPDATE ON users\\nFOR EACH ROW\\nBEGIN\\n    SET NEW.updated_at = NOW();\\nEND //\\nDELIMITER ;\\n\\n-- 创建删除触发器（软删除）\\nDELIMITER //\\nCREATE TRIGGER before_user_delete\\nBEFORE DELETE ON users\\nFOR EACH ROW\\nBEGIN\\n    INSERT INTO deleted_users (id, name, email, deleted_at)\\n    VALUES (OLD.id, OLD.name, OLD.email, NOW());\\nEND //\\nDELIMITER ;\\n\\n-- 查看触发器\\nSHOW TRIGGERS;\\n\\n-- 删除触发器\\nDROP TRIGGER IF EXISTS after_user_insert;\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

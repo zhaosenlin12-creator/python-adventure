@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.625186+00:00",
+  "request": {
+    "lesson_id": "f90da63ce7f95c7f076ac0bc00c9a8f1",
+    "course_id": "07e9ff923dd8a9eab06e26a8cfc4e593",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "07e9ff923dd8a9eab06e26a8cfc4e593",
+    "order": 416,
+    "nextCourseId": "07e9ff923dd8a9eab06e26a8cfc4e593",
+    "courseName": "初中必背古诗60首（2）",
+    "lessonId": "f90da63ce7f95c7f076ac0bc00c9a8f1",
+    "nextLessonId": "f3909629f4abdaa6e82003e2565271b0",
+    "lessonName": "南乡子",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4d72978082ebd4390bf0bbe582ad39ee",
+        "index": 1,
+        "text": [
+          "南乡子\\n辛弃疾\\n何处望神州？满眼风光北固楼。千古兴亡多少事？悠悠。\\n不尽长江滚滚流。天下英雄谁敌手？曹刘。生子当如孙仲谋。"
+        ],
+        "pinyin": "[[\"南\", \"nán\"], [\"乡\", \"xiāng\"], [\"子\", \"zǐ\"], [\"\\n\", \"\"], [\"辛\", \"xīn\"], [\"弃\", \"qì\"], [\"疾\", \"jí\"], [\"\\n\", \"\"], [\"何\", \"hé\"], [\"处\", \"chù\"], [\"望\", \"wàng\"], [\"神\", \"shén\"], [\"州\", \"zhōu\"], [\"？\", \"\"], [\"满\", \"mǎn\"], [\"眼\", \"yǎn\"], [\"风\", \"fēng\"], [\"光\", \"guāng\"], [\"北\", \"běi\"], [\"固\", \"gù\"], [\"楼\", \"lóu\"], [\"。\", \"\"], [\"千\", \"qiān\"], [\"古\", \"gǔ\"], [\"兴\", \"xīng\"], [\"亡\", \"wáng\"], [\"多\", \"duō\"], [\"少\", \"shǎo\"], [\"事\", \"shì\"], [\"？\", \"\"], [\"悠\", \"yōu\"], [\"悠\", \"yōu\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"不\", \"bù\"], [\"尽\", \"jìn\"], [\"长\", \"cháng\"], [\"江\", \"jiāng\"], [\"滚\", \"gǔn\"], [\"滚\", \"gǔn\"], [\"流\", \"liú\"], [\"。\", \"\"], [\"天\", \"tiān\"], [\"下\", \"xià\"], [\"英\", \"yīng\"], [\"雄\", \"xióng\"], [\"谁\", \"shuí\"], [\"敌\", \"dí\"], [\"手\", \"shǒu\"], [\"？\", \"\"], [\"曹\", \"cáo\"], [\"刘\", \"liú\"], [\"。\", \"\"], [\"生\", \"shēng\"], [\"子\", \"zǐ\"], [\"当\", \"dāng\"], [\"如\", \"rú\"], [\"孙\", \"sūn\"], [\"仲\", \"zhòng\"], [\"谋\", \"móu\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

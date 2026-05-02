@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.565179+00:00",
+  "request": {
+    "lesson_id": "f892f74b3de3c5fd919060661de48a4d",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 106,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "f892f74b3de3c5fd919060661de48a4d",
+    "nextLessonId": "8a05b91bf80a8cb7c0d2f6fb04554e77",
+    "lessonName": "KET核心词-20",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第20课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4960a9e9774b28b0e6635ee7dd930845",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"drink\",\"pronun\":\"[drɪŋk]\",\"translation\":\"n. 酒，饮料；喝酒\\nvt. 喝，饮；吸收；举杯庆贺\\nvi. 喝酒；饮水；干杯\",\"audio\":\"drink.mp3\"},{\"word\":\"drive\",\"pronun\":\"[draɪv]\",\"translation\":\"n. 驱动器；驾车；[心理] 内驱力，推进力；快车道\\nvi. 开车；猛击；飞跑\\nvt. 推动，发动（机器等）；驾驶（马车，汽车等）；驱赶\",\"audio\":\"drive.mp3\"},{\"word\":\"drop\",\"pronun\":\"[drɑːp]\",\"translation\":\"n. 滴；落下；空投；微量；滴剂\\nvt. 滴；使降低；使终止；随口漏出\\nvi. 下降；终止\",\"audio\":\"drop.mp3\"},{\"word\":\"drugstore\",\"pronun\":\"[ˈdrʌɡstɔːr]\",\"translation\":\"n. [药] 药房（常兼售化妆品、杂志等杂货）；（美）杂货店\",\"audio\":\"drugstore.mp3\"},{\"word\":\"drum\",\"pronun\":\"[drʌm]\",\"translation\":\"n. 鼓；鼓声\\nvi. 击鼓；大力争取\\nvt. 击鼓；大力争取\",\"audio\":\"drum.mp3\"},{\"word\":\"dry\",\"pronun\":\"[draɪ]\",\"translation\":\"n. 干涸\\nadj. 干的；口渴的；枯燥无味的；禁酒的\\nvt. 把…弄干\\nvi. 变干\",\"audio\":\"dry.mp3\"},{\"word\":\"during\",\"pronun\":\"[ˈdʊrɪŋ]\",\"translation\":\"prep. 在…的时候，在…的期间\",\"audio\":\"during.mp3\"},{\"word\":\"dust\",\"pronun\":\"[dʌst]\",\"translation\":\"n. 灰尘；尘埃；尘土\\nvt. 撒；拂去灰尘\\nvi. 拂去灰尘；化为粉末\",\"audio\":\"dust.mp3\"},{\"word\":\"duty\",\"pronun\":\"[ˈduːti]\",\"translation\":\"n. 责任；[税收] 关税；职务\",\"audio\":\"duty.mp3\"},{\"word\":\"each\",\"pronun\":\"[iːtʃ]\",\"translation\":\"adj. 每；各自的\\npron. 每个；各自\\nadv. 每个；各自\",\"audio\":\"each.mp3\"},{\"word\":\"ear\",\"pronun\":\"[ɪr]\",\"translation\":\"n. 耳朵；穗；听觉；倾听\\nvi. （美俚）听见；抽穗\",\"audio\":\"ear.mp3\"},{\"word\":\"early\",\"pronun\":\"[ˈɜːrli]\",\"translation\":\"adj. 早期的；早熟的\\nadv. 提早；在初期\",\"audio\":\"early.mp3\"},{\"word\":\"earn\",\"pronun\":\"[ɜːrn]\",\"translation\":\"vt. 赚，赚得；获得，挣得；使得到；博得\",\"audio\":\"earn.mp3\"},{\"word\":\"earring\",\"pronun\":\"[ˈɪrɪŋ]\",\"translation\":\"n. 耳环，耳饰\\nv. 抽穗；听见（ear的ing形式）\",\"audio\":\"earring.mp3\"},{\"word\":\"earth\",\"pronun\":\"[ɜːrθ]\",\"translation\":\"n. 地球；地表，陆地；土地，土壤；尘事，俗事；兽穴\\nvt. 把（电线）[电] 接地；盖（土）；追赶入洞穴\\nvi. 躲进地洞\",\"audio\":\"earth.mp3\"},{\"word\":\"east\",\"pronun\":\"[iːst]\",\"translation\":\"n. 东方；东风；东方国家\\nadj. 东方的；向东的；从东方来的\\nadv. 向东方，在东方\",\"audio\":\"east.mp3\"},{\"word\":\"easy\",\"pronun\":\"[ˈiːzi]\",\"translation\":\"adj. 容易的；舒适的\\nvt. 发出停划命令\\nadv. 不费力地，从容地\\nvi. 停止划桨\",\"audio\":\"easy.mp3\"},{\"word\":\"eat\",\"pronun\":\"[iːt]\",\"translation\":\"vt. 吃，喝；腐蚀；烦扰\\nvi. 进食；腐蚀，侵蚀\",\"audio\":\"eat.mp3\"},{\"word\":\"e-book\",\"pronun\":\"[ˈiː bʊk]\",\"translation\":\"n. 电子书\",\"audio\":\"e-book.mp3\"},{\"word\":\"Egypt\",\"pronun\":\"[ˈiːdʒɪpt]\",\"translation\":\"n. 埃及（非洲国家）\",\"audio\":\"Egypt.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.043574+00:00",
+  "request": {
+    "lesson_id": "5f5c75654c70ff2ff3d977a3cf74fbb7",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 94,
+    "nextCourseId": "e13b6bae2990dd699f332f225dd1955b",
+    "courseName": "Javascript",
+    "lessonId": "5f5c75654c70ff2ff3d977a3cf74fbb7",
+    "nextLessonId": "490530840bbfeffa45aaf961bed94601",
+    "lessonName": "for循环遍历",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - for循环遍历",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "856036fd3bd38af2f5a0b7c058cd74d0",
+        "index": 1,
+        "text": [
+          "// 使用for循环遍历数组\\nconst fruits = [\"苹果\", \"香蕉\", \"橙子\", \"葡萄\"];\\n\\nfor (const fruit of fruits) {\\n    console.log(`我喜欢吃${fruit}`);\\n}\\n\\nconsole.log(\"\");\\nfor (let i = 1; i <= 5; i++) {\\n    console.log(`第${i}次循环`);\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.964357+00:00",
+  "request": {
+    "lesson_id": "5eec8acd6b428312ae145feb9ee9f79b",
+    "course_id": "6b7e28f9c51591c604dbd65a0dd6d5c4",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "6b7e28f9c51591c604dbd65a0dd6d5c4",
+    "order": 397,
+    "nextCourseId": "6b7e28f9c51591c604dbd65a0dd6d5c4",
+    "courseName": "百科知识2",
+    "lessonId": "5eec8acd6b428312ae145feb9ee9f79b",
+    "nextLessonId": "6066bdac4c96f8a7aa123eb35b4aa9ba",
+    "lessonName": "游戏：英文单词",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-duck.b036f0ad8f.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "bc1c46a4024108fbcbb3acb840046a7a",
+        "index": 1,
+        "text": [
+          "reference constitute urge swift virtual magnificent strike"
+        ],
+        "contentType": 3,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 30,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

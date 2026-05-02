@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.632871+00:00",
+  "request": {
+    "lesson_id": "e2b14b135272671c8dd7c2c0f6d63138",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 344,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "e2b14b135272671c8dd7c2c0f6d63138",
+    "nextLessonId": "c7c7a2abe089bed2a8783f3b60ae6087",
+    "lessonName": "六级词汇正序版-85",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第85课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4ed33c4e9f96fbc9e3f0a757511602f4",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"progressive\",\"pronun\":\"[prəˈɡresɪv]\",\"translation\":\"n. 改革论者；进步分子\\nadj. 进步的；先进的\",\"audio\":\"progressive.mp3\"},{\"word\":\"prohibit\",\"pronun\":\"[prəˈhɪbɪtˌproʊˈhɪbɪt]\",\"translation\":\"vt. 阻止，禁止\",\"audio\":\"prohibit.mp3\"},{\"word\":\"project\",\"pronun\":\"[ˈprɑːdʒekt]\",\"translation\":\"n. 工程；计划；事业\\nvt. 设计；计划；发射；放映\\nvi. 设计；计划；表达；投射\",\"audio\":\"project.mp3\"},{\"word\":\"prolong\",\"pronun\":\"[prəˈlɔːŋ]\",\"translation\":\"vt. 延长；拖延\",\"audio\":\"prolong.mp3\"},{\"word\":\"prominent\",\"pronun\":\"[ˈprɑːmɪnənt]\",\"translation\":\"adj. 突出的，显著的；杰出的；卓越的\",\"audio\":\"prominent.mp3\"},{\"word\":\"promising\",\"pronun\":\"[ˈprɑːmɪsɪŋ]\",\"translation\":\"v. 许诺，答应（promise的现在分词形式）\\nadj. 有希望的，有前途的\",\"audio\":\"promising.mp3\"},{\"word\":\"promote\",\"pronun\":\"[prəˈmoʊt]\",\"translation\":\"vi. 成为王后或其他大于卒的子\\nvt. 促进；提升；推销；发扬\",\"audio\":\"promote.mp3\"},{\"word\":\"prone\",\"pronun\":\"[proʊn]\",\"translation\":\"adj. 俯卧的；有…倾向的，易于…的\",\"audio\":\"prone.mp3\"},{\"word\":\"proof\",\"pronun\":\"[pruːf]\",\"translation\":\"n. 证明；证据；校样；考验；验证；试验\\nadj. 防…的；不能透入的；证明用的；耐…的\\nvt. 试验；校对；使不被穿透\",\"audio\":\"proof.mp3\"},{\"word\":\"propaganda\",\"pronun\":\"[ˌprɑːpəˈɡændə]\",\"translation\":\"n. 宣传；传道总会\",\"audio\":\"propaganda.mp3\"},{\"word\":\"propagate\",\"pronun\":\"[ˈprɑːpəɡeɪt]\",\"translation\":\"vt. 传播；传送；繁殖；宣传\\nvi. 繁殖；增殖\",\"audio\":\"propagate.mp3\"},{\"word\":\"propel\",\"pronun\":\"[prəˈpel]\",\"translation\":\"vt. 推进；驱使；激励；驱策\",\"audio\":\"propel.mp3\"},{\"word\":\"property\",\"pronun\":\"[ˈprɑːpərti]\",\"translation\":\"n. 性质，性能；财产；所有权\",\"audio\":\"property.mp3\"},{\"word\":\"prophet\",\"pronun\":\"[ˈprɑːfɪt]\",\"translation\":\"n. 先知；预言者；提倡者\",\"audio\":\"prophet.mp3\"},{\"word\":\"proposition\",\"pronun\":\"[ˌprɑːpəˈzɪʃn]\",\"translation\":\"n. [数] 命题；提议；主题；议题\\nvt. 向…提议；向…求欢\",\"audio\":\"proposition.mp3\"},{\"word\":\"prose\",\"pronun\":\"[proʊz]\",\"translation\":\"n. 散文；单调\\nadj. 散文的；平凡的；乏味的\\nvt. 把…写成散文\\nvi. 写散文；乏味地讲话\",\"audio\":\"prose.mp3\"},{\"word\":\"prosecute\",\"pronun\":\"[ˈprɑːsɪkjuːt]\",\"translation\":\"vt. 检举；贯彻；从事；依法进行\\nvi. 起诉；告发；作检察官\",\"audio\":\"prosecute.mp3\"},{\"word\":\"prospect\",\"pronun\":\"[ˈprɑːspekt]\",\"translation\":\"n. 前途；预期；景色\\nvt. 勘探，勘察\\nvi. 勘探，找矿\",\"audio\":\"prospect.mp3\"},{\"word\":\"prospective\",\"pronun\":\"[prəˈspektɪv]\",\"translation\":\"n. 预期；展望\\nadj. 未来的；预期的\",\"audio\":\"prospective.mp3\"},{\"word\":\"prosperous\",\"pronun\":\"[ˈprɑːspərəs]\",\"translation\":\"adj. 繁荣的；兴旺的\",\"audio\":\"prosperous.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

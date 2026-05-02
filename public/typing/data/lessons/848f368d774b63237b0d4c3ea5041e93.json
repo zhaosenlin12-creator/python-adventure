@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.411398+00:00",
+  "request": {
+    "lesson_id": "848f368d774b63237b0d4c3ea5041e93",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 641,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "848f368d774b63237b0d4c3ea5041e93",
+    "nextLessonId": "112e19bd7d6c5918335d68ea4ce8352e",
+    "lessonName": " 四年级下-5",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点四年级下 - 第5课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "553490cf46beca8984f8f171868246ba",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"yours\",\"pronun\":\"[jərz; jɔːrz; jʊrz]\",\"translation\":\"pron. 你（们）的东西；你的责任[义务]；你的家属；来信，尊函\\nadj. 你（们）的（东西）；信末署名前用语\",\"audio\":\"yours.mp3\"},{\"word\":\"whose\",\"pronun\":\"[huːz]\",\"translation\":\"pron. 谁的（疑问代词）\",\"audio\":\"whose.mp3\"},{\"word\":\"mine\",\"pronun\":\"[maɪn]\",\"translation\":\"n. 矿，矿藏；矿山，矿井；地雷，水雷\\nvt. 开采，采掘；在…布雷\\nvi. 开矿，采矿；埋设地雷\\npron. 我的\",\"audio\":\"mine.mp3\"},{\"word\":\"pack\",\"pronun\":\"[pæk]\",\"translation\":\"n. 包装；一群；背包；包裹；一副\\nvt. 包装；压紧；捆扎；挑选；塞满\\nvi. 挤；包装货物；被包装；群集\",\"audio\":\"pack.mp3\"},{\"word\":\"wait\",\"pronun\":\"[weɪt]\",\"translation\":\"n. 等待；等候\\nvi. 等待；耽搁；伺候用餐\\nvt. 等候；推迟；延缓\",\"audio\":\"wait.mp3\"},{\"word\":\"glove\",\"pronun\":\"[ɡlʌv]\",\"translation\":\"n. 手套\\nvt. 给…戴手套\",\"audio\":\"glove.mp3\"},{\"word\":\"scarf\",\"pronun\":\"[skɑːrf]\",\"translation\":\"n. 围巾；嵌接，嵌接处；头巾领巾\\nvt. 披嵌接；用围巾围\",\"audio\":\"scarf.mp3\"},{\"word\":\"umbrella\",\"pronun\":\"[ʌmˈbrelə]\",\"translation\":\"n. 雨伞；保护伞；庇护；伞形结构\",\"audio\":\"umbrella.mp3\"},{\"word\":\"sunglasses\",\"pronun\":\"[ˈsʌnɡlæsɪz]\",\"translation\":\"n. 太阳镜；凸透镜（sunglass的复数）\",\"audio\":\"sunglasses.mp3\"},{\"word\":\"pretty\",\"pronun\":\"[ˈprɪti]\",\"translation\":\"n. 有吸引力的事物（尤指饰品）；漂亮的人\\nadj. 漂亮的；可爱的；优美的\\nadv. 相当地；颇\",\"audio\":\"pretty.mp3\"},{\"word\":\"expensive\",\"pronun\":\"[ɪkˈspensɪv]\",\"translation\":\"adj. 昂贵的；花钱的\",\"audio\":\"expensive.mp3\"},{\"word\":\"cheap\",\"pronun\":\"[tʃiːp]\",\"translation\":\"adj. 便宜的；小气的；不值钱的\\nadv. 便宜地\",\"audio\":\"cheap.mp3\"},{\"word\":\"nice\",\"pronun\":\"[naɪs]\",\"translation\":\"adj. 精密的；美好的；细微的；和蔼的\",\"audio\":\"nice.mp3\"},{\"word\":\"try on\",\"pronun\":\"\",\"translation\":\"na. 试穿；〈非正式〉搞恶作剧(以试探能否被容忍)；〈非正式〉耍花招\",\"audio\":\"try_on.mp3\"},{\"word\":\"size\",\"pronun\":\"[saɪz]\",\"translation\":\"n. 大小；尺寸\\nadj. 一定尺寸的\\nvt. 依大小排列\\nvi. 可比拟\",\"audio\":\"size.mp3\"},{\"word\":\"of course\",\"pronun\":\"\",\"translation\":\"na. 当然\",\"audio\":\"of_course.mp3\"},{\"word\":\"too\",\"pronun\":\"[tuː]\",\"translation\":\"adv. 太；也；很；还；非常；过度\",\"audio\":\"too.mp3\"},{\"word\":\"just\",\"pronun\":\"[dʒʌst]\",\"translation\":\"adv. 只是，仅仅；刚才，刚刚；正好，恰好；实在；刚要\\nadj. 公正的，合理的；正直的，正义的；正确的；公平的；应得的\",\"audio\":\"just.mp3\"},{\"word\":\"how much\",\"pronun\":\"[haʊ mʌtʃ]\",\"translation\":\"conj. 多少\",\"audio\":\"how_much.mp3\"},{\"word\":\"eighty\",\"pronun\":\"[ˈeɪti]\",\"translation\":\"num. 八十\\nn. 八十；八十岁；八十年代\\nadj. 八十的，八十个的；八十岁的\",\"audio\":\"eighty.mp3\"},{\"word\":\"dollar\",\"pronun\":\"[ˈdɑːlər]\",\"translation\":\"n. 美元\",\"audio\":\"dollar.mp3\"},{\"word\":\"sale\",\"pronun\":\"[seɪl]\",\"translation\":\"n. 销售；出售；拍卖；销售额；廉价出售\",\"audio\":\"sale.mp3\"},{\"word\":\"more\",\"pronun\":\"[mɔːr]\",\"translation\":\"adv. 更多；此外；更大程度地\\nadj. 更多的；附加的\\npron. 更多的数量\\nn. 更多\",\"audio\":\"more.mp3\"},{\"word\":\"us\",\"pronun\":\"[əs; ʌs]\",\"translation\":\"pron. 我们\",\"audio\":\"us.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

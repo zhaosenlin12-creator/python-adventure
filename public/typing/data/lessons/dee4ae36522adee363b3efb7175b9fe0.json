@@ -1,0 +1,50 @@
+{
+  "source": "speed-test",
+  "scrapedAt": "2026-05-02T06:08:44.893727+00:00",
+  "request": {
+    "lesson_id": "dee4ae36522adee363b3efb7175b9fe0",
+    "course_id": "c6bc39f4ba86486e20cc171fab797ea3",
+    "source": "speed-test"
+  },
+  "data": {
+    "level": "速度测试",
+    "courseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "order": 50,
+    "nextCourseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "courseName": "英文速度测试",
+    "lessonId": "dee4ae36522adee363b3efb7175b9fe0",
+    "nextLessonId": "28455999ed460cbc2c9c8f58e6c5e108",
+    "lessonName": "A Proud Father",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c5ba989b2dc74e01a679c7dd770bf065",
+        "index": 1,
+        "text": [
+          "Daniel loves hockey. He is a good hockey player.\\nHe plays on the school team.\\nDaniel's father loves hockey too, but he doesn't play. He can't even skate. But he goes to all Daniel's hockey games.\\nWhen people ask about his favourite sport, he says, \"Hockey!\""
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": 13,
+    "categoryTitle": "速度测试"
+  }
+}

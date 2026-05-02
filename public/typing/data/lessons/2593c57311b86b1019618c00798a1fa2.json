@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.609603+00:00",
+  "request": {
+    "lesson_id": "2593c57311b86b1019618c00798a1fa2",
+    "course_id": "07e9ff923dd8a9eab06e26a8cfc4e593",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "07e9ff923dd8a9eab06e26a8cfc4e593",
+    "order": 413,
+    "nextCourseId": "07e9ff923dd8a9eab06e26a8cfc4e593",
+    "courseName": "初中必背古诗60首（2）",
+    "lessonId": "2593c57311b86b1019618c00798a1fa2",
+    "nextLessonId": "6e222d830af07da70374eb1ac28b920f",
+    "lessonName": "水调歌头",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "298e6761688d026c00c765f3ed8e9fe5",
+        "index": 1,
+        "text": [
+          "水调歌头\\n苏轼\\n人有悲欢离合，月有阴晴圆缺，此事古难全。但愿人长久，千里共婵娟。"
+        ],
+        "pinyin": "[[\"水\", \"shuǐ\"], [\"调\", \"diào\"], [\"歌\", \"gē\"], [\"头\", \"tóu\"], [\"\\n\", \"\"], [\"苏\", \"sū\"], [\"轼\", \"shì\"], [\"\\n\", \"\"], [\"人\", \"rén\"], [\"有\", \"yǒu\"], [\"悲\", \"bēi\"], [\"欢\", \"huān\"], [\"离\", \"lí\"], [\"合\", \"hé\"], [\"，\", \"\"], [\"月\", \"yuè\"], [\"有\", \"yǒu\"], [\"阴\", \"yīn\"], [\"晴\", \"qíng\"], [\"圆\", \"yuán\"], [\"缺\", \"quē\"], [\"，\", \"\"], [\"此\", \"cǐ\"], [\"事\", \"shì\"], [\"古\", \"gǔ\"], [\"难\", \"nán\"], [\"全\", \"quán\"], [\"。\", \"\"], [\"但\", \"dàn\"], [\"愿\", \"yuàn\"], [\"人\", \"rén\"], [\"长\", \"cháng\"], [\"久\", \"jiǔ\"], [\"，\", \"\"], [\"千\", \"qiān\"], [\"里\", \"lǐ\"], [\"共\", \"gòng\"], [\"婵\", \"chán\"], [\"娟\", \"juān\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

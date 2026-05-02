@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.166044+00:00",
+  "request": {
+    "lesson_id": "00ad63bba4043cb8c42495c1c381eb16",
+    "course_id": "9983508511f457b02ddcae4777acab15",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "9983508511f457b02ddcae4777acab15",
+    "order": 128,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "JAVA",
+    "lessonId": "00ad63bba4043cb8c42495c1c381eb16",
+    "nextLessonId": "f29d2948d7839cca51495f5837eec346",
+    "lessonName": "方法定义",
+    "icon": "data/assets/daziya.com/key-icon_key-java.09b827febf.png",
+    "description": "Java编程练习 - 方法定义",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c77240ebeb90576e3f72ea09c8fadf86",
+        "index": 1,
+        "text": [
+          "class Main {\\n    public static String greet(String name) {\\n        return \"你好, \" + name + \"!\";\\n    }\\n\\n    public static int addNumbers(int a, int b) {\\n        return a + b;\\n    }\\n\\n    public static void main(String[] args) {\\n        String message = greet(\"小明\");\\n        int result = addNumbers(5, 3);\\n\\n        System.out.println(message);\\n        System.out.println(\"5 + 3 = \" + result);\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "java",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

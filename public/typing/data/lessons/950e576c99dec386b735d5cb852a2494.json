@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.119799+00:00",
+  "request": {
+    "lesson_id": "950e576c99dec386b735d5cb852a2494",
+    "course_id": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "order": 202,
+    "nextCourseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "courseName": "汉字一级",
+    "lessonId": "950e576c99dec386b735d5cb852a2494",
+    "nextLessonId": "1d44e0d212b2baed8a34610bc932d807",
+    "lessonName": "盲打",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-good.c7e935711e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "402220c11190faaad574f5f6f03c9c4f",
+        "index": 1,
+        "text": [
+          "当你学会了盲打，电脑就会变成你身体的一部分，仿佛被你的大脑控制。"
+        ],
+        "pinyin": "[[\"当\", \"dāng\"], [\"你\", \"nǐ\"], [\"学\", \"xué\"], [\"会\", \"huì\"], [\"了\", \"le\"], [\"盲\", \"máng\"], [\"打\", \"dǎ\"], [\"，\", \"\"], [\"电\", \"diàn\"], [\"脑\", \"nǎo\"], [\"就\", \"jiù\"], [\"会\", \"huì\"], [\"变\", \"biàn\"], [\"成\", \"chéng\"], [\"你\", \"nǐ\"], [\"身\", \"shēn\"], [\"体\", \"tǐ\"], [\"的\", \"de\"], [\"一\", \"yī\"], [\"部\", \"bù\"], [\"分\", \"fèn\"], [\"，\", \"\"], [\"仿\", \"fǎng\"], [\"佛\", \"fú\"], [\"被\", \"bèi\"], [\"你\", \"nǐ\"], [\"的\", \"de\"], [\"大\", \"dà\"], [\"脑\", \"nǎo\"], [\"控\", \"kòng\"], [\"制\", \"zhì\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 17,
+        "minSpeed": 9,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

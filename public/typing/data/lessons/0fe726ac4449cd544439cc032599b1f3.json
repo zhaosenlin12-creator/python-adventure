@@ -1,0 +1,50 @@
+{
+  "source": "speed-test",
+  "scrapedAt": "2026-05-02T06:08:44.814492+00:00",
+  "request": {
+    "lesson_id": "0fe726ac4449cd544439cc032599b1f3",
+    "course_id": "c6bc39f4ba86486e20cc171fab797ea3",
+    "source": "speed-test"
+  },
+  "data": {
+    "level": "速度测试",
+    "courseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "order": 28,
+    "nextCourseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "courseName": "英文速度测试",
+    "lessonId": "0fe726ac4449cd544439cc032599b1f3",
+    "nextLessonId": "677705e9ab88f157d7119f85e3bd17d8",
+    "lessonName": "Colours",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "0d68ef4c4a92a9dbb3e66a8f823fd0ab",
+        "index": 1,
+        "text": [
+          "One day, Red and Blue were arguing about which colour is the best.\\nRed said, \"I get all the attention!\"\\nBlue said, \"I am the colour of the sea!\"\\nAll of a sudden, red spilled onto blue. Purple was born.\\nFrom then on, they both agreed that purple was their favourite colour."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": 13,
+    "categoryTitle": "速度测试"
+  }
+}

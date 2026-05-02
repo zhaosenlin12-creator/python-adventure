@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.190440+00:00",
+  "request": {
+    "lesson_id": "b61814efd926e0575eb6822806e25a53",
+    "course_id": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "order": 207,
+    "nextCourseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "courseName": "汉字一级",
+    "lessonId": "b61814efd926e0575eb6822806e25a53",
+    "nextLessonId": "4419cec54d80143557cc5f97c33c6551",
+    "lessonName": "肌肉记忆",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-good.c7e935711e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ce6603c02c8e6899e86c17d9be7b4b2a",
+        "index": 1,
+        "text": [
+          "就像运动员通过长期训练形成肌肉记忆帮助他们在球场上出色发挥一样，练习打字时形成的肌肉记忆也会帮助你在键盘上出色发挥。"
+        ],
+        "pinyin": "[[\"就\", \"jiù\"], [\"像\", \"xiàng\"], [\"运\", \"yùn\"], [\"动\", \"dòng\"], [\"员\", \"yuán\"], [\"通\", \"tōng\"], [\"过\", \"guò\"], [\"长\", \"cháng\"], [\"期\", \"qī\"], [\"训\", \"xùn\"], [\"练\", \"liàn\"], [\"形\", \"xíng\"], [\"成\", \"chéng\"], [\"肌\", \"jī\"], [\"肉\", \"ròu\"], [\"记\", \"jì\"], [\"忆\", \"yì\"], [\"帮\", \"bāng\"], [\"助\", \"zhù\"], [\"他\", \"tā\"], [\"们\", \"men\"], [\"在\", \"zài\"], [\"球\", \"qiú\"], [\"场\", \"chǎng\"], [\"上\", \"shàng\"], [\"出\", \"chū\"], [\"色\", \"sè\"], [\"发\", \"fā\"], [\"挥\", \"huī\"], [\"一\", \"yī\"], [\"样\", \"yàng\"], [\"，\", \"\"], [\"练\", \"liàn\"], [\"习\", \"xí\"], [\"打\", \"dǎ\"], [\"字\", \"zì\"], [\"时\", \"shí\"], [\"形\", \"xíng\"], [\"成\", \"chéng\"], [\"的\", \"de\"], [\"肌\", \"jī\"], [\"肉\", \"ròu\"], [\"记\", \"jì\"], [\"忆\", \"yì\"], [\"也\", \"yě\"], [\"会\", \"huì\"], [\"帮\", \"bāng\"], [\"助\", \"zhù\"], [\"你\", \"nǐ\"], [\"在\", \"zài\"], [\"键\", \"jiàn\"], [\"盘\", \"pán\"], [\"上\", \"shàng\"], [\"出\", \"chū\"], [\"色\", \"sè\"], [\"发\", \"fā\"], [\"挥\", \"huī\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 19,
+        "minSpeed": 11,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

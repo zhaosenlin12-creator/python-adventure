@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.568159+00:00",
+  "request": {
+    "lesson_id": "e91bc4f591a30487d3df4ea222f6a6db",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 544,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "e91bc4f591a30487d3df4ea222f6a6db",
+    "nextLessonId": "0b399d8e585c4e6ffa9f49ccf38558d3",
+    "lessonName": "Snow or Not",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f0bb16d1aabe9c9c645b8f23dd562933",
+        "index": 1,
+        "text": [
+          "Snow or Not\\nWhen I was young, my family always seemed short of food. We were poor. My brothers and sisters and I were hungry all of the time.\\nWe didn't have much flour. And sugar was rare. You know, with flour and sugar, our mom could make delicious treats. Flour and sugar were signs of wealth to us.\\nWhen it snowed in winter, I always wondered, \"Why doesn't it snow flour?\"\\n\"Or sugar,\" my young brother would correct me.\\nWe imagined how happy we would be if it snowed flour and sugar-precious white four and sugar!\\nWhen we grew up, we laughed about how silly we were. If it snowed flour and sugar, there would be big problems in the world. We would not be able to survive very long!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

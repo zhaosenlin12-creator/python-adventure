@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.358825+00:00",
+  "request": {
+    "lesson_id": "e98a77b9a1d53b22d6eb1e1cb4197ee5",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 629,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "e98a77b9a1d53b22d6eb1e1cb4197ee5",
+    "nextLessonId": "8f19064e412b1622d073c405dc0b15cb",
+    "lessonName": " 三年级下-1",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点三年级下 - 第1课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "392ce60925797f5b10b39a86b99ae28f",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"UK\",\"pronun\":\"[ˌjuː ˈkeɪ]\",\"translation\":\"n. 英国\\nabbr. 联合王国（United Kingdom）\",\"audio\":\"UK.mp3\"},{\"word\":\"Canada\",\"pronun\":\"[ˈkænədə]\",\"translation\":\"n. 加拿大（北美洲国家）\",\"audio\":\"Canada.mp3\"},{\"word\":\"USA\",\"pronun\":\"\",\"translation\":\"abbr. 美国；美利坚合众国（the United States of America）\",\"audio\":\"USA.mp3\"},{\"word\":\"China\",\"pronun\":\"[ˈtʃaɪnə]\",\"translation\":\"n. 中国\\nn. china，瓷器\\nadj. 中国的；中国制造的\\nadj. china，瓷制的\",\"audio\":\"China.mp3\"},{\"word\":\"she\",\"pronun\":\"[ʃi; ʃiː]\",\"translation\":\"n. 女人；雌性动物\\npron. 她（主格）；它（用来指雌性动物或国家、船舶、地球、月亮等）\",\"audio\":\"she.mp3\"},{\"word\":\"student\",\"pronun\":\"[ˈstuːdnt]\",\"translation\":\"n. 学生；学者\",\"audio\":\"student.mp3\"},{\"word\":\"pupil\",\"pronun\":\"[ˈpjuːpl]\",\"translation\":\"n. 学生；[解剖] 瞳孔；未成年人\",\"audio\":\"pupil.mp3\"},{\"word\":\"he\",\"pronun\":\"[hi; iː; i; hiː]\",\"translation\":\"n. 男孩，男人；它（雄性动物）\\npron. 他\",\"audio\":\"he.mp3\"},{\"word\":\"teacher\",\"pronun\":\"[ˈtiːtʃər]\",\"translation\":\"n. 教师；导师\",\"audio\":\"teacher.mp3\"},{\"word\":\"boy\",\"pronun\":\"[bɔɪ]\",\"translation\":\"n. 男孩；男人\",\"audio\":\"boy.mp3\"},{\"word\":\"and\",\"pronun\":\"[ənd; ən; n; ænd]\",\"translation\":\"conj. 和，与；就；而且；但是；然后\",\"audio\":\"and.mp3\"},{\"word\":\"girl\",\"pronun\":\"[ɡɜːrl]\",\"translation\":\"n. 女孩；姑娘，未婚女子；女职员，女演员；（男人的）女朋友\\nn. （捷）吉尔\",\"audio\":\"girl.mp3\"},{\"word\":\"new\",\"pronun\":\"[nuː]\",\"translation\":\"adj. 新的，新鲜的；更新的；初见的\\nadv. 新近\",\"audio\":\"new.mp3\"},{\"word\":\"friend\",\"pronun\":\"[frend]\",\"translation\":\"n. 朋友；助手；赞助者\",\"audio\":\"friend.mp3\"},{\"word\":\"today\",\"pronun\":\"[təˈdeɪ]\",\"translation\":\"n. 今天；现今\\nadv. 今天；现今\",\"audio\":\"today.mp3\"},{\"word\":\"father\",\"pronun\":\"[ˈfɑːðər]\",\"translation\":\"n. 父亲，爸爸；神父；祖先；前辈\\nvt. 发明，创立；当…的父亲\",\"audio\":\"father.mp3\"},{\"word\":\"dad\",\"pronun\":\"[dæd]\",\"translation\":\"n. 爸爸；爹爹\",\"audio\":\"dad.mp3\"},{\"word\":\"man\",\"pronun\":\"[mæn]\",\"translation\":\"n. 人；男人；人类；丈夫；雇工\\nvt. 操纵；给…配置人员；使增强勇气；在…就位\",\"audio\":\"man.mp3\"},{\"word\":\"woman\",\"pronun\":\"[ˈwʊmən]\",\"translation\":\"n. 妇女；女性；成年女子\",\"audio\":\"woman.mp3\"},{\"word\":\"mother\",\"pronun\":\"[ˈmʌðər]\",\"translation\":\"n. 母亲；大娘；女修道院院长\\nvt. 生下；养育；像母亲般关怀或照管\\nadj. 母亲的；出生地的\",\"audio\":\"mother.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

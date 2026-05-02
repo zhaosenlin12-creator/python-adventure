@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.722420+00:00",
+  "request": {
+    "lesson_id": "b58879aca7bfd3b0f9b25a5800230e89",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 136,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "b58879aca7bfd3b0f9b25a5800230e89",
+    "nextLessonId": "77c03740754740b1af144a4a8f8896b3",
+    "lessonName": "KET核心词-110",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第110课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "78558be00f1372763ff96c098a7a1b30",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"monkey\",\"pronun\":\"[ˈmʌŋki]\",\"translation\":\"n. 猴子；顽童\\nvi. 胡闹；捣蛋\\nvt. 嘲弄\",\"audio\":\"monkey.mp3\"},{\"word\":\"mouse\",\"pronun\":\"[maʊs]\",\"translation\":\"n. 鼠标；老鼠；胆小羞怯的人\\nvt. 探出\\nvi. 捕鼠；窥探\",\"audio\":\"mouse.mp3\"},{\"word\":\"parrot\",\"pronun\":\"[ˈpærət]\",\"translation\":\"n. 鹦鹉；学舌者，应声虫；机械模仿别人的人\\nvt. 机械地模仿\",\"audio\":\"parrot.mp3\"},{\"word\":\"pet\",\"pronun\":\"[pet]\",\"translation\":\"n. 宠物；生气；受宠爱的人\\nadj. 宠爱的\\nvt. 宠爱\\nvi. 生气；爱抚\",\"audio\":\"pet.mp3\"},{\"word\":\"pig\",\"pronun\":\"[pɪɡ]\",\"translation\":\"n. 猪；猪肉\\nvi. 生小猪；像猪一样过活\\nn. 警察（俚语，带有攻击性）\",\"audio\":\"pig.mp3\"},{\"word\":\"rabbit\",\"pronun\":\"[ˈræbɪt]\",\"translation\":\"n. 兔子，野兔\\nvt. 让…见鬼去吧\\nvi. 猎兔\",\"audio\":\"rabbit.mp3\"},{\"word\":\"sea creature\",\"pronun\":\"\",\"translation\":\"un. 海洋生物\",\"audio\":\"sea_creature.mp3\"},{\"word\":\"sheep\",\"pronun\":\"[ʃiːp]\",\"translation\":\"n. 羊，绵羊；胆小鬼\",\"audio\":\"sheep.mp3\"},{\"word\":\"snake\",\"pronun\":\"[sneɪk]\",\"translation\":\"n. 蛇；阴险的人\\nvt. 拉（木材等）；迂回前进\\nvi. 迂回前进\",\"audio\":\"snake.mp3\"},{\"word\":\"tiger\",\"pronun\":\"[ˈtaɪɡər]\",\"translation\":\"n. 老虎；凶暴的人\",\"audio\":\"tiger.mp3\"},{\"word\":\"turkey\",\"pronun\":\"[ˈtɜːrki]\",\"translation\":\"n. 土耳其（横跨欧亚两洲的国家）\",\"audio\":\"turkey.mp3\"},{\"word\":\"whale\",\"pronun\":\"[weɪl]\",\"translation\":\"n. 鲸；巨大的东西\\nvt. 猛揍；使惨败\\nvi. 捕鲸\",\"audio\":\"whale.mp3\"},{\"word\":\"wild animals\",\"pronun\":\"\",\"translation\":\"na. 野生动物\",\"audio\":\"wild_animals.mp3\"},{\"word\":\"wing\",\"pronun\":\"[wɪŋ]\",\"translation\":\"n. 翼；翅膀；飞翔；派别；侧厅，耳房，厢房\\nvt. 使飞；飞过；空运；增加…速度；装以翼\\nvi. 飞行\",\"audio\":\"wing.mp3\"},{\"word\":\"zebra\",\"pronun\":\"[ˈziːbrə]\",\"translation\":\"n. [脊椎] 斑马\\nadj. 有斑纹的\",\"audio\":\"zebra.mp3\"},{\"word\":\"assistant\",\"pronun\":\"[əˈsɪstənt]\",\"translation\":\"n. 助手，助理，助教\\nadj. 辅助的，助理的；有帮助的\",\"audio\":\"assistant.mp3\"},{\"word\":\"Bill\",\"pronun\":\"\",\"translation\":\"n. [法] 法案；广告；账单；[金融] 票据；钞票；清单\\nvt. 宣布；开账单；用海报宣传\",\"audio\":\"Bill.mp3\"},{\"word\":\"buy\",\"pronun\":\"[baɪ]\",\"translation\":\"n. 购买，买卖；所购的物品\\nvi. 买，采购\\nvt. 购买；获得；贿赂\",\"audio\":\"buy.mp3\"},{\"word\":\"car park\",\"pronun\":\"\",\"translation\":\"n. 停车场；停车房\",\"audio\":\"car_park.mp3\"},{\"word\":\"cash\",\"pronun\":\"[kæʃ]\",\"translation\":\"n. 现款，现金\\nvt. 将…兑现；支付现款\",\"audio\":\"cash.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

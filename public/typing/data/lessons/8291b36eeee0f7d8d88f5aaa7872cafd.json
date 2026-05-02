@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.907224+00:00",
+  "request": {
+    "lesson_id": "8291b36eeee0f7d8d88f5aaa7872cafd",
+    "course_id": "daccefd55478aba6657b64a604f8f971",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "daccefd55478aba6657b64a604f8f971",
+    "order": 159,
+    "nextCourseId": "c965d44766237ddfb0947c82570af65d",
+    "courseName": "注音练习1",
+    "lessonId": "8291b36eeee0f7d8d88f5aaa7872cafd",
+    "nextLessonId": "083f5eb20b07ca4ade132417ccf374d3",
+    "lessonName": "《江雪》",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-wen.691360af01.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "09bb910b590b4d370add988679c3f2e5",
+        "index": 1,
+        "text": [
+          "《江雪》\\n唐：柳宗元\\n\\n千山鸟飞绝，万径人踪灭。\\n孤舟蓑笠翁，独钓寒江雪。"
+        ],
+        "pinyin": "[[\"《\", \"\"], [\"江\", \"jiāng\"], [\"雪\", \"xuě\"], [\"》\", \"\"], [\"\\n\", \"\"], [\"唐\", \"táng\"], [\"：\", \"\"], [\"柳\", \"liǔ\"], [\"宗\", \"zōng\"], [\"元\", \"yuán\"], [\"\\n\", \"\"], [\"\\n\", \"\"], [\"千\", \"qiān\"], [\"山\", \"shān\"], [\"鸟\", \"niǎo\"], [\"飞\", \"fēi\"], [\"绝\", \"jué\"], [\"，\", \"\"], [\"万\", \"wàn\"], [\"径\", \"jìng\"], [\"人\", \"rén\"], [\"踪\", \"zōng\"], [\"灭\", \"miè\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"孤\", \"gū\"], [\"舟\", \"zhōu\"], [\"蓑\", \"suō\"], [\"笠\", \"lì\"], [\"翁\", \"wēng\"], [\"，\", \"\"], [\"独\", \"dú\"], [\"钓\", \"diào\"], [\"寒\", \"hán\"], [\"江\", \"jiāng\"], [\"雪\", \"xuě\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 8,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.113222+00:00",
+  "request": {
+    "lesson_id": "82487d4f11a1d4ac3f88d461c7e437dd",
+    "course_id": "31f8b0bfdd5cf12de8374becadc88615",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "31f8b0bfdd5cf12de8374becadc88615",
+    "order": 394,
+    "nextCourseId": "31f8b0bfdd5cf12de8374becadc88615",
+    "courseName": "实战演练-100万以内金额",
+    "lessonId": "82487d4f11a1d4ac3f88d461c7e437dd",
+    "nextLessonId": "df5a2f99bde7d5a3846aeade324ae213",
+    "lessonName": "十万元货币二",
+    "icon": "data/assets/daziya.com/key-icon_num-dianzan.b4fa52ea4b.png",
+    "description": "数字输入练习 - 十万元货币二",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "dcf9bce5543788920f3df26f580f978f",
+        "index": 1,
+        "text": [
+          "10500000\\n20500000\\n30500000\\n40500000\\n50500000\\n60500000\\n70500000\\n80500000\\n90500000\\n11500000\\n22500000\\n33500000\\n44500000\\n55500000\\n66500000\\n77500000\\n88500000\\n99500000\\n15500000\\n25500000\\n35500000\\n45500000\\n56500000\\n67500000\\n78500000\\n89500000\\n91500000\\n18500000\\n28500000\\n38500000"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

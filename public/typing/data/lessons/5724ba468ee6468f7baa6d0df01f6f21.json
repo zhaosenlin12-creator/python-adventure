@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.406744+00:00",
+  "request": {
+    "lesson_id": "5724ba468ee6468f7baa6d0df01f6f21",
+    "course_id": "30951c93875a1e260feda8cb699005df",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "30951c93875a1e260feda8cb699005df",
+    "order": 505,
+    "nextCourseId": "30951c93875a1e260feda8cb699005df",
+    "courseName": "英语每日故事（初级）32-61",
+    "lessonId": "5724ba468ee6468f7baa6d0df01f6f21",
+    "nextLessonId": "a696151510ed96114bc70c3aa62e6c0f",
+    "lessonName": "Numbers",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9c4d7552dad03fc5fa5a89723abd124a",
+        "index": 1,
+        "text": [
+          "Numbers are handy. I use them to count. I have one nose. I have two eyes. I have three sisters. I have four aunts and four uncles. I have five friends. I have six hats. I have seven books. I have eight crayons. I have nine pencils. And I have ten fingers and ten toes. See, numbers are handy. What can you count?"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

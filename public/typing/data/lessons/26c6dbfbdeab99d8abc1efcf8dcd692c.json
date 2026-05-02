@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.607314+00:00",
+  "request": {
+    "lesson_id": "26c6dbfbdeab99d8abc1efcf8dcd692c",
+    "course_id": "f5e1caafe742206a7fc8abc95cf77b44",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "order": 309,
+    "nextCourseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "courseName": "诗词歌赋",
+    "lessonId": "26c6dbfbdeab99d8abc1efcf8dcd692c",
+    "nextLessonId": "babd7b04f45a57bec70645e1b2f96490",
+    "lessonName": "《水调歌头·明月几时有》",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-poet-1.54ee3c2d1e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5d0e6d9c42985e799561595a10f214f2",
+        "index": 1,
+        "text": [
+          "《水调歌头·明月几时有》\\n宋：苏轼\\n丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。"
+        ],
+        "pinyin": "[[\"《\", \"\"], [\"水\", \"shuǐ\"], [\"调\", \"diào\"], [\"歌\", \"gē\"], [\"头\", \"tóu\"], [\"·\", \"\"], [\"明\", \"míng\"], [\"月\", \"yuè\"], [\"几\", \"jǐ\"], [\"时\", \"shí\"], [\"有\", \"yǒu\"], [\"》\", \"\"], [\"\\n\", \"\"], [\"宋\", \"sòng\"], [\"：\", \"\"], [\"苏\", \"sū\"], [\"轼\", \"shì\"], [\"\\n\", \"\"], [\"丙\", \"bǐng\"], [\"辰\", \"chén\"], [\"中\", \"zhōng\"], [\"秋\", \"qiū\"], [\"，\", \"\"], [\"欢\", \"huān\"], [\"饮\", \"yǐn\"], [\"达\", \"dá\"], [\"旦\", \"dàn\"], [\"，\", \"\"], [\"大\", \"dà\"], [\"醉\", \"zuì\"], [\"，\", \"\"], [\"作\", \"zuò\"], [\"此\", \"cǐ\"], [\"篇\", \"piān\"], [\"，\", \"\"], [\"兼\", \"jiān\"], [\"怀\", \"huái\"], [\"子\", \"zǐ\"], [\"由\", \"yóu\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 43,
+        "minSpeed": 28,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

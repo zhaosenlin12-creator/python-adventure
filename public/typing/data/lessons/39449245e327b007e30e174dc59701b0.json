@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.228742+00:00",
+  "request": {
+    "lesson_id": "39449245e327b007e30e174dc59701b0",
+    "course_id": "b121644211bd274795ee5972ddf997a2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "b121644211bd274795ee5972ddf997a2",
+    "order": 319,
+    "nextCourseId": "b121644211bd274795ee5972ddf997a2",
+    "courseName": "小学必备古诗75首（1）",
+    "lessonId": "39449245e327b007e30e174dc59701b0",
+    "nextLessonId": "a83f022b01d9e95795e7bf7ab930dcdb",
+    "lessonName": "出塞",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3d09d07bedd6b584d1b16277f83aeafe",
+        "index": 1,
+        "text": [
+          "出塞\\n王昌龄\\n秦时明月汉时关，万里长征人未还。\\n但使龙城飞将在，不教胡马度阴山。"
+        ],
+        "pinyin": "[[\"出\", \"chū\"], [\"塞\", \"sài\"], [\"\\n\", \"\"], [\"王\", \"wáng\"], [\"昌\", \"chāng\"], [\"龄\", \"líng\"], [\"\\n\", \"\"], [\"秦\", \"qín\"], [\"时\", \"shí\"], [\"明\", \"míng\"], [\"月\", \"yuè\"], [\"汉\", \"hàn\"], [\"时\", \"shí\"], [\"关\", \"guān\"], [\"，\", \"\"], [\"万\", \"wàn\"], [\"里\", \"lǐ\"], [\"长\", \"cháng\"], [\"征\", \"zhēng\"], [\"人\", \"rén\"], [\"未\", \"wèi\"], [\"还\", \"huán\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"但\", \"dàn\"], [\"使\", \"shǐ\"], [\"龙\", \"lóng\"], [\"城\", \"chéng\"], [\"飞\", \"fēi\"], [\"将\", \"jiàng\"], [\"在\", \"zài\"], [\"，\", \"\"], [\"不\", \"bù\"], [\"教\", \"jiào\"], [\"胡\", \"hú\"], [\"马\", \"mǎ\"], [\"度\", \"dù\"], [\"阴\", \"yīn\"], [\"山\", \"shān\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

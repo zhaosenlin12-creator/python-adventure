@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:30.982783+00:00",
+  "request": {
+    "lesson_id": "537bed6ecf83e3f1ed0855b27330944f",
+    "course_id": "21fe8d60de407da95e1abc33ac636014",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "21fe8d60de407da95e1abc33ac636014",
+    "order": 34,
+    "nextCourseId": "21fe8d60de407da95e1abc33ac636014",
+    "courseName": "上排字母",
+    "lessonId": "537bed6ecf83e3f1ed0855b27330944f",
+    "nextLessonId": "c1a4ab82ee0278d18c7df6d67479d4db",
+    "lessonName": "回顾q和y",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-review-qy.e1e0686b71.png",
+    "description": "回顾q和y",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "7cbc71b6cabd848dbc73af0688569a0d",
+        "index": 1,
+        "text": [
+          "qu qi qiao yao you yu yi qie wo yu ye ruo rou you jiao shua shuo shui kou kuo guo gu gao shuai sha shi yao you ye qiao qi qiu"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "quiaoy ewrjshkgq",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

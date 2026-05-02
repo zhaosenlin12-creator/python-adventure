@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.518457+00:00",
+  "request": {
+    "lesson_id": "4d1ef4eba3a596c035a387435b93df3e",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 325,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "4d1ef4eba3a596c035a387435b93df3e",
+    "nextLessonId": "0b62957d946a0717ce3c6cf9e5619e21",
+    "lessonName": "六级词汇正序版-28",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第28课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9f73b01e5f611e00bf7a404cd35fd641",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"cradle\",\"pronun\":\"[ˈkreɪdl]\",\"translation\":\"n. 摇篮；发源地；发祥地；支船架\\nvt. 抚育；把...搁在支架上；把...放在摇篮内\",\"audio\":\"cradle.mp3\"},{\"word\":\"crash\",\"pronun\":\"[kræʃ]\",\"translation\":\"n. 撞碎；坠毁；破产；轰隆声；睡觉\\nvi. 摔碎；坠落；发出隆隆声；(金融企业等)破产\\nvt. 打碎；使坠毁、撞坏；擅自闯入\",\"audio\":\"crash.mp3\"},{\"word\":\"crawl\",\"pronun\":\"[krɔːl]\",\"translation\":\"n. 爬行；养鱼池；匍匐而行\\nvt. 爬行；缓慢地行进\\nvi. 爬行；匍匐行进\",\"audio\":\"crawl.mp3\"},{\"word\":\"creation\",\"pronun\":\"[kriˈeɪʃn]\",\"translation\":\"n. 创造，创作；创作物，产物\",\"audio\":\"creation.mp3\"},{\"word\":\"credible\",\"pronun\":\"[ˈkredəbl]\",\"translation\":\"adj. 可靠的，可信的\",\"audio\":\"credible.mp3\"},{\"word\":\"credit\",\"pronun\":\"[ˈkredɪt]\",\"translation\":\"n. 信用，信誉；[金融] 贷款；学分；信任；声望\\nvt. 相信，信任；把…归给，归功于；赞颂\",\"audio\":\"credit.mp3\"},{\"word\":\"crew\",\"pronun\":\"[kruː]\",\"translation\":\"n. 队，组；全体人员，全体船员\\nvt. 使当船员\\nvi. 一起工作\",\"audio\":\"crew.mp3\"},{\"word\":\"crime\",\"pronun\":\"[kraɪm]\",\"translation\":\"n. 罪行，犯罪；罪恶；犯罪活动\\nvt. 控告……违反纪律\",\"audio\":\"crime.mp3\"},{\"word\":\"criminal\",\"pronun\":\"[ˈkrɪmɪnl]\",\"translation\":\"n. 罪犯\\nadj. 刑事的；犯罪的；罪恶的\",\"audio\":\"criminal.mp3\"},{\"word\":\"cripple\",\"pronun\":\"[ˈkrɪpl]\",\"translation\":\"n. 跛子；残废\\nvt. 削弱；使跛；使残废\\nadj. 跛的；残废的\",\"audio\":\"cripple.mp3\"},{\"word\":\"crisis\",\"pronun\":\"[ˈkraɪsɪs]\",\"translation\":\"n. 危机；危险期；决定性时刻\\nadj. 危机的；用于处理危机的\",\"audio\":\"crisis.mp3\"},{\"word\":\"crisp\",\"pronun\":\"[krɪsp]\",\"translation\":\"adj. 脆的；新鲜的；易碎的\\nvt. 使卷曲；使发脆\\nvi. 卷曲；发脆\\nn. 松脆物；油炸马铃薯片\",\"audio\":\"crisp.mp3\"},{\"word\":\"criterion\",\"pronun\":\"[kraɪˈtɪriən]\",\"translation\":\"n. （批评判断的）标准；准则；规范；准据\",\"audio\":\"criterion.mp3\"},{\"word\":\"critic\",\"pronun\":\"[ˈkrɪtɪk]\",\"translation\":\"n. 批评家，评论家；爱挑剔的人\",\"audio\":\"critic.mp3\"},{\"word\":\"critical\",\"pronun\":\"[ˈkrɪtɪkl]\",\"translation\":\"adj. 鉴定的；[核] 临界的；批评的，爱挑剔的；危险的；决定性的；评论的\",\"audio\":\"critical.mp3\"},{\"word\":\"criticism\",\"pronun\":\"[ˈkrɪtɪsɪzəm]\",\"translation\":\"n. 批评；考证；苛求\",\"audio\":\"criticism.mp3\"},{\"word\":\"criticize\",\"pronun\":\"[ˈkrɪtɪsaɪz]\",\"translation\":\"vi. 批评；评论；苛求\\nvt. 批评；评论；非难\",\"audio\":\"criticize.mp3\"},{\"word\":\"crowd\",\"pronun\":\"[kraʊd]\",\"translation\":\"n. 群众,一伙;一堆,许多,大众\\nv. 拥挤,挤满,挤进\\nvt. 挤满,将...塞进;催促,催逼\\nvi. 挤,拥挤,聚集\",\"audio\":\"crowd.mp3\"},{\"word\":\"crucial\",\"pronun\":\"[ˈkruːʃl]\",\"translation\":\"adj. 重要的；决定性的；定局的；决断的\",\"audio\":\"crucial.mp3\"},{\"word\":\"crumble\",\"pronun\":\"[ˈkrʌmbl]\",\"translation\":\"n. 面包屑\\nvi. 崩溃；破碎，粉碎\\nvt. 崩溃；弄碎，粉碎\",\"audio\":\"crumble.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

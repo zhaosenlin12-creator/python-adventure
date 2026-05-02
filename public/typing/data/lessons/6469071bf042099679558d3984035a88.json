@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.683228+00:00",
+  "request": {
+    "lesson_id": "6469071bf042099679558d3984035a88",
+    "course_id": "bff1f4acbe3c325f85571ee987d1bdd2",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "bff1f4acbe3c325f85571ee987d1bdd2",
+    "order": 100,
+    "nextCourseId": "bff1f4acbe3c325f85571ee987d1bdd2",
+    "courseName": "左右手练习",
+    "lessonId": "6469071bf042099679558d3984035a88",
+    "nextLessonId": "4dc44b879cab8300bc90367d3e5c13e7",
+    "lessonName": "右手练习-拼音",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-right-hand.8b4e761bff.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f7e55840fae15fb6271e64ebf60db87a",
+        "index": 1,
+        "text": [
+          "hu you yi lou mou niu; po. ni ji, li. ku yu hui; miu."
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "f",
+        "key": "huyoilmn;p.jk",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 10,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

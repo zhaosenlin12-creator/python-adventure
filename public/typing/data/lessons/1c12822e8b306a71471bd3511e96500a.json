@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.974183+00:00",
+  "request": {
+    "lesson_id": "1c12822e8b306a71471bd3511e96500a",
+    "course_id": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "order": 78,
+    "nextCourseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "courseName": "C++",
+    "lessonId": "1c12822e8b306a71471bd3511e96500a",
+    "nextLessonId": "90bebcc0fae30cd009a588572bc97eaf",
+    "lessonName": "插入排序",
+    "icon": "data/assets/daziya.com/key-icon_key-cpp.b136419115.png",
+    "description": "C++编程练习 - 插入排序",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3c5d3f69d99493b857ae3c6f3107ad23",
+        "index": 1,
+        "text": [
+          "#include <iostream>\\nusing namespace std;\\n\\nvoid insertionSort(int arr[], int n) {\\n    for (int i = 1; i < n; i++) {\\n        int key = arr[i];\\n        int j = i - 1;\\n\\n        while (j >= 0 && arr[j] > key) {\\n            arr[j + 1] = arr[j];\\n            j--;\\n        }\\n\\n        arr[j + 1] = key;\\n    }\\n}\\n\\nint main() {\\n    int arr[] = {12, 11, 13, 5, 6};\\n    int n = 5;\\n\\n    cout << \"排序前: \";\\n    for (int i = 0; i < n; i++) cout << arr[i] << \" \";\\n\\n    insertionSort(arr, n);\\n\\n    cout << \"\\n排序后: \";\\n    for (int i = 0; i < n; i++) cout << arr[i] << \" \";\\n    cout << endl;\\n\\n    return 0;\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "cpp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

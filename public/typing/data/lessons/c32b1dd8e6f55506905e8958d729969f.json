@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.491201+00:00",
+  "request": {
+    "lesson_id": "c32b1dd8e6f55506905e8958d729969f",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 524,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "c32b1dd8e6f55506905e8958d729969f",
+    "nextLessonId": "f6893083ffc460cfddc02d99afd4f16f",
+    "lessonName": "Easter Egg Hunt",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4912436982b7dc677062ef2e95df6af4",
+        "index": 1,
+        "text": [
+          "In Canada, we celebrate a holiday called Easter.\\nIt is a springtime holiday.\\nMy sister and I love Easter because we get to go Easter egg hunting.\\nAn Easter egg is chocolate that is shaped like an egg.\\nThe Easter Bunny hides Easter eggs for us to find. This is called an Easter egg hunt.\\nIt's a lot of fun!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

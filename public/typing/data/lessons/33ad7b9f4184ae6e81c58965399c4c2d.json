@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:42.630505+00:00",
+  "request": {
+    "lesson_id": "33ad7b9f4184ae6e81c58965399c4c2d",
+    "course_id": "3d8843cc8aae77f0342b8831e23d52c3",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "3d8843cc8aae77f0342b8831e23d52c3",
+    "order": 279,
+    "nextCourseId": "3d8843cc8aae77f0342b8831e23d52c3",
+    "courseName": "财务汇算-小数计算",
+    "lessonId": "33ad7b9f4184ae6e81c58965399c4c2d",
+    "nextLessonId": "f2cffc24a2c39dee81b717c80933c062",
+    "lessonName": "混合位数累加一",
+    "icon": "data/assets/daziya.com/key-icon_num-jiadeng.3722a47f6f.png",
+    "description": "数字输入练习 - 混合位数累加一",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "7af44c2ec646c9b358a0bd7090f2a02a",
+        "index": 1,
+        "text": [
+          "5.5+\\n125.25+\\n2380.75+\\n47.8+\\n589.35+\\n6120.90+\\n74.2+\\n851.60+\\n9260.15+\\n18.7+\\n245.30"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

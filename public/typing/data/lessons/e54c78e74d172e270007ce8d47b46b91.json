@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:42.540841+00:00",
+  "request": {
+    "lesson_id": "e54c78e74d172e270007ce8d47b46b91",
+    "course_id": "37a7adf23aab7533faea85ded4a73fdb",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "37a7adf23aab7533faea85ded4a73fdb",
+    "order": 256,
+    "nextCourseId": "37a7adf23aab7533faea85ded4a73fdb",
+    "courseName": "财务汇算-整数计算",
+    "lessonId": "e54c78e74d172e270007ce8d47b46b91",
+    "nextLessonId": "68817152db2d197d24ade9c4a12c9425",
+    "lessonName": "三位数累减二",
+    "icon": "data/assets/daziya.com/key-icon_num-jianfagonggu.8baf118dbb.png",
+    "description": "数字输入练习 - 三位数累减二",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "075e18905b04f928e981251d797bff6c",
+        "index": 1,
+        "text": [
+          "8760-\\n156-\\n289-\\n374-\\n495-\\n518-\\n637-\\n762-\\n894-\\n123-\\n456"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

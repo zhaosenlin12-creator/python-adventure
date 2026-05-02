@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.522287+00:00",
+  "request": {
+    "lesson_id": "9515be4e3f9574cd83a37c23c4c878eb",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 205,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "9515be4e3f9574cd83a37c23c4c878eb",
+    "nextLessonId": "db0372f81fbf75cda54eccfbb037c8c9",
+    "lessonName": "事务处理",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - 事务处理",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "812945890b79a6b5b3d340d0c02ced51",
+        "index": 1,
+        "text": [
+          "-- 开始事务\\nSTART TRANSACTION;\\n\\n-- 转账操作示例\\nUPDATE accounts SET balance = balance - 1000 WHERE user_id = 1;\\nUPDATE accounts SET balance = balance + 1000 WHERE user_id = 2;\\n\\n-- 提交事务\\nCOMMIT;\\n\\n-- 事务回滚示例\\nSTART TRANSACTION;\\n\\nINSERT INTO orders (user_id, amount, status)\\nVALUES (1, 500.00, 'pending');\\n\\nUPDATE products SET stock = stock - 1 WHERE id = 100;\\n\\n-- 检查库存是否足够\\nSET @stock = (SELECT stock FROM products WHERE id = 100);\\nIF @stock < 0 THEN\\n    ROLLBACK;\\nELSE\\n    COMMIT;\\nEND IF;\\n\\n-- 设置事务隔离级别\\nSET TRANSACTION ISOLATION LEVEL READ COMMITTED;\\n\\n-- 保存点使用\\nSTART TRANSACTION;\\nINSERT INTO logs (message) VALUES ('Start operation');\\nSAVEPOINT sp1;\\nUPDATE users SET status = 'active' WHERE id = 1;\\nSAVEPOINT sp2;\\nDELETE FROM temp_data WHERE created_at < NOW();\\nROLLBACK TO sp2;\\nCOMMIT;\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

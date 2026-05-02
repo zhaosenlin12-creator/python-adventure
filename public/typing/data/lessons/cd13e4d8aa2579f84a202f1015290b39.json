@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.719336+00:00",
+  "request": {
+    "lesson_id": "cd13e4d8aa2579f84a202f1015290b39",
+    "course_id": "e22bc4218a485f29edeedf729586a38c",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e22bc4218a485f29edeedf729586a38c",
+    "order": 14,
+    "nextCourseId": "e22bc4218a485f29edeedf729586a38c",
+    "courseName": "基础词汇",
+    "lessonId": "cd13e4d8aa2579f84a202f1015290b39",
+    "nextLessonId": "4c5858967eadecdda31d1ab3ed13b64f",
+    "lessonName": "基础词汇-14",
+    "icon": "data/assets/daziya.com/key-icon_code-word.cd253668a4.png",
+    "description": "编程基础词汇 - 基础词汇-14",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1a72462d2b41161807846a3ae3b0fb52",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"thread\",\"pronun\":\"[\\u03b8red]\",\"translation\":\"\\u7ebf\\u7a0b\"},{\"word\":\"process\",\"pronun\":\"[\\u02c8pr\\u0251\\u02d0ses]\",\"translation\":\"\\u8fdb\\u7a0b\"},{\"word\":\"lock\",\"pronun\":\"[l\\u0251\\u02d0k]\",\"translation\":\"\\u9501\"},{\"word\":\"mutex\",\"pronun\":\"[\\u02c8mju\\u02d0teks]\",\"translation\":\"\\u4e92\\u65a5\\u9501\"},{\"word\":\"semaphore\",\"pronun\":\"[\\u02c8sem\\u0259f\\u0254\\u02d0r]\",\"translation\":\"\\u4fe1\\u53f7\\u91cf\"},{\"word\":\"sync\",\"pronun\":\"[s\\u026a\\u014bk]\",\"translation\":\"\\u540c\\u6b65\"},{\"word\":\"atomic\",\"pronun\":\"[\\u0259\\u02c8t\\u0251\\u02d0m\\u026ak]\",\"translation\":\"\\u539f\\u5b50\\u7684\"},{\"word\":\"volatile\",\"pronun\":\"[\\u02c8v\\u0251\\u02d0l\\u0259tl]\",\"translation\":\"\\u6613\\u53d8\\u7684\"},{\"word\":\"concurrent\",\"pronun\":\"[k\\u0259n\\u02c8k\\u025c\\u02d0r\\u0259nt]\",\"translation\":\"\\u5e76\\u53d1\\u7684\"},{\"word\":\"parallel\",\"pronun\":\"[\\u02c8p\\u00e6r\\u0259lel]\",\"translation\":\"\\u5e76\\u884c\\u7684\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

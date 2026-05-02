@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.907990+00:00",
+  "request": {
+    "lesson_id": "cbed88a6407f55086456d7062e6bf7ba",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 179,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "cbed88a6407f55086456d7062e6bf7ba",
+    "nextLessonId": "6d210520141610e175cb22ee614b7ab6",
+    "lessonName": "KET核心词-102",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第102课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9ee557fd441f609ccae442a5ab5d2a34",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"lake\",\"pronun\":\"[leɪk]\",\"translation\":\"n. 湖；深红色颜料；胭脂红\\nvt. （使）血球溶解\\nvi. （使）血球溶解\",\"audio\":\"lake.mp3\"},{\"word\":\"leaf\",\"pronun\":\"[liːf]\",\"translation\":\"n. 叶子；（书籍等的）一张；扇页\\nvi. 生叶；翻书页\\nvt. 翻…的页，匆匆翻阅\",\"audio\":\"leaf.mp3\"},{\"word\":\"moon\",\"pronun\":\"[muːn]\",\"translation\":\"n. 月亮；月球；月光；卫星\\nvi. 闲荡；出神\\nvt. 虚度\",\"audio\":\"moon.mp3\"},{\"word\":\"ocean\",\"pronun\":\"[ˈoʊʃn]\",\"translation\":\"n. 海洋；大量；广阔\",\"audio\":\"ocean.mp3\"},{\"word\":\"path\",\"pronun\":\"[pæθ]\",\"translation\":\"n. 道路；小路；轨道\",\"audio\":\"path.mp3\"},{\"word\":\"pet\",\"pronun\":\"[pet]\",\"translation\":\"n. 宠物；生气；受宠爱的人\\nadj. 宠爱的\\nvt. 宠爱\\nvi. 生气；爱抚\",\"audio\":\"pet.mp3\"},{\"word\":\"plant\",\"pronun\":\"[plænt]\",\"translation\":\"n. 工厂，车间；植物；设备；庄稼\\nvt. 种植；培养；栽培；安置\\nvi. 种植\",\"audio\":\"plant.mp3\"},{\"word\":\"river\",\"pronun\":\"[ˈrɪvər]\",\"translation\":\"n. 河，江\",\"audio\":\"river.mp3\"},{\"word\":\"rock\",\"pronun\":\"[rɑːk]\",\"translation\":\"n. 岩石；摇滚乐；暗礁\\nvt. 摇动；使摇晃\\nvi. 摇动；摇晃\",\"audio\":\"rock.mp3\"},{\"word\":\"rose\",\"pronun\":\"[roʊz]\",\"translation\":\"n. 玫瑰；粉红色；蔷薇（花）；粉红色的葡萄酒\\nadj. 玫瑰花的；玫瑰色的；粉红色的；带有玫瑰香味的\\nvt. 使成玫瑰色，使（面颊）发红；使有玫瑰香味\\nvi. 起义( rise的过去式)；升起；（数量）增加；休会\",\"audio\":\"rose.mp3\"},{\"word\":\"sand\",\"pronun\":\"[sænd]\",\"translation\":\"n. 沙；沙地；沙洲；沙滩；沙子\\nvt. 撒沙于；以沙掩盖；用砂纸等擦平或磨光某物；使撒沙似地布满；给…掺沙子\\nvi. 被沙堵塞\",\"audio\":\"sand.mp3\"},{\"word\":\"sea\",\"pronun\":\"[siː]\",\"translation\":\"n. 海；海洋；许多；大量\",\"audio\":\"sea.mp3\"},{\"word\":\"seaside\",\"pronun\":\"[ˈsiːsaɪd]\",\"translation\":\"n. 海边；海滨\\nadj. 海边的；海滨的\",\"audio\":\"seaside.mp3\"},{\"word\":\"sky\",\"pronun\":\"[skaɪ]\",\"translation\":\"n. 天空；顶点\\nvt. 把…投向空中；把…挂得过高\\nvi. 踢或击高空球；把桨叶翘得过高；飞涨\",\"audio\":\"sky.mp3\"},{\"word\":\"snow\",\"pronun\":\"[snoʊ]\",\"translation\":\"n. 雪，积雪；下雪\\nvt. 使纷纷落下；使变白\\nvi. 降雪\",\"audio\":\"snow.mp3\"},{\"word\":\"space\",\"pronun\":\"[speɪs]\",\"translation\":\"n. 空间；太空；距离\\nvt. 隔开\\nvi. 留间隔\",\"audio\":\"space.mp3\"},{\"word\":\"star\",\"pronun\":\"[stɑːr]\",\"translation\":\"n. 星，恒星；明星；星形物\\nadj. 明星的，主角的；星形的\\nvt. 用星号标于；由…主演，由…担任主角\\nvi. 担任主角\",\"audio\":\"star.mp3\"},{\"word\":\"sun\",\"pronun\":\"[sʌn]\",\"translation\":\"n. 太阳\\nvt. 使晒\\nvi. 晒太阳\",\"audio\":\"sun.mp3\"},{\"word\":\"village\",\"pronun\":\"[ˈvɪlɪdʒ]\",\"translation\":\"n. 村庄；村民；（动物的）群落\",\"audio\":\"village.mp3\"},{\"word\":\"wave\",\"pronun\":\"[weɪv]\",\"translation\":\"n. 波动；波浪；高潮；挥手示意；卷曲\\nvt. 卷（烫）发；向…挥手示意；使成波浪形\\nvi. 波动；起伏；挥手示意；摇动；呈波形\",\"audio\":\"wave.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.070976+00:00",
+  "request": {
+    "lesson_id": "9fe14dc211ecfdffd23532f44de577a6",
+    "course_id": "cd45306af9fe6ba99ad31ab2ab5006ba",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "cd45306af9fe6ba99ad31ab2ab5006ba",
+    "order": 385,
+    "nextCourseId": "cd45306af9fe6ba99ad31ab2ab5006ba",
+    "courseName": "实战演练-1万以内金额",
+    "lessonId": "9fe14dc211ecfdffd23532f44de577a6",
+    "nextLessonId": "bf2ac5daefd8506ddeb6d25304a6c8f5",
+    "lessonName": "高难度五",
+    "icon": "data/assets/daziya.com/key-icon_num-jiangbei.44832ef16e.png",
+    "description": "数字输入练习 - 高难度五",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b3ac3ff6aa7fde0dfe97beac475b82d1",
+        "index": 1,
+        "text": [
+          "976345\\n885446\\n794547\\n614648\\n525749\\n436841\\n347942\\n258153\\n169254\\n986546\\n895647\\n715748\\n626849\\n537941\\n448152\\n359253\\n261354\\n172455\\n996747\\n816848\\n727949\\n638151\\n549252\\n451353\\n362454\\n273555\\n184656\\n917957\\n827158\\n738259"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.506561+00:00",
+  "request": {
+    "lesson_id": "dba4222f70db72d0681b1d54efc2cfef",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 659,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "dba4222f70db72d0681b1d54efc2cfef",
+    "nextLessonId": "fc01d350f06501ac5a7238295e7bc5e4",
+    "lessonName": " 六年级上-3",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点六年级上 - 第3课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c6c21842107906fe8904ef887c557751",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"must\",\"pronun\":\"[məst; mʌst]\",\"translation\":\"aux. 必须，一定；可以，应当；很可能\\nn. 绝对必要的事物；未发酵葡萄汁\",\"audio\":\"must.mp3\"},{\"word\":\"wear\",\"pronun\":\"[wer]\",\"translation\":\"n. 衣物；磨损；耐久性\\nv. 穿着；用旧；耗损；面露\",\"audio\":\"wear.mp3\"},{\"word\":\"attention\",\"pronun\":\"[əˈtenʃn]\",\"translation\":\"n. 注意力；关心；立正！（口令）\",\"audio\":\"attention.mp3\"},{\"word\":\"pay attention to\",\"pronun\":\"\",\"translation\":\"na. 注意\",\"audio\":\"pay_attention_to.mp3\"},{\"word\":\"traffic\",\"pronun\":\"[ˈtræfɪk]\",\"translation\":\"n. 交通；运输；贸易；[通信] 通信量\\nvt. 用…作交换；在…通行\\nvi. 交易，买卖\",\"audio\":\"traffic.mp3\"},{\"word\":\"traffic lights\",\"pronun\":\"\",\"translation\":\"n. 交通信号灯；红绿灯\",\"audio\":\"traffic_lights.mp3\"},{\"word\":\"Munich\",\"pronun\":\"[ˈmjuːnɪk]\",\"translation\":\"n. 慕尼黑（联邦德国城市）\",\"audio\":\"Munich.mp3\"},{\"word\":\"Germany\",\"pronun\":\"[ˈdʒɜːrməni]\",\"translation\":\"n. 德国\",\"audio\":\"Germany.mp3\"},{\"word\":\"Alaska\",\"pronun\":\"[əˈlæskə]\",\"translation\":\"n. 阿拉斯加州\",\"audio\":\"Alaska.mp3\"},{\"word\":\"sled\",\"pronun\":\"[sled]\",\"translation\":\"n. 雪橇\\nvt. 用摘棉机摘；用雪橇运\\nvi. 乘雪橇；用雪橇运\",\"audio\":\"sled.mp3\"},{\"word\":\"fast\",\"pronun\":\"[fæst]\",\"translation\":\"n. 斋戒；绝食\\nadj. 快速的，迅速的；紧的，稳固的\\nadv. 迅速地；紧紧地；彻底地\\nvi. 禁食，斋戒\",\"audio\":\"fast.mp3\"},{\"word\":\"ferry\",\"pronun\":\"[ˈferi]\",\"translation\":\"n. 渡船；摆渡；渡口\\nvt. （乘渡船）渡过；用渡船运送；空运\\nvi. 摆渡；来往行驶\",\"audio\":\"ferry.mp3\"},{\"word\":\"Papa Westray\",\"pronun\":\"\",\"translation\":\"帕帕威斯垂岛\",\"audio\":\"Papa_Westray.mp3\"},{\"word\":\"Scotland\",\"pronun\":\"[ˈskɑːtlənd]\",\"translation\":\"n. 苏格兰\",\"audio\":\"Scotland.mp3\"},{\"word\":\"visit\",\"pronun\":\"[ˈvɪzɪt]\",\"translation\":\"n. 访问；参观；逗留\\nvt. 访问；参观；视察\\nvi. 访问；暂住；闲谈\",\"audio\":\"visit.mp3\"},{\"word\":\"film\",\"pronun\":\"[fɪlm]\",\"translation\":\"n. 电影；薄膜；胶卷；轻烟\\nvt. 在…上覆以薄膜；把…拍成电影\\nvi. 摄制电影；生薄膜；变得朦胧\",\"audio\":\"film.mp3\"},{\"word\":\"see a film\",\"pronun\":\"\",\"translation\":\"看电影；去看电影；去电影院看电影\",\"audio\":\"see_a_film.mp3\"},{\"word\":\"trip\",\"pronun\":\"[trɪp]\",\"translation\":\"n. 旅行；绊倒；差错\\nvt. 绊倒；使犯错\\nvi. 绊倒；远足；犯错误；轻快地走\",\"audio\":\"trip.mp3\"},{\"word\":\"take a trip\",\"pronun\":\"\",\"translation\":\"na. 旅行\",\"audio\":\"take_a_trip.mp3\"},{\"word\":\"supermarket\",\"pronun\":\"[ˈsuːpərmɑːrkɪt]\",\"translation\":\"n. 超级市场；自助售货商店\",\"audio\":\"supermarket.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

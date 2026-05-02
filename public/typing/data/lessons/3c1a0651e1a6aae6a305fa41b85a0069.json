@@ -1,0 +1,83 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.594137+00:00",
+  "request": {
+    "lesson_id": "3c1a0651e1a6aae6a305fa41b85a0069",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 14,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "3c1a0651e1a6aae6a305fa41b85a0069",
+    "nextLessonId": "98bf400f913945074b1d29325d069fd9",
+    "lessonName": "韵母ui、ue",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母ui、ue的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "5914a3be3cede22c96f09f42972141fe",
+        "index": 1,
+        "highlights": [
+          "ui"
+        ],
+        "text": [
+          "请输入按键 [ui]"
+        ],
+        "detail": "学习双拼按键 ui"
+      },
+      {
+        "chapterId": "5e2723b3c3045cd4663089674df4316e",
+        "index": 2,
+        "highlights": [
+          "ue"
+        ],
+        "text": [
+          "请输入按键 [ue]"
+        ],
+        "detail": "学习双拼按键 ue"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "4ab25dc8f966cbbea5f98c1e5fb2fe42",
+        "index": 3,
+        "text": [
+          "uiuiuiuiueueueueuiueuiueuiueuiue"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "57ce72b277997ca374a16c420fd0066a",
+        "index": 4,
+        "text": [
+          "水位退后对推土机队说，灰堆会随水退回最北。"
+        ],
+        "pinyin": "[[\"水\", \"shuǐ\"], [\"位\", \"wèi\"], [\"退\", \"tuì\"], [\"后\", \"hòu\"], [\"对\", \"duì\"], [\"推\", \"tuī\"], [\"土\", \"tǔ\"], [\"机\", \"jī\"], [\"队\", \"duì\"], [\"说\", \"shuō\"], [\"，\", \"\"], [\"灰\", \"huī\"], [\"堆\", \"duī\"], [\"会\", \"huì\"], [\"随\", \"suí\"], [\"水\", \"shuǐ\"], [\"退\", \"tuì\"], [\"回\", \"huí\"], [\"最\", \"zuì\"], [\"北\", \"běi\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

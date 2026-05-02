@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.518683+00:00",
+  "request": {
+    "lesson_id": "d9076914f6bb9273b893e872392724b9",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 91,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "d9076914f6bb9273b893e872392724b9",
+    "nextLessonId": "7a33ab3493ec98b0e08dd1fba7b59400",
+    "lessonName": "KET核心词-112",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第112课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "023ec03214463e9a80fc84ae3873b74a",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"manager\",\"pronun\":\"[ˈmænɪdʒər]\",\"translation\":\"n. 经理；管理人员\",\"audio\":\"manager.mp3\"},{\"word\":\"parking lot\",\"pronun\":\"\",\"translation\":\"n. 停车场\",\"audio\":\"parking_lot.mp3\"},{\"word\":\"pay\",\"pronun\":\"[peɪ]\",\"translation\":\"n. 工资，薪水；付款；报答\\nvt. 支付，付；偿还，补偿；给予\\nvi. 付款；偿还\\nadj. 收费的；需付费的\",\"audio\":\"pay.mp3\"},{\"word\":\"penny\",\"pronun\":\"[ˈpeni]\",\"translation\":\"n. （美）分；便士\",\"audio\":\"penny.mp3\"},{\"word\":\"pound\",\"pronun\":\"[paʊnd]\",\"translation\":\"n. 英镑；重击，重击声；兽栏；拘留所\\nvt. 捣烂；敲打；监禁，拘留\\nvi. 连续重击，猛击\",\"audio\":\"pound.mp3\"},{\"word\":\"price\",\"pronun\":\"[praɪs]\",\"translation\":\"n. 价格；价值；代价\\nvt. 给……定价；问……的价格\",\"audio\":\"price.mp3\"},{\"word\":\"receipt\",\"pronun\":\"[rɪˈsiːt]\",\"translation\":\"n. 收到；收据；收入\\nvt. 收到\",\"audio\":\"receipt.mp3\"},{\"word\":\"salesman\",\"pronun\":\"[ˈseɪlzmən]\",\"translation\":\"n. 推销员；售货员\",\"audio\":\"salesman.mp3\"},{\"word\":\"shop assistant\",\"pronun\":\"\",\"translation\":\"n. 店员；售货员\",\"audio\":\"shop_assistant.mp3\"},{\"word\":\"spend\",\"pronun\":\"[spend]\",\"translation\":\"n. 预算\\nvt. 度过，消磨（时光）；花费；浪费；用尽\\nvi. 花钱；用尽，耗尽\",\"audio\":\"spend.mp3\"},{\"word\":\"take away\",\"pronun\":\"\",\"translation\":\"adj. 买回去的\",\"audio\":\"take_away.mp3\"},{\"word\":\"travel agent\",\"pronun\":\"[ˈtrævl eɪdʒənt]\",\"translation\":\"n. 旅行代办人；旅行代理商；旅行社\",\"audio\":\"travel_agent.mp3\"},{\"word\":\"call\",\"pronun\":\"[kɔːl]\",\"translation\":\"n. 电话；呼叫；要求；访问\\nvi. 呼叫；拜访；叫牌\\nvt. 呼叫；称呼；召集\",\"audio\":\"call.mp3\"},{\"word\":\"cellphone\",\"pronun\":\"[ˈselfoʊn]\",\"translation\":\"n. 蜂窝式便携无线电话；大哥大\",\"audio\":\"cellphone.mp3\"},{\"word\":\"chat\",\"pronun\":\"[tʃæt]\",\"translation\":\"n. 聊天；闲谈\\nvt. 与…搭讪；与…攀谈\\nvi. 聊天；闲谈\",\"audio\":\"chat.mp3\"},{\"word\":\"conversation\",\"pronun\":\"[ˌkɑːnvərˈseɪʃn]\",\"translation\":\"n. 交谈，会话；社交；交往，交际；会谈；（人与计算机的）人机对话\",\"audio\":\"conversation.mp3\"},{\"word\":\"email\",\"pronun\":\"[ˈiːmeɪl]\",\"translation\":\"n. 电子信函\\nvt. 给…发电子邮件\",\"audio\":\"email.mp3\"},{\"word\":\"letter\",\"pronun\":\"[ˈletər]\",\"translation\":\"n. 信；字母，文字；证书；文学，学问；字面意义\\nvt. 写字母于\\nvi. 写印刷体字母\",\"audio\":\"letter.mp3\"},{\"word\":\"mobile\",\"pronun\":\"[ˈmoʊbl]\",\"translation\":\"adj. 可移动的；机动的；易变的；非固定的\\nn. 运动物体\",\"audio\":\"mobile.mp3\"},{\"word\":\"mobile phone\",\"pronun\":\"\",\"translation\":\"n. 手机；移动电话\",\"audio\":\"mobile_phone.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

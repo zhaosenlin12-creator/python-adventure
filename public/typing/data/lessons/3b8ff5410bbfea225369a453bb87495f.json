@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:37.466942+00:00",
+  "request": {
+    "lesson_id": "3b8ff5410bbfea225369a453bb87495f",
+    "course_id": "080aa640e5f820c887b06c95eded7890",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "080aa640e5f820c887b06c95eded7890",
+    "order": 776,
+    "nextCourseId": "080aa640e5f820c887b06c95eded7890",
+    "courseName": "国学经典2",
+    "lessonId": "3b8ff5410bbfea225369a453bb87495f",
+    "nextLessonId": "4cadb86bfa0a9ef94e92c319e4152039",
+    "lessonName": "诗经15 月出",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-4.cd3573ff4d.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "84b3e94c1015c623d896782d8ef44fe3",
+        "index": 1,
+        "text": [
+          "月出皎兮。佼人僚兮。舒窈纠兮。劳心悄兮。\\n月出皓兮。佼人懰兮。舒忧受兮。劳心慅兮。"
+        ],
+        "pinyin": "[[\"月\", \"yuè\"], [\"出\", \"chū\"], [\"皎\", \"jiǎo\"], [\"兮\", \"xī\"], [\"。\", \"\"], [\"佼\", \"jiǎo\"], [\"人\", \"rén\"], [\"僚\", \"liáo\"], [\"兮\", \"xī\"], [\"。\", \"\"], [\"舒\", \"shū\"], [\"窈\", \"yǎo\"], [\"纠\", \"jiū\"], [\"兮\", \"xī\"], [\"。\", \"\"], [\"劳\", \"láo\"], [\"心\", \"xīn\"], [\"悄\", \"qiǎo\"], [\"兮\", \"xī\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"月\", \"yuè\"], [\"出\", \"chū\"], [\"皓\", \"hào\"], [\"兮\", \"xī\"], [\"。\", \"\"], [\"佼\", \"jiǎo\"], [\"人\", \"rén\"], [\"懰\", \"liú\"], [\"兮\", \"xī\"], [\"。\", \"\"], [\"舒\", \"shū\"], [\"忧\", \"yōu\"], [\"受\", \"shòu\"], [\"兮\", \"xī\"], [\"。\", \"\"], [\"劳\", \"láo\"], [\"心\", \"xīn\"], [\"慅\", \"cǎo\"], [\"兮\", \"xī\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

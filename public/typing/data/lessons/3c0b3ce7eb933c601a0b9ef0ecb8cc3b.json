@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.340367+00:00",
+  "request": {
+    "lesson_id": "3c0b3ce7eb933c601a0b9ef0ecb8cc3b",
+    "course_id": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "order": 350,
+    "nextCourseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "courseName": "小学必备古诗75首（2）",
+    "lessonId": "3c0b3ce7eb933c601a0b9ef0ecb8cc3b",
+    "nextLessonId": "bb4c168511548158c4f4312ec38eb591",
+    "lessonName": "江雪",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4c22b3b1ad9d2d806be8facfaf4d17d6",
+        "index": 1,
+        "text": [
+          "江雪\\n柳宗元\\n千山鸟飞绝，万径人踪灭。\\n孤舟蓑笠翁，独钓寒江雪。"
+        ],
+        "pinyin": "[[\"江\", \"jiāng\"], [\"雪\", \"xuě\"], [\"\\n\", \"\"], [\"柳\", \"liǔ\"], [\"宗\", \"zōng\"], [\"元\", \"yuán\"], [\"\\n\", \"\"], [\"千\", \"qiān\"], [\"山\", \"shān\"], [\"鸟\", \"niǎo\"], [\"飞\", \"fēi\"], [\"绝\", \"jué\"], [\"，\", \"\"], [\"万\", \"wàn\"], [\"径\", \"jìng\"], [\"人\", \"rén\"], [\"踪\", \"zōng\"], [\"灭\", \"miè\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"孤\", \"gū\"], [\"舟\", \"zhōu\"], [\"蓑\", \"suō\"], [\"笠\", \"lì\"], [\"翁\", \"wēng\"], [\"，\", \"\"], [\"独\", \"dú\"], [\"钓\", \"diào\"], [\"寒\", \"hán\"], [\"江\", \"jiāng\"], [\"雪\", \"xuě\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

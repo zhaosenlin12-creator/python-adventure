@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.446774+00:00",
+  "request": {
+    "lesson_id": "35e49e9d26025597d884f71310918155",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 75,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "35e49e9d26025597d884f71310918155",
+    "nextLessonId": "8565d4b078fdf30f79744d56610d3c7d",
+    "lessonName": "KET核心词-64",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第64课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "89e3e585ca89aefb4fcd818e0518c8c4",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"suit\",\"pronun\":\"[suːt]\",\"translation\":\"n. 诉讼；恳求；套装，西装；一套外衣\\nvt. 适合；使适应\\nvi. 合适；相称\",\"audio\":\"suit.mp3\"},{\"word\":\"suitcase\",\"pronun\":\"[ˈsuːtkeɪs]\",\"translation\":\"n. [轻] 手提箱；衣箱\",\"audio\":\"suitcase.mp3\"},{\"word\":\"summer\",\"pronun\":\"[ˈsʌmər]\",\"translation\":\"n. 夏季；全盛时期\\nadj. 夏季的\\nvi. 避暑；过夏天\",\"audio\":\"summer.mp3\"},{\"word\":\"sun\",\"pronun\":\"[sʌn]\",\"translation\":\"n. 太阳\\nvt. 使晒\\nvi. 晒太阳\",\"audio\":\"sun.mp3\"},{\"word\":\"sunglasses\",\"pronun\":\"[ˈsʌnɡlæsɪz]\",\"translation\":\"n. 太阳镜；凸透镜（sunglass的复数）\",\"audio\":\"sunglasses.mp3\"},{\"word\":\"sunrise\",\"pronun\":\"[ˈsʌnraɪz]\",\"translation\":\"n. 日出；黎明\",\"audio\":\"sunrise.mp3\"},{\"word\":\"supermarket\",\"pronun\":\"[ˈsuːpərmɑːrkɪt]\",\"translation\":\"n. 超级市场；自助售货商店\",\"audio\":\"supermarket.mp3\"},{\"word\":\"supper\",\"pronun\":\"[ˈsʌpər]\",\"translation\":\"n. 晚餐，晚饭；夜宵\",\"audio\":\"supper.mp3\"},{\"word\":\"suppose\",\"pronun\":\"[səˈpoʊz]\",\"translation\":\"conj. 假使…结果会怎样\\nvt. 假设；认为；让（虚拟语气）；推想\\nvi. 猜想；料想\",\"audio\":\"suppose.mp3\"},{\"word\":\"sure\",\"pronun\":\"[ʃʊr]\",\"translation\":\"adj. 确信的；可靠的；必定的\\nadv. 当然；的确\",\"audio\":\"sure.mp3\"},{\"word\":\"surf\",\"pronun\":\"[sɜːrf]\",\"translation\":\"vi. 作冲浪运动\\nvt. 在…冲浪\\nn. 海浪，拍岸浪\",\"audio\":\"surf.mp3\"},{\"word\":\"surfboard\",\"pronun\":\"[ˈsɜːrfbɔːrd]\",\"translation\":\"n. 冲浪板\\nvi. 以冲浪板滑水\",\"audio\":\"surfboard.mp3\"},{\"word\":\"surname\",\"pronun\":\"[ˈsɜːrneɪm]\",\"translation\":\"n. 姓，姓氏；绰号，别名\\nvt. 给…起别名；给…姓氏\",\"audio\":\"surname.mp3\"},{\"word\":\"surprise\",\"pronun\":\"[sərˈpraɪz]\",\"translation\":\"n. 惊奇，诧异；突然袭击\\nadj. 令人惊讶的\\nvt. 使惊奇；奇袭\",\"audio\":\"surprise.mp3\"},{\"word\":\"surprised\",\"pronun\":\"[sərˈpraɪzd]\",\"translation\":\"v. 使惊奇（surprise的过去分词形式）\\nadj. 感到惊讶的，出人意料的\",\"audio\":\"surprised.mp3\"},{\"word\":\"sweater\",\"pronun\":\"[ˈswetər]\",\"translation\":\"n. 毛线衣，运动衫；大量出汗的人，发汗剂\",\"audio\":\"sweater.mp3\"},{\"word\":\"sweep\",\"pronun\":\"[swiːp]\",\"translation\":\"n. 打扫，扫除；范围；全胜\\nvt. 扫除；猛拉；掸去\\nvi. 扫，打扫；席卷；扫视；袭击\",\"audio\":\"sweep.mp3\"},{\"word\":\"sweet\",\"pronun\":\"[swiːt]\",\"translation\":\"n. 糖果；乐趣；芳香；宝贝\\nadj. 甜的；悦耳的；芳香的；亲切的\\n（俚）酷毙了\",\"audio\":\"sweet.mp3\"},{\"word\":\"swim\",\"pronun\":\"[swɪm]\",\"translation\":\"n. 游泳；漂浮；眩晕\\nadj. 游泳时穿戴的\\nvi. 游泳；漂浮；浸；眩晕\\nvt. 游过；使浮起\",\"audio\":\"swim.mp3\"},{\"word\":\"swimsuit\",\"pronun\":\"[ˈswɪmsuːt]\",\"translation\":\"n. 游泳衣（女式）\",\"audio\":\"swimsuit.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

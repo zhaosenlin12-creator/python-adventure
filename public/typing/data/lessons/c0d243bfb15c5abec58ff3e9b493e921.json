@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.532380+00:00",
+  "request": {
+    "lesson_id": "c0d243bfb15c5abec58ff3e9b493e921",
+    "course_id": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "order": 16,
+    "nextCourseId": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "courseName": "基准键",
+    "lessonId": "c0d243bfb15c5abec58ff3e9b493e921",
+    "nextLessonId": "3f622675439fee5ab69645c728166140",
+    "lessonName": "练习asdfghjkl;",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-practise-reward.f43370a84d.png",
+    "description": "练习asdfghjkl;",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "84b7409a495462af5e2d6200c9a1a102",
+        "index": 1,
+        "text": [
+          "ga ha ha fa ga g; h; ha ga ga ha;g;h haha gaga haga gaha ha ga sa da fa ga ha ja ka la;a a;"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "asdf ghjkl;",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

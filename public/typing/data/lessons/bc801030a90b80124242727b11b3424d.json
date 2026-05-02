@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.413212+00:00",
+  "request": {
+    "lesson_id": "bc801030a90b80124242727b11b3424d",
+    "course_id": "2ab9dc27a9350a9ff86633c542967f70",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "order": 46,
+    "nextCourseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "courseName": "下排字母",
+    "lessonId": "bc801030a90b80124242727b11b3424d",
+    "nextLessonId": "72561f5254dfdfb1cdf47696c9705e50",
+    "lessonName": "回顾v和m",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-review-vm.4a35c4a1ff.png",
+    "description": "回顾v和m",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f7126a01aa3c1ed85dbd73de8ccc6c28",
+        "index": 1,
+        "text": [
+          "mu ma mou mi mai mei lv vv lv me mie mo mao sa sou si ku; lv me wo qie piao; sa se shuai qiao jiao; me mei mai; vvv"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "mu aoielvsk;wqphj",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

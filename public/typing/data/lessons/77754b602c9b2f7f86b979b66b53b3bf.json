@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.920934+00:00",
+  "request": {
+    "lesson_id": "77754b602c9b2f7f86b979b66b53b3bf",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 181,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "77754b602c9b2f7f86b979b66b53b3bf",
+    "nextLessonId": "c01c79d6e3e49b1589cda7073f86d60d",
+    "lessonName": "KET核心词-108",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第108课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "450b67ac6323b535873ca507ccb7e425",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"police officer\",\"pronun\":\"[pəˈlis ˈɔfɪsɚ]\",\"translation\":\"n. 警官；警察；警务人员\",\"audio\":\"police_officer.mp3\"},{\"word\":\"porter\",\"pronun\":\"[ˈpotər]\",\"translation\":\"n. 门房；服务员；行李搬运工；守门人\",\"audio\":\"porter.mp3\"},{\"word\":\"publisher\",\"pronun\":\"[ˈpʌblɪʃər]\",\"translation\":\"n. 出版者，出版商；发行人\",\"audio\":\"publisher.mp3\"},{\"word\":\"receptionist\",\"pronun\":\"[rɪˈsepʃənɪst]\",\"translation\":\"n. 接待员；传达员\",\"audio\":\"receptionist.mp3\"},{\"word\":\"salary\",\"pronun\":\"[ˈsæləri]\",\"translation\":\"n. 薪水\\nvt. 给...加薪；给...薪水\",\"audio\":\"salary.mp3\"},{\"word\":\"sales assistant\",\"pronun\":\"\",\"translation\":\"销售助理；业务助理；售货员\",\"audio\":\"sales_assistant.mp3\"},{\"word\":\"secretary\",\"pronun\":\"[ˈsekrəteri]\",\"translation\":\"n. 秘书；书记；部长；大臣\",\"audio\":\"secretary.mp3\"},{\"word\":\"security guard\",\"pronun\":\"\",\"translation\":\"n. 保安人员\",\"audio\":\"security_guard.mp3\"},{\"word\":\"singer\",\"pronun\":\"[ˈsɪŋər]\",\"translation\":\"n. 歌手，歌唱家\",\"audio\":\"singer.mp3\"},{\"word\":\"trade\",\"pronun\":\"[treɪd]\",\"translation\":\"n. 贸易，交易；行业；职业\\nvt. 用…进行交换\\nvi. 交易，买卖；以物易物\",\"audio\":\"trade.mp3\"},{\"word\":\"tour guide\",\"pronun\":\"[tʊr ɡaɪd]\",\"translation\":\"un. 导游\",\"audio\":\"tour_guide.mp3\"},{\"word\":\"wage\",\"pronun\":\"[weɪdʒ]\",\"translation\":\"n. 工资；代价；报偿\\nvt. 进行；开展\\nvi. 进行；发动；从事\",\"audio\":\"wage.mp3\"},{\"word\":\"waiter\",\"pronun\":\"[ˈweɪtər]\",\"translation\":\"n. 服务员，侍者\",\"audio\":\"waiter.mp3\"},{\"word\":\"waitress\",\"pronun\":\"[ˈweɪtrəs]\",\"translation\":\"n. 女服务员；女侍者\\nvi. 做女服务生\",\"audio\":\"waitress.mp3\"},{\"word\":\"worker\",\"pronun\":\"[ˈwɜːrkər]\",\"translation\":\"n. 工人；劳动者；职蚁\",\"audio\":\"worker.mp3\"},{\"word\":\"writer\",\"pronun\":\"[ˈraɪtər]\",\"translation\":\"n. 作家；作者\",\"audio\":\"writer.mp3\"},{\"word\":\"bark\",\"pronun\":\"[bɑːrk]\",\"translation\":\"n. 树皮；深青棕色；毛皮；皮肤；狗叫\\nvt. 狗叫；尖叫；剥皮\",\"audio\":\"bark.mp3\"},{\"word\":\"bat\",\"pronun\":\"[bæt]\",\"translation\":\"n. 蝙蝠；球棒；球拍；批处理文件的扩展名\\nvt. 用球棒击球；击球率达…\\nvi. 轮到击球；用球棒击球\",\"audio\":\"bat.mp3\"},{\"word\":\"bear\",\"pronun\":\"[ber]\",\"translation\":\"n. 熊\\nvt. 结果实，开花（正式）\\nvt. 忍受；承受；具有；支撑\",\"audio\":\"bear.mp3\"},{\"word\":\"bee\",\"pronun\":\"[biː]\",\"translation\":\"n. 蜜蜂，蜂；勤劳的人\",\"audio\":\"bee.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

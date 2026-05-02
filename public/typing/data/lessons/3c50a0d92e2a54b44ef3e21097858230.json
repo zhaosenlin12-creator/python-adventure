@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.472656+00:00",
+  "request": {
+    "lesson_id": "3c50a0d92e2a54b44ef3e21097858230",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 520,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "3c50a0d92e2a54b44ef3e21097858230",
+    "nextLessonId": "cbe0658578f8aa655c74972844c1b9f8",
+    "lessonName": "Mr. Fox and the Tree",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f9a90dc37e16794adfdfc75abae35f6a",
+        "index": 1,
+        "text": [
+          "Mr. Fox plants a tree in the spring. He takes care of the tree, and he even talks to it every day. It makes him smile.\\nHis friend, Danny, does not understand. \"Why are you talking to the tree?\" asks Danny.\\n\"I'm helping it grow,\" says Mr. Fox.\\n\"But the tree cannot see or talk.\" Danny still doesn't understand.\\n\"But it can feel. And so can I,\" says Mr. Fox."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

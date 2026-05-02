@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:37.439926+00:00",
+  "request": {
+    "lesson_id": "cbae1a614f1419d6535334daa9d6baf5",
+    "course_id": "080aa640e5f820c887b06c95eded7890",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "080aa640e5f820c887b06c95eded7890",
+    "order": 774,
+    "nextCourseId": "080aa640e5f820c887b06c95eded7890",
+    "courseName": "国学经典2",
+    "lessonId": "cbae1a614f1419d6535334daa9d6baf5",
+    "nextLessonId": "2a5d8e4f7d8a1f8dc666fd6f5e7cc6e6",
+    "lessonName": "诗经13 静女",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-4.cd3573ff4d.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5effaa12c7bd0022094ca2dd9711d82c",
+        "index": 1,
+        "text": [
+          "静女其姝，俟我於城隅。爱而不见，搔首踟蹰。\\n静女其娈，贻我彤管。彤管有炜，说怿女美。"
+        ],
+        "pinyin": "[[\"静\", \"jìng\"], [\"女\", \"nǚ\"], [\"其\", \"qí\"], [\"姝\", \"shū\"], [\"，\", \"\"], [\"俟\", \"sì\"], [\"我\", \"wǒ\"], [\"於\", \"yū\"], [\"城\", \"chéng\"], [\"隅\", \"yú\"], [\"。\", \"\"], [\"爱\", \"ài\"], [\"而\", \"ér\"], [\"不\", \"bù\"], [\"见\", \"xiàn\"], [\"，\", \"\"], [\"搔\", \"sāo\"], [\"首\", \"shǒu\"], [\"踟\", \"chí\"], [\"蹰\", \"chú\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"静\", \"jìng\"], [\"女\", \"nǚ\"], [\"其\", \"qí\"], [\"娈\", \"luán\"], [\"，\", \"\"], [\"贻\", \"yí\"], [\"我\", \"wǒ\"], [\"彤\", \"tóng\"], [\"管\", \"guǎn\"], [\"。\", \"\"], [\"彤\", \"tóng\"], [\"管\", \"guǎn\"], [\"有\", \"yǒu\"], [\"炜\", \"wěi\"], [\"，\", \"\"], [\"说\", \"yuè\"], [\"怿\", \"yì\"], [\"女\", \"rǔ\"], [\"美\", \"měi\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

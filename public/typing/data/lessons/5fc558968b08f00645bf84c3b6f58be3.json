@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.804138+00:00",
+  "request": {
+    "lesson_id": "5fc558968b08f00645bf84c3b6f58be3",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 154,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "5fc558968b08f00645bf84c3b6f58be3",
+    "nextLessonId": "2945c46f5aa27d34f49531e83a4ff58f",
+    "lessonName": "KET核心词-27",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第27课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e6d33a5843eaee034180a48f9b60b397",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"geography\",\"pronun\":\"[dʒiˈɑːɡrəfi]\",\"translation\":\"n. 地理；地形\",\"audio\":\"geography.mp3\"},{\"word\":\"German\",\"pronun\":\"[ˈdʒɜːrmən]\",\"translation\":\"n. 德语；德国人\\nadj. 德国的；德语的，德国人的\",\"audio\":\"German.mp3\"},{\"word\":\"get\",\"pronun\":\"[ɡet]\",\"translation\":\"n. 生殖；幼兽\\nvi. 成为；变得；到达\\nvt. 使得；获得；受到；变成\",\"audio\":\"get.mp3\"},{\"word\":\"gift\",\"pronun\":\"[ɡɪft]\",\"translation\":\"n. 礼物；天赋；赠品\\nvt. 赋予；向…赠送\",\"audio\":\"gift.mp3\"},{\"word\":\"girlfriend\",\"pronun\":\"[ˈɡɜːrlfrend]\",\"translation\":\"n. 女朋友\\n女伴\",\"audio\":\"girlfriend.mp3\"},{\"word\":\"give\",\"pronun\":\"[ɡɪv]\",\"translation\":\"n. 弹性；弯曲；伸展性\\nvi. 捐赠；面向；有弹性；气候转暖\\nvt. 给；产生；让步；举办；授予\",\"audio\":\"give.mp3\"},{\"word\":\"glad\",\"pronun\":\"[ɡlæd]\",\"translation\":\"adj. 高兴的；乐意的；令人高兴的；灿烂美丽的\\nvt. 使高兴\",\"audio\":\"glad.mp3\"},{\"word\":\"glass\",\"pronun\":\"[ɡlæs]\",\"translation\":\"n. 玻璃；玻璃制品；镜子\\nvt. 反映；给某物加玻璃\\nvi. 成玻璃状\",\"audio\":\"glass.mp3\"},{\"word\":\"glasses\",\"pronun\":\"[ˈɡlæsɪz]\",\"translation\":\"n. [轻] 眼镜；玻璃（glass的复数形式）；双筒望远镜\\nv. 把…装入玻璃容器内；给…装上玻璃（glass的第三人称单数形式）\",\"audio\":\"glasses.mp3\"},{\"word\":\"glove\",\"pronun\":\"[ɡlʌv]\",\"translation\":\"n. 手套\\nvt. 给…戴手套\",\"audio\":\"glove.mp3\"},{\"word\":\"glow\",\"pronun\":\"[ɡloʊ]\",\"translation\":\"n. 灼热；色彩鲜艳；兴高采烈\\nvi. 发热；洋溢；绚丽夺目\",\"audio\":\"glow.mp3\"},{\"word\":\"glue\",\"pronun\":\"[ɡluː]\",\"translation\":\"n. 胶；各种胶合物\\nvt. 粘合；似胶般固着于\",\"audio\":\"glue.mp3\"},{\"word\":\"go\",\"pronun\":\"[ɡoʊ]\",\"translation\":\"n. 去；进行；尝试\\nvi. 走；达到；运转；趋于\\nvt. 忍受；出产；以…打赌\\n[复数 goes 第三人称单数 goes 过去式 went 过去分词 gone 现在分词 going]\",\"audio\":\"go.mp3\"},{\"word\":\"goal\",\"pronun\":\"[ɡoʊl]\",\"translation\":\"n. 目标；球门，得分数；终点\\nvi. 攻门，射门得分\",\"audio\":\"goal.mp3\"},{\"word\":\"gold\",\"pronun\":\"[ɡoʊld]\",\"translation\":\"n. 金，黄金；金色；金币\\nadj. 金的，金制的；金色的\",\"audio\":\"gold.mp3\"},{\"word\":\"golf\",\"pronun\":\"[ɡɑːlf]\",\"translation\":\"n. 高尔夫球；高尔夫球运动\\nvi. 打高尔夫球\",\"audio\":\"golf.mp3\"},{\"word\":\"grade\",\"pronun\":\"[ɡreɪd]\",\"translation\":\"n. 年级；等级；成绩；级别；阶段\\nvt. 评分；把…分等级\\nvi. 分等级；逐渐变化\",\"audio\":\"grade.mp3\"},{\"word\":\"grammar\",\"pronun\":\"[ˈɡræmər]\",\"translation\":\"n. 语法；语法书\",\"audio\":\"grammar.mp3\"},{\"word\":\"grandchild\",\"pronun\":\"[ˈɡræntʃaɪld]\",\"translation\":\"n. 孙子；孙女；外孙；外孙女\",\"audio\":\"grandchild.mp3\"},{\"word\":\"grandad\",\"pronun\":\"[ˈɡrændæd]\",\"translation\":\"n. 爷爷；外公\",\"audio\":\"grandad.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

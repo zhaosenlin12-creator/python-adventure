@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:36.255823+00:00",
+  "request": {
+    "lesson_id": "af9637de30311d2f12dc1c830eeb3322",
+    "course_id": "aaf391ebe3c578672e2811298ce699e2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "aaf391ebe3c578672e2811298ce699e2",
+    "order": 544,
+    "nextCourseId": "aaf391ebe3c578672e2811298ce699e2",
+    "courseName": "词语专项",
+    "lessonId": "af9637de30311d2f12dc1c830eeb3322",
+    "nextLessonId": "54e9417ef5475366f4b0fcf6e23c03bb",
+    "lessonName": "拟人句4",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e252aca630c41da712721b1c7d6bff81",
+        "index": 1,
+        "text": [
+          "老屋已经活了一百多岁了。它的窗户变成了黑窟窿，门板也破了洞。它很久很久没人住了。"
+        ],
+        "pinyin": "[[\"老\", \"lǎo\"], [\"屋\", \"wū\"], [\"已\", \"yǐ\"], [\"经\", \"jīng\"], [\"活\", \"huó\"], [\"了\", \"le\"], [\"一\", \"yī\"], [\"百\", \"bǎi\"], [\"多\", \"duō\"], [\"岁\", \"suì\"], [\"了\", \"le\"], [\"。\", \"\"], [\"它\", \"tā\"], [\"的\", \"de\"], [\"窗\", \"chuāng\"], [\"户\", \"hù\"], [\"变\", \"biàn\"], [\"成\", \"chéng\"], [\"了\", \"le\"], [\"黑\", \"hēi\"], [\"窟\", \"kū\"], [\"窿\", \"lóng\"], [\"，\", \"\"], [\"门\", \"mén\"], [\"板\", \"bǎn\"], [\"也\", \"yě\"], [\"破\", \"pò\"], [\"了\", \"le\"], [\"洞\", \"dòng\"], [\"。\", \"\"], [\"它\", \"tā\"], [\"很\", \"hěn\"], [\"久\", \"jiǔ\"], [\"很\", \"hěn\"], [\"久\", \"jiǔ\"], [\"没\", \"méi\"], [\"人\", \"rén\"], [\"住\", \"zhù\"], [\"了\", \"le\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

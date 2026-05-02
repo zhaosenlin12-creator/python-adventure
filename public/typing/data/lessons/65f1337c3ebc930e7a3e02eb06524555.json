@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.759155+00:00",
+  "request": {
+    "lesson_id": "65f1337c3ebc930e7a3e02eb06524555",
+    "course_id": "e22bc4218a485f29edeedf729586a38c",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e22bc4218a485f29edeedf729586a38c",
+    "order": 28,
+    "nextCourseId": "e22bc4218a485f29edeedf729586a38c",
+    "courseName": "基础词汇",
+    "lessonId": "65f1337c3ebc930e7a3e02eb06524555",
+    "nextLessonId": "35186892412223ee6565e726245944e2",
+    "lessonName": "基础词汇-28",
+    "icon": "data/assets/daziya.com/key-icon_code-word.cd253668a4.png",
+    "description": "编程基础词汇 - 基础词汇-28",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "75f318a9479ab1a185ff4f34d0fd35a0",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"factory\",\"pronun\":\"[\\u02c8f\\u00e6ktri]\",\"translation\":\"\\u5de5\\u5382\\u6a21\\u5f0f\"},{\"word\":\"builder\",\"pronun\":\"[\\u02c8b\\u026ald\\u0259r]\",\"translation\":\"\\u6784\\u5efa\\u5668\"},{\"word\":\"adapter\",\"pronun\":\"[\\u0259\\u02c8d\\u00e6pt\\u0259r]\",\"translation\":\"\\u9002\\u914d\\u5668\"},{\"word\":\"decorator\",\"pronun\":\"[\\u02c8dek\\u0259re\\u026at\\u0259r]\",\"translation\":\"\\u88c5\\u9970\\u5668\"},{\"word\":\"proxy\",\"pronun\":\"[\\u02c8pr\\u0251\\u02d0ksi]\",\"translation\":\"\\u4ee3\\u7406\"},{\"word\":\"facade\",\"pronun\":\"[f\\u0259\\u02c8s\\u0251\\u02d0d]\",\"translation\":\"\\u5916\\u89c2\\u6a21\\u5f0f\"},{\"word\":\"strategy\",\"pronun\":\"[\\u02c8str\\u00e6t\\u0259d\\u0292i]\",\"translation\":\"\\u7b56\\u7565\\u6a21\\u5f0f\"},{\"word\":\"command\",\"pronun\":\"[k\\u0259\\u02c8m\\u00e6nd]\",\"translation\":\"\\u547d\\u4ee4\\u6a21\\u5f0f\"},{\"word\":\"state\",\"pronun\":\"[ste\\u026at]\",\"translation\":\"\\u72b6\\u6001\"},{\"word\":\"chain\",\"pronun\":\"[t\\u0283e\\u026an]\",\"translation\":\"\\u94fe\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

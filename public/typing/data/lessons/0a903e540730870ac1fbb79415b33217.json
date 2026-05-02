@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.234299+00:00",
+  "request": {
+    "lesson_id": "0a903e540730870ac1fbb79415b33217",
+    "course_id": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "order": 464,
+    "nextCourseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "courseName": "英语每日故事（初级）1-31",
+    "lessonId": "0a903e540730870ac1fbb79415b33217",
+    "nextLessonId": "5462726bfaf49f42a6ec453900bcb84c",
+    "lessonName": "A Bird and a Cat",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9ed262a868b61750bc97963686b99626",
+        "index": 1,
+        "text": [
+          "I have a little blue bird. She lives in a cage in my room. She is a beautiful bird.\\nShe likes to sing, and she likes me. But she does not like my cat.\\nShe is a happy bird. I enjoy listening to my bird's singing. But when my cat comes in the room, the bird stops singing.\\nShe is quiet. She sits and watches the cat. I think she is afraid of the cat."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.086654+00:00",
+  "request": {
+    "lesson_id": "52b659210e0dc5f2d0eca33e191ab460",
+    "course_id": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "order": 194,
+    "nextCourseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "courseName": "汉字一级",
+    "lessonId": "52b659210e0dc5f2d0eca33e191ab460",
+    "nextLessonId": "c492a29c3063cecc3fac9460eb1b7a0e",
+    "lessonName": "肌肉记忆",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-good.c7e935711e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "0b0e80ed02ba8702247137b03629f857",
+        "index": 1,
+        "text": [
+          "通常需要几个星期的练习才能形成肌肉记忆，从而提高你的打字速度。"
+        ],
+        "pinyin": "[[\"通\", \"tōng\"], [\"常\", \"cháng\"], [\"需\", \"xū\"], [\"要\", \"yào\"], [\"几\", \"jǐ\"], [\"个\", \"gè\"], [\"星\", \"xīng\"], [\"期\", \"qī\"], [\"的\", \"de\"], [\"练\", \"liàn\"], [\"习\", \"xí\"], [\"才\", \"cái\"], [\"能\", \"néng\"], [\"形\", \"xíng\"], [\"成\", \"chéng\"], [\"肌\", \"jī\"], [\"肉\", \"ròu\"], [\"记\", \"jì\"], [\"忆\", \"yì\"], [\"，\", \"\"], [\"从\", \"cóng\"], [\"而\", \"ér\"], [\"提\", \"tí\"], [\"高\", \"gāo\"], [\"你\", \"nǐ\"], [\"的\", \"de\"], [\"打\", \"dǎ\"], [\"字\", \"zì\"], [\"速\", \"sù\"], [\"度\", \"dù\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 14,
+        "minSpeed": 6,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

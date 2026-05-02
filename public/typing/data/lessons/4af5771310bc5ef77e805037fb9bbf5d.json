@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.871729+00:00",
+  "request": {
+    "lesson_id": "4af5771310bc5ef77e805037fb9bbf5d",
+    "course_id": "daccefd55478aba6657b64a604f8f971",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "daccefd55478aba6657b64a604f8f971",
+    "order": 149,
+    "nextCourseId": "daccefd55478aba6657b64a604f8f971",
+    "courseName": "注音练习1",
+    "lessonId": "4af5771310bc5ef77e805037fb9bbf5d",
+    "nextLessonId": "314287a8c299456edc8f467fafd6e97b",
+    "lessonName": "《渡荆门送别》",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-wen.691360af01.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ce0058d32fc0b7ddc1ee5bbfca819112",
+        "index": 1,
+        "text": [
+          "《渡荆门送别》\\n唐：杜甫\\n\\n渡远荆门外，来从楚国游。\\n山随平野尽，江入大荒流。\\n月下飞天镜，云生结海楼。\\n仍怜故乡水，万里送行舟。"
+        ],
+        "pinyin": "[[\"《\", \"\"], [\"渡\", \"dù\"], [\"荆\", \"jīng\"], [\"门\", \"mén\"], [\"送\", \"sòng\"], [\"别\", \"bié\"], [\"》\", \"\"], [\"\\n\", \"\"], [\"唐\", \"táng\"], [\"：\", \"\"], [\"杜\", \"dù\"], [\"甫\", \"fǔ\"], [\"\\n\", \"\"], [\"\\n\", \"\"], [\"渡\", \"dù\"], [\"远\", \"yuǎn\"], [\"荆\", \"jīng\"], [\"门\", \"mén\"], [\"外\", \"wài\"], [\"，\", \"\"], [\"来\", \"lái\"], [\"从\", \"cóng\"], [\"楚\", \"chǔ\"], [\"国\", \"guó\"], [\"游\", \"yóu\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"山\", \"shān\"], [\"随\", \"suí\"], [\"平\", \"píng\"], [\"野\", \"yě\"], [\"尽\", \"jǐn\"], [\"，\", \"\"], [\"江\", \"jiāng\"], [\"入\", \"rù\"], [\"大\", \"dà\"], [\"荒\", \"huāng\"], [\"流\", \"liú\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"月\", \"yuè\"], [\"下\", \"xià\"], [\"飞\", \"fēi\"], [\"天\", \"tiān\"], [\"镜\", \"jìng\"], [\"，\", \"\"], [\"云\", \"yún\"], [\"生\", \"shēng\"], [\"结\", \"jié\"], [\"海\", \"hǎi\"], [\"楼\", \"lóu\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"仍\", \"réng\"], [\"怜\", \"lián\"], [\"故\", \"gù\"], [\"乡\", \"xiāng\"], [\"水\", \"shuǐ\"], [\"，\", \"\"], [\"万\", \"wàn\"], [\"里\", \"lǐ\"], [\"送\", \"sòng\"], [\"行\", \"xíng\"], [\"舟\", \"zhōu\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 16,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

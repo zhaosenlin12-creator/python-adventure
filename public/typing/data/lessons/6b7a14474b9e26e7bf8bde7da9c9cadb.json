@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.235719+00:00",
+  "request": {
+    "lesson_id": "6b7a14474b9e26e7bf8bde7da9c9cadb",
+    "course_id": "b121644211bd274795ee5972ddf997a2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "b121644211bd274795ee5972ddf997a2",
+    "order": 324,
+    "nextCourseId": "b121644211bd274795ee5972ddf997a2",
+    "courseName": "小学必备古诗75首（1）",
+    "lessonId": "6b7a14474b9e26e7bf8bde7da9c9cadb",
+    "nextLessonId": "6c17ed2978fc86d9224148944c7492ff",
+    "lessonName": "静夜思",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "887cd8dabf9754d8ef648f21cd904e7d",
+        "index": 1,
+        "text": [
+          "静夜思\\n李白\\n床前明月光，疑是地上霜。\\n举头望明月，低头思故乡。"
+        ],
+        "pinyin": "[[\"静\", \"jìng\"], [\"夜\", \"yè\"], [\"思\", \"sī\"], [\"\\n\", \"\"], [\"李\", \"lǐ\"], [\"白\", \"bái\"], [\"\\n\", \"\"], [\"床\", \"chuáng\"], [\"前\", \"qián\"], [\"明\", \"míng\"], [\"月\", \"yuè\"], [\"光\", \"guāng\"], [\"，\", \"\"], [\"疑\", \"yí\"], [\"是\", \"shì\"], [\"地\", \"dì\"], [\"上\", \"shàng\"], [\"霜\", \"shuāng\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"举\", \"jǔ\"], [\"头\", \"tóu\"], [\"望\", \"wàng\"], [\"明\", \"míng\"], [\"月\", \"yuè\"], [\"，\", \"\"], [\"低\", \"dī\"], [\"头\", \"tóu\"], [\"思\", \"sī\"], [\"故\", \"gù\"], [\"乡\", \"xiāng\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

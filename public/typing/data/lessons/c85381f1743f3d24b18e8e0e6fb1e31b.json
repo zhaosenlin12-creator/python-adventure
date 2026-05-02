@@ -1,0 +1,75 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:30.342004+00:00",
+  "request": {
+    "lesson_id": "c85381f1743f3d24b18e8e0e6fb1e31b",
+    "course_id": "21fe8d60de407da95e1abc33ac636014",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "21fe8d60de407da95e1abc33ac636014",
+    "order": 19,
+    "nextCourseId": "21fe8d60de407da95e1abc33ac636014",
+    "courseName": "上排字母",
+    "lessonId": "c85381f1743f3d24b18e8e0e6fb1e31b",
+    "nextLessonId": "538b9216cb5298cd0e9b7035a6ccb30c",
+    "lessonName": "学习r和u",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-learn-ru.ac55c90353.png",
+    "description": "学习r和u",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "1bcd2db42aaf9e46022a07abc2aab2bd",
+        "index": 1,
+        "highlights": [
+          "r"
+        ],
+        "text": [
+          "请使用左手食指输入按键r，完成输入后请将手指移回基准键"
+        ],
+        "detail": "新的字母键/请输入[r]键"
+      },
+      {
+        "chapterId": "536291957a97a8cb991de10feacf0037",
+        "index": 2,
+        "highlights": [
+          "u"
+        ],
+        "text": [
+          "请使用右手食指输入按键u，完成输入后请将手指移回基准键"
+        ],
+        "detail": "新的字母键/请输入[u]键"
+      },
+      {
+        "chapterId": "2b5c00abc71bc87422024dcfad8da0bc",
+        "index": 3,
+        "highlights": [
+          " "
+        ],
+        "text": [
+          "接下来我们将练习如何输入[r]和[u]，请确保使用正确的指法输入，敲击 键开始"
+        ],
+        "detail": "新的字母键/很好"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "ae3d8f2f8a7e70d6b18a21affe1b2795",
+        "index": 4,
+        "text": [
+          "rrruuruuuuruurruruurrrruruuuruu"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

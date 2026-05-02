@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.858873+00:00",
+  "request": {
+    "lesson_id": "8bd2a8f64b9eae1837877088eae17679",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 167,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "8bd2a8f64b9eae1837877088eae17679",
+    "nextLessonId": "bfe73a6042f97592fecd61b9e3b6a449",
+    "lessonName": "KET核心词-66",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第66课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "06e699bd570ce7a38b0e960d45a6cf47",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"tennis\",\"pronun\":\"[ˈtenɪs]\",\"translation\":\"n. 网球（运动）\",\"audio\":\"tennis.mp3\"},{\"word\":\"tent\",\"pronun\":\"[tent]\",\"translation\":\"n. 帐篷；住处；帷幕\\nvt. 用帐篷遮盖；使在帐篷里住宿\\nvi. 住帐蓬；暂时居住\",\"audio\":\"tent.mp3\"},{\"word\":\"term\",\"pronun\":\"[tɜːrm]\",\"translation\":\"n. 术语；学期；期限；条款；(代数式等的)项\\nvt. 把…叫做\",\"audio\":\"term.mp3\"},{\"word\":\"terrible\",\"pronun\":\"[ˈterəbl]\",\"translation\":\"adj. 可怕的；很糟的；令人讨厌的\\nadv. 很，非常\",\"audio\":\"terrible.mp3\"},{\"word\":\"test\",\"pronun\":\"[test]\",\"translation\":\"n. 试验；检验\\nvt. 试验；测试\\nvi. 试验；测试\",\"audio\":\"test.mp3\"},{\"word\":\"text\",\"pronun\":\"[tekst]\",\"translation\":\"n. [计] 文本；课文；主题\\nvt. 发短信\",\"audio\":\"text.mp3\"},{\"word\":\"textbook\",\"pronun\":\"[ˈtekstbʊk]\",\"translation\":\"n. 教科书，课本\",\"audio\":\"textbook.mp3\"},{\"word\":\"than\",\"pronun\":\"[ðən; ðæn]\",\"translation\":\"conj. 比（用于形容词、副词的比较级之后）；除…外（用于other等之后）；与其…（用于 rather等之后）；一…就（用于 no sooner等之后）\\nprep. 比；超过\",\"audio\":\"than.mp3\"},{\"word\":\"thank\",\"pronun\":\"[θæŋk]\",\"translation\":\"n. 感谢\\nvt. 感谢\\nint. 谢谢\",\"audio\":\"thank.mp3\"},{\"word\":\"that\",\"pronun\":\"[ðæt]\",\"translation\":\"conj. 因为；以至于\\nadj. 那；那个\\npron. 那；那个\\nadv. 那么；那样\",\"audio\":\"that.mp3\"},{\"word\":\"theatre\",\"pronun\":\"[ˈθiːətər]\",\"translation\":\"n. 电影院，戏院；戏剧；阶梯式讲堂\",\"audio\":\"theatre.mp3\"},{\"word\":\"themselves\",\"pronun\":\"[ðəmˈselvz]\",\"translation\":\"pron. 他们自己；他们亲自\",\"audio\":\"themselves.mp3\"},{\"word\":\"then\",\"pronun\":\"[ðen]\",\"translation\":\"conj. 然后，当时\\nn. 那时\\nadv. 然后；那么；于是；当时；此外\",\"audio\":\"then.mp3\"},{\"word\":\"thick\",\"pronun\":\"[θɪk]\",\"translation\":\"n. 最拥挤部分；活动最多部分；事物的粗大浓密部分\\nadj. 厚的；浓的；粗大的\\nadv. 密集地；浓浓地，厚厚地\",\"audio\":\"thick.mp3\"},{\"word\":\"thief\",\"pronun\":\"[θiːf]\",\"translation\":\"n. 小偷，贼\",\"audio\":\"thief.mp3\"},{\"word\":\"thing\",\"pronun\":\"[θɪŋ]\",\"translation\":\"n. 事情；东西；事物；情况\",\"audio\":\"thing.mp3\"},{\"word\":\"think\",\"pronun\":\"[θɪŋk]\",\"translation\":\"n. 想；想法\\nadj. 思想的\\nvi. 想；认为\\nvt. 想；认为；想起；想像；打算\",\"audio\":\"think.mp3\"},{\"word\":\"thirsty\",\"pronun\":\"[ˈθɜːrsti]\",\"translation\":\"adj. 口渴的，口干的；渴望的，热望的\",\"audio\":\"thirsty.mp3\"},{\"word\":\"this\",\"pronun\":\"[ðɪs]\",\"translation\":\"adj. 这；本；这个；今\\npron. 这；这个；这里\\nadv. 这样地；这么\",\"audio\":\"this.mp3\"},{\"word\":\"through\",\"pronun\":\"[θruː]\",\"translation\":\"prep. 通过；穿过；凭借\\nadj. 直达的；过境的；完结的\\nadv. 彻底；从头至尾\",\"audio\":\"through.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

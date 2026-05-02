@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.116821+00:00",
+  "request": {
+    "lesson_id": "0ff5cc12e004372f454b1992951a2c26",
+    "course_id": "df148decfeeb55dca1e38526c60baec7",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "df148decfeeb55dca1e38526c60baec7",
+    "order": 299,
+    "nextCourseId": "df148decfeeb55dca1e38526c60baec7",
+    "courseName": "语文课内同步六年级下册",
+    "lessonId": "0ff5cc12e004372f454b1992951a2c26",
+    "nextLessonId": "b5be4209af73e7b3e4818c925542a20f",
+    "lessonName": "竹石",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e71fc991635298340ca11c2aba10d6d6",
+        "index": 1,
+        "text": [
+          "咬定青山不放松，\\n立根原在破岩中。\\n千磨万击还坚劲，\\n任尔东西南北风。"
+        ],
+        "pinyin": "[[\"咬\", \"yǎo\"], [\"定\", \"dìng\"], [\"青\", \"qīng\"], [\"山\", \"shān\"], [\"不\", \"bù\"], [\"放\", \"fàng\"], [\"松\", \"sōng\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"立\", \"lì\"], [\"根\", \"gēn\"], [\"原\", \"yuán\"], [\"在\", \"zài\"], [\"破\", \"pò\"], [\"岩\", \"yán\"], [\"中\", \"zhōng\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"千\", \"qiān\"], [\"磨\", \"mó\"], [\"万\", \"wàn\"], [\"击\", \"jī\"], [\"还\", \"hái\"], [\"坚\", \"jiān\"], [\"劲\", \"jìn\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"任\", \"rèn\"], [\"尔\", \"ěr\"], [\"东\", \"dōng\"], [\"西\", \"xī\"], [\"南\", \"nán\"], [\"北\", \"běi\"], [\"风\", \"fēng\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

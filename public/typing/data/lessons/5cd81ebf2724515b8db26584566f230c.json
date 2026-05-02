@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:33.664998+00:00",
+  "request": {
+    "lesson_id": "5cd81ebf2724515b8db26584566f230c",
+    "course_id": "c34575de8400552068ca0d9da0898f18",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "c34575de8400552068ca0d9da0898f18",
+    "order": 19,
+    "nextCourseId": "c34575de8400552068ca0d9da0898f18",
+    "courseName": "语文课内同步一年级上册",
+    "lessonId": "5cd81ebf2724515b8db26584566f230c",
+    "nextLessonId": "11e898ed664a2a2ad59b18944fd938de",
+    "lessonName": "小小的船",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "fbdc2b797501a3d0b86f0273af91a3a0",
+        "index": 1,
+        "text": [
+          "弯弯的月儿小小的船，\\n小小的船儿两头尖。\\n我在小小的船里坐，\\n只看见闪闪的星星蓝蓝的天。"
+        ],
+        "pinyin": "[[\"弯\", \"wān\"], [\"弯\", \"wān\"], [\"的\", \"de\"], [\"月\", \"yuè\"], [\"儿\", \"ér\"], [\"小\", \"xiǎo\"], [\"小\", \"xiǎo\"], [\"的\", \"de\"], [\"船\", \"chuán\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"小\", \"xiǎo\"], [\"小\", \"xiǎo\"], [\"的\", \"de\"], [\"船\", \"chuán\"], [\"儿\", \"ér\"], [\"两\", \"liǎng\"], [\"头\", \"tóu\"], [\"尖\", \"jiān\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"我\", \"wǒ\"], [\"在\", \"zài\"], [\"小\", \"xiǎo\"], [\"小\", \"xiǎo\"], [\"的\", \"de\"], [\"船\", \"chuán\"], [\"里\", \"lǐ\"], [\"坐\", \"zuò\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"只\", \"zhǐ\"], [\"看\", \"kàn\"], [\"见\", \"jiàn\"], [\"闪\", \"shǎn\"], [\"闪\", \"shǎn\"], [\"的\", \"de\"], [\"星\", \"xīng\"], [\"星\", \"xīng\"], [\"蓝\", \"lán\"], [\"蓝\", \"lán\"], [\"的\", \"de\"], [\"天\", \"tiān\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

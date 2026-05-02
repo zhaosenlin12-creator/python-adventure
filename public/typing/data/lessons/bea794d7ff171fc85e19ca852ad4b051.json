@@ -1,0 +1,75 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.454608+00:00",
+  "request": {
+    "lesson_id": "bea794d7ff171fc85e19ca852ad4b051",
+    "course_id": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "order": 10,
+    "nextCourseId": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "courseName": "基准键",
+    "lessonId": "bea794d7ff171fc85e19ca852ad4b051",
+    "nextLessonId": "9b6c958f99c6c86771800e6674e2ccd7",
+    "lessonName": "学习a和;",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-learn-acomma.5430bfb1a9.png",
+    "description": "学习a和;",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "85f315945020925733db882f1e1db3bf",
+        "index": 1,
+        "highlights": [
+          "a"
+        ],
+        "text": [
+          "请使用左手小拇指输入按键a"
+        ],
+        "detail": "新的字母键/请输入[a]键"
+      },
+      {
+        "chapterId": "4d7131c003a6139bbea29f0d48a932d0",
+        "index": 2,
+        "highlights": [
+          ";"
+        ],
+        "text": [
+          "请使用右手小拇指输入按键;"
+        ],
+        "detail": "新的字母键/请输入[;]键"
+      },
+      {
+        "chapterId": "a4d9061d699af028af7db09532ff276a",
+        "index": 3,
+        "highlights": [
+          " "
+        ],
+        "text": [
+          "接下来我们将练习如何输入[a]和[;]，请确保使用正确的指法输入，敲击 键开始"
+        ],
+        "detail": "新的字母键/很好"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "dcffa65393dd332ddd35d229c8068381",
+        "index": 4,
+        "text": [
+          "aaaa;;;;aaaa;;;;aa;;aa;;a;a;;a;a"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.377344+00:00",
+  "request": {
+    "lesson_id": "180c41411dbb7d93ba068e2c4597eb9e",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 188,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "180c41411dbb7d93ba068e2c4597eb9e",
+    "nextLessonId": "335ceb7cb07c5ef216894e71abd5d18c",
+    "lessonName": "MAX和MIN",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - MAX和MIN",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "522f8774b92fa0a36cba23ad7b57a462",
+        "index": 1,
+        "text": [
+          "-- 查询最高和最低年龄\\nSELECT MAX(age) AS max_age, MIN(age) AS min_age\\nFROM users;\\n\\n-- 查询最大订单金额\\nSELECT MAX(amount) AS max_order FROM orders;\\n\\n-- 每个分类的最高和最低价格\\nSELECT category, MAX(price) AS max_price, MIN(price) AS min_price\\nFROM products\\nGROUP BY category;\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

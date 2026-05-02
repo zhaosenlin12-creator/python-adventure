@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.563169+00:00",
+  "request": {
+    "lesson_id": "71d063b857882163e0426a18969fcc5c",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 103,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "71d063b857882163e0426a18969fcc5c",
+    "nextLessonId": "188f015f32f234abf68fe0c6ece56476",
+    "lessonName": "KET核心词-11",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第11课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "438107b6c212c0c600b49ee16164603d",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"can\",\"pronun\":\"[kən; kæn]\",\"translation\":\"aux. 能； 能够； 可以； 可能\\nn. 罐头； （用金属或塑料制作的）容器； （马口铁或其他金属制作的）食品罐头\\nvt. 将…装入密封罐中保存\",\"audio\":\"can.mp3\"},{\"word\":\"Canada\",\"pronun\":\"[ˈkænədə]\",\"translation\":\"n. 加拿大（北美洲国家）\",\"audio\":\"Canada.mp3\"},{\"word\":\"canal\",\"pronun\":\"[kəˈnæl]\",\"translation\":\"n. 运河；[地理] 水道；[建] 管道；灌溉水渠\\nvt. 在…开凿运河\",\"audio\":\"canal.mp3\"},{\"word\":\"candidate\",\"pronun\":\"[ˈkændɪdət; ˈkændɪdeɪt]\",\"translation\":\"n. 候选人，候补者；应试者\",\"audio\":\"candidate.mp3\"},{\"word\":\"candle\",\"pronun\":\"[ˈkændl]\",\"translation\":\"n. 蜡烛；烛光；烛形物\\nvt. 对着光检查\",\"audio\":\"candle.mp3\"},{\"word\":\"candy\",\"pronun\":\"[ˈkændi]\",\"translation\":\"n. 糖果（等于sweets）；冰糖（等于sugar candy，rock candy）；毒品\\nadj. 新潮的（服饰）；甜言蜜语的\\nvt. 用糖煮；使结晶为砂糖；美化\\nvi. 糖煮；成为结晶\",\"audio\":\"candy.mp3\"},{\"word\":\"capital\",\"pronun\":\"[ˈkæpɪt(ə)l]\",\"translation\":\"n. 首都，省会；资金；大写字母；资本家\\nadj. 首都的；重要的；大写的\",\"audio\":\"capital.mp3\"},{\"word\":\"card\",\"pronun\":\"[kɑːrd]\",\"translation\":\"n. 卡片；纸牌；明信片\\nvt. 记于卡片上\",\"audio\":\"card.mp3\"},{\"word\":\"care\",\"pronun\":\"[ker]\",\"translation\":\"n. 关怀；照料；谨慎；忧虑\\nvt. 在意；希望或喜欢\\nvi. 照顾；关心；喜爱；顾虑\",\"audio\":\"care.mp3\"},{\"word\":\"career\",\"pronun\":\"[kəˈrɪr]\",\"translation\":\"n. 生涯；职业；事业；速度，全速\\nadj. 作为毕生职业的\\nvi. 全速前进，猛冲\",\"audio\":\"career.mp3\"},{\"word\":\"careful\",\"pronun\":\"[ˈkerfl]\",\"translation\":\"adj. 仔细的，小心的\",\"audio\":\"careful.mp3\"},{\"word\":\"carpet\",\"pronun\":\"[ˈkɑːrpɪt]\",\"translation\":\"n. 地毯；地毯状覆盖物\\nvt. 在…上铺地毯，把地毯铺在…上；斥责\",\"audio\":\"carpet.mp3\"},{\"word\":\"carry\",\"pronun\":\"[ˈkæri]\",\"translation\":\"n. 运载；[计] 进位；射程\\nvi. 能达到；被携带；被搬运\\nvt. 拿，扛；携带；支持；搬运\",\"audio\":\"carry.mp3\"},{\"word\":\"cartoon\",\"pronun\":\"[kɑːrˈtuːn]\",\"translation\":\"n. 卡通片，[电影] 动画片；连环漫画\\nvt. 为…画漫画\\nvi. 画漫画\",\"audio\":\"cartoon.mp3\"},{\"word\":\"case\",\"pronun\":\"[keɪs]\",\"translation\":\"n. 情况；实例；箱\\nvt. 包围；把…装于容器中\",\"audio\":\"case.mp3\"},{\"word\":\"cash\",\"pronun\":\"[kæʃ]\",\"translation\":\"n. 现款，现金\\nvt. 将…兑现；支付现款\",\"audio\":\"cash.mp3\"},{\"word\":\"cent\",\"pronun\":\"[sent]\",\"translation\":\"n. 分；一分的硬币；森特（等于半音程的百分之一）\",\"audio\":\"cent.mp3\"},{\"word\":\"castle\",\"pronun\":\"[ˈkæsl]\",\"translation\":\"n. 城堡；象棋中的车\\nvt. 置…于城堡中；筑城堡防御\",\"audio\":\"castle.mp3\"},{\"word\":\"catch\",\"pronun\":\"[kætʃ]\",\"translation\":\"n. 捕捉；捕获物；窗钩\\nvt. 赶上；抓住；感染；了解\\nvi. 赶上；抓住\",\"audio\":\"catch.mp3\"},{\"word\":\"cave\",\"pronun\":\"[keɪv]\",\"translation\":\"n. 洞穴，窑洞\\nvi. 凹陷，塌落；投降\\nvt. 使凹陷，使塌落；在…挖洞穴\",\"audio\":\"cave.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

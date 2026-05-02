@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.004668+00:00",
+  "request": {
+    "lesson_id": "d80c72bba308e6895091bda98ae0506a",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 416,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "d80c72bba308e6895091bda98ae0506a",
+    "nextLessonId": "f22a4d50c0efba96de5dd9c194b8bf5f",
+    "lessonName": "六级词汇正序版-27",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第27课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4334f188a2a0c2b3c6a7c486f4acfb81",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"cork\",\"pronun\":\"[kɔːrk]\",\"translation\":\"n. 软木橡树皮；瓶塞；软木塞\\nvt. 用瓶塞塞住\",\"audio\":\"cork.mp3\"},{\"word\":\"corporate\",\"pronun\":\"[ˈkɔːrpərət]\",\"translation\":\"adj. 法人的；共同的，全体的；社团的；公司的；企业的\",\"audio\":\"corporate.mp3\"},{\"word\":\"corps\",\"pronun\":\"[kɔːr]\",\"translation\":\"n. 军团；兵种；兵队；（德国大学的）学生联合会\",\"audio\":\"corps.mp3\"},{\"word\":\"corpse\",\"pronun\":\"\",\"translation\":\"\",\"audio\":\"corpse.mp3\"},{\"word\":\"correlate\",\"pronun\":\"[ˈkɔːrəleɪt]\",\"translation\":\"n. 相关物；相关联的人\\nvt. 使有相互关系；互相有关系\\nadj. 关联的\\nvi. 关联\",\"audio\":\"correlate.mp3\"},{\"word\":\"correspondence\",\"pronun\":\"[ˌkɔːrəˈspɑːndəns]\",\"translation\":\"n. 通信；一致；相当\",\"audio\":\"correspondence.mp3\"},{\"word\":\"corresponding\",\"pronun\":\"[ˌkɔːrəˈspɑːndɪŋ]\",\"translation\":\"adj. 相当的，相应的；一致的；通信的\\nv. 类似（correspond的ing形式）；相配\",\"audio\":\"corresponding.mp3\"},{\"word\":\"corrode\",\"pronun\":\"[kəˈroʊd]\",\"translation\":\"vt. 侵蚀；损害\\nvi. 受腐蚀；起腐蚀作用\",\"audio\":\"corrode.mp3\"},{\"word\":\"corrupt\",\"pronun\":\"[kəˈrʌpt]\",\"translation\":\"adj. 腐败的，贪污的；堕落的\\nvt. 使腐烂；使堕落，使恶化\\nvi. 堕落，腐化；腐烂\",\"audio\":\"corrupt.mp3\"},{\"word\":\"costume\",\"pronun\":\"[ˈkɑːstuːm]\",\"translation\":\"n. 服装，装束；戏装，剧装\\nvt. 给…穿上服装\",\"audio\":\"costume.mp3\"},{\"word\":\"council\",\"pronun\":\"[ˈkaʊnsl]\",\"translation\":\"n. 委员会；会议；理事会；地方议会；顾问班子\",\"audio\":\"council.mp3\"},{\"word\":\"counsel\",\"pronun\":\"[ˈkaʊnsl]\",\"translation\":\"n. 法律顾问；忠告；商议；讨论；决策\\nvt. 建议；劝告\\nvi. 商讨；提出忠告\",\"audio\":\"counsel.mp3\"},{\"word\":\"counter\",\"pronun\":\"[ˈkaʊntər]\",\"translation\":\"n. 柜台；对立面；计数器；（某些棋盘游戏的）筹码\\nvi. 逆向移动，对着干；反驳\\nadj. 相反的\\nvt. 反击，还击；反向移动，对着干；反驳，回答\\nadv. 反方向地；背道而驰地\",\"audio\":\"counter.mp3\"},{\"word\":\"counterpart\",\"pronun\":\"[ˈkaʊntərpɑːrt]\",\"translation\":\"n. 副本；配对物；极相似的人或物\",\"audio\":\"counterpart.mp3\"},{\"word\":\"coupon\",\"pronun\":\"[ˈkuːpɑːn; ˈkjuːpɑːn]\",\"translation\":\"n. 息票；赠券；联票；[经] 配给券\",\"audio\":\"coupon.mp3\"},{\"word\":\"court\",\"pronun\":\"[kɔːrt]\",\"translation\":\"n. 法院；球场；朝廷；奉承\\nvt. 招致（失败、危险等）；向…献殷勤；设法获得\\nvi. 求爱\",\"audio\":\"court.mp3\"},{\"word\":\"courtesy\",\"pronun\":\"[ˈkɜːrtəsi]\",\"translation\":\"n. 礼貌；好意；恩惠\\nadj. 殷勤的；被承认的；出于礼节的\",\"audio\":\"courtesy.mp3\"},{\"word\":\"coverage\",\"pronun\":\"[ˈkʌvərɪdʒ]\",\"translation\":\"n. 覆盖，覆盖范围；新闻报道\",\"audio\":\"coverage.mp3\"},{\"word\":\"coward\",\"pronun\":\"[ˈkaʊərd]\",\"translation\":\"n. 懦夫，懦弱的人\\nadj. 胆小的，懦怯的\",\"audio\":\"coward.mp3\"},{\"word\":\"cozy\",\"pronun\":\"[ˈkoʊzi]\",\"translation\":\"n. 保温罩\\nvt. 蒙骗；抚慰\\nadj. 舒适的；安逸的\",\"audio\":\"cozy.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

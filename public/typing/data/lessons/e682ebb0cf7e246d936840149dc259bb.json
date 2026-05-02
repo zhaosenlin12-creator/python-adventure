@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.484673+00:00",
+  "request": {
+    "lesson_id": "e682ebb0cf7e246d936840149dc259bb",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 203,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "e682ebb0cf7e246d936840149dc259bb",
+    "nextLessonId": "ba4c97fd76baf791f2f671ba2725f2eb",
+    "lessonName": "创建索引",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - 创建索引",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "af043ce15189f83228af1e2dfc95cc41",
+        "index": 1,
+        "text": [
+          "-- 创建单列索引\\nCREATE INDEX idx_users_email ON users(email);\\n\\n-- 创建复合索引\\nCREATE INDEX idx_orders_user_status ON orders(user_id, status);\\n\\n-- 创建唯一索引\\nCREATE UNIQUE INDEX idx_users_email_unique ON users(email);\\n\\n-- 创建全文索引\\nCREATE FULLTEXT INDEX idx_products_name_desc\\nON products(name, description);\\n\\n-- 查看表的索引\\nSHOW INDEX FROM users;\\n\\n-- 删除索引\\nDROP INDEX idx_users_email ON users;\\n\\n-- 创建前缀索引\\nCREATE INDEX idx_users_name_prefix ON users(name(10));\\n\\n-- 使用EXPLAIN查看索引使用情况\\nEXPLAIN SELECT * FROM users WHERE email = 'test@example.com';\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

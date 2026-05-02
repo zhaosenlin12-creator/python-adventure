@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.291168+00:00",
+  "request": {
+    "lesson_id": "6f946af63d137880b2522d0d4016a9ea",
+    "course_id": "f81aeb9f7457592295d8d925c4358b36",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "f81aeb9f7457592295d8d925c4358b36",
+    "order": 231,
+    "nextCourseId": "f81aeb9f7457592295d8d925c4358b36",
+    "courseName": "汉字二级",
+    "lessonId": "6f946af63d137880b2522d0d4016a9ea",
+    "nextLessonId": "f1091798b6c8e03db977e4ad5b77074e",
+    "lessonName": "《踏青的风日》 李佩芝",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-2.4d21a5bc2c.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ff484f670bf645fde94b8cdbcd2061db",
+        "index": 1,
+        "text": [
+          "起初，风还腼腆，凉凉的，轻轻的，车前车后荡着哨音。愈向远方，风愈烈了，仿佛起了妒忌般，追赶着我们，又阻挡着我们了。"
+        ],
+        "pinyin": "[[\"起\", \"qǐ\"], [\"初\", \"chū\"], [\"，\", \"\"], [\"风\", \"fēng\"], [\"还\", \"hái\"], [\"腼\", \"miǎn\"], [\"腆\", \"tiǎn\"], [\"，\", \"\"], [\"凉\", \"liáng\"], [\"凉\", \"liáng\"], [\"的\", \"de\"], [\"，\", \"\"], [\"轻\", \"qīng\"], [\"轻\", \"qīng\"], [\"的\", \"\"], [\"，\", \"\"], [\"车\", \"chē\"], [\"前\", \"qián\"], [\"车\", \"chē\"], [\"后\", \"hòu\"], [\"荡\", \"dàng\"], [\"着\", \"zhe\"], [\"哨\", \"shào\"], [\"音\", \"yīn\"], [\"。\", \"\"], [\"愈\", \"yù\"], [\"向\", \"xiàng\"], [\"远\", \"yuǎn\"], [\"方\", \"fāng\"], [\"，\", \"\"], [\"风\", \"fēng\"], [\"愈\", \"yù\"], [\"烈\", \"liè\"], [\"了\", \"le\"], [\"，\", \"\"], [\"仿\", \"fǎng\"], [\"佛\", \"fú\"], [\"起\", \"qǐ\"], [\"了\", \"le\"], [\"妒\", \"dù\"], [\"忌\", \"jì\"], [\"般\", \"bān\"], [\"，\", \"\"], [\"追\", \"zhuī\"], [\"赶\", \"gǎn\"], [\"着\", \"zhe\"], [\"我\", \"wǒ\"], [\"们\", \"men\"], [\"，\", \"\"], [\"又\", \"yòu\"], [\"阻\", \"zǔ\"], [\"挡\", \"dǎng\"], [\"着\", \"zhe\"], [\"我\", \"wǒ\"], [\"们\", \"men\"], [\"了\", \"le\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 27,
+        "minSpeed": 17,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

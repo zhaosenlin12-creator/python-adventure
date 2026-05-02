@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.260704+00:00",
+  "request": {
+    "lesson_id": "352bdf4b2340711983e969d1bee0aae4",
+    "course_id": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "order": 468,
+    "nextCourseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "courseName": "英语每日故事（初级）1-31",
+    "lessonId": "352bdf4b2340711983e969d1bee0aae4",
+    "nextLessonId": "d7653d2b609632628b7450b1af5173aa",
+    "lessonName": "A Young Artist",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "875fe7997b552d55910114410cf18901",
+        "index": 1,
+        "text": [
+          "Maddy loves drawing. She is only five years old, but she can draw many things.\\nOne day, her grandma said, \"Maddy, can you draw me a happy puppy?\"\\nGuess what Maddy drew? She drew a picture of her grandma sitting in a chair and holding a puppy.\\nOf course, that was a happy puppy!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

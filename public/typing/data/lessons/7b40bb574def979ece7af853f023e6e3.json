@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.179191+00:00",
+  "request": {
+    "lesson_id": "7b40bb574def979ece7af853f023e6e3",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 450,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "7b40bb574def979ece7af853f023e6e3",
+    "nextLessonId": "e83a86bedd309630956aa121a7ddb18e",
+    "lessonName": "六级词汇正序版-129",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第129课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "40b2dc5df59ca9e5ae036ef1f7285844",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"spear\",\"pronun\":\"[spɪr]\",\"translation\":\"n. 矛，枪\\nvt. 用矛刺\",\"audio\":\"spear.mp3\"},{\"word\":\"spotlight\",\"pronun\":\"[ˈspɑːtlaɪt]\",\"translation\":\"n. 聚光灯；反光灯；公众注意的中心\\nvt. 聚光照明；使公众注意\",\"audio\":\"spotlight.mp3\"},{\"word\":\"standardize\",\"pronun\":\"[ˈstændərdaɪz]\",\"translation\":\"vt. 使标准化；用标准检验\",\"audio\":\"standardize.mp3\"},{\"word\":\"standing\",\"pronun\":\"[ˈstændɪŋ]\",\"translation\":\"n. 站立；持续；身分\\nadj. 长期的；直立的；固定的\\nv. 站立；坚持不变；坐落于（stand的ing形式）\",\"audio\":\"standing.mp3\"},{\"word\":\"stark\",\"pronun\":\"[stɑːrk]\",\"translation\":\"adj. 完全的；荒凉的；刻板的；光秃秃的；朴实的\\nadv. 完全；明显地；突出地；质朴地\",\"audio\":\"stark.mp3\"},{\"word\":\"stationery\",\"pronun\":\"[ˈsteɪʃəneri]\",\"translation\":\"n. 文具；信纸\",\"audio\":\"stationery.mp3\"},{\"word\":\"stylish\",\"pronun\":\"[ˈstaɪlɪʃ]\",\"translation\":\"adj. 时髦的；现代风格的；潇洒的\",\"audio\":\"stylish.mp3\"},{\"word\":\"supple\",\"pronun\":\"[ˈsʌpl]\",\"translation\":\"adj. 柔软的；灵活的；顺从的；易弯曲的；逢迎的\\nvt. 使柔软；使顺从\\nvi. 变柔顺；变柔软\",\"audio\":\"supple.mp3\"},{\"word\":\"sustainable\",\"pronun\":\"[səˈsteɪnəb(ə)l]\",\"translation\":\"adj. 可以忍受的；足可支撑的；养得起的；可持续的\",\"audio\":\"sustainable.mp3\"},{\"word\":\"tenure\",\"pronun\":\"[ˈtenjər]\",\"translation\":\"n. 任期；占有\\nvt. 授予…终身职位\",\"audio\":\"tenure.mp3\"},{\"word\":\"touched\",\"pronun\":\"[tʌtʃt]\",\"translation\":\"v. 触摸（touch的过去式和过去分词）\\nadj. 受感动的；精神失常的\",\"audio\":\"touched.mp3\"},{\"word\":\"transformation\",\"pronun\":\"[ˌtrænsfərˈmeɪʃn]\",\"translation\":\"n. [遗] 转化；转换；改革；变形\",\"audio\":\"transformation.mp3\"},{\"word\":\"triumphant\",\"pronun\":\"[traɪˈʌmfənt]\",\"translation\":\"adj. 成功的；得意洋洋的；狂欢的\",\"audio\":\"triumphant.mp3\"},{\"word\":\"trolley\",\"pronun\":\"[ˈtrɑːli]\",\"translation\":\"n. 手推车；（美）有轨电车（等于trolley car）；（英）无轨电车（等于trolleybus）；空中吊运车\\nvt. 用手推车运\\nvi. 乘电车\",\"audio\":\"trolley.mp3\"},{\"word\":\"tumor\",\"pronun\":\"[ˈtuːmər]\",\"translation\":\"n. 肿瘤；肿块；赘生物\",\"audio\":\"tumor.mp3\"},{\"word\":\"turkey\",\"pronun\":\"[ˈtɜːrki]\",\"translation\":\"n. 土耳其（横跨欧亚两洲的国家）\",\"audio\":\"turkey.mp3\"},{\"word\":\"twinkle\",\"pronun\":\"[ˈtwɪŋkl]\",\"translation\":\"n. 闪烁\\nvt. 使闪耀；闪耀\\nvi. 闪烁；发亮\",\"audio\":\"twinkle.mp3\"},{\"word\":\"uncommon\",\"pronun\":\"[ʌnˈkɑːmən]\",\"translation\":\"adj. 不寻常的；罕有的\\nadv. 非常地\",\"audio\":\"uncommon.mp3\"},{\"word\":\"undue\",\"pronun\":\"[ˌʌnˈduː]\",\"translation\":\"adj. 过度的，过分的；不适当的；未到期的\",\"audio\":\"undue.mp3\"},{\"word\":\"uranium\",\"pronun\":\"[juˈreɪniəm]\",\"translation\":\"n. [化学] 铀\",\"audio\":\"uranium.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

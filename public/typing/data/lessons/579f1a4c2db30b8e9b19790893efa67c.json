@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.409696+00:00",
+  "request": {
+    "lesson_id": "579f1a4c2db30b8e9b19790893efa67c",
+    "course_id": "2ab9dc27a9350a9ff86633c542967f70",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "order": 45,
+    "nextCourseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "courseName": "下排字母",
+    "lessonId": "579f1a4c2db30b8e9b19790893efa67c",
+    "nextLessonId": "bc801030a90b80124242727b11b3424d",
+    "lessonName": "练习v和m",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-practise-vm.6d49900c3b.png",
+    "description": "练习v和m",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "33454bea8b8ce315c061d0b6b8937d7a",
+        "index": 2,
+        "text": [
+          "vf vvf vf vvf mj mmj mj mmj vfvf mjmj vvvf mmmj fvmj fvf jmj fvfvf jmjmj vvf mmj vvmm vmvm vmfj vvf mmj"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "vf mj",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

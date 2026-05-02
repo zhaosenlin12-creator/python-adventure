@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.868316+00:00",
+  "request": {
+    "lesson_id": "bfe73a6042f97592fecd61b9e3b6a449",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 168,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "bfe73a6042f97592fecd61b9e3b6a449",
+    "nextLessonId": "1167df0c44167a21d429fa3d654605a6",
+    "lessonName": "KET核心词-69",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第69课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1dbf853eec99d367eaf916a006ac216c",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"treat\",\"pronun\":\"[triːt]\",\"translation\":\"n. 请客；款待\\nvi. 探讨；请客；协商\\nvt. 治疗；对待；探讨；视为\",\"audio\":\"treat.mp3\"},{\"word\":\"tree\",\"pronun\":\"[triː]\",\"translation\":\"n. 树；木料；树状物\\nvt. 把...赶上树\\nvi. 爬上树；逃上树\",\"audio\":\"tree.mp3\"},{\"word\":\"trick\",\"pronun\":\"[trɪk]\",\"translation\":\"n. 诡计；恶作剧；窍门；花招；骗局；欺诈\\nadj. 特技的；欺诈的；有决窍的\\nvt. 欺骗；哄骗；装饰；打扮\\nvi. 哄骗；戏弄\",\"audio\":\"trick.mp3\"},{\"word\":\"trip\",\"pronun\":\"[trɪp]\",\"translation\":\"n. 旅行；绊倒；差错\\nvt. 绊倒；使犯错\\nvi. 绊倒；远足；犯错误；轻快地走\",\"audio\":\"trip.mp3\"},{\"word\":\"trouble\",\"pronun\":\"[ˈtrʌbl]\",\"translation\":\"n. 麻烦；烦恼；故障；动乱\\nvt. 麻烦；使烦恼；折磨\\nvi. 费心，烦恼\",\"audio\":\"trouble.mp3\"},{\"word\":\"truck\",\"pronun\":\"[trʌk]\",\"translation\":\"n. 卡车；交易；手推车\\nadj. （美）运货汽车的\\nvt. 交易；以卡车运输\\nvi. 驾驶卡车；以物易物\",\"audio\":\"truck.mp3\"},{\"word\":\"trust\",\"pronun\":\"[trʌst]\",\"translation\":\"n. 信任，信赖；责任；托拉斯\\nvt. 信任，信赖；盼望；赊卖给\\nvi. 信任，信赖；依靠\",\"audio\":\"trust.mp3\"},{\"word\":\"truth\",\"pronun\":\"[truːθ]\",\"translation\":\"n. 真理；事实；诚实；实质\",\"audio\":\"truth.mp3\"},{\"word\":\"try\",\"pronun\":\"[traɪ]\",\"translation\":\"n. 尝试；努力；试验\\nvt. 试图，努力；试验；审判；考验\\nvi. 尝试；努力；试验\",\"audio\":\"try.mp3\"},{\"word\":\"T-shirt\",\"pronun\":\"[ˈtiː ʃɜːrt]\",\"translation\":\"n. 短袖圆领汗衫\",\"audio\":\"T-shirt.mp3\"},{\"word\":\"Turkish\",\"pronun\":\"[ˈtɜːrkɪʃ]\",\"translation\":\"n. 土耳其语\\nadj. 土耳其人的，土耳其语的；土耳其的；突厥诸语言的\",\"audio\":\"Turkish.mp3\"},{\"word\":\"turn\",\"pronun\":\"[tɜːrn]\",\"translation\":\"n. 转弯；变化；(损害或有益于别人的)行为，举动，举止\\nvi. 转向；转变；转动\\nvt. 转动，使旋转；转弯；翻过来；兑换\",\"audio\":\"turn.mp3\"},{\"word\":\"twice\",\"pronun\":\"[twaɪs]\",\"translation\":\"adv. 两次；两倍\",\"audio\":\"twice.mp3\"},{\"word\":\"twin\",\"pronun\":\"[twɪn]\",\"translation\":\"n. 双胞胎中一人\\nadj. 双胞胎的\\nvt. 使成对\\nvi. 成对；生双胞胎\",\"audio\":\"twin.mp3\"},{\"word\":\"type\",\"pronun\":\"[taɪp]\",\"translation\":\"n. 类型，品种；模范；样式\\nvt. 打字；测定（血等）类型\\nvi. 打字\",\"audio\":\"type.mp3\"},{\"word\":\"tyre\",\"pronun\":\"[ˈtaɪər]\",\"translation\":\"n. [橡胶] 轮胎；轮箍\\nvt. 装轮胎于\",\"audio\":\"tyre.mp3\"},{\"word\":\"umbrella\",\"pronun\":\"[ʌmˈbrelə]\",\"translation\":\"n. 雨伞；保护伞；庇护；伞形结构\",\"audio\":\"umbrella.mp3\"},{\"word\":\"uncle\",\"pronun\":\"[ˈʌŋkl]\",\"translation\":\"n. 叔叔；伯父；伯伯；舅父；姨丈；姑父\",\"audio\":\"uncle.mp3\"},{\"word\":\"under\",\"pronun\":\"[ˈʌndər]\",\"translation\":\"prep. 低于，少于；在...之下\\nadj. 下面的；从属的\\nadv. 在下面；在下方\",\"audio\":\"under.mp3\"},{\"word\":\"underground\",\"pronun\":\"[ˌʌndərˈɡraʊnd]\",\"translation\":\"n. 地下；地铁；地道；地下组织；秘密活动；先锋派团体\\nadj. 地下的；秘密的；先锋派的\\nadv. 在地下；秘密地\",\"audio\":\"underground.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

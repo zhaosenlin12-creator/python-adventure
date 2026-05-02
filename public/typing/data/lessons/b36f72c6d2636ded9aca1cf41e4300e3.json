@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.009127+00:00",
+  "request": {
+    "lesson_id": "b36f72c6d2636ded9aca1cf41e4300e3",
+    "course_id": "cd45306af9fe6ba99ad31ab2ab5006ba",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "cd45306af9fe6ba99ad31ab2ab5006ba",
+    "order": 367,
+    "nextCourseId": "cd45306af9fe6ba99ad31ab2ab5006ba",
+    "courseName": "实战演练-1万以内金额",
+    "lessonId": "b36f72c6d2636ded9aca1cf41e4300e3",
+    "nextLessonId": "f7ff1d4fb34c3f2ab8bbd250e0d361c3",
+    "lessonName": "随机千元三",
+    "icon": "data/assets/daziya.com/key-icon_num-jiangbei.44832ef16e.png",
+    "description": "数字输入练习 - 随机千元三",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "0bb497738cd672a671142e4d2d346a1a",
+        "index": 1,
+        "text": [
+          "182547\\n293658\\n314769\\n425871\\n536982\\n647193\\n758214\\n869325\\n971436\\n192658\\n213769\\n324871\\n435982\\n546193\\n657214\\n768325\\n879436\\n981547\\n213869\\n324971\\n435182\\n546293\\n657314\\n768425\\n879536\\n981647\\n192758\\n213869\\n324182"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

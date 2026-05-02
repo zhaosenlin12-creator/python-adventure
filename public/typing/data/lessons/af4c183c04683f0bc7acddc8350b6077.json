@@ -1,0 +1,50 @@
+{
+  "source": "speed-test",
+  "scrapedAt": "2026-05-02T06:08:44.826676+00:00",
+  "request": {
+    "lesson_id": "af4c183c04683f0bc7acddc8350b6077",
+    "course_id": "c6bc39f4ba86486e20cc171fab797ea3",
+    "source": "speed-test"
+  },
+  "data": {
+    "level": "速度测试",
+    "courseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "order": 31,
+    "nextCourseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "courseName": "英文速度测试",
+    "lessonId": "af4c183c04683f0bc7acddc8350b6077",
+    "nextLessonId": "c864b63418248ad2f5fe4ef816a8a9d0",
+    "lessonName": "Save the World",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f0c93405d47b28de5b31811fb1434f64",
+        "index": 1,
+        "text": [
+          "One day, Simon's mother asks him what he wants to do when he grows up.\\n\"Save the world!\" he says.\\nHis mother smiles and says, \"I'm glad to hear that. But can you save your world first?\"\\n\"What?\" asks Simon.\\n\"Yes... I can!\" says Simon."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": 13,
+    "categoryTitle": "速度测试"
+  }
+}

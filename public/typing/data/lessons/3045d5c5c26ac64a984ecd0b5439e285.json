@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.518643+00:00",
+  "request": {
+    "lesson_id": "3045d5c5c26ac64a984ecd0b5439e285",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 662,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "3045d5c5c26ac64a984ecd0b5439e285",
+    "nextLessonId": "341da0601df1b67793aff043acc10001",
+    "lessonName": " 六年级上-6",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点六年级上 - 第6课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ead859ce2838836f2209a5853c10eef8",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"fisherman\",\"pronun\":\"[ˈfɪʃərmən]\",\"translation\":\"n. 渔夫；渔人\",\"audio\":\"fisherman.mp3\"},{\"word\":\"scientist\",\"pronun\":\"[ˈsaɪəntɪst]\",\"translation\":\"n. 科学家\",\"audio\":\"scientist.mp3\"},{\"word\":\"pilot\",\"pronun\":\"[ˈpaɪlət]\",\"translation\":\"n. 飞行员；领航员\\nadj. 试点的\\nv. 驾驶；领航；试用\",\"audio\":\"pilot.mp3\"},{\"word\":\"coach\",\"pronun\":\"[koʊtʃ]\",\"translation\":\"n. 教练；旅客车厢；长途公车；四轮大马车\\nvt. 训练；指导\\nvi. 作指导；接受辅导；坐马车旅行\\nn.  蔻驰（皮革品牌）\",\"audio\":\"coach.mp3\"},{\"word\":\"country\",\"pronun\":\"[ˈkʌntri]\",\"translation\":\"n. 国家，国土；国民；乡下，农村；乡村；故乡\\nadj. 祖国的，故乡的；地方的，乡村的；国家的；粗鲁的；乡村音乐的\",\"audio\":\"country.mp3\"},{\"word\":\"head teacher\",\"pronun\":\"\",\"translation\":\"n. 校长\",\"audio\":\"head_teacher.mp3\"},{\"word\":\"sea\",\"pronun\":\"[siː]\",\"translation\":\"n. 海；海洋；许多；大量\",\"audio\":\"sea.mp3\"},{\"word\":\"stay\",\"pronun\":\"[steɪ]\",\"translation\":\"n. 逗留；停止；支柱\\nvi. 停留；坚持；暂住；停下\\nvt. 坚持；暂住；抑制\",\"audio\":\"stay.mp3\"},{\"word\":\"university\",\"pronun\":\"[ˌjuːnɪˈvɜːrsəti]\",\"translation\":\"n. 大学；综合性大学；大学校舍\",\"audio\":\"university.mp3\"},{\"word\":\"gym\",\"pronun\":\"[dʒɪm]\",\"translation\":\"n. 健身房；体育；体育馆\",\"audio\":\"gym.mp3\"},{\"word\":\"if\",\"pronun\":\"[ɪf]\",\"translation\":\"conj. （表条件）如果；即使；是否；（表假设）假如\\nn. 条件；设想\",\"audio\":\"if.mp3\"},{\"word\":\"reporter\",\"pronun\":\"[rɪˈpɔːrtər]\",\"translation\":\"n. 记者\",\"audio\":\"reporter.mp3\"},{\"word\":\"use\",\"pronun\":\"[juːz]\",\"translation\":\"n. 使用；用途；发挥\\nvt. 利用；耗费\\nvi. 使用，运用\",\"audio\":\"use.mp3\"},{\"word\":\"type\",\"pronun\":\"[taɪp]\",\"translation\":\"n. 类型，品种；模范；样式\\nvt. 打字；测定（血等）类型\\nvi. 打字\",\"audio\":\"type.mp3\"},{\"word\":\"quickly\",\"pronun\":\"[ˈkwɪkli]\",\"translation\":\"adv. 迅速地；很快地\",\"audio\":\"quickly.mp3\"},{\"word\":\"secretary\",\"pronun\":\"[ˈsekrəteri]\",\"translation\":\"n. 秘书；书记；部长；大臣\",\"audio\":\"secretary.mp3\"},{\"word\":\"angry\",\"pronun\":\"[ˈæŋɡri]\",\"translation\":\"adj. 生气的；愤怒的；狂暴的；（伤口等）发炎的\",\"audio\":\"angry.mp3\"},{\"word\":\"afraid\",\"pronun\":\"[əˈfreɪd]\",\"translation\":\"adj. 害怕的；恐怕；担心的\",\"audio\":\"afraid.mp3\"},{\"word\":\"sad\",\"pronun\":\"[sæd]\",\"translation\":\"adj. 难过的；悲哀的，令人悲痛的；凄惨的，阴郁的（形容颜色）\",\"audio\":\"sad.mp3\"},{\"word\":\"worried\",\"pronun\":\"[ˈwɜːrid]\",\"translation\":\"adj. 担心的\",\"audio\":\"worried.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

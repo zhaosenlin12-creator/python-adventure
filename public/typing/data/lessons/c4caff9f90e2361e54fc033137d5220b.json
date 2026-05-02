@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.912847+00:00",
+  "request": {
+    "lesson_id": "c4caff9f90e2361e54fc033137d5220b",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 394,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "c4caff9f90e2361e54fc033137d5220b",
+    "nextLessonId": "9d539941199b22cd2be88e68a2831574",
+    "lessonName": "六级词汇正序版-98",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第98课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e8f9c612ab70855adfcdbfb807e64ea3",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"shabby\",\"pronun\":\"[ˈʃæbi]\",\"translation\":\"adj. 破旧的；卑鄙的；吝啬的；低劣的\",\"audio\":\"shabby.mp3\"},{\"word\":\"shaft\",\"pronun\":\"[ʃæft]\",\"translation\":\"n. 拍杆；[机] 轴；箭杆；杆状物\\nvt. 利用；在……上装杆\",\"audio\":\"shaft.mp3\"},{\"word\":\"shark\",\"pronun\":\"[ʃɑːrk]\",\"translation\":\"n. 鲨鱼；骗子\\nvt. 敲诈\\nvi. 诈骗\",\"audio\":\"shark.mp3\"},{\"word\":\"shatter\",\"pronun\":\"[ˈʃætər]\",\"translation\":\"n. 碎片；乱七八糟的状态\\nvt. 粉碎；打碎；破坏；破掉；使散开\\nvi. 粉碎；损坏；落叶\",\"audio\":\"shatter.mp3\"},{\"word\":\"shed\",\"pronun\":\"[ʃed]\",\"translation\":\"n. 小屋，棚；分水岭\\nvt. 流出；摆脱；散发；倾吐\\nvi. 流出；脱落；散布\",\"audio\":\"shed.mp3\"},{\"word\":\"sheer\",\"pronun\":\"[ʃɪr]\",\"translation\":\"n. 偏航；透明薄织物\\nadj. 绝对的；透明的；峻峭的；纯粹的\\nvt. 使偏航；使急转向\\nadv. 完全；陡峭地\\nvi. 偏航\",\"audio\":\"sheer.mp3\"},{\"word\":\"shelter\",\"pronun\":\"[ˈʃeltər]\",\"translation\":\"n. 庇护；避难所；遮盖物\\nvt. 保护；使掩蔽\\nvi. 躲避，避难\",\"audio\":\"shelter.mp3\"},{\"word\":\"shepherd\",\"pronun\":\"[ˈʃepərd]\",\"translation\":\"n. 牧羊人；牧师；指导者\\nvt. 牧羊；带领；指导；看管\",\"audio\":\"shepherd.mp3\"},{\"word\":\"shield\",\"pronun\":\"[ʃiːld]\",\"translation\":\"n. 盾；防护物；保护者\\nvt. 遮蔽；包庇；避开；保卫\\nvi. 防御；起保护作用\",\"audio\":\"shield.mp3\"},{\"word\":\"shipment\",\"pronun\":\"[ˈʃɪpmənt]\",\"translation\":\"n. 装货；装载的货物\",\"audio\":\"shipment.mp3\"},{\"word\":\"shove\",\"pronun\":\"[ʃʌv]\",\"translation\":\"n. 推；挤\\nvt. 挤；强使；撞；猛推\",\"audio\":\"shove.mp3\"},{\"word\":\"shrewd\",\"pronun\":\"[ʃruːd]\",\"translation\":\"n. 精明（的人）；机灵（的人）\\nadj. 精明的；狡猾的；机灵的\",\"audio\":\"shrewd.mp3\"},{\"word\":\"shrink\",\"pronun\":\"[ʃrɪŋk]\",\"translation\":\"vi. 收缩；畏缩\\nn. 收缩；畏缩；<俚>精神病学家\\nvt. 使缩小，使收缩\",\"audio\":\"shrink.mp3\"},{\"word\":\"shrub\",\"pronun\":\"[ʃrʌb]\",\"translation\":\"n. 灌木；灌木丛\",\"audio\":\"shrub.mp3\"},{\"word\":\"shrug\",\"pronun\":\"[ʃrʌɡ]\",\"translation\":\"n. 耸肩\\nvi. 耸肩\\nvt. 耸肩，耸肩表示\",\"audio\":\"shrug.mp3\"},{\"word\":\"shutter\",\"pronun\":\"[ˈʃʌtər]\",\"translation\":\"n. 快门；百叶窗；关闭物；遮板\\nvt. 为…装百叶窗；以百叶窗遮闭\",\"audio\":\"shutter.mp3\"},{\"word\":\"shuttle\",\"pronun\":\"[ˈʃʌtl]\",\"translation\":\"n. 航天飞机；穿梭；梭子；穿梭班机、公共汽车等\\nvt. 使穿梭般来回移动；短程穿梭般运送\\nvi. 穿梭往返\",\"audio\":\"shuttle.mp3\"},{\"word\":\"siege\",\"pronun\":\"[siːdʒ]\",\"translation\":\"n. 围攻；包围；围城；不断袭击；长期努力\\nvt. 围攻；包围\",\"audio\":\"siege.mp3\"},{\"word\":\"sieve\",\"pronun\":\"[sɪv]\",\"translation\":\"vt. 筛；滤\\nn. [粮食][矿业] 筛子；滤网；不能保守秘密的人\\nvi. 筛；滤\",\"audio\":\"sieve.mp3\"},{\"word\":\"sightseeing\",\"pronun\":\"[ˈsaɪtsiːɪŋ]\",\"translation\":\"n. 观光；游览\\nv. 观光（sightsee的ing形式）；游览\\nadj. 观光的；游览的\",\"audio\":\"sightseeing.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

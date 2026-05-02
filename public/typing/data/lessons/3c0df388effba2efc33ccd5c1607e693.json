@@ -1,0 +1,94 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.541068+00:00",
+  "request": {
+    "lesson_id": "3c0df388effba2efc33ccd5c1607e693",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 2,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "3c0df388effba2efc33ccd5c1607e693",
+    "nextLessonId": "891c0faab99028b05f18897bbc5de201",
+    "lessonName": "声母zh、ch、sh",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习声母zh、ch、sh在双拼中的按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "bb12992aef9ee35cb0af4c583009f727",
+        "index": 1,
+        "highlights": [
+          "zh"
+        ],
+        "text": [
+          "请输入按键 [zh]"
+        ],
+        "detail": "学习双拼按键 zh"
+      },
+      {
+        "chapterId": "f0ab9cc023515ed9ee76eacf2ce0890e",
+        "index": 2,
+        "highlights": [
+          "ch"
+        ],
+        "text": [
+          "请输入按键 [ch]"
+        ],
+        "detail": "学习双拼按键 ch"
+      },
+      {
+        "chapterId": "9fec4582d14a9289f826d37ee42acaf7",
+        "index": 3,
+        "highlights": [
+          "sh"
+        ],
+        "text": [
+          "请输入按键 [sh]"
+        ],
+        "detail": "学习双拼按键 sh"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "521dd9a0672b94af535cf245d67ede3d",
+        "index": 4,
+        "text": [
+          "zhzhzhzhchchchchshshshshzhchshzhchshzhchshzhchsh"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "44ed67b52a8cc4f4dd662c904dbdcaaa",
+        "index": 5,
+        "text": [
+          "张叔叔在厨房煮茶。\\n这只小虫子在树枝上吃柿子。\\n陈医生正给病人查视力。\\n那座石桥下有几只水鸭在游。\\n周老师手持书册走进教室。"
+        ],
+        "pinyin": "[[\"张\",\"zhāng\"],[\"叔\",\"shū\"],[\"叔\",\"shu\"],[\"在\",\"zài\"],[\"厨\",\"chú\"],[\"房\",\"fáng\"],[\"煮\",\"zhǔ\"],[\"茶\",\"chá\"],[\"。\",\"\"],[\"这\",\"zhè\"],[\"只\",\"zhī\"],[\"小\",\"xiǎo\"],[\"虫\",\"chóng\"],[\"子\",\"zi\"],[\"在\",\"zài\"],[\"树\",\"shù\"],[\"枝\",\"zhī\"],[\"上\",\"shàng\"],[\"吃\",\"chī\"],[\"柿\",\"shì\"],[\"子\",\"zi\"],[\"。\",\"\"],[\"陈\",\"chén\"],[\"医\",\"yī\"],[\"生\",\"shēng\"],[\"正\",\"zhèng\"],[\"给\",\"gěi\"],[\"病\",\"bìng\"],[\"人\",\"rén\"],[\"查\",\"chá\"],[\"视\",\"shì\"],[\"力\",\"lì\"],[\"。\",\"\"],[\"那\",\"nà\"],[\"座\",\"zuò\"],[\"石\",\"shí\"],[\"桥\",\"qiáo\"],[\"下\",\"xià\"],[\"有\",\"yǒu\"],[\"几\",\"jǐ\"],[\"只\",\"zhī\"],[\"水\",\"shuǐ\"],[\"鸭\",\"yā\"],[\"在\",\"zài\"],[\"游\",\"yóu\"],[\"。\",\"\"],[\"周\",\"zhōu\"],[\"老\",\"lǎo\"],[\"师\",\"shī\"],[\"手\",\"shǒu\"],[\"持\",\"chí\"],[\"书\",\"shū\"],[\"册\",\"cè\"],[\"走\",\"zǒu\"],[\"进\",\"jìn\"],[\"教\",\"jiào\"],[\"室\",\"shì\"],[\"。\",\"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

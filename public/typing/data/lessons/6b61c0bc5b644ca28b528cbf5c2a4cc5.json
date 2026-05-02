@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.403169+00:00",
+  "request": {
+    "lesson_id": "6b61c0bc5b644ca28b528cbf5c2a4cc5",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 194,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "6b61c0bc5b644ca28b528cbf5c2a4cc5",
+    "nextLessonId": "046f3241bb58f803ee49a2d31dcd7698",
+    "lessonName": "LIKE模糊查询",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - LIKE模糊查询",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b5ed0489db162ad93248c46db0a91e2f",
+        "index": 1,
+        "text": [
+          "-- 查询名字包含\"张\"的用户\\nSELECT * FROM users WHERE name LIKE '%张%';\\n\\n-- 查询邮箱以gmail结尾的用户\\nSELECT * FROM users WHERE email LIKE '%@gmail.com';\\n\\n-- 查询名字以\"李\"开头的用户\\nSELECT * FROM users WHERE name LIKE '李%';\\n\\n-- 多条件模糊查询\\nSELECT * FROM products\\nWHERE name LIKE '%手机%' OR description LIKE '%手机%';\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

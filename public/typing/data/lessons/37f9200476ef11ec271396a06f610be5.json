@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.280963+00:00",
+  "request": {
+    "lesson_id": "37f9200476ef11ec271396a06f610be5",
+    "course_id": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "order": 476,
+    "nextCourseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "courseName": "英语每日故事（初级）1-31",
+    "lessonId": "37f9200476ef11ec271396a06f610be5",
+    "nextLessonId": "4027ceb88ec1a272b82d7d690625a83e",
+    "lessonName": "Big Snow Days",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "aae6fe3471fac057358ed4b07dfc0968",
+        "index": 1,
+        "text": [
+          "Every winter, we have big snow days. When it snows day and night, we can have snow up to the windows.\\nOn these days, no one can go to school. No one can go to work. What do we do? We play!\\nWe play games. We make hot chocolate. We watch the snow fall. When it stops snowing, we go outside and make a BIG snowman!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

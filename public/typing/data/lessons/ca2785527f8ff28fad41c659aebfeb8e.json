@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.100930+00:00",
+  "request": {
+    "lesson_id": "ca2785527f8ff28fad41c659aebfeb8e",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 437,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "ca2785527f8ff28fad41c659aebfeb8e",
+    "nextLessonId": "4f1fec93f7660c8c1824cdc210c1b709",
+    "lessonName": "六级词汇正序版-90",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第90课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "90596f16de0a223c358c2cf1486505e8",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"referee\",\"pronun\":\"[ˌrefəˈriː]\",\"translation\":\"n. 裁判员；调解人；介绍人\\nvt. 为…当裁判；调停\\nvi. 仲裁；担任裁判\",\"audio\":\"referee.mp3\"},{\"word\":\"reference\",\"pronun\":\"[ˈrefrəns]\",\"translation\":\"n. 参考，参照；涉及，提及；参考书目；介绍信；证明书\\nvt. 引用\\nvi. 引用\",\"audio\":\"reference.mp3\"},{\"word\":\"reflect\",\"pronun\":\"[rɪˈflekt]\",\"translation\":\"vt. 反映；反射，照出；表达；显示;反省\\nvi. 反射，映现；深思\",\"audio\":\"reflect.mp3\"},{\"word\":\"reform\",\"pronun\":\"[rɪˈfɔːrm]\",\"translation\":\"n. 改革，改良；改正\\nadj. 改革的；改革教会的\\nvt. 改革，革新；重新组成\\nvi. 重组；改过\",\"audio\":\"reform.mp3\"},{\"word\":\"refrain\",\"pronun\":\"[rɪˈfreɪn]\",\"translation\":\"n. 叠句，副歌；重复\\nvi. 节制，克制；避免；制止\",\"audio\":\"refrain.mp3\"},{\"word\":\"refresh\",\"pronun\":\"[rɪˈfreʃ]\",\"translation\":\"vt. 更新；使……恢复；使……清新；消除……的疲劳\\nvi. 恢复精神；喝饮料，吃点心；补充给养\",\"audio\":\"refresh.mp3\"},{\"word\":\"refreshment\",\"pronun\":\"[rɪˈfreʃmənt]\",\"translation\":\"n. 点心；起提神作用的东西；精力恢复\",\"audio\":\"refreshment.mp3\"},{\"word\":\"refuge\",\"pronun\":\"[ˈrefjuːdʒ]\",\"translation\":\"n. 避难；避难所；庇护\\nvt. 给予…庇护；接纳…避难\\nvi. 避难；逃避\",\"audio\":\"refuge.mp3\"},{\"word\":\"refund\",\"pronun\":\"[ˈriːfʌnd; rɪˈfʌnd]\",\"translation\":\"n. 退款；偿还，偿还额\\nvt. 退还；偿还；付还\\nvi. 退还；偿还，归还\",\"audio\":\"refund.mp3\"},{\"word\":\"refusal\",\"pronun\":\"[rɪˈfjuːzl]\",\"translation\":\"n. 拒绝；优先取舍权；推却；取舍权\",\"audio\":\"refusal.mp3\"},{\"word\":\"refute\",\"pronun\":\"[rɪˈfjuːt]\",\"translation\":\"vt. 反驳，驳斥；驳倒\",\"audio\":\"refute.mp3\"},{\"word\":\"regenerate\",\"pronun\":\"[rɪˈdʒenəreɪt]\",\"translation\":\"vt. 使再生；革新\\nadj. 再生的；革新的\\nvi. 再生；革新\",\"audio\":\"regenerate.mp3\"},{\"word\":\"regime\",\"pronun\":\"[reɪˈʒiːm]\",\"translation\":\"n. 政权，政体；社会制度；管理体制\",\"audio\":\"regime.mp3\"},{\"word\":\"regiment\",\"pronun\":\"[ˈredʒɪmənt]\",\"translation\":\"n. 团；大量\\nvt. 把…编成团；严格地管制\",\"audio\":\"regiment.mp3\"},{\"word\":\"region\",\"pronun\":\"[ˈriːdʒən]\",\"translation\":\"n. 地区；范围；部位\",\"audio\":\"region.mp3\"},{\"word\":\"register\",\"pronun\":\"[ˈredʒɪstər]\",\"translation\":\"n. 登记；注册；记录；寄存器；登记簿\\nvt. 登记；注册；记录；挂号邮寄；把…挂号；正式提出\\nvi. 登记；注册；挂号\",\"audio\":\"register.mp3\"},{\"word\":\"regulation\",\"pronun\":\"[ˌreɡjuˈleɪʃn]\",\"translation\":\"n. 管理；规则；校准\\nadj. 规定的；平常的\",\"audio\":\"regulation.mp3\"},{\"word\":\"rehearsal\",\"pronun\":\"[rɪˈhɜːrsl]\",\"translation\":\"n. 排演；预演；练习；训练；叙述\",\"audio\":\"rehearsal.mp3\"},{\"word\":\"reign\",\"pronun\":\"[reɪn]\",\"translation\":\"n. 统治；统治时期；支配\\nvi. 统治；支配；盛行；君临\",\"audio\":\"reign.mp3\"},{\"word\":\"rein\",\"pronun\":\"[reɪn]\",\"translation\":\"n. 缰绳；驾驭；统治；支配\\nvt. 控制；驾驭；勒住\\nvi. 勒住马\",\"audio\":\"rein.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

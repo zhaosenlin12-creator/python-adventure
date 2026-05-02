@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:42.565377+00:00",
+  "request": {
+    "lesson_id": "b5380a7b123c34f952281747f09ff133",
+    "course_id": "37a7adf23aab7533faea85ded4a73fdb",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "37a7adf23aab7533faea85ded4a73fdb",
+    "order": 265,
+    "nextCourseId": "37a7adf23aab7533faea85ded4a73fdb",
+    "courseName": "财务汇算-整数计算",
+    "lessonId": "b5380a7b123c34f952281747f09ff133",
+    "nextLessonId": "62f2670a3aa95764448c8129f395ed5d",
+    "lessonName": "除法累计一",
+    "icon": "data/assets/daziya.com/key-icon_num-chudeng.4d9ad13dfa.png",
+    "description": "数字输入练习 - 除法累计一",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "52bce584198e0866a8d7a13a897f3357",
+        "index": 1,
+        "text": [
+          "100/\\n5/\\n2/\\n5/\\n2"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

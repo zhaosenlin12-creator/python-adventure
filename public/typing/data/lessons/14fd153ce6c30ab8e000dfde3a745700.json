@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.942289+00:00",
+  "request": {
+    "lesson_id": "14fd153ce6c30ab8e000dfde3a745700",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 183,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "14fd153ce6c30ab8e000dfde3a745700",
+    "nextLessonId": "d76bcaed8e51b1c7b82f07283fca9f64",
+    "lessonName": "KET核心词-114",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第114课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5b35edb642674d3c345500f3e46369f3",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"PC\",\"pronun\":\"\",\"translation\":\"abbr. 个人电脑（Personal Computer）；巡逻车（Patrol Car）\",\"audio\":\"PC.mp3\"},{\"word\":\"personal computer\",\"pronun\":\"\",\"translation\":\"n. 个人电脑；个人计算机\",\"audio\":\"personal_computer.mp3\"},{\"word\":\"program\",\"pronun\":\"[ˈproʊɡræm]\",\"translation\":\"n. 程序；计划；大纲\\nvt. 用程序指令；为…制订计划；为…安排节目\\nvi. 编程序；安排节目；设计电脑程式\",\"audio\":\"program.mp3\"},{\"word\":\"save\",\"pronun\":\"[seɪv]\",\"translation\":\"prep. 除...之外\\nn. 救援\\nvi. 节省；挽救\\nvt. 节省；保存；储蓄；解救\",\"audio\":\"save.mp3\"},{\"word\":\"screen\",\"pronun\":\"[skriːn]\",\"translation\":\"n. 屏，幕；屏风\\nvt. 筛；拍摄；放映；掩蔽\\nvi. 拍电影\",\"audio\":\"screen.mp3\"},{\"word\":\"software\",\"pronun\":\"[ˈsɔːftwer]\",\"translation\":\"n. 软件\",\"audio\":\"software.mp3\"},{\"word\":\"surf\",\"pronun\":\"[sɜːrf]\",\"translation\":\"vi. 作冲浪运动\\nvt. 在…冲浪\\nn. 海浪，拍岸浪\",\"audio\":\"surf.mp3\"},{\"word\":\"web\",\"pronun\":\"[web]\",\"translation\":\"n. 网；卷筒纸；蹼；织物；圈套\\nvt. 用网缠住；使中圈套\\nvi. 形成网\",\"audio\":\"web.mp3\"},{\"word\":\"web page\",\"pronun\":\"[ˈweb peɪdʒ]\",\"translation\":\"n. 网页\",\"audio\":\"web_page.mp3\"},{\"word\":\"website\",\"pronun\":\"[ˈwebsaɪt]\",\"translation\":\"n. 网站（全球资讯网的主机站）\",\"audio\":\"website.mp3\"},{\"word\":\"advanced\",\"pronun\":\"[ədˈvænst]\",\"translation\":\"adj. 先进的；高级的；晚期的；年老的\\nv. 前进；增加；上涨（advance的过去式和过去分词形式）\",\"audio\":\"advanced.mp3\"},{\"word\":\"beginner\",\"pronun\":\"[bɪˈɡɪnər]\",\"translation\":\"n. 初学者；新手；创始人\",\"audio\":\"beginner.mp3\"},{\"word\":\"bell\",\"pronun\":\"[bel]\",\"translation\":\"n. 铃，钟；钟声，铃声；钟状物\\nvt. 装钟于，系铃于\\nvi. 鸣钟；成钟状鼓起\",\"audio\":\"bell.mp3\"},{\"word\":\"blackboard\",\"pronun\":\"[ˈblækbɔːrd]\",\"translation\":\"n. 黑板\",\"audio\":\"blackboard.mp3\"},{\"word\":\"board\",\"pronun\":\"[bɔːrd]\",\"translation\":\"n. 董事会；木板；甲板；膳食\\nvt. 上（飞机、车、船等）；用板盖上；给提供膳宿\\nvi. 寄宿\",\"audio\":\"board.mp3\"},{\"word\":\"book\",\"pronun\":\"[bʊk]\",\"translation\":\"n. 书籍；卷；帐簿；名册；工作簿\\nvt. 预订；登记\",\"audio\":\"book.mp3\"},{\"word\":\"bookshelf\",\"pronun\":\"[ˈbʊkʃelf]\",\"translation\":\"n. 书架\",\"audio\":\"bookshelf.mp3\"},{\"word\":\"break\",\"pronun\":\"[breɪk]\",\"translation\":\"vi. 打破；折断；弄坏；削弱\\nvt. （使）破；打破（纪录）；（常指好天气）突变；开始\\nvi. （嗓音）突变；突破；破晓；（价格）突然下跌\\nn. 破裂；间断；（持续一段时间的状况的）改变；间歇\",\"audio\":\"break.mp3\"},{\"word\":\"class\",\"pronun\":\"[klæs]\",\"translation\":\"n. 阶级；班级；种类；班；等级\\nadj. 极好的；很好的，优秀的，出色的\\nvt. 分类；把…分等级；把…归入某等级，把…看作（或分类、归类）；把…编入某一班级\\nvi. 属于…类（或等级），被列为某类（或某级）\",\"audio\":\"class.mp3\"},{\"word\":\"classmate\",\"pronun\":\"[ˈklæsmeɪt]\",\"translation\":\"n. 同班同学\",\"audio\":\"classmate.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

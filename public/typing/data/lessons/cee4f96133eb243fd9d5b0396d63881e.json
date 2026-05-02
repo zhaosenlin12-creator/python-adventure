@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.910012+00:00",
+  "request": {
+    "lesson_id": "cee4f96133eb243fd9d5b0396d63881e",
+    "course_id": "6b7e28f9c51591c604dbd65a0dd6d5c4",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "6b7e28f9c51591c604dbd65a0dd6d5c4",
+    "order": 386,
+    "nextCourseId": "6b7e28f9c51591c604dbd65a0dd6d5c4",
+    "courseName": "百科知识2",
+    "lessonId": "cee4f96133eb243fd9d5b0396d63881e",
+    "nextLessonId": "f5ad43a4bec5aa1fb07d8d53472ef564",
+    "lessonName": "游戏：英文单词",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-duck.b036f0ad8f.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "e8ff9ea613d39409596973e2902eda99",
+        "index": 1,
+        "text": [
+          "fake real guess complicate conflict sword bubble contunue"
+        ],
+        "contentType": 3,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 30,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

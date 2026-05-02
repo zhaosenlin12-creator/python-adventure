@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.207479+00:00",
+  "request": {
+    "lesson_id": "02911d505647e16896c06065b78521a1",
+    "course_id": "9983508511f457b02ddcae4777acab15",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "9983508511f457b02ddcae4777acab15",
+    "order": 137,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "JAVA",
+    "lessonId": "02911d505647e16896c06065b78521a1",
+    "nextLessonId": "5ecf185976554026ba37a20abcc445ff",
+    "lessonName": "选择排序",
+    "icon": "data/assets/daziya.com/key-icon_key-java.09b827febf.png",
+    "description": "Java编程练习 - 选择排序",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "14b6a5cc0f33a86feba91f69eb3413b4",
+        "index": 1,
+        "text": [
+          "import java.util.Arrays;\\n\\nclass Main {\\n    public static void selectionSort(int[] arr) {\\n        int n = arr.length;\\n\\n        for (int i = 0; i < n - 1; i++) {\\n            int minIndex = i;\\n\\n            for (int j = i + 1; j < n; j++) {\\n                if (arr[j] < arr[minIndex]) {\\n                    minIndex = j;\\n                }\\n            }\\n\\n            int temp = arr[i];\\n            arr[i] = arr[minIndex];\\n            arr[minIndex] = temp;\\n        }\\n    }\\n\\n    public static void main(String[] args) {\\n        int[] arr = {64, 25, 12, 22, 11};\\n        System.out.println(\"原数组: \" + Arrays.toString(arr));\\n        selectionSort(arr);\\n        System.out.println(\"排序后: \" + Arrays.toString(arr));\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "java",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

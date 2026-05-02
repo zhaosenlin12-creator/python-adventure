@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.998843+00:00",
+  "request": {
+    "lesson_id": "fff6d0f118f09340870fb1022fe50b07",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 415,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "fff6d0f118f09340870fb1022fe50b07",
+    "nextLessonId": "d80c72bba308e6895091bda98ae0506a",
+    "lessonName": "六级词汇正序版-24",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第24课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "fe3bd64cacf0f45e9309e6cdb346fa6f",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"consensus\",\"pronun\":\"[kənˈsensəs]\",\"translation\":\"n. 一致；舆论；合意\",\"audio\":\"consensus.mp3\"},{\"word\":\"consent\",\"pronun\":\"[kənˈsent]\",\"translation\":\"n. 同意；（意见等的）一致；赞成\\nvi. 同意；赞成；答应\",\"audio\":\"consent.mp3\"},{\"word\":\"consequence\",\"pronun\":\"[ˈkɑːnsɪkwens]\",\"translation\":\"n. 结果；重要性；推论\",\"audio\":\"consequence.mp3\"},{\"word\":\"consequent\",\"pronun\":\"[ˈkɑːnsɪkwent]\",\"translation\":\"n. 结果\\nadj. 随之发生的；作为结果的\",\"audio\":\"consequent.mp3\"},{\"word\":\"consequently\",\"pronun\":\"[ˈkɑːnsɪkwentli]\",\"translation\":\"adv. 因此；结果；所以\",\"audio\":\"consequently.mp3\"},{\"word\":\"conservation\",\"pronun\":\"[ˌkɑːnsərˈveɪʃn]\",\"translation\":\"n. 保存，保持；保护\",\"audio\":\"conservation.mp3\"},{\"word\":\"conservative\",\"pronun\":\"[kənˈsɜːrvətɪv]\",\"translation\":\"n. 保守派，守旧者\\nadj. 保守的\",\"audio\":\"conservative.mp3\"},{\"word\":\"conserve\",\"pronun\":\"[kənˈsɜːrv]\",\"translation\":\"n. 果酱；蜜饯\\nvt. 保存；将…做成蜜饯；使守恒\",\"audio\":\"conserve.mp3\"},{\"word\":\"considerable\",\"pronun\":\"[kənˈsɪdərəbl]\",\"translation\":\"adj. 相当大的；重要的，值得考虑的\",\"audio\":\"considerable.mp3\"},{\"word\":\"considerate\",\"pronun\":\"[kənˈsɪdərət]\",\"translation\":\"adj. 体贴的；体谅的；考虑周到的\",\"audio\":\"considerate.mp3\"},{\"word\":\"consist\",\"pronun\":\"[kənˈsɪst]\",\"translation\":\"vi. 由…组成；在于；符合\",\"audio\":\"consist.mp3\"},{\"word\":\"consistent\",\"pronun\":\"[kənˈsɪstənt]\",\"translation\":\"adj. 始终如一的，一致的；坚持的\",\"audio\":\"consistent.mp3\"},{\"word\":\"console\",\"pronun\":\"[ˈkɑːnsoʊl; kənˈsoʊl]\",\"translation\":\"n. [计] 控制台；[电] 操纵台\\nvt. 安慰；慰藉\",\"audio\":\"console.mp3\"},{\"word\":\"consolidate\",\"pronun\":\"[kənˈsɑːlɪdeɪt]\",\"translation\":\"vt. 巩固，使固定；联合\\nvi. 巩固，加强\",\"audio\":\"consolidate.mp3\"},{\"word\":\"conspicuous\",\"pronun\":\"[kənˈspɪkjuəs]\",\"translation\":\"adj. 显著的；显而易见的\",\"audio\":\"conspicuous.mp3\"},{\"word\":\"constant\",\"pronun\":\"[ˈkɑːnstənt]\",\"translation\":\"n. [数] 常数；恒量\\nadj. 不变的；恒定的；经常的\",\"audio\":\"constant.mp3\"},{\"word\":\"constituent\",\"pronun\":\"[kənˈstɪtʃuənt]\",\"translation\":\"n. 成分；选民；委托人\\nadj. 构成的；选举的\",\"audio\":\"constituent.mp3\"},{\"word\":\"constitute\",\"pronun\":\"[ˈkɑːnstɪtuːt]\",\"translation\":\"vt. 组成，构成；建立；任命\",\"audio\":\"constitute.mp3\"},{\"word\":\"constitution\",\"pronun\":\"[ˌkɑːnstɪˈtuːʃn]\",\"translation\":\"n. 宪法；体制；章程；构造；建立，组成；体格\",\"audio\":\"constitution.mp3\"},{\"word\":\"constrain\",\"pronun\":\"[kənˈstreɪn]\",\"translation\":\"vt. 驱使；强迫；束缚\",\"audio\":\"constrain.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

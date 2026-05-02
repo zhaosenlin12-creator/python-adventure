@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.629960+00:00",
+  "request": {
+    "lesson_id": "f3f0d80ac97d90660225ec372d101d5f",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 343,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "f3f0d80ac97d90660225ec372d101d5f",
+    "nextLessonId": "e2b14b135272671c8dd7c2c0f6d63138",
+    "lessonName": "六级词汇正序版-82",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第82课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f5fee79d581da89480c1e33200a10405",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"precedent\",\"pronun\":\"[ˈpresɪdənt]\",\"translation\":\"n. 先例；前例\\nadj. 在前的；在先的\",\"audio\":\"precedent.mp3\"},{\"word\":\"precious\",\"pronun\":\"[ˈpreʃəs]\",\"translation\":\"adj. 宝贵的；珍贵的；矫揉造作的\",\"audio\":\"precious.mp3\"},{\"word\":\"precipitate\",\"pronun\":\"\",\"translation\":\"\",\"audio\":\"precipitate.mp3\"},{\"word\":\"precise\",\"pronun\":\"[prɪˈsaɪs]\",\"translation\":\"adj. 精确的；明确的；严格的\",\"audio\":\"precise.mp3\"},{\"word\":\"preclude\",\"pronun\":\"[prɪˈkluːd]\",\"translation\":\"vt. 排除；妨碍；阻止\",\"audio\":\"preclude.mp3\"},{\"word\":\"predecessor\",\"pronun\":\"[ˈpredəsesər]\",\"translation\":\"n. 前任，前辈\",\"audio\":\"predecessor.mp3\"},{\"word\":\"predestine\",\"pronun\":\"[priːˈdestɪn]\",\"translation\":\"vt. 注定\",\"audio\":\"predestine.mp3\"},{\"word\":\"predict\",\"pronun\":\"[prɪˈdɪkt]\",\"translation\":\"vi. 作出预言；作预料，作预报\\nvt. 预报，预言；预知\",\"audio\":\"predict.mp3\"},{\"word\":\"predominant\",\"pronun\":\"[prɪˈdɑːmɪnənt]\",\"translation\":\"adj. 主要的；卓越的；支配的；有力的；有影响的\",\"audio\":\"predominant.mp3\"},{\"word\":\"preferable\",\"pronun\":\"[ˈprefrəbl]\",\"translation\":\"adj. 更好的，更可取的；更合意的\",\"audio\":\"preferable.mp3\"},{\"word\":\"preference\",\"pronun\":\"[ˈprefrəns]\",\"translation\":\"n. 偏爱，倾向；优先权\",\"audio\":\"preference.mp3\"},{\"word\":\"pregnancy\",\"pronun\":\"[ˈpreɡnənsi]\",\"translation\":\"n. 怀孕；丰富，多产；意义深长\",\"audio\":\"pregnancy.mp3\"},{\"word\":\"prejudice\",\"pronun\":\"[ˈpredʒudɪs]\",\"translation\":\"n. 偏见；侵害\\nvt. 损害；使有偏见\",\"audio\":\"prejudice.mp3\"},{\"word\":\"preliminary\",\"pronun\":\"[prɪˈlɪmɪneri]\",\"translation\":\"n. 准备；预赛；初步措施\\nadj. 初步的；开始的；预备的\",\"audio\":\"preliminary.mp3\"},{\"word\":\"premature\",\"pronun\":\"[ˌpriːməˈtʃʊrˌˌpriːməˈtʊr]\",\"translation\":\"n. 早产儿；过早发生的事物\\nadj. 早产的；不成熟的；比预期早的\",\"audio\":\"premature.mp3\"},{\"word\":\"premier\",\"pronun\":\"[prɪˈmɪrˌprɪˈmjɪr]\",\"translation\":\"n. 总理，首相\\nadj. 第一的；最初的\",\"audio\":\"premier.mp3\"},{\"word\":\"premise\",\"pronun\":\"[ˈpremɪs]\",\"translation\":\"n. 前提；上述各项；房屋连地基\\nvt. 引出，预先提出；作为…的前提\\nvi. 作出前提\",\"audio\":\"premise.mp3\"},{\"word\":\"premium\",\"pronun\":\"[ˈpriːmiəm]\",\"translation\":\"n. 额外费用；奖金；保险费;(商)溢价\\nadj. 高价的；优质的\",\"audio\":\"premium.mp3\"},{\"word\":\"preparatory\",\"pronun\":\"[prɪˈpærətɔːri]\",\"translation\":\"n. 预科；预备学校\\nadj. 预备的\",\"audio\":\"preparatory.mp3\"},{\"word\":\"prescient\",\"pronun\":\"[ˈpreʃnt]\",\"translation\":\"adj. 预知的；有先见之明的\",\"audio\":\"prescient.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

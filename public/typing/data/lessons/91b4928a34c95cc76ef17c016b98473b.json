@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.360037+00:00",
+  "request": {
+    "lesson_id": "91b4928a34c95cc76ef17c016b98473b",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 51,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "91b4928a34c95cc76ef17c016b98473b",
+    "nextLessonId": "19c009c64c243485b668070ff489c637",
+    "lessonName": "2022年版 PEP-六年级-下册-4",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-六年级-下册 - 第4课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "251f36587c09d173ab9d34ddbabeda05",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"fast\",\"pronun\":\"[fæst]\",\"translation\":\"n. 斋戒；绝食\\nadj. 快速的，迅速的；紧的，稳固的\\nadv. 迅速地；紧紧地；彻底地\\nvi. 禁食，斋戒\",\"audio\":\"fast.mp3\"},{\"word\":\"hotel\",\"pronun\":\"[hoʊˈtel]\",\"translation\":\"n. 旅馆，饭店；客栈\\nvt. 使…在饭店下榻\\nvi. 进行旅馆式办公\",\"audio\":\"hotel.mp3\"},{\"word\":\"fixed\",\"pronun\":\"[fɪkst]\",\"translation\":\"adj. 确定的；固执的；<美口>处境...的；准备好的\\nv. 修理（过去式）\",\"audio\":\"fixed.mp3\"},{\"word\":\"fix\",\"pronun\":\"[fɪks]\",\"translation\":\"n. 困境；方位；贿赂\\nvt. 使固定；修理；安装；准备\\nvi. 固定；注视\",\"audio\":\"fix.mp3\"},{\"word\":\"broken\",\"pronun\":\"[ˈbroʊkən]\",\"translation\":\"v. 折断；打碎；损坏（break的过去分词）\\nadj. 破碎的；坏掉的\",\"audio\":\"broken.mp3\"},{\"word\":\"lamp\",\"pronun\":\"[læmp]\",\"translation\":\"n. 灯；照射器\\nvt. 照亮\\nvi. 发亮\",\"audio\":\"lamp.mp3\"},{\"word\":\"loud\",\"pronun\":\"[laʊd]\",\"translation\":\"adj. 大声的，高声的；不断的；喧吵的\\nadv. 大声地，高声地，响亮地\",\"audio\":\"loud.mp3\"},{\"word\":\"enjoy\",\"pronun\":\"[ɪnˈdʒɔɪ]\",\"translation\":\"vt. 欣赏，享受；喜爱；使过得快活\",\"audio\":\"enjoy.mp3\"},{\"word\":\"went\",\"pronun\":\"[went]\",\"translation\":\"v. 去，过去（go的过去式）\",\"audio\":\"went.mp3\"},{\"word\":\"go\",\"pronun\":\"[ɡoʊ]\",\"translation\":\"n. 去；进行；尝试\\nvi. 走；达到；运转；趋于\\nvt. 忍受；出产；以…打赌\\n[复数 goes 第三人称单数 goes 过去式 went 过去分词 gone 现在分词 going]\",\"audio\":\"go.mp3\"},{\"word\":\"camp\",\"pronun\":\"[kæmp]\",\"translation\":\"n. 露营\\nvt. 扎营；使扎营\\nvi. 露营；扎营\",\"audio\":\"camp.mp3\"},{\"word\":\"fish\",\"pronun\":\"[fɪʃ]\",\"translation\":\"n. 鱼，鱼类\\nvt. 钓鱼，捕鱼；搜寻\\nvi. 捕鱼，钓鱼；用钩捞取\",\"audio\":\"fish.mp3\"},{\"word\":\"rode\",\"pronun\":\"[roʊd]\",\"translation\":\"v. 骑（ride的过去式）\",\"audio\":\"rode.mp3\"},{\"word\":\"ride\",\"pronun\":\"[raɪd]\",\"translation\":\"n. 骑；乘坐；交通工具；可供骑行的路；（乘坐汽车等的）旅行；乘骑；（乘车或骑车的）短途旅程；供乘骑的游乐设施\\nvi. 骑马；乘车；依靠；漂浮\\nvt. 骑；乘；控制；（骑马、自行车等）穿越；搭乘；飘浮\",\"audio\":\"ride.mp3\"},{\"word\":\"hurt\",\"pronun\":\"[hɜːrt]\",\"translation\":\"n. 痛苦；危害；痛苦的原因\\nvt. 使受伤；损害；使疼痛；使痛心\\nadj. 受伤的；痛苦的；受损的\\nvi. 感到疼痛；有坏处；带来痛苦\",\"audio\":\"hurt.mp3\"},{\"word\":\"ate\",\"pronun\":\"[eɪt]\",\"translation\":\"v. 吃（eat的过去式）\",\"audio\":\"ate.mp3\"},{\"word\":\"eat\",\"pronun\":\"[iːt]\",\"translation\":\"vt. 吃，喝；腐蚀；烦扰\\nvi. 进食；腐蚀，侵蚀\",\"audio\":\"eat.mp3\"},{\"word\":\"took\",\"pronun\":\"[tʊk]\",\"translation\":\"v. 拿；取；接受（take的过去式）\",\"audio\":\"took.mp3\"},{\"word\":\"take\",\"pronun\":\"[teɪk]\",\"translation\":\"vi. 拿；获得\\nvt. 拿，取；采取；接受（礼物等）；买，花费；耗费（时间等）\\nn. 捕获量；看法；利益，盈益；（入场券的）售得金额\",\"audio\":\"take.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

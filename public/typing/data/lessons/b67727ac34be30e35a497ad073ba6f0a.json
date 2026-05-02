@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.535150+00:00",
+  "request": {
+    "lesson_id": "b67727ac34be30e35a497ad073ba6f0a",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 666,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "b67727ac34be30e35a497ad073ba6f0a",
+    "nextLessonId": "dbf86821af7767bc878f92c1ff97fead",
+    "lessonName": " 六年级下-3",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点六年级下 - 第3课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8ac3b657aebb49334e478ced179f3541",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"fixed\",\"pronun\":\"[fɪkst]\",\"translation\":\"adj. 确定的；固执的；<美口>处境...的；准备好的\\nv. 修理（过去式）\",\"audio\":\"fixed.mp3\"},{\"word\":\"broken\",\"pronun\":\"[ˈbroʊkən]\",\"translation\":\"v. 折断；打碎；损坏（break的过去分词）\\nadj. 破碎的；坏掉的\",\"audio\":\"broken.mp3\"},{\"word\":\"lamp\",\"pronun\":\"[læmp]\",\"translation\":\"n. 灯；照射器\\nvt. 照亮\\nvi. 发亮\",\"audio\":\"lamp.mp3\"},{\"word\":\"loud\",\"pronun\":\"[laʊd]\",\"translation\":\"adj. 大声的，高声的；不断的；喧吵的\\nadv. 大声地，高声地，响亮地\",\"audio\":\"loud.mp3\"},{\"word\":\"enjoy\",\"pronun\":\"[ɪnˈdʒɔɪ]\",\"translation\":\"vt. 欣赏，享受；喜爱；使过得快活\",\"audio\":\"enjoy.mp3\"},{\"word\":\"stay\",\"pronun\":\"[steɪ]\",\"translation\":\"n. 逗留；停止；支柱\\nvi. 停留；坚持；暂住；停下\\nvt. 坚持；暂住；抑制\",\"audio\":\"stay.mp3\"},{\"word\":\"went\",\"pronun\":\"[went]\",\"translation\":\"v. 去，过去（go的过去式）\",\"audio\":\"went.mp3\"},{\"word\":\"camp\",\"pronun\":\"[kæmp]\",\"translation\":\"n. 露营\\nvt. 扎营；使扎营\\nvi. 露营；扎营\",\"audio\":\"camp.mp3\"},{\"word\":\"went camping\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"went_camping.mp3\"},{\"word\":\"fish\",\"pronun\":\"[fɪʃ]\",\"translation\":\"n. 鱼，鱼类\\nvt. 钓鱼，捕鱼；搜寻\\nvi. 捕鱼，钓鱼；用钩捞取\",\"audio\":\"fish.mp3\"},{\"word\":\"went fishing\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"went_fishing.mp3\"},{\"word\":\"rode\",\"pronun\":\"[roʊd]\",\"translation\":\"v. 骑（ride的过去式）\",\"audio\":\"rode.mp3\"},{\"word\":\"hurt\",\"pronun\":\"[hɜːrt]\",\"translation\":\"n. 痛苦；危害；痛苦的原因\\nvt. 使受伤；损害；使疼痛；使痛心\\nadj. 受伤的；痛苦的；受损的\\nvi. 感到疼痛；有坏处；带来痛苦\",\"audio\":\"hurt.mp3\"},{\"word\":\"ate\",\"pronun\":\"[eɪt]\",\"translation\":\"v. 吃（eat的过去式）\",\"audio\":\"ate.mp3\"},{\"word\":\"took\",\"pronun\":\"[tʊk]\",\"translation\":\"v. 拿；取；接受（take的过去式）\",\"audio\":\"took.mp3\"},{\"word\":\"took pictures\",\"pronun\":\"\",\"translation\":\"vbl.照像,摄影\",\"audio\":\"took_pictures.mp3\"},{\"word\":\"bought\",\"pronun\":\"[bɔːt]\",\"translation\":\"v. 买（buy的过去式和过去分词）\",\"audio\":\"bought.mp3\"},{\"word\":\"gift\",\"pronun\":\"[ɡɪft]\",\"translation\":\"n. 礼物；天赋；赠品\\nvt. 赋予；向…赠送\",\"audio\":\"gift.mp3\"},{\"word\":\"fell\",\"pronun\":\"[fel]\",\"translation\":\"n. [林] 一季所伐的木材；折缝；兽皮\\nv. 掉下；摔倒；下垂；变坏（fall的过去式）\\nadj. 凶猛的；毁灭性的\\nvt. 砍伐；打倒；击倒\",\"audio\":\"fell.mp3\"},{\"word\":\"off\",\"pronun\":\"[ɔːf]\",\"translation\":\"prep. 离开；脱落\\nadv. 切断；走开\\nadj. 远离的；空闲的\",\"audio\":\"off.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

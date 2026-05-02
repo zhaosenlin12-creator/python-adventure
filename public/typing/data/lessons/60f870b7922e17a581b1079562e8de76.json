@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.136177+00:00",
+  "request": {
+    "lesson_id": "60f870b7922e17a581b1079562e8de76",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 444,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "60f870b7922e17a581b1079562e8de76",
+    "nextLessonId": "e51163d5c36f441f9711b7930e6b43c6",
+    "lessonName": "六级词汇正序版-111",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第111课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "63c514c46bb0b6733c0990d8046fe7b2",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"transmit\",\"pronun\":\"[trænzˈmɪtˌtrænsˈmɪt]\",\"translation\":\"vt. 传输；传播；发射；传达；遗传\\nvi. 传输；发射信号\",\"audio\":\"transmit.mp3\"},{\"word\":\"transplant\",\"pronun\":\"[trænsˈplæntˌtrænzˈplænt]\",\"translation\":\"n. 移植；移植器官；被移植物；移居者\\nvt. 移植；迁移；使移居\\nvi. 移植；迁移；移居\",\"audio\":\"transplant.mp3\"},{\"word\":\"transport\",\"pronun\":\"[ˈtrænspɔːrt]\",\"translation\":\"n. 运输；运输机；狂喜；流放犯\\nvt. 运输；流放；使狂喜\",\"audio\":\"transport.mp3\"},{\"word\":\"traverse\",\"pronun\":\"[ˈtrævɜːrs; trəˈvɜːrs]\",\"translation\":\"n. 穿过；横贯；横木\\nvt. 穿过；反对；详细研究；在…来回移动\\nvi. 横越；旋转；来回移动\\nadj. 横贯的\",\"audio\":\"traverse.mp3\"},{\"word\":\"treaty\",\"pronun\":\"[ˈtriːti]\",\"translation\":\"n. 条约，协议；谈判\",\"audio\":\"treaty.mp3\"},{\"word\":\"tremendous\",\"pronun\":\"[trəˈmendəs]\",\"translation\":\"adj. 极大的，巨大的；惊人的；极好的\",\"audio\":\"tremendous.mp3\"},{\"word\":\"trench\",\"pronun\":\"[trentʃ]\",\"translation\":\"n. 沟，沟渠；战壕；堑壕\\nvt. 掘沟\\nvi. 挖战壕；侵害\",\"audio\":\"trench.mp3\"},{\"word\":\"trend\",\"pronun\":\"[trend]\",\"translation\":\"n. 趋势，倾向；走向\\nvt. 使…趋向\\nvi. 趋向，伸向\",\"audio\":\"trend.mp3\"},{\"word\":\"trial\",\"pronun\":\"[ˈtraɪəl]\",\"translation\":\"n. 试验；审讯；努力；磨炼\\nadj. 试验的；审讯的\",\"audio\":\"trial.mp3\"},{\"word\":\"tribe\",\"pronun\":\"[traɪb]\",\"translation\":\"n. 部落；族；宗族；一伙\",\"audio\":\"tribe.mp3\"},{\"word\":\"tribute\",\"pronun\":\"[ˈtrɪbjuːt]\",\"translation\":\"n. 礼物；[税收] 贡物；颂词；（尤指对死者的）致敬，悼念，吊唁礼物\",\"audio\":\"tribute.mp3\"},{\"word\":\"trifle\",\"pronun\":\"[ˈtraɪfl]\",\"translation\":\"n. 琐事；蛋糕；少量\\nvt. 浪费；虚度\\nvi. 开玩笑；闲混；嘲弄\",\"audio\":\"trifle.mp3\"},{\"word\":\"trigger\",\"pronun\":\"[ˈtrɪɡər]\",\"translation\":\"n. 扳机；[电子] 触发器；制滑机\\nvt. 引发，引起；触发\\nvi. 松开扳柄\",\"audio\":\"trigger.mp3\"},{\"word\":\"triple\",\"pronun\":\"[ˈtrɪpl]\",\"translation\":\"n. 三倍数；三个一组\\nadj. 三倍的；三方的\\nvt. 使成三倍\\nvi. 增至三倍\",\"audio\":\"triple.mp3\"},{\"word\":\"triumph\",\"pronun\":\"[ˈtraɪʌmf]\",\"translation\":\"n. 胜利，凯旋；欢欣\\nvi. 获得胜利，成功\",\"audio\":\"triumph.mp3\"},{\"word\":\"trivial\",\"pronun\":\"[ˈtrɪviəl]\",\"translation\":\"adj. 不重要的，琐碎的；琐细的\",\"audio\":\"trivial.mp3\"},{\"word\":\"tub\",\"pronun\":\"[tʌb]\",\"translation\":\"n. 浴盆；桶\\nvt. 把…装入桶；为…洗盆浴\\nvi. 洗盆浴；（衣服等）被放在桶里洗\",\"audio\":\"tub.mp3\"},{\"word\":\"tuck\",\"pronun\":\"[tʌk]\",\"translation\":\"n. 食物；船尾突出部；缝摺；抱膝式跳水；活力；鼓声\\nvt. 卷起；挤进；用某物舒适地裹住；使有褶裥；收拢；大口吃；使隐藏\\nvi. 缝褶裥；缩拢；舒服地裹在里面；大口吃\",\"audio\":\"tuck.mp3\"},{\"word\":\"tug\",\"pronun\":\"[tʌɡ]\",\"translation\":\"n. 拖船；拖曳；苦干\\nvt. 用力拉；较量；用拖船拖\\nvi. 用力拉；竞争；努力做\",\"audio\":\"tug.mp3\"},{\"word\":\"tuition\",\"pronun\":\"[tuˈɪʃn]\",\"translation\":\"n. 学费；讲授\",\"audio\":\"tuition.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

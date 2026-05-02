@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.925708+00:00",
+  "request": {
+    "lesson_id": "eb0d494624e664c4c2be769614760b09",
+    "course_id": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "order": 71,
+    "nextCourseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "courseName": "C++",
+    "lessonId": "eb0d494624e664c4c2be769614760b09",
+    "nextLessonId": "227bbfb4cccf846233502be366248147",
+    "lessonName": "最大值最小值",
+    "icon": "data/assets/daziya.com/key-icon_key-cpp.b136419115.png",
+    "description": "C++编程练习 - 最大值最小值",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4132c4a83940f6b0a7e6017680d2a8e9",
+        "index": 1,
+        "text": [
+          "#include <iostream>\\nusing namespace std;\\n\\nint main() {\\n    int arr[] = {23, 45, 12, 67, 34, 8, 90};\\n    int size = 7;\\n    int maxNum = arr[0], minNum = arr[0];\\n\\n    for (int i = 1; i < size; i++) {\\n        if (arr[i] > maxNum) maxNum = arr[i];\\n        if (arr[i] < minNum) minNum = arr[i];\\n    }\\n\\n    cout << \"最大值: \" << maxNum << endl;\\n    cout << \"最小值: \" << minNum << endl;\\n\\n    return 0;\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "cpp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

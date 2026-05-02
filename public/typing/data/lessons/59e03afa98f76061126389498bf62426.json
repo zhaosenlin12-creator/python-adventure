@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.988746+00:00",
+  "request": {
+    "lesson_id": "59e03afa98f76061126389498bf62426",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 413,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "59e03afa98f76061126389498bf62426",
+    "nextLessonId": "e694159e449ff63511bc3ae083571ecb",
+    "lessonName": "六级词汇正序版-18",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第18课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8bd3bab0f9140461cc740c5e72b01cee",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"clamp\",\"pronun\":\"[klæmp]\",\"translation\":\"n. 夹钳，螺丝钳\\nvt. 夹紧，固定住\",\"audio\":\"clamp.mp3\"},{\"word\":\"clan\",\"pronun\":\"[klæn]\",\"translation\":\"n. 宗族；部落；集团\",\"audio\":\"clan.mp3\"},{\"word\":\"clarity\",\"pronun\":\"[ˈklærəti]\",\"translation\":\"n. 清楚，明晰；透明\",\"audio\":\"clarity.mp3\"},{\"word\":\"clash\",\"pronun\":\"[klæʃ]\",\"translation\":\"n. 冲突，不协调；碰撞声，铿锵声\\nvt. 使碰撞作声\\nvi. 冲突，抵触；砰地相碰撞，发出铿锵声\",\"audio\":\"clash.mp3\"},{\"word\":\"clasp\",\"pronun\":\"[klæsp]\",\"translation\":\"n. 扣子，钩子；握手\\nvt. 紧抱；扣紧；紧紧缠绕\\nvi. 扣住\",\"audio\":\"clasp.mp3\"},{\"word\":\"classic\",\"pronun\":\"[ˈklæsɪk]\",\"translation\":\"n. 名著；经典著作；大艺术家\\nadj. 经典的；古典的，传统的；最优秀的\",\"audio\":\"classic.mp3\"},{\"word\":\"classical\",\"pronun\":\"[ˈklæsɪkl]\",\"translation\":\"n. 古典音乐\\nadj. 古典的；经典的；传统的；第一流的\",\"audio\":\"classical.mp3\"},{\"word\":\"classification\",\"pronun\":\"[ˌklæsɪfɪˈkeɪʃn]\",\"translation\":\"n. 分类；类别，等级\",\"audio\":\"classification.mp3\"},{\"word\":\"clearance\",\"pronun\":\"[ˈklɪrəns]\",\"translation\":\"n. 清除；空隙\",\"audio\":\"clearance.mp3\"},{\"word\":\"clerk\",\"pronun\":\"[klɜːrk]\",\"translation\":\"n. 职员，办事员；店员；书记；记账员；<古>牧师，教士\\nvi. 当销售员，当店员；当职员\",\"audio\":\"clerk.mp3\"},{\"word\":\"client\",\"pronun\":\"[ˈklaɪənt]\",\"translation\":\"n. [经] 客户；顾客；委托人\",\"audio\":\"client.mp3\"},{\"word\":\"cliff\",\"pronun\":\"[klɪf]\",\"translation\":\"n. 悬崖；绝壁\",\"audio\":\"cliff.mp3\"},{\"word\":\"climate\",\"pronun\":\"[ˈklaɪmət]\",\"translation\":\"n. 气候；风气；思潮；风土\",\"audio\":\"climate.mp3\"},{\"word\":\"climax\",\"pronun\":\"[ˈklaɪmæks]\",\"translation\":\"n. 高潮；顶点；层进法；极点\",\"audio\":\"climax.mp3\"},{\"word\":\"cling\",\"pronun\":\"[klɪŋ]\",\"translation\":\"vi. 坚持，墨守；紧贴；附着\",\"audio\":\"cling.mp3\"},{\"word\":\"clip\",\"pronun\":\"[klɪp]\",\"translation\":\"vi. 剪；修剪；剪下报刊上的文章（或新闻、图片等）；迅速行动；用别针别在某物上，用夹子夹在某物上\\nn. （塑料或金属的）夹子；回纹针；修剪；剪报\\nvt. 剪；剪掉；缩短；给…剪毛（或发\",\"audio\":\"clip.mp3\"},{\"word\":\"clockwise\",\"pronun\":\"[ˈklɑːkwaɪz]\",\"translation\":\"adj. 顺时针方向的\\nadv. 顺时针方向地\",\"audio\":\"clockwise.mp3\"},{\"word\":\"clone\",\"pronun\":\"[kloʊn]\",\"translation\":\"n. 克隆；无性系；无性繁殖；靠营养生殖而由母体分离繁殖的植物\\nvt. 无性繁殖，复制\",\"audio\":\"clone.mp3\"},{\"word\":\"closet\",\"pronun\":\"[ˈklɑːzɪt]\",\"translation\":\"n. 壁橱；议事室，密室；小房间\\nadj. 秘密的，私下的；空谈的\\nvt. 把…关在私室中\",\"audio\":\"closet.mp3\"},{\"word\":\"clue\",\"pronun\":\"[kluː]\",\"translation\":\"n. 线索；（故事等的）情节\\nvt. 为…提供线索；为…提供情况\",\"audio\":\"clue.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

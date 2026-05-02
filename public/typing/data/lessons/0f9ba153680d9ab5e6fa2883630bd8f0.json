@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.371842+00:00",
+  "request": {
+    "lesson_id": "0f9ba153680d9ab5e6fa2883630bd8f0",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 185,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "0f9ba153680d9ab5e6fa2883630bd8f0",
+    "nextLessonId": "4592d63aa791a5420dc6276f3385d043",
+    "lessonName": "COUNT计数",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - COUNT计数",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c76f03928491bca45580f9cdd74f06ea",
+        "index": 1,
+        "text": [
+          "-- 统计用户总数\\nSELECT COUNT(*) AS total_users FROM users;\\n\\n-- 统计活跃用户数\\nSELECT COUNT(*) AS active_users\\nFROM users WHERE status = 'active';\\n\\n-- 统计不同状态的用户数\\nSELECT status, COUNT(*) AS count\\nFROM users GROUP BY status;\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

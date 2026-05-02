@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.171169+00:00",
+  "request": {
+    "lesson_id": "49d0e253f1ce3fddd7affffffed05423",
+    "course_id": "31f8b0bfdd5cf12de8374becadc88615",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "31f8b0bfdd5cf12de8374becadc88615",
+    "order": 410,
+    "nextCourseId": "31f8b0bfdd5cf12de8374becadc88615",
+    "courseName": "实战演练-100万以内金额",
+    "lessonId": "49d0e253f1ce3fddd7affffffed05423",
+    "nextLessonId": "badd316c89d4b2e6d50a668a08effad0",
+    "lessonName": "整数元练习",
+    "icon": "data/assets/daziya.com/key-icon_num-dianzan.b4fa52ea4b.png",
+    "description": "数字输入练习 - 整数元练习",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1ef955ebe8072b9e9ba243153d8ad6a6",
+        "index": 1,
+        "text": [
+          "10000000\\n20000000\\n30000000\\n40000000\\n50000000\\n60000000\\n70000000\\n80000000\\n90000000\\n15000000\\n25000000\\n35000000\\n45000000\\n55000000\\n65000000\\n75000000\\n85000000\\n95000000\\n18000000\\n28000000\\n38000000\\n48000000\\n58000000\\n68000000\\n78000000\\n88000000\\n98000000\\n19000000\\n29000000\\n39000000"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

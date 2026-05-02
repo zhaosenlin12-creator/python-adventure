@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.891993+00:00",
+  "request": {
+    "lesson_id": "c946bc22ba3652dbc9182dbcf65ebfe6",
+    "course_id": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "order": 63,
+    "nextCourseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "courseName": "C++",
+    "lessonId": "c946bc22ba3652dbc9182dbcf65ebfe6",
+    "nextLessonId": "741749381e0c0234cd977dd1eb3be68c",
+    "lessonName": "条件判断",
+    "icon": "data/assets/daziya.com/key-icon_key-cpp.b136419115.png",
+    "description": "C++编程练习 - 条件判断",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "cd6a3164708235e36eb317eb4c928136",
+        "index": 1,
+        "text": [
+          "#include <iostream>\\nusing namespace std;\\n\\nint main() {\\n    int number = 15;\\n\\n    if (number > 0) {\\n        cout << number << \" 是正数\" << endl;\\n    } else if (number < 0) {\\n        cout << number << \" 是负数\" << endl;\\n    } else {\\n        cout << \"这个数字是零\" << endl;\\n    }\\n\\n    return 0;\\n}\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "cpp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

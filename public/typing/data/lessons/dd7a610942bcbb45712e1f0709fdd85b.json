@@ -1,0 +1,50 @@
+{
+  "source": "speed-test",
+  "scrapedAt": "2026-05-02T06:08:44.882197+00:00",
+  "request": {
+    "lesson_id": "dd7a610942bcbb45712e1f0709fdd85b",
+    "course_id": "c6bc39f4ba86486e20cc171fab797ea3",
+    "source": "speed-test"
+  },
+  "data": {
+    "level": "速度测试",
+    "courseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "order": 47,
+    "nextCourseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "courseName": "英文速度测试",
+    "lessonId": "dd7a610942bcbb45712e1f0709fdd85b",
+    "nextLessonId": "ee27e6ba509ee47cb7f90168c5ff5d2d",
+    "lessonName": "Day or Night",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4410edc648a247eedbf3819846c39655",
+        "index": 1,
+        "text": [
+          "Up in the sky is the red, hot sun. The sun gives us light and keeps us warm.\\nAt night, we cannot see the sun, but the sun is still there.\\nWhy can't we see the sun at night? The Earth moves around the sun. At night, the sun is on the other side of the Earth.\\nFor example, when it is dark in Canada, the sun is shining in China."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": 13,
+    "categoryTitle": "速度测试"
+  }
+}

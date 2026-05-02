@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.135003+00:00",
+  "request": {
+    "lesson_id": "e51163d5c36f441f9711b7930e6b43c6",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 445,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "e51163d5c36f441f9711b7930e6b43c6",
+    "nextLessonId": "052fc58a86d932ca2d881443935562de",
+    "lessonName": "六级词汇正序版-114",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第114课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2f0831cd40e3525347162d4f12215303",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"vary\",\"pronun\":\"[ˈveri; ˈværi]\",\"translation\":\"vi. 变化；变异；违反\\nvt. 改变；使多样化；变奏\",\"audio\":\"vary.mp3\"},{\"word\":\"vast\",\"pronun\":\"[væst]\",\"translation\":\"n. 浩瀚；广阔无垠的空间\\nadj. 广阔的；巨大的；大量的；巨额的\",\"audio\":\"vast.mp3\"},{\"word\":\"vegetation\",\"pronun\":\"[ˌvedʒəˈteɪʃn]\",\"translation\":\"n. 植被；植物，草木；呆板单调的生活\",\"audio\":\"vegetation.mp3\"},{\"word\":\"vehicle\",\"pronun\":\"[ˈviːəkl; ˈviːhɪkl]\",\"translation\":\"n. [车辆] 车辆；工具；交通工具；运载工具；传播媒介；媒介物\",\"audio\":\"vehicle.mp3\"},{\"word\":\"veil\",\"pronun\":\"[veɪl]\",\"translation\":\"n. 面纱；面罩；遮蔽物；托词\\nvt. 遮蔽；掩饰；以面纱遮掩；用帷幕分隔\\nvi. 蒙上面纱；出现轻度灰雾\",\"audio\":\"veil.mp3\"},{\"word\":\"vein\",\"pronun\":\"[veɪn]\",\"translation\":\"n. 血管；叶脉；[地质] 岩脉；纹理；翅脉；性情\\nvt. 使成脉络；象脉络般分布于\",\"audio\":\"vein.mp3\"},{\"word\":\"velocity\",\"pronun\":\"[vəˈlɑːsəti]\",\"translation\":\"n. 【物】速度\",\"audio\":\"velocity.mp3\"},{\"word\":\"velvet\",\"pronun\":\"[ˈvelvɪt]\",\"translation\":\"adj. 天鹅绒的\\nn. 天鹅绒，丝绒；天鹅绒似的东西\",\"audio\":\"velvet.mp3\"},{\"word\":\"vent\",\"pronun\":\"[vent]\",\"translation\":\"n. （感情的）发泄；出口；通风孔\\nvt. 发泄感情；放出…；给…开孔\\nvi. 放出；（通过排泄等）减轻压力\",\"audio\":\"vent.mp3\"},{\"word\":\"ventilate\",\"pronun\":\"[ˈventɪleɪt]\",\"translation\":\"vt. 使通风；给…装通风设备；宣布\",\"audio\":\"ventilate.mp3\"},{\"word\":\"venture\",\"pronun\":\"[ˈventʃər]\",\"translation\":\"n. 企业；风险；冒险\\nvt. 敢于\\nvi. 冒险；投机\",\"audio\":\"venture.mp3\"},{\"word\":\"verbal\",\"pronun\":\"[ˈvɜːrbl]\",\"translation\":\"n. 动词的非谓语形式\\nadj. 口头的；言语的；动词的；照字面的\",\"audio\":\"verbal.mp3\"},{\"word\":\"verdict\",\"pronun\":\"[ˈvɜːrdɪkt]\",\"translation\":\"n. 结论；裁定\",\"audio\":\"verdict.mp3\"},{\"word\":\"verge\",\"pronun\":\"[vɜːrdʒ]\",\"translation\":\"n. 边缘\\nvi. 濒临，接近；处在边缘\",\"audio\":\"verge.mp3\"},{\"word\":\"verify\",\"pronun\":\"[ˈverɪfaɪ]\",\"translation\":\"vt. 核实；查证\",\"audio\":\"verify.mp3\"},{\"word\":\"versatile\",\"pronun\":\"[ˈvɜːrsətl]\",\"translation\":\"adj. 多才多艺的；通用的，万能的；多面手的\",\"audio\":\"versatile.mp3\"},{\"word\":\"verse\",\"pronun\":\"[vɜːrs]\",\"translation\":\"n. 诗，诗篇；韵文；诗节\\nvi. 作诗\\nvt. 使熟练，使精通\",\"audio\":\"verse.mp3\"},{\"word\":\"version\",\"pronun\":\"[ˈvɜːrʒn]\",\"translation\":\"n. 版本；译文；倒转术\",\"audio\":\"version.mp3\"},{\"word\":\"versus\",\"pronun\":\"[ˈvɜːrsəs]\",\"translation\":\"prep. 对；与...相对；对抗\",\"audio\":\"versus.mp3\"},{\"word\":\"vertical\",\"pronun\":\"[ˈvɜːrtɪkl]\",\"translation\":\"n. 垂直线，垂直面\\nadj. 垂直的，直立的；[解剖] 头顶的，顶点的\",\"audio\":\"vertical.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

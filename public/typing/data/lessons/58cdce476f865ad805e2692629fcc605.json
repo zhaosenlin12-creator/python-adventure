@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:36.259806+00:00",
+  "request": {
+    "lesson_id": "58cdce476f865ad805e2692629fcc605",
+    "course_id": "aaf391ebe3c578672e2811298ce699e2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "aaf391ebe3c578672e2811298ce699e2",
+    "order": 547,
+    "nextCourseId": "aaf391ebe3c578672e2811298ce699e2",
+    "courseName": "词语专项",
+    "lessonId": "58cdce476f865ad805e2692629fcc605",
+    "nextLessonId": "9e4ef2750ce56d28445d4527bbf2588e",
+    "lessonName": "比喻句3",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3b6cdc3a2c0b53eebb198f0f578433be",
+        "index": 1,
+        "text": [
+          "再近些，只见白浪翻滚，形成一堵两丈多高的水墙。"
+        ],
+        "pinyin": "[[\"再\", \"zài\"], [\"近\", \"jìn\"], [\"些\", \"xiē\"], [\"，\", \"\"], [\"只\", \"zhǐ\"], [\"见\", \"jiàn\"], [\"白\", \"bái\"], [\"浪\", \"làng\"], [\"翻\", \"fān\"], [\"滚\", \"gǔn\"], [\"，\", \"\"], [\"形\", \"xíng\"], [\"成\", \"chéng\"], [\"一\", \"yī\"], [\"堵\", \"dǔ\"], [\"两\", \"liǎng\"], [\"丈\", \"zhàng\"], [\"多\", \"duō\"], [\"高\", \"gāo\"], [\"的\", \"de\"], [\"水\", \"shuǐ\"], [\"墙\", \"qiáng\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

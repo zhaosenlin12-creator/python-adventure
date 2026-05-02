@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.314230+00:00",
+  "request": {
+    "lesson_id": "4e2142c237220721661fd72612480e88",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 169,
+    "nextCourseId": "d7df026ff1d81047d30da28a958b118f",
+    "courseName": "golang",
+    "lessonId": "4e2142c237220721661fd72612480e88",
+    "nextLessonId": "44da1ffdd8d698bcd63af570df88ba22",
+    "lessonName": "二分查找",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - 二分查找",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d35d5caf8e67e50d11f7222411c6fc34",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport \"fmt\"\\n\\nfunc binarySearch(arr []int, target int) int {\\n\tleft := 0\\n\tright := len(arr) - 1\\n\\n\tfor left <= right {\\n\t\tmid := left + (right-left)/2\\n\\n\t\tif arr[mid] == target {\\n\t\t\treturn mid\\n\t\t} else if arr[mid] < target {\\n\t\t\tleft = mid + 1\\n\t\t} else {\\n\t\t\tright = mid - 1\\n\t\t}\\n\t}\\n\\n\treturn -1\\n}\\n\\nfunc main() {\\n\tarr := []int{2, 5, 8, 12, 16, 23, 38, 45, 56, 67, 78}\\n\ttarget := 23\\n\\n\tresult := binarySearch(arr, target)\\n\tif result != -1 {\\n\t\tfmt.Printf(\"元素 %d 在索引 %d 处\\n\", target, result)\\n\t} else {\\n\t\tfmt.Printf(\"元素 %d 不在数组中\\n\", target)\\n\t}\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

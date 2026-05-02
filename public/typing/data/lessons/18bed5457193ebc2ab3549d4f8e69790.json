@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.463649+00:00",
+  "request": {
+    "lesson_id": "18bed5457193ebc2ab3549d4f8e69790",
+    "course_id": "2ab9dc27a9350a9ff86633c542967f70",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "order": 52,
+    "nextCourseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "courseName": "下排字母",
+    "lessonId": "18bed5457193ebc2ab3549d4f8e69790",
+    "nextLessonId": "d5e04944ad2d5c18d3ff7eae54bc0ca5",
+    "lessonName": "练习x和.",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-practise-xdot.b54daa86bc.png",
+    "description": "练习x和.",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8a97116754440c951baa7b35a835084f",
+        "index": 2,
+        "text": [
+          "xs xxs xs xxs .l ..l .l ..l xsxs .l.l xxxs ...l sx.l sxs l.l sxsxs l.l.l xxs ..l xx.. x.x. x.sl xxs ..l"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "xs .l",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

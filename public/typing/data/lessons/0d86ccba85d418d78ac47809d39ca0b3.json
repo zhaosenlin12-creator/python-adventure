@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.247897+00:00",
+  "request": {
+    "lesson_id": "0d86ccba85d418d78ac47809d39ca0b3",
+    "course_id": "b121644211bd274795ee5972ddf997a2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "b121644211bd274795ee5972ddf997a2",
+    "order": 326,
+    "nextCourseId": "b121644211bd274795ee5972ddf997a2",
+    "courseName": "小学必备古诗75首（1）",
+    "lessonId": "0d86ccba85d418d78ac47809d39ca0b3",
+    "nextLessonId": "c1c4f70d4c7b3c8c440a97a31c3b89bb",
+    "lessonName": "望庐山瀑布",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e94b95f427cb9ad129d015026191e0e5",
+        "index": 1,
+        "text": [
+          "望庐山瀑布\\n李白\\n日照香炉生紫烟，遥看瀑布挂前川。\\n飞流直下三千尺，疑是银河落九天。"
+        ],
+        "pinyin": "[[\"望\", \"wàng\"], [\"庐\", \"lú\"], [\"山\", \"shān\"], [\"瀑\", \"pù\"], [\"布\", \"bù\"], [\"\\n\", \"\"], [\"李\", \"lǐ\"], [\"白\", \"bái\"], [\"\\n\", \"\"], [\"日\", \"rì\"], [\"照\", \"zhào\"], [\"香\", \"xiāng\"], [\"炉\", \"lú\"], [\"生\", \"shēng\"], [\"紫\", \"zǐ\"], [\"烟\", \"yān\"], [\"，\", \"\"], [\"遥\", \"yáo\"], [\"看\", \"kàn\"], [\"瀑\", \"pù\"], [\"布\", \"bù\"], [\"挂\", \"guà\"], [\"前\", \"qián\"], [\"川\", \"chuān\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"飞\", \"fēi\"], [\"流\", \"liú\"], [\"直\", \"zhí\"], [\"下\", \"xià\"], [\"三\", \"sān\"], [\"千\", \"qiān\"], [\"尺\", \"chǐ\"], [\"，\", \"\"], [\"疑\", \"yí\"], [\"是\", \"shì\"], [\"银\", \"yín\"], [\"河\", \"hé\"], [\"落\", \"luò\"], [\"九\", \"jiǔ\"], [\"天\", \"tiān\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

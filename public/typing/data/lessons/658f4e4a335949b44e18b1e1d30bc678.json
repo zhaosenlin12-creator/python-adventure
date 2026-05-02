@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:44.242917+00:00",
+  "request": {
+    "lesson_id": "658f4e4a335949b44e18b1e1d30bc678",
+    "course_id": "48d2e288e71b74e24ef61b93eddceda0",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "48d2e288e71b74e24ef61b93eddceda0",
+    "order": 192,
+    "nextCourseId": "48d2e288e71b74e24ef61b93eddceda0",
+    "courseName": "名人名言",
+    "lessonId": "658f4e4a335949b44e18b1e1d30bc678",
+    "nextLessonId": "f4366b788bfded002dda2ed3e78c1848",
+    "lessonName": "《流金岁月》",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "《流金岁月》 - 名人名言双拼输入练习",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8d9b87e53dec6d786662bd621bf1dddf",
+        "index": 1,
+        "text": [
+          "流金岁月匆匆过，唯有奋斗不负韶华。成功源于坚持，梦想照亮前行路。珍惜当下，勇敢追梦，让生命绽放光彩。"
+        ],
+        "pinyin": "[[\"流\", \"liú\"], [\"金\", \"jīn\"], [\"岁\", \"suì\"], [\"月\", \"yuè\"], [\"匆\", \"cōng\"], [\"匆\", \"cōng\"], [\"过\", \"guò\"], [\"，\", \"\"], [\"唯\", \"wéi\"], [\"有\", \"yǒu\"], [\"奋\", \"fèn\"], [\"斗\", \"dòu\"], [\"不\", \"bù\"], [\"负\", \"fù\"], [\"韶\", \"sháo\"], [\"华\", \"huá\"], [\"。\", \"\"], [\"成\", \"chéng\"], [\"功\", \"gōng\"], [\"源\", \"yuán\"], [\"于\", \"yú\"], [\"坚\", \"jiān\"], [\"持\", \"chí\"], [\"，\", \"\"], [\"梦\", \"mèng\"], [\"想\", \"xiǎng\"], [\"照\", \"zhào\"], [\"亮\", \"liàng\"], [\"前\", \"qián\"], [\"行\", \"xíng\"], [\"路\", \"lù\"], [\"。\", \"\"], [\"珍\", \"zhēn\"], [\"惜\", \"xī\"], [\"当\", \"dāng\"], [\"下\", \"xià\"], [\"，\", \"\"], [\"勇\", \"yǒng\"], [\"敢\", \"gǎn\"], [\"追\", \"zhuī\"], [\"梦\", \"mèng\"], [\"，\", \"\"], [\"让\", \"ràng\"], [\"生\", \"shēng\"], [\"命\", \"mìng\"], [\"绽\", \"zhàn\"], [\"放\", \"fàng\"], [\"光\", \"guāng\"], [\"彩\", \"cǎi\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 10,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:42.128620+00:00",
+  "request": {
+    "lesson_id": "bf5b9e6a8c316d01d8c3fe99b8b8f3e9",
+    "course_id": "36c10bddab6d2ba030357f873942fd90",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "36c10bddab6d2ba030357f873942fd90",
+    "order": 148,
+    "nextCourseId": "36c10bddab6d2ba030357f873942fd90",
+    "courseName": "进阶练习-整数输入",
+    "lessonId": "bf5b9e6a8c316d01d8c3fe99b8b8f3e9",
+    "nextLessonId": "29d0534652b1b428390d214182b1bfbf",
+    "lessonName": "六位数随机二",
+    "icon": "data/assets/daziya.com/key-icon_num-28.5b8dbeea47.png",
+    "description": "数字输入练习 - 六位数随机二",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "7c3a345a82191d6d77293ea6927a57e5",
+        "index": 1,
+        "text": [
+          "496385\\n517496\\n628517\\n739628\\n841739\\n952841\\n163952\\n274163\\n385274\\n496385"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

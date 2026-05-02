@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.476988+00:00",
+  "request": {
+    "lesson_id": "cbe0658578f8aa655c74972844c1b9f8",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 521,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "cbe0658578f8aa655c74972844c1b9f8",
+    "nextLessonId": "67499af82882c49f3c7212720f7f84d9",
+    "lessonName": "Crossing the Street",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "924ce1d0850da0549270e03b889d847f",
+        "index": 1,
+        "text": [
+          "When Mario came to China for the first time, he couldn't cross the street.\\nThere were too many cars, buses, and bikes.\\nEven at the traffic lights, he was afraid to go.\\nMario was smart. He waited until many other people started to go. Then he put himself in the middle of the crowd.\\nHe safely crossed the street."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

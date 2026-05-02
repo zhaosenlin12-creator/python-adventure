@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.644022+00:00",
+  "request": {
+    "lesson_id": "549769314408338b39d808cbea2682af",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 120,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "549769314408338b39d808cbea2682af",
+    "nextLessonId": "89752e1b1817caeba4efb2ec1daa510a",
+    "lessonName": "KET核心词-62",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第62课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "845341e94f935cda56feccb0a865e53b",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"spot\",\"pronun\":\"[spɑːt]\",\"translation\":\"n. 地点；斑点\\nadj. 现场的；现货买卖的\\nvt. 认出；弄脏；用灯光照射\\nvi. 沾上污渍；满是斑点\\nadv. 准确地；恰好\",\"audio\":\"spot.mp3\"},{\"word\":\"spread\",\"pronun\":\"[spred]\",\"translation\":\"n. 传播；伸展\\nadj. 伸展的\\nvt. 传播，散布；展开；伸展；铺开\\nvi. 传播；伸展\",\"audio\":\"spread.mp3\"},{\"word\":\"square\",\"pronun\":\"[skwer]\",\"translation\":\"n. 平方；广场；正方形\\nadj. 平方的；正方形的；直角的；正直的\\nvt. 使成方形；与…一致\\nvi. 一致；成方形\\nadv. 成直角地\",\"audio\":\"square.mp3\"},{\"word\":\"stadium\",\"pronun\":\"[ˈsteɪdiəm]\",\"translation\":\"n. 体育场；露天大型运动场\",\"audio\":\"stadium.mp3\"},{\"word\":\"staff\",\"pronun\":\"[stæf]\",\"translation\":\"n. 职员；参谋；棒；支撑\\nadj. 职员的；行政工作的\\nvt. 供给人员；给…配备职员\\nvi. 雇用工作人员\",\"audio\":\"staff.mp3\"},{\"word\":\"stage\",\"pronun\":\"[steɪdʒ]\",\"translation\":\"n. 阶段；舞台；戏剧；驿站\\nvt. 举行；上演；筹划\\nvi. 举行；适于上演；乘驿车旅行\",\"audio\":\"stage.mp3\"},{\"word\":\"stair\",\"pronun\":\"[ster]\",\"translation\":\"n. 楼梯，阶梯；梯级\",\"audio\":\"stair.mp3\"},{\"word\":\"stamp\",\"pronun\":\"[stæmp]\",\"translation\":\"n. 邮票；印记；标志；跺脚\\nvt. 铭记；标出；盖章于…；贴邮票于…；用脚踩踏\\nvi. 跺脚；捣碎；毁掉\",\"audio\":\"stamp.mp3\"},{\"word\":\"stand\",\"pronun\":\"[stænd]\",\"translation\":\"n. 站立；立场；看台；停止\\nvi. 站立；位于；停滞\\nvt. 使站立；忍受；抵抗\",\"audio\":\"stand.mp3\"},{\"word\":\"start\",\"pronun\":\"[stɑːrt]\",\"translation\":\"n. 开始；起点\\nvt. 开始；启动\\nvi. 出发\",\"audio\":\"start.mp3\"},{\"word\":\"station\",\"pronun\":\"[ˈsteɪʃn]\",\"translation\":\"n. 车站；驻地；地位；身份\\nvt. 配置；安置；驻扎\",\"audio\":\"station.mp3\"},{\"word\":\"stay\",\"pronun\":\"[steɪ]\",\"translation\":\"n. 逗留；停止；支柱\\nvi. 停留；坚持；暂住；停下\\nvt. 坚持；暂住；抑制\",\"audio\":\"stay.mp3\"},{\"word\":\"steak\",\"pronun\":\"[steɪk]\",\"translation\":\"n. 牛排；肉排；鱼排\",\"audio\":\"steak.mp3\"},{\"word\":\"steal\",\"pronun\":\"[stiːl]\",\"translation\":\"n. 偷窃；便宜货；偷垒；断球\\nvt. 剽窃；偷偷地做；偷窃\\nvi. 窃取；偷偷地行动；偷垒\",\"audio\":\"steal.mp3\"},{\"word\":\"step\",\"pronun\":\"[step]\",\"translation\":\"n. 步，脚步；步骤；步伐；梯级\\nvt. 走，迈步\\nvi. 踏，踩；走\",\"audio\":\"step.mp3\"},{\"word\":\"stick\",\"pronun\":\"[stɪk]\",\"translation\":\"n. 棍；手杖；呆头呆脑的人\\nvi. 坚持；伸出；粘住\\nvt. 刺，戳；伸出；粘贴\",\"audio\":\"stick.mp3\"},{\"word\":\"still\",\"pronun\":\"[stɪl]\",\"translation\":\"conj. 仍然；但是；尽管如此\\nn. 寂静；剧照；蒸馏室\\nadj. 静止的，不动的；寂静的，平静的；不起泡的\\nadv. 仍然；更；静止地\\nvt. 蒸馏；使…静止；使…平静下来\\nvi. 静止；平静；蒸馏\",\"audio\":\"still.mp3\"},{\"word\":\"stir\",\"pronun\":\"[stɜːr]\",\"translation\":\"n. 搅拌；轰动\\nvi. 搅动；传播；走动\\nvt. 搅拌；激起；惹起\",\"audio\":\"stir.mp3\"},{\"word\":\"stomach\",\"pronun\":\"[ˈstʌmək]\",\"translation\":\"n. 胃；腹部；胃口\\nvt. 忍受；吃下\\nvi. 忍受\",\"audio\":\"stomach.mp3\"},{\"word\":\"stomach ache\",\"pronun\":\"[ˈstʌmək eɪk]\",\"translation\":\"n. 胃痛；腹痛\",\"audio\":\"stomach_ache.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

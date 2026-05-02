@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:42.954162+00:00",
+  "request": {
+    "lesson_id": "6ac80a02df7b33480550e8172b386735",
+    "course_id": "95ffe485e13ee14eb48fd57287df112d",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "95ffe485e13ee14eb48fd57287df112d",
+    "order": 357,
+    "nextCourseId": "95ffe485e13ee14eb48fd57287df112d",
+    "courseName": "实战演练-100以内金额",
+    "lessonId": "6ac80a02df7b33480550e8172b386735",
+    "nextLessonId": "eafd3d8daee6547fb16c546ae7aac85c",
+    "lessonName": "高难度三",
+    "icon": "data/assets/daziya.com/key-icon_num-jiangpai.be9813a4d3.png",
+    "description": "数字输入练习 - 高难度三",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3d096e5f5d5daf00cddd17d4c540892e",
+        "index": 1,
+        "text": [
+          "9527\\n8618\\n7719\\n6811\\n5912\\n4123\\n3224\\n2325\\n1426\\n9629\\n8721\\n7822\\n6923\\n5124\\n4225\\n3326\\n2427\\n1528\\n9731\\n8832\\n7933\\n6134\\n5235\\n4336\\n3437\\n2538\\n1639\\n9833\\n8934\\n7135"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

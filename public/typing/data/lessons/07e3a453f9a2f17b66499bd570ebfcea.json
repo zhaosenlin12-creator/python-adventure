@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.646927+00:00",
+  "request": {
+    "lesson_id": "07e3a453f9a2f17b66499bd570ebfcea",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 564,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "07e3a453f9a2f17b66499bd570ebfcea",
+    "nextLessonId": "7aabed71e435b1b2d1036e89dcf0024f",
+    "lessonName": "Protect Mom’s Belly",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "22e88cf17eaa8de80080a4b571e0e1ea",
+        "index": 1,
+        "text": [
+          "Protect Mom's Belly\\nIrene is four years old. She is very smart. She observes everything. Her mom is going to have a baby!\\nOne day, her mom asked her, \"Irene, do you want a baby sister? You are too lonely.\"\\n\"No!\" Irene replied.\\n\"How about a baby brother?\" Mom asked.\\n\"No!\" Irene replied again.\\n\"Why? Wouldn't you like to have a sister or brother to play with?\" Mom asked again.\\n\"I would want to play with my sister or brother! But I just wouldn't want your belly to explode. You will feel so much pain. It's getting so big and round,\" Irene said.\\nMom laughed, \"Don't worry. My belly won't explode.\"\\n\"Why don't we ask Dad to give birth to the baby? He is big and strong,\" Irene asked.\\nDad started laughing too. \"I'm a man and men can't do that.\""
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

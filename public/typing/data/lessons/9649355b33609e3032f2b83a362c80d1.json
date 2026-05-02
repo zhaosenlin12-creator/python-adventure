@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:44.175428+00:00",
+  "request": {
+    "lesson_id": "9649355b33609e3032f2b83a362c80d1",
+    "course_id": "48d2e288e71b74e24ef61b93eddceda0",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "48d2e288e71b74e24ef61b93eddceda0",
+    "order": 173,
+    "nextCourseId": "48d2e288e71b74e24ef61b93eddceda0",
+    "courseName": "名人名言",
+    "lessonId": "9649355b33609e3032f2b83a362c80d1",
+    "nextLessonId": "c9e17b65c6ecfa3a4f262cad593cba92",
+    "lessonName": "陈涉",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "陈涉 - 名人名言双拼输入练习",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f47f3fa25cc6746e88fcd6972181a718",
+        "index": 1,
+        "text": [
+          "陈涉年少时曾感叹，燕雀安知鸿鹄之志。他后来领导起义，说出王侯将相宁有种乎的名言，激励了无数后人奋发向上，改变命运。"
+        ],
+        "pinyin": "[[\"陈\", \"chén\"], [\"涉\", \"shè\"], [\"年\", \"nián\"], [\"少\", \"shào\"], [\"时\", \"shí\"], [\"曾\", \"céng\"], [\"感\", \"gǎn\"], [\"叹\", \"tàn\"], [\"，\", \"\"], [\"燕\", \"yàn\"], [\"雀\", \"què\"], [\"安\", \"ān\"], [\"知\", \"zhī\"], [\"鸿\", \"hóng\"], [\"鹄\", \"hú\"], [\"之\", \"zhī\"], [\"志\", \"zhì\"], [\"。\", \"\"], [\"他\", \"tā\"], [\"后\", \"hòu\"], [\"来\", \"lái\"], [\"领\", \"lǐng\"], [\"导\", \"dǎo\"], [\"起\", \"qǐ\"], [\"义\", \"yì\"], [\"，\", \"\"], [\"说\", \"shuō\"], [\"出\", \"chū\"], [\"王\", \"wáng\"], [\"侯\", \"hóu\"], [\"将\", \"jiàng\"], [\"相\", \"xiàng\"], [\"宁\", \"nìng\"], [\"有\", \"yǒu\"], [\"种\", \"zhǒng\"], [\"乎\", \"hū\"], [\"的\", \"de\"], [\"名\", \"míng\"], [\"言\", \"yán\"], [\"，\", \"\"], [\"激\", \"jī\"], [\"励\", \"lì\"], [\"了\", \"le\"], [\"无\", \"wú\"], [\"数\", \"shù\"], [\"后\", \"hòu\"], [\"人\", \"rén\"], [\"奋\", \"fèn\"], [\"发\", \"fā\"], [\"向\", \"xiàng\"], [\"上\", \"shàng\"], [\"，\", \"\"], [\"改\", \"gǎi\"], [\"变\", \"biàn\"], [\"命\", \"mìng\"], [\"运\", \"yùn\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 10,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

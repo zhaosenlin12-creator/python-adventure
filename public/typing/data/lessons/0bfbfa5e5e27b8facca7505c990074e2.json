@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.216973+00:00",
+  "request": {
+    "lesson_id": "0bfbfa5e5e27b8facca7505c990074e2",
+    "course_id": "9983508511f457b02ddcae4777acab15",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "9983508511f457b02ddcae4777acab15",
+    "order": 141,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "JAVA",
+    "lessonId": "0bfbfa5e5e27b8facca7505c990074e2",
+    "nextLessonId": "d13fb940e889d157f24fe26d3ae9b49b",
+    "lessonName": "斐波那契数列",
+    "icon": "data/assets/daziya.com/key-icon_key-java.09b827febf.png",
+    "description": "Java编程练习 - 斐波那契数列",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e5cc6028c5e4274a2177960fbaeae1d1",
+        "index": 1,
+        "text": [
+          "class Main {\\n    public static int fibonacciRecursive(int n) {\\n        if (n <= 1) return n;\\n        return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);\\n    }\\n\\n    public static int fibonacciIterative(int n) {\\n        if (n <= 1) return n;\\n\\n        int a = 0, b = 1;\\n        for (int i = 2; i <= n; i++) {\\n            int temp = a + b;\\n            a = b;\\n            b = temp;\\n        }\\n        return b;\\n    }\\n\\n    public static void main(String[] args) {\\n        System.out.println(\"斐波那契数列前10项:\");\\n        for (int i = 0; i < 10; i++) {\\n            System.out.print(fibonacciIterative(i) + \" \");\\n        }\\n\\n        System.out.println(\"\\n\\n第10项的值: \" + fibonacciRecursive(10));\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "java",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

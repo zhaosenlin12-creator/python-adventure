@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.432084+00:00",
+  "request": {
+    "lesson_id": "9d833b239f95998bb5191fe16a83b71a",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 200,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "9d833b239f95998bb5191fe16a83b71a",
+    "nextLessonId": "ed2a6af477d770bf7badfa49d78f85ff",
+    "lessonName": "UNION联合查询",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - UNION联合查询",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "119e2368c9310ea74d7b5d8a07b25511",
+        "index": 1,
+        "text": [
+          "-- 合并当前订单和历史订单\\nSELECT order_id, user_id, amount, status, created_at\\nFROM current_orders\\nWHERE status = 'active'\\nUNION\\nSELECT order_id, user_id, amount, status, created_at\\nFROM archived_orders\\nWHERE created_at > '2024-01-01'\\nORDER BY created_at DESC;\\n\\n-- UNION ALL 保留重复记录\\nSELECT product_id, name, 'online' AS source\\nFROM online_products\\nUNION ALL\\nSELECT product_id, name, 'offline' AS source\\nFROM offline_products;\\n\\n-- 查询高价值用户（订单总额>10000或订单数>50）\\nSELECT user_id, SUM(amount) AS total_amount, 'high_value' AS type\\nFROM orders\\nGROUP BY user_id\\nHAVING SUM(amount) > 10000\\nUNION\\nSELECT user_id, COUNT(*) AS order_count, 'frequent' AS type\\nFROM orders\\nGROUP BY user_id\\nHAVING COUNT(*) > 50;\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

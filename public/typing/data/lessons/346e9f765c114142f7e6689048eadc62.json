@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.792558+00:00",
+  "request": {
+    "lesson_id": "346e9f765c114142f7e6689048eadc62",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 152,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "346e9f765c114142f7e6689048eadc62",
+    "nextLessonId": "cc5753a9f724c0ad46fa29089d27eac6",
+    "lessonName": "KET核心词-21",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第21课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "22d233d6e3071b2db4dd9081dbf7ebc3",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"electric\",\"pronun\":\"[ɪˈlektrɪk]\",\"translation\":\"n. 电；电气车辆；带电体\\nadj. 电的；电动的；发电的；导电的；令人震惊的\",\"audio\":\"electric.mp3\"},{\"word\":\"electricity\",\"pronun\":\"[ɪˌlekˈtrɪsəti]\",\"translation\":\"n. 电力；电流；强烈的紧张情绪\",\"audio\":\"electricity.mp3\"},{\"word\":\"elephant\",\"pronun\":\"[ˈelɪfənt]\",\"translation\":\"n. 象；大号图画纸\",\"audio\":\"elephant.mp3\"},{\"word\":\"elevator\",\"pronun\":\"[ˈelɪveɪtər]\",\"translation\":\"n. 电梯；升降机；升降舵；起卸机\",\"audio\":\"elevator.mp3\"},{\"word\":\"else\",\"pronun\":\"[els]\",\"translation\":\"adj. 别的；其他的\\nadv. 其他；否则；另外\",\"audio\":\"else.mp3\"},{\"word\":\"email\",\"pronun\":\"[ˈiːmeɪl]\",\"translation\":\"n. 电子信函\\nvt. 给…发电子邮件\",\"audio\":\"email.mp3\"},{\"word\":\"end\",\"pronun\":\"[end]\",\"translation\":\"n. 结束；目标；尽头；末端；死亡\\nvi. 结束，终止；终结\\nvt. 结束，终止；终结\",\"audio\":\"end.mp3\"},{\"word\":\"engine\",\"pronun\":\"[ˈendʒɪn]\",\"translation\":\"n. 引擎，发动机；机车，火车头；工具\",\"audio\":\"engine.mp3\"},{\"word\":\"engineer\",\"pronun\":\"[ˌendʒɪˈnɪr]\",\"translation\":\"n. 工程师；工兵；火车司机\\nvt. 设计；策划；精明地处理\\nvi. 设计；建造\",\"audio\":\"engineer.mp3\"},{\"word\":\"England\",\"pronun\":\"[ˈɪŋɡlənd]\",\"translation\":\"n. 英格兰\",\"audio\":\"England.mp3\"},{\"word\":\"enjoy\",\"pronun\":\"[ɪnˈdʒɔɪ]\",\"translation\":\"vt. 欣赏，享受；喜爱；使过得快活\",\"audio\":\"enjoy.mp3\"},{\"word\":\"enormous\",\"pronun\":\"[ɪˈnɔːrməs]\",\"translation\":\"adj. 庞大的，巨大的；凶暴的，极恶的\",\"audio\":\"enormous.mp3\"},{\"word\":\"enough\",\"pronun\":\"[ɪˈnʌf]\",\"translation\":\"n. 很多；充足\\nadj. 充足的\\nadv. 足够地，充足地\\nint. 够了！\",\"audio\":\"enough.mp3\"},{\"word\":\"enter\",\"pronun\":\"[ˈentər]\",\"translation\":\"n. [计] 输入；回车\\nvt. 进入；开始；参加\\nvi. 参加，登场；进去\",\"audio\":\"enter.mp3\"},{\"word\":\"entry\",\"pronun\":\"[ˈentri]\",\"translation\":\"n. 进入；入口；条目；登记；报关手续；对土地的侵占\",\"audio\":\"entry.mp3\"},{\"word\":\"envelope\",\"pronun\":\"[ˈenvəloʊp; ˈɑːnvəloʊp]\",\"translation\":\"n. 信封，封皮；包膜；[天] 包层；包迹\",\"audio\":\"envelope.mp3\"},{\"word\":\"eraser\",\"pronun\":\"[ɪˈreɪsər]\",\"translation\":\"n. 橡皮；擦除器；[计] 清除器\",\"audio\":\"eraser.mp3\"},{\"word\":\"especially\",\"pronun\":\"[ɪˈspeʃəli]\",\"translation\":\"adv. 特别；尤其；格外\",\"audio\":\"especially.mp3\"},{\"word\":\"euro\",\"pronun\":\"[ˈjʊroʊ]\",\"translation\":\"n. 欧元（欧盟的统一货币单位）\",\"audio\":\"euro.mp3\"},{\"word\":\"even\",\"pronun\":\"[ˈiːvn]\",\"translation\":\"adj. [数] 偶数的；平坦的；相等的\\nadv. 甚至；即使；还；实际上\\nvt. 使平坦；使相等\\nvi. 变平；变得可比较；成为相等\",\"audio\":\"even.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.231162+00:00",
+  "request": {
+    "lesson_id": "25ca42427fa7e18969dc9870341dcb37",
+    "course_id": "9983508511f457b02ddcae4777acab15",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "9983508511f457b02ddcae4777acab15",
+    "order": 147,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "JAVA",
+    "lessonId": "25ca42427fa7e18969dc9870341dcb37",
+    "nextLessonId": "36d90f5be14e26e4323996fee62143c6",
+    "lessonName": "最大公约数",
+    "icon": "data/assets/daziya.com/key-icon_key-java.09b827febf.png",
+    "description": "Java编程练习 - 最大公约数",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "15c30b1803f325f1cf6d305724ab873c",
+        "index": 1,
+        "text": [
+          "class Main {\\n    public static int gcd(int a, int b) {\\n        while (b != 0) {\\n            int temp = b;\\n            b = a % b;\\n            a = temp;\\n        }\\n        return a;\\n    }\\n\\n    public static int gcdRecursive(int a, int b) {\\n        if (b == 0) return a;\\n        return gcdRecursive(b, a % b);\\n    }\\n\\n    public static int lcm(int a, int b) {\\n        return Math.abs(a * b) / gcd(a, b);\\n    }\\n\\n    public static void main(String[] args) {\\n        int[][] pairs = {{48, 18}, {100, 75}, {17, 19}};\\n\\n        System.out.println(\"最大公约数和最小公倍数:\");\\n        for (int[] pair : pairs) {\\n            int a = pair[0], b = pair[1];\\n            System.out.println(\"GCD(\" + a + \", \" + b + \") = \" + gcd(a, b));\\n            System.out.println(\"LCM(\" + a + \", \" + b + \") = \" + lcm(a, b));\\n            System.out.println();\\n        }\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "java",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

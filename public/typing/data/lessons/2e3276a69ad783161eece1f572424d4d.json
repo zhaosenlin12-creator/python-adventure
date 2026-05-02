@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.419095+00:00",
+  "request": {
+    "lesson_id": "2e3276a69ad783161eece1f572424d4d",
+    "course_id": "d47f40df8593ffe75da61fffca274131",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "d47f40df8593ffe75da61fffca274131",
+    "order": 263,
+    "nextCourseId": "d47f40df8593ffe75da61fffca274131",
+    "courseName": "汉字三级",
+    "lessonId": "2e3276a69ad783161eece1f572424d4d",
+    "nextLessonId": "cd43c60bcde68980cb3eaa1e3ee41843",
+    "lessonName": "《秋夜》 鲁迅",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-3.f410710cf0.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "cd6a7c70ddf4aed6be3dd1d4bcb716d0",
+        "index": 1,
+        "text": [
+          "后窗的玻璃上丁丁地响，还有许多小飞虫乱撞。不多久，几个进来了，许是从窗纸的破孔进来的。他们一进来，又在玻璃的灯罩上撞得丁丁地响。"
+        ],
+        "pinyin": "[[\"后\", \"hòu\"], [\"窗\", \"chuāng\"], [\"的\", \"de\"], [\"玻\", \"bō\"], [\"璃\", \"lí\"], [\"上\", \"shàng\"], [\"丁\", \"dīng\"], [\"丁\", \"dīng\"], [\"地\", \"de\"], [\"响\", \"xiǎng\"], [\"，\", \"\"], [\"还\", \"hái\"], [\"有\", \"yǒu\"], [\"许\", \"xǔ\"], [\"多\", \"duō\"], [\"小\", \"xiǎo\"], [\"飞\", \"fēi\"], [\"虫\", \"chóng\"], [\"乱\", \"luàn\"], [\"撞\", \"zhuàng\"], [\"。\", \"\"], [\"不\", \"bù\"], [\"多\", \"duō\"], [\"久\", \"jiǔ\"], [\"，\", \"\"], [\"几\", \"jǐ\"], [\"个\", \"gè\"], [\"进\", \"jìn\"], [\"来\", \"lái\"], [\"了\", \"le\"], [\"，\", \"\"], [\"许\", \"xǔ\"], [\"是\", \"shì\"], [\"从\", \"cóng\"], [\"窗\", \"chuāng\"], [\"纸\", \"zhǐ\"], [\"的\", \"de\"], [\"破\", \"pò\"], [\"孔\", \"kǒng\"], [\"进\", \"jìn\"], [\"来\", \"lái\"], [\"的\", \"de\"], [\"。\", \"\"], [\"他\", \"tā\"], [\"们\", \"men\"], [\"一\", \"yī\"], [\"进\", \"jìn\"], [\"来\", \"lái\"], [\"，\", \"\"], [\"又\", \"yòu\"], [\"在\", \"zài\"], [\"玻\", \"bō\"], [\"璃\", \"lí\"], [\"的\", \"de\"], [\"灯\", \"dēng\"], [\"罩\", \"zhào\"], [\"上\", \"shàng\"], [\"撞\", \"zhuàng\"], [\"得\", \"de\"], [\"丁\", \"dīng\"], [\"丁\", \"dīng\"], [\"地\", \"de\"], [\"响\", \"xiǎng\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 35,
+        "minSpeed": 27,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

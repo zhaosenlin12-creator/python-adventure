@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.059632+00:00",
+  "request": {
+    "lesson_id": "4481599280ba3163f96c34ee2aec176a",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 103,
+    "nextCourseId": "e13b6bae2990dd699f332f225dd1955b",
+    "courseName": "Javascript",
+    "lessonId": "4481599280ba3163f96c34ee2aec176a",
+    "nextLessonId": "47fcdbf2cafceef6742f7c7c0631c60f",
+    "lessonName": "字符串反转",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - 字符串反转",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9e124681d9cb79b8cc868806150fca4b",
+        "index": 1,
+        "text": [
+          "// 反转字符串\\nconst reverseString = (text) => text.split(\"\").reverse().join(\"\");\\n\\n// 测试字符串反转\\nconst original = \"Hello World\";\\nconst reversed = reverseString(original);\\n\\nconsole.log(`原字符串: ${original}`);\\nconsole.log(`反转后: ${reversed}`);\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

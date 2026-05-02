@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:42.022873+00:00",
+  "request": {
+    "lesson_id": "5bbfe9b7d49f3dde042a6bb563543173",
+    "course_id": "649abfd4e6da035acc06a37a3357166f",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "649abfd4e6da035acc06a37a3357166f",
+    "order": 119,
+    "nextCourseId": "649abfd4e6da035acc06a37a3357166f",
+    "courseName": "基础练习-全键位输入",
+    "lessonId": "5bbfe9b7d49f3dde042a6bb563543173",
+    "nextLessonId": "f19333eb2bbff3d16f926e6813d26fca",
+    "lessonName": "身份证号码练习",
+    "icon": "data/assets/daziya.com/key-icon_num-card.28107afb8c.png",
+    "description": "数字输入练习 - 身份证号码练习",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1d0f1c44d61803884c432cfc0292ee67",
+        "index": 1,
+        "text": [
+          "11010219900101234512"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

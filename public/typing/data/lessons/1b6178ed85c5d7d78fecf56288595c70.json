@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.767532+00:00",
+  "request": {
+    "lesson_id": "1b6178ed85c5d7d78fecf56288595c70",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 366,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "1b6178ed85c5d7d78fecf56288595c70",
+    "nextLessonId": "8b0a8dee15265d464f4de602e6269642",
+    "lessonName": "六级词汇正序版-14",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第14课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a5c48cc4b295dd94ef6997f1033fc806",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"bruise\",\"pronun\":\"[bruːz]\",\"translation\":\"n. 擦伤；挫伤；青肿\\nvt. 使受瘀伤；使受挫伤\\nvi. 擦伤；受伤\",\"audio\":\"bruise.mp3\"},{\"word\":\"brutal\",\"pronun\":\"[ˈbruːt(ə)l]\",\"translation\":\"adj. 残忍的；野蛮的，不讲理的\",\"audio\":\"brutal.mp3\"},{\"word\":\"bubble\",\"pronun\":\"[ˈbʌbl]\",\"translation\":\"n. 气泡，泡沫，泡状物；透明圆形罩，圆形顶\\nvt. 使冒泡；滔滔不绝地说\\nvi. 沸腾，冒泡；发出气泡声\",\"audio\":\"bubble.mp3\"},{\"word\":\"buck\",\"pronun\":\"[bʌk]\",\"translation\":\"n. （美）钱，元；雄鹿；纨绔子弟；年轻的印第安人或黑人\",\"audio\":\"buck.mp3\"},{\"word\":\"bud\",\"pronun\":\"[bʌd]\",\"translation\":\"n. 芽，萌芽；蓓蕾\\nvt. 使发芽\\nvi. 发芽，萌芽\",\"audio\":\"bud.mp3\"},{\"word\":\"budget\",\"pronun\":\"[ˈbʌdʒɪt]\",\"translation\":\"n. 预算，预算费\\nadj. 廉价的\\nvt. 安排，预定；把…编入预算\\nvi. 编预算，做预算\",\"audio\":\"budget.mp3\"},{\"word\":\"bug\",\"pronun\":\"[bʌɡ]\",\"translation\":\"n. 臭虫，小虫；故障；窃听器\\nvt. 烦扰，打扰；装窃听器\\nvi. 装置窃听器；打扰\",\"audio\":\"bug.mp3\"},{\"word\":\"bulk\",\"pronun\":\"[bʌlk]\",\"translation\":\"n. 体积，容量；大多数，大部分；大块\\nvt. 使扩大，使形成大量；使显得重要\",\"audio\":\"bulk.mp3\"},{\"word\":\"bull\",\"pronun\":\"[bʊl]\",\"translation\":\"n. 公牛；看好股市者；粗壮如牛的人；胡说八道；印玺\\nadj. 大型的；公牛似的；雄性的\\nvt. 企图抬高证券价格；吓唬；强力实现\\nvi. 价格上涨；走运；猛推；吹牛\",\"audio\":\"bull.mp3\"},{\"word\":\"bulletin\",\"pronun\":\"[ˈbʊlətɪn]\",\"translation\":\"n. 公告，公报\\nvt. 公布，公告\",\"audio\":\"bulletin.mp3\"},{\"word\":\"bully\",\"pronun\":\"[ˈbʊli]\",\"translation\":\"n. 欺凌弱小者；土霸\\nvt. 欺负；威吓\\nadj. 第一流的；特好的\\nvi. 欺侮人\\nadv. 很；十分\\nint. 好；妙\",\"audio\":\"bully.mp3\"},{\"word\":\"bump\",\"pronun\":\"[bʌmp]\",\"translation\":\"n. 肿块，隆起物；撞击\\nvi. 碰撞，撞击；颠簸而行\\nvt. 碰，撞；颠簸\\nadv. 突然地，猛烈地\",\"audio\":\"bump.mp3\"},{\"word\":\"burden\",\"pronun\":\"[ˈbɜːrdn]\",\"translation\":\"n. 负担；责任；船的载货量\\nvt. 使负担；烦扰；装货于\",\"audio\":\"burden.mp3\"},{\"word\":\"bureaucracy\",\"pronun\":\"[bjʊˈrɑːkrəsi]\",\"translation\":\"n. 官僚主义；官僚机构；官僚政治\",\"audio\":\"bureaucracy.mp3\"},{\"word\":\"burial\",\"pronun\":\"[ˈberiəl]\",\"translation\":\"n. 埋葬；葬礼；弃绝\\nadj. 埋葬的\",\"audio\":\"burial.mp3\"},{\"word\":\"bust\",\"pronun\":\"[bʌst]\",\"translation\":\"n. 破产；半身像；萧条；胸部\\nadj. 破产了的；毁坏了的\\nvt. 使破产；使爆裂；逮捕\\nvi. 破产；爆裂；降低级别\",\"audio\":\"bust.mp3\"},{\"word\":\"buzz\",\"pronun\":\"[bʌz]\",\"translation\":\"n. 嗡嗡声\\nvt. 使嗡嗡叫；暗中散布\\nvi. 作嗡嗡声；东奔西忙\\nn. 网络口碑（消费者或网民对于品牌、产品等广告主在乎的事情在网上发出的各种声音）\",\"audio\":\"buzz.mp3\"},{\"word\":\"bypass\",\"pronun\":\"[ˈbaɪpæs]\",\"translation\":\"n. 旁路；[公路] 支路\\nvt. 绕开；忽视；设旁路；迂回\",\"audio\":\"bypass.mp3\"},{\"word\":\"cabin\",\"pronun\":\"[ˈkæbɪn]\",\"translation\":\"n. 小屋；客舱；船舱\\nvt. 把…关在小屋里\\nvi. 住在小屋里\",\"audio\":\"cabin.mp3\"},{\"word\":\"cabinet\",\"pronun\":\"[ˈkæbɪnət]\",\"translation\":\"n. 内阁；橱柜；展览艺术品的小陈列室\\nadj. 内阁的；私下的，秘密的\",\"audio\":\"cabinet.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

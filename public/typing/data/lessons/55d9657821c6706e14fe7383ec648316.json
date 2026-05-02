@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.721226+00:00",
+  "request": {
+    "lesson_id": "55d9657821c6706e14fe7383ec648316",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 134,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "55d9657821c6706e14fe7383ec648316",
+    "nextLessonId": "3043df4db95e63d0dfc19d32bab4dbc0",
+    "lessonName": "KET核心词-104",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第104课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "63e58eef1746dd81a7f9c45552546a93",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"guitar\",\"pronun\":\"[ɡɪˈtɑːr]\",\"translation\":\"n. 吉他，六弦琴\\nvi. 弹吉他\",\"audio\":\"guitar.mp3\"},{\"word\":\"instrument\",\"pronun\":\"[ˈɪnstrəmənt]\",\"translation\":\"n. 仪器；工具；乐器；手段；器械\",\"audio\":\"instrument.mp3\"},{\"word\":\"jazz\",\"pronun\":\"[dʒæz]\",\"translation\":\"n. 爵士乐，爵士舞；喧闹\\nvi. 奏爵士乐，跳爵士舞；游荡\\nvt. 奏爵士乐；使活泼\\nadj. 爵士乐的；喧吵的\",\"audio\":\"jazz.mp3\"},{\"word\":\"keyboard\",\"pronun\":\"[ˈkiːbɔːrd]\",\"translation\":\"n. 键盘\\nvt. 键入；用键盘式排字机排字\\nvi. 用键盘进行操作；作键盘式排字机排字\",\"audio\":\"keyboard.mp3\"},{\"word\":\"make-up\",\"pronun\":\"[ˈmeɪk ʌp]\",\"translation\":\"n. 化妆品；（美）补考；性格；构造；排版\",\"audio\":\"make-up.mp3\"},{\"word\":\"music\",\"pronun\":\"[ˈmjuːzɪk]\",\"translation\":\"n. 音乐，乐曲\",\"audio\":\"music.mp3\"},{\"word\":\"musician\",\"pronun\":\"[mjuˈzɪʃn]\",\"translation\":\"n. 音乐家\",\"audio\":\"musician.mp3\"},{\"word\":\"mystery\",\"pronun\":\"[ˈmɪstəri]\",\"translation\":\"n. 秘密，谜；神秘，神秘的事物；推理小说，推理剧；常作 mysteries 秘技，秘诀\",\"audio\":\"mystery.mp3\"},{\"word\":\"novel\",\"pronun\":\"[ˈnɑːvl]\",\"translation\":\"adj. 新奇的；异常的\\nn. 小说\",\"audio\":\"novel.mp3\"},{\"word\":\"perform\",\"pronun\":\"[pərˈfɔːrm]\",\"translation\":\"vt. 执行；完成；演奏\\nvi. 执行，机器运转；表演\",\"audio\":\"perform.mp3\"},{\"word\":\"performance\",\"pronun\":\"[pərˈfɔːrməns]\",\"translation\":\"n. 性能；绩效；表演；执行；表现\",\"audio\":\"performance.mp3\"},{\"word\":\"piano\",\"pronun\":\"[piˈænoʊ]\",\"translation\":\"n. 钢琴\",\"audio\":\"piano.mp3\"},{\"word\":\"play\",\"pronun\":\"[pleɪ]\",\"translation\":\"n. 游戏；比赛；剧本\\nvt. 游戏；扮演；演奏；播放；同…比赛\\nvi. 演奏；玩耍；上演；参加比赛\",\"audio\":\"play.mp3\"},{\"word\":\"poem\",\"pronun\":\"[ˈpoʊəm]\",\"translation\":\"n. 诗\",\"audio\":\"poem.mp3\"},{\"word\":\"produce\",\"pronun\":\"[prəˈduːs]\",\"translation\":\"n. 农产品，产品\\nvt. 生产；引起；创作；生育，繁殖\\nvi. 生产，创作\",\"audio\":\"produce.mp3\"},{\"word\":\"role\",\"pronun\":\"[roʊl]\",\"translation\":\"n. 角色；任务\",\"audio\":\"role.mp3\"},{\"word\":\"romantic\",\"pronun\":\"[roʊˈmæntɪk]\",\"translation\":\"n. 浪漫的人\\nadj. 浪漫的；多情的；空想的\\nvt. 使…浪漫化\",\"audio\":\"romantic.mp3\"},{\"word\":\"scene\",\"pronun\":\"[siːn]\",\"translation\":\"n. 场面；情景；景象；事件\",\"audio\":\"scene.mp3\"},{\"word\":\"scenery\",\"pronun\":\"[ˈsiːnəri]\",\"translation\":\"n. 风景；景色；舞台布景\",\"audio\":\"scenery.mp3\"},{\"word\":\"science fiction\",\"pronun\":\"[ˌsaɪəns ˈfɪkʃn]\",\"translation\":\"n. 科幻小说；科幻电影\",\"audio\":\"science_fiction.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

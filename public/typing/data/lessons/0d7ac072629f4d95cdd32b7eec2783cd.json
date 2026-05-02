@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:33.626185+00:00",
+  "request": {
+    "lesson_id": "0d7ac072629f4d95cdd32b7eec2783cd",
+    "course_id": "c34575de8400552068ca0d9da0898f18",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "c34575de8400552068ca0d9da0898f18",
+    "order": 11,
+    "nextCourseId": "c34575de8400552068ca0d9da0898f18",
+    "courseName": "语文课内同步一年级上册",
+    "lessonId": "0d7ac072629f4d95cdd32b7eec2783cd",
+    "nextLessonId": "0172d9efeb23d4b0ce3578d6253fe44a",
+    "lessonName": "过桥",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "33734e1ea866f8dd0505d5463f032b56",
+        "index": 1,
+        "text": [
+          "数学题，一道道，\\n等号就像一座桥。\\n做对了，走过桥，\\n做错了，过不了。\\n想一想，算一算，\\n快快乐乐过了桥。"
+        ],
+        "pinyin": "[[\"数\", \"shù\"], [\"学\", \"xué\"], [\"题\", \"tí\"], [\"，\", \"\"], [\"一\", \"yī\"], [\"道\", \"dào\"], [\"道\", \"dào\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"等\", \"děng\"], [\"号\", \"hào\"], [\"就\", \"jiù\"], [\"像\", \"xiàng\"], [\"一\", \"yī\"], [\"座\", \"zuò\"], [\"桥\", \"qiáo\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"做\", \"zuò\"], [\"对\", \"duì\"], [\"了\", \"le\"], [\"，\", \"\"], [\"走\", \"zǒu\"], [\"过\", \"guò\"], [\"桥\", \"qiáo\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"做\", \"zuò\"], [\"错\", \"cuò\"], [\"了\", \"le\"], [\"，\", \"\"], [\"过\", \"guò\"], [\"不\", \"bù\"], [\"了\", \"liǎo\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"想\", \"xiǎng\"], [\"一\", \"yī\"], [\"想\", \"xiǎng\"], [\"，\", \"\"], [\"算\", \"suàn\"], [\"一\", \"yī\"], [\"算\", \"suàn\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"快\", \"kuài\"], [\"快\", \"kuài\"], [\"乐\", \"lè\"], [\"乐\", \"lè\"], [\"过\", \"guò\"], [\"了\", \"le\"], [\"桥\", \"qiáo\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

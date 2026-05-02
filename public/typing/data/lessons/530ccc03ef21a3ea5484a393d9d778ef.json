@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.131768+00:00",
+  "request": {
+    "lesson_id": "530ccc03ef21a3ea5484a393d9d778ef",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 440,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "530ccc03ef21a3ea5484a393d9d778ef",
+    "nextLessonId": "31fb45d177f9181f9ba124ecf95492c8",
+    "lessonName": "六级词汇正序版-99",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第99课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "167e5f033d1a32fca3e562d15e2ce1c3",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"signal\",\"pronun\":\"[ˈsɪɡnəl]\",\"translation\":\"n. 信号；暗号；导火线\\nadj. 显著的；作为信号的\\nvt. 标志；用信号通知；表示\\nvi. 发信号\",\"audio\":\"signal.mp3\"},{\"word\":\"significant\",\"pronun\":\"[sɪɡˈnɪfɪkənt]\",\"translation\":\"n. 象征；有意义的事物\\nadj. 重大的；有效的；有意义的；值得注意的；意味深长的\",\"audio\":\"significant.mp3\"},{\"word\":\"signify\",\"pronun\":\"[ˈsɪɡnɪfaɪ]\",\"translation\":\"vt. 表示；意味；预示\\nvi. 有重要性；要紧；冒充内行\",\"audio\":\"signify.mp3\"},{\"word\":\"silicon\",\"pronun\":\"[ˈsɪlɪkən]\",\"translation\":\"n. [化学] 硅；硅元素\",\"audio\":\"silicon.mp3\"},{\"word\":\"similar\",\"pronun\":\"[ˈsɪmələr]\",\"translation\":\"n. 类似物\\nadj. 相似的\",\"audio\":\"similar.mp3\"},{\"word\":\"simulate\",\"pronun\":\"[ˈsɪmjuleɪt]\",\"translation\":\"adj. 模仿的；假装的\\nvt. 模仿；假装；冒充\",\"audio\":\"simulate.mp3\"},{\"word\":\"simultaneous\",\"pronun\":\"[ˌsaɪmlˈteɪniəs]\",\"translation\":\"n. 同时译员\\nadj. 同时的；联立的；同时发生的\",\"audio\":\"simultaneous.mp3\"},{\"word\":\"sip\",\"pronun\":\"[sɪp]\",\"translation\":\"n. 抿；小口喝；单列直插式组件\\nvt. 啜\\nvi. 啜饮\",\"audio\":\"sip.mp3\"},{\"word\":\"situated\",\"pronun\":\"[ˈsɪtʃueɪtɪd]\",\"translation\":\"v. 使位于；使处于（situate的过去分词）\\nadj. 位于…的；处于…境遇的\",\"audio\":\"situated.mp3\"},{\"word\":\"skeleton\",\"pronun\":\"[ˈskelɪtn]\",\"translation\":\"n. 骨架，骨骼；纲要；骨瘦如柴的人\\nadj. 骨骼的；骨瘦如柴的；概略的\",\"audio\":\"skeleton.mp3\"},{\"word\":\"skeptical\",\"pronun\":\"[ˈskeptɪkl]\",\"translation\":\"adj. 怀疑的；怀疑论的，不可知论的\",\"audio\":\"skeptical.mp3\"},{\"word\":\"skip\",\"pronun\":\"[skɪp]\",\"translation\":\"n. 跳跃；跳读\\nvt. 跳过；遗漏\\nvi. 跳跃；跳绳；遗漏；跳读\",\"audio\":\"skip.mp3\"},{\"word\":\"skull\",\"pronun\":\"[skʌl]\",\"translation\":\"n. 头盖骨，脑壳\",\"audio\":\"skull.mp3\"},{\"word\":\"slack\",\"pronun\":\"[slæk]\",\"translation\":\"n. 煤末；峡谷\\nadj. 松弛的；疏忽的；不流畅的\\nvt. 放松；使缓慢\\nadv. 马虎地；缓慢地\\nvi. 松懈；减弱\",\"audio\":\"slack.mp3\"},{\"word\":\"slap\",\"pronun\":\"[slæp]\",\"translation\":\"n. 掴；侮辱；掌击；拍打声\\nvt. 拍击；侮辱；掌击；掴…的耳光\\nvi. 掴；拍击\\nadv. 直接地；猛然地；恰好\",\"audio\":\"slap.mp3\"},{\"word\":\"slash\",\"pronun\":\"[slæʃ]\",\"translation\":\"n. 削减；斜线；猛砍；砍痕；沼泽低地\\nvt. 猛砍；鞭打；严厉批评；大幅度裁减或削减\\nvi. 猛砍；严厉批评\",\"audio\":\"slash.mp3\"},{\"word\":\"slaughter\",\"pronun\":\"[ˈslɔːtər]\",\"translation\":\"n. 屠宰，屠杀；杀戮；消灭\\nvt. 屠宰，屠杀；杀戮；使惨败\",\"audio\":\"slaughter.mp3\"},{\"word\":\"slice\",\"pronun\":\"[slaɪs]\",\"translation\":\"n. 薄片；部分；菜刀，火铲\\nvt. 切下；把…分成部分；将…切成薄片\\nvi. 切开；割破\",\"audio\":\"slice.mp3\"},{\"word\":\"slick\",\"pronun\":\"[slɪk]\",\"translation\":\"n. [机] 平滑器；[机] 修光工具；通俗杂志\\nadj. 光滑的；华而不实的；聪明的；熟练的；老套的\\nadv. 灵活地；聪明地\\nvt. 使光滑；使漂亮\\nvi. 打扮整洁\",\"audio\":\"slick.mp3\"},{\"word\":\"slide\",\"pronun\":\"[slaɪd]\",\"translation\":\"n. 滑动；幻灯片；滑梯；雪崩\\nvt. 滑动；使滑动；悄悄地迅速放置\\nvi. 滑动；滑落；不知不觉陷入\",\"audio\":\"slide.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

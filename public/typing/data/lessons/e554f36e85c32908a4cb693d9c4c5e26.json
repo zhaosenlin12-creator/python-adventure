@@ -1,0 +1,50 @@
+{
+  "source": "speed-test",
+  "scrapedAt": "2026-05-02T06:08:44.803825+00:00",
+  "request": {
+    "lesson_id": "e554f36e85c32908a4cb693d9c4c5e26",
+    "course_id": "c6bc39f4ba86486e20cc171fab797ea3",
+    "source": "speed-test"
+  },
+  "data": {
+    "level": "速度测试",
+    "courseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "order": 24,
+    "nextCourseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "courseName": "英文速度测试",
+    "lessonId": "e554f36e85c32908a4cb693d9c4c5e26",
+    "nextLessonId": "52f7ddd3afa86533f8a55a215658f91a",
+    "lessonName": "Tall Tom",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "fd4804dbd1e582dc4820f818e2e3d509",
+        "index": 1,
+        "text": [
+          "Tom is very tall. He is taller than anyone in our class. He is even taller than our teacher.\\nToday, our teacher asked us to play a game called Reach High.\\nTom raised his hand and all the kids jumped as high as possible. They tried to reach Tom's hand.\\nBut no one could do it. He is tall!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": 13,
+    "categoryTitle": "速度测试"
+  }
+}

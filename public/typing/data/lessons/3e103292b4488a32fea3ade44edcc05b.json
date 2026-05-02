@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.115944+00:00",
+  "request": {
+    "lesson_id": "3e103292b4488a32fea3ade44edcc05b",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 112,
+    "nextCourseId": "e13b6bae2990dd699f332f225dd1955b",
+    "courseName": "Javascript",
+    "lessonId": "3e103292b4488a32fea3ade44edcc05b",
+    "nextLessonId": "1c5b2e160d86d02db42bb1381e5d211e",
+    "lessonName": "阶乘计算",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - 阶乘计算",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c01701f3dfb08b65312e040a1028d41c",
+        "index": 1,
+        "text": [
+          "// 计算阶乘的多种方法\\nfunction factorialRecursive(n) {\\n    if (n <= 1) return 1;\\n    return n * factorialRecursive(n - 1);\\n}\\n\\nfunction factorialIterative(n) {\\n    let result = 1;\\n    for (let i = 2; i <= n; i++) {\\n        result *= i;\\n    }\\n    return result;\\n}\\n\\n// 测试阶乘计算\\nconst numbers = [5, 6, 7, 8];\\nconsole.log(\"阶乘计算结果:\");\\nfor (const num of numbers) {\\n    console.log(`${num}! = ${factorialRecursive(num)}`);\\n}\\n\\nconst n = 10;\\nconsole.log(`\\n递归方法: ${n}! = ${factorialRecursive(n)}`);\\nconsole.log(`迭代方法: ${n}! = ${factorialIterative(n)}`);\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

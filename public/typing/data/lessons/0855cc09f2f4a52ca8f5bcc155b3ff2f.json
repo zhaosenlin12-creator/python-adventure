@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.626932+00:00",
+  "request": {
+    "lesson_id": "0855cc09f2f4a52ca8f5bcc155b3ff2f",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 342,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "0855cc09f2f4a52ca8f5bcc155b3ff2f",
+    "nextLessonId": "f3f0d80ac97d90660225ec372d101d5f",
+    "lessonName": "六级词汇正序版-79",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第79课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "dd84b655662748915a099bc3d00c206e",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"perception\",\"pronun\":\"[pərˈsepʃn]\",\"translation\":\"n. 知觉；[生理] 感觉；看法；洞察力；获取\",\"audio\":\"perception.mp3\"},{\"word\":\"perfection\",\"pronun\":\"[pərˈfekʃn]\",\"translation\":\"n. 完善；完美\",\"audio\":\"perfection.mp3\"},{\"word\":\"performance\",\"pronun\":\"[pərˈfɔːrməns]\",\"translation\":\"n. 性能；绩效；表演；执行；表现\",\"audio\":\"performance.mp3\"},{\"word\":\"perfume\",\"pronun\":\"[pərˈfjuːm]\",\"translation\":\"n. 香水；香味\\nvt. 洒香水于…；使…带香味\\nvi. 散发香气\",\"audio\":\"perfume.mp3\"},{\"word\":\"periodic\",\"pronun\":\"[ˌpɪriˈɑːdɪk]\",\"translation\":\"adj. 周期的；定期的\",\"audio\":\"periodic.mp3\"},{\"word\":\"periodical\",\"pronun\":\"[ˌpɪriˈɑːdɪkl]\",\"translation\":\"n. 期刊；杂志\\nadj. [数] 周期的；定期的\",\"audio\":\"periodical.mp3\"},{\"word\":\"perish\",\"pronun\":\"[ˈperɪʃ]\",\"translation\":\"vi. 死亡；毁灭；腐烂；枯萎\\nvt. 使麻木；毁坏\",\"audio\":\"perish.mp3\"},{\"word\":\"permanent\",\"pronun\":\"[ˈpɜːrmənənt]\",\"translation\":\"n. 烫发（等于permanent wave）\\nadj. 永久的，永恒的；不变的\",\"audio\":\"permanent.mp3\"},{\"word\":\"permeate\",\"pronun\":\"[ˈpɜːrmieɪt]\",\"translation\":\"vt. 渗透，透过；弥漫\\nvi. 弥漫；透入；散布\",\"audio\":\"permeate.mp3\"},{\"word\":\"permissible\",\"pronun\":\"[pərˈmɪsəbl]\",\"translation\":\"adj. 可允许的；获得准许的\",\"audio\":\"permissible.mp3\"},{\"word\":\"perpetual\",\"pronun\":\"[pərˈpetʃuəl]\",\"translation\":\"adj. 永久的；不断的；四季开花的；无期限的\",\"audio\":\"perpetual.mp3\"},{\"word\":\"perplex\",\"pronun\":\"[pərˈpleks]\",\"translation\":\"vt. 使困惑，使为难；使复杂化\",\"audio\":\"perplex.mp3\"},{\"word\":\"persist\",\"pronun\":\"[pərˈsɪst]\",\"translation\":\"vi. 存留，坚持；持续，固执\\nvt. 坚持说，反复说\",\"audio\":\"persist.mp3\"},{\"word\":\"persistent\",\"pronun\":\"[pərˈsɪstənt]\",\"translation\":\"adj. 固执的，坚持的；持久稳固的\",\"audio\":\"persistent.mp3\"},{\"word\":\"personality\",\"pronun\":\"[ˌpɜːrsəˈnæləti]\",\"translation\":\"n. 个性；品格；名人\",\"audio\":\"personality.mp3\"},{\"word\":\"perspective\",\"pronun\":\"[pərˈspektɪv]\",\"translation\":\"n. 观点；远景；透视图\\nadj. 透视的\",\"audio\":\"perspective.mp3\"},{\"word\":\"persuasion\",\"pronun\":\"[pərˈsweɪʒn]\",\"translation\":\"n. 说服；说服力；信念；派别\",\"audio\":\"persuasion.mp3\"},{\"word\":\"pessimistic\",\"pronun\":\"[ˌpesɪˈmɪstɪk]\",\"translation\":\"adj. 悲观的，厌世的；悲观主义的\",\"audio\":\"pessimistic.mp3\"},{\"word\":\"pest\",\"pronun\":\"[pest]\",\"translation\":\"n. 害虫；有害之物；讨厌的人\",\"audio\":\"pest.mp3\"},{\"word\":\"petition\",\"pronun\":\"[pəˈtɪʃn]\",\"translation\":\"n. 请愿；请愿书；祈求；[法] 诉状\\nvt. 请愿；请求；恳求\\nvi. 请愿；请求\",\"audio\":\"petition.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

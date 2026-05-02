@@ -1,0 +1,72 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.773651+00:00",
+  "request": {
+    "lesson_id": "fe4ddd92a042c6e073e94b294d8755d7",
+    "course_id": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "order": 63,
+    "nextCourseId": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "courseName": "声母组合练习",
+    "lessonId": "fe4ddd92a042c6e073e94b294d8755d7",
+    "nextLessonId": "1159f7fe279254cef2f65b1525119ed5",
+    "lessonName": "声母组合chi",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "练习声母ch与各韵母的组合",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "418407a2b271b9e97a416f57043a829d",
+        "index": 1,
+        "highlights": [
+          "ch"
+        ],
+        "text": [
+          "请输入按键 [ch]"
+        ],
+        "detail": "学习双拼按键 ch"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "5d817f12bf008aabe4e388d0352c2d39",
+        "index": 2,
+        "text": [
+          "chchchchchchchch"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "ee6648504903bc79c71a628aef0b9e2d",
+        "index": 3,
+        "text": [
+          "春风吹过池塘，吹出层层涟漪。晨光照在茶桌上，茶杯冒着热气。车站旁的长椅上，穿着衬衫的长者正在吃橙子，身旁的小孩捧着画册，出神地望着窗外穿梭的车流。"
+        ],
+        "pinyin": "[[\"春\",\"chūn\"],[\"风\",\"fēng\"],[\"吹\",\"chuī\"],[\"过\",\"guò\"],[\"池\",\"chí\"],[\"塘\",\"táng\"],[\"，\",\"\"],[\"吹\",\"chuī\"],[\"出\",\"chū\"],[\"层\",\"céng\"],[\"层\",\"céng\"],[\"涟\",\"lián\"],[\"漪\",\"yī\"],[\"。\",\"\"],[\"晨\",\"chén\"],[\"光\",\"guāng\"],[\"照\",\"zhào\"],[\"在\",\"zài\"],[\"茶\",\"chá\"],[\"桌\",\"zhuō\"],[\"上\",\"shàng\"],[\"，\",\"\"],[\"茶\",\"chá\"],[\"杯\",\"bēi\"],[\"冒\",\"mào\"],[\"着\",\"zhe\"],[\"热\",\"rè\"],[\"气\",\"qì\"],[\"。\",\"\"],[\"车\",\"chē\"],[\"站\",\"zhàn\"],[\"旁\",\"páng\"],[\"的\",\"de\"],[\"长\",\"cháng\"],[\"椅\",\"yǐ\"],[\"上\",\"shàng\"],[\"，\",\"\"],[\"穿\",\"chuān\"],[\"着\",\"zhe\"],[\"衬\",\"chèn\"],[\"衫\",\"shān\"],[\"的\",\"de\"],[\"长\",\"zhǎng\"],[\"者\",\"zhě\"],[\"正\",\"zhèng\"],[\"在\",\"zài\"],[\"吃\",\"chī\"],[\"橙\",\"chéng\"],[\"子\",\"zi\"],[\"，\",\"\"],[\"身\",\"shēn\"],[\"旁\",\"páng\"],[\"的\",\"de\"],[\"小\",\"xiǎo\"],[\"孩\",\"hái\"],[\"捧\",\"pěng\"],[\"着\",\"zhe\"],[\"画\",\"huà\"],[\"册\",\"cè\"],[\"，\",\"\"],[\"出\",\"chū\"],[\"神\",\"shén\"],[\"地\",\"de\"],[\"望\",\"wàng\"],[\"着\",\"zhe\"],[\"窗\",\"chuāng\"],[\"外\",\"wài\"],[\"穿\",\"chuān\"],[\"梭\",\"suō\"],[\"的\",\"de\"],[\"车\",\"chē\"],[\"流\",\"liú\"],[\"。\",\"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 10,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

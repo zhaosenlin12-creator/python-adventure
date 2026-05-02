@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.717877+00:00",
+  "request": {
+    "lesson_id": "77c03740754740b1af144a4a8f8896b3",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 137,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "77c03740754740b1af144a4a8f8896b3",
+    "nextLessonId": "a46ebc05b6e3bc377ba08906dd30e5a8",
+    "lessonName": "KET核心词-113",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第113课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1fcc872fdae2c1f84248fdfdef8b803f",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"note\",\"pronun\":\"[noʊt]\",\"translation\":\"n. 笔记；音符；票据；注解；纸币；便笺；照会；调子\\nvt. 注意；记录；注解\",\"audio\":\"note.mp3\"},{\"word\":\"phone\",\"pronun\":\"[foʊn]\",\"translation\":\"n. 电话；耳机，听筒\\nvt. 打电话\\nvi. 打电话\",\"audio\":\"phone.mp3\"},{\"word\":\"speak\",\"pronun\":\"[spiːk]\",\"translation\":\"vi. 说话；演讲；表明；陈述\\nvt. 讲话；发言；讲演\",\"audio\":\"speak.mp3\"},{\"word\":\"telephone\",\"pronun\":\"[ˈtelɪfoʊn]\",\"translation\":\"n. （美）电话；电话机；电话耳机\\nvt. 打电话给…\\nvi. 打电话\",\"audio\":\"telephone.mp3\"},{\"word\":\"text message\",\"pronun\":\"[ˈtekst mesɪdʒ]\",\"translation\":\"n. 文本信息；短信息\",\"audio\":\"text_message.mp3\"},{\"word\":\"write\",\"pronun\":\"[raɪt]\",\"translation\":\"vi. 写，写字；写作，作曲；写信\\nvt. 写，书写；写信给；著述\",\"audio\":\"write.mp3\"},{\"word\":\"app\",\"pronun\":\"[æp]\",\"translation\":\"abbr. 应用（Application）；穿甲试验（Armor Piercing Proof）\",\"audio\":\"app.mp3\"},{\"word\":\"blog\",\"pronun\":\"[blɑːɡ]\",\"translation\":\"n. 博客；部落格；网络日志\",\"audio\":\"blog.mp3\"},{\"word\":\"click\",\"pronun\":\"[klɪk]\",\"translation\":\"n. 单击；滴答声\\nvi. 作咔哒声\\nvt. 点击；使发咔哒声\",\"audio\":\"click.mp3\"},{\"word\":\"dot\",\"pronun\":\"[dɑːt]\",\"translation\":\"n. 点，圆点；嫁妆\\nvt. 加小点于\\nvi. 打上点\",\"audio\":\"dot.mp3\"},{\"word\":\"download\",\"pronun\":\"[ˌdaʊnˈloʊd]\",\"translation\":\"vt. [计] 下载\",\"audio\":\"download.mp3\"},{\"word\":\"game\",\"pronun\":\"[ɡeɪm]\",\"translation\":\"n. 游戏；比赛\\nadj. 勇敢的\\nvi. 赌博\",\"audio\":\"game.mp3\"},{\"word\":\"Internet\",\"pronun\":\"[ˈɪntərnet]\",\"translation\":\"n. 因特网\",\"audio\":\"Internet.mp3\"},{\"word\":\"keyboard\",\"pronun\":\"[ˈkiːbɔːrd]\",\"translation\":\"n. 键盘\\nvt. 键入；用键盘式排字机排字\\nvi. 用键盘进行操作；作键盘式排字机排字\",\"audio\":\"keyboard.mp3\"},{\"word\":\"laptop\",\"pronun\":\"[ˈlæptɑːp]\",\"translation\":\"n. 膝上型轻便电脑，笔记本电脑\",\"audio\":\"laptop.mp3\"},{\"word\":\"memory\",\"pronun\":\"[ˈmeməri]\",\"translation\":\"n. 记忆，记忆力；内存，[计] 存储器；回忆\",\"audio\":\"memory.mp3\"},{\"word\":\"mouse\",\"pronun\":\"[maʊs]\",\"translation\":\"n. 鼠标；老鼠；胆小羞怯的人\\nvt. 探出\\nvi. 捕鼠；窥探\",\"audio\":\"mouse.mp3\"},{\"word\":\"net\",\"pronun\":\"[net]\",\"translation\":\"n. 网；网络；净利；实价\\nvi. 编网\\nvt. 得到；净赚；用网捕\\nadj. 纯粹的；净余的\",\"audio\":\"net.mp3\"},{\"word\":\"online\",\"pronun\":\"[ˌɑːnˈlaɪn]\",\"translation\":\"adj. 联机的；在线的\\nadv. 在线地\",\"audio\":\"online.mp3\"},{\"word\":\"password\",\"pronun\":\"[ˈpæswɜːrd]\",\"translation\":\"n. 密码；口令\",\"audio\":\"password.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

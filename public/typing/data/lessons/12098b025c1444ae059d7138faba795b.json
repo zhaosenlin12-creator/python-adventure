@@ -1,0 +1,83 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.597769+00:00",
+  "request": {
+    "lesson_id": "12098b025c1444ae059d7138faba795b",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 17,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "12098b025c1444ae059d7138faba795b",
+    "nextLessonId": "f8247815f1289a0018213c843ed8afa2",
+    "lessonName": "an、en",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母an、en的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "d2b8e9a95d0a70f6e05724863ed30ec9",
+        "index": 1,
+        "highlights": [
+          "an"
+        ],
+        "text": [
+          "请输入按键 [an]"
+        ],
+        "detail": "学习双拼按键 an"
+      },
+      {
+        "chapterId": "d0d67cbd36eb5dff15e0cb859eca8add",
+        "index": 2,
+        "highlights": [
+          "en"
+        ],
+        "text": [
+          "请输入按键 [en]"
+        ],
+        "detail": "学习双拼按键 en"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "59a2bf4f4d98206a458d5675d61a99f8",
+        "index": 3,
+        "text": [
+          "ananananenenenenanenanenanenanen"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "bd7640d50f53bbf84ce650d0341b9385",
+        "index": 4,
+        "text": [
+          "安全门很沉，搬进门真难。\\n认真看新闻，关心人间冷暖。\\n深山有珍禽，晨昏常安闲。"
+        ],
+        "pinyin": "[[\"安\",\"ān\"],[\"全\",\"quán\"],[\"门\",\"mén\"],[\"很\",\"hěn\"],[\"沉\",\"chén\"],[\"，\",\"\"],[\"搬\",\"bān\"],[\"进\",\"jìn\"],[\"门\",\"mén\"],[\"真\",\"zhēn\"],[\"难\",\"nán\"],[\"。\",\"\"],[\"认\",\"rèn\"],[\"真\",\"zhēn\"],[\"看\",\"kàn\"],[\"新\",\"xīn\"],[\"闻\",\"wén\"],[\"，\",\"\"],[\"关\",\"guān\"],[\"心\",\"xīn\"],[\"人\",\"rén\"],[\"间\",\"jiān\"],[\"冷\",\"lěng\"],[\"暖\",\"nuǎn\"],[\"。\",\"\"],[\"深\",\"shēn\"],[\"山\",\"shān\"],[\"有\",\"yǒu\"],[\"珍\",\"zhēn\"],[\"禽\",\"qín\"],[\"，\",\"\"],[\"晨\",\"chén\"],[\"昏\",\"hūn\"],[\"常\",\"cháng\"],[\"安\",\"ān\"],[\"闲\",\"xián\"],[\"。\",\"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

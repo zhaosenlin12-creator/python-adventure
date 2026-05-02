@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.435030+00:00",
+  "request": {
+    "lesson_id": "87f3a3185eda021efc29f80107901ad2",
+    "course_id": "007ef7afc48bb0178d2f077a23bc898d",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "007ef7afc48bb0178d2f077a23bc898d",
+    "order": 371,
+    "nextCourseId": "007ef7afc48bb0178d2f077a23bc898d",
+    "courseName": "小学必备古诗75首（3）",
+    "lessonId": "87f3a3185eda021efc29f80107901ad2",
+    "nextLessonId": "ed1b9d8bb0ed8cf4dcc92dd2e71f8433",
+    "lessonName": "晓出净慈寺送林子方",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "48b508953a2e7bdee61e6ecff469a078",
+        "index": 1,
+        "text": [
+          "晓出净慈寺送林子方\\n杨万里\\n毕竟西湖六月中，风光不与四时同。\\n接天莲叶无穷碧，映曰荷花别样红。"
+        ],
+        "pinyin": "[[\"晓\", \"xiǎo\"], [\"出\", \"chū\"], [\"净\", \"jìng\"], [\"慈\", \"cí\"], [\"寺\", \"sì\"], [\"送\", \"sòng\"], [\"林\", \"lín\"], [\"子\", \"zǐ\"], [\"方\", \"fāng\"], [\"\\n\", \"\"], [\"杨\", \"yáng\"], [\"万\", \"wàn\"], [\"里\", \"lǐ\"], [\"\\n\", \"\"], [\"毕\", \"bì\"], [\"竟\", \"jìng\"], [\"西\", \"xī\"], [\"湖\", \"hú\"], [\"六\", \"liù\"], [\"月\", \"yuè\"], [\"中\", \"zhōng\"], [\"，\", \"\"], [\"风\", \"fēng\"], [\"光\", \"guāng\"], [\"不\", \"bù\"], [\"与\", \"yǔ\"], [\"四\", \"sì\"], [\"时\", \"shí\"], [\"同\", \"tóng\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"接\", \"jiē\"], [\"天\", \"tiān\"], [\"莲\", \"lián\"], [\"叶\", \"yè\"], [\"无\", \"wú\"], [\"穷\", \"qióng\"], [\"碧\", \"bì\"], [\"，\", \"\"], [\"映\", \"yìng\"], [\"曰\", \"\"], [\"荷\", \"hé\"], [\"花\", \"huā\"], [\"别\", \"bié\"], [\"样\", \"yàng\"], [\"红\", \"hóng\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.763138+00:00",
+  "request": {
+    "lesson_id": "cb0240652ecaf3885da002a1415a7f72",
+    "course_id": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "order": 59,
+    "nextCourseId": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "courseName": "声母组合练习",
+    "lessonId": "cb0240652ecaf3885da002a1415a7f72",
+    "nextLessonId": "8d955fd91e214e4b789631abec9a032a",
+    "lessonName": "声母组合j",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "练习声母j与各韵母的组合",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "1e71cd48a952521c85bc3394fec02c70",
+        "index": 1,
+        "highlights": [
+          "j"
+        ],
+        "text": [
+          "请输入按键 [j]"
+        ],
+        "detail": "学习双拼按键 j"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "4610136abf684b3deb73863bc26ee860",
+        "index": 2,
+        "text": [
+          "jjjjjjjj"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "73685dacdc5c83fc4ddcfa768d5566a2",
+        "index": 3,
+        "text": [
+          "姐姐今天在家教小娟剪纸。她们用剪刀剪出金鸡、骏马和洁白的菊花。小娟觉得姐姐的手真巧，决定自己也要加紧练习，将来剪出更精美的作品。"
+        ],
+        "pinyin": "[[\"姐\",\"jiě\"],[\"姐\",\"jiě\"],[\"今\",\"jīn\"],[\"天\",\"tiān\"],[\"在\",\"zài\"],[\"家\",\"jiā\"],[\"教\",\"jiāo\"],[\"小\",\"xiǎo\"],[\"娟\",\"juān\"],[\"剪\",\"jiǎn\"],[\"纸\",\"zhǐ\"],[\"。\",\"\"],[\"她\",\"tā\"],[\"们\",\"men\"],[\"用\",\"yòng\"],[\"剪\",\"jiǎn\"],[\"刀\",\"dāo\"],[\"剪\",\"jiǎn\"],[\"出\",\"chū\"],[\"金\",\"jīn\"],[\"鸡\",\"jī\"],[\"、\",\"\"],[\"骏\",\"jùn\"],[\"马\",\"mǎ\"],[\"和\",\"hé\"],[\"洁\",\"jié\"],[\"白\",\"bái\"],[\"的\",\"de\"],[\"菊\",\"jú\"],[\"花\",\"huā\"],[\"。\",\"\"],[\"小\",\"xiǎo\"],[\"娟\",\"juān\"],[\"觉\",\"jué\"],[\"得\",\"de\"],[\"姐\",\"jiě\"],[\"姐\",\"jiě\"],[\"的\",\"de\"],[\"手\",\"shǒu\"],[\"真\",\"zhēn\"],[\"巧\",\"qiǎo\"],[\"，\",\"\"],[\"决\",\"jué\"],[\"定\",\"dìng\"],[\"自\",\"zì\"],[\"己\",\"jǐ\"],[\"也\",\"yě\"],[\"要\",\"yào\"],[\"加\",\"jiā\"],[\"紧\",\"jǐn\"],[\"练\",\"liàn\"],[\"习\",\"xí\"],[\"，\",\"\"],[\"将\",\"jiāng\"],[\"来\",\"lái\"],[\"剪\",\"jiǎn\"],[\"出\",\"chū\"],[\"更\",\"gèng\"],[\"精\",\"jīng\"],[\"美\",\"měi\"],[\"的\",\"de\"],[\"作\",\"zuò\"],[\"品\",\"pǐn\"],[\"。\",\"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 10,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.382067+00:00",
+  "request": {
+    "lesson_id": "c8e3757ad6560baebf28f5bd563bad8d",
+    "course_id": "30951c93875a1e260feda8cb699005df",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "30951c93875a1e260feda8cb699005df",
+    "order": 497,
+    "nextCourseId": "30951c93875a1e260feda8cb699005df",
+    "courseName": "英语每日故事（初级）32-61",
+    "lessonId": "c8e3757ad6560baebf28f5bd563bad8d",
+    "nextLessonId": "131355213b44843b74548b6b5a27cd51",
+    "lessonName": "Rubber Boots",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "fe37b6232b863d9d7245d55731d31371",
+        "index": 1,
+        "text": [
+          "I love my rubber boots. They keep my feet warm and dry when I go outside and play in the rain. When I get home, I take off my rubber boots before I come into the house. My mom loves my rubber boots too. Why? She does not have to worry about my wet feet on the nice, clean floors. I take them off at the door."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

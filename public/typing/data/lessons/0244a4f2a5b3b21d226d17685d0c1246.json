@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.668544+00:00",
+  "request": {
+    "lesson_id": "0244a4f2a5b3b21d226d17685d0c1246",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 126,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "0244a4f2a5b3b21d226d17685d0c1246",
+    "nextLessonId": "6c93ef05e81ac273ba0c553949a3cf30",
+    "lessonName": "KET核心词-80",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第80课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e4b04530624946e70f1241c36a21c12b",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"cricket\",\"pronun\":\"[ˈkrɪkɪt]\",\"translation\":\"n. 板球，板球运动；蟋蟀\",\"audio\":\"cricket.mp3\"},{\"word\":\"cycling\",\"pronun\":\"[ˈsaɪklɪŋ]\",\"translation\":\"n. 骑脚踏车消遣；骑脚踏车兜风\",\"audio\":\"cycling.mp3\"},{\"word\":\"diving\",\"pronun\":\"[ˈdaɪvɪŋ]\",\"translation\":\"n. 跳水，潜水\\nadj. 跳水的，潜水的\\nv. 跳水（dive的现在分词）；潜水\",\"audio\":\"diving.mp3\"},{\"word\":\"fishing\",\"pronun\":\"[ˈfɪʃɪŋ]\",\"translation\":\"n. 渔业；捕鱼（术）；试探；装配\\nadj. 钓鱼的；钓鱼用的\\nv. 捕鱼（fish的ing形式）\",\"audio\":\"fishing.mp3\"},{\"word\":\"fishing rod\",\"pronun\":\"\",\"translation\":\"n. 钓竿\",\"audio\":\"fishing_rod.mp3\"},{\"word\":\"football\",\"pronun\":\"[ˈfʊtbɔːl]\",\"translation\":\"n. 足球，橄榄球\\nvi. 踢足球；打橄榄球\",\"audio\":\"football.mp3\"},{\"word\":\"glove\",\"pronun\":\"[ɡlʌv]\",\"translation\":\"n. 手套\\nvt. 给…戴手套\",\"audio\":\"glove.mp3\"},{\"word\":\"goal\",\"pronun\":\"[ɡoʊl]\",\"translation\":\"n. 目标；球门，得分数；终点\\nvi. 攻门，射门得分\",\"audio\":\"goal.mp3\"},{\"word\":\"golf\",\"pronun\":\"[ɡɑːlf]\",\"translation\":\"n. 高尔夫球；高尔夫球运动\\nvi. 打高尔夫球\",\"audio\":\"golf.mp3\"},{\"word\":\"helmet\",\"pronun\":\"[ˈhelmɪt]\",\"translation\":\"n. 钢盔，头盔\",\"audio\":\"helmet.mp3\"},{\"word\":\"hockey\",\"pronun\":\"[ˈhɑːki]\",\"translation\":\"n. 曲棍球；冰球\",\"audio\":\"hockey.mp3\"},{\"word\":\"jogging\",\"pronun\":\"[ˈdʒɑːɡɪŋ]\",\"translation\":\"n. 慢跑\\nv. 慢跑（jog的ing形式）；轻推；唤起\",\"audio\":\"jogging.mp3\"},{\"word\":\"marathon\",\"pronun\":\"[ˈmærəθɑːn]\",\"translation\":\"n. 马拉松赛跑；耐力的考验\\nadj. 马拉松式的；有耐力的\\nvi. 参加马拉松赛跑\",\"audio\":\"marathon.mp3\"},{\"word\":\"match\",\"pronun\":\"[mætʃ]\",\"translation\":\"vt. 使比赛；使相配；敌得过，比得上；相配；与…竞争\\nvi. 比赛；匹配；相配，相称；相比\\nn. 比赛，竞赛；匹配；对手；火柴\",\"audio\":\"match.mp3\"},{\"word\":\"net\",\"pronun\":\"[net]\",\"translation\":\"n. 网；网络；净利；实价\\nvi. 编网\\nvt. 得到；净赚；用网捕\\nadj. 纯粹的；净余的\",\"audio\":\"net.mp3\"},{\"word\":\"play\",\"pronun\":\"[pleɪ]\",\"translation\":\"n. 游戏；比赛；剧本\\nvt. 游戏；扮演；演奏；播放；同…比赛\\nvi. 演奏；玩耍；上演；参加比赛\",\"audio\":\"play.mp3\"},{\"word\":\"player\",\"pronun\":\"[ˈpleɪər]\",\"translation\":\"n. 运动员，比赛者；游戏者，做游戏的人；演奏者，表演者；演员；播放器\",\"audio\":\"player.mp3\"},{\"word\":\"pool\",\"pronun\":\"[puːl]\",\"translation\":\"n. 联营；撞球；水塘；共同资金\\nvt. 合伙经营\\nvi. 联营，合伙经营\",\"audio\":\"pool.mp3\"},{\"word\":\"race\",\"pronun\":\"[reɪs]\",\"translation\":\"n. 属，种；种族，人种；家庭，门第\\nvt. 使参加比赛；和…竞赛；使急走，使全速行进\\nvi. 比速度，参加竞赛；全速行进\",\"audio\":\"race.mp3\"},{\"word\":\"racket\",\"pronun\":\"[ˈrækɪt]\",\"translation\":\"n. 球拍；吵闹，喧闹\\nvt. 过着花天酒地的生活\\nvi. 过着花天酒地的生活\",\"audio\":\"racket.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

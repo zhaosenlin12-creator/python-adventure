@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.903591+00:00",
+  "request": {
+    "lesson_id": "9d539941199b22cd2be88e68a2831574",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 395,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "9d539941199b22cd2be88e68a2831574",
+    "nextLessonId": "1376dd0096101f09b062fe178abcc6ac",
+    "lessonName": "六级词汇正序版-101",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第101课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "fdb021032382913de3eb3ee23994661a",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"solitary\",\"pronun\":\"[ˈsɑːləteri]\",\"translation\":\"n. 独居者；隐士\\nadj. 孤独的；独居的\",\"audio\":\"solitary.mp3\"},{\"word\":\"solo\",\"pronun\":\"[ˈsoʊloʊ]\",\"translation\":\"n. 独奏；独唱；独奏曲\\nadj. 独奏的；独唱的；单独的\\nvt. 单人攀登；单独驾\\nvi. 单独表演；放单飞\\nadv. 单独地\",\"audio\":\"solo.mp3\"},{\"word\":\"soluble\",\"pronun\":\"[ˈsɑːljəbl]\",\"translation\":\"adj. [化学] 可溶的，可溶解的；可解决的\",\"audio\":\"soluble.mp3\"},{\"word\":\"solution\",\"pronun\":\"[səˈluːʃn]\",\"translation\":\"n. 解决方案；溶液；溶解；解答\",\"audio\":\"solution.mp3\"},{\"word\":\"sophisticated\",\"pronun\":\"[səˈfɪstɪkeɪtɪd]\",\"translation\":\"adj. 复杂的；精致的；久经世故的；富有经验的\\nv. 使变得世故；使迷惑；篡改（sophisticate的过去分词形式）\",\"audio\":\"sophisticated.mp3\"},{\"word\":\"sour\",\"pronun\":\"[ˈsaʊər]\",\"translation\":\"n. 酸味；苦事\\nadj. 酸的；发酵的；刺耳的；酸臭的；讨厌的\\nvt. 使变酸；使失望\\nvi. 发酵；变酸；厌烦\",\"audio\":\"sour.mp3\"},{\"word\":\"sovereign\",\"pronun\":\"\",\"translation\":\"\",\"audio\":\"sovereign.mp3\"},{\"word\":\"spacious\",\"pronun\":\"[ˈspeɪʃəs]\",\"translation\":\"adj. 宽敞的，广阔的；无边无际的\",\"audio\":\"spacious.mp3\"},{\"word\":\"span\",\"pronun\":\"[spæn]\",\"translation\":\"n. 跨度，跨距；范围\\nvt. 跨越；持续；以手指测量\",\"audio\":\"span.mp3\"},{\"word\":\"sparkle\",\"pronun\":\"[ˈspɑːrkl]\",\"translation\":\"n. 闪耀；火花；活力\\nvt. 使闪耀；使发光\\nvi. 闪耀；发泡；活跃\",\"audio\":\"sparkle.mp3\"},{\"word\":\"specialist\",\"pronun\":\"[ˈspeʃəlɪst]\",\"translation\":\"n. 专家；专门医师\\nadj. 专家的；专业的\",\"audio\":\"specialist.mp3\"},{\"word\":\"specialize\",\"pronun\":\"[ˈspeʃəlaɪz]\",\"translation\":\"vi. 专门从事；详细说明；特化\\nvt. 使专门化；使适应特殊情况；详细说明\",\"audio\":\"specialize.mp3\"},{\"word\":\"specialty\",\"pronun\":\"[ˈspeʃəlti]\",\"translation\":\"n. 专业，专长；特产；特性；招牌菜\\nadj. 特色的；专门的；独立的\",\"audio\":\"specialty.mp3\"},{\"word\":\"species\",\"pronun\":\"[ˈspiːʃiːz]\",\"translation\":\"n. [生物] 物种；种类\\nadj. 物种上的\",\"audio\":\"species.mp3\"},{\"word\":\"specific\",\"pronun\":\"[spəˈsɪfɪk]\",\"translation\":\"n. 特性；细节；特效药\\nadj. 特殊的，特定的；明确的；详细的；[药] 具有特效的\",\"audio\":\"specific.mp3\"},{\"word\":\"specification\",\"pronun\":\"[ˌspesɪfɪˈkeɪʃn]\",\"translation\":\"n. 规格；说明书；详述\",\"audio\":\"specification.mp3\"},{\"word\":\"spectacle\",\"pronun\":\"[ˈspektəkl]\",\"translation\":\"n. 景象；场面；奇观；壮观；公开展示；表相，假相 n.（复）眼镜\",\"audio\":\"spectacle.mp3\"},{\"word\":\"spectator\",\"pronun\":\"[ˈspekteɪtər]\",\"translation\":\"n. 观众；旁观者\",\"audio\":\"spectator.mp3\"},{\"word\":\"spectrum\",\"pronun\":\"[ˈspektrəm]\",\"translation\":\"n. 光谱；频谱；范围；余象\",\"audio\":\"spectrum.mp3\"},{\"word\":\"speculate\",\"pronun\":\"[ˈspekjuleɪt]\",\"translation\":\"vi. 推测；投机；思索\\nvt. 推断\",\"audio\":\"speculate.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

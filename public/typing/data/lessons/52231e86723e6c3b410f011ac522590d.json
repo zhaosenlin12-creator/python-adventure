@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.407078+00:00",
+  "request": {
+    "lesson_id": "52231e86723e6c3b410f011ac522590d",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 69,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "52231e86723e6c3b410f011ac522590d",
+    "nextLessonId": "5ba202c1dd51858fb189449a7980921f",
+    "lessonName": "KET核心词-46",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第46课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f561048734b0df406a0ad1b67c2c6130",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"own\",\"pronun\":\"[oʊn]\",\"translation\":\"vt. 拥有；承认\\nvi. 承认\\nadj. 自己的；特有的\\nn. 自己的\",\"audio\":\"own.mp3\"},{\"word\":\"pack\",\"pronun\":\"[pæk]\",\"translation\":\"n. 包装；一群；背包；包裹；一副\\nvt. 包装；压紧；捆扎；挑选；塞满\\nvi. 挤；包装货物；被包装；群集\",\"audio\":\"pack.mp3\"},{\"word\":\"packet\",\"pronun\":\"[ˈpækɪt]\",\"translation\":\"n. 数据包，信息包；小包，小捆\\nvt. 包装，打包\",\"audio\":\"packet.mp3\"},{\"word\":\"page\",\"pronun\":\"[peɪdʒ]\",\"translation\":\"n. 页；记录；大事件，时期；男侍者\\nvt. 给…标页码\\nvi. 翻书页，浏览\",\"audio\":\"page.mp3\"},{\"word\":\"pain\",\"pronun\":\"[peɪn]\",\"translation\":\"n. 疼痛；努力\\nvt. 使…痛苦；使…烦恼\\nvi. 感到疼痛；引起疼痛\",\"audio\":\"pain.mp3\"},{\"word\":\"paint\",\"pronun\":\"[peɪnt]\",\"translation\":\"vt. 油漆；绘画；装饰；涂色于；描绘；（用语言，文字等）描写；擦脂粉等\\nvi. 油漆；描绘；绘画；化妆\\nn. 油漆；颜料，涂料；绘画作品；胭脂等化妆品；色彩，装饰\",\"audio\":\"paint.mp3\"},{\"word\":\"pair\",\"pronun\":\"[per]\",\"translation\":\"n. 一对，一双，一副\\nvt. 把…组成一对\",\"audio\":\"pair.mp3\"},{\"word\":\"palace\",\"pronun\":\"[ˈpæləs]\",\"translation\":\"n. 宫殿；宅邸；豪华住宅\",\"audio\":\"palace.mp3\"},{\"word\":\"panda\",\"pronun\":\"[ˈpændə]\",\"translation\":\"n. 熊猫；猫熊\",\"audio\":\"panda.mp3\"},{\"word\":\"pants\",\"pronun\":\"[pænts]\",\"translation\":\"n. 裤子\",\"audio\":\"pants.mp3\"},{\"word\":\"paper\",\"pronun\":\"[ˈpeɪpər]\",\"translation\":\"n. 纸；论文；文件；报纸\\nadj. 纸做的\\nvt. 用纸糊；用纸包装\\nvi. 贴糊墙纸；发交通违章传票\",\"audio\":\"paper.mp3\"},{\"word\":\"paragraph\",\"pronun\":\"[ˈpærəɡræf]\",\"translation\":\"n. 段落；短评；段落符号\\nvt. 将…分段\",\"audio\":\"paragraph.mp3\"},{\"word\":\"pardon\",\"pronun\":\"[ˈpɑːrd(ə)n]\",\"translation\":\"n. 原谅；赦免；宽恕\\nvt. 原谅；赦免；宽恕\",\"audio\":\"pardon.mp3\"},{\"word\":\"parent\",\"pronun\":\"[ˈperənt]\",\"translation\":\"n. 父亲（或母亲）；父母亲；根源\",\"audio\":\"parent.mp3\"},{\"word\":\"park\",\"pronun\":\"[pɑːrk]\",\"translation\":\"n. 公园；[交] 停车场\\nvt. 停放；放置；寄存\\nvi. 停放车辆\",\"audio\":\"park.mp3\"},{\"word\":\"parrot\",\"pronun\":\"[ˈpærət]\",\"translation\":\"n. 鹦鹉；学舌者，应声虫；机械模仿别人的人\\nvt. 机械地模仿\",\"audio\":\"parrot.mp3\"},{\"word\":\"part\",\"pronun\":\"[pɑːrt]\",\"translation\":\"n. 部分；角色；零件；一些；片段\\nadj. 部分的\\nvt. 分离；分配；分开\\nadv. 部分地\\nvi. 断裂；分手\",\"audio\":\"part.mp3\"},{\"word\":\"partner\",\"pronun\":\"[ˈpɑːrtnər]\",\"translation\":\"n. 伙伴；合伙人；配偶\\nvt. 使合作；与…合伙\\nvi. 合伙；合股；成为搭档\",\"audio\":\"partner.mp3\"},{\"word\":\"party\",\"pronun\":\"[ˈpɑːrti]\",\"translation\":\"n. 政党，党派；聚会，派对；当事人 [复数 parties]\\nvi. 参加社交聚会 [ 过去式 partied 过去分词 partied 现在分词 partying ]\",\"audio\":\"party.mp3\"},{\"word\":\"pass\",\"pronun\":\"[pæs]\",\"translation\":\"n. 及格；经过；护照；途径；传球\\nvt. 通过；经过；传递\\nvi. 经过；传递；变化；终止\",\"audio\":\"pass.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.502610+00:00",
+  "request": {
+    "lesson_id": "e10d922d05963bd9886056300dfa2c96",
+    "course_id": "2ab9dc27a9350a9ff86633c542967f70",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "order": 56,
+    "nextCourseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "courseName": "下排字母",
+    "lessonId": "e10d922d05963bd9886056300dfa2c96",
+    "nextLessonId": "e8254614568948d925f36fbff484cac3",
+    "lessonName": "回顾z和/",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-review-zslash.771c09262c.png",
+    "description": "回顾z和/",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f006280567e60f365e7997371a3ce7ee",
+        "index": 1,
+        "text": [
+          "e zhe shi / yi ge sha ya de // / gu shi kai zai zhai zi // de mo mu ya mei si ci ai la / ji xu // xue hua / mai ma//"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "e zhsi/ygadukmocljx",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.545903+00:00",
+  "request": {
+    "lesson_id": "e86ad617f01ed447876156928593a129",
+    "course_id": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "order": 397,
+    "nextCourseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "courseName": "初中必背古诗60首（1）",
+    "lessonId": "e86ad617f01ed447876156928593a129",
+    "nextLessonId": "8e2f70aed0f77aaf78b6f8ed8be57b85",
+    "lessonName": "望岳",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "7cc39aff91c3a18fd0b83ff8f7f1a683",
+        "index": 1,
+        "text": [
+          "望岳\\n杜甫\\n岱宗夫如何？齐鲁青未了。\\n造化钟神秀，阴阳割昏晓。\\n荡胸生曾云，决眦入归鸟。\\n会当凌绝顶，一览众山小。"
+        ],
+        "pinyin": "[[\"望\", \"wàng\"], [\"岳\", \"yuè\"], [\"\\n\", \"\"], [\"杜\", \"dù\"], [\"甫\", \"fǔ\"], [\"\\n\", \"\"], [\"岱\", \"dài\"], [\"宗\", \"zōng\"], [\"夫\", \"fú\"], [\"如\", \"rú\"], [\"何\", \"hé\"], [\"？\", \"\"], [\"齐\", \"qí\"], [\"鲁\", \"lǔ\"], [\"青\", \"qīng\"], [\"未\", \"wèi\"], [\"了\", \"liǎo\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"造\", \"zào\"], [\"化\", \"huà\"], [\"钟\", \"zhōng\"], [\"神\", \"shén\"], [\"秀\", \"xiù\"], [\"，\", \"\"], [\"阴\", \"yīn\"], [\"阳\", \"yáng\"], [\"割\", \"gē\"], [\"昏\", \"hūn\"], [\"晓\", \"xiǎo\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"荡\", \"dàng\"], [\"胸\", \"xiōng\"], [\"生\", \"shēng\"], [\"曾\", \"céng\"], [\"云\", \"yún\"], [\"，\", \"\"], [\"决\", \"jué\"], [\"眦\", \"zì\"], [\"入\", \"rù\"], [\"归\", \"guī\"], [\"鸟\", \"niǎo\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"会\", \"huì\"], [\"当\", \"dāng\"], [\"凌\", \"líng\"], [\"绝\", \"jué\"], [\"顶\", \"dǐng\"], [\"，\", \"\"], [\"一\", \"yī\"], [\"览\", \"lǎn\"], [\"众\", \"zhòng\"], [\"山\", \"shān\"], [\"小\", \"xiǎo\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

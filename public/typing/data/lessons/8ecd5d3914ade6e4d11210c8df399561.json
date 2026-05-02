@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.056075+00:00",
+  "request": {
+    "lesson_id": "8ecd5d3914ade6e4d11210c8df399561",
+    "course_id": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "order": 212,
+    "nextCourseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "courseName": "小升初必备单词",
+    "lessonId": "8ecd5d3914ade6e4d11210c8df399561",
+    "nextLessonId": "9bd017221b5b419bfecb0d144d112b38",
+    "lessonName": "U",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c370dcdc7c07261e01e6bea07626835b",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"ugly\",\"pronun\":\"[\\u02c8\\u028c\\u0261li]\",\"translation\":\"adj. \\u96be\\u770b\\u7684; \\u4e11\\u964b\\u7684; \\u8ba8\\u538c\\u7684; ...\"},{\"word\":\"umbrella\",\"pronun\":\"[\\u028cm\\u02c8brel\\u0259]\",\"translation\":\"n. \\u96e8\\u4f1e; \\u4f1e\"},{\"word\":\"uncle\",\"pronun\":\"[\\u02c8\\u028c\\u014bkl]\",\"translation\":\"n. \\u53d4\\u53d4; \\u4f2f\\u7236\\u7b49\"},{\"word\":\"under\",\"pronun\":\"[\\u02c8\\u028cnd\\u0259]\",\"translation\":\"adv. \\u5728\\u4e0b\\u9762; \\u5c11\\u4e8e prep. \\u5728...\"},{\"word\":\"unhealthy\",\"pronun\":\"[\\u028cn\\u02c8hel\\u03b8i:]\",\"translation\":\"adj. \\u4e0d\\u5065\\u5eb7\\u7684; \\u4e0d\\u536b\\u751f\\u7684\"},{\"word\":\"uniform\",\"pronun\":\"[\\u02c8ju:nif\\u0254:m]\",\"translation\":\"adj. \\u4e00\\u81f4\\u7684; \\u4e00\\u5f8b\\u7684 n. \\u5236\\u670d;...\"},{\"word\":\"unit\",\"pronun\":\"[\\u02c8ju:nit]\",\"translation\":\"n. (\\u6559\\u5b66)\\u5355\\u5143\"},{\"word\":\"up\",\"pronun\":\"[\\u028cp]\",\"translation\":\"adv. \\u5411\\u4e0a prep. \\u5411\\u4e0a\\u6e38\"},{\"word\":\"usually\",\"pronun\":\"[\\u02c8ju\\u02d0\\u0292u\\u0259li]\",\"translation\":\"adv. \\u901a\\u5e38; \\u5e73\\u5e38; \\u4e00\\u822c\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "u",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 12,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

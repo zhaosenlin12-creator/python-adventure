@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.121312+00:00",
+  "request": {
+    "lesson_id": "f23885d6f069e8e159e684717756e0d1",
+    "course_id": "31f8b0bfdd5cf12de8374becadc88615",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "31f8b0bfdd5cf12de8374becadc88615",
+    "order": 398,
+    "nextCourseId": "31f8b0bfdd5cf12de8374becadc88615",
+    "courseName": "实战演练-100万以内金额",
+    "lessonId": "f23885d6f069e8e159e684717756e0d1",
+    "nextLessonId": "b715e41b1c796cac50bf805bc310ce49",
+    "lessonName": "随机百万四",
+    "icon": "data/assets/daziya.com/key-icon_num-dianzan.b4fa52ea4b.png",
+    "description": "数字输入练习 - 随机百万四",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1f98a0b3509a403dd70c6716e0f9f5f4",
+        "index": 1,
+        "text": [
+          "25473658\\n36584769\\n47695871\\n58716982\\n69827193\\n71938214\\n82149325\\n93251436\\n14362547\\n26484769\\n37595871\\n48616982\\n59727193\\n61838214\\n72949325\\n83151436\\n94262547\\n15374658\\n27495871\\n38516982\\n49627193\\n51738214\\n62849325\\n73951436\\n84162547\\n95273658\\n16385769\\n28416982\\n39527193"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

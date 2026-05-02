@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.218298+00:00",
+  "request": {
+    "lesson_id": "02e7f8155fce4cd08cb4b77af59b1659",
+    "course_id": "b121644211bd274795ee5972ddf997a2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "b121644211bd274795ee5972ddf997a2",
+    "order": 316,
+    "nextCourseId": "b121644211bd274795ee5972ddf997a2",
+    "courseName": "小学必备古诗75首（1）",
+    "lessonId": "02e7f8155fce4cd08cb4b77af59b1659",
+    "nextLessonId": "65773ef63352b1d7a5f9db0e2683fbff",
+    "lessonName": "登鹳雀楼",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "383e6a90526fce6a8f2816bdb83d13c1",
+        "index": 1,
+        "text": [
+          "登鹳雀楼\\n王之涣\\n白日依山尽，黄河入海流。\\n欲穷千里目，更上一层楼。"
+        ],
+        "pinyin": "[[\"登\", \"dēng\"], [\"鹳\", \"guàn\"], [\"雀\", \"què\"], [\"楼\", \"lóu\"], [\"\\n\", \"\"], [\"王\", \"wáng\"], [\"之\", \"zhī\"], [\"涣\", \"huàn\"], [\"\\n\", \"\"], [\"白\", \"bái\"], [\"日\", \"rì\"], [\"依\", \"yī\"], [\"山\", \"shān\"], [\"尽\", \"jìn\"], [\"，\", \"\"], [\"黄\", \"huáng\"], [\"河\", \"hé\"], [\"入\", \"rù\"], [\"海\", \"hǎi\"], [\"流\", \"liú\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"欲\", \"yù\"], [\"穷\", \"qióng\"], [\"千\", \"qiān\"], [\"里\", \"lǐ\"], [\"目\", \"mù\"], [\"，\", \"\"], [\"更\", \"gèng\"], [\"上\", \"shàng\"], [\"一\", \"yī\"], [\"层\", \"céng\"], [\"楼\", \"lóu\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

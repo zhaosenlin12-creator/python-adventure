@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:33.846401+00:00",
+  "request": {
+    "lesson_id": "c9df7823215afb96db76d0fdf63d2856",
+    "course_id": "b2f97c6fd09f9abe4a430ab5522cac2f",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "b2f97c6fd09f9abe4a430ab5522cac2f",
+    "order": 59,
+    "nextCourseId": "b2f97c6fd09f9abe4a430ab5522cac2f",
+    "courseName": "语文课内同步二年级上册",
+    "lessonId": "c9df7823215afb96db76d0fdf63d2856",
+    "nextLessonId": "3f32cccac85bf04a46d5858e57e79ced",
+    "lessonName": "树之歌",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "bbb5a553ed372ad98a9faad387ff22e5",
+        "index": 1,
+        "text": [
+          "杨树高，榕树壮，梧桐树叶像手掌。\\n枫树秋天叶儿红，松柏四季披绿装。\\n木棉喜暖在南方，桦树耐寒守北疆。\\n银杏水杉活化石，金桂开花满院香。"
+        ],
+        "pinyin": "[[\"杨\", \"yáng\"], [\"树\", \"shù\"], [\"高\", \"gāo\"], [\"，\", \"\"], [\"榕\", \"róng\"], [\"树\", \"shù\"], [\"壮\", \"zhuàng\"], [\"，\", \"\"], [\"梧\", \"wú\"], [\"桐\", \"tóng\"], [\"树\", \"shù\"], [\"叶\", \"yè\"], [\"像\", \"xiàng\"], [\"手\", \"shǒu\"], [\"掌\", \"zhǎng\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"枫\", \"fēng\"], [\"树\", \"shù\"], [\"秋\", \"qiū\"], [\"天\", \"tiān\"], [\"叶\", \"yè\"], [\"儿\", \"r\"], [\"红\", \"hóng\"], [\"，\", \"\"], [\"松\", \"sōng\"], [\"柏\", \"bǎi\"], [\"四\", \"sì\"], [\"季\", \"jì\"], [\"披\", \"pī\"], [\"绿\", \"lǜ\"], [\"装\", \"zhuāng\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"木\", \"mù\"], [\"棉\", \"mián\"], [\"喜\", \"xǐ\"], [\"暖\", \"nuǎn\"], [\"在\", \"zài\"], [\"南\", \"nán\"], [\"方\", \"fāng\"], [\"，\", \"\"], [\"桦\", \"huà\"], [\"树\", \"shù\"], [\"耐\", \"nài\"], [\"寒\", \"hán\"], [\"守\", \"shǒu\"], [\"北\", \"běi\"], [\"疆\", \"jiāng\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"银\", \"yín\"], [\"杏\", \"xìng\"], [\"水\", \"shuǐ\"], [\"杉\", \"shān\"], [\"活\", \"huó\"], [\"化\", \"huà\"], [\"石\", \"shí\"], [\"，\", \"\"], [\"金\", \"jīn\"], [\"桂\", \"guì\"], [\"开\", \"kāi\"], [\"花\", \"huā\"], [\"满\", \"mǎn\"], [\"院\", \"yuàn\"], [\"香\", \"xiāng\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

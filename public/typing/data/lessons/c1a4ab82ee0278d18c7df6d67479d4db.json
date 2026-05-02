@@ -1,0 +1,75 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.026697+00:00",
+  "request": {
+    "lesson_id": "c1a4ab82ee0278d18c7df6d67479d4db",
+    "course_id": "21fe8d60de407da95e1abc33ac636014",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "21fe8d60de407da95e1abc33ac636014",
+    "order": 35,
+    "nextCourseId": "21fe8d60de407da95e1abc33ac636014",
+    "courseName": "上排字母",
+    "lessonId": "c1a4ab82ee0278d18c7df6d67479d4db",
+    "nextLessonId": "acf9909e4c1ca3864ce4ffcf83b4e309",
+    "lessonName": "学习t和p",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-learn-tp.7404c8eccb.png",
+    "description": "学习t和p",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "1c501b448a438122a7292d7a1d0f07c9",
+        "index": 1,
+        "highlights": [
+          "t"
+        ],
+        "text": [
+          "请使用左手食指输入按键t"
+        ],
+        "detail": "新的字母键/请输入[t]键"
+      },
+      {
+        "chapterId": "bdf55aefda8b02a5b5fcd980d38ea2da",
+        "index": 2,
+        "highlights": [
+          "p"
+        ],
+        "text": [
+          "请使用右手小食指输入按键p"
+        ],
+        "detail": "新的字母键/请输入[p]键"
+      },
+      {
+        "chapterId": "e0fb98e89f08cac68891763e43e5ee22",
+        "index": 3,
+        "highlights": [
+          " "
+        ],
+        "text": [
+          "接下来我们将练习如何输入[t]和[p]，请确保使用正确的指法输入，敲击 键开始"
+        ],
+        "detail": "新的字母键/很好"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "5217706053f4d18eb9933b60ba27a50c",
+        "index": 1,
+        "text": [
+          "pptptpttpptttptpptptppptpttptppt"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

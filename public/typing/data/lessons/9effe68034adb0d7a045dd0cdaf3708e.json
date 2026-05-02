@@ -1,0 +1,75 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:07:34.811309+00:00",
+  "request": {
+    "lesson_id": "9effe68034adb0d7a045dd0cdaf3708e",
+    "course_id": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "order": 1,
+    "nextCourseId": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "courseName": "基准键",
+    "lessonId": "9effe68034adb0d7a045dd0cdaf3708e",
+    "nextLessonId": "6e9342847cfaa2e99e180f8e92b05b90",
+    "lessonName": "学习f和j",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-learn-fj.d5e2aacf7c.png",
+    "description": "学习f和j",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "1efc745169a4cb3a11f4e7ddd156b9e6",
+        "index": 1,
+        "highlights": [
+          "f"
+        ],
+        "text": [
+          "请使用左手食指输入按键f"
+        ],
+        "detail": "新的字母键/请输入[f]键"
+      },
+      {
+        "chapterId": "270262da5f608be9112d13494e89bd5f",
+        "index": 2,
+        "highlights": [
+          "j"
+        ],
+        "text": [
+          "请使用右手食指输入按键j"
+        ],
+        "detail": "新的字母键/请输入[j]键"
+      },
+      {
+        "chapterId": "a7bf4f361c4c8a3d10f409931e7b7e37",
+        "index": 3,
+        "highlights": [
+          " "
+        ],
+        "text": [
+          "接下来我们将练习如何输入[f]和[j]，请确保使用正确的指法输入，敲击 键开始"
+        ],
+        "detail": "新的字母键/很好"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "823dfa636a4281f6234afcc4d3460572",
+        "index": 4,
+        "text": [
+          "ffffjjjjffffjjjjffjjffjjfjfjjfjf"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

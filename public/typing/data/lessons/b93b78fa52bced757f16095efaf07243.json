@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.021717+00:00",
+  "request": {
+    "lesson_id": "b93b78fa52bced757f16095efaf07243",
+    "course_id": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "order": 206,
+    "nextCourseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "courseName": "小升初必备单词",
+    "lessonId": "b93b78fa52bced757f16095efaf07243",
+    "nextLessonId": "53aee8cedcb454f9b1a4213caf116700",
+    "lessonName": "O",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "55937197dde23d3527004ae043529127",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"object\",\"pronun\":\"[\\u02c8\\u0254bd\\u0292ikt]\",\"translation\":\"vi. \\u53cd\\u5bf9 n. \\u5b9e\\u7269; \\u7269\\u4f53; \\u76ee\\u6807...\"},{\"word\":\"ocean\",\"pronun\":\"[\\u02c8\\u0259u\\u0283\\u0259n]\",\"translation\":\"n. \\u6d0b; \\u6d77\\u6d0b; \\u5927\\u91cf; \\u8bb8\\u591a\"},{\"word\":\"October\",\"pronun\":\"[\\u0254k\\u02c8t\\u0259ub\\u0259]\",\"translation\":\"n. \\u5341\\u6708\"},{\"word\":\"office\",\"pronun\":\"[\\u02c8\\u0254fis]\",\"translation\":\"n. \\u529e\\u516c\\u5ba4; \\u529e\\u4e8b\\u5904; \\u90e8; \\u5904\"},{\"word\":\"old\",\"pronun\":\"[\\u0259uld]\",\"translation\":\"adj. \\u5e74\\u8001\\u7684; \\u65e7\\u7684; \\u2026\\u5c81\\u7684\"},{\"word\":\"on\",\"pronun\":\"[\\u0254n]\",\"translation\":\"adv. \\u5411\\u524d; \\u9760\\u8fd1; \\u4e34\\u8fd1; \\u8fdb\\u5c55 ...\"},{\"word\":\"one\",\"pronun\":\"[w\\u028cn]\",\"translation\":\"num. \\u4e00 pron. \\u4e00\\u4e2a(\\u53ea)(\\u8868...\"},{\"word\":\"onion\",\"pronun\":\"[\\u02c8\\u028cnj\\u0259n]\",\"translation\":\"n. [\\u690d] \\u6d0b\\u8471\"},{\"word\":\"only\",\"pronun\":\"[\\u02c8\\u0259unli]\",\"translation\":\"adj. \\u552f\\u4e00\\u7684 adv. \\u53ea; \\u4ec5\\u4ec5 ...\"},{\"word\":\"open\",\"pronun\":\"[\\u02c8\\u0259up\\u0259n]\",\"translation\":\"adj. \\u5f00\\u7740\\u7684; \\u5f00\\u653e\\u7684; \\u8425\\u4e1a\\u4e2d\\u7684;...\"},{\"word\":\"or\",\"pronun\":\"[\\u0254:]\",\"translation\":\"conj. \\u6216\\u8005; \\u8fd8\\u662f; \\u4e0d\\u7136; \\u5426\\u5219\"},{\"word\":\"orange\",\"pronun\":\"[\\u02c8\\u0254rind\\u0292]\",\"translation\":\"adj. \\u6a59\\u8272\\u7684; \\u6854\\u8272\\u7684 n. \\u6a58\\u5b50;...\"},{\"word\":\"other\",\"pronun\":\"[\\u02c8\\u028c\\u00f0\\u0259(r]\",\"translation\":\"indef.&det. \\u53e6\\u4e00\\u4e2a\\u4eba(\\u6216\\u7269)\"},{\"word\":\"others\",\"pronun\":\"\",\"translation\":\"prep. \\u53e6\\u5916\\u7684\\u4eba pron. \\u5176\\u4ed6\\u4eba\"},{\"word\":\"out\",\"pronun\":\"[aut]\",\"translation\":\"adj. \\u5916\\u9762\\u7684; \\u5f80\\u5916\\u53bb\\u7684 adv. ...\"},{\"word\":\"outside\",\"pronun\":\"[\\u02ccaut\\u02c8said]\",\"translation\":\"adv. \\u5411\\u5916\\u9762\"},{\"word\":\"oven\",\"pronun\":\"[\\u02c8\\u028cv\\u0259n]\",\"translation\":\"n. \\u7089; \\u7076; \\u70d8\\u7bb1\"},{\"word\":\"over\",\"pronun\":\"[\\u02c8\\u0259uv\\u0259]\",\"translation\":\"prep. \\u5728\\u2026\\u4e0a\\u65b9\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "o",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 12,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

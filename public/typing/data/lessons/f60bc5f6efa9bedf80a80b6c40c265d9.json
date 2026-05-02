@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.698177+00:00",
+  "request": {
+    "lesson_id": "f60bc5f6efa9bedf80a80b6c40c265d9",
+    "course_id": "bff1f4acbe3c325f85571ee987d1bdd2",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "bff1f4acbe3c325f85571ee987d1bdd2",
+    "order": 106,
+    "nextCourseId": "77cc7d3093a4e829cb2fb89b1788a0e1",
+    "courseName": "左右手练习",
+    "lessonId": "f60bc5f6efa9bedf80a80b6c40c265d9",
+    "nextLessonId": "cc7848ffc9061c5bf6d76a3f00e88c30",
+    "lessonName": "右手练习-英文",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-right-hand.8b4e761bff.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e6e2e8be6ed2813bfad118ab12b4ec3f",
+        "index": 1,
+        "text": [
+          "n mommy jimmy, puppy. minimum; plum, poly oily, hook"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "f",
+        "key": "nmoyjipu;h",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 10,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

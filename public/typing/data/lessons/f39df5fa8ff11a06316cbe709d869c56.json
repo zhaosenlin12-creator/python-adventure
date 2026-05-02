@@ -1,0 +1,75 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:30.724758+00:00",
+  "request": {
+    "lesson_id": "f39df5fa8ff11a06316cbe709d869c56",
+    "course_id": "21fe8d60de407da95e1abc33ac636014",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "21fe8d60de407da95e1abc33ac636014",
+    "order": 28,
+    "nextCourseId": "21fe8d60de407da95e1abc33ac636014",
+    "courseName": "上排字母",
+    "lessonId": "f39df5fa8ff11a06316cbe709d869c56",
+    "nextLessonId": "b952902af966198d732821a640a5f1d0",
+    "lessonName": "学习w和o",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-learn-wo.23508c16d1.png",
+    "description": "学习w和o",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "81e2c61c7d91a2d3824aefe854c55216",
+        "index": 1,
+        "highlights": [
+          "w"
+        ],
+        "text": [
+          "请使用左手无名指输入按键w"
+        ],
+        "detail": "新的字母键/请输入[w]键"
+      },
+      {
+        "chapterId": "15debdd941b62d2ca40aed9ef0e7615e",
+        "index": 2,
+        "highlights": [
+          "o"
+        ],
+        "text": [
+          "请使用右手无名指输入按键o"
+        ],
+        "detail": "新的字母键/请输入[o]键"
+      },
+      {
+        "chapterId": "5af57f680d84f85f5bf1db78d32a088a",
+        "index": 3,
+        "highlights": [
+          " "
+        ],
+        "text": [
+          "接下来我们将练习如何输入[w]和[o]，请确保使用正确的指法输入，敲击 键开始"
+        ],
+        "detail": "新的字母键/很好"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "5c968d739f6d359f60c5308e955dc959",
+        "index": 4,
+        "text": [
+          "wwoowwoowwooowwoowwwoowwowoowwwo"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.412583+00:00",
+  "request": {
+    "lesson_id": "8f8bdf8a7811e3de497af151018ebe7b",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 197,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "8f8bdf8a7811e3de497af151018ebe7b",
+    "nextLessonId": "5dff1ff41417ae434e5491fd29bd467d",
+    "lessonName": "LEFT JOIN左连接",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - LEFT JOIN左连接",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "12a74abf1e63739eb4528d611f68df60",
+        "index": 1,
+        "text": [
+          "-- 查询所有用户及其订单（包括没有订单的用户）\\nSELECT u.id, u.name, u.email, COUNT(o.order_id) AS order_count\\nFROM users u\\nLEFT JOIN orders o ON u.id = o.user_id\\nGROUP BY u.id, u.name, u.email\\nORDER BY order_count DESC;\\n\\n-- 查询所有产品及其销售数量\\nSELECT\\n    p.id,\\n    p.name,\\n    p.price,\\n    COALESCE(SUM(od.quantity), 0) AS total_sold\\nFROM products p\\nLEFT JOIN order_details od ON p.id = od.product_id\\nGROUP BY p.id, p.name, p.price\\nORDER BY total_sold DESC;\\n\\n-- 找出没有下过订单的用户\\nSELECT u.id, u.name, u.email, u.created_at\\nFROM users u\\nLEFT JOIN orders o ON u.id = o.user_id\\nWHERE o.order_id IS NULL;\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

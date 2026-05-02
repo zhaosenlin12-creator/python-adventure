@@ -1,0 +1,83 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.657881+00:00",
+  "request": {
+    "lesson_id": "646622f476de3e6b5a8bfea1e6d36af1",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 32,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "646622f476de3e6b5a8bfea1e6d36af1",
+    "nextLessonId": "a7d50704bd227cedd486e850257fc4b5",
+    "lessonName": "韵母uan、uang",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母uan、uang的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "16473a91219a2f03c8b9c79397cf42b2",
+        "index": 1,
+        "highlights": [
+          "uan"
+        ],
+        "text": [
+          "请输入按键 [uan]"
+        ],
+        "detail": "学习双拼按键 uan"
+      },
+      {
+        "chapterId": "d521b9aee74ce5cb8bb61d769b5f7384",
+        "index": 2,
+        "highlights": [
+          "uang"
+        ],
+        "text": [
+          "请输入按键 [uang]"
+        ],
+        "detail": "学习双拼按键 uang"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "c0fc12e1477830cc6576daaa7c020d79",
+        "index": 3,
+        "text": [
+          "uanuanuanuanuanguanguanguanguanuanguanuanguanuanguanuang"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "c0a3e82287a0dd768f91fa38b20e8760",
+        "index": 4,
+        "text": [
+          "宽广的黄河穿过壮观的黄土高原。\\n温暖的阳光照亮了远方的村庄。\\n端庄的状元站在华丽的宫殿前。\\n繁忙的商贩穿过喧闹的街市广场。"
+        ],
+        "pinyin": "[[\"宽\",\"kuān\"],[\"广\",\"guǎng\"],[\"的\",\"de\"],[\"黄\",\"huáng\"],[\"河\",\"hé\"],[\"穿\",\"chuān\"],[\"过\",\"guò\"],[\"壮\",\"zhuàng\"],[\"观\",\"guān\"],[\"的\",\"de\"],[\"黄\",\"huáng\"],[\"土\",\"tǔ\"],[\"高\",\"gāo\"],[\"原\",\"yuán\"],[\"。\",\"\"],[\"温\",\"wēn\"],[\"暖\",\"nuǎn\"],[\"的\",\"de\"],[\"阳\",\"yáng\"],[\"光\",\"guāng\"],[\"照\",\"zhào\"],[\"亮\",\"liàng\"],[\"了\",\"le\"],[\"远\",\"yuǎn\"],[\"方\",\"fāng\"],[\"的\",\"de\"],[\"村\",\"cūn\"],[\"庄\",\"zhuāng\"],[\"。\",\"\"],[\"端\",\"duān\"],[\"庄\",\"zhuāng\"],[\"的\",\"de\"],[\"状\",\"zhuàng\"],[\"元\",\"yuán\"],[\"站\",\"zhàn\"],[\"在\",\"zài\"],[\"华\",\"huá\"],[\"丽\",\"lì\"],[\"的\",\"de\"],[\"宫\",\"gōng\"],[\"殿\",\"diàn\"],[\"前\",\"qián\"],[\"。\",\"\"],[\"繁\",\"fán\"],[\"忙\",\"máng\"],[\"的\",\"de\"],[\"商\",\"shāng\"],[\"贩\",\"fàn\"],[\"穿\",\"chuān\"],[\"过\",\"guò\"],[\"喧\",\"xuān\"],[\"闹\",\"nào\"],[\"的\",\"de\"],[\"街\",\"jiē\"],[\"市\",\"shì\"],[\"广\",\"guǎng\"],[\"场\",\"chǎng\"],[\"。\",\"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

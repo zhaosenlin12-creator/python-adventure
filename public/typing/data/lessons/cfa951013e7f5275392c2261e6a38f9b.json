@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:07:35.378926+00:00",
+  "request": {
+    "lesson_id": "cfa951013e7f5275392c2261e6a38f9b",
+    "course_id": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "order": 4,
+    "nextCourseId": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "courseName": "基准键",
+    "lessonId": "cfa951013e7f5275392c2261e6a38f9b",
+    "nextLessonId": "4dec89f0278aeece7661937dc7bd018c",
+    "lessonName": "练习d和k",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-practise-dk.d6e7677f02.png",
+    "description": "练习d和k",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "020da5387788544266087cec9d89d823",
+        "index": 2,
+        "text": [
+          "dkddkdd dddd dkdkkkk dkkddk ddd kdddddd dkd kddkk kkkd ddddk kdd kkd kdk dkddkdk"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "d k",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

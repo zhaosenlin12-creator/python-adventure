@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.471567+00:00",
+  "request": {
+    "lesson_id": "58f07d19b2dc6e4ded8e51f2b2e78be0",
+    "course_id": "fa03ede610a7cc0a487ff4fca5942e36",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "fa03ede610a7cc0a487ff4fca5942e36",
+    "order": 276,
+    "nextCourseId": "fa03ede610a7cc0a487ff4fca5942e36",
+    "courseName": "汉字四级",
+    "lessonId": "58f07d19b2dc6e4ded8e51f2b2e78be0",
+    "nextLessonId": "68db8a188acc4b88f6a6ac4a6d4205f0",
+    "lessonName": "《江南的冬景》郁达夫",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-4.b52294a527.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "213ae932d16235ee65cb01829ed610f1",
+        "index": 1,
+        "text": [
+          "但在江南，可又不同；冬至过后，大江以南的树叶，也不至于脱尽。西北风间或吹来，至多也不过冷了一日两日。"
+        ],
+        "pinyin": "[[\"但\", \"dàn\"], [\"在\", \"zài\"], [\"江\", \"jiāng\"], [\"南\", \"nán\"], [\"，\", \"\"], [\"可\", \"kě\"], [\"又\", \"yòu\"], [\"不\", \"bù\"], [\"同\", \"tóng\"], [\"；\", \"\"], [\"冬\", \"dōng\"], [\"至\", \"zhì\"], [\"过\", \"guò\"], [\"后\", \"hòu\"], [\"，\", \"\"], [\"大\", \"dà\"], [\"江\", \"jiāng\"], [\"以\", \"yǐ\"], [\"南\", \"nán\"], [\"的\", \"de\"], [\"树\", \"shù\"], [\"叶\", \"yè\"], [\"，\", \"\"], [\"也\", \"yě\"], [\"不\", \"bù\"], [\"至\", \"zhì\"], [\"于\", \"yú\"], [\"脱\", \"tuō\"], [\"尽\", \"jìn\"], [\"。\", \"\"], [\"西\", \"xī\"], [\"北\", \"běi\"], [\"风\", \"fēng\"], [\"间\", \"jiàn\"], [\"或\", \"huò\"], [\"吹\", \"chuī\"], [\"来\", \"lái\"], [\"，\", \"\"], [\"至\", \"zhì\"], [\"多\", \"duō\"], [\"也\", \"yě\"], [\"不\", \"bù\"], [\"过\", \"guò\"], [\"冷\", \"lěng\"], [\"了\", \"le\"], [\"一\", \"yī\"], [\"日\", \"rì\"], [\"两\", \"liǎng\"], [\"日\", \"rì\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 40,
+        "minSpeed": 26,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

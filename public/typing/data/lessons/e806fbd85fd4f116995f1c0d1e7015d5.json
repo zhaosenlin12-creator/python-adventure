@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.514414+00:00",
+  "request": {
+    "lesson_id": "e806fbd85fd4f116995f1c0d1e7015d5",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 323,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "e806fbd85fd4f116995f1c0d1e7015d5",
+    "nextLessonId": "036cbc607e88980c8a174b5c63836ee1",
+    "lessonName": "六级词汇正序版-22",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第22课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ba18ff52d3bc60b9d029e49e60ba06a5",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"comply\",\"pronun\":\"[kəmˈplaɪ]\",\"translation\":\"vi. 遵守；顺从，遵从；答应\",\"audio\":\"comply.mp3\"},{\"word\":\"component\",\"pronun\":\"[kəmˈpoʊnənt]\",\"translation\":\"n. 成分；组件；[电子] 元件\\nadj. 组成的，构成的\",\"audio\":\"component.mp3\"},{\"word\":\"compose\",\"pronun\":\"[kəmˈpoʊz]\",\"translation\":\"vt. 构成；写作；使平静；排…的版\\nvi. 组成；作曲；排字\",\"audio\":\"compose.mp3\"},{\"word\":\"composite\",\"pronun\":\"[kəmˈpɑːzət]\",\"translation\":\"n. 复合材料；合成物；菊科\\nadj. 复合的；合成的；菊科的\\nvt. 使合成；使混合\",\"audio\":\"composite.mp3\"},{\"word\":\"compound\",\"pronun\":\"[ˈkɑːmpaʊnd]\",\"translation\":\"n. [化学] 化合物；混合物；复合词\\nadj. 复合的；混合的\\nv. 合成；混合；恶化，加重；和解，妥协\",\"audio\":\"compound.mp3\"},{\"word\":\"comprehension\",\"pronun\":\"[ˌkɑːmprɪˈhenʃn]\",\"translation\":\"n. 理解；包含\",\"audio\":\"comprehension.mp3\"},{\"word\":\"comprehensive\",\"pronun\":\"[ˌkɑːmprɪˈhensɪv]\",\"translation\":\"n. 综合学校；专业综合测验\\nadj. 综合的；广泛的；有理解力的\",\"audio\":\"comprehensive.mp3\"},{\"word\":\"compromise\",\"pronun\":\"[ˈkɑːmprəmaɪz]\",\"translation\":\"n. 妥协，和解；折衷\\nvt. 妥协；危害\\nvi. 妥协；让步\",\"audio\":\"compromise.mp3\"},{\"word\":\"compulsory\",\"pronun\":\"[kəmˈpʌlsəri]\",\"translation\":\"n. （花样滑冰、竞技体操等的）规定动作\\nadj. 义务的；必修的；被强制的\",\"audio\":\"compulsory.mp3\"},{\"word\":\"compute\",\"pronun\":\"[kəmˈpjuːt]\",\"translation\":\"n. 计算；估计；推断\\nvt. 计算；估算；用计算机计算\\nvi. 计算；估算；推断\",\"audio\":\"compute.mp3\"},{\"word\":\"concede\",\"pronun\":\"[kənˈsiːd]\",\"translation\":\"vi. 让步\\nvt. 承认；退让；给予，容许\",\"audio\":\"concede.mp3\"},{\"word\":\"conceive\",\"pronun\":\"[kənˈsiːv]\",\"translation\":\"vi. 怀孕；设想；考虑\\nvt. 怀孕；构思；以为；持有\",\"audio\":\"conceive.mp3\"},{\"word\":\"concentrate\",\"pronun\":\"[ˈkɑːnsntreɪt]\",\"translation\":\"n. 浓缩，精选；浓缩液\\nvi. 集中；浓缩；全神贯注；聚集\\nvt. 集中；浓缩\",\"audio\":\"concentrate.mp3\"},{\"word\":\"concentration\",\"pronun\":\"[ˌkɑːnsnˈtreɪʃn]\",\"translation\":\"n. 浓度；集中；浓缩；专心；集合\",\"audio\":\"concentration.mp3\"},{\"word\":\"concept\",\"pronun\":\"[ˈkɑːnsept]\",\"translation\":\"n. 观念，概念\",\"audio\":\"concept.mp3\"},{\"word\":\"conception\",\"pronun\":\"[kənˈsepʃn]\",\"translation\":\"n. 怀孕；概念；设想；开始\",\"audio\":\"conception.mp3\"},{\"word\":\"concern\",\"pronun\":\"[kənˈsɜːrn]\",\"translation\":\"n. 关系；关心；关心的事；忧虑\\nvt. 涉及，关系到；使担心\",\"audio\":\"concern.mp3\"},{\"word\":\"concise\",\"pronun\":\"[kənˈsaɪs]\",\"translation\":\"adj. 简明的，简洁的\",\"audio\":\"concise.mp3\"},{\"word\":\"conclude\",\"pronun\":\"[kənˈkluːd]\",\"translation\":\"vi. 推断；断定；决定\\nvt. 推断；决定，作结论；结束\",\"audio\":\"conclude.mp3\"},{\"word\":\"conclusive\",\"pronun\":\"[kənˈkluːsɪv]\",\"translation\":\"adj. 决定性的；最后的；确实的；确定性的\",\"audio\":\"conclusive.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

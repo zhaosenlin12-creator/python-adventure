@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.114062+00:00",
+  "request": {
+    "lesson_id": "9e7e71995c3fc1347b58dca52f799a47",
+    "course_id": "ee920473fc84aa54eb12b2498d3762ad",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "ee920473fc84aa54eb12b2498d3762ad",
+    "order": 230,
+    "nextCourseId": "ee920473fc84aa54eb12b2498d3762ad",
+    "courseName": "初中必备1200词",
+    "lessonId": "9e7e71995c3fc1347b58dca52f799a47",
+    "nextLessonId": "eb3809d6c5487a9f85c05c1e301a36f2",
+    "lessonName": "Chapter.13",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "811e28c109480cd9b494522774a07720",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"decision\",\"pronun\":\"[d\\u026a's\\u026a\\u0292n]\",\"translation\":\"n. \\u51b3\\u5b9a; \\u6289\\u62e9\"},{\"word\":\"control\",\"pronun\":\"[k\\u0259n'tr\\u0259\\u028al]\",\"translation\":\"n.&v. \\u9650\\u5236; \\u7ea6\\u675f; \\u7ba1\\u7406\"},{\"word\":\"spirit\",\"pronun\":\"['sp\\u026ar\\u026at\\/]\",\"translation\":\"n. \\u52c7\\u6c14; \\u610f\\u5fd7\"},{\"word\":\"death\",\"pronun\":\"[de\\u03b8\\/]\",\"translation\":\"n. \\u6b7b; \\u6b7b\\u4ea1\"},{\"word\":\"Judy\",\"pronun\":\"['d\\u0292u:di\\/]\",\"translation\":\"\\u6731\\u8fea \\uff08\\u5973\\u540d\\uff09\"},{\"word\":\"Nancy\",\"pronun\":\"['n\\u00e6nsi\\/]\",\"translation\":\"\\u5357\\u5e0c \\uff08\\u5973\\u540d\\uff09\"},{\"word\":\"Mandy\",\"pronun\":\"['m\\u00e6ndi\\/]\",\"translation\":\"\\u66fc\\u8fea \\uff08\\u5973\\u540d\\uff09\"},{\"word\":\"Utah\",\"pronun\":\"['ju:t\\u0251:\\/]\",\"translation\":\" \\u72b9\\u4ed6\\u5dde\\uff08\\u7f8e\\u56fd\\uff09\"},{\"word\":\"cheer\",\"pronun\":\"[t\\u0283\\u026a\\u0259\\/, \\/t\\u0283\\u026ar]\",\"translation\":\"v. \\u6b22\\u547c; \\u559d\\u5f69\"},{\"word\":\"volunteer\",\"pronun\":\"[v\\u0252l\\u0259n't\\u026a\\u0259\\/ ,\\/v\\u0251:l\\u0259n't\\u026ar\\/]\",\"translation\":\"v. \\u4e49\\u52a1\\u505a; \\u81ea\\u613f\\u505a n. \\u5fd7\\u613f\\u8005\"},{\"word\":\"notice\",\"pronun\":\"['n\\u0259\\u028at\\u026as\\/]\",\"translation\":\"n. \\u901a\\u77e5; \\u901a\\u544a; \\u6ce8\\u610f v. \\u6ce8\\u610f\\u5230; \\u610f\\u8bc6\\u5230\"},{\"word\":\"lonely\",\"pronun\":\"['l\\u0259\\u028anli\\/]\",\"translation\":\"adj. \\u5b64\\u72ec\\u7684; \\u5bc2\\u5bde\\u7684\"},{\"word\":\"several\",\"pronun\":\"['sevr\\u0259l\\/]\",\"translation\":\"pron. \\u51e0\\u4e2a; \\u6570\\u4e2a; \\u4e00\\u4e9b\"},{\"word\":\"feeling\",\"pronun\":\"['fi:l\\u026a\\u014b]\",\"translation\":\"n. \\u611f\\u89c9; \\u611f\\u89e6\"},{\"word\":\"satisfaction\",\"pronun\":\"[s\\u00e6t\\u026as'f\\u00e6k\\u0283n\\/]\",\"translation\":\"n. \\u6ee1\\u8db3; \\u6ee1\\u610f\"},{\"word\":\"joy\",\"pronun\":\"[d\\u0292\\u0254\\u026a\\/]\",\"translation\":\"n. \\u9ad8\\u5174; \\u6109\\u5feb\"},{\"word\":\"owner\",\"pronun\":\"['\\u0259\\u028an\\u0259(r)\\/]\",\"translation\":\"n. \\u7269\\u4e3b; \\u4e3b\\u4eba\"},{\"word\":\"journey\",\"pronun\":\"['d\\u0292\\u025c:(r)ni\\/]\",\"translation\":\"n.\\uff08\\u5c24\\u6307\\u957f\\u9014\\uff09\\u65c5\\u884c; \\u884c\\u7a0b\"},{\"word\":\"raise\",\"pronun\":\"[re\\u026az\\/]\",\"translation\":\"v. \\u52df\\u96c6; \\u5f81\\u96c6\"},{\"word\":\"alone\",\"pronun\":\"[\\u0259'l\\u0259\\u028an\\/]\",\"translation\":\"adv. \\u72ec\\u81ea; \\u5355\\u72ec\"},{\"word\":\"repair\",\"pronun\":\"[r\\u026a'pe\\u0259\\/, \\/r\\u026a'per\\/]\",\"translation\":\"v. \\u4fee\\u7406; \\u4fee\\u8865\"},{\"word\":\"fix\",\"pronun\":\"[f\\u026aks\\/]\",\"translation\":\"v. \\u4fee\\u7406; \\u5b89\\u88c5\"},{\"word\":\"disabled\",\"pronun\":\"[d\\u026as'e\\u026abld\\/]\",\"translation\":\"adj. \\u4e27\\u5931\\u80fd\\u529b\\u7684; \\u6709\\u6b8b\\u75be\\u7684\"},{\"word\":\"deaf\",\"pronun\":\"[def\\/]\",\"translation\":\"adj. \\u804b\\u7684\"},{\"word\":\"imagine\",\"pronun\":\"[\\u026a'm\\u00e6d\\u0292\\u026an\\/]\",\"translation\":\"v. \\u60f3\\u8c61; \\u8bbe\\u60f3\"},{\"word\":\"difficulty\",\"pronun\":\"['d\\u026af\\u026ak\\u0259lt\\u026a\\/]\",\"translation\":\"n. \\u56f0\\u96be; \\u96be\\u9898\"},{\"word\":\"carry\",\"pronun\":\"['k\\u00e6ri\\/]\",\"translation\":\"v. \\u62ff; \\u63d0; \\u625b\"},{\"word\":\"excited\",\"pronun\":\"[\\u026ak'sa\\u026at\\u026ad]\",\"translation\":\"adj. \\u6fc0\\u52a8\\u7684; \\u5174\\u594b\\u7684\"},{\"word\":\"training\",\"pronun\":\"['tre\\u026an\\u026a\\u014b\\/]\",\"translation\":\"n. \\u8bad\\u7ec3; \\u57f9\\u8bad\"},{\"word\":\"kindness\",\"pronun\":\"['ka\\u026andn\\u0259s]\",\"translation\":\"n. \\u4ec1\\u6148; \\u5584\\u826f\"},{\"word\":\"clever\",\"pronun\":\"['klev\\u0259(r)\\/]\",\"translation\":\"adj. \\u806a\\u660e\\u7684; \\u806a\\u9896\\u7684\"},{\"word\":\"understand\",\"pronun\":\"[\\u028cnd\\u0259(r)'st\\u00e6nd\\/]\",\"translation\":\"v. (understood \\/\\u028cnd\\u0259(r)'st\\u028ad\\/ ) \\u7406\\u89e3; \\u9886\\u4f1a\"},{\"word\":\"interest\",\"pronun\":\"['\\u026antr\\u0259st\\/]\",\"translation\":\"n. \\u5174\\u8da3; \\u5173\\u6ce8  v. \\u4f7f\\u611f\\u5174\\u8da3; \\u4f7f\\u5173\\u6ce8\"},{\"word\":\"Mario\",\"pronun\":\"['m\\u00e6ri\\u0259\\u028a\\/, \\/'m\\u0251:ri\\u0259\\u028a]\",\"translation\":\"\\u9a6c\\u91cc\\u5965 \\uff08\\u7537\\u540d\\uff09\"},{\"word\":\"Jimmy\",\"pronun\":\"['d\\u0292\\u026ami\\/]\",\"translation\":\"\\u5409\\u7c73 \\uff08\\u7537\\u540d\\uff09\"},{\"word\":\"sweep\",\"pronun\":\"[swi:p\\/]\",\"translation\":\"v. (swept \\/swept\\/ ) \\u626b; \\u6253\\u626b\"},{\"word\":\"floor\",\"pronun\":\"[fl\\u0254:(r)\\/]\",\"translation\":\"n. \\u5730\\u677f\"},{\"word\":\"mess\",\"pronun\":\"[mes\\/]\",\"translation\":\"n. \\u6742\\u4e71; \\u4e0d\\u6574\\u6d01\"},{\"word\":\"neither\",\"pronun\":\"['na\\u026a\\u00f0\\u0259\\/, \\/'ni:\\u00f0\\u0259(r)\\/]\",\"translation\":\"adv. \\u4e5f\\u4e0d\"},{\"word\":\"pass\",\"pronun\":\"[p\\u0251:s\\/, \\/p\\u00e6s\\/]\",\"translation\":\"v. \\u7ed9; \\u9012; \\u8d70\\u8fc7; \\u901a\\u8fc7\"},{\"word\":\"borrow\",\"pronun\":\"['b\\u0252r\\u0259\\u028a\\/, \\/'b\\u0251:r\\u0259\\u028a]\",\"translation\":\"v. \\u501f; \\u501f\\u7528\"},{\"word\":\"lend\",\"pronun\":\"[lend\\/]\",\"translation\":\"v. (lent \\/lent\\/ ) \\u501f\\u7ed9; \\u501f\\u51fa\"},{\"word\":\"hate\",\"pronun\":\"[he\\u026at\\/]\",\"translation\":\"v. \\u538c\\u6076; \\u8ba8\\u538c\"},{\"word\":\"chore\",\"pronun\":\"[t\\u0283\\u0254:(r)\\/]\",\"translation\":\"n. \\u6742\\u52a1; \\u4e4f\\u5473\\u65e0\\u804a\\u7684\\u5de5\\u4f5c\"},{\"word\":\"while\",\"pronun\":\"[wa\\u026al\\/]\",\"translation\":\"conj. \\u4e0e......\\u540c\\u65f6; \\u5f53......\\u7684\\u65f6\\u5019; \\u800c; \\u7136\\u800c\"},{\"word\":\"snack\",\"pronun\":\"[sn\\u00e6k\\/]\",\"translation\":\"n. \\u70b9\\u5fc3; \\u5c0f\\u5403; \\u5feb\\u9910\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 18,
+        "minSpeed": 12,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

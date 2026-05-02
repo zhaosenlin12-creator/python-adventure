@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.940239+00:00",
+  "request": {
+    "lesson_id": "1f824efb9ddaebbd7e1017cf8647702c",
+    "course_id": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "order": 73,
+    "nextCourseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "courseName": "C++",
+    "lessonId": "1f824efb9ddaebbd7e1017cf8647702c",
+    "nextLessonId": "5c60bf6f4db495a0c0912362a4b5fbdd",
+    "lessonName": "字符串反转",
+    "icon": "data/assets/daziya.com/key-icon_key-cpp.b136419115.png",
+    "description": "C++编程练习 - 字符串反转",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2ffc8bf619fc5a88990cdff68a1c1c48",
+        "index": 1,
+        "text": [
+          "#include <iostream>\\n#include <algorithm>\\nusing namespace std;\\n\\nint main() {\\n    string text = \"Hello World\";\\n    string reversed = text;\\n\\n    reverse(reversed.begin(), reversed.end());\\n\\n    cout << \"原字符串: \" << text << endl;\\n    cout << \"反转后: \" << reversed << endl;\\n\\n    return 0;\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "cpp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

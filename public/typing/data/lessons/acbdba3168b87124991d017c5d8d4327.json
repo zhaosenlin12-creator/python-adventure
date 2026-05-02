@@ -1,0 +1,75 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.414101+00:00",
+  "request": {
+    "lesson_id": "acbdba3168b87124991d017c5d8d4327",
+    "course_id": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "order": 7,
+    "nextCourseId": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "courseName": "基准键",
+    "lessonId": "acbdba3168b87124991d017c5d8d4327",
+    "nextLessonId": "f43ad19e681b16a972efdd199f26396c",
+    "lessonName": "学习s和l",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-learn-sl.1dfb1f576f.png",
+    "description": "学习s和l",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "1e149ff51a9a2815d735836e56e200fd",
+        "index": 1,
+        "highlights": [
+          "s"
+        ],
+        "text": [
+          "请使用左手无名指输入按键s"
+        ],
+        "detail": "新的字母键/请输入[s]键"
+      },
+      {
+        "chapterId": "ac6c514c640e920f87226961ac19f4eb",
+        "index": 2,
+        "highlights": [
+          "l"
+        ],
+        "text": [
+          "请使用右手无名指输入按键l"
+        ],
+        "detail": "新的字母键/请输入[l]键"
+      },
+      {
+        "chapterId": "0412ecb4790c75fdc108baa335a92322",
+        "index": 3,
+        "highlights": [
+          " "
+        ],
+        "text": [
+          "接下来我们将练习如何输入[s]和[l]，请确保使用正确的指法输入，敲击 键开始"
+        ],
+        "detail": "新的字母键/很好"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "6ef48547848ba300b733c9f3385b0fb4",
+        "index": 4,
+        "text": [
+          "ssssllllssssllllssllssllslsllsls"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

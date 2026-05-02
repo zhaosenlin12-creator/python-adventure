@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.920013+00:00",
+  "request": {
+    "lesson_id": "5c6e14c0d4df0bf451bacef289235e04",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 398,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "5c6e14c0d4df0bf451bacef289235e04",
+    "nextLessonId": "9f8b646db5d3dd8c944267efedf4bb29",
+    "lessonName": "六级词汇正序版-110",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第110课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "67741436683e68b2ebda729f9682fc93",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"tissue\",\"pronun\":\"[ˈtɪʃuː]\",\"translation\":\"n. 组织；纸巾；薄纱；一套\\nvt. 饰以薄纱；用化妆纸揩去\",\"audio\":\"tissue.mp3\"},{\"word\":\"token\",\"pronun\":\"[ˈtoʊkən]\",\"translation\":\"n. 表征；代币；记号\\nadj. 象征的；表意的；作为对某事的保证的\\nvt. 象征；代表\",\"audio\":\"token.mp3\"},{\"word\":\"tolerant\",\"pronun\":\"[ˈtɑːlərənt]\",\"translation\":\"adj. 宽容的；容忍的；有耐药力的\",\"audio\":\"tolerant.mp3\"},{\"word\":\"toll\",\"pronun\":\"[toʊl]\",\"translation\":\"vt. 征收；敲钟\\nn. 通行费；代价；钟声；伤亡人数\\nvi. 鸣钟；征税\",\"audio\":\"toll.mp3\"},{\"word\":\"toss\",\"pronun\":\"[tɔːs]\",\"translation\":\"n. 投掷；摇荡；投掷的距离；掷币赌胜负\\nvt. 投掷；使…不安；突然抬起；使…上下摇动；与…掷币打赌\\nvi. 辗转；被乱扔；颠簸；掷钱币决定某事\",\"audio\":\"toss.mp3\"},{\"word\":\"tow\",\"pronun\":\"[toʊ]\",\"translation\":\"n. 拖；麻的粗纤维；拖曳所用之绳\\nvt. 拖；牵引；曳\\nvi. 被拖带；拖行\",\"audio\":\"tow.mp3\"},{\"word\":\"toxic\",\"pronun\":\"[ˈtɑːksɪk]\",\"translation\":\"adj. 有毒的；中毒的\",\"audio\":\"toxic.mp3\"},{\"word\":\"tract\",\"pronun\":\"[trækt]\",\"translation\":\"n. 束；大片土地，地带；小册子\",\"audio\":\"tract.mp3\"},{\"word\":\"trademark\",\"pronun\":\"[ˈtreɪdmɑːrk]\",\"translation\":\"n. 商标\\n标志\",\"audio\":\"trademark.mp3\"},{\"word\":\"tragic\",\"pronun\":\"[ˈtrædʒɪk]\",\"translation\":\"adj. 悲剧的；悲痛的，不幸的\",\"audio\":\"tragic.mp3\"},{\"word\":\"trait\",\"pronun\":\"[treɪt]\",\"translation\":\"n. 特性，特点；品质；少许\",\"audio\":\"trait.mp3\"},{\"word\":\"transaction\",\"pronun\":\"[trænˈzækʃn]\",\"translation\":\"n. 交易；事务；办理；会报，学报\",\"audio\":\"transaction.mp3\"},{\"word\":\"transcend\",\"pronun\":\"[trænˈsend]\",\"translation\":\"vt. 胜过，超越\",\"audio\":\"transcend.mp3\"},{\"word\":\"transfer\",\"pronun\":\"[trænsˈfɜːr]\",\"translation\":\"n. 转让；转移；传递；过户\\nvt. 使转移；调任\\nvi. 转让；转学；换车\",\"audio\":\"transfer.mp3\"},{\"word\":\"transform\",\"pronun\":\"[trænsˈfɔːrm]\",\"translation\":\"vt. 改变，使…变形；转换\\nvi. 变换，改变；转化\",\"audio\":\"transform.mp3\"},{\"word\":\"transient\",\"pronun\":\"[ˈtrænʃnt]\",\"translation\":\"n. 瞬变现象；过往旅客；候鸟\\nadj. 短暂的；路过的\",\"audio\":\"transient.mp3\"},{\"word\":\"transistor\",\"pronun\":\"[trænˈzɪstərˌtrænˈsɪstər]\",\"translation\":\"n. 晶体管（收音机）\",\"audio\":\"transistor.mp3\"},{\"word\":\"transit\",\"pronun\":\"[ˈtrænzɪtˌˈtrænsɪt]\",\"translation\":\"n. 运输；经过\\nvt. 运送\\nvi. 经过\",\"audio\":\"transit.mp3\"},{\"word\":\"transition\",\"pronun\":\"[trænˈzɪʃnˌtrænˈsɪʃn]\",\"translation\":\"n. 过渡；转变；[分子生物] 转换；变调\",\"audio\":\"transition.mp3\"},{\"word\":\"transmission\",\"pronun\":\"[trænzˈmɪʃnˌtrænsˈmɪʃn]\",\"translation\":\"n. 传动装置，[机] 变速器；传递；传送；播送\",\"audio\":\"transmission.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

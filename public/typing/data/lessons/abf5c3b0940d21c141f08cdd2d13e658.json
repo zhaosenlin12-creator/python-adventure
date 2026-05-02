@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.597781+00:00",
+  "request": {
+    "lesson_id": "abf5c3b0940d21c141f08cdd2d13e658",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 553,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "abf5c3b0940d21c141f08cdd2d13e658",
+    "nextLessonId": "d4ccba8f826354744fd4837da28bbccf",
+    "lessonName": "Colours",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "147cbd5006813890eb223c3db9d4cebe",
+        "index": 1,
+        "text": [
+          "Colours\\nJake got out a piece of paper. Then he found a paintbrush and four colours of paint. He had red, yellow, blue, and white. He painted a red boat floating on blue water.\\nHe painted a yellow sun peaking through white clouds.\\n\"I need orange for my picture,\" said Jake. He mixed some of the red with some of the yellow. It made a nice shade of orange.\\n\"That's better,\" said Jake. \"But I need green too.\" He mixed some of the yellow with some of the blue. It made a nice shade of green.\\n\"That's better,\" said Jake. \"What about purple? I need purple as well.\" He mixed some of the blue with some of the red. It made a nice shade of purple.\\n\"Much better,\" said Jake. \"Now I'm ready to paint a rainbow.\""
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

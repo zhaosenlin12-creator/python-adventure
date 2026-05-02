@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.936199+00:00",
+  "request": {
+    "lesson_id": "9fc141d3cdd6e9d0d2ac1cd1d0324a1d",
+    "course_id": "6b7e28f9c51591c604dbd65a0dd6d5c4",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "6b7e28f9c51591c604dbd65a0dd6d5c4",
+    "order": 390,
+    "nextCourseId": "6b7e28f9c51591c604dbd65a0dd6d5c4",
+    "courseName": "百科知识2",
+    "lessonId": "9fc141d3cdd6e9d0d2ac1cd1d0324a1d",
+    "nextLessonId": "a476563e50710e54b01b985fa268bdcf",
+    "lessonName": "游戏：英文单词",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-duck.b036f0ad8f.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "834bd0b57bea2c8b5fa3f4a13f49996a",
+        "index": 1,
+        "text": [
+          "counsel mingle sneeze phrase quote idiom refract reflect"
+        ],
+        "contentType": 3,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 30,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

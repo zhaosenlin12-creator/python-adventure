@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.355648+00:00",
+  "request": {
+    "lesson_id": "71a74a2c5a3bf3688f314d2767498cbb",
+    "course_id": "d47f40df8593ffe75da61fffca274131",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "d47f40df8593ffe75da61fffca274131",
+    "order": 250,
+    "nextCourseId": "d47f40df8593ffe75da61fffca274131",
+    "courseName": "汉字三级",
+    "lessonId": "71a74a2c5a3bf3688f314d2767498cbb",
+    "nextLessonId": "b61be5ec05889408023863cbfbda3b24",
+    "lessonName": "《荷叶·母亲》 冰心",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-3.f410710cf0.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4c866379319f787ddcc250c95124a057",
+        "index": 1,
+        "text": [
+          "雨势并不减退，红莲却不摇动了。雨点不住的打着，只能在那勇敢慈怜的荷叶上面，聚了些流转无力的水珠。"
+        ],
+        "pinyin": "[[\"雨\", \"yǔ\"], [\"势\", \"shì\"], [\"并\", \"bìng\"], [\"不\", \"bù\"], [\"减\", \"jiǎn\"], [\"退\", \"tuì\"], [\"，\", \"\"], [\"红\", \"hóng\"], [\"莲\", \"lián\"], [\"却\", \"què\"], [\"不\", \"bù\"], [\"摇\", \"yáo\"], [\"动\", \"dòng\"], [\"了\", \"le\"], [\"。\", \"\"], [\"雨\", \"yǔ\"], [\"点\", \"diǎn\"], [\"不\", \"bù\"], [\"住\", \"zhù\"], [\"的\", \"de\"], [\"打\", \"dǎ\"], [\"着\", \"zhe\"], [\"，\", \"\"], [\"只\", \"zhǐ\"], [\"能\", \"néng\"], [\"在\", \"zài\"], [\"那\", \"nà\"], [\"勇\", \"yǒng\"], [\"敢\", \"gǎn\"], [\"慈\", \"cí\"], [\"怜\", \"lián\"], [\"的\", \"de\"], [\"荷\", \"hé\"], [\"叶\", \"yè\"], [\"上\", \"shàng\"], [\"面\", \"miàn\"], [\"，\", \"\"], [\"聚\", \"jù\"], [\"了\", \"le\"], [\"些\", \"xiē\"], [\"流\", \"liú\"], [\"转\", \"zhuǎn\"], [\"无\", \"wú\"], [\"力\", \"lì\"], [\"的\", \"de\"], [\"水\", \"shuǐ\"], [\"珠\", \"zhū\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 31,
+        "minSpeed": 23,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

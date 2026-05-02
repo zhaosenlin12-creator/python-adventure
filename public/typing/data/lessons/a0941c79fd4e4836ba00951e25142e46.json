@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.935529+00:00",
+  "request": {
+    "lesson_id": "a0941c79fd4e4836ba00951e25142e46",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 403,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "a0941c79fd4e4836ba00951e25142e46",
+    "nextLessonId": "b87d72193de46ece23649be4bf1b2cc2",
+    "lessonName": "六级词汇正序版-125",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第125课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "fe93036f7c8b5ecfddc4fe95b8406da4",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"interruption\",\"pronun\":\"[ˌɪntəˈrʌpʃn]\",\"translation\":\"n. 中断；干扰；中断之事\",\"audio\":\"interruption.mp3\"},{\"word\":\"intervention\",\"pronun\":\"[ˌɪntərˈvenʃn]\",\"translation\":\"n. 介入；调停；妨碍\",\"audio\":\"intervention.mp3\"},{\"word\":\"intestine\",\"pronun\":\"[ɪnˈtestɪn]\",\"translation\":\"n. 肠\\nadj. 内部的；国内的\",\"audio\":\"intestine.mp3\"},{\"word\":\"ironically\",\"pronun\":\"[aɪˈrɑːnɪkli]\",\"translation\":\"adv. 讽刺地；说反话地\",\"audio\":\"ironically.mp3\"},{\"word\":\"irreplaceable\",\"pronun\":\"[ˌɪrɪˈpleɪsəbl]\",\"translation\":\"adj. 不能替代的，不能调换的\",\"audio\":\"irreplaceable.mp3\"},{\"word\":\"irreversible\",\"pronun\":\"[ˌɪrɪˈvɜːrsəbl]\",\"translation\":\"adj. 不可逆的；不能取消的；不能翻转的\",\"audio\":\"irreversible.mp3\"},{\"word\":\"irritation\",\"pronun\":\"[ˌɪrɪˈteɪʃn]\",\"translation\":\"n. 刺激；激怒，恼怒，生气；兴奋；令人恼火的事\",\"audio\":\"irritation.mp3\"},{\"word\":\"itinerary\",\"pronun\":\"[aɪˈtɪnəreri]\",\"translation\":\"n. 旅程，路线； 旅行日程\\nadj. 旅程的； 巡回的，流动的\",\"audio\":\"itinerary.mp3\"},{\"word\":\"Jack\",\"pronun\":\"[dʒæk]\",\"translation\":\"n. 千斤顶；[电] 插座；男人\\nadj. 雄的\\nvt. 增加；提醒；抬起；用千斤顶顶起某物\",\"audio\":\"Jack.mp3\"},{\"word\":\"juggle\",\"pronun\":\"[ˈdʒʌɡl]\",\"translation\":\"vi. 玩杂耍；欺骗；歪曲\\nvt. 歪曲；欺骗\\nn. 玩戏法；欺骗\",\"audio\":\"juggle.mp3\"},{\"word\":\"kerosene\",\"pronun\":\"[ˈkerəsiːn]\",\"translation\":\"n. 煤油，火油\",\"audio\":\"kerosene.mp3\"},{\"word\":\"kin\",\"pronun\":\"[kɪn]\",\"translation\":\"n. 亲戚；家族；同族\\nadj. 同类的；有亲属关系的；性质类似的\",\"audio\":\"kin.mp3\"},{\"word\":\"legacy\",\"pronun\":\"[ˈleɡəsi]\",\"translation\":\"n. 遗赠，遗产\",\"audio\":\"legacy.mp3\"},{\"word\":\"linguist\",\"pronun\":\"[ˈlɪŋɡwɪst]\",\"translation\":\"n. 语言学家\\n学多种外语的人\",\"audio\":\"linguist.mp3\"},{\"word\":\"linguistic\",\"pronun\":\"[lɪŋˈɡwɪstɪk]\",\"translation\":\"adj. 语言的；语言学的\",\"audio\":\"linguistic.mp3\"},{\"word\":\"literate\",\"pronun\":\"[ˈlɪtərət]\",\"translation\":\"adj. 受过教育的；精通文学的\\nn. 学者\",\"audio\":\"literate.mp3\"},{\"word\":\"longevity\",\"pronun\":\"[lɔːnˈdʒevəti]\",\"translation\":\"n. 长寿，长命；寿命\",\"audio\":\"longevity.mp3\"},{\"word\":\"malnutrition\",\"pronun\":\"[ˌmælnuˈtrɪʃn]\",\"translation\":\"n. 营养失调，营养不良\",\"audio\":\"malnutrition.mp3\"},{\"word\":\"mammal\",\"pronun\":\"[ˈmæml]\",\"translation\":\"n. [脊椎] 哺乳动物\",\"audio\":\"mammal.mp3\"},{\"word\":\"manifestation\",\"pronun\":\"[ˌmænɪfeˈsteɪʃn]\",\"translation\":\"n. 表现；显示；示威运动\",\"audio\":\"manifestation.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

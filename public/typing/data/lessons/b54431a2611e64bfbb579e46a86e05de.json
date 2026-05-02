@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.328082+00:00",
+  "request": {
+    "lesson_id": "b54431a2611e64bfbb579e46a86e05de",
+    "course_id": "30951c93875a1e260feda8cb699005df",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "30951c93875a1e260feda8cb699005df",
+    "order": 484,
+    "nextCourseId": "30951c93875a1e260feda8cb699005df",
+    "courseName": "英语每日故事（初级）32-61",
+    "lessonId": "b54431a2611e64bfbb579e46a86e05de",
+    "nextLessonId": "89f1013085b4929aeda798f6c722989c",
+    "lessonName": "Animals in the Park",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5f16485b664f9e9e8bf0b1b05e72f0a1",
+        "index": 1,
+        "text": [
+          "When Grandpa comes to visit, we like to go for a walk. First, we go to the store. Grandpa buys some seeds and nuts. Then we go to the park. Grandpa shows me how to feed the birds and squirrels. We give them seeds and nuts to eat. Soon all the small animals come to me. I enjoy feeding them. I think they like seeds and nuts, and they like us too!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

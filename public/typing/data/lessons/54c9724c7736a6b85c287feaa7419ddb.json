@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.272866+00:00",
+  "request": {
+    "lesson_id": "54c9724c7736a6b85c287feaa7419ddb",
+    "course_id": "f81aeb9f7457592295d8d925c4358b36",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "f81aeb9f7457592295d8d925c4358b36",
+    "order": 228,
+    "nextCourseId": "f81aeb9f7457592295d8d925c4358b36",
+    "courseName": "汉字二级",
+    "lessonId": "54c9724c7736a6b85c287feaa7419ddb",
+    "nextLessonId": "bfe03ca2192ce220ceb1a5405f744f3d",
+    "lessonName": "《踏青的风日》 李佩芝",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-2.4d21a5bc2c.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c0cdbcd28f96314c7cadbb222cb01281",
+        "index": 1,
+        "text": [
+          "刮了一天的大风。\\n不像春风。没有吹绿小草，没有鼓胀花蕾，何况，又一丝儿也不温柔。\\n可我觉得，这是最使我快活的风呢！"
+        ],
+        "pinyin": "[[\"刮\", \"guā\"], [\"了\", \"le\"], [\"一\", \"yī\"], [\"天\", \"tiān\"], [\"的\", \"de\"], [\"大\", \"dà\"], [\"风\", \"fēng\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"不\", \"bù\"], [\"像\", \"xiàng\"], [\"春\", \"chūn\"], [\"风\", \"fēng\"], [\"。\", \"\"], [\"没\", \"méi\"], [\"有\", \"yǒu\"], [\"吹\", \"chuī\"], [\"绿\", \"lǜ\"], [\"小\", \"xiǎo\"], [\"草\", \"cǎo\"], [\"，\", \"\"], [\"没\", \"méi\"], [\"有\", \"yǒu\"], [\"鼓\", \"gǔ\"], [\"胀\", \"zhàng\"], [\"花\", \"huā\"], [\"蕾\", \"lěi\"], [\"，\", \"\"], [\"何\", \"hé\"], [\"况\", \"kuàng\"], [\"，\", \"\"], [\"又\", \"yòu\"], [\"一\", \"yī\"], [\"丝\", \"sī\"], [\"儿\", \"r\"], [\"也\", \"yě\"], [\"不\", \"bù\"], [\"温\", \"wēn\"], [\"柔\", \"róu\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"可\", \"kě\"], [\"我\", \"wǒ\"], [\"觉\", \"jué\"], [\"得\", \"de\"], [\"，\", \"\"], [\"这\", \"zhè\"], [\"是\", \"shì\"], [\"最\", \"zuì\"], [\"使\", \"shǐ\"], [\"我\", \"wǒ\"], [\"快\", \"kuài\"], [\"活\", \"huó\"], [\"的\", \"de\"], [\"风\", \"fēng\"], [\"呢\", \"ne\"], [\"！\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 26,
+        "minSpeed": 16,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

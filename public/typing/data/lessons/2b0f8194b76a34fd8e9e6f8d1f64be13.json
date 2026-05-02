@@ -1,0 +1,148 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.542350+00:00",
+  "request": {
+    "lesson_id": "2b0f8194b76a34fd8e9e6f8d1f64be13",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 1,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "2b0f8194b76a34fd8e9e6f8d1f64be13",
+    "nextLessonId": "3c0df388effba2efc33ccd5c1607e693",
+    "lessonName": "什么是双拼打字",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "了解双拼输入法的基本概念和优势",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [],
+    "article": [
+      {
+        "chapterId": "34d243f67f3fa2fee4e6ac87386165aa",
+        "index": 1,
+        "contentType": 18,
+        "content": [
+          {
+            "type": "heading",
+            "content": "什么是双拼输入法？"
+          },
+          {
+            "type": "text",
+            "content": "双拼输入法是一种高效的中文输入方式。与全拼不同，双拼将每个汉字的音节拆分为\"声母\"和\"韵母\"两部分，每部分只需按一个键，因此每个汉字最多只需敲两次键盘。"
+          },
+          {
+            "type": "image",
+            "url": "data/assets/daziya.com/assets_img_shuangpin_what-is-shuangpin.1120252a69.png",
+            "caption": "双拼 vs 全拼对比"
+          },
+          {
+            "type": "heading",
+            "content": "全拼 vs 双拼"
+          },
+          {
+            "type": "text",
+            "content": "以\"双拼\"这个词为例："
+          },
+          {
+            "type": "comparison",
+            "items": [
+              {
+                "label": "全拼",
+                "keys": "shuangpin",
+                "count": 9
+              },
+              {
+                "label": "双拼",
+                "keys": "ul pb",
+                "count": 4
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": "全拼需要敲 9 次键盘，而双拼只需 4 次。输入越多，效率差距越明显。"
+          },
+          {
+            "type": "heading",
+            "content": "双拼的原理"
+          },
+          {
+            "type": "text",
+            "content": "汉语拼音由声母和韵母组成。双拼将所有声母和韵母分别映射到键盘上的某个按键。例如在小鹤双拼方案中："
+          },
+          {
+            "type": "list",
+            "items": [
+              "声母 sh 对应按键 U",
+              "韵母 uang 对应按键 L",
+              "声母 p 对应按键 P",
+              "韵母 in 对应按键 B",
+              "所以\"双拼\"= UL PB，只需 4 次按键"
+            ]
+          },
+          {
+            "type": "image",
+            "url": "data/assets/daziya.com/assets_img_shuangpin_xiaohe-shuangpin-keyboard.cd4ce2c79f.png",
+            "caption": "小鹤双拼键位图"
+          },
+          {
+            "type": "heading",
+            "content": "为什么学双拼？"
+          },
+          {
+            "type": "list",
+            "items": [
+              "速度更快：每个字只需 2 次按键，打字速度可提升 30%-50%",
+              "手指更轻松：按键次数减少，长时间打字不累",
+              "学习成本低：只需记住韵母的键位映射，1-2 周即可上手",
+              "兼容性好：主流输入法（搜狗、微信、百度等）均支持双拼模式"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "常用的几种双拼方案"
+          },
+          {
+            "type": "text",
+            "content": "目前主流的双拼方案有四种，它们的声母/韵母键位映射各不相同，选择一种坚持使用即可。下面简单介绍它们的特点："
+          },
+          {
+            "type": "list",
+            "items": [
+              "小鹤双拼：键位安排科学，零声母处理简洁，手感舒适，是近年来最流行的方案，社区资源丰富，主流输入法均内置支持。",
+              "自然码：最早的双拼方案之一，历史悠久，布局经典，曾广泛用于专业录入场景，学习曲线略陡，但稳定可靠。",
+              "搜狗双拼：搜狗输入法自带的默认方案，键位沿用常见习惯，与搜狗输入法配合紧密，适合搜狗老用户。",
+              "微软双拼：Windows 系统微软拼音自带方案，历史悠久，兼容性好，适合长期使用 Windows 自带输入法的用户。"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "如何选择？"
+          },
+          {
+            "type": "text",
+            "content": "如果你是第一次接触双拼，推荐直接学习小鹤双拼。原因有三：一是键位设计最合理，上手体验最好；二是各大输入法（搜狗、微信、百度、Rime 等）都原生支持，切换设备无忧；三是教程和练习资源最丰富，遇到问题容易找到答案。本课程后续内容也将以小鹤双拼为例进行讲解。"
+          },
+          {
+            "type": "heading",
+            "content": "准备好了吗？"
+          },
+          {
+            "type": "text",
+            "content": "接下来，我们将从最基础的声母和韵母键位开始，一步步带你掌握小鹤双拼。每节课都有针对性练习，跟着练就能学会！"
+          }
+        ]
+      }
+    ],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

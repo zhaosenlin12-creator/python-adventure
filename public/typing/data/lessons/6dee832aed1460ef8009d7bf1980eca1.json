@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.390349+00:00",
+  "request": {
+    "lesson_id": "6dee832aed1460ef8009d7bf1980eca1",
+    "course_id": "30951c93875a1e260feda8cb699005df",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "30951c93875a1e260feda8cb699005df",
+    "order": 500,
+    "nextCourseId": "30951c93875a1e260feda8cb699005df",
+    "courseName": "英语每日故事（初级）32-61",
+    "lessonId": "6dee832aed1460ef8009d7bf1980eca1",
+    "nextLessonId": "0e435d9fb4702535591cf593f72679bc",
+    "lessonName": "Who Is Your Hero?-1",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3590c01403fd33bf9fda082d73453560",
+        "index": 1,
+        "text": [
+          "My teacher asked us to write about a hero. She said, 'Your hero has to be someone that you know.' At home, my father said, 'You can write about me! I have done many good things.' My mother smiled and said, 'Usually a hero doesn't say he is a hero!' Who could I write about?"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

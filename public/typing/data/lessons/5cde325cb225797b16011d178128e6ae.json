@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.506971+00:00",
+  "request": {
+    "lesson_id": "5cde325cb225797b16011d178128e6ae",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 531,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "5cde325cb225797b16011d178128e6ae",
+    "nextLessonId": "63d7dedeabd33e43dcc2f2c581f4681e",
+    "lessonName": "Zoo Animals",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3e7d006c11c8c82f066816bf955825f8",
+        "index": 1,
+        "text": [
+          "My class went to the zoo today. It was fun!\\nWe watched elephants use their trunks. We saw lions rest in the sunshine. We watched polar bears swim in the water. We saw monkeys climb trees and birds fly through the air.\\nBut best of all, we watched a peacock fan his tail feathers. It was so beautiful!\\nI want to see that again!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

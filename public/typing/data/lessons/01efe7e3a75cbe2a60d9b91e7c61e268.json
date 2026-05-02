@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.528242+00:00",
+  "request": {
+    "lesson_id": "01efe7e3a75cbe2a60d9b91e7c61e268",
+    "course_id": "2ab9dc27a9350a9ff86633c542967f70",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "order": 62,
+    "nextCourseId": "2ab9dc27a9350a9ff86633c542967f70",
+    "courseName": "下排字母",
+    "lessonId": "01efe7e3a75cbe2a60d9b91e7c61e268",
+    "nextLessonId": "cee03916de2ba1e1c66bfedd9b51a8f2",
+    "lessonName": "右手下排字母",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-up-row-right.f280f051d1.png",
+    "description": "右手下排字母",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4feac96b1e84731cb21b8997e1cb756c",
+        "index": 1,
+        "text": [
+          "// hu hui; you ju jiu, nu ni po li // lou luo muo mou / mi mo you; ji liu, lu miu miu. niu niu nu, pu yu lu ni."
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "/ hui;yoj,nplm.",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

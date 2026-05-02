@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.348599+00:00",
+  "request": {
+    "lesson_id": "a7d8ae3d2b8a7351d1c581705662a6f6",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 57,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "a7d8ae3d2b8a7351d1c581705662a6f6",
+    "nextLessonId": "fb23f2ff265eb0563ca112cc1fda0136",
+    "lessonName": "KET核心词-10",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第10课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "0fd5e3d24672b1393b73326401d21642",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"brush\",\"pronun\":\"[brʌʃ]\",\"translation\":\"n. 刷子；画笔；毛笔；争吵；与某人有效冲突；灌木丛地带；矮树丛；狐狸尾巴\\nvi. 刷；擦过；掠过；（经过时）轻触\\nvt. 刷；画；\",\"audio\":\"brush.mp3\"},{\"word\":\"build\",\"pronun\":\"[bɪld]\",\"translation\":\"n. 构造；体形；体格\\nvi. 建筑；建造\\nvt. 建立；建筑\",\"audio\":\"build.mp3\"},{\"word\":\"burger\",\"pronun\":\"[ˈbɜːrɡər]\",\"translation\":\"n. 汉堡包\",\"audio\":\"burger.mp3\"},{\"word\":\"burn\",\"pronun\":\"[bɜːrn]\",\"translation\":\"n. 灼伤，烧伤；烙印\\nvt. 燃烧；烧毁，灼伤；激起…的愤怒\\nvi. 燃烧；烧毁；发热\",\"audio\":\"burn.mp3\"},{\"word\":\"bus\",\"pronun\":\"[bʌs]\",\"translation\":\"n. 公共汽车\\n乘公共汽车\",\"audio\":\"bus.mp3\"},{\"word\":\"business\",\"pronun\":\"[ˈbɪznəs]\",\"translation\":\"n. 商业；[贸易] 生意；[贸易] 交易；事情\",\"audio\":\"business.mp3\"},{\"word\":\"businessman\",\"pronun\":\"[ˈbɪznəsmæn]\",\"translation\":\"n. 商人\",\"audio\":\"businessman.mp3\"},{\"word\":\"businesswoman\",\"pronun\":\"[ˈbɪznəswʊmən]\",\"translation\":\"n. 女商人\",\"audio\":\"businesswoman.mp3\"},{\"word\":\"busy\",\"pronun\":\"[ˈbɪzi]\",\"translation\":\"adj. 忙碌的；热闹的；正被占用的\\nvt. 使忙于\",\"audio\":\"busy.mp3\"},{\"word\":\"but\",\"pronun\":\"[bət; bʌt]\",\"translation\":\"conj. 但是；而是；然而\\nadv. 仅仅，只\\nprep. 除…以外\",\"audio\":\"but.mp3\"},{\"word\":\"buy\",\"pronun\":\"[baɪ]\",\"translation\":\"n. 购买，买卖；所购的物品\\nvi. 买，采购\\nvt. 购买；获得；贿赂\",\"audio\":\"buy.mp3\"},{\"word\":\"by\",\"pronun\":\"[baɪ]\",\"translation\":\"prep. 通过；被；依据；经由；在附近；在……之前\\nadv. 通过；经过；附近；[互联网] 白俄罗斯的国家代码顶级域名\",\"audio\":\"by.mp3\"},{\"word\":\"bye\",\"pronun\":\"[baɪ]\",\"translation\":\"n. 轮空；次要的东西\\nint. 再见\\nadj. 次要的\",\"audio\":\"bye.mp3\"},{\"word\":\"café\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"caf__.mp3\"},{\"word\":\"cake\",\"pronun\":\"[keɪk]\",\"translation\":\"n. 蛋糕；块状物；利益总额\\nvt. 使结块\\nvi. 结成块状\",\"audio\":\"cake.mp3\"},{\"word\":\"calendar\",\"pronun\":\"[ˈkælɪndər]\",\"translation\":\"n. 日历；[天] 历法；日程表\\nvt. 将…列入表中；将…排入日程表\",\"audio\":\"calendar.mp3\"},{\"word\":\"call\",\"pronun\":\"[kɔːl]\",\"translation\":\"n. 电话；呼叫；要求；访问\\nvi. 呼叫；拜访；叫牌\\nvt. 呼叫；称呼；召集\",\"audio\":\"call.mp3\"},{\"word\":\"camera\",\"pronun\":\"[ˈkæm(ə)rə]\",\"translation\":\"n. 照相机；摄影机\",\"audio\":\"camera.mp3\"},{\"word\":\"camp\",\"pronun\":\"[kæmp]\",\"translation\":\"n. 露营\\nvt. 扎营；使扎营\\nvi. 露营；扎营\",\"audio\":\"camp.mp3\"},{\"word\":\"campsite\",\"pronun\":\"[ˈkæmpsaɪt]\",\"translation\":\"n. 营地\",\"audio\":\"campsite.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

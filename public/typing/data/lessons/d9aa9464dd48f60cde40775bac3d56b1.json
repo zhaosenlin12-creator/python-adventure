@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.667609+00:00",
+  "request": {
+    "lesson_id": "d9aa9464dd48f60cde40775bac3d56b1",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 348,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "d9aa9464dd48f60cde40775bac3d56b1",
+    "nextLessonId": "b4d8b05961d6d7f4e6bc621f3c1af54e",
+    "lessonName": "六级词汇正序版-97",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第97课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "32fceb5467dbe9c8a4ed1d50a434733b",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"security\",\"pronun\":\"[sɪˈkjʊrəti]\",\"translation\":\"n. 安全；保证；证券；抵押品\\nadj. 安全的；保安的；保密的\",\"audio\":\"security.mp3\"},{\"word\":\"seemingly\",\"pronun\":\"[ˈsiːmɪŋli]\",\"translation\":\"adv. 看来似乎；表面上看来\",\"audio\":\"seemingly.mp3\"},{\"word\":\"segment\",\"pronun\":\"[ˈseɡmənt]\",\"translation\":\"n. 段；部分\\nvt. 分割\\nvi. 分割\",\"audio\":\"segment.mp3\"},{\"word\":\"segregate\",\"pronun\":\"[ˈseɡrɪɡeɪt]\",\"translation\":\"vt. 使隔离；使分离；在…实行种族隔离\",\"audio\":\"segregate.mp3\"},{\"word\":\"semester\",\"pronun\":\"[sɪˈmestər]\",\"translation\":\"n. 学期；半年\",\"audio\":\"semester.mp3\"},{\"word\":\"seminar\",\"pronun\":\"[ˈsemɪnɑːr]\",\"translation\":\"n. 讨论会，研讨班\",\"audio\":\"seminar.mp3\"},{\"word\":\"senator\",\"pronun\":\"[ˈsenətər]\",\"translation\":\"n. 参议员；（古罗马的）元老院议员；评议员，理事\",\"audio\":\"senator.mp3\"},{\"word\":\"sensation\",\"pronun\":\"[senˈseɪʃn]\",\"translation\":\"n. 感觉；轰动；感动\",\"audio\":\"sensation.mp3\"},{\"word\":\"sensational\",\"pronun\":\"[senˈseɪʃənl]\",\"translation\":\"adj. 轰动的；耸人听闻的；非常好的；使人感动的\",\"audio\":\"sensational.mp3\"},{\"word\":\"sensible\",\"pronun\":\"[ˈsensəbl]\",\"translation\":\"n. 可感觉到的东西; 敏感的人;\\nadj. 明智的; 通情达理的; 合乎情理的; 意识到的，能感觉到的;\",\"audio\":\"sensible.mp3\"},{\"word\":\"sensitive\",\"pronun\":\"[ˈsensətɪv]\",\"translation\":\"adj. 敏感的；感觉的；[仪] 灵敏的；感光的；易受伤害的；易受影响的\\nn. 敏感的人；有灵异能力的人\",\"audio\":\"sensitive.mp3\"},{\"word\":\"sentiment\",\"pronun\":\"[ˈsentɪmənt]\",\"translation\":\"n. 感情，情绪；情操；观点；多愁善感\",\"audio\":\"sentiment.mp3\"},{\"word\":\"sequence\",\"pronun\":\"[ˈsiːkwəns]\",\"translation\":\"n. [数][计] 序列；顺序；续发事件\\nvt. 按顺序排好\",\"audio\":\"sequence.mp3\"},{\"word\":\"sergeant\",\"pronun\":\"[ˈsɑːrdʒənt]\",\"translation\":\"n. 军士；警察小队长；海军陆战队中士；高等律师\",\"audio\":\"sergeant.mp3\"},{\"word\":\"serial\",\"pronun\":\"[ˈsɪriəl]\",\"translation\":\"n. 电视连续剧；[图情] 期刊；连载小说\\nadj. 连续的；连载的；分期偿还的\",\"audio\":\"serial.mp3\"},{\"word\":\"series\",\"pronun\":\"[ˈsɪriːz]\",\"translation\":\"n. 系列，连续；[电] 串联；级数；丛书\",\"audio\":\"series.mp3\"},{\"word\":\"setback\",\"pronun\":\"[ˈsetbæk]\",\"translation\":\"n. 挫折；退步；逆流\",\"audio\":\"setback.mp3\"},{\"word\":\"settle\",\"pronun\":\"[ˈset(ə)l]\",\"translation\":\"n. 有背长椅\\nvi. 解决；定居；沉淀；下陷\\nvt. 解决；安排；使…定居\",\"audio\":\"settle.mp3\"},{\"word\":\"settlement\",\"pronun\":\"[ˈsetlmənt]\",\"translation\":\"n. 解决，处理；[会计] 结算；沉降；殖民\",\"audio\":\"settlement.mp3\"},{\"word\":\"severe\",\"pronun\":\"[sɪˈvɪr]\",\"translation\":\"adj. 严峻的；严厉的；剧烈的；苛刻的\",\"audio\":\"severe.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

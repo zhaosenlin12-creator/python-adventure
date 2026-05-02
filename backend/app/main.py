@@ -30,6 +30,7 @@ from app.api.v1 import (
     pvp,
     pvp_battle_royale,
     tasks,
+    typing,
     user_questions,
     users,
     workshop,
@@ -198,6 +199,7 @@ app.include_router(pet_chat.router, prefix="/api/v1/ai", tags=["宠物 AI 聊天
 app.include_router(learning_assistant.router, prefix="/api/v1/ai/learning-assistant", tags=["AI Learning Assistant"])
 app.include_router(user_questions.router, prefix="/api/v1/user-questions", tags=["用户题库"])
 app.include_router(ai_questions.router, prefix="/api/v1/ai/questions", tags=["AI 出题"])
+app.include_router(typing.router, prefix="/api/typing", tags=["typing"])
 
 
 @app.get("/")

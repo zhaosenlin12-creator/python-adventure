@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.063903+00:00",
+  "request": {
+    "lesson_id": "9bd017221b5b419bfecb0d144d112b38",
+    "course_id": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "order": 213,
+    "nextCourseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "courseName": "小升初必备单词",
+    "lessonId": "9bd017221b5b419bfecb0d144d112b38",
+    "nextLessonId": "beead81ae3068bd1ff2b0b8a2e5f0cad",
+    "lessonName": "V",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9df9a8c8beadfad3ec88e84bba046ae0",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"van\",\"pronun\":\"[v\\u00e6n]\",\"translation\":\"n. \\u9762\\u5305\\u8f66; \\u7bb1\\u5f0f\\u9001\\u8d27\\u8f66\"},{\"word\":\"vegetable\",\"pronun\":\"[\\u02c8ved\\u0292it\\u0259bl]\",\"translation\":\"n. \\u852c\\u83dc; \\u690d\\u7269\"},{\"word\":\"very\",\"pronun\":\"[\\u02c8veri]\",\"translation\":\"adv. \\u5f88; \\u5341\\u5206; \\u975e\\u5e38\"},{\"word\":\"video\",\"pronun\":\"[\\u02c8vidi\\u0259u]\",\"translation\":\"n. \\u7535\\u89c6; \\u89c6\\u9891; \\u5f55\\u8c61\"},{\"word\":\"village\",\"pronun\":\"[\\u02c8vilid\\u0292]\",\"translation\":\"n. \\u6751\\u5e84; \\u4e61\\u6751\"},{\"word\":\"violet\",\"pronun\":\"[\\u02c8vai\\u0259lit]\",\"translation\":\"adj. \\u7d2b\\u7f57\\u5170\\u8272\\u7684; \\u7d2b\\u8272\\u7684 n. \\u7d2b...\"},{\"word\":\"violin\",\"pronun\":\"[\\u02ccvai\\u0259\\u02c8lin]\",\"translation\":\"n. \\u5c0f\\u63d0\\u7434(\\u624b)\"},{\"word\":\"visit\",\"pronun\":\"[\\u02c8vizit]\",\"translation\":\"v. \\u53c2\\u89c2; \\u8bbf\\u95ee; \\u63a2\\u671b\"},{\"word\":\"volleyball\",\"pronun\":\"[\\u02c8v\\u0254lib\\u0254:l]\",\"translation\":\"n. \\u6392\\u7403; \\u6392\\u7403\\u8fd0\\u52a8\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "v",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 12,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

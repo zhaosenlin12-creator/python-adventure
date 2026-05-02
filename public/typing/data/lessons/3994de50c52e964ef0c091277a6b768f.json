@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.289244+00:00",
+  "request": {
+    "lesson_id": "3994de50c52e964ef0c091277a6b768f",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 46,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "3994de50c52e964ef0c091277a6b768f",
+    "nextLessonId": "a5d9a7b2bde59b698f6ca04cd3e6dc8f",
+    "lessonName": "2022年版 PEP-六年级-上册-7",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-六年级-上册 - 第7课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a692e7a9cd7a0be00a3b17ba8b74ce6f",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"use\",\"pronun\":\"[juːz]\",\"translation\":\"n. 使用；用途；发挥\\nvt. 利用；耗费\\nvi. 使用，运用\",\"audio\":\"use.mp3\"},{\"word\":\"type\",\"pronun\":\"[taɪp]\",\"translation\":\"n. 类型，品种；模范；样式\\nvt. 打字；测定（血等）类型\\nvi. 打字\",\"audio\":\"type.mp3\"},{\"word\":\"quickly\",\"pronun\":\"[ˈkwɪkli]\",\"translation\":\"adv. 迅速地；很快地\",\"audio\":\"quickly.mp3\"},{\"word\":\"secretary\",\"pronun\":\"[ˈsekrəteri]\",\"translation\":\"n. 秘书；书记；部长；大臣\",\"audio\":\"secretary.mp3\"},{\"word\":\"angry\",\"pronun\":\"[ˈæŋɡri]\",\"translation\":\"adj. 生气的；愤怒的；狂暴的；（伤口等）发炎的\",\"audio\":\"angry.mp3\"},{\"word\":\"afraid\",\"pronun\":\"[əˈfreɪd]\",\"translation\":\"adj. 害怕的；恐怕；担心的\",\"audio\":\"afraid.mp3\"},{\"word\":\"sad\",\"pronun\":\"[sæd]\",\"translation\":\"adj. 难过的；悲哀的，令人悲痛的；凄惨的，阴郁的（形容颜色）\",\"audio\":\"sad.mp3\"},{\"word\":\"worried\",\"pronun\":\"[ˈwɜːrid]\",\"translation\":\"adj. 担心的\",\"audio\":\"worried.mp3\"},{\"word\":\"happy\",\"pronun\":\"[ˈhæpi]\",\"translation\":\"adj. 幸福的；高兴的；巧妙的\",\"audio\":\"happy.mp3\"},{\"word\":\"doctor\",\"pronun\":\"[ˈdɑːktər]\",\"translation\":\"vt. 修理；篡改，伪造；为…治病；授以博士学位\\nn. 医生；博士\\nvi. 就医；行医\",\"audio\":\"doctor.mp3\"},{\"word\":\"more\",\"pronun\":\"[mɔːr]\",\"translation\":\"adv. 更多；此外；更大程度地\\nadj. 更多的；附加的\\npron. 更多的数量\\nn. 更多\",\"audio\":\"more.mp3\"},{\"word\":\"deep\",\"pronun\":\"[diːp]\",\"translation\":\"n. 深处；深渊\\nadj. 深的；低沉的；深奥的\\nadv. 深入地；深深地；迟\",\"audio\":\"deep.mp3\"},{\"word\":\"breath\",\"pronun\":\"[breθ]\",\"translation\":\"n. 呼吸，气息；一口气，（呼吸的）一次；瞬间，瞬息；微风；迹象；无声音，气音\",\"audio\":\"breath.mp3\"},{\"word\":\"count\",\"pronun\":\"[kaʊnt]\",\"translation\":\"n. 计数；计算；伯爵\\nvt. 计算；认为\\nvi. 计数；有价值\",\"audio\":\"count.mp3\"},{\"word\":\"to\",\"pronun\":\"[tə; tu; tuː]\",\"translation\":\"prep. 到；向；（表示时间、方向）朝…方向\\nadv. 向前；（门等）关上\",\"audio\":\"to.mp3\"},{\"word\":\"ten\",\"pronun\":\"[ten]\",\"translation\":\"num. 十个，十\",\"audio\":\"ten.mp3\"},{\"word\":\"chase\",\"pronun\":\"[tʃeɪs]\",\"translation\":\"n. 追逐；追赶；追击\\nvt. 追逐；追捕；试图赢得；雕镂\\nvi. 追逐；追赶；奔跑\",\"audio\":\"chase.mp3\"},{\"word\":\"mice\",\"pronun\":\"[maɪs]\",\"translation\":\"n. 老鼠（mouse的复数）\",\"audio\":\"mice.mp3\"},{\"word\":\"mouse\",\"pronun\":\"[maʊs]\",\"translation\":\"n. 鼠标；老鼠；胆小羞怯的人\\nvt. 探出\\nvi. 捕鼠；窥探\",\"audio\":\"mouse.mp3\"},{\"word\":\"bad\",\"pronun\":\"[bæd]\",\"translation\":\"n. 坏事；坏人\\nadj. 坏的；严重的；劣质的\\nadv. 很，非常；坏地；邪恶地\",\"audio\":\"bad.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

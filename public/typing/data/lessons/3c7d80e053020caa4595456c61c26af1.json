@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.465541+00:00",
+  "request": {
+    "lesson_id": "3c7d80e053020caa4595456c61c26af1",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 518,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "3c7d80e053020caa4595456c61c26af1",
+    "nextLessonId": "445a59f9339ed6946fdd3e2901972cea",
+    "lessonName": "Teddy",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "79ed84c887f712debe49e11681d92367",
+        "index": 1,
+        "text": [
+          "Teddy is my friend. He is a brown teddy bear. He has two big brown eyes. He wears red shoes and a blue hat.\\nWherever I go, I take Teddy with me. He sits beside me in the car. When I go to sleep at night, I put Teddy beside me.\\nTeddy is only a toy, but Teddy is really my best friend."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

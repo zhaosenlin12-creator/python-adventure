@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.892808+00:00",
+  "request": {
+    "lesson_id": "c2bfd3a417131ead39cdf7c7caf9ce07",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 170,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "c2bfd3a417131ead39cdf7c7caf9ce07",
+    "nextLessonId": "41fbc7118249ae5db90ffa7d13d2c711",
+    "lessonName": "KET核心词-75",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第75课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4f7a2bbebcbd38c6941730618b74c53e",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"world\",\"pronun\":\"[wɜːrld]\",\"translation\":\"n. 世界；领域；世俗；全人类；物质生活\",\"audio\":\"world.mp3\"},{\"word\":\"worry\",\"pronun\":\"[ˈwɜːri]\",\"translation\":\"n. 担心；烦恼；撕咬\\nvi. 担心；烦恼；撕咬\\nvt. 担心；发愁；折磨\",\"audio\":\"worry.mp3\"},{\"word\":\"would\",\"pronun\":\"[wʊd]\",\"translation\":\"aux. 将，将要；愿意\\nv. will的过去式\",\"audio\":\"would.mp3\"},{\"word\":\"write\",\"pronun\":\"[raɪt]\",\"translation\":\"vi. 写，写字；写作，作曲；写信\\nvt. 写，书写；写信给；著述\",\"audio\":\"write.mp3\"},{\"word\":\"wrong\",\"pronun\":\"[rɔːŋ]\",\"translation\":\"n. 坏事；不公正\\nadj. 错误的；失常的；不适当的\\nvt. 委屈；无理地对待；诽谤\\nadv. 错误地；邪恶地，不正当地\",\"audio\":\"wrong.mp3\"},{\"word\":\"year\",\"pronun\":\"[jɪr]\",\"translation\":\"n. 年；年度；历年；年纪；一年的期间；某年级的学生\",\"audio\":\"year.mp3\"},{\"word\":\"yesterday\",\"pronun\":\"[ˈjestərdeɪ; ˈjestərdi]\",\"translation\":\"n. 昨天；往昔\\nadv. 昨天\",\"audio\":\"yesterday.mp3\"},{\"word\":\"yet\",\"pronun\":\"[jet]\",\"translation\":\"conj. 但是；然而\\nadv. 还；但是；已经\",\"audio\":\"yet.mp3\"},{\"word\":\"yogurt\",\"pronun\":\"[ˈjoʊɡərt]\",\"translation\":\"n. 酸奶酪，[食品] 酸乳（等于yoghurt）\",\"audio\":\"yogurt.mp3\"},{\"word\":\"young\",\"pronun\":\"[jʌŋ]\",\"translation\":\"n. 年轻人；（动物的）崽，仔\\nadj. 年轻的；初期的；没有经验的\",\"audio\":\"young.mp3\"},{\"word\":\"yourself\",\"pronun\":\"[jɔːrˈself; jʊrˈself; jərˈself]\",\"translation\":\"pron. 你自己\",\"audio\":\"yourself.mp3\"},{\"word\":\"zero\",\"pronun\":\"[ˈzɪroʊ]\",\"translation\":\"num. 零\\nn. 零点，零度\",\"audio\":\"zero.mp3\"},{\"word\":\"zoo\",\"pronun\":\"[zuː]\",\"translation\":\"n. 动物园; <美俚>（铁路货车的最后一节）守车; <美俚>核粒子园\",\"audio\":\"zoo.mp3\"},{\"word\":\"apple\",\"pronun\":\"[ˈæpl]\",\"translation\":\"n. 苹果，苹果树，苹果似的东西；[美俚]炸弹，手榴弹，（棒球的）球；[美俚]人，家伙。\",\"audio\":\"apple.mp3\"},{\"word\":\"banana\",\"pronun\":\"[bəˈnænə]\",\"translation\":\"n. 香蕉；喜剧演员；大鹰钩鼻\",\"audio\":\"banana.mp3\"},{\"word\":\"bean\",\"pronun\":\"[biːn]\",\"translation\":\"n. 豆；嘴峰；毫无价值的东西\\nvt. 击…的头部\",\"audio\":\"bean.mp3\"},{\"word\":\"biscuit\",\"pronun\":\"[ˈbɪskɪt]\",\"translation\":\"n. 小点心，饼干\",\"audio\":\"biscuit.mp3\"},{\"word\":\"bread\",\"pronun\":\"[bred]\",\"translation\":\"n. 面包；生计\\nvt. 在…上洒面包屑\",\"audio\":\"bread.mp3\"},{\"word\":\"breakfast\",\"pronun\":\"[ˈbrekfəst]\",\"translation\":\"n. 早餐；早饭\\nvt. 为…供应早餐\\nvi. 吃早餐\",\"audio\":\"breakfast.mp3\"},{\"word\":\"burger\",\"pronun\":\"[ˈbɜːrɡər]\",\"translation\":\"n. 汉堡包\",\"audio\":\"burger.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

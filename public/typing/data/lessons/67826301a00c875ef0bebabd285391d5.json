@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.800722+00:00",
+  "request": {
+    "lesson_id": "67826301a00c875ef0bebabd285391d5",
+    "course_id": "df7bf8b8c0456926de2c1fac14a741b2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "order": 460,
+    "nextCourseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "courseName": "宋词必备67首（1）",
+    "lessonId": "67826301a00c875ef0bebabd285391d5",
+    "nextLessonId": "855c296ab28c2b3e1b80021e3880ff98",
+    "lessonName": "观书有感 其二",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f15ffb63fdb6ccf3c01c5ee4edb81048",
+        "index": 1,
+        "text": [
+          "观书有感 其二\\n朱熹\\n昨夜江边春水生，蒙冲巨舰一毛轻。\\n向来枉费推移力，此日中流自在行。"
+        ],
+        "pinyin": "[[\"观\", \"guān\"], [\"书\", \"shū\"], [\"有\", \"yǒu\"], [\"感\", \"gǎn\"], [\" \", \"\"], [\"其\", \"qí\"], [\"二\", \"èr\"], [\"\\n\", \"\"], [\"朱\", \"zhū\"], [\"熹\", \"xī\"], [\"\\n\", \"\"], [\"昨\", \"zuó\"], [\"夜\", \"yè\"], [\"江\", \"jiāng\"], [\"边\", \"biān\"], [\"春\", \"chūn\"], [\"水\", \"shuǐ\"], [\"生\", \"shēng\"], [\"，\", \"\"], [\"蒙\", \"méng\"], [\"冲\", \"chōng\"], [\"巨\", \"jù\"], [\"舰\", \"jiàn\"], [\"一\", \"yī\"], [\"毛\", \"máo\"], [\"轻\", \"qīng\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"向\", \"xiàng\"], [\"来\", \"lái\"], [\"枉\", \"wǎng\"], [\"费\", \"fèi\"], [\"推\", \"tuī\"], [\"移\", \"yí\"], [\"力\", \"lì\"], [\"，\", \"\"], [\"此\", \"cǐ\"], [\"日\", \"rì\"], [\"中\", \"zhōng\"], [\"流\", \"liú\"], [\"自\", \"zì\"], [\"在\", \"zài\"], [\"行\", \"xíng\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

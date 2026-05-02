@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:42.407336+00:00",
+  "request": {
+    "lesson_id": "078bbe1a376432d24f0bc020d2e1d7e0",
+    "course_id": "e52cc8eda96f7509fa421962517744bb",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "e52cc8eda96f7509fa421962517744bb",
+    "order": 222,
+    "nextCourseId": "e52cc8eda96f7509fa421962517744bb",
+    "courseName": "进阶练习-信息录入",
+    "lessonId": "078bbe1a376432d24f0bc020d2e1d7e0",
+    "nextLessonId": "efa66e311da43a1bd73f55ff0f5ef97a",
+    "lessonName": "座机号练习二",
+    "icon": "data/assets/daziya.com/key-icon_num-enter.40107a726c.png",
+    "description": "数字输入练习 - 座机号练习二",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f1b4407f26a9e180220e2c31fd8c6e1e",
+        "index": 1,
+        "text": [
+          "021-12345678\\n021-23456789\\n021-34567891\\n021-45678912\\n021-56789123\\n021-67891234\\n021-78912345\\n021-89123456\\n021-91234567\\n021-12345670"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

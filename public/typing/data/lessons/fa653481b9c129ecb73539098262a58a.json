@@ -1,0 +1,50 @@
+{
+  "source": "speed-test",
+  "scrapedAt": "2026-05-02T06:08:44.880814+00:00",
+  "request": {
+    "lesson_id": "fa653481b9c129ecb73539098262a58a",
+    "course_id": "c6bc39f4ba86486e20cc171fab797ea3",
+    "source": "speed-test"
+  },
+  "data": {
+    "level": "速度测试",
+    "courseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "order": 44,
+    "nextCourseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "courseName": "英文速度测试",
+    "lessonId": "fa653481b9c129ecb73539098262a58a",
+    "nextLessonId": "207fd74ecf905cf94ef03ba3867297b5",
+    "lessonName": "Big Snow Days",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f7fd50395233d675fa76f0cbc4ef6907",
+        "index": 1,
+        "text": [
+          "Every winter, we have big snow days. When it snows day and night, we can have snow up to the windows.\\nOn these days, no one can go to school. No one can go to work. What do we do? We play!\\nWe play games. We make hot chocolate. We watch the snow fall. When it stops snowing, we go outside and make a BIG snowman!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": 13,
+    "categoryTitle": "速度测试"
+  }
+}

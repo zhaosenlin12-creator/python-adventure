@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.267497+00:00",
+  "request": {
+    "lesson_id": "10f9ea2206af5672ea14a2609ee9822b",
+    "course_id": "be2af5259ed993e6499f4c46d3f7e67e",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "be2af5259ed993e6499f4c46d3f7e67e",
+    "order": 436,
+    "nextCourseId": "be2af5259ed993e6499f4c46d3f7e67e",
+    "courseName": "实战演练-1亿以内金额",
+    "lessonId": "10f9ea2206af5672ea14a2609ee9822b",
+    "nextLessonId": "3118ecf121ea38b7f34e2c11ace5e83b",
+    "lessonName": "综合练习四",
+    "icon": "data/assets/daziya.com/key-icon_key-practise-star.b4ccc47d6d.png",
+    "description": "数字输入练习 - 综合练习四",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4e2963d98f64be7d0188536605546d45",
+        "index": 1,
+        "text": [
+          "4712365869\\n5823476971\\n6934587182\\n7145698293\\n8256719314\\n9367821425\\n1478932536\\n2589143647\\n3691254758\\n4823476971\\n5934587182\\n6145698293\\n7256719314\\n8367821425\\n9478932536\\n1589143647\\n2691254758\\n3712365869\\n4934587182\\n5145698293\\n6256719314\\n7367821425\\n8478932536\\n9589143647\\n1691254758\\n2712365869\\n3823476971\\n4145698293\\n5256719314\\n6367821425"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

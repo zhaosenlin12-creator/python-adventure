@@ -1,0 +1,83 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.566016+00:00",
+  "request": {
+    "lesson_id": "c2c2abb7e8b75e952ac1b973d21de245",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 8,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "c2c2abb7e8b75e952ac1b973d21de245",
+    "nextLessonId": "be810870886603d9c0838c3bfa557325",
+    "lessonName": "巩固练习：ai、ei",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母ai、ei的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "c1eaa65299c2c3c72e9ce386f5c8fa9a",
+        "index": 1,
+        "highlights": [
+          "ai"
+        ],
+        "text": [
+          "请输入按键 [ai]"
+        ],
+        "detail": "学习双拼按键 ai"
+      },
+      {
+        "chapterId": "9182992fcfc1c8b0bf8d28f80410ed01",
+        "index": 2,
+        "highlights": [
+          "ei"
+        ],
+        "text": [
+          "请输入按键 [ei]"
+        ],
+        "detail": "学习双拼按键 ei"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "5c0e84bb30f67efa1bc3e0e6e3acd2a0",
+        "index": 3,
+        "text": [
+          "aiaiaiaieieieieiaieiaieiaieiaiei"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "f544e9c01596f5054c6e5cbad76fe971",
+        "index": 4,
+        "text": [
+          "爱梅花开在北海，妹妹戴白帽来摘菜。\\n黑麦面包配海带，肥美扇贝待彩排。"
+        ],
+        "pinyin": "[[\"爱\", \"ài\"], [\"梅\", \"méi\"], [\"花\", \"huā\"], [\"开\", \"kāi\"], [\"在\", \"zài\"], [\"北\", \"běi\"], [\"海\", \"hǎi\"], [\"，\", \"\"], [\"妹\", \"mèi\"], [\"妹\", \"mei\"], [\"戴\", \"dài\"], [\"白\", \"bái\"], [\"帽\", \"mào\"], [\"来\", \"lái\"], [\"摘\", \"zhāi\"], [\"菜\", \"cài\"], [\"。\", \"\"], [\"黑\", \"hēi\"], [\"麦\", \"mài\"], [\"面\", \"miàn\"], [\"包\", \"bāo\"], [\"配\", \"pèi\"], [\"海\", \"hǎi\"], [\"带\", \"dài\"], [\"，\", \"\"], [\"肥\", \"féi\"], [\"美\", \"měi\"], [\"扇\", \"shàn\"], [\"贝\", \"bèi\"], [\"待\", \"dài\"], [\"彩\", \"cǎi\"], [\"排\", \"pái\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

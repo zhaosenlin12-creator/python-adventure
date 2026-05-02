@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.851786+00:00",
+  "request": {
+    "lesson_id": "c215cd05938c2b695ec40a40226e851e",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 166,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "c215cd05938c2b695ec40a40226e851e",
+    "nextLessonId": "8bd2a8f64b9eae1837877088eae17679",
+    "lessonName": "KET核心词-63",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第63课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d8fdf8c3cf1506522122c549ab5b468c",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"stop\",\"pronun\":\"[stɑːp]\",\"translation\":\"n. 停止；车站；障碍；逗留\\nvi. 停止；中止；逗留；被塞住\\nvt. 停止；堵塞；断绝\",\"audio\":\"stop.mp3\"},{\"word\":\"storm\",\"pronun\":\"[stɔːrm]\",\"translation\":\"n. 暴风雨；大动荡\\nvt. 猛攻；怒骂\\nvi. 起风暴；横冲直撞；狂怒咆哮\",\"audio\":\"storm.mp3\"},{\"word\":\"story\",\"pronun\":\"[ˈstɔːri]\",\"translation\":\"n. 故事；小说；新闻报道；来历；假话\\nvt. 用历史故事画装饰\\nvi. 说谎\",\"audio\":\"story.mp3\"},{\"word\":\"straight\",\"pronun\":\"[streɪt]\",\"translation\":\"n. 直；直线；直男，直女，异性恋者\\nadj. 直的；连续的；笔直的；正直的；整齐的；异性恋的\\nadv. 直接地；不断地；立即；坦率地\",\"audio\":\"straight.mp3\"},{\"word\":\"strait\",\"pronun\":\"[streɪt]\",\"translation\":\"n. 海峡；困境\\nadj. 狭窄的；苦恼的\",\"audio\":\"strait.mp3\"},{\"word\":\"strange\",\"pronun\":\"[streɪndʒ]\",\"translation\":\"adj. 奇怪的；陌生的；外行的\\nadv. 奇怪地；陌生地，冷淡地\",\"audio\":\"strange.mp3\"},{\"word\":\"street\",\"pronun\":\"[striːt]\",\"translation\":\"n. 街道\\nadj. 街道的\",\"audio\":\"street.mp3\"},{\"word\":\"strict\",\"pronun\":\"[strɪkt]\",\"translation\":\"adj. 严格的；绝对的；精确的；详细的\",\"audio\":\"strict.mp3\"},{\"word\":\"stripe\",\"pronun\":\"[straɪp]\",\"translation\":\"n. 条纹，斑纹；种类\\nvt. 加条纹于…\",\"audio\":\"stripe.mp3\"},{\"word\":\"strong\",\"pronun\":\"[strɔːŋ]\",\"translation\":\"adj. 坚强的；强壮的；牢固的；擅长的\\nadv. 强劲地；猛烈地\",\"audio\":\"strong.mp3\"},{\"word\":\"student\",\"pronun\":\"[ˈstuːdnt]\",\"translation\":\"n. 学生；学者\",\"audio\":\"student.mp3\"},{\"word\":\"study\",\"pronun\":\"[ˈstʌdi]\",\"translation\":\"n. 学习，研究；课题；书房；学问\\nvt. 学习；考虑；攻读；细察\\nvi. 研究；用功\",\"audio\":\"study.mp3\"},{\"word\":\"stuff\",\"pronun\":\"[stʌf]\",\"translation\":\"n. 东西；材料；填充物；素材资料\\nvt. 塞满；填塞；让吃饱\\nvi. 吃得过多\",\"audio\":\"stuff.mp3\"},{\"word\":\"style\",\"pronun\":\"[staɪl]\",\"translation\":\"n. 风格；时尚；类型；字体\\nvt. 设计；称呼；使合潮流\\nvi. 设计式样；用刻刀作装饰画\",\"audio\":\"style.mp3\"},{\"word\":\"subject\",\"pronun\":\"[ˈsʌbdʒɪkt; ˈsʌbdʒekt]\",\"translation\":\"n. 主题；科目；[语] 主语；国民\\nadj. 服从的；易患…的；受制于…的\\nvt. 使…隶属；使屈从于…\",\"audio\":\"subject.mp3\"},{\"word\":\"success\",\"pronun\":\"[səkˈses]\",\"translation\":\"n. 成功，成就；胜利；大获成功的人或事物\",\"audio\":\"success.mp3\"},{\"word\":\"such\",\"pronun\":\"[sʌtʃ]\",\"translation\":\"adj. 这样的，如此的\",\"audio\":\"such.mp3\"},{\"word\":\"suddenly\",\"pronun\":\"[ˈsʌdənli]\",\"translation\":\"adv. 突然地；忽然\",\"audio\":\"suddenly.mp3\"},{\"word\":\"sugar\",\"pronun\":\"[ˈʃʊɡər]\",\"translation\":\"n. 糖；食糖；甜言蜜语\\nvt. 加糖于；粉饰\\nvi. 形成糖\",\"audio\":\"sugar.mp3\"},{\"word\":\"suggest\",\"pronun\":\"[səˈdʒestˌsəɡˈdʒest]\",\"translation\":\"vt. 提议，建议；启发；使人想起；显示；暗示\",\"audio\":\"suggest.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

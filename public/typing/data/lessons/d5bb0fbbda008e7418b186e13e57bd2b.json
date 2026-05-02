@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.894693+00:00",
+  "request": {
+    "lesson_id": "d5bb0fbbda008e7418b186e13e57bd2b",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 174,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "d5bb0fbbda008e7418b186e13e57bd2b",
+    "nextLessonId": "6631c6ca643cf3ef0d2592a9c150cbf1",
+    "lessonName": "KET核心词-87",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第87课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1bcdf2373318658773b39afd4ba9761f",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"ache\",\"pronun\":\"[eɪk]\",\"translation\":\"n. 疼痛\\nvi. 疼痛；渴望\",\"audio\":\"ache.mp3\"},{\"word\":\"ambulance\",\"pronun\":\"[ˈæmbjələns]\",\"translation\":\"n. [车辆][医] 救护车；战时流动医院\",\"audio\":\"ambulance.mp3\"},{\"word\":\"appointment\",\"pronun\":\"[əˈpɔɪntmənt]\",\"translation\":\"n. 任命；约定；任命的职位\",\"audio\":\"appointment.mp3\"},{\"word\":\"bandage\",\"pronun\":\"[ˈbændɪdʒ]\",\"translation\":\"n. 绷带\\nvt. 用绷带包扎\",\"audio\":\"bandage.mp3\"},{\"word\":\"be injured\",\"pronun\":\"\",\"translation\":\"受伤；受伤的；受伤基本解释\",\"audio\":\"be_injured.mp3\"},{\"word\":\"break\",\"pronun\":\"[breɪk]\",\"translation\":\"vi. 打破；折断；弄坏；削弱\\nvt. （使）破；打破（纪录）；（常指好天气）突变；开始\\nvi. （嗓音）突变；突破；破晓；（价格）突然下跌\\nn. 破裂；间断；（持续一段时间的状况的）改变；间歇\",\"audio\":\"break.mp3\"},{\"word\":\"break a nose\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"break_a_nose.mp3\"},{\"word\":\"burn\",\"pronun\":\"[bɜːrn]\",\"translation\":\"n. 灼伤，烧伤；烙印\\nvt. 燃烧；烧毁，灼伤；激起…的愤怒\\nvi. 燃烧；烧毁；发热\",\"audio\":\"burn.mp3\"},{\"word\":\"burn yourself\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"burn_yourself.mp3\"},{\"word\":\"catch\",\"pronun\":\"[kætʃ]\",\"translation\":\"n. 捕捉；捕获物；窗钩\\nvt. 赶上；抓住；感染；了解\\nvi. 赶上；抓住\",\"audio\":\"catch.mp3\"},{\"word\":\"catch an illness\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"catch_an_illness.mp3\"},{\"word\":\"check\",\"pronun\":\"[tʃek]\",\"translation\":\"n. <美>支票；制止，抑制；检验，核对\\nvi. 核实，查核；中止；打勾；[象棋]将一军\\nvt. 检查，核对；制止，抑制；在…上打勾\",\"audio\":\"check.mp3\"},{\"word\":\"cold\",\"pronun\":\"[kəʊld]\",\"translation\":\"n. 寒冷；感冒\\nadj. 寒冷的；冷淡的，不热情的；失去知觉的\\nadv. 完全地\",\"audio\":\"cold.mp3\"},{\"word\":\"dentist\",\"pronun\":\"[ˈdentɪst]\",\"translation\":\"n. 牙科医生\\n牙医诊所\",\"audio\":\"dentist.mp3\"},{\"word\":\"doctor\",\"pronun\":\"[ˈdɑːktər]\",\"translation\":\"vt. 修理；篡改，伪造；为…治病；授以博士学位\\nn. 医生；博士\\nvi. 就医；行医\",\"audio\":\"doctor.mp3\"},{\"word\":\"feel\",\"pronun\":\"[fiːl]\",\"translation\":\"n. 感觉；触摸\\nvi. 觉得；摸索\\nvt. 感觉；认为；触摸；试探\",\"audio\":\"feel.mp3\"},{\"word\":\"glasses\",\"pronun\":\"[ˈɡlæsɪz]\",\"translation\":\"n. [轻] 眼镜；玻璃（glass的复数形式）；双筒望远镜\\nv. 把…装入玻璃容器内；给…装上玻璃（glass的第三人称单数形式）\",\"audio\":\"glasses.mp3\"},{\"word\":\"hospital\",\"pronun\":\"[ˈhɑːspɪtl]\",\"translation\":\"n. 医院\",\"audio\":\"hospital.mp3\"},{\"word\":\"hurt\",\"pronun\":\"[hɜːrt]\",\"translation\":\"n. 痛苦；危害；痛苦的原因\\nvt. 使受伤；损害；使疼痛；使痛心\\nadj. 受伤的；痛苦的；受损的\\nvi. 感到疼痛；有坏处；带来痛苦\",\"audio\":\"hurt.mp3\"},{\"word\":\"ill\",\"pronun\":\"[ɪl]\",\"translation\":\"n. 疾病；不幸\\nadj. 生病的；坏的；邪恶的；不吉利的\\nadv. 不利地；恶劣地；几乎不\",\"audio\":\"ill.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

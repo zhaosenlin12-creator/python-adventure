@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.337738+00:00",
+  "request": {
+    "lesson_id": "3ddc36089500ce7f30e5ddec715c0d4a",
+    "course_id": "30951c93875a1e260feda8cb699005df",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "30951c93875a1e260feda8cb699005df",
+    "order": 487,
+    "nextCourseId": "30951c93875a1e260feda8cb699005df",
+    "courseName": "英语每日故事（初级）32-61",
+    "lessonId": "3ddc36089500ce7f30e5ddec715c0d4a",
+    "nextLessonId": "26eb4909ec66ecdf18d693c47fe51a90",
+    "lessonName": "Yellow",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b714d29beb70ec75743ba70c5a167a9f",
+        "index": 1,
+        "text": [
+          "My favourite colour is yellow. So many good things are yellow. Corn and butter are yellow. Bananas and lemonade are yellow. My favourite shirt is yellow, and my bedroom is yellow. But best of all, my hair is yellow. My mom says that my hair shines like gold in the morning light. 'You are rich!' says my mom. I love the colour yellow!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

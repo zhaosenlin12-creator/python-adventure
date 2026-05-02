@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.374663+00:00",
+  "request": {
+    "lesson_id": "335ceb7cb07c5ef216894e71abd5d18c",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 189,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "335ceb7cb07c5ef216894e71abd5d18c",
+    "nextLessonId": "eaec07b4a99ab1a018045b9b7afeab78",
+    "lessonName": "GROUP BY分组",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - GROUP BY分组",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e6715a1ab7c15fab14291b55d3e2e0ae",
+        "index": 1,
+        "text": [
+          "-- 按城市分组统计用户数\\nSELECT city, COUNT(*) AS user_count\\nFROM users\\nGROUP BY city;\\n\\n-- 按日期分组统计订单数\\nSELECT DATE(created_at) AS order_date, COUNT(*) AS order_count\\nFROM orders\\nGROUP BY DATE(created_at);\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

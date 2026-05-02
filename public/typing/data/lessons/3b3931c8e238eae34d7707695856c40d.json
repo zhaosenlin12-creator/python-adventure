@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.791996+00:00",
+  "request": {
+    "lesson_id": "3b3931c8e238eae34d7707695856c40d",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 374,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "3b3931c8e238eae34d7707695856c40d",
+    "nextLessonId": "f76e2970457a57483ae10658f64366dd",
+    "lessonName": "六级词汇正序版-38",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第38课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "45f26ed377d16b0e747ec673364798c2",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"drill\",\"pronun\":\"[drɪl]\",\"translation\":\"n. 训练；钻孔机；钻子；播种机\\nvt. 钻孔；训练；条播\\nvi. 钻孔；训练\",\"audio\":\"drill.mp3\"},{\"word\":\"drought\",\"pronun\":\"[draʊt]\",\"translation\":\"n. 干旱；缺乏\",\"audio\":\"drought.mp3\"},{\"word\":\"dual\",\"pronun\":\"[ˈduːəl]\",\"translation\":\"n. 双数；双数词\\nadj. 双的；双重的\",\"audio\":\"dual.mp3\"},{\"word\":\"dub\",\"pronun\":\"[dʌb]\",\"translation\":\"n. 笨蛋；鼓声\\nvt. 配音；轻点；打击；授予称号\",\"audio\":\"dub.mp3\"},{\"word\":\"dubious\",\"pronun\":\"[ˈduːbiəs]\",\"translation\":\"adj. 可疑的；暧昧的；无把握的；半信半疑的\",\"audio\":\"dubious.mp3\"},{\"word\":\"duplicate\",\"pronun\":\"[ˈduːplɪkeɪt]\",\"translation\":\"n. 副本；复制品\\nadj. 复制的；二重的\\nvt. 复制；使加倍\\nvi. 复制；重复\",\"audio\":\"duplicate.mp3\"},{\"word\":\"dutiful\",\"pronun\":\"[ˈduːtɪfl]\",\"translation\":\"adj. 忠实的；顺从的；守本分的\",\"audio\":\"dutiful.mp3\"},{\"word\":\"dwarf\",\"pronun\":\"[dwɔːrf]\",\"translation\":\"n. 侏儒，矮子\\nadj. 矮小的\\nvi. 变矮小\\nvt. 使矮小\",\"audio\":\"dwarf.mp3\"},{\"word\":\"dwell\",\"pronun\":\"[dwel]\",\"translation\":\"vi. 居住；存在于；细想某事\",\"audio\":\"dwell.mp3\"},{\"word\":\"dynamic\",\"pronun\":\"[daɪˈnæmɪk]\",\"translation\":\"n. 动态；动力\\nadj. 动态的；动力的；动力学的；有活力的\",\"audio\":\"dynamic.mp3\"},{\"word\":\"eagle\",\"pronun\":\"[ˈiːɡl]\",\"translation\":\"n. 鹰；鹰状标饰\",\"audio\":\"eagle.mp3\"},{\"word\":\"Easter\",\"pronun\":\"[ˈiːstər]\",\"translation\":\"n. 复活节\",\"audio\":\"Easter.mp3\"},{\"word\":\"eccentric\",\"pronun\":\"[ɪkˈsentrɪk]\",\"translation\":\"n. 古怪的人\\nadj. 古怪的，反常的\",\"audio\":\"eccentric.mp3\"},{\"word\":\"eclipse\",\"pronun\":\"[ɪˈklɪps]\",\"translation\":\"n. 日蚀，月蚀；黯然失色\\nvt. 使黯然失色；形成蚀\",\"audio\":\"eclipse.mp3\"},{\"word\":\"ecology\",\"pronun\":\"[iˈkɑːlədʒi]\",\"translation\":\"n. 生态学；社会生态学\",\"audio\":\"ecology.mp3\"},{\"word\":\"economic\",\"pronun\":\"[ˌiːkəˈnɑːmɪk; ˌekəˈnɑːmɪk]\",\"translation\":\"adj. 经济的，经济上的；经济学的\",\"audio\":\"economic.mp3\"},{\"word\":\"economical\",\"pronun\":\"[ˌiːkəˈnɑːmɪklˌˌekəˈnɑːmɪkl]\",\"translation\":\"adj. 经济的；节约的；合算的\",\"audio\":\"economical.mp3\"},{\"word\":\"economy\",\"pronun\":\"[ɪˈkɑːnəmi]\",\"translation\":\"n. 经济；节约；理财\",\"audio\":\"economy.mp3\"},{\"word\":\"edible\",\"pronun\":\"[ˈedəbl]\",\"translation\":\"n. 食品；食物\\nadj. 可食用的\",\"audio\":\"edible.mp3\"},{\"word\":\"educational\",\"pronun\":\"[ˌedʒuˈkeɪʃənl]\",\"translation\":\"adj. 教育的；有教育意义的\",\"audio\":\"educational.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

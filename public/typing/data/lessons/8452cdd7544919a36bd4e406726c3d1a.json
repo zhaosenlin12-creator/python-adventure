@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.455622+00:00",
+  "request": {
+    "lesson_id": "8452cdd7544919a36bd4e406726c3d1a",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 516,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "8452cdd7544919a36bd4e406726c3d1a",
+    "nextLessonId": "9e3dd43c79350cf1233cdabfab3e2de6",
+    "lessonName": "Bookworm",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9903a597d33e9bbeb6d69b00c3569ed4",
+        "index": 1,
+        "text": [
+          "Do you know what a bookworm is? Is it a worm that lives in a book? Yes. There are worms that like books.\\nCan worms read books? Of course not.\\nBookworms just like to eat the paper.\\nBookworm has another meaning. When a person really loves reading books, we call that person a bookworm too."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

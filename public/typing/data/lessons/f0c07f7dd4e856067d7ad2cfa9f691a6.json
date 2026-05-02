@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.563810+00:00",
+  "request": {
+    "lesson_id": "f0c07f7dd4e856067d7ad2cfa9f691a6",
+    "course_id": "fa03ede610a7cc0a487ff4fca5942e36",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "fa03ede610a7cc0a487ff4fca5942e36",
+    "order": 297,
+    "nextCourseId": "fa03ede610a7cc0a487ff4fca5942e36",
+    "courseName": "汉字四级",
+    "lessonId": "f0c07f7dd4e856067d7ad2cfa9f691a6",
+    "nextLessonId": "21ed5d598ef8321170f72f2cbc767662",
+    "lessonName": "游戏：英文单词",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-duck.b036f0ad8f.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "1fdca97a60da62c96d723107ef5bf925",
+        "index": 1,
+        "text": [
+          "family better indeed surrounding indeed imagined middle lands himself almost lands surround"
+        ],
+        "contentType": 3,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 1,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

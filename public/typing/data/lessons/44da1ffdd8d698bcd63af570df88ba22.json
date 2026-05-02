@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.317284+00:00",
+  "request": {
+    "lesson_id": "44da1ffdd8d698bcd63af570df88ba22",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 170,
+    "nextCourseId": "d7df026ff1d81047d30da28a958b118f",
+    "courseName": "golang",
+    "lessonId": "44da1ffdd8d698bcd63af570df88ba22",
+    "nextLessonId": "9cb7af2f44fd8cd7103713d3e0a7a59c",
+    "lessonName": "快速排序",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - 快速排序",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3320f6382d96d27c62b384afdf8fc8c1",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport \"fmt\"\\n\\nfunc quickSort(arr []int, low, high int) {\\n\tif low < high {\\n\t\tpi := partition(arr, low, high)\\n\t\tquickSort(arr, low, pi-1)\\n\t\tquickSort(arr, pi+1, high)\\n\t}\\n}\\n\\nfunc partition(arr []int, low, high int) int {\\n\tpivot := arr[high]\\n\ti := low - 1\\n\\n\tfor j := low; j < high; j++ {\\n\t\tif arr[j] < pivot {\\n\t\t\ti++\\n\t\t\tarr[i], arr[j] = arr[j], arr[i]\\n\t\t}\\n\t}\\n\\n\tarr[i+1], arr[high] = arr[high], arr[i+1]\\n\treturn i + 1\\n}\\n\\nfunc main() {\\n\tarr := []int{64, 34, 25, 12, 22, 11, 90}\\n\tfmt.Println(\"排序前:\", arr)\\n\tquickSort(arr, 0, len(arr)-1)\\n\tfmt.Println(\"排序后:\", arr)\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

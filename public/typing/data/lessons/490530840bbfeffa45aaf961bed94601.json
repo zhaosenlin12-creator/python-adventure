@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.044715+00:00",
+  "request": {
+    "lesson_id": "490530840bbfeffa45aaf961bed94601",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 95,
+    "nextCourseId": "e13b6bae2990dd699f332f225dd1955b",
+    "courseName": "Javascript",
+    "lessonId": "490530840bbfeffa45aaf961bed94601",
+    "nextLessonId": "0405f228a814a5739008035e58d59653",
+    "lessonName": "while循环",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - while循环",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6dce276f53dae6749542fbfde2ad0cba",
+        "index": 1,
+        "text": [
+          "// 使用while循环计算1到10的和\\nlet total = 0;\\nlet count = 1;\\n\\nwhile (count <= 10) {\\n    total += count;\\n    count++;\\n}\\n\\nconsole.log(`1到10的和是: ${total}`);\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

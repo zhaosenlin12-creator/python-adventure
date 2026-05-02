@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.614787+00:00",
+  "request": {
+    "lesson_id": "878c05e2a5061382f289201176397a62",
+    "course_id": "f5e1caafe742206a7fc8abc95cf77b44",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "order": 311,
+    "nextCourseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "courseName": "诗词歌赋",
+    "lessonId": "878c05e2a5061382f289201176397a62",
+    "nextLessonId": "2f671f8797eaced5985863bdb7e9e770",
+    "lessonName": "《水调歌头·明月几时有》",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-poet-1.54ee3c2d1e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2737a71e8fa1bb4a0fd0cf21477c80ef",
+        "index": 1,
+        "text": [
+          "转朱阁，低绮户，照无眠。不应有恨，何事长向别时圆？人有悲欢离合，月有阴晴圆缺，此事古难全。但愿人长久，千里共婵娟。"
+        ],
+        "pinyin": "[[\"转\", \"zhuǎn\"], [\"朱\", \"zhū\"], [\"阁\", \"gé\"], [\"，\", \"\"], [\"低\", \"dī\"], [\"绮\", \"qǐ\"], [\"户\", \"hù\"], [\"，\", \"\"], [\"照\", \"zhào\"], [\"无\", \"wú\"], [\"眠\", \"mián\"], [\"。\", \"\"], [\"不\", \"bù\"], [\"应\", \"yīng\"], [\"有\", \"yǒu\"], [\"恨\", \"hèn\"], [\"，\", \"\"], [\"何\", \"hé\"], [\"事\", \"shì\"], [\"长\", \"cháng\"], [\"向\", \"xiàng\"], [\"别\", \"bié\"], [\"时\", \"shí\"], [\"圆\", \"yuán\"], [\"？\", \"\"], [\"人\", \"rén\"], [\"有\", \"yǒu\"], [\"悲\", \"bēi\"], [\"欢\", \"huān\"], [\"离\", \"lí\"], [\"合\", \"hé\"], [\"，\", \"\"], [\"月\", \"yuè\"], [\"有\", \"yǒu\"], [\"阴\", \"yīn\"], [\"晴\", \"qíng\"], [\"圆\", \"yuán\"], [\"缺\", \"quē\"], [\"，\", \"\"], [\"此\", \"cǐ\"], [\"事\", \"shì\"], [\"古\", \"gǔ\"], [\"难\", \"nán\"], [\"全\", \"quán\"], [\"。\", \"\"], [\"但\", \"dàn\"], [\"愿\", \"yuàn\"], [\"人\", \"rén\"], [\"长\", \"cháng\"], [\"久\", \"jiǔ\"], [\"，\", \"\"], [\"千\", \"qiān\"], [\"里\", \"lǐ\"], [\"共\", \"gòng\"], [\"婵\", \"chán\"], [\"娟\", \"juān\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 43,
+        "minSpeed": 28,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

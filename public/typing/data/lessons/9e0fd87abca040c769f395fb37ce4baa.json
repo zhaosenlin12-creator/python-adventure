@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:34.193610+00:00",
+  "request": {
+    "lesson_id": "9e0fd87abca040c769f395fb37ce4baa",
+    "course_id": "703e7d000b9e8a47d0408ea89e1bc552",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "703e7d000b9e8a47d0408ea89e1bc552",
+    "order": 134,
+    "nextCourseId": "703e7d000b9e8a47d0408ea89e1bc552",
+    "courseName": "语文课内同步三年级上册",
+    "lessonId": "9e0fd87abca040c769f395fb37ce4baa",
+    "nextLessonId": "3d799d371ab6b14a14854c7d9b18631c",
+    "lessonName": "司马光",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4a4198907c20df048765178929c41dbf",
+        "index": 1,
+        "text": [
+          "群儿戏于庭，一儿登瓮，足跌没水中。众皆弃去，光持石击瓮破之，水迸，儿得活。"
+        ],
+        "pinyin": "[[\"群\", \"qún\"], [\"儿\", \"ér\"], [\"戏\", \"xì\"], [\"于\", \"yú\"], [\"庭\", \"tíng\"], [\"，\", \"\"], [\"一\", \"yī\"], [\"儿\", \"ér\"], [\"登\", \"dēng\"], [\"瓮\", \"wèng\"], [\"，\", \"\"], [\"足\", \"zú\"], [\"跌\", \"diē\"], [\"没\", \"mò\"], [\"水\", \"shuǐ\"], [\"中\", \"zhōng\"], [\"。\", \"\"], [\"众\", \"zhòng\"], [\"皆\", \"jiē\"], [\"弃\", \"qì\"], [\"去\", \"qù\"], [\"，\", \"\"], [\"光\", \"guāng\"], [\"持\", \"chí\"], [\"石\", \"shí\"], [\"击\", \"jī\"], [\"瓮\", \"wèng\"], [\"破\", \"pò\"], [\"之\", \"zhī\"], [\"，\", \"\"], [\"水\", \"shuǐ\"], [\"迸\", \"bèng\"], [\"，\", \"\"], [\"儿\", \"ér\"], [\"得\", \"dé\"], [\"活\", \"huó\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.142688+00:00",
+  "request": {
+    "lesson_id": "a2febb8a8406cd8e6ef1b412da36a978",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 22,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "a2febb8a8406cd8e6ef1b412da36a978",
+    "nextLessonId": "f737157177058f5957c2a574cb992d00",
+    "lessonName": "2022年版 PEP-四年级-下册-5",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-四年级-下册 - 第5课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f3eeb4ac2e80d0fc1be2ad7572ea0bdb",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"farm\",\"pronun\":\"[fɑːrm]\",\"translation\":\"n. 农场；农家；畜牧场\\nvt. 养殖；耕种；佃出（土地）\\nvi. 种田，务农；经营农场\",\"audio\":\"farm.mp3\"},{\"word\":\"goat\",\"pronun\":\"[goʊt]\",\"translation\":\"n. 山羊；替罪羊（美俚）；色鬼（美俚）\",\"audio\":\"goat.mp3\"},{\"word\":\"eat\",\"pronun\":\"[iːt]\",\"translation\":\"vt. 吃，喝；腐蚀；烦扰\\nvi. 进食；腐蚀，侵蚀\",\"audio\":\"eat.mp3\"},{\"word\":\"clothes\",\"pronun\":\"[kloʊðz; kloʊz]\",\"translation\":\"n. 衣服\",\"audio\":\"clothes.mp3\"},{\"word\":\"pants\",\"pronun\":\"[pænts]\",\"translation\":\"n. 裤子\",\"audio\":\"pants.mp3\"},{\"word\":\"hat\",\"pronun\":\"[hæt]\",\"translation\":\"n. 帽子\\nvt. 给……戴上帽子\\nvi. 供应帽子；制造帽子\",\"audio\":\"hat.mp3\"},{\"word\":\"dress\",\"pronun\":\"[dres]\",\"translation\":\"n. 连衣裙；女装\\nvt. 给…穿衣\\nvi. 穿衣\",\"audio\":\"dress.mp3\"},{\"word\":\"skirt\",\"pronun\":\"[skɜːrt]\",\"translation\":\"n. 裙子\\nvt. 绕过，回避；位于…边缘\\nvi. 沿边走，绕开；环绕\",\"audio\":\"skirt.mp3\"},{\"word\":\"coat\",\"pronun\":\"[koʊt]\",\"translation\":\"n. 外套\\nvt. 覆盖…的表面\",\"audio\":\"coat.mp3\"},{\"word\":\"sweater\",\"pronun\":\"[ˈswetər]\",\"translation\":\"n. 毛线衣，运动衫；大量出汗的人，发汗剂\",\"audio\":\"sweater.mp3\"},{\"word\":\"sock\",\"pronun\":\"[sɑːk]\",\"translation\":\"vt. 重击；给……穿袜\\nn. 短袜；一击\\nadv. 正着地；不偏不倚地\\nadj. 非常成功的\",\"audio\":\"sock.mp3\"},{\"word\":\"shorts\",\"pronun\":\"[ʃɔːrts]\",\"translation\":\"n. 短裤\",\"audio\":\"shorts.mp3\"},{\"word\":\"jacket\",\"pronun\":\"[ˈdʒækɪt]\",\"translation\":\"n. 羽绒滑雪衫；西装短外套；短上衣，夹克；土豆皮；书籍的护封；文件套，公文夹\\nvt. 给…穿夹克；给…装护套；给…包上护封；〈口〉打\",\"audio\":\"jacket.mp3\"},{\"word\":\"shirt\",\"pronun\":\"[ʃɜːrt]\",\"translation\":\"n. 衬衫；汗衫，内衣\",\"audio\":\"shirt.mp3\"},{\"word\":\"yours\",\"pronun\":\"[jərz; jɔːrz; jʊrz]\",\"translation\":\"pron. 你（们）的东西；你的责任[义务]；你的家属；来信，尊函\\nadj. 你（们）的（东西）；信末署名前用语\",\"audio\":\"yours.mp3\"},{\"word\":\"whose\",\"pronun\":\"[huːz]\",\"translation\":\"pron. 谁的（疑问代词）\",\"audio\":\"whose.mp3\"},{\"word\":\"mine\",\"pronun\":\"[maɪn]\",\"translation\":\"n. 矿，矿藏；矿山，矿井；地雷，水雷\\nvt. 开采，采掘；在…布雷\\nvi. 开矿，采矿；埋设地雷\\npron. 我的\",\"audio\":\"mine.mp3\"},{\"word\":\"pack\",\"pronun\":\"[pæk]\",\"translation\":\"n. 包装；一群；背包；包裹；一副\\nvt. 包装；压紧；捆扎；挑选；塞满\\nvi. 挤；包装货物；被包装；群集\",\"audio\":\"pack.mp3\"},{\"word\":\"wait\",\"pronun\":\"[weɪt]\",\"translation\":\"n. 等待；等候\\nvi. 等待；耽搁；伺候用餐\\nvt. 等候；推迟；延缓\",\"audio\":\"wait.mp3\"},{\"word\":\"glove\",\"pronun\":\"[ɡlʌv]\",\"translation\":\"n. 手套\\nvt. 给…戴手套\",\"audio\":\"glove.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.790265+00:00",
+  "request": {
+    "lesson_id": "5078f9ece8b1d33a7bce37e24155e3e2",
+    "course_id": "c02abec1127900f16353dac5e0b02419",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "c02abec1127900f16353dac5e0b02419",
+    "order": 351,
+    "nextCourseId": "c02abec1127900f16353dac5e0b02419",
+    "courseName": "百科知识1",
+    "lessonId": "5078f9ece8b1d33a7bce37e24155e3e2",
+    "nextLessonId": "0c7399751a4b8a6a33c18cf3c1536b6a",
+    "lessonName": "游戏：英文单词",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-duck.b036f0ad8f.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "2e910fb298b291ed030f96b182f9df46",
+        "index": 1,
+        "text": [
+          "sitting sigh serious beside mother nearest should walked because before"
+        ],
+        "contentType": 3,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 30,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

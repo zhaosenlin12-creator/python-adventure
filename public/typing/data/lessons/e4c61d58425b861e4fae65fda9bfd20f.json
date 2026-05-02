@@ -1,0 +1,50 @@
+{
+  "source": "speed-test",
+  "scrapedAt": "2026-05-02T06:08:44.794941+00:00",
+  "request": {
+    "lesson_id": "e4c61d58425b861e4fae65fda9bfd20f",
+    "course_id": "c6bc39f4ba86486e20cc171fab797ea3",
+    "source": "speed-test"
+  },
+  "data": {
+    "level": "速度测试",
+    "courseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "order": 22,
+    "nextCourseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "courseName": "英文速度测试",
+    "lessonId": "e4c61d58425b861e4fae65fda9bfd20f",
+    "nextLessonId": "3a7e8589758b3a743a7266d8f4736f31",
+    "lessonName": "Fruit or Vegetables?",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "42619dbbca16c565aeb61f91038e2598",
+        "index": 1,
+        "text": [
+          "Mac likes vegetables. He does not like fruit. At lunch, Mac eats peas, beans and carrots.\\nKim is the opposite. She likes fruit, but not vegetables.\\nAt lunch, their friend Rachel says, \"There are places where people don't have food to eat, and they go hungry.\"\\nThen she says, \"If you think about that, you see all food is good!\""
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": 13,
+    "categoryTitle": "速度测试"
+  }
+}

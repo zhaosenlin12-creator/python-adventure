@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.223595+00:00",
+  "request": {
+    "lesson_id": "65773ef63352b1d7a5f9db0e2683fbff",
+    "course_id": "b121644211bd274795ee5972ddf997a2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "b121644211bd274795ee5972ddf997a2",
+    "order": 317,
+    "nextCourseId": "b121644211bd274795ee5972ddf997a2",
+    "courseName": "小学必备古诗75首（1）",
+    "lessonId": "65773ef63352b1d7a5f9db0e2683fbff",
+    "nextLessonId": "a3512375c24349fc231ee5423dd5c739",
+    "lessonName": "春晓",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "575cd6a881b5b97026e0986f8fb95f50",
+        "index": 1,
+        "text": [
+          "春晓\\n孟浩然\\n春眠不觉晓，处处闻啼鸟。\\n夜来风雨声，花落知多少。"
+        ],
+        "pinyin": "[[\"春\", \"chūn\"], [\"晓\", \"xiǎo\"], [\"\\n\", \"\"], [\"孟\", \"mèng\"], [\"浩\", \"hào\"], [\"然\", \"rán\"], [\"\\n\", \"\"], [\"春\", \"chūn\"], [\"眠\", \"mián\"], [\"不\", \"bù\"], [\"觉\", \"jué\"], [\"晓\", \"xiǎo\"], [\"，\", \"\"], [\"处\", \"chù\"], [\"处\", \"chù\"], [\"闻\", \"wén\"], [\"啼\", \"tí\"], [\"鸟\", \"niǎo\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"夜\", \"yè\"], [\"来\", \"lái\"], [\"风\", \"fēng\"], [\"雨\", \"yǔ\"], [\"声\", \"shēng\"], [\"，\", \"\"], [\"花\", \"huā\"], [\"落\", \"luò\"], [\"知\", \"zhī\"], [\"多\", \"duō\"], [\"少\", \"shǎo\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

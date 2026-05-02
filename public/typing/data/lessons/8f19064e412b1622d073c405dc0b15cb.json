@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.366631+00:00",
+  "request": {
+    "lesson_id": "8f19064e412b1622d073c405dc0b15cb",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 630,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "8f19064e412b1622d073c405dc0b15cb",
+    "nextLessonId": "fd6d2e2bfe5482bcf9a458c1ac3d53d1",
+    "lessonName": " 三年级下-2",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点三年级下 - 第2课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5b3262b122029dd51062584981301b2b",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"sister\",\"pronun\":\"[ˈsɪstər]\",\"translation\":\"n. 姐妹；（称志同道合者）姐妹；修女；护士\\nadj. 姐妹般的；同类型的\",\"audio\":\"sister.mp3\"},{\"word\":\"brother\",\"pronun\":\"[ˈbrʌðər]\",\"translation\":\"n. 兄弟；同事；战友\\nint. 我的老兄！\",\"audio\":\"brother.mp3\"},{\"word\":\"grandmother\",\"pronun\":\"[ˈɡrænmʌðər]\",\"translation\":\"n. 祖母；女祖先\\nvt. 当…的祖母\\nvi. 当祖母\",\"audio\":\"grandmother.mp3\"},{\"word\":\"grandma\",\"pronun\":\"[ˈɡrænmɑː]\",\"translation\":\"n. 奶奶；外婆\",\"audio\":\"grandma.mp3\"},{\"word\":\"grandfather\",\"pronun\":\"[ˈɡrænfɑːðər]\",\"translation\":\"n. 祖父；始祖\\nvt. 不受新规定限制\",\"audio\":\"grandfather.mp3\"},{\"word\":\"grandpa\",\"pronun\":\"[ˈɡrænpɑː]\",\"translation\":\"n. 爷爷；外公\",\"audio\":\"grandpa.mp3\"},{\"word\":\"family\",\"pronun\":\"[ˈfæməli]\",\"translation\":\"n. 家庭；亲属；家族；子女；[生]科；语族；[化]族\\nadj. 家庭的；家族的；适合于全家的\",\"audio\":\"family.mp3\"},{\"word\":\"thin\",\"pronun\":\"[θɪn]\",\"translation\":\"n. 细小部分\\nadj. 薄的；瘦的；稀薄的；微弱的\\nvt. 使瘦；使淡；使稀疏\\nvi. 变薄；变瘦；变淡\\nadv. 稀疏地；微弱地\",\"audio\":\"thin.mp3\"},{\"word\":\"fat\",\"pronun\":\"[fæt]\",\"translation\":\"n. 脂肪，肥肉\\nadj. 肥的，胖的；油腻的；丰满的\\nvt. 养肥；在…中加入脂肪\\nvi. 长肥\",\"audio\":\"fat.mp3\"},{\"word\":\"tall\",\"pronun\":\"[tɔːl]\",\"translation\":\"adj. 高的；长的；过分的；夸大的\\nadv. 夸大地\",\"audio\":\"tall.mp3\"},{\"word\":\"short\",\"pronun\":\"[ʃɔːrt]\",\"translation\":\"n. 短；缺乏；短路；短裤\\nadj. 短的；不足的；矮的，低的\\nadv. 不足；突然；唐突地\",\"audio\":\"short.mp3\"},{\"word\":\"long\",\"pronun\":\"[lɔːŋ]\",\"translation\":\"n. 长时间；[语] 长音节；（服装的）长尺寸；长裤\\nadj. 长的；过长的；做多头的；长时间的；冗长的，长音\\nvi. 渴望；热望\\nadv. 长期地；始终\",\"audio\":\"long.mp3\"},{\"word\":\"small\",\"pronun\":\"[smɔːl]\",\"translation\":\"n. 小件物品；矮小的人\\nadj. 少的，小的；微弱的；几乎没有的；不重要的；幼小的\\nadv. 小小地；卑鄙地\",\"audio\":\"small.mp3\"},{\"word\":\"big\",\"pronun\":\"[bɪɡ]\",\"translation\":\"adj. 大的；重要的；量大的\\nadv. 大量地；顺利；夸大地\",\"audio\":\"big.mp3\"},{\"word\":\"giraffe\",\"pronun\":\"[dʒəˈræf]\",\"translation\":\"n. 长颈鹿\",\"audio\":\"giraffe.mp3\"},{\"word\":\"so\",\"pronun\":\"[soʊ]\",\"translation\":\"conj. 所以；因此\\nadv. 如此，这么；确是如此\\npron. 这样\",\"audio\":\"so.mp3\"},{\"word\":\"children\",\"pronun\":\"[ˈtʃɪldrən]\",\"translation\":\"n. 孩子们（child的复数）\",\"audio\":\"children.mp3\"},{\"word\":\"tail\",\"pronun\":\"[teɪl]\",\"translation\":\"n. 尾巴；踪迹；辫子；燕尾服\\nadj. 从后面而来的；尾部的\\nvt. 尾随；装上尾巴\\nvi. 跟踪；变少或缩小\",\"audio\":\"tail.mp3\"},{\"word\":\"on\",\"pronun\":\"[ɑːn]\",\"translation\":\"adv. 向前地；作用中，行动中；继续着\\nprep. 向，朝……；关于；在……之上；在……时候\\nadj. 开着的；发生着的，正在进行中\",\"audio\":\"on.mp3\"},{\"word\":\"in\",\"pronun\":\"[ɪn]\",\"translation\":\"prep. 按照（表示方式）；从事于；在…之内\\nn. 执政者；门路；知情者\\nadj. 在里面的；时髦的\\nadv. 进入；当选；（服装等）时髦；在屋里\",\"audio\":\"in.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

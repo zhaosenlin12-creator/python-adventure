@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.054179+00:00",
+  "request": {
+    "lesson_id": "8b862a8ad29ca800e7988ce15e05d0f7",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 7,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "8b862a8ad29ca800e7988ce15e05d0f7",
+    "nextLessonId": "c75a0b74e7675da3cff8558672766c68",
+    "lessonName": "2022年版 PEP-三年级-下册-2",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-三年级-下册 - 第2课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9e04b9b9d473893928b4162c8dae1d7f",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"China\",\"pronun\":\"[ˈtʃaɪnə]\",\"translation\":\"n. 中国\\nn. china，瓷器\\nadj. 中国的；中国制造的\\nadj. china，瓷制的\",\"audio\":\"China.mp3\"},{\"word\":\"Canada\",\"pronun\":\"[ˈkænədə]\",\"translation\":\"n. 加拿大（北美洲国家）\",\"audio\":\"Canada.mp3\"},{\"word\":\"USA\",\"pronun\":\"\",\"translation\":\"abbr. 美国；美利坚合众国（the United States of America）\",\"audio\":\"USA.mp3\"},{\"word\":\"has\",\"pronun\":\"[həz; əz; hæz]\",\"translation\":\"v. 有，吃，得到，从事，允许，雇用，享有（have的第三人称单数）；（亲属关系中）接受；拿；买到\",\"audio\":\"has.mp3\"},{\"word\":\"have\",\"pronun\":\"[həv; əv; hæv]\",\"translation\":\"aux. 已经\\nvt. 有；让；拿；从事；允许\",\"audio\":\"have.mp3\"},{\"word\":\"long\",\"pronun\":\"[lɔːŋ]\",\"translation\":\"n. 长时间；[语] 长音节；（服装的）长尺寸；长裤\\nadj. 长的；过长的；做多头的；长时间的；冗长的，长音\\nvi. 渴望；热望\\nadv. 长期地；始终\",\"audio\":\"long.mp3\"},{\"word\":\"body\",\"pronun\":\"[ˈbɑːdi]\",\"translation\":\"n. 身体；主体；大量；团体；主要部分\\nvt. 赋以形体\",\"audio\":\"body.mp3\"},{\"word\":\"short\",\"pronun\":\"[ʃɔːrt]\",\"translation\":\"n. 短；缺乏；短路；短裤\\nadj. 短的；不足的；矮的，低的\\nadv. 不足；突然；唐突地\",\"audio\":\"short.mp3\"},{\"word\":\"leg\",\"pronun\":\"[leɡ]\",\"translation\":\"n. 腿；支柱\",\"audio\":\"leg.mp3\"},{\"word\":\"right\",\"pronun\":\"[raɪt]\",\"translation\":\"n. 正确；右边；正义\\nadj. 正确的；直接的；右方的\\nvt. 纠正\\nadv. 正确地；恰当地；彻底地\\nvi. 复正；恢复平稳\",\"audio\":\"right.mp3\"},{\"word\":\"fat\",\"pronun\":\"[fæt]\",\"translation\":\"n. 脂肪，肥肉\\nadj. 肥的，胖的；油腻的；丰满的\\nvt. 养肥；在…中加入脂肪\\nvi. 长肥\",\"audio\":\"fat.mp3\"},{\"word\":\"thin\",\"pronun\":\"[θɪn]\",\"translation\":\"n. 细小部分\\nadj. 薄的；瘦的；稀薄的；微弱的\\nvt. 使瘦；使淡；使稀疏\\nvi. 变薄；变瘦；变淡\\nadv. 稀疏地；微弱地\",\"audio\":\"thin.mp3\"},{\"word\":\"slow\",\"pronun\":\"[sloʊ]\",\"translation\":\"adj. 慢的；减速的；迟钝的\\nvt. 放慢；阻碍\\nvi. 变慢；变萧条\\nadv. 慢慢地；迟缓地\",\"audio\":\"slow.mp3\"},{\"word\":\"love\",\"pronun\":\"[lʌv]\",\"translation\":\"n. 恋爱；亲爱的；酷爱；喜爱的事物；爱情，爱意；疼爱；热爱；爱人，所爱之物\\nv. 爱，热爱；爱戴；赞美，称赞；喜爱；喜好；喜欢；爱慕\",\"audio\":\"love.mp3\"},{\"word\":\"tail\",\"pronun\":\"[teɪl]\",\"translation\":\"n. 尾巴；踪迹；辫子；燕尾服\\nadj. 从后面而来的；尾部的\\nvt. 尾随；装上尾巴\\nvi. 跟踪；变少或缩小\",\"audio\":\"tail.mp3\"},{\"word\":\"her\",\"pronun\":\"[hər; ɜːr; ər; hɜːr]\",\"translation\":\"pron. 她（she的宾格）；她的（she的所有格）；她（指某个国家；一艘船）\",\"audio\":\"her.mp3\"},{\"word\":\"gift\",\"pronun\":\"[ɡɪft]\",\"translation\":\"n. 礼物；天赋；赠品\\nvt. 赋予；向…赠送\",\"audio\":\"gift.mp3\"},{\"word\":\"picture\",\"pronun\":\"[ˈpɪktʃər]\",\"translation\":\"n. 照片，图画；影片；景色；化身\\nvt. 画；想像；描写\",\"audio\":\"picture.mp3\"},{\"word\":\"card\",\"pronun\":\"[kɑːrd]\",\"translation\":\"n. 卡片；纸牌；明信片\\nvt. 记于卡片上\",\"audio\":\"card.mp3\"},{\"word\":\"sing\",\"pronun\":\"[sɪŋ]\",\"translation\":\"n. 演唱；鸣声；呼啸声\\nvt. 唱；用诗赞颂；唱着使\\nvi. 唱歌；歌颂；鸣叫；呼号\",\"audio\":\"sing.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.964678+00:00",
+  "request": {
+    "lesson_id": "5c60bf6f4db495a0c0912362a4b5fbdd",
+    "course_id": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "order": 74,
+    "nextCourseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "courseName": "C++",
+    "lessonId": "5c60bf6f4db495a0c0912362a4b5fbdd",
+    "nextLessonId": "68d50bfb07262f9eb16aa6bca35f891a",
+    "lessonName": "求和与平均值",
+    "icon": "data/assets/daziya.com/key-icon_key-cpp.b136419115.png",
+    "description": "C++编程练习 - 求和与平均值",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2cc459f060c6d86cd603a02419b624b4",
+        "index": 1,
+        "text": [
+          "#include <iostream>\\nusing namespace std;\\n\\nint main() {\\n    int scores[] = {85, 90, 78, 92, 88};\\n    int size = 5;\\n    int total = 0;\\n\\n    for (int i = 0; i < size; i++) {\\n        total += scores[i];\\n    }\\n\\n    double average = (double)total / size;\\n\\n    cout << \"总分: \" << total << endl;\\n    cout << \"平均分: \" << average << endl;\\n\\n    return 0;\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "cpp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

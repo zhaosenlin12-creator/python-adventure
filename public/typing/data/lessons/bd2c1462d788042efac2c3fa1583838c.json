@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.353571+00:00",
+  "request": {
+    "lesson_id": "bd2c1462d788042efac2c3fa1583838c",
+    "course_id": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "order": 349,
+    "nextCourseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "courseName": "小学必备古诗75首（2）",
+    "lessonId": "bd2c1462d788042efac2c3fa1583838c",
+    "nextLessonId": "3c0b3ce7eb933c601a0b9ef0ecb8cc3b",
+    "lessonName": "悯农",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "fe86b68f370175e61361984e6d25f8f2",
+        "index": 1,
+        "text": [
+          "悯农\\n李绅\\n春种一粒粟，秋收万颗子。\\n四海无闲田，农夫犹饿死。"
+        ],
+        "pinyin": "[[\"悯\", \"mǐn\"], [\"农\", \"nóng\"], [\"\\n\", \"\"], [\"李\", \"lǐ\"], [\"绅\", \"shēn\"], [\"\\n\", \"\"], [\"春\", \"chūn\"], [\"种\", \"zhòng\"], [\"一\", \"yī\"], [\"粒\", \"lì\"], [\"粟\", \"sù\"], [\"，\", \"\"], [\"秋\", \"qiū\"], [\"收\", \"shōu\"], [\"万\", \"wàn\"], [\"颗\", \"kē\"], [\"子\", \"zǐ\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"四\", \"sì\"], [\"海\", \"hǎi\"], [\"无\", \"wú\"], [\"闲\", \"xián\"], [\"田\", \"tián\"], [\"，\", \"\"], [\"农\", \"nóng\"], [\"夫\", \"fū\"], [\"犹\", \"yóu\"], [\"饿\", \"è\"], [\"死\", \"sǐ\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

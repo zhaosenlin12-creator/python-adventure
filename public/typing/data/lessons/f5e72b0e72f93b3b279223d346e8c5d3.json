@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.824743+00:00",
+  "request": {
+    "lesson_id": "f5e72b0e72f93b3b279223d346e8c5d3",
+    "course_id": "df7bf8b8c0456926de2c1fac14a741b2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "order": 463,
+    "nextCourseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "courseName": "宋词必备67首（1）",
+    "lessonId": "f5e72b0e72f93b3b279223d346e8c5d3",
+    "nextLessonId": "f36e4463ce3c857ce3e58b961debb114",
+    "lessonName": "村晚",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f5fdd661c2c3977d703985f754a75f9a",
+        "index": 1,
+        "text": [
+          "村晚\\n雷震\\n草满池塘水满陂，山衔落日浸寒漪。\\n牧童归去横牛背，短笛无腔信口吹。"
+        ],
+        "pinyin": "[[\"村\", \"cūn\"], [\"晚\", \"wǎn\"], [\"\\n\", \"\"], [\"雷\", \"léi\"], [\"震\", \"zhèn\"], [\"\\n\", \"\"], [\"草\", \"cǎo\"], [\"满\", \"mǎn\"], [\"池\", \"chí\"], [\"塘\", \"táng\"], [\"水\", \"shuǐ\"], [\"满\", \"mǎn\"], [\"陂\", \"bēi\"], [\"，\", \"\"], [\"山\", \"shān\"], [\"衔\", \"xián\"], [\"落\", \"luò\"], [\"日\", \"rì\"], [\"浸\", \"jìn\"], [\"寒\", \"hán\"], [\"漪\", \"yī\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"牧\", \"mù\"], [\"童\", \"tóng\"], [\"归\", \"guī\"], [\"去\", \"qù\"], [\"横\", \"héng\"], [\"牛\", \"niú\"], [\"背\", \"bèi\"], [\"，\", \"\"], [\"短\", \"duǎn\"], [\"笛\", \"dí\"], [\"无\", \"wú\"], [\"腔\", \"qiāng\"], [\"信\", \"xìn\"], [\"口\", \"kǒu\"], [\"吹\", \"chuī\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

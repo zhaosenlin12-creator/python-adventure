@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.797698+00:00",
+  "request": {
+    "lesson_id": "51edb17534c5ad954bfd4b125095c279",
+    "course_id": "df7bf8b8c0456926de2c1fac14a741b2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "order": 458,
+    "nextCourseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "courseName": "宋词必备67首（1）",
+    "lessonId": "51edb17534c5ad954bfd4b125095c279",
+    "nextLessonId": "9618de532f768742d61639d482fc2d6a",
+    "lessonName": "题临安邸",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a144451999216c99a6d34cf2df8949e2",
+        "index": 1,
+        "text": [
+          "题临安邸\\n林升\\n山外青山楼外楼，西湖歌舞几时休？\\n暖风熏得游人醉，直把杭州作汴州。"
+        ],
+        "pinyin": "[[\"题\", \"tí\"], [\"临\", \"lín\"], [\"安\", \"ān\"], [\"邸\", \"dǐ\"], [\"\\n\", \"\"], [\"林\", \"lín\"], [\"升\", \"shēng\"], [\"\\n\", \"\"], [\"山\", \"shān\"], [\"外\", \"wài\"], [\"青\", \"qīng\"], [\"山\", \"shān\"], [\"楼\", \"lóu\"], [\"外\", \"wài\"], [\"楼\", \"lóu\"], [\"，\", \"\"], [\"西\", \"xī\"], [\"湖\", \"hú\"], [\"歌\", \"gē\"], [\"舞\", \"wǔ\"], [\"几\", \"jǐ\"], [\"时\", \"shí\"], [\"休\", \"xiū\"], [\"？\", \"\"], [\"\\n\", \"\"], [\"暖\", \"nuǎn\"], [\"风\", \"fēng\"], [\"熏\", \"xūn\"], [\"得\", \"de\"], [\"游\", \"yóu\"], [\"人\", \"rén\"], [\"醉\", \"zuì\"], [\"，\", \"\"], [\"直\", \"zhí\"], [\"把\", \"bǎ\"], [\"杭\", \"háng\"], [\"州\", \"zhōu\"], [\"作\", \"zuò\"], [\"汴\", \"biàn\"], [\"州\", \"zhōu\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

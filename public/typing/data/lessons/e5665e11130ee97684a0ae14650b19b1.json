@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.152953+00:00",
+  "request": {
+    "lesson_id": "e5665e11130ee97684a0ae14650b19b1",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 447,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "e5665e11130ee97684a0ae14650b19b1",
+    "nextLessonId": "5790b89f68583c5ff8d50ac656c37b1e",
+    "lessonName": "六级词汇正序版-120",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第120课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8f2b9faa91b4a639a8fbe89b9d0ca467",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"comprehend\",\"pronun\":\"[ˌkɑːmprɪˈhend]\",\"translation\":\"vt. 理解；包含；由…组成\",\"audio\":\"comprehend.mp3\"},{\"word\":\"condemnation\",\"pronun\":\"[ˌkɑːndemˈneɪʃn]\",\"translation\":\"n. 谴责；定罪；非难的理由；征用\",\"audio\":\"condemnation.mp3\"},{\"word\":\"confession\",\"pronun\":\"[kənˈfeʃn]\",\"translation\":\"n. 忏悔，告解；供认；表白\",\"audio\":\"confession.mp3\"},{\"word\":\"confinement\",\"pronun\":\"[kənˈfaɪnmənt]\",\"translation\":\"n. 限制；监禁；分娩\",\"audio\":\"confinement.mp3\"},{\"word\":\"contamination\",\"pronun\":\"[kənˌtæmɪˈneɪʃn]\",\"translation\":\"n. 污染，玷污；污染物\",\"audio\":\"contamination.mp3\"},{\"word\":\"contributor\",\"pronun\":\"[kənˈtrɪbjətər]\",\"translation\":\"n. 贡献者；投稿者；捐助者\",\"audio\":\"contributor.mp3\"},{\"word\":\"converse\",\"pronun\":\"[kənˈvɜːrs]\",\"translation\":\"n. 逆行，逆向；倒；相反的事物\\nadj. 相反的，逆向的；颠倒的\\nvi. 交谈，谈话；认识\\nn. 匡威（服装品牌）\",\"audio\":\"converse.mp3\"},{\"word\":\"correlation\",\"pronun\":\"[ˌkɔːrəˈleɪʃn]\",\"translation\":\"n. [数] 相关，关联；相互关系\",\"audio\":\"correlation.mp3\"},{\"word\":\"cosmopolitan\",\"pronun\":\"[ˌkɑːzməˈpɑːlɪtən]\",\"translation\":\"n. 四海为家者；世界主义者；世界各地都有的东西\\nadj. 世界性的；世界主义的，四海一家的\",\"audio\":\"cosmopolitan.mp3\"},{\"word\":\"coup\",\"pronun\":\"[kuː]\",\"translation\":\"n. 政变；妙计；出乎意料的行动；砰然的一击\\nvt. 使…颠倒；使…倾斜\\nvi. 推倒；倾斜；溢出\",\"audio\":\"coup.mp3\"},{\"word\":\"credentials\",\"pronun\":\"[krəˈdenʃlz]\",\"translation\":\"n. [管理] 证书；文凭；信任状（credential的复数）\\nv. 得到信用；授…以证书（credential的三单形式）\",\"audio\":\"credentials.mp3\"},{\"word\":\"cult\",\"pronun\":\"[kʌlt]\",\"translation\":\"n. 祭仪（尤其指宗教上的）；礼拜；狂热信徒\",\"audio\":\"cult.mp3\"},{\"word\":\"curt\",\"pronun\":\"[kɜːrt]\",\"translation\":\"adj. 简略的；简要的；草率的；简单粗暴的\",\"audio\":\"curt.mp3\"},{\"word\":\"cyberspace\",\"pronun\":\"[ˈsaɪbərspeɪs]\",\"translation\":\"n. 网络空间；赛博空间\",\"audio\":\"cyberspace.mp3\"},{\"word\":\"dealer\",\"pronun\":\"[ˈdiːlər]\",\"translation\":\"n. 经销商；商人\\nn. 发牌员\\nn. [俚语]毒品贩子，贩毒者\",\"audio\":\"dealer.mp3\"},{\"word\":\"deceptive\",\"pronun\":\"[dɪˈseptɪv]\",\"translation\":\"adj. 欺诈的；迷惑的；虚伪的\",\"audio\":\"deceptive.mp3\"},{\"word\":\"decode\",\"pronun\":\"[ˈdiˈkod]\",\"translation\":\"vt. 译(密码文电等)，译(码)，解(码)等：；(尤指在学习过程中)把拼写和读音关系用于(阅读)\\nvi. 从事破译(或解译)工作\",\"audio\":\"decode.mp3\"},{\"word\":\"deed\",\"pronun\":\"[diːd]\",\"translation\":\"n. 行动；功绩；证书；[法] 契据\\nvt. 立契转让\",\"audio\":\"deed.mp3\"},{\"word\":\"defective\",\"pronun\":\"[dɪˈfektɪv]\",\"translation\":\"n. 有缺陷的人；不完全变化词\\nadj. 有缺陷的；不完美的\",\"audio\":\"defective.mp3\"},{\"word\":\"deficient\",\"pronun\":\"[dɪˈfɪʃnt]\",\"translation\":\"adj. 不足的；有缺陷的；不充分的\",\"audio\":\"deficient.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

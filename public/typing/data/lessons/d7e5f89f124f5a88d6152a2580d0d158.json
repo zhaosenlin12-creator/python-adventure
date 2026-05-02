@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:33.019188+00:00",
+  "request": {
+    "lesson_id": "d7e5f89f124f5a88d6152a2580d0d158",
+    "course_id": "6b7e28f9c51591c604dbd65a0dd6d5c4",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "6b7e28f9c51591c604dbd65a0dd6d5c4",
+    "order": 410,
+    "nextCourseId": "6ac8e1237d57b70b6dfc49843aaa773b",
+    "courseName": "百科知识2",
+    "lessonId": "d7e5f89f124f5a88d6152a2580d0d158",
+    "nextLessonId": "2ee4f61a0f2f3cc24d7f59713bffa22d",
+    "lessonName": "游戏：英文单词",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-duck.b036f0ad8f.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "ab98b5019ba0d7b853f6c40d343b20fa",
+        "index": 1,
+        "text": [
+          "jeep immune vein sync offset ignore plum bow swell"
+        ],
+        "contentType": 3,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 30,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

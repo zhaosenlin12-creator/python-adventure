@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.818258+00:00",
+  "request": {
+    "lesson_id": "8ccb0ccfe431aebc8af19922f3d0f6ef",
+    "course_id": "c02abec1127900f16353dac5e0b02419",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "c02abec1127900f16353dac5e0b02419",
+    "order": 361,
+    "nextCourseId": "c02abec1127900f16353dac5e0b02419",
+    "courseName": "百科知识1",
+    "lessonId": "8ccb0ccfe431aebc8af19922f3d0f6ef",
+    "nextLessonId": "828d33a386f79e84e4b5e8cb15b2178d",
+    "lessonName": "游戏：英文单词",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-duck.b036f0ad8f.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "6a4fc33832da33be53b56e28ce1a5718",
+        "index": 1,
+        "text": [
+          "warm little abroad wife prayer summer property service round"
+        ],
+        "contentType": 3,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 30,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

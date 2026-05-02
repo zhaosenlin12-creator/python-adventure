@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.760019+00:00",
+  "request": {
+    "lesson_id": "efc41b96fe14545b439c90750221ba2f",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 363,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "efc41b96fe14545b439c90750221ba2f",
+    "nextLessonId": "3670e23bc5b32b4d70c88074ca5f61a3",
+    "lessonName": "六级词汇正序版-5",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第5课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d70bd6ba69f1d93d24c2a12e9c8ebb46",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"alliance\",\"pronun\":\"[əˈlaɪəns]\",\"translation\":\"n. 联盟，联合；联姻\",\"audio\":\"alliance.mp3\"},{\"word\":\"allocate\",\"pronun\":\"[ˈæləkeɪt]\",\"translation\":\"vt. 分配；拨出；使坐落于\\nvi. 分配；指定\",\"audio\":\"allocate.mp3\"},{\"word\":\"allowance\",\"pronun\":\"[əˈlaʊəns]\",\"translation\":\"n. 津贴，零用钱；允许；限额\\nvt. 定量供应\",\"audio\":\"allowance.mp3\"},{\"word\":\"alloy\",\"pronun\":\"[ˈælɔɪ]\",\"translation\":\"n. 合金\\nvt. 使成合金；使减低成色\\nvi. 易于铸成合金\",\"audio\":\"alloy.mp3\"},{\"word\":\"alter\",\"pronun\":\"[ˈɔːltər]\",\"translation\":\"vt. 改变，更改\\nvi. 改变；修改\",\"audio\":\"alter.mp3\"},{\"word\":\"alternate\",\"pronun\":\"[ˈɔːltərnət]\",\"translation\":\"n. 替换物\\nadj. 交替的；轮流的\\nvt. 使交替；使轮流\\nvi. 交替；轮流\",\"audio\":\"alternate.mp3\"},{\"word\":\"alternative\",\"pronun\":\"[ɔːlˈtɜːrnətɪv]\",\"translation\":\"n. 二中择一；供替代的选择\\nadj. 供选择的；选择性的；交替的\",\"audio\":\"alternative.mp3\"},{\"word\":\"ambiguous\",\"pronun\":\"[æmˈbɪɡjuəs]\",\"translation\":\"adj. 模糊不清的；引起歧义的\",\"audio\":\"ambiguous.mp3\"},{\"word\":\"ambition\",\"pronun\":\"[æmˈbɪʃ(ə)n]\",\"translation\":\"n. 野心，雄心；抱负，志向\\nvt. 追求；有…野心\",\"audio\":\"ambition.mp3\"},{\"word\":\"ambitious\",\"pronun\":\"[æmˈbɪʃəs]\",\"translation\":\"adj. 野心勃勃的；有雄心的；热望的；炫耀的\",\"audio\":\"ambitious.mp3\"},{\"word\":\"amend\",\"pronun\":\"[əˈmend]\",\"translation\":\"vt. 修改；改善，改进\\nvi. 改正，改善；改过自新\",\"audio\":\"amend.mp3\"},{\"word\":\"ammunition\",\"pronun\":\"[ˌæmjuˈnɪʃn]\",\"translation\":\"n. 弹药；军火\\nvt. 装弹药于\\nvi. 装弹药\",\"audio\":\"ammunition.mp3\"},{\"word\":\"amplify\",\"pronun\":\"[ˈæmplɪfaɪ]\",\"translation\":\"vt. 放大，扩大；增强；详述\\nvi. 详述\",\"audio\":\"amplify.mp3\"},{\"word\":\"analogous\",\"pronun\":\"[əˈnæləɡəs]\",\"translation\":\"adj. 类似的；[昆] 同功的；可比拟的\",\"audio\":\"analogous.mp3\"},{\"word\":\"analogy\",\"pronun\":\"\",\"translation\":\"\",\"audio\":\"analogy.mp3\"},{\"word\":\"analyse\",\"pronun\":\"[ˈænəlaɪz]\",\"translation\":\"vt. 分析；分解；细察\",\"audio\":\"analyse.mp3\"},{\"word\":\"analysis\",\"pronun\":\"[əˈnæləsɪs]\",\"translation\":\"n. 分析；分解；验定\",\"audio\":\"analysis.mp3\"},{\"word\":\"ancestor\",\"pronun\":\"[ˈænsestər]\",\"translation\":\"n. 始祖，祖先；被继承人\",\"audio\":\"ancestor.mp3\"},{\"word\":\"ancient\",\"pronun\":\"[ˈeɪnʃənt]\",\"translation\":\"n. 古代人；老人\\nadj. 古代的；古老的，过时的；年老的\",\"audio\":\"ancient.mp3\"},{\"word\":\"anniversary\",\"pronun\":\"[ˌænɪˈvɜːrsəri]\",\"translation\":\"n. 周年纪念日\",\"audio\":\"anniversary.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.948893+00:00",
+  "request": {
+    "lesson_id": "f0feccead16816e73fca7c40c470cb51",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 185,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "f0feccead16816e73fca7c40c470cb51",
+    "nextLessonId": "1de55dc3751e7dc8584c615671cc6880",
+    "lessonName": "KET核心词-120",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第120课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2b77ed9569d510ded12a22df0c54cb5a",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"Europe\",\"pronun\":\"[ˈjʊrəp]\",\"translation\":\"n. 欧洲\",\"audio\":\"Europe.mp3\"},{\"word\":\"France\",\"pronun\":\"[fræns]\",\"translation\":\"n. 法国；法郎士（姓氏）\",\"audio\":\"France.mp3\"},{\"word\":\"French\",\"pronun\":\"[frentʃ]\",\"translation\":\"n. 法国人；法语\\nadj. 法国的；法语的；法国人的\",\"audio\":\"French.mp3\"},{\"word\":\"German\",\"pronun\":\"[ˈdʒɜːrmən]\",\"translation\":\"n. 德语；德国人\\nadj. 德国的；德语的，德国人的\",\"audio\":\"German.mp3\"},{\"word\":\"Germany\",\"pronun\":\"[ˈdʒɜːrməni]\",\"translation\":\"n. 德国\",\"audio\":\"Germany.mp3\"},{\"word\":\"Greece\",\"pronun\":\"[ɡriːs]\",\"translation\":\"希腊（欧洲南部国家）\",\"audio\":\"Greece.mp3\"},{\"word\":\"India\",\"pronun\":\"[ˈɪndiə]\",\"translation\":\"n. 印度（南亚国家）\",\"audio\":\"India.mp3\"},{\"word\":\"Italian\",\"pronun\":\"[ɪˈtæliən]\",\"translation\":\"n. 意大利人；意大利语\\nadj. 意大利的；意大利文化的；意大利语的\",\"audio\":\"Italian.mp3\"},{\"word\":\"Italy\",\"pronun\":\"[ˈɪtəli]\",\"translation\":\"n. 意大利（欧洲南部国家）\",\"audio\":\"Italy.mp3\"},{\"word\":\"Japan\",\"pronun\":\"[dʒəˈpæn]\",\"translation\":\"n. 日本（东亚国家名）\",\"audio\":\"Japan.mp3\"},{\"word\":\"Japanese\",\"pronun\":\"[ˌdʒæpəˈniːz]\",\"translation\":\"n. 日本人；日语\\nadj. 日本（人）的；日语的\",\"audio\":\"Japanese.mp3\"},{\"word\":\"Kenya\",\"pronun\":\"[ˈkinjə]\",\"translation\":\"n. 肯尼亚（东非国家）\",\"audio\":\"Kenya.mp3\"},{\"word\":\"Mexico\",\"pronun\":\"[ˈmeksɪkoʊ]\",\"translation\":\"n. 墨西哥\",\"audio\":\"Mexico.mp3\"},{\"word\":\"North America\",\"pronun\":\"\",\"translation\":\"n. 北美洲\",\"audio\":\"North_America.mp3\"},{\"word\":\"Norway\",\"pronun\":\"[ˈnɔːrweɪ]\",\"translation\":\"n. 挪威（北欧国家名）\",\"audio\":\"Norway.mp3\"},{\"word\":\"Poland\",\"pronun\":\"[ˈpoʊlənd]\",\"translation\":\"n. 波兰（欧洲国家）\",\"audio\":\"Poland.mp3\"},{\"word\":\"polish\",\"pronun\":\"[ˈpoʊlɪʃ]\",\"translation\":\"n. 磨光，擦亮；上光剂，擦亮剂；优雅，精良\\nvi. 擦亮，变光滑\\nvt. 磨光，使发亮\\nadj. 波兰的\",\"audio\":\"polish.mp3\"},{\"word\":\"Portugal\",\"pronun\":\"[ˈpɔːrtʃʊɡl]\",\"translation\":\"n. 葡萄牙（欧洲西南部国家）\",\"audio\":\"Portugal.mp3\"},{\"word\":\"Portuguese\",\"pronun\":\"[ˌpɔːrtʃʊˈɡiːz]\",\"translation\":\"n. 葡萄牙语；葡萄牙人\\nadj. 葡萄牙的；葡萄牙人的；葡萄牙语的\",\"audio\":\"Portuguese.mp3\"},{\"word\":\"Russia\",\"pronun\":\"[ˈrʌʃə]\",\"translation\":\"n. 俄罗斯\",\"audio\":\"Russia.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

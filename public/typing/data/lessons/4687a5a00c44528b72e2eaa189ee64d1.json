@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.695166+00:00",
+  "request": {
+    "lesson_id": "4687a5a00c44528b72e2eaa189ee64d1",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 353,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "4687a5a00c44528b72e2eaa189ee64d1",
+    "nextLessonId": "2d3b3f24f9633de250b79b4a6958e792",
+    "lessonName": "六级词汇正序版-112",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第112课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8f851eec5dce5aec448b1592544f90b8",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"tumble\",\"pronun\":\"[ˈtʌmbl]\",\"translation\":\"n. 跌倒；翻筋斗；跌跤\\nvt. 使摔倒；使滚翻；弄乱\\nvi. 摔倒；倒塌；滚动；打滚；仓惶地行动\\n[ 过去式tumbled 过去分词tumbled 现在分词tumbling ]\",\"audio\":\"tumble.mp3\"},{\"word\":\"tunnel\",\"pronun\":\"[ˈtʌnl]\",\"translation\":\"n. 隧道；坑道；洞穴通道\\nvt. 挖；在…打开通道；在…挖掘隧道\\nvi. 挖掘隧道；打开通道\",\"audio\":\"tunnel.mp3\"},{\"word\":\"turbulent\",\"pronun\":\"[ˈtɜːrbjələnt]\",\"translation\":\"adj. 骚乱的，混乱的；狂暴的；吵闹的；激流的，湍流的\",\"audio\":\"turbulent.mp3\"},{\"word\":\"turnover\",\"pronun\":\"[ˈtɜːrnoʊvər]\",\"translation\":\"n. 翻覆；[贸易] 营业额；流通量；半圆卷饼；失误\\nadj. 翻过来的；可翻转的\",\"audio\":\"turnover.mp3\"},{\"word\":\"tutor\",\"pronun\":\"[ˈtuːtər]\",\"translation\":\"n. 导师；家庭教师；助教\\nvt. 辅导；约束\\nvi. 当家庭教师；（美）在家庭教师指导下学习\",\"audio\":\"tutor.mp3\"},{\"word\":\"twist\",\"pronun\":\"[twɪst]\",\"translation\":\"n. 扭曲；拧；扭伤\\nvt. 捻；拧；扭伤；编织；使苦恼\\nvi. 扭动；弯曲\",\"audio\":\"twist.mp3\"},{\"word\":\"typical\",\"pronun\":\"[ˈtɪpɪkl]\",\"translation\":\"adj. 典型的；特有的；象征性的\",\"audio\":\"typical.mp3\"},{\"word\":\"ultimate\",\"pronun\":\"[ˈʌltɪmət]\",\"translation\":\"n. 终极；根本；基本原则\\nadj. 最终的；极限的；根本的\",\"audio\":\"ultimate.mp3\"},{\"word\":\"ultraviolet\",\"pronun\":\"[ˌʌltrəˈvaɪələt]\",\"translation\":\"adj. 紫外的；紫外线的\\nn. 紫外线辐射，紫外光\",\"audio\":\"ultraviolet.mp3\"},{\"word\":\"unanimous\",\"pronun\":\"[juˈnænɪməs]\",\"translation\":\"adj. 全体一致的；意见一致的；无异议的\",\"audio\":\"unanimous.mp3\"},{\"word\":\"underestimate\",\"pronun\":\"[ˌʌndərˈestɪmeɪt]\",\"translation\":\"n. 低估\\nvt. 低估；看轻\",\"audio\":\"underestimate.mp3\"},{\"word\":\"undergo\",\"pronun\":\"[ˌʌndərˈɡoʊ]\",\"translation\":\"vt. 经历，经受；忍受\",\"audio\":\"undergo.mp3\"},{\"word\":\"underlying\",\"pronun\":\"[ˌʌndərˈlaɪɪŋ]\",\"translation\":\"adj. 潜在的；根本的；在下面的；优先的\\nv. 放在…的下面；为…的基础；优先于（underlie的ing形式）\",\"audio\":\"underlying.mp3\"},{\"word\":\"undermine\",\"pronun\":\"[ˌʌndərˈmaɪn]\",\"translation\":\"vt. 破坏，渐渐破坏；挖掘地基\",\"audio\":\"undermine.mp3\"},{\"word\":\"unemployment\",\"pronun\":\"[ˌʌnɪmˈplɔɪmənt]\",\"translation\":\"n. 失业；失业率；失业人数\",\"audio\":\"unemployment.mp3\"},{\"word\":\"uneven\",\"pronun\":\"[ʌnˈiːvn]\",\"translation\":\"adj. 不均匀的；不平坦的；[数] 奇数的\",\"audio\":\"uneven.mp3\"},{\"word\":\"unfold\",\"pronun\":\"[ʌnˈfoʊld]\",\"translation\":\"vi. 展开；显露\\nvt. 打开；呈现\",\"audio\":\"unfold.mp3\"},{\"word\":\"unify\",\"pronun\":\"[ˈjuːnɪfaɪ]\",\"translation\":\"vt. 统一；使相同，使一致\",\"audio\":\"unify.mp3\"},{\"word\":\"unique\",\"pronun\":\"[juˈniːk]\",\"translation\":\"n. 独一无二的人或物\\nadj. 独特的，稀罕的；[数] 唯一的，独一无二的\",\"audio\":\"unique.mp3\"},{\"word\":\"unity\",\"pronun\":\"[ˈjuːnəti]\",\"translation\":\"n. 团结；一致；联合；个体\",\"audio\":\"unity.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

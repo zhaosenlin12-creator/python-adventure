@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.673631+00:00",
+  "request": {
+    "lesson_id": "249748c3030a6fabb076d58898cb6392",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 570,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "249748c3030a6fabb076d58898cb6392",
+    "nextLessonId": "7699424c79cb0459485d890fd6789b07",
+    "lessonName": "Kenny’s Adventure",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d3cef9f2196ab4ddb2640dde4f4dc956",
+        "index": 1,
+        "text": [
+          "Kenny's Adventure\\nKenny was going on an adventure. Where was he going?\\nHe was going to the grocery store!\\nHe was going to get some groceries, all by himself.\\nKenny's mom gave him a list and some money. \"You need to get bread, milk and butter,\" she told him. \"And be sure to use the crosswalk and to look both ways when crossing the street.\"\\nKenny walked to the crosswalk. He looked both ways carefully. Then, he looked again, just to be sure there were no cars coming. Finally, he crossed the street and went into the store.\\nKenny gave the grocery list to the clerk. \"I want bread, milk and butter,\" he told the clerk. \"Here is the money.\"\\nThe clerk put the things in a bag and handed it to Kenny, with some change. Kenny was excited!\\nHe walked back safely and made his way home. He had had a wonderful adventure!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

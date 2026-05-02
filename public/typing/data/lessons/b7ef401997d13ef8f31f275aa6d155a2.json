@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.573359+00:00",
+  "request": {
+    "lesson_id": "b7ef401997d13ef8f31f275aa6d155a2",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 547,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "b7ef401997d13ef8f31f275aa6d155a2",
+    "nextLessonId": "bf19175f5bfacbd91d58b59dcb3859a0",
+    "lessonName": "When the Earth Shakes",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4961d6134c47e7256c2db49eacb0fd41",
+        "index": 1,
+        "text": [
+          "When the Earth Shakes\\nIt was a day Tony would never forget. He was playing with his friends in the yard. All of a sudden, there was a strange noise. Then, everything started to shake.\\nTony saw that his house was moving. Dogs were barking. Chickens were running around in fear. A horse was standing upright on its back legs. What was it?\\nTony had no idea.\\nSome of kids fell down and others were trying to keep from falling.\\nA woman ran outside and shouted, \"Hurry!\"\\nIt's an earthquake. Get away from the building!\"Tony was so scared that he couldn't move. The woman grabbed him and led him away from the building.\\nIt was his first earthquake.\\nTony was shocked to learn that the ground he stood on every day could shake! And that shaking could hurt a lot of people."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

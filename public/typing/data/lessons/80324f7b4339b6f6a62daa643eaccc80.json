@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.546235+00:00",
+  "request": {
+    "lesson_id": "80324f7b4339b6f6a62daa643eaccc80",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 327,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "80324f7b4339b6f6a62daa643eaccc80",
+    "nextLessonId": "2912010e381829fad3b8eb0dc9bbd2f4",
+    "lessonName": "六级词汇正序版-34",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第34课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d257fbbaaf6c885980a3a7a01168f7ba",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"dilemma\",\"pronun\":\"[dɪˈlemə; daɪˈlemə]\",\"translation\":\"n. 困境；进退两难；两刀论法\",\"audio\":\"dilemma.mp3\"},{\"word\":\"diligent\",\"pronun\":\"[ˈdɪlɪdʒənt]\",\"translation\":\"adj. 勤勉的；用功的，费尽心血的\",\"audio\":\"diligent.mp3\"},{\"word\":\"dilute\",\"pronun\":\"[daɪˈluːt]\",\"translation\":\"vt. 稀释；冲淡；削弱\\nadj. 稀释的；淡的\\nvi. 变稀薄；变淡\",\"audio\":\"dilute.mp3\"},{\"word\":\"dim\",\"pronun\":\"[dɪm]\",\"translation\":\"n. 笨蛋，傻子\\nadj. 暗淡的，昏暗的；模糊的，看不清的；悲观的，怀疑的\\nvt. 使暗淡，使失去光泽；使变模糊\\nvi. 变模糊，变暗淡\",\"audio\":\"dim.mp3\"},{\"word\":\"dimension\",\"pronun\":\"[daɪˈmenʃn; dɪˈmenʃn]\",\"translation\":\"n. 方面;[数] 维；尺寸；次元；容积 vt. 标出尺寸\\nadj. 规格的\",\"audio\":\"dimension.mp3\"},{\"word\":\"diminish\",\"pronun\":\"[dɪˈmɪnɪʃ]\",\"translation\":\"vt. 使减少；使变小\\nvi. 减少，缩小；变小\",\"audio\":\"diminish.mp3\"},{\"word\":\"dine\",\"pronun\":\"[daɪn]\",\"translation\":\"vi. 进餐，用餐\\nvt. 宴请\",\"audio\":\"dine.mp3\"},{\"word\":\"diploma\",\"pronun\":\"[dɪˈploʊmə]\",\"translation\":\"n. 毕业证书，学位证书；公文，文书；奖状\\nvt. 发给…毕业文凭\",\"audio\":\"diploma.mp3\"},{\"word\":\"diplomat\",\"pronun\":\"[ˈdɪpləmæt]\",\"translation\":\"n. 外交家，外交官；有外交手腕的人；处事圆滑机敏的人\",\"audio\":\"diplomat.mp3\"},{\"word\":\"directory\",\"pronun\":\"[dəˈrektəri; daɪˈrektəri]\",\"translation\":\"n. [计] 目录；工商名录；姓名地址录\\nadj. 指导的；咨询的\",\"audio\":\"directory.mp3\"},{\"word\":\"disable\",\"pronun\":\"[dɪsˈeɪbl]\",\"translation\":\"vt. 使失去能力；使残废；使无资格\",\"audio\":\"disable.mp3\"},{\"word\":\"disapproval\",\"pronun\":\"[ˌdɪsəˈpruːvl]\",\"translation\":\"n. 不赞成；不喜欢\",\"audio\":\"disapproval.mp3\"},{\"word\":\"disaster\",\"pronun\":\"[dɪˈzæstər]\",\"translation\":\"n. 灾难，灾祸；不幸\",\"audio\":\"disaster.mp3\"},{\"word\":\"disastrous\",\"pronun\":\"[dɪˈzæstrəs]\",\"translation\":\"adj. 灾难性的；损失惨重的；悲伤的\",\"audio\":\"disastrous.mp3\"},{\"word\":\"discard\",\"pronun\":\"[dɪˈskɑːrd]\",\"translation\":\"n. 抛弃；被丢弃的东西或人\\nvt. 抛弃；放弃；丢弃\\nvi. 放弃\",\"audio\":\"discard.mp3\"},{\"word\":\"discern\",\"pronun\":\"[dɪˈsɜːrn]\",\"translation\":\"vt. 识别；领悟，认识\\nvi. 看清楚，辨别\",\"audio\":\"discern.mp3\"},{\"word\":\"discharge\",\"pronun\":\"[dɪsˈtʃɑːrdʒ]\",\"translation\":\"n. 排放；卸货；解雇\\nvt. 解雇；卸下；放出；免除\\nvi. 排放；卸货；流出\",\"audio\":\"discharge.mp3\"},{\"word\":\"discipline\",\"pronun\":\"[ˈdɪsəplɪn]\",\"translation\":\"n. 学科；纪律；训练；惩罚\\nvt. 训练，训导；惩戒\",\"audio\":\"discipline.mp3\"},{\"word\":\"disclose\",\"pronun\":\"[dɪsˈkloʊz]\",\"translation\":\"vt. 公开；揭露\",\"audio\":\"disclose.mp3\"},{\"word\":\"discount\",\"pronun\":\"[ˈdɪskaʊnt]\",\"translation\":\"n. 折扣；贴现率\\nvt. 打折扣；将…贴现；贬损；低估；忽视\\nvi. 贴现；打折扣出售商品\",\"audio\":\"discount.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

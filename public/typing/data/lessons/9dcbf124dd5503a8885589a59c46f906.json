@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.386082+00:00",
+  "request": {
+    "lesson_id": "9dcbf124dd5503a8885589a59c46f906",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 62,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "9dcbf124dd5503a8885589a59c46f906",
+    "nextLessonId": "4d49ad2773feef602916dfbf8cd54757",
+    "lessonName": "KET核心词-25",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第25课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9247dc2f1be9d50308cadcfc3964f875",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"fix\",\"pronun\":\"[fɪks]\",\"translation\":\"n. 困境；方位；贿赂\\nvt. 使固定；修理；安装；准备\\nvi. 固定；注视\",\"audio\":\"fix.mp3\"},{\"word\":\"flat\",\"pronun\":\"[flæt]\",\"translation\":\"n. 平地；公寓；平面\\nadj. 平的；单调的；不景气的；干脆的；平坦的；扁平的；浅的\\nvi. 逐渐变平；[音乐]以降调唱（或奏）\\nvt. 使变平；[音乐]使（音调）下降，尤指降半音\\nadv. （尤指贴着另一表面）平直地；断然地；水平地；直接地，完全地\",\"audio\":\"flat.mp3\"},{\"word\":\"flight\",\"pronun\":\"[flaɪt]\",\"translation\":\"n. 飞行；班机；逃走\\nvt. 射击；使惊飞\\nvi. 迁徙\",\"audio\":\"flight.mp3\"},{\"word\":\"floor\",\"pronun\":\"[flɔːr]\",\"translation\":\"n. 地板，地面；楼层；基底；议员席\\nvt. 铺地板；打倒，击倒；（被困难）难倒\",\"audio\":\"floor.mp3\"},{\"word\":\"flour\",\"pronun\":\"[ˈflaʊər]\",\"translation\":\"n. 面粉；粉状物质\\nvt. 撒粉于；把…磨成粉\",\"audio\":\"flour.mp3\"},{\"word\":\"flower\",\"pronun\":\"[ˈflaʊər]\",\"translation\":\"n. 花；精华；开花植物\\nvt. 使开花；用花装饰\\nvi. 成熟，发育；开花；繁荣；旺盛\",\"audio\":\"flower.mp3\"},{\"word\":\"fly\",\"pronun\":\"[flaɪ]\",\"translation\":\"n. 飞行；苍蝇；两翼昆虫\\nadj. 敏捷的\\nvi. 飞；驾驶飞机；飘扬\\nvt. 飞行；飞越；使飘扬\",\"audio\":\"fly.mp3\"},{\"word\":\"focus\",\"pronun\":\"[ˈfoʊkəs]\",\"translation\":\"n. 焦点；中心；清晰；焦距\\nvt. 使集中；使聚焦\\nvi. 集中；聚焦；调节焦距\",\"audio\":\"focus.mp3\"},{\"word\":\"fog\",\"pronun\":\"[fɑːɡ]\",\"translation\":\"n. 雾；烟雾，尘雾；迷惑\\nvt. 使模糊；使困惑；以雾笼罩\\nvi. 被雾笼罩；变模糊\",\"audio\":\"fog.mp3\"},{\"word\":\"follow\",\"pronun\":\"[ˈfɑːloʊ]\",\"translation\":\"n. 跟随；追随\\nvi. 跟随；接着\\nvt. 跟随；遵循；追求；密切注意，注视；注意；倾听\",\"audio\":\"follow.mp3\"},{\"word\":\"food\",\"pronun\":\"[fuːd]\",\"translation\":\"n. 食物；养料\",\"audio\":\"food.mp3\"},{\"word\":\"foot\",\"pronun\":\"[fʊt]\",\"translation\":\"n. 脚；英尺；步调；末尾\\nvt. 支付；给……换底\\nvi. 步行；跳舞；总计\",\"audio\":\"foot.mp3\"},{\"word\":\"football\",\"pronun\":\"[ˈfʊtbɔːl]\",\"translation\":\"n. 足球，橄榄球\\nvi. 踢足球；打橄榄球\",\"audio\":\"football.mp3\"},{\"word\":\"for\",\"pronun\":\"[fər; fɔːr]\",\"translation\":\"prep. 为，为了；因为；给；对于；至于；适合于\\nconj. 因为\",\"audio\":\"for.mp3\"},{\"word\":\"forecast\",\"pronun\":\"[ˈfɔːrkæst]\",\"translation\":\"n. 预测，预报；预想\\nvt. 预报，预测；预示\\nvi. 进行预报，作预测\",\"audio\":\"forecast.mp3\"},{\"word\":\"foreign\",\"pronun\":\"[ˈfɔːrən]\",\"translation\":\"adj. 外国的；外交的；异质的；不相关的\",\"audio\":\"foreign.mp3\"},{\"word\":\"forest\",\"pronun\":\"[ˈfɔːrɪst]\",\"translation\":\"n. 森林\\nvt. 植树于，使成为森林\",\"audio\":\"forest.mp3\"},{\"word\":\"forget\",\"pronun\":\"[fərˈɡet]\",\"translation\":\"vi. 忘记\\nvt. 忘记；忽略\",\"audio\":\"forget.mp3\"},{\"word\":\"fork\",\"pronun\":\"[fɔːrk]\",\"translation\":\"n. 叉；餐叉；耙\\nvt. 叉起；使成叉状\\nvi. 分叉；分歧\",\"audio\":\"fork.mp3\"},{\"word\":\"form\",\"pronun\":\"[fɔːrm]\",\"translation\":\"n. 形式，形状；形态，外形；方式；表格\\nvt. 构成，组成；排列，组织；产生，塑造\\nvi. 形成，构成；排列\",\"audio\":\"form.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

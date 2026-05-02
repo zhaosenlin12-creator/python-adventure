@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.182329+00:00",
+  "request": {
+    "lesson_id": "59bff2ea5928f3e0720e1665d6ab1808",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 32,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "59bff2ea5928f3e0720e1665d6ab1808",
+    "nextLessonId": "276caae1dee3dbcc4bacb8ef9f9f464c",
+    "lessonName": "2022年版 PEP-五年级-下册-2",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-五年级-下册 - 第2课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "68a20f7cfe8dcbf36c1cc14eec21643b",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"dancing\",\"pronun\":\"[ˈdænsɪŋ]\",\"translation\":\"n. 跳舞；舞蹈\\nv. 跳舞；摇晃（dance的ing形式）\",\"audio\":\"dancing.mp3\"},{\"word\":\"when\",\"pronun\":\"[wen]\",\"translation\":\"conj. 考虑到；既然；当…时；在…时；如果\\nn. 时间，时候；日期；场合\\nadv. 什么时候，何时；（用于时间的表达方式之后）在那时；其时；当时\\npron. 那时；什么时侯\",\"audio\":\"when.mp3\"},{\"word\":\"after\",\"pronun\":\"[ˈæftər]\",\"translation\":\"conj. 在……之后\\nprep. 在……之后\\nadj. 以后的\\nadv. 后来，以后\",\"audio\":\"after.mp3\"},{\"word\":\"start\",\"pronun\":\"[stɑːrt]\",\"translation\":\"n. 开始；起点\\nvt. 开始；启动\\nvi. 出发\",\"audio\":\"start.mp3\"},{\"word\":\"usually\",\"pronun\":\"[ˈjuːʒuəli; ˈjuːʒəli]\",\"translation\":\"adv. 通常，经常\",\"audio\":\"usually.mp3\"},{\"word\":\"Spain\",\"pronun\":\"[speɪn]\",\"translation\":\"n. 西班牙\",\"audio\":\"Spain.mp3\"},{\"word\":\"late\",\"pronun\":\"[leɪt]\",\"translation\":\"adj. 晚的；迟的；已故的；最近的\\nadv. 晚；迟；最近；在晚期\",\"audio\":\"late.mp3\"},{\"word\":\"a.m.\",\"pronun\":\"[ˌeɪ ˈem]\",\"translation\":\"abbr. 上午，午前（ante meridiem）\",\"audio\":\"a_m_.mp3\"},{\"word\":\"p.m.\",\"pronun\":\"[ˌpiː ˈem]\",\"translation\":\"abbr. (=prime minister)总理；首相；午后\\nn. 总理（全写为 prime minister）\",\"audio\":\"p_m_.mp3\"},{\"word\":\"why\",\"pronun\":\"[waɪ]\",\"translation\":\"int. 哎呀！什么？\\nadv. 为什么\",\"audio\":\"why.mp3\"},{\"word\":\"shop\",\"pronun\":\"[ʃɑːp]\",\"translation\":\"n. 商店；店铺\\nvt. 购物\\nvi. 购物；买东西\",\"audio\":\"shop.mp3\"},{\"word\":\"work\",\"pronun\":\"[wɜːrk]\",\"translation\":\"n. 工作；[物] 功；产品；操作；职业；行为；事业；工厂；著作；文学、音乐或艺术作品\\nvt. 使工作；操作；经营；使缓慢前进\\nvi. 工作；运作；起作用\",\"audio\":\"work.mp3\"},{\"word\":\"last\",\"pronun\":\"[læst]\",\"translation\":\"n. 末尾，最后；上个；鞋楦（做鞋的模型）\\nadj. 最后的；最近的，最新的；仅剩的；最不可能…的\\nvi. 持续；维持，够用；持久\\nvt. 度过，拖过；使维持\\nadv. 最后地；上次，最近；最后一点\",\"audio\":\"last.mp3\"},{\"word\":\"sound\",\"pronun\":\"[saʊnd]\",\"translation\":\"n. 声音，语音；噪音；海峡；吵闹；听力范围；[医] 探条\\nadj. 健全的，健康的；合理的；可靠的；有效彻底的\\nvt. 听（诊）；测量，测…深；使发声；试探；宣告\\nvi. 听起来；发\",\"audio\":\"sound.mp3\"},{\"word\":\"also\",\"pronun\":\"[ˈɔːlsoʊ]\",\"translation\":\"conj. 并且；另外\\nadv. 也；而且；同样\",\"audio\":\"also.mp3\"},{\"word\":\"busy\",\"pronun\":\"[ˈbɪzi]\",\"translation\":\"adj. 忙碌的；热闹的；正被占用的\\nvt. 使忙于\",\"audio\":\"busy.mp3\"},{\"word\":\"need\",\"pronun\":\"[niːd]\",\"translation\":\"n. 需要，要求；缺乏；必要之物\\nvt. 需要\\nvi. 需要\",\"audio\":\"need.mp3\"},{\"word\":\"letter\",\"pronun\":\"[ˈletər]\",\"translation\":\"n. 信；字母，文字；证书；文学，学问；字面意义\\nvt. 写字母于\\nvi. 写印刷体字母\",\"audio\":\"letter.mp3\"},{\"word\":\"live\",\"pronun\":\"[lɪv; laɪv]\",\"translation\":\"adj. 活的；生动的；实况转播的；精力充沛的\\nvt. 经历；度过\\nvi. 活；居住；生存\",\"audio\":\"live.mp3\"},{\"word\":\"island\",\"pronun\":\"[ˈaɪlənd]\",\"translation\":\"n. 岛；岛屿；安全岛；岛状物\\nadj. 岛的\\nvt. 孤立；使成岛状\",\"audio\":\"island.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

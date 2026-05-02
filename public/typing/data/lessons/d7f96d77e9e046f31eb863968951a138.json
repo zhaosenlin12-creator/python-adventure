@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.056902+00:00",
+  "request": {
+    "lesson_id": "d7f96d77e9e046f31eb863968951a138",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 427,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "d7f96d77e9e046f31eb863968951a138",
+    "nextLessonId": "974f4e5a04612c0db029884e61d37ed1",
+    "lessonName": "六级词汇正序版-60",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第60课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4cb2f8382bfe5343f4546d9cfb3ce700",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"installment\",\"pronun\":\"[ɪnˈstɔːlmənt]\",\"translation\":\"n. 安装；分期付款；部分；就职\",\"audio\":\"installment.mp3\"},{\"word\":\"instance\",\"pronun\":\"[ˈɪnstəns]\",\"translation\":\"n. 实例；情况；建议\\nvt. 举...为例\",\"audio\":\"instance.mp3\"},{\"word\":\"instantaneous\",\"pronun\":\"[ˌɪnstənˈteɪniəs]\",\"translation\":\"adj. 瞬间的；即时的；猝发的\",\"audio\":\"instantaneous.mp3\"},{\"word\":\"instinct\",\"pronun\":\"[ˈɪnstɪŋkt]\",\"translation\":\"n. 本能，直觉；天性\\nadj. 充满着的\",\"audio\":\"instinct.mp3\"},{\"word\":\"institute\",\"pronun\":\"[ˈɪnstɪtuːt]\",\"translation\":\"n. 学会，协会；学院\\nvt. 开始（调查）；制定；创立；提起（诉讼）\",\"audio\":\"institute.mp3\"},{\"word\":\"institution\",\"pronun\":\"[ˌɪnstɪˈtuːʃn]\",\"translation\":\"n. 制度；建立；（社会或宗教等）公共机构；习俗\",\"audio\":\"institution.mp3\"},{\"word\":\"instruct\",\"pronun\":\"[ɪnˈstrʌkt]\",\"translation\":\"vt. 指导；通知；命令；教授\",\"audio\":\"instruct.mp3\"},{\"word\":\"instructional\",\"pronun\":\"[ɪnˈstrʌkʃənl]\",\"translation\":\"adj. 教学的；指导的，教育的\",\"audio\":\"instructional.mp3\"},{\"word\":\"instrument\",\"pronun\":\"[ˈɪnstrəmənt]\",\"translation\":\"n. 仪器；工具；乐器；手段；器械\",\"audio\":\"instrument.mp3\"},{\"word\":\"instrumental\",\"pronun\":\"[ˌɪnstrəˈmentl]\",\"translation\":\"n. 器乐曲；工具字，工具格\\nadj. 乐器的；有帮助的；仪器的，器械的\",\"audio\":\"instrumental.mp3\"},{\"word\":\"insulate\",\"pronun\":\"[ˈɪnsəleɪt]\",\"translation\":\"vt. 隔离，使孤立；使绝缘，使隔热\",\"audio\":\"insulate.mp3\"},{\"word\":\"insulation\",\"pronun\":\"[ˌɪnsəˈleɪʃn]\",\"translation\":\"n. 绝缘；隔离，孤立\",\"audio\":\"insulation.mp3\"},{\"word\":\"insurance\",\"pronun\":\"[ɪnˈʃʊrəns]\",\"translation\":\"n. 保险；保险费；保险契约；赔偿金\",\"audio\":\"insurance.mp3\"},{\"word\":\"intact\",\"pronun\":\"[ɪnˈtækt]\",\"translation\":\"adj. 完整的；原封不动的；未受损伤的\",\"audio\":\"intact.mp3\"},{\"word\":\"integral\",\"pronun\":\"[ˈɪntɪɡrəlˌɪnˈteɡrəl]\",\"translation\":\"n. 积分；部分；完整\\nadj. 积分的；完整的，整体的；构成整体所必须的\",\"audio\":\"integral.mp3\"},{\"word\":\"integrity\",\"pronun\":\"[ɪnˈteɡrəti]\",\"translation\":\"n. 完整；正直；诚实；廉正\",\"audio\":\"integrity.mp3\"},{\"word\":\"intellect\",\"pronun\":\"[ˈɪntəlekt]\",\"translation\":\"n. 智力，理解力；知识分子；思维逻辑领悟力；智力高的人\",\"audio\":\"intellect.mp3\"},{\"word\":\"intellectual\",\"pronun\":\"[ˌɪntəˈlektʃuəl]\",\"translation\":\"n. 知识分子；凭理智做事者\\nadj. 智力的；聪明的；理智的\",\"audio\":\"intellectual.mp3\"},{\"word\":\"intelligent\",\"pronun\":\"[ɪnˈtelɪdʒənt]\",\"translation\":\"adj. 智能的；聪明的；理解力强的\",\"audio\":\"intelligent.mp3\"},{\"word\":\"intelligible\",\"pronun\":\"[ɪnˈtelɪdʒəbl]\",\"translation\":\"adj. 可理解的；明了的；仅能用智力了解的\",\"audio\":\"intelligible.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

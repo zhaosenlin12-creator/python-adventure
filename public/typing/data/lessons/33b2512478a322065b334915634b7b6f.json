@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.874106+00:00",
+  "request": {
+    "lesson_id": "33b2512478a322065b334915634b7b6f",
+    "course_id": "305e1352051511f2dff62dc198c6af98",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "305e1352051511f2dff62dc198c6af98",
+    "order": 86,
+    "nextCourseId": "305e1352051511f2dff62dc198c6af98",
+    "courseName": "1000个日常汉字",
+    "lessonId": "33b2512478a322065b334915634b7b6f",
+    "nextLessonId": "f5a396adf2d6ba37b448f8a1ef47bb73",
+    "lessonName": "常见汉字16",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "1000个日常汉字 - 第16组（751-800字）",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "717ce0d14bcb9cf7ac4595feca973ab6",
+        "index": 1,
+        "text": [
+          "权鲁简态级票怪寻杀律胜份汽右洋范床舞秘午登楼贵吸责例追较职属渐左录丝牙党继托赶章智冲叶胡吉卖坚喝肉遗"
+        ],
+        "pinyin": "[[\"权\",\"quán\"],[\"鲁\",\"lǔ\"],[\"简\",\"jiǎn\"],[\"态\",\"tài\"],[\"级\",\"jí\"],[\"票\",\"piào\"],[\"怪\",\"guài\"],[\"寻\",\"xún\"],[\"杀\",\"shā\"],[\"律\",\"lǜ\"],[\"胜\",\"shèng\"],[\"份\",\"fèn\"],[\"汽\",\"qì\"],[\"右\",\"yòu\"],[\"洋\",\"yáng\"],[\"范\",\"fàn\"],[\"床\",\"chuáng\"],[\"舞\",\"wǔ\"],[\"秘\",\"mì\"],[\"午\",\"wǔ\"],[\"登\",\"dēng\"],[\"楼\",\"lóu\"],[\"贵\",\"guì\"],[\"吸\",\"xī\"],[\"责\",\"zé\"],[\"例\",\"lì\"],[\"追\",\"zhuī\"],[\"较\",\"jiào\"],[\"职\",\"zhí\"],[\"属\",\"shǔ\"],[\"渐\",\"jiàn\"],[\"左\",\"zuǒ\"],[\"录\",\"lù\"],[\"丝\",\"sī\"],[\"牙\",\"yá\"],[\"党\",\"dǎng\"],[\"继\",\"jì\"],[\"托\",\"tuō\"],[\"赶\",\"gǎn\"],[\"章\",\"zhāng\"],[\"智\",\"zhì\"],[\"冲\",\"chōng\"],[\"叶\",\"yè\"],[\"胡\",\"hú\"],[\"吉\",\"jí\"],[\"卖\",\"mài\"],[\"坚\",\"jiān\"],[\"喝\",\"hē\"],[\"肉\",\"ròu\"],[\"遗\",\"yí\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 10,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

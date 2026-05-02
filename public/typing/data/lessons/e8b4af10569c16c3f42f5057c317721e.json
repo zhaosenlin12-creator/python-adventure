@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.858931+00:00",
+  "request": {
+    "lesson_id": "e8b4af10569c16c3f42f5057c317721e",
+    "course_id": "305e1352051511f2dff62dc198c6af98",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "305e1352051511f2dff62dc198c6af98",
+    "order": 83,
+    "nextCourseId": "305e1352051511f2dff62dc198c6af98",
+    "courseName": "1000个日常汉字",
+    "lessonId": "e8b4af10569c16c3f42f5057c317721e",
+    "nextLessonId": "9eb89f2487d1b21df3a78000a9affa49",
+    "lessonName": "常见汉字13",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "1000个日常汉字 - 第13组（601-650字）",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8574f75c250b0dd45087e6865b860ffb",
+        "index": 1,
+        "text": [
+          "亮假印设线温虽掉京初养香停际致阳纸李纳验助激够严证帝饭忘趣支春集丈木研班普导顿睡展跳获艺六波察群皇段"
+        ],
+        "pinyin": "[[\"亮\",\"liàng\"],[\"假\",\"jiǎ\"],[\"印\",\"yìn\"],[\"设\",\"shè\"],[\"线\",\"xiàn\"],[\"温\",\"wēn\"],[\"虽\",\"suī\"],[\"掉\",\"diào\"],[\"京\",\"jīng\"],[\"初\",\"chū\"],[\"养\",\"yǎng\"],[\"香\",\"xiāng\"],[\"停\",\"tíng\"],[\"际\",\"jì\"],[\"致\",\"zhì\"],[\"阳\",\"yáng\"],[\"纸\",\"zhǐ\"],[\"李\",\"lǐ\"],[\"纳\",\"nà\"],[\"验\",\"yàn\"],[\"助\",\"zhù\"],[\"激\",\"jī\"],[\"够\",\"gòu\"],[\"严\",\"yán\"],[\"证\",\"zhèng\"],[\"帝\",\"dì\"],[\"饭\",\"fàn\"],[\"忘\",\"wàng\"],[\"趣\",\"qù\"],[\"支\",\"zhī\"],[\"春\",\"chūn\"],[\"集\",\"jí\"],[\"丈\",\"zhàng\"],[\"木\",\"mù\"],[\"研\",\"yán\"],[\"班\",\"bān\"],[\"普\",\"pǔ\"],[\"导\",\"dǎo\"],[\"顿\",\"dùn\"],[\"睡\",\"shuì\"],[\"展\",\"zhǎn\"],[\"跳\",\"tiào\"],[\"获\",\"huò\"],[\"艺\",\"yì\"],[\"六\",\"liù\"],[\"波\",\"bō\"],[\"察\",\"chá\"],[\"群\",\"qún\"],[\"皇\",\"huáng\"],[\"段\",\"duàn\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 10,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

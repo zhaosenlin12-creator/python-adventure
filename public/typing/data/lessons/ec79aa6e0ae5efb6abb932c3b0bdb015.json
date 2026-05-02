@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.680963+00:00",
+  "request": {
+    "lesson_id": "ec79aa6e0ae5efb6abb932c3b0bdb015",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 351,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "ec79aa6e0ae5efb6abb932c3b0bdb015",
+    "nextLessonId": "27263fb9469f3434886c328f961752fa",
+    "lessonName": "六级词汇正序版-106",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第106课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "88e3bb3e793d3207f57f865733565343",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"superintendent\",\"pronun\":\"[ˌsuːpərɪnˈtendənt]\",\"translation\":\"n. 监督人；负责人；主管；指挥者\",\"audio\":\"superintendent.mp3\"},{\"word\":\"superior\",\"pronun\":\"[suːˈpɪriər]\",\"translation\":\"n. 上级，长官；优胜者，高手；长者\\nadj. 上级的；优秀的，出众的；高傲的\",\"audio\":\"superior.mp3\"},{\"word\":\"superiority\",\"pronun\":\"[suːˌpɪriˈɔːrəti]\",\"translation\":\"n. 优越，优势；优越性\",\"audio\":\"superiority.mp3\"},{\"word\":\"supersonic\",\"pronun\":\"[ˌsuːpərˈsɑːnɪk]\",\"translation\":\"n. 超音速；超声波\\nadj. 超音速的；超声波的\",\"audio\":\"supersonic.mp3\"},{\"word\":\"supervise\",\"pronun\":\"[ˈsuːpərvaɪz]\",\"translation\":\"vt. 监督，管理；指导\\nvi. 监督，管理；指导\",\"audio\":\"supervise.mp3\"},{\"word\":\"supplement\",\"pronun\":\"[ˈsʌplɪmənt]\",\"translation\":\"vt. 增补，补充\\nn. 增补，补充；补充物；增刊，副刊\",\"audio\":\"supplement.mp3\"},{\"word\":\"supplementary\",\"pronun\":\"[ˌsʌplɪˈmentri]\",\"translation\":\"n. 补充者；增补物\\nadj. 补充的；追加的\",\"audio\":\"supplementary.mp3\"},{\"word\":\"suppress\",\"pronun\":\"[səˈpres]\",\"translation\":\"vt. 抑制；镇压；废止\",\"audio\":\"suppress.mp3\"},{\"word\":\"supreme\",\"pronun\":\"[suːˈpriːm]\",\"translation\":\"n. 至高；霸权\\nadj. 最高的；至高的；最重要的\",\"audio\":\"supreme.mp3\"},{\"word\":\"surge\",\"pronun\":\"[sɜːrdʒ]\",\"translation\":\"n. 汹涌；大浪，波涛；汹涌澎湃；巨涌\\nv. 汹涌；起大浪，蜂拥而来\",\"audio\":\"surge.mp3\"},{\"word\":\"surgeon\",\"pronun\":\"[ˈsɜːrdʒən]\",\"translation\":\"n. 外科医生\",\"audio\":\"surgeon.mp3\"},{\"word\":\"surgery\",\"pronun\":\"[ˈsɜːrdʒəri]\",\"translation\":\"n. 外科；外科手术；手术室；诊疗室\",\"audio\":\"surgery.mp3\"},{\"word\":\"surpass\",\"pronun\":\"[sərˈpæs]\",\"translation\":\"vt. 超越；胜过，优于；非…所能办到或理解\",\"audio\":\"surpass.mp3\"},{\"word\":\"surplus\",\"pronun\":\"[ˈsɜːrplʌs]\",\"translation\":\"n. 剩余；[贸易] 顺差；盈余；过剩\\nadj. 剩余的；过剩的\",\"audio\":\"surplus.mp3\"},{\"word\":\"survey\",\"pronun\":\"[ˈsɜːrveɪ]\",\"translation\":\"n. 调查；测量；审视；纵览\\nvt. 调查；勘测；俯瞰\\nvi. 测量土地\",\"audio\":\"survey.mp3\"},{\"word\":\"survival\",\"pronun\":\"[sərˈvaɪvl]\",\"translation\":\"n. 幸存，残存；幸存者，残存物\",\"audio\":\"survival.mp3\"},{\"word\":\"survive\",\"pronun\":\"[sərˈvaɪv]\",\"translation\":\"vi. 幸存；活下来\\nvt. 幸存；生还；幸免于；比...活得长\",\"audio\":\"survive.mp3\"},{\"word\":\"susceptible\",\"pronun\":\"[səˈseptəbl]\",\"translation\":\"n. 易得病的人\\nadj. 易受影响的；易感动的；容许…的\",\"audio\":\"susceptible.mp3\"},{\"word\":\"suspension\",\"pronun\":\"[səˈspenʃn]\",\"translation\":\"n. 悬浮；暂停；停职\",\"audio\":\"suspension.mp3\"},{\"word\":\"suspicion\",\"pronun\":\"[səˈspɪʃn]\",\"translation\":\"n. 怀疑；嫌疑；疑心；一点儿\\nvt. 怀疑\",\"audio\":\"suspicion.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

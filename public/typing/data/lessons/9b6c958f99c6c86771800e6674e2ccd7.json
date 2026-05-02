@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.365331+00:00",
+  "request": {
+    "lesson_id": "9b6c958f99c6c86771800e6674e2ccd7",
+    "course_id": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "order": 11,
+    "nextCourseId": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "courseName": "基准键",
+    "lessonId": "9b6c958f99c6c86771800e6674e2ccd7",
+    "nextLessonId": "9b545c61a7d1e2989492e859df9413c1",
+    "lessonName": "练习a和;",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-practise-acomma.dab42132e6.png",
+    "description": "练习a和;",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f68e9b1ea28a3b4d3eb54d0dce4e1e72",
+        "index": 2,
+        "text": [
+          "aaaa;a a;;;; a;aaaaa aaa;; a; ;aa; ;a ;aa;a a;a aaa ;aaa;;; ;aa ;; ; a aaaaaa"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "a ;",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

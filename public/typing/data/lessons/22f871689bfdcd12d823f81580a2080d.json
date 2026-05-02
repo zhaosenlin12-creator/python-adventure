@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.450050+00:00",
+  "request": {
+    "lesson_id": "22f871689bfdcd12d823f81580a2080d",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 77,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "22f871689bfdcd12d823f81580a2080d",
+    "nextLessonId": "f12d85c225f2d634f3d35c3d8abc783e",
+    "lessonName": "KET核心词-70",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第70课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "45752b5092df4f895c6bc589366157d4",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"understand\",\"pronun\":\"[ˌʌndərˈstænd]\",\"translation\":\"vi. 理解；懂得；熟悉\\nvt. 理解；懂；获悉；推断；省略\",\"audio\":\"understand.mp3\"},{\"word\":\"unfortunately\",\"pronun\":\"[ʌnˈfɔːrtʃənətli]\",\"translation\":\"adv. 不幸地\",\"audio\":\"unfortunately.mp3\"},{\"word\":\"unhappy\",\"pronun\":\"[ʌnˈhæpi]\",\"translation\":\"adj. 不快乐的；不幸福的；不适当的\",\"audio\":\"unhappy.mp3\"},{\"word\":\"uniform\",\"pronun\":\"[ˈjuːnɪfɔːrm]\",\"translation\":\"n. 制服\\nadj. 统一的；一致的；相同的；均衡的；始终如一的\\nvt. 使穿制服；使成一样\",\"audio\":\"uniform.mp3\"},{\"word\":\"university\",\"pronun\":\"[ˌjuːnɪˈvɜːrsəti]\",\"translation\":\"n. 大学；综合性大学；大学校舍\",\"audio\":\"university.mp3\"},{\"word\":\"unless\",\"pronun\":\"[ənˈles]\",\"translation\":\"conj. 除非，如果不\\nprep. 除…之外\",\"audio\":\"unless.mp3\"},{\"word\":\"untidy\",\"pronun\":\"[ʌnˈtaɪdi]\",\"translation\":\"adj. 不整洁的，凌乱的；懒散的；不干净利落的，不简练的；不适宜的\\nv. 使不整洁；使杂乱无章\",\"audio\":\"untidy.mp3\"},{\"word\":\"until\",\"pronun\":\"[ənˈtɪl]\",\"translation\":\"prep. 在…以前；到…为止\\nconj. 在…以前；直到…时\",\"audio\":\"until.mp3\"},{\"word\":\"unusual\",\"pronun\":\"[ʌnˈjuːʒuəl; ʌnˈjuːʒəl]\",\"translation\":\"adj. 不寻常的；与众不同的；不平常的\",\"audio\":\"unusual.mp3\"},{\"word\":\"unwell\",\"pronun\":\"[ʌnˈwel]\",\"translation\":\"adj. 不舒服的；生病的\",\"audio\":\"unwell.mp3\"},{\"word\":\"up\",\"pronun\":\"[ʌp]\",\"translation\":\"prep. 在…之上；向…的较高处\\nn. 上升；繁荣\\nadj. 涨的；起床的；向上的\\nadv. 起来；上涨；向上\",\"audio\":\"up.mp3\"},{\"word\":\"upload\",\"pronun\":\"[ˌʌpˈloʊd]\",\"translation\":\"vt. 上传\",\"audio\":\"upload.mp3\"},{\"word\":\"upset\",\"pronun\":\"[ˌʌpˈset]\",\"translation\":\"n. 混乱；翻倒；颠覆\\nadj. 心烦的；混乱的；弄翻的\\nvt. 使心烦；颠覆；扰乱\\nvi. 翻倒\",\"audio\":\"upset.mp3\"},{\"word\":\"upstairs\",\"pronun\":\"[ˌʌpˈsterz]\",\"translation\":\"n. 楼上\\nadj. 楼上的\\nadv. 在楼上，向楼上；上楼；往楼上\",\"audio\":\"upstairs.mp3\"},{\"word\":\"use\",\"pronun\":\"[juːz]\",\"translation\":\"n. 使用；用途；发挥\\nvt. 利用；耗费\\nvi. 使用，运用\",\"audio\":\"use.mp3\"},{\"word\":\"usual\",\"pronun\":\"[ˈjuːʒuəl; ˈjuːʒəl]\",\"translation\":\"adj. 通常的，惯例的；平常的\",\"audio\":\"usual.mp3\"},{\"word\":\"usually\",\"pronun\":\"[ˈjuːʒuəli; ˈjuːʒəli]\",\"translation\":\"adv. 通常，经常\",\"audio\":\"usually.mp3\"},{\"word\":\"vacation\",\"pronun\":\"[veɪˈkeɪʃn; vəˈkeɪʃn]\",\"translation\":\"n. 假期；（房屋）搬出\\nvi. 休假，度假\",\"audio\":\"vacation.mp3\"},{\"word\":\"valley\",\"pronun\":\"[ˈvæli]\",\"translation\":\"n. 山谷；流域；溪谷\",\"audio\":\"valley.mp3\"},{\"word\":\"van\",\"pronun\":\"[væn]\",\"translation\":\"n. 先锋；厢式货车；增值网\\nvt. 用车搬运\",\"audio\":\"van.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

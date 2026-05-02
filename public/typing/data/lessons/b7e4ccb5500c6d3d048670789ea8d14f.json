@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.477364+00:00",
+  "request": {
+    "lesson_id": "b7e4ccb5500c6d3d048670789ea8d14f",
+    "course_id": "007ef7afc48bb0178d2f077a23bc898d",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "007ef7afc48bb0178d2f077a23bc898d",
+    "order": 379,
+    "nextCourseId": "007ef7afc48bb0178d2f077a23bc898d",
+    "courseName": "小学必备古诗75首（3）",
+    "lessonId": "b7e4ccb5500c6d3d048670789ea8d14f",
+    "nextLessonId": "fbd2a048676a471639063360b5c0cb63",
+    "lessonName": "竹石",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8bacf0c5946ef8f5cfbc424564314dc9",
+        "index": 1,
+        "text": [
+          "竹石\\n郑燮\\n咬定青山不放松，立根原在破岩中。\\n千磨万击还坚劲，任尔东西南北风。"
+        ],
+        "pinyin": "[[\"竹\", \"zhú\"], [\"石\", \"shí\"], [\"\\n\", \"\"], [\"郑\", \"qīng\"], [\"燮\", \"zhèng\"], [\"\\n\", \"\"], [\"咬\", \"xiè\"], [\"定\", \"yǎo\"], [\"青\", \"dìng\"], [\"山\", \"qīng\"], [\"不\", \"shān\"], [\"放\", \"bù\"], [\"松\", \"fàng\"], [\"，\", \"\"], [\"立\", \"sōng\"], [\"根\", \"lì\"], [\"原\", \"gēn\"], [\"在\", \"yuán\"], [\"破\", \"zài\"], [\"岩\", \"pò\"], [\"中\", \"yán\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"千\", \"zhōng\"], [\"磨\", \"qiān\"], [\"万\", \"mó\"], [\"击\", \"wàn\"], [\"还\", \"jī\"], [\"坚\", \"hái\"], [\"劲\", \"jiān\"], [\"，\", \"\"], [\"任\", \"jìng\"], [\"尔\", \"rèn\"], [\"东\", \"ěr\"], [\"西\", \"dōng\"], [\"南\", \"xī\"], [\"北\", \"nán\"], [\"风\", \"běi\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

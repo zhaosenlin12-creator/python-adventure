@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.976114+00:00",
+  "request": {
+    "lesson_id": "3bd1be91018832df8ff72cf8eb9f3aa4",
+    "course_id": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "order": 76,
+    "nextCourseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "courseName": "C++",
+    "lessonId": "3bd1be91018832df8ff72cf8eb9f3aa4",
+    "nextLessonId": "e3b70a0d69b50bb8e8feaac9f8e8958c",
+    "lessonName": "冒泡排序",
+    "icon": "data/assets/daziya.com/key-icon_key-cpp.b136419115.png",
+    "description": "C++编程练习 - 冒泡排序",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6e88ba08c38cbb286ac39a2150f33c8b",
+        "index": 1,
+        "text": [
+          "#include <iostream>\\nusing namespace std;\\n\\nvoid bubbleSort(int arr[], int n) {\\n    for (int i = 0; i < n - 1; i++) {\\n        bool swapped = false;\\n\\n        for (int j = 0; j < n - i - 1; j++) {\\n            if (arr[j] > arr[j + 1]) {\\n                swap(arr[j], arr[j + 1]);\\n                swapped = true;\\n            }\\n        }\\n\\n        if (!swapped) break;\\n    }\\n}\\n\\nint main() {\\n    int arr[] = {64, 34, 25, 12, 22, 11, 90};\\n    int n = 7;\\n\\n    cout << \"排序前: \";\\n    for (int i = 0; i < n; i++) cout << arr[i] << \" \";\\n\\n    bubbleSort(arr, n);\\n\\n    cout << \"\\n排序后: \";\\n    for (int i = 0; i < n; i++) cout << arr[i] << \" \";\\n    cout << endl;\\n\\n    return 0;\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "cpp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

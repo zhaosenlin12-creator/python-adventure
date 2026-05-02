@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.176199+00:00",
+  "request": {
+    "lesson_id": "6254a52f7a1e9f29eaf8aa0093f19b18",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 24,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "6254a52f7a1e9f29eaf8aa0093f19b18",
+    "nextLessonId": "af634d248374f454496e2616dfd4692f",
+    "lessonName": "2022年版 PEP-五年级-上册-1",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-五年级-上册 - 第1课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "181e977747015059348898fbee38afae",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"old\",\"pronun\":\"[oʊld]\",\"translation\":\"adj. 陈旧的，古老的；年老的\\nn. 古时\",\"audio\":\"old.mp3\"},{\"word\":\"young\",\"pronun\":\"[jʌŋ]\",\"translation\":\"n. 年轻人；（动物的）崽，仔\\nadj. 年轻的；初期的；没有经验的\",\"audio\":\"young.mp3\"},{\"word\":\"funny\",\"pronun\":\"[ˈfʌni]\",\"translation\":\"n. 滑稽人物；笑话，有趣的故事；滑稽连环漫画栏；（英）（比赛用）单人双桨小艇\\nadj. 有趣的，好笑的，滑稽的；（口）稀奇的，古怪的，奇异的；有病的，不舒服的；狡猾的，欺骗（性）的，可疑的，不光明\",\"audio\":\"funny.mp3\"},{\"word\":\"kind\",\"pronun\":\"[kaɪnd]\",\"translation\":\"n. 种类；性质\\nadj. 和蔼的；宽容的；令人感激的\",\"audio\":\"kind.mp3\"},{\"word\":\"strict\",\"pronun\":\"[strɪkt]\",\"translation\":\"adj. 严格的；绝对的；精确的；详细的\",\"audio\":\"strict.mp3\"},{\"word\":\"polite\",\"pronun\":\"[pəˈlaɪt]\",\"translation\":\"adj. 有礼貌的，客气的；文雅的；上流的；优雅的\",\"audio\":\"polite.mp3\"},{\"word\":\"hard\",\"pronun\":\"[hɑːrd]\",\"translation\":\"adj. 努力的；硬的；困难的；辛苦的；确实的；严厉的；猛烈的；冷酷无情的\\nadv. 努力地；困难地；辛苦地；接近地；猛烈地；牢固地\",\"audio\":\"hard.mp3\"},{\"word\":\"working\",\"pronun\":\"[ˈwɜːrkɪŋ]\",\"translation\":\"n. 工作；活动；制作；操纵\\nv. 工作；影响；受雇用（work的ing形式）\\nadj. 工作的；操作的；可行的\",\"audio\":\"working.mp3\"},{\"word\":\"helpful\",\"pronun\":\"[ˈhelpfl]\",\"translation\":\"adj. 有帮助的；有益的\",\"audio\":\"helpful.mp3\"},{\"word\":\"clever\",\"pronun\":\"[ˈklevər]\",\"translation\":\"adj. 聪明的；机灵的；熟练的\\n[ 比较级cleverer 最高级 cleverest ]\",\"audio\":\"clever.mp3\"},{\"word\":\"shy\",\"pronun\":\"[ʃaɪ]\",\"translation\":\"n. 投掷；惊跳\\nadj. 害羞的；畏缩的，胆怯的\\nvi. 投；畏缩；惊退；厌恶\\nvt. 投；乱掷\",\"audio\":\"shy.mp3\"},{\"word\":\"know\",\"pronun\":\"[noʊ]\",\"translation\":\"vt. 知道；认识；懂得\\nvi. 了解；熟悉；确信\",\"audio\":\"know.mp3\"},{\"word\":\"our\",\"pronun\":\"[ɑːr]\",\"translation\":\"pron. 我们的\",\"audio\":\"our.mp3\"},{\"word\":\"Ms\",\"pronun\":\"[mɪz]\",\"translation\":\"abbr. 存贮系统（Memory System）；主存储器（Main Storage）；主程序装置（Master Sequecer）；中速，平均速度（Medium Speed）；主（总）开关（Master Switch）\",\"audio\":\"Ms.mp3\"},{\"word\":\"will\",\"pronun\":\"[wɪl]\",\"translation\":\"n. 意志；决心；情感；遗嘱；意图；心愿\\nvt. 决心要；遗赠；用意志力使\\nvi. 愿意；下决心\\naux. 将；愿意；必须\",\"audio\":\"will.mp3\"},{\"word\":\"sometimes\",\"pronun\":\"[ˈsʌmtaɪmz]\",\"translation\":\"adv. 有时，间或\",\"audio\":\"sometimes.mp3\"},{\"word\":\"robot\",\"pronun\":\"[ˈroʊbɑːt]\",\"translation\":\"n. 机器人；遥控设备，自动机械；机械般工作的人\",\"audio\":\"robot.mp3\"},{\"word\":\"him\",\"pronun\":\"[hɪm; ɪm]\",\"translation\":\"pron. 他（宾格）\",\"audio\":\"him.mp3\"},{\"word\":\"speak\",\"pronun\":\"[spiːk]\",\"translation\":\"vi. 说话；演讲；表明；陈述\\nvt. 讲话；发言；讲演\",\"audio\":\"speak.mp3\"},{\"word\":\"finish\",\"pronun\":\"[ˈfɪnɪʃ]\",\"translation\":\"n. 结束；完美；回味（葡萄酒）\\nvt. 完成；结束；用完\\nvi. 结束，终止；终结\",\"audio\":\"finish.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

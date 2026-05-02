@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.528285+00:00",
+  "request": {
+    "lesson_id": "867a980b1e3beb9751a98afb0d3c8de4",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 96,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "867a980b1e3beb9751a98afb0d3c8de4",
+    "nextLessonId": "fdb6e7db9e6f8e35d8620ca68faf847e",
+    "lessonName": "KET核心词-127",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第127课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ce16c15a38d14b6fd8566c8d0484e3d2",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"today\",\"pronun\":\"[təˈdeɪ]\",\"translation\":\"n. 今天；现今\\nadv. 今天；现今\",\"audio\":\"today.mp3\"},{\"word\":\"tomorrow\",\"pronun\":\"[təˈmɑːroʊ]\",\"translation\":\"n. 明天；未来\\nadv. 明天；未来地（等于to-morrow）\",\"audio\":\"tomorrow.mp3\"},{\"word\":\"tonight\",\"pronun\":\"[təˈnaɪt]\",\"translation\":\"n. 今晚\\nadv. 在今晚\",\"audio\":\"tonight.mp3\"},{\"word\":\"week\",\"pronun\":\"[wiːk]\",\"translation\":\"n. 周，星期\",\"audio\":\"week.mp3\"},{\"word\":\"weekday\",\"pronun\":\"[ˈwiːkdeɪ]\",\"translation\":\"n. 平日，普通日；工作日\",\"audio\":\"weekday.mp3\"},{\"word\":\"weekend\",\"pronun\":\"[ˈwiːkend]\",\"translation\":\"n. 周末，周末休假；周末聚会\\nadj. 周末的，周末用的\\nvi. 度周末\",\"audio\":\"weekend.mp3\"},{\"word\":\"working hours\",\"pronun\":\"\",\"translation\":\"na. 工作时间\",\"audio\":\"working_hours.mp3\"},{\"word\":\"year\",\"pronun\":\"[jɪr]\",\"translation\":\"n. 年；年度；历年；年纪；一年的期间；某年级的学生\",\"audio\":\"year.mp3\"},{\"word\":\"yesterday\",\"pronun\":\"[ˈjestərdeɪ; ˈjestərdi]\",\"translation\":\"n. 昨天；往昔\\nadv. 昨天\",\"audio\":\"yesterday.mp3\"},{\"word\":\"Monday\",\"pronun\":\"[ˈmʌndeɪ]\",\"translation\":\"n. 星期一\",\"audio\":\"Monday.mp3\"},{\"word\":\"Tuesday\",\"pronun\":\"[ˈtuːzdeɪ]\",\"translation\":\"n. 星期二\",\"audio\":\"Tuesday.mp3\"},{\"word\":\"Wednesday\",\"pronun\":\"[ˈwenzdeɪ]\",\"translation\":\"n. 星期三\",\"audio\":\"Wednesday.mp3\"},{\"word\":\"Thursday\",\"pronun\":\"[ˈθɜːrzdeɪ]\",\"translation\":\"n. 星期四\",\"audio\":\"Thursday.mp3\"},{\"word\":\"Friday\",\"pronun\":\"[ˈfraɪdeɪ]\",\"translation\":\"n. 星期五\",\"audio\":\"Friday.mp3\"},{\"word\":\"Saturday\",\"pronun\":\"[ˈsætərdeɪ]\",\"translation\":\"n. 星期六\",\"audio\":\"Saturday.mp3\"},{\"word\":\"Sunday\",\"pronun\":\"[ˈsʌndeɪ]\",\"translation\":\"n. 星期日；礼拜日\",\"audio\":\"Sunday.mp3\"},{\"word\":\"calm\",\"pronun\":\"[kɑːm]\",\"translation\":\"n. 风平浪静\\nadj. 静的，平静的；沉着的\\nvt. 使平静；使镇定\\nvi. 平静下来；镇定下来\",\"audio\":\"calm.mp3\"},{\"word\":\"cheerful\",\"pronun\":\"[ˈtʃɪrfl]\",\"translation\":\"adj. 快乐的；愉快的；高兴的\",\"audio\":\"cheerful.mp3\"},{\"word\":\"dull\",\"pronun\":\"[dʌl]\",\"translation\":\"adj. 钝的；迟钝的；无趣的；呆滞的；阴暗的\\nvt. 使迟钝；使阴暗；缓和\\nvi. 减少；变迟钝\",\"audio\":\"dull.mp3\"},{\"word\":\"excited\",\"pronun\":\"[ɪkˈsaɪtɪd]\",\"translation\":\"v. 激动；唤起（excite的过去分词）\\nadj. 兴奋的；激动的；活跃的\",\"audio\":\"excited.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

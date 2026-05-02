@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.195368+00:00",
+  "request": {
+    "lesson_id": "b7ab6c59e5c542bc48e94ca6944c02e9",
+    "course_id": "f81aeb9f7457592295d8d925c4358b36",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "f81aeb9f7457592295d8d925c4358b36",
+    "order": 214,
+    "nextCourseId": "f81aeb9f7457592295d8d925c4358b36",
+    "courseName": "汉字二级",
+    "lessonId": "b7ab6c59e5c542bc48e94ca6944c02e9",
+    "nextLessonId": "1c2cc1c63f296650d27af6d1fb8b60a9",
+    "lessonName": "《春》 朱自清",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-2.4d21a5bc2c.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d18cd8b521e3b059d1ed4b5b86ab41f5",
+        "index": 1,
+        "text": [
+          "一切都像刚睡醒的样子，欣欣然张开了眼。山朗润起来了，水长起来了，太阳的脸红起来了。"
+        ],
+        "pinyin": "[[\"一\", \"yī\"], [\"切\", \"qiè\"], [\"都\", \"dōu\"], [\"像\", \"xiàng\"], [\"刚\", \"gāng\"], [\"睡\", \"shuì\"], [\"醒\", \"xǐng\"], [\"的\", \"de\"], [\"样\", \"yàng\"], [\"子\", \"zi\"], [\"，\", \"\"], [\"欣\", \"xīn\"], [\"欣\", \"xīn\"], [\"然\", \"rán\"], [\"张\", \"zhāng\"], [\"开\", \"kāi\"], [\"了\", \"le\"], [\"眼\", \"yǎn\"], [\"。\", \"\"], [\"山\", \"shān\"], [\"朗\", \"lǎng\"], [\"润\", \"rùn\"], [\"起\", \"qǐ\"], [\"来\", \"lái\"], [\"了\", \"le\"], [\"，\", \"\"], [\"水\", \"shuǐ\"], [\"长\", \"zhǎng\"], [\"起\", \"qǐ\"], [\"来\", \"lái\"], [\"了\", \"le\"], [\"，\", \"\"], [\"太\", \"tài\"], [\"阳\", \"yáng\"], [\"的\", \"de\"], [\"脸\", \"liǎn\"], [\"红\", \"hóng\"], [\"起\", \"qǐ\"], [\"来\", \"lái\"], [\"了\", \"le\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 21,
+        "minSpeed": 11,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

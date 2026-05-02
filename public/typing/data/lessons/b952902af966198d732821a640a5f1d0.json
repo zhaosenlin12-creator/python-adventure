@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:30.770636+00:00",
+  "request": {
+    "lesson_id": "b952902af966198d732821a640a5f1d0",
+    "course_id": "21fe8d60de407da95e1abc33ac636014",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "21fe8d60de407da95e1abc33ac636014",
+    "order": 29,
+    "nextCourseId": "21fe8d60de407da95e1abc33ac636014",
+    "courseName": "上排字母",
+    "lessonId": "b952902af966198d732821a640a5f1d0",
+    "nextLessonId": "c0be2be82a8dc6eefa1842857ab76a79",
+    "lessonName": "练习w和o",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-practise-wo.c2c5aa9ed3.png",
+    "description": "练习w和o",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "01c5fb282b301d23613f6f9cee575190",
+        "index": 2,
+        "text": [
+          "ws wws ws wws ol ool ol ool wsws olol wwws oool swol sws lol swsws lolol wws ool wwoo wowo wosl wws ool"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "ws ol",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

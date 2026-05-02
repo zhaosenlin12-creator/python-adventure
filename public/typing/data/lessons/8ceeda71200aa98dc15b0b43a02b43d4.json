@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.289577+00:00",
+  "request": {
+    "lesson_id": "8ceeda71200aa98dc15b0b43a02b43d4",
+    "course_id": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "order": 334,
+    "nextCourseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "courseName": "小学必备古诗75首（2）",
+    "lessonId": "8ceeda71200aa98dc15b0b43a02b43d4",
+    "nextLessonId": "720537f7cd31d16f1e8518e2da9fb091",
+    "lessonName": "绝句",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "202c6565e722db853ca82ce5a1d37a65",
+        "index": 1,
+        "text": [
+          "绝句\\n杜甫\\n迟日江山丽，春风花草香。\\n泥融飞燕子，沙暖睡鸳鸯。"
+        ],
+        "pinyin": "[[\"绝\", \"jué\"], [\"句\", \"jù\"], [\"\\n\", \"\"], [\"杜\", \"dù\"], [\"甫\", \"fǔ\"], [\"\\n\", \"\"], [\"迟\", \"chí\"], [\"日\", \"rì\"], [\"江\", \"jiāng\"], [\"山\", \"shān\"], [\"丽\", \"lì\"], [\"，\", \"\"], [\"春\", \"chūn\"], [\"风\", \"fēng\"], [\"花\", \"huā\"], [\"草\", \"cǎo\"], [\"香\", \"xiāng\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"泥\", \"ní\"], [\"融\", \"róng\"], [\"飞\", \"fēi\"], [\"燕\", \"yàn\"], [\"子\", \"zǐ\"], [\"，\", \"\"], [\"沙\", \"shā\"], [\"暖\", \"nuǎn\"], [\"睡\", \"shuì\"], [\"鸳\", \"yuān\"], [\"鸯\", \"yāng\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

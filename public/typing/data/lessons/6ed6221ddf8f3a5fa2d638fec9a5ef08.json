@@ -1,0 +1,105 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.613755+00:00",
+  "request": {
+    "lesson_id": "6ed6221ddf8f3a5fa2d638fec9a5ef08",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 21,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "6ed6221ddf8f3a5fa2d638fec9a5ef08",
+    "nextLessonId": "e81e4ba6811c636b6c871378f4df1a08",
+    "lessonName": "巩固:an、en、in、ia",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母an、en、in、ia的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "d16d59e805d552556fd4198cf6a86923",
+        "index": 1,
+        "highlights": [
+          "an"
+        ],
+        "text": [
+          "请输入按键 [an]"
+        ],
+        "detail": "学习双拼按键 an"
+      },
+      {
+        "chapterId": "1389c96fe677beabe3d97ce3cefd1896",
+        "index": 2,
+        "highlights": [
+          "en"
+        ],
+        "text": [
+          "请输入按键 [en]"
+        ],
+        "detail": "学习双拼按键 en"
+      },
+      {
+        "chapterId": "90b0ce3ca846af7e7eced62869d4f5b0",
+        "index": 3,
+        "highlights": [
+          "in"
+        ],
+        "text": [
+          "请输入按键 [in]"
+        ],
+        "detail": "学习双拼按键 in"
+      },
+      {
+        "chapterId": "2250f3480cbd5f771beb4466e5a8d906",
+        "index": 4,
+        "highlights": [
+          "ia"
+        ],
+        "text": [
+          "请输入按键 [ia]"
+        ],
+        "detail": "学习双拼按键 ia"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "8ff0f0c1ac4bba23c6057671d225cc76",
+        "index": 5,
+        "text": [
+          "ananananenenenenininininiaiaiaiaaneniniaaneniniaaneniniaaneninia"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "fd41bc122a2e10efa81d26c352b7f87d",
+        "index": 6,
+        "text": [
+          "山间溪流潺潺，林间鸟鸣阵阵。\\n春天花开满园，人们踏青赏景。\\n夜深灯火阑珊，思念亲人难眠。"
+        ],
+        "pinyin": "[[\"山\",\"shān\"],[\"间\",\"jiān\"],[\"溪\",\"xī\"],[\"流\",\"liú\"],[\"潺\",\"chán\"],[\"潺\",\"chán\"],[\"，\",\"\"],[\"林\",\"lín\"],[\"间\",\"jiān\"],[\"鸟\",\"niǎo\"],[\"鸣\",\"míng\"],[\"阵\",\"zhèn\"],[\"阵\",\"zhèn\"],[\"。\",\"\"],[\"春\",\"chūn\"],[\"天\",\"tiān\"],[\"花\",\"huā\"],[\"开\",\"kāi\"],[\"满\",\"mǎn\"],[\"园\",\"yuán\"],[\"，\",\"\"],[\"人\",\"rén\"],[\"们\",\"men\"],[\"踏\",\"tà\"],[\"青\",\"qīng\"],[\"赏\",\"shǎng\"],[\"景\",\"jǐng\"],[\"。\",\"\"],[\"夜\",\"yè\"],[\"深\",\"shēn\"],[\"灯\",\"dēng\"],[\"火\",\"huǒ\"],[\"阑\",\"lán\"],[\"珊\",\"shān\"],[\"，\",\"\"],[\"思\",\"sī\"],[\"念\",\"niàn\"],[\"亲\",\"qīn\"],[\"人\",\"rén\"],[\"难\",\"nán\"],[\"眠\",\"mián\"],[\"。\",\"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

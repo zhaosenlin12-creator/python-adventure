@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.013008+00:00",
+  "request": {
+    "lesson_id": "c10e2251aff341dfa29d1d50b6d7cd24",
+    "course_id": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "order": 205,
+    "nextCourseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "courseName": "小升初必备单词",
+    "lessonId": "c10e2251aff341dfa29d1d50b6d7cd24",
+    "nextLessonId": "b93b78fa52bced757f16095efaf07243",
+    "lessonName": "N",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "fb250a98b071d34f65e07b6d4c4e006b",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"name\",\"pronun\":\"[neim]\",\"translation\":\"v. \\u547d\\u540d; \\u7ed9\\u2026\\u53d6\\u540d n. \\u59d3\\u540d; \\u540d...\"},{\"word\":\"narrow\",\"pronun\":\"[\\u02c8n\\u00e6r\\u0259u]\",\"translation\":\"adj. \\u72ed\\u7a84\\u7684; \\u8303\\u56f4\\u5c0f\\u7684; \\u773c\\u5149\\u77ed\\u6d45...\"},{\"word\":\"near\",\"pronun\":\"[ni\\u0259]\",\"translation\":\"adj. \\u8fd1\\u7684 prep. \\u9760\\u8fd1; \\u5728\\u2026...\"},{\"word\":\"needle\",\"pronun\":\"[\\u02c8ni:dl]\",\"translation\":\"n. \\u9488; \\u6307\\u9488\"},{\"word\":\"nephew\",\"pronun\":\"[\\u02c8nefju:]\",\"translation\":\"n. \\u4f84\\u5b50; \\u5916\\u7525\"},{\"word\":\"nest\",\"pronun\":\"[nest]\",\"translation\":\"n. \\u9e1f\\u7a9d; \\u5de2\"},{\"word\":\"never\",\"pronun\":\"[\\u02c8nev\\u0259]\",\"translation\":\"adv. \\u4ece\\u672a; \\u672a\\u66fe\"},{\"word\":\"new\",\"pronun\":\"[nju:]\",\"translation\":\"adj. \\u65b0\\u7684; \\u6ca1\\u7ecf\\u9a8c\\u7684; \\u91cd\\u65b0\\u5f00\\u59cb\\u7684...\"},{\"word\":\"next\",\"pronun\":\"[nekst]\",\"translation\":\"adj. \\u4e0b\\u4e00(\\u4e2a); \\u4e0e\\u2026\\u90bb\\u63a5\"},{\"word\":\"nice\",\"pronun\":\"[nais]\",\"translation\":\"adj. \\u597d\\u770b\\u7684; \\u4ee4\\u4eba\\u6109\\u5feb\\u7684\"},{\"word\":\"niece\",\"pronun\":\"[ni:s]\",\"translation\":\"n. \\u4f84\\u5973; \\u5916\\u7525\\u5973\"},{\"word\":\"night\",\"pronun\":\"[nait]\",\"translation\":\"n. \\u665a\\u4e0a; \\u591c\\u665a; \\u591c\\u7a7a\"},{\"word\":\"nine\",\"pronun\":\"[na\\u026an]\",\"translation\":\"num. \\u4e5d; \\u4e5d\\u4e2a\"},{\"word\":\"no\",\"pronun\":\"[n\\u0259\\u028a]\",\"translation\":\"adj. \\u6ca1\\u6709 adv. \\u4e0d; \\u4e0d\\u662f; ...\"},{\"word\":\"nod\",\"pronun\":\"[n\\u0254d]\",\"translation\":\"v. \\u70b9\\u5934; \\u540c\\u610f n. \\u70b9\\u5934\\u62db\\u547c; \\u6253...\"},{\"word\":\"noise\",\"pronun\":\"[n\\u0254iz]\",\"translation\":\"n. \\u54cd\\u58f0; \\u58f0\\u97f3\"},{\"word\":\"noisy\",\"pronun\":\"[\\u02c8n\\u0254izi]\",\"translation\":\"adj. \\u5435\\u95f9\\u7684; \\u5608\\u6742\\u7684\"},{\"word\":\"noodle\",\"pronun\":\"[\\u02c8nu:dl]\",\"translation\":\"n. (\\u5e38\\u7528\\u590d\\u6570)\\u9762\\u6761; \\u50bb\\u74dc; \\u7b28\\u86cb\"},{\"word\":\"noon\",\"pronun\":\"[nu:n]\",\"translation\":\"n. \\u6b63\\u5348; \\u4e2d\\u5348\"},{\"word\":\"north\",\"pronun\":\"[n\\u0254:\\u03b8]\",\"translation\":\"adv. \\u5411\\u5317 adj. \\u5317\\u65b9\\u7684 n. ...\"},{\"word\":\"nose\",\"pronun\":\"[n\\u0259uz]\",\"translation\":\"n. \\u9f3b\\u5b50\"},{\"word\":\"not\",\"pronun\":\"[n\\u0254t]\",\"translation\":\"adv. \\u4e0d; \\u4e0d\\u662f; \\u4e0d\\u4f1a; \\u6ca1\\u6709\"},{\"word\":\"note\",\"pronun\":\"[n\\u0259ut]\",\"translation\":\"n. \\u7eb8\\u5e01\"},{\"word\":\"November\",\"pronun\":\"[n\\u0259u\\u02c8vemb\\u0259]\",\"translation\":\"n. \\u5341\\u4e00\\u6708; 11\\u6708(\\u6708\\u4efd\\u540d\\u79f0\\u5927\\u5199)\"},{\"word\":\"now\",\"pronun\":\"[nau]\",\"translation\":\"adv. \\u73b0\\u5728; \\u5f53\\u65f6; \\u7acb\\u523b conj...\"},{\"word\":\"number\",\"pronun\":\"[\\u02c8n\\u028cmb\\u0259]\",\"translation\":\"n. \\u53f7\\u7801; \\u6570\\u5b57\"},{\"word\":\"nurse\",\"pronun\":\"[n\\u0259:s]\",\"translation\":\"v. \\u62a4\\u7406; \\u517b\\u80b2; \\u5582\\u5976 n. \\u4fdd\\u59c6;...\"},{\"word\":\"nut\",\"pronun\":\"[n\\u028ct]\",\"translation\":\"n. \\u575a\\u679c; \\u5e72\\u679c; \\u87ba\\u6bcd; \\u87ba\\u5e3d\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "n",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 12,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

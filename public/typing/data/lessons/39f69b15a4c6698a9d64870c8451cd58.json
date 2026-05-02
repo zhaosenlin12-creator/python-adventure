@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.336844+00:00",
+  "request": {
+    "lesson_id": "39f69b15a4c6698a9d64870c8451cd58",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 176,
+    "nextCourseId": "d7df026ff1d81047d30da28a958b118f",
+    "courseName": "golang",
+    "lessonId": "39f69b15a4c6698a9d64870c8451cd58",
+    "nextLessonId": "d67250f96ba234446db6f96342c433ee",
+    "lessonName": "字符统计",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - 字符统计",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3b8d188fdb9c91a37b8ef1f841b3b8e2",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport (\\n\t\"fmt\"\\n\t\"unicode\"\\n)\\n\\nfunc main() {\\n\ttext := \"Hello World! How are you?\"\\n\tcharCount := make(map[rune]int)\\n\\n\tfor _, c := range text {\\n\t\tif unicode.IsLetter(c) || unicode.IsDigit(c) {\\n\t\t\tc = unicode.ToLower(c)\\n\t\t\tcharCount[c]++\\n\t\t}\\n\t}\\n\\n\tfmt.Println(\"原文本:\", text)\\n\tfmt.Println(\"\\n字符出现频率:\")\\n\\n\tfor char, count := range charCount {\\n\t\tfmt.Printf(\"'%c': %d\\n\", char, count)\\n\t}\\n\\n\tvar mostCommon rune\\n\tmaxCount := 0\\n\tfor char, count := range charCount {\\n\t\tif count > maxCount {\\n\t\t\tmostCommon = char\\n\t\t\tmaxCount = count\\n\t\t}\\n\t}\\n\\n\tfmt.Printf(\"\\n出现最多的字符: '%c' (%d次)\\n\", mostCommon, maxCount)\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

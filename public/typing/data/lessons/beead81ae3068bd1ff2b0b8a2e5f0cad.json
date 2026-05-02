@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.057167+00:00",
+  "request": {
+    "lesson_id": "beead81ae3068bd1ff2b0b8a2e5f0cad",
+    "course_id": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "order": 214,
+    "nextCourseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "courseName": "小升初必备单词",
+    "lessonId": "beead81ae3068bd1ff2b0b8a2e5f0cad",
+    "nextLessonId": "355c16cb2ad368c7c0b7c7136ac4d792",
+    "lessonName": "W",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "dab117d8c26f702196e98b6daa0771ba",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"waiter\",\"pronun\":\"[\\u02c8weit\\u0259]\",\"translation\":\"n. (\\u9910\\u9986\\u7684)\\u7537\\u670d\\u52a1\\u5458; \\u4f8d\\u8005; \\u670d\\u52a1...\"},{\"word\":\"warm\",\"pronun\":\"[w\\u0254:m]\",\"translation\":\"adj. \\u6696\\u548c\\u7684; \\u6e29\\u6696\\u7684; \\u70ed\\u60c5\\u7684; ...\"},{\"word\":\"wash\",\"pronun\":\"[w\\u0254\\u0283]\",\"translation\":\"vt. \\u6d17; \\u6d17\\u6da4; \\u51b2 vi. \\u6d17\\u624b(...\"},{\"word\":\"watch\",\"pronun\":\"[w\\u0254t\\u0283]\",\"translation\":\"v. \\u89c2\\u770b; \\u6ce8\\u89c6; \\u89c2\\u5bdf; \\u89c1\\u8bc6 n....\"},{\"word\":\"water\",\"pronun\":\"[\\u02c8w\\u0254:t\\u0259]\",\"translation\":\"v. \\u6d47\\u6c34 vt. \\u7ed9\\u2026\\u6d47\\u6c34; \\u5782\\u6d8e n...\"},{\"word\":\"waterfall\",\"pronun\":\"[\\u02c8w\\u0254:t\\u0259\\u02ccf\\u0254:l]\",\"translation\":\"n. \\u7011\\u5e03\"},{\"word\":\"wave\",\"pronun\":\"[weiv]\",\"translation\":\"v. \\u6325\\u821e; \\u6325\\u52a8\"},{\"word\":\"way\",\"pronun\":\"[wei]\",\"translation\":\"n. \\u9053\\u8def; \\u65b9\\u5f0f; \\u65b9\\u6cd5\"},{\"word\":\"we\",\"pronun\":\"[wi]\",\"translation\":\"pron. \\u6211\\u4eec\\u4e3b\\u683c; \\u5bbe\\u8bed\\u662fus\"},{\"word\":\"wear\",\"pronun\":\"[w\\u025b\\u0259]\",\"translation\":\"v. \\u7a7f\\u7740; \\u6234\\u7740; \\u78e8\\u635f; \\u7528\\u65e7 n....\"},{\"word\":\"Wednesday\",\"pronun\":\"[\\u02c8wenzdi]\",\"translation\":\"n. \\u661f\\u671f\\u4e09\"},{\"word\":\"week\",\"pronun\":\"[wi:k]\",\"translation\":\"n. \\u661f\\u671f; \\u5468; \\u5de5\\u4f5c\\u5468\"},{\"word\":\"weekend\",\"pronun\":\"[\\u02ccwi:k\\u02c8end]\",\"translation\":\"n. \\u5468\\u672b; \\u5468\\u672b\\u5047\\u671f\"},{\"word\":\"weigh\",\"pronun\":\"[wei]\",\"translation\":\"v. \\u91cd(\\u82e5\\u5e72); \\u79f0\\u2026\\u7684\\u91cd\\u91cf vt. ...\"},{\"word\":\"weight\",\"pronun\":\"[weit]\",\"translation\":\"n. \\u91cd\\u91cf; \\u4f53\\u91cd; \\u781d\\u7801; \\u91cd\\u5927\"},{\"word\":\"well\",\"pronun\":\"[wel]\",\"translation\":\"adv. \\u597d\\u5730; \\u6ee1\\u610f\\u5730; \\u5065\\u5eb7\\u7684 in...\"},{\"word\":\"were\",\"pronun\":\"[w\\u025c:]\",\"translation\":\"v. are\\u7684\\u8fc7\\u53bb\\u65f6\"},{\"word\":\"west\",\"pronun\":\"[west]\",\"translation\":\"n.&adj. \\u897f; \\u897f\\u65b9(\\u7684) n. ...\"},{\"word\":\"wet\",\"pronun\":\"[wet]\",\"translation\":\"adj. \\u6f6e\\u6e7f\\u7684; \\u591a\\u96e8\\u7684\"},{\"word\":\"whale\",\"pronun\":\"[hweil]\",\"translation\":\"n. \\u9cb8\\u9c7c; \\u5e9e\\u7136\\u5927\\u7269\"},{\"word\":\"what\",\"pronun\":\"[hw\\u0254t]\",\"translation\":\"adj. \\u4ec0\\u4e48\\u2026 pron. \\u4ec0\\u4e48\"},{\"word\":\"wheel\",\"pronun\":\"[hwi:l]\",\"translation\":\"n. \\u8f6e\\u5b50\"},{\"word\":\"when\",\"pronun\":\"[hwen]\",\"translation\":\"conj. \\u5728\\u90a3\\u4e2a\\u65f6\\u5019; \\u5f53\\u2026\\u65f6\"},{\"word\":\"wide\",\"pronun\":\"[waid]\",\"translation\":\"adj. \\u5bbd\\u5e7f\\u7684; \\u5e7f\\u9614\\u7684\"},{\"word\":\"wild\",\"pronun\":\"[waild]\",\"translation\":\"adj. \\u672a\\u5f00\\u5316\\u7684; \\u91ce\\u86ee\\u7684; \\u5931\\u53bb\\u63a7\\u5236...\"},{\"word\":\"will\",\"pronun\":\"[wil]\",\"translation\":\"v.&n. \\u5c06\\u8981; \\u610f\\u5fd7 v.&aux....\"},{\"word\":\"wind\",\"pronun\":\"[wind]\",\"translation\":\"v. \\u873f\\u8712; \\u7f20\\u7ed5 n. \\u98ce(\\u5411)\"},{\"word\":\"windy\",\"pronun\":\"[\\u02c8w\\u026andi:]\",\"translation\":\"adj. \\u591a\\u98ce\\u7684; \\u6709\\u98ce\\u7684; \\u98ce\\u5927\\u7684\"},{\"word\":\"wing\",\"pronun\":\"[wi\\u014b]\",\"translation\":\"n. \\u7ffc; \\u7fc5\\u8180; \\u8fb9\\u950b; \\u4fa7\\u5385\"},{\"word\":\"wink\",\"pronun\":\"[wi\\u014bk]\",\"translation\":\"n.&v. \\u7728\\u773c; \\u4f7f\\u773c\\u8272; \\u95ea\\u4eae; \\u95ea...\"},{\"word\":\"winter\",\"pronun\":\"[\\u02c8wint\\u0259]\",\"translation\":\"n. \\u51ac\\u5929; \\u51ac\\u5b63\"},{\"word\":\"with\",\"pronun\":\"[wi\\u00f0]\",\"translation\":\"prep. \\u548c\\u2026\\u4e00\\u8d77; \\u7528\"},{\"word\":\"without\",\"pronun\":\"[wi\\u02c8\\u00f0aut]\",\"translation\":\"adv. \\u5728\\u5916 prep. \\u65e0; \\u6ca1\\u6709\"},{\"word\":\"wolf\",\"pronun\":\"[wulf]\",\"translation\":\"n. (\\uff3b\\u590d\\uff3dwolves)\\u72fc; \\u8d2a\\u5a6a\\u7684...\"},{\"word\":\"wonder\",\"pronun\":\"[\\u02c8w\\u028cnd\\u0259]\",\"translation\":\"n.&.&v. \\u5bf9\\u2026\\u611f\\u5230\\u7591\\u60d1\"},{\"word\":\"wonderful\",\"pronun\":\"[\\u02c8w\\u028cnd\\u0259ful]\",\"translation\":\"adj. \\u7f8e\\u5999\\u7684; \\u4e86\\u4e0d\\u8d77\\u7684; \\u6781\\u597d\\u7684;...\"},{\"word\":\"wood\",\"pronun\":\"[wud]\",\"translation\":\"n. \\u6811\\u6797; \\u5c0f\\u68ee\\u6797; \\u6728\\u5934; \\u6728\\u6750\"},{\"word\":\"work\",\"pronun\":\"[w\\u0259:k]\",\"translation\":\"n. \\u5de5\\u4f5c; \\u52b3\\u52a8\"},{\"word\":\"worker\",\"pronun\":\"[\\u02c8w\\u0259:k\\u0259]\",\"translation\":\"n. \\u5de5\\u4eba; \\u5de5\\u4f5c\\u8005; \\u5de5\\u4f5c\\u4eba\\u5458\"},{\"word\":\"world\",\"pronun\":\"[w\\u025c\\u02d0(r)ld]\",\"translation\":\"n. \\u4e16\\u754c\"},{\"word\":\"would\",\"pronun\":\"[wud]\",\"translation\":\"v. \\u613f\\u610f; \\u8981 aux.&v. wil...\"},{\"word\":\"write\",\"pronun\":\"[rait]\",\"translation\":\"v. \\u5199; \\u4e66\\u5199; \\u5199\\u5b57; \\u5199\\u4f5c\"},{\"word\":\"wrong\",\"pronun\":\"[r\\u0254\\u014b]\",\"translation\":\"adv. \\u9519\\u8bef\\u5730 adj. \\u9519\\u8bef\\u7684; \\u9519...\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "w",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 12,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

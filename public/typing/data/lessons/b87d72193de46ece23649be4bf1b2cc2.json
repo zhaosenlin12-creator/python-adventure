@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.938914+00:00",
+  "request": {
+    "lesson_id": "b87d72193de46ece23649be4bf1b2cc2",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 404,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "b87d72193de46ece23649be4bf1b2cc2",
+    "nextLessonId": "1c19b4149b93ced01175de0a9e12308a",
+    "lessonName": "六级词汇正序版-128",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第128课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "afbf0bab8ff5b2b621766112ff1d34a7",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"reproduction\",\"pronun\":\"[ˌriːprəˈdʌkʃn]\",\"translation\":\"n. 繁殖，生殖；复制；复制品\",\"audio\":\"reproduction.mp3\"},{\"word\":\"resignation\",\"pronun\":\"[ˌrezɪɡˈneɪʃn]\",\"translation\":\"n. 辞职；放弃；辞职书；顺从\",\"audio\":\"resignation.mp3\"},{\"word\":\"respectable\",\"pronun\":\"[rɪˈspektəbl]\",\"translation\":\"n. 可敬的人\\nadj. 值得尊敬的；人格高尚的；相当数量的\",\"audio\":\"respectable.mp3\"},{\"word\":\"respectful\",\"pronun\":\"[rɪˈspektfl]\",\"translation\":\"adj. 恭敬的；有礼貌的\",\"audio\":\"respectful.mp3\"},{\"word\":\"revel\",\"pronun\":\"[ˈrevl]\",\"translation\":\"n. 狂欢；闹饮；喜庆狂欢活动\\nvi. 狂欢；陶醉\",\"audio\":\"revel.mp3\"},{\"word\":\"revision\",\"pronun\":\"[rɪˈvɪʒn]\",\"translation\":\"n. [印刷] 修正；复习；修订本\",\"audio\":\"revision.mp3\"},{\"word\":\"rewarding\",\"pronun\":\"[rɪˈwɔːrdɪŋ]\",\"translation\":\"adj. 有益的，值得的；有报酬的，报答的\",\"audio\":\"rewarding.mp3\"},{\"word\":\"rigor\",\"pronun\":\"[ˈrɪɡər]\",\"translation\":\"n. 严厉；精确；苛刻；僵硬\",\"audio\":\"rigor.mp3\"},{\"word\":\"scrutinize\",\"pronun\":\"[ˈskruːtənaɪz]\",\"translation\":\"n. 仔细或彻底检查\\nvt. 详细检查；细看\\nvi. 细阅；作详细检查\",\"audio\":\"scrutinize.mp3\"},{\"word\":\"sediment\",\"pronun\":\"[ˈsedɪmənt]\",\"translation\":\"n. 沉积；沉淀物\",\"audio\":\"sediment.mp3\"},{\"word\":\"shear\",\"pronun\":\"[ʃɪr]\",\"translation\":\"n. [力] 切变；修剪；大剪刀\\nvi. 剪；剪切；修剪\\nvt. 剪；修剪；剥夺\",\"audio\":\"shear.mp3\"},{\"word\":\"shifting\",\"pronun\":\"[ˈʃɪftɪŋ]\",\"translation\":\"n. [计] 移位；狡猾\\nv. 改变（shift的ing形式）\\nadj. 移动的；狡诈的\",\"audio\":\"shifting.mp3\"},{\"word\":\"shrimp\",\"pronun\":\"[ʃrɪmp]\",\"translation\":\"n. 虾；小虾；矮小的人\\nadj. 有虾的；虾制的\\nvi. 捕虾\",\"audio\":\"shrimp.mp3\"},{\"word\":\"simultaneously\",\"pronun\":\"[ˌsaɪmlˈteɪniəsli]\",\"translation\":\"adv. 同时地\",\"audio\":\"simultaneously.mp3\"},{\"word\":\"slate\",\"pronun\":\"[sleɪt]\",\"translation\":\"n. 板岩；石板；蓝色；石片\\nadj. 板岩的；石板色的\\nvt. 铺石板；严厉批评某人；计划\",\"audio\":\"slate.mp3\"},{\"word\":\"smog\",\"pronun\":\"[smɑːɡ]\",\"translation\":\"n. 烟雾\",\"audio\":\"smog.mp3\"},{\"word\":\"smoothly\",\"pronun\":\"[ˈsmuːðli]\",\"translation\":\"adv. 平稳地，平滑地；流畅地，流利地\",\"audio\":\"smoothly.mp3\"},{\"word\":\"sociable\",\"pronun\":\"[ˈsoʊʃəbl]\",\"translation\":\"n. 联谊会\\nadj. 社交的；好交际的；友善的\",\"audio\":\"sociable.mp3\"},{\"word\":\"solicit\",\"pronun\":\"[səˈlɪsɪt]\",\"translation\":\"vt. 征求；招揽；请求；乞求\\nvi. 征求；招揽；恳求；请求\",\"audio\":\"solicit.mp3\"},{\"word\":\"solitude\",\"pronun\":\"[ˈsɑːlətuːd]\",\"translation\":\"n. 孤独；隐居；荒僻的地方\",\"audio\":\"solitude.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

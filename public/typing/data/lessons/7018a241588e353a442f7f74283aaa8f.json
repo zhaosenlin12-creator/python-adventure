@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.310186+00:00",
+  "request": {
+    "lesson_id": "7018a241588e353a442f7f74283aaa8f",
+    "course_id": "507208abf6b7416a5e11a3c2bcd62136",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "507208abf6b7416a5e11a3c2bcd62136",
+    "order": 278,
+    "nextCourseId": "507208abf6b7416a5e11a3c2bcd62136",
+    "courseName": "高中必备3500词-下",
+    "lessonId": "7018a241588e353a442f7f74283aaa8f",
+    "nextLessonId": "ca5087a3943e0f13a24650cee2fbf2f6",
+    "lessonName": "Chapter.15",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a353f6d25616d2fd8d5da666de325d39",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"dizzy\",\"pronun\":\"\\/\\u02c8d\\u026azi\\/\",\"translation\":\"a.\\u5934\\u6655\\u76ee\\u7729\\u7684\"},{\"word\":\"stimulate\",\"pronun\":\"\\/\\u02c8st\\u026amjule\\u026at\\/\",\"translation\":\"vt.\\u6fc0\\u53d1;\\u4fc3\\u8fdb;\\u523a\\u6fc0\"},{\"word\":\"sugary\",\"pronun\":\"\\/\\u02c8\\u0283\\u028ag\\u0259ri\\/\",\"translation\":\"a.\\u542b\\u7cd6\\u7684;\\u751c\\u7684\"},{\"word\":\"dynamic\",\"pronun\":\"\\/da\\u026a\\u02c8n\\u00e6m\\u026ak\\/\",\"translation\":\"a.\\u5145\\u6ee1\\u6d3b\\u529b\\u7684;\\u7cbe\\u529b\\u5145\\u6c9b\\u7684\"},{\"word\":\"bowling\",\"pronun\":\"\\/\\u02c8b\\u0259\\u028al\\u026a\\u014b\\/\",\"translation\":\"n.\\u4fdd\\u9f84\\u7403\\u8fd0\\u52a8\"},{\"word\":\"monthly\",\"pronun\":\"\\/\\u02c8m\\u028cn\\u03b8li\\/\",\"translation\":\"ad.\\u6bcf\\u6708;\\u6bcf\\u6708\\u4e00\\u6b21\\u7684 n.\\u6708\\u520a\"},{\"word\":\"enhance\",\"pronun\":\"\\/\\u026an\\u02c8h\\u0251:ns\\/\",\"translation\":\"vt.\\u63d0\\u9ad8;\\u589e\\u5f3a;\\u589e\\u8fdb\"},{\"word\":\"refresh\",\"pronun\":\"\\/r\\u026a\\u02c8fre\\u0283\\/\",\"translation\":\"v.\\u4f7f\\u6062\\u590d\\u7cbe\\u529b;\\u4f7f\\u51c9\\u723d;\\u5237\\u65b0\"},{\"word\":\"absorb\",\"pronun\":\"\\/\\u0259b\\u02c8s\\u0254:b\\/\",\"translation\":\"vt.\\u5438\\u5f15\\u5168\\u90e8\\u6ce8\\u610f\\u529b;\\u5438\\u6536\"},{\"word\":\"Aristotle\",\"pronun\":\"\",\"translation\":\"\\u4e9a\\u91cc\\u571f\\u591a\\u5fb7(\\u53e4\\u5e0c\\u814a\\u54f2\\u5b66\\u5bb6)\"},{\"word\":\"graph\",\"pronun\":\"\\/gr\\u00e6f\\/\",\"translation\":\"n.\\u56fe;\\u56fe\\u8868;\\u66f2\\u7ebf\\u56fe\"},{\"word\":\"emission\",\"pronun\":\"\\/i\\u02c8m\\u026a\\u0283n\\/\",\"translation\":\"n.\\u6392\\u653e\\u7269;\\u6563\\u53d1\\u7269;\\u6392\\u653e\"},{\"word\":\"melt\",\"pronun\":\"\\/melt\\/\",\"translation\":\"vi.&vt.(\\u4f7f)\\u878d\\u5316;\\u7194\\u5316;\\u8f6f\\u5316\"},{\"word\":\"starve\",\"pronun\":\"\\/st\\u0251:v\\/\",\"translation\":\"vi.&vt.(\\u4f7f)\\u6328\\u997f;\\u997f\\u6b7b\"},{\"word\":\"ecology\",\"pronun\":\"\\/i\\u02c8k\\u0252l\\u0259d\\u0292i\\/\",\"translation\":\"n.\\u751f\\u6001;\\u751f\\u6001\\u5b66\"},{\"word\":\"release\",\"pronun\":\"\\/r\\u026a\\u02c8li:s\\/\",\"translation\":\"vt.&n.\\u6392\\u653e;\\u91ca\\u653e;\\u53d1\\u5e03\"},{\"word\":\"methane\",\"pronun\":\"\\/\\u02c8mi:\\u03b8e\\u026an\\/\",\"translation\":\"n.\\u7532\\u70f7;\\u6cbc\\u6c14\"},{\"word\":\"carbon\",\"pronun\":\"\\/\\u02c8k\\u0251:b\\u0259n\\/\",\"translation\":\"n.\\u78b3\"},{\"word\":\"dioxide\",\"pronun\":\"\\/da\\u026a\\u02c8\\u0252ksa\\u026ad\\/\",\"translation\":\"n.\\u4e8c\\u6c27\\u5316\\u7269\"},{\"word\":\"habitable\",\"pronun\":\"\",\"translation\":\"a.\\u9002\\u5408\\u5c45\\u4f4f\\u7684\"},{\"word\":\"sustain\",\"pronun\":\"\\/s\\u0259\\u02c8ste\\u026an\\/\",\"translation\":\"vt.\\u7ef4\\u6301;\\u907a\\u53d7;\\u627f\\u53d7\\u4f4f\"},{\"word\":\"sustainable\",\"pronun\":\"\\/s\\u0259\\u02c8ste\\u026an\\u0259bl\\/\",\"translation\":\"a.\\u53ef\\u6301\\u7eed\\u7684;\\u5408\\u7406\\u5229\\u7528\\u7684\"},{\"word\":\"fossil\",\"pronun\":\"\\/\\u02c8f\\u0252sl\\/\",\"translation\":\"n.\\u5316\\u77f3\"},{\"word\":\"fuel\",\"pronun\":\"\\/\\u02c8fju:\\u0259l\\/\",\"translation\":\"n.\\u71c3\\u6599;\\u523a\\u6fc0\\u6027\\u8a00\\u884c\"},{\"word\":\"comprehensive\",\"pronun\":\"\\/\\u02cck\\u0252mpr\\u026a\\u02c8hens\\u026av\\/\",\"translation\":\"a.\\u5168\\u90e8\\u7684;\\u6240\\u6709\\u7684;\\u8be6\\u5c3d\\u7684\"},{\"word\":\"worldwide\",\"pronun\":\"\\/\\u02c8w\\u025c:ldwa\\u026ad\\/\",\"translation\":\"ad.\\u904d\\u5168\\u7403\\u5730 a.\\u4e16\\u754c\\u5404\\u5730\\u7684\"},{\"word\":\"trend\",\"pronun\":\"\\/trend\\/\",\"translation\":\"n.\\u8d8b\\u52bf;\\u8d8b\\u5411;\\u52a8\\u5411\"},{\"word\":\"frequently\",\"pronun\":\"\\/\\u02c8fri:kw\\u0259ntli\\/\",\"translation\":\"ad.\\u9891\\u7e41\\u5730;\\u7ecf\\u5e38\"},{\"word\":\"broadcast\",\"pronun\":\"\\/\\u02c8br\\u0254:dk\\u0251:st\\/\",\"translation\":\"v.\\u64ad\\u9001;\\u5e7f\\u64ad n.\\u5e7f\\u64ad\\u8282\\u76ee\"},{\"word\":\"policy\",\"pronun\":\"\\/\\u02c8p\\u0252l\\u0259si\\/\",\"translation\":\"n.\\u653f\\u7b56;\\u65b9\\u9488;\\u539f\\u5219\"},{\"word\":\"footprint\",\"pronun\":\"\\/\\u02c8f\\u028atpr\\u026ant\\/\",\"translation\":\"n.\\u8db3\\u8ff9;(\\u67d0\\u7269\\u6240\\u5360)\\u7a7a\\u95f4\\u91cf\"},{\"word\":\"restrict\",\"pronun\":\"\\/r\\u026a\\u02c8str\\u026akt\\/\",\"translation\":\"vt.\\u9650\\u5236;\\u9650\\u5b9a;\\u675f\\u7f1a\"},{\"word\":\"restriction\",\"pronun\":\"\\/r\\u026a\\u02c8str\\u026ak\\u0283n\\/\",\"translation\":\"n.\\u9650\\u5236\\u89c4\\u5b9a;\\u9650\\u5236\\u6cd5\\u89c4;\\u7ea6\\u675f\"},{\"word\":\"seize\",\"pronun\":\"\\/si:z\\/\",\"translation\":\"vt.\\u6293\\u4f4f;\\u593a\\u53d6;\\u63a7\\u5236\"},{\"word\":\"basin\",\"pronun\":\"\\/\\u02c8be\\u026asn\\/\",\"translation\":\"n.\\u6d41\\u57df;\\u76c6\\u5730;\\u76c6\"},{\"word\":\"penguin\",\"pronun\":\"\\/\\u02c8pe\\u014bgw\\u026an\\/\",\"translation\":\"n.\\u4f01\\u9e45\"},{\"word\":\"reform\",\"pronun\":\"\\/r\\u026a\\u02c8f\\u0254:m\\/\",\"translation\":\"v.\\u6539\\u9769;\\u6539\\u6b63 n.\\u6539\\u9769;\\u53d8\\u9769\"},{\"word\":\"undergo\",\"pronun\":\"\\/\\u02cc\\u028cnd\\u0259\\u02c8g\\u0259\\u028a\\/\",\"translation\":\"v.\\u7ecf\\u5386;\\u7ecf\\u53d7(\\u53d8\\u5316\\/\\u4e0d\\u5feb\\u7b49)\"},{\"word\":\"implement\",\"pronun\":\"\\/\\u02c8\\u026ampl\\u026ament\\/\",\"translation\":\"vt.\\u4f7f\\u751f\\u6548;\\u8d2f\\u5f7b;\\u6267\\u884c\"},{\"word\":\"harmonious\",\"pronun\":\"\\/h\\u0251:\\u02c8m\\u0259\\u028ani\\u0259s\\/\",\"translation\":\"a.\\u548c\\u8c10\\u7684\"},{\"word\":\"moderate\",\"pronun\":\"\\/\\u02c8m\\u0252d\\u0259r\\u0259t\\/\",\"translation\":\"a.\\u9002\\u5ea6\\u7684;\\u4e2d\\u7b49\\u7684 v.\\u7f13\\u548c\"},{\"word\":\"submit\",\"pronun\":\"\\/s\\u0259b\\u02c8m\\u026at\\/\",\"translation\":\"vt.&vi.\\u63d0\\u4ea4;\\u5448\\u9012;\\u5c48\\u670d\"},{\"word\":\"annual\",\"pronun\":\"\\/\\u02c8\\u00e6nju\\u0259l\\/\",\"translation\":\"a.\\u6bcf\\u5e74\\u7684;\\u4e00\\u5e74\\u7684 n.\\u5e74\\u520a\"},{\"word\":\"tropical\",\"pronun\":\"\\/\\u02c8tr\\u0252p\\u026akl\\/\",\"translation\":\"a.\\u70ed\\u5e26\\u7684;\\u6765\\u81ea\\u70ed\\u5e26\\u7684\"},{\"word\":\"chaos\",\"pronun\":\"\\/\\u02c8ke\\u026a\\u0252s\\/\",\"translation\":\"n.\\u6df7\\u4e71;\\u6742\\u4e71;\\u7d0a\\u4e71\"},{\"word\":\"nuclear\",\"pronun\":\"\\/\\u02c8nju:kli\\u0259(r)\\/\",\"translation\":\"a.\\u539f\\u5b50\\u80fd\\u7684;\\u6838\\u80fd\\u7684\"},{\"word\":\"sensitive\",\"pronun\":\"\\/\\u02c8sens\\u0259t\\u026av\\/\",\"translation\":\"a.\\u654f\\u611f\\u7684;\\u5584\\u89e3\\u4eba\\u610f\\u7684\"},{\"word\":\"smog\",\"pronun\":\"\\/sm\\u0252g\\/\",\"translation\":\"n.\\u70df\\u96fe(\\u70df\\u4e0e\\u96fe\\u6df7\\u5408\\u6c61\\u67d3\\u7269)\"},{\"word\":\"originate\",\"pronun\":\"\\/\\u0259\\u02c8r\\u026ad\\u0292\\u026ane\\u026at\\/\",\"translation\":\"vi.&vt.\\u8d77\\u6e90;\\u53d1\\u6e90;\\u521b\\u7acb\"},{\"word\":\"volume\",\"pronun\":\"\\/\\u02c8v\\u0252lju:m\\/\",\"translation\":\"n.\\u91cf;\\u4f53\\u79ef;(\\u6210\\u5957\\u4e66\\u4e2d)\\u4e00\\u5377\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 24,
+        "minSpeed": 18,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

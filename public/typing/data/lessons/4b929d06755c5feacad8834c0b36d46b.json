@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.495217+00:00",
+  "request": {
+    "lesson_id": "4b929d06755c5feacad8834c0b36d46b",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 88,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "4b929d06755c5feacad8834c0b36d46b",
+    "nextLessonId": "9b89291fe7cd7625052faaf1ec41cefb",
+    "lessonName": "KET核心词-103",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第103课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "75712fa61429a300423441ed7f8eb748",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"wet\",\"pronun\":\"[wet]\",\"translation\":\"n. 雨天；湿气\\nadj. [气象][物] 潮湿的；有雨的\\nvt. 弄湿\\nvi. 变湿\",\"audio\":\"wet.mp3\"},{\"word\":\"wood\",\"pronun\":\"[wʊd]\",\"translation\":\"n. 木材；木制品；树林\\nvt. 植林于；给…添加木柴\\nvi. 收集木材\",\"audio\":\"wood.mp3\"},{\"word\":\"act\",\"pronun\":\"[ækt]\",\"translation\":\"n. 行为，行动；法令，法案；（戏剧，歌剧的）一幕，段；装腔作势\\nvt. 扮演；装作，举动像\\nvi. 行动；扮演，充当；表现，举止；假装，演戏；起作用，见效\",\"audio\":\"act.mp3\"},{\"word\":\"actor\",\"pronun\":\"[ˈæktər]\",\"translation\":\"n. 男演员；行动者；作用物\",\"audio\":\"actor.mp3\"},{\"word\":\"actress\",\"pronun\":\"[ˈæktrəs]\",\"translation\":\"n. 女演员\",\"audio\":\"actress.mp3\"},{\"word\":\"ballet\",\"pronun\":\"[bæˈleɪ]\",\"translation\":\"n. 芭蕾舞剧；芭蕾舞乐曲\",\"audio\":\"ballet.mp3\"},{\"word\":\"box office\",\"pronun\":\"\",\"translation\":\"n. 票房；售票处\",\"audio\":\"box_office.mp3\"},{\"word\":\"cartoon\",\"pronun\":\"[kɑːrˈtuːn]\",\"translation\":\"n. 卡通片，[电影] 动画片；连环漫画\\nvt. 为…画漫画\\nvi. 画漫画\",\"audio\":\"cartoon.mp3\"},{\"word\":\"character\",\"pronun\":\"[ˈkærəktər]\",\"translation\":\"n. 性格，品质；特性；角色；[计] 字符\\nvt. 印，刻；使具有特征\",\"audio\":\"character.mp3\"},{\"word\":\"clap\",\"pronun\":\"[klæp]\",\"translation\":\"n. 鼓掌；拍手声\\nvt. 拍手，鼓掌；轻轻拍打某人\\nvi. 鼓掌，拍手；啪地关上\",\"audio\":\"clap.mp3\"},{\"word\":\"classical\",\"pronun\":\"[ˈklæsɪkl]\",\"translation\":\"n. 古典音乐\\nadj. 古典的；经典的；传统的；第一流的\",\"audio\":\"classical.mp3\"},{\"word\":\"pop\",\"pronun\":\"[pɑːp]\",\"translation\":\"abbr. 卖点广告（Point of Purchase）\",\"audio\":\"pop.mp3\"},{\"word\":\"rock music\",\"pronun\":\"\",\"translation\":\"un. 摇滚音乐\",\"audio\":\"rock_music.mp3\"},{\"word\":\"comedy\",\"pronun\":\"[ˈkɑːmədi]\",\"translation\":\"n. 喜剧；喜剧性；有趣的事情\",\"audio\":\"comedy.mp3\"},{\"word\":\"concert\",\"pronun\":\"[ˈkɑːnsərt]\",\"translation\":\"n. 音乐会；一致；和谐\\nadj. 音乐会用的；在音乐会上演出的\\nvt. 使协调；协同安排\\nvi. 协调；协力\",\"audio\":\"concert.mp3\"},{\"word\":\"dance\",\"pronun\":\"[dæns]\",\"translation\":\"n. 舞蹈；舞会；舞曲\\nadj. 舞蹈的；用于跳舞的\\nvt. 跳舞；使跳跃\\nvi. 跳舞；跳跃；飘扬\",\"audio\":\"dance.mp3\"},{\"word\":\"drama\",\"pronun\":\"[ˈdrɑːmə]\",\"translation\":\"n. 戏剧，戏剧艺术；剧本；戏剧性事件\",\"audio\":\"drama.mp3\"},{\"word\":\"drum\",\"pronun\":\"[drʌm]\",\"translation\":\"n. 鼓；鼓声\\nvi. 击鼓；大力争取\\nvt. 击鼓；大力争取\",\"audio\":\"drum.mp3\"},{\"word\":\"exhibition\",\"pronun\":\"[ˌeksɪˈbɪʃn]\",\"translation\":\"n. 展览，显示；展览会；展览品\",\"audio\":\"exhibition.mp3\"},{\"word\":\"film\",\"pronun\":\"[fɪlm]\",\"translation\":\"n. 电影；薄膜；胶卷；轻烟\\nvt. 在…上覆以薄膜；把…拍成电影\\nvi. 摄制电影；生薄膜；变得朦胧\",\"audio\":\"film.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

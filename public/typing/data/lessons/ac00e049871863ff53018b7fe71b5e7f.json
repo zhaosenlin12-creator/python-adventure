@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.283485+00:00",
+  "request": {
+    "lesson_id": "ac00e049871863ff53018b7fe71b5e7f",
+    "course_id": "be2af5259ed993e6499f4c46d3f7e67e",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "be2af5259ed993e6499f4c46d3f7e67e",
+    "order": 442,
+    "nextCourseId": "be2af5259ed993e6499f4c46d3f7e67e",
+    "courseName": "实战演练-1亿以内金额",
+    "lessonId": "ac00e049871863ff53018b7fe71b5e7f",
+    "nextLessonId": "d97f56cbdc2aee40361088d107bf3a35",
+    "lessonName": "高难度二",
+    "icon": "data/assets/daziya.com/key-icon_key-practise-star.b4ccc47d6d.png",
+    "description": "数字输入练习 - 高难度二",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f647668c786a5edaf92bf1c12630d230",
+        "index": 1,
+        "text": [
+          "9182736455\\n8273645546\\n7364554637\\n6455463728\\n5546372819\\n4637281921\\n3728191012\\n2819101913\\n1921011814\\n9283746556\\n8374655647\\n7465564738\\n6556473829\\n5647382921\\n4738291012\\n3829191913\\n2921191914\\n1913191915\\n9384756657\\n8475665748\\n7566574839\\n6657483921\\n5748392912\\n4839291913\\n3921191914\\n2912191915\\n1913191916\\n9485766758\\n8576675849\\n7667584931"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

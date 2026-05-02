@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.095965+00:00",
+  "request": {
+    "lesson_id": "05a94d18110c04dd98a460845f549103",
+    "course_id": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "order": 196,
+    "nextCourseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "courseName": "汉字一级",
+    "lessonId": "05a94d18110c04dd98a460845f549103",
+    "nextLessonId": "0bcd893a8f819c7cd788304c41a2160c",
+    "lessonName": "调整显示屏",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-good.c7e935711e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f171229c8104c74f3dfa3ba1c87071fd",
+        "index": 1,
+        "text": [
+          "抬头挺胸，平视前方。眼睛看着显示屏就好像对面坐着一个人。"
+        ],
+        "pinyin": "[[\"抬\", \"tái\"], [\"头\", \"tóu\"], [\"挺\", \"tǐng\"], [\"胸\", \"xiōng\"], [\"，\", \"\"], [\"平\", \"píng\"], [\"视\", \"shì\"], [\"前\", \"qián\"], [\"方\", \"fāng\"], [\"。\", \"\"], [\"眼\", \"yǎn\"], [\"睛\", \"jīng\"], [\"看\", \"kàn\"], [\"着\", \"zhe\"], [\"显\", \"xiǎn\"], [\"示\", \"shì\"], [\"屏\", \"píng\"], [\"就\", \"jiù\"], [\"好\", \"hǎo\"], [\"像\", \"xiàng\"], [\"对\", \"duì\"], [\"面\", \"miàn\"], [\"坐\", \"zuò\"], [\"着\", \"zhe\"], [\"一\", \"yī\"], [\"个\", \"gè\"], [\"人\", \"rén\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 7,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

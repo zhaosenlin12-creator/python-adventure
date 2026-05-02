@@ -1,0 +1,83 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.647381+00:00",
+  "request": {
+    "lesson_id": "5a486d95d95e79a873e68cc20b63649b",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 27,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "5a486d95d95e79a873e68cc20b63649b",
+    "nextLessonId": "a8e5ae5835a5002d8bd30f6492f2f184",
+    "lessonName": "韵母iao、uai",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母iao、uai的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "ae628f4952a8b29892b64d5157c633cd",
+        "index": 1,
+        "highlights": [
+          "iao"
+        ],
+        "text": [
+          "请输入按键 [iao]"
+        ],
+        "detail": "学习双拼按键 iao"
+      },
+      {
+        "chapterId": "bf1016d45225ae553f5d81eb8b176c98",
+        "index": 2,
+        "highlights": [
+          "uai"
+        ],
+        "text": [
+          "请输入按键 [uai]"
+        ],
+        "detail": "学习双拼按键 uai"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "f3f4b0b21ac54bde415a148750c9b9d6",
+        "index": 3,
+        "text": [
+          "iaoiaoiaoiaouaiuaiuaiuaiiaouaiiaouaiiaouaiiaouai"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "6df40b448093740b34c583b2b2f1ec1e",
+        "index": 4,
+        "text": [
+          "小苗在浇水，快快来帮忙。\\n小鸟飞来了，乖乖吃米粮。\\n外婆夸我乖，小手真灵巧。"
+        ],
+        "pinyin": "[[\"小\", \"xiǎo\"], [\"苗\", \"miáo\"], [\"在\", \"zài\"], [\"浇\", \"jiāo\"], [\"水\", \"shuǐ\"], [\"，\", \"\"], [\"快\", \"kuài\"], [\"快\", \"kuài\"], [\"来\", \"lái\"], [\"帮\", \"bāng\"], [\"忙\", \"máng\"], [\"。\", \"\"], [\"小\", \"xiǎo\"], [\"鸟\", \"niǎo\"], [\"飞\", \"fēi\"], [\"来\", \"lái\"], [\"了\", \"le\"], [\"，\", \"\"], [\"乖\", \"guāi\"], [\"乖\", \"guāi\"], [\"吃\", \"chī\"], [\"米\", \"mǐ\"], [\"粮\", \"liáng\"], [\"。\", \"\"], [\"外\", \"wài\"], [\"婆\", \"pó\"], [\"夸\", \"kuā\"], [\"我\", \"wǒ\"], [\"乖\", \"guāi\"], [\"，\", \"\"], [\"小\", \"xiǎo\"], [\"手\", \"shǒu\"], [\"真\", \"zhēn\"], [\"灵\", \"líng\"], [\"巧\", \"qiǎo\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

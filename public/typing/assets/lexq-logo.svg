@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" role="img" aria-labelledby="title desc">
+  <title id="title">乐启享</title>
+  <desc id="desc">乐启享机构标识</desc>
+  <rect width="760" height="300" fill="none"/>
+  <g transform="translate(42 16)">
+    <path d="M196 24c56-10 111 7 143 45 35 42 40 97 11 140-35 52-109 61-166 38-23-10-38-28-47-52-26 9-55 20-79 18-28-3-38-24-25-46 10-17 31-26 55-34 15-5 24-12 24-22 1-15-17-18-49-22-45-5-57-28-31-54 31-30 83-43 142-43 8 0 15-1 22-2z" fill="#203a91"/>
+    <path d="M210 91h121c17 0 31 14 31 31s-14 31-31 31H210c-17 0-31-14-31-31s14-31 31-31z" fill="#fff" stroke="#203a91" stroke-width="8"/>
+    <ellipse cx="237" cy="122" rx="18" ry="26" fill="#203a91"/>
+    <ellipse cx="297" cy="122" rx="18" ry="26" fill="#203a91"/>
+    <path d="M218 105c11 13 1 28-16 25" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+    <path d="M278 105c11 13 1 28-16 25" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+    <rect x="183" y="173" width="28" height="62" rx="13" fill="#203a91" stroke="#fff" stroke-width="5"/>
+    <rect x="286" y="173" width="28" height="62" rx="13" fill="#203a91" stroke="#fff" stroke-width="5"/>
+    <path d="M103 166c-34 43-54 73-73 83-11 5-22-1-25-13-3-13 7-25 18-38 15-18 30-36 43-57" fill="#203a91"/>
+  </g>
+  <g font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-weight="900">
+    <text x="55" y="248" font-size="86" fill="#18358d">乐</text>
+    <text x="275" y="248" font-size="86" fill="#f28a00">启</text>
+    <text x="500" y="248" font-size="86" fill="#18358d">享</text>
+    <text x="76" y="288" font-size="34" letter-spacing="22" fill="#18358d">LEQIXIANG</text>
+  </g>
+</svg>

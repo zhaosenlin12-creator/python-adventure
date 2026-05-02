@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.311974+00:00",
+  "request": {
+    "lesson_id": "f158728efab6283b6d154dcf8212abcf",
+    "course_id": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "order": 343,
+    "nextCourseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "courseName": "小学必备古诗75首（2）",
+    "lessonId": "f158728efab6283b6d154dcf8212abcf",
+    "nextLessonId": "2b3bfe890f032aa8230db99508535547",
+    "lessonName": "浪淘沙",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4d64e9ba24a70d50e9ce86b8d96ee8b2",
+        "index": 1,
+        "text": [
+          "浪淘沙\\n刘禹锡\\n九曲黄河万里沙，浪淘风簸自天涯。\\n如今直上银河去，同到牵牛织女家。"
+        ],
+        "pinyin": "[[\"浪\", \"làng\"], [\"淘\", \"táo\"], [\"沙\", \"shā\"], [\"\\n\", \"\"], [\"刘\", \"liú\"], [\"禹\", \"yǔ\"], [\"锡\", \"xī\"], [\"\\n\", \"\"], [\"九\", \"jiǔ\"], [\"曲\", \"qū\"], [\"黄\", \"huáng\"], [\"河\", \"hé\"], [\"万\", \"wàn\"], [\"里\", \"lǐ\"], [\"沙\", \"shā\"], [\"，\", \"\"], [\"浪\", \"làng\"], [\"淘\", \"táo\"], [\"风\", \"fēng\"], [\"簸\", \"bǒ\"], [\"自\", \"zì\"], [\"天\", \"tiān\"], [\"涯\", \"yá\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"如\", \"rú\"], [\"今\", \"jīn\"], [\"直\", \"zhí\"], [\"上\", \"shàng\"], [\"银\", \"yín\"], [\"河\", \"hé\"], [\"去\", \"qù\"], [\"，\", \"\"], [\"同\", \"tóng\"], [\"到\", \"dào\"], [\"牵\", \"qiān\"], [\"牛\", \"niú\"], [\"织\", \"zhī\"], [\"女\", \"nǚ\"], [\"家\", \"jiā\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

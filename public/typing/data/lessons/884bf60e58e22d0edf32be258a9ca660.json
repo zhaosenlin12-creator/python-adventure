@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.322605+00:00",
+  "request": {
+    "lesson_id": "884bf60e58e22d0edf32be258a9ca660",
+    "course_id": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "order": 482,
+    "nextCourseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "courseName": "英语每日故事（初级）1-31",
+    "lessonId": "884bf60e58e22d0edf32be258a9ca660",
+    "nextLessonId": "1ec73af8cd6e9c2ad2cf268c10f82a97",
+    "lessonName": "A Proud Father",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ecbb308ce5677d2a236b5c8b84b3c4e2",
+        "index": 1,
+        "text": [
+          "Daniel loves hockey. He is a good hockey player.\\nHe plays on the school team.\\nDaniel's father loves hockey too, but he doesn't play. He can't even skate. But he goes to all Daniel's hockey games.\\nWhen people ask about his favourite sport, he says, \"Hockey!\""
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

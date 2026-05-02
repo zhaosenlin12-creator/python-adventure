@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.265310+00:00",
+  "request": {
+    "lesson_id": "e92a6d072d9fc16800c02bdf7d1c2df8",
+    "course_id": "b121644211bd274795ee5972ddf997a2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "b121644211bd274795ee5972ddf997a2",
+    "order": 329,
+    "nextCourseId": "b121644211bd274795ee5972ddf997a2",
+    "courseName": "小学必备古诗75首（1）",
+    "lessonId": "e92a6d072d9fc16800c02bdf7d1c2df8",
+    "nextLessonId": "8cb20dd8112794683941206ea52ea8c4",
+    "lessonName": "早发白帝城",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "983d33973e4d7249ef81e89066bf6737",
+        "index": 1,
+        "text": [
+          "早发白帝城\\n李白\\n朝辞白帝彩云间，千里江陵一日还。\\n两岸猿声啼不住，轻舟已过万重山。"
+        ],
+        "pinyin": "[[\"早\", \"zǎo\"], [\"发\", \"fā\"], [\"白\", \"bái\"], [\"帝\", \"dì\"], [\"城\", \"chéng\"], [\"\\n\", \"\"], [\"李\", \"lǐ\"], [\"白\", \"bái\"], [\"\\n\", \"\"], [\"朝\", \"zhāo\"], [\"辞\", \"cí\"], [\"白\", \"bái\"], [\"帝\", \"dì\"], [\"彩\", \"cǎi\"], [\"云\", \"yún\"], [\"间\", \"jiān\"], [\"，\", \"\"], [\"千\", \"qiān\"], [\"里\", \"lǐ\"], [\"江\", \"jiāng\"], [\"陵\", \"líng\"], [\"一\", \"yī\"], [\"日\", \"rì\"], [\"还\", \"huán\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"两\", \"liǎng\"], [\"岸\", \"àn\"], [\"猿\", \"yuán\"], [\"声\", \"shēng\"], [\"啼\", \"tí\"], [\"不\", \"bù\"], [\"住\", \"zhù\"], [\"，\", \"\"], [\"轻\", \"qīng\"], [\"舟\", \"zhōu\"], [\"已\", \"yǐ\"], [\"过\", \"guò\"], [\"万\", \"wàn\"], [\"重\", \"chóng\"], [\"山\", \"shān\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

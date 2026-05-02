@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.997613+00:00",
+  "request": {
+    "lesson_id": "83cd74fe5847cc448127a357d897f947",
+    "course_id": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "order": 200,
+    "nextCourseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "courseName": "小升初必备单词",
+    "lessonId": "83cd74fe5847cc448127a357d897f947",
+    "nextLessonId": "c7b3f4624fa4e1ae58ca408aedb8aee5",
+    "lessonName": "I",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "67ce7684959745d3236ed6ae0af2ac7c",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"I\",\"pronun\":\"[a\\u026a]\",\"translation\":\"pron. (\\u4e3b\\u683c)\\u6211\"},{\"word\":\"ice-cream\",\"pronun\":\"['a\\u026askri\\u02d0m]\",\"translation\":\"n. \\u51b0\\u6dc7\\u6dcb\"},{\"word\":\"idea\",\"pronun\":\"[ai\\u02c8di\\u0259]\",\"translation\":\"n. \\u60f3\\u6cd5; \\u601d\\u60f3; \\u610f\\u89c1\"},{\"word\":\"if\",\"pronun\":\"[if]\",\"translation\":\"conj. \\u5982\\u679c; \\u5047\\u5982; \\u662f\\u5426; \\u5373\\u4f7f\"},{\"word\":\"in\",\"pronun\":\"[in]\",\"translation\":\"prep. \\u5728\\u2026\\u91cc\\u9762; \\u5728; \\u5728\\u2026\\u60c5\\u51b5;...\"},{\"word\":\"information\",\"pronun\":\"[\\u02cc\\u026anf\\u0259\\u02c8mei\\u0283\\u0259n]\",\"translation\":\"n. \\u901a\\u77e5; \\u62a5\\u544a; \\u6d88\\u606f; \\u60c5\\u62a5\"},{\"word\":\"insect\",\"pronun\":\"[\\u02c8insekt]\",\"translation\":\"n. \\u6606\\u866b\"},{\"word\":\"instrument\",\"pronun\":\"[\\u02c8instrum\\u0259nt]\",\"translation\":\"n. \\u5668\\u68b0\"},{\"word\":\"interesting\",\"pronun\":\"[\\u02c8intristi\\u014b]\",\"translation\":\"adj. \\u6709\\u8da3\\u7684; \\u6709\\u610f\\u601d\\u7684\"},{\"word\":\"invitation\",\"pronun\":\"[\\u02cc\\u026anvi\\u02c8tei\\u0283\\u0259n]\",\"translation\":\"n. \\u9080\\u8bf7; \\u8bf7\\u8d34; \\u8bf7\\u5e16\"},{\"word\":\"invite\",\"pronun\":\"[in\\u02c8vait]\",\"translation\":\"vt. \\u9080\\u8bf7; \\u8bf7\\u6c42; \\u5f15\\u8d77\"},{\"word\":\"is\",\"pronun\":\"[iz]\",\"translation\":\"v. \\u662f(be\\u7684\\u7b2c\\u4e09\\u4eba\\u79f0\\u5355\\u6570\\u73b0\\u5728\\u65f6)\"},{\"word\":\"island\",\"pronun\":\"[\\u02c8ail\\u0259nd]\",\"translation\":\"n. \\u5c9b; \\u5c9b\\u5c7f; (\\u9053\\u8def\\u4e0a\\u7684)\\u4ea4\\u901a\\u5b89\\u5168...\"},{\"word\":\"it\",\"pronun\":\"[it]\",\"translation\":\"pron. \\u5b83\"},{\"word\":\"its\",\"pronun\":\"[its]\",\"translation\":\"pron. [it\\u7684\\u6240\\u6709\\u683c]\\u5b83\\u7684\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 16,
+        "minSpeed": 8,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

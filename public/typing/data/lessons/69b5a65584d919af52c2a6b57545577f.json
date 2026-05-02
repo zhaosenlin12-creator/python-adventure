@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.348003+00:00",
+  "request": {
+    "lesson_id": "69b5a65584d919af52c2a6b57545577f",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 50,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "69b5a65584d919af52c2a6b57545577f",
+    "nextLessonId": "91b4928a34c95cc76ef17c016b98473b",
+    "lessonName": "2022年版 PEP-六年级-下册-3",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-六年级-下册 - 第3课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "98008cbb829f3594fbf1e91acd734e3c",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"watched\",\"pronun\":\"\",\"translation\":\"vt. 观察；注视；看守；警戒\\nn. 手表；监视；守护；值班人\\nvi. 观看，注视；守侯，看守\",\"audio\":\"watched.mp3\"},{\"word\":\"watch\",\"pronun\":\"[wɑːtʃ]\",\"translation\":\"n. 手表；监视；守护；值班人\\nvt. 观察；注视；看守；警戒\\nvi. 观看，注视；守侯，看守\",\"audio\":\"watch.mp3\"},{\"word\":\"had\",\"pronun\":\"[həd; əd; hæd]\",\"translation\":\"v. 有；吃；得到（动词have的过去式和过去分词）\\naux. 已经（用于过去完成时和过去完成进行时）\",\"audio\":\"had.mp3\"},{\"word\":\"have\",\"pronun\":\"[həv; əv; hæv]\",\"translation\":\"aux. 已经\\nvt. 有；让；拿；从事；允许\",\"audio\":\"have.mp3\"},{\"word\":\"cold\",\"pronun\":\"[kəʊld]\",\"translation\":\"n. 寒冷；感冒\\nadj. 寒冷的；冷淡的，不热情的；失去知觉的\\nadv. 完全地\",\"audio\":\"cold.mp3\"},{\"word\":\"slept\",\"pronun\":\"[slept]\",\"translation\":\"v. 睡觉（sleep的过去式和过去分词）\",\"audio\":\"slept.mp3\"},{\"word\":\"sleep\",\"pronun\":\"[sliːp]\",\"translation\":\"n. 睡眠\\nvi. 睡，睡觉\",\"audio\":\"sleep.mp3\"},{\"word\":\"read\",\"pronun\":\"[riːd]\",\"translation\":\"n. 阅读；读物\\nadj. 有学问的\\nvi. 读；读起来\\nvt. 阅读；读懂，理解\",\"audio\":\"read.mp3\"},{\"word\":\"saw\",\"pronun\":\"[sɔː]\",\"translation\":\"n. 锯子；谚语\\nv. see的过去式\\nvi. 锯；用锯；将某物锯成小块\\nvt. 看见；明白，了解；锯；锯成；锯开\",\"audio\":\"saw.mp3\"},{\"word\":\"see\",\"pronun\":\"[siː]\",\"translation\":\"vi. 看；看见；领会\\nvt. 看见；理解；领会\",\"audio\":\"see.mp3\"},{\"word\":\"last\",\"pronun\":\"[læst]\",\"translation\":\"n. 末尾，最后；上个；鞋楦（做鞋的模型）\\nadj. 最后的；最近的，最新的；仅剩的；最不可能…的\\nvi. 持续；维持，够用；持久\\nvt. 度过，拖过；使维持\\nadv. 最后地；上次，最近；最后一点\",\"audio\":\"last.mp3\"},{\"word\":\"yesterday\",\"pronun\":\"[ˈjestərdeɪ; ˈjestərdi]\",\"translation\":\"n. 昨天；往昔\\nadv. 昨天\",\"audio\":\"yesterday.mp3\"},{\"word\":\"before\",\"pronun\":\"[bɪˈfɔːr]\",\"translation\":\"prep. 在…之前，先于\\nconj. 在…以前；在…之前\\nadv. 以前；在前\",\"audio\":\"before.mp3\"},{\"word\":\"drank\",\"pronun\":\"[dræŋk]\",\"translation\":\"v. 喝；喝酒（drink的过去式）\",\"audio\":\"drank.mp3\"},{\"word\":\"drink\",\"pronun\":\"[drɪŋk]\",\"translation\":\"n. 酒，饮料；喝酒\\nvt. 喝，饮；吸收；举杯庆贺\\nvi. 喝酒；饮水；干杯\",\"audio\":\"drink.mp3\"},{\"word\":\"show\",\"pronun\":\"[ʃoʊ]\",\"translation\":\"n. 显示；表演；炫耀\\nvt. 显示；说明；演出；展出\\nvi. 显示；说明；指示\",\"audio\":\"show.mp3\"},{\"word\":\"magazine\",\"pronun\":\"[ˈmæɡəziːn]\",\"translation\":\"n. 杂志；弹药库；胶卷盒\",\"audio\":\"magazine.mp3\"},{\"word\":\"better\",\"pronun\":\"[ˈbetər]\",\"translation\":\"n. 长辈；较好者；打赌的人（等于bettor）\\nadj. 较好的\\nvt. 改善；胜过\\nadv. 更好的；更多的；较大程度地\\nvi. 变得较好\",\"audio\":\"better.mp3\"},{\"word\":\"well\",\"pronun\":\"[wel]\",\"translation\":\"n. 井；源泉\\nadj. 良好的；健康的；适宜的\\nadv. 很好地；充分地；满意地；适当地\\nv. 涌出\",\"audio\":\"well.mp3\"},{\"word\":\"faster\",\"pronun\":\"['fastə]\",\"translation\":\"adj. 更快的\\nadv. 更快地\",\"audio\":\"faster.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

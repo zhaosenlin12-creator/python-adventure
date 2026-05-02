@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.445265+00:00",
+  "request": {
+    "lesson_id": "1324d5af1eaebd083febe3167e0056b7",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 646,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "1324d5af1eaebd083febe3167e0056b7",
+    "nextLessonId": "6959f107876b4c8bdf9f9bd499839fe2",
+    "lessonName": " 五年级上-5",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点五年级上 - 第5课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "49183d142a0f01aa038a539969a8797b",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"we will\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"we_will.mp3\"},{\"word\":\"party\",\"pronun\":\"[ˈpɑːrti]\",\"translation\":\"n. 政党，党派；聚会，派对；当事人 [复数 parties]\\nvi. 参加社交聚会 [ 过去式 partied 过去分词 partied 现在分词 partying ]\",\"audio\":\"party.mp3\"},{\"word\":\"next\",\"pronun\":\"[nekst]\",\"translation\":\"adv. 然后；下次；其次\\nadj. 下一个的；其次的；贴近的\\nn. 下一个\\nprep. 靠近；居于…之后\",\"audio\":\"next.mp3\"},{\"word\":\"wonderful\",\"pronun\":\"[ˈwʌndərf(ə)l]\",\"translation\":\"adj. 极好的，精彩的，绝妙的；奇妙的；美妙；胜；神妙\",\"audio\":\"wonderful.mp3\"},{\"word\":\"learn\",\"pronun\":\"[lɜːrn]\",\"translation\":\"vt. 学习；得知；认识到\\nvi. 学习；获悉\",\"audio\":\"learn.mp3\"},{\"word\":\"any\",\"pronun\":\"[ˈeni]\",\"translation\":\"adj. 任何的；所有的；丝毫\\npron. 任何；任何一个；若干\\nadv. 稍微；少许\",\"audio\":\"any.mp3\"},{\"word\":\"problem\",\"pronun\":\"[ˈprɑːbləm]\",\"translation\":\"n. 难题；引起麻烦的人\\nadj. 成问题的；难处理的\",\"audio\":\"problem.mp3\"},{\"word\":\"no problem\",\"pronun\":\"\",\"translation\":\"n. 没问题\",\"audio\":\"no_problem.mp3\"},{\"word\":\"want\",\"pronun\":\"[wɑːnt]\",\"translation\":\"n. 需要；缺乏；贫困；必需品\\nvt. 需要；希望；应该；缺少\\nvi. 需要；缺少\",\"audio\":\"want.mp3\"},{\"word\":\"send\",\"pronun\":\"[send]\",\"translation\":\"n. 上升运动\\nvi. 派人；寄信\\nvt. 发送，寄；派遣；使进入；发射\",\"audio\":\"send.mp3\"},{\"word\":\"email\",\"pronun\":\"[ˈiːmeɪl]\",\"translation\":\"n. 电子信函\\nvt. 给…发电子邮件\",\"audio\":\"email.mp3\"},{\"word\":\"at\",\"pronun\":\"[ət; æt]\",\"translation\":\"prep. 在（表示存在或出现的地点、场所、位置、空间）；以（某种价格、速度等）；向；达；因为；朝；忙于\\nn. 阿特（老挝货币基本单位att）；[化]砹（极不稳定放射性元素）\\nabbr. 密封的（airtight）；气温（air temperature）\",\"audio\":\"at.mp3\"},{\"word\":\"clock\",\"pronun\":\"[klɑːk]\",\"translation\":\"n. 时钟；计时器\\nvt. 记录；记时\\nvi. 打卡；记录时间\",\"audio\":\"clock.mp3\"},{\"word\":\"plant\",\"pronun\":\"[plænt]\",\"translation\":\"n. 工厂，车间；植物；设备；庄稼\\nvt. 种植；培养；栽培；安置\\nvi. 种植\",\"audio\":\"plant.mp3\"},{\"word\":\"bottle\",\"pronun\":\"[ˈbɑːtl]\",\"translation\":\"n. 瓶子；一瓶的容量\\nvt. 控制；把…装入瓶中\\nvi. （街头艺人演出后）收拢钱币\",\"audio\":\"bottle.mp3\"},{\"word\":\"water bottle\",\"pronun\":\"\",\"translation\":\"un. 水壶；采水瓶；采水器；采水样器\",\"audio\":\"water_bottle.mp3\"},{\"word\":\"bike\",\"pronun\":\"[baɪk]\",\"translation\":\"n. 自行车；脚踏车\\nvi. 骑自行车（或摩托车）\",\"audio\":\"bike.mp3\"},{\"word\":\"photo\",\"pronun\":\"[ˈfoʊtoʊ]\",\"translation\":\"n. 照片\",\"audio\":\"photo.mp3\"},{\"word\":\"front\",\"pronun\":\"[frʌnt]\",\"translation\":\"n. 前面；正面；前线\\nadj. 前面的；正面的\\nvt. 面对；朝向；对付\\nvi. 朝向\\nadv. 在前面；向前\",\"audio\":\"front.mp3\"},{\"word\":\"in front of\",\"pronun\":\"[ɪn frʌnt ʌv]\",\"translation\":\"na. 在…的前面\",\"audio\":\"in_front_of.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

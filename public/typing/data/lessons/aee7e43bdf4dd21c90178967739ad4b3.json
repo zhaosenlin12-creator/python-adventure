@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.769536+00:00",
+  "request": {
+    "lesson_id": "aee7e43bdf4dd21c90178967739ad4b3",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 369,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "aee7e43bdf4dd21c90178967739ad4b3",
+    "nextLessonId": "520050ec33d1aea3457141c51d94760e",
+    "lessonName": "六级词汇正序版-23",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第23课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "72f9678ecbad20ca9b53c6ae4dbd942e",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"condemn\",\"pronun\":\"[kənˈdem]\",\"translation\":\"vt. 谴责；判刑，定罪；声讨\",\"audio\":\"condemn.mp3\"},{\"word\":\"condense\",\"pronun\":\"[kənˈdens]\",\"translation\":\"vt. 使浓缩；使压缩\\nvi. 浓缩；凝结\",\"audio\":\"condense.mp3\"},{\"word\":\"conduct\",\"pronun\":\"[kənˈdʌkt; ˈkɑːndʌkt]\",\"translation\":\"n. 进行；行为；实施\\nvi. 导电；带领\\nvt. 管理；引导；表现\",\"audio\":\"conduct.mp3\"},{\"word\":\"confer\",\"pronun\":\"[kənˈfɜːr]\",\"translation\":\"vt. 授予；给予\\nvi. 协商\",\"audio\":\"confer.mp3\"},{\"word\":\"conference\",\"pronun\":\"[ˈkɑːnfərəns]\",\"translation\":\"n. 会议；讨论；协商；联盟；（正式）讨论会；[工会、工党用语]（每年的）大会\\nvi. 举行或参加（系列）会议\",\"audio\":\"conference.mp3\"},{\"word\":\"confidence\",\"pronun\":\"[ˈkɑːnfɪdəns]\",\"translation\":\"n. 信心；信任；秘密\\nadj. （美）诈骗的；骗得信任的\",\"audio\":\"confidence.mp3\"},{\"word\":\"confident\",\"pronun\":\"[ˈkɑːnfɪdənt]\",\"translation\":\"adj. 自信的；确信的\",\"audio\":\"confident.mp3\"},{\"word\":\"confidential\",\"pronun\":\"[ˌkɑːnfɪˈdenʃl]\",\"translation\":\"adj. 机密的；表示信任的；获信任的\",\"audio\":\"confidential.mp3\"},{\"word\":\"configuration\",\"pronun\":\"[kənˌfɪɡjəˈreɪʃn]\",\"translation\":\"n. 配置；结构；外形\",\"audio\":\"configuration.mp3\"},{\"word\":\"confine\",\"pronun\":\"[kənˈfaɪn]\",\"translation\":\"n. 界限，边界;约束；限制\\nvt. 限制；禁闭\",\"audio\":\"confine.mp3\"},{\"word\":\"confirm\",\"pronun\":\"[kənˈfɜːrm]\",\"translation\":\"vt. 确认；确定；证实；批准；使巩固\",\"audio\":\"confirm.mp3\"},{\"word\":\"conflict\",\"pronun\":\"[ˈkɑːnflɪkt]\",\"translation\":\"n. 冲突，矛盾；斗争；争执\\nvi. 冲突，抵触；争执；战斗\",\"audio\":\"conflict.mp3\"},{\"word\":\"conform\",\"pronun\":\"[kənˈfɔːrm]\",\"translation\":\"adj. 一致的；顺从的\\nvi. 符合；遵照；适应环境\\nvt. 使遵守；使一致；使顺从\",\"audio\":\"conform.mp3\"},{\"word\":\"confront\",\"pronun\":\"[kənˈfrʌnt]\",\"translation\":\"vt. 面对；遭遇；比较\",\"audio\":\"confront.mp3\"},{\"word\":\"confusion\",\"pronun\":\"[kənˈfjuːʒn]\",\"translation\":\"n. 混淆，混乱；困惑\",\"audio\":\"confusion.mp3\"},{\"word\":\"congress\",\"pronun\":\"[ˈkɑːŋɡrəs]\",\"translation\":\"n. 国会；代表大会；会议；社交\",\"audio\":\"congress.mp3\"},{\"word\":\"connection\",\"pronun\":\"[kəˈnekʃn]\",\"translation\":\"n. 连接；关系；人脉；连接件\",\"audio\":\"connection.mp3\"},{\"word\":\"conscientious\",\"pronun\":\"[ˌkɑːnʃiˈenʃəs]\",\"translation\":\"adj. 认真的；尽责的；本着良心的；小心谨慎的\",\"audio\":\"conscientious.mp3\"},{\"word\":\"conscious\",\"pronun\":\"[ˈkɑːnʃəs]\",\"translation\":\"adj. 意识到的；故意的；神志清醒的\",\"audio\":\"conscious.mp3\"},{\"word\":\"consecutive\",\"pronun\":\"[kənˈsekjətɪv]\",\"translation\":\"adj. 连贯的；连续不断的\",\"audio\":\"consecutive.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

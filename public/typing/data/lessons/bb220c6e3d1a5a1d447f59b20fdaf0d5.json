@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.848470+00:00",
+  "request": {
+    "lesson_id": "bb220c6e3d1a5a1d447f59b20fdaf0d5",
+    "course_id": "df7bf8b8c0456926de2c1fac14a741b2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "order": 471,
+    "nextCourseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "courseName": "宋词必备67首（1）",
+    "lessonId": "bb220c6e3d1a5a1d447f59b20fdaf0d5",
+    "nextLessonId": "e60bd224acb7d5121268a231683e2352",
+    "lessonName": "泊船瓜洲",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "67f30215038fcb4165d4e398837b39c7",
+        "index": 1,
+        "text": [
+          "泊船瓜洲\\n王安石\\n京口瓜洲一水间，钟山只隔数重山。\\n春风又绿江南岸，明月何时照我还。"
+        ],
+        "pinyin": "[[\"泊\", \"bó\"], [\"船\", \"chuán\"], [\"瓜\", \"guā\"], [\"洲\", \"zhōu\"], [\"\\n\", \"\"], [\"王\", \"wáng\"], [\"安\", \"ān\"], [\"石\", \"shí\"], [\"\\n\", \"\"], [\"京\", \"jīng\"], [\"口\", \"kǒu\"], [\"瓜\", \"guā\"], [\"洲\", \"zhōu\"], [\"一\", \"yī\"], [\"水\", \"shuǐ\"], [\"间\", \"jiān\"], [\"，\", \"\"], [\"钟\", \"zhōng\"], [\"山\", \"shān\"], [\"只\", \"zhǐ\"], [\"隔\", \"gé\"], [\"数\", \"shù\"], [\"重\", \"chóng\"], [\"山\", \"shān\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"春\", \"chūn\"], [\"风\", \"fēng\"], [\"又\", \"yòu\"], [\"绿\", \"lǜ\"], [\"江\", \"jiāng\"], [\"南\", \"nán\"], [\"岸\", \"àn\"], [\"，\", \"\"], [\"明\", \"míng\"], [\"月\", \"yuè\"], [\"何\", \"hé\"], [\"时\", \"shí\"], [\"照\", \"zhào\"], [\"我\", \"wǒ\"], [\"还\", \"huán\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

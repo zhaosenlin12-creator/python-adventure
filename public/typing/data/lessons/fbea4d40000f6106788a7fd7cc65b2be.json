@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.354611+00:00",
+  "request": {
+    "lesson_id": "fbea4d40000f6106788a7fd7cc65b2be",
+    "course_id": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "order": 354,
+    "nextCourseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "courseName": "小学必备古诗75首（2）",
+    "lessonId": "fbea4d40000f6106788a7fd7cc65b2be",
+    "nextLessonId": "311dc0684cde014284c35cf1cbb5e721",
+    "lessonName": "江南春",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "0f37a39ffc7f388d13dc359f64192b0f",
+        "index": 1,
+        "text": [
+          "江南春\\n杜牧\\n千里莺啼绿映红，水村山郭酒旗风。\\n南朝四百八十寺，多少楼台烟雨中。"
+        ],
+        "pinyin": "[[\"江\", \"jiāng\"], [\"南\", \"nán\"], [\"春\", \"chūn\"], [\"\\n\", \"\"], [\"杜\", \"dù\"], [\"牧\", \"mù\"], [\"\\n\", \"\"], [\"千\", \"qiān\"], [\"里\", \"lǐ\"], [\"莺\", \"yīng\"], [\"啼\", \"tí\"], [\"绿\", \"lǜ\"], [\"映\", \"yìng\"], [\"红\", \"hóng\"], [\"，\", \"\"], [\"水\", \"shuǐ\"], [\"村\", \"cūn\"], [\"山\", \"shān\"], [\"郭\", \"guō\"], [\"酒\", \"jiǔ\"], [\"旗\", \"qí\"], [\"风\", \"fēng\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"南\", \"nán\"], [\"朝\", \"cháo\"], [\"四\", \"sì\"], [\"百\", \"bǎi\"], [\"八\", \"bā\"], [\"十\", \"shí\"], [\"寺\", \"sì\"], [\"，\", \"\"], [\"多\", \"duō\"], [\"少\", \"shǎo\"], [\"楼\", \"lóu\"], [\"台\", \"tái\"], [\"烟\", \"yān\"], [\"雨\", \"yǔ\"], [\"中\", \"zhōng\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.390442+00:00",
+  "request": {
+    "lesson_id": "76f3ba04e2000f20423e43befdbfe4cd",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 636,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "76f3ba04e2000f20423e43befdbfe4cd",
+    "nextLessonId": "c8544cd54bc38db701c32657c28f03e4",
+    "lessonName": " 四年级上-4",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点四年级上 - 第4课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6fd90ff5e3ac559e274eaaf0076238d1",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"knife\",\"pronun\":\"[naɪf]\",\"translation\":\"n. 刀；匕首\\nvt. 用刀切；（口）伤害\\nvi. 劈开；划过\",\"audio\":\"knife.mp3\"},{\"word\":\"spoon\",\"pronun\":\"[spuːn]\",\"translation\":\"n. 匙，勺子；一杓的量\\nvt. 用匙舀；使成匙状\\nvi. 轻轻向上击\",\"audio\":\"spoon.mp3\"},{\"word\":\"dinner\",\"pronun\":\"[ˈdɪnər]\",\"translation\":\"n. 晚餐，晚宴；宴会；正餐\",\"audio\":\"dinner.mp3\"},{\"word\":\"ready\",\"pronun\":\"[ˈredi]\",\"translation\":\"n. 现款；预备好的状态\\nadj. 准备好；现成的；迅速的；情愿的；快要…的\\nvt. 使准备好\\nadv. 迅速地；预先\",\"audio\":\"ready.mp3\"},{\"word\":\"help yourself\",\"pronun\":\"\",\"translation\":\"别客气；请自便；随便吃\",\"audio\":\"help_yourself.mp3\"},{\"word\":\"pass\",\"pronun\":\"[pæs]\",\"translation\":\"n. 及格；经过；护照；途径；传球\\nvt. 通过；经过；传递\\nvi. 经过；传递；变化；终止\",\"audio\":\"pass.mp3\"},{\"word\":\"try\",\"pronun\":\"[traɪ]\",\"translation\":\"n. 尝试；努力；试验\\nvt. 试图，努力；试验；审判；考验\\nvi. 尝试；努力；试验\",\"audio\":\"try.mp3\"},{\"word\":\"parents\",\"pronun\":\"['perənts]\",\"translation\":\"n. 父母；双亲（parent的复数）\\nv. 教养；引起（parent的三单形式）\",\"audio\":\"parents.mp3\"},{\"word\":\"cousin\",\"pronun\":\"[ˈkʌzn]\",\"translation\":\"n. 堂兄弟姊妹；表兄弟姊妹\",\"audio\":\"cousin.mp3\"},{\"word\":\"uncle\",\"pronun\":\"[ˈʌŋkl]\",\"translation\":\"n. 叔叔；伯父；伯伯；舅父；姨丈；姑父\",\"audio\":\"uncle.mp3\"},{\"word\":\"aunt\",\"pronun\":\"[ænt]\",\"translation\":\"n. 阿姨；姑妈；伯母；舅妈\",\"audio\":\"aunt.mp3\"},{\"word\":\"baby brother\",\"pronun\":\"\",\"translation\":\"小弟弟；我的弟弟啊；切入正题\",\"audio\":\"baby_brother.mp3\"},{\"word\":\"doctor\",\"pronun\":\"[ˈdɑːktər]\",\"translation\":\"vt. 修理；篡改，伪造；为…治病；授以博士学位\\nn. 医生；博士\\nvi. 就医；行医\",\"audio\":\"doctor.mp3\"},{\"word\":\"cook\",\"pronun\":\"[kʊk]\",\"translation\":\"n. 厨师，厨子\\nvt. 烹调，煮\\nvi. 烹调，做菜\",\"audio\":\"cook.mp3\"},{\"word\":\"driver\",\"pronun\":\"[ˈdraɪvər]\",\"translation\":\"n. 驾驶员；驱动程序；起子；传动器\",\"audio\":\"driver.mp3\"},{\"word\":\"farmer\",\"pronun\":\"[ˈfɑːrmər]\",\"translation\":\"n. 农夫，农民\",\"audio\":\"farmer.mp3\"},{\"word\":\"nurse\",\"pronun\":\"[nɜːrs]\",\"translation\":\"vt. 看护，护理；照顾；培养；给…喂奶\\nvi. 照料，护理；喂奶；当保姆\\nn. 护士；奶妈，保姆\",\"audio\":\"nurse.mp3\"},{\"word\":\"people\",\"pronun\":\"[ˈpiːpl]\",\"translation\":\"n. 人；人类；民族；公民\\nvt. 居住于；使住满人\",\"audio\":\"people.mp3\"},{\"word\":\"but\",\"pronun\":\"[bət; bʌt]\",\"translation\":\"conj. 但是；而是；然而\\nadv. 仅仅，只\\nprep. 除…以外\",\"audio\":\"but.mp3\"},{\"word\":\"little\",\"pronun\":\"[ˈlɪtl]\",\"translation\":\"adj. 小的；很少的；短暂的；小巧可爱的\\nadv. 完全不\\nn. 少许；没有多少；短时间\",\"audio\":\"little.mp3\"},{\"word\":\"puppy\",\"pronun\":\"[ˈpʌpi]\",\"translation\":\"n. 小狗，幼犬\",\"audio\":\"puppy.mp3\"},{\"word\":\"football player\",\"pronun\":\"\",\"translation\":\"足球运动员；球员；足球队员\",\"audio\":\"football_player.mp3\"},{\"word\":\"job\",\"pronun\":\"[dʒɑːb]\",\"translation\":\"n. 工作；职业\\nvt. 承包；代客买卖\\nvi. 做零工\",\"audio\":\"job.mp3\"},{\"word\":\"basketball\",\"pronun\":\"[ˈbæskɪtbɔːl]\",\"translation\":\"n. 篮球；篮球运动\",\"audio\":\"basketball.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

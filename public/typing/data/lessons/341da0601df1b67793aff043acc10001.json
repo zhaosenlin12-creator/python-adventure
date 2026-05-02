@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.517642+00:00",
+  "request": {
+    "lesson_id": "341da0601df1b67793aff043acc10001",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 663,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "341da0601df1b67793aff043acc10001",
+    "nextLessonId": "f491e5410832ca64529da27c6a2a5d51",
+    "lessonName": " 六年级上-7",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点六年级上 - 第7课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "81ab3e5c0a5807b2686edf07686c9f91",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"happy\",\"pronun\":\"[ˈhæpi]\",\"translation\":\"adj. 幸福的；高兴的；巧妙的\",\"audio\":\"happy.mp3\"},{\"word\":\"see a doctor\",\"pronun\":\"\",\"translation\":\"na. 去就医；去看医生\",\"audio\":\"see_a_doctor.mp3\"},{\"word\":\"wear\",\"pronun\":\"[wer]\",\"translation\":\"n. 衣物；磨损；耐久性\\nv. 穿着；用旧；耗损；面露\",\"audio\":\"wear.mp3\"},{\"word\":\"more\",\"pronun\":\"[mɔːr]\",\"translation\":\"adv. 更多；此外；更大程度地\\nadj. 更多的；附加的\\npron. 更多的数量\\nn. 更多\",\"audio\":\"more.mp3\"},{\"word\":\"deep\",\"pronun\":\"[diːp]\",\"translation\":\"n. 深处；深渊\\nadj. 深的；低沉的；深奥的\\nadv. 深入地；深深地；迟\",\"audio\":\"deep.mp3\"},{\"word\":\"breath\",\"pronun\":\"[breθ]\",\"translation\":\"n. 呼吸，气息；一口气，（呼吸的）一次；瞬间，瞬息；微风；迹象；无声音，气音\",\"audio\":\"breath.mp3\"},{\"word\":\"take a deep breath\",\"pronun\":\"\",\"translation\":\"na. 行深呼吸\",\"audio\":\"take_a_deep_breath.mp3\"},{\"word\":\"count\",\"pronun\":\"[kaʊnt]\",\"translation\":\"n. 计数；计算；伯爵\\nvt. 计算；认为\\nvi. 计数；有价值\",\"audio\":\"count.mp3\"},{\"word\":\"count to ten\",\"pronun\":\"[kaʊnt tu ten]\",\"translation\":\"数到十；十；沉静下来\",\"audio\":\"count_to_ten.mp3\"},{\"word\":\"chase\",\"pronun\":\"[tʃeɪs]\",\"translation\":\"n. 追逐；追赶；追击\\nvt. 追逐；追捕；试图赢得；雕镂\\nvi. 追逐；追赶；奔跑\",\"audio\":\"chase.mp3\"},{\"word\":\"mice\",\"pronun\":\"[maɪs]\",\"translation\":\"n. 老鼠（mouse的复数）\",\"audio\":\"mice.mp3\"},{\"word\":\"bad\",\"pronun\":\"[bæd]\",\"translation\":\"n. 坏事；坏人\\nadj. 坏的；严重的；劣质的\\nadv. 很，非常；坏地；邪恶地\",\"audio\":\"bad.mp3\"},{\"word\":\"hurt\",\"pronun\":\"[hɜːrt]\",\"translation\":\"n. 痛苦；危害；痛苦的原因\\nvt. 使受伤；损害；使疼痛；使痛心\\nadj. 受伤的；痛苦的；受损的\\nvi. 感到疼痛；有坏处；带来痛苦\",\"audio\":\"hurt.mp3\"},{\"word\":\"ill\",\"pronun\":\"[ɪl]\",\"translation\":\"n. 疾病；不幸\\nadj. 生病的；坏的；邪恶的；不吉利的\\nadv. 不利地；恶劣地；几乎不\",\"audio\":\"ill.mp3\"},{\"word\":\"wrong\",\"pronun\":\"[rɔːŋ]\",\"translation\":\"n. 坏事；不公正\\nadj. 错误的；失常的；不适当的\\nvt. 委屈；无理地对待；诽谤\\nadv. 错误地；邪恶地，不正当地\",\"audio\":\"wrong.mp3\"},{\"word\":\"should\",\"pronun\":\"[ʃəd; ʃʊd]\",\"translation\":\"aux. 应该；就；可能；将要\",\"audio\":\"should.mp3\"},{\"word\":\"feel\",\"pronun\":\"[fiːl]\",\"translation\":\"n. 感觉；触摸\\nvi. 觉得；摸索\\nvt. 感觉；认为；触摸；试探\",\"audio\":\"feel.mp3\"},{\"word\":\"well\",\"pronun\":\"[wel]\",\"translation\":\"n. 井；源泉\\nadj. 良好的；健康的；适宜的\\nadv. 很好地；充分地；满意地；适当地\\nv. 涌出\",\"audio\":\"well.mp3\"},{\"word\":\"sit\",\"pronun\":\"[sɪt]\",\"translation\":\"vi. 坐；位于\\nvt. 使就座\",\"audio\":\"sit.mp3\"},{\"word\":\"grass\",\"pronun\":\"[ɡræs]\",\"translation\":\"n. 草；草地，草坪\\nvt. 放牧；使……长满草；使……吃草\\nvi. 长草\",\"audio\":\"grass.mp3\"},{\"word\":\"hear\",\"pronun\":\"[hɪr]\",\"translation\":\"vi. 听；听见\\nvt. 听到，听；听说；审理\",\"audio\":\"hear.mp3\"},{\"word\":\"ant\",\"pronun\":\"[ænt]\",\"translation\":\"n. 蚂蚁\",\"audio\":\"ant.mp3\"},{\"word\":\"worry\",\"pronun\":\"[ˈwɜːri]\",\"translation\":\"n. 担心；烦恼；撕咬\\nvi. 担心；烦恼；撕咬\\nvt. 担心；发愁；折磨\",\"audio\":\"worry.mp3\"},{\"word\":\"stuck\",\"pronun\":\"[stʌk]\",\"translation\":\"v. 刺（stick的过去式）\\nadj. 被卡住的；不能动的\",\"audio\":\"stuck.mp3\"},{\"word\":\"mud\",\"pronun\":\"[mʌd]\",\"translation\":\"vt. 弄脏；用泥涂\\nvi. 钻入泥中\\nn. 泥；诽谤的话；无价值的东西\",\"audio\":\"mud.mp3\"},{\"word\":\"pull\",\"pronun\":\"[pʊl]\",\"translation\":\"n. 拉，拉绳；拉力，牵引力；拖\\nvt. 拉；拔；拖\\nvi. 拉，拖；拔\",\"audio\":\"pull.mp3\"},{\"word\":\"everyone\",\"pronun\":\"[ˈevriwʌn]\",\"translation\":\"n. 每个人\\npron. 每个人；人人\",\"audio\":\"everyone.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

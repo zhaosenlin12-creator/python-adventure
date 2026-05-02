@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:42.406639+00:00",
+  "request": {
+    "lesson_id": "e1c54f48cb1bedf5609593cc8ed91b91",
+    "course_id": "e52cc8eda96f7509fa421962517744bb",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "e52cc8eda96f7509fa421962517744bb",
+    "order": 219,
+    "nextCourseId": "e52cc8eda96f7509fa421962517744bb",
+    "courseName": "进阶练习-信息录入",
+    "lessonId": "e1c54f48cb1bedf5609593cc8ed91b91",
+    "nextLessonId": "f0f9494fe106448310620155d65cf5f3",
+    "lessonName": "手机号练习九",
+    "icon": "data/assets/daziya.com/key-icon_num-jianpan.758041f8e3.png",
+    "description": "数字输入练习 - 手机号练习九",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8215929c8ce6cb5addf327cf5337052b",
+        "index": 1,
+        "text": [
+          "17987654321\\n17887654321\\n17787654321\\n17687654321\\n17587654321\\n17487654321\\n17387654321\\n17287654321\\n17187654321\\n17087654321"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

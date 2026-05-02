@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.916376+00:00",
+  "request": {
+    "lesson_id": "bb5d6a46c91bba9affb970b798f81100",
+    "course_id": "c965d44766237ddfb0947c82570af65d",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "c965d44766237ddfb0947c82570af65d",
+    "order": 162,
+    "nextCourseId": "c965d44766237ddfb0947c82570af65d",
+    "courseName": "注音练习2",
+    "lessonId": "bb5d6a46c91bba9affb970b798f81100",
+    "nextLessonId": "e5db6bf3c853be0fc68562e76cb7a4b0",
+    "lessonName": "影子",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-zhang.73c290cc69.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d89c06a220295a7248cd278f69eca30e",
+        "index": 1,
+        "text": [
+          "影子在前，\\n影子在后，\\n影子常常跟着我，\\n就像一条小黑狗。\\n影子在左，\\n影子在右，\\n影子常常陪着我，\\n它是我的好朋友。"
+        ],
+        "pinyin": "[[\"影\", \"yǐng\"], [\"子\", \"zǐ\"], [\"在\", \"zài\"], [\"前\", \"qián\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"影\", \"yǐng\"], [\"子\", \"zǐ\"], [\"在\", \"zài\"], [\"后\", \"hòu\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"影\", \"yǐng\"], [\"子\", \"zǐ\"], [\"常\", \"cháng\"], [\"常\", \"cháng\"], [\"跟\", \"gēn\"], [\"着\", \"zhe\"], [\"我\", \"wǒ\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"就\", \"jiù\"], [\"像\", \"xiàng\"], [\"一\", \"yī\"], [\"条\", \"tiáo\"], [\"小\", \"xiǎo\"], [\"黑\", \"hēi\"], [\"狗\", \"gǒu\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"影\", \"yǐng\"], [\"子\", \"zǐ\"], [\"在\", \"zài\"], [\"左\", \"zuǒ\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"影\", \"yǐng\"], [\"子\", \"zǐ\"], [\"在\", \"zài\"], [\"右\", \"yòu\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"影\", \"yǐng\"], [\"子\", \"zǐ\"], [\"常\", \"cháng\"], [\"常\", \"cháng\"], [\"陪\", \"péi\"], [\"着\", \"zhe\"], [\"我\", \"wǒ\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"它\", \"tā\"], [\"是\", \"shì\"], [\"我\", \"wǒ\"], [\"的\", \"de\"], [\"好\", \"hǎo\"], [\"朋\", \"péng\"], [\"友\", \"yǒu\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 12,
+        "minSpeed": 4,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

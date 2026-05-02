@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.041460+00:00",
+  "request": {
+    "lesson_id": "86ca9ad8440e487572f95685f447709c",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 93,
+    "nextCourseId": "e13b6bae2990dd699f332f225dd1955b",
+    "courseName": "Javascript",
+    "lessonId": "86ca9ad8440e487572f95685f447709c",
+    "nextLessonId": "5f5c75654c70ff2ff3d977a3cf74fbb7",
+    "lessonName": "条件判断",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - 条件判断",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "dd6c1091db925c5300bb6c9c13ec030f",
+        "index": 1,
+        "text": [
+          "// 判断数字的正负\\nconst number = 15;\\n\\nif (number > 0) {\\n    console.log(`${number} 是正数`);\\n} else if (number < 0) {\\n    console.log(`${number} 是负数`);\\n} else {\\n    console.log(\"这个数字是零\");\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

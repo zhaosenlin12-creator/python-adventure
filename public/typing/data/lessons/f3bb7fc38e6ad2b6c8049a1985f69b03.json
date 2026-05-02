@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.886816+00:00",
+  "request": {
+    "lesson_id": "f3bb7fc38e6ad2b6c8049a1985f69b03",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 391,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "f3bb7fc38e6ad2b6c8049a1985f69b03",
+    "nextLessonId": "30da9977d51760cb6efc2038d9429a14",
+    "lessonName": "六级词汇正序版-89",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第89课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a4e9ba49cff164c667819fd89a15a7c3",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"recipient\",\"pronun\":\"[rɪˈsɪpiənt]\",\"translation\":\"n. 容器，接受者；容纳者\\nadj. 容易接受的，感受性强的\",\"audio\":\"recipient.mp3\"},{\"word\":\"reciprocal\",\"pronun\":\"[rɪˈsɪprəkl]\",\"translation\":\"n. [数] 倒数；互相起作用的事物\\nadj. 互惠的；相互的；倒数的，彼此相反的\",\"audio\":\"reciprocal.mp3\"},{\"word\":\"recite\",\"pronun\":\"[rɪˈsaɪt]\",\"translation\":\"vt. 背诵；叙述；列举\\nvi. 背诵；叙述\",\"audio\":\"recite.mp3\"},{\"word\":\"reckless\",\"pronun\":\"[ˈrekləs]\",\"translation\":\"adj. 鲁莽的，不顾后果的；粗心大意的\",\"audio\":\"reckless.mp3\"},{\"word\":\"reckon\",\"pronun\":\"[ˈrekən]\",\"translation\":\"vi. 估计；计算；猜想，料想\\nvt. 测算，估计；认为；计算\",\"audio\":\"reckon.mp3\"},{\"word\":\"reclaim\",\"pronun\":\"[rɪˈkleɪm]\",\"translation\":\"n. 改造，感化；再生胶\\nvt. 开拓；回收再利用；改造某人，使某人悔改\\nvi. 抗议，喊叫\",\"audio\":\"reclaim.mp3\"},{\"word\":\"recognition\",\"pronun\":\"[ˌrekəɡˈnɪʃn]\",\"translation\":\"n. 识别；承认，认出；重视；赞誉；公认\",\"audio\":\"recognition.mp3\"},{\"word\":\"recognize\",\"pronun\":\"[ˈrekəɡnaɪz]\",\"translation\":\"vt. 认出，识别；承认\\nvi. 确认，承认；具结\",\"audio\":\"recognize.mp3\"},{\"word\":\"reconcile\",\"pronun\":\"[ˈrekənsaɪl]\",\"translation\":\"vt. 使一致；使和解；调停，调解；使顺从\",\"audio\":\"reconcile.mp3\"},{\"word\":\"reconciliation\",\"pronun\":\"[ˌrekənsɪliˈeɪʃn]\",\"translation\":\"n. 和解；调和；和谐；甘愿\",\"audio\":\"reconciliation.mp3\"},{\"word\":\"recover\",\"pronun\":\"[rɪˈkʌvər]\",\"translation\":\"n. 还原至预备姿势\\nvt. 恢复；弥补；重新获得\\nvi. 恢复；胜诉；重新得球\",\"audio\":\"recover.mp3\"},{\"word\":\"recovery\",\"pronun\":\"[rɪˈkʌvəri]\",\"translation\":\"n. 恢复，复原；痊愈；重获\",\"audio\":\"recovery.mp3\"},{\"word\":\"recreation\",\"pronun\":\"[ˌriːkriˈeɪʃn]\",\"translation\":\"n. 娱乐；消遣；休养\",\"audio\":\"recreation.mp3\"},{\"word\":\"recruit\",\"pronun\":\"[rɪˈkruːt]\",\"translation\":\"n. 招聘；新兵；新成员\\nvi. 复原；征募新兵；得到补充；恢复健康\\nvt. 补充；聘用；征募；使…恢复健康\",\"audio\":\"recruit.mp3\"},{\"word\":\"rectangular\",\"pronun\":\"[rekˈtæŋɡjələr]\",\"translation\":\"adj. 矩形的；成直角的\",\"audio\":\"rectangular.mp3\"},{\"word\":\"rectify\",\"pronun\":\"[ˈrektɪfaɪ]\",\"translation\":\"vt. 改正；精馏；整流\",\"audio\":\"rectify.mp3\"},{\"word\":\"recur\",\"pronun\":\"[rɪˈkɜːr]\",\"translation\":\"vi. 复发；重现；采用；再来；循环；递归\",\"audio\":\"recur.mp3\"},{\"word\":\"recycle\",\"pronun\":\"[ˌriːˈsaɪkl]\",\"translation\":\"n. 再生；再循环；重复利用\\nvt. 使再循环；使…重新利用\\nvi. 重复利用\",\"audio\":\"recycle.mp3\"},{\"word\":\"redundant\",\"pronun\":\"[rɪˈdʌndənt]\",\"translation\":\"adj. 多余的，过剩的；被解雇的，失业的；冗长的，累赘的\",\"audio\":\"redundant.mp3\"},{\"word\":\"reel\",\"pronun\":\"[riːl]\",\"translation\":\"n. 蹒跚；眩晕；旋转\\nvt. 卷；使旋转\\nvi. 卷；眩晕；蹒跚地走；退缩\",\"audio\":\"reel.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

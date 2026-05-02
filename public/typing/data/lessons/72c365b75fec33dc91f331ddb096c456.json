@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.623978+00:00",
+  "request": {
+    "lesson_id": "72c365b75fec33dc91f331ddb096c456",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 117,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "72c365b75fec33dc91f331ddb096c456",
+    "nextLessonId": "cd32add8ec44e1ddec8b7983ce75be67",
+    "lessonName": "KET核心词-53",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第53课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "fc2ef18ba66b4f9d24e51e18b5ff53d3",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"rare\",\"pronun\":\"[rer]\",\"translation\":\"adj. 稀有的；稀薄的；半熟的\\nadj. 杰出的；极度的；非常好的\\nadv. 非常；极其\\nvi. 用后腿站起；渴望\",\"audio\":\"rare.mp3\"},{\"word\":\"rather\",\"pronun\":\"[ˈræðər]\",\"translation\":\"adv. 宁可，宁愿；相当\\nint. 当然啦（回答问题时用）\",\"audio\":\"rather.mp3\"},{\"word\":\"reach\",\"pronun\":\"[riːtʃ]\",\"translation\":\"n. 范围；延伸；河段；横风行驶\\nvi. 达到；延伸；伸出手；传开\\nvt. 达到；影响；抵达；伸出\",\"audio\":\"reach.mp3\"},{\"word\":\"read\",\"pronun\":\"[riːd]\",\"translation\":\"n. 阅读；读物\\nadj. 有学问的\\nvi. 读；读起来\\nvt. 阅读；读懂，理解\",\"audio\":\"read.mp3\"},{\"word\":\"ready\",\"pronun\":\"[ˈredi]\",\"translation\":\"n. 现款；预备好的状态\\nadj. 准备好；现成的；迅速的；情愿的；快要…的\\nvt. 使准备好\\nadv. 迅速地；预先\",\"audio\":\"ready.mp3\"},{\"word\":\"real\",\"pronun\":\"[ˈriːəl]\",\"translation\":\"n. 现实；实数\\nadj. 实际的；真实的；实在的\\nadv. 真正地；确实地\",\"audio\":\"real.mp3\"},{\"word\":\"really\",\"pronun\":\"[ˈriːəli]\",\"translation\":\"adv. 实际上，事实上；真正地，真实地；真的吗？（表语气）\",\"audio\":\"really.mp3\"},{\"word\":\"reason\",\"pronun\":\"[ˈriːzn]\",\"translation\":\"n. 理由；理性；动机\\nvt. 说服；推论；辩论\\nvi. 推论；劝说\",\"audio\":\"reason.mp3\"},{\"word\":\"receipt\",\"pronun\":\"[rɪˈsiːt]\",\"translation\":\"n. 收到；收据；收入\\nvt. 收到\",\"audio\":\"receipt.mp3\"},{\"word\":\"receive\",\"pronun\":\"[rɪˈsiːv]\",\"translation\":\"vt. 收到；接待；接纳\\nvi. 接收\",\"audio\":\"receive.mp3\"},{\"word\":\"reception\",\"pronun\":\"[rɪˈsepʃn]\",\"translation\":\"n. 接待；接收；招待会；感受；反应\",\"audio\":\"reception.mp3\"},{\"word\":\"record\",\"pronun\":\"[ˈrekərd; rɪˈkɔːrd]\",\"translation\":\"n. 档案，履历；唱片；最高纪录\\nadj. 创纪录的\\nvt. 记录，记载；标明；将...录音\\nvi. 记录；录音\",\"audio\":\"record.mp3\"},{\"word\":\"relative\",\"pronun\":\"[ˈrelətɪv]\",\"translation\":\"n. 亲戚；相关物；[语] 关系词；亲缘植物\\nadj. 相对的；有关系的；成比例的\",\"audio\":\"relative.mp3\"},{\"word\":\"remember\",\"pronun\":\"[rɪˈmembər]\",\"translation\":\"vi. 记得，记起\\nvt. 记得；牢记；纪念；代…问好\",\"audio\":\"remember.mp3\"},{\"word\":\"rent\",\"pronun\":\"[rent]\",\"translation\":\"n. 租金\\nvt. 出租；租用；租借\\nvi. 租；出租\",\"audio\":\"rent.mp3\"},{\"word\":\"repair\",\"pronun\":\"[rɪˈper]\",\"translation\":\"n. 修理，修补；修补部位\\nvt. 修理；恢复；补救，纠正\\nvi. 修理；修复\",\"audio\":\"repair.mp3\"},{\"word\":\"repeat\",\"pronun\":\"[rɪˈpiːt]\",\"translation\":\"n. 重复；副本\\nvi. 重做；重复发生\\nvt. 重复；复制；背诵\",\"audio\":\"repeat.mp3\"},{\"word\":\"reply\",\"pronun\":\"[rɪˈplaɪ]\",\"translation\":\"n. 回答；[法] 答辩\\nvt. 回答；答复\\nvi. 回答；[法] 答辩；回击\",\"audio\":\"reply.mp3\"},{\"word\":\"report\",\"pronun\":\"[rɪˈpɔːrt]\",\"translation\":\"n. 报告；报道；成绩单\\nvt. 报告；报导；使报到\\nvi. 报告；报到；写报导\",\"audio\":\"report.mp3\"},{\"word\":\"research\",\"pronun\":\"[ˈriːsɜːrtʃ; rɪˈsɜːrtʃ; rɪˈsərtʃ; ˈriːsərtʃ]\",\"translation\":\"n. 研究；调查\\nvt. 研究；调查\\nvi. 研究；调查\\n[ 过去式 researched 过去分词 researched 现在分词 researching ]\",\"audio\":\"research.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:42.980417+00:00",
+  "request": {
+    "lesson_id": "b810f5c2459bbe6b3095e26c225798ac",
+    "course_id": "cd45306af9fe6ba99ad31ab2ab5006ba",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "cd45306af9fe6ba99ad31ab2ab5006ba",
+    "order": 364,
+    "nextCourseId": "cd45306af9fe6ba99ad31ab2ab5006ba",
+    "courseName": "实战演练-1万以内金额",
+    "lessonId": "b810f5c2459bbe6b3095e26c225798ac",
+    "nextLessonId": "b116d2f8baef169714571bad5d12d30a",
+    "lessonName": "千元货币二",
+    "icon": "data/assets/daziya.com/key-icon_num-jiangbei.44832ef16e.png",
+    "description": "数字输入练习 - 千元货币二",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5f26b7b03b17504f2c351d7c94b5ac37",
+        "index": 1,
+        "text": [
+          "105000\\n205000\\n305000\\n405000\\n505000\\n605000\\n705000\\n805000\\n905000\\n115000\\n225000\\n335000\\n445000\\n555000\\n665000\\n775000\\n885000\\n995000\\n155000\\n255000\\n355000\\n455000\\n565000\\n675000\\n785000\\n895000\\n915000\\n185000\\n285000\\n385000"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.776169+00:00",
+  "request": {
+    "lesson_id": "520050ec33d1aea3457141c51d94760e",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 370,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "520050ec33d1aea3457141c51d94760e",
+    "nextLessonId": "c8a30db8c9d680e356a814136bad4628",
+    "lessonName": "六级词汇正序版-26",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第26课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5f44cbcfc713d9501f3c7529a6a4ac93",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"contrast\",\"pronun\":\"[ˈkɑːntræst]\",\"translation\":\"n. 对比；差别；对照物\\nvt. 使对比；使与…对照\\nvi. 对比；形成对照\",\"audio\":\"contrast.mp3\"},{\"word\":\"contribute\",\"pronun\":\"[kənˈtrɪbjuːt]\",\"translation\":\"vt. 贡献，出力；投稿；捐献\\nvi. 贡献，出力；投稿；捐献\\n[ 过去式 contributed 过去分词 contributed 现在分词 contributing ]\",\"audio\":\"contribute.mp3\"},{\"word\":\"contribution\",\"pronun\":\"[ˌkɑːntrɪˈbjuːʃn]\",\"translation\":\"n. 贡献；捐献；投稿\",\"audio\":\"contribution.mp3\"},{\"word\":\"contrive\",\"pronun\":\"[kənˈtraɪv]\",\"translation\":\"vt. 设计；发明；图谋\\nvi. 谋划；设法做到\",\"audio\":\"contrive.mp3\"},{\"word\":\"controversial\",\"pronun\":\"[ˌkɑːntrəˈvɜːrʃl]\",\"translation\":\"adj. 有争议的；有争论的\",\"audio\":\"controversial.mp3\"},{\"word\":\"controversy\",\"pronun\":\"[ˈkɑːntrəvɜːrsi]\",\"translation\":\"n. 争论；论战；辩论\",\"audio\":\"controversy.mp3\"},{\"word\":\"convene\",\"pronun\":\"[kənˈviːn]\",\"translation\":\"vt. 召集，集合；传唤\\nvi. 聚集，集合\",\"audio\":\"convene.mp3\"},{\"word\":\"convenience\",\"pronun\":\"[kənˈviːniəns]\",\"translation\":\"n. 便利；厕所；便利的事物\",\"audio\":\"convenience.mp3\"},{\"word\":\"convention\",\"pronun\":\"[kənˈvenʃn]\",\"translation\":\"n. 大会；[法] 惯例；[计] 约定；[法] 协定；习俗\",\"audio\":\"convention.mp3\"},{\"word\":\"conventional\",\"pronun\":\"[kənˈvenʃənl]\",\"translation\":\"adj. 符合习俗的，传统的；常见的；惯例的\",\"audio\":\"conventional.mp3\"},{\"word\":\"converge\",\"pronun\":\"[kənˈvɜːrdʒ]\",\"translation\":\"vt. 使汇聚\\nvi. 聚集；靠拢；收敛\",\"audio\":\"converge.mp3\"},{\"word\":\"conversion\",\"pronun\":\"[kənˈvɜːrʒn]\",\"translation\":\"n. 转换；变换；[金融] 兑换；改变信仰\",\"audio\":\"conversion.mp3\"},{\"word\":\"convert\",\"pronun\":\"[kənˈvɜːrt]\",\"translation\":\"n. 皈依者；改变宗教信仰者\\nvt. 使转变；转换…；使…改变信仰\\nvi. 转变，变换；皈依；改变信仰\",\"audio\":\"convert.mp3\"},{\"word\":\"convey\",\"pronun\":\"[kənˈveɪ]\",\"translation\":\"vt. 传达；运输；让与\",\"audio\":\"convey.mp3\"},{\"word\":\"convict\",\"pronun\":\"[kənˈvɪkt; ˈkɑnvɪkt]\",\"translation\":\"n. 罪犯\\nvt. 证明…有罪；宣告…有罪\",\"audio\":\"convict.mp3\"},{\"word\":\"convince\",\"pronun\":\"[kənˈvɪns]\",\"translation\":\"vt. 说服；使确信，使信服\",\"audio\":\"convince.mp3\"},{\"word\":\"cooperative\",\"pronun\":\"[koʊˈɑːpərətɪv]\",\"translation\":\"n. 合作社\\nadj. 合作的；合作社的\",\"audio\":\"cooperative.mp3\"},{\"word\":\"cope\",\"pronun\":\"[koʊp]\",\"translation\":\"n. 长袍\\nvi. 处理；对付；竞争\",\"audio\":\"cope.mp3\"},{\"word\":\"cord\",\"pronun\":\"[kɔːrd]\",\"translation\":\"n. 绳索；束缚\\nvt. 用绳子捆绑\",\"audio\":\"cord.mp3\"},{\"word\":\"cordial\",\"pronun\":\"[ˈkɔːrdʒəl]\",\"translation\":\"n. 补品；兴奋剂；甜香酒，甘露酒\\nadj. 热忱的，诚恳的；兴奋的\",\"audio\":\"cordial.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

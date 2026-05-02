@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.472413+00:00",
+  "request": {
+    "lesson_id": "319099e0a1ace1dd78871532923fd180",
+    "course_id": "007ef7afc48bb0178d2f077a23bc898d",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "007ef7afc48bb0178d2f077a23bc898d",
+    "order": 378,
+    "nextCourseId": "007ef7afc48bb0178d2f077a23bc898d",
+    "courseName": "小学必备古诗75首（3）",
+    "lessonId": "319099e0a1ace1dd78871532923fd180",
+    "nextLessonId": "b7e4ccb5500c6d3d048670789ea8d14f",
+    "lessonName": "石灰吟",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2ac3801a0764483ed5cc18718bf31eb3",
+        "index": 1,
+        "text": [
+          "石灰吟\\n于谦\\n千锤万凿出深山，烈火焚烧若等闲。\\n粉身碎骨全不怕，要留清白在人间。"
+        ],
+        "pinyin": "[[\"石\", \"shí\"], [\"灰\", \"huī\"], [\"吟\", \"yín\"], [\"\\n\", \"\"], [\"于\", \"yú\"], [\"谦\", \"qiān\"], [\"\\n\", \"\"], [\"千\", \"qiān\"], [\"锤\", \"chuí\"], [\"万\", \"wàn\"], [\"凿\", \"záo\"], [\"出\", \"chū\"], [\"深\", \"shēn\"], [\"山\", \"shān\"], [\"，\", \"\"], [\"烈\", \"liè\"], [\"火\", \"huǒ\"], [\"焚\", \"fén\"], [\"烧\", \"shāo\"], [\"若\", \"ruò\"], [\"等\", \"děng\"], [\"闲\", \"xián\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"粉\", \"fěn\"], [\"身\", \"shēn\"], [\"碎\", \"suì\"], [\"骨\", \"gǔ\"], [\"全\", \"quán\"], [\"不\", \"bù\"], [\"怕\", \"pà\"], [\"，\", \"\"], [\"要\", \"yào\"], [\"留\", \"liú\"], [\"清\", \"qīng\"], [\"白\", \"bái\"], [\"在\", \"zài\"], [\"人\", \"rén\"], [\"间\", \"jiān\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

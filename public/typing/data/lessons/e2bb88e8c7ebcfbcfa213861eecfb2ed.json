@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.007555+00:00",
+  "request": {
+    "lesson_id": "e2bb88e8c7ebcfbcfa213861eecfb2ed",
+    "course_id": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "order": 184,
+    "nextCourseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "courseName": "汉字一级",
+    "lessonId": "e2bb88e8c7ebcfbcfa213861eecfb2ed",
+    "nextLessonId": "20d171293b37f058cf3e79ec62c98dc9",
+    "lessonName": "运用十根手指",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-good.c7e935711e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "218248ddd759c9d2b74f0b449b3aea1d",
+        "index": 1,
+        "text": [
+          "现在你已经知道了如何运用每根手指，试着提高你的速度，然后再练习其它的按键吧。"
+        ],
+        "pinyin": "[[\"现\", \"xiàn\"], [\"在\", \"zài\"], [\"你\", \"nǐ\"], [\"已\", \"yǐ\"], [\"经\", \"jīng\"], [\"知\", \"zhī\"], [\"道\", \"dào\"], [\"了\", \"le\"], [\"如\", \"rú\"], [\"何\", \"hé\"], [\"运\", \"yùn\"], [\"用\", \"yòng\"], [\"每\", \"měi\"], [\"根\", \"gēn\"], [\"手\", \"shǒu\"], [\"指\", \"zhǐ\"], [\"，\", \"\"], [\"试\", \"shì\"], [\"着\", \"zhe\"], [\"提\", \"tí\"], [\"高\", \"gāo\"], [\"你\", \"nǐ\"], [\"的\", \"de\"], [\"速\", \"sù\"], [\"度\", \"dù\"], [\"，\", \"\"], [\"然\", \"rán\"], [\"后\", \"hòu\"], [\"再\", \"zài\"], [\"练\", \"liàn\"], [\"习\", \"xí\"], [\"其\", \"qí\"], [\"它\", \"tā\"], [\"的\", \"de\"], [\"按\", \"àn\"], [\"键\", \"jiàn\"], [\"吧\", \"ba\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.280428+00:00",
+  "request": {
+    "lesson_id": "9b4bfac8a097aa1fe537fe867206ef1a",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 48,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "9b4bfac8a097aa1fe537fe867206ef1a",
+    "nextLessonId": "d3d015e65386984717011d5227f25b6b",
+    "lessonName": "2022年版 PEP-六年级-下册-1",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-六年级-下册 - 第1课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c0b979a621eea1ead01cac416b1000df",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"younger\",\"pronun\":\"[ˈjʌŋɡər]\",\"translation\":\"n. 年纪较小者；幼辈\\nadj. 较年轻的\",\"audio\":\"younger.mp3\"},{\"word\":\"young\",\"pronun\":\"[jʌŋ]\",\"translation\":\"n. 年轻人；（动物的）崽，仔\\nadj. 年轻的；初期的；没有经验的\",\"audio\":\"young.mp3\"},{\"word\":\"older\",\"pronun\":\"[ˈoʊldər]\",\"translation\":\"adj. 年长的；较旧的\",\"audio\":\"older.mp3\"},{\"word\":\"old\",\"pronun\":\"[oʊld]\",\"translation\":\"adj. 陈旧的，古老的；年老的\\nn. 古时\",\"audio\":\"old.mp3\"},{\"word\":\"taller\",\"pronun\":\"[ˈtɔːlər]\",\"translation\":\"adj. 更高的；高一点的\",\"audio\":\"taller.mp3\"},{\"word\":\"tall\",\"pronun\":\"[tɔːl]\",\"translation\":\"adj. 高的；长的；过分的；夸大的\\nadv. 夸大地\",\"audio\":\"tall.mp3\"},{\"word\":\"shorter\",\"pronun\":\"[ˈʃɔːrtər]\",\"translation\":\"adj. 较短的；更短的；更矮的（short的比较级）\",\"audio\":\"shorter.mp3\"},{\"word\":\"short\",\"pronun\":\"[ʃɔːrt]\",\"translation\":\"n. 短；缺乏；短路；短裤\\nadj. 短的；不足的；矮的，低的\\nadv. 不足；突然；唐突地\",\"audio\":\"short.mp3\"},{\"word\":\"longer\",\"pronun\":\"[lɔːŋɡər]\",\"translation\":\"长的（long的比较级）\",\"audio\":\"longer.mp3\"},{\"word\":\"long\",\"pronun\":\"[lɔːŋ]\",\"translation\":\"n. 长时间；[语] 长音节；（服装的）长尺寸；长裤\\nadj. 长的；过长的；做多头的；长时间的；冗长的，长音\\nvi. 渴望；热望\\nadv. 长期地；始终\",\"audio\":\"long.mp3\"},{\"word\":\"thinner\",\"pronun\":\"[ˈθɪnər]\",\"translation\":\"adj. 较薄的；较瘦的；较细的（thin的比较级）\\nn. （油漆的）稀释剂；冲淡剂；使变稀薄者，加稀料的制漆工\",\"audio\":\"thinner.mp3\"},{\"word\":\"thin\",\"pronun\":\"[θɪn]\",\"translation\":\"n. 细小部分\\nadj. 薄的；瘦的；稀薄的；微弱的\\nvt. 使瘦；使淡；使稀疏\\nvi. 变薄；变瘦；变淡\\nadv. 稀疏地；微弱地\",\"audio\":\"thin.mp3\"},{\"word\":\"heavier\",\"pronun\":\"[ˈhevɪərðənˈer]\",\"translation\":\"adj. 沉重的；巨大的\",\"audio\":\"heavier.mp3\"},{\"word\":\"heavy\",\"pronun\":\"[ˈhevi]\",\"translation\":\"n. 重物；严肃角色\\nadj. 沉重的；繁重的，巨大的；拥挤的；阴沉的\\nadv. 大量地；笨重地\",\"audio\":\"heavy.mp3\"},{\"word\":\"bigger\",\"pronun\":\"[bɪgə(r)]\",\"translation\":\"adj. 更大的（big的比较级）\",\"audio\":\"bigger.mp3\"},{\"word\":\"big\",\"pronun\":\"[bɪɡ]\",\"translation\":\"adj. 大的；重要的；量大的\\nadv. 大量地；顺利；夸大地\",\"audio\":\"big.mp3\"},{\"word\":\"smaller\",\"pronun\":\"[ˈsmɔːlər]\",\"translation\":\"adj. 较小，更小的\",\"audio\":\"smaller.mp3\"},{\"word\":\"small\",\"pronun\":\"[smɔːl]\",\"translation\":\"n. 小件物品；矮小的人\\nadj. 少的，小的；微弱的；几乎没有的；不重要的；幼小的\\nadv. 小小地；卑鄙地\",\"audio\":\"small.mp3\"},{\"word\":\"stronger\",\"pronun\":\"[strɔːŋər]\",\"translation\":\"adj. 更强壮的\",\"audio\":\"stronger.mp3\"},{\"word\":\"strong\",\"pronun\":\"[strɔːŋ]\",\"translation\":\"adj. 坚强的；强壮的；牢固的；擅长的\\nadv. 强劲地；猛烈地\",\"audio\":\"strong.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

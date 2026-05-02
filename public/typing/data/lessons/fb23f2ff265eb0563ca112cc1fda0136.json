@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.856464+00:00",
+  "request": {
+    "lesson_id": "fb23f2ff265eb0563ca112cc1fda0136",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 58,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "fb23f2ff265eb0563ca112cc1fda0136",
+    "nextLessonId": "1d3472248d2361fed826b658d729ea2e",
+    "lessonName": "KET核心词-13",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第13课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "55fdc368cebad61c5457a7848180d8b8",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"chess\",\"pronun\":\"[tʃes]\",\"translation\":\"n. 国际象棋，西洋棋\",\"audio\":\"chess.mp3\"},{\"word\":\"child\",\"pronun\":\"[tʃaɪld]\",\"translation\":\"n. 儿童，小孩，孩子；产物；子孙；幼稚的人；弟子\",\"audio\":\"child.mp3\"},{\"word\":\"chip\",\"pronun\":\"[tʃɪp]\",\"translation\":\"n. [电子] 芯片；筹码；碎片；(食物的) 小片; 薄片\\nvt. 削，凿；削成碎片\\nvi. 剥落；碎裂\",\"audio\":\"chip.mp3\"},{\"word\":\"chocolate\",\"pronun\":\"[ˈtʃɔːklət]\",\"translation\":\"n. 巧克力，巧克力糖；巧克力色\\nadj. 巧克力色的；巧克力口味的\",\"audio\":\"chocolate.mp3\"},{\"word\":\"choose\",\"pronun\":\"[tʃuːz]\",\"translation\":\"vt. 选择，决定\\nvi. 选择，挑选\",\"audio\":\"choose.mp3\"},{\"word\":\"chopstick\",\"pronun\":\"[ˈtʃɑːpstɪk]\",\"translation\":\"n. 筷子\",\"audio\":\"chopstick.mp3\"},{\"word\":\"church\",\"pronun\":\"[tʃɜːrtʃ]\",\"translation\":\"n. 教堂；礼拜；教派\\nadj. 教会的；礼拜的\\nvt. 领…到教堂接受宗教仪式\",\"audio\":\"church.mp3\"},{\"word\":\"cinema\",\"pronun\":\"[ˈsɪnəmə]\",\"translation\":\"n. 电影；电影院；电影业，电影制作术\",\"audio\":\"cinema.mp3\"},{\"word\":\"circle\",\"pronun\":\"[ˈsɜːrkl]\",\"translation\":\"n. 循环，周期；圆；圈子；圆形物\\nvt. 画圆圈；环绕…移动\\nvi. 盘旋，旋转；环行\",\"audio\":\"circle.mp3\"},{\"word\":\"circus\",\"pronun\":\"[ˈsɜːrkəs]\",\"translation\":\"n. 马戏；马戏团\",\"audio\":\"circus.mp3\"},{\"word\":\"city\",\"pronun\":\"[ˈsɪti]\",\"translation\":\"n. 城市，都市\\nadj. 城市的；都会的\",\"audio\":\"city.mp3\"},{\"word\":\"class\",\"pronun\":\"[klæs]\",\"translation\":\"n. 阶级；班级；种类；班；等级\\nadj. 极好的；很好的，优秀的，出色的\\nvt. 分类；把…分等级；把…归入某等级，把…看作（或分类、归类）；把…编入某一班级\\nvi. 属于…类（或等级），被列为某类（或某级）\",\"audio\":\"class.mp3\"},{\"word\":\"classical\",\"pronun\":\"[ˈklæsɪkl]\",\"translation\":\"n. 古典音乐\\nadj. 古典的；经典的；传统的；第一流的\",\"audio\":\"classical.mp3\"},{\"word\":\"classmate\",\"pronun\":\"[ˈklæsmeɪt]\",\"translation\":\"n. 同班同学\",\"audio\":\"classmate.mp3\"},{\"word\":\"classroom\",\"pronun\":\"[ˈklæsruːm; ˈklæsrʊm]\",\"translation\":\"n. 教室\",\"audio\":\"classroom.mp3\"},{\"word\":\"clean\",\"pronun\":\"[kliːn]\",\"translation\":\"n. 打扫\\nadj. 清洁的，干净的；清白的\\nvt. 使干净\\nvi. 打扫，清扫\\nadv. 完全地\",\"audio\":\"clean.mp3\"},{\"word\":\"clear\",\"pronun\":\"[klɪr]\",\"translation\":\"n. 清除；空隙\\nadj. 清楚的；清澈的；晴朗的；无罪的\\nvt. 通过；清除；使干净；跳过\\nvi. 放晴；变清澈\\nadv. 清晰地；完全地\",\"audio\":\"clear.mp3\"},{\"word\":\"clever\",\"pronun\":\"[ˈklevər]\",\"translation\":\"adj. 聪明的；机灵的；熟练的\\n[ 比较级cleverer 最高级 cleverest ]\",\"audio\":\"clever.mp3\"},{\"word\":\"click\",\"pronun\":\"[klɪk]\",\"translation\":\"n. 单击；滴答声\\nvi. 作咔哒声\\nvt. 点击；使发咔哒声\",\"audio\":\"click.mp3\"},{\"word\":\"climb\",\"pronun\":\"[klaɪm]\",\"translation\":\"n. 爬；攀登\\nvi. 爬；攀登；上升\\nvt. 爬；攀登；上升\",\"audio\":\"climb.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

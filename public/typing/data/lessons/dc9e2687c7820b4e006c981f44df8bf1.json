@@ -1,0 +1,62 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.493408+00:00",
+  "request": {
+    "lesson_id": "dc9e2687c7820b4e006c981f44df8bf1",
+    "course_id": "a74c1aef61379ff4f0a2ca54be6ac56f",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "a74c1aef61379ff4f0a2ca54be6ac56f",
+    "order": 1,
+    "nextCourseId": "a74c1aef61379ff4f0a2ca54be6ac56f",
+    "courseName": "基础练习-下排数字",
+    "lessonId": "dc9e2687c7820b4e006c981f44df8bf1",
+    "nextLessonId": "d8e7a643357ebadc9c182188b0c07c5c",
+    "lessonName": "1指法练习",
+    "icon": "data/assets/daziya.com/key-icon_num-1.5c05814b7b.png",
+    "description": "数字输入练习 - 1指法练习",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "9336c23b58d667541e0f23ce22a5fd17",
+        "index": 1,
+        "highlights": [
+          "1"
+        ],
+        "text": [
+          "请用右手食指输入数字1"
+        ],
+        "detail": "新的数字键"
+      }
+    ],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d9f0b98bb783479c52c1fc635106fd70",
+        "index": 2,
+        "text": [
+          "11111111111111111111"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "1",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

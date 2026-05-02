@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.915641+00:00",
+  "request": {
+    "lesson_id": "ae1e40abe4cb5b05a82c62baff4c2f5d",
+    "course_id": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "order": 69,
+    "nextCourseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "courseName": "C++",
+    "lessonId": "ae1e40abe4cb5b05a82c62baff4c2f5d",
+    "nextLessonId": "c0c97a4c799487d7546e3d098099e328",
+    "lessonName": "指针基础",
+    "icon": "data/assets/daziya.com/key-icon_key-cpp.b136419115.png",
+    "description": "C++编程练习 - 指针基础",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "df49d63f95a7bc4b7bf6ae4f1ec0ad77",
+        "index": 1,
+        "text": [
+          "#include <iostream>\\nusing namespace std;\\n\\nint main() {\\n    int num = 42;\\n    int *ptr = &num;\\n\\n    cout << \"变量值: \" << num << endl;\\n    cout << \"变量地址: \" << &num << endl;\\n    cout << \"指针指向的地址: \" << ptr << endl;\\n    cout << \"指针指向的值: \" << *ptr << endl;\\n\\n    *ptr = 100;\\n    cout << \"修改后的值: \" << num << endl;\\n\\n    return 0;\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "cpp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

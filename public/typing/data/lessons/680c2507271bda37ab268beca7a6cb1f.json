@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.608687+00:00",
+  "request": {
+    "lesson_id": "680c2507271bda37ab268beca7a6cb1f",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 339,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "680c2507271bda37ab268beca7a6cb1f",
+    "nextLessonId": "69fe88447e52724b8def266edd1d0a72",
+    "lessonName": "六级词汇正序版-70",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第70课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b1f2b094bb64689416b600ef146b84ee",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"misfortune\",\"pronun\":\"[ˌmɪsˈfɔːrtʃən]\",\"translation\":\"n. 不幸；灾祸，灾难\",\"audio\":\"misfortune.mp3\"},{\"word\":\"mission\",\"pronun\":\"[ˈmɪʃn]\",\"translation\":\"n. 使命，任务；代表团；布道\\nvt. 派遣；向……传教\",\"audio\":\"mission.mp3\"},{\"word\":\"missionary\",\"pronun\":\"[ˈmɪʃəneri]\",\"translation\":\"adj. 传教的；传教士的\\nn. 传教士\",\"audio\":\"missionary.mp3\"},{\"word\":\"mistress\",\"pronun\":\"[ˈmɪstrəs]\",\"translation\":\"n. 情妇；女主人；主妇；女教师；女能人\",\"audio\":\"mistress.mp3\"},{\"word\":\"moan\",\"pronun\":\"[moʊn]\",\"translation\":\"vi. 抱怨，悲叹；呻吟\\nn. 呻吟声；悲叹\\nvt. 抱怨；呻吟着说\",\"audio\":\"moan.mp3\"},{\"word\":\"mob\",\"pronun\":\"[mɑːb]\",\"translation\":\"n. 暴民，暴徒；民众；乌合之众\\nvt. 大举包围，围攻；蜂拥进入\\nvi. 聚众生事，聚众滋事\",\"audio\":\"mob.mp3\"},{\"word\":\"mobile\",\"pronun\":\"[ˈmoʊbl]\",\"translation\":\"adj. 可移动的；机动的；易变的；非固定的\\nn. 运动物体\",\"audio\":\"mobile.mp3\"},{\"word\":\"mobilize\",\"pronun\":\"[ˈmoʊbəlaɪz]\",\"translation\":\"vt. 动员，调动；集合，组织；使…流通；使…松动\\nvi. 组织；动员起来\",\"audio\":\"mobilize.mp3\"},{\"word\":\"mock\",\"pronun\":\"[mɑːk]\",\"translation\":\"n. 英国模拟考试（mocks）\\nvt. 愚弄，嘲弄\\nadj. 仿制的，模拟的，虚假的，不诚实的\\nvt. 不尊重，蔑视\",\"audio\":\"mock.mp3\"},{\"word\":\"modest\",\"pronun\":\"[ˈmɑːdɪst]\",\"translation\":\"adj. 谦虚的，谦逊的；适度的；端庄的；羞怯的\",\"audio\":\"modest.mp3\"},{\"word\":\"modesty\",\"pronun\":\"[ˈmɑːdəsti]\",\"translation\":\"n. 谦逊；质朴；稳重\",\"audio\":\"modesty.mp3\"},{\"word\":\"modify\",\"pronun\":\"[ˈmɑːdɪfaɪ]\",\"translation\":\"vt. 修改，修饰；更改\\nvi. 修改\",\"audio\":\"modify.mp3\"},{\"word\":\"module\",\"pronun\":\"[ˈmɑːdʒuːl]\",\"translation\":\"n. [计] 模块；组件；模数\",\"audio\":\"module.mp3\"},{\"word\":\"molecule\",\"pronun\":\"[ˈmɑːlɪkjuːl]\",\"translation\":\"n. [化学] 分子；微小颗粒，微粒\",\"audio\":\"molecule.mp3\"},{\"word\":\"momentum\",\"pronun\":\"[moʊˈmentəm]\",\"translation\":\"n. 势头；[物] 动量；动力；冲力\",\"audio\":\"momentum.mp3\"},{\"word\":\"monetary\",\"pronun\":\"[ˈmɑːnɪteri]\",\"translation\":\"adj. 货币的；财政的\",\"audio\":\"monetary.mp3\"},{\"word\":\"monitor\",\"pronun\":\"[ˈmɑːnɪtər]\",\"translation\":\"n. 监视器；监听器；监控器；显示屏；班长\\nvt. 监控\",\"audio\":\"monitor.mp3\"},{\"word\":\"monopoly\",\"pronun\":\"[məˈnɑːpəli]\",\"translation\":\"n. 垄断；垄断者；专卖权\",\"audio\":\"monopoly.mp3\"},{\"word\":\"monster\",\"pronun\":\"[ˈmɑːnstər]\",\"translation\":\"n. 怪物；巨人，巨兽；残忍的人\\nadj. 巨大的，庞大的\",\"audio\":\"monster.mp3\"},{\"word\":\"moral\",\"pronun\":\"[ˈmɔːrəl]\",\"translation\":\"adj. 道德的；精神上的；品性端正的\\nn. 道德；寓意\",\"audio\":\"moral.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

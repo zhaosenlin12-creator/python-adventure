@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.850132+00:00",
+  "request": {
+    "lesson_id": "0591616cdaa061dea38f16c4420b402a",
+    "course_id": "daccefd55478aba6657b64a604f8f971",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "daccefd55478aba6657b64a604f8f971",
+    "order": 145,
+    "nextCourseId": "daccefd55478aba6657b64a604f8f971",
+    "courseName": "注音练习1",
+    "lessonId": "0591616cdaa061dea38f16c4420b402a",
+    "nextLessonId": "dbeda4176144f79957689367aa676033",
+    "lessonName": "《送别》",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-wen.691360af01.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "57d63c23fa063b982d8d5fd9234da7ea",
+        "index": 1,
+        "text": [
+          "《送别》\\n唐：王之涣\\n\\n山中相送罢，日暮掩柴扉。\\n春草年年绿，王孙归不归。"
+        ],
+        "pinyin": "[[\"《\", \"\"], [\"送\", \"sòng\"], [\"别\", \"bié\"], [\"》\", \"\"], [\"\\n\", \"\"], [\"唐\", \"táng\"], [\"：\", \"\"], [\"王\", \"wáng\"], [\"之\", \"zhī\"], [\"涣\", \"huàn\"], [\"\\n\", \"\"], [\"\\n\", \"\"], [\"山\", \"shān\"], [\"中\", \"zhōng\"], [\"相\", \"xiāng\"], [\"送\", \"sòng\"], [\"罢\", \"bà\"], [\"，\", \"\"], [\"日\", \"rì\"], [\"暮\", \"mù\"], [\"掩\", \"yǎn\"], [\"柴\", \"chái\"], [\"扉\", \"fēi\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"春\", \"chūn\"], [\"草\", \"cǎo\"], [\"年\", \"nián\"], [\"年\", \"nián\"], [\"绿\", \"lǜ\"], [\"，\", \"\"], [\"王\", \"wáng\"], [\"孙\", \"sūn\"], [\"归\", \"guī\"], [\"不\", \"bù\"], [\"归\", \"guī\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 14,
+        "minSpeed": 4,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

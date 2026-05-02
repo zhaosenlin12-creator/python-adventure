@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.933315+00:00",
+  "request": {
+    "lesson_id": "227bbfb4cccf846233502be366248147",
+    "course_id": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "order": 72,
+    "nextCourseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "courseName": "C++",
+    "lessonId": "227bbfb4cccf846233502be366248147",
+    "nextLessonId": "1f824efb9ddaebbd7e1017cf8647702c",
+    "lessonName": "判断奇偶数",
+    "icon": "data/assets/daziya.com/key-icon_key-cpp.b136419115.png",
+    "description": "C++编程练习 - 判断奇偶数",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "43167ea93982d08e31066fe2494b88b5",
+        "index": 1,
+        "text": [
+          "#include <iostream>\\nusing namespace std;\\n\\nbool isEven(int number) {\\n    return number % 2 == 0;\\n}\\n\\nint main() {\\n    int numbers[] = {10, 15, 22, 7, 30};\\n\\n    for (int i = 0; i < 5; i++) {\\n        if (isEven(numbers[i])) {\\n            cout << numbers[i] << \" 是偶数\" << endl;\\n        } else {\\n            cout << numbers[i] << \" 是奇数\" << endl;\\n        }\\n    }\\n\\n    return 0;\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "cpp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

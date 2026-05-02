@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.529613+00:00",
+  "request": {
+    "lesson_id": "f5e85eba10d89e7970c61bb0eecd041b",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 534,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "f5e85eba10d89e7970c61bb0eecd041b",
+    "nextLessonId": "967cf7883186b81c67b6d7b81363dc33",
+    "lessonName": "Red Toy Car",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a081ce852acbe5636387141a3832219e",
+        "index": 1,
+        "text": [
+          "Johnny loves his red toy car, but the wheels fell off while he was playing. He began to cry.\\nHis mom gave him a big hug and said, \"It's okay. It's not broken. Look!\" She picked up the car and made it fly through the air.\\n\"Now it's a flying car. The wheels made it too heavy.\" said his mom.\\nJohnny stopped crying and said, \"A flying car? Wow!\""
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

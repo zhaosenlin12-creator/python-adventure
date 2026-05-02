@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.277538+00:00",
+  "request": {
+    "lesson_id": "1e7057c783b6719bb83a0e562bc0ecf4",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 44,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "1e7057c783b6719bb83a0e562bc0ecf4",
+    "nextLessonId": "774a61b89c330d47c204529d36db1f45",
+    "lessonName": "2022年版 PEP-六年级-上册-5",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-六年级-上册 - 第5课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d05d45696762ca8187b04bd33aa35562",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"festival\",\"pronun\":\"[ˈfestɪvl]\",\"translation\":\"n. 节日；庆祝，纪念活动；欢乐\\nadj. 节日的，喜庆的；快乐的\",\"audio\":\"festival.mp3\"},{\"word\":\"together\",\"pronun\":\"[təˈɡeðər]\",\"translation\":\"adj. 新潮的；情绪稳定的，做事有效率的\\nadv. 一起；同时；相互；连续地；总共\",\"audio\":\"together.mp3\"},{\"word\":\"mooncake\",\"pronun\":\"[ˈmuːnkeɪk]\",\"translation\":\"n. 月饼\",\"audio\":\"mooncake.mp3\"},{\"word\":\"poem\",\"pronun\":\"[ˈpoʊəm]\",\"translation\":\"n. 诗\",\"audio\":\"poem.mp3\"},{\"word\":\"moon\",\"pronun\":\"[muːn]\",\"translation\":\"n. 月亮；月球；月光；卫星\\nvi. 闲荡；出神\\nvt. 虚度\",\"audio\":\"moon.mp3\"},{\"word\":\"studies\",\"pronun\":\"[ˈstʌdiz]\",\"translation\":\"n. 研究；学习；学业（study的复数）\\nv. 学习（study的第三人称单数形式）\",\"audio\":\"studies.mp3\"},{\"word\":\"study\",\"pronun\":\"[ˈstʌdi]\",\"translation\":\"n. 学习，研究；课题；书房；学问\\nvt. 学习；考虑；攻读；细察\\nvi. 研究；用功\",\"audio\":\"study.mp3\"},{\"word\":\"puzzle\",\"pronun\":\"[ˈpʌzl]\",\"translation\":\"n. 谜；难题；迷惑\\nvt. 使…困惑；使…为难；苦思而得出\\nvi. 迷惑；冥思苦想\",\"audio\":\"puzzle.mp3\"},{\"word\":\"hiking\",\"pronun\":\"[ˈhaɪkɪŋ]\",\"translation\":\"n. 徒步旅行\",\"audio\":\"hiking.mp3\"},{\"word\":\"pen\",\"pronun\":\"[pen]\",\"translation\":\"n. 钢笔；作家；围栏\\nvt. 写；关入栏中\",\"audio\":\"pen.mp3\"},{\"word\":\"pal\",\"pronun\":\"[pæl]\",\"translation\":\"n. 朋友，伙伴；同志\\nvi. 结为朋友\",\"audio\":\"pal.mp3\"},{\"word\":\"hobby\",\"pronun\":\"[ˈhɑːbi]\",\"translation\":\"n. 嗜好；业余爱好\",\"audio\":\"hobby.mp3\"},{\"word\":\"jasmine\",\"pronun\":\"[ˈdʒæzmɪn]\",\"translation\":\"n. 茉莉；淡黄色\",\"audio\":\"jasmine.mp3\"},{\"word\":\"idea\",\"pronun\":\"[aɪˈdiːə]\",\"translation\":\"n. 想法；主意；概念\",\"audio\":\"idea.mp3\"},{\"word\":\"Canberra\",\"pronun\":\"[ˈkænbərəˌˈkænberə]\",\"translation\":\"n. 堪培拉（澳大利亚的首都）\",\"audio\":\"Canberra.mp3\"},{\"word\":\"amazing\",\"pronun\":\"[əˈmeɪzɪŋ]\",\"translation\":\"adj. 令人惊异的\\nv. 使吃惊（amaze的ing形式）\",\"audio\":\"amazing.mp3\"},{\"word\":\"shall\",\"pronun\":\"[ʃəl; ʃæl]\",\"translation\":\"aux. 应；会；将；必须\",\"audio\":\"shall.mp3\"},{\"word\":\"goal\",\"pronun\":\"[ɡoʊl]\",\"translation\":\"n. 目标；球门，得分数；终点\\nvi. 攻门，射门得分\",\"audio\":\"goal.mp3\"},{\"word\":\"join\",\"pronun\":\"[dʒɔɪn]\",\"translation\":\"vt. 参加；结合；连接\\nvi. 加入；参加；结合\\nn. 结合；连接；接合点\",\"audio\":\"join.mp3\"},{\"word\":\"club\",\"pronun\":\"[klʌb]\",\"translation\":\"n. 俱乐部，社团；夜总会；棍棒；（扑克牌中的）梅花\\nadj. 俱乐部的\\nvt. 用棍棒打；募集\\nvi. 集资；组成俱乐部\",\"audio\":\"club.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

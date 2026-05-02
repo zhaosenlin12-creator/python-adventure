@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.601879+00:00",
+  "request": {
+    "lesson_id": "6d5e0a6845ad92ae88504476b1f147f3",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 338,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "6d5e0a6845ad92ae88504476b1f147f3",
+    "nextLessonId": "680c2507271bda37ab268beca7a6cb1f",
+    "lessonName": "六级词汇正序版-67",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第67课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8391e4aa3433d020b8efba71199797fa",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"mall\",\"pronun\":\"[mɔːl]\",\"translation\":\"n. 购物商场；林荫路；铁圈球场\",\"audio\":\"mall.mp3\"},{\"word\":\"management\",\"pronun\":\"[ˈmænɪdʒmənt]\",\"translation\":\"n. 管理；管理人员；管理部门；操纵；经营手段\",\"audio\":\"management.mp3\"},{\"word\":\"maneuver\",\"pronun\":\"[məˈnuːvər]\",\"translation\":\"n. [军] 机动；演习；策略；调遣\\nvi. [军] 机动；演习；调遣；用计谋\\nvt. [军] 机动；演习；用计；调遣\",\"audio\":\"maneuver.mp3\"},{\"word\":\"manifest\",\"pronun\":\"[ˈmænɪfest]\",\"translation\":\"vt. 证明，表明；显示\\nvi. 显示，出现\\nn. 载货单，货单；旅客名单\\nadj. 显然的，明显的；明白的\",\"audio\":\"manifest.mp3\"},{\"word\":\"manipulate\",\"pronun\":\"[məˈnɪpjuleɪt]\",\"translation\":\"vt. 操纵；操作；巧妙地处理；篡改\",\"audio\":\"manipulate.mp3\"},{\"word\":\"mansion\",\"pronun\":\"[ˈmænʃn]\",\"translation\":\"n. 大厦；宅邸\",\"audio\":\"mansion.mp3\"},{\"word\":\"manual\",\"pronun\":\"[ˈmænjuəl]\",\"translation\":\"adj. 手工的；体力的\\nn. 手册，指南\",\"audio\":\"manual.mp3\"},{\"word\":\"manufacture\",\"pronun\":\"[ˌmænjuˈfæktʃər]\",\"translation\":\"n. 制造；产品；制造业\\nvt. 制造；加工；捏造\\nvi. 制造\",\"audio\":\"manufacture.mp3\"},{\"word\":\"manufacturer\",\"pronun\":\"[ˌmænjuˈfæktʃərər]\",\"translation\":\"n. 制造商；[经] 厂商\",\"audio\":\"manufacturer.mp3\"},{\"word\":\"manuscript\",\"pronun\":\"[ˈmænjuskrɪpt]\",\"translation\":\"n. [图情] 手稿；原稿\\nadj. 手写的\",\"audio\":\"manuscript.mp3\"},{\"word\":\"marble\",\"pronun\":\"[ˈmɑːrbl]\",\"translation\":\"n. 大理石；大理石制品；弹珠\\nadj. 大理石的；冷酷无情的\",\"audio\":\"marble.mp3\"},{\"word\":\"margin\",\"pronun\":\"[ˈmɑːrdʒɪn]\",\"translation\":\"n. 边缘；利润，余裕；页边的空白\\nvt. 加边于；加旁注于\",\"audio\":\"margin.mp3\"},{\"word\":\"marginal\",\"pronun\":\"[ˈmɑːrdʒɪnl]\",\"translation\":\"adj. 边缘的；临界的；末端的\",\"audio\":\"marginal.mp3\"},{\"word\":\"marsh\",\"pronun\":\"[mɑːrʃ]\",\"translation\":\"n. 沼泽；湿地\\nadj. 沼泽的；生长在沼泽地的\",\"audio\":\"marsh.mp3\"},{\"word\":\"marshal\",\"pronun\":\"[ˈmɑːrʃ(ə)l]\",\"translation\":\"n. 元帅；司仪\\nvt. 整理；引领；编列\\nvi. 排列\",\"audio\":\"marshal.mp3\"},{\"word\":\"masculine\",\"pronun\":\"[ˈmæskjəlɪn]\",\"translation\":\"adj. 男性的；阳性的；男子气概的\\nn. 男性；阳性，阳性词\",\"audio\":\"masculine.mp3\"},{\"word\":\"mask\",\"pronun\":\"[mæsk]\",\"translation\":\"n. 面具；口罩；掩饰\\nvi. 掩饰；戴面具；化装\\nvt. 掩饰；戴面具；使模糊\",\"audio\":\"mask.mp3\"},{\"word\":\"mass\",\"pronun\":\"[mæs]\",\"translation\":\"n. 块，团；群众，民众；大量，众多；质量\\nadj. 群众的，民众的；大规模的，集中的\\nvi. 聚集起来，聚集\\nvt. 使集合\",\"audio\":\"mass.mp3\"},{\"word\":\"massacre\",\"pronun\":\"[ˈmæsəkər]\",\"translation\":\"vt. 残杀；彻底击败\\nn. 大屠杀；惨败\",\"audio\":\"massacre.mp3\"},{\"word\":\"massive\",\"pronun\":\"[ˈmæsɪv]\",\"translation\":\"adj. 大量的；巨大的，厚重的；魁伟的\",\"audio\":\"massive.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

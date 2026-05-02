@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.590101+00:00",
+  "request": {
+    "lesson_id": "3e292a591e1b0c1126679fb3e3df74a6",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 334,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "3e292a591e1b0c1126679fb3e3df74a6",
+    "nextLessonId": "f6bece7a45e278fa9e7d99a93e532c14",
+    "lessonName": "六级词汇正序版-55",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第55课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "dfc4c8be77eab3706285e150391f4bf0",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"huddle\",\"pronun\":\"[ˈhʌdl]\",\"translation\":\"n. 拥挤；混乱；杂乱一团\\nvt. 把...挤在一起；使缩成一团；草率了事\\nvi. 蜷缩；挤作一团\",\"audio\":\"huddle.mp3\"},{\"word\":\"hug\",\"pronun\":\"[hʌɡ]\",\"translation\":\"n. 拥抱；紧抱；固执\\nvi. 拥抱；紧抱在一起；挤在一起\\nvt. 拥抱；紧抱；抱有，坚持\",\"audio\":\"hug.mp3\"},{\"word\":\"hum\",\"pronun\":\"[hʌm]\",\"translation\":\"n. 嗡嗡声；哼声；杂声\\nvt. 用哼声表示\\nint. 哼；嗯\\nvi. 发低哼声\",\"audio\":\"hum.mp3\"},{\"word\":\"humanity\",\"pronun\":\"[hjuːˈmænəti]\",\"translation\":\"n. 人类；人道；仁慈；人文学科\",\"audio\":\"humanity.mp3\"},{\"word\":\"humble\",\"pronun\":\"[ˈhʌmbl]\",\"translation\":\"adj. 谦逊的；简陋的；（级别或地位）低下的；不大的\\nvt. 使谦恭；轻松打败（尤指强大的对手）；低声下气\",\"audio\":\"humble.mp3\"},{\"word\":\"humidity\",\"pronun\":\"[hjuːˈmɪdəti]\",\"translation\":\"n. [气象] 湿度；湿气\",\"audio\":\"humidity.mp3\"},{\"word\":\"hurl\",\"pronun\":\"[hɜːrl]\",\"translation\":\"n. 用力的投掷\\nvt. 丢下；用力投掷；愤慨地说出\\nvi. 猛投；猛掷\",\"audio\":\"hurl.mp3\"},{\"word\":\"hurricane\",\"pronun\":\"[ˈhɜːrəkeɪn]\",\"translation\":\"n. 飓风，暴风\",\"audio\":\"hurricane.mp3\"},{\"word\":\"hustle\",\"pronun\":\"[ˈhʌsl]\",\"translation\":\"n. 推；奔忙；拥挤喧嚷\\nvt. 催促；猛推；强夺\\nvi. 赶紧；硬挤过去；骗取财富\",\"audio\":\"hustle.mp3\"},{\"word\":\"hypothesis\",\"pronun\":\"[haɪˈpɑːθəsɪs]\",\"translation\":\"n. 假设\",\"audio\":\"hypothesis.mp3\"},{\"word\":\"hysterical\",\"pronun\":\"[hɪˈsterɪkl]\",\"translation\":\"adj. 歇斯底里的；异常兴奋的\",\"audio\":\"hysterical.mp3\"},{\"word\":\"ideal\",\"pronun\":\"[aɪˈdiːəl]\",\"translation\":\"n. 理想；典范\\nadj. 理想的；完美的；想象的；不切实际的\",\"audio\":\"ideal.mp3\"},{\"word\":\"identical\",\"pronun\":\"[aɪˈdentɪk(ə)l]\",\"translation\":\"n. 完全相同的事物\\nadj. 同一的；完全相同的\",\"audio\":\"identical.mp3\"},{\"word\":\"identification\",\"pronun\":\"[aɪˌdentɪfɪˈkeɪʃn]\",\"translation\":\"n. 鉴定，识别；认同；身份证明\",\"audio\":\"identification.mp3\"},{\"word\":\"identify\",\"pronun\":\"[aɪˈdentɪfaɪ]\",\"translation\":\"vt. 确定；鉴定；识别，辨认出；使参与；把…看成一样 vi. 确定；认同；一致\",\"audio\":\"identify.mp3\"},{\"word\":\"ideology\",\"pronun\":\"[ˌaɪdiˈɑːlədʒiˌˌɪdiˈɑːlədʒi]\",\"translation\":\"n. 意识形态；思想意识；观念学\",\"audio\":\"ideology.mp3\"},{\"word\":\"idiom\",\"pronun\":\"[ˈɪdiəm]\",\"translation\":\"n. 成语，习语；土话\",\"audio\":\"idiom.mp3\"},{\"word\":\"idiot\",\"pronun\":\"[ˈɪdiət]\",\"translation\":\"n. 笨蛋，傻瓜；白痴\",\"audio\":\"idiot.mp3\"},{\"word\":\"ignite\",\"pronun\":\"[ɪɡˈnaɪt]\",\"translation\":\"vt. 点燃；使燃烧；使激动\\nvi. 点火；燃烧\",\"audio\":\"ignite.mp3\"},{\"word\":\"ignore\",\"pronun\":\"[ɪɡˈnɔːr]\",\"translation\":\"vt. 驳回诉讼；忽视；不理睬\",\"audio\":\"ignore.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

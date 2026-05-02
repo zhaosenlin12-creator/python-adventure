@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.600522+00:00",
+  "request": {
+    "lesson_id": "d4ccba8f826354744fd4837da28bbccf",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 554,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "d4ccba8f826354744fd4837da28bbccf",
+    "nextLessonId": "56a11c766fa73359e12b5ed9baf06a24",
+    "lessonName": "Open Your Eyes",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2f6681d6c177395f8145db3f3dbc80e0",
+        "index": 1,
+        "text": [
+          "Open Your Eyes\\nMy grandpa always says, \"The world is a beautiful place if you just open your eyes.\" Now I know what he means.\\nOne time, my friend's family invited me to go with them for a balloon ride.\\nWe all got in the basket. Then we started to lift off the ground. I got scared and closed my eyes.\\nWhen I opened one eye, I saw the trees below us. I quickly shut my eyes again.\\nSuddenly, my friend yelled,\"Look!\" A huge flock of geese was flying right by us. For a while, we blew right along with them. It was the most beautiful thing I had ever seen!\\nIt was an amazing sight. Just imagine... all I had to do was open my eyes.\\nGood advice, Grandpa!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

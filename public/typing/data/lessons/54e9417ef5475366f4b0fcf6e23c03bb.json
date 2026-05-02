@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:36.258399+00:00",
+  "request": {
+    "lesson_id": "54e9417ef5475366f4b0fcf6e23c03bb",
+    "course_id": "aaf391ebe3c578672e2811298ce699e2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "aaf391ebe3c578672e2811298ce699e2",
+    "order": 545,
+    "nextCourseId": "aaf391ebe3c578672e2811298ce699e2",
+    "courseName": "词语专项",
+    "lessonId": "54e9417ef5475366f4b0fcf6e23c03bb",
+    "nextLessonId": "bd4ce573f35369437853d5e6f1871336",
+    "lessonName": "比喻句1",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "24f9aa6c1abd6ce5a524b3b3339b459e",
+        "index": 1,
+        "text": [
+          "水泥道像铺上了一块彩色的地毯。这是一块印着落叶图案的、闪闪发光的地毯,从脚下一直铺到很远很远的地方,一直到路的尽头"
+        ],
+        "pinyin": "[[\"水\", \"shuǐ\"], [\"泥\", \"ní\"], [\"道\", \"dào\"], [\"像\", \"xiàng\"], [\"铺\", \"pū\"], [\"上\", \"shàng\"], [\"了\", \"le\"], [\"一\", \"yī\"], [\"块\", \"kuài\"], [\"彩\", \"cǎi\"], [\"色\", \"sè\"], [\"的\", \"de\"], [\"地\", \"dì\"], [\"毯\", \"tǎn\"], [\"。\", \"\"], [\"这\", \"zhè\"], [\"是\", \"shì\"], [\"一\", \"yī\"], [\"块\", \"kuài\"], [\"印\", \"yìn\"], [\"着\", \"zhe\"], [\"落\", \"luò\"], [\"叶\", \"yè\"], [\"图\", \"tú\"], [\"案\", \"àn\"], [\"的\", \"de\"], [\"、\", \"\"], [\"闪\", \"shǎn\"], [\"闪\", \"shǎn\"], [\"发\", \"fā\"], [\"光\", \"guāng\"], [\"的\", \"de\"], [\"地\", \"dì\"], [\"毯\", \"tǎn\"], [\",\", \"\"], [\"从\", \"cóng\"], [\"脚\", \"jiǎo\"], [\"下\", \"xià\"], [\"一\", \"yī\"], [\"直\", \"zhí\"], [\"铺\", \"pū\"], [\"到\", \"dào\"], [\"很\", \"hěn\"], [\"远\", \"yuǎn\"], [\"很\", \"hěn\"], [\"远\", \"yuǎn\"], [\"的\", \"de\"], [\"地\", \"dì\"], [\"方\", \"fāng\"], [\",\", \"\"], [\"一\", \"yī\"], [\"直\", \"zhí\"], [\"到\", \"dào\"], [\"路\", \"lù\"], [\"的\", \"de\"], [\"尽\", \"jìn\"], [\"头\", \"tóu\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

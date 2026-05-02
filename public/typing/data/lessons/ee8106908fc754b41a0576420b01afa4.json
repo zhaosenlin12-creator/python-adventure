@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.241705+00:00",
+  "request": {
+    "lesson_id": "ee8106908fc754b41a0576420b01afa4",
+    "course_id": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "order": 466,
+    "nextCourseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "courseName": "英语每日故事（初级）1-31",
+    "lessonId": "ee8106908fc754b41a0576420b01afa4",
+    "nextLessonId": "4680bd7c03f6bfed41e8b2f72cbea45f",
+    "lessonName": "The First Word",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e19c54c3dfed5ce7f80056275eedadf8",
+        "index": 1,
+        "text": [
+          "I wonder what the first word was. Who spoke the first word? How long ago?\\nWas it \"hello\"? Or was it \"goodbye\"?\\nEver since that first word, people have been talking.\\nI think I know what the first word was. Someone was cooking on a fire and burned himself. \"Ouch!!!\""
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

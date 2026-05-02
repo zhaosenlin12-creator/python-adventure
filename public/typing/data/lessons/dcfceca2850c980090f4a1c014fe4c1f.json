@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.495120+00:00",
+  "request": {
+    "lesson_id": "dcfceca2850c980090f4a1c014fe4c1f",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 656,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "dcfceca2850c980090f4a1c014fe4c1f",
+    "nextLessonId": "a0e528e6e2e2a99c1430f64bf6a0901b",
+    "lessonName": " 五年级下-8",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点五年级下 - 第8课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "cf06c22517082e1da6162dbe7c1aa217",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"talk quietly\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"talk_quietly.mp3\"},{\"word\":\"turn\",\"pronun\":\"[tɜːrn]\",\"translation\":\"n. 转弯；变化；(损害或有益于别人的)行为，举动，举止\\nvi. 转向；转变；转动\\nvt. 转动，使旋转；转弯；翻过来；兑换\",\"audio\":\"turn.mp3\"},{\"word\":\"take turns\",\"pronun\":\"\",\"translation\":\"na. 替换\",\"audio\":\"take_turns.mp3\"},{\"word\":\"bamboo\",\"pronun\":\"[ˌbæmˈbuː]\",\"translation\":\"n. 竹，竹子\\nadj. 竹制的；土著居民的\\nvt. 为…装上篾条\",\"audio\":\"bamboo.mp3\"},{\"word\":\"its\",\"pronun\":\"[ɪts]\",\"translation\":\"pron. 它的\",\"audio\":\"its.mp3\"},{\"word\":\"show\",\"pronun\":\"[ʃoʊ]\",\"translation\":\"n. 显示；表演；炫耀\\nvt. 显示；说明；演出；展出\\nvi. 显示；说明；指示\",\"audio\":\"show.mp3\"},{\"word\":\"anything\",\"pronun\":\"[ˈeniθɪŋ]\",\"translation\":\"pron. 任何事\",\"audio\":\"anything.mp3\"},{\"word\":\"else\",\"pronun\":\"[els]\",\"translation\":\"adj. 别的；其他的\\nadv. 其他；否则；另外\",\"audio\":\"else.mp3\"},{\"word\":\"exhibition\",\"pronun\":\"[ˌeksɪˈbɪʃn]\",\"translation\":\"n. 展览，显示；展览会；展览品\",\"audio\":\"exhibition.mp3\"},{\"word\":\"say\",\"pronun\":\"[seɪ]\",\"translation\":\"vt. 讲；说明；例如；声称；假设；指明\\nvi. 讲；表示；念；假定；背诵\",\"audio\":\"say.mp3\"},{\"word\":\"have a look\",\"pronun\":\"\",\"translation\":\"v. 看一看\",\"audio\":\"have_a_look.mp3\"},{\"word\":\"sushi\",\"pronun\":\"[ˈsuːʃi]\",\"translation\":\"n. 寿司（生鱼片冷饭团）\",\"audio\":\"sushi.mp3\"},{\"word\":\"teach\",\"pronun\":\"[tiːtʃ]\",\"translation\":\"vt. 教；教授；教导\\nvi. 教授；讲授；当老师\",\"audio\":\"teach.mp3\"},{\"word\":\"sure\",\"pronun\":\"[ʃʊr]\",\"translation\":\"adj. 确信的；可靠的；必定的\\nadv. 当然；的确\",\"audio\":\"sure.mp3\"},{\"word\":\"Canadian\",\"pronun\":\"[kəˈneɪdiən]\",\"translation\":\"n. 加拿大人\\nadj. 加拿大（人）的\",\"audio\":\"Canadian.mp3\"},{\"word\":\"Spanish\",\"pronun\":\"[ˈspænɪʃ]\",\"translation\":\"n. 西班牙语；西班牙人\\nadj. 西班牙的；西班牙人的；西班牙语的\",\"audio\":\"Spanish.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

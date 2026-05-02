@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.184640+00:00",
+  "request": {
+    "lesson_id": "09783a7c884661b551871a7b52526e24",
+    "course_id": "77636b47c0ae2f1a01e822bed50cbd42",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "77636b47c0ae2f1a01e822bed50cbd42",
+    "order": 243,
+    "nextCourseId": "77636b47c0ae2f1a01e822bed50cbd42",
+    "courseName": "高中必备3500词-上",
+    "lessonId": "09783a7c884661b551871a7b52526e24",
+    "nextLessonId": "eeef2929ee8bc3ed795f25bedfbf6e68",
+    "lessonName": "Chapter.1",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b3b6de63282c4e13e059b3accd24ff53",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"adult\",\"pronun\":\"[\\u02c8\\u00e6d\\u028clt]\",\"translation\":\"adj. \\u6210\\u5e74\\u7684; \\u6210\\u719f\\u7684; \\u5145\\u5206\\u957f\\u6210\\u7684...\"},{\"word\":\"badminton\",\"pronun\":\"[\\u02c8b\\u00e6dmint\\u0259n]\",\"translation\":\"n. \\u7fbd\\u6bdb\\u7403(\\u8fd0\\u52a8)\"},{\"word\":\"bath\",\"pronun\":\"[b\\u0251:\\u03b8]\",\"translation\":\"n. \\u6d17\\u6fa1; \\u6d74\\u5ba4; \\u6fa1\\u76c6\"},{\"word\":\"bee\",\"pronun\":\"[bi:]\",\"translation\":\"n. \\u8702; \\u871c\\u8702; \\u5fd9\\u788c\\u7684\\u4eba\"},{\"word\":\"belt\",\"pronun\":\"[belt]\",\"translation\":\"n. \\u5e26; \\u8170\\u5e26; \\u76ae\\u5e26; \\u533a\"},{\"word\":\"boot\",\"pronun\":\"[bu:t]\",\"translation\":\"n. \\u957f\\u7b52\\u9774; \\u9774\\u5b50; \\u957f\\u7edf\\u9774\"},{\"word\":\"botanical\",\"pronun\":\"[b\\u0259\\u02c8t\\u00e6nik\\u0259l]\",\"translation\":\"adj. \\u690d\\u7269\\u5b66\\u7684; \\u690d\\u7269\\u7684\"},{\"word\":\"bow\",\"pronun\":\"[b\\u0259u]\",\"translation\":\"v. \\u97a0\\u8eac; \\u70b9\\u5934; \\u7528\\u5f13\\u62c9\\u7434 n. \\u5f13...\"},{\"word\":\"breathe\",\"pronun\":\"[bri:\\u00f0]\",\"translation\":\"vt. \\u547c\\u5438; (\\u4f4e\\u58f0\\u5730)\\u8bf4\\u51fa vi. ...\"},{\"word\":\"butter\",\"pronun\":\"[\\u02c8b\\u028ct\\u0259]\",\"translation\":\"vt. \\u62b9\\u9ec4\\u6cb9\\u4e8e n. \\u9ec4\\u6cb9; \\u5976\\u6cb9\"},{\"word\":\"butterfly\",\"pronun\":\"[\\u02c8b\\u028ct\\u0259flai]\",\"translation\":\"n. \\u8774\\u8776; \\u65f6\\u9ae6\\u7684\\u4eba\"},{\"word\":\"button\",\"pronun\":\"[\\u02c8b\\u028ct\\u0259n]\",\"translation\":\"n. \\u6309\\u94ae; \\u94ae\\u6263\"},{\"word\":\"castle\",\"pronun\":\"[\\u02c8k\\u0251\\u02d0sl]\",\"translation\":\"n. \\u5821\\u5792; \\u57ce\\u5821\"},{\"word\":\"cave\",\"pronun\":\"[keiv]\",\"translation\":\"n. \\u5c71\\u6d1e; \\u6d1e\\u7a74; \\u7a91\\u6d1e\"},{\"word\":\"cheese\",\"pronun\":\"[t\\u0283i:z]\",\"translation\":\"n. \\u5976\\u916a; \\u4e73\\u916a; \\u5e72\\u916a\"},{\"word\":\"cherry\",\"pronun\":\"[\\u02c8t\\u0283eri:]\",\"translation\":\"n. \\u6a31\\u6843(\\u6811)\"},{\"word\":\"cigarette\",\"pronun\":\"[\\u02ccsi\\u0261\\u0259\\u02c8ret]\",\"translation\":\"n. \\u7eb8\\u70df; \\u9999\\u70df; \\u5377\\u70df\"},{\"word\":\"clap\",\"pronun\":\"[kl\\u00e6p]\",\"translation\":\"v. \\u62cd\\u624b; \\u62cd; \\u8f7b\\u62cd vi. \\u62cd\\u624b;...\"},{\"word\":\"clerk\",\"pronun\":\"[kl\\u0251:k]\",\"translation\":\"n. \\u804c\\u5458; \\u5e97\\u5458; \\u529e\\u4e8b\\u5458; (\\u6cd5\\u5ead\\u4e2d...\"},{\"word\":\"construction\",\"pronun\":\"[k\\u0259n\\u02c8str\\u028ck\\u0283n]\",\"translation\":\"\\u5de5\\u5730\"},{\"word\":\"cupboard\",\"pronun\":\"[\\u02c8k\\u028cb\\u0259d]\",\"translation\":\"n. \\u7897\\u67dc; \\u6a71\\u67dc; \\u7897\\u6a71; \\u5c0f\\u6a71\"},{\"word\":\"cycle\",\"pronun\":\"[\\u02c8saikl]\",\"translation\":\"v. \\u9a91\\u81ea\\u884c\\u8f66; \\u5faa\\u73af n. \\u81ea\\u884c\\u8f66; ...\"},{\"word\":\"dentist\",\"pronun\":\"[\\u02c8dentist]\",\"translation\":\"n. \\u7259\\u79d1\\u533b\\u751f; \\u7259\\u533b\"},{\"word\":\"dessert\",\"pronun\":\"[di\\u02c8z\\u0259:t]\",\"translation\":\"n. \\u751c\\u98df\"},{\"word\":\"diamond\",\"pronun\":\"[\\u02c8dai\\u0259m\\u0259nd]\",\"translation\":\"n. \\u94bb\\u77f3; \\u91d1\\u521a\\u77f3; \\u91d1\\u94a2\\u77f3; \\u83f1\\u5f62\"},{\"word\":\"diet\",\"pronun\":\"[\\u02c8dai\\u0259t]\",\"translation\":\"v. \\u8282\\u98df n. \\u65e5\\u5e38\\u996e\\u98df; \\u89c4\\u5b9a\\u996e\\u98df;...\"},{\"word\":\"dinosaur\",\"pronun\":\"[\\u02c8dain\\u0259s\\u0254:]\",\"translation\":\"n. \\u6050\\u9f99\"},{\"word\":\"district\",\"pronun\":\"[\\u02c8distrikt]\",\"translation\":\"n. \\u533a; \\u884c\\u653f\\u533a; \\u5730\\u533a; \\u533a\\u57df\"},{\"word\":\"dive\",\"pronun\":\"[daiv]\",\"translation\":\"vi. \\u8df3\\u6c34; \\u6f5c\\u6c34; \\u4fef\\u51b2; \\u6251\"},{\"word\":\"dolphin\",\"pronun\":\"[\\u02c8d\\u0254lfin]\",\"translation\":\"n. \\u6d77\\u8c5a\"},{\"word\":\"dot\",\"pronun\":\"[d\\u0254t]\",\"translation\":\"n. \\u5c0f\\u5706\\u70b9\"},{\"word\":\"drill\",\"pronun\":\"[dril]\",\"translation\":\"n. \\u94bb\\u5b54\\u5668\"},{\"word\":\"dust\",\"pronun\":\"[d\\u028cst]\",\"translation\":\"vt. \\u53bb\\u6389\\u2026\\u4e0a\\u7684\\u7070\\u5c18 n. \\u7070\\u5c18; \\u5c18...\"},{\"word\":\"electricity\",\"pronun\":\"[ilek\\u02c8trisiti]\",\"translation\":\"n. \\u7535; \\u7535\\u5b66; \\u7535\\u6d41\"},{\"word\":\"engine\",\"pronun\":\"[\\u02c8end\\u0292in]\",\"translation\":\"n. \\u53d1\\u52a8\\u673a; \\u5f15\\u64ce; \\u673a\\u8f66; \\u706b\\u8f66\\u5934\"},{\"word\":\"entrance\",\"pronun\":\"[\\u02c8entr\\u0259ns]\",\"translation\":\"n. \\u8fdb\\u5165; \\u5165\\u53e3; \\u95e8\\u53e3; \\u5165\\u573a\"},{\"word\":\"estate\",\"pronun\":\"[is\\u02c8teit]\",\"translation\":\"n. \\u571f\\u5730; \\u5730\\u4ea7; \\u623f\\u5730\\u4ea7; \\u8d22\\u4ea7\"},{\"word\":\"fine\",\"pronun\":\"[fain]\",\"translation\":\"adj. \\u597d\\u7684; \\u7ec6\\u5fae\\u7684; \\u7ec6\\u81f4\\u7684; \\u7cbe...\"},{\"word\":\"flat\",\"pronun\":\"[fl\\u00e6t]\",\"translation\":\"n. \\u5355\\u5143\\u623f\"},{\"word\":\"flour\",\"pronun\":\"[\\u02c8flau\\u0259]\",\"translation\":\"n. \\u9762\\u7c89; \\u7c89; \\u7c89\\u72b6\\u7269\\u8d28\"},{\"word\":\"fold\",\"pronun\":\"[f\\u0259uld]\",\"translation\":\"v. \\u6298\\u53e0; \\u6298\\u8d77\\u6765; \\u5408\\u62e2 n. \\u8936;...\"},{\"word\":\"forecast\",\"pronun\":\"[\\u02c8f\\u0254:-k\\u0251:st]\",\"translation\":\"vt. \\u9884\\u8a00; \\u9884\\u793a vt.&n. \\u9884\\u6d4b...\"},{\"word\":\"forward\",\"pronun\":\"[\\u02c8f\\u0254:w\\u0259d]\",\"translation\":\"adj.&adv. \\u5411\\u524d\\u7684; \\u5411\\u524d n....\"},{\"word\":\"fountain\",\"pronun\":\"[\\u02c8fauntin]\",\"translation\":\"n. \\u6cc9\\u6c34; \\u55b7\\u6cc9; \\u6e90\\u6cc9\"},{\"word\":\"fox\",\"pronun\":\"[f\\u0254ks]\",\"translation\":\"vt. \\u4f7f\\u56f0\\u60d1; \\u6b3a\\u9a97; \\u4f7f\\u53d8\\u9178 n. ...\"},{\"word\":\"frog\",\"pronun\":\"[fr\\u0254\\u0261]\",\"translation\":\"n. \\u9752\\u86d9; \\u86d9; \\u86d9\\u7c7b\\u52a8\\u7269\"},{\"word\":\"gas\",\"pronun\":\"[\\u0261\\u00e6s]\",\"translation\":\"n. \\u7164\\u6c14; \\u6c7d\\u6cb9; \\u5929\\u7136\\u6c14; \\u6c14\\u4f53\"},{\"word\":\"giant\",\"pronun\":\"[\\u02c8d\\u0292ai\\u0259nt]\",\"translation\":\"adj. \\u5de8\\u5927\\u7684 n. \\u5de8\\u4eba\"},{\"word\":\"goal\",\"pronun\":\"[\\u0261\\u0259ul]\",\"translation\":\"n. \\u5f97\\u5206\"},{\"word\":\"ham\",\"pronun\":\"[h\\u00e6m]\",\"translation\":\"n. \\u706b\\u817f; \\u65e0\\u7ebf\\u7535\\u6536\\u53d1\\u62a5\\u4e1a\\u4f59\\u7231\\u597d\\u8005\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 15,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

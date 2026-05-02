@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.320492+00:00",
+  "request": {
+    "lesson_id": "e757f65e08f07aa6a2ebf3b3b6cd4aa0",
+    "course_id": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "order": 345,
+    "nextCourseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "courseName": "小学必备古诗75首（2）",
+    "lessonId": "e757f65e08f07aa6a2ebf3b3b6cd4aa0",
+    "nextLessonId": "d1b208135c9e377736a968c1f0c0e05f",
+    "lessonName": "池上",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b1326b00a151b6c319d3de4ee0a03b78",
+        "index": 1,
+        "text": [
+          "池上\\n白居易\\n小娃撑小艇，偷采白莲回。\\n不解藏踪迹，浮萍一道开。"
+        ],
+        "pinyin": "[[\"池\", \"chí\"], [\"上\", \"shàng\"], [\"\\n\", \"\"], [\"白\", \"bái\"], [\"居\", \"jū\"], [\"易\", \"yì\"], [\"\\n\", \"\"], [\"小\", \"xiǎo\"], [\"娃\", \"wá\"], [\"撑\", \"chēng\"], [\"小\", \"xiǎo\"], [\"艇\", \"tǐng\"], [\"，\", \"\"], [\"偷\", \"tōu\"], [\"采\", \"cǎi\"], [\"白\", \"bái\"], [\"莲\", \"lián\"], [\"回\", \"huí\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"不\", \"bù\"], [\"解\", \"jiě\"], [\"藏\", \"cáng\"], [\"踪\", \"zōng\"], [\"迹\", \"jì\"], [\"，\", \"\"], [\"浮\", \"fú\"], [\"萍\", \"píng\"], [\"一\", \"yī\"], [\"道\", \"dào\"], [\"开\", \"kāi\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

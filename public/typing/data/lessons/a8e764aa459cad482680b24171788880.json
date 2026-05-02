@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.478731+00:00",
+  "request": {
+    "lesson_id": "a8e764aa459cad482680b24171788880",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 82,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "a8e764aa459cad482680b24171788880",
+    "nextLessonId": "f8ec2a88b448ec4b91ecaac0dc97b998",
+    "lessonName": "KET核心词-85",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第85课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "706d796529a12d32c013098880b141a4",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"station\",\"pronun\":\"[ˈsteɪʃn]\",\"translation\":\"n. 车站；驻地；地位；身份\\nvt. 配置；安置；驻扎\",\"audio\":\"station.mp3\"},{\"word\":\"suitcase\",\"pronun\":\"[ˈsuːtkeɪs]\",\"translation\":\"n. [轻] 手提箱；衣箱\",\"audio\":\"suitcase.mp3\"},{\"word\":\"take off\",\"pronun\":\"[ˈteɪk ɔːf]\",\"translation\":\"v. (飞机)起飞；出去；拿掉；移送\",\"audio\":\"take_off.mp3\"},{\"word\":\"terminal\",\"pronun\":\"[ˈtɜːrmɪnl]\",\"translation\":\"n. 末端；终点；终端机；极限\\nadj. 末端的；终点的；晚期的\",\"audio\":\"terminal.mp3\"},{\"word\":\"timetable\",\"pronun\":\"[ˈtaɪmteɪbl]\",\"translation\":\"n. 时间表；时刻表；课程表\",\"audio\":\"timetable.mp3\"},{\"word\":\"tour\",\"pronun\":\"[tʊr]\",\"translation\":\"n. 旅游，旅行；巡回演出\\nvt. 旅行，在……旅游；在……作巡回演出\\nvi. 旅行，旅游；作巡回演出\",\"audio\":\"tour.mp3\"},{\"word\":\"tourist\",\"pronun\":\"[ˈtʊrɪst]\",\"translation\":\"n. 旅行者，观光客\\nadj. 旅游的\\nvt. 在旅行参观\\nvi. 旅游；观光\\nadv. 坐旅游车厢；坐经济舱\",\"audio\":\"tourist.mp3\"},{\"word\":\"traffic\",\"pronun\":\"[ˈtræfɪk]\",\"translation\":\"n. 交通；运输；贸易；[通信] 通信量\\nvt. 用…作交换；在…通行\\nvi. 交易，买卖\",\"audio\":\"traffic.mp3\"},{\"word\":\"traffic lights\",\"pronun\":\"\",\"translation\":\"n. 交通信号灯；红绿灯\",\"audio\":\"traffic_lights.mp3\"},{\"word\":\"trip\",\"pronun\":\"[trɪp]\",\"translation\":\"n. 旅行；绊倒；差错\\nvt. 绊倒；使犯错\\nvi. 绊倒；远足；犯错误；轻快地走\",\"audio\":\"trip.mp3\"},{\"word\":\"visit\",\"pronun\":\"[ˈvɪzɪt]\",\"translation\":\"n. 访问；参观；逗留\\nvt. 访问；参观；视察\\nvi. 访问；暂住；闲谈\",\"audio\":\"visit.mp3\"},{\"word\":\"visitor\",\"pronun\":\"[ˈvɪzɪtər]\",\"translation\":\"n. 访问者，参观者；视察者；候鸟\",\"audio\":\"visitor.mp3\"},{\"word\":\"uncomfortable\",\"pronun\":\"[ʌnˈkʌmftəbl; ʌnˈkʌmfərtəbl]\",\"translation\":\"adj. 不舒服的；不安的\",\"audio\":\"uncomfortable.mp3\"},{\"word\":\"waiting room\",\"pronun\":\"\",\"translation\":\"n. 候诊室；等候室；候车室\",\"audio\":\"waiting_room.mp3\"},{\"word\":\"art\",\"pronun\":\"[ɑːrt]\",\"translation\":\"n. 艺术；美术；艺术品\\nv. 是（be的变体）\\nadj. 艺术的；艺术品的\",\"audio\":\"art.mp3\"},{\"word\":\"biology\",\"pronun\":\"[baɪˈɑːlədʒi]\",\"translation\":\"n. （一个地区全部的）生物；生物学\",\"audio\":\"biology.mp3\"},{\"word\":\"boring\",\"pronun\":\"[ˈbɔːrɪŋ]\",\"translation\":\"n. 钻孔\\nadj. 无聊的；令人厌烦的\\nv. 钻孔；使厌烦；挖空（bore的ing形式）\",\"audio\":\"boring.mp3\"},{\"word\":\"chemistry\",\"pronun\":\"[ˈkemɪstri]\",\"translation\":\"n. 化学；化学过程\",\"audio\":\"chemistry.mp3\"},{\"word\":\"difficult\",\"pronun\":\"[ˈdɪfɪkəlt]\",\"translation\":\"adj. 困难的；不随和的；执拗的\",\"audio\":\"difficult.mp3\"},{\"word\":\"dull\",\"pronun\":\"[dʌl]\",\"translation\":\"adj. 钝的；迟钝的；无趣的；呆滞的；阴暗的\\nvt. 使迟钝；使阴暗；缓和\\nvi. 减少；变迟钝\",\"audio\":\"dull.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

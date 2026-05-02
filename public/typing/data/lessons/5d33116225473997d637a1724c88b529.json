@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.241128+00:00",
+  "request": {
+    "lesson_id": "5d33116225473997d637a1724c88b529",
+    "course_id": "21fe8d60de407da95e1abc33ac636014",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "21fe8d60de407da95e1abc33ac636014",
+    "order": 40,
+    "nextCourseId": "21fe8d60de407da95e1abc33ac636014",
+    "courseName": "上排字母",
+    "lessonId": "5d33116225473997d637a1724c88b529",
+    "nextLessonId": "dcc167ff1256690e03b569dbd4985351",
+    "lessonName": "左手上排字母",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-up-row-left.4905c854d1.png",
+    "description": "左手上排字母",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5127de5999f4cfa78a70120b1831bfbe",
+        "index": 1,
+        "text": [
+          "de da te se wa ga ta ge re er wa qq sa se ta re ss gg ww qq tt qqq ttt ww ggg qq ww tt rr"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "",
+        "key": "de atswgrq",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

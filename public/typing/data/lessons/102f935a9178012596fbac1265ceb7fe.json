@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.183925+00:00",
+  "request": {
+    "lesson_id": "102f935a9178012596fbac1265ceb7fe",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 31,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "102f935a9178012596fbac1265ceb7fe",
+    "nextLessonId": "59bff2ea5928f3e0720e1665d6ab1808",
+    "lessonName": "2022年版 PEP-五年级-下册-1",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-五年级-下册 - 第1课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "bcb414119f125fccb84601bd3d192bb9",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"eat\",\"pronun\":\"[iːt]\",\"translation\":\"vt. 吃，喝；腐蚀；烦扰\\nvi. 进食；腐蚀，侵蚀\",\"audio\":\"eat.mp3\"},{\"word\":\"breakfast\",\"pronun\":\"[ˈbrekfəst]\",\"translation\":\"n. 早餐；早饭\\nvt. 为…供应早餐\\nvi. 吃早餐\",\"audio\":\"breakfast.mp3\"},{\"word\":\"have\",\"pronun\":\"[həv; əv; hæv]\",\"translation\":\"aux. 已经\\nvt. 有；让；拿；从事；允许\",\"audio\":\"have.mp3\"},{\"word\":\"class\",\"pronun\":\"[klæs]\",\"translation\":\"n. 阶级；班级；种类；班；等级\\nadj. 极好的；很好的，优秀的，出色的\\nvt. 分类；把…分等级；把…归入某等级，把…看作（或分类、归类）；把…编入某一班级\\nvi. 属于…类（或等级），被列为某类（或某级）\",\"audio\":\"class.mp3\"},{\"word\":\"play\",\"pronun\":\"[pleɪ]\",\"translation\":\"n. 游戏；比赛；剧本\\nvt. 游戏；扮演；演奏；播放；同…比赛\\nvi. 演奏；玩耍；上演；参加比赛\",\"audio\":\"play.mp3\"},{\"word\":\"exercise\",\"pronun\":\"[ˈeksərsaɪz]\",\"translation\":\"n. 运动；练习；运用；操练；礼拜；典礼\\nvt. 锻炼；练习；使用；使忙碌；使惊恐\\nvi. 运动；练习\",\"audio\":\"exercise.mp3\"},{\"word\":\"do\",\"pronun\":\"[duː; də; du; doʊ]\",\"translation\":\"vi. 行，足够；生长\\nn. 要求；规定；C大调音阶中的第一音\\nv. 做；干；学习；研究；进行；完成；解答；整理；算出；引起；行过\\naux. 助动词（构成疑问句和否定句）；（代替动词）；（用于加强语气）\\nn. （口语）事件；（主英国口语）诈骗；（主英国、新西兰口语）宴会；（口语）必须做到的事情\",\"audio\":\"do.mp3\"},{\"word\":\"morning\",\"pronun\":\"[ˈmɔːrnɪŋ]\",\"translation\":\"n. 早晨；黎明；初期\",\"audio\":\"morning.mp3\"},{\"word\":\"dinner\",\"pronun\":\"[ˈdɪnər]\",\"translation\":\"n. 晚餐，晚宴；宴会；正餐\",\"audio\":\"dinner.mp3\"},{\"word\":\"clean\",\"pronun\":\"[kliːn]\",\"translation\":\"n. 打扫\\nadj. 清洁的，干净的；清白的\\nvt. 使干净\\nvi. 打扫，清扫\\nadv. 完全地\",\"audio\":\"clean.mp3\"},{\"word\":\"my\",\"pronun\":\"[maɪ]\",\"translation\":\"pron. 我的\\nint. 哎呀（表示惊奇等）；喔唷\",\"audio\":\"my.mp3\"},{\"word\":\"room\",\"pronun\":\"[ruːm; rʊm]\",\"translation\":\"n. 房间；空间；余地；机会；房间里所有的人\\nvt. 为…提供住处；租房，合住；投宿，住宿；留…住宿\\nvi. 居住；住宿\",\"audio\":\"room.mp3\"},{\"word\":\"go\",\"pronun\":\"[ɡoʊ]\",\"translation\":\"n. 去；进行；尝试\\nvi. 走；达到；运转；趋于\\nvt. 忍受；出产；以…打赌\\n[复数 goes 第三人称单数 goes 过去式 went 过去分词 gone 现在分词 going]\",\"audio\":\"go.mp3\"},{\"word\":\"for\",\"pronun\":\"[fər; fɔːr]\",\"translation\":\"prep. 为，为了；因为；给；对于；至于；适合于\\nconj. 因为\",\"audio\":\"for.mp3\"},{\"word\":\"a\",\"pronun\":\"[ə; eɪ]\",\"translation\":\"n. 字母A；第一流的；学业成绩达最高标准的评价符号\\nabbr. [物]安（ampere）\",\"audio\":\"a.mp3\"},{\"word\":\"walk\",\"pronun\":\"[wɔːk]\",\"translation\":\"n. 步行，走；散步\\nvi. 走，步行；散步\\nvt. 散步；走过\",\"audio\":\"walk.mp3\"},{\"word\":\"shopping\",\"pronun\":\"[ˈʃɑːpɪŋ]\",\"translation\":\"n. 购物，买东西\\nv. 购物（shop的ing形式）\",\"audio\":\"shopping.mp3\"},{\"word\":\"take\",\"pronun\":\"[teɪk]\",\"translation\":\"vi. 拿；获得\\nvt. 拿，取；采取；接受（礼物等）；买，花费；耗费（时间等）\\nn. 捕获量；看法；利益，盈益；（入场券的）售得金额\",\"audio\":\"take.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

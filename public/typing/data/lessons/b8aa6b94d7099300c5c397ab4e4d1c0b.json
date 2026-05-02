@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.670802+00:00",
+  "request": {
+    "lesson_id": "b8aa6b94d7099300c5c397ab4e4d1c0b",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 125,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "b8aa6b94d7099300c5c397ab4e4d1c0b",
+    "nextLessonId": "0244a4f2a5b3b21d226d17685d0c1246",
+    "lessonName": "KET核心词-77",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第77课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "95cc8e1b30d4bb27e60fa24c556e99f4",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"dessert\",\"pronun\":\"[dɪˈzɜːrt]\",\"translation\":\"n. 餐后甜点；甜点心\",\"audio\":\"dessert.mp3\"},{\"word\":\"dinner\",\"pronun\":\"[ˈdɪnər]\",\"translation\":\"n. 晚餐，晚宴；宴会；正餐\",\"audio\":\"dinner.mp3\"},{\"word\":\"dish\",\"pronun\":\"[dɪʃ]\",\"translation\":\"n. 盘；餐具；一盘食物；外貌有吸引力的人\\nvt. 盛于碟盘中；分发；使某人的希望破灭；说（某人）的闲话\\nvi. 成碟状；闲谈\",\"audio\":\"dish.mp3\"},{\"word\":\"duck\",\"pronun\":\"[dʌk]\",\"translation\":\"n. 鸭子；鸭肉；（英）宝贝儿；零分\\nvt. 躲避；猛按…入水\\nvi. 闪避；没入水中\",\"audio\":\"duck.mp3\"},{\"word\":\"egg\",\"pronun\":\"[eɡ]\",\"translation\":\"n. 蛋；卵子；家伙；鸡蛋\\nvt. 煽动；怂恿\",\"audio\":\"egg.mp3\"},{\"word\":\"fish\",\"pronun\":\"[fɪʃ]\",\"translation\":\"n. 鱼，鱼类\\nvt. 钓鱼，捕鱼；搜寻\\nvi. 捕鱼，钓鱼；用钩捞取\",\"audio\":\"fish.mp3\"},{\"word\":\"flour\",\"pronun\":\"[ˈflaʊər]\",\"translation\":\"n. 面粉；粉状物质\\nvt. 撒粉于；把…磨成粉\",\"audio\":\"flour.mp3\"},{\"word\":\"food\",\"pronun\":\"[fuːd]\",\"translation\":\"n. 食物；养料\",\"audio\":\"food.mp3\"},{\"word\":\"French fries\",\"pronun\":\"[frentʃ fraɪz]\",\"translation\":\"n. 【食】炸薯条\",\"audio\":\"French_fries.mp3\"},{\"word\":\"fruit\",\"pronun\":\"[fruːt]\",\"translation\":\"n. 水果；产物\\nvt. 使……结果实\\nvi. 结果实\",\"audio\":\"fruit.mp3\"},{\"word\":\"garlic\",\"pronun\":\"[ˈɡɑːrlɪk]\",\"translation\":\"n. 大蒜；蒜头\",\"audio\":\"garlic.mp3\"},{\"word\":\"grape\",\"pronun\":\"[ɡreɪp]\",\"translation\":\"n. 葡萄；葡萄酒；葡萄树；葡萄色\",\"audio\":\"grape.mp3\"},{\"word\":\"ham\",\"pronun\":\"[hæm]\",\"translation\":\"adj. 过火的；做作的\\nvi. 表演过火\\nvt. 演得过火\\nn. 火腿；业余无线电爱好者；蹩脚演员\",\"audio\":\"ham.mp3\"},{\"word\":\"honey\",\"pronun\":\"[ˈhʌni]\",\"translation\":\"n. 蜂蜜；宝贝；甜蜜\\nadj. 甘美的；蜂蜜似的\\nvt. 对…说甜言蜜语；加蜜使甜\\nvi. 奉承；说甜言蜜语\",\"audio\":\"honey.mp3\"},{\"word\":\"ice cream\",\"pronun\":\"[ˈaɪs kriːm]\",\"translation\":\"n. 【食】冰淇淋\",\"audio\":\"ice_cream.mp3\"},{\"word\":\"jam\",\"pronun\":\"[dʒæm]\",\"translation\":\"n. 果酱；拥挤；困境；扣篮\\nvt. 使堵塞；挤进，使塞满；混杂；压碎\\nvi. 堵塞；轧住\",\"audio\":\"jam.mp3\"},{\"word\":\"juice\",\"pronun\":\"[dʒuːs]\",\"translation\":\"n. （水果）汁，液；果汁\",\"audio\":\"juice.mp3\"},{\"word\":\"lamb\",\"pronun\":\"[læm]\",\"translation\":\"n. 羔羊，小羊；羔羊肉\\nvt. 生小羊，产羔羊\\nvi. 生小羊，产羔羊\",\"audio\":\"lamb.mp3\"},{\"word\":\"lemon\",\"pronun\":\"[ˈlemən]\",\"translation\":\"adj. 柠檬色的\\nn. 柠檬\",\"audio\":\"lemon.mp3\"},{\"word\":\"lemonade\",\"pronun\":\"[ˌleməˈneɪd]\",\"translation\":\"n. 柠檬水\",\"audio\":\"lemonade.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

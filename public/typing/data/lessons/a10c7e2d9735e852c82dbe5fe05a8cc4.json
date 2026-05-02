@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.443576+00:00",
+  "request": {
+    "lesson_id": "a10c7e2d9735e852c82dbe5fe05a8cc4",
+    "course_id": "30951c93875a1e260feda8cb699005df",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "30951c93875a1e260feda8cb699005df",
+    "order": 509,
+    "nextCourseId": "30951c93875a1e260feda8cb699005df",
+    "courseName": "英语每日故事（初级）32-61",
+    "lessonId": "a10c7e2d9735e852c82dbe5fe05a8cc4",
+    "nextLessonId": "02db6d5aecbe1911e28c2d50e7f52965",
+    "lessonName": "Spring Time",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "218d5f5903cff2bc64decd231d16d7b3",
+        "index": 1,
+        "text": [
+          "It's a beautiful spring day. Matt and his sister go for a walk. Suddenly, they see a big black bear. Matt and his sister run as fast as they can. When they stop, they look back and the bear is gone. Phew! They are safe. Bears sleep all winter. When they wake up in the spring, they are hungry. That's why Matt and his sister ran away fast. They didn't want to become bear food."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

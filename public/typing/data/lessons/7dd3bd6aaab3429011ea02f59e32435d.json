@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.849023+00:00",
+  "request": {
+    "lesson_id": "7dd3bd6aaab3429011ea02f59e32435d",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 386,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "7dd3bd6aaab3429011ea02f59e32435d",
+    "nextLessonId": "1a6776671ecb3bd15555de623fd0de49",
+    "lessonName": "六级词汇正序版-74",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第74课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8157b1003caf13ea09f97c4a509f2187",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"obscure\",\"pronun\":\"[əbˈskjʊr]\",\"translation\":\"adj. 昏暗的，朦胧的；晦涩的，不清楚的；隐蔽的；不著名的，无名的\\nvt. 使…模糊不清，掩盖；隐藏；使难理解\\nn. 某种模糊的或不清楚的东西\",\"audio\":\"obscure.mp3\"},{\"word\":\"obstacle\",\"pronun\":\"[ˈɑːbstək(ə)l]\",\"translation\":\"n. 障碍，干扰；妨害物\",\"audio\":\"obstacle.mp3\"},{\"word\":\"obtain\",\"pronun\":\"[əbˈteɪn]\",\"translation\":\"vi. 获得；流行\\nvt. 获得\",\"audio\":\"obtain.mp3\"},{\"word\":\"occasional\",\"pronun\":\"[əˈkeɪʒənl]\",\"translation\":\"adj. 偶然的；临时的；特殊场合的\",\"audio\":\"occasional.mp3\"},{\"word\":\"occupation\",\"pronun\":\"[ˌɑːkjuˈpeɪʃn]\",\"translation\":\"n. 职业；占有；消遣；占有期\",\"audio\":\"occupation.mp3\"},{\"word\":\"occupy\",\"pronun\":\"[ˈɑːkjupaɪ]\",\"translation\":\"vt. 占据，占领；居住；使忙碌\",\"audio\":\"occupy.mp3\"},{\"word\":\"occur\",\"pronun\":\"[əˈkɜːr]\",\"translation\":\"vi. 发生；出现；存在\",\"audio\":\"occur.mp3\"},{\"word\":\"odor\",\"pronun\":\"[ˈoʊdər]\",\"translation\":\"n. 气味；名声\",\"audio\":\"odor.mp3\"},{\"word\":\"offense\",\"pronun\":\"[əˈfens]\",\"translation\":\"n. 犯罪，过错；进攻；触怒；引起反感的事物\",\"audio\":\"offense.mp3\"},{\"word\":\"offensive\",\"pronun\":\"[əˈfensɪv]\",\"translation\":\"adj. 攻击的；冒犯的；无礼的；讨厌的\\nn. 攻势；攻击\",\"audio\":\"offensive.mp3\"},{\"word\":\"offset\",\"pronun\":\"[ˈɔːfset]\",\"translation\":\"n. 抵消，补偿；平版印刷；支管\\nvt. 抵消；弥补；用平版印刷术印刷\\nvi. 装支管\",\"audio\":\"offset.mp3\"},{\"word\":\"offspring\",\"pronun\":\"[ˈɔːfsprɪŋ]\",\"translation\":\"n. 后代，子孙；产物\",\"audio\":\"offspring.mp3\"},{\"word\":\"olive\",\"pronun\":\"[ˈɑːlɪv]\",\"translation\":\"n. 橄榄；橄榄树；橄榄色\\nadj. 橄榄的；橄榄色的\",\"audio\":\"olive.mp3\"},{\"word\":\"ongoing\",\"pronun\":\"[ˈɑːnɡoʊɪŋ]\",\"translation\":\"adj. 不间断的，进行的；前进的\\nn. 前进；行为，举止\",\"audio\":\"ongoing.mp3\"},{\"word\":\"opaque\",\"pronun\":\"[oʊˈpeɪk]\",\"translation\":\"adj. 不透明的；不传热的；迟钝的\\nn. 不透明物\\nvt. 使不透明；使不反光\",\"audio\":\"opaque.mp3\"},{\"word\":\"opponent\",\"pronun\":\"[əˈpoʊnənt]\",\"translation\":\"n. 对手；反对者；敌手\\nadj. 对立的；敌对的\",\"audio\":\"opponent.mp3\"},{\"word\":\"oppose\",\"pronun\":\"[əˈpoʊz]\",\"translation\":\"vt. 反对；对抗，抗争\\nvi. 反对\",\"audio\":\"oppose.mp3\"},{\"word\":\"oppress\",\"pronun\":\"[əˈpres]\",\"translation\":\"vt. 压迫，压抑；使……烦恼；使……感到沉重\",\"audio\":\"oppress.mp3\"},{\"word\":\"optical\",\"pronun\":\"[ˈɑːptɪk(ə)l]\",\"translation\":\"adj. 光学的；眼睛的，视觉的\",\"audio\":\"optical.mp3\"},{\"word\":\"optimism\",\"pronun\":\"[ˈɑːptɪmɪzəm]\",\"translation\":\"n. 乐观；乐观主义\",\"audio\":\"optimism.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

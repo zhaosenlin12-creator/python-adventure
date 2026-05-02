@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.745450+00:00",
+  "request": {
+    "lesson_id": "a2a80651867a311fa55d65f788b6e9da",
+    "course_id": "e22bc4218a485f29edeedf729586a38c",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e22bc4218a485f29edeedf729586a38c",
+    "order": 25,
+    "nextCourseId": "e22bc4218a485f29edeedf729586a38c",
+    "courseName": "基础词汇",
+    "lessonId": "a2a80651867a311fa55d65f788b6e9da",
+    "nextLessonId": "a719e2e361dcf1798c98e5fbf9972cfb",
+    "lessonName": "基础词汇-25",
+    "icon": "data/assets/daziya.com/key-icon_code-word.cd253668a4.png",
+    "description": "编程基础词汇 - 基础词汇-25",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5d3d7235d4ee7e4d9c4c496f3b6c3b01",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"promise\",\"pronun\":\"[\\u02c8pr\\u0251\\u02d0m\\u026as]\",\"translation\":\"\\u627f\\u8bfa\\/\\u5f02\\u6b65\\u5bf9\\u8c61\"},{\"word\":\"future\",\"pronun\":\"[\\u02c8fju\\u02d0t\\u0283\\u0259r]\",\"translation\":\"\\u672a\\u6765\\u5bf9\\u8c61\\/\\u5f02\\u6b65\\u7ed3\\u679c\"},{\"word\":\"resolve\",\"pronun\":\"[r\\u026a\\u02c8z\\u0251\\u02d0lv]\",\"translation\":\"\\u89e3\\u51b3\\/\\u5b8c\\u6210\"},{\"word\":\"reject\",\"pronun\":\"[r\\u026a\\u02c8d\\u0292ekt]\",\"translation\":\"\\u62d2\\u7edd\\/\\u5931\\u8d25\"},{\"word\":\"defer\",\"pronun\":\"[d\\u026a\\u02c8f\\u025c\\u02d0r]\",\"translation\":\"\\u5ef6\\u8fdf\\u6267\\u884c\"},{\"word\":\"delay\",\"pronun\":\"[d\\u026a\\u02c8le\\u026a]\",\"translation\":\"\\u5ef6\\u8fdf\"},{\"word\":\"timeout\",\"pronun\":\"[\\u02c8ta\\u026ama\\u028at]\",\"translation\":\"\\u8d85\\u65f6\"},{\"word\":\"interval\",\"pronun\":\"[\\u02c8\\u026ant\\u0259rvl]\",\"translation\":\"\\u95f4\\u9694\"},{\"word\":\"schedule\",\"pronun\":\"[\\u02c8sked\\u0292u\\u02d0l]\",\"translation\":\"\\u8c03\\u5ea6\"},{\"word\":\"event\",\"pronun\":\"[\\u026a\\u02c8vent]\",\"translation\":\"\\u4e8b\\u4ef6\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

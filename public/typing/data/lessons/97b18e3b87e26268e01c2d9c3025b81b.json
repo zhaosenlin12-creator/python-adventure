@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.006410+00:00",
+  "request": {
+    "lesson_id": "97b18e3b87e26268e01c2d9c3025b81b",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 418,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "97b18e3b87e26268e01c2d9c3025b81b",
+    "nextLessonId": "3133e38aa1ac501b5ea9f6cd6adbb0fc",
+    "lessonName": "六级词汇正序版-33",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第33课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "629cb5de607ddf23c27b07de59245272",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"destruction\",\"pronun\":\"[dɪˈstrʌkʃn]\",\"translation\":\"n. 破坏，毁灭；摧毁\",\"audio\":\"destruction.mp3\"},{\"word\":\"destructive\",\"pronun\":\"[dɪˈstrʌktɪv]\",\"translation\":\"adj. 破坏的；毁灭性的；有害的，消极的\",\"audio\":\"destructive.mp3\"},{\"word\":\"detach\",\"pronun\":\"[dɪˈtætʃ]\",\"translation\":\"vt. 分离；派遣；使超然\",\"audio\":\"detach.mp3\"},{\"word\":\"detail\",\"pronun\":\"[ˈdiːteɪlˌdɪˈteɪl]\",\"translation\":\"n. 细节，详情\\nvt. 详述；选派\\nvi. 画详图\",\"audio\":\"detail.mp3\"},{\"word\":\"detain\",\"pronun\":\"[dɪˈteɪn]\",\"translation\":\"vt. 拘留；留住；耽搁\",\"audio\":\"detain.mp3\"},{\"word\":\"detect\",\"pronun\":\"[dɪˈtekt]\",\"translation\":\"vt. 察觉；发现；探测\",\"audio\":\"detect.mp3\"},{\"word\":\"detection\",\"pronun\":\"[dɪˈtekʃn]\",\"translation\":\"n. 侦查，探测；发觉，发现；察觉\",\"audio\":\"detection.mp3\"},{\"word\":\"detective\",\"pronun\":\"[dɪˈtektɪv]\",\"translation\":\"n. 侦探\\nadj. 侦探的\",\"audio\":\"detective.mp3\"},{\"word\":\"deteriorate\",\"pronun\":\"[dɪˈtɪriəreɪt]\",\"translation\":\"vi. 恶化，变坏\\nvt. 恶化\",\"audio\":\"deteriorate.mp3\"},{\"word\":\"deviate\",\"pronun\":\"[ˈdiːvieɪt]\",\"translation\":\"vi. 脱离；越轨\\nvt. 使偏离\",\"audio\":\"deviate.mp3\"},{\"word\":\"device\",\"pronun\":\"[dɪˈvaɪs]\",\"translation\":\"n. 装置；策略；图案\",\"audio\":\"device.mp3\"},{\"word\":\"devise\",\"pronun\":\"[dɪˈvaɪz]\",\"translation\":\"n. 遗赠\\nvt. 设计；想出；发明；图谋；遗赠给\",\"audio\":\"devise.mp3\"},{\"word\":\"devote\",\"pronun\":\"[dɪˈvoʊt]\",\"translation\":\"vt. 致力于；奉献\",\"audio\":\"devote.mp3\"},{\"word\":\"diagnose\",\"pronun\":\"[ˌdaɪəɡˈnoʊs]\",\"translation\":\"vt. 诊断；断定\\nvi. 诊断；判断\",\"audio\":\"diagnose.mp3\"},{\"word\":\"dictate\",\"pronun\":\"[ˈdɪkteɪt]\",\"translation\":\"n. 命令；指示\\nvt. 命令；口述；使听写\\nvi. 口述；听写\",\"audio\":\"dictate.mp3\"},{\"word\":\"differentiate\",\"pronun\":\"[ˌdɪfəˈrenʃieɪt]\",\"translation\":\"vt. 区分，区别\\nvi. 区分，区别\",\"audio\":\"differentiate.mp3\"},{\"word\":\"differentiation\",\"pronun\":\"[ˌdɪfəˌrenʃiˈeɪʃn]\",\"translation\":\"n. 变异，[生物] 分化；区别\",\"audio\":\"differentiation.mp3\"},{\"word\":\"diffuse\",\"pronun\":\"[dɪˈfjuːs]\",\"translation\":\"vt. 扩散；传播；漫射\\nadj. 弥漫的；散开的\\nvi. 传播；四散\",\"audio\":\"diffuse.mp3\"},{\"word\":\"digest\",\"pronun\":\"[daɪˈdʒest; dɪˈdʒest]\",\"translation\":\"n. 文摘；摘要\\nvt. 消化；吸收；融会贯通\\nvi. 消化\",\"audio\":\"digest.mp3\"},{\"word\":\"dignity\",\"pronun\":\"[ˈdɪɡnəti]\",\"translation\":\"n. 尊严；高贵\",\"audio\":\"dignity.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

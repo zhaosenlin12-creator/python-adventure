@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.697161+00:00",
+  "request": {
+    "lesson_id": "2b9ddcd6ee671df5651017417c9d7554",
+    "course_id": "bff1f4acbe3c325f85571ee987d1bdd2",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "bff1f4acbe3c325f85571ee987d1bdd2",
+    "order": 105,
+    "nextCourseId": "bff1f4acbe3c325f85571ee987d1bdd2",
+    "courseName": "左右手练习",
+    "lessonId": "2b9ddcd6ee671df5651017417c9d7554",
+    "nextLessonId": "f60bc5f6efa9bedf80a80b6c40c265d9",
+    "lessonName": "英文左手-英文",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-left-hand.932779dcca.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3abb27246ef9fc7988227fa35447f86f",
+        "index": 1,
+        "text": [
+          "feat beat create feed great saw see fact treat bed bad"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "j",
+        "key": "featbcrfgwd",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 10,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

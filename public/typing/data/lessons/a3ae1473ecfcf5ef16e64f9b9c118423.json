@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.211809+00:00",
+  "request": {
+    "lesson_id": "a3ae1473ecfcf5ef16e64f9b9c118423",
+    "course_id": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "order": 462,
+    "nextCourseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "courseName": "英语每日故事（初级）1-31",
+    "lessonId": "a3ae1473ecfcf5ef16e64f9b9c118423",
+    "nextLessonId": "b74238d901643baa5c4947ea6aa7bbc7",
+    "lessonName": "Everything Is New!",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "17bef0cba6ce5a992579cfb33d4198ce",
+        "index": 1,
+        "text": [
+          "When the first baby is born, everything is new. With a new baby, there is a new mother and new father. There is also a new grandfather and grandmother, a new uncle and new aunt.\\nThe new parents have to prepare a new bed and new clothes and new toys for the new baby. Everything is new!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

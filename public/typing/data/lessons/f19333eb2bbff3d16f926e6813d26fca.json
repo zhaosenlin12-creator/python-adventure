@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:42.029584+00:00",
+  "request": {
+    "lesson_id": "f19333eb2bbff3d16f926e6813d26fca",
+    "course_id": "649abfd4e6da035acc06a37a3357166f",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "649abfd4e6da035acc06a37a3357166f",
+    "order": 120,
+    "nextCourseId": "36c10bddab6d2ba030357f873942fd90",
+    "courseName": "基础练习-全键位输入",
+    "lessonId": "f19333eb2bbff3d16f926e6813d26fca",
+    "nextLessonId": "65badef4853bd934fb3dc3e89c429bd3",
+    "lessonName": "银行卡号码练习",
+    "icon": "data/assets/daziya.com/key-icon_num-card.28107afb8c.png",
+    "description": "数字输入练习 - 银行卡号码练习",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6d2db24145a46fed0292e0c0c87d8c77",
+        "index": 1,
+        "text": [
+          "62170123456789012345"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

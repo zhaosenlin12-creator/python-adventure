@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.815416+00:00",
+  "request": {
+    "lesson_id": "a5d9a7b2bde59b698f6ca04cd3e6dc8f",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 47,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "a5d9a7b2bde59b698f6ca04cd3e6dc8f",
+    "nextLessonId": "9b4bfac8a097aa1fe537fe867206ef1a",
+    "lessonName": "2022年版 PEP-六年级-上册-8",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-六年级-上册 - 第8课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ef99a8b2d46946805998e759d0ed979a",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"hurt\",\"pronun\":\"[hɜːrt]\",\"translation\":\"n. 痛苦；危害；痛苦的原因\\nvt. 使受伤；损害；使疼痛；使痛心\\nadj. 受伤的；痛苦的；受损的\\nvi. 感到疼痛；有坏处；带来痛苦\",\"audio\":\"hurt.mp3\"},{\"word\":\"ill\",\"pronun\":\"[ɪl]\",\"translation\":\"n. 疾病；不幸\\nadj. 生病的；坏的；邪恶的；不吉利的\\nadv. 不利地；恶劣地；几乎不\",\"audio\":\"ill.mp3\"},{\"word\":\"wrong\",\"pronun\":\"[rɔːŋ]\",\"translation\":\"n. 坏事；不公正\\nadj. 错误的；失常的；不适当的\\nvt. 委屈；无理地对待；诽谤\\nadv. 错误地；邪恶地，不正当地\",\"audio\":\"wrong.mp3\"},{\"word\":\"should\",\"pronun\":\"[ʃəd; ʃʊd]\",\"translation\":\"aux. 应该；就；可能；将要\",\"audio\":\"should.mp3\"},{\"word\":\"feel\",\"pronun\":\"[fiːl]\",\"translation\":\"n. 感觉；触摸\\nvi. 觉得；摸索\\nvt. 感觉；认为；触摸；试探\",\"audio\":\"feel.mp3\"},{\"word\":\"well\",\"pronun\":\"[wel]\",\"translation\":\"n. 井；源泉\\nadj. 良好的；健康的；适宜的\\nadv. 很好地；充分地；满意地；适当地\\nv. 涌出\",\"audio\":\"well.mp3\"},{\"word\":\"sit\",\"pronun\":\"[sɪt]\",\"translation\":\"vi. 坐；位于\\nvt. 使就座\",\"audio\":\"sit.mp3\"},{\"word\":\"grass\",\"pronun\":\"[ɡræs]\",\"translation\":\"n. 草；草地，草坪\\nvt. 放牧；使……长满草；使……吃草\\nvi. 长草\",\"audio\":\"grass.mp3\"},{\"word\":\"hear\",\"pronun\":\"[hɪr]\",\"translation\":\"vi. 听；听见\\nvt. 听到，听；听说；审理\",\"audio\":\"hear.mp3\"},{\"word\":\"ant\",\"pronun\":\"[ænt]\",\"translation\":\"n. 蚂蚁\",\"audio\":\"ant.mp3\"},{\"word\":\"worry\",\"pronun\":\"[ˈwɜːri]\",\"translation\":\"n. 担心；烦恼；撕咬\\nvi. 担心；烦恼；撕咬\\nvt. 担心；发愁；折磨\",\"audio\":\"worry.mp3\"},{\"word\":\"stuck\",\"pronun\":\"[stʌk]\",\"translation\":\"v. 刺（stick的过去式）\\nadj. 被卡住的；不能动的\",\"audio\":\"stuck.mp3\"},{\"word\":\"mud\",\"pronun\":\"[mʌd]\",\"translation\":\"vt. 弄脏；用泥涂\\nvi. 钻入泥中\\nn. 泥；诽谤的话；无价值的东西\",\"audio\":\"mud.mp3\"},{\"word\":\"pull\",\"pronun\":\"[pʊl]\",\"translation\":\"n. 拉，拉绳；拉力，牵引力；拖\\nvt. 拉；拔；拖\\nvi. 拉，拖；拔\",\"audio\":\"pull.mp3\"},{\"word\":\"everyone\",\"pronun\":\"[ˈevriwʌn]\",\"translation\":\"n. 每个人\\npron. 每个人；人人\",\"audio\":\"everyone.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

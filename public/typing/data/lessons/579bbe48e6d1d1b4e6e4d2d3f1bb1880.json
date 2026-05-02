@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.841101+00:00",
+  "request": {
+    "lesson_id": "579bbe48e6d1d1b4e6e4d2d3f1bb1880",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 159,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "579bbe48e6d1d1b4e6e4d2d3f1bb1880",
+    "nextLessonId": "45b37a07de2d5aa3caa2c3f253c761a6",
+    "lessonName": "KET核心词-42",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第42课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5bbf45958b36b39135f84dc8915c9b73",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"more\",\"pronun\":\"[mɔːr]\",\"translation\":\"adv. 更多；此外；更大程度地\\nadj. 更多的；附加的\\npron. 更多的数量\\nn. 更多\",\"audio\":\"more.mp3\"},{\"word\":\"morning\",\"pronun\":\"[ˈmɔːrnɪŋ]\",\"translation\":\"n. 早晨；黎明；初期\",\"audio\":\"morning.mp3\"},{\"word\":\"motorbike\",\"pronun\":\"[ˈmoʊtərbaɪk]\",\"translation\":\"n. 摩托车\",\"audio\":\"motorbike.mp3\"},{\"word\":\"motorway\",\"pronun\":\"[ˈmoʊtərweɪ]\",\"translation\":\"n. 高速公路，汽车高速公路\",\"audio\":\"motorway.mp3\"},{\"word\":\"mountain\",\"pronun\":\"[ˈmaʊntn]\",\"translation\":\"n. 山；山脉\",\"audio\":\"mountain.mp3\"},{\"word\":\"mouse\",\"pronun\":\"[maʊs]\",\"translation\":\"n. 鼠标；老鼠；胆小羞怯的人\\nvt. 探出\\nvi. 捕鼠；窥探\",\"audio\":\"mouse.mp3\"},{\"word\":\"mouth\",\"pronun\":\"[maʊθ]\",\"translation\":\"n. 口，嘴；河口\\nvt. 做作地说，装腔作势地说；喃喃地说出\\nvi. 装腔作势说话\",\"audio\":\"mouth.mp3\"},{\"word\":\"much\",\"pronun\":\"[mʌtʃ]\",\"translation\":\"adv. 非常，很\\nadj. 大量的\\nn. 许多，大量\\npron. 许多，大量\",\"audio\":\"much.mp3\"},{\"word\":\"move\",\"pronun\":\"[muːv]\",\"translation\":\"n. 移动；步骤；迁居；策略\\nvi. 移动；搬家，迁移；离开\\nvt. 移动；感动\",\"audio\":\"move.mp3\"},{\"word\":\"movie\",\"pronun\":\"[ˈmuːvi]\",\"translation\":\"n. 电影；电影院；电影业\\nadj. 电影的\",\"audio\":\"movie.mp3\"},{\"word\":\"museum\",\"pronun\":\"[mjuˈziːəm]\",\"translation\":\"n. 博物馆\",\"audio\":\"museum.mp3\"},{\"word\":\"mushroom\",\"pronun\":\"[ˈmʌʃrʊm; ˈmʌʃruːm]\",\"translation\":\"n. 蘑菇，伞菌；蘑菇形物体；暴发户\\nadj. 蘑菇的；蘑菇形的；迅速生长的\\nvi. 迅速增加；采蘑菇；迅速生长\",\"audio\":\"mushroom.mp3\"},{\"word\":\"music\",\"pronun\":\"[ˈmjuːzɪk]\",\"translation\":\"n. 音乐，乐曲\",\"audio\":\"music.mp3\"},{\"word\":\"must\",\"pronun\":\"[məst; mʌst]\",\"translation\":\"aux. 必须，一定；可以，应当；很可能\\nn. 绝对必要的事物；未发酵葡萄汁\",\"audio\":\"must.mp3\"},{\"word\":\"myself\",\"pronun\":\"[maɪˈself]\",\"translation\":\"pron. 我自己；我亲自；我的正常的健康状况和正常情绪\",\"audio\":\"myself.mp3\"},{\"word\":\"name\",\"pronun\":\"[neɪm]\",\"translation\":\"n. 名称，名字；姓名；名誉\\nvt. 命名，任命；指定；称呼；提名；叫出\\nadj. 姓名的；据以取名的\",\"audio\":\"name.mp3\"},{\"word\":\"national\",\"pronun\":\"[ˈnæʃnəl]\",\"translation\":\"adj. 国家的；国民的；民族的；国立的\\nn. 国民\",\"audio\":\"national.mp3\"},{\"word\":\"nationality\",\"pronun\":\"[ˌnæʃəˈnæləti]\",\"translation\":\"n. 国籍，国家；民族；部落\",\"audio\":\"nationality.mp3\"},{\"word\":\"nature\",\"pronun\":\"[ˈneɪtʃər]\",\"translation\":\"n. 自然；性质；本性；种类\",\"audio\":\"nature.mp3\"},{\"word\":\"naughty\",\"pronun\":\"[ˈnɔːti]\",\"translation\":\"adj. 顽皮的，淘气的；不听话的；没规矩的；不适当的；下流的\",\"audio\":\"naughty.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

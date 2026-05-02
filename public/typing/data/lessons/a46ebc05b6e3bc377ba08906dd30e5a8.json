@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.736329+00:00",
+  "request": {
+    "lesson_id": "a46ebc05b6e3bc377ba08906dd30e5a8",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 138,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "a46ebc05b6e3bc377ba08906dd30e5a8",
+    "nextLessonId": "e693f7f598fb6f7a306a9766f5012f29",
+    "lessonName": "KET核心词-116",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第116课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e1d19782b54630cd93cb8961a3d21248",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"Mark\",\"pronun\":\"[mɑːrk]\",\"translation\":\"n. 标志；马克；符号；痕迹；分数\\nvi. 作记号\\nvt. .标志；做标记于；打分数\\nn. . 标志；做标记于；打分数\",\"audio\":\"Mark.mp3\"},{\"word\":\"mark homework\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"mark_homework.mp3\"},{\"word\":\"method\",\"pronun\":\"[ˈmeθəd]\",\"translation\":\"n. 方法；条理；类函数\\nadj. 使用体验派表演方法的\",\"audio\":\"method.mp3\"},{\"word\":\"note\",\"pronun\":\"[noʊt]\",\"translation\":\"n. 笔记；音符；票据；注解；纸币；便笺；照会；调子\\nvt. 注意；记录；注解\",\"audio\":\"note.mp3\"},{\"word\":\"notebook\",\"pronun\":\"[ˈnoʊtbʊk]\",\"translation\":\"n. 笔记本，笔记簿；手册\",\"audio\":\"notebook.mp3\"},{\"word\":\"pass an exam\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"pass_an_exam.mp3\"},{\"word\":\"pupil\",\"pronun\":\"[ˈpjuːpl]\",\"translation\":\"n. 学生；[解剖] 瞳孔；未成年人\",\"audio\":\"pupil.mp3\"},{\"word\":\"report\",\"pronun\":\"[rɪˈpɔːrt]\",\"translation\":\"n. 报告；报道；成绩单\\nvt. 报告；报导；使报到\\nvi. 报告；报到；写报导\",\"audio\":\"report.mp3\"},{\"word\":\"read\",\"pronun\":\"[riːd]\",\"translation\":\"n. 阅读；读物\\nadj. 有学问的\\nvi. 读；读起来\\nvt. 阅读；读懂，理解\",\"audio\":\"read.mp3\"},{\"word\":\"remember\",\"pronun\":\"[rɪˈmembər]\",\"translation\":\"vi. 记得，记起\\nvt. 记得；牢记；纪念；代…问好\",\"audio\":\"remember.mp3\"},{\"word\":\"result\",\"pronun\":\"[rɪˈzʌlt]\",\"translation\":\"n. 结果；成绩；答案；比赛结果\\nvi. 结果；导致；产生\",\"audio\":\"result.mp3\"},{\"word\":\"revise\",\"pronun\":\"[rɪˈvaɪz]\",\"translation\":\"n. 修订；校订\\nvi. 修订；校订；复习功课\\nvt. 修正；复习；校订\",\"audio\":\"revise.mp3\"},{\"word\":\"rubber\",\"pronun\":\"[ˈrʌbər]\",\"translation\":\"n. 橡胶；橡皮；合成橡胶；按摩师\\nadj. 橡胶制成的\\nvt. 涂橡胶于；用橡胶制造\\nvi. 扭转脖子看；好奇地引颈而望\",\"audio\":\"rubber.mp3\"},{\"word\":\"ruler\",\"pronun\":\"[ˈruːlər]\",\"translation\":\"n. 尺；统治者；[测] 划线板，划线的人\",\"audio\":\"ruler.mp3\"},{\"word\":\"school\",\"pronun\":\"[skuːl]\",\"translation\":\"n. 学校；学院；学派；鱼群\\nvt. 教育\",\"audio\":\"school.mp3\"},{\"word\":\"secondary school\",\"pronun\":\"\",\"translation\":\"n. 中学；中等学校\",\"audio\":\"secondary_school.mp3\"},{\"word\":\"serious\",\"pronun\":\"[ˈsɪriəs]\",\"translation\":\"adj. 严肃的，严重的；认真的；庄重的；危急的\",\"audio\":\"serious.mp3\"},{\"word\":\"strict\",\"pronun\":\"[strɪkt]\",\"translation\":\"adj. 严格的；绝对的；精确的；详细的\",\"audio\":\"strict.mp3\"},{\"word\":\"student\",\"pronun\":\"[ˈstuːdnt]\",\"translation\":\"n. 学生；学者\",\"audio\":\"student.mp3\"},{\"word\":\"study\",\"pronun\":\"[ˈstʌdi]\",\"translation\":\"n. 学习，研究；课题；书房；学问\\nvt. 学习；考虑；攻读；细察\\nvi. 研究；用功\",\"audio\":\"study.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

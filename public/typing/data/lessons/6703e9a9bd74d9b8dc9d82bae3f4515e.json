@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.537869+00:00",
+  "request": {
+    "lesson_id": "6703e9a9bd74d9b8dc9d82bae3f4515e",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 536,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "6703e9a9bd74d9b8dc9d82bae3f4515e",
+    "nextLessonId": "c859082dcf69a06d02df26266d726b96",
+    "lessonName": "Cat Adventure-2",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "704ea882b96a925e48e2a633ebbe8bcb",
+        "index": 1,
+        "text": [
+          "The cat went up to the top of our house!\\nSomeone left the window open and our cat jumped outside and onto the roof.\\nIt was too high for her to jump back down.\\nFinally, my mom climbed up and carried the cat down.\\nShe said, \"You should think about coming down before you climb up!\""
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

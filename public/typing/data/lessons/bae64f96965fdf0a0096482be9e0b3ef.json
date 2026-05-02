@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.606112+00:00",
+  "request": {
+    "lesson_id": "bae64f96965fdf0a0096482be9e0b3ef",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 110,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "bae64f96965fdf0a0096482be9e0b3ef",
+    "nextLessonId": "575fa85039eb58a7d8759e87ed638c5d",
+    "lessonName": "KET核心词-32",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第32课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "75c13242f84a34c05ea9b5deff47642a",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"house\",\"pronun\":\"[haʊs]\",\"translation\":\"n. 住宅；家庭；机构；议会；某种用途的建筑物\\nvt. 覆盖；给…房子住；把…储藏在房内\\nvi. 住\",\"audio\":\"house.mp3\"},{\"word\":\"housewife\",\"pronun\":\"[ˈhaʊswaɪf]\",\"translation\":\"n. 家庭主妇\",\"audio\":\"housewife.mp3\"},{\"word\":\"housework\",\"pronun\":\"[ˈhaʊswɜːrk]\",\"translation\":\"n. 家务事\",\"audio\":\"housework.mp3\"},{\"word\":\"how\",\"pronun\":\"[haʊ]\",\"translation\":\"adv. 如何；多少；多么\\nn. 方法；方式\\nconj. 如何\",\"audio\":\"how.mp3\"},{\"word\":\"huge\",\"pronun\":\"[hjuːdʒ]\",\"translation\":\"adj. 巨大的；庞大的；无限的\",\"audio\":\"huge.mp3\"},{\"word\":\"hundred\",\"pronun\":\"[ˈhʌndrəd]\",\"translation\":\"num. 百；百个\\nn. 一百；许多\\nadj. 一百的；许多的\",\"audio\":\"hundred.mp3\"},{\"word\":\"hungry\",\"pronun\":\"[ˈhʌŋɡri]\",\"translation\":\"adj. 饥饿的；渴望的；荒年的；不毛的\",\"audio\":\"hungry.mp3\"},{\"word\":\"Hunt\",\"pronun\":\"[hʌnt]\",\"translation\":\"n. 狩猎；搜寻\\nvt. 打猎；搜索\\nvi. 打猎；搜寻\",\"audio\":\"Hunt.mp3\"},{\"word\":\"hurry\",\"pronun\":\"[ˈhɜːri]\",\"translation\":\"n. 匆忙，急忙\\nv. 仓促（做某事）；催促；（朝某方向）迅速移动；迅速处理\",\"audio\":\"hurry.mp3\"},{\"word\":\"hurt\",\"pronun\":\"[hɜːrt]\",\"translation\":\"n. 痛苦；危害；痛苦的原因\\nvt. 使受伤；损害；使疼痛；使痛心\\nadj. 受伤的；痛苦的；受损的\\nvi. 感到疼痛；有坏处；带来痛苦\",\"audio\":\"hurt.mp3\"},{\"word\":\"ice\",\"pronun\":\"[aɪs]\",\"translation\":\"n. 冰；冰淇淋；矜持；（俚）钻石\\nadj. 冰的\\nvt. 冰镇；结冰\\nvi. 结冰\",\"audio\":\"ice.mp3\"},{\"word\":\"ice-cream\",\"pronun\":\"[ˈaɪs kriːm]\",\"translation\":\"a. 冰淇淋的, 乳白色的\",\"audio\":\"ice-cream.mp3\"},{\"word\":\"ice-hockey\",\"pronun\":\"\",\"translation\":\"na. 冰上曲棍球\",\"audio\":\"ice-hockey.mp3\"},{\"word\":\"Iceland\",\"pronun\":\"[ˈaɪslənd]\",\"translation\":\"n. 冰岛（欧洲岛名，在大西洋北部，近北极圈）\",\"audio\":\"Iceland.mp3\"},{\"word\":\"ID\",\"pronun\":\"[ˌaɪ ˈdiː]\",\"translation\":\"身份证件\",\"audio\":\"ID.mp3\"},{\"word\":\"idea\",\"pronun\":\"[aɪˈdiːə]\",\"translation\":\"n. 想法；主意；概念\",\"audio\":\"idea.mp3\"},{\"word\":\"if\",\"pronun\":\"[ɪf]\",\"translation\":\"conj. （表条件）如果；即使；是否；（表假设）假如\\nn. 条件；设想\",\"audio\":\"if.mp3\"},{\"word\":\"ill\",\"pronun\":\"[ɪl]\",\"translation\":\"n. 疾病；不幸\\nadj. 生病的；坏的；邪恶的；不吉利的\\nadv. 不利地；恶劣地；几乎不\",\"audio\":\"ill.mp3\"},{\"word\":\"immediately\",\"pronun\":\"[ɪˈmiːdiətli]\",\"translation\":\"conj. 一…就\\nadv. 立即，立刻；直接地\",\"audio\":\"immediately.mp3\"},{\"word\":\"important\",\"pronun\":\"[ɪmˈpɔːrtnt]\",\"translation\":\"adj. 重要的，重大的；有地位的；有权力的\",\"audio\":\"important.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

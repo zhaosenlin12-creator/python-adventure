@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.675394+00:00",
+  "request": {
+    "lesson_id": "f796c67f493297193995a2dde95ce382",
+    "course_id": "bff1f4acbe3c325f85571ee987d1bdd2",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "bff1f4acbe3c325f85571ee987d1bdd2",
+    "order": 99,
+    "nextCourseId": "bff1f4acbe3c325f85571ee987d1bdd2",
+    "courseName": "左右手练习",
+    "lessonId": "f796c67f493297193995a2dde95ce382",
+    "nextLessonId": "6469071bf042099679558d3984035a88",
+    "lessonName": "左手练习-拼音",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-left-hand.932779dcca.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "603a497bb54d50a484577a3dd478d89a",
+        "index": 1,
+        "text": [
+          "fe re se sa za ce re er er ga ba ta te sa ze ba ge"
+        ],
+        "pinyin": null,
+        "contentType": 0,
+        "persistentKey": "j",
+        "key": "ferszcgbt",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 10,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.084103+00:00",
+  "request": {
+    "lesson_id": "7a3ee42a9766f67b5edd6788997c97b3",
+    "course_id": "cd45306af9fe6ba99ad31ab2ab5006ba",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "cd45306af9fe6ba99ad31ab2ab5006ba",
+    "order": 389,
+    "nextCourseId": "cd45306af9fe6ba99ad31ab2ab5006ba",
+    "courseName": "实战演练-1万以内金额",
+    "lessonId": "7a3ee42a9766f67b5edd6788997c97b3",
+    "nextLessonId": "64f4d25391217b6051d26a0cc1de631a",
+    "lessonName": "极限挑战四",
+    "icon": "data/assets/daziya.com/key-icon_num-jiangbei.44832ef16e.png",
+    "description": "数字输入练习 - 极限挑战四",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b25b95bd9b74560f0c543584cd06e4ed",
+        "index": 1,
+        "text": [
+          "938564\\n847675\\n756786\\n665897\\n574918\\n483129\\n392231\\n213342\\n124453\\n949675\\n858786\\n767897\\n676918\\n585129\\n494231\\n313342\\n224453\\n135564\\n959786\\n868897\\n777918\\n686129\\n595231\\n414342\\n325453\\n236564\\n147675\\n969897\\n878918\\n787129"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

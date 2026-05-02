@@ -369,3 +369,58 @@
 .animate-slideDown {
   animation: slideDown 0.3s ease-out;
 }
+
+.top-action-cta {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.top-action-cta::after {
+  content: "";
+  position: absolute;
+  inset: -65% -35%;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.42) 50%, transparent 70%);
+  transform: translateX(-130%) rotate(12deg);
+  transition: transform 460ms ease;
+}
+
+.top-action-cta:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.top-action-cta:hover::after {
+  transform: translateX(130%) rotate(12deg);
+}
+
+.top-action-cta:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.top-action-cta:hover svg {
+  color: currentColor;
+}
+
+.top-action-typing:hover {
+  background-color: #fde047;
+  border-color: rgba(254, 243, 199, 0.95);
+  color: #0f172a;
+  box-shadow:
+    0 0 0 2px rgba(254, 243, 199, 0.58),
+    0 14px 34px rgba(250, 204, 21, 0.28);
+}
+
+.top-action-ai:hover {
+  background-color: #67e8f9;
+  border-color: rgba(207, 250, 254, 0.9);
+  color: #0f172a;
+  box-shadow:
+    0 0 0 2px rgba(207, 250, 254, 0.5),
+    0 14px 34px rgba(34, 211, 238, 0.26);
+}

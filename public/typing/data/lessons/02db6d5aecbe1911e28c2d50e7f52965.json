@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.432217+00:00",
+  "request": {
+    "lesson_id": "02db6d5aecbe1911e28c2d50e7f52965",
+    "course_id": "30951c93875a1e260feda8cb699005df",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "30951c93875a1e260feda8cb699005df",
+    "order": 510,
+    "nextCourseId": "30951c93875a1e260feda8cb699005df",
+    "courseName": "英语每日故事（初级）32-61",
+    "lessonId": "02db6d5aecbe1911e28c2d50e7f52965",
+    "nextLessonId": "4ebf91b4cdb1e69f8fb63caf5d5c3437",
+    "lessonName": "Baby Birds",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "687ae368ece3510716daca6026a93431",
+        "index": 1,
+        "text": [
+          "Dave's dad shows Dave a little bird's nest in a tree. 'See the pretty blue eggs?' asks his dad. 'A mother bird laid those eggs. She will sit on them and keep them warm. Soon, the eggs will break. What will come out?' asks the father. 'Baby birds!' Dave says. 'Yes. But don't touch the nest or the mother bird won't come back to her eggs!'"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

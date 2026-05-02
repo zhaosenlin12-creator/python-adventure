@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.441281+00:00",
+  "request": {
+    "lesson_id": "f54b8f36e03cfb304f28ebd117ef6d8f",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 645,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "f54b8f36e03cfb304f28ebd117ef6d8f",
+    "nextLessonId": "1324d5af1eaebd083febe3167e0056b7",
+    "lessonName": " 五年级上-4",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点五年级上 - 第4课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4cc5556e5cc1dd9ed28cd624286e2aa4",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"food\",\"pronun\":\"[fuːd]\",\"translation\":\"n. 食物；养料\",\"audio\":\"food.mp3\"},{\"word\":\"Dear\",\"pronun\":\"[dɪr]\",\"translation\":\"n. 亲爱的人\\nadj. 亲爱的；尊敬的；昂贵的\\nadv. 高价地；疼爱地\\nint. 哎呀\",\"audio\":\"Dear.mp3\"},{\"word\":\"onion\",\"pronun\":\"[ˈʌnjən]\",\"translation\":\"n. 洋葱；洋葱头\",\"audio\":\"onion.mp3\"},{\"word\":\"sing\",\"pronun\":\"[sɪŋ]\",\"translation\":\"n. 演唱；鸣声；呼啸声\\nvt. 唱；用诗赞颂；唱着使\\nvi. 唱歌；歌颂；鸣叫；呼号\",\"audio\":\"sing.mp3\"},{\"word\":\"song\",\"pronun\":\"[sɔŋ]\",\"translation\":\"n. 歌曲；歌唱；诗歌；鸣声\",\"audio\":\"song.mp3\"},{\"word\":\"sing English songs\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"sing_English_songs.mp3\"},{\"word\":\"play the pipa\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"play_the_pipa.mp3\"},{\"word\":\"kung fu\",\"pronun\":\"[ˌkʌŋ ˈfuː]\",\"translation\":\"n. 功夫（中国拳术）\\nv. 用功夫击打(对手)\",\"audio\":\"kung_fu.mp3\"},{\"word\":\"do kung fu\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"do_kung_fu.mp3\"},{\"word\":\"dance\",\"pronun\":\"[dæns]\",\"translation\":\"n. 舞蹈；舞会；舞曲\\nadj. 舞蹈的；用于跳舞的\\nvt. 跳舞；使跳跃\\nvi. 跳舞；跳跃；飘扬\",\"audio\":\"dance.mp3\"},{\"word\":\"draw\",\"pronun\":\"[drɔː]\",\"translation\":\"n. 平局；抽签\\nvi. 拉；拖\\nvt. 画；拉；吸引\",\"audio\":\"draw.mp3\"},{\"word\":\"cartoon\",\"pronun\":\"[kɑːrˈtuːn]\",\"translation\":\"n. 卡通片，[电影] 动画片；连环漫画\\nvt. 为…画漫画\\nvi. 画漫画\",\"audio\":\"cartoon.mp3\"},{\"word\":\"draw cartoons\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"draw_cartoons.mp3\"},{\"word\":\"cook\",\"pronun\":\"[kʊk]\",\"translation\":\"n. 厨师，厨子\\nvt. 烹调，煮\\nvi. 烹调，做菜\",\"audio\":\"cook.mp3\"},{\"word\":\"swim\",\"pronun\":\"[swɪm]\",\"translation\":\"n. 游泳；漂浮；眩晕\\nadj. 游泳时穿戴的\\nvi. 游泳；漂浮；浸；眩晕\\nvt. 游过；使浮起\",\"audio\":\"swim.mp3\"},{\"word\":\"play basketball\",\"pronun\":\"\",\"translation\":\"打篮球；玩篮球；篮球锻炼知多少\",\"audio\":\"play_basketball.mp3\"},{\"word\":\"ping-pong\",\"pronun\":\"[ˈpɪŋ pɑːŋ]\",\"translation\":\"n. 乒乓球；桌球\",\"audio\":\"ping-pong.mp3\"},{\"word\":\"play ping-pong\",\"pronun\":\"\",\"translation\":\"打乒乓球\",\"audio\":\"play_ping-pong.mp3\"},{\"word\":\"speak English\",\"pronun\":\"\",\"translation\":\"说英语；讲英语；相信我会讲英文\",\"audio\":\"speak_English.mp3\"},{\"word\":\"we'll\",\"pronun\":\"\",\"translation\":\"abbr. 我们将（we shall，we will）\",\"audio\":\"we_ll.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.508250+00:00",
+  "request": {
+    "lesson_id": "fc01d350f06501ac5a7238295e7bc5e4",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 660,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "fc01d350f06501ac5a7238295e7bc5e4",
+    "nextLessonId": "b89ab9a47a19494347cf9a02f0c9104a",
+    "lessonName": " 六年级上-4",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点六年级上 - 第4课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e115ba01e9cf7df41ea984d457450a68",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"evening\",\"pronun\":\"[ˈiːvnɪŋ]\",\"translation\":\"n. 晚上；傍晚；（联欢性的）晚会；后期\\nadj. 在晚上的；为晚上的；晚上用的\\nint. 晚上好（等于good evening）\",\"audio\":\"evening.mp3\"},{\"word\":\"tonight\",\"pronun\":\"[təˈnaɪt]\",\"translation\":\"n. 今晚\\nadv. 在今晚\",\"audio\":\"tonight.mp3\"},{\"word\":\"tomorrow\",\"pronun\":\"[təˈmɑːroʊ]\",\"translation\":\"n. 明天；未来\\nadv. 明天；未来地（等于to-morrow）\",\"audio\":\"tomorrow.mp3\"},{\"word\":\"next week\",\"pronun\":\"[nekst wiːk]\",\"translation\":\"na. 下星期\",\"audio\":\"next_week.mp3\"},{\"word\":\"dictionary\",\"pronun\":\"[ˈdɪkʃəneri]\",\"translation\":\"n. 字典；词典\",\"audio\":\"dictionary.mp3\"},{\"word\":\"comic\",\"pronun\":\"[ˈkɑːmɪk]\",\"translation\":\"n. 连环漫画；喜剧演员；滑稽人物\\nadj. 喜剧的；滑稽的；有趣的\",\"audio\":\"comic.mp3\"},{\"word\":\"comic book\",\"pronun\":\"\",\"translation\":\"n. 漫画书\",\"audio\":\"comic_book.mp3\"},{\"word\":\"word\",\"pronun\":\"[wɜːrd]\",\"translation\":\"n. [语] 单词；话语；消息；诺言；命令\\nvt. 用言辞表达\",\"audio\":\"word.mp3\"},{\"word\":\"word book\",\"pronun\":\"[ˈwɜːrkˈbʊk]\",\"translation\":\"n. 词典；字汇表；歌词集\",\"audio\":\"word_book.mp3\"},{\"word\":\"postcard\",\"pronun\":\"[ˈpoʊstkɑːrd]\",\"translation\":\"n. 明信片\",\"audio\":\"postcard.mp3\"},{\"word\":\"lesson\",\"pronun\":\"[ˈlesn]\",\"translation\":\"n. 教训；课\\nvt. 教训；上课\",\"audio\":\"lesson.mp3\"},{\"word\":\"space\",\"pronun\":\"[speɪs]\",\"translation\":\"n. 空间；太空；距离\\nvt. 隔开\\nvi. 留间隔\",\"audio\":\"space.mp3\"},{\"word\":\"travel\",\"pronun\":\"[ˈtrævl]\",\"translation\":\"n. 旅行；游历；漫游\\nvt. 经过；在…旅行\\nvi. 旅行；行进；步行；交往\",\"audio\":\"travel.mp3\"},{\"word\":\"half\",\"pronun\":\"[hæf]\",\"translation\":\"n. 一半；半场；半学年\\nadj. 一半的；不完全的；半途的\\nadv. 一半地；部分地\",\"audio\":\"half.mp3\"},{\"word\":\"price\",\"pronun\":\"[praɪs]\",\"translation\":\"n. 价格；价值；代价\\nvt. 给……定价；问……的价格\",\"audio\":\"price.mp3\"},{\"word\":\"Mid-Autumn Festival\",\"pronun\":\"\",\"translation\":\"《英汉医学词典》mid autumn festival\\n中秋节\",\"audio\":\"Mid-Autumn_Festival.mp3\"},{\"word\":\"together\",\"pronun\":\"[təˈɡeðər]\",\"translation\":\"adj. 新潮的；情绪稳定的，做事有效率的\\nadv. 一起；同时；相互；连续地；总共\",\"audio\":\"together.mp3\"},{\"word\":\"get together\",\"pronun\":\"\",\"translation\":\"na. 聚集；集合；汇齐；积累\",\"audio\":\"get_together.mp3\"},{\"word\":\"mooncake\",\"pronun\":\"[ˈmuːnkeɪk]\",\"translation\":\"n. 月饼\",\"audio\":\"mooncake.mp3\"},{\"word\":\"poem\",\"pronun\":\"[ˈpoʊəm]\",\"translation\":\"n. 诗\",\"audio\":\"poem.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

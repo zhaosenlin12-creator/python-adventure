@@ -1,0 +1,72 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.775360+00:00",
+  "request": {
+    "lesson_id": "6dd2ccfd7780bf234476dc02d48c4a04",
+    "course_id": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "order": 62,
+    "nextCourseId": "d24598c46ac65b5ad70e6ca8094d62f4",
+    "courseName": "声母组合练习",
+    "lessonId": "6dd2ccfd7780bf234476dc02d48c4a04",
+    "nextLessonId": "fe4ddd92a042c6e073e94b294d8755d7",
+    "lessonName": "声母组合zh",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "练习声母zh与各韵母的组合",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "249bfd21a647ed1498ff5edabd6d18da",
+        "index": 1,
+        "highlights": [
+          "zh"
+        ],
+        "text": [
+          "请输入按键 [zh]"
+        ],
+        "detail": "学习双拼按键 zh"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "9b7a9dbfc5cbefe9a13673137093cde4",
+        "index": 2,
+        "text": [
+          "zhzhzhzhzhzhzhzh"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "3cf8c74d59925cda2018405d5d00a571",
+        "index": 3,
+        "text": [
+          "张站长住在真州镇，正在种植珍珠竹。他主张重视质量管理，准时召开整治会议。这盏灯照得整个屋子真亮，蜘蛛在墙上织网，露珠闪着光芒。"
+        ],
+        "pinyin": "[[\"张\",\"zhāng\"],[\"站\",\"zhàn\"],[\"长\",\"zhǎng\"],[\"住\",\"zhù\"],[\"在\",\"zài\"],[\"真\",\"zhēn\"],[\"州\",\"zhōu\"],[\"镇\",\"zhèn\"],[\"，\",\"\"],[\"正\",\"zhèng\"],[\"在\",\"zài\"],[\"种\",\"zhòng\"],[\"植\",\"zhí\"],[\"珍\",\"zhēn\"],[\"珠\",\"zhū\"],[\"竹\",\"zhú\"],[\"。\",\"\"],[\"他\",\"tā\"],[\"主\",\"zhǔ\"],[\"张\",\"zhāng\"],[\"重\",\"zhòng\"],[\"视\",\"shì\"],[\"质\",\"zhì\"],[\"量\",\"liàng\"],[\"管\",\"guǎn\"],[\"理\",\"lǐ\"],[\"，\",\"\"],[\"准\",\"zhǔn\"],[\"时\",\"shí\"],[\"召\",\"zhào\"],[\"开\",\"kāi\"],[\"整\",\"zhěng\"],[\"治\",\"zhì\"],[\"会\",\"huì\"],[\"议\",\"yì\"],[\"。\",\"\"],[\"这\",\"zhè\"],[\"盏\",\"zhǎn\"],[\"灯\",\"dēng\"],[\"照\",\"zhào\"],[\"得\",\"de\"],[\"整\",\"zhěng\"],[\"个\",\"gè\"],[\"屋\",\"wū\"],[\"子\",\"zi\"],[\"真\",\"zhēn\"],[\"亮\",\"liàng\"],[\"，\",\"\"],[\"蜘\",\"zhī\"],[\"蛛\",\"zhū\"],[\"在\",\"zài\"],[\"墙\",\"qiáng\"],[\"上\",\"shàng\"],[\"织\",\"zhī\"],[\"网\",\"wǎng\"],[\"，\",\"\"],[\"露\",\"lù\"],[\"珠\",\"zhū\"],[\"闪\",\"shǎn\"],[\"着\",\"zhe\"],[\"光\",\"guāng\"],[\"芒\",\"máng\"],[\"。\",\"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 10,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

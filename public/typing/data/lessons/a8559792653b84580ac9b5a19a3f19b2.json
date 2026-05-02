@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.972433+00:00",
+  "request": {
+    "lesson_id": "a8559792653b84580ac9b5a19a3f19b2",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 409,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "a8559792653b84580ac9b5a19a3f19b2",
+    "nextLessonId": "98b243fa09ec4380ea8492e71d876d24",
+    "lessonName": "六级词汇正序版-6",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第6课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d88760f40a5d1502e8af369f5aaa4ad7",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"annoy\",\"pronun\":\"[əˈnɔɪ]\",\"translation\":\"n. 烦恼（等于annoyance）\\nvt. 骚扰；惹恼；打搅\\nvi. 惹恼；令人讨厌；打搅\",\"audio\":\"annoy.mp3\"},{\"word\":\"annual\",\"pronun\":\"[ˈænjuəl]\",\"translation\":\"n. 年刊，年鉴；一年生植物\\nadj. 年度的；每年的\",\"audio\":\"annual.mp3\"},{\"word\":\"anonymous\",\"pronun\":\"[əˈnɑːnɪməs]\",\"translation\":\"adj. 匿名的，无名的；无个性特征的\",\"audio\":\"anonymous.mp3\"},{\"word\":\"anticipate\",\"pronun\":\"[ænˈtɪsɪpeɪt]\",\"translation\":\"vt. 预期，期望；占先，抢先；提前使用\",\"audio\":\"anticipate.mp3\"},{\"word\":\"antique\",\"pronun\":\"[ænˈtiːk]\",\"translation\":\"n. 古董，古玩；古风，古希腊和古罗马艺术风格\\nadj. 古老的，年代久远的；过时的，古董的；古风的，古式的\\nvi. 觅购古玩\",\"audio\":\"antique.mp3\"},{\"word\":\"anxiety\",\"pronun\":\"[æŋˈzaɪəti]\",\"translation\":\"n. 焦虑；渴望；挂念；令人焦虑的事\",\"audio\":\"anxiety.mp3\"},{\"word\":\"apartment\",\"pronun\":\"[əˈpɑːrtmənt]\",\"translation\":\"n. 公寓；房间\",\"audio\":\"apartment.mp3\"},{\"word\":\"apology\",\"pronun\":\"[əˈpɑːlədʒi]\",\"translation\":\"n. 道歉；谢罪；辩护；勉强的替代物\",\"audio\":\"apology.mp3\"},{\"word\":\"apparatus\",\"pronun\":\"[ˌæpəˈrætəs]\",\"translation\":\"n. 装置，设备；仪器；器官\",\"audio\":\"apparatus.mp3\"},{\"word\":\"appeal\",\"pronun\":\"[əˈpiːl]\",\"translation\":\"n. 呼吁，请求；吸引力，感染力；上诉；诉诸裁判\\nvt. 将…上诉，对…上诉\\nvi. 呼吁，恳求；上诉；诉诸，求助；有吸引力，迎合爱好；（体育比赛中）诉诸裁判\",\"audio\":\"appeal.mp3\"},{\"word\":\"appearance\",\"pronun\":\"[əˈpɪrəns]\",\"translation\":\"n. 外貌，外观；出现，露面\",\"audio\":\"appearance.mp3\"},{\"word\":\"appease\",\"pronun\":\"[əˈpiːz]\",\"translation\":\"vt. 使平息；使满足；使和缓；对…让步\",\"audio\":\"appease.mp3\"},{\"word\":\"appendix\",\"pronun\":\"[əˈpendɪks]\",\"translation\":\"n. 附录；阑尾；附加物\",\"audio\":\"appendix.mp3\"},{\"word\":\"applaud\",\"pronun\":\"[əˈplɔːd]\",\"translation\":\"vt. 赞同；称赞；向…喝彩\\nvi. 喝彩；鼓掌欢迎\",\"audio\":\"applaud.mp3\"},{\"word\":\"appliance\",\"pronun\":\"[əˈplaɪəns]\",\"translation\":\"n. 器具；器械；装置\",\"audio\":\"appliance.mp3\"},{\"word\":\"application\",\"pronun\":\"[ˌæplɪˈkeɪʃn]\",\"translation\":\"n. 应用；申请；应用程序；敷用\",\"audio\":\"application.mp3\"},{\"word\":\"apply\",\"pronun\":\"[əˈplaɪ]\",\"translation\":\"vi. 申请；涂，敷；适用；请求\\nvt. 申请；涂，敷；应用\",\"audio\":\"apply.mp3\"},{\"word\":\"appraisal\",\"pronun\":\"[əˈpreɪzl]\",\"translation\":\"n. 评价；估价（尤指估价财产，以便征税）；估计\",\"audio\":\"appraisal.mp3\"},{\"word\":\"approach\",\"pronun\":\"[əˈproʊtʃ]\",\"translation\":\"n. 方法；途径；接近\\nvt. 接近；着手处理\\nvi. 靠近\",\"audio\":\"approach.mp3\"},{\"word\":\"appropriate\",\"pronun\":\"[əˈproʊpriət; əˈproʊprieɪt]\",\"translation\":\"adj. 适当的；恰当的；合适的\\nvt. 占用，拨出\",\"audio\":\"appropriate.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

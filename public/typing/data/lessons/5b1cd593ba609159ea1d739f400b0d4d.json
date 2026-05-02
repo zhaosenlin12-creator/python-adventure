@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.409997+00:00",
+  "request": {
+    "lesson_id": "5b1cd593ba609159ea1d739f400b0d4d",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 199,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "5b1cd593ba609159ea1d739f400b0d4d",
+    "nextLessonId": "9d833b239f95998bb5191fe16a83b71a",
+    "lessonName": "子查询",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - 子查询",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "db09042f8baa0442b2b1b394efa920f9",
+        "index": 1,
+        "text": [
+          "-- 查询订单金额大于平均值的订单\\nSELECT order_id, user_id, amount, created_at\\nFROM orders\\nWHERE amount > (SELECT AVG(amount) FROM orders);\\n\\n-- 查询购买过特定产品的用户\\nSELECT * FROM users\\nWHERE id IN (\\n    SELECT DISTINCT user_id FROM orders\\n    WHERE order_id IN (\\n        SELECT order_id FROM order_details\\n        WHERE product_id = 100\\n    )\\n);\\n\\n-- 查询每个城市订单金额最高的用户\\nSELECT u.city, u.name, u.email, total.total_amount\\nFROM users u\\nINNER JOIN (\\n    SELECT user_id, SUM(amount) AS total_amount\\n    FROM orders\\n    GROUP BY user_id\\n) AS total ON u.id = total.user_id\\nWHERE total.total_amount = (\\n    SELECT MAX(t2.total_amount)\\n    FROM (\\n        SELECT u2.city, SUM(o2.amount) AS total_amount\\n        FROM users u2\\n        INNER JOIN orders o2 ON u2.id = o2.user_id\\n        WHERE u2.city = u.city\\n        GROUP BY u2.id\\n    ) AS t2\\n);\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

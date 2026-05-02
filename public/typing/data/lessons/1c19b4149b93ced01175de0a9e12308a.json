@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.940690+00:00",
+  "request": {
+    "lesson_id": "1c19b4149b93ced01175de0a9e12308a",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 405,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "1c19b4149b93ced01175de0a9e12308a",
+    "nextLessonId": "91218be0aeea9c24ccbf84d81a4b5b12",
+    "lessonName": "六级词汇正序版-131",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第131课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8e1c1f57769063b0b3149c7733e478e0",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"belt\",\"pronun\":\"[belt]\",\"translation\":\"n. 带；腰带；地带\\nvt. 用带子系住；用皮带抽打\\nvi. 猛击\",\"audio\":\"belt.mp3\"},{\"word\":\"book\",\"pronun\":\"[bʊk]\",\"translation\":\"n. 书籍；卷；帐簿；名册；工作簿\\nvt. 预订；登记\",\"audio\":\"book.mp3\"},{\"word\":\"bother\",\"pronun\":\"[ˈbɑːðər]\",\"translation\":\"n. 麻烦；烦恼\\nvt. 烦扰，打扰；使……不安；使……恼怒\\nvi. 操心，麻烦；烦恼\",\"audio\":\"bother.mp3\"},{\"word\":\"branch\",\"pronun\":\"[bræntʃ]\",\"translation\":\"n. 树枝，分枝；分部；支流\\nvt. 分支；出现分歧\\nvi. 分支；出现分歧\",\"audio\":\"branch.mp3\"},{\"word\":\"bridge\",\"pronun\":\"[brɪdʒ]\",\"translation\":\"n. 桥；桥牌；桥接器；船桥\\nvt. 架桥；渡过\",\"audio\":\"bridge.mp3\"},{\"word\":\"browse\",\"pronun\":\"[braʊz]\",\"translation\":\"n. 浏览；吃草\\nvt. 浏览；吃草\\nvi. 浏览；吃草；漫不经心地看商品\",\"audio\":\"browse.mp3\"},{\"word\":\"button\",\"pronun\":\"[ˈbʌt(ə)n]\",\"translation\":\"n. 按钮；纽扣\\nvt. 扣住；扣紧；在…上装纽扣\\nvi. 扣住；装有纽扣；扣上纽扣\",\"audio\":\"button.mp3\"},{\"word\":\"capital\",\"pronun\":\"[ˈkæpɪt(ə)l]\",\"translation\":\"n. 首都，省会；资金；大写字母；资本家\\nadj. 首都的；重要的；大写的\",\"audio\":\"capital.mp3\"},{\"word\":\"cell\",\"pronun\":\"[sel]\",\"translation\":\"n. 细胞；电池；蜂房的巢室；单人小室\\nvi. 住在牢房或小室中\",\"audio\":\"cell.mp3\"},{\"word\":\"change\",\"pronun\":\"[tʃeɪndʒ]\",\"translation\":\"n. 变化；找回的零钱\\nvt. 改变；交换\\nvi. 改变；兑换\",\"audio\":\"change.mp3\"},{\"word\":\"cheap\",\"pronun\":\"[tʃiːp]\",\"translation\":\"adj. 便宜的；小气的；不值钱的\\nadv. 便宜地\",\"audio\":\"cheap.mp3\"},{\"word\":\"coat\",\"pronun\":\"[koʊt]\",\"translation\":\"n. 外套\\nvt. 覆盖…的表面\",\"audio\":\"coat.mp3\"},{\"word\":\"code\",\"pronun\":\"[koʊd]\",\"translation\":\"n. 代码，密码；编码；法典\\nvt. 编码；制成法典\\nvi. 指定遗传密码\",\"audio\":\"code.mp3\"},{\"word\":\"coin\",\"pronun\":\"[kɔɪn]\",\"translation\":\"n. 硬币，钱币\\nvt. 铸造（货币）；杜撰，创造\",\"audio\":\"coin.mp3\"},{\"word\":\"collect\",\"pronun\":\"[kəˈlekt]\",\"translation\":\"vt. 收集；募捐\\nadj. 由收件人付款的\\nvi. 收集；聚集；募捐\\nadv. 由收件人付款地\",\"audio\":\"collect.mp3\"},{\"word\":\"company\",\"pronun\":\"[ˈkʌmpəni]\",\"translation\":\"n. 公司；陪伴，同伴；连队\\nvt. 陪伴\\nvi. 交往\",\"audio\":\"company.mp3\"},{\"word\":\"composition\",\"pronun\":\"[ˌkɑːmpəˈzɪʃn]\",\"translation\":\"n. 作文，作曲，作品；[材] 构成；合成物；成分\",\"audio\":\"composition.mp3\"},{\"word\":\"concert\",\"pronun\":\"[ˈkɑːnsərt]\",\"translation\":\"n. 音乐会；一致；和谐\\nadj. 音乐会用的；在音乐会上演出的\\nvt. 使协调；协同安排\\nvi. 协调；协力\",\"audio\":\"concert.mp3\"},{\"word\":\"content\",\"pronun\":\"[ˈkɑːntent; kənˈtent]\",\"translation\":\"n. 内容，目录；满足；容量\\nadj. 满意的\\nvt. 使满足\",\"audio\":\"content.mp3\"},{\"word\":\"couch\",\"pronun\":\"[kaʊtʃ]\",\"translation\":\"vt. 使躺下；表达；弯下\\nvi. 蹲伏，埋伏；躺着\\nn. 睡椅，长沙发；床；卧榻\",\"audio\":\"couch.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

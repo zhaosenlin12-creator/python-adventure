@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:34.819484+00:00",
+  "request": {
+    "lesson_id": "5fcc9cca7dad01d9a4608e7003ad003a",
+    "course_id": "ecd651bc5180b531e2e6375c54e880fc",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "ecd651bc5180b531e2e6375c54e880fc",
+    "order": 249,
+    "nextCourseId": "ecd651bc5180b531e2e6375c54e880fc",
+    "courseName": "语文课内同步五年级下册",
+    "lessonId": "5fcc9cca7dad01d9a4608e7003ad003a",
+    "nextLessonId": "0c490d36cde63d41667706c11be5426d",
+    "lessonName": "秋夜将晓出篱门迎凉有感",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "db6e9be2f774f5858033b602814de51e",
+        "index": 1,
+        "text": [
+          "三万里河东入海，\\n五千仞岳上摩天。\\n遗民泪尽胡尘里，\\n南望王师又一年。"
+        ],
+        "pinyin": "[[\"三\", \"sān\"], [\"万\", \"wàn\"], [\"里\", \"lǐ\"], [\"河\", \"hé\"], [\"东\", \"dōng\"], [\"入\", \"rù\"], [\"海\", \"hǎi\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"五\", \"wǔ\"], [\"千\", \"qiān\"], [\"仞\", \"rèn\"], [\"岳\", \"yuè\"], [\"上\", \"shàng\"], [\"摩\", \"mó\"], [\"天\", \"tiān\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"遗\", \"yí\"], [\"民\", \"mín\"], [\"泪\", \"lèi\"], [\"尽\", \"jìn\"], [\"胡\", \"hú\"], [\"尘\", \"chén\"], [\"里\", \"lǐ\"], [\"，\", \"\"], [\"\\n\", \"\"], [\"南\", \"nán\"], [\"望\", \"wàng\"], [\"王\", \"wáng\"], [\"师\", \"shī\"], [\"又\", \"yòu\"], [\"一\", \"yī\"], [\"年\", \"nián\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.419635+00:00",
+  "request": {
+    "lesson_id": "ed2a6af477d770bf7badfa49d78f85ff",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 201,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "ed2a6af477d770bf7badfa49d78f85ff",
+    "nextLessonId": "a1a482fe99b4a8d183c4917d6d178a53",
+    "lessonName": "CREATE TABLE创建表",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - CREATE TABLE创建表",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "261cb3fe7186b5572b41651c754035c5",
+        "index": 1,
+        "text": [
+          "-- 创建用户表\\nCREATE TABLE users (\\n    id INT PRIMARY KEY AUTO_INCREMENT,\\n    name VARCHAR(100) NOT NULL,\\n    email VARCHAR(255) UNIQUE NOT NULL,\\n    password VARCHAR(255) NOT NULL,\\n    age INT,\\n    city VARCHAR(50),\\n    status ENUM('active', 'inactive', 'banned') DEFAULT 'active',\\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\\n    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP\\n);\\n\\n-- 创建订单表\\nCREATE TABLE orders (\\n    order_id INT PRIMARY KEY AUTO_INCREMENT,\\n    user_id INT NOT NULL,\\n    amount DECIMAL(10, 2) NOT NULL,\\n    status VARCHAR(20) DEFAULT 'pending',\\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\\n    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,\\n    INDEX idx_user_id (user_id),\\n    INDEX idx_created_at (created_at)\\n);\\n\\n-- 创建产品表\\nCREATE TABLE products (\\n    id INT PRIMARY KEY AUTO_INCREMENT,\\n    name VARCHAR(200) NOT NULL,\\n    description TEXT,\\n    price DECIMAL(10, 2) NOT NULL,\\n    stock INT DEFAULT 0,\\n    category_id INT,\\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\\n);\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

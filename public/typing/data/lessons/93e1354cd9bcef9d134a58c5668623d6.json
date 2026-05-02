@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.101539+00:00",
+  "request": {
+    "lesson_id": "93e1354cd9bcef9d134a58c5668623d6",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 19,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "93e1354cd9bcef9d134a58c5668623d6",
+    "nextLessonId": "d6addd4bf594ff4880a7035f7731af5a",
+    "lessonName": "2022年版 PEP-四年级-下册-2",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-四年级-下册 - 第2课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "41432597418960e0e555b222f6bf17bc",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"now\",\"pronun\":\"[naʊ]\",\"translation\":\"adv. 现在；如今；立刻\\nadj. 现在的\\nn. 现在；目前\\nconj. 由于；既然\",\"audio\":\"now.mp3\"},{\"word\":\"o'clock\",\"pronun\":\"\",\"translation\":\"abbr. …点钟（等于of the clock）\",\"audio\":\"o_clock.mp3\"},{\"word\":\"kid\",\"pronun\":\"[kɪd]\",\"translation\":\"n. 小孩；小山羊\\nvt. 欺骗；取笑；戏弄\\nvi. 欺骗；取笑；戏弄\\nadj. 小山羊皮制的；较年幼的\",\"audio\":\"kid.mp3\"},{\"word\":\"thirty\",\"pronun\":\"[ˈθɜːrti]\",\"translation\":\"num. 三十\\nn. 三十年代\\nadj. 三十个的\",\"audio\":\"thirty.mp3\"},{\"word\":\"fifty\",\"pronun\":\"[ˈfɪfti]\",\"translation\":\"n. 五十；五十个；编号为50的东西\\nadj. 五十的；五十个的；众多的\",\"audio\":\"fifty.mp3\"},{\"word\":\"twenty\",\"pronun\":\"[ˈtwenti]\",\"translation\":\"num. 二十\\nn. 二十；二十年代\\nadj. 二十的\",\"audio\":\"twenty.mp3\"},{\"word\":\"hurry\",\"pronun\":\"[ˈhɜːri]\",\"translation\":\"n. 匆忙，急忙\\nv. 仓促（做某事）；催促；（朝某方向）迅速移动；迅速处理\",\"audio\":\"hurry.mp3\"},{\"word\":\"up\",\"pronun\":\"[ʌp]\",\"translation\":\"prep. 在…之上；向…的较高处\\nn. 上升；繁荣\\nadj. 涨的；起床的；向上的\\nadv. 起来；上涨；向上\",\"audio\":\"up.mp3\"},{\"word\":\"come\",\"pronun\":\"[kʌm]\",\"translation\":\"vi. 来；开始；出现；发生；变成；到达\\nvt. 做；假装；将满（…岁）\\nint. 嗨！\",\"audio\":\"come.mp3\"},{\"word\":\"on\",\"pronun\":\"[ɑːn]\",\"translation\":\"adv. 向前地；作用中，行动中；继续着\\nprep. 向，朝……；关于；在……之上；在……时候\\nadj. 开着的；发生着的，正在进行中\",\"audio\":\"on.mp3\"},{\"word\":\"just\",\"pronun\":\"[dʒʌst]\",\"translation\":\"adv. 只是，仅仅；刚才，刚刚；正好，恰好；实在；刚要\\nadj. 公正的，合理的；正直的，正义的；正确的；公平的；应得的\",\"audio\":\"just.mp3\"},{\"word\":\"a\",\"pronun\":\"[ə; eɪ]\",\"translation\":\"n. 字母A；第一流的；学业成绩达最高标准的评价符号\\nabbr. [物]安（ampere）\",\"audio\":\"a.mp3\"},{\"word\":\"minute\",\"pronun\":\"[ˈmɪnɪt]\",\"translation\":\"n. 分，分钟；片刻，一会儿；备忘录，笔记；会议记录\\nvt. 将…记录下来\\nadj. 微小的，详细的 [maɪˈnjuːt; US -ˈnuːt; maɪˋnut]\",\"audio\":\"minute.mp3\"},{\"word\":\"breakfast\",\"pronun\":\"[ˈbrekfəst]\",\"translation\":\"n. 早餐；早饭\\nvt. 为…供应早餐\\nvi. 吃早餐\",\"audio\":\"breakfast.mp3\"},{\"word\":\"English\",\"pronun\":\"[ˈɪŋɡlɪʃ]\",\"translation\":\"n. 英语；英国人；英文；英格兰人\\nadj. 英国人的；英国的；英文的\\nvt. 把…译成英语\",\"audio\":\"English.mp3\"},{\"word\":\"lunch\",\"pronun\":\"[lʌntʃ]\",\"translation\":\"n. 午餐\\nvt. 吃午餐；供给午餐\\nvi. 吃午餐；供给午餐\",\"audio\":\"lunch.mp3\"},{\"word\":\"PE\",\"pronun\":\"[peɪ]\",\"translation\":\"abbr. 体育课，体能训练（physical education）\",\"audio\":\"PE.mp3\"},{\"word\":\"dinner\",\"pronun\":\"[ˈdɪnər]\",\"translation\":\"n. 晚餐，晚宴；宴会；正餐\",\"audio\":\"dinner.mp3\"},{\"word\":\"get\",\"pronun\":\"[ɡet]\",\"translation\":\"n. 生殖；幼兽\\nvi. 成为；变得；到达\\nvt. 使得；获得；受到；变成\",\"audio\":\"get.mp3\"},{\"word\":\"school\",\"pronun\":\"[skuːl]\",\"translation\":\"n. 学校；学院；学派；鱼群\\nvt. 教育\",\"audio\":\"school.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

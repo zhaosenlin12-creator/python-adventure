@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.365304+00:00",
+  "request": {
+    "lesson_id": "f6b68d60bf0cc41c213744925b536455",
+    "course_id": "30951c93875a1e260feda8cb699005df",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "30951c93875a1e260feda8cb699005df",
+    "order": 494,
+    "nextCourseId": "30951c93875a1e260feda8cb699005df",
+    "courseName": "英语每日故事（初级）32-61",
+    "lessonId": "f6b68d60bf0cc41c213744925b536455",
+    "nextLessonId": "9a7c39b5d7659d854b7b399aa902854b",
+    "lessonName": "Go on a Ship?",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e36e031d2de0e71d962b31e47e62e66a",
+        "index": 1,
+        "text": [
+          "I love going to the beach. I love watching the ships go by. My grandfather was a sailor. He would tell me stories about waves that were taller than a house. One day, he asked me, 'Would you like to go on a ship?' I said, 'Not now. I think I'll stay on the beach and build a sand castle bigger than a house!'"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

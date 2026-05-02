@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.921925+00:00",
+  "request": {
+    "lesson_id": "a61bb7066a4954790e28014635f45e28",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 397,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "a61bb7066a4954790e28014635f45e28",
+    "nextLessonId": "5c6e14c0d4df0bf451bacef289235e04",
+    "lessonName": "六级词汇正序版-107",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第107课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3a2e9801ff0d6c5208c4f3832c88528b",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"suspicious\",\"pronun\":\"[səˈspɪʃəs]\",\"translation\":\"adj. 可疑的；怀疑的；多疑的\",\"audio\":\"suspicious.mp3\"},{\"word\":\"sustain\",\"pronun\":\"[səˈsteɪn]\",\"translation\":\"vt. 维持；支撑，承担；忍受；供养；证实\",\"audio\":\"sustain.mp3\"},{\"word\":\"swamp\",\"pronun\":\"[swɑːmp]\",\"translation\":\"vt. 使陷于沼泽；使沉没；使陷入困境\\nn. 沼泽；湿地\\nvi. 下沉；陷入沼泽；陷入困境；不知所措（过去式swamped，过去分词swamped，现在分词swamping，第三人称单数swamps，名词swampiness，形容词swampy）\",\"audio\":\"swamp.mp3\"},{\"word\":\"swap\",\"pronun\":\"[swɑːp]\",\"translation\":\"n. 交换；交换之物\\nvt. 与...交换；以...作交换\\nvi. 交换；交易\",\"audio\":\"swap.mp3\"},{\"word\":\"symbol\",\"pronun\":\"[ˈsɪmbl]\",\"translation\":\"n. 象征；符号；标志\",\"audio\":\"symbol.mp3\"},{\"word\":\"symbolic\",\"pronun\":\"[sɪmˈbɑːlɪk]\",\"translation\":\"adj. 象征的；符号的；使用符号的\",\"audio\":\"symbolic.mp3\"},{\"word\":\"symmetry\",\"pronun\":\"[ˈsɪmətri]\",\"translation\":\"n. 对称（性）；整齐，匀称\",\"audio\":\"symmetry.mp3\"},{\"word\":\"sympathetic\",\"pronun\":\"[ˌsɪmpəˈθetɪk]\",\"translation\":\"n. 交感神经；容易感受的人\\nadj. 同情的；交感神经的；共鸣的；赞同的；和谐的；合意的\",\"audio\":\"sympathetic.mp3\"},{\"word\":\"sympathy\",\"pronun\":\"[ˈsɪmpəθi]\",\"translation\":\"n. 同情；慰问；赞同\",\"audio\":\"sympathy.mp3\"},{\"word\":\"symphony\",\"pronun\":\"[ˈsɪmfəni]\",\"translation\":\"n. 交响乐；谐声，和声\",\"audio\":\"symphony.mp3\"},{\"word\":\"symposium\",\"pronun\":\"[sɪmˈpoʊziəm]\",\"translation\":\"n. 讨论会，座谈会；专题论文集；酒宴，宴会\",\"audio\":\"symposium.mp3\"},{\"word\":\"syndrome\",\"pronun\":\"[ˈsɪndroʊm]\",\"translation\":\"n. [临床] 综合症状；并发症状；校验子；并发位\",\"audio\":\"syndrome.mp3\"},{\"word\":\"synthesis\",\"pronun\":\"[ˈsɪnθəsɪs]\",\"translation\":\"n. 综合，[化学] 合成；综合体\",\"audio\":\"synthesis.mp3\"},{\"word\":\"tack\",\"pronun\":\"[tæk]\",\"translation\":\"n. 大头钉；粗缝；行动方针；食物\\nvt. 附加；以大头针钉住\\nvi. 抢风航行；作文字形移动\",\"audio\":\"tack.mp3\"},{\"word\":\"tackle\",\"pronun\":\"[ˈtækl]\",\"translation\":\"n. 滑车；装备；用具；扭倒\\nvi. 扭倒；拦截抢球\\nvt. 处理；抓住；固定；与…交涉\",\"audio\":\"tackle.mp3\"},{\"word\":\"tame\",\"pronun\":\"[teɪm]\",\"translation\":\"adj. 驯服的；平淡的；乏味的；顺从的\\nvt. 驯养；使变得平淡；制服\\nvi. 变得驯服\",\"audio\":\"tame.mp3\"},{\"word\":\"tan\",\"pronun\":\"[tæn]\",\"translation\":\"vi. 晒成棕褐色\\nadj. 黄褐色的；鞣皮的\\nn. （日晒后皮肤的）黝黑色；棕褐色；鞣料；马戏团\\nvt. 鞣（革）；晒成褐色\",\"audio\":\"tan.mp3\"},{\"word\":\"tangle\",\"pronun\":\"[ˈtæŋɡl]\",\"translation\":\"n. 纠纷；混乱状态\\nvt. 使纠缠；处于混乱状态\\nvi. 缠结；乱作一团\",\"audio\":\"tangle.mp3\"},{\"word\":\"tanker\",\"pronun\":\"[ˈtæŋkər]\",\"translation\":\"n. 油轮；运油飞机；油槽车；坦克手\",\"audio\":\"tanker.mp3\"},{\"word\":\"target\",\"pronun\":\"[ˈtɑːrɡɪt]\",\"translation\":\"n. 目标；靶子\\nvt. 把……作为目标；规定……的指标；瞄准某物\",\"audio\":\"target.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

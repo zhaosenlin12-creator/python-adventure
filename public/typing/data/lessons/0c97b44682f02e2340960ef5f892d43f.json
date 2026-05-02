@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.907541+00:00",
+  "request": {
+    "lesson_id": "0c97b44682f02e2340960ef5f892d43f",
+    "course_id": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "order": 66,
+    "nextCourseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "courseName": "C++",
+    "lessonId": "0c97b44682f02e2340960ef5f892d43f",
+    "nextLessonId": "663cb839ad0d577c241861a569b558b5",
+    "lessonName": "数组操作",
+    "icon": "data/assets/daziya.com/key-icon_key-cpp.b136419115.png",
+    "description": "C++编程练习 - 数组操作",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2101708dd7d0778d04c4a4c9c7d108a3",
+        "index": 1,
+        "text": [
+          "#include <iostream>\\n#include <algorithm>\\nusing namespace std;\\n\\nint main() {\\n    int numbers[] = {5, 2, 8, 1, 9};\\n    int size = 5;\\n\\n    cout << \"原数组: \";\\n    for (int i = 0; i < size; i++) {\\n        cout << numbers[i] << \" \";\\n    }\\n    cout << endl;\\n\\n    sort(numbers, numbers + size);\\n    cout << \"排序后: \";\\n    for (int i = 0; i < size; i++) {\\n        cout << numbers[i] << \" \";\\n    }\\n    cout << endl;\\n\\n    return 0;\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "cpp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

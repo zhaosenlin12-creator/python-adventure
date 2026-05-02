@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.768942+00:00",
+  "request": {
+    "lesson_id": "ddaebb4028ed304610a99ae68cefcbc8",
+    "course_id": "df7bf8b8c0456926de2c1fac14a741b2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "order": 450,
+    "nextCourseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "courseName": "宋词必备67首（1）",
+    "lessonId": "ddaebb4028ed304610a99ae68cefcbc8",
+    "nextLessonId": "7b6c1bb5245cc09a1e8c618bebd8c4a7",
+    "lessonName": "元日",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ba0bf7645c530fe0a4a243e0c3af96be",
+        "index": 1,
+        "text": [
+          "元日\\n王安石\\n爆竹声中一岁除，春风送暖入屠苏。\\n千门万户曈曈日，总把新桃换旧符。"
+        ],
+        "pinyin": "[[\"元\", \"yuán\"], [\"日\", \"rì\"], [\"\\n\", \"\"], [\"王\", \"wáng\"], [\"安\", \"ān\"], [\"石\", \"shí\"], [\"\\n\", \"\"], [\"爆\", \"bào\"], [\"竹\", \"zhú\"], [\"声\", \"shēng\"], [\"中\", \"zhōng\"], [\"一\", \"yī\"], [\"岁\", \"suì\"], [\"除\", \"chú\"], [\"，\", \"\"], [\"春\", \"chūn\"], [\"风\", \"fēng\"], [\"送\", \"sòng\"], [\"暖\", \"nuǎn\"], [\"入\", \"rù\"], [\"屠\", \"tú\"], [\"苏\", \"sū\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"千\", \"qiān\"], [\"门\", \"mén\"], [\"万\", \"wàn\"], [\"户\", \"hù\"], [\"曈\", \"tóng\"], [\"曈\", \"tóng\"], [\"日\", \"rì\"], [\"，\", \"\"], [\"总\", \"zǒng\"], [\"把\", \"bǎ\"], [\"新\", \"xīn\"], [\"桃\", \"táo\"], [\"换\", \"huàn\"], [\"旧\", \"jiù\"], [\"符\", \"fú\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

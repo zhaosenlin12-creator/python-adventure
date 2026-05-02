@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.777128+00:00",
+  "request": {
+    "lesson_id": "5fc05d42fef21d475d39728a9d3b2a3e",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 32,
+    "nextCourseId": "ff61770b1da83313ceacb0a08aef6378",
+    "courseName": "Python",
+    "lessonId": "5fc05d42fef21d475d39728a9d3b2a3e",
+    "nextLessonId": "bbdc15e148a4d30c52814a74b8d262e2",
+    "lessonName": "基本运算",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - 基本运算",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "e41f9c314a8ba576e41f3287d1cc694e",
+        "index": 1,
+        "text": [
+          "# 基本数学运算\\na = 10\\nb = 3\\n\\nprint(f\"加法: {a} + {b} = {a + b}\")\\nprint(f\"减法: {a} - {b} = {a - b}\")\\nprint(f\"乘法: {a} * {b} = {a * b}\")\\nprint(f\"除法: {a} / {b} = {a / b}\")\\nprint(f\"整除: {a} // {b} = {a // b}\")\\nprint(f\"取余: {a} % {b} = {a % b}\")\\nprint(f\"幂运算: {a} ** {b} = {a ** b}\")\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

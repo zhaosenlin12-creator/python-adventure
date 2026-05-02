@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.750524+00:00",
+  "request": {
+    "lesson_id": "299cdccdd95b94ad5e0660147ea100d4",
+    "course_id": "df7bf8b8c0456926de2c1fac14a741b2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "order": 446,
+    "nextCourseId": "df7bf8b8c0456926de2c1fac14a741b2",
+    "courseName": "宋词必备67首（1）",
+    "lessonId": "299cdccdd95b94ad5e0660147ea100d4",
+    "nextLessonId": "637ccdd684ac98f2a2752134eb760c40",
+    "lessonName": "夜书所见",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a308e0891070dfd8d8b66ed8b06c1628",
+        "index": 1,
+        "text": [
+          "夜书所见\\n叶绍翁\\n萧萧梧叶送寒声，江上秋风动客情。\\n知有儿童挑促织，夜深篱落一灯明。"
+        ],
+        "pinyin": "[[\"夜\", \"yè\"], [\"书\", \"shū\"], [\"所\", \"suǒ\"], [\"见\", \"jiàn\"], [\"\\n\", \"\"], [\"叶\", \"yè\"], [\"绍\", \"shào\"], [\"翁\", \"wēng\"], [\"\\n\", \"\"], [\"萧\", \"xiāo\"], [\"萧\", \"xiāo\"], [\"梧\", \"wú\"], [\"叶\", \"yè\"], [\"送\", \"sòng\"], [\"寒\", \"hán\"], [\"声\", \"shēng\"], [\"，\", \"\"], [\"江\", \"jiāng\"], [\"上\", \"shàng\"], [\"秋\", \"qiū\"], [\"风\", \"fēng\"], [\"动\", \"dòng\"], [\"客\", \"kè\"], [\"情\", \"qíng\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"知\", \"zhī\"], [\"有\", \"yǒu\"], [\"儿\", \"ér\"], [\"童\", \"tóng\"], [\"挑\", \"tiǎo\"], [\"促\", \"cù\"], [\"织\", \"zhī\"], [\"，\", \"\"], [\"夜\", \"yè\"], [\"深\", \"shēn\"], [\"篱\", \"lí\"], [\"落\", \"luò\"], [\"一\", \"yī\"], [\"灯\", \"dēng\"], [\"明\", \"míng\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

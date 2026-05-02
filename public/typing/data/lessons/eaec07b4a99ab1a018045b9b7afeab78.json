@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.389506+00:00",
+  "request": {
+    "lesson_id": "eaec07b4a99ab1a018045b9b7afeab78",
+    "course_id": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "order": 190,
+    "nextCourseId": "0f3d1baadb9fc32eb1e3e83be2c9e2fe",
+    "courseName": "SQL",
+    "lessonId": "eaec07b4a99ab1a018045b9b7afeab78",
+    "nextLessonId": "c8238349604e6d1d7f7be8de5e41b53d",
+    "lessonName": "HAVING筛选",
+    "icon": "data/assets/daziya.com/key-icon_key-sql.a29f9df1a9.png",
+    "description": "SQL编程练习 - HAVING筛选",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1c300645dc677a1bf3d8447b0fd32333",
+        "index": 1,
+        "text": [
+          "-- 查询订单数大于5的用户\\nSELECT user_id, COUNT(*) AS order_count\\nFROM orders\\nGROUP BY user_id\\nHAVING COUNT(*) > 5;\\n\\n-- 查询平均订单金额大于1000的用户\\nSELECT user_id, AVG(amount) AS avg_amount\\nFROM orders\\nGROUP BY user_id\\nHAVING AVG(amount) > 1000;\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "sql",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

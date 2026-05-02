@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.293437+00:00",
+  "request": {
+    "lesson_id": "fdf68581186483756828949f5988b1da",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 163,
+    "nextCourseId": "d7df026ff1d81047d30da28a958b118f",
+    "courseName": "golang",
+    "lessonId": "fdf68581186483756828949f5988b1da",
+    "nextLessonId": "21491cc4fa8d1e6ed8cb52bf20160c34",
+    "lessonName": "字符串反转",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - 字符串反转",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2037e819a7c3fd36bf0fa7e71d255c61",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport \"fmt\"\\n\\nfunc reverseString(text string) string {\\n\trunes := []rune(text)\\n\tfor i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {\\n\t\trunes[i], runes[j] = runes[j], runes[i]\\n\t}\\n\treturn string(runes)\\n}\\n\\nfunc main() {\\n\toriginal := \"Hello World\"\\n\treversed := reverseString(original)\\n\\n\tfmt.Println(\"原字符串:\", original)\\n\tfmt.Println(\"反转后:\", reversed)\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

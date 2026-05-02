@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.914084+00:00",
+  "request": {
+    "lesson_id": "9f8b646db5d3dd8c944267efedf4bb29",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 399,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "9f8b646db5d3dd8c944267efedf4bb29",
+    "nextLessonId": "3d2c4309fec3e3cbd316c222247b76a8",
+    "lessonName": "六级词汇正序版-113",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第113课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b0b194a160cbe73e5932822c78f7d6aa",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"universe\",\"pronun\":\"[ˈjuːnɪvɜːrs]\",\"translation\":\"n. 宇宙；世界；领域\",\"audio\":\"universe.mp3\"},{\"word\":\"update\",\"pronun\":\"[ˌʌpˈdeɪt]\",\"translation\":\"n. 更新；现代化\\nvt. 更新；校正，修正；使现代化\",\"audio\":\"update.mp3\"},{\"word\":\"upgrade\",\"pronun\":\"[ˈʌpɡreɪd]\",\"translation\":\"n. 升级；上升；上坡\\nvt. 使升级；提升；改良品种\\nadj. 向上的\\nadv. 往上\",\"audio\":\"upgrade.mp3\"},{\"word\":\"uphold\",\"pronun\":\"[ʌpˈhoʊld]\",\"translation\":\"vt. 支撑；鼓励；赞成；举起\",\"audio\":\"uphold.mp3\"},{\"word\":\"upright\",\"pronun\":\"[ˈʌpraɪt]\",\"translation\":\"n. 垂直；竖立\\nadj. 正直的，诚实的；垂直的，直立的；笔直的；合乎正道的\",\"audio\":\"upright.mp3\"},{\"word\":\"urban\",\"pronun\":\"[ˈɜːrbən]\",\"translation\":\"adj. 城市的；住在都市的\",\"audio\":\"urban.mp3\"},{\"word\":\"urge\",\"pronun\":\"[ɜːrdʒ]\",\"translation\":\"n. 强烈的欲望，迫切要求；推动力\\nvi. 强烈要求\\nvt. 力劝，催促；驱策，推进\",\"audio\":\"urge.mp3\"},{\"word\":\"utility\",\"pronun\":\"[juːˈtɪləti]\",\"translation\":\"n. 实用；效用；公共设施；功用\\nadj. 实用的；通用的；有多种用途的\",\"audio\":\"utility.mp3\"},{\"word\":\"utilize\",\"pronun\":\"[ˈjuːtəlaɪz]\",\"translation\":\"vt. 利用\",\"audio\":\"utilize.mp3\"},{\"word\":\"utmost\",\"pronun\":\"[ˈʌtmoʊst]\",\"translation\":\"n. 极限；最大可能\\nadj. 极度的；最远的\",\"audio\":\"utmost.mp3\"},{\"word\":\"utopian\",\"pronun\":\"\",\"translation\":\"\",\"audio\":\"utopian.mp3\"},{\"word\":\"vacant\",\"pronun\":\"[ˈveɪkənt]\",\"translation\":\"adj. 空虚的；空的；空缺的；空闲的；茫然的\",\"audio\":\"vacant.mp3\"},{\"word\":\"vacuum\",\"pronun\":\"[ˈvækjuːm]\",\"translation\":\"n. 真空；空间；真空吸尘器\\nadj. 真空的；利用真空的；产生真空的\\nvt. 用真空吸尘器清扫\",\"audio\":\"vacuum.mp3\"},{\"word\":\"vague\",\"pronun\":\"[veɪɡ]\",\"translation\":\"adj. 模糊的；含糊的；不明确的；暧昧的\",\"audio\":\"vague.mp3\"},{\"word\":\"vain\",\"pronun\":\"[veɪn]\",\"translation\":\"adj. 徒劳的；自负的；无结果的；无用的\",\"audio\":\"vain.mp3\"},{\"word\":\"valid\",\"pronun\":\"[ˈvælɪd]\",\"translation\":\"adj. 有效的；有根据的；合法的；正当的\",\"audio\":\"valid.mp3\"},{\"word\":\"valve\",\"pronun\":\"[vælv]\",\"translation\":\"n. 阀；[解剖] 瓣膜；真空管；活门\\nvt. 装阀于；以活门调节\",\"audio\":\"valve.mp3\"},{\"word\":\"van\",\"pronun\":\"[væn]\",\"translation\":\"n. 先锋；厢式货车；增值网\\nvt. 用车搬运\",\"audio\":\"van.mp3\"},{\"word\":\"variation\",\"pronun\":\"[ˌveriˈeɪʃn]\",\"translation\":\"n. 变化；[生物] 变异，变种\",\"audio\":\"variation.mp3\"},{\"word\":\"various\",\"pronun\":\"[ˈveriəs; ˈværiəs]\",\"translation\":\"adj. 各种各样的；多方面的\",\"audio\":\"various.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

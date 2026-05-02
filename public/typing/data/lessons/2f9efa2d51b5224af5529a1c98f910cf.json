@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.595579+00:00",
+  "request": {
+    "lesson_id": "2f9efa2d51b5224af5529a1c98f910cf",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 337,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "2f9efa2d51b5224af5529a1c98f910cf",
+    "nextLessonId": "6d5e0a6845ad92ae88504476b1f147f3",
+    "lessonName": "六级词汇正序版-64",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第64课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9979fd8ec5126043a9866cb147e0089c",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"lane\",\"pronun\":\"[leɪn]\",\"translation\":\"n. 小巷；[航][水运] 航线；车道；罚球区\",\"audio\":\"lane.mp3\"},{\"word\":\"lash\",\"pronun\":\"[læʃ]\",\"translation\":\"vt. 鞭打；冲击；摆动；扎捆；煽动；讽刺\\nvi. 鞭打；猛击；急速甩动\\nn. 鞭打；睫毛；鞭子；责骂；讽刺\",\"audio\":\"lash.mp3\"},{\"word\":\"latent\",\"pronun\":\"[ˈleɪtnt]\",\"translation\":\"adj. 潜在的；潜伏的；隐藏的\",\"audio\":\"latent.mp3\"},{\"word\":\"latitude\",\"pronun\":\"[ˈlætɪtuːd]\",\"translation\":\"n. 纬度；界限；活动范围\",\"audio\":\"latitude.mp3\"},{\"word\":\"layer\",\"pronun\":\"[ˈleɪər]\",\"translation\":\"n. 层，层次；膜；[植]压条；放置者，计划者\\nvt. 把…分层堆放；借助压条法；生根繁殖；将（头发）剪成不同层次\\nvi. 形成或分成层次；[植]通过压条法而生根\",\"audio\":\"layer.mp3\"},{\"word\":\"layman\",\"pronun\":\"[ˈleɪmən]\",\"translation\":\"n. 外行；门外汉；俗人；一般信徒\",\"audio\":\"layman.mp3\"},{\"word\":\"layoff\",\"pronun\":\"[ˈleɪˌɔːf]\",\"translation\":\"n. 活动停止期间；临时解雇；操作停止；失业期\",\"audio\":\"layoff.mp3\"},{\"word\":\"leaflet\",\"pronun\":\"[ˈliːflət]\",\"translation\":\"n. 小叶；传单\",\"audio\":\"leaflet.mp3\"},{\"word\":\"lease\",\"pronun\":\"[liːs]\",\"translation\":\"n. 租约；租期；租赁物；租赁权\\nvt. 出租；租得\\nvi. 出租\",\"audio\":\"lease.mp3\"},{\"word\":\"leather\",\"pronun\":\"[ˈleðər]\",\"translation\":\"n. 皮革；皮革制品\\nvt. 用皮革包盖；抽打\\nadj. 皮的；皮革制的\",\"audio\":\"leather.mp3\"},{\"word\":\"legal\",\"pronun\":\"[ˈliːɡl]\",\"translation\":\"adj. 法律的；合法的；法定的；依照法律的\",\"audio\":\"legal.mp3\"},{\"word\":\"legend\",\"pronun\":\"[ˈledʒənd]\",\"translation\":\"n. 传奇；说明；图例；刻印文字\",\"audio\":\"legend.mp3\"},{\"word\":\"legislation\",\"pronun\":\"[ˌledʒɪsˈleɪʃn]\",\"translation\":\"n. 立法；法律\",\"audio\":\"legislation.mp3\"},{\"word\":\"legitimate\",\"pronun\":\"[lɪˈdʒɪtɪmət]\",\"translation\":\"adj. 合法的；正当的；合理的；正统的\\nvt. 使合法；认为正当（等于legitimize）\",\"audio\":\"legitimate.mp3\"},{\"word\":\"leisure\",\"pronun\":\"[ˈliːʒər]\",\"translation\":\"n. 闲暇；空闲；安逸\\nadj. 空闲的；有闲的；业余的\",\"audio\":\"leisure.mp3\"},{\"word\":\"lens\",\"pronun\":\"[lenz]\",\"translation\":\"n. 透镜，镜头；眼睛中的水晶体；晶状体；隐形眼镜；汽车的灯玻璃\\nvt. 给……摄影\",\"audio\":\"lens.mp3\"},{\"word\":\"lever\",\"pronun\":\"[ˈlevər]\",\"translation\":\"n. 杠杆；控制杆\\nvt. 用杠杆撬动；把…作为杠杆\\nvi. 用杠杆撬\",\"audio\":\"lever.mp3\"},{\"word\":\"levy\",\"pronun\":\"[ˈlevi]\",\"translation\":\"n. 征收；征兵，征税\\nvt. 征收（税等）；征集（兵等）\\nvi. 征税；征兵\",\"audio\":\"levy.mp3\"},{\"word\":\"liability\",\"pronun\":\"[ˌlaɪəˈbɪləti]\",\"translation\":\"n. 责任；债务；倾向；可能性；不利因素\",\"audio\":\"liability.mp3\"},{\"word\":\"liable\",\"pronun\":\"[ˈlaɪəbl]\",\"translation\":\"adj. 有责任的，有义务的；应受罚的；有…倾向的；易…的\",\"audio\":\"liable.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

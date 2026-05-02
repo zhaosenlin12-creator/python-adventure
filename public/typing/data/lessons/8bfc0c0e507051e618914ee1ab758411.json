@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.312468+00:00",
+  "request": {
+    "lesson_id": "8bfc0c0e507051e618914ee1ab758411",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 167,
+    "nextCourseId": "d7df026ff1d81047d30da28a958b118f",
+    "courseName": "golang",
+    "lessonId": "8bfc0c0e507051e618914ee1ab758411",
+    "nextLessonId": "488a026074b966edb985eba166491927",
+    "lessonName": "选择排序",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - 选择排序",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6dd301a608d2a95dd29639e86482afc9",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport \"fmt\"\\n\\nfunc selectionSort(arr []int) {\\n\tn := len(arr)\\n\\n\tfor i := 0; i < n-1; i++ {\\n\t\tminIndex := i\\n\\n\t\tfor j := i + 1; j < n; j++ {\\n\t\t\tif arr[j] < arr[minIndex] {\\n\t\t\t\tminIndex = j\\n\t\t\t}\\n\t\t}\\n\\n\t\tarr[i], arr[minIndex] = arr[minIndex], arr[i]\\n\t}\\n}\\n\\nfunc main() {\\n\tarr := []int{64, 25, 12, 22, 11}\\n\tfmt.Println(\"原数组:\", arr)\\n\tselectionSort(arr)\\n\tfmt.Println(\"排序后:\", arr)\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.188420+00:00",
+  "request": {
+    "lesson_id": "b7a187d6f4c2324b2793f1c2490dfe00",
+    "course_id": "b121644211bd274795ee5972ddf997a2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "b121644211bd274795ee5972ddf997a2",
+    "order": 312,
+    "nextCourseId": "b121644211bd274795ee5972ddf997a2",
+    "courseName": "小学必备古诗75首（1）",
+    "lessonId": "b7a187d6f4c2324b2793f1c2490dfe00",
+    "nextLessonId": "ec5b1653a84d4c7572117de91861bd41",
+    "lessonName": "风",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "11246177637f64885c9e1fbaf4173fae",
+        "index": 1,
+        "text": [
+          "风\\n李峤\\n解落三秋叶，能开二月花。\\n过江千尺浪，入竹万竿斜。"
+        ],
+        "pinyin": "[[\"风\", \"fēng\"], [\"\\n\", \"\"], [\"李\", \"lǐ\"], [\"峤\", \"qiáo\"], [\"\\n\", \"\"], [\"解\", \"jiě\"], [\"落\", \"luò\"], [\"三\", \"sān\"], [\"秋\", \"qiū\"], [\"叶\", \"yè\"], [\"，\", \"\"], [\"能\", \"néng\"], [\"开\", \"kāi\"], [\"二\", \"èr\"], [\"月\", \"yuè\"], [\"花\", \"huā\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"过\", \"guò\"], [\"江\", \"jiāng\"], [\"千\", \"qiān\"], [\"尺\", \"chǐ\"], [\"浪\", \"làng\"], [\"，\", \"\"], [\"入\", \"rù\"], [\"竹\", \"zhú\"], [\"万\", \"wàn\"], [\"竿\", \"gān\"], [\"斜\", \"xié\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

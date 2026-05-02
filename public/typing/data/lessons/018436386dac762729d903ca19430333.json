@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.266421+00:00",
+  "request": {
+    "lesson_id": "018436386dac762729d903ca19430333",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 152,
+    "nextCourseId": "d7df026ff1d81047d30da28a958b118f",
+    "courseName": "golang",
+    "lessonId": "018436386dac762729d903ca19430333",
+    "nextLessonId": "91dba7bfd82ac8e2a3496d1b2e48d9d4",
+    "lessonName": "基本运算",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - 基本运算",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "0342322525896b58eac222fc9eeb0684",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport \"fmt\"\\n\\nfunc main() {\\n\ta, b := 10, 3\\n\\n\tfmt.Println(\"加法:\", a, \"+\", b, \"=\", a+b)\\n\tfmt.Println(\"减法:\", a, \"-\", b, \"=\", a-b)\\n\tfmt.Println(\"乘法:\", a, \"*\", b, \"=\", a*b)\\n\tfmt.Println(\"除法:\", a, \"/\", b, \"=\", a/b)\\n\tfmt.Println(\"取余:\", a, \"%\", b, \"=\", a%b)\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

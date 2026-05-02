@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.539495+00:00",
+  "request": {
+    "lesson_id": "aa594c7e2e69bf13c141cd94c1e0e772",
+    "course_id": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "order": 394,
+    "nextCourseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "courseName": "初中必背古诗60首（1）",
+    "lessonId": "aa594c7e2e69bf13c141cd94c1e0e772",
+    "nextLessonId": "d356abfd13253af052a15ae0e0c7c3eb",
+    "lessonName": "行路难",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d79330d7978dbb9a3124a05d46c4be74",
+        "index": 1,
+        "text": [
+          "行路难\\n李白\\n行路难！行路难！多歧路，今安在？\\n长风破浪会有时，直挂云帆济沧海。"
+        ],
+        "pinyin": "[[\"行\", \"xíng\"], [\"路\", \"lù\"], [\"难\", \"nán\"], [\"\\n\", \"\"], [\"李\", \"lǐ\"], [\"白\", \"bái\"], [\"\\n\", \"\"], [\"行\", \"xíng\"], [\"路\", \"lù\"], [\"难\", \"nán\"], [\"！\", \"\"], [\"行\", \"xíng\"], [\"路\", \"lù\"], [\"难\", \"nán\"], [\"！\", \"\"], [\"多\", \"duō\"], [\"歧\", \"qí\"], [\"路\", \"lù\"], [\"，\", \"\"], [\"今\", \"jīn\"], [\"安\", \"ān\"], [\"在\", \"zài\"], [\"？\", \"\"], [\"\\n\", \"\"], [\"长\", \"cháng\"], [\"风\", \"fēng\"], [\"破\", \"pò\"], [\"浪\", \"làng\"], [\"会\", \"huì\"], [\"有\", \"yǒu\"], [\"时\", \"shí\"], [\"，\", \"\"], [\"直\", \"zhí\"], [\"挂\", \"guà\"], [\"云\", \"yún\"], [\"帆\", \"fān\"], [\"济\", \"jì\"], [\"沧\", \"cāng\"], [\"海\", \"hǎi\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

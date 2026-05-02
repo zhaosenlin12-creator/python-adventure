@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.273741+00:00",
+  "request": {
+    "lesson_id": "95c5d4c55ab4e22954b98e82633ee87d",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 157,
+    "nextCourseId": "d7df026ff1d81047d30da28a958b118f",
+    "courseName": "golang",
+    "lessonId": "95c5d4c55ab4e22954b98e82633ee87d",
+    "nextLessonId": "87cf13e5b8df9cc7c7ffcae81e75c49c",
+    "lessonName": "字符串操作",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - 字符串操作",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "20f91beae99d0c5cb442df28559e5613",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport (\\n\t\"fmt\"\\n\t\"strings\"\\n)\\n\\nfunc main() {\\n\ttext := \"Hello Go\"\\n\\n\tfmt.Println(\"原字符串:\", text)\\n\tfmt.Println(\"转大写:\", strings.ToUpper(text))\\n\tfmt.Println(\"转小写:\", strings.ToLower(text))\\n\tfmt.Println(\"替换:\", strings.Replace(text, \"Go\", \"World\", 1))\\n\tfmt.Println(\"字符串长度:\", len(text))\\n\tfmt.Println(\"是否以Hello开头:\", strings.HasPrefix(text, \"Hello\"))\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

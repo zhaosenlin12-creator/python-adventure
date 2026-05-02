@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.591909+00:00",
+  "request": {
+    "lesson_id": "19401a2a336ad07cf1abed55f21a266c",
+    "course_id": "f5e1caafe742206a7fc8abc95cf77b44",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "order": 308,
+    "nextCourseId": "f5e1caafe742206a7fc8abc95cf77b44",
+    "courseName": "诗词歌赋",
+    "lessonId": "19401a2a336ad07cf1abed55f21a266c",
+    "nextLessonId": "26c6dbfbdeab99d8abc1efcf8dcd692c",
+    "lessonName": "《梅花》王安石",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-poet-1.54ee3c2d1e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3765d8be174f55064c5f728b0443d71c",
+        "index": 1,
+        "text": [
+          "《梅花》\\n宋代：王安石\\n墙角数枝梅，凌寒独自开。\\n遥知不是雪，为有暗香来。"
+        ],
+        "pinyin": "[[\"《\", \"\"], [\"梅\", \"méi\"], [\"花\", \"huā\"], [\"》\", \"\"], [\"\\n\", \"\"], [\"宋\", \"sòng\"], [\"代\", \"dài\"], [\"：\", \"\"], [\"王\", \"wáng\"], [\"安\", \"ān\"], [\"石\", \"shí\"], [\"\\n\", \"\"], [\"墙\", \"qiáng\"], [\"角\", \"jiǎo\"], [\"数\", \"shù\"], [\"枝\", \"zhī\"], [\"梅\", \"méi\"], [\"，\", \"\"], [\"凌\", \"líng\"], [\"寒\", \"hán\"], [\"独\", \"dú\"], [\"自\", \"zì\"], [\"开\", \"kāi\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"遥\", \"yáo\"], [\"知\", \"zhī\"], [\"不\", \"bù\"], [\"是\", \"shì\"], [\"雪\", \"xuě\"], [\"，\", \"\"], [\"为\", \"wèi\"], [\"有\", \"yǒu\"], [\"暗\", \"àn\"], [\"香\", \"xiāng\"], [\"来\", \"lái\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 43,
+        "minSpeed": 28,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

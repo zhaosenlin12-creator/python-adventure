@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.275639+00:00",
+  "request": {
+    "lesson_id": "93f40933af908322b503041ee85246a3",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 160,
+    "nextCourseId": "d7df026ff1d81047d30da28a958b118f",
+    "courseName": "golang",
+    "lessonId": "93f40933af908322b503041ee85246a3",
+    "nextLessonId": "6baf42075842171607ac1880dff3af6c",
+    "lessonName": "结构体定义",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - 结构体定义",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b7fd383ab17eba0b46c156ea882ac484",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport \"fmt\"\\n\\ntype Student struct {\\n\tName string\\n\tAge  int\\n}\\n\\nfunc main() {\\n\tstu := Student{Name: \"张三\", Age: 20}\\n\\n\tfmt.Println(\"学生信息:\")\\n\tfmt.Println(\"姓名:\", stu.Name)\\n\tfmt.Println(\"年龄:\", stu.Age)\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

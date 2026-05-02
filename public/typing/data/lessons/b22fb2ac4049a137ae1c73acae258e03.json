@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.118054+00:00",
+  "request": {
+    "lesson_id": "b22fb2ac4049a137ae1c73acae258e03",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 116,
+    "nextCourseId": "e13b6bae2990dd699f332f225dd1955b",
+    "courseName": "Javascript",
+    "lessonId": "b22fb2ac4049a137ae1c73acae258e03",
+    "nextLessonId": "38944d27d5192a00701a496c60036f23",
+    "lessonName": "字符统计",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - 字符统计",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "abbfcc5b770f0ecb57b44c4e49b11146",
+        "index": 1,
+        "text": [
+          "// 统计字符串中字符出现的频率\\nfunction countCharacters(text) {\\n    const charCount = {};\\n\\n    for (const char of text) {\\n        if (/[a-zA-Z0-9]/.test(char)) {\\n            const lowerChar = char.toLowerCase();\\n            charCount[lowerChar] = (charCount[lowerChar] || 0) + 1;\\n        }\\n    }\\n\\n    return charCount;\\n}\\n\\n// 测试字符统计\\nconst text = \"Hello World! How are you?\";\\nconst frequency = countCharacters(text);\\n\\nconsole.log(`原文本: ${text}`);\\nconsole.log(\"\\n字符出现频率:\");\\nfor (const [char, count] of Object.entries(frequency).sort()) {\\n    console.log(`'${char}': ${count}`);\\n}\\n\\n// 找出出现最多的字符\\nconst mostCommon = Object.entries(frequency).reduce((a, b) => a[1] > b[1] ? a : b);\\nconsole.log(`\\n出现最多的字符: '${mostCommon[0]}' (${mostCommon[1]}次)`);\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

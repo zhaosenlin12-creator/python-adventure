@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.738296+00:00",
+  "request": {
+    "lesson_id": "e7e0368930508c5ddb2fbbea6526931b",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 361,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-1",
+    "lessonId": "e7e0368930508c5ddb2fbbea6526931b",
+    "nextLessonId": "7d8bef5ab1f23984bd031c2a08d5cd52",
+    "lessonName": "六级词汇正序版-136",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第136课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "7fce6557b72227e30b6970dccbc053b6",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"refer\",\"pronun\":\"[rɪˈfɜːr]\",\"translation\":\"vt. 涉及；委托；归诸于；使…求助于\\nvi. 参考；涉及；提到；查阅\",\"audio\":\"refer.mp3\"},{\"word\":\"rest\",\"pronun\":\"[rest]\",\"translation\":\"n. 休息，静止；休息时间；剩余部分；支架\\nvt. 使休息，使轻松；把…寄托于\\nvi. 休息；静止；依赖；安置\",\"audio\":\"rest.mp3\"},{\"word\":\"revolution\",\"pronun\":\"[ˌrevəˈluːʃn]\",\"translation\":\"n. 革命；旋转；运行；循环\",\"audio\":\"revolution.mp3\"},{\"word\":\"role\",\"pronun\":\"[roʊl]\",\"translation\":\"n. 角色；任务\",\"audio\":\"role.mp3\"},{\"word\":\"rough\",\"pronun\":\"[rʌf]\",\"translation\":\"n. 艰苦；高低不平的地面；未经加工的材料；粗糙的部分\\nadj. 粗糙的；粗略的；粗野的；艰苦的；未经加工的\\nvt. 使粗糙；粗暴对待；草拟\\nadv. 粗糙地；粗略地；粗暴地\\nvi. 举止粗野\",\"audio\":\"rough.mp3\"},{\"word\":\"row\",\"pronun\":\"[roʊ; raʊ]\",\"translation\":\"n. 行，排；划船；街道；吵闹\\nvt. 划船；使……成排\\nvi. 划船；争吵\",\"audio\":\"row.mp3\"},{\"word\":\"rush\",\"pronun\":\"[rʌʃ]\",\"translation\":\"n. 冲进；匆促；急流；灯心草\\nadj. 急需的\\nvt. 使冲；突袭；匆忙地做；飞跃\\nvi. 冲；奔；闯；赶紧；涌现\",\"audio\":\"rush.mp3\"},{\"word\":\"safe\",\"pronun\":\"[seɪf]\",\"translation\":\"n. 保险箱；冷藏室；纱橱\\nadj. 安全的；可靠的；平安的\",\"audio\":\"safe.mp3\"},{\"word\":\"sandwich\",\"pronun\":\"[ˈsænwɪtʃ; ˈsænwɪdʒ]\",\"translation\":\"n. 三明治；夹心面包\\nvt. 夹入；挤进；把...做成三明治\",\"audio\":\"sandwich.mp3\"},{\"word\":\"satisfaction\",\"pronun\":\"[ˌsætɪsˈfækʃn]\",\"translation\":\"n. 满意，满足；赔偿；乐事；赎罪\",\"audio\":\"satisfaction.mp3\"},{\"word\":\"save\",\"pronun\":\"[seɪv]\",\"translation\":\"prep. 除...之外\\nn. 救援\\nvi. 节省；挽救\\nvt. 节省；保存；储蓄；解救\",\"audio\":\"save.mp3\"},{\"word\":\"school\",\"pronun\":\"[skuːl]\",\"translation\":\"n. 学校；学院；学派；鱼群\\nvt. 教育\",\"audio\":\"school.mp3\"},{\"word\":\"season\",\"pronun\":\"[ˈsiːzn]\",\"translation\":\"n. 时期；季节；赛季\\nvt. 给…调味；使适应\\nvi. 变得成熟；变干燥\",\"audio\":\"season.mp3\"},{\"word\":\"sentence\",\"pronun\":\"[ˈsentəns]\",\"translation\":\"n. [语][计] 句子，命题；宣判，判决\\nvt. 判决，宣判\",\"audio\":\"sentence.mp3\"},{\"word\":\"share\",\"pronun\":\"[ʃer]\",\"translation\":\"n. 份额；股份\\nvt. 分享，分担；分配\\nvi. 共享；分担\",\"audio\":\"share.mp3\"},{\"word\":\"shoot\",\"pronun\":\"[ʃuːt]\",\"translation\":\"n. 射击；摄影；狩猎；急流\\nvt. 射击，射中；拍摄；发芽；使爆炸；给…注射\\nvi. 射击；发芽；拍电影\",\"audio\":\"shoot.mp3\"},{\"word\":\"shoulder\",\"pronun\":\"[ˈʃoʊldər]\",\"translation\":\"n. 肩，肩膀；肩部\\nvi. 用肩推挤，用肩顶\\nvt. 肩负，承担\",\"audio\":\"shoulder.mp3\"},{\"word\":\"silence\",\"pronun\":\"[ˈsaɪləns]\",\"translation\":\"n. 沉默；寂静；缄默；不谈；无声状态\\nvt. 使沉默；使安静；压制；消除噪音\\nint. 安静！；别作声！\",\"audio\":\"silence.mp3\"},{\"word\":\"skirt\",\"pronun\":\"[skɜːrt]\",\"translation\":\"n. 裙子\\nvt. 绕过，回避；位于…边缘\\nvi. 沿边走，绕开；环绕\",\"audio\":\"skirt.mp3\"},{\"word\":\"society\",\"pronun\":\"[səˈsaɪəti]\",\"translation\":\"n. 社会；交往；社团；社交界\",\"audio\":\"society.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.728743+00:00",
+  "request": {
+    "lesson_id": "4d7465ad55e28cfb4e87282915b95239",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 359,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "4d7465ad55e28cfb4e87282915b95239",
+    "nextLessonId": "f7270fdc16dd8f969e8b31194d0ce072",
+    "lessonName": "六级词汇正序版-130",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第130课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "17191a28fb0520aa3786107b4f950fcb",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"urine\",\"pronun\":\"[ˈjʊrɪn]\",\"translation\":\"n. 尿\",\"audio\":\"urine.mp3\"},{\"word\":\"vacancy\",\"pronun\":\"[ˈveɪkənsi]\",\"translation\":\"n. 空缺；空位；空白；空虚\",\"audio\":\"vacancy.mp3\"},{\"word\":\"validity\",\"pronun\":\"[vəˈlɪdəti]\",\"translation\":\"n. [计] 有效性；正确；正确性\",\"audio\":\"validity.mp3\"},{\"word\":\"vengeance\",\"pronun\":\"[ˈvendʒəns]\",\"translation\":\"n. 复仇；报复；报仇\",\"audio\":\"vengeance.mp3\"},{\"word\":\"waxy\",\"pronun\":\"[ˈwæksi]\",\"translation\":\"adj. 柔软的；蜡色的；像蜡的；苍白的\",\"audio\":\"waxy.mp3\"},{\"word\":\"willingness\",\"pronun\":\"[ˈwɪlɪŋnəs]\",\"translation\":\"n. 乐意；心甘情愿；自动自发\",\"audio\":\"willingness.mp3\"},{\"word\":\"wretch\",\"pronun\":\"[retʃ]\",\"translation\":\"n. 可怜的人，不幸的人；卑鄙的人\",\"audio\":\"wretch.mp3\"},{\"word\":\"act\",\"pronun\":\"[ækt]\",\"translation\":\"n. 行为，行动；法令，法案；（戏剧，歌剧的）一幕，段；装腔作势\\nvt. 扮演；装作，举动像\\nvi. 行动；扮演，充当；表现，举止；假装，演戏；起作用，见效\",\"audio\":\"act.mp3\"},{\"word\":\"address\",\"pronun\":\"[əˈdres; ˈædres]\",\"translation\":\"n. 地址；演讲；致辞；说话的技巧；称呼\\nvt. 演说；从事；忙于；写姓名地址；向…致辞；与…说话；提出；处理\",\"audio\":\"address.mp3\"},{\"word\":\"administer\",\"pronun\":\"[ədˈmɪnɪstər]\",\"translation\":\"vt. 管理；执行；给予\\nvi. 给予帮助；执行遗产管理人的职责；担当管理人\",\"audio\":\"administer.mp3\"},{\"word\":\"advance\",\"pronun\":\"[ədˈvæns]\",\"translation\":\"n. 发展；前进；增长；预付款\\nadj. 预先的；先行的\\nvt. 提出；预付；使……前进；将……提前\\nvi. 前进；进展；上涨\",\"audio\":\"advance.mp3\"},{\"word\":\"air\",\"pronun\":\"[er]\",\"translation\":\"n. 空气，大气；天空；样子；曲调\\nvt. 使通风，晾干；夸耀\\nvi. 通风\",\"audio\":\"air.mp3\"},{\"word\":\"arch\",\"pronun\":\"[ɑːrtʃ]\",\"translation\":\"n. 弓形，拱形；拱门\\nadj. 主要的\\nvt. 使…弯成弓形；用拱连接\\nvi. 拱起；成为弓形\",\"audio\":\"arch.mp3\"},{\"word\":\"article\",\"pronun\":\"[ˈɑːrtɪk(ə)l]\",\"translation\":\"n. 文章；物品；条款；[语] 冠词\\nvt. 订约将…收为学徒或见习生；使…受协议条款的约束\\nvi. 签订协议；进行控告\",\"audio\":\"article.mp3\"},{\"word\":\"attend\",\"pronun\":\"[əˈtend]\",\"translation\":\"vi. 出席；致力于；照料；照顾\\nvt. 出席；上（大学等）；照料；招待；陪伴\",\"audio\":\"attend.mp3\"},{\"word\":\"bachelor\",\"pronun\":\"[ˈbætʃələr]\",\"translation\":\"n. 学士；单身汉；（尚未交配的）小雄兽\",\"audio\":\"bachelor.mp3\"},{\"word\":\"badly\",\"pronun\":\"[ˈbædli]\",\"translation\":\"adv. 非常，很；严重地，厉害地；恶劣地\",\"audio\":\"badly.mp3\"},{\"word\":\"bar\",\"pronun\":\"[bɑːr]\",\"translation\":\"n. 条，棒；酒吧；障碍；法庭\\nprep. 除……外\\nvt. 禁止；阻拦\",\"audio\":\"bar.mp3\"},{\"word\":\"battle\",\"pronun\":\"[ˈbætl]\",\"translation\":\"n. 战役；斗争\\nvt. 与…作战\\nvi. 斗争；作战\",\"audio\":\"battle.mp3\"},{\"word\":\"bear\",\"pronun\":\"[ber]\",\"translation\":\"n. 熊\\nvt. 结果实，开花（正式）\\nvt. 忍受；承受；具有；支撑\",\"audio\":\"bear.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

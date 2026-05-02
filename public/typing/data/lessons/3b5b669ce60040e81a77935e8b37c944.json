@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.161985+00:00",
+  "request": {
+    "lesson_id": "3b5b669ce60040e81a77935e8b37c944",
+    "course_id": "9983508511f457b02ddcae4777acab15",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "9983508511f457b02ddcae4777acab15",
+    "order": 127,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "JAVA",
+    "lessonId": "3b5b669ce60040e81a77935e8b37c944",
+    "nextLessonId": "00ad63bba4043cb8c42495c1c381eb16",
+    "lessonName": "字符串操作",
+    "icon": "data/assets/daziya.com/key-icon_key-java.09b827febf.png",
+    "description": "Java编程练习 - 字符串操作",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6f3617a1e32670e3c2c1609983baa006",
+        "index": 1,
+        "text": [
+          "class Main {\\n    public static void main(String[] args) {\\n        String text = \"Hello Java\";\\n\\n        System.out.println(\"原字符串: \" + text);\\n        System.out.println(\"转大写: \" + text.toUpperCase());\\n        System.out.println(\"转小写: \" + text.toLowerCase());\\n        System.out.println(\"替换: \" + text.replace(\"Java\", \"World\"));\\n        System.out.println(\"字符串长度: \" + text.length());\\n        System.out.println(\"是否以Hello开头: \" + text.startsWith(\"Hello\"));\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "java",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.062016+00:00",
+  "request": {
+    "lesson_id": "83843e4ac58da15e7c9337f80a277490",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 426,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "83843e4ac58da15e7c9337f80a277490",
+    "nextLessonId": "d7f96d77e9e046f31eb863968951a138",
+    "lessonName": "六级词汇正序版-57",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第57课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "46e4ee3e3b37ecf4bf2721e71604158f",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"implication\",\"pronun\":\"[ˌɪmplɪˈkeɪʃn]\",\"translation\":\"n. 含义；暗示；牵连，卷入；可能的结果，影响\",\"audio\":\"implication.mp3\"},{\"word\":\"implicit\",\"pronun\":\"[ɪmˈplɪsɪt]\",\"translation\":\"adj. 含蓄的；暗示的；盲从的\",\"audio\":\"implicit.mp3\"},{\"word\":\"imply\",\"pronun\":\"[ɪmˈplaɪ]\",\"translation\":\"vt. 意味；暗示；隐含\",\"audio\":\"imply.mp3\"},{\"word\":\"impose\",\"pronun\":\"[ɪmˈpoʊz]\",\"translation\":\"vt. 强加；征税；以…欺骗\\nvi. 利用；欺骗；施加影响\",\"audio\":\"impose.mp3\"},{\"word\":\"impulse\",\"pronun\":\"[ˈɪmpʌls]\",\"translation\":\"n. 冲动；[电子] 脉冲；刺激；神经冲动；推动力\\nvt. 推动\",\"audio\":\"impulse.mp3\"},{\"word\":\"impulsive\",\"pronun\":\"[ɪmˈpʌlsɪv]\",\"translation\":\"adj. 冲动的；受感情驱使的；任性的\",\"audio\":\"impulsive.mp3\"},{\"word\":\"inaugurate\",\"pronun\":\"[ɪˈnɔːɡjəreɪt]\",\"translation\":\"vt. 创新；开辟；开创；举行开幕典礼；举行就职典礼\",\"audio\":\"inaugurate.mp3\"},{\"word\":\"incentive\",\"pronun\":\"[ɪnˈsentɪv]\",\"translation\":\"n. 动机；刺激\\nadj. 激励的；刺激的\",\"audio\":\"incentive.mp3\"},{\"word\":\"incidence\",\"pronun\":\"[ˈɪnsɪdəns]\",\"translation\":\"n. 发生率；影响；[光] 入射；影响范围\",\"audio\":\"incidence.mp3\"},{\"word\":\"incident\",\"pronun\":\"[ˈɪnsɪdənt]\",\"translation\":\"n. 事件，事变；插曲\\nadj. [光] 入射的；附带的；易发生的，伴随而来的\",\"audio\":\"incident.mp3\"},{\"word\":\"incidentally\",\"pronun\":\"[ˌɪnsɪˈdentli]\",\"translation\":\"adv. 顺便；偶然地；附带地\",\"audio\":\"incidentally.mp3\"},{\"word\":\"incline\",\"pronun\":\"[ɪnˈklaɪn]\",\"translation\":\"n. 倾斜；斜面；斜坡\\nvt. 使倾斜；使倾向于\\nvi. 倾斜；倾向；易于\",\"audio\":\"incline.mp3\"},{\"word\":\"inclusive\",\"pronun\":\"[ɪnˈkluːsɪv]\",\"translation\":\"adj. 包括的，包含的\",\"audio\":\"inclusive.mp3\"},{\"word\":\"incorporate\",\"pronun\":\"[ɪnˈkɔːrpəreɪt]\",\"translation\":\"vt. 包含，吸收；体现；把……合并\\nadj. 合并的；一体化的；组成公司的\\nvi. 合并；混合；组成公司\",\"audio\":\"incorporate.mp3\"},{\"word\":\"incredible\",\"pronun\":\"[ɪnˈkredəbl]\",\"translation\":\"adj. 难以置信的，惊人的\",\"audio\":\"incredible.mp3\"},{\"word\":\"incur\",\"pronun\":\"[ɪnˈkɜːr]\",\"translation\":\"vt. 招致，引发；蒙受\",\"audio\":\"incur.mp3\"},{\"word\":\"indefinite\",\"pronun\":\"[ɪnˈdefɪnət]\",\"translation\":\"adj. 不确定的；无限的；模糊的\",\"audio\":\"indefinite.mp3\"},{\"word\":\"independence\",\"pronun\":\"[ˌɪndɪˈpendəns]\",\"translation\":\"n. 独立性，自立性；自主\",\"audio\":\"independence.mp3\"},{\"word\":\"indication\",\"pronun\":\"[ˌɪndɪˈkeɪʃn]\",\"translation\":\"n. 指示，指出；迹象；象征\",\"audio\":\"indication.mp3\"},{\"word\":\"indicative\",\"pronun\":\"[ɪnˈdɪkətɪv]\",\"translation\":\"n. 陈述语气；陈述语气的动词形式\\nadj. 象征的；指示的；表示…的\",\"audio\":\"indicative.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

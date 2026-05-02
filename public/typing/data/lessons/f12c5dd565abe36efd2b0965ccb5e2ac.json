@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.952928+00:00",
+  "request": {
+    "lesson_id": "f12c5dd565abe36efd2b0965ccb5e2ac",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 191,
+    "nextCourseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "f12c5dd565abe36efd2b0965ccb5e2ac",
+    "nextLessonId": "c1dc70b9418c84a4637a4f3fbd93804a",
+    "lessonName": "KET核心词-138",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第138课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "45c3738b50da5aecfa6ab7bcc9565d3d",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"thirty\",\"pronun\":\"[ˈθɜːrti]\",\"translation\":\"num. 三十\\nn. 三十年代\\nadj. 三十个的\",\"audio\":\"thirty.mp3\"},{\"word\":\"forty\",\"pronun\":\"[ˈfɔːrti]\",\"translation\":\"n. 四十\\nadj. 四十的；四十个的\",\"audio\":\"forty.mp3\"},{\"word\":\"fifty\",\"pronun\":\"[ˈfɪfti]\",\"translation\":\"n. 五十；五十个；编号为50的东西\\nadj. 五十的；五十个的；众多的\",\"audio\":\"fifty.mp3\"},{\"word\":\"hundred\",\"pronun\":\"[ˈhʌndrəd]\",\"translation\":\"num. 百；百个\\nn. 一百；许多\\nadj. 一百的；许多的\",\"audio\":\"hundred.mp3\"},{\"word\":\"thousand\",\"pronun\":\"[ˈθaʊz(ə)nd]\",\"translation\":\"n. 一千；一千个；许许多多\\nadj. 成千的；无数的\",\"audio\":\"thousand.mp3\"},{\"word\":\"first\",\"pronun\":\"[fɜːrst]\",\"translation\":\"num. 第一\\nn. 第一；开始；冠军\\nadj. 第一的；基本的；最早的\\nadv. 第一；首先；优先；宁愿\",\"audio\":\"first.mp3\"},{\"word\":\"second\",\"pronun\":\"[ˈsekənd; sɪˈkɑːnd]\",\"translation\":\"num. 第二\\nn. 秒；第二名；瞬间；二等品\\nadj. 第二的；次要的；附加的\\nvt. 支持\\nadv. 第二；其次；居第二位\",\"audio\":\"second.mp3\"},{\"word\":\"third\",\"pronun\":\"[θɜːrd]\",\"translation\":\"num. 第三；三分之一\\nadj. 第三的；三分之一的\",\"audio\":\"third.mp3\"},{\"word\":\"fourth\",\"pronun\":\"[fɔːrθ]\",\"translation\":\"num. 第四\\nn. 第四，月的第四日；四分之一\\nadj. 第四的，第四个的；四分之一的\",\"audio\":\"fourth.mp3\"},{\"word\":\"fifth\",\"pronun\":\"[fɪfθ]\",\"translation\":\"num. 第五\\nn. 第五；五分之一\\nadj. 第五的；五分之一的\",\"audio\":\"fifth.mp3\"},{\"word\":\"sixth\",\"pronun\":\"[sɪksθ]\",\"translation\":\"n. 月的第六日，（与the连用的）第六个；六分之一\\nadj. （与 the 连用）第六的，第六个的；六分之一的\",\"audio\":\"sixth.mp3\"},{\"word\":\"seventh\",\"pronun\":\"[ˈsevnθ]\",\"translation\":\"n. 第七；七分之一\\nadj. 第七的；七分之一的\\nadv. 居第七位地\",\"audio\":\"seventh.mp3\"},{\"word\":\"eighth\",\"pronun\":\"[eɪtθ]\",\"translation\":\"num. 第八；八分之一\\nadj. 第八的；八分之一的\",\"audio\":\"eighth.mp3\"},{\"word\":\"ninth\",\"pronun\":\"[naɪnθ]\",\"translation\":\"num. 第九\\nadj. 第九的；九分之一的\\nn. 九分之一\",\"audio\":\"ninth.mp3\"},{\"word\":\"tenth\",\"pronun\":\"[tenθ]\",\"translation\":\"num. 第十；十分之一\\nadj. 十分之一的；第十个的\",\"audio\":\"tenth.mp3\"},{\"word\":\"eleventh\",\"pronun\":\"[ɪˈlevnθ]\",\"translation\":\"num. 第十一；十一分之一\\nn. 第十一；十一分之一\\nadj. 第十一的；十一分之一的\",\"audio\":\"eleventh.mp3\"},{\"word\":\"twelfth\",\"pronun\":\"[twelfθ]\",\"translation\":\"n. 第十二；月的第十二日\\nadj. 第十二的，第十二个的；十二分之一的\",\"audio\":\"twelfth.mp3\"},{\"word\":\"thirteenth\",\"pronun\":\"[ˌθɜːrˈtiːnθ]\",\"translation\":\"n. 第十三；十三分之一\\nadj. 第十三的；十三分之一的\",\"audio\":\"thirteenth.mp3\"},{\"word\":\"fourteenth\",\"pronun\":\"[ˌfɔːrˈtiːnθ]\",\"translation\":\"num. 第十四\\nn. 第十四；月的第十四日；十四分之一\\nadj. 第十四的；第十四个的\",\"audio\":\"fourteenth.mp3\"},{\"word\":\"fifteenth\",\"pronun\":\"[ˌfɪfˈtiːnθ]\",\"translation\":\"adj. 第十五的；十五分之一的\\nnum. 第十五\",\"audio\":\"fifteenth.mp3\"},{\"word\":\"twentieth\",\"pronun\":\"[ˈtwentiəθ]\",\"translation\":\"n. 二十分之一\\nnum. 第二十\\nadj. 第二十的；二十分之一的\",\"audio\":\"twentieth.mp3\"},{\"word\":\"twenty-first\",\"pronun\":\"[ˌtwenti ˈfɜːrst]\",\"translation\":\"num. 第二十一\",\"audio\":\"twenty-first.mp3\"},{\"word\":\"thirtieth\",\"pronun\":\"[ˈθɜːrtiəθ]\",\"translation\":\"n. 第三十；三十分之一\\nadj. 第三十个的；三十分之一的\\nnum. 第三十；三十分之一\",\"audio\":\"thirtieth.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

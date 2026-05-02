@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.312651+00:00",
+  "request": {
+    "lesson_id": "9e8f11e16c1a1f2247d265adf15a0b81",
+    "course_id": "be2af5259ed993e6499f4c46d3f7e67e",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "be2af5259ed993e6499f4c46d3f7e67e",
+    "order": 448,
+    "nextCourseId": "be2af5259ed993e6499f4c46d3f7e67e",
+    "courseName": "实战演练-1亿以内金额",
+    "lessonId": "9e8f11e16c1a1f2247d265adf15a0b81",
+    "nextLessonId": "ddec488a5ed5c9ecbcaee85b53437c05",
+    "lessonName": "极限挑战三",
+    "icon": "data/assets/daziya.com/key-icon_key-practise-star.b4ccc47d6d.png",
+    "description": "数字输入练习 - 极限挑战三",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3cdad6652f0eef588071dcf6947c3a12",
+        "index": 1,
+        "text": [
+          "9462738596\\n8553849617\\n7644951728\\n6735162839\\n5826273941\\n4917384152\\n3128495263\\n2239516374\\n1341627485\\n9573849617\\n8664951728\\n7755162839\\n6846273941\\n5937384152\\n4128495263\\n3239516374\\n2341627485\\n1452738596\\n9674951728\\n8765162839\\n7856273941\\n6947384152\\n5138495263\\n4249516374\\n3351627485\\n2462738596\\n1573849617\\n9775162839\\n8866273941\\n7957384152"
+        ],
+        "pinyin": null,
+        "contentType": 15,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

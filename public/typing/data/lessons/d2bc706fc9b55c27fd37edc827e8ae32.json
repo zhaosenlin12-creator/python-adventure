@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.000029+00:00",
+  "request": {
+    "lesson_id": "d2bc706fc9b55c27fd37edc827e8ae32",
+    "course_id": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "order": 85,
+    "nextCourseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "courseName": "C++",
+    "lessonId": "d2bc706fc9b55c27fd37edc827e8ae32",
+    "nextLessonId": "8f7ef99c1fe243bf248a0ba66dea2f7b",
+    "lessonName": "队列的实现",
+    "icon": "data/assets/daziya.com/key-icon_key-cpp.b136419115.png",
+    "description": "C++编程练习 - 队列的实现",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "088413eb4c21271bd9381cab130fa0ff",
+        "index": 1,
+        "text": [
+          "#include <iostream>\\n#include <queue>\\nusing namespace std;\\n\\nint main() {\\n    queue<string> q;\\n\\n    q.push(\"客户A\");\\n    q.push(\"客户B\");\\n    q.push(\"客户C\");\\n\\n    cout << \"队首: \" << q.front() << endl;\\n    cout << \"队列大小: \" << q.size() << endl;\\n\\n    cout << \"\\n开始服务...\" << endl;\\n    while (!q.empty()) {\\n        cout << \"服务: \" << q.front() << endl;\\n        q.pop();\\n    }\\n\\n    cout << \"\\n当前队列大小: \" << q.size() << endl;\\n\\n    return 0;\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "cpp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

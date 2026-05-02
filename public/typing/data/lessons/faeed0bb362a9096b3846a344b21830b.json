@@ -1,0 +1,41 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.570279+00:00",
+  "request": {
+    "lesson_id": "faeed0bb362a9096b3846a344b21830b",
+    "course_id": "059d1050da5fdf5c469f0cab1d245527",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "059d1050da5fdf5c469f0cab1d245527",
+    "order": 70,
+    "nextCourseId": "059d1050da5fdf5c469f0cab1d245527",
+    "courseName": "特殊符号",
+    "lessonId": "faeed0bb362a9096b3846a344b21830b",
+    "nextLessonId": "001e812459a33c81a512f527de64f2d6",
+    "lessonName": "%和^键",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-special.34e63cbb3b.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [
+      {
+        "chapterId": "bc2508149e9b6f56ea660ae3f08c7ca4",
+        "index": 1,
+        "text": [
+          "^^^%%^%^^%%^%^^%%%^^"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

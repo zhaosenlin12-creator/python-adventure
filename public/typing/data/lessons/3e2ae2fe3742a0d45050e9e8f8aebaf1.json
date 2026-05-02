@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.853812+00:00",
+  "request": {
+    "lesson_id": "3e2ae2fe3742a0d45050e9e8f8aebaf1",
+    "course_id": "305e1352051511f2dff62dc198c6af98",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "305e1352051511f2dff62dc198c6af98",
+    "order": 79,
+    "nextCourseId": "305e1352051511f2dff62dc198c6af98",
+    "courseName": "1000个日常汉字",
+    "lessonId": "3e2ae2fe3742a0d45050e9e8f8aebaf1",
+    "nextLessonId": "7d12681e6991ff4e5998596b7106b29b",
+    "lessonName": "常见汉字9",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "1000个日常汉字 - 第9组（401-450字）",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3a671381f73d3b4a2c79b7762edf283c",
+        "index": 1,
+        "text": [
+          "红爸百令周吧识步希亚术留市半热送兴造谈容极随演收首根讲整式取照办强石古华諣拿计您装似足双妻尼转诉米称"
+        ],
+        "pinyin": "[[\"红\",\"hóng\"],[\"爸\",\"bà\"],[\"百\",\"bǎi\"],[\"令\",\"lìng\"],[\"周\",\"zhōu\"],[\"吧\",\"ba\"],[\"识\",\"shí\"],[\"步\",\"bù\"],[\"希\",\"xī\"],[\"亚\",\"yà\"],[\"术\",\"shù\"],[\"留\",\"liú\"],[\"市\",\"shì\"],[\"半\",\"bàn\"],[\"热\",\"rè\"],[\"送\",\"sòng\"],[\"兴\",\"xīng\"],[\"造\",\"zào\"],[\"谈\",\"tán\"],[\"容\",\"róng\"],[\"极\",\"jí\"],[\"随\",\"suí\"],[\"演\",\"yǎn\"],[\"收\",\"shōu\"],[\"首\",\"shǒu\"],[\"根\",\"gēn\"],[\"讲\",\"jiǎng\"],[\"整\",\"zhěng\"],[\"式\",\"shì\"],[\"取\",\"qǔ\"],[\"照\",\"zhào\"],[\"办\",\"bàn\"],[\"强\",\"qiáng\"],[\"石\",\"shí\"],[\"古\",\"gǔ\"],[\"华\",\"huá\"],[\"諣\",\"huà\"],[\"拿\",\"ná\"],[\"计\",\"jì\"],[\"您\",\"nín\"],[\"装\",\"zhuāng\"],[\"似\",\"sì\"],[\"足\",\"zú\"],[\"双\",\"shuāng\"],[\"妻\",\"qī\"],[\"尼\",\"ní\"],[\"转\",\"zhuǎn\"],[\"诉\",\"sù\"],[\"米\",\"mǐ\"],[\"称\",\"chēng\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 10,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

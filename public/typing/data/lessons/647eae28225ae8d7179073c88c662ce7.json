@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.962099+00:00",
+  "request": {
+    "lesson_id": "647eae28225ae8d7179073c88c662ce7",
+    "course_id": "649abfd4e6da035acc06a37a3357166f",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "649abfd4e6da035acc06a37a3357166f",
+    "order": 105,
+    "nextCourseId": "649abfd4e6da035acc06a37a3357166f",
+    "courseName": "基础练习-全键位输入",
+    "lessonId": "647eae28225ae8d7179073c88c662ce7",
+    "nextLessonId": "03cd2d49d7f8758f77d95e5d1ee689b3",
+    "lessonName": "乘法综合",
+    "icon": "data/assets/daziya.com/key-icon_num-chenghao.00de1ba759.png",
+    "description": "数字输入练习 - 乘法综合",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f732c03d0384dd845ac30bf3159c43fa",
+        "index": 1,
+        "text": [
+          "1*2*3*4*5*6*7*8*9*01"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

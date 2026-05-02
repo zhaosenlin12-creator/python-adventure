@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.662689+00:00",
+  "request": {
+    "lesson_id": "89752e1b1817caeba4efb2ec1daa510a",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 121,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "89752e1b1817caeba4efb2ec1daa510a",
+    "nextLessonId": "a4f6fe771cc11792f0f7658a51c8a5fc",
+    "lessonName": "KET核心词-65",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第65课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b7963a820503af02b74eb7a29bbd222b",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"swing\",\"pronun\":\"[swɪŋ]\",\"translation\":\"n. 摇摆；摆动；秋千；音律；涨落\\nadj. 旋转的；悬挂的；强节奏爵士音乐的\\nvt. 使旋转；挥舞；悬挂\\nvi. 摇摆；转向；悬挂；大摇大摆地行走\",\"audio\":\"swing.mp3\"},{\"word\":\"Swiss\",\"pronun\":\"[swɪs]\",\"translation\":\"n. 瑞士人；瑞士腔调\\nadj. 瑞士的；瑞士人的；瑞士风格的\",\"audio\":\"Swiss.mp3\"},{\"word\":\"Switzerland\",\"pronun\":\"[ˈswɪtsərlənd]\",\"translation\":\"n. 瑞士（欧洲国家）\",\"audio\":\"Switzerland.mp3\"},{\"word\":\"syrup\",\"pronun\":\"[ˈsɪrəp]\",\"translation\":\"n. 糖浆，果汁；含药糖浆\",\"audio\":\"syrup.mp3\"},{\"word\":\"table\",\"pronun\":\"[ˈteɪbl]\",\"translation\":\"n. 桌子；表格；平地层\\nvt. 制表；搁置；嵌合\\nadj. 桌子的\",\"audio\":\"table.mp3\"},{\"word\":\"tablet\",\"pronun\":\"[ˈtæblət]\",\"translation\":\"n. 碑；药片；写字板；小块；平板电脑\\nvt. 用碑牌纪念；将(备忘录等)写在板上；将…制成小片或小块\",\"audio\":\"tablet.mp3\"},{\"word\":\"tail\",\"pronun\":\"[teɪl]\",\"translation\":\"n. 尾巴；踪迹；辫子；燕尾服\\nadj. 从后面而来的；尾部的\\nvt. 尾随；装上尾巴\\nvi. 跟踪；变少或缩小\",\"audio\":\"tail.mp3\"},{\"word\":\"take\",\"pronun\":\"[teɪk]\",\"translation\":\"vi. 拿；获得\\nvt. 拿，取；采取；接受（礼物等）；买，花费；耗费（时间等）\\nn. 捕获量；看法；利益，盈益；（入场券的）售得金额\",\"audio\":\"take.mp3\"},{\"word\":\"talk\",\"pronun\":\"[tɔːk]\",\"translation\":\"n. 谈话；演讲；空谈\\nvi. 谈话；说闲话\\nvt. 说；谈话；讨论\",\"audio\":\"talk.mp3\"},{\"word\":\"tape\",\"pronun\":\"[teɪp]\",\"translation\":\"n. 胶带；磁带；带子；卷尺\\nvt. 录音；用带子捆扎；用胶布把…封住\\nvi. 用磁带录音\",\"audio\":\"tape.mp3\"},{\"word\":\"taste\",\"pronun\":\"[teɪst]\",\"translation\":\"n. 味道；品味；审美\\nvt. 尝；体验\\nvi. 尝起来；有…的味道\",\"audio\":\"taste.mp3\"},{\"word\":\"taxi\",\"pronun\":\"[ˈtæksi]\",\"translation\":\"n. 出租汽车\\nvt. 使滑行；用出租车送\\nvi. 乘出租车；滑行\",\"audio\":\"taxi.mp3\"},{\"word\":\"teach\",\"pronun\":\"[tiːtʃ]\",\"translation\":\"vt. 教；教授；教导\\nvi. 教授；讲授；当老师\",\"audio\":\"teach.mp3\"},{\"word\":\"team\",\"pronun\":\"[tiːm]\",\"translation\":\"n. 队；组\\nvt. 使合作\\nvi. 合作\",\"audio\":\"team.mp3\"},{\"word\":\"teenage\",\"pronun\":\"[ˈtiːneɪdʒ]\",\"translation\":\"n. 青少年时期\\nadj. 青少年的；十几岁的\",\"audio\":\"teenage.mp3\"},{\"word\":\"teenager\",\"pronun\":\"[ˈtiːneɪdʒər]\",\"translation\":\"n. 十几岁的青少年；十三岁到十九岁的少年\",\"audio\":\"teenager.mp3\"},{\"word\":\"television\",\"pronun\":\"[ˈtelɪvɪʒn]\",\"translation\":\"n. 电视，电视机；电视业\",\"audio\":\"television.mp3\"},{\"word\":\"tell\",\"pronun\":\"[tel]\",\"translation\":\"vt. 告诉，说；辨别；吩咐；断定\\nvi. 讲述；告发，泄密；识别\",\"audio\":\"tell.mp3\"},{\"word\":\"temperature\",\"pronun\":\"[ˈtemprətʃər; ˈtemprətʃʊr]\",\"translation\":\"n. 温度；体温；气温；发烧\",\"audio\":\"temperature.mp3\"},{\"word\":\"temple\",\"pronun\":\"[ˈtempl]\",\"translation\":\"n. 庙宇；寺院；神殿；太阳穴\",\"audio\":\"temple.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

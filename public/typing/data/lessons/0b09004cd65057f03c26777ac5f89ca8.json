@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.845045+00:00",
+  "request": {
+    "lesson_id": "0b09004cd65057f03c26777ac5f89ca8",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 52,
+    "nextCourseId": "ff61770b1da83313ceacb0a08aef6378",
+    "courseName": "Python",
+    "lessonId": "0b09004cd65057f03c26777ac5f89ca8",
+    "nextLessonId": "7c142dbd58bd362739301d5ab1d09b4f",
+    "lessonName": "阶乘计算",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - 阶乘计算",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "4a80d17c40a3a2033c77b0a66ab32740",
+        "index": 1,
+        "text": [
+          "# 计算阶乘的多种方法\\ndef factorial_recursive(n):\\n    if n == 0 or n == 1:\\n        return 1\\n    return n * factorial_recursive(n - 1)\\n\\ndef factorial_iterative(n):\\n    result = 1\\n    for i in range(2, n + 1):\\n        result *= i\\n    return result\\n\\n# 测试阶乘计算\\nnumbers = [5, 6, 7, 8]\\nprint(\"阶乘计算结果:\")\\nfor num in numbers:\\n    print(f\"{num}! = {factorial_recursive(num)}\")\\n\\n# 比较两种方法的结果\\nn = 10\\nprint(f\"\\n递归方法: {n}! = {factorial_recursive(n)}\")\\nprint(f\"迭代方法: {n}! = {factorial_iterative(n)}\")\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

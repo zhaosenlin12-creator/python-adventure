@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.146609+00:00",
+  "request": {
+    "lesson_id": "f737157177058f5957c2a574cb992d00",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 23,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "f737157177058f5957c2a574cb992d00",
+    "nextLessonId": "6254a52f7a1e9f29eaf8aa0093f19b18",
+    "lessonName": "2022年版 PEP-四年级-下册-6",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-四年级-下册 - 第6课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ecf59aa3a5fe37efeab42c392205aabd",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"scarf\",\"pronun\":\"[skɑːrf]\",\"translation\":\"n. 围巾；嵌接，嵌接处；头巾领巾\\nvt. 披嵌接；用围巾围\",\"audio\":\"scarf.mp3\"},{\"word\":\"umbrella\",\"pronun\":\"[ʌmˈbrelə]\",\"translation\":\"n. 雨伞；保护伞；庇护；伞形结构\",\"audio\":\"umbrella.mp3\"},{\"word\":\"sunglasses\",\"pronun\":\"[ˈsʌnɡlæsɪz]\",\"translation\":\"n. 太阳镜；凸透镜（sunglass的复数）\",\"audio\":\"sunglasses.mp3\"},{\"word\":\"pretty\",\"pronun\":\"[ˈprɪti]\",\"translation\":\"n. 有吸引力的事物（尤指饰品）；漂亮的人\\nadj. 漂亮的；可爱的；优美的\\nadv. 相当地；颇\",\"audio\":\"pretty.mp3\"},{\"word\":\"expensive\",\"pronun\":\"[ɪkˈspensɪv]\",\"translation\":\"adj. 昂贵的；花钱的\",\"audio\":\"expensive.mp3\"},{\"word\":\"cheap\",\"pronun\":\"[tʃiːp]\",\"translation\":\"adj. 便宜的；小气的；不值钱的\\nadv. 便宜地\",\"audio\":\"cheap.mp3\"},{\"word\":\"nice\",\"pronun\":\"[naɪs]\",\"translation\":\"adj. 精密的；美好的；细微的；和蔼的\",\"audio\":\"nice.mp3\"},{\"word\":\"try\",\"pronun\":\"[traɪ]\",\"translation\":\"n. 尝试；努力；试验\\nvt. 试图，努力；试验；审判；考验\\nvi. 尝试；努力；试验\",\"audio\":\"try.mp3\"},{\"word\":\"size\",\"pronun\":\"[saɪz]\",\"translation\":\"n. 大小；尺寸\\nadj. 一定尺寸的\\nvt. 依大小排列\\nvi. 可比拟\",\"audio\":\"size.mp3\"},{\"word\":\"of\",\"pronun\":\"[əv; ʌv]\",\"translation\":\"prep. 关于；属于；…的；由…组成的\",\"audio\":\"of.mp3\"},{\"word\":\"course\",\"pronun\":\"[kɔːrs]\",\"translation\":\"n. 科目；课程；过程；进程；道路；路线，航向；一道菜\\nvt. 追赶；跑过\\nvi. 指引航线；快跑\",\"audio\":\"course.mp3\"},{\"word\":\"too\",\"pronun\":\"[tuː]\",\"translation\":\"adv. 太；也；很；还；非常；过度\",\"audio\":\"too.mp3\"},{\"word\":\"much\",\"pronun\":\"[mʌtʃ]\",\"translation\":\"adv. 非常，很\\nadj. 大量的\\nn. 许多，大量\\npron. 许多，大量\",\"audio\":\"much.mp3\"},{\"word\":\"eighty\",\"pronun\":\"[ˈeɪti]\",\"translation\":\"num. 八十\\nn. 八十；八十岁；八十年代\\nadj. 八十的，八十个的；八十岁的\",\"audio\":\"eighty.mp3\"},{\"word\":\"dollar\",\"pronun\":\"[ˈdɑːlər]\",\"translation\":\"n. 美元\",\"audio\":\"dollar.mp3\"},{\"word\":\"sale\",\"pronun\":\"[seɪl]\",\"translation\":\"n. 销售；出售；拍卖；销售额；廉价出售\",\"audio\":\"sale.mp3\"},{\"word\":\"more\",\"pronun\":\"[mɔːr]\",\"translation\":\"adv. 更多；此外；更大程度地\\nadj. 更多的；附加的\\npron. 更多的数量\\nn. 更多\",\"audio\":\"more.mp3\"},{\"word\":\"us\",\"pronun\":\"[əs; ʌs]\",\"translation\":\"pron. 我们\",\"audio\":\"us.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

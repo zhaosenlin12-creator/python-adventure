@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.701619+00:00",
+  "request": {
+    "lesson_id": "89d306af3d605421a0bb844d18e66962",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 133,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "89d306af3d605421a0bb844d18e66962",
+    "nextLessonId": "55d9657821c6706e14fe7383ec648316",
+    "lessonName": "KET核心词-101",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第101课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2e87aec516a59a1e6e617e54af0ba36c",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"speaking\",\"pronun\":\"[ˈspiːkɪŋ]\",\"translation\":\"n. 说话；演讲\\nv. 讲（speak的ing形式）\\nadj. 演讲的；富于表情的，雄辩的\",\"audio\":\"speaking.mp3\"},{\"word\":\"spelling\",\"pronun\":\"[ˈspelɪŋ]\",\"translation\":\"n. 拼写；拼字；拼法\\nv. 拼写；意味着（spell的ing形式）；迷住\",\"audio\":\"spelling.mp3\"},{\"word\":\"vocabulary\",\"pronun\":\"[vəˈkæbjəleri]\",\"translation\":\"n. 词汇；词表；词汇量\",\"audio\":\"vocabulary.mp3\"},{\"word\":\"writing\",\"pronun\":\"[ˈraɪtɪŋ]\",\"translation\":\"n. 书写；作品；著作；[法] 笔迹\\nv. 书写（write的ing形式）\",\"audio\":\"writing.mp3\"},{\"word\":\"beach\",\"pronun\":\"[biːtʃ]\",\"translation\":\"n. 海滩；湖滨\\nvt. 将…拖上岸\\nvi. 搁浅；定居\",\"audio\":\"beach.mp3\"},{\"word\":\"branch\",\"pronun\":\"[bræntʃ]\",\"translation\":\"n. 树枝，分枝；分部；支流\\nvt. 分支；出现分歧\\nvi. 分支；出现分歧\",\"audio\":\"branch.mp3\"},{\"word\":\"cave\",\"pronun\":\"[keɪv]\",\"translation\":\"n. 洞穴，窑洞\\nvi. 凹陷，塌落；投降\\nvt. 使凹陷，使塌落；在…挖洞穴\",\"audio\":\"cave.mp3\"},{\"word\":\"coast\",\"pronun\":\"[koʊst]\",\"translation\":\"n. 海岸；滑坡\\nvt. 沿…岸航行\\nvi. 滑行；沿岸航行\",\"audio\":\"coast.mp3\"},{\"word\":\"earth\",\"pronun\":\"[ɜːrθ]\",\"translation\":\"n. 地球；地表，陆地；土地，土壤；尘事，俗事；兽穴\\nvt. 把（电线）[电] 接地；盖（土）；追赶入洞穴\\nvi. 躲进地洞\",\"audio\":\"earth.mp3\"},{\"word\":\"egg\",\"pronun\":\"[eɡ]\",\"translation\":\"n. 蛋；卵子；家伙；鸡蛋\\nvt. 煽动；怂恿\",\"audio\":\"egg.mp3\"},{\"word\":\"farm\",\"pronun\":\"[fɑːrm]\",\"translation\":\"n. 农场；农家；畜牧场\\nvt. 养殖；耕种；佃出（土地）\\nvi. 种田，务农；经营农场\",\"audio\":\"farm.mp3\"},{\"word\":\"farmer\",\"pronun\":\"[ˈfɑːrmər]\",\"translation\":\"n. 农夫，农民\",\"audio\":\"farmer.mp3\"},{\"word\":\"field\",\"pronun\":\"[fiːld]\",\"translation\":\"n. 领域；牧场；旷野；战场；运动场\\nadj. 扫描场；田赛的；野生的\\nvt. 把暴晒于场上；使上场\\nvi. 担任场外队员\",\"audio\":\"field.mp3\"},{\"word\":\"fish\",\"pronun\":\"[fɪʃ]\",\"translation\":\"n. 鱼，鱼类\\nvt. 钓鱼，捕鱼；搜寻\\nvi. 捕鱼，钓鱼；用钩捞取\",\"audio\":\"fish.mp3\"},{\"word\":\"flower\",\"pronun\":\"[ˈflaʊər]\",\"translation\":\"n. 花；精华；开花植物\\nvt. 使开花；用花装饰\\nvi. 成熟，发育；开花；繁荣；旺盛\",\"audio\":\"flower.mp3\"},{\"word\":\"forest\",\"pronun\":\"[ˈfɔːrɪst]\",\"translation\":\"n. 森林\\nvt. 植树于，使成为森林\",\"audio\":\"forest.mp3\"},{\"word\":\"garden\",\"pronun\":\"[ˈɡɑːrdn]\",\"translation\":\"n. 花园；菜园\\nvt. 栽培花木\\nvi. 从事园艺；在园中种植\",\"audio\":\"garden.mp3\"},{\"word\":\"grass\",\"pronun\":\"[ɡræs]\",\"translation\":\"n. 草；草地，草坪\\nvt. 放牧；使……长满草；使……吃草\\nvi. 长草\",\"audio\":\"grass.mp3\"},{\"word\":\"hill\",\"pronun\":\"[hɪl]\",\"translation\":\"n. 小山；丘陵；斜坡；山冈\",\"audio\":\"hill.mp3\"},{\"word\":\"island\",\"pronun\":\"[ˈaɪlənd]\",\"translation\":\"n. 岛；岛屿；安全岛；岛状物\\nadj. 岛的\\nvt. 孤立；使成岛状\",\"audio\":\"island.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

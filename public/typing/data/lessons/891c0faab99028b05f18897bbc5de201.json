@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.549706+00:00",
+  "request": {
+    "lesson_id": "891c0faab99028b05f18897bbc5de201",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 3,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "891c0faab99028b05f18897bbc5de201",
+    "nextLessonId": "fc3a96ca133ef42f487867fa8562231d",
+    "lessonName": "声母巩固",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "声母巩固",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2f940d96997f9920481686f708ae932d",
+        "index": 1,
+        "text": [
+          "爸爸帮弟弟搬笨重的大包袱，妈妈忙着买面包和白菜。隔壁伯伯在河边捕鱼，妹妹捧着皮球蹦蹦跳跳。大家搬板凳坐好，准备听广播。"
+        ],
+        "pinyin": "[[\"爸\",\"bà\"],[\"爸\",\"ba\"],[\"帮\",\"bāng\"],[\"弟\",\"dì\"],[\"弟\",\"di\"],[\"搬\",\"bān\"],[\"笨\",\"bèn\"],[\"重\",\"zhòng\"],[\"的\",\"de\"],[\"大\",\"dà\"],[\"包\",\"bāo\"],[\"袱\",\"fu\"],[\"，\",\"\"],[\"妈\",\"mā\"],[\"妈\",\"ma\"],[\"忙\",\"máng\"],[\"着\",\"zhe\"],[\"买\",\"mǎi\"],[\"面\",\"miàn\"],[\"包\",\"bāo\"],[\"和\",\"hé\"],[\"白\",\"bái\"],[\"菜\",\"cài\"],[\"。\" ,\"\"],[\"隔\",\"gé\"],[\"壁\",\"bì\"],[\"伯\",\"bó\"],[\"伯\",\"bo\"],[\"在\",\"zài\"],[\"河\",\"hé\"],[\"边\",\"biān\"],[\"捕\",\"bǔ\"],[\"鱼\",\"yú\"],[\"，\",\"\"],[\"妹\",\"mèi\"],[\"妹\",\"mei\"],[\"捧\",\"pěng\"],[\"着\",\"zhe\"],[\"皮\",\"pí\"],[\"球\",\"qiú\"],[\"蹦\",\"bèng\"],[\"蹦\",\"bèng\"],[\"跳\",\"tiào\"],[\"跳\",\"tiao\"],[\"。\" ,\"\"],[\"大\",\"dà\"],[\"家\",\"jiā\"],[\"搬\",\"bān\"],[\"板\",\"bǎn\"],[\"凳\",\"dèng\"],[\"坐\",\"zuò\"],[\"好\",\"hǎo\"],[\"，\",\"\"],[\"准\",\"zhǔn\"],[\"备\",\"bèi\"],[\"听\",\"tīng\"],[\"广\",\"guǎng\"],[\"播\",\"bō\"],[\"。\" ,\"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 10,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

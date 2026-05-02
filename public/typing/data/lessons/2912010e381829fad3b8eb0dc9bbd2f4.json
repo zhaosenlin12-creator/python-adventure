@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.550534+00:00",
+  "request": {
+    "lesson_id": "2912010e381829fad3b8eb0dc9bbd2f4",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 328,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "2912010e381829fad3b8eb0dc9bbd2f4",
+    "nextLessonId": "4ce1393b495092d4cd05f1b5e53e7bf6",
+    "lessonName": "六级词汇正序版-37",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第37课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "32901875656302b60515f5db55531389",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"dole\",\"pronun\":\"[doʊl]\",\"translation\":\"n. 失业救济金；赈济物；施舍品\\nvt. 发放救济；以小份发给\",\"audio\":\"dole.mp3\"},{\"word\":\"dolphin\",\"pronun\":\"[ˈdɑːlfɪn]\",\"translation\":\"n. 海豚\",\"audio\":\"dolphin.mp3\"},{\"word\":\"domain\",\"pronun\":\"[doʊˈmeɪn]\",\"translation\":\"n. 领域；域名；产业；地产\",\"audio\":\"domain.mp3\"},{\"word\":\"dome\",\"pronun\":\"[doʊm]\",\"translation\":\"n. 圆屋顶\\nvi. 成圆顶状\\nvt. 加圆屋顶于…上\",\"audio\":\"dome.mp3\"},{\"word\":\"domestic\",\"pronun\":\"[dəˈmestɪk]\",\"translation\":\"n. 国货；佣人\\nadj. 国内的；家庭的；驯养的；一心只管家务的\",\"audio\":\"domestic.mp3\"},{\"word\":\"dominant\",\"pronun\":\"[ˈdɑːmɪnənt]\",\"translation\":\"n. 显性\\nadj. 显性的；占优势的；支配的，统治的\",\"audio\":\"dominant.mp3\"},{\"word\":\"dominate\",\"pronun\":\"[ˈdɑːmɪneɪt]\",\"translation\":\"vt. 控制；支配；占优势；在…中占主要地位\\nvi. 占优势；处于支配地位\",\"audio\":\"dominate.mp3\"},{\"word\":\"donate\",\"pronun\":\"[ˈdoʊneɪt]\",\"translation\":\"n. 捐赠；捐献\\nvt. 捐赠；捐献\\nvi. 捐赠；捐献\",\"audio\":\"donate.mp3\"},{\"word\":\"donation\",\"pronun\":\"[doʊˈneɪʃn]\",\"translation\":\"n. 捐款，捐赠物；捐赠\",\"audio\":\"donation.mp3\"},{\"word\":\"doom\",\"pronun\":\"[duːm]\",\"translation\":\"n. 厄运；死亡；判决；世界末日\\nvt. 注定；判决；使失败\",\"audio\":\"doom.mp3\"},{\"word\":\"doubtless\",\"pronun\":\"[ˈdaʊtləs]\",\"translation\":\"adj. 无疑的；确定的\\nadv. 无疑地；确定地；大概，多半\",\"audio\":\"doubtless.mp3\"},{\"word\":\"draft\",\"pronun\":\"[dræft]\",\"translation\":\"n. 汇票；草稿；选派；（尤指房间、烟囱、炉子等供暖系统中的）（小股）气流\\nvt. 起草；制定；征募\\nvi. 拟稿；绘样；作草图\\nadj. 初步画出或（写出）的；（设计、草图、提纲或版本）正在起草中的，草拟的；以草稿形式的；草图的\",\"audio\":\"draft.mp3\"},{\"word\":\"drag\",\"pronun\":\"[dræɡ]\",\"translation\":\"n. 拖；拖累\\nvi. 拖曳；缓慢而吃力地行进\\nvt. 拖累；拖拉；缓慢而吃力地行进\",\"audio\":\"drag.mp3\"},{\"word\":\"drain\",\"pronun\":\"[dreɪn]\",\"translation\":\"n. 排水；下水道，排水管；消耗\\nvt. 喝光，耗尽；使流出；排掉水\\nvi. 排水；流干\",\"audio\":\"drain.mp3\"},{\"word\":\"drainage\",\"pronun\":\"[ˈdreɪnɪdʒ]\",\"translation\":\"n. 排水；排水系统；污水；排水面积\",\"audio\":\"drainage.mp3\"},{\"word\":\"dramatic\",\"pronun\":\"[drəˈmætɪk]\",\"translation\":\"adj. 戏剧的；急剧的；引人注目的；激动人心的\",\"audio\":\"dramatic.mp3\"},{\"word\":\"drastic\",\"pronun\":\"[ˈdræstɪk]\",\"translation\":\"n. 烈性泻药\\nadj. 激烈的；猛烈的\",\"audio\":\"drastic.mp3\"},{\"word\":\"drawback\",\"pronun\":\"[ˈdrɔːbæk]\",\"translation\":\"n. 缺点，不利条件；退税\",\"audio\":\"drawback.mp3\"},{\"word\":\"dread\",\"pronun\":\"[dred]\",\"translation\":\"n. 恐惧；可怕的人（或物）\\nvt. 惧怕；担心\\nadj. 可怕的\\nvi. 惧怕；担心\",\"audio\":\"dread.mp3\"},{\"word\":\"dreadful\",\"pronun\":\"[ˈdredfl]\",\"translation\":\"adj. 可怕的；糟透的，令人不快的\",\"audio\":\"dreadful.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.874650+00:00",
+  "request": {
+    "lesson_id": "1167df0c44167a21d429fa3d654605a6",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 169,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "1167df0c44167a21d429fa3d654605a6",
+    "nextLessonId": "c2bfd3a417131ead39cdf7c7caf9ce07",
+    "lessonName": "KET核心词-72",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第72课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "85935560b3f3df742193b66ff48aa7e7",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"wash\",\"pronun\":\"[wɑːʃ]\",\"translation\":\"n. 洗涤；洗的衣服；化妆水；冲积物\\nvt. 洗涤；洗刷；冲走；拍打\\nvi. 洗澡；被冲蚀\",\"audio\":\"wash.mp3\"},{\"word\":\"washing-up\",\"pronun\":\"[ˌwɑːʃɪŋ ˈʌp]\",\"translation\":\"n. 洗涤；洗餐具\",\"audio\":\"washing-up.mp3\"},{\"word\":\"washroom\",\"pronun\":\"[ˈwɑːʃruːm; ˈwɑːʃrʊm]\",\"translation\":\"n. 洗手间；盥洗室；厕所\",\"audio\":\"washroom.mp3\"},{\"word\":\"waste\",\"pronun\":\"[weɪst]\",\"translation\":\"n. 浪费；废物；荒地；损耗；地面风化物\\nadj. 废弃的；多余的；荒芜的\\nvt. 浪费；消耗；使荒芜\\nvi. 浪费；变消瘦；挥霍钱财\",\"audio\":\"waste.mp3\"},{\"word\":\"watch\",\"pronun\":\"[wɑːtʃ]\",\"translation\":\"n. 手表；监视；守护；值班人\\nvt. 观察；注视；看守；警戒\\nvi. 观看，注视；守侯，看守\",\"audio\":\"watch.mp3\"},{\"word\":\"water\",\"pronun\":\"[ˈwɔːtər]\",\"translation\":\"n. 水；海水；雨水；海域，大片的水\\nvt. 使湿；供以水；给…浇水\\nvi. 加水；流泪；流口水\",\"audio\":\"water.mp3\"},{\"word\":\"watercolour\",\"pronun\":\"[ˈwɔːtərkʌlər]\",\"translation\":\"n. 水彩画；水彩画颜料（等于watercolor）\",\"audio\":\"watercolour.mp3\"},{\"word\":\"waterfall\",\"pronun\":\"[ˈwɔːtərfɔːl]\",\"translation\":\"n. 瀑布；瀑布似的东西\",\"audio\":\"waterfall.mp3\"},{\"word\":\"wave\",\"pronun\":\"[weɪv]\",\"translation\":\"n. 波动；波浪；高潮；挥手示意；卷曲\\nvt. 卷（烫）发；向…挥手示意；使成波浪形\\nvi. 波动；起伏；挥手示意；摇动；呈波形\",\"audio\":\"wave.mp3\"},{\"word\":\"way\",\"pronun\":\"[weɪ]\",\"translation\":\"n. 方法；道路；方向；行业；习惯\\nadj. 途中的\\nadv. 大大地；远远地\",\"audio\":\"way.mp3\"},{\"word\":\"weak\",\"pronun\":\"[wiːk]\",\"translation\":\"adj. [经] 疲软的；虚弱的；无力的；不牢固的\",\"audio\":\"weak.mp3\"},{\"word\":\"wear\",\"pronun\":\"[wer]\",\"translation\":\"n. 衣物；磨损；耐久性\\nv. 穿着；用旧；耗损；面露\",\"audio\":\"wear.mp3\"},{\"word\":\"weather\",\"pronun\":\"[ˈweðər]\",\"translation\":\"n. 天气；气象；气候；处境\\nvt. 经受住；使风化；侵蚀；使受风吹雨打\\nadj. 露天的；迎风的\\nvi. 风化；受侵蚀；经受风雨\",\"audio\":\"weather.mp3\"},{\"word\":\"web\",\"pronun\":\"[web]\",\"translation\":\"n. 网；卷筒纸；蹼；织物；圈套\\nvt. 用网缠住；使中圈套\\nvi. 形成网\",\"audio\":\"web.mp3\"},{\"word\":\"website\",\"pronun\":\"[ˈwebsaɪt]\",\"translation\":\"n. 网站（全球资讯网的主机站）\",\"audio\":\"website.mp3\"},{\"word\":\"wedding\",\"pronun\":\"[ˈwedɪŋ]\",\"translation\":\"n. 婚礼，婚宴；结婚；结合\\nv. 与…结婚（wed的ing形式）\",\"audio\":\"wedding.mp3\"},{\"word\":\"weekday\",\"pronun\":\"[ˈwiːkdeɪ]\",\"translation\":\"n. 平日，普通日；工作日\",\"audio\":\"weekday.mp3\"},{\"word\":\"weekend\",\"pronun\":\"[ˈwiːkend]\",\"translation\":\"n. 周末，周末休假；周末聚会\\nadj. 周末的，周末用的\\nvi. 度周末\",\"audio\":\"weekend.mp3\"},{\"word\":\"weekly\",\"pronun\":\"[ˈwiːkli]\",\"translation\":\"n. 周刊\\nadj. 每周的；周刊的；一周一次的\\nadv. 每周一次；逐周\",\"audio\":\"weekly.mp3\"},{\"word\":\"weigh\",\"pronun\":\"[weɪ]\",\"translation\":\"n. 权衡；称重量\\nvt. 权衡；考虑；称…重量\\nvi. 重量为…；具有重要性；成为…的重荷；起锚\",\"audio\":\"weigh.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

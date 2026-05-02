@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.892253+00:00",
+  "request": {
+    "lesson_id": "eaef4df1c12b4f7a1deab43ca674b13a",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 393,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "eaef4df1c12b4f7a1deab43ca674b13a",
+    "nextLessonId": "c4caff9f90e2361e54fc033137d5220b",
+    "lessonName": "六级词汇正序版-95",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第95课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "658df1d39bac356ca59a689f16580bdc",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"romance\",\"pronun\":\"[ˈroʊmæns]\",\"translation\":\"n. 传奇；浪漫史；风流韵事；冒险故事\\nvi. 虚构；渲染；写传奇\",\"audio\":\"romance.mp3\"},{\"word\":\"rot\",\"pronun\":\"[rɑːt]\",\"translation\":\"n. 腐烂；腐败；腐坏\\nvt. 使腐烂；使腐朽；使堕落\\nvi. 腐烂；腐败；堕落\\nint. （表示厌恶、蔑视、烦恼等）胡说；糟了\",\"audio\":\"rot.mp3\"},{\"word\":\"rotary\",\"pronun\":\"[ˈroʊtəri]\",\"translation\":\"n. 旋转式机器；[动力] 转缸式发动机\\nadj. 旋转的，转动的；轮流的\",\"audio\":\"rotary.mp3\"},{\"word\":\"routine\",\"pronun\":\"[ruːˈtiːn]\",\"translation\":\"n. [计] 程序；日常工作；例行公事\\nadj. 日常的；例行的\",\"audio\":\"routine.mp3\"},{\"word\":\"royalty\",\"pronun\":\"[ˈrɔɪəlti]\",\"translation\":\"n. 皇室；版税；王权；专利税\",\"audio\":\"royalty.mp3\"},{\"word\":\"ruin\",\"pronun\":\"[ˈruːɪn]\",\"translation\":\"n. 废墟；毁坏；灭亡\\nvt. 毁灭；使破产\\nvi. 破产；堕落；被毁灭\",\"audio\":\"ruin.mp3\"},{\"word\":\"rupture\",\"pronun\":\"[ˈrʌptʃər]\",\"translation\":\"n. 破裂；决裂；疝气\\nvt. 使破裂；断绝；发生疝\\nvi. 破裂；发疝气\",\"audio\":\"rupture.mp3\"},{\"word\":\"sacred\",\"pronun\":\"[ˈseɪkrɪd]\",\"translation\":\"adj. 神的；神圣的；宗教的；庄严的\",\"audio\":\"sacred.mp3\"},{\"word\":\"sacrifice\",\"pronun\":\"[ˈsækrɪfaɪs]\",\"translation\":\"n. 牺牲；祭品；供奉\\nvt. 牺牲；献祭；亏本出售\\nvi. 献祭；奉献\",\"audio\":\"sacrifice.mp3\"},{\"word\":\"safeguard\",\"pronun\":\"[ˈseɪfɡɑːrd]\",\"translation\":\"n. [安全] 保护；保卫；保护措施\\nvt. [安全] 保护，护卫\",\"audio\":\"safeguard.mp3\"},{\"word\":\"sake\",\"pronun\":\"[seɪk; ˈsɑːki]\",\"translation\":\"n. 目的；利益；理由；日本米酒\",\"audio\":\"sake.mp3\"},{\"word\":\"saleable\",\"pronun\":\"[ˈseɪləbl]\",\"translation\":\"adj. 畅销的；可供出售的\",\"audio\":\"saleable.mp3\"},{\"word\":\"salute\",\"pronun\":\"[səˈluːt]\",\"translation\":\"n. 致敬，欢迎；敬礼\\nvt. 行礼致敬，欢迎\\nvi. 致意，打招呼；行礼\",\"audio\":\"salute.mp3\"},{\"word\":\"salvation\",\"pronun\":\"[sælˈveɪʃn]\",\"translation\":\"n. 拯救；救助\",\"audio\":\"salvation.mp3\"},{\"word\":\"sample\",\"pronun\":\"[ˈsæmpl]\",\"translation\":\"n. 样品；样本；例子\\nadj. 试样的，样品的；作为例子的\\nvt. 取样；尝试；抽样检查\",\"audio\":\"sample.mp3\"},{\"word\":\"sanction\",\"pronun\":\"[ˈsæŋkʃn]\",\"translation\":\"n. 制裁，处罚；认可；支持\\nvt. 制裁，处罚；批准；鼓励\",\"audio\":\"sanction.mp3\"},{\"word\":\"saturate\",\"pronun\":\"[ˈsætʃəreɪt]\",\"translation\":\"adj. 浸透的，饱和的；深颜色的\\nvt. 浸透，使湿透；使饱和，使充满\",\"audio\":\"saturate.mp3\"},{\"word\":\"savage\",\"pronun\":\"[ˈsævɪdʒ]\",\"translation\":\"n. 未开化的人；粗鲁的人；残暴成性的人\\nadj. 野蛮的；残酷的；狂怒的；荒凉的\\nvt. 乱咬；粗暴的对待\",\"audio\":\"savage.mp3\"},{\"word\":\"scale\",\"pronun\":\"[skeɪl]\",\"translation\":\"n. 规模；比例；鳞；刻度；天平；数值范围\\nvt. 测量；攀登；刮鳞；依比例决定\\nvi. 衡量；攀登；剥落；生水垢\",\"audio\":\"scale.mp3\"},{\"word\":\"scan\",\"pronun\":\"[skæn]\",\"translation\":\"n. 扫描；浏览；审视；细看\\nvt. 扫描；浏览；细看；详细调查；标出格律\\nvi. 扫描；扫掠\",\"audio\":\"scan.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.555214+00:00",
+  "request": {
+    "lesson_id": "c24e232bf10e13fc39540d4cec5abe05",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 542,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "c24e232bf10e13fc39540d4cec5abe05",
+    "nextLessonId": "26cb2a324136e77902e4a5481e2f3d48",
+    "lessonName": "Grandma’s Moving Day",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "21224e49ad2a08355787c62cff2028b4",
+        "index": 1,
+        "text": [
+          "Grandma's Moving Day\\nThe day had come. Grandma was moving out of her big house. I was sad. I had a lot of memories in that house.\\nI asked where Grandma was moving to. My dad just said, \"Somewhere nearby. Don't worry.\"\\nBut I was worried. I spent a lot of time with Grandma.\\nI did not want to see her any less. In fact, I wanted to see her more.\\nI could tell that no one wanted to tell me because they knew I would be sad. \"It must be far away,\" I thought to myself.\\nWe got all of Grandma's things in the truck. I sat beside her in the car. We talked the whole time.\\nAfter a while, the truck stopped. I looked out to see her new home.\\nIt was our house! Grandma was coming to live with us."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.236693+00:00",
+  "request": {
+    "lesson_id": "65543ab0a43c0a90e81c39a922436007",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 37,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "65543ab0a43c0a90e81c39a922436007",
+    "nextLessonId": "a71412503cb4e7093f12a19b01421dff",
+    "lessonName": "2022年版 PEP-五年级-下册-7",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-五年级-下册 - 第7课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3a0e2041aa5db1da564fde3ed2a05deb",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"diary\",\"pronun\":\"[ˈdaɪəri]\",\"translation\":\"n. 日志，日记；日记簿\",\"audio\":\"diary.mp3\"},{\"word\":\"still\",\"pronun\":\"[stɪl]\",\"translation\":\"conj. 仍然；但是；尽管如此\\nn. 寂静；剧照；蒸馏室\\nadj. 静止的，不动的；寂静的，平静的；不起泡的\\nadv. 仍然；更；静止地\\nvt. 蒸馏；使…静止；使…平静下来\\nvi. 静止；平静；蒸馏\",\"audio\":\"still.mp3\"},{\"word\":\"noise\",\"pronun\":\"[nɔɪz]\",\"translation\":\"n. [环境] 噪音；响声；杂音\\nvt. 谣传\\nvi. 发出声音；大声议论\",\"audio\":\"noise.mp3\"},{\"word\":\"fur\",\"pronun\":\"[fɜːr]\",\"translation\":\"n. 皮，皮子；毛皮；软毛\\nn. 水垢\\nvt. 用毛皮覆盖；使穿毛皮服装\",\"audio\":\"fur.mp3\"},{\"word\":\"open\",\"pronun\":\"[ˈoʊpən]\",\"translation\":\"adj. 公开的；敞开的；空旷的；坦率的；营业着的\\nvi. 开始；展现\\nvt. 公开；打开\\nn. 公开；空旷；户外\",\"audio\":\"open.mp3\"},{\"word\":\"mine\",\"pronun\":\"[maɪn]\",\"translation\":\"n. 矿，矿藏；矿山，矿井；地雷，水雷\\nvt. 开采，采掘；在…布雷\\nvi. 开矿，采矿；埋设地雷\\npron. 我的\",\"audio\":\"mine.mp3\"},{\"word\":\"yours\",\"pronun\":\"[jərz; jɔːrz; jʊrz]\",\"translation\":\"pron. 你（们）的东西；你的责任[义务]；你的家属；来信，尊函\\nadj. 你（们）的（东西）；信末署名前用语\",\"audio\":\"yours.mp3\"},{\"word\":\"his\",\"pronun\":\"[hɪz; ɪz]\",\"translation\":\"pron. 他的\",\"audio\":\"his.mp3\"},{\"word\":\"hers\",\"pronun\":\"[hɜːrz; ɜːrz]\",\"translation\":\"pron. 她的（所有格）\",\"audio\":\"hers.mp3\"},{\"word\":\"theirs\",\"pronun\":\"[ðerz]\",\"translation\":\"pron. 他们的；她们的；它们的\",\"audio\":\"theirs.mp3\"},{\"word\":\"ours\",\"pronun\":\"[ˈaʊərz]\",\"translation\":\"pron. 我们的\",\"audio\":\"ours.mp3\"},{\"word\":\"climbing\",\"pronun\":\"[ˈklaɪmɪŋ]\",\"translation\":\"n. 攀登\\nv. 爬（climb的ing形式）\\nadj. 上升的；攀缘而登的\",\"audio\":\"climbing.mp3\"},{\"word\":\"climb\",\"pronun\":\"[klaɪm]\",\"translation\":\"n. 爬；攀登\\nvi. 爬；攀登；上升\\nvt. 爬；攀登；上升\",\"audio\":\"climb.mp3\"},{\"word\":\"eating\",\"pronun\":\"[ˈiːtɪŋ]\",\"translation\":\"n. 吃；食物\\nv. 吃（eat的ing形式）\\nadj. 侵蚀的；可生食的；进餐用的\",\"audio\":\"eating.mp3\"},{\"word\":\"playing\",\"pronun\":\"[ˈpleɪɪŋ]\",\"translation\":\"n. 比赛；演奏\\nv. 玩耍（play的ing形式）\",\"audio\":\"playing.mp3\"},{\"word\":\"jumping\",\"pronun\":\"[ˈdʒʌmpɪŋ]\",\"translation\":\"adj. 跳跃的\\nn. 障碍\\nvi. 跳（jump的ing形式）\",\"audio\":\"jumping.mp3\"},{\"word\":\"jump\",\"pronun\":\"[dʒʌmp]\",\"translation\":\"n. 跳跃；暴涨；惊跳\\nvt. 跳跃；使跳跃；跳过；突升\\nvi. 跳跃；暴涨；猛增\",\"audio\":\"jump.mp3\"},{\"word\":\"drinking\",\"pronun\":\"[ˈdrɪŋkɪŋ]\",\"translation\":\"n. 喝，饮；喝酒\\nv. 饮（drink的ing形式）；喝\",\"audio\":\"drinking.mp3\"},{\"word\":\"drink\",\"pronun\":\"[drɪŋk]\",\"translation\":\"n. 酒，饮料；喝酒\\nvt. 喝，饮；吸收；举杯庆贺\\nvi. 喝酒；饮水；干杯\",\"audio\":\"drink.mp3\"},{\"word\":\"sleeping\",\"pronun\":\"[ˈsliːpɪŋ]\",\"translation\":\"n. 睡眠\\nadj. 睡着的\",\"audio\":\"sleeping.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

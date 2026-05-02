@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.844201+00:00",
+  "request": {
+    "lesson_id": "5baa56e45b4e9500f76b6db11b0e0971",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 49,
+    "nextCourseId": "ff61770b1da83313ceacb0a08aef6378",
+    "courseName": "Python",
+    "lessonId": "5baa56e45b4e9500f76b6db11b0e0971",
+    "nextLessonId": "891ac38b752440a5843b5b8e0ab46b73",
+    "lessonName": "二分查找",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - 二分查找",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "72af875ab9b2bbf1843f00c4d02f3703",
+        "index": 1,
+        "text": [
+          "# 二分查找算法\\ndef binary_search(arr, target):\\n    left = 0\\n    right = len(arr) - 1\\n\\n    while left <= right:\\n        mid = (left + right) // 2\\n\\n        if arr[mid] == target:\\n            return mid\\n        elif arr[mid] < target:\\n            left = mid + 1\\n        else:\\n            right = mid - 1\\n\\n    return -1\\n\\n# 测试二分查找\\nsorted_array = [2, 5, 8, 12, 16, 23, 38, 45, 56, 67, 78]\\ntarget = 23\\n\\nresult = binary_search(sorted_array, target)\\nif result != -1:\\n    print(f\"元素 {target} 在索引 {result} 处\")\\nelse:\\n    print(f\"元素 {target} 不在数组中\")\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

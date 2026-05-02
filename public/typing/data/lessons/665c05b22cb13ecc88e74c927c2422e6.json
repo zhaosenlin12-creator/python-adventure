@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.353157+00:00",
+  "request": {
+    "lesson_id": "665c05b22cb13ecc88e74c927c2422e6",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 53,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "665c05b22cb13ecc88e74c927c2422e6",
+    "nextLessonId": "99aa34294e6a46088bfdd9373b029c45",
+    "lessonName": "2022年版 PEP-六年级-下册-6",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-六年级-下册 - 第6课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "28440a082857cb0682df5d47fda06ee1",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"gym\",\"pronun\":\"[dʒɪm]\",\"translation\":\"n. 健身房；体育；体育馆\",\"audio\":\"gym.mp3\"},{\"word\":\"ago\",\"pronun\":\"[əˈɡoʊ]\",\"translation\":\"adj. 以前的；过去的\\nadv. 以前，以往\",\"audio\":\"ago.mp3\"},{\"word\":\"cycling\",\"pronun\":\"[ˈsaɪklɪŋ]\",\"translation\":\"n. 骑脚踏车消遣；骑脚踏车兜风\",\"audio\":\"cycling.mp3\"},{\"word\":\"ice-skate\",\"pronun\":\"[ˈaɪs skeɪt]\",\"translation\":\"v. 溜冰，滑冰\",\"audio\":\"ice-skate.mp3\"},{\"word\":\"badminton\",\"pronun\":\"[ˈbædmɪntən]\",\"translation\":\"n. 羽毛球\",\"audio\":\"badminton.mp3\"},{\"word\":\"star\",\"pronun\":\"[stɑːr]\",\"translation\":\"n. 星，恒星；明星；星形物\\nadj. 明星的，主角的；星形的\\nvt. 用星号标于；由…主演，由…担任主角\\nvi. 担任主角\",\"audio\":\"star.mp3\"},{\"word\":\"easy\",\"pronun\":\"[ˈiːzi]\",\"translation\":\"adj. 容易的；舒适的\\nvt. 发出停划命令\\nadv. 不费力地，从容地\\nvi. 停止划桨\",\"audio\":\"easy.mp3\"},{\"word\":\"look\",\"pronun\":\"[lʊk]\",\"translation\":\"vt. 看；期待；注意；面向；看上去像\\nvi. 看；看起来；注意；面向\\nn. 看；样子；面容\",\"audio\":\"look.mp3\"},{\"word\":\"up\",\"pronun\":\"[ʌp]\",\"translation\":\"prep. 在…之上；向…的较高处\\nn. 上升；繁荣\\nadj. 涨的；起床的；向上的\\nadv. 起来；上涨；向上\",\"audio\":\"up.mp3\"},{\"word\":\"Internet\",\"pronun\":\"[ˈɪntərnet]\",\"translation\":\"n. 因特网\",\"audio\":\"Internet.mp3\"},{\"word\":\"different\",\"pronun\":\"[ˈdɪfrənt]\",\"translation\":\"adj. 不同的；个别的，与众不同的\",\"audio\":\"different.mp3\"},{\"word\":\"active\",\"pronun\":\"[ˈæktɪv]\",\"translation\":\"n. 主动语态；积极分子\\nadj. 积极的；活跃的；主动的；有效的；现役的\",\"audio\":\"active.mp3\"},{\"word\":\"race\",\"pronun\":\"[reɪs]\",\"translation\":\"n. 属，种；种族，人种；家庭，门第\\nvt. 使参加比赛；和…竞赛；使急走，使全速行进\\nvi. 比速度，参加竞赛；全速行进\",\"audio\":\"race.mp3\"},{\"word\":\"nothing\",\"pronun\":\"[ˈnʌθɪŋ]\",\"translation\":\"neg. 没什么；毫不\\nn. 无；零；不关紧要之事\\nadv. 毫不；决不\\npron. 无事；无物\\nint. 什么也没有\",\"audio\":\"nothing.mp3\"},{\"word\":\"thought\",\"pronun\":\"[θɔːt]\",\"translation\":\"n. 思想；思考；想法；关心\\nv. 想，思考；认为（think的过去式和过去分词）\",\"audio\":\"thought.mp3\"},{\"word\":\"think\",\"pronun\":\"[θɪŋk]\",\"translation\":\"n. 想；想法\\nadj. 思想的\\nvi. 想；认为\\nvt. 想；认为；想起；想像；打算\",\"audio\":\"think.mp3\"},{\"word\":\"felt\",\"pronun\":\"[felt]\",\"translation\":\"n. 毡；毡制品\\nv. 感觉（feel的过去式）\\nvi. 粘结\\nvt. 使粘结；把…制成毡\",\"audio\":\"felt.mp3\"},{\"word\":\"feel\",\"pronun\":\"[fiːl]\",\"translation\":\"n. 感觉；触摸\\nvi. 觉得；摸索\\nvt. 感觉；认为；触摸；试探\",\"audio\":\"feel.mp3\"},{\"word\":\"cheetah\",\"pronun\":\"[ˈtʃiːtə]\",\"translation\":\"n. [脊椎] 猎豹\",\"audio\":\"cheetah.mp3\"},{\"word\":\"trip\",\"pronun\":\"[trɪp]\",\"translation\":\"n. 旅行；绊倒；差错\\nvt. 绊倒；使犯错\\nvi. 绊倒；远足；犯错误；轻快地走\",\"audio\":\"trip.mp3\"},{\"word\":\"woke\",\"pronun\":\"[woʊk]\",\"translation\":\"v. 唤醒；激发；使…复活（wake的过去式）\",\"audio\":\"woke.mp3\"},{\"word\":\"wake\",\"pronun\":\"[weɪk]\",\"translation\":\"n. 尾迹；守夜；守丧\\nvt. 叫醒；激发\\nvi. 醒来；唤醒；警觉\",\"audio\":\"wake.mp3\"},{\"word\":\"dream\",\"pronun\":\"[driːm]\",\"translation\":\"n. 梦想，愿望；梦\\nadj. 梦的；理想的；不切实际的\\nvt. 梦想；做梦；想到\\nvi. 梦想；做梦，梦见；想到\",\"audio\":\"dream.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

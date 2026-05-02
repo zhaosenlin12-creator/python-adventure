@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.482900+00:00",
+  "request": {
+    "lesson_id": "ad4bc102aca8e5d76d0f24701f75ae42",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 86,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "ad4bc102aca8e5d76d0f24701f75ae42",
+    "nextLessonId": "d908b5ef6aed8355d20c2dc7dfdedae7",
+    "lessonName": "KET核心词-97",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第97课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9758847d6694df987a50274f90d87a39",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"angry\",\"pronun\":\"[ˈæŋɡri]\",\"translation\":\"adj. 生气的；愤怒的；狂暴的；（伤口等）发炎的\",\"audio\":\"angry.mp3\"},{\"word\":\"annoyed\",\"pronun\":\"[əˈnɔɪd]\",\"translation\":\"v. 使烦恼；打扰（annoy的过去分词）\\nadj. 恼怒的；烦闷的\",\"audio\":\"annoyed.mp3\"},{\"word\":\"anxious\",\"pronun\":\"[ˈæŋkʃəs]\",\"translation\":\"adj. 焦虑的；担忧的；渴望的；急切的\",\"audio\":\"anxious.mp3\"},{\"word\":\"ashamed\",\"pronun\":\"[əˈʃeɪmd]\",\"translation\":\"adj. 惭愧的，感到难为情的；耻于……的\",\"audio\":\"ashamed.mp3\"},{\"word\":\"be fond of\",\"pronun\":\"\",\"translation\":\"v. 爱好\",\"audio\":\"be_fond_of.mp3\"},{\"word\":\"be keen on\",\"pronun\":\"\",\"translation\":\"na. 喜爱\",\"audio\":\"be_keen_on.mp3\"},{\"word\":\"bored\",\"pronun\":\"[bɔːrd]\",\"translation\":\"v. 使厌烦（bore的过去式）；烦扰\\nadj. 无聊的；无趣的；烦人的\",\"audio\":\"bored.mp3\"},{\"word\":\"brilliant\",\"pronun\":\"[ˈbrɪliənt]\",\"translation\":\"adj. 灿烂的，闪耀的；杰出的；有才气的；精彩的，绝妙的\",\"audio\":\"brilliant.mp3\"},{\"word\":\"calm\",\"pronun\":\"[kɑːm]\",\"translation\":\"n. 风平浪静\\nadj. 静的，平静的；沉着的\\nvt. 使平静；使镇定\\nvi. 平静下来；镇定下来\",\"audio\":\"calm.mp3\"},{\"word\":\"cool\",\"pronun\":\"[kuːl]\",\"translation\":\"n. 凉爽；凉爽的空气\\nadj. 凉爽的；冷静的；出色的\\nvt. 使…冷却；使…平静下来\\nvi. 变凉；平息\\nadv. 冷静地\",\"audio\":\"cool.mp3\"},{\"word\":\"depressed\",\"pronun\":\"[dɪˈprest]\",\"translation\":\"adj. 沮丧的；萧条的；压低的\\nv. 使沮丧；使萧条（depress的过去式和过去分词形式）；压低\",\"audio\":\"depressed.mp3\"},{\"word\":\"difficult\",\"pronun\":\"[ˈdɪfɪkəlt]\",\"translation\":\"adj. 困难的；不随和的；执拗的\",\"audio\":\"difficult.mp3\"},{\"word\":\"disappointed\",\"pronun\":\"[ˌdɪsəˈpɔɪntɪd]\",\"translation\":\"adj. 失望的，沮丧的；受挫折的\",\"audio\":\"disappointed.mp3\"},{\"word\":\"dislike\",\"pronun\":\"[dɪsˈlaɪk]\",\"translation\":\"n. 嫌恶，反感，不喜爱\\nvt. 不喜欢，厌恶\",\"audio\":\"dislike.mp3\"},{\"word\":\"embarrassed\",\"pronun\":\"[ɪmˈbærəst]\",\"translation\":\"v. 使...困窘；使...局促不安（embarrass的过去分词形式）\\nadj. 尴尬的；窘迫的\",\"audio\":\"embarrassed.mp3\"},{\"word\":\"favourite\",\"pronun\":\"[ˈfeɪvərɪt]\",\"translation\":\"n. 特别喜爱的人（或物）\\nadj. 特别受喜爱的\",\"audio\":\"favourite.mp3\"},{\"word\":\"fine\",\"pronun\":\"[faɪn]\",\"translation\":\"n. 罚款\\nadj. 好的；优良的；细小的，精美的；健康的；晴朗的\\nvt. 罚款；澄清\\nadv. 很好地；精巧地\",\"audio\":\"fine.mp3\"},{\"word\":\"friendly\",\"pronun\":\"[ˈfrendli]\",\"translation\":\"adj. 友好的；亲切的；支持的；融洽的，和睦的\\nadv. 友善地；温和地\",\"audio\":\"friendly.mp3\"},{\"word\":\"frightened\",\"pronun\":\"[ˈfraɪtnd]\",\"translation\":\"v. 害怕；使吃惊；吓走（frighten的过去分词）\\nadj. 害怕的；受惊的；受恐吓的\",\"audio\":\"frightened.mp3\"},{\"word\":\"great\",\"pronun\":\"[ɡreɪt]\",\"translation\":\"n. 大师；大人物；伟人们\\nadj. 伟大的，重大的；极好的，好的；主要的\",\"audio\":\"great.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

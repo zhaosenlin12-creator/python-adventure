@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.140719+00:00",
+  "request": {
+    "lesson_id": "8a5bdfdea8639d77a9c999b7e4ebdfed",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 118,
+    "nextCourseId": "e13b6bae2990dd699f332f225dd1955b",
+    "courseName": "Javascript",
+    "lessonId": "8a5bdfdea8639d77a9c999b7e4ebdfed",
+    "nextLessonId": "fc8cf26a13b61d99ab120ff5cdbec67e",
+    "lessonName": "矩阵转置",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - 矩阵转置",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f619aec3de36180bd4189d7cc34631f5",
+        "index": 1,
+        "text": [
+          "// 矩阵转置操作\\nfunction transposeMatrix(matrix) {\\n    const rows = matrix.length;\\n    const cols = matrix[0].length;\\n\\n    const result = Array.from({ length: cols }, () => Array(rows).fill(0));\\n\\n    for (let i = 0; i < rows; i++) {\\n        for (let j = 0; j < cols; j++) {\\n            result[j][i] = matrix[i][j];\\n        }\\n    }\\n\\n    return result;\\n}\\n\\nfunction printMatrix(matrix) {\\n    for (const row of matrix) {\\n        console.log(row.map(val => String(val).padStart(3)).join(\" \"));\\n    }\\n}\\n\\n// 测试矩阵转置\\nconst matrix = [\\n    [1, 2, 3],\\n    [4, 5, 6],\\n    [7, 8, 9]\\n];\\n\\nconsole.log(\"原矩阵:\");\\nprintMatrix(matrix);\\n\\nconst transposed = transposeMatrix(matrix);\\nconsole.log(\"\\n转置后:\");\\nprintMatrix(transposed);\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

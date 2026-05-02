@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.023754+00:00",
+  "request": {
+    "lesson_id": "975b65cc91da8ab09d759251a9c57af0",
+    "course_id": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "order": 208,
+    "nextCourseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "courseName": "小升初必备单词",
+    "lessonId": "975b65cc91da8ab09d759251a9c57af0",
+    "nextLessonId": "f59287e8bd373d3f84eb15bf303570ce",
+    "lessonName": "Q",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "438c3361cb17a70581e1ac9d5ca064ac",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"quarter\",\"pronun\":\"[\\u02c8kw\\u0254:t\\u0259]\",\"translation\":\"n. \\u56db\\u5206\\u4e4b\\u4e00; \\u4e00\\u523b\\u949f; \\u5730\\u533a; \\u4f4f\\u5904\"},{\"word\":\"queen\",\"pronun\":\"[kwi:n]\",\"translation\":\"n. \\u7687\\u540e; \\u5973\\u738b\"},{\"word\":\"question\",\"pronun\":\"[\\u02c8kwest\\u0283\\u0259n]\",\"translation\":\"n. \\u95ee\\u9898\"},{\"word\":\"quick\",\"pronun\":\"[kwik]\",\"translation\":\"adv. \\u5feb; \\u8fc5\\u901f\\u5730 adj. \\u5feb\\u7684;...\"},{\"word\":\"quickly\",\"pronun\":\"[\\u02c8kw\\u026akl\\u026a]\",\"translation\":\"adv. \\u5feb\\u5730; \\u654f\\u6377\\u5730\"},{\"word\":\"quiet\",\"pronun\":\"[\\u02c8kwai\\u0259t]\",\"translation\":\"adj. \\u5b89\\u9759; \\u5bc2\\u9759\"},{\"word\":\"quietly\",\"pronun\":\"[\\u02c8kwa\\u026a\\u0259tl\\u026a]\",\"translation\":\"adv. \\u9759\\u6084\\u6084\\u5730\"},{\"word\":\"quilt\",\"pronun\":\"[kwilt]\",\"translation\":\"n. \\u88ab\\u5b50; \\u88ab\\u8925\"},{\"word\":\"quite\",\"pronun\":\"[kwait]\",\"translation\":\"adv. \\u76f8\\u5f53\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "q",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 12,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

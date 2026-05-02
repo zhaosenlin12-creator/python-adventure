@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.841095+00:00",
+  "request": {
+    "lesson_id": "d88edd24ab0566e03ca8412ac0ea3658",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 48,
+    "nextCourseId": "ff61770b1da83313ceacb0a08aef6378",
+    "courseName": "Python",
+    "lessonId": "d88edd24ab0566e03ca8412ac0ea3658",
+    "nextLessonId": "5baa56e45b4e9500f76b6db11b0e0971",
+    "lessonName": "插入排序",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - 插入排序",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f8f66d53d30cf0121507ce13ca911203",
+        "index": 1,
+        "text": [
+          "# 插入排序算法\\ndef insertion_sort(arr):\\n    for i in range(1, len(arr)):\\n        key = arr[i]\\n        j = i - 1\\n\\n        # 将大于key的元素向后移动\\n        while j >= 0 and arr[j] > key:\\n            arr[j + 1] = arr[j]\\n            j -= 1\\n\\n        # 插入key到正确位置\\n        arr[j + 1] = key\\n\\n    return arr\\n\\n# 测试插入排序\\nnumbers = [12, 11, 13, 5, 6]\\nprint(f\"排序前: {numbers}\")\\nsorted_numbers = insertion_sort(numbers.copy())\\nprint(f\"排序后: {sorted_numbers}\")\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

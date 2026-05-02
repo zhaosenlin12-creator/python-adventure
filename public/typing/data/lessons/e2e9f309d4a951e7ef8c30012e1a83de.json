@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.662297+00:00",
+  "request": {
+    "lesson_id": "e2e9f309d4a951e7ef8c30012e1a83de",
+    "course_id": "e22bc4218a485f29edeedf729586a38c",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e22bc4218a485f29edeedf729586a38c",
+    "order": 1,
+    "nextCourseId": "e22bc4218a485f29edeedf729586a38c",
+    "courseName": "基础词汇",
+    "lessonId": "e2e9f309d4a951e7ef8c30012e1a83de",
+    "nextLessonId": "5407f0c9725bfec3234098930b18dcdc",
+    "lessonName": "基础词汇-1",
+    "icon": "data/assets/daziya.com/key-icon_code-word.cd253668a4.png",
+    "description": "编程基础词汇 - 基础词汇-1",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "fd56abbf3d54be1bd4c54b2decf81337",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"int\",\"pronun\":\"[\\u026ant]\",\"translation\":\"\\u6574\\u578b\\u53d8\\u91cf\\u6807\\u8bc6\\u7b26\"},{\"word\":\"float\",\"pronun\":\"[fl\\u0259\\u028at]\",\"translation\":\"\\u6d6e\\u70b9\\u578b\\u53d8\\u91cf\\u6807\\u8bc6\\u7b26\"},{\"word\":\"double\",\"pronun\":\"[\\u02c8d\\u028cbl]\",\"translation\":\"\\u53cc\\u7cbe\\u5ea6\\u6d6e\\u70b9\\u578b\\u6807\\u8bc6\\u7b26\"},{\"word\":\"char\",\"pronun\":\"[t\\u0283\\u0251\\u02d0r]\",\"translation\":\"\\u5b57\\u7b26\\u578b\\u53d8\\u91cf\\u6807\\u8bc6\\u7b26\"},{\"word\":\"string\",\"pronun\":\"[str\\u026a\\u014b]\",\"translation\":\"\\u5b57\\u7b26\\u4e32\\u7c7b\\u578b\"},{\"word\":\"bool\",\"pronun\":\"[bu\\u02d0l]\",\"translation\":\"\\u5e03\\u5c14\\u578b\\u53d8\\u91cf\\u6807\\u8bc6\\u7b26\"},{\"word\":\"void\",\"pronun\":\"[v\\u0254\\u026ad]\",\"translation\":\"\\u7a7a\\u7c7b\\u578b\\/\\u65e0\\u8fd4\\u56de\\u503c\"},{\"word\":\"byte\",\"pronun\":\"[ba\\u026at]\",\"translation\":\"\\u5b57\\u8282\\u7c7b\\u578b\"},{\"word\":\"long\",\"pronun\":\"[l\\u0254\\u02d0\\u014b]\",\"translation\":\"\\u957f\\u6574\\u578b\\u6807\\u8bc6\\u7b26\"},{\"word\":\"short\",\"pronun\":\"[\\u0283\\u0254\\u02d0rt]\",\"translation\":\"\\u77ed\\u6574\\u578b\\u6807\\u8bc6\\u7b26\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

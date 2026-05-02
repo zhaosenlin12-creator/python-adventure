@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.544540+00:00",
+  "request": {
+    "lesson_id": "771ed63468488fa5e10cb14cc1899e5b",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 540,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "771ed63468488fa5e10cb14cc1899e5b",
+    "nextLessonId": "564acbeea106388e631736bf8c01d92f",
+    "lessonName": "The Cow Didn't Listen!",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f2b0667aa172f9f1a535d43acd3f733b",
+        "index": 1,
+        "text": [
+          "Mr. Lee went to the city with his cow. He followed the animal as it crossed the street, not noticing the traffic lights.\\n\"Stop!\" A policeman said to them loudly. He started to write a ticket.\\nMr. Lee said to his cow, \"Stop! Didn't you hear the policeman?\"\\nBut the cow kept moving forward.\\nMr. Lee said, \"You see? It's not me. It's the cow you should give the ticket to.\""
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

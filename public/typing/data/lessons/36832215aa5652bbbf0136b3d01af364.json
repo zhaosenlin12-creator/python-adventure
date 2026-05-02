@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:33.098814+00:00",
+  "request": {
+    "lesson_id": "36832215aa5652bbbf0136b3d01af364",
+    "course_id": "6ac8e1237d57b70b6dfc49843aaa773b",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "6ac8e1237d57b70b6dfc49843aaa773b",
+    "order": 430,
+    "nextCourseId": "6ac8e1237d57b70b6dfc49843aaa773b",
+    "courseName": "百科知识3",
+    "lessonId": "36832215aa5652bbbf0136b3d01af364",
+    "nextLessonId": "7ca16ef30ce57dac3ccb90b5cdb16279",
+    "lessonName": "游戏：英文单词",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-duck.b036f0ad8f.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "5393882e9790059706481d675ff5d83a",
+        "index": 1,
+        "text": [
+          "committee petty trunk heave mighty impressive colony"
+        ],
+        "contentType": 3,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 30,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

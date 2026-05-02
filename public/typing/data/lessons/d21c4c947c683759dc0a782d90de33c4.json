@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.906953+00:00",
+  "request": {
+    "lesson_id": "d21c4c947c683759dc0a782d90de33c4",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 178,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "d21c4c947c683759dc0a782d90de33c4",
+    "nextLessonId": "cbed88a6407f55086456d7062e6bf7ba",
+    "lessonName": "KET核心词-99",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第99课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "d60355437fa81c03f42216eec37379ae",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"exchange\",\"pronun\":\"[ɪksˈtʃeɪndʒ]\",\"translation\":\"n. 交换；交流；交易所；兑换\\nvt. 交换；交易；兑换\\nvi. 交换；交易；兑换\",\"audio\":\"exchange.mp3\"},{\"word\":\"horse-riding\",\"pronun\":\"[ˈhɔːrs raɪdɪŋ]\",\"translation\":\"骑马\",\"audio\":\"horse-riding.mp3\"},{\"word\":\"increase\",\"pronun\":\"[ɪnˈkriːs; ˈɪŋkriːs; ˈɪnkriːs]\",\"translation\":\"n. 增加，增长；提高\\nvt. 增加，加大\\nvi. 增加，增大；繁殖\",\"audio\":\"increase.mp3\"},{\"word\":\"keep fit\",\"pronun\":\"[ˌkiːp ˈfɪt]\",\"translation\":\"na. 保持健康\",\"audio\":\"keep_fit.mp3\"},{\"word\":\"painting\",\"pronun\":\"[ˈpeɪntɪŋ]\",\"translation\":\"n. 绘画；油画；着色\\nv. 绘画（paint的ing形式）；涂色于\",\"audio\":\"painting.mp3\"},{\"word\":\"perform\",\"pronun\":\"[pərˈfɔːrm]\",\"translation\":\"vt. 执行；完成；演奏\\nvi. 执行，机器运转；表演\",\"audio\":\"perform.mp3\"},{\"word\":\"photography\",\"pronun\":\"[fəˈtɑːɡrəfi]\",\"translation\":\"n. 摄影；摄影术\",\"audio\":\"photography.mp3\"},{\"word\":\"practice\",\"pronun\":\"[ˈpræktɪs]\",\"translation\":\"n. 实践；练习；惯例\\nvt. 练习；实习；实行\\nvi. 练习；实习；实行\",\"audio\":\"practice.mp3\"},{\"word\":\"skiing\",\"pronun\":\"[ˈskiːɪŋ]\",\"translation\":\"n. 滑雪运动；滑雪术\\nv. 滑雪（ski的ing形式）\",\"audio\":\"skiing.mp3\"},{\"word\":\"camping\",\"pronun\":\"[ˈkæmpɪŋ]\",\"translation\":\"n. 露营；野营\\nv. 露营；扎营；临时安顿（camp的ing形式）\",\"audio\":\"camping.mp3\"},{\"word\":\"campsite\",\"pronun\":\"[ˈkæmpsaɪt]\",\"translation\":\"n. 营地\",\"audio\":\"campsite.mp3\"},{\"word\":\"climbing\",\"pronun\":\"[ˈklaɪmɪŋ]\",\"translation\":\"n. 攀登\\nv. 爬（climb的ing形式）\\nadj. 上升的；攀缘而登的\",\"audio\":\"climbing.mp3\"},{\"word\":\"clothing\",\"pronun\":\"[ˈkloʊðɪŋ]\",\"translation\":\"n. （总称）[服装] 服装；帆装\\nv. 覆盖（clothe的ing形式）；给…穿衣\",\"audio\":\"clothing.mp3\"},{\"word\":\"club\",\"pronun\":\"[klʌb]\",\"translation\":\"n. 俱乐部，社团；夜总会；棍棒；（扑克牌中的）梅花\\nadj. 俱乐部的\\nvt. 用棍棒打；募集\\nvi. 集资；组成俱乐部\",\"audio\":\"club.mp3\"},{\"word\":\"dancing\",\"pronun\":\"[ˈdænsɪŋ]\",\"translation\":\"n. 跳舞；舞蹈\\nv. 跳舞；摇晃（dance的ing形式）\",\"audio\":\"dancing.mp3\"},{\"word\":\"equipment\",\"pronun\":\"[ɪˈkwɪpmənt]\",\"translation\":\"n. 设备，装备；器材\",\"audio\":\"equipment.mp3\"},{\"word\":\"fee\",\"pronun\":\"[fiː]\",\"translation\":\"n. 费用；酬金；小费\\nvt. 付费给……\",\"audio\":\"fee.mp3\"},{\"word\":\"life jacket\",\"pronun\":\"[ˈlaɪf dʒækɪt]\",\"translation\":\"n. 救生衣\",\"audio\":\"life_jacket.mp3\"},{\"word\":\"member\",\"pronun\":\"[ˈmembər]\",\"translation\":\"n. 成员；会员；议员\",\"audio\":\"member.mp3\"},{\"word\":\"membership\",\"pronun\":\"[ˈmembərʃɪp]\",\"translation\":\"n. 资格；成员资格；会员身份\",\"audio\":\"membership.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

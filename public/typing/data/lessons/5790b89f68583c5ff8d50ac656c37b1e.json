@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.150463+00:00",
+  "request": {
+    "lesson_id": "5790b89f68583c5ff8d50ac656c37b1e",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 448,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "5790b89f68583c5ff8d50ac656c37b1e",
+    "nextLessonId": "7f46c478cc0c18b63f5abe8145b7db6e",
+    "lessonName": "六级词汇正序版-123",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第123课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c1807e7a23d853c8926d3abfad8d699b",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"fore\",\"pronun\":\"[fɔːr]\",\"translation\":\"n. 前部；船头\\nprep. 在前\\nadj. 以前的；在前部的\\nadv. 在前面；在船头\\nint. （打高尔夫球者的叫声）让开！\",\"audio\":\"fore.mp3\"},{\"word\":\"glaring\",\"pronun\":\"[ˈɡlerɪŋ]\",\"translation\":\"adj. 耀眼的；瞪视的；炯炯的\",\"audio\":\"glaring.mp3\"},{\"word\":\"graciously\",\"pronun\":\"[ˈɡreɪʃəsli]\",\"translation\":\"adv. 和蔼地；仁慈地；雅致地\",\"audio\":\"graciously.mp3\"},{\"word\":\"graphics\",\"pronun\":\"[ˈɡræfɪks]\",\"translation\":\"n. [测] 制图学；制图法；图表算法\",\"audio\":\"graphics.mp3\"},{\"word\":\"gravely\",\"pronun\":\"[ˈɡreɪvli]\",\"translation\":\"adv. 严重地；严肃地；严峻地；沉重地\",\"audio\":\"gravely.mp3\"},{\"word\":\"greed\",\"pronun\":\"[ɡriːd]\",\"translation\":\"n. 贪婪，贪心\",\"audio\":\"greed.mp3\"},{\"word\":\"groom\",\"pronun\":\"[ɡruːm]\",\"translation\":\"vi. 打扮\\nvt. 整饰；推荐；喂马；刷洗（马等）\\nn. 新郎；马夫；男仆\",\"audio\":\"groom.mp3\"},{\"word\":\"haven\",\"pronun\":\"[ˈheɪvn]\",\"translation\":\"n. 港口；避难所，安息所\\nvt. 为……提供避难处；安置……于港中\",\"audio\":\"haven.mp3\"},{\"word\":\"helmet\",\"pronun\":\"[ˈhelmɪt]\",\"translation\":\"n. 钢盔，头盔\",\"audio\":\"helmet.mp3\"},{\"word\":\"holder\",\"pronun\":\"[ˈhoʊldər]\",\"translation\":\"n. 持有人；所有人；固定器；（台、架等）支持物\",\"audio\":\"holder.mp3\"},{\"word\":\"hostility\",\"pronun\":\"[hɑːˈstɪləti]\",\"translation\":\"n. 敌意；战争行动\",\"audio\":\"hostility.mp3\"},{\"word\":\"hybrid\",\"pronun\":\"[ˈhaɪbrɪd]\",\"translation\":\"n. 杂种，混血儿；混合物\\nadj. 混合的；杂种的\",\"audio\":\"hybrid.mp3\"},{\"word\":\"iceberg\",\"pronun\":\"[ˈaɪsbɜːrɡ]\",\"translation\":\"n. [地理] 冰山；显露部分\",\"audio\":\"iceberg.mp3\"},{\"word\":\"identically\",\"pronun\":\"[aɪˈdentɪkli]\",\"translation\":\"adv. 同一地；相等地\",\"audio\":\"identically.mp3\"},{\"word\":\"illuminate\",\"pronun\":\"[ɪˈluːmɪneɪt]\",\"translation\":\"vt. 阐明，说明；照亮；使灿烂；用灯装饰\\nvi. 照亮\",\"audio\":\"illuminate.mp3\"},{\"word\":\"imitative\",\"pronun\":\"[ˈɪmɪteɪtɪv]\",\"translation\":\"adj. 模仿的；仿制的\",\"audio\":\"imitative.mp3\"},{\"word\":\"immersed\",\"pronun\":\"[ɪˈmɜːrst]\",\"translation\":\"adj. 浸入的；专注的\\nv. 浸（immerse的过去式和过去分词）；沉湎于\",\"audio\":\"immersed.mp3\"},{\"word\":\"immovable\",\"pronun\":\"[ɪˈmuːvəbl]\",\"translation\":\"adj. 不动的；固定的；不改变的\",\"audio\":\"immovable.mp3\"},{\"word\":\"impartial\",\"pronun\":\"[ɪmˈpɑːrʃl]\",\"translation\":\"adj. 公平的，公正的；不偏不倚的\",\"audio\":\"impartial.mp3\"},{\"word\":\"implementation\",\"pronun\":\"[ˌɪmplɪmenˈteɪʃn]\",\"translation\":\"n. [计] 实现；履行；安装启用\",\"audio\":\"implementation.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.613873+00:00",
+  "request": {
+    "lesson_id": "a1147c1960b186508ff2e16af150800c",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 116,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "a1147c1960b186508ff2e16af150800c",
+    "nextLessonId": "72c365b75fec33dc91f331ddb096c456",
+    "lessonName": "KET核心词-50",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第50课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "325a623e464f163e847f92b60e7efddc",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"popcorn\",\"pronun\":\"[ˈpɑːpkɔːrn]\",\"translation\":\"n. 爆米花，爆玉米花\",\"audio\":\"popcorn.mp3\"},{\"word\":\"popular\",\"pronun\":\"[ˈpɑːpjələr]\",\"translation\":\"adj. 流行的，通俗的；受欢迎的；大众的；普及的\",\"audio\":\"popular.mp3\"},{\"word\":\"port\",\"pronun\":\"[pɔːrt]\",\"translation\":\"n. 港口，口岸；（计算机的）端口；左舷；舱门\\nvt. 持（枪）；左转舵\\nvi. 转向左舷\",\"audio\":\"port.mp3\"},{\"word\":\"Portuguese\",\"pronun\":\"[ˌpɔːrtʃʊˈɡiːz]\",\"translation\":\"n. 葡萄牙语；葡萄牙人\\nadj. 葡萄牙的；葡萄牙人的；葡萄牙语的\",\"audio\":\"Portuguese.mp3\"},{\"word\":\"possible\",\"pronun\":\"[ˈpɑːsəbl]\",\"translation\":\"n. 可能性；合适的人；可能的事物\\nadj. 可能的；合理的；合适的\",\"audio\":\"possible.mp3\"},{\"word\":\"post\",\"pronun\":\"[poʊst]\",\"translation\":\"n. 岗位；邮件；标杆\\nvt. 张贴；公布；邮递；布置\\nvi. 快速行进\",\"audio\":\"post.mp3\"},{\"word\":\"postcard\",\"pronun\":\"[ˈpoʊstkɑːrd]\",\"translation\":\"n. 明信片\",\"audio\":\"postcard.mp3\"},{\"word\":\"postman\",\"pronun\":\"[ˈpoʊstmən]\",\"translation\":\"n. 邮递员；邮差\",\"audio\":\"postman.mp3\"},{\"word\":\"pot\",\"pronun\":\"[pɑːt]\",\"translation\":\"n. 壶；盆；罐\\nvt. 把…装罐；射击；节略\\nvi. 随手射击\",\"audio\":\"pot.mp3\"},{\"word\":\"potato\",\"pronun\":\"[pəˈteɪtoʊ]\",\"translation\":\"n. [作物] 土豆，[作物] 马铃薯\",\"audio\":\"potato.mp3\"},{\"word\":\"pound\",\"pronun\":\"[paʊnd]\",\"translation\":\"n. 英镑；重击，重击声；兽栏；拘留所\\nvt. 捣烂；敲打；监禁，拘留\\nvi. 连续重击，猛击\",\"audio\":\"pound.mp3\"},{\"word\":\"pour\",\"pronun\":\"[pɔːr]\",\"translation\":\"n. 倾泻；流出；骤雨\\nvt. 灌，注；倒；倾泻；倾吐\\nvi. 倾泻；涌流；斟茶\",\"audio\":\"pour.mp3\"},{\"word\":\"practice\",\"pronun\":\"[ˈpræktɪs]\",\"translation\":\"n. 实践；练习；惯例\\nvt. 练习；实习；实行\\nvi. 练习；实习；实行\",\"audio\":\"practice.mp3\"},{\"word\":\"practise\",\"pronun\":\"[ˈpræktɪs]\",\"translation\":\"vi. 练习，实践；实施，实行；从事\\nvt. 练习，实践；实施，实行\",\"audio\":\"practise.mp3\"},{\"word\":\"prefer\",\"pronun\":\"[prɪˈfɜːr]\",\"translation\":\"vt. 更喜欢；宁愿；提出；提升\\nvi. 喜欢；愿意\",\"audio\":\"prefer.mp3\"},{\"word\":\"prepare\",\"pronun\":\"[prɪˈper]\",\"translation\":\"vt. 准备；使适合；装备；起草\\nvi. 预备；做好思想准备\",\"audio\":\"prepare.mp3\"},{\"word\":\"present\",\"pronun\":\"[ˈpreznt]\",\"translation\":\"n. 现在；礼物；瞄准\\nadj. 现在的；出席的\\nvt. 提出；介绍；呈现；赠送\\nvi. 举枪瞄准\",\"audio\":\"present.mp3\"},{\"word\":\"president\",\"pronun\":\"[ˈprezɪdənt]\",\"translation\":\"n. 总统；董事长；校长；主席\",\"audio\":\"president.mp3\"},{\"word\":\"press\",\"pronun\":\"[pres]\",\"translation\":\"n. 压；按；新闻；出版社；[印刷] 印刷机\\nvt. 压；按；逼迫；紧抱\\nvi. 压；逼；重压\",\"audio\":\"press.mp3\"},{\"word\":\"pretty\",\"pronun\":\"[ˈprɪti]\",\"translation\":\"n. 有吸引力的事物（尤指饰品）；漂亮的人\\nadj. 漂亮的；可爱的；优美的\\nadv. 相当地；颇\",\"audio\":\"pretty.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

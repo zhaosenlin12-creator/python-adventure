@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.441586+00:00",
+  "request": {
+    "lesson_id": "0f611d4acc0a4d6464d8b2448e4a8413",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 512,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "0f611d4acc0a4d6464d8b2448e4a8413",
+    "nextLessonId": "ee0e70d6087e3df8b915acca3dfc908a",
+    "lessonName": "First Hospital Visit",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f5081dfaab39f85f5b26a170d6debbd6",
+        "index": 1,
+        "text": [
+          "Baby Ethan is sick. He has a fever. His mom takes him to the Children's Hospital for the first time.\\nThere are many children there. All are waiting to see a doctor.\\nSome children are two or three years old. Some are even younger. One baby is just a few weeks old. Her dad is carrying her in a basket. She is crying.\\nBut Ethan is not crying. He is playing with the toys in the waiting room."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.902377+00:00",
+  "request": {
+    "lesson_id": "68ca896ebf93accc9fca70108abc68d5",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 176,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "68ca896ebf93accc9fca70108abc68d5",
+    "nextLessonId": "bb4b37ee8188e88282b803c3ee83f04a",
+    "lessonName": "KET核心词-93",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第93课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c693239a279a4ca1fd922a688009ae27",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"boots\",\"pronun\":\"[buːts]\",\"translation\":\"n. 靴子（boot的复数）；（英）擦靴的仆役\",\"audio\":\"boots.mp3\"},{\"word\":\"bracelet\",\"pronun\":\"[ˈbreɪslət]\",\"translation\":\"n. 手镯；手链\",\"audio\":\"bracelet.mp3\"},{\"word\":\"button\",\"pronun\":\"[ˈbʌt(ə)n]\",\"translation\":\"n. 按钮；纽扣\\nvt. 扣住；扣紧；在…上装纽扣\\nvi. 扣住；装有纽扣；扣上纽扣\",\"audio\":\"button.mp3\"},{\"word\":\"cap\",\"pronun\":\"[kæp]\",\"translation\":\"n. 盖；帽子\\nvt. 覆盖；胜过；给…戴帽；加盖于\\nvi. 脱帽致意\",\"audio\":\"cap.mp3\"},{\"word\":\"clothes\",\"pronun\":\"[kloʊðz; kloʊz]\",\"translation\":\"n. 衣服\",\"audio\":\"clothes.mp3\"},{\"word\":\"coat\",\"pronun\":\"[koʊt]\",\"translation\":\"n. 外套\\nvt. 覆盖…的表面\",\"audio\":\"coat.mp3\"},{\"word\":\"collar\",\"pronun\":\"[ˈkɑːlər]\",\"translation\":\"n. 衣领；颈圈\\nvt. 抓住；给…上领子；给…套上颈圈\",\"audio\":\"collar.mp3\"},{\"word\":\"comfortable\",\"pronun\":\"[ˈkʌmftəbl; ˈkʌmfərtəbl]\",\"translation\":\"n. 盖被\\nadj. 舒适的，舒服的\",\"audio\":\"comfortable.mp3\"},{\"word\":\"costume\",\"pronun\":\"[ˈkɑːstuːm]\",\"translation\":\"n. 服装，装束；戏装，剧装\\nvt. 给…穿上服装\",\"audio\":\"costume.mp3\"},{\"word\":\"cotton\",\"pronun\":\"[ˈkɑːtn]\",\"translation\":\"n. 棉花；棉布；棉线\\nadj. 棉的；棉制的\\nvi. 一致；理解；和谐；亲近\",\"audio\":\"cotton.mp3\"},{\"word\":\"dress\",\"pronun\":\"[dres]\",\"translation\":\"n. 连衣裙；女装\\nvt. 给…穿衣\\nvi. 穿衣\",\"audio\":\"dress.mp3\"},{\"word\":\"earring\",\"pronun\":\"[ˈɪrɪŋ]\",\"translation\":\"n. 耳环，耳饰\\nv. 抽穗；听见（ear的ing形式）\",\"audio\":\"earring.mp3\"},{\"word\":\"fashion\",\"pronun\":\"[ˈfæʃn]\",\"translation\":\"n. 时尚；时装；样式；时髦人物\\nvt. 使用；改变；做成…的形状\",\"audio\":\"fashion.mp3\"},{\"word\":\"fashionable\",\"pronun\":\"[ˈfæʃnəbl]\",\"translation\":\"adj. 流行的；时髦的；上流社会的\",\"audio\":\"fashionable.mp3\"},{\"word\":\"fit\",\"pronun\":\"[fɪt]\",\"translation\":\"n. 合身；发作；痉挛\\nadj. 健康的；合适的；恰当的；准备好的\\nvt. 安装；使……适应；使……合身；与……相符\\nvi. 符合，配合；适合；合身\",\"audio\":\"fit.mp3\"},{\"word\":\"get dressed\",\"pronun\":\"[ɡet drest]\",\"translation\":\"v. 穿衣服\",\"audio\":\"get_dressed.mp3\"},{\"word\":\"glove\",\"pronun\":\"[ɡlʌv]\",\"translation\":\"n. 手套\\nvt. 给…戴手套\",\"audio\":\"glove.mp3\"},{\"word\":\"gold\",\"pronun\":\"[ɡoʊld]\",\"translation\":\"n. 金，黄金；金色；金币\\nadj. 金的，金制的；金色的\",\"audio\":\"gold.mp3\"},{\"word\":\"handbag\",\"pronun\":\"[ˈhændbæɡ]\",\"translation\":\"n. 手提包\",\"audio\":\"handbag.mp3\"},{\"word\":\"handkerchief\",\"pronun\":\"[ˈhæŋkərtʃɪf; ˈhæŋkərtʃiːf]\",\"translation\":\"n. 手帕；头巾，围巾\",\"audio\":\"handkerchief.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

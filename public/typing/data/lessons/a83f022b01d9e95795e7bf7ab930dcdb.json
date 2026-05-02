@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.233736+00:00",
+  "request": {
+    "lesson_id": "a83f022b01d9e95795e7bf7ab930dcdb",
+    "course_id": "b121644211bd274795ee5972ddf997a2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "b121644211bd274795ee5972ddf997a2",
+    "order": 320,
+    "nextCourseId": "b121644211bd274795ee5972ddf997a2",
+    "courseName": "小学必备古诗75首（1）",
+    "lessonId": "a83f022b01d9e95795e7bf7ab930dcdb",
+    "nextLessonId": "1fbd6f5144e1dce3c9ff11dba1c5464e",
+    "lessonName": "芙蓉楼送辛渐",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a591ab77fdacf9fe9a111617b38245ee",
+        "index": 1,
+        "text": [
+          "芙蓉楼送辛渐\\n王昌龄\\n寒雨连江夜入吴，平明送客楚山孤。\\n洛阳亲友如相问，一片冰心在玉壶。"
+        ],
+        "pinyin": "[[\"芙\", \"fú\"], [\"蓉\", \"róng\"], [\"楼\", \"lóu\"], [\"送\", \"sòng\"], [\"辛\", \"xīn\"], [\"渐\", \"jiàn\"], [\"\\n\", \"\"], [\"王\", \"wáng\"], [\"昌\", \"chāng\"], [\"龄\", \"líng\"], [\"\\n\", \"\"], [\"寒\", \"hán\"], [\"雨\", \"yǔ\"], [\"连\", \"lián\"], [\"江\", \"jiāng\"], [\"夜\", \"yè\"], [\"入\", \"rù\"], [\"吴\", \"wú\"], [\"，\", \"\"], [\"平\", \"píng\"], [\"明\", \"míng\"], [\"送\", \"sòng\"], [\"客\", \"kè\"], [\"楚\", \"chǔ\"], [\"山\", \"shān\"], [\"孤\", \"gū\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"洛\", \"luò\"], [\"阳\", \"yáng\"], [\"亲\", \"qīn\"], [\"友\", \"yǒu\"], [\"如\", \"rú\"], [\"相\", \"xiāng\"], [\"问\", \"wèn\"], [\"，\", \"\"], [\"一\", \"yī\"], [\"片\", \"piàn\"], [\"冰\", \"bīng\"], [\"心\", \"xīn\"], [\"在\", \"zài\"], [\"玉\", \"yù\"], [\"壶\", \"hú\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

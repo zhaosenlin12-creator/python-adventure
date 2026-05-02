@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:42.203907+00:00",
+  "request": {
+    "lesson_id": "e267e406164c2d924183de5bb179e243",
+    "course_id": "7b4d48204919370cd339b45657fbc10b",
+    "category_id": "5"
+  },
+  "data": {
+    "level": "数字小键盘",
+    "courseId": "7b4d48204919370cd339b45657fbc10b",
+    "order": 164,
+    "nextCourseId": "7b4d48204919370cd339b45657fbc10b",
+    "courseName": "进阶练习-小数输入",
+    "lessonId": "e267e406164c2d924183de5bb179e243",
+    "nextLessonId": "f949e8f9630cdf728f9408185700bc32",
+    "lessonName": "千位小数练习四",
+    "icon": "data/assets/daziya.com/key-icon_num-14.918d44ec91.png",
+    "description": "数字输入练习 - 千位小数练习四",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "de80afcd808d74e1d8471a836050e3e2",
+        "index": 1,
+        "text": [
+          "567.89\\n678.91\\n789.12\\n891.23\\n912.34\\n123.45\\n234.56\\n345.67\\n456.78\\n579.13"
+        ],
+        "pinyin": null,
+        "contentType": 14,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 100,
+        "minSpeed": 20,
+        "maxDuration": 600,
+        "minAccuracy": 95
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "5",
+    "categoryTitle": "数字小键盘"
+  }
+}

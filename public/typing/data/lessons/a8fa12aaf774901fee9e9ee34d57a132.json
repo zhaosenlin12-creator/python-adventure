@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.884661+00:00",
+  "request": {
+    "lesson_id": "a8fa12aaf774901fee9e9ee34d57a132",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 172,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "a8fa12aaf774901fee9e9ee34d57a132",
+    "nextLessonId": "2152a9dea02a9078c62e4c7a2727befc",
+    "lessonName": "KET核心词-81",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第81课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f58866a43e6f5ccdc1feae7bce2c4dfb",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"ride\",\"pronun\":\"[raɪd]\",\"translation\":\"n. 骑；乘坐；交通工具；可供骑行的路；（乘坐汽车等的）旅行；乘骑；（乘车或骑车的）短途旅程；供乘骑的游乐设施\\nvi. 骑马；乘车；依靠；漂浮\\nvt. 骑；乘；控制；（骑马、自行车等）穿越；搭乘；飘浮\",\"audio\":\"ride.mp3\"},{\"word\":\"rugby\",\"pronun\":\"[ˈrʌɡbi]\",\"translation\":\"n. 英式橄榄球；拉格比（英格兰中部的城市）\",\"audio\":\"rugby.mp3\"},{\"word\":\"running\",\"pronun\":\"[ˈrʌnɪŋ]\",\"translation\":\"n. 运转；赛跑；流出\\nv. 跑；运转（run的ing形式）；行驶\\nadj. 连续的；流动的；跑着的；运转着的\",\"audio\":\"running.mp3\"},{\"word\":\"sailing\",\"pronun\":\"[ˈseɪlɪŋ]\",\"translation\":\"n. 航行，航海；启航；航海术\\nv. 航行，起航（sail的现在分词形式）\\nadj. 航行的\",\"audio\":\"sailing.mp3\"},{\"word\":\"skate\",\"pronun\":\"[skeɪt]\",\"translation\":\"n. 溜冰；冰鞋\\nvi. 滑冰；滑过\",\"audio\":\"skate.mp3\"},{\"word\":\"skateboard\",\"pronun\":\"[ˈskeɪtbɔːrd]\",\"translation\":\"n. 溜冰板\\nvi. 用滑板滑行\",\"audio\":\"skateboard.mp3\"},{\"word\":\"ski\",\"pronun\":\"[skiː]\",\"translation\":\"n. 滑雪橇\\nvi. 滑雪\\nadj. 滑雪（用）的\",\"audio\":\"ski.mp3\"},{\"word\":\"skiing\",\"pronun\":\"[ˈskiːɪŋ]\",\"translation\":\"n. 滑雪运动；滑雪术\\nv. 滑雪（ski的ing形式）\",\"audio\":\"skiing.mp3\"},{\"word\":\"snowboard\",\"pronun\":\"[ˈsnoʊbɔːrd]\",\"translation\":\"n. 滑雪板\",\"audio\":\"snowboard.mp3\"},{\"word\":\"snowboarding\",\"pronun\":\"[ˈsnoʊbɔːrdɪŋ]\",\"translation\":\"n. 滑板滑雪（运动）；单板滑雪（运动）\\nv. 参加滑雪（snowboard的ing形式）\",\"audio\":\"snowboarding.mp3\"},{\"word\":\"stadium\",\"pronun\":\"[ˈsteɪdiəm]\",\"translation\":\"n. 体育场；露天大型运动场\",\"audio\":\"stadium.mp3\"},{\"word\":\"surf\",\"pronun\":\"[sɜːrf]\",\"translation\":\"vi. 作冲浪运动\\nvt. 在…冲浪\\nn. 海浪，拍岸浪\",\"audio\":\"surf.mp3\"},{\"word\":\"surfboard\",\"pronun\":\"[ˈsɜːrfbɔːrd]\",\"translation\":\"n. 冲浪板\\nvi. 以冲浪板滑水\",\"audio\":\"surfboard.mp3\"},{\"word\":\"swimming\",\"pronun\":\"[ˈswɪmɪŋ]\",\"translation\":\"n. 游泳；目眩\\nadj. 游泳的；游泳用的；善于游泳的；晕眩的\\nv. 游泳；漂浮；旋转（swim的ing形式）\",\"audio\":\"swimming.mp3\"},{\"word\":\"swimming pool\",\"pronun\":\"[ˈswɪmɪŋ puːl]\",\"translation\":\"n. 游泳池；游泳场；游泳馆\",\"audio\":\"swimming_pool.mp3\"},{\"word\":\"swimsuit\",\"pronun\":\"[ˈswɪmsuːt]\",\"translation\":\"n. 游泳衣（女式）\",\"audio\":\"swimsuit.mp3\"},{\"word\":\"table tennis\",\"pronun\":\"[ˈteɪbl tenɪs]\",\"translation\":\"n. 乒乓球运动\",\"audio\":\"table_tennis.mp3\"},{\"word\":\"team\",\"pronun\":\"[tiːm]\",\"translation\":\"n. 队；组\\nvt. 使合作\\nvi. 合作\",\"audio\":\"team.mp3\"},{\"word\":\"tennis\",\"pronun\":\"[ˈtenɪs]\",\"translation\":\"n. 网球（运动）\",\"audio\":\"tennis.mp3\"},{\"word\":\"throw\",\"pronun\":\"[θroʊ]\",\"translation\":\"n. 投掷；冒险\\nvt. 投；抛；掷\\nvi. 抛；投掷\",\"audio\":\"throw.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

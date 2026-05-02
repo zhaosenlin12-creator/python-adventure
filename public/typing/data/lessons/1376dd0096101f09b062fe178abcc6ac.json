@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.915206+00:00",
+  "request": {
+    "lesson_id": "1376dd0096101f09b062fe178abcc6ac",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 396,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "1376dd0096101f09b062fe178abcc6ac",
+    "nextLessonId": "a61bb7066a4954790e28014635f45e28",
+    "lessonName": "六级词汇正序版-104",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第104课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "a75bf291a9976da3fe145fcf56928ca5",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"strategy\",\"pronun\":\"[ˈstrætədʒi]\",\"translation\":\"n. 战略，策略\",\"audio\":\"strategy.mp3\"},{\"word\":\"stray\",\"pronun\":\"[streɪ]\",\"translation\":\"n. 走失的家畜；流浪者\\nadj. 迷路的；离群的；偶遇的\\nvi. 流浪；迷路；偏离\",\"audio\":\"stray.mp3\"},{\"word\":\"streak\",\"pronun\":\"[striːk]\",\"translation\":\"n. 条纹，线条；倾向\\nvi. 飞跑，疾驶；加上条纹\\nvt. 飞跑，疾驰；加条纹于\",\"audio\":\"streak.mp3\"},{\"word\":\"stream\",\"pronun\":\"[striːm]\",\"translation\":\"n. 溪流；流动；潮流；光线\\nvt. 流出；涌出；使飘动\\nvi. 流；涌进；飘扬\",\"audio\":\"stream.mp3\"},{\"word\":\"streamline\",\"pronun\":\"[ˈstriːmlaɪn]\",\"translation\":\"n. 流线；流线型\\nvt. 把…做成流线型；使现代化；组织；使合理化；使简单化\\nadj. 流线型的\",\"audio\":\"streamline.mp3\"},{\"word\":\"stride\",\"pronun\":\"[straɪd]\",\"translation\":\"n. 大步；步幅；进展\\nvt. 跨过；大踏步走过；跨坐在…\\nvi. 跨；跨过；大步行走\",\"audio\":\"stride.mp3\"},{\"word\":\"string\",\"pronun\":\"[strɪŋ]\",\"translation\":\"n. 线，弦，细绳；一串，一行\",\"audio\":\"string.mp3\"},{\"word\":\"strive\",\"pronun\":\"[straɪv]\",\"translation\":\"vi. 努力；奋斗；抗争\",\"audio\":\"strive.mp3\"},{\"word\":\"stroke\",\"pronun\":\"[stroʊk]\",\"translation\":\"n. （游泳或划船的）划；中风；（打、击等的）一下；冲程；（成功的）举动；尝试；轻抚\\nvt. （用笔等）画；轻抚；轻挪；敲击；划尾桨；划掉；（打字时）击打键盘\\nvi. 击球；作尾桨手，指挥划桨；（打字时）击打键盘\",\"audio\":\"stroke.mp3\"},{\"word\":\"stroll\",\"pronun\":\"[stroʊl]\",\"translation\":\"n. 漫步；闲逛；巡回演出\\nvt. 散步；闲逛\\nvi. 散步；闲逛；巡回演出\",\"audio\":\"stroll.mp3\"},{\"word\":\"stubborn\",\"pronun\":\"[ˈstʌbərn]\",\"translation\":\"adj. 顽固的；顽强的；难处理的\",\"audio\":\"stubborn.mp3\"},{\"word\":\"stumble\",\"pronun\":\"[ˈstʌmbl]\",\"translation\":\"n. 绊倒；蹒跚而行\\nvi. 踌躇，蹒跚；失足；犯错\\nvt. 使…困惑；使…绊倒\",\"audio\":\"stumble.mp3\"},{\"word\":\"stump\",\"pronun\":\"[stʌmp]\",\"translation\":\"vt. 砍伐；使为难；在…作巡回政治演说\\nn. 树桩；残余部分；假肢\\nvi. 笨重地行走；发表竞选演说\",\"audio\":\"stump.mp3\"},{\"word\":\"stun\",\"pronun\":\"[stʌn]\",\"translation\":\"n. 昏迷；打昏；惊倒；令人惊叹的事物\\nvt. 使震惊；打昏；给以深刻的印象\",\"audio\":\"stun.mp3\"},{\"word\":\"sturdy\",\"pronun\":\"[ˈstɜːrdi]\",\"translation\":\"n. 羊晕倒病\\nadj. 坚定的；强健的；健全的\",\"audio\":\"sturdy.mp3\"},{\"word\":\"subculture\",\"pronun\":\"\",\"translation\":\"\",\"audio\":\"subculture.mp3\"},{\"word\":\"subjective\",\"pronun\":\"[səbˈdʒektɪv]\",\"translation\":\"adj. 主观的；个人的；自觉的\",\"audio\":\"subjective.mp3\"},{\"word\":\"submarine\",\"pronun\":\"[ˌsʌbməˈriːn; ˈsʌbməriːn]\",\"translation\":\"n. 潜水艇；海底生物\\nadj. 海底的；水下的\\nvt. 用潜水艇攻击\\nvi. 在下疾行；在下滑动\",\"audio\":\"submarine.mp3\"},{\"word\":\"submit\",\"pronun\":\"[səbˈmɪt]\",\"translation\":\"vi. 提交；服从\\nvt. 使服从；主张；呈递\",\"audio\":\"submit.mp3\"},{\"word\":\"subordinate\",\"pronun\":\"[səˈbɔːrdɪnət; səˈbɔːrdɪneɪt]\",\"translation\":\"n. 下属，下级；部属，属下\\nadj. 从属的；次要的\\nvt. 使……居下位；使……服从\",\"audio\":\"subordinate.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

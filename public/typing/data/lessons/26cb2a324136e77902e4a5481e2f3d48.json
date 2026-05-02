@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.552870+00:00",
+  "request": {
+    "lesson_id": "26cb2a324136e77902e4a5481e2f3d48",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 543,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "26cb2a324136e77902e4a5481e2f3d48",
+    "nextLessonId": "e91bc4f591a30487d3df4ea222f6a6db",
+    "lessonName": "A Little Artist",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "8822a6b874f368560940334b96a1e7f1",
+        "index": 1,
+        "text": [
+          "A Little Artist\\nIrene is only three years old. But to her parents, she is already a little artist.\\nAt their home, her paintings cover the walls of all the rooms-even the bathroom.\\n\"A child's creativity is beyond your imagination,\" her mom always says. \"And she can be highly productive too.\"\\nOne time, her mother counted all of Irene's drawings.\\nIrene had used nearly 500 sheets of paper in just one month!\\nMost of her drawings are of animals: birds, rabbits, turtles, and even raccoons. All the animals in her paintings are in groups of three—a father, a mother, and a baby.\\nThat's how it is in little Irene's world."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

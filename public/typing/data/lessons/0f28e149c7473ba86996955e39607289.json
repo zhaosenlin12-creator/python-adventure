@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.207214+00:00",
+  "request": {
+    "lesson_id": "0f28e149c7473ba86996955e39607289",
+    "course_id": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "order": 453,
+    "nextCourseId": "61c5f3a58f2b29009a859c5ac3fdc062",
+    "courseName": "英语每日故事（初级）1-31",
+    "lessonId": "0f28e149c7473ba86996955e39607289",
+    "nextLessonId": "6a6e4924378cb870d190cf63a307afbc",
+    "lessonName": "The Sky Is Blue!",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c583fb433a0ea0b2590cf0925576a66f",
+        "index": 1,
+        "text": [
+          "My uncle sends me a picture. It's a picture of a blue sky and white clouds.\\n\"I am so happy to see the blue sky!\" says my uncle.\\nI wonder why. \"Isn't the sky always blue?\"\\n\"No,\" he says. \"The sky in my city is often grey because there are too many cars.\"\\nThat's why he is so excited! White clouds and a blue sky. It's beautiful!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

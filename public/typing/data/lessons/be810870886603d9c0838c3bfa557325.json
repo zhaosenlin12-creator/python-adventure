@@ -1,0 +1,83 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.570299+00:00",
+  "request": {
+    "lesson_id": "be810870886603d9c0838c3bfa557325",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 9,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "be810870886603d9c0838c3bfa557325",
+    "nextLessonId": "9c571cd2359bf2b5a49062d97810cc21",
+    "lessonName": "韵母ao、ou",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母ao、ou的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "0b331646387d009720d269eadb86b2f5",
+        "index": 1,
+        "highlights": [
+          "ao"
+        ],
+        "text": [
+          "请输入按键 [ao]"
+        ],
+        "detail": "学习双拼按键 ao"
+      },
+      {
+        "chapterId": "e28564c54af746e38883314d313278b9",
+        "index": 2,
+        "highlights": [
+          "ou"
+        ],
+        "text": [
+          "请输入按键 [ou]"
+        ],
+        "detail": "学习双拼按键 ou"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "05e760db5a52a29941c3d9d97e6d2ce0",
+        "index": 3,
+        "text": [
+          "aoaoaoaoououououaoouaoouaoouaoou"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "07346dce9aee93e019f4f79876e7b68a",
+        "index": 4,
+        "text": [
+          "小狗跑过桥头，去找朋友。老猴偷桃，跳到高楼。海鸥飞过海岛，叫声好柔。小草冒头，绿油油。早操后，他喝粥又吃枣。"
+        ],
+        "pinyin": "[[\"小\", \"xiǎo\"], [\"狗\", \"gǒu\"], [\"跑\", \"pǎo\"], [\"过\", \"guò\"], [\"桥\", \"qiáo\"], [\"头\", \"tóu\"], [\"，\", \"\"], [\"去\", \"qù\"], [\"找\", \"zhǎo\"], [\"朋\", \"péng\"], [\"友\", \"yǒu\"], [\"。\", \"\"], [\"老\", \"lǎo\"], [\"猴\", \"hóu\"], [\"偷\", \"tōu\"], [\"桃\", \"táo\"], [\"，\", \"\"], [\"跳\", \"tiào\"], [\"到\", \"dào\"], [\"高\", \"gāo\"], [\"楼\", \"lóu\"], [\"。\", \"\"], [\"海\", \"hǎi\"], [\"鸥\", \"ōu\"], [\"飞\", \"fēi\"], [\"过\", \"guò\"], [\"海\", \"hǎi\"], [\"岛\", \"dǎo\"], [\"，\", \"\"], [\"叫\", \"jiào\"], [\"声\", \"shēng\"], [\"好\", \"hǎo\"], [\"柔\", \"róu\"], [\"。\", \"\"], [\"小\", \"xiǎo\"], [\"草\", \"cǎo\"], [\"冒\", \"mào\"], [\"头\", \"tóu\"], [\"，\", \"\"], [\"绿\", \"lǜ\"], [\"油\", \"yóu\"], [\"油\", \"yóu\"], [\"。\", \"\"], [\"早\", \"zǎo\"], [\"操\", \"cāo\"], [\"后\", \"hòu\"], [\"，\", \"\"], [\"他\", \"tā\"], [\"喝\", \"hē\"], [\"粥\", \"zhōu\"], [\"又\", \"yòu\"], [\"吃\", \"chī\"], [\"枣\", \"zǎo\"], [\"。\", \"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

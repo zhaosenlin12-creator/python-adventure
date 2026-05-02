@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.990646+00:00",
+  "request": {
+    "lesson_id": "8b97b8a8ea7d279e906faf388791bcf0",
+    "course_id": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "order": 81,
+    "nextCourseId": "ca71e9d8b6c8a5dae3ab019d1bd8f327",
+    "courseName": "C++",
+    "lessonId": "8b97b8a8ea7d279e906faf388791bcf0",
+    "nextLessonId": "a7d06ec960fd28033789bfdeba69a8e1",
+    "lessonName": "斐波那契数列",
+    "icon": "data/assets/daziya.com/key-icon_key-cpp.b136419115.png",
+    "description": "C++编程练习 - 斐波那契数列",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "65b6ed887e09b2824a7cb16cc19ce9f6",
+        "index": 1,
+        "text": [
+          "#include <iostream>\\nusing namespace std;\\n\\nint fibonacciRecursive(int n) {\\n    if (n <= 1) return n;\\n    return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);\\n}\\n\\nint fibonacciIterative(int n) {\\n    if (n <= 1) return n;\\n\\n    int a = 0, b = 1;\\n    for (int i = 2; i <= n; i++) {\\n        int temp = a + b;\\n        a = b;\\n        b = temp;\\n    }\\n    return b;\\n}\\n\\nint main() {\\n    cout << \"斐波那契数列前10项:\" << endl;\\n    for (int i = 0; i < 10; i++) {\\n        cout << fibonacciIterative(i) << \" \";\\n    }\\n    cout << endl;\\n\\n    cout << \"\\n第10项的值: \" << fibonacciRecursive(10) << endl;\\n\\n    return 0;\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "cpp",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

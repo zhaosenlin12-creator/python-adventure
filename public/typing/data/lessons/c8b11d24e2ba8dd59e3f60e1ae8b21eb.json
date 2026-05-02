@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.479174+00:00",
+  "request": {
+    "lesson_id": "c8b11d24e2ba8dd59e3f60e1ae8b21eb",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 654,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "c8b11d24e2ba8dd59e3f60e1ae8b21eb",
+    "nextLessonId": "ce2b539b954bc89478d15b613ff405f6",
+    "lessonName": " 五年级下-6",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点五年级下 - 第6课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "7422e73758e9f33173efc4b9f7b30836",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"fifth\",\"pronun\":\"[fɪfθ]\",\"translation\":\"num. 第五\\nn. 第五；五分之一\\nadj. 第五的；五分之一的\",\"audio\":\"fifth.mp3\"},{\"word\":\"twelfth\",\"pronun\":\"[twelfθ]\",\"translation\":\"n. 第十二；月的第十二日\\nadj. 第十二的，第十二个的；十二分之一的\",\"audio\":\"twelfth.mp3\"},{\"word\":\"twentieth\",\"pronun\":\"[ˈtwentiəθ]\",\"translation\":\"n. 二十分之一\\nnum. 第二十\\nadj. 第二十的；二十分之一的\",\"audio\":\"twentieth.mp3\"},{\"word\":\"twenty-first\",\"pronun\":\"[ˌtwenti ˈfɜːrst]\",\"translation\":\"num. 第二十一\",\"audio\":\"twenty-first.mp3\"},{\"word\":\"twenty-third\",\"pronun\":\"\",\"translation\":\"num. 第二十三\",\"audio\":\"twenty-third.mp3\"},{\"word\":\"thirtieth\",\"pronun\":\"[ˈθɜːrtiəθ]\",\"translation\":\"n. 第三十；三十分之一\\nadj. 第三十个的；三十分之一的\\nnum. 第三十；三十分之一\",\"audio\":\"thirtieth.mp3\"},{\"word\":\"special\",\"pronun\":\"[ˈspeʃl]\",\"translation\":\"n. 特使，特派人员；特刊；特色菜；专车；特价商品\\nadj. 特别的；专门的，专用的\",\"audio\":\"special.mp3\"},{\"word\":\"fool\",\"pronun\":\"[fuːl]\",\"translation\":\"n. 傻瓜；愚人；受骗者\\nvt. 欺骗，愚弄\\nadj. 傻的\\nvi. 欺骗；开玩笑；戏弄\",\"audio\":\"fool.mp3\"},{\"word\":\"kitten\",\"pronun\":\"[ˈkɪt(ə)n]\",\"translation\":\"n. 小猫；小动物\\nvi. 产小猫\",\"audio\":\"kitten.mp3\"},{\"word\":\"diary\",\"pronun\":\"[ˈdaɪəri]\",\"translation\":\"n. 日志，日记；日记簿\",\"audio\":\"diary.mp3\"},{\"word\":\"still\",\"pronun\":\"[stɪl]\",\"translation\":\"conj. 仍然；但是；尽管如此\\nn. 寂静；剧照；蒸馏室\\nadj. 静止的，不动的；寂静的，平静的；不起泡的\\nadv. 仍然；更；静止地\\nvt. 蒸馏；使…静止；使…平静下来\\nvi. 静止；平静；蒸馏\",\"audio\":\"still.mp3\"},{\"word\":\"noise\",\"pronun\":\"[nɔɪz]\",\"translation\":\"n. [环境] 噪音；响声；杂音\\nvt. 谣传\\nvi. 发出声音；大声议论\",\"audio\":\"noise.mp3\"},{\"word\":\"fur\",\"pronun\":\"[fɜːr]\",\"translation\":\"n. 皮，皮子；毛皮；软毛\\nn. 水垢\\nvt. 用毛皮覆盖；使穿毛皮服装\",\"audio\":\"fur.mp3\"},{\"word\":\"open\",\"pronun\":\"[ˈoʊpən]\",\"translation\":\"adj. 公开的；敞开的；空旷的；坦率的；营业着的\\nvi. 开始；展现\\nvt. 公开；打开\\nn. 公开；空旷；户外\",\"audio\":\"open.mp3\"},{\"word\":\"walk\",\"pronun\":\"[wɔːk]\",\"translation\":\"n. 步行，走；散步\\nvi. 走，步行；散步\\nvt. 散步；走过\",\"audio\":\"walk.mp3\"},{\"word\":\"mine\",\"pronun\":\"[maɪn]\",\"translation\":\"n. 矿，矿藏；矿山，矿井；地雷，水雷\\nvt. 开采，采掘；在…布雷\\nvi. 开矿，采矿；埋设地雷\\npron. 我的\",\"audio\":\"mine.mp3\"},{\"word\":\"yours\",\"pronun\":\"[jərz; jɔːrz; jʊrz]\",\"translation\":\"pron. 你（们）的东西；你的责任[义务]；你的家属；来信，尊函\\nadj. 你（们）的（东西）；信末署名前用语\",\"audio\":\"yours.mp3\"},{\"word\":\"his\",\"pronun\":\"[hɪz; ɪz]\",\"translation\":\"pron. 他的\",\"audio\":\"his.mp3\"},{\"word\":\"hers\",\"pronun\":\"[hɜːrz; ɜːrz]\",\"translation\":\"pron. 她的（所有格）\",\"audio\":\"hers.mp3\"},{\"word\":\"theirs\",\"pronun\":\"[ðerz]\",\"translation\":\"pron. 他们的；她们的；它们的\",\"audio\":\"theirs.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

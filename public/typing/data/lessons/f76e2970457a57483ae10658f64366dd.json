@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.809750+00:00",
+  "request": {
+    "lesson_id": "f76e2970457a57483ae10658f64366dd",
+    "course_id": "6d87e0f971d26475c01f191987022b3b",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "6d87e0f971d26475c01f191987022b3b",
+    "order": 375,
+    "nextCourseId": "6d87e0f971d26475c01f191987022b3b",
+    "courseName": "六级词汇-2",
+    "lessonId": "f76e2970457a57483ae10658f64366dd",
+    "nextLessonId": "eb7f5a0fbc768b925af61ff3ee33df63",
+    "lessonName": "六级词汇正序版-41",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第41课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b27f508369773a9b52f28df208f2ba16",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"endurance\",\"pronun\":\"[ɪnˈdʊrəns]\",\"translation\":\"n. 忍耐力；忍耐；持久；耐久\",\"audio\":\"endurance.mp3\"},{\"word\":\"endure\",\"pronun\":\"[ɪnˈdʊr]\",\"translation\":\"vt. 忍耐；容忍\\nvi. 忍耐；持续\",\"audio\":\"endure.mp3\"},{\"word\":\"energetic\",\"pronun\":\"[ˌenərˈdʒetɪk]\",\"translation\":\"adj. 精力充沛的；积极的；有力的\",\"audio\":\"energetic.mp3\"},{\"word\":\"enforce\",\"pronun\":\"[ɪnˈfɔːrs]\",\"translation\":\"vt. 实施，执行；强迫，强制\",\"audio\":\"enforce.mp3\"},{\"word\":\"engage\",\"pronun\":\"[ɪnˈɡeɪdʒ]\",\"translation\":\"vi. 从事；答应，保证；交战；啮合\\nvt. 吸引，占用；使参加；雇佣；使订婚；预定\",\"audio\":\"engage.mp3\"},{\"word\":\"engagement\",\"pronun\":\"[ɪnˈɡeɪdʒmənt]\",\"translation\":\"n. 婚约；约会；交战；诺言\\nn. 参与度（指用户点赞、转发、评论、下载文档、观看视频、咨询等交互行为）\",\"audio\":\"engagement.mp3\"},{\"word\":\"engine\",\"pronun\":\"[ˈendʒɪn]\",\"translation\":\"n. 引擎，发动机；机车，火车头；工具\",\"audio\":\"engine.mp3\"},{\"word\":\"enhance\",\"pronun\":\"[ɪnˈhæns]\",\"translation\":\"vt. 提高；加强；增加\",\"audio\":\"enhance.mp3\"},{\"word\":\"enlighten\",\"pronun\":\"[ɪnˈlaɪtn]\",\"translation\":\"vt. 启发，启蒙；教导，开导；照耀\",\"audio\":\"enlighten.mp3\"},{\"word\":\"enlightenment\",\"pronun\":\"[ɪnˈlaɪtnmənt]\",\"translation\":\"n. 启迪；启蒙运动；教化\",\"audio\":\"enlightenment.mp3\"},{\"word\":\"enormous\",\"pronun\":\"[ɪˈnɔːrməs]\",\"translation\":\"adj. 庞大的，巨大的；凶暴的，极恶的\",\"audio\":\"enormous.mp3\"},{\"word\":\"enrich\",\"pronun\":\"[ɪnˈrɪtʃ]\",\"translation\":\"vt. 使充实；使肥沃；使富足\",\"audio\":\"enrich.mp3\"},{\"word\":\"enroll\",\"pronun\":\"[ɪnˈroʊl]\",\"translation\":\"vi. 参加；登记；注册；记入名册\\nvt. 登记；使加入；把...记入名册；使入伍\",\"audio\":\"enroll.mp3\"},{\"word\":\"ensue\",\"pronun\":\"[ɪnˈsuː]\",\"translation\":\"vi. 跟着发生，接着发生；继起\\nvt. 追求\",\"audio\":\"ensue.mp3\"},{\"word\":\"entail\",\"pronun\":\"[ɪnˈteɪl]\",\"translation\":\"vt. 使需要，必需；承担；遗传给；蕴含\\nn. 引起；需要；继承\",\"audio\":\"entail.mp3\"},{\"word\":\"entertainment\",\"pronun\":\"[ˌentərˈteɪnmənt]\",\"translation\":\"n. 娱乐；消遣；款待\",\"audio\":\"entertainment.mp3\"},{\"word\":\"enthusiasm\",\"pronun\":\"[ɪnˈθuːziæzəm]\",\"translation\":\"n. 热心，热忱，热情\",\"audio\":\"enthusiasm.mp3\"},{\"word\":\"enthusiastic\",\"pronun\":\"[ɪnˌθuːziˈæstɪk]\",\"translation\":\"adj. 热情的；热心的；狂热的\",\"audio\":\"enthusiastic.mp3\"},{\"word\":\"entitle\",\"pronun\":\"[ɪnˈtaɪtl]\",\"translation\":\"vt. 称做…；定名为…；给…称号；使…有权利\",\"audio\":\"entitle.mp3\"},{\"word\":\"entity\",\"pronun\":\"[ˈentəti]\",\"translation\":\"n. 实体；存在；本质\",\"audio\":\"entity.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

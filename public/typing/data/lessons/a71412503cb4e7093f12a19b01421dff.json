@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.258945+00:00",
+  "request": {
+    "lesson_id": "a71412503cb4e7093f12a19b01421dff",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 38,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "a71412503cb4e7093f12a19b01421dff",
+    "nextLessonId": "2ba4184e5f67ea1d269dc9d9ac6e7a67",
+    "lessonName": "2022年版 PEP-五年级-下册-8",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-五年级-下册 - 第8课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "dc434fb60734b520ff1e6d2faad94cc4",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"sleep\",\"pronun\":\"[sliːp]\",\"translation\":\"n. 睡眠\\nvi. 睡，睡觉\",\"audio\":\"sleep.mp3\"},{\"word\":\"each\",\"pronun\":\"[iːtʃ]\",\"translation\":\"adj. 每；各自的\\npron. 每个；各自\\nadv. 每个；各自\",\"audio\":\"each.mp3\"},{\"word\":\"excited\",\"pronun\":\"[ɪkˈsaɪtɪd]\",\"translation\":\"v. 激动；唤起（excite的过去分词）\\nadj. 兴奋的；激动的；活跃的\",\"audio\":\"excited.mp3\"},{\"word\":\"like\",\"pronun\":\"[laɪk]\",\"translation\":\"vt. 喜欢；想；愿意\\nvi. 喜欢；希望\\nprep. 像；如同\\nadj. 同样的；相似的\\nn. 爱好；同样的人或物\\nadv. 可能\\nconj. 好像\",\"audio\":\"like.mp3\"},{\"word\":\"reading\",\"pronun\":\"[ˈriːdɪŋ]\",\"translation\":\"n. 阅读，朗读；读物；读数\\nv. 阅读（read的ing形式）\\nadj. 阅读的\",\"audio\":\"reading.mp3\"},{\"word\":\"book\",\"pronun\":\"[bʊk]\",\"translation\":\"n. 书籍；卷；帐簿；名册；工作簿\\nvt. 预订；登记\",\"audio\":\"book.mp3\"},{\"word\":\"to\",\"pronun\":\"[tə; tu; tuː]\",\"translation\":\"prep. 到；向；（表示时间、方向）朝…方向\\nadv. 向前；（门等）关上\",\"audio\":\"to.mp3\"},{\"word\":\"music\",\"pronun\":\"[ˈmjuːzɪk]\",\"translation\":\"n. 音乐，乐曲\",\"audio\":\"music.mp3\"},{\"word\":\"keep\",\"pronun\":\"[kiːp]\",\"translation\":\"vt. 保持；经营；遵守；饲养\\nvi. 保持；继续不断\\nn. 保持；生计；生活费\",\"audio\":\"keep.mp3\"},{\"word\":\"your\",\"pronun\":\"[jʊr; jər]\",\"translation\":\"pron. 你的，你们的\",\"audio\":\"your.mp3\"},{\"word\":\"desk\",\"pronun\":\"[desk]\",\"translation\":\"n. 办公桌；服务台；编辑部；（美）讲道台；乐谱架\\nadj. 书桌的；桌上用的；伏案做的\",\"audio\":\"desk.mp3\"},{\"word\":\"clean\",\"pronun\":\"[kliːn]\",\"translation\":\"n. 打扫\\nadj. 清洁的，干净的；清白的\\nvt. 使干净\\nvi. 打扫，清扫\\nadv. 完全地\",\"audio\":\"clean.mp3\"},{\"word\":\"talk\",\"pronun\":\"[tɔːk]\",\"translation\":\"n. 谈话；演讲；空谈\\nvi. 谈话；说闲话\\nvt. 说；谈话；讨论\",\"audio\":\"talk.mp3\"},{\"word\":\"quietly\",\"pronun\":\"[ˈkwaɪətli]\",\"translation\":\"adv. 安静地；秘密地；平稳地\",\"audio\":\"quietly.mp3\"},{\"word\":\"turn\",\"pronun\":\"[tɜːrn]\",\"translation\":\"n. 转弯；变化；(损害或有益于别人的)行为，举动，举止\\nvi. 转向；转变；转动\\nvt. 转动，使旋转；转弯；翻过来；兑换\",\"audio\":\"turn.mp3\"},{\"word\":\"bamboo\",\"pronun\":\"[ˌbæmˈbuː]\",\"translation\":\"n. 竹，竹子\\nadj. 竹制的；土著居民的\\nvt. 为…装上篾条\",\"audio\":\"bamboo.mp3\"},{\"word\":\"its\",\"pronun\":\"[ɪts]\",\"translation\":\"pron. 它的\",\"audio\":\"its.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

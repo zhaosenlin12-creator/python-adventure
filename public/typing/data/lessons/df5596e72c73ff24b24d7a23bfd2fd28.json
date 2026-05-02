@@ -1,0 +1,75 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:07:35.377531+00:00",
+  "request": {
+    "lesson_id": "df5596e72c73ff24b24d7a23bfd2fd28",
+    "course_id": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "order": 3,
+    "nextCourseId": "457f8a3bb1d8f45bd90a07b4d03504e4",
+    "courseName": "基准键",
+    "lessonId": "df5596e72c73ff24b24d7a23bfd2fd28",
+    "nextLessonId": "cfa951013e7f5275392c2261e6a38f9b",
+    "lessonName": "学习d和k",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-learn-dk.465c07fa65.png",
+    "description": "学习d和k",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "4380a9c79d7f53c7e58f59ecea317553",
+        "index": 1,
+        "highlights": [
+          "d"
+        ],
+        "text": [
+          "请使用左手中指输入按键d"
+        ],
+        "detail": "新的字母键/请输入[d]键"
+      },
+      {
+        "chapterId": "01f9cbe92870026b415a1c6ade87b5f0",
+        "index": 2,
+        "highlights": [
+          "k"
+        ],
+        "text": [
+          "请使用右手中指输入按键k"
+        ],
+        "detail": "新的字母键/请输入[k]键"
+      },
+      {
+        "chapterId": "da1f2d3811e5261661dfe3608c6c20b0",
+        "index": 3,
+        "highlights": [
+          " "
+        ],
+        "text": [
+          "接下来我们将练习如何输入[d]和[k]，请确保使用正确的指法输入，敲击 键开始"
+        ],
+        "detail": "新的字母键/很好"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "17b0ce5cedc7a4c35fff79e04d674953",
+        "index": 4,
+        "text": [
+          "ddddkkkkddddkkkkddkkddkkdkdkkdkd"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

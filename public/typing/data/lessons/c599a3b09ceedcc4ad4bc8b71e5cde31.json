@@ -1,0 +1,47 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.592277+00:00",
+  "request": {
+    "lesson_id": "c599a3b09ceedcc4ad4bc8b71e5cde31",
+    "course_id": "059d1050da5fdf5c469f0cab1d245527",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "059d1050da5fdf5c469f0cab1d245527",
+    "order": 76,
+    "nextCourseId": "3b877f6987801a51996848da3c925322",
+    "courseName": "特殊符号",
+    "lessonId": "c599a3b09ceedcc4ad4bc8b71e5cde31",
+    "nextLessonId": "25edf6ac1fc536d014cb4dff6810eb54",
+    "lessonName": "游戏：特殊符号",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-game-2.e3845d48bf.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [],
+    "game": [
+      {
+        "chapterId": "e7b336f72081b1d0f1d9a89758482d94",
+        "index": 1,
+        "text": [
+          "&`fc [)hn\\\\( #|@`^#kl) kt eo@"
+        ],
+        "contentType": 2,
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 10,
+        "minSpeed": 3,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

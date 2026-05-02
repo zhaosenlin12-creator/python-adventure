@@ -93,6 +93,7 @@ backend_deploy_tmp/
 *.db.malformed-*.bak
 backend/test_backend.db
 backend/_archive_*/
+.typing-data/
 
 # Backend virtual environment
 backend/venv/

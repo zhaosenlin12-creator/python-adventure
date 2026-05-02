@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.309855+00:00",
+  "request": {
+    "lesson_id": "3a9bbb4afe01012dc8a9f7416c238ca1",
+    "course_id": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "order": 341,
+    "nextCourseId": "c7b6a4bf4cd7be20cf712da232b531dd",
+    "courseName": "小学必备古诗75首（2）",
+    "lessonId": "3a9bbb4afe01012dc8a9f7416c238ca1",
+    "nextLessonId": "d294a046ce593242736e4cc8246a6071",
+    "lessonName": "塞下曲",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f63cde4fc0827402a6d4a997eb97a10d",
+        "index": 1,
+        "text": [
+          "塞下曲\\n卢纶\\n月黑雁飞高，单于夜遁逃。\\n欲将轻骑逐，大雪满弓刀。"
+        ],
+        "pinyin": "[[\"塞\", \"sài\"], [\"下\", \"xià\"], [\"曲\", \"qǔ\"], [\"\\n\", \"\"], [\"卢\", \"lú\"], [\"纶\", \"lún\"], [\"\\n\", \"\"], [\"月\", \"yuè\"], [\"黑\", \"hēi\"], [\"雁\", \"yàn\"], [\"飞\", \"fēi\"], [\"高\", \"gāo\"], [\"，\", \"\"], [\"单\", \"chán\"], [\"于\", \"yú\"], [\"夜\", \"yè\"], [\"遁\", \"dùn\"], [\"逃\", \"táo\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"欲\", \"yù\"], [\"将\", \"jiāng\"], [\"轻\", \"qīng\"], [\"骑\", \"jì\"], [\"逐\", \"zhú\"], [\"，\", \"\"], [\"大\", \"dà\"], [\"雪\", \"xuě\"], [\"满\", \"mǎn\"], [\"弓\", \"gōng\"], [\"刀\", \"dāo\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

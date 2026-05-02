@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.267700+00:00",
+  "request": {
+    "lesson_id": "f20ca7572865cf71bb936667d898644c",
+    "course_id": "d7df026ff1d81047d30da28a958b118f",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "d7df026ff1d81047d30da28a958b118f",
+    "order": 156,
+    "nextCourseId": "d7df026ff1d81047d30da28a958b118f",
+    "courseName": "golang",
+    "lessonId": "f20ca7572865cf71bb936667d898644c",
+    "nextLessonId": "95c5d4c55ab4e22954b98e82633ee87d",
+    "lessonName": "切片操作",
+    "icon": "data/assets/daziya.com/key-icon_key-golang.3da8ce5c32.png",
+    "description": "Go编程练习 - 切片操作",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b64b3dda7b6b7e1df1e89d9c04a197d4",
+        "index": 1,
+        "text": [
+          "package main\\n\\nimport \"fmt\"\\n\\nfunc main() {\\n\tnumbers := []int{1, 2, 3, 4, 5}\\n\\n\tnumbers = append(numbers, 6)\\n\tnumbers = append([]int{0}, numbers...)\\n\\n\tfmt.Println(\"切片内容:\", numbers)\\n\tfmt.Println(\"切片长度:\", len(numbers))\\n\tfmt.Println(\"切片容量:\", cap(numbers))\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "go",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.718261+00:00",
+  "request": {
+    "lesson_id": "cc7848ffc9061c5bf6d76a3f00e88c30",
+    "course_id": "77cc7d3093a4e829cb2fb89b1788a0e1",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "77cc7d3093a4e829cb2fb89b1788a0e1",
+    "order": 107,
+    "nextCourseId": "77cc7d3093a4e829cb2fb89b1788a0e1",
+    "courseName": "拼音",
+    "lessonId": "cc7848ffc9061c5bf6d76a3f00e88c30",
+    "nextLessonId": "6bf107215d927b419c112401df8564cc",
+    "lessonName": "开始拼音练习",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-py-bpmf.36cf047e0e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "d6548c54b2381c43fd2be499733516d5",
+        "index": 1,
+        "highlights": [
+          "b"
+        ],
+        "text": [
+          "首先我们开始声母练习"
+        ],
+        "detail": "-"
+      },
+      {
+        "chapterId": "d64fb8d676537f493cc287b6db90c61b",
+        "index": 2,
+        "highlights": [
+          "a"
+        ],
+        "text": [
+          "我们开始韵母练习"
+        ],
+        "detail": "-"
+      },
+      {
+        "chapterId": "eb3f49bab2c8872a3d146507fe395286",
+        "index": 3,
+        "highlights": [
+          "zhi "
+        ],
+        "text": [
+          "整体认读音节和其它拼音组合"
+        ],
+        "detail": "-"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "246cc1cdfc0142c4c4bb1fcc2fbab238",
+        "index": 4,
+        "text": [
+          "bpmfdt"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

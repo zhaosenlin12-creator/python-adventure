@@ -1,0 +1,83 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.631930+00:00",
+  "request": {
+    "lesson_id": "66e93c7337ff6c5a0972edd40fe6a839",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 24,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "66e93c7337ff6c5a0972edd40fe6a839",
+    "nextLessonId": "649d4fdb3ad32d784cf54b5d15d4efd1",
+    "lessonName": "韵母uo、un",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母uo、un的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "ed47bd80013ec062b39b674ecb3e2805",
+        "index": 1,
+        "highlights": [
+          "uo"
+        ],
+        "text": [
+          "请输入按键 [uo]"
+        ],
+        "detail": "学习双拼按键 uo"
+      },
+      {
+        "chapterId": "09303a9887efb60a4a6a982b67bc77fc",
+        "index": 2,
+        "highlights": [
+          "un"
+        ],
+        "text": [
+          "请输入按键 [un]"
+        ],
+        "detail": "学习双拼按键 un"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "81dd5eaeef23aba1aac0858da24513d4",
+        "index": 3,
+        "text": [
+          "uouououoununununuounuounuounuoun"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "0583309ee26372f2c6f0395b17b86912",
+        "index": 4,
+        "text": [
+          "云朵飘过村庄，春风吹动窗棂。\\n温暖的阳光穿透云层，滋润着田野。\\n孩子们追逐奔跑，笑声回荡在村屯。"
+        ],
+        "pinyin": "[[\"云\",\"yún\"],[\"朵\",\"duǒ\"],[\"飘\",\"piāo\"],[\"过\",\"guò\"],[\"村\",\"cūn\"],[\"庄\",\"zhuāng\"],[\"，\",\"\"],[\"春\",\"chūn\"],[\"风\",\"fēng\"],[\"吹\",\"chuī\"],[\"动\",\"dòng\"],[\"窗\",\"chuāng\"],[\"棂\",\"líng\"],[\"。\",\"\"],[\"温\",\"wēn\"],[\"暖\",\"nuǎn\"],[\"的\",\"de\"],[\"阳\",\"yáng\"],[\"光\",\"guāng\"],[\"穿\",\"chuān\"],[\"透\",\"tòu\"],[\"云\",\"yún\"],[\"层\",\"céng\"],[\"，\",\"\"],[\"滋\",\"zī\"],[\"润\",\"rùn\"],[\"着\",\"zhe\"],[\"田\",\"tián\"],[\"野\",\"yě\"],[\"。\",\"\"],[\"孩\",\"hái\"],[\"子\",\"zi\"],[\"们\",\"men\"],[\"追\",\"zhuī\"],[\"逐\",\"zhú\"],[\"奔\",\"bēn\"],[\"跑\",\"pǎo\"],[\"，\",\"\"],[\"笑\",\"xiào\"],[\"声\",\"shēng\"],[\"回\",\"huí\"],[\"荡\",\"dàng\"],[\"在\",\"zài\"],[\"村\",\"cūn\"],[\"屯\",\"tún\"],[\"。\",\"\"]]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

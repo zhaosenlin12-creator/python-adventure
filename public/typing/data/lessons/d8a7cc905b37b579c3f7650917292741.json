@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.210084+00:00",
+  "request": {
+    "lesson_id": "d8a7cc905b37b579c3f7650917292741",
+    "course_id": "9983508511f457b02ddcae4777acab15",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "9983508511f457b02ddcae4777acab15",
+    "order": 140,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "JAVA",
+    "lessonId": "d8a7cc905b37b579c3f7650917292741",
+    "nextLessonId": "0bfbfa5e5e27b8facca7505c990074e2",
+    "lessonName": "快速排序",
+    "icon": "data/assets/daziya.com/key-icon_key-java.09b827febf.png",
+    "description": "Java编程练习 - 快速排序",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "aabd14e2ddd828bd19dc6679ea2a8368",
+        "index": 1,
+        "text": [
+          "import java.util.Arrays;\\n\\nclass Main {\\n    public static void quickSort(int[] arr, int low, int high) {\\n        if (low < high) {\\n            int pi = partition(arr, low, high);\\n            quickSort(arr, low, pi - 1);\\n            quickSort(arr, pi + 1, high);\\n        }\\n    }\\n\\n    public static int partition(int[] arr, int low, int high) {\\n        int pivot = arr[high];\\n        int i = low - 1;\\n\\n        for (int j = low; j < high; j++) {\\n            if (arr[j] < pivot) {\\n                i++;\\n                int temp = arr[i];\\n                arr[i] = arr[j];\\n                arr[j] = temp;\\n            }\\n        }\\n\\n        int temp = arr[i + 1];\\n        arr[i + 1] = arr[high];\\n        arr[high] = temp;\\n        return i + 1;\\n    }\\n\\n    public static void main(String[] args) {\\n        int[] arr = {64, 34, 25, 12, 22, 11, 90};\\n        System.out.println(\"排序前: \" + Arrays.toString(arr));\\n        quickSort(arr, 0, arr.length - 1);\\n        System.out.println(\"排序后: \" + Arrays.toString(arr));\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "java",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

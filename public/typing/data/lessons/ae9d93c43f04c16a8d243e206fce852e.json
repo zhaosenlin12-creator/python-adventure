@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.554896+00:00",
+  "request": {
+    "lesson_id": "ae9d93c43f04c16a8d243e206fce852e",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 99,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "ae9d93c43f04c16a8d243e206fce852e",
+    "nextLessonId": "6f75fdaae904528edba287a7976e1ea4",
+    "lessonName": "KET核心词-136",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第136课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2b7988a2dc02010c06ea1ec46f18484e",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"gym\",\"pronun\":\"[dʒɪm]\",\"translation\":\"n. 健身房；体育；体育馆\",\"audio\":\"gym.mp3\"},{\"word\":\"healthy\",\"pronun\":\"[ˈhelθi]\",\"translation\":\"adj. 健康的，健全的；有益于健康的\",\"audio\":\"healthy.mp3\"},{\"word\":\"inactive\",\"pronun\":\"[ɪnˈæktɪv]\",\"translation\":\"adj. 不活跃的；不活动的；怠惰的；闲置的\",\"audio\":\"inactive.mp3\"},{\"word\":\"get fit\",\"pronun\":\"\",\"translation\":\"保持健康；健身；去健身\",\"audio\":\"get_fit.mp3\"},{\"word\":\"keep fit\",\"pronun\":\"[ˌkiːp ˈfɪt]\",\"translation\":\"na. 保持健康\",\"audio\":\"keep_fit.mp3\"},{\"word\":\"park\",\"pronun\":\"[pɑːrk]\",\"translation\":\"n. 公园；[交] 停车场\\nvt. 停放；放置；寄存\\nvi. 停放车辆\",\"audio\":\"park.mp3\"},{\"word\":\"run\",\"pronun\":\"[rʌn]\",\"translation\":\"n. 奔跑；赛跑；趋向；奔跑的路程\\nvt. 管理，经营；运行；参赛\\nvi. 经营；奔跑；运转\",\"audio\":\"run.mp3\"},{\"word\":\"swim\",\"pronun\":\"[swɪm]\",\"translation\":\"n. 游泳；漂浮；眩晕\\nadj. 游泳时穿戴的\\nvi. 游泳；漂浮；浸；眩晕\\nvt. 游过；使浮起\",\"audio\":\"swim.mp3\"},{\"word\":\"thirsty\",\"pronun\":\"[ˈθɜːrsti]\",\"translation\":\"adj. 口渴的，口干的；渴望的，热望的\",\"audio\":\"thirsty.mp3\"},{\"word\":\"use\",\"pronun\":\"[juːz]\",\"translation\":\"n. 使用；用途；发挥\\nvt. 利用；耗费\\nvi. 使用，运用\",\"audio\":\"use.mp3\"},{\"word\":\"walk\",\"pronun\":\"[wɔːk]\",\"translation\":\"n. 步行，走；散步\\nvi. 走，步行；散步\\nvt. 散步；走过\",\"audio\":\"walk.mp3\"},{\"word\":\"weight\",\"pronun\":\"[weɪt]\",\"translation\":\"n. 重量，重力；负担；砝码；重要性\\nvt. 加重量于，使变重\",\"audio\":\"weight.mp3\"},{\"word\":\"centimetre\",\"pronun\":\"[ˈsentɪmiːtər]\",\"translation\":\"n. 厘米；公分\",\"audio\":\"centimetre.mp3\"},{\"word\":\"degree\",\"pronun\":\"[dɪˈɡriː]\",\"translation\":\"n. 程度，等级；度；学位；阶层\",\"audio\":\"degree.mp3\"},{\"word\":\"gram\",\"pronun\":\"[ɡræm]\",\"translation\":\"n. 克；鹰嘴豆（用作饲料）\",\"audio\":\"gram.mp3\"},{\"word\":\"gramme\",\"pronun\":\"[ɡræm]\",\"translation\":\"n. 克\",\"audio\":\"gramme.mp3\"},{\"word\":\"kilo\",\"pronun\":\"[ˈkilo]\",\"translation\":\"n. 千克\",\"audio\":\"kilo.mp3\"},{\"word\":\"kilometre\",\"pronun\":\"[kɪˈlɑːmɪtər]\",\"translation\":\"n. [计量] 公里；[计量] 千米\",\"audio\":\"kilometre.mp3\"},{\"word\":\"litre\",\"pronun\":\"[ˈliːtər]\",\"translation\":\"n. [计量] 公升（米制容量单位）\",\"audio\":\"litre.mp3\"},{\"word\":\"metre\",\"pronun\":\"[ˈmiːtər]\",\"translation\":\"n. 米；公尺；韵律\",\"audio\":\"metre.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

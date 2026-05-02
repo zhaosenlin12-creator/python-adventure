@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.093353+00:00",
+  "request": {
+    "lesson_id": "0bcd893a8f819c7cd788304c41a2160c",
+    "course_id": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "order": 197,
+    "nextCourseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "courseName": "汉字一级",
+    "lessonId": "0bcd893a8f819c7cd788304c41a2160c",
+    "nextLessonId": "6b99a462118b48f3ccf07d8ed00e29bf",
+    "lessonName": "相信自己",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-good.c7e935711e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "199cff20d86e7d2d849ce08e2fa93700",
+        "index": 1,
+        "text": [
+          "当你熟悉键盘后，你可以在页面上的设置中关闭指法提示。"
+        ],
+        "pinyin": "[[\"当\", \"dāng\"], [\"你\", \"nǐ\"], [\"熟\", \"shú\"], [\"悉\", \"xī\"], [\"键\", \"jiàn\"], [\"盘\", \"pán\"], [\"后\", \"hòu\"], [\"，\", \"\"], [\"你\", \"nǐ\"], [\"可\", \"kě\"], [\"以\", \"yǐ\"], [\"在\", \"zài\"], [\"页\", \"yè\"], [\"面\", \"miàn\"], [\"上\", \"shàng\"], [\"的\", \"de\"], [\"设\", \"shè\"], [\"置\", \"zhì\"], [\"中\", \"zhōng\"], [\"关\", \"guān\"], [\"闭\", \"bì\"], [\"指\", \"zhǐ\"], [\"法\", \"fǎ\"], [\"提\", \"tí\"], [\"示\", \"shì\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 7,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

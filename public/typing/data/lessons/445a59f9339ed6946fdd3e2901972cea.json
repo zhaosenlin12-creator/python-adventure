@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.460832+00:00",
+  "request": {
+    "lesson_id": "445a59f9339ed6946fdd3e2901972cea",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 519,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "445a59f9339ed6946fdd3e2901972cea",
+    "nextLessonId": "3c50a0d92e2a54b44ef3e21097858230",
+    "lessonName": "Ladybug",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "b8ca0d922403b3a18ff3c978d73d8013",
+        "index": 1,
+        "text": [
+          "I am small. I have six legs. I can be red or brown or orange. I have black dots on my back. I have wings. I can fly. What am I?\\nI am a ladybug.\\nPeople say that I bring good luck. If you see a ladybug, count the spots on its back. You will have good luck soon.\\nFarmers like me a lot. Why? I eat many bad bugs that farmers do not like."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

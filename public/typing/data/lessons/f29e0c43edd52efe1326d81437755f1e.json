@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.094976+00:00",
+  "request": {
+    "lesson_id": "f29e0c43edd52efe1326d81437755f1e",
+    "course_id": "e13b6bae2990dd699f332f225dd1955b",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "e13b6bae2990dd699f332f225dd1955b",
+    "order": 108,
+    "nextCourseId": "e13b6bae2990dd699f332f225dd1955b",
+    "courseName": "Javascript",
+    "lessonId": "f29e0c43edd52efe1326d81437755f1e",
+    "nextLessonId": "f325d742afa9fa690d70815f6e0e984f",
+    "lessonName": "插入排序",
+    "icon": "data/assets/daziya.com/key-icon_key-javascript.59335e487e.png",
+    "description": "JavaScript编程练习 - 插入排序",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f723f4db0c0f8aba2fa4610c1dae6e71",
+        "index": 1,
+        "text": [
+          "// 插入排序算法\\nfunction insertionSort(arr) {\\n    for (let i = 1; i < arr.length; i++) {\\n        const key = arr[i];\\n        let j = i - 1;\\n\\n        while (j >= 0 && arr[j] > key) {\\n            arr[j + 1] = arr[j];\\n            j--;\\n        }\\n\\n        arr[j + 1] = key;\\n    }\\n\\n    return arr;\\n}\\n\\n// 测试插入排序\\nconst numbers = [12, 11, 13, 5, 6];\\nconsole.log(`排序前: ${numbers}`);\\nconst sorted = insertionSort([...numbers]);\\nconsole.log(`排序后: ${sorted}`);\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "javascript",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

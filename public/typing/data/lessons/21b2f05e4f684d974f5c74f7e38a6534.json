@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.084782+00:00",
+  "request": {
+    "lesson_id": "21b2f05e4f684d974f5c74f7e38a6534",
+    "course_id": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "order": 192,
+    "nextCourseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "courseName": "汉字一级",
+    "lessonId": "21b2f05e4f684d974f5c74f7e38a6534",
+    "nextLessonId": "44389f7635ec8c27d7935a3aee1b602c",
+    "lessonName": "起来运动",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-good.c7e935711e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "bc435a23b5a0138dad8b6133dfa0f599",
+        "index": 1,
+        "text": [
+          "久坐不动有害身体健康，使用电脑一小时后，你应该进行一些适当的运动。"
+        ],
+        "pinyin": "[[\"久\", \"jiǔ\"], [\"坐\", \"zuò\"], [\"不\", \"bù\"], [\"动\", \"dòng\"], [\"有\", \"yǒu\"], [\"害\", \"hài\"], [\"身\", \"shēn\"], [\"体\", \"tǐ\"], [\"健\", \"jiàn\"], [\"康\", \"kāng\"], [\"，\", \"\"], [\"使\", \"shǐ\"], [\"用\", \"yòng\"], [\"电\", \"diàn\"], [\"脑\", \"nǎo\"], [\"一\", \"yī\"], [\"小\", \"xiǎo\"], [\"时\", \"shí\"], [\"后\", \"hòu\"], [\"，\", \"\"], [\"你\", \"nǐ\"], [\"应\", \"yīng\"], [\"该\", \"gāi\"], [\"进\", \"jìn\"], [\"行\", \"xíng\"], [\"一\", \"yī\"], [\"些\", \"xiē\"], [\"适\", \"shì\"], [\"当\", \"dāng\"], [\"的\", \"de\"], [\"运\", \"yùn\"], [\"动\", \"dòng\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 13,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

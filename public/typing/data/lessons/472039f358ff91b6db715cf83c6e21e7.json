@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.489218+00:00",
+  "request": {
+    "lesson_id": "472039f358ff91b6db715cf83c6e21e7",
+    "course_id": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "order": 383,
+    "nextCourseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "courseName": "初中必背古诗60首（1）",
+    "lessonId": "472039f358ff91b6db715cf83c6e21e7",
+    "nextLessonId": "b29fc184d540dd1aecd47b5e78e1415e",
+    "lessonName": "关雎",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "ee2ad9045ad8bcb50e8074e231d892ba",
+        "index": 1,
+        "text": [
+          "关雎\\n诗经\\n关关雎鸠，在河之洲。窈窕淑女，君子好逑。\\n参差荇菜，左右流之。窈窕淑女，寤寐求之。"
+        ],
+        "pinyin": "[[\"关\", \"guān\"], [\"雎\", \"jū\"], [\"\\n\", \"\"], [\"诗\", \"shī\"], [\"经\", \"jīng\"], [\"\\n\", \"\"], [\"关\", \"guān\"], [\"关\", \"guān\"], [\"雎\", \"jū\"], [\"鸠\", \"jiū\"], [\"，\", \"\"], [\"在\", \"zài\"], [\"河\", \"hé\"], [\"之\", \"zhī\"], [\"洲\", \"zhōu\"], [\"。\", \"\"], [\"窈\", \"yǎo\"], [\"窕\", \"tiǎo\"], [\"淑\", \"shū\"], [\"女\", \"nǚ\"], [\"，\", \"\"], [\"君\", \"jūn\"], [\"子\", \"zǐ\"], [\"好\", \"hǎo\"], [\"逑\", \"qiú\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"参\", \"cēn\"], [\"差\", \"cī\"], [\"荇\", \"xìng\"], [\"菜\", \"cài\"], [\"，\", \"\"], [\"左\", \"zuǒ\"], [\"右\", \"yòu\"], [\"流\", \"liú\"], [\"之\", \"zhī\"], [\"。\", \"\"], [\"窈\", \"yǎo\"], [\"窕\", \"tiǎo\"], [\"淑\", \"shū\"], [\"女\", \"nǚ\"], [\"，\", \"\"], [\"寤\", \"wù\"], [\"寐\", \"mèi\"], [\"求\", \"qiú\"], [\"之\", \"zhī\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

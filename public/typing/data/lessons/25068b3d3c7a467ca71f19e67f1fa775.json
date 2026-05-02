@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.811863+00:00",
+  "request": {
+    "lesson_id": "25068b3d3c7a467ca71f19e67f1fa775",
+    "course_id": "102325916680ca25b9a64dc7781ebe58",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "102325916680ca25b9a64dc7781ebe58",
+    "order": 157,
+    "nextCourseId": "102325916680ca25b9a64dc7781ebe58",
+    "courseName": "KET核心词汇-3",
+    "lessonId": "25068b3d3c7a467ca71f19e67f1fa775",
+    "nextLessonId": "f800520eb9f36642f614671ae9168a53",
+    "lessonName": "KET核心词-36",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第36课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1c7e03956d2f3e4480c4187ed4c22889",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"large\",\"pronun\":\"[lɑːrdʒ]\",\"translation\":\"adj. 大的；多数的；广博的\\nadv. 大大地；夸大地\\nn. 大\",\"audio\":\"large.mp3\"},{\"word\":\"last\",\"pronun\":\"[læst]\",\"translation\":\"n. 末尾，最后；上个；鞋楦（做鞋的模型）\\nadj. 最后的；最近的，最新的；仅剩的；最不可能…的\\nvi. 持续；维持，够用；持久\\nvt. 度过，拖过；使维持\\nadv. 最后地；上次，最近；最后一点\",\"audio\":\"last.mp3\"},{\"word\":\"late\",\"pronun\":\"[leɪt]\",\"translation\":\"adj. 晚的；迟的；已故的；最近的\\nadv. 晚；迟；最近；在晚期\",\"audio\":\"late.mp3\"},{\"word\":\"later\",\"pronun\":\"[ˈleɪtər]\",\"translation\":\"adv. 后来；稍后；随后\\nadj. 更迟的；更后的\",\"audio\":\"later.mp3\"},{\"word\":\"latest\",\"pronun\":\"[ˈleɪtɪst]\",\"translation\":\"adv. 最迟地；最后地\\nn. 最新的事物\\nadj. 最新的，最近的；最迟的，最后的\",\"audio\":\"latest.mp3\"},{\"word\":\"laugh\",\"pronun\":\"[læf]\",\"translation\":\"n. 笑；引人发笑的事或人\\nvi. 笑\\nvt. 以笑表示；使…笑得\",\"audio\":\"laugh.mp3\"},{\"word\":\"lazy\",\"pronun\":\"[ˈleɪzi]\",\"translation\":\"adj. 懒惰的；懒洋洋的；怠惰的；慢吞吞的\",\"audio\":\"lazy.mp3\"},{\"word\":\"leader\",\"pronun\":\"[ˈliːdər]\",\"translation\":\"n. 领导者；首领；指挥者\",\"audio\":\"leader.mp3\"},{\"word\":\"leaf\",\"pronun\":\"[liːf]\",\"translation\":\"n. 叶子；（书籍等的）一张；扇页\\nvi. 生叶；翻书页\\nvt. 翻…的页，匆匆翻阅\",\"audio\":\"leaf.mp3\"},{\"word\":\"learn\",\"pronun\":\"[lɜːrn]\",\"translation\":\"vt. 学习；得知；认识到\\nvi. 学习；获悉\",\"audio\":\"learn.mp3\"},{\"word\":\"least\",\"pronun\":\"[liːst]\",\"translation\":\"adj. 最小的；最少的（little的最高级）\\nadv. 最小；最少\\nn. 最小；最少\",\"audio\":\"least.mp3\"},{\"word\":\"leather\",\"pronun\":\"[ˈleðər]\",\"translation\":\"n. 皮革；皮革制品\\nvt. 用皮革包盖；抽打\\nadj. 皮的；皮革制的\",\"audio\":\"leather.mp3\"},{\"word\":\"leave\",\"pronun\":\"[liːv]\",\"translation\":\"vt. 离开；留下；遗忘；委托\\nvi. 离开，出发；留下\\nn. 许可，同意；休假\",\"audio\":\"leave.mp3\"},{\"word\":\"left\",\"pronun\":\"[left]\",\"translation\":\"adj. 左边的；左派的；剩下的\\nadv. 在左面\\nn. 左边；左派；激进分子\\nv. 离开（leave的过去式）\",\"audio\":\"left.mp3\"},{\"word\":\"left-hand\",\"pronun\":\"[ˈleft hænd]\",\"translation\":\"adj. 左手的；左侧的\",\"audio\":\"left-hand.mp3\"},{\"word\":\"leg\",\"pronun\":\"[leɡ]\",\"translation\":\"n. 腿；支柱\",\"audio\":\"leg.mp3\"},{\"word\":\"lemon\",\"pronun\":\"[ˈlemən]\",\"translation\":\"adj. 柠檬色的\\nn. 柠檬\",\"audio\":\"lemon.mp3\"},{\"word\":\"lemonade\",\"pronun\":\"[ˌleməˈneɪd]\",\"translation\":\"n. 柠檬水\",\"audio\":\"lemonade.mp3\"},{\"word\":\"length\",\"pronun\":\"[leŋkθ]\",\"translation\":\"n. 长度，长；时间的长短；（语）音长\",\"audio\":\"length.mp3\"},{\"word\":\"less\",\"pronun\":\"[les]\",\"translation\":\"adv. 较少地；较小地；更小地\\nadj. 较少的；较小的\\nprep. 减去\\nn. 较少；较小\",\"audio\":\"less.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.659781+00:00",
+  "request": {
+    "lesson_id": "160ca36f362c8aa53b06c99e8d712454",
+    "course_id": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "category_id": "16"
+  },
+  "data": {
+    "level": "双拼打字练习",
+    "courseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "order": 30,
+    "nextCourseId": "fec73fe958fb3a2d2e9e8c85519421f4",
+    "courseName": "键位练习",
+    "lessonId": "160ca36f362c8aa53b06c99e8d712454",
+    "nextLessonId": "a0ffbdf22d333e6de43d3b6ab8ee6352",
+    "lessonName": "巩固练习：ian、iang",
+    "icon": "data/assets/daziya.com/key-icon_key-wen-1.ed1dd1f777.png",
+    "description": "学习韵母ian、iang的双拼按键",
+    "background": "default",
+    "instruction": [
+      {
+        "chapterId": "131abbeadaeda26072ff454fb77ef477",
+        "index": 1,
+        "highlights": [
+          "ian"
+        ],
+        "text": [
+          "请输入按键 [ian]"
+        ],
+        "detail": "学习双拼按键 ian"
+      },
+      {
+        "chapterId": "01c4033e44a92b96eae4b80bb1027876",
+        "index": 2,
+        "highlights": [
+          "iang"
+        ],
+        "text": [
+          "请输入按键 [iang]"
+        ],
+        "detail": "学习双拼按键 iang"
+      }
+    ],
+    "practice": [
+      {
+        "chapterId": "462d7dfbc3e7ad525dd74ca9cf9e1dc9",
+        "index": 3,
+        "text": [
+          "ianianianianiangiangiangiangianiangianiangianiangianiang"
+        ],
+        "onFail": "block",
+        "onSuccess": "next"
+      }
+    ],
+    "test": [
+      {
+        "chapterId": "79e89ff7d878d1f766c7e02d680c1242",
+        "index": 4,
+        "text": [
+          "天边亮着星光，江边渔船点亮灯。小羊想眠，姑娘想娘，天边渐亮。长江边，天连山，山连江，江天一线亮。良田千顷，香稻满仓，年年丰年想。凉风凉天凉江面，轻舟轻桨轻帆扬。"
+        ],
+        "pinyin": "[\n  [\"天\", \"tiān\"],\n  [\"边\", \"biān\"],\n  [\"亮\", \"liàng\"],\n  [\"着\", \"zhe\"],\n  [\"星\", \"xīng\"],\n  [\"光\", \"guāng\"],\n  [\"，\", \"\"],\n  [\"江\", \"jiāng\"],\n  [\"边\", \"biān\"],\n  [\"渔\", \"yú\"],\n  [\"船\", \"chuán\"],\n  [\"点\", \"diǎn\"],\n  [\"亮\", \"liàng\"],\n  [\"灯\", \"dēng\"],\n  [\"。\", \"\"],\n  [\"小\", \"xiǎo\"],\n  [\"羊\", \"yáng\"],\n  [\"想\", \"xiǎng\"],\n  [\"眠\", \"mián\"],\n  [\"，\", \"\"],\n  [\"姑\", \"gū\"],\n  [\"娘\", \"niáng\"],\n  [\"想\", \"xiǎng\"],\n  [\"娘\", \"niáng\"],\n  [\"，\", \"\"],\n  [\"天\", \"tiān\"],\n  [\"边\", \"biān\"],\n  [\"渐\", \"jiàn\"],\n  [\"亮\", \"liàng\"],\n  [\"。\", \"\"],\n  [\"长\", \"cháng\"],\n  [\"江\", \"jiāng\"],\n  [\"边\", \"biān\"],\n  [\"，\", \"\"],\n  [\"天\", \"tiān\"],\n  [\"连\", \"lián\"],\n  [\"山\", \"shān\"],\n  [\"，\", \"\"],\n  [\"山\", \"shān\"],\n  [\"连\", \"lián\"],\n  [\"江\", \"jiāng\"],\n  [\"，\", \"\"],\n  [\"江\", \"jiāng\"],\n  [\"天\", \"tiān\"],\n  [\"一\", \"yī\"],\n  [\"线\", \"xiàn\"],\n  [\"亮\", \"liàng\"],\n  [\"。\", \"\"],\n  [\"良\", \"liáng\"],\n  [\"田\", \"tián\"],\n  [\"千\", \"qiān\"],\n  [\"顷\", \"qǐng\"],\n  [\"，\", \"\"],\n  [\"香\", \"xiāng\"],\n  [\"稻\", \"dào\"],\n  [\"满\", \"mǎn\"],\n  [\"仓\", \"cāng\"],\n  [\"，\", \"\"],\n  [\"年\", \"nián\"],\n  [\"年\", \"nián\"],\n  [\"丰\", \"fēng\"],\n  [\"年\", \"nián\"],\n  [\"想\", \"xiǎng\"],\n  [\"。\", \"\"],\n  [\"凉\", \"liáng\"],\n  [\"风\", \"fēng\"],\n  [\"凉\", \"liáng\"],\n  [\"天\", \"tiān\"],\n  [\"凉\", \"liáng\"],\n  [\"江\", \"jiāng\"],\n  [\"面\", \"miàn\"],\n  [\"，\", \"\"],\n  [\"轻\", \"qīng\"],\n  [\"舟\", \"zhōu\"],\n  [\"轻\", \"qīng\"],\n  [\"桨\", \"jiǎng\"],\n  [\"轻\", \"qīng\"],\n  [\"帆\", \"fān\"],\n  [\"扬\", \"yáng\"],\n  [\"。\", \"\"]\n]",
+        "contentType": 17,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 15,
+        "minSpeed": 5,
+        "maxDuration": 300,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "16",
+    "categoryTitle": "双拼打字练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:35.485143+00:00",
+  "request": {
+    "lesson_id": "b29fc184d540dd1aecd47b5e78e1415e",
+    "course_id": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "order": 384,
+    "nextCourseId": "64886e6fefb38fe3a46364df8eb5d5b7",
+    "courseName": "初中必背古诗60首（1）",
+    "lessonId": "b29fc184d540dd1aecd47b5e78e1415e",
+    "nextLessonId": "f757904e3f2b1911d544ea16ce459cea",
+    "lessonName": "蒹葭",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-1.d726e4701e.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "dd56d74becfa77dee51713066317d016",
+        "index": 1,
+        "text": [
+          "蒹葭\\n诗经\\n蒹葭苍苍，白露为霜。所谓伊人，在水一方。"
+        ],
+        "pinyin": "[[\"蒹\", \"jiān\"], [\"葭\", \"jiā\"], [\"\\n\", \"\"], [\"诗\", \"shī\"], [\"经\", \"jīng\"], [\"\\n\", \"\"], [\"蒹\", \"jiān\"], [\"葭\", \"jiā\"], [\"苍\", \"cāng\"], [\"苍\", \"cāng\"], [\"，\", \"\"], [\"白\", \"bái\"], [\"露\", \"lù\"], [\"为\", \"wéi\"], [\"霜\", \"shuāng\"], [\"。\", \"\"], [\"所\", \"suǒ\"], [\"谓\", \"wèi\"], [\"伊\", \"yī\"], [\"人\", \"rén\"], [\"，\", \"\"], [\"在\", \"zài\"], [\"水\", \"shuǐ\"], [\"一\", \"yī\"], [\"方\", \"fāng\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

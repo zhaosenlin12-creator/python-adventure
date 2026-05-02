@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.984602+00:00",
+  "request": {
+    "lesson_id": "c49d6207bfff6624a419c22ee69a4bd3",
+    "course_id": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "order": 196,
+    "nextCourseId": "0116b7fd1cb6b4b7c6b822338d41eb41",
+    "courseName": "小升初必备单词",
+    "lessonId": "c49d6207bfff6624a419c22ee69a4bd3",
+    "nextLessonId": "211811d245526fe60763d3de3321c964",
+    "lessonName": "E",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-word.35a59aa08e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "92b230fbac1017b49ef0b2f180d944d1",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"each\",\"pronun\":\"[i:t\\u0283]\",\"translation\":\"adj. \\u5404\\u81ea\\u7684; \\u6bcf pron. \\u6bcf\\u4e00...\"},{\"word\":\"ear\",\"pronun\":\"[i\\u0259]\",\"translation\":\"n. \\u8033\\u6735\"},{\"word\":\"earth\",\"pronun\":\"[\\u0259:\\u03b8]\",\"translation\":\"n. \\u5730\\u7403; \\u5730\\u4e0a; \\u6ce5\\u571f\"},{\"word\":\"east\",\"pronun\":\"[i\\u02d0st]\",\"translation\":\"adj. \\u5728\\u4e1c\\u65b9\\u7684; \\u4e1c\\u90e8\\u7684 n. \\u4e1c\\u65b9...\"},{\"word\":\"eat\",\"pronun\":\"[i:t]\",\"translation\":\"vt. \\u5403; \\u559d vi. \\u5403\\u996d; \\u5403\\u4e1c\\u897f\"},{\"word\":\"egg\",\"pronun\":\"[e\\u0261]\",\"translation\":\"n. \\u86cb; \\u5375; \\u9e21\\u86cb\"},{\"word\":\"eight\",\"pronun\":\"[e\\u026at]\",\"translation\":\"num. \\u516b\"},{\"word\":\"electricity\",\"pronun\":\"[ilek\\u02c8trisiti]\",\"translation\":\"n. \\u7535; \\u7535\\u5b66; \\u7535\\u6d41\"},{\"word\":\"elephant\",\"pronun\":\"[\\u02c8elif\\u0259nt]\",\"translation\":\"n. (\\u52a8\\u7269)\\u8c61\"},{\"word\":\"eleven\",\"pronun\":\"[\\u026a\\u02c8lev\\u0259n]\",\"translation\":\"num. \\u5341\\u4e00; \\u5341\\u4e00\\u4e2a\"},{\"word\":\"else\",\"pronun\":\"[els]\",\"translation\":\"adj. \\u522b\\u7684; \\u5176\\u4ed6\\u7684\"},{\"word\":\"empty\",\"pronun\":\"[\\u02c8empti]\",\"translation\":\"adj. \\u7a7a\\u7684; \\u7a7a\\u6d1e\\u7684; \\u7a7a\\u865a\\u7684 vt...\"},{\"word\":\"end\",\"pronun\":\"[end]\",\"translation\":\"vt. \\u7ed3\\u675f n. \\u7ed3\\u675f; \\u7ec8\\u70b9; \\u672b\\u7aef...\"},{\"word\":\"engine\",\"pronun\":\"[\\u02c8end\\u0292in]\",\"translation\":\"n. \\u53d1\\u52a8\\u673a; \\u5f15\\u64ce; \\u673a\\u8f66; \\u706b\\u8f66\\u5934\"},{\"word\":\"English\",\"pronun\":\"[\\u02c8\\u026a\\u014bgl\\u026a\\u0283]\",\"translation\":\"adj. \\u82f1\\u56fd(\\u4eba)\\u7684; \\u82f1\\u8bed\\u7684; \\u82f1\\u56fd...\"},{\"word\":\"enough\",\"pronun\":\"[i\\u02c8n\\u028cf]\",\"translation\":\"adv. \\u8db3\\u591f\\u5730; \\u5145\\u5206\\u5730; \\u5f88; \\u76f8\\u5f53...\"},{\"word\":\"entrance\",\"pronun\":\"[\\u02c8entr\\u0259ns]\",\"translation\":\"n. \\u8fdb\\u5165; \\u5165\\u53e3; \\u95e8\\u53e3; \\u5165\\u573a\"},{\"word\":\"environment\",\"pronun\":\"[in\\u02c8vai\\u0259r\\u0259nm\\u0259nt]\",\"translation\":\"n. \\u73af\\u5883; \\u5468\\u56f4\\u72b6\\u51b5; \\u81ea\\u7136\\u73af\\u5883; \\u56db...\"},{\"word\":\"estate\",\"pronun\":\"[is\\u02c8teit]\",\"translation\":\"n. \\u571f\\u5730; \\u5730\\u4ea7; \\u623f\\u5730\\u4ea7; \\u8d22\\u4ea7\"},{\"word\":\"evening\",\"pronun\":\"[\\u02c8i:vni\\u014b]\",\"translation\":\"n. \\u665a\\u4e0a; \\u508d\\u665a; \\u9ec4\\u660f\"},{\"word\":\"ever\",\"pronun\":\"[\\u02c8ev\\u0259]\",\"translation\":\"adv. \\u4e5f; \\u66fe\\u7ecf; \\u5728\\u4efb\\u4f55\\u65f6\\u5019\"},{\"word\":\"every\",\"pronun\":\"[\\u02c8evri]\",\"translation\":\"det. \\u6bcf\\u4e00(\\u5929)\"},{\"word\":\"everything\",\"pronun\":\"[\\u02c8evri\\u03b8i\\u014b]\",\"translation\":\"pron. \\u6bcf\\u4ef6\\u4e8b; \\u4e00\\u5207\\u4e8b\\u7269; \\u4e8b\\u4e8b;...\"},{\"word\":\"everywhere\",\"pronun\":\"[\\u02c8evrihw\\u025b\\u0259]\",\"translation\":\"adv. \\u5230\\u5904; \\u65e0\\u8bba\\u54ea\\u91cc; \\u5404\\u5904; \\u65e0...\"},{\"word\":\"except\",\"pronun\":\"[ik\\u02c8sept]\",\"translation\":\"prep. \\u9664\\u2026\\u4e4b\\u5916; \\u9664\\u975e\"},{\"word\":\"exciting\",\"pronun\":\"[ik\\u02c8saiti\\u014b]\",\"translation\":\"adj. \\u4f7f\\u6fc0\\u52a8\\u7684; \\u5174\\u594b\\u7684\"},{\"word\":\"eye\",\"pronun\":\"[ai]\",\"translation\":\"n. \\u773c\\u775b; \\u773c\\u529b; \\u9274\\u8d4f\\u529b\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 14,
+        "minSpeed": 7,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:32.016748+00:00",
+  "request": {
+    "lesson_id": "12b43a062601f34108cc0df5474da3cf",
+    "course_id": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "order": 187,
+    "nextCourseId": "de99a415d0b1d59fe5f025eab0fbb46d",
+    "courseName": "汉字一级",
+    "lessonId": "12b43a062601f34108cc0df5474da3cf",
+    "nextLessonId": "751ae15ec5a17ecd8ab3e0f709acec10",
+    "lessonName": "别看键盘",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-han-good.c7e935711e.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "6e010e5b2bd95c0807a19fd1774c4369",
+        "index": 1,
+        "text": [
+          "千万不要看着键盘打字，这是练习打字首要也是唯一的要求。"
+        ],
+        "pinyin": "[[\"千\", \"qiān\"], [\"万\", \"wàn\"], [\"不\", \"bù\"], [\"要\", \"yào\"], [\"看\", \"kàn\"], [\"着\", \"zhe\"], [\"键\", \"jiàn\"], [\"盘\", \"pán\"], [\"打\", \"dǎ\"], [\"字\", \"zì\"], [\"，\", \"\"], [\"这\", \"zhè\"], [\"是\", \"shì\"], [\"练\", \"liàn\"], [\"习\", \"xí\"], [\"打\", \"dǎ\"], [\"字\", \"zì\"], [\"首\", \"shǒu\"], [\"要\", \"yào\"], [\"也\", \"yě\"], [\"是\", \"shì\"], [\"唯\", \"wéi\"], [\"一\", \"yī\"], [\"的\", \"de\"], [\"要\", \"yāo\"], [\"求\", \"qiú\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 11,
+        "minSpeed": 4,
+        "maxDuration": 600,
+        "minAccuracy": 80
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

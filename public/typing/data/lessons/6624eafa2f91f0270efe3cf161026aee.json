@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.624027+00:00",
+  "request": {
+    "lesson_id": "6624eafa2f91f0270efe3cf161026aee",
+    "course_id": "5e0d8279664539be677db96c71643966",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5e0d8279664539be677db96c71643966",
+    "order": 561,
+    "nextCourseId": "5e0d8279664539be677db96c71643966",
+    "courseName": "英文每日故事（中级）",
+    "lessonId": "6624eafa2f91f0270efe3cf161026aee",
+    "nextLessonId": "5f72a56152603b5a29f88197f0b64f29",
+    "lessonName": "Baseball or Piano?",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "3725aac0c795b19d748463e61813cde1",
+        "index": 1,
+        "text": [
+          "Baseball or Piano?\\nMy mom loves music. She wants me to become a pianist. But I like sports. I play baseball every day after school. Sometimes, I stay out playing until it gets dark.\\nSo when my mom signed me up for piano lessons, I was not happy. Mom said that I had to try the piano for one year.\\nI went to the first lesson. It was very difficult. My fingers were not good at pushing the right piano keys.\\nThey were good at holding a ball.\\nA little girl there saw me struggling. She said to me,\\n\"I will help you learn to play the piano if you teach me to play baseball.\"\\nWe became good friends that day. She taught me how to play Beethoven. And I taught her how to throw a curve ball.\\nNow, I don't know which I like better, baseball or piano?"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 16,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.070153+00:00",
+  "request": {
+    "lesson_id": "277189686da3fed4a8881a635b4c6a6d",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 9,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "277189686da3fed4a8881a635b4c6a6d",
+    "nextLessonId": "7462b8f2f86fb5ebbc3e01b77daff6fb",
+    "lessonName": "2022年版 PEP-三年级-下册-4",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-三年级-下册 - 第4课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "dce48092b520c82f48580d03920ae70b",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"hear\",\"pronun\":\"[hɪr]\",\"translation\":\"vi. 听；听见\\nvt. 听到，听；听说；审理\",\"audio\":\"hear.mp3\"},{\"word\":\"touch\",\"pronun\":\"[tʌtʃ]\",\"translation\":\"n. 接触；触觉；格调；少许\\nvt. 接触；触动；使轻度受害\\nvi. 触摸；涉及；接近；提到\",\"audio\":\"touch.mp3\"},{\"word\":\"learn\",\"pronun\":\"[lɜːrn]\",\"translation\":\"vt. 学习；得知；认识到\\nvi. 学习；获悉\",\"audio\":\"learn.mp3\"},{\"word\":\"nose\",\"pronun\":\"[noʊz]\",\"translation\":\"n. 鼻子；嗅觉；突出的部分；探问\\nvt. 嗅；用鼻子触\\nvi. 小心探索着前进；探问\",\"audio\":\"nose.mp3\"},{\"word\":\"tongue\",\"pronun\":\"[tʌŋ]\",\"translation\":\"n. 舌头；语言\\nvt. 舔；斥责；用舌吹\\nvi. 说话；吹管乐器\",\"audio\":\"tongue.mp3\"},{\"word\":\"class\",\"pronun\":\"[klæs]\",\"translation\":\"n. 阶级；班级；种类；班；等级\\nadj. 极好的；很好的，优秀的，出色的\\nvt. 分类；把…分等级；把…归入某等级，把…看作（或分类、归类）；把…编入某一班级\\nvi. 属于…类（或等级），被列为某类（或某级）\",\"audio\":\"class.mp3\"},{\"word\":\"in\",\"pronun\":\"[ɪn]\",\"translation\":\"prep. 按照（表示方式）；从事于；在…之内\\nn. 执政者；门路；知情者\\nadj. 在里面的；时髦的\\nadv. 进入；当选；（服装等）时髦；在屋里\",\"audio\":\"in.mp3\"},{\"word\":\"computer\",\"pronun\":\"[kəmˈpjuːtər]\",\"translation\":\"n. 计算机；电脑；电子计算机\",\"audio\":\"computer.mp3\"},{\"word\":\"breakfast\",\"pronun\":\"[ˈbrekfəst]\",\"translation\":\"n. 早餐；早饭\\nvt. 为…供应早餐\\nvi. 吃早餐\",\"audio\":\"breakfast.mp3\"},{\"word\":\"time\",\"pronun\":\"[taɪm]\",\"translation\":\"n. 时间；时代；次数；节拍；倍数\\nadj. 定时的；定期的；分期的\\nvt. 计时；测定…的时间；安排…的速度\",\"audio\":\"time.mp3\"},{\"word\":\"bread\",\"pronun\":\"[bred]\",\"translation\":\"n. 面包；生计\\nvt. 在…上洒面包屑\",\"audio\":\"bread.mp3\"},{\"word\":\"egg\",\"pronun\":\"[eɡ]\",\"translation\":\"n. 蛋；卵子；家伙；鸡蛋\\nvt. 煽动；怂恿\",\"audio\":\"egg.mp3\"},{\"word\":\"milk\",\"pronun\":\"[mɪlk]\",\"translation\":\"n. 牛奶；乳状物\\nvt. 榨取；挤…的奶\\nvi. 挤奶\",\"audio\":\"milk.mp3\"},{\"word\":\"noodle\",\"pronun\":\"[ˈnuːd(ə)l]\",\"translation\":\"n. 面条；笨蛋\",\"audio\":\"noodle.mp3\"},{\"word\":\"juice\",\"pronun\":\"[dʒuːs]\",\"translation\":\"n. （水果）汁，液；果汁\",\"audio\":\"juice.mp3\"},{\"word\":\"rice\",\"pronun\":\"[raɪs]\",\"translation\":\"n. 稻；米饭\\nvt. 把…捣成米糊状\",\"audio\":\"rice.mp3\"},{\"word\":\"meat\",\"pronun\":\"[miːt]\",\"translation\":\"n. 肉，肉类（食用）\",\"audio\":\"meat.mp3\"},{\"word\":\"vegetable\",\"pronun\":\"[ˈvedʒtəbl]\",\"translation\":\"n. 蔬菜；植物；植物人\\nadj. 蔬菜的；植物的\",\"audio\":\"vegetable.mp3\"},{\"word\":\"healthy\",\"pronun\":\"[ˈhelθi]\",\"translation\":\"adj. 健康的，健全的；有益于健康的\",\"audio\":\"healthy.mp3\"},{\"word\":\"plate\",\"pronun\":\"[pleɪt]\",\"translation\":\"n. 碟；金属板；金属牌；感光底片\\nvt. 电镀；给…装甲\",\"audio\":\"plate.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

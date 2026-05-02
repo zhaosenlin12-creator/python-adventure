@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.353992+00:00",
+  "request": {
+    "lesson_id": "19c009c64c243485b668070ff489c637",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 52,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "19c009c64c243485b668070ff489c637",
+    "nextLessonId": "665c05b22cb13ecc88e74c927c2422e6",
+    "lessonName": "2022年版 PEP-六年级-下册-5",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-六年级-下册 - 第5课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "7dd99627aac20d86a7e81feba15aa21d",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"bought\",\"pronun\":\"[bɔːt]\",\"translation\":\"v. 买（buy的过去式和过去分词）\",\"audio\":\"bought.mp3\"},{\"word\":\"buy\",\"pronun\":\"[baɪ]\",\"translation\":\"n. 购买，买卖；所购的物品\\nvi. 买，采购\\nvt. 购买；获得；贿赂\",\"audio\":\"buy.mp3\"},{\"word\":\"gift\",\"pronun\":\"[ɡɪft]\",\"translation\":\"n. 礼物；天赋；赠品\\nvt. 赋予；向…赠送\",\"audio\":\"gift.mp3\"},{\"word\":\"fell\",\"pronun\":\"[fel]\",\"translation\":\"n. [林] 一季所伐的木材；折缝；兽皮\\nv. 掉下；摔倒；下垂；变坏（fall的过去式）\\nadj. 凶猛的；毁灭性的\\nvt. 砍伐；打倒；击倒\",\"audio\":\"fell.mp3\"},{\"word\":\"fall\",\"pronun\":\"[fɔːl]\",\"translation\":\"n. 下降；秋天；瀑布\\nadj. 秋天的\\nvi. 落下；变成；来临；减弱\\nvt. 砍倒；击倒\",\"audio\":\"fall.mp3\"},{\"word\":\"off\",\"pronun\":\"[ɔːf]\",\"translation\":\"prep. 离开；脱落\\nadv. 切断；走开\\nadj. 远离的；空闲的\",\"audio\":\"off.mp3\"},{\"word\":\"mule\",\"pronun\":\"[mjuːl]\",\"translation\":\"n. 骡；倔强之人，顽固的人；杂交种动物\",\"audio\":\"mule.mp3\"},{\"word\":\"Turpan\",\"pronun\":\"\",\"translation\":\"吐鲁番（新疆维吾尔自治区）（旧译Turfan）\",\"audio\":\"Turpan.mp3\"},{\"word\":\"could\",\"pronun\":\"[kəd; kʊd]\",\"translation\":\"aux. 能够\\nv. 能（can的过去式）\",\"audio\":\"could.mp3\"},{\"word\":\"can\",\"pronun\":\"[kən; kæn]\",\"translation\":\"aux. 能； 能够； 可以； 可能\\nn. 罐头； （用金属或塑料制作的）容器； （马口铁或其他金属制作的）食品罐头\\nvt. 将…装入密封罐中保存\",\"audio\":\"can.mp3\"},{\"word\":\"till\",\"pronun\":\"[tɪl]\",\"translation\":\"prep. 直到\\nconj. 直到...为止\\nn. [地理][水文] 冰碛；放钱的抽屉；备用现金\\nvt. 耕种；犁\\nvi. 耕种；耕耘\",\"audio\":\"till.mp3\"},{\"word\":\"beach\",\"pronun\":\"[biːtʃ]\",\"translation\":\"n. 海滩；湖滨\\nvt. 将…拖上岸\\nvi. 搁浅；定居\",\"audio\":\"beach.mp3\"},{\"word\":\"basket\",\"pronun\":\"[ˈbæskɪt]\",\"translation\":\"n. 篮子；（篮球比赛的）得分；一篮之量；篮筐\\nvt. 装入篮\",\"audio\":\"basket.mp3\"},{\"word\":\"part\",\"pronun\":\"[pɑːrt]\",\"translation\":\"n. 部分；角色；零件；一些；片段\\nadj. 部分的\\nvt. 分离；分配；分开\\nadv. 部分地\\nvi. 断裂；分手\",\"audio\":\"part.mp3\"},{\"word\":\"licked\",\"pronun\":\"[lɪk]\",\"translation\":\"vt. 舔；卷过；鞭打\\nvt. （非正式）战胜\\nvi. 舔；轻轻拍打\\nn. 舔；打；少许\",\"audio\":\"licked.mp3\"},{\"word\":\"lick\",\"pronun\":\"[lɪk]\",\"translation\":\"vt. 舔；卷过；鞭打\\nvt. （非正式）战胜\\nvi. 舔；轻轻拍打\\nn. 舔；打；少许\",\"audio\":\"lick.mp3\"},{\"word\":\"laughed\",\"pronun\":\"[læft]\",\"translation\":\"笑\\n为了开玩笑\\n有趣的事\\n嘲笑\",\"audio\":\"laughed.mp3\"},{\"word\":\"laugh\",\"pronun\":\"[læf]\",\"translation\":\"n. 笑；引人发笑的事或人\\nvi. 笑\\nvt. 以笑表示；使…笑得\",\"audio\":\"laugh.mp3\"},{\"word\":\"dining\",\"pronun\":\"[ˈdaɪnɪŋ]\",\"translation\":\"n. 吃饭，进餐\\nv. 吃饭（dine的现在分词）\",\"audio\":\"dining.mp3\"},{\"word\":\"grass\",\"pronun\":\"[ɡræs]\",\"translation\":\"n. 草；草地，草坪\\nvt. 放牧；使……长满草；使……吃草\\nvi. 长草\",\"audio\":\"grass.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

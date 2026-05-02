@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.438093+00:00",
+  "request": {
+    "lesson_id": "4ebf91b4cdb1e69f8fb63caf5d5c3437",
+    "course_id": "30951c93875a1e260feda8cb699005df",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "30951c93875a1e260feda8cb699005df",
+    "order": 511,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）32-61",
+    "lessonId": "4ebf91b4cdb1e69f8fb63caf5d5c3437",
+    "nextLessonId": "0f611d4acc0a4d6464d8b2448e4a8413",
+    "lessonName": "Animal Coats",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "87fc8ff80f09cb39b53e83469fc5fcdf",
+        "index": 1,
+        "text": [
+          "Some animals wear coats. Their coats are made of hair. Can animals take off their coats? No. But here is something interesting to know about animal coats. In places where it gets really cold, some animals grow really long coats of hair. When it is warm again in spring, the long coats fall off."
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

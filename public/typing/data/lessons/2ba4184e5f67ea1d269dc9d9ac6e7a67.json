@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.262514+00:00",
+  "request": {
+    "lesson_id": "2ba4184e5f67ea1d269dc9d9ac6e7a67",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 39,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "2ba4184e5f67ea1d269dc9d9ac6e7a67",
+    "nextLessonId": "bd0fc850a61618775117a78bf7d3092e",
+    "lessonName": "2022年版 PEP-五年级-下册-9",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-五年级-下册 - 第9课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "2c42dccaa44c782ef5f02a5760cbdf02",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"anything\",\"pronun\":\"[ˈeniθɪŋ]\",\"translation\":\"pron. 任何事\",\"audio\":\"anything.mp3\"},{\"word\":\"else\",\"pronun\":\"[els]\",\"translation\":\"adj. 别的；其他的\\nadv. 其他；否则；另外\",\"audio\":\"else.mp3\"},{\"word\":\"exhibition\",\"pronun\":\"[ˌeksɪˈbɪʃn]\",\"translation\":\"n. 展览，显示；展览会；展览品\",\"audio\":\"exhibition.mp3\"},{\"word\":\"say\",\"pronun\":\"[seɪ]\",\"translation\":\"vt. 讲；说明；例如；声称；假设；指明\\nvi. 讲；表示；念；假定；背诵\",\"audio\":\"say.mp3\"},{\"word\":\"look\",\"pronun\":\"[lʊk]\",\"translation\":\"vt. 看；期待；注意；面向；看上去像\\nvi. 看；看起来；注意；面向\\nn. 看；样子；面容\",\"audio\":\"look.mp3\"},{\"word\":\"sushi\",\"pronun\":\"[ˈsuːʃi]\",\"translation\":\"n. 寿司（生鱼片冷饭团）\",\"audio\":\"sushi.mp3\"},{\"word\":\"teach\",\"pronun\":\"[tiːtʃ]\",\"translation\":\"vt. 教；教授；教导\\nvi. 教授；讲授；当老师\",\"audio\":\"teach.mp3\"},{\"word\":\"sure\",\"pronun\":\"[ʃʊr]\",\"translation\":\"adj. 确信的；可靠的；必定的\\nadv. 当然；的确\",\"audio\":\"sure.mp3\"},{\"word\":\"Canadian\",\"pronun\":\"[kəˈneɪdiən]\",\"translation\":\"n. 加拿大人\\nadj. 加拿大（人）的\",\"audio\":\"Canadian.mp3\"},{\"word\":\"Spanish\",\"pronun\":\"[ˈspænɪʃ]\",\"translation\":\"n. 西班牙语；西班牙人\\nadj. 西班牙的；西班牙人的；西班牙语的\",\"audio\":\"Spanish.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

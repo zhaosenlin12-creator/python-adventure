@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.974806+00:00",
+  "request": {
+    "lesson_id": "3e3249e4e0c0efcf4eb7c2ae57ba1f00",
+    "course_id": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "order": 408,
+    "nextCourseId": "c9289c7e9e1f9ef7554515b5f8633aa9",
+    "courseName": "六级词汇-3",
+    "lessonId": "3e3249e4e0c0efcf4eb7c2ae57ba1f00",
+    "nextLessonId": "a8559792653b84580ac9b5a19a3f19b2",
+    "lessonName": "六级词汇正序版-3",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第3课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "9aa43a821387bbc1213f66896d2ba384",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"additional\",\"pronun\":\"[əˈdɪʃənl]\",\"translation\":\"adj. 附加的，额外的\",\"audio\":\"additional.mp3\"},{\"word\":\"adequate\",\"pronun\":\"[ˈædɪkwət]\",\"translation\":\"adj. 充足的；适当的；胜任的\",\"audio\":\"adequate.mp3\"},{\"word\":\"adhere\",\"pronun\":\"[ədˈhɪr]\",\"translation\":\"vi. 坚持；依附；粘着；追随\\nvt. 使粘附\",\"audio\":\"adhere.mp3\"},{\"word\":\"adjacent\",\"pronun\":\"[əˈdʒeɪsnt]\",\"translation\":\"adj. 邻近的，毗连的\",\"audio\":\"adjacent.mp3\"},{\"word\":\"adjoin\",\"pronun\":\"[əˈdʒɔɪn]\",\"translation\":\"vt. 毗连，邻接\\nvi. 毗连，邻接\",\"audio\":\"adjoin.mp3\"},{\"word\":\"adjust\",\"pronun\":\"[əˈdʒʌst]\",\"translation\":\"vt. 调整，使…适合；校准\\nvi. 调整，校准；适应\",\"audio\":\"adjust.mp3\"},{\"word\":\"administration\",\"pronun\":\"[ədˌmɪnɪˈstreɪʃn]\",\"translation\":\"n. 管理；行政；实施；行政机构\",\"audio\":\"administration.mp3\"},{\"word\":\"admit\",\"pronun\":\"[ədˈmɪt]\",\"translation\":\"vi. 承认；容许\\nvt. 承认；准许进入；可容纳\",\"audio\":\"admit.mp3\"},{\"word\":\"adolescent\",\"pronun\":\"[ˌædəˈles(ə)nt]\",\"translation\":\"n. 青少年\\nadj. 青春期的；未成熟的\",\"audio\":\"adolescent.mp3\"},{\"word\":\"adopt\",\"pronun\":\"[əˈdɑːpt]\",\"translation\":\"vi. 采取；过继\\nvt. 采取；接受；收养；正式通过\",\"audio\":\"adopt.mp3\"},{\"word\":\"adore\",\"pronun\":\"[əˈdɔːr]\",\"translation\":\"vt. 崇拜；爱慕；喜爱；极喜欢\\nvi. 崇拜；爱慕\",\"audio\":\"adore.mp3\"},{\"word\":\"advantage\",\"pronun\":\"[ədˈvæntɪdʒ]\",\"translation\":\"n. 优势；利益；有利条件\\nvt. 有利于；使处于优势\\nvi. 获利\",\"audio\":\"advantage.mp3\"},{\"word\":\"adverse\",\"pronun\":\"[ədˈvɜːrsˌˈædvɜːrs]\",\"translation\":\"adj. 不利的；相反的；敌对的（名词adverseness，副词adversely）\",\"audio\":\"adverse.mp3\"},{\"word\":\"advisable\",\"pronun\":\"[ədˈvaɪzəbl]\",\"translation\":\"adj. 明智的，可取的，适当的\",\"audio\":\"advisable.mp3\"},{\"word\":\"advocate\",\"pronun\":\"[ˈædvəkeɪt]\",\"translation\":\"n. 提倡者；支持者；律师\\nvt. 提倡，主张，拥护\",\"audio\":\"advocate.mp3\"},{\"word\":\"aerial\",\"pronun\":\"[ˈeriəl]\",\"translation\":\"n. [电讯] 天线\\nadj. 空中的，航空的；空气的；空想的\",\"audio\":\"aerial.mp3\"},{\"word\":\"aesthetic\",\"pronun\":\"[esˈθetɪk]\",\"translation\":\"adj. 美的；美学的；审美的，具有审美趣味的\",\"audio\":\"aesthetic.mp3\"},{\"word\":\"affection\",\"pronun\":\"[əˈfekʃn]\",\"translation\":\"n. 喜爱，感情；影响；感染\",\"audio\":\"affection.mp3\"},{\"word\":\"affiliate\",\"pronun\":\"[əˈfɪlieɪt]\",\"translation\":\"n. 联号；隶属的机构等\\nvt. 使附属；接纳；使紧密联系\\nvi. 参加，加入；发生联系\",\"audio\":\"affiliate.mp3\"},{\"word\":\"affirm\",\"pronun\":\"[əˈfɜːrm]\",\"translation\":\"vt. 肯定；断言\\nvi. 确认；断言\",\"audio\":\"affirm.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

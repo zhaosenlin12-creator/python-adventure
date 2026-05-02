@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.031367+00:00",
+  "request": {
+    "lesson_id": "f18ceb9ad10bf1bc71fcaef1bb97574d",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 3,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "f18ceb9ad10bf1bc71fcaef1bb97574d",
+    "nextLessonId": "f5e0e3de76f461b140e479bc8f0c786d",
+    "lessonName": "2022年版 PEP-三年级-上册-3",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-三年级-上册 - 第3课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "325ec6f410fe834dc47398ddfc07929e",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"rabbit\",\"pronun\":\"[ˈræbɪt]\",\"translation\":\"n. 兔子，野兔\\nvt. 让…见鬼去吧\\nvi. 猎兔\",\"audio\":\"rabbit.mp3\"},{\"word\":\"go\",\"pronun\":\"[ɡoʊ]\",\"translation\":\"n. 去；进行；尝试\\nvi. 走；达到；运转；趋于\\nvt. 忍受；出产；以…打赌\\n[复数 goes 第三人称单数 goes 过去式 went 过去分词 gone 现在分词 going]\",\"audio\":\"go.mp3\"},{\"word\":\"zoo\",\"pronun\":\"[zuː]\",\"translation\":\"n. 动物园; <美俚>（铁路货车的最后一节）守车; <美俚>核粒子园\",\"audio\":\"zoo.mp3\"},{\"word\":\"fox\",\"pronun\":\"[fɑːks]\",\"translation\":\"n. 狐狸；狡猾的人\\nvt. 欺骗；使变酸\\nvi. 假装；耍狡猾手段\",\"audio\":\"fox.mp3\"},{\"word\":\"miss\",\"pronun\":\"[mɪs]\",\"translation\":\"n. 女士，小姐，年轻未婚女子\\nvt. 错过，想念，缺（勤）\",\"audio\":\"miss.mp3\"},{\"word\":\"panda\",\"pronun\":\"[ˈpændə]\",\"translation\":\"n. 熊猫；猫熊\",\"audio\":\"panda.mp3\"},{\"word\":\"red\",\"pronun\":\"[red]\",\"translation\":\"n. 红色，红颜料；赤字\\nadj. 红色的；红肿的，充血的\",\"audio\":\"red.mp3\"},{\"word\":\"cute\",\"pronun\":\"[kjuːt]\",\"translation\":\"adj. 可爱的；漂亮的；聪明的，伶俐的\",\"audio\":\"cute.mp3\"},{\"word\":\"monkey\",\"pronun\":\"[ˈmʌŋki]\",\"translation\":\"n. 猴子；顽童\\nvi. 胡闹；捣蛋\\nvt. 嘲弄\",\"audio\":\"monkey.mp3\"},{\"word\":\"tiger\",\"pronun\":\"[ˈtaɪɡər]\",\"translation\":\"n. 老虎；凶暴的人\",\"audio\":\"tiger.mp3\"},{\"word\":\"elephant\",\"pronun\":\"[ˈelɪfənt]\",\"translation\":\"n. 象；大号图画纸\",\"audio\":\"elephant.mp3\"},{\"word\":\"lion\",\"pronun\":\"[ˈlaɪən]\",\"translation\":\"n. 狮子；名人；勇猛的人；社交场合的名流\",\"audio\":\"lion.mp3\"},{\"word\":\"animal\",\"pronun\":\"[ˈænɪm(ə)l]\",\"translation\":\"n. 动物\\n动物的\",\"audio\":\"animal.mp3\"},{\"word\":\"giraffe\",\"pronun\":\"[dʒəˈræf]\",\"translation\":\"n. 长颈鹿\",\"audio\":\"giraffe.mp3\"},{\"word\":\"tall\",\"pronun\":\"[tɔːl]\",\"translation\":\"adj. 高的；长的；过分的；夸大的\\nadv. 夸大地\",\"audio\":\"tall.mp3\"},{\"word\":\"fast\",\"pronun\":\"[fæst]\",\"translation\":\"n. 斋戒；绝食\\nadj. 快速的，迅速的；紧的，稳固的\\nadv. 迅速地；紧紧地；彻底地\\nvi. 禁食，斋戒\",\"audio\":\"fast.mp3\"},{\"word\":\"apple\",\"pronun\":\"[ˈæpl]\",\"translation\":\"n. 苹果，苹果树，苹果似的东西；[美俚]炸弹，手榴弹，（棒球的）球；[美俚]人，家伙。\",\"audio\":\"apple.mp3\"},{\"word\":\"banana\",\"pronun\":\"[bəˈnænə]\",\"translation\":\"n. 香蕉；喜剧演员；大鹰钩鼻\",\"audio\":\"banana.mp3\"},{\"word\":\"farm\",\"pronun\":\"[fɑːrm]\",\"translation\":\"n. 农场；农家；畜牧场\\nvt. 养殖；耕种；佃出（土地）\\nvi. 种田，务农；经营农场\",\"audio\":\"farm.mp3\"},{\"word\":\"air\",\"pronun\":\"[er]\",\"translation\":\"n. 空气，大气；天空；样子；曲调\\nvt. 使通风，晾干；夸耀\\nvi. 通风\",\"audio\":\"air.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

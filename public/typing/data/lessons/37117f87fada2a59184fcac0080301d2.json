@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.397831+00:00",
+  "request": {
+    "lesson_id": "37117f87fada2a59184fcac0080301d2",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 638,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "37117f87fada2a59184fcac0080301d2",
+    "nextLessonId": "c19e9647212d105d6624df3bff37a6f5",
+    "lessonName": " 四年级下-2",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点四年级下 - 第2课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "67e7c4ba8f6546791c149e64ea37e290",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"go to school\",\"pronun\":\"\",\"translation\":\"na. 到校上课；上学去；开始求学\",\"audio\":\"go_to_school.mp3\"},{\"word\":\"go home\",\"pronun\":\"\",\"translation\":\"na. 回家；〈口〉死；(忠告等)刻骨铭心；击中\",\"audio\":\"go_home.mp3\"},{\"word\":\"go to bed\",\"pronun\":\"\",\"translation\":\"na. 睡；同床；【印】付印\",\"audio\":\"go_to_bed.mp3\"},{\"word\":\"over\",\"pronun\":\"[ˈoʊvər]\",\"translation\":\"adv. 结束；越过；从头到尾\\nprep. 越过；在…之上；遍于…之上\\nadj. 结束的；上面的\\nvt. 越过\",\"audio\":\"over.mp3\"},{\"word\":\"now\",\"pronun\":\"[naʊ]\",\"translation\":\"adv. 现在；如今；立刻\\nadj. 现在的\\nn. 现在；目前\\nconj. 由于；既然\",\"audio\":\"now.mp3\"},{\"word\":\"o'clock\",\"pronun\":\"\",\"translation\":\"abbr. …点钟（等于of the clock）\",\"audio\":\"o_clock.mp3\"},{\"word\":\"kid\",\"pronun\":\"[kɪd]\",\"translation\":\"n. 小孩；小山羊\\nvt. 欺骗；取笑；戏弄\\nvi. 欺骗；取笑；戏弄\\nadj. 小山羊皮制的；较年幼的\",\"audio\":\"kid.mp3\"},{\"word\":\"thirty\",\"pronun\":\"[ˈθɜːrti]\",\"translation\":\"num. 三十\\nn. 三十年代\\nadj. 三十个的\",\"audio\":\"thirty.mp3\"},{\"word\":\"hurry up\",\"pronun\":\"['hɜːrɪ ʌp]\",\"translation\":\"na. 催促；赶快\",\"audio\":\"hurry_up.mp3\"},{\"word\":\"come on\",\"pronun\":\"\",\"translation\":\"na. (演员)出台；进行(很好)；(暴风雨等)起；(病,苦痛等)加深\",\"audio\":\"come_on.mp3\"},{\"word\":\"just a minute\",\"pronun\":\"\",\"translation\":\"na. “wait\\/just a minute”的变体\",\"audio\":\"just_a_minute.mp3\"},{\"word\":\"cold\",\"pronun\":\"[kəʊld]\",\"translation\":\"n. 寒冷；感冒\\nadj. 寒冷的；冷淡的，不热情的；失去知觉的\\nadv. 完全地\",\"audio\":\"cold.mp3\"},{\"word\":\"cool\",\"pronun\":\"[kuːl]\",\"translation\":\"n. 凉爽；凉爽的空气\\nadj. 凉爽的；冷静的；出色的\\nvt. 使…冷却；使…平静下来\\nvi. 变凉；平息\\nadv. 冷静地\",\"audio\":\"cool.mp3\"},{\"word\":\"warm\",\"pronun\":\"[wɔːrm]\",\"translation\":\"n. 取暖；加热\\nadj. 温暖的；热情的\\nvt. 使…兴奋；使…温暖；使…感兴趣\\nvi. 同情；激动；变温暖\",\"audio\":\"warm.mp3\"},{\"word\":\"hot\",\"pronun\":\"[hɑːt]\",\"translation\":\"adj. 热的；辣的；热情的；激动的；紧迫的\\nvt. 增加；给…加温\\nadv. 热；紧迫地\\nvi. 变热\",\"audio\":\"hot.mp3\"},{\"word\":\"sunny\",\"pronun\":\"[ˈsʌni]\",\"translation\":\"adj. 阳光充足的，和煦的；快活的；性情开朗的\",\"audio\":\"sunny.mp3\"},{\"word\":\"windy\",\"pronun\":\"[ˈwɪndi]\",\"translation\":\"adj. 多风的，有风的；腹胀的；吹牛的\",\"audio\":\"windy.mp3\"},{\"word\":\"cloudy\",\"pronun\":\"[ˈklaʊdi]\",\"translation\":\"adj. 多云的；阴天的；愁容满面的\",\"audio\":\"cloudy.mp3\"},{\"word\":\"snowy\",\"pronun\":\"[ˈsnoʊi]\",\"translation\":\"adj. 下雪的，多雪的；被雪覆盖的；洁白无瑕的\",\"audio\":\"snowy.mp3\"},{\"word\":\"rainy\",\"pronun\":\"[ˈreɪni]\",\"translation\":\"adj. 下雨的；多雨的\",\"audio\":\"rainy.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

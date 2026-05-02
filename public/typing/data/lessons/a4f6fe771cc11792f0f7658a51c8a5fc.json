@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.657392+00:00",
+  "request": {
+    "lesson_id": "a4f6fe771cc11792f0f7658a51c8a5fc",
+    "course_id": "5202b605a96a0732d7146a207c8d1acb",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "5202b605a96a0732d7146a207c8d1acb",
+    "order": 122,
+    "nextCourseId": "5202b605a96a0732d7146a207c8d1acb",
+    "courseName": "KET核心词汇-2",
+    "lessonId": "a4f6fe771cc11792f0f7658a51c8a5fc",
+    "nextLessonId": "49393325c070601737eef684f441e08b",
+    "lessonName": "KET核心词-68",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第68课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "0d1827c7b8ceb750869f0b69459afec2",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"tonight\",\"pronun\":\"[təˈnaɪt]\",\"translation\":\"n. 今晚\\nadv. 在今晚\",\"audio\":\"tonight.mp3\"},{\"word\":\"too\",\"pronun\":\"[tuː]\",\"translation\":\"adv. 太；也；很；还；非常；过度\",\"audio\":\"too.mp3\"},{\"word\":\"tooth\",\"pronun\":\"[tuːθ]\",\"translation\":\"n. 牙齿\\nvt. 给……装齿\\nvi. 啮合\",\"audio\":\"tooth.mp3\"},{\"word\":\"toothache\",\"pronun\":\"[ˈtuːθeɪk]\",\"translation\":\"n. [口腔] 牙痛\",\"audio\":\"toothache.mp3\"},{\"word\":\"toothbrush\",\"pronun\":\"[ˈtuːθbrʌʃ]\",\"translation\":\"n. 牙刷\",\"audio\":\"toothbrush.mp3\"},{\"word\":\"top\",\"pronun\":\"[tɑːp]\",\"translation\":\"n. 顶部，顶端；上部；首席；陀螺\\nadj. 最高的，顶上的；头等的\\nvt. 超越，超过；给…加盖；达到…的顶端\\nvi. 高出，超越；结束；达到顶点\",\"audio\":\"top.mp3\"},{\"word\":\"topic\",\"pronun\":\"[ˈtɑːpɪk]\",\"translation\":\"n. 主题（等于theme）；题目；一般规则；总论\",\"audio\":\"topic.mp3\"},{\"word\":\"total\",\"pronun\":\"[ˈtoʊtl]\",\"translation\":\"n. 总数，合计\\nadj. 全部的；完全的；整个的\\nvt. 总数达\\nvi. 合计\",\"audio\":\"total.mp3\"},{\"word\":\"touch\",\"pronun\":\"[tʌtʃ]\",\"translation\":\"n. 接触；触觉；格调；少许\\nvt. 接触；触动；使轻度受害\\nvi. 触摸；涉及；接近；提到\",\"audio\":\"touch.mp3\"},{\"word\":\"tour\",\"pronun\":\"[tʊr]\",\"translation\":\"n. 旅游，旅行；巡回演出\\nvt. 旅行，在……旅游；在……作巡回演出\\nvi. 旅行，旅游；作巡回演出\",\"audio\":\"tour.mp3\"},{\"word\":\"towel\",\"pronun\":\"[ˈtaʊəl]\",\"translation\":\"n. 毛巾，手巾；[纸] 纸巾\\nvi. 用毛巾擦干身体\\nvt. 用毛巾擦\",\"audio\":\"towel.mp3\"},{\"word\":\"tower\",\"pronun\":\"[ˈtaʊər]\",\"translation\":\"n. 塔；高楼；堡垒\\nvi. 高耸；超越\",\"audio\":\"tower.mp3\"},{\"word\":\"town\",\"pronun\":\"[taʊn]\",\"translation\":\"n. 城镇，市镇；市内商业区\",\"audio\":\"town.mp3\"},{\"word\":\"traditional\",\"pronun\":\"[trəˈdɪʃənl]\",\"translation\":\"adj. 传统的；惯例的\",\"audio\":\"traditional.mp3\"},{\"word\":\"traffic\",\"pronun\":\"[ˈtræfɪk]\",\"translation\":\"n. 交通；运输；贸易；[通信] 通信量\\nvt. 用…作交换；在…通行\\nvi. 交易，买卖\",\"audio\":\"traffic.mp3\"},{\"word\":\"train\",\"pronun\":\"[treɪn]\",\"translation\":\"n. 火车；行列；长队；裙裾\\nv. 培养；训练；瞄准\",\"audio\":\"train.mp3\"},{\"word\":\"trainer\",\"pronun\":\"[ˈtreɪnər]\",\"translation\":\"n. 助理教练；训练员；驯马师；飞行练习器；运动鞋\",\"audio\":\"trainer.mp3\"},{\"word\":\"tram\",\"pronun\":\"[træm]\",\"translation\":\"n. 电车轨道；煤车\\nvt. 用煤车运载\\nvi. 乘电车\",\"audio\":\"tram.mp3\"},{\"word\":\"trash\",\"pronun\":\"[træʃ]\",\"translation\":\"n. 垃圾；废物\\nvt. 丢弃；修剪树枝\",\"audio\":\"trash.mp3\"},{\"word\":\"travel\",\"pronun\":\"[ˈtrævl]\",\"translation\":\"n. 旅行；游历；漫游\\nvt. 经过；在…旅行\\nvi. 旅行；行进；步行；交往\",\"audio\":\"travel.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

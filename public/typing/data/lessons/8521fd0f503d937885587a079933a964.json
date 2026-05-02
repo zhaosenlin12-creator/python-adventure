@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:41.245036+00:00",
+  "request": {
+    "lesson_id": "8521fd0f503d937885587a079933a964",
+    "course_id": "9983508511f457b02ddcae4777acab15",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "9983508511f457b02ddcae4777acab15",
+    "order": 149,
+    "nextCourseId": "9983508511f457b02ddcae4777acab15",
+    "courseName": "JAVA",
+    "lessonId": "8521fd0f503d937885587a079933a964",
+    "nextLessonId": "18e028542e29bd0e49254ba612d3183f",
+    "lessonName": "单词计数",
+    "icon": "data/assets/daziya.com/key-icon_key-java.09b827febf.png",
+    "description": "Java编程练习 - 单词计数",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "28c6d66d19c4437c872df41628bf21f7",
+        "index": 1,
+        "text": [
+          "import java.util.HashMap;\\nimport java.util.Map;\\n\\nclass Main {\\n    public static void main(String[] args) {\\n        String text = \"Java is great. Java is powerful. I love Java programming.\";\\n        Map<String, Integer> wordCount = new HashMap<>();\\n\\n        String[] words = text.toLowerCase().split(\"\\\\s+\");\\n\\n        for (String word : words) {\\n            String cleaned = word.replaceAll(\"[^a-z0-9]\", \"\");\\n\\n            if (!cleaned.isEmpty()) {\\n                wordCount.put(cleaned, wordCount.getOrDefault(cleaned, 0) + 1);\\n            }\\n        }\\n\\n        System.out.println(\"原文本: \" + text + \"\\n\");\\n        System.out.println(\"单词频率:\");\\n\\n        for (Map.Entry<String, Integer> entry : wordCount.entrySet()) {\\n            System.out.println(entry.getKey() + \": \" + entry.getValue());\\n        }\\n    }\\n}\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "java",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "speed-test",
+  "scrapedAt": "2026-05-02T06:08:44.786201+00:00",
+  "request": {
+    "lesson_id": "fc7269e5abc6107fb6ab3fd1acac2302",
+    "course_id": "c6bc39f4ba86486e20cc171fab797ea3",
+    "source": "speed-test"
+  },
+  "data": {
+    "level": "速度测试",
+    "courseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "order": 21,
+    "nextCourseId": "c6bc39f4ba86486e20cc171fab797ea3",
+    "courseName": "英文速度测试",
+    "lessonId": "fc7269e5abc6107fb6ab3fd1acac2302",
+    "nextLessonId": "e4c61d58425b861e4fae65fda9bfd20f",
+    "lessonName": "The Sky Is Blue!",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "1138deea952b576ad566519ed38f8f69",
+        "index": 1,
+        "text": [
+          "My uncle sends me a picture. It's a picture of a blue sky and white clouds.\\n\"I am so happy to see the blue sky!\" says my uncle.\\nI wonder why. \"Isn't the sky always blue?\"\\n\"No,\" he says. \"The sky in my city is often grey because there are too many cars.\"\\nThat's why he is so excited! White clouds and a blue sky. It's beautiful!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": 13,
+    "categoryTitle": "速度测试"
+  }
+}

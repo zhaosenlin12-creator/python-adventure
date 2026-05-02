@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.086428+00:00",
+  "request": {
+    "lesson_id": "da87f9029b6501156077a96fa4d13be0",
+    "course_id": "f761984f29478810b8d76a1b0d943f1f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "f761984f29478810b8d76a1b0d943f1f",
+    "order": 13,
+    "nextCourseId": "f761984f29478810b8d76a1b0d943f1f",
+    "courseName": "人教版PEP三年级起点（2022年版）",
+    "lessonId": "da87f9029b6501156077a96fa4d13be0",
+    "nextLessonId": "764f83cf4029e49416be1554dfdeef01",
+    "lessonName": "2022年版 PEP-四年级-上册-2",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 2022年版人教版三年级起点PEP-四年级-上册 - 第2课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "c65608b8ecbc3fcd043dc14a6772662d",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"child\",\"pronun\":\"[tʃaɪld]\",\"translation\":\"n. 儿童，小孩，孩子；产物；子孙；幼稚的人；弟子\",\"audio\":\"child.mp3\"},{\"word\":\"children\",\"pronun\":\"[ˈtʃɪldrən]\",\"translation\":\"n. 孩子们（child的复数）\",\"audio\":\"children.mp3\"},{\"word\":\"his\",\"pronun\":\"[hɪz; ɪz]\",\"translation\":\"pron. 他的\",\"audio\":\"his.mp3\"},{\"word\":\"strong\",\"pronun\":\"[strɔːŋ]\",\"translation\":\"adj. 坚强的；强壮的；牢固的；擅长的\\nadv. 强劲地；猛烈地\",\"audio\":\"strong.mp3\"},{\"word\":\"hair\",\"pronun\":\"[her]\",\"translation\":\"n. 头发；毛发；些微\\nadj. 毛发的；护理毛发的；用毛发制成的\\nvt. 除去…的毛发\\nvi. 生长毛发；形成毛状纤维\",\"audio\":\"hair.mp3\"},{\"word\":\"also\",\"pronun\":\"[ˈɔːlsoʊ]\",\"translation\":\"conj. 并且；另外\\nadv. 也；而且；同样\",\"audio\":\"also.mp3\"},{\"word\":\"kind\",\"pronun\":\"[kaɪnd]\",\"translation\":\"n. 种类；性质\\nadj. 和蔼的；宽容的；令人感激的\",\"audio\":\"kind.mp3\"},{\"word\":\"quiet\",\"pronun\":\"[ˈkwaɪət]\",\"translation\":\"n. 安静；和平\\nadj. 安静的；安定的；不动的；温顺的\\nvt. 使平息；安慰\\nvi. 平静下来\",\"audio\":\"quiet.mp3\"},{\"word\":\"best\",\"pronun\":\"[best]\",\"translation\":\"n. 最好的人，最好的事物；最佳状态\\nadj. 最好的\\nvt. 打败，胜过\\nadv. 最好地\",\"audio\":\"best.mp3\"},{\"word\":\"read\",\"pronun\":\"[riːd]\",\"translation\":\"n. 阅读；读物\\nadj. 有学问的\\nvi. 读；读起来\\nvt. 阅读；读懂，理解\",\"audio\":\"read.mp3\"},{\"word\":\"Chinese\",\"pronun\":\"[ˌtʃaɪˈniːz]\",\"translation\":\"n. 中文，汉语；中国人\\nadj. 中国的，中国人的；中国话的\",\"audio\":\"Chinese.mp3\"},{\"word\":\"play\",\"pronun\":\"[pleɪ]\",\"translation\":\"n. 游戏；比赛；剧本\\nvt. 游戏；扮演；演奏；播放；同…比赛\\nvi. 演奏；玩耍；上演；参加比赛\",\"audio\":\"play.mp3\"},{\"word\":\"game\",\"pronun\":\"[ɡeɪm]\",\"translation\":\"n. 游戏；比赛\\nadj. 勇敢的\\nvi. 赌博\",\"audio\":\"game.mp3\"},{\"word\":\"football\",\"pronun\":\"[ˈfʊtbɔːl]\",\"translation\":\"n. 足球，橄榄球\\nvi. 踢足球；打橄榄球\",\"audio\":\"football.mp3\"},{\"word\":\"basketball\",\"pronun\":\"[ˈbæskɪtbɔːl]\",\"translation\":\"n. 篮球；篮球运动\",\"audio\":\"basketball.mp3\"},{\"word\":\"always\",\"pronun\":\"[ˈɔːlweɪz]\",\"translation\":\"adv. 永远，一直；总是；常常\",\"audio\":\"always.mp3\"},{\"word\":\"afternoon\",\"pronun\":\"[ˌæftərˈnuːn]\",\"translation\":\"n. 午后，下午\",\"audio\":\"afternoon.mp3\"},{\"word\":\"there\",\"pronun\":\"[ðer]\",\"translation\":\"n. 那个地方\\nadv. 在那里；在那边；在那点上\\nint. 你瞧\",\"audio\":\"there.mp3\"},{\"word\":\"playground\",\"pronun\":\"[ˈpleɪɡraʊnd]\",\"translation\":\"n. 运动场，操场；游乐场\",\"audio\":\"playground.mp3\"},{\"word\":\"park\",\"pronun\":\"[pɑːrk]\",\"translation\":\"n. 公园；[交] 停车场\\nvt. 停放；放置；寄存\\nvi. 停放车辆\",\"audio\":\"park.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

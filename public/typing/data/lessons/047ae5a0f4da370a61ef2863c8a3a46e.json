@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.498755+00:00",
+  "request": {
+    "lesson_id": "047ae5a0f4da370a61ef2863c8a3a46e",
+    "course_id": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "order": 526,
+    "nextCourseId": "b10dfaf3fcea5f81a5df0d9daae89c5f",
+    "courseName": "英语每日故事（初级）61-90",
+    "lessonId": "047ae5a0f4da370a61ef2863c8a3a46e",
+    "nextLessonId": "642474032245b271a3fc91f8a2a6c7e8",
+    "lessonName": "School Bus-2",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-en-article.288d794de2.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "eb908403b4c67c118061bc60a1a9155f",
+        "index": 1,
+        "text": [
+          "From then on, every day, Karen asks her mom, \"Am I big enough to go to school now?\"\\nHer mom says, \"Not yet.\"\\nOne day, Karen's mom says, \"Karen, you are a big girl now. It's time for you to go to school.\\nTomorrow, you can ride the big yellow school bus with your sister. Are you ready?\"\\n\"Yes!\" Karen is very excited. Her dream to ride the big yellow school bus will come true!"
+        ],
+        "pinyin": null,
+        "contentType": 12,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

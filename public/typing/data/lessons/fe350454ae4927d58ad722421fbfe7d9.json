@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:40.791920+00:00",
+  "request": {
+    "lesson_id": "fe350454ae4927d58ad722421fbfe7d9",
+    "course_id": "ff61770b1da83313ceacb0a08aef6378",
+    "category_id": "4"
+  },
+  "data": {
+    "level": "编程练习",
+    "courseId": "ff61770b1da83313ceacb0a08aef6378",
+    "order": 35,
+    "nextCourseId": "ff61770b1da83313ceacb0a08aef6378",
+    "courseName": "Python",
+    "lessonId": "fe350454ae4927d58ad722421fbfe7d9",
+    "nextLessonId": "2413064c2a89701fee57ff36f0b12a20",
+    "lessonName": "while循环",
+    "icon": "data/assets/daziya.com/key-icon_key-python.e427ee43c8.png",
+    "description": "Python编程练习 - while循环",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "5867b54f564cbb84360d07f4c4dc881c",
+        "index": 1,
+        "text": [
+          "# 使用while循环计算1到10的和\\ntotal = 0\\ncount = 1\\n\\nwhile count <= 10:\\n    total += count\\n    count += 1\\n\\nprint(f\"1到10的和是: {total}\")\\n\\n"
+        ],
+        "pinyin": null,
+        "contentType": 13,
+        "persistentKey": "",
+        "key": "python",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "4",
+    "categoryTitle": "编程练习"
+  }
+}

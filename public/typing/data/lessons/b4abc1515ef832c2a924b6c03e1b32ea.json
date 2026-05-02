@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.461899+00:00",
+  "request": {
+    "lesson_id": "b4abc1515ef832c2a924b6c03e1b32ea",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 649,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "b4abc1515ef832c2a924b6c03e1b32ea",
+    "nextLessonId": "5f69c50b3735b3b5cb464f83ec8f05b1",
+    "lessonName": " 五年级下-1",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点五年级下 - 第1课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "34da33b7091e54f9c2594743d49098fa",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"eat breakfast\",\"pronun\":\"[iːt ˈbrekfəst]\",\"translation\":\"吃早饭；吃早餐；食早餐\",\"audio\":\"eat_breakfast.mp3\"},{\"word\":\"have ... class\",\"pronun\":\"\",\"translation\":\"上课；指上课；该上课了\",\"audio\":\"have_____class.mp3\"},{\"word\":\"play sports\",\"pronun\":\"\",\"translation\":\"做运动；进行体育运动；进行体育活动\",\"audio\":\"play_sports.mp3\"},{\"word\":\"exercise\",\"pronun\":\"[ˈeksərsaɪz]\",\"translation\":\"n. 运动；练习；运用；操练；礼拜；典礼\\nvt. 锻炼；练习；使用；使忙碌；使惊恐\\nvi. 运动；练习\",\"audio\":\"exercise.mp3\"},{\"word\":\"do morning exercises\",\"pronun\":\"\",\"translation\":\"做早操；晨练；做早操要说\",\"audio\":\"do_morning_exercises.mp3\"},{\"word\":\"eat dinner\",\"pronun\":\"\",\"translation\":\"吃晚饭；吃晚餐；吃饭\",\"audio\":\"eat_dinner.mp3\"},{\"word\":\"clean my room\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"clean_my_room.mp3\"},{\"word\":\"go for a walk\",\"pronun\":\"\",\"translation\":\"v. 出去散步\",\"audio\":\"go_for_a_walk.mp3\"},{\"word\":\"go shopping\",\"pronun\":\"\",\"translation\":\"na. 去买东西\",\"audio\":\"go_shopping.mp3\"},{\"word\":\"take\",\"pronun\":\"[teɪk]\",\"translation\":\"vi. 拿；获得\\nvt. 拿，取；采取；接受（礼物等）；买，花费；耗费（时间等）\\nn. 捕获量；看法；利益，盈益；（入场券的）售得金额\",\"audio\":\"take.mp3\"},{\"word\":\"dancing\",\"pronun\":\"[ˈdænsɪŋ]\",\"translation\":\"n. 跳舞；舞蹈\\nv. 跳舞；摇晃（dance的ing形式）\",\"audio\":\"dancing.mp3\"},{\"word\":\"take a dancing class\",\"pronun\":\"\",\"translation\":\"无\",\"audio\":\"take_a_dancing_class.mp3\"},{\"word\":\"when\",\"pronun\":\"[wen]\",\"translation\":\"conj. 考虑到；既然；当…时；在…时；如果\\nn. 时间，时候；日期；场合\\nadv. 什么时候，何时；（用于时间的表达方式之后）在那时；其时；当时\\npron. 那时；什么时侯\",\"audio\":\"when.mp3\"},{\"word\":\"after\",\"pronun\":\"[ˈæftər]\",\"translation\":\"conj. 在……之后\\nprep. 在……之后\\nadj. 以后的\\nadv. 后来，以后\",\"audio\":\"after.mp3\"},{\"word\":\"start\",\"pronun\":\"[stɑːrt]\",\"translation\":\"n. 开始；起点\\nvt. 开始；启动\\nvi. 出发\",\"audio\":\"start.mp3\"},{\"word\":\"usually\",\"pronun\":\"[ˈjuːʒuəli; ˈjuːʒəli]\",\"translation\":\"adv. 通常，经常\",\"audio\":\"usually.mp3\"},{\"word\":\"Spain\",\"pronun\":\"[speɪn]\",\"translation\":\"n. 西班牙\",\"audio\":\"Spain.mp3\"},{\"word\":\"late\",\"pronun\":\"[leɪt]\",\"translation\":\"adj. 晚的；迟的；已故的；最近的\\nadv. 晚；迟；最近；在晚期\",\"audio\":\"late.mp3\"},{\"word\":\"a.m.\",\"pronun\":\"[ˌeɪ ˈem]\",\"translation\":\"abbr. 上午，午前（ante meridiem）\",\"audio\":\"a_m_.mp3\"},{\"word\":\"p.m.\",\"pronun\":\"[ˌpiː ˈem]\",\"translation\":\"abbr. (=prime minister)总理；首相；午后\\nn. 总理（全写为 prime minister）\",\"audio\":\"p_m_.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

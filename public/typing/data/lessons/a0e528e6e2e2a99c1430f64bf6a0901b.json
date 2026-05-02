@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:43.492238+00:00",
+  "request": {
+    "lesson_id": "a0e528e6e2e2a99c1430f64bf6a0901b",
+    "course_id": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "category_id": "8"
+  },
+  "data": {
+    "level": "打字比赛",
+    "courseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "order": 657,
+    "nextCourseId": "dab583fcb3623c3bb3e45ef7f2e584b1",
+    "courseName": "同步教材-人教版三年级起点",
+    "lessonId": "a0e528e6e2e2a99c1430f64bf6a0901b",
+    "nextLessonId": "d5da47b960a5e9ee611c97fb5ee8cc4c",
+    "lessonName": " 六年级上-1",
+    "icon": "data/assets/daziya.com/key-icon_key-textbook-en-1.28d8841e50.png",
+    "description": "词书: 人教版三年级起点六年级上 - 第1课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f846b42bec921db9d9310a66121ace45",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"science\",\"pronun\":\"[ˈsaɪəns]\",\"translation\":\"n. 科学；技术；学科；理科\",\"audio\":\"science.mp3\"},{\"word\":\"museum\",\"pronun\":\"[mjuˈziːəm]\",\"translation\":\"n. 博物馆\",\"audio\":\"museum.mp3\"},{\"word\":\"post office\",\"pronun\":\"[ˈpost ɔfɪs]\",\"translation\":\"n. 邮局；邮政部门；邮政系统；邮差敲门游戏（儿童用假托的信件换取亲吻）\",\"audio\":\"post_office.mp3\"},{\"word\":\"bookstore\",\"pronun\":\"[ˈbʊkstɔːr]\",\"translation\":\"n. 书店（等于bookshop）\",\"audio\":\"bookstore.mp3\"},{\"word\":\"cinema\",\"pronun\":\"[ˈsɪnəmə]\",\"translation\":\"n. 电影；电影院；电影业，电影制作术\",\"audio\":\"cinema.mp3\"},{\"word\":\"hospital\",\"pronun\":\"[ˈhɑːspɪtl]\",\"translation\":\"n. 医院\",\"audio\":\"hospital.mp3\"},{\"word\":\"crossing\",\"pronun\":\"[ˈkrɔːsɪŋ]\",\"translation\":\"n. 十字路口；杂交；横渡；横道\\nv. 横越（cross的现在分词）\",\"audio\":\"crossing.mp3\"},{\"word\":\"turn\",\"pronun\":\"[tɜːrn]\",\"translation\":\"n. 转弯；变化；(损害或有益于别人的)行为，举动，举止\\nvi. 转向；转变；转动\\nvt. 转动，使旋转；转弯；翻过来；兑换\",\"audio\":\"turn.mp3\"},{\"word\":\"left\",\"pronun\":\"[left]\",\"translation\":\"adj. 左边的；左派的；剩下的\\nadv. 在左面\\nn. 左边；左派；激进分子\\nv. 离开（leave的过去式）\",\"audio\":\"left.mp3\"},{\"word\":\"straight\",\"pronun\":\"[streɪt]\",\"translation\":\"n. 直；直线；直男，直女，异性恋者\\nadj. 直的；连续的；笔直的；正直的；整齐的；异性恋的\\nadv. 直接地；不断地；立即；坦率地\",\"audio\":\"straight.mp3\"},{\"word\":\"right\",\"pronun\":\"[raɪt]\",\"translation\":\"n. 正确；右边；正义\\nadj. 正确的；直接的；右方的\\nvt. 纠正\\nadv. 正确地；恰当地；彻底地\\nvi. 复正；恢复平稳\",\"audio\":\"right.mp3\"},{\"word\":\"ask\",\"pronun\":\"[æsk]\",\"translation\":\"vt. 问，询问；要求；需要；邀请；讨价\\nvi. 问，询问；要求\",\"audio\":\"ask.mp3\"},{\"word\":\"sir\",\"pronun\":\"[sɜːr; sər]\",\"translation\":\"n. 先生；（用于姓名前）爵士；阁下；（中小学生对男教师的称呼）先生；老师\",\"audio\":\"sir.mp3\"},{\"word\":\"interesting\",\"pronun\":\"[ˈɪntrəstɪŋ; ˈɪntrestɪŋ]\",\"translation\":\"adj. 有趣的；引起兴趣的，令人关注的\",\"audio\":\"interesting.mp3\"},{\"word\":\"Italian\",\"pronun\":\"[ɪˈtæliən]\",\"translation\":\"n. 意大利人；意大利语\\nadj. 意大利的；意大利文化的；意大利语的\",\"audio\":\"Italian.mp3\"},{\"word\":\"restaurant\",\"pronun\":\"[ˈrestrɑːnt; ˈrestərɑːnt]\",\"translation\":\"n. 餐馆；[经] 饭店\",\"audio\":\"restaurant.mp3\"},{\"word\":\"pizza\",\"pronun\":\"[ˈpiːtsə]\",\"translation\":\"n. 比萨饼（一种涂有乳酪核番茄酱的意大利式有馅烘饼）\",\"audio\":\"pizza.mp3\"},{\"word\":\"street\",\"pronun\":\"[striːt]\",\"translation\":\"n. 街道\\nadj. 街道的\",\"audio\":\"street.mp3\"},{\"word\":\"get\",\"pronun\":\"[ɡet]\",\"translation\":\"n. 生殖；幼兽\\nvi. 成为；变得；到达\\nvt. 使得；获得；受到；变成\",\"audio\":\"get.mp3\"},{\"word\":\"GPS\",\"pronun\":\"[ˌdʒiː piː ˈes]\",\"translation\":\"abbr. 全球定位系统（Global Position System）；通用雷达（General Purpose Radar）；炮长主瞄准镜（Gunner's Primary Sight）\",\"audio\":\"GPS.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "8",
+    "categoryTitle": "打字比赛"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:38.386780+00:00",
+  "request": {
+    "lesson_id": "dba56cfde99c850a690a37344681ccb1",
+    "course_id": "9327dc979bdaf7eece7f62fc25c392ca",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "order": 61,
+    "nextCourseId": "9327dc979bdaf7eece7f62fc25c392ca",
+    "courseName": "KET核心词汇-1",
+    "lessonId": "dba56cfde99c850a690a37344681ccb1",
+    "nextLessonId": "9dcbf124dd5503a8885589a59c46f906",
+    "lessonName": "KET核心词-22",
+    "icon": "data/assets/daziya.com/key-icon_key-ket-1.65b8fc6642.png",
+    "description": "词书: KET核心词 - 第22课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "f6856e1c7e6a418258ea975f727c53cc",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"evening\",\"pronun\":\"[ˈiːvnɪŋ]\",\"translation\":\"n. 晚上；傍晚；（联欢性的）晚会；后期\\nadj. 在晚上的；为晚上的；晚上用的\\nint. 晚上好（等于good evening）\",\"audio\":\"evening.mp3\"},{\"word\":\"event\",\"pronun\":\"[ɪˈvent]\",\"translation\":\"n. 事件，大事；项目；结果\",\"audio\":\"event.mp3\"},{\"word\":\"ever\",\"pronun\":\"[ˈevər]\",\"translation\":\"adv. 永远；曾经；究竟\",\"audio\":\"ever.mp3\"},{\"word\":\"every\",\"pronun\":\"[ˈevri]\",\"translation\":\"adj. 每一的，每个的；每隔…的\",\"audio\":\"every.mp3\"},{\"word\":\"everyone\",\"pronun\":\"[ˈevriwʌn]\",\"translation\":\"n. 每个人\\npron. 每个人；人人\",\"audio\":\"everyone.mp3\"},{\"word\":\"everything\",\"pronun\":\"[ˈevriθɪŋ]\",\"translation\":\"pron. 每件事物；最重要的东西；（有关的）一切；万事\",\"audio\":\"everything.mp3\"},{\"word\":\"everywhere\",\"pronun\":\"[ˈevriwer]\",\"translation\":\"n. 每个地方\\nadv. 到处\",\"audio\":\"everywhere.mp3\"},{\"word\":\"exam\",\"pronun\":\"[ɪɡˈzæm]\",\"translation\":\"n. 考试；测验\",\"audio\":\"exam.mp3\"},{\"word\":\"example\",\"pronun\":\"[ɪɡˈzæmpl]\",\"translation\":\"n. 例子；榜样\\nvt. 作为…的例子；为…做出榜样\\nvi. 举例\",\"audio\":\"example.mp3\"},{\"word\":\"excellent\",\"pronun\":\"[ˈeksələnt]\",\"translation\":\"adj. 卓越的；极好的；杰出的\",\"audio\":\"excellent.mp3\"},{\"word\":\"except\",\"pronun\":\"[ɪkˈsept]\",\"translation\":\"conj. 除了；要不是\\nprep. 除…之外\\nvt. 不计；把…除外\\nvi. 反对\",\"audio\":\"except.mp3\"},{\"word\":\"exciting\",\"pronun\":\"[ɪkˈsaɪtɪŋ]\",\"translation\":\"adj. 令人兴奋的；使人激动的\\nv. 激动；刺激（excite的ing形式）；唤起\",\"audio\":\"exciting.mp3\"},{\"word\":\"excuse\",\"pronun\":\"[ɪkˈskjuːs]\",\"translation\":\"n. 借口；理由\\nvt. 原谅；为…申辩；给…免去\\nvi. 作为借口；请求宽恕；表示宽恕\",\"audio\":\"excuse.mp3\"},{\"word\":\"exercise\",\"pronun\":\"[ˈeksərsaɪz]\",\"translation\":\"n. 运动；练习；运用；操练；礼拜；典礼\\nvt. 锻炼；练习；使用；使忙碌；使惊恐\\nvi. 运动；练习\",\"audio\":\"exercise.mp3\"},{\"word\":\"exhibition\",\"pronun\":\"[ˌeksɪˈbɪʃn]\",\"translation\":\"n. 展览，显示；展览会；展览品\",\"audio\":\"exhibition.mp3\"},{\"word\":\"exit\",\"pronun\":\"[ˈeksɪt; ˈeɡzɪt]\",\"translation\":\"n. 出口，通道；退场\\nvi. 退出；离去\",\"audio\":\"exit.mp3\"},{\"word\":\"expensive\",\"pronun\":\"[ɪkˈspensɪv]\",\"translation\":\"adj. 昂贵的；花钱的\",\"audio\":\"expensive.mp3\"},{\"word\":\"experience\",\"pronun\":\"[ɪkˈspɪriəns]\",\"translation\":\"n. 经验；经历；体验\\nvt. 经验；经历；体验\",\"audio\":\"experience.mp3\"},{\"word\":\"explain\",\"pronun\":\"[ɪkˈspleɪn]\",\"translation\":\"v. 说明；解释\",\"audio\":\"explain.mp3\"},{\"word\":\"explorer\",\"pronun\":\"[ɪkˈsplɔːrər]\",\"translation\":\"n. 探险家；勘探者；探测器；[医]探针\",\"audio\":\"explorer.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}

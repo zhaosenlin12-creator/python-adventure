@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:36.262065+00:00",
+  "request": {
+    "lesson_id": "bd4ce573f35369437853d5e6f1871336",
+    "course_id": "aaf391ebe3c578672e2811298ce699e2",
+    "category_id": "2"
+  },
+  "data": {
+    "level": "中文练习",
+    "courseId": "aaf391ebe3c578672e2811298ce699e2",
+    "order": 546,
+    "nextCourseId": "aaf391ebe3c578672e2811298ce699e2",
+    "courseName": "词语专项",
+    "lessonId": "bd4ce573f35369437853d5e6f1871336",
+    "nextLessonId": "58cdce476f865ad805e2692629fcc605",
+    "lessonName": "比喻句2",
+    "icon": "data/assets/daziya.com/key-icon_key-poet-2.853c51c679.png",
+    "description": "",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "23dd235463661cb3670713f5f137a92e",
+        "index": 1,
+        "text": [
+          "你看，它把黄色给了银杏树，黄黄的叶子像一把把小扇子，扇哪扇哪，扇走了夏天的炎热。"
+        ],
+        "pinyin": "[[\"你\", \"nǐ\"], [\"看\", \"kàn\"], [\"，\", \"\"], [\"它\", \"tā\"], [\"把\", \"bǎ\"], [\"黄\", \"huáng\"], [\"色\", \"sè\"], [\"给\", \"gěi\"], [\"了\", \"le\"], [\"银\", \"yín\"], [\"杏\", \"xìng\"], [\"树\", \"shù\"], [\"，\", \"\"], [\"黄\", \"huáng\"], [\"黄\", \"huáng\"], [\"的\", \"de\"], [\"叶\", \"yè\"], [\"子\", \"zi\"], [\"像\", \"xiàng\"], [\"一\", \"yī\"], [\"把\", \"bǎ\"], [\"把\", \"bǎ\"], [\"小\", \"xiǎo\"], [\"扇\", \"shàn\"], [\"子\", \"zi\"], [\"，\", \"\"], [\"扇\", \"shān\"], [\"哪\", \"na\"], [\"扇\", \"shān\"], [\"哪\", \"na\"], [\"，\", \"\"], [\"扇\", \"shān\"], [\"走\", \"zǒu\"], [\"了\", \"le\"], [\"夏\", \"xià\"], [\"天\", \"tiān\"], [\"的\", \"de\"], [\"炎\", \"yán\"], [\"热\", \"rè\"], [\"。\", \"\"]]",
+        "contentType": 10,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 25,
+        "minSpeed": 5,
+        "maxDuration": 500,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "2",
+    "categoryTitle": "中文练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:31.897335+00:00",
+  "request": {
+    "lesson_id": "99ad403825772b4ef7c47c34a9cad08f",
+    "course_id": "daccefd55478aba6657b64a604f8f971",
+    "category_id": "1"
+  },
+  "data": {
+    "level": "标准指法练习",
+    "courseId": "daccefd55478aba6657b64a604f8f971",
+    "order": 154,
+    "nextCourseId": "daccefd55478aba6657b64a604f8f971",
+    "courseName": "注音练习1",
+    "lessonId": "99ad403825772b4ef7c47c34a9cad08f",
+    "nextLessonId": "5190db50f209219c3df604db87486802",
+    "lessonName": "《悯农》",
+    "icon": "data/assets/typing-web.oss-cn-shanghai.aliyuncs.com/key-icon_key-wen.691360af01.png",
+    "description": "-",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "17e44f4a1437bcf2f29491e56eaf71e4",
+        "index": 1,
+        "text": [
+          "《悯农》\\n唐：李绅\\n\\n春种一粒粟，秋收万颗子。\\n四海无闲田，农夫犹饿死。"
+        ],
+        "pinyin": "[[\"《\", \"\"], [\"悯\", \"mǐn\"], [\"农\", \"nóng\"], [\"》\", \"\"], [\"\\n\", \"\"], [\"唐\", \"táng\"], [\"：\", \"\"], [\"李\", \"lǐ\"], [\"绅\", \"shēn\"], [\"\\n\", \"\"], [\"\\n\", \"\"], [\"春\", \"chūn\"], [\"种\", \"zhòng\"], [\"一\", \"yī\"], [\"粒\", \"lì\"], [\"粟\", \"sù\"], [\"，\", \"\"], [\"秋\", \"qiū\"], [\"收\", \"shōu\"], [\"万\", \"wàn\"], [\"颗\", \"kē\"], [\"子\", \"zǐ\"], [\"。\", \"\"], [\"\\n\", \"\"], [\"四\", \"sì\"], [\"海\", \"hǎi\"], [\"无\", \"wú\"], [\"闲\", \"xián\"], [\"田\", \"tián\"], [\"，\", \"\"], [\"农\", \"nóng\"], [\"夫\", \"fū\"], [\"犹\", \"yóu\"], [\"饿\", \"è\"], [\"死\", \"sǐ\"], [\"。\", \"\"]]",
+        "contentType": 100,
+        "persistentKey": "",
+        "key": "-",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 18,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 85
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "1",
+    "categoryTitle": "标准指法练习"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source": "course",
+  "scrapedAt": "2026-05-02T06:08:39.570281+00:00",
+  "request": {
+    "lesson_id": "4ce1393b495092d4cd05f1b5e53e7bf6",
+    "course_id": "c7cab438bde08415a5c4230dcb8e6568",
+    "category_id": "3"
+  },
+  "data": {
+    "level": "英文练习",
+    "courseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "order": 329,
+    "nextCourseId": "c7cab438bde08415a5c4230dcb8e6568",
+    "courseName": "六级词汇-1",
+    "lessonId": "4ce1393b495092d4cd05f1b5e53e7bf6",
+    "nextLessonId": "9b0ad30ffcb1937dbd527133259fa889",
+    "lessonName": "六级词汇正序版-40",
+    "icon": "data/assets/daziya.com/key-icon_key-en-word.8f2e829a44.png",
+    "description": "词书: 六级词汇正序版 - 第40课",
+    "background": "default",
+    "instruction": [],
+    "practice": [],
+    "test": [
+      {
+        "chapterId": "efb89c897bd03997d3f1ae24ea842237",
+        "index": 1,
+        "text": [
+          "[{\"word\":\"eligible\",\"pronun\":\"[ˈelɪdʒəbl]\",\"translation\":\"n. 合格者；适任者；有资格者\\nadj. 合格的，合适的；符合条件的；有资格当选的\",\"audio\":\"eligible.mp3\"},{\"word\":\"eliminate\",\"pronun\":\"[ɪˈlɪmɪneɪt]\",\"translation\":\"vt. 消除；排除\",\"audio\":\"eliminate.mp3\"},{\"word\":\"elite\",\"pronun\":\"[eɪˈliːt; ɪˈliːt]\",\"translation\":\"n. 精英；精华；中坚分子\",\"audio\":\"elite.mp3\"},{\"word\":\"eloquent\",\"pronun\":\"[ˈeləkwənt]\",\"translation\":\"adj. 意味深长的；雄辩的，有口才的；有说服力的；动人的\",\"audio\":\"eloquent.mp3\"},{\"word\":\"embark\",\"pronun\":\"[ɪmˈbɑːrk]\",\"translation\":\"vi. 从事，着手；上船或飞机\\nvt. 使从事；使上船\",\"audio\":\"embark.mp3\"},{\"word\":\"embarrass\",\"pronun\":\"[ɪmˈbærəs]\",\"translation\":\"vt. 使局促不安；使困窘；阻碍\",\"audio\":\"embarrass.mp3\"},{\"word\":\"embed\",\"pronun\":\"[ɪmˈbed]\",\"translation\":\"vt. 栽种；使嵌入，使插入；使深留脑中\",\"audio\":\"embed.mp3\"},{\"word\":\"embody\",\"pronun\":\"[ɪmˈbɑːdi]\",\"translation\":\"vt. 体现，使具体化；具体表达\",\"audio\":\"embody.mp3\"},{\"word\":\"emerge\",\"pronun\":\"[ɪˈmɜːrdʒ]\",\"translation\":\"vi. 浮现；摆脱；暴露\",\"audio\":\"emerge.mp3\"},{\"word\":\"emergency\",\"pronun\":\"[ɪˈmɜːrdʒənsi]\",\"translation\":\"n. 紧急情况；突发事件；非常时刻\\nadj. 紧急的；备用的\",\"audio\":\"emergency.mp3\"},{\"word\":\"emotion\",\"pronun\":\"[ɪˈmoʊʃn]\",\"translation\":\"n. 情感；情绪\",\"audio\":\"emotion.mp3\"},{\"word\":\"emphasis\",\"pronun\":\"[ˈemfəsɪs]\",\"translation\":\"n. 重点；强调；加强语气\",\"audio\":\"emphasis.mp3\"},{\"word\":\"emphasize\",\"pronun\":\"[ˈemfəsaɪz]\",\"translation\":\"vt. 强调，着重\",\"audio\":\"emphasize.mp3\"},{\"word\":\"empirical\",\"pronun\":\"[ɪmˈpɪrɪkl]\",\"translation\":\"adj. 经验主义的，完全根据经验的；实证的\",\"audio\":\"empirical.mp3\"},{\"word\":\"employment\",\"pronun\":\"[ɪmˈplɔɪmənt]\",\"translation\":\"n. 使用；职业；雇用\",\"audio\":\"employment.mp3\"},{\"word\":\"enclosure\",\"pronun\":\"[ɪnˈkloʊʒər]\",\"translation\":\"n. 附件；围墙；围场\",\"audio\":\"enclosure.mp3\"},{\"word\":\"encounter\",\"pronun\":\"[ɪnˈkaʊntər]\",\"translation\":\"n. 遭遇，偶然碰见\\nvi. 遭遇；偶然相遇\\nvt. 遭遇，邂逅；遇到\",\"audio\":\"encounter.mp3\"},{\"word\":\"encourage\",\"pronun\":\"[ɪnˈkɜːrɪdʒ]\",\"translation\":\"vt. 鼓励，怂恿；激励；支持\",\"audio\":\"encourage.mp3\"},{\"word\":\"endeavor\",\"pronun\":\"[ɪnˈdevər]\",\"translation\":\"n. 努力；尽力（等于endeavour）\\nvi. 努力；尽力（等于endeavour）\\nvt. 努力；尽力（等于endeavour）\",\"audio\":\"endeavor.mp3\"},{\"word\":\"endow\",\"pronun\":\"[ɪnˈdaʊ]\",\"translation\":\"vt. 赋予；捐赠；天生具有\",\"audio\":\"endow.mp3\"}]"
+        ],
+        "pinyin": null,
+        "contentType": 11,
+        "persistentKey": "",
+        "key": "",
+        "onFail": "next",
+        "onSuccess": "next",
+        "proficiency": 0,
+        "goalSpeed": 20,
+        "minSpeed": 5,
+        "maxDuration": 600,
+        "minAccuracy": 90
+      }
+    ],
+    "game": [],
+    "article": [],
+    "language": "zh_CN",
+    "subscription": "FREE",
+    "categoryId": "3",
+    "categoryTitle": "英文练习"
+  }
+}
