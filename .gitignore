@@ -104,6 +104,8 @@ backend/*.pyc
 
 # Deployment packages
 *.zip
+/deploy/frontend-dist/
+/deploy/backend-dist/
 qa-level-*.png
 tmp-br-debug.png
 tmp-br-guest-before-fill.png

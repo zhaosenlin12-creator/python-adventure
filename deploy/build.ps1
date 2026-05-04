@@ -1,6 +1,37 @@
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
+function Remove-TreeSafely {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Path
+    )
+
+    if (-not (Test-Path $Path)) {
+        return
+    }
+
+    try {
+        Remove-Item -LiteralPath $Path -Recurse -Force -ErrorAction Stop
+    } catch {
+        Get-ChildItem -LiteralPath $Path -Recurse -Force -File -ErrorAction SilentlyContinue | ForEach-Object {
+            $_.Attributes = 'Normal'
+        }
+        Get-ChildItem -LiteralPath $Path -Recurse -Force -Directory -ErrorAction SilentlyContinue |
+            Sort-Object { $_.FullName.Length } -Descending |
+            ForEach-Object {
+                try {
+                    $_.Attributes = 'Directory'
+                } catch {
+                }
+            }
+        cmd /c rmdir /s /q "$Path" | Out-Null
+        if (Test-Path $Path) {
+            throw
+        }
+    }
+}
+
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host "  Frontend packaging script - game.codebn.cn" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
@@ -36,7 +67,7 @@ if (Test-Path $zipFile) {
     Remove-Item -LiteralPath $zipFile -Force
 }
 if (Test-Path $stageDir) {
-    Remove-Item -LiteralPath $stageDir -Recurse -Force
+    Remove-TreeSafely -Path $stageDir
 }
 New-Item -ItemType Directory -Path $stageDir | Out-Null
 
@@ -86,7 +117,7 @@ foreach ($file in $runtimeDeployFiles) {
 
 Write-Host "[5/5] Create deployment zip..." -ForegroundColor Yellow
 Compress-Archive -Path "$stageDir\*" -DestinationPath $zipFile -Force
-Remove-Item -LiteralPath $stageDir -Recurse -Force
+Remove-TreeSafely -Path $stageDir
 
 $zipSize = (Get-Item -LiteralPath $zipFile).Length / 1MB
 $zipHash = (Get-FileHash -LiteralPath $zipFile -Algorithm SHA256).Hash.ToLowerInvariant()

@@ -397,6 +397,8 @@
 
   function normalizeText(value) {
     return String(value ?? "")
+      .replaceAll("\r\n", "\n")
+      .replaceAll("\r", "\n")
       .replaceAll("\\r\\n", "\n")
       .replaceAll("\\n", "\n")
       .replaceAll("\\t", "\t");
@@ -803,7 +805,10 @@
       courseId: state.route.query.get("courseId") || foundMeta.courseId,
       categoryId: state.route.query.get("categoryId") || foundMeta.categoryId,
     };
-    if (!state.trainer || state.trainer.lessonId !== lessonId || state.trainer.source !== source || String(state.trainer.meta?.categoryId || "") !== String(meta.categoryId || "")) {
+    const trainerCategoryId = String(state.trainer?.meta?.categoryId || state.trainer?.detail?.categoryId || "");
+    const routeCategoryId = String(meta.categoryId || "");
+    const categoryChanged = source === "custom" ? false : trainerCategoryId !== routeCategoryId;
+    if (!state.trainer || state.trainer.lessonId !== lessonId || state.trainer.source !== source || categoryChanged) {
       ensureLessonTrainer(lessonId, source, meta);
       return `<div class="loading">正在加载课时 ${html(meta?.title || lessonId)}...</div>`;
     }
@@ -815,8 +820,13 @@
     if (state.loadingLesson === loadingKey) return;
     state.loadingLesson = loadingKey;
     try {
-      const detail = await loadLessonDetail(lessonId);
-      state.trainer = buildTrainer(detail, meta, source);
+      if (source === "custom") {
+        state.trainer = buildCustomTrainer(meta?.customItem || customItemFromLessonId(lessonId) || { id: lessonId.replace(/^custom-/, ""), title: meta?.title || lessonId, text: meta?.text || meta?.title || lessonId });
+        await Promise.resolve();
+      } else {
+        const detail = await loadLessonDetail(lessonId);
+        state.trainer = buildTrainer(detail, meta, source);
+      }
     } catch (error) {
       state.trainer = buildTrainer(null, meta || { lessonId, title: lessonId }, source);
       showToast(`课时详情缺失，已用标题生成练习文本：${error.message}`);
@@ -947,7 +957,7 @@
     const title = trainer.detail.lessonName || trainer.meta.title || "练习";
     const category = trainer.detail.categoryTitle || trainer.meta.categoryTitle || (trainer.source === "speed-test" ? "速度测试" : "课程练习");
     const next = nextLessonLink(trainer);
-    const backLink = trainer.source === "speed-test" ? link("/speed-test") : link(`/courses/${trainer.detail.categoryId || trainer.meta.categoryId || ""}`);
+    const backLink = trainer.source === "speed-test" ? link("/speed-test") : trainer.source === "custom" ? link("/custom") : link(`/courses/${trainer.detail.categoryId || trainer.meta.categoryId || ""}`);
     return `
       ${renderTrainingTopbar({ title, category, course: trainer.detail.courseName || trainer.meta.courseTitle || "", backLink, next })}
       ${trainer.mode === "word" || trainer.mode === "dictation" ? renderWordTrainer(trainer, metrics) : renderTextTrainer(trainer, metrics, current)}
@@ -1038,14 +1048,14 @@
 
   function renderHanziBoard(trainer) {
     const chinese = isChineseTextTrainer(trainer);
-    const compactRows = typeof window !== "undefined" && window.innerHeight <= 820;
+    const compactRows = typeof window !== "undefined" && window.innerHeight <= 920;
     const perRow = chinese ? 20 : compactRows ? 24 : 28;
     const text = trainer.text || "";
     const inputLength = clamp((trainer.input || "").length, 0, text.length);
     const totalRows = Math.max(1, Math.ceil(text.length / perRow));
     const activeRow = clamp(Math.floor(inputLength / perRow), 0, totalRows - 1);
-    const visibleRows = compactRows ? 2 : 3;
-    const startRow = clamp(activeRow <= 1 ? 0 : activeRow - 1, 0, Math.max(0, totalRows - visibleRows));
+    const visibleRows = compactRows ? 1 : 2;
+    const startRow = visibleRows === 1 ? activeRow : clamp(activeRow <= 0 ? 0 : activeRow - 1, 0, Math.max(0, totalRows - visibleRows));
     const rows = Array.from({ length: Math.min(visibleRows, totalRows - startRow) }, (_, offset) => {
       const row = startRow + offset;
       const rowStart = row * perRow;
@@ -1275,7 +1285,7 @@
               (row) =>
                 `<div class="key-row">${row
                   .split("")
-                  .map((char) => `<span class="key ${char === key ? "active" : ""}">${html(char)}</span>`)
+                  .map((char) => `<span class="key ${char === key ? "active" : ""}" data-action="keyboard-key" data-keyboard-key="${html(char)}">${html(char)}</span>`)
                   .join("")}</div>`
             )
             .join("")}
@@ -1341,7 +1351,7 @@
           .map(
             (row) =>
               `<div class="key-row">${row
-                .map(([char, label, span = 1]) => `<span class="key ${char === key ? "active" : ""}" style="--span:${span}">${label}</span>`)
+                .map(([char, label, span = 1]) => `<span class="key ${char === key ? "active" : ""}" data-action="keyboard-key" data-keyboard-key="${html(char)}" style="--span:${span}">${label}</span>`)
                 .join("")}</div>`
           )
           .join("")}
@@ -2323,6 +2333,31 @@
   }
 
   function findLessonMeta(lessonId, source) {
+    if (source === "custom") {
+      const item = customItemFromLessonId(lessonId);
+      if (item) {
+        return {
+          lessonId,
+          title: item.title,
+          source: "custom",
+          courseId: "custom",
+          courseTitle: "自定义课程",
+          categoryId: "6",
+          categoryTitle: "自定义课程",
+          customItem: item,
+          text: item.text,
+        };
+      }
+      return {
+        lessonId,
+        title: lessonId.replace(/^custom-/, "") || "自定义课程",
+        source: "custom",
+        courseId: "custom",
+        courseTitle: "自定义课程",
+        categoryId: "6",
+        categoryTitle: "自定义课程",
+      };
+    }
     if (source === "speed-test") {
       for (const group of state.catalog.speedTests || []) {
         for (const course of group.courses || []) {
@@ -2408,6 +2443,7 @@
         setTimeout(speakCurrent, 120);
       }
     }
+    if (action === "keyboard-key") handleVirtualKeyboardKey(button.dataset.keyboardKey || "");
     if (action === "speak-current") speakCurrent();
     if (action === "speak-all") speakAll();
     if (action === "toggle-loop-speech") toggleLoopSpeech();
@@ -2562,6 +2598,14 @@
 
   function handleKeydown(event) {
     unlockAudio();
+    const bind = event.target?.dataset?.bind;
+    if (bind === "trainer-cell-input" && (event.key === "Backspace" || event.key === "Delete" || event.key === "Enter")) {
+      if (state.composing || event.isComposing || event.key === "Process") return;
+      event.preventDefault();
+      if (event.key === "Enter") updateTrainerCellInput("\n");
+      else deleteTrainerCellInput();
+      return;
+    }
     if (state.route.parts[0] !== "games") return;
     const g = state.game;
     if (!g || !g.running || g.finished) return;
@@ -2602,7 +2646,7 @@
     const index = clamp(base.length, 0, text.length);
     if (Number.isFinite(options.sourceIndex) && options.sourceIndex !== index) return;
     if (index >= text.length) return;
-    const committed = String(value || "");
+    const committed = String(value || "").replaceAll("\r\n", "\n").replaceAll("\r", "\n");
     if (!committed) return;
     const previous = trainer.input;
     trainer.input = (base + committed).slice(0, text.length);
@@ -2616,6 +2660,43 @@
     if (editor) editor.value = "";
     if (finished) completeTrainer(trainer);
     render();
+  }
+
+  function handleVirtualKeyboardKey(key) {
+    if (state.route.parts[0] !== "lesson" || !shouldUseTextBoardTrainer(state.trainer)) {
+      focusBindSoon(document.activeElement?.dataset?.bind || trainerFocusBind());
+      return;
+    }
+    const normalized = String(key || "").toLowerCase();
+    if (normalized === "backspace" || normalized === "delete") {
+      deleteTrainerCellInput();
+      return;
+    }
+    if (normalized === "space") {
+      updateTrainerCellInput(" ");
+      return;
+    }
+    if (normalized === "enter") {
+      updateTrainerCellInput("\n");
+      return;
+    }
+    if (key.length === 1) updateTrainerCellInput(key);
+    else focusTrainerInputSoon();
+  }
+
+  function deleteTrainerCellInput() {
+    const trainer = state.trainer;
+    if (!trainer || trainer.finished || !shouldUseTextBoardTrainer(trainer)) return;
+    const previous = trainer.input || "";
+    if (!previous) {
+      focusTrainerInputSoon();
+      return;
+    }
+    trainer.input = previous.slice(0, -1);
+    const editor = app.querySelector('[data-bind="trainer-cell-input"]');
+    if (editor) editor.value = "";
+    if (state.settings.keyAudio) playTone(220, 0.045, { gain: 0.09, type: "triangle" });
+    updateTrainerDom(trainer);
   }
 
   function updateTrainerDom(trainer) {
@@ -2749,7 +2830,7 @@
 
   function saveCustomCourse() {
     const title = app.querySelector('[data-bind="custom-title"]')?.value?.trim() || `自定义课程 ${state.custom.length + 1}`;
-    const text = app.querySelector('[data-bind="custom-text"]')?.value?.trim();
+    const text = normalizeText(app.querySelector('[data-bind="custom-text"]')?.value || "").trim();
     if (!text) {
       showToast("自定义课程内容不能为空。");
       return;
@@ -2762,19 +2843,34 @@
   function practiceCustom(id) {
     const item = state.custom.find((course) => course.id === id);
     if (!item) return;
-    state.trainer = {
+    state.trainer = buildCustomTrainer(item);
+    location.hash = link(`/lesson/custom-${item.id}`, { source: "custom" });
+  }
+
+  function customItemFromLessonId(lessonId) {
+    const id = String(lessonId || "").replace(/^custom-/, "");
+    return state.custom.find((course) => course.id === id) || null;
+  }
+
+  function buildCustomTrainer(item) {
+    return {
       lessonId: `custom-${item.id}`,
       source: "custom",
-      detail: { lessonName: item.title, categoryTitle: "自定义课程" },
-      meta: { title: item.title },
-      text: item.text,
+      mode: "text",
+      detail: { lessonName: item.title, courseName: "自定义课程", categoryTitle: "自定义课程", categoryId: "6", courseId: "custom" },
+      meta: { title: item.title, courseTitle: "自定义课程", categoryTitle: "自定义课程", categoryId: "6", courseId: "custom" },
+      text: normalizeText(item.text || item.title || "自定义课程"),
+      words: [],
+      wordIndex: 0,
+      wordStats: { completed: 0, correct: 0, chars: 0 },
+      revealAnswer: false,
+      pinyin: [],
       input: "",
       startedAt: null,
       paused: false,
       finished: false,
       saved: false,
     };
-    location.hash = link(`/lesson/custom-${item.id}`, { source: "custom" });
   }
 
   function deleteCustom(id) {
