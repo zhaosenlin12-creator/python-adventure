@@ -1054,7 +1054,7 @@ h3 {
   position: relative;
 }
 
-.hanzi-input-cell.current::after {
+.hanzi-input-cell.current:not(.editing)::after {
   content: "";
   position: absolute;
   right: 7px;
@@ -1066,6 +1066,37 @@ h3 {
   animation: caretBlink 1s steps(2, start) infinite;
 }
 
+.hanzi-input-cell.editing {
+  overflow: visible;
+}
+
+.hanzi-cell-editor {
+  position: absolute;
+  inset: 4px;
+  z-index: 3;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #16314f;
+  caret-color: #1f1f1f;
+  font: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 1;
+  text-align: center;
+}
+
+.hanzi-cell-editor:focus {
+  outline: 0;
+}
+
+.hanzi-cell-editor::selection {
+  background: rgba(44, 140, 255, 0.22);
+}
+
 .typing-input.training-input.hanzi-capture {
   min-height: 70px;
   max-height: 96px;
@@ -1075,6 +1106,19 @@ h3 {
   resize: none;
   font-size: 25px;
   line-height: 1.45;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.typing-input.training-input.hanzi-capture.is-sync-only {
+  border-color: rgba(31, 31, 31, 0.22);
+  background: rgba(255, 255, 255, 0.64);
+  color: #5e6673;
+  user-select: text;
+}
+
+.sync-placeholder {
+  color: rgba(31, 31, 31, 0.48);
 }
 
 .text-board-practice .training-status,
@@ -1840,6 +1884,21 @@ body.dark .hanzi-input-cell.bad {
   border-color: #ff8585;
   background: rgba(255, 95, 95, 0.22);
   color: #ffd9d9;
+}
+
+body.dark .hanzi-cell-editor {
+  color: #e9f3ff;
+  caret-color: #fff8d8;
+}
+
+body.dark .typing-input.training-input.hanzi-capture.is-sync-only {
+  border-color: rgba(255, 248, 216, 0.22);
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 248, 216, 0.86);
+}
+
+body.dark .sync-placeholder {
+  color: rgba(255, 248, 216, 0.58);
 }
 
 body.dark .settings-mini label.is-on,

@@ -483,7 +483,7 @@
       scrollCurrentCharIntoView({ force: route === "lesson" });
     }
     if (route === "lesson" && state.trainer && !state.trainer.finished && !state.composing) {
-      focusBindSoon("trainer-input");
+      focusTrainerInputSoon();
     }
     scheduleAutoSpeech();
   }
@@ -532,6 +532,14 @@
     focusBind(bind);
     setTimeout(() => focusBind(bind), 80);
     setTimeout(() => focusBind(bind), 220);
+  }
+
+  function trainerFocusBind() {
+    return shouldUseTextBoardTrainer(state.trainer) ? "trainer-cell-input" : "trainer-input";
+  }
+
+  function focusTrainerInputSoon() {
+    focusBindSoon(trainerFocusBind());
   }
 
   function focusWithoutScroll(node) {
@@ -988,7 +996,7 @@
           <div class="typing-target training-target ${textBoard ? "hanzi-target text-board-target" : ""} ${chinese ? "chinese-target" : "latin-target"}" data-training-target aria-label="目标文本">${renderTrainingTarget(trainer)}</div>
           <div class="training-status" data-training-status>${renderTextTrainingStatus(metrics)}</div>
           <div class="progress training-progress" data-training-progress style="--value:${metrics.progress}%"><i></i></div>
-          <textarea class="typing-input training-input ${textBoard ? "hanzi-capture text-board-capture" : ""}" data-bind="trainer-input" lang="zh-CN" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="点击这里或按键开始，中文输入法可直接上屏..." ${trainer.finished ? "readonly" : ""}>${html(trainer.input)}</textarea>
+          ${renderTextInputCapture(trainer, textBoard)}
           <div class="toolbar training-toolbar" data-training-toolbar>${renderTextToolbar(metrics, current)}</div>
           <div class="trainer-keyboard-zone" data-training-keyboard>${state.settings.showKeyboard ? renderKeyboard(current, "full") : ""}</div>
         </div>
@@ -997,6 +1005,17 @@
           ${trainer.finished ? `<div class="finish-card">训练完成，成绩已保存。</div>` : ""}
         </aside>
       </section>
+    `;
+  }
+
+  function renderTextInputCapture(trainer, textBoard) {
+    if (textBoard) {
+      return `
+        <div class="typing-input training-input hanzi-capture text-board-capture is-sync-only" data-bind="trainer-input-sync" aria-label="完整输入内容同步显示">${trainer.input ? html(trainer.input) : `<span class="sync-placeholder">上方方格输入，这里同步显示完整内容。</span>`}</div>
+      `;
+    }
+    return `
+      <textarea class="typing-input training-input" data-bind="trainer-input" lang="zh-CN" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="点击这里或按键开始，中文输入法可直接上屏..." ${trainer.finished ? "readonly" : ""}>${html(trainer.input)}</textarea>
     `;
   }
 
@@ -1062,10 +1081,16 @@
       if (expected === " ") cls += " space-cell";
       if (expected === "\n") cls += " newline-cell";
       if (current) cls += " current";
+      if (mode === "input" && current && !trainer.finished) cls += " editing";
       const currentAttr = current ? ' data-current="true"' : "";
       const value = mode === "input" ? actual : expected;
-      return `<span class="${cls}" data-index="${index}"${currentAttr}>${html(displayHanziCell(value))}</span>`;
+      const editor = mode === "input" && current && !trainer.finished ? renderHanziCellEditor(index) : "";
+      return `<span class="${cls}" data-index="${index}"${currentAttr}>${html(displayHanziCell(value))}${editor}</span>`;
     }).join("");
+  }
+
+  function renderHanziCellEditor(index) {
+    return `<input class="hanzi-cell-editor" data-bind="trainer-cell-input" data-index="${index}" value="" lang="zh-CN" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="当前方格输入">`;
   }
 
   function displayHanziCell(value) {
@@ -1509,6 +1534,7 @@
       health: 5,
       timeLeft: 60,
       input: "",
+      inputEpoch: 0,
       targets: [],
       progress: 0,
       text: game.mode === "immersive" ? GAME_WORDS.immersive : GAME_WORDS.raceText,
@@ -1535,8 +1561,8 @@
           <div class="tag-row" data-game-hud>${renderGameHud(g)}</div>
           ${
             raceMode
-              ? `<textarea class="field game-input race-input" data-bind="game-input" lang="zh-CN" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="照着下方文字输入，系统会即时标红错字" ${!g.running || g.finished ? "disabled" : ""}>${html(g.input)}</textarea>`
-              : `<input class="field game-input" data-bind="game-input" value="${html(g.input)}" lang="zh-CN" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="输入目标后自动命中，中文可直接输入" ${!g.running || g.finished ? "disabled" : ""}>`
+              ? `<textarea class="field game-input race-input" data-bind="game-input" data-input-epoch="${g.inputEpoch || 0}" lang="zh-CN" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="照着下方文字输入，系统会即时标红错字" ${!g.running || g.finished ? "disabled" : ""}>${html(g.input)}</textarea>`
+              : `<input class="field game-input" data-bind="game-input" data-input-epoch="${g.inputEpoch || 0}" value="${html(g.input)}" lang="zh-CN" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="输入目标后自动命中，中文可直接输入" ${!g.running || g.finished ? "disabled" : ""}>`
           }
         </div>
         ${renderGameStage(game, g)}
@@ -1709,6 +1735,8 @@
     const g = state.game;
     if (!g || !g.running || g.finished) return;
     if (state.composing || options.composing) return;
+    const sourceEpoch = Number(options.sourceEpoch);
+    if (Number.isFinite(sourceEpoch) && sourceEpoch !== (g.inputEpoch || 0)) return;
     const previous = g.input;
     g.input = value;
     if (previous === value) return;
@@ -1728,10 +1756,22 @@
     if (hit) {
       g.targets = g.targets.filter((target) => target.id !== hit.id);
       g.score += 10 + Math.max(0, g.timeLeft);
-      g.input = "";
+      clearGameInputDom();
       if (state.settings.keyAudio) playHitSound();
     }
     render();
+  }
+
+  function clearGameInputDom() {
+    const g = state.game;
+    if (g) {
+      g.input = "";
+      g.inputEpoch = (g.inputEpoch || 0) + 1;
+    }
+    const input = app.querySelector('[data-bind="game-input"]');
+    if (input && "value" in input) input.value = "";
+    state.composing = false;
+    state.composingBind = "";
   }
 
   function updateGameDom() {
@@ -2332,7 +2372,7 @@
     unlockAudio();
     const button = event.target.closest("[data-action]");
     if (!button) {
-      if (event.target.closest(".hanzi-board")) focusBindSoon("trainer-input");
+      if (event.target.closest(".hanzi-board, .text-board-capture")) focusTrainerInputSoon();
       return;
     }
     const action = button.dataset.action;
@@ -2362,7 +2402,7 @@
       }
     }
     if (action === "focus-trainer") {
-      focusBindSoon("trainer-input");
+      focusTrainerInputSoon();
       scrollCurrentCharIntoView({ force: true });
       if (state.trainer?.mode === "word" || state.trainer?.mode === "dictation") {
         setTimeout(speakCurrent, 120);
@@ -2416,7 +2456,7 @@
     if (isImeBind(bind) && (event.isComposing || state.composing)) {
       state.composing = true;
       state.composingBind = bind;
-      commitInputValue(bind, target.value, { composing: true });
+      commitInputValue(bind, target.value, inputCommitOptions(target, { composing: true }));
       return;
     }
     if (bind === "search") {
@@ -2426,8 +2466,11 @@
     if (bind === "trainer-input") {
       updateTrainerInput(target.value);
     }
+    if (bind === "trainer-cell-input") {
+      updateTrainerCellInput(target.value, inputCommitOptions(target));
+    }
     if (bind === "game-input") {
-      updateGameInput(target.value);
+      updateGameInput(target.value, inputCommitOptions(target));
     }
     if (bind === "contest-input") {
       updateContestInput(target.value);
@@ -2454,7 +2497,8 @@
     state.composingBind = "";
     const target = event.target;
     const commit = () => {
-      commitInputValue(bind, target.value);
+      if (!target.isConnected) return;
+      commitInputValue(bind, target.value, inputCommitOptions(target));
       if (state.renderQueued) {
         state.renderQueued = false;
         render();
@@ -2467,11 +2511,19 @@
   }
 
   function isImeBind(bind) {
-    return bind === "trainer-input" || bind === "contest-input" || bind === "game-input";
+    return bind === "trainer-input" || bind === "trainer-cell-input" || bind === "contest-input" || bind === "game-input";
+  }
+
+  function inputCommitOptions(target, extra = {}) {
+    const options = { ...extra };
+    if (target?.dataset?.index !== undefined) options.sourceIndex = Number(target.dataset.index);
+    if (target?.dataset?.inputEpoch !== undefined) options.sourceEpoch = Number(target.dataset.inputEpoch);
+    return options;
   }
 
   function commitInputValue(bind, value, options = {}) {
     if (bind === "trainer-input") updateTrainerInput(value, options);
+    if (bind === "trainer-cell-input") updateTrainerCellInput(value, options);
     if (bind === "contest-input") updateContestInput(value, options);
     if (bind === "game-input") updateGameInput(value, options);
   }
@@ -2541,6 +2593,31 @@
     else updateTrainerDom(trainer);
   }
 
+  function updateTrainerCellInput(value, options = {}) {
+    const trainer = state.trainer;
+    if (!trainer || trainer.finished) return;
+    if (state.composing || options.composing) return;
+    const text = trainer.text || "";
+    const base = trainer.input || "";
+    const index = clamp(base.length, 0, text.length);
+    if (Number.isFinite(options.sourceIndex) && options.sourceIndex !== index) return;
+    if (index >= text.length) return;
+    const committed = String(value || "");
+    if (!committed) return;
+    const previous = trainer.input;
+    trainer.input = (base + committed).slice(0, text.length);
+    if (!trainer.startedAt) trainer.startedAt = nowSeconds();
+    const finished = trainer.input.length >= text.length;
+    if (state.settings.keyAudio && trainer.input.length > previous.length) {
+      const lastIndex = trainer.input.length - 1;
+      keyClick(trainer.input[lastIndex], text[lastIndex]);
+    }
+    const editor = app.querySelector('[data-bind="trainer-cell-input"]');
+    if (editor) editor.value = "";
+    if (finished) completeTrainer(trainer);
+    render();
+  }
+
   function updateTrainerDom(trainer) {
     if (!trainer || trainer.mode === "word" || trainer.mode === "dictation" || state.route.parts[0] !== "lesson") return;
     const metrics = trainerMetrics(trainer);
@@ -2562,6 +2639,9 @@
     if (metricGrid) metricGrid.innerHTML = renderTextMetricGrid(metrics);
     const keyboard = app.querySelector("[data-training-keyboard]");
     if (keyboard) keyboard.innerHTML = state.settings.showKeyboard ? renderKeyboard(current, "full") : "";
+    const syncInput = app.querySelector('[data-bind="trainer-input-sync"]');
+    if (syncInput) syncInput.innerHTML = trainer.input ? html(trainer.input) : `<span class="sync-placeholder">上方方格输入，这里同步显示完整内容。</span>`;
+    if (!state.composing) focusBindSoon(trainerFocusBind());
   }
 
   function updateWordTrainerInput(value, options = {}) {
