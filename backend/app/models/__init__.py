@@ -22,6 +22,7 @@ from app.models.custom_level import CustomLevel
 from app.models.level_like import LevelLike
 from app.models.decoration import UserDecoration, PlacedDecoration
 from app.models.coin import CoinTransaction
+from app.models.typing import TypingContestRoom, TypingScore, TypingSession, TypingSetting
 
 __all__ = [
     "User", "Task", "UserTask", "Achievement", "UserAchievement",
@@ -32,5 +33,6 @@ __all__ = [
     "TaskFileSubmission", "UserProgress", "LevelCompletion",
     "BattleRoom", "BattleSubmission", "UserRank",
     "ChatMessage", "UserChatLimit", "CustomLevel", "LevelLike",
-    "UserDecoration", "PlacedDecoration", "CoinTransaction"
+    "UserDecoration", "PlacedDecoration", "CoinTransaction",
+    "TypingContestRoom", "TypingScore", "TypingSession", "TypingSetting"
 ]

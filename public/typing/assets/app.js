@@ -25,7 +25,7 @@
     darkMode: false,
   };
 
-  const API_ROOT = "/api";
+  const API_ROOT = "/api/typing";
 
   const GAME_WORDS = {
     english: [
@@ -82,6 +82,7 @@
     contestTimer: null,
     rankPage: 1,
     remoteRankings: [],
+    serverHistory: [],
     apiOnline: false,
     ttsServiceAvailable: false,
     assetMap: {},
@@ -100,6 +101,7 @@
     suppressAutoScrollUntil: 0,
     lastSpokenTarget: "",
     toast: null,
+    renderError: null,
     settings: loadJson(STORE.settings, DEFAULT_SETTINGS),
     history: loadJson(STORE.history, []),
     progress: loadJson(STORE.progress, {}),
@@ -124,6 +126,8 @@
     app.addEventListener("keydown", handleKeydown);
     app.addEventListener("compositionstart", handleCompositionStart);
     app.addEventListener("compositionend", handleCompositionEnd);
+    window.addEventListener("error", handleRuntimeError);
+    window.addEventListener("unhandledrejection", handleRuntimeError);
     warmupSpeechVoices();
 
     try {
@@ -254,6 +258,7 @@
       state.remoteRankings = Array.isArray(rankings?.rankings) ? rankings.rankings : [];
 
       if (state.session.token) {
+        await syncHistoryFromServer();
         const payload = await apiGet("/settings", { token: state.session.token });
         if (payload?.settings && typeof payload.settings === "object") {
           state.settings = { ...state.settings, ...payload.settings };
@@ -266,6 +271,18 @@
       state.apiOnline = false;
       state.ttsServiceAvailable = false;
     }
+  }
+
+  async function syncHistoryFromServer() {
+    const params = {
+      token: state.session.token,
+      user_id: currentUserId(),
+      username: currentUsername(),
+      limit: 120,
+    };
+    const payload = await apiGet("/history", params);
+    state.serverHistory = Array.isArray(payload?.history) ? payload.history : [];
+    return state.serverHistory;
   }
 
   async function syncSessionToServer() {
@@ -304,8 +321,10 @@
       });
       if (Array.isArray(payload?.rankings)) {
         state.remoteRankings = payload.rankings;
-        render();
       }
+      if (Array.isArray(payload?.history)) state.serverHistory = payload.history;
+      else if (state.session.token) await syncHistoryFromServer();
+      render();
     } catch {
       state.apiOnline = false;
     }
@@ -396,25 +415,58 @@
   }
 
   function render() {
-    document.body.classList.toggle("dark", Boolean(state.settings.darkMode));
-    const activeBind = document.activeElement?.dataset?.bind;
-    const activeSelection = document.activeElement?.selectionStart;
-    if (state.loading) {
-      app.innerHTML = `<div class="loading">正在载入训练数据...</div>`;
-      return;
-    }
+    try {
+      document.body.classList.toggle("dark", Boolean(state.settings.darkMode));
+      const activeBind = document.activeElement?.dataset?.bind;
+      const activeSelection = document.activeElement?.selectionStart;
+      if (state.loading) {
+        app.innerHTML = `<div class="loading">正在载入训练数据...</div>`;
+        return;
+      }
 
-    clearRouteIntervals();
-    const body = renderRoute();
+      clearRouteIntervals();
+      const body = renderRoute();
+      state.renderError = null;
+      app.innerHTML = `
+        <div class="app-shell">
+          ${renderHeader()}
+          <main class="main">${body}</main>
+          ${state.toast ? `<div class="toast">${html(state.toast)}</div>` : ""}
+        </div>
+      `;
+      restoreFocus(activeBind, activeSelection);
+      afterRender();
+    } catch (error) {
+      handleRenderError(error);
+    }
+  }
+
+  function handleRuntimeError(event) {
+    const error = event?.reason || event?.error || event;
+    console.error("[typing-runtime]", error);
+    showToast("页面遇到临时异常，已保护当前练习，请刷新或重新进入本课。");
+  }
+
+  function handleRenderError(error) {
+    console.error("[typing-render]", error);
+    state.renderError = error;
+    stopSpeechLoop();
+    stopTrainerAutoNext();
     app.innerHTML = `
       <div class="app-shell">
         ${renderHeader()}
-        <main class="main">${body}</main>
-        ${state.toast ? `<div class="toast">${html(state.toast)}</div>` : ""}
+        <main class="main">
+          <section class="panel">
+            <h2>页面临时异常</h2>
+            <p class="muted">练习数据已保留，请点击重新载入当前页面。若仍然出现，请返回课程重新进入。</p>
+            <div class="tag-row" style="margin-top:14px">
+              <button class="solid-button" data-action="reload-page">重新载入</button>
+              <a class="ghost-button" href="${link("/courses")}">返回课程</a>
+            </div>
+          </section>
+        </main>
       </div>
     `;
-    restoreFocus(activeBind, activeSelection);
-    afterRender();
   }
 
   function renderWhenInputSafe() {
@@ -539,8 +591,9 @@
 
   function renderHome() {
     const stats = state.catalog.stats || {};
-    const done = state.history.length;
-    const best = state.history.reduce((max, item) => Math.max(max, Number(item.speed || 0)), 0);
+    const history = primaryHistoryRecords();
+    const done = history.length;
+    const best = history.reduce((max, item) => Math.max(max, Number(item.speed || 0)), 0);
     return `
       <section class="hero-band">
         <div class="hero-copy">
@@ -937,11 +990,11 @@
           <div class="progress training-progress" data-training-progress style="--value:${metrics.progress}%"><i></i></div>
           <textarea class="typing-input training-input ${textBoard ? "hanzi-capture text-board-capture" : ""}" data-bind="trainer-input" lang="zh-CN" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="点击这里或按键开始，中文输入法可直接上屏..." ${trainer.finished ? "readonly" : ""}>${html(trainer.input)}</textarea>
           <div class="toolbar training-toolbar" data-training-toolbar>${renderTextToolbar(metrics, current)}</div>
+          <div class="trainer-keyboard-zone" data-training-keyboard>${state.settings.showKeyboard ? renderKeyboard(current, "full") : ""}</div>
         </div>
         <aside class="practice-side">
           <div class="metric-grid" data-training-metrics>${renderTextMetricGrid(metrics)}</div>
           ${trainer.finished ? `<div class="finish-card">训练完成，成绩已保存。</div>` : ""}
-          <div data-training-keyboard>${state.settings.showKeyboard ? renderKeyboard(current, "compact") : ""}</div>
         </aside>
       </section>
     `;
@@ -957,7 +1010,7 @@
   }
 
   function shouldUseTextBoardTrainer(trainer) {
-    return isChineseTextTrainer(trainer) || isLongLatinTextTrainer(trainer);
+    return trainer?.mode === "text";
   }
 
   function renderTrainingTarget(trainer) {
@@ -1006,6 +1059,8 @@
       const current = index === input.length && index < text.length;
       let cls = `hanzi-cell char ${mode === "input" ? "hanzi-input-cell" : "hanzi-target-cell"}`;
       if (mode === "input" && actual) cls += actual === expected ? " ok" : " bad";
+      if (expected === " ") cls += " space-cell";
+      if (expected === "\n") cls += " newline-cell";
       if (current) cls += " current";
       const currentAttr = current ? ' data-current="true"' : "";
       const value = mode === "input" ? actual : expected;
@@ -1016,7 +1071,7 @@
   function displayHanziCell(value) {
     if (!value) return "";
     if (value === "\n") return "↵";
-    if (value === " ") return "·";
+    if (value === " ") return "\u00a0";
     return value;
   }
 
@@ -2046,7 +2101,8 @@
   function mergedRankingRecords() {
     const combined = [
       ...state.remoteRankings.map((item) => normalizeRecord(item, "server")),
-      ...state.history.map((item) => normalizeRecord(item, "local")),
+      ...state.serverHistory.map((item) => normalizeRecord(item, "server")),
+      ...offlineHistoryRecords().map((item) => normalizeRecord(item, "local")),
     ];
     const seen = new Set();
     return combined
@@ -2079,10 +2135,33 @@
     };
   }
 
+  function primaryHistoryRecords() {
+    const useServer = state.apiOnline && Boolean(state.session.token);
+    const source = useServer ? state.serverHistory : state.history;
+    return [...source]
+      .map((item) => normalizeRecord(item, useServer ? "server" : "local"))
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  }
+
+  function offlineHistoryRecords() {
+    if (!state.apiOnline || !state.serverHistory.length) return state.history;
+    const serverKeys = new Set(
+      state.serverHistory.map((item) => {
+        const normalized = normalizeRecord(item, "server");
+        return `${normalized.mode}|${normalized.title}|${normalized.speed}|${normalized.accuracy}|${normalized.chars}|${normalized.seconds}|${normalized.date}`;
+      })
+    );
+    return state.history.filter((item) => {
+      const normalized = normalizeRecord(item, "local");
+      return !serverKeys.has(`${normalized.mode}|${normalized.title}|${normalized.speed}|${normalized.accuracy}|${normalized.chars}|${normalized.seconds}|${normalized.date}`);
+    });
+  }
+
   function renderProfile() {
     const completed = Object.values(state.progress).filter((item) => item.complete).length;
-    const best = state.history.reduce((max, item) => Math.max(max, Number(item.speed || 0)), 0);
-    const totalChars = state.history.reduce((sum, item) => sum + Number(item.chars || 0), 0);
+    const history = primaryHistoryRecords();
+    const best = history.reduce((max, item) => Math.max(max, Number(item.speed || 0)), 0);
+    const totalChars = history.reduce((sum, item) => sum + Number(item.chars || 0), 0);
     return `
       <section class="section-title">
         <div>
@@ -2112,7 +2191,7 @@
           <h3>统计</h3>
           <div class="metric-grid">
             ${metric("完成课时", completed, "节")}
-            ${metric("历史记录", state.history.length, "条")}
+            ${metric("历史记录", history.length, "条")}
             ${metric("最佳速度", best, "字/分")}
             ${metric("累计字数", totalChars, "字")}
           </div>
@@ -2123,7 +2202,7 @@
   }
 
   function renderRecentHistory() {
-    const recent = [...state.history].reverse().slice(0, 8);
+    const recent = primaryHistoryRecords().slice(0, 8);
     return `
       <section class="section-title">
         <div><h2>最近记录</h2><p>最近训练和比赛成绩。</p></div>
@@ -2322,6 +2401,9 @@
     if (action === "refresh-rank") {
       syncServerState().then(render);
     }
+    if (action === "reload-page") {
+      window.location.reload();
+    }
     if (action === "save-custom") saveCustomCourse();
     if (action === "practice-custom") practiceCustom(button.dataset.id);
     if (action === "delete-custom") deleteCustom(button.dataset.id);
@@ -2479,7 +2561,7 @@
     const metricGrid = app.querySelector("[data-training-metrics]");
     if (metricGrid) metricGrid.innerHTML = renderTextMetricGrid(metrics);
     const keyboard = app.querySelector("[data-training-keyboard]");
-    if (keyboard) keyboard.innerHTML = state.settings.showKeyboard ? renderKeyboard(current, "compact") : "";
+    if (keyboard) keyboard.innerHTML = state.settings.showKeyboard ? renderKeyboard(current, "full") : "";
   }
 
   function updateWordTrainerInput(value, options = {}) {
@@ -3072,7 +3154,7 @@
   }
 
   function bestGameScore() {
-    return state.history.filter((item) => item.mode === "game").reduce((max, item) => Math.max(max, Number(item.speed || 0)), 0);
+    return primaryHistoryRecords().filter((item) => item.mode === "game").reduce((max, item) => Math.max(max, Number(item.speed || 0)), 0);
   }
 
   function modeLabel(mode) {

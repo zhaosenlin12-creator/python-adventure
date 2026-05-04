@@ -15,9 +15,62 @@ type TypingDb = {
 const DB_PATH = path.join(process.cwd(), ".typing-data", "typing-db.json");
 const WORD_AUDIO_DIR = path.join(process.cwd(), ".typing-data", "audio", "words");
 let dbWriteQueue: Promise<void> = Promise.resolve();
+const DEFAULT_PRODUCTION_PROXY_ROOT = "http://127.0.0.1:8000/api/typing";
 
 function now() {
   return new Date().toISOString();
+}
+
+function backendProxyRoot() {
+  if (process.env.TYPING_API_PROXY_DISABLED === "true") return "";
+  const configured = process.env.TYPING_API_PROXY_URL?.trim();
+  const fallback = process.env.NODE_ENV === "production" ? DEFAULT_PRODUCTION_PROXY_ROOT : "";
+  return (configured || fallback).replace(/\/+$/, "");
+}
+
+function responseHeaders(headers: Headers) {
+  const safe = new Headers(headers);
+  for (const key of ["connection", "content-encoding", "content-length", "keep-alive", "transfer-encoding"]) {
+    safe.delete(key);
+  }
+  return safe;
+}
+
+async function proxyToBackend(request: NextRequest, pathName: string, payload?: Record<string, unknown>) {
+  const root = backendProxyRoot();
+  if (!root) return null;
+
+  const url = new URL(`${root}${pathName}`);
+  request.nextUrl.searchParams.forEach((value, key) => url.searchParams.append(key, value));
+  const headers = new Headers();
+  const accept = request.headers.get("accept");
+  const authorization = request.headers.get("authorization");
+  if (accept) headers.set("accept", accept);
+  if (authorization) headers.set("authorization", authorization);
+
+  const init: RequestInit = {
+    method: request.method,
+    headers,
+    cache: "no-store",
+  };
+  if (request.method !== "GET" && request.method !== "HEAD") {
+    headers.set("content-type", "application/json");
+    init.body = JSON.stringify(payload || {});
+  }
+
+  try {
+    const response = await fetch(url, init);
+    return new NextResponse(response.body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers: responseHeaders(response.headers),
+    });
+  } catch {
+    return NextResponse.json(
+      { ok: false, error: "typing backend unavailable" },
+      { status: process.env.NODE_ENV === "production" ? 502 : 503 }
+    );
+  }
 }
 
 function emptyDb(): TypingDb {
@@ -77,6 +130,23 @@ function listScores(db: TypingDb, limit = 50, mode = "") {
       return Number(a.seconds || 999999) - Number(b.seconds || 999999);
     })
     .slice(0, Math.max(1, Math.min(limit, 200)));
+}
+
+function listHistory(db: TypingDb, limit = 80, token = "", userId = "", username = "") {
+  const safeLimit = Math.max(1, Math.min(limit, 300));
+  return [...db.scores]
+    .filter((item) => {
+      if (token && item.token === token) return true;
+      if (userId && item.user_id === userId) return true;
+      if (username && item.username === username) return true;
+      return false;
+    })
+    .sort((a, b) => {
+      const aTime = new Date(String(a.created_at || a.date || 0)).getTime();
+      const bTime = new Date(String(b.created_at || b.date || 0)).getTime();
+      return bTime - aTime;
+    })
+    .slice(0, safeLimit);
 }
 
 function clampNumber(value: unknown, min: number, max: number, fallback: number) {
@@ -275,6 +345,9 @@ async function synthesizeSpeech(payload: Record<string, unknown>) {
 export async function GET(request: NextRequest, context: { params: Promise<{ path?: string[] }> }) {
   const params = await context.params;
   const pathName = routePath(params.path);
+  const proxied = await proxyToBackend(request, pathName);
+  if (proxied) return proxied;
+
   const query = request.nextUrl.searchParams;
   const db = await loadDb();
 
@@ -292,6 +365,21 @@ export async function GET(request: NextRequest, context: { params: Promise<{ pat
     return NextResponse.json({
       ok: true,
       rankings: listScores(db, Number(query.get("limit") || 50), query.get("mode") || ""),
+    });
+  }
+
+  if (pathName === "/history") {
+    const token = query.get("token") || "";
+    const session = token ? db.sessions[token] : null;
+    return NextResponse.json({
+      ok: true,
+      history: listHistory(
+        db,
+        Number(query.get("limit") || 80),
+        token,
+        query.get("user_id") || session?.user_id || "",
+        query.get("username") || session?.username || ""
+      ),
     });
   }
 
@@ -319,6 +407,8 @@ export async function POST(request: NextRequest, context: { params: Promise<{ pa
   const params = await context.params;
   const pathName = routePath(params.path);
   const payload = (await request.json().catch(() => ({}))) as Record<string, unknown>;
+  const proxied = await proxyToBackend(request, pathName, payload);
+  if (proxied) return proxied;
 
   if (pathName === "/tts") {
     const result = await synthesizeSpeech(payload);
@@ -372,7 +462,7 @@ export async function POST(request: NextRequest, context: { params: Promise<{ pa
       };
       db.scores.push(record);
       db.scores = db.scores.slice(-1000);
-      return { score: record, rankings: listScores(db, 50) };
+      return { score: record, rankings: listScores(db, 50), history: listHistory(db, 80, token, String(record.user_id || ""), String(record.username || "")) };
     });
     return NextResponse.json({ ok: true, ...result });
   }

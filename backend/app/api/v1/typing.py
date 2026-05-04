@@ -1,17 +1,19 @@
-import asyncio
 import base64
 import hashlib
 import json
-import os
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 import httpx
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query
 from fastapi.responses import Response
+from sqlalchemy import or_
+from sqlalchemy.orm import Session
 
 from app.core.config import settings
+from app.core.database import get_db
+from app.models.typing import TypingContestRoom, TypingScore, TypingSession, TypingSetting
 
 
 router = APIRouter()
@@ -30,11 +32,35 @@ LEARNER_NAME = "\u5b66\u4e60\u8005"
 PRACTICE_TITLE = "\u7ec3\u4e60"
 CONTEST_TITLE = "\u6253\u5b57\u6bd4\u8d5b"
 
-_db_lock = asyncio.Lock()
+_json_migration_checked = False
 
 
 def _now() -> str:
     return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def _now_dt() -> datetime:
+    return datetime.now(timezone.utc)
+
+
+def _iso(value: Any) -> str:
+    if isinstance(value, datetime):
+        if value.tzinfo is None:
+            value = value.replace(tzinfo=timezone.utc)
+        return value.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
+    return str(value or _now())
+
+
+def _parse_datetime(value: Any) -> datetime:
+    if isinstance(value, datetime):
+        return value if value.tzinfo else value.replace(tzinfo=timezone.utc)
+    if isinstance(value, str) and value.strip():
+        try:
+            parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+            return parsed if parsed.tzinfo else parsed.replace(tzinfo=timezone.utc)
+        except ValueError:
+            pass
+    return _now_dt()
 
 
 def _empty_db() -> dict[str, Any]:
@@ -64,23 +90,6 @@ def _load_db() -> dict[str, Any]:
         return _empty_db()
 
 
-def _save_db(db: dict[str, Any]) -> None:
-    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
-    temp_path = DB_PATH.with_suffix(f".{os.getpid()}.{int(datetime.now().timestamp() * 1000)}.tmp")
-    temp_path.write_text(json.dumps(db, ensure_ascii=False, indent=2), encoding="utf-8")
-    temp_path.replace(DB_PATH)
-
-
-async def _mutate_db(mutator):
-    async with _db_lock:
-        db = _load_db()
-        result = mutator(db)
-        if asyncio.iscoroutine(result):
-            result = await result
-        _save_db(db)
-        return result
-
-
 def _clamp_number(value: Any, minimum: float, maximum: float, fallback: float) -> float:
     try:
         number = float(value)
@@ -102,19 +111,196 @@ def _score_int(item: dict[str, Any], key: str, fallback: int = 0) -> int:
     return int(_score_number(item, key, fallback))
 
 
-def _list_scores(db: dict[str, Any], limit: int = 50, mode: str = "") -> list[dict[str, Any]]:
+def _json_dumps(value: Any) -> str:
+    return json.dumps(value if value is not None else {}, ensure_ascii=False)
+
+
+def _json_loads(value: str | None, fallback: Any = None) -> Any:
+    if not value:
+        return {} if fallback is None else fallback
+    try:
+        return json.loads(value)
+    except (TypeError, json.JSONDecodeError):
+        return {} if fallback is None else fallback
+
+
+def _score_to_dict(score: TypingScore) -> dict[str, Any]:
+    return {
+        "id": score.id,
+        "token": score.token or "",
+        "user_id": score.user_id or "",
+        "username": score.username or LEARNER_NAME,
+        "mode": score.mode or "lesson",
+        "title": score.title or PRACTICE_TITLE,
+        "speed": _score_number({"speed": score.speed}, "speed"),
+        "accuracy": _score_number({"accuracy": score.accuracy}, "accuracy"),
+        "chars": int(score.chars or 0),
+        "seconds": _score_number({"seconds": score.seconds}, "seconds"),
+        "created_at": _iso(score.created_at),
+        "date": _iso(score.created_at),
+    }
+
+
+def _room_to_dict(room: TypingContestRoom) -> dict[str, Any]:
+    return {
+        "id": room.id,
+        "owner_token": room.owner_token or "",
+        "owner_name": room.owner_name or LEARNER_NAME,
+        "title": room.title or CONTEST_TITLE,
+        "lesson_id": room.lesson_id or "",
+        "status": room.status or "waiting",
+        "payload": _json_loads(room.payload, {}),
+        "created_at": _iso(room.created_at),
+        "updated_at": _iso(room.updated_at),
+    }
+
+
+def _list_scores_from_db(db: Session, limit: int = 50, mode: str = "") -> list[dict[str, Any]]:
     safe_limit = max(1, min(int(limit or 50), 200))
-    scores = [item for item in db.get("scores", []) if isinstance(item, dict)]
+    query = db.query(TypingScore)
     if mode:
-        scores = [item for item in scores if item.get("mode") == mode]
-    scores.sort(
-        key=lambda item: (
-            -_score_number(item, "speed"),
-            -_score_number(item, "accuracy"),
-            _score_number(item, "seconds", 999999),
-        )
+        query = query.filter(TypingScore.mode == mode)
+    scores = (
+        query.order_by(TypingScore.speed.desc(), TypingScore.accuracy.desc(), TypingScore.seconds.asc())
+        .limit(safe_limit)
+        .all()
     )
-    return scores[:safe_limit]
+    return [_score_to_dict(score) for score in scores]
+
+
+def _history_filters(query, token: str = "", user_id: str = "", username: str = ""):
+    filters = []
+    if token:
+        filters.append(TypingScore.token == token)
+    if user_id:
+        filters.append(TypingScore.user_id == user_id)
+    if username and username != LEARNER_NAME:
+        filters.append(TypingScore.username == username)
+    if not filters:
+        return query.filter(TypingScore.id < 0)
+    return query.filter(or_(*filters))
+
+
+def _list_history_from_db(
+    db: Session,
+    *,
+    token: str = "",
+    user_id: str = "",
+    username: str = "",
+    limit: int = 80,
+) -> list[dict[str, Any]]:
+    safe_limit = max(1, min(int(limit or 80), 300))
+    query = _history_filters(db.query(TypingScore), token, user_id, username)
+    scores = query.order_by(TypingScore.created_at.desc(), TypingScore.id.desc()).limit(safe_limit).all()
+    return [_score_to_dict(score) for score in scores]
+
+
+def _upsert_session(db: Session, payload: dict[str, Any]) -> TypingSession:
+    user = payload.get("user") if isinstance(payload.get("user"), dict) else {}
+    username = _username_from(payload, user)
+    token = str(payload.get("token") or f"school-{username}-{int(datetime.now().timestamp() * 1000)}")
+    session = db.get(TypingSession, token)
+    if session is None:
+        session = TypingSession(token=token, created_at=_now_dt())
+    session.source = str(payload.get("source") or "school")[:80]
+    session.user_id = _user_id_from(payload, user)
+    session.username = username[:100] or LEARNER_NAME
+    session.raw_user = _json_dumps(user)
+    session.updated_at = _now_dt()
+    db.add(session)
+    return session
+
+
+def _migrate_json_db_once(db: Session) -> None:
+    global _json_migration_checked
+    if _json_migration_checked:
+        return
+    _json_migration_checked = True
+    if settings.ENVIRONMENT.lower() == "test":
+        return
+    legacy = _load_db()
+    if not legacy.get("sessions") and not legacy.get("settings") and not legacy.get("scores") and not legacy.get("rooms"):
+        return
+
+    changed = False
+    for token, item in (legacy.get("sessions") or {}).items():
+        if not token or not isinstance(item, dict):
+            continue
+        session = db.get(TypingSession, str(token)) or TypingSession(token=str(token))
+        session.user_id = str(item.get("user_id") or "")
+        session.username = str(item.get("username") or LEARNER_NAME)[:100] or LEARNER_NAME
+        session.raw_user = _json_dumps(item.get("raw_user") or {})
+        session.source = str(item.get("source") or "school")[:80]
+        session.created_at = _parse_datetime(item.get("created_at"))
+        session.updated_at = _parse_datetime(item.get("updated_at"))
+        db.add(session)
+        changed = True
+
+    for token, item in (legacy.get("settings") or {}).items():
+        if not token or not isinstance(item, dict):
+            continue
+        setting = db.get(TypingSetting, str(token)) or TypingSetting(token=str(token))
+        setting.payload = _json_dumps(item.get("payload") if isinstance(item.get("payload"), dict) else {})
+        setting.updated_at = _parse_datetime(item.get("updated_at"))
+        db.add(setting)
+        changed = True
+
+    for item in legacy.get("scores") or []:
+        if not isinstance(item, dict):
+            continue
+        created_at = _parse_datetime(item.get("created_at") or item.get("date"))
+        duplicate = (
+            db.query(TypingScore)
+            .filter(
+                TypingScore.token == str(item.get("token") or ""),
+                TypingScore.mode == str(item.get("mode") or "lesson"),
+                TypingScore.title == str(item.get("title") or PRACTICE_TITLE),
+                TypingScore.speed == _score_number(item, "speed"),
+                TypingScore.accuracy == _score_number(item, "accuracy"),
+                TypingScore.chars == _score_int(item, "chars"),
+                TypingScore.seconds == _score_number(item, "seconds"),
+                TypingScore.created_at == created_at,
+            )
+            .first()
+        )
+        if duplicate:
+            continue
+        db.add(
+            TypingScore(
+                token=str(item.get("token") or ""),
+                user_id=str(item.get("user_id") or ""),
+                username=str(item.get("username") or LEARNER_NAME)[:100] or LEARNER_NAME,
+                mode=str(item.get("mode") or "lesson")[:40],
+                title=str(item.get("title") or PRACTICE_TITLE)[:255],
+                speed=_score_number(item, "speed"),
+                accuracy=_score_number(item, "accuracy"),
+                chars=_score_int(item, "chars"),
+                seconds=_score_number(item, "seconds"),
+                created_at=created_at,
+            )
+        )
+        changed = True
+
+    for item in legacy.get("rooms") or []:
+        if not isinstance(item, dict):
+            continue
+        room_id = str(item.get("id") or "")
+        if not room_id:
+            continue
+        room = db.get(TypingContestRoom, room_id) or TypingContestRoom(id=room_id)
+        room.owner_token = str(item.get("owner_token") or "")
+        room.owner_name = str(item.get("owner_name") or LEARNER_NAME)[:100] or LEARNER_NAME
+        room.title = str(item.get("title") or CONTEST_TITLE)[:255]
+        room.lesson_id = str(item.get("lesson_id") or item.get("lessonId") or "")
+        room.status = str(item.get("status") or "waiting")[:40]
+        room.payload = _json_dumps(item.get("payload") if isinstance(item.get("payload"), dict) else item)
+        room.created_at = _parse_datetime(item.get("created_at"))
+        room.updated_at = _parse_datetime(item.get("updated_at"))
+        db.add(room)
+        changed = True
+
+    if changed:
+        db.commit()
 
 
 def _normalize_word(value: str) -> str:
@@ -332,26 +518,43 @@ async def health():
 
 
 @router.get("/me")
-async def me(token: str = ""):
-    db = _load_db()
-    session = db.get("sessions", {}).get(token) if token else None
+async def me(token: str = "", db: Session = Depends(get_db)):
+    _migrate_json_db_once(db)
+    session = db.get(TypingSession, token) if token else None
     user = None
-    if isinstance(session, dict):
-        user = {"id": session.get("user_id", ""), "username": session.get("username", ""), "raw": session.get("raw_user")}
+    if session:
+        user = {"id": session.user_id or "", "username": session.username or "", "raw": _json_loads(session.raw_user, {})}
     return {"ok": True, "user": user}
 
 
 @router.get("/rankings")
-async def rankings(limit: int = Query(50, ge=1, le=200), mode: str = ""):
-    db = _load_db()
-    return {"ok": True, "rankings": _list_scores(db, limit, mode)}
+async def rankings(limit: int = Query(50, ge=1, le=200), mode: str = "", db: Session = Depends(get_db)):
+    _migrate_json_db_once(db)
+    return {"ok": True, "rankings": _list_scores_from_db(db, limit, mode)}
+
+
+@router.get("/history")
+async def history(
+    token: str = "",
+    user_id: str = "",
+    username: str = "",
+    limit: int = Query(80, ge=1, le=300),
+    db: Session = Depends(get_db),
+):
+    _migrate_json_db_once(db)
+    if token:
+        session = db.get(TypingSession, token)
+        if session:
+            user_id = user_id or (session.user_id or "")
+            username = username or (session.username or "")
+    return {"ok": True, "history": _list_history_from_db(db, token=token, user_id=user_id, username=username, limit=limit)}
 
 
 @router.get("/settings")
-async def get_settings(token: str = ""):
-    db = _load_db()
-    item = db.get("settings", {}).get(token) if token else None
-    return {"ok": True, "settings": item.get("payload") if isinstance(item, dict) else None}
+async def get_settings(token: str = "", db: Session = Depends(get_db)):
+    _migrate_json_db_once(db)
+    item = db.get(TypingSetting, token) if token else None
+    return {"ok": True, "settings": _json_loads(item.payload, {}) if item else None}
 
 
 @router.get("/word-audio")
@@ -377,87 +580,74 @@ async def tts(payload: dict[str, Any]):
 
 
 @router.post("/session")
-async def create_session(payload: dict[str, Any]):
-    def mutator(db: dict[str, Any]) -> dict[str, Any]:
-        user = payload.get("user") if isinstance(payload.get("user"), dict) else {}
-        username = _username_from(payload, user)
-        token = str(payload.get("token") or f"school-{username}-{int(datetime.now().timestamp() * 1000)}")
-        previous = db["sessions"].get(token) if isinstance(db["sessions"], dict) else None
-        db["sessions"][token] = {
-            "token": token,
-            "user_id": _user_id_from(payload, user),
-            "username": username,
-            "raw_user": user,
-            "created_at": previous.get("created_at") if isinstance(previous, dict) else _now(),
-            "updated_at": _now(),
-        }
-        return {"token": token, "user": {"id": db["sessions"][token]["user_id"], "username": username}}
-
-    result = await _mutate_db(mutator)
-    return {"ok": True, **result}
+async def create_session(payload: dict[str, Any], db: Session = Depends(get_db)):
+    _migrate_json_db_once(db)
+    session = _upsert_session(db, payload)
+    db.commit()
+    db.refresh(session)
+    return {"ok": True, "token": session.token, "user": {"id": session.user_id or "", "username": session.username}}
 
 
 @router.post("/scores")
-async def create_score(payload: dict[str, Any]):
-    def mutator(db: dict[str, Any]) -> dict[str, Any]:
-        token = str(payload.get("token") or "")
-        session = db.get("sessions", {}).get(token) if token else None
-        if not isinstance(session, dict):
-            session = {}
-        record = {
-            "id": len(db.get("scores", [])) + 1,
-            "token": token,
-            "user_id": str(session.get("user_id") or payload.get("user_id") or ""),
-            "username": str(payload.get("username") or session.get("username") or LEARNER_NAME),
-            "mode": str(payload.get("mode") or "lesson"),
-            "title": str(payload.get("title") or PRACTICE_TITLE),
-            "speed": _score_number(payload, "speed"),
-            "accuracy": _score_number(payload, "accuracy"),
-            "chars": _score_int(payload, "chars"),
-            "seconds": _score_number(payload, "seconds"),
-            "created_at": str(payload.get("date") or _now()),
-        }
-        db["scores"].append(record)
-        db["scores"] = db["scores"][-1000:]
-        return {"score": record, "rankings": _list_scores(db, 50)}
-
-    result = await _mutate_db(mutator)
-    return {"ok": True, **result}
+async def create_score(payload: dict[str, Any], db: Session = Depends(get_db)):
+    _migrate_json_db_once(db)
+    token = str(payload.get("token") or "")
+    session = db.get(TypingSession, token) if token else None
+    user_id = str((session.user_id if session else "") or payload.get("user_id") or "")
+    username = str(payload.get("username") or (session.username if session else "") or LEARNER_NAME)[:100] or LEARNER_NAME
+    score = TypingScore(
+        token=token,
+        user_id=user_id,
+        username=username,
+        mode=str(payload.get("mode") or "lesson")[:40],
+        title=str(payload.get("title") or PRACTICE_TITLE)[:255],
+        speed=_score_number(payload, "speed"),
+        accuracy=_score_number(payload, "accuracy"),
+        chars=_score_int(payload, "chars"),
+        seconds=_score_number(payload, "seconds"),
+        created_at=_parse_datetime(payload.get("date") or payload.get("created_at")),
+    )
+    db.add(score)
+    db.commit()
+    db.refresh(score)
+    return {
+        "ok": True,
+        "score": _score_to_dict(score),
+        "rankings": _list_scores_from_db(db, 50),
+        "history": _list_history_from_db(db, token=token, user_id=user_id, username=username, limit=80),
+    }
 
 
 @router.post("/settings")
-async def save_settings(payload: dict[str, Any]):
-    def mutator(db: dict[str, Any]) -> None:
-        token = str(payload.get("token") or "")
-        settings_payload = payload.get("settings") if isinstance(payload.get("settings"), dict) else {}
-        if token:
-            db["settings"][token] = {"payload": settings_payload, "updated_at": _now()}
-
-    await _mutate_db(mutator)
+async def save_settings(payload: dict[str, Any], db: Session = Depends(get_db)):
+    _migrate_json_db_once(db)
+    token = str(payload.get("token") or "")
+    if token:
+        setting = db.get(TypingSetting, token) or TypingSetting(token=token)
+        setting.payload = _json_dumps(payload.get("settings") if isinstance(payload.get("settings"), dict) else {})
+        setting.updated_at = _now_dt()
+        db.add(setting)
+        db.commit()
     return {"ok": True}
 
 
 @router.post("/contest/rooms")
-async def create_contest_room(payload: dict[str, Any]):
-    def mutator(db: dict[str, Any]) -> dict[str, Any]:
-        token = str(payload.get("token") or "")
-        session = db.get("sessions", {}).get(token) if token else None
-        if not isinstance(session, dict):
-            session = {}
-        room = {
-            "id": f"ROOM-{int(datetime.now().timestamp() * 1000)}",
-            "owner_token": token,
-            "owner_name": str(session.get("username") or payload.get("username") or LEARNER_NAME),
-            "title": str(payload.get("title") or CONTEST_TITLE),
-            "lesson_id": str(payload.get("lessonId") or ""),
-            "status": "waiting",
-            "payload": payload,
-            "created_at": _now(),
-            "updated_at": _now(),
-        }
-        db["rooms"].append(room)
-        db["rooms"] = db["rooms"][-300:]
-        return room
-
-    room = await _mutate_db(mutator)
-    return {"ok": True, "room": room}
+async def create_contest_room(payload: dict[str, Any], db: Session = Depends(get_db)):
+    _migrate_json_db_once(db)
+    token = str(payload.get("token") or "")
+    session = db.get(TypingSession, token) if token else None
+    room = TypingContestRoom(
+        id=f"ROOM-{int(datetime.now().timestamp() * 1000)}",
+        owner_token=token,
+        owner_name=str((session.username if session else "") or payload.get("username") or LEARNER_NAME)[:100],
+        title=str(payload.get("title") or CONTEST_TITLE)[:255],
+        lesson_id=str(payload.get("lessonId") or ""),
+        status="waiting",
+        payload=_json_dumps(payload),
+        created_at=_now_dt(),
+        updated_at=_now_dt(),
+    )
+    db.add(room)
+    db.commit()
+    db.refresh(room)
+    return {"ok": True, "room": _room_to_dict(room)}
