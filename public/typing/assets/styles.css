@@ -1816,16 +1816,26 @@ body.dark select {
 }
 
 body.dark .keyboard-panel {
-  border-color: rgba(255, 248, 216, 0.28);
-  background: rgba(12, 14, 17, 0.9);
+  border-color: rgba(255, 228, 92, 0.55);
+  background: rgba(12, 14, 17, 0.92);
+  box-shadow:
+    0 0 0 2px rgba(255, 228, 92, 0.12),
+    0 14px 34px rgba(0, 0, 0, 0.34);
+}
+
+body.dark .keyboard {
+  border-color: rgba(255, 228, 92, 0.52);
+  background: rgba(22, 26, 22, 0.94);
 }
 
 body.dark .key {
-  background: linear-gradient(180deg, #2b3029 0%, #171b17 100%);
-  color: #fff7c7;
-  border-color: rgba(255, 248, 216, 0.44);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.42);
+  background: linear-gradient(180deg, #343a31 0%, #1d221d 100%);
+  color: #fff8d6;
+  border-color: rgba(255, 228, 92, 0.68);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 0 1px rgba(255, 228, 92, 0.1);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.46);
 }
 
 body.dark .key br + * {
@@ -1833,10 +1843,12 @@ body.dark .key br + * {
 }
 
 body.dark .key.active {
+  background: linear-gradient(180deg, #ffe88c 0%, #f0d84a 100%);
   color: #1f1f1f;
   border-color: #ffe45c;
   box-shadow:
-    0 0 0 2px rgba(255, 228, 92, 0.16),
+    0 0 0 3px rgba(255, 228, 92, 0.22),
+    0 6px 16px rgba(255, 228, 92, 0.18),
     inset 0 1px 0 rgba(255, 255, 255, 0.26);
 }
 

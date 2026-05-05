@@ -807,7 +807,7 @@
     };
     const trainerCategoryId = String(state.trainer?.meta?.categoryId || state.trainer?.detail?.categoryId || "");
     const routeCategoryId = String(meta.categoryId || "");
-    const categoryChanged = source === "custom" ? false : trainerCategoryId !== routeCategoryId;
+    const categoryChanged = source === "course" ? trainerCategoryId !== routeCategoryId : false;
     if (!state.trainer || state.trainer.lessonId !== lessonId || state.trainer.source !== source || categoryChanged) {
       ensureLessonTrainer(lessonId, source, meta);
       return `<div class="loading">正在加载课时 ${html(meta?.title || lessonId)}...</div>`;

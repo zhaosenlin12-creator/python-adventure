@@ -4,6 +4,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse, urlunparse
 
 import httpx
 from fastapi import APIRouter, Depends, HTTPException, Query
@@ -397,6 +398,40 @@ def _tts_configured() -> bool:
     )
 
 
+def _secure_audio_url(url: str) -> str:
+    value = str(url or "").strip()
+    if not value:
+        return ""
+    parsed = urlparse(value)
+    if parsed.scheme != "http":
+        return value
+    if not parsed.netloc.endswith("aliyuncs.com"):
+        return value
+    return urlunparse(parsed._replace(scheme="https"))
+
+
+async def _fetch_audio_url(client: httpx.AsyncClient, url: str) -> tuple[bytes, str] | None:
+    candidates = []
+    secure = _secure_audio_url(url)
+    if secure:
+        candidates.append(secure)
+    original = str(url or "").strip()
+    if original and original not in candidates:
+        candidates.append(original)
+    for candidate in candidates:
+        try:
+            response = await client.get(candidate)
+        except Exception:
+            continue
+        if response.status_code >= 400:
+            continue
+        content_type = response.headers.get("content-type") or "audio/mpeg"
+        if not _looks_like_audio(response.content, content_type):
+            continue
+        return response.content, content_type
+    return None
+
+
 async def _synthesize_minimax(text: str, lang: str, rate: float) -> tuple[bytes, str] | None:
     api_key = settings.MINIMAX_API_KEY.strip()
     if not api_key:
@@ -480,10 +515,9 @@ async def _synthesize_qwen(text: str, lang: str, rate: float) -> tuple[bytes, st
         output = data.get("output") if isinstance(data, dict) else None
         audio_payload = output.get("audio") if isinstance(output, dict) else None
         if isinstance(audio_payload, dict) and isinstance(audio_payload.get("url"), str):
-            audio_response = await client.get(audio_payload["url"])
-            if audio_response.status_code >= 400:
-                return None
-            return audio_response.content, audio_response.headers.get("content-type") or "audio/mpeg"
+            fetched = await _fetch_audio_url(client, audio_payload["url"])
+            if fetched:
+                return fetched
         audio = _decode_audio_value(audio_payload.get("data") if isinstance(audio_payload, dict) else audio_payload)
         return (audio, "audio/mpeg") if audio else None
 
