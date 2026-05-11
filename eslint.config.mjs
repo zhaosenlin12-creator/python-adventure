@@ -16,7 +16,9 @@ const eslintConfig = defineConfig([
     "public/pyodide/**",
     "node_modules/**",
     ".tmp/**",
+    ".tmp-assets/**",
     "release/**",
+    "kenney_pico-8-city/**",
     // Ignore archived snapshots/tests
     "_archive_20260128/**",
   ]),

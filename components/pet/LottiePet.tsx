@@ -57,6 +57,17 @@ const VALID_PET_TYPES = new Set([
   'taowu_flare',
   'golden_roc',
 ]);
+
+// 仅这些宠物当前提供了 Lottie JSON，其他宠物将直接走静态图降级路径（避免无效网络请求和 404）
+const LOTTIE_ENABLED_PET_TYPES = new Set([
+  'code_kitty',
+  'algo_bunny',
+  'shiba_debugger',
+  'bit_bot',
+  'data_sprite',
+  'ava_ai',
+  'code_dragon',
+]);
 const VALID_ANIMATION_STATES = new Set([
   'normal', 'happy', 'excited', 'sad', 'tired', 'curious',
   'eating', 'coma', 'playing', 'sleeping', 'walking', 'question',
@@ -87,6 +98,10 @@ async function loadAnimation(petType: string, state: string): Promise<object | n
   // 🔒 白名单校验 - 防止路径遍历 (../)
   if (!VALID_PET_TYPES.has(petType) || !VALID_ANIMATION_STATES.has(state)) {
     console.warn(`[LottiePet] Invalid petType/state: ${petType.slice(0, 30)}/${state.slice(0, 20)}`);
+    return null;
+  }
+
+  if (!LOTTIE_ENABLED_PET_TYPES.has(petType)) {
     return null;
   }
 

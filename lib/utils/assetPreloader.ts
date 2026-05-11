@@ -52,8 +52,9 @@ export const ASSET_BUNDLES = {
   
   // 宠物系统资源
   pets: [
-    { key: 'pet-sprites', type: 'spritesheet' as AssetType, url: '/assets/pets/sprites.png', frameWidth: 64, frameHeight: 64, priority: 10 },
-    { key: 'pet-items', type: 'image' as AssetType, url: '/assets/pets/items.png', priority: 8 },
+    // 使用当前仓库真实存在的宠物资源，避免预加载阶段产生 404
+    { key: 'pet-egg', type: 'image' as AssetType, url: '/assets/pets/egg.svg', priority: 10 },
+    { key: 'pet-code-kitty-stage-1', type: 'image' as AssetType, url: '/assets/pets/camp-remaster/british-shorthair/stage-1.png', priority: 8 },
   ],
   
   // 编辑器资源

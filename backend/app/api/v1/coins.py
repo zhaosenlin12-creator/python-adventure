@@ -20,6 +20,7 @@ CLIENT_COIN_LIMITS = {
     "level_complete": 50,
     "wheel_spin": 100,
     "campaign_level_complete": 300,
+    "code_research": 300,
 }
 MAX_DESCRIPTION_LENGTH = 255
 

@@ -37,12 +37,14 @@ yarn-error.log*
 frontend-dev.log
 frontend-qa.log
 frontend-qa.err.log
+.next-dev-*.log
 .tmp-*.log
 .tmp-*.out.log
 .tmp-*.err.log
 .tmp-*/
 .tmp-*.png
 .tmp-*.txt
+.tmp-*.tsx
 .tmp-system-update-qa/
 backend/backend-dev.log
 backend/backend-dev.log.*
@@ -106,8 +108,16 @@ backend/*.pyc
 *.zip
 /deploy/frontend-dist/
 /deploy/backend-dist/
+release/server-update-*/
+release/*.sha256.txt
+release/typing-resource-stability-*.json
+release/DEPLOY_STEPS_CODE_RESEARCH_*.md
 qa-level-*.png
 tmp-br-debug.png
 tmp-br-guest-before-fill.png
 tmp-br-host-before-fill.png
 .gstack/
+
+# Local raw asset sources
+/kenney_pico-8-city/
+/kenney_pico-8-city.zip

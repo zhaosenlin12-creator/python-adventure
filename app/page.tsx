@@ -198,6 +198,10 @@ export default function Home() {
         window.open(AI_RESEARCH_URL, '_blank', 'noopener,noreferrer');
     };
 
+    const handleOpenCodeResearch = () => {
+        router.push('/code-research');
+    };
+
     const handleOpenTyping = () => {
         if (typeof window === 'undefined') return;
         const target = new URL(TYPING_URL, window.location.origin);
@@ -273,6 +277,16 @@ export default function Home() {
                         <BrainCircuit className="h-4 w-4 text-cyan-300 transition-all duration-200 group-hover:scale-110 group-hover:rotate-6 group-hover:text-slate-950" />
                         <span className="hidden text-sm font-medium sm:inline">AI Research</span>
                         <ExternalLink className="h-3.5 w-3.5 text-cyan-200/80 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-slate-950" />
+                    </button>
+                    <button
+                        data-testid="code-research-button"
+                        onClick={handleOpenCodeResearch}
+                        className="top-action-cta top-action-code group inline-flex min-h-[44px] transform-gpu items-center gap-2 rounded-full border border-emerald-300/35 bg-emerald-500/12 px-3 py-2 text-emerald-100 shadow-lg shadow-emerald-500/10 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02] hover:border-emerald-100 hover:bg-emerald-300 hover:text-slate-950 hover:shadow-xl hover:shadow-emerald-300/25 hover:ring-2 hover:ring-emerald-100/80 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/70"
+                        title="进入 Code Research 编程挑战"
+                    >
+                        <BrainCircuit className="h-4 w-4 text-emerald-300 transition-all duration-200 group-hover:scale-110 group-hover:-rotate-6 group-hover:text-slate-950" />
+                        <span className="hidden text-sm font-medium sm:inline">Code Research</span>
+                        <ExternalLink className="h-3.5 w-3.5 text-emerald-200/80 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-slate-950" />
                     </button>
                     <button
                         onClick={handleToggleMute}

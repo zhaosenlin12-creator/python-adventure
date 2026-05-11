@@ -26,6 +26,7 @@
   };
 
   const API_ROOT = "/api/typing";
+  const ALLOW_EXTERNAL_WORD_AUDIO_FALLBACK = false;
 
   const GAME_WORDS = {
     english: [
@@ -3180,9 +3181,11 @@
     if (mapped) urls.push(mapped.startsWith("data/") ? `./${mapped}` : mapped);
     if (item.localAudio) urls.push(toAssetUrl(item.localAudio));
     urls.push(apiUrl("/word-audio", { word }).toString());
-    urls.push(`https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(word)}&type=2`);
-    urls.push(`https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(word)}&type=1`);
-    urls.push(`https://fanyi.baidu.com/gettts?lan=en&text=${encodeURIComponent(word)}&spd=3&source=web`);
+    if (ALLOW_EXTERNAL_WORD_AUDIO_FALLBACK) {
+      urls.push(`https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(word)}&type=2`);
+      urls.push(`https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(word)}&type=1`);
+      urls.push(`https://fanyi.baidu.com/gettts?lan=en&text=${encodeURIComponent(word)}&spd=3&source=web`);
+    }
     return [...new Set(urls.filter(Boolean))];
   }
 

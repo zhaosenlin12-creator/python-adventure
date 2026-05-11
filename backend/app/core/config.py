@@ -89,6 +89,7 @@ class Settings(BaseSettings):
 
     # Typing trainer runtime data and TTS providers.
     TYPING_DATA_DIR: str = ""
+    TYPING_EXTERNAL_WORD_AUDIO_FALLBACK: bool = False
     MINIMAX_API_KEY: str = ""
     MINIMAX_TTS_ENDPOINT: str = "https://api.minimax.io/v1/t2a_v2"
     MINIMAX_GROUP_ID: str = ""

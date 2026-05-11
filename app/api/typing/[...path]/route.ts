@@ -184,6 +184,10 @@ function wordAudioUrls(word: string) {
   ];
 }
 
+function externalWordAudioFallbackEnabled() {
+  return String(process.env.TYPING_EXTERNAL_WORD_AUDIO_FALLBACK || "").toLowerCase() === "true";
+}
+
 function looksLikeAudio(audio: Buffer, contentType: string | null) {
   const lower = (contentType || "").toLowerCase();
   return Boolean(
@@ -207,8 +211,9 @@ async function getWordAudio(word: string) {
   try {
     return { audio: await fs.readFile(target), contentType: "audio/mpeg" };
   } catch {
-    // Cache miss: download public dictionary pronunciation and store it server-side.
+    // Cache miss: optionally download from public dictionary if explicitly enabled.
   }
+  if (!externalWordAudioFallbackEnabled()) return null;
   let audio: Buffer | null = null;
   let contentType = "audio/mpeg";
   for (const url of wordAudioUrls(normalized)) {

@@ -1,6 +1,7 @@
 ﻿'use client';
 
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { usePetStore } from '@/store/petStore';
 import { useAuthStore } from '@/store/authStore';
 import { PET_CONFIGS, STATUS_TEXT, STATUS_COLORS } from '@/types/pet';
@@ -22,6 +23,7 @@ import { toFriendlyMessage } from '@/lib/utils/friendlyError';
 import { useGlobalUiStore } from '@/store/globalUiStore';
 
 export default function PetMainPanel() {
+  const pathname = usePathname();
   const { currentPet, pets, loadPets, isLoading, evolvePet, checkEvolution, updatePetName } = usePetStore();
   const { isAuthenticated, token, user } = useAuthStore();
   const setPetHomeActive = useGlobalUiStore((state) => state.setPetHomeActive);
@@ -50,6 +52,10 @@ export default function PetMainPanel() {
       loadPets();
     }
   }, [isAuthenticated, token, loadPets]);
+
+  if (pathname?.startsWith('/code-research')) {
+    return null;
+  }
   
   useEffect(() => {
     if (currentPet) {

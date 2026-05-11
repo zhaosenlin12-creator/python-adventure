@@ -326,6 +326,10 @@ def _word_audio_urls(word: str) -> list[str]:
     ]
 
 
+def _external_word_audio_fallback_enabled() -> bool:
+    return bool(settings.TYPING_EXTERNAL_WORD_AUDIO_FALLBACK)
+
+
 def _looks_like_audio(audio: bytes, content_type: str | None) -> bool:
     lower = (content_type or "").lower()
     return bool(
@@ -349,6 +353,9 @@ async def _get_word_audio(word: str) -> tuple[bytes, str] | None:
     except FileNotFoundError:
         pass
     except OSError:
+        return None
+
+    if not _external_word_audio_fallback_enabled():
         return None
 
     async with httpx.AsyncClient(timeout=httpx.Timeout(12.0, connect=4.0)) as client:

@@ -6,6 +6,45 @@ import { getApiBaseUrl } from '@/lib/config/api';
 import { showErrorToast } from '@/components/ui/ErrorToast';
 
 const getApiUrl = () => getApiBaseUrl();
+const TRANSIENT_HTTP_STATUS = new Set([429, 502, 503, 504]);
+
+function wait(ms: number) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function fetchWithTransientRetry(
+    url: string,
+    init: RequestInit,
+    maxAttempts: number = 3
+): Promise<Response> {
+    let lastError: Error | null = null;
+
+    for (let attempt = 0; attempt < maxAttempts; attempt += 1) {
+        try {
+            const response = await fetch(url, init);
+            if (response.ok || response.status === 401) {
+                return response;
+            }
+
+            if (TRANSIENT_HTTP_STATUS.has(response.status) && attempt < maxAttempts - 1) {
+                const backoffMs = 180 * (attempt + 1) + Math.floor(Math.random() * 80);
+                await wait(backoffMs);
+                continue;
+            }
+
+            return response;
+        } catch (error) {
+            lastError = error instanceof Error ? error : new Error(String(error));
+            if (attempt < maxAttempts - 1) {
+                const backoffMs = 180 * (attempt + 1) + Math.floor(Math.random() * 80);
+                await wait(backoffMs);
+                continue;
+            }
+        }
+    }
+
+    throw lastError ?? new Error('Failed to fetch progress');
+}
 
 // 🔒 Token 过期错误类
 export class TokenExpiredError extends Error {
@@ -84,7 +123,7 @@ export async function saveProgress(progress: GameProgress, token: string): Promi
  * @throws {TokenExpiredError} 当 token 过期时
  */
 export async function loadProgress(token: string): Promise<GameProgress> {
-    const response = await fetch(`${getApiUrl()}/progress/load`, {
+    const response = await fetchWithTransientRetry(`${getApiUrl()}/progress/load`, {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`,

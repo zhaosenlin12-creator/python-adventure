@@ -11,6 +11,7 @@ interface LearningCompanionModalProps {
   isOpen: boolean;
   onClose: () => void;
   context: LearningAssistantContext;
+  variant?: "floating" | "embedded";
 }
 
 interface ChatMessage {
@@ -65,10 +66,53 @@ function buildLocalHelp(context: LearningAssistantContext, message: string) {
     : "先补最关键的一处代码，再根据终端结果继续调整。";
 }
 
+function parseMessageBlocks(content: string) {
+  return content
+    .replace(/\r/g, "")
+    .trim()
+    .split(/\n\s*\n/)
+    .map((block) => block.split("\n").map((line) => line.trim()).filter(Boolean))
+    .filter((lines) => lines.length > 0)
+    .map((lines) => {
+      const ordered = lines.every((line) => /^\d+[.)]\s+/.test(line));
+      const bulleted = lines.every((line) => /^[-*•]\s+/.test(line));
+
+      if (ordered || bulleted) {
+        return {
+          type: "list" as const,
+          ordered,
+          items: lines.map((line) => line.replace(/^(\d+[.)]|[-*•])\s+/, "")),
+        };
+      }
+
+      return {
+        type: "paragraph" as const,
+        text: lines.join(" "),
+      };
+    });
+}
+
+function buildQuickPrompts(language: "cn" | "en") {
+  if (language === "en") {
+    return [
+      "What is this level teaching?",
+      "Only tell me the next step.",
+      "Help me read my latest error.",
+    ];
+  }
+
+  return [
+    "这一关在练什么？",
+    "只告诉我下一步。",
+    "帮我看最后一条报错。",
+  ];
+}
+
 export default function LearningCompanionModal({
   isOpen,
   onClose,
   context,
+  variant = "floating",
 }: LearningCompanionModalProps) {
   const { token } = useAuthStore();
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -127,8 +171,8 @@ export default function LearningCompanionModal({
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [isOpen, messages]);
 
-  const handleSend = async () => {
-    const content = inputValue.trim();
+  const handleSend = async (rawContent?: string) => {
+    const content = (rawContent ?? inputValue).trim();
     if (!content || isSending) {
       return;
     }
@@ -206,18 +250,24 @@ export default function LearningCompanionModal({
         placeholder: "Ask one concrete question...",
         send: "Send",
         thinking: "Thinking...",
-        helper: "Ask for the key idea or the next step.",
-      }
+      helper: "Ask for the key idea or the next step.",
+      quickPrompts: "Quick asks",
+    }
     : {
         title: "AI 小伴",
         placeholder: "直接问这一关的具体问题...",
         send: "发送",
         thinking: "思考中...",
         helper: "可以问核心知识点，或直接问下一步。",
+        quickPrompts: "快捷提问",
       };
+  const quickPrompts = buildQuickPrompts(context.interfaceLanguage);
+  const shellClassName = variant === "embedded"
+    ? "flex min-h-[360px] max-h-[520px] flex-col overflow-hidden rounded-[26px] border border-cyan-300/18 bg-slate-950/94 shadow-[0_22px_60px_rgba(8,15,40,0.36)]"
+    : "fixed inset-x-3 bottom-3 z-[90] flex min-h-[520px] max-h-[min(86vh,860px)] flex-col overflow-hidden rounded-3xl border border-cyan-300/20 bg-slate-950/96 shadow-[0_28px_90px_rgba(8,15,40,0.55)] md:inset-x-auto md:bottom-5 md:right-5 md:min-h-[700px] md:max-h-[86vh] md:w-[600px] lg:w-[680px]";
 
   return (
-    <div className="fixed inset-x-3 bottom-3 z-[90] flex min-h-[320px] max-h-[min(64vh,470px)] flex-col overflow-hidden rounded-3xl border border-cyan-300/20 bg-slate-950/96 shadow-[0_28px_90px_rgba(8,15,40,0.55)] md:absolute md:inset-x-auto md:bottom-auto md:top-[54px] md:right-2 md:min-h-[336px] md:max-h-[368px] md:w-[400px]">
+    <div className={shellClassName} data-testid="learning-companion-modal">
       <div className="flex items-center justify-between gap-4 border-b border-white/10 bg-slate-900/90 px-4 py-3">
         <div className="min-w-0">
           <div className="flex items-center gap-2 text-cyan-200">
@@ -243,6 +293,23 @@ export default function LearningCompanionModal({
         {context.knowledgeHint ?? copy.helper}
       </div>
 
+      <div className="border-b border-white/8 bg-slate-950/90 px-4 py-3">
+        <div className="mb-2 text-[10px] uppercase tracking-[0.16em] text-slate-500">{copy.quickPrompts}</div>
+        <div className="flex flex-wrap gap-2">
+          {quickPrompts.map((prompt) => (
+            <button
+              key={prompt}
+              type="button"
+              onClick={() => void handleSend(prompt)}
+              disabled={isSending}
+              className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-slate-200 transition-colors hover:bg-white/10 disabled:opacity-45"
+            >
+              {prompt}
+            </button>
+          ))}
+        </div>
+      </div>
+
       <div className="flex-1 overflow-y-auto px-4 py-4">
         <div className="space-y-3">
           {messages.map((message) => {
@@ -256,7 +323,29 @@ export default function LearningCompanionModal({
                       : "border-white/10 bg-slate-900/86 text-slate-100"
                   }`}
                 >
-                  {message.content}
+                  <div className="space-y-2">
+                    {parseMessageBlocks(message.content).map((block, index) => (
+                      block.type === "list" ? (
+                        block.ordered ? (
+                          <ol key={`${message.id}-${index}`} className="list-decimal space-y-1 pl-5">
+                            {block.items.map((item) => (
+                              <li key={`${message.id}-${index}-${item}`}>{item}</li>
+                            ))}
+                          </ol>
+                        ) : (
+                          <ul key={`${message.id}-${index}`} className="list-disc space-y-1 pl-5">
+                            {block.items.map((item) => (
+                              <li key={`${message.id}-${index}-${item}`}>{item}</li>
+                            ))}
+                          </ul>
+                        )
+                      ) : (
+                        <p key={`${message.id}-${index}`} className="whitespace-pre-wrap">
+                          {block.text}
+                        </p>
+                      )
+                    ))}
+                  </div>
                 </div>
               </div>
             );
