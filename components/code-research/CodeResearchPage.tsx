@@ -2251,6 +2251,7 @@ function ChapterMapScreen({
 
 function DrawerPanel({
   open,
+  panelId,
   title,
   subtitle,
   sections,
@@ -2261,6 +2262,7 @@ function DrawerPanel({
   onClose,
 }: {
   open: boolean;
+  panelId?: string;
   title: string;
   subtitle?: string;
   sections: DrawerSection[];
@@ -2275,8 +2277,11 @@ function DrawerPanel({
   return (
     <div className="cr-drawer-backdrop" onClick={onClose} data-testid="code-research-drawer">
       <aside
+        id={panelId}
         className="cr-drawer-panel"
         onClick={(event) => event.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
         aria-label={cleanMissionCopy(title)}
       >
         <div className="cr-drawer-head">
@@ -3708,7 +3713,7 @@ function LevelScreen({
                 </button>
                 <button
                   type="button"
-                  className="cr-hint-toggle"
+                  className="cr-guide-entry-btn"
                   data-testid="code-research-level-onboarding"
                   onClick={onOpenOnboarding}
                 >
@@ -3722,6 +3727,9 @@ function LevelScreen({
                   ].filter(Boolean).join(" ")}
                   type="button"
                   data-testid="code-research-task-toggle"
+                  aria-haspopup="dialog"
+                  aria-expanded={guideOverlayMode === "task"}
+                  aria-controls="code-research-drawer-task"
                   onClick={() => openGuideOverlay("task")}
                 >
                   <ScrollText /> 任务
@@ -3734,6 +3742,9 @@ function LevelScreen({
                   ].filter(Boolean).join(" ")}
                   type="button"
                   data-testid="code-research-hint-toggle"
+                  aria-haspopup="dialog"
+                  aria-expanded={guideOverlayMode === "hint"}
+                  aria-controls="code-research-drawer-hint"
                   onClick={() => openGuideOverlay("hint")}
                 >
                   <Lightbulb /> 提示
@@ -3746,6 +3757,9 @@ function LevelScreen({
                   ].filter(Boolean).join(" ")}
                   type="button"
                   data-testid="code-research-knowledge-toggle"
+                  aria-haspopup="dialog"
+                  aria-expanded={guideOverlayMode === "knowledge"}
+                  aria-controls="code-research-drawer-knowledge"
                   onClick={() => openGuideOverlay("knowledge")}
                 >
                   <BookOpen /> 知识点
@@ -3757,6 +3771,9 @@ function LevelScreen({
                   ].filter(Boolean).join(" ")}
                   type="button"
                   data-testid="code-research-story-toggle"
+                  aria-haspopup="dialog"
+                  aria-expanded={guideOverlayMode === "story"}
+                  aria-controls="code-research-drawer-story"
                   onClick={() => openGuideOverlay("story")}
                 >
                   <Sparkles /> 剧情
@@ -3951,6 +3968,7 @@ function LevelScreen({
 
       <DrawerPanel
         open={guideOverlayMode === "task"}
+        panelId="code-research-drawer-task"
         title="当前任务"
         subtitle="先明确这关要完成什么，再回到代码区逐步验证。"
         sections={[
@@ -3975,6 +3993,7 @@ function LevelScreen({
 
       <DrawerPanel
         open={guideOverlayMode === "hint"}
+        panelId="code-research-drawer-hint"
         title="提示"
         subtitle="只给你下一段可执行提示，不直接替你完成代码。"
         sections={[
@@ -3999,6 +4018,7 @@ function LevelScreen({
 
       <DrawerPanel
         open={guideOverlayMode === "knowledge"}
+        panelId="code-research-drawer-knowledge"
         title="知识点"
         subtitle="把这一关真正要学的概念拆开看，不把说明堆在主界面上。"
         sections={[
@@ -4017,6 +4037,7 @@ function LevelScreen({
 
       <DrawerPanel
         open={guideOverlayMode === "story"}
+        panelId="code-research-drawer-story"
         title="剧情线"
         subtitle="按段阅读剧情，再回到战场执行代码。"
         sections={[
@@ -4047,6 +4068,7 @@ function LevelScreen({
 
       <DrawerPanel
         open={guideOverlayMode === "timeline"}
+        panelId="code-research-drawer-timeline"
         title="运行记录"
         subtitle="运行后再打开这里看过程，定位哪一步出了问题。"
         sections={[]}

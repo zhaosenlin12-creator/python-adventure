@@ -1508,7 +1508,8 @@
 .cr-back-btn,
 .cr-run-btn,
 .cr-tool-btn,
-.cr-hint-toggle {
+.cr-hint-toggle,
+.cr-guide-entry-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1529,6 +1530,7 @@
 
 .cr-back-btn:hover,
 .cr-tool-btn:hover,
+.cr-guide-entry-btn:hover,
 .cr-hint-toggle:hover,
 .cr-run-btn:hover:not(:disabled) {
   transform: translateY(-2px);
@@ -1542,6 +1544,7 @@
 
 .cr-back-btn svg,
 .cr-tool-btn svg,
+.cr-guide-entry-btn svg,
 .cr-hint-toggle svg,
 .cr-run-btn svg {
   width: 18px;
@@ -2931,7 +2934,8 @@
 }
 
 .cr-tool-btn,
-.cr-hint-toggle {
+.cr-hint-toggle,
+.cr-guide-entry-btn {
   padding: 0 13px;
   background: rgba(255, 255, 255, 0.12);
 }
@@ -2954,7 +2958,8 @@
   width: 16px;
 }
 
-.cr-hint-toggle {
+.cr-hint-toggle,
+.cr-guide-entry-btn {
   width: fit-content;
   color: #fff4bd;
   background: rgba(250, 204, 21, 0.14);
@@ -6129,6 +6134,7 @@
   }
 
   .cr-guided-top-actions .cr-hint-toggle,
+  .cr-guided-top-actions .cr-guide-entry-btn,
   .cr-guided-top-actions .cr-ai-companion-btn {
     width: 100%;
     min-height: 46px;
@@ -6187,6 +6193,7 @@
   }
 
   .cr-guided-top-actions .cr-hint-toggle,
+  .cr-guided-top-actions .cr-guide-entry-btn,
   .cr-guided-top-actions .cr-ai-companion-btn {
     min-height: 48px;
   }

@@ -356,9 +356,9 @@ async function main() {
     await page.screenshot({ path: path.join(ARTIFACT_DIR, "code-research-level.png"), fullPage: true });
 
     let guideDrawerOpen = false;
-    const guideButtons = page.locator(".cr-guided-top-actions .cr-hint-toggle");
-    if ((await guideButtons.count()) > 0) {
-      await guideButtons.first().click();
+    const hintToggle = page.locator('[data-testid="code-research-hint-toggle"]').first();
+    if ((await hintToggle.count()) > 0) {
+      await hintToggle.click();
       const drawer = page.locator('[data-testid="code-research-drawer"]');
       try {
         await drawer.waitFor({ timeout: 12000 });
