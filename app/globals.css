@@ -424,3 +424,21 @@
     0 0 0 2px rgba(207, 250, 254, 0.5),
     0 14px 34px rgba(34, 211, 238, 0.26);
 }
+
+.top-action-code:hover {
+  background-color: #6ee7b7;
+  border-color: rgba(209, 250, 229, 0.92);
+  color: #0f172a;
+  box-shadow:
+    0 0 0 2px rgba(209, 250, 229, 0.48),
+    0 14px 34px rgba(16, 185, 129, 0.26);
+}
+
+.top-action-english:hover {
+  background-color: #c4b5fd;
+  border-color: rgba(237, 233, 254, 0.94);
+  color: #0f172a;
+  box-shadow:
+    0 0 0 2px rgba(237, 233, 254, 0.5),
+    0 14px 34px rgba(139, 92, 246, 0.26);
+}

@@ -19,17 +19,17 @@ import { Level } from "@/lib/levels";
 import { getLearningChapter, getLearningCopy, type LearningSubjectId } from "@/lib/learningHub";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Trophy, LogOut, User, Volume2, VolumeX, Languages, Globe2, BrainCircuit, ExternalLink, Keyboard } from "lucide-react";
+import { Trophy, LogOut, User, Volume2, VolumeX, Languages, Globe2, BrainCircuit, ExternalLink, Keyboard, Gamepad2, Menu, X } from "lucide-react";
 import Footer from "@/components/Footer";
 import CoinBalance from "@/components/ui/CoinBalance";
 import CoinHistory from "@/components/ui/CoinHistory";
 import NewUserGuide, { shouldShowNewUserGuide } from "@/components/ui/NewUserGuide";
-import SystemUpdateAnnouncement from "@/components/ui/SystemUpdateAnnouncement";
 import DailyCheckIn from "@/components/pet/DailyCheckIn";
 import AchievementPanel from "@/components/pet/AchievementPanel";
 
 type ViewState = 'home' | 'map' | 'level';
 const AI_RESEARCH_URL = "https://research.google/ai-quests/intl/en_us/quest/market-marshes";
+const ENGLISH_GAME_URL = "https://www.gamestolearnenglish.com/";
 const TYPING_URL = process.env.NEXT_PUBLIC_TYPING_URL || "/typing/index.html";
 
 export default function Home() {
@@ -42,6 +42,7 @@ export default function Home() {
     const [showLeaderboard, setShowLeaderboard] = useState(false);
     const [showCoinHistory, setShowCoinHistory] = useState(false);
     const [showNewUserGuide, setShowNewUserGuide] = useState(false);
+    const [showQuickLinksMenu, setShowQuickLinksMenu] = useState(false);
     const [mounted, setMounted] = useState(false);
     const [isValidating, setIsValidating] = useState(true); // 🔒 Token验证状态
     const { level: userLevel, xp } = useGameStore();
@@ -49,6 +50,7 @@ export default function Home() {
     const { isMuted, toggleMute } = useSoundStore();
     const { language, setLanguage, t } = useI18n();
     const musicInitialized = useRef(false);
+    const quickLinksMenuRef = useRef<HTMLDivElement | null>(null);
     const tokenValidated = useRef(false); // 🔒 防止重复验证
 
     useEffect(() => {
@@ -122,6 +124,33 @@ export default function Home() {
             window.removeEventListener('open-campaign', handleOpenCampaign);
         };
     }, [isAuthenticated, validateToken, token, loadBalance]);
+
+    useEffect(() => {
+        if (!showQuickLinksMenu) return;
+
+        const handlePointerDown = (event: MouseEvent | TouchEvent) => {
+            const target = event.target as Node | null;
+            if (quickLinksMenuRef.current && target && !quickLinksMenuRef.current.contains(target)) {
+                setShowQuickLinksMenu(false);
+            }
+        };
+
+        const handleEscape = (event: globalThis.KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                setShowQuickLinksMenu(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handlePointerDown);
+        document.addEventListener('touchstart', handlePointerDown);
+        document.addEventListener('keydown', handleEscape);
+
+        return () => {
+            document.removeEventListener('mousedown', handlePointerDown);
+            document.removeEventListener('touchstart', handlePointerDown);
+            document.removeEventListener('keydown', handleEscape);
+        };
+    }, [showQuickLinksMenu]);
 
     // 🔒 验证中显示加载状态
     if (!mounted || isValidating) {
@@ -198,6 +227,11 @@ export default function Home() {
         window.open(AI_RESEARCH_URL, '_blank', 'noopener,noreferrer');
     };
 
+    const handleOpenEnglishGame = () => {
+        if (typeof window === 'undefined') return;
+        window.open(ENGLISH_GAME_URL, '_blank', 'noopener,noreferrer');
+    };
+
     const handleOpenCodeResearch = () => {
         router.push('/code-research');
     };
@@ -215,13 +249,56 @@ export default function Home() {
         window.location.href = target.toString();
     };
 
+    const topQuickLinks = [
+        {
+            id: 'typing',
+            testId: 'typing-entry-button',
+            label: '\u4eab\u6253\u5b57',
+            title: '\u8fdb\u5165\u4e50\u542f\u4eab\u6253\u5b57\u8bad\u7ec3\u4e2d\u5fc3',
+            Icon: Keyboard,
+            iconClassName: 'text-yellow-300',
+            buttonClassName: 'top-action-typing border-yellow-300/40 bg-yellow-400/15 text-yellow-50 shadow-yellow-500/10',
+            onClick: handleOpenTyping,
+        },
+        {
+            id: 'ai-research',
+            testId: 'ai-research-button',
+            label: 'AI Research',
+            title: '\u56fd\u5916\u8d44\u6e90\uff1a\u9700\u8981\u8c03\u6574\u7f51\u7edc\u73af\u5883',
+            Icon: BrainCircuit,
+            iconClassName: 'text-cyan-300',
+            buttonClassName: 'top-action-ai border-cyan-400/30 bg-cyan-500/10 text-cyan-100 shadow-cyan-500/10',
+            onClick: handleOpenAiResearch,
+        },
+        {
+            id: 'code-research',
+            testId: 'code-research-button',
+            label: 'Code Research',
+            title: '\u8fdb\u5165 Code Research \u7f16\u7a0b\u6311\u6218',
+            Icon: BrainCircuit,
+            iconClassName: 'text-emerald-300',
+            buttonClassName: 'top-action-code border-emerald-300/35 bg-emerald-500/12 text-emerald-100 shadow-emerald-500/10',
+            onClick: handleOpenCodeResearch,
+        },
+        {
+            id: 'english-game',
+            testId: 'english-game-button',
+            label: '\u82f1\u8bed\u6e38\u620f',
+            title: '\u6253\u5f00\u82f1\u8bed\u6e38\u620f\u7ad9\u70b9',
+            Icon: Gamepad2,
+            iconClassName: 'text-violet-300',
+            buttonClassName: 'top-action-english border-violet-300/35 bg-violet-500/12 text-violet-100 shadow-violet-500/10',
+            onClick: handleOpenEnglishGame,
+        },
+    ] as const;
+
     return (
         <main className="min-h-screen bg-gradient-to-b from-[#0a0e27] via-[#1a1e3e] to-[#0a0e27] text-white">
             {/* 🔒 进度同步状态指示器 */}
             <SyncStatusIndicator />
             
             {/* Top Bar */}
-            <div className="flex flex-col sm:flex-row justify-between items-center p-2 sm:p-4 bg-[#0a0e27]/80 backdrop-blur-sm border-b border-blue-900/30 gap-2 sm:gap-0">
+            <div className="relative z-30 flex flex-col sm:flex-row justify-between items-center p-2 sm:p-4 bg-[#0a0e27]/80 backdrop-blur-sm border-b border-blue-900/30 gap-2 sm:gap-0">
                 <div className="flex items-center gap-2 sm:gap-4 flex-wrap justify-center sm:justify-start">
                     <div className="flex items-center gap-2 rounded-full border border-cyan-400/20 bg-slate-950/40 px-3 py-2 shadow-[0_8px_24px_rgba(4,18,38,0.35)]">
                         <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 ring-1 ring-white/10">
@@ -244,7 +321,70 @@ export default function Home() {
                     </div>
                     <div className="text-xs sm:text-sm text-slate-400 hidden sm:block">{t('app.welcome', { username: user?.username || '' })}</div>
                 </div>
-                <div className="flex items-center gap-2 sm:gap-4">
+                <div className="flex w-full flex-wrap items-center justify-end gap-2 sm:gap-3 lg:w-auto lg:flex-nowrap">
+                    <div ref={quickLinksMenuRef} className="relative">
+                        <div className="hidden items-center gap-2 lg:flex">
+                            {topQuickLinks.map((link) => {
+                                const Icon = link.Icon;
+                                return (
+                                    <button
+                                        key={link.id}
+                                        data-testid={link.testId}
+                                        onClick={link.onClick}
+                                        className={`top-action-cta group inline-flex min-h-[44px] transform-gpu items-center gap-2 rounded-full border px-3 py-2 shadow-lg transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02] hover:text-slate-950 hover:shadow-xl hover:ring-2 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 ${link.buttonClassName}`}
+                                        title={link.title}
+                                    >
+                                        <Icon className={`h-4 w-4 transition-all duration-200 group-hover:scale-110 group-hover:text-slate-950 ${link.iconClassName}`} />
+                                        <span className="hidden text-sm font-medium xl:inline">{link.label}</span>
+                                        <ExternalLink className="hidden h-3.5 w-3.5 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-slate-950 xl:block" />
+                                    </button>
+                                );
+                            })}
+                        </div>
+                        <button
+                            type="button"
+                            data-testid="quick-links-toggle"
+                            onClick={() => setShowQuickLinksMenu((current) => !current)}
+                            className="top-action-cta inline-flex min-h-[44px] items-center gap-2 rounded-full border border-cyan-400/25 bg-slate-950/60 px-3 py-2 text-cyan-100 shadow-lg shadow-cyan-950/30 transition-colors hover:bg-slate-900/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 lg:hidden"
+                            aria-expanded={showQuickLinksMenu}
+                            aria-haspopup="menu"
+                            aria-label={'\u6253\u5f00\u5b66\u4e60\u5165\u53e3\u83dc\u5355'}
+                        >
+                            {showQuickLinksMenu ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+                            <span className="text-sm font-medium">{'\u5b66\u4e60\u5165\u53e3'}</span>
+                        </button>
+                        {showQuickLinksMenu && (
+                            <div className="absolute left-0 top-[calc(100%+0.6rem)] z-50 w-[min(18rem,calc(100vw-1.5rem))] rounded-2xl border border-cyan-400/20 bg-[#071427]/95 p-3 shadow-[0_24px_60px_rgba(2,12,27,0.6)] backdrop-blur-xl sm:left-auto sm:right-0 lg:hidden">
+                                <div className="mb-2 px-1 text-[11px] uppercase tracking-[0.2em] text-cyan-200/70">{'\u5b66\u4e60\u5165\u53e3'}</div>
+                                <div className="flex flex-col gap-2">
+                                    {topQuickLinks.map((link) => {
+                                        const Icon = link.Icon;
+                                        return (
+                                            <button
+                                                key={`${link.id}-menu`}
+                                                type="button"
+                                                data-testid={`${link.testId}-menu`}
+                                                onClick={() => {
+                                                    link.onClick();
+                                                    setShowQuickLinksMenu(false);
+                                                }}
+                                                className={`top-action-cta group inline-flex min-h-[48px] w-full items-center justify-between gap-3 rounded-2xl border px-3 py-3 text-left shadow-lg transition-all duration-200 ease-out hover:text-slate-950 hover:shadow-xl hover:ring-2 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 ${link.buttonClassName}`}
+                                                title={link.title}
+                                            >
+                                                <span className="flex items-center gap-3">
+                                                    <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-950/25 ring-1 ring-white/10">
+                                                        <Icon className={`h-4 w-4 transition-all duration-200 group-hover:scale-110 group-hover:text-slate-950 ${link.iconClassName}`} />
+                                                    </span>
+                                                    <span className="text-sm font-medium">{link.label}</span>
+                                                </span>
+                                                <ExternalLink className="h-4 w-4 opacity-80 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-slate-950" />
+                                            </button>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        )}
+                    </div>
                     <div className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 bg-blue-900/30 rounded">
                         <User className="w-4 h-4 text-blue-400" />
                         <span className="text-xs sm:text-sm">Lv.{userLevel}</span>
@@ -255,39 +395,6 @@ export default function Home() {
                         size="sm"
                         onClick={() => setShowCoinHistory(true)}
                     />
-                    {view === 'home' && !showNewUserGuide && (
-                        <SystemUpdateAnnouncement triggerVariant="toolbar" />
-                    )}
-                    <button
-                        data-testid="typing-entry-button"
-                        onClick={handleOpenTyping}
-                        className="top-action-cta top-action-typing group inline-flex min-h-[44px] transform-gpu items-center gap-2 rounded-full border border-yellow-300/40 bg-yellow-400/15 px-3 py-2 text-yellow-50 shadow-lg shadow-yellow-500/10 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02] hover:border-yellow-100 hover:bg-yellow-300 hover:text-slate-950 hover:shadow-xl hover:shadow-yellow-300/25 hover:ring-2 hover:ring-yellow-100/80 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-300/70"
-                        title="进入乐启享打字训练中心"
-                    >
-                        <Keyboard className="h-4 w-4 text-yellow-300 transition-all duration-200 group-hover:-rotate-6 group-hover:scale-110 group-hover:text-slate-950" />
-                        <span className="hidden text-sm font-medium sm:inline">享打字</span>
-                        <ExternalLink className="h-3.5 w-3.5 text-yellow-100/80 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-slate-950" />
-                    </button>
-                    <button
-                        data-testid="ai-research-button"
-                        onClick={handleOpenAiResearch}
-                        className="top-action-cta top-action-ai group inline-flex min-h-[44px] transform-gpu items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-3 py-2 text-cyan-100 shadow-lg shadow-cyan-500/10 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02] hover:border-cyan-100 hover:bg-cyan-300 hover:text-slate-950 hover:shadow-xl hover:shadow-cyan-300/25 hover:ring-2 hover:ring-cyan-100/80 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70"
-                        title="国外资源：需要调整网络环境"
-                    >
-                        <BrainCircuit className="h-4 w-4 text-cyan-300 transition-all duration-200 group-hover:scale-110 group-hover:rotate-6 group-hover:text-slate-950" />
-                        <span className="hidden text-sm font-medium sm:inline">AI Research</span>
-                        <ExternalLink className="h-3.5 w-3.5 text-cyan-200/80 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-slate-950" />
-                    </button>
-                    <button
-                        data-testid="code-research-button"
-                        onClick={handleOpenCodeResearch}
-                        className="top-action-cta top-action-code group inline-flex min-h-[44px] transform-gpu items-center gap-2 rounded-full border border-emerald-300/35 bg-emerald-500/12 px-3 py-2 text-emerald-100 shadow-lg shadow-emerald-500/10 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02] hover:border-emerald-100 hover:bg-emerald-300 hover:text-slate-950 hover:shadow-xl hover:shadow-emerald-300/25 hover:ring-2 hover:ring-emerald-100/80 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/70"
-                        title="进入 Code Research 编程挑战"
-                    >
-                        <BrainCircuit className="h-4 w-4 text-emerald-300 transition-all duration-200 group-hover:scale-110 group-hover:-rotate-6 group-hover:text-slate-950" />
-                        <span className="hidden text-sm font-medium sm:inline">Code Research</span>
-                        <ExternalLink className="h-3.5 w-3.5 text-emerald-200/80 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-slate-950" />
-                    </button>
                     <button
                         onClick={handleToggleMute}
                         className="p-2 sm:p-2 hover:bg-blue-900/30 rounded transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
@@ -305,7 +412,7 @@ export default function Home() {
                         title={language === 'cn' ? t('btn.switchToEnglish') : t('btn.switchToChinese')}
                     >
                         <Languages className="w-5 h-5 text-blue-400" />
-                        <span className="ml-1 text-xs hidden sm:inline">{language === 'cn' ? 'EN' : '中'}</span>
+                        <span className="ml-1 text-xs hidden sm:inline">{language === 'cn' ? 'EN' : '\u4e2d'}</span>
                     </button>
                     <button
                         onClick={() => setShowLeaderboard(true)}
