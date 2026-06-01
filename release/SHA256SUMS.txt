@@ -1,2 +1,2 @@
-4299f3c1ec9db2a449e81cda4fe1b026f5a723b2654b67a516a710c05cce5e2d  game-deploy.zip
+a41669f7b1c7ec432dd6a774f82d5acf9e7a997af2ef4e6a85d6da35dddb8839  game-deploy.zip
 78630434aa3e332e782b23ac2380b742ea397dcdd4475fc80a03568be00cb4c3  backend-deploy.zip

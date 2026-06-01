@@ -30,6 +30,7 @@ import AchievementPanel from "@/components/pet/AchievementPanel";
 type ViewState = 'home' | 'map' | 'level';
 const AI_RESEARCH_URL = "https://research.google/ai-quests/intl/en_us/quest/market-marshes";
 const ENGLISH_GAME_URL = "https://www.gamestolearnenglish.com/";
+const MICROSTUDIO_GAME_URL = "https://microstudio.dev/";
 const TYPING_URL = process.env.NEXT_PUBLIC_TYPING_URL || "/typing/index.html";
 
 export default function Home() {
@@ -232,6 +233,11 @@ export default function Home() {
         window.open(ENGLISH_GAME_URL, '_blank', 'noopener,noreferrer');
     };
 
+    const handleOpenMicrostudioGame = () => {
+        if (typeof window === 'undefined') return;
+        window.open(MICROSTUDIO_GAME_URL, '_blank', 'noopener,noreferrer');
+    };
+
     const handleOpenCodeResearch = () => {
         router.push('/code-research');
     };
@@ -289,6 +295,16 @@ export default function Home() {
             iconClassName: 'text-violet-300',
             buttonClassName: 'top-action-english border-violet-300/35 bg-violet-500/12 text-violet-100 shadow-violet-500/10',
             onClick: handleOpenEnglishGame,
+        },
+        {
+            id: 'microstudio-game',
+            testId: 'microstudio-game-button',
+            label: 'microstudio game',
+            title: '\u6253\u5f00 microstudio \u6e38\u620f\u521b\u4f5c\u5e73\u53f0',
+            Icon: Gamepad2,
+            iconClassName: 'text-sky-300',
+            buttonClassName: 'top-action-microstudio border-sky-300/35 bg-sky-500/12 text-sky-100 shadow-sky-500/10',
+            onClick: handleOpenMicrostudioGame,
         },
     ] as const;
 
