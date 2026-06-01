@@ -2,6 +2,12 @@
 import { touchInputManager, TouchInputState } from '@/lib/input/TouchInputManager';
 import { isMobileDevice } from '@/hooks/useDeviceType';
 import { buildCampaignOverviewText, buildPlatformControlsText } from '@/lib/gameplayText';
+import {
+    getPlatformArtPack,
+    getPlatformCampaignThemeId,
+    type PlatformArtPack,
+    type PlatformThemeId,
+} from '@/lib/platformArt';
 
 // 生产环境禁用调试日志
 const DEBUG = process.env.NODE_ENV === 'development';
@@ -10,6 +16,8 @@ const debugLog = DEBUG ? console.log.bind(console) : () => { };
 export default class PlatformGameScene extends Phaser.Scene {
     // 性能优化：纹理缓存
     private static textureCache = new Map<string, boolean>();
+    private platformThemeId: PlatformThemeId = 'default';
+    private platformArtPack: PlatformArtPack = getPlatformArtPack('default');
 
     // 清理纹理缓存（解决颜色异常问题）
     public static clearTextureCache() {
@@ -355,6 +363,8 @@ export default class PlatformGameScene extends Phaser.Scene {
 
     init(data: { level: any }) {
         this.levelData = data.level;
+        this.platformThemeId = getPlatformCampaignThemeId(data.level?.id);
+        this.platformArtPack = getPlatformArtPack(this.platformThemeId);
         this.playerHP = 100;
         this.maxHP = 100;
         this.score = 0;
@@ -428,6 +438,26 @@ export default class PlatformGameScene extends Phaser.Scene {
             this.maxHP = 120;
             this.playerHP = this.maxHP;
         }
+    }
+
+    preload() {
+        const assets: Array<[string, string]> = [
+            ['platform-player', this.platformArtPack.player.texture],
+            ['platform-coin', this.platformArtPack.items.coin],
+            ['platform-dash-star', this.platformArtPack.items.dashStar],
+            ['platform-goal-flag', this.platformArtPack.goal.texture],
+            [this.getPatrolEnemyTextureKey(), this.platformArtPack.enemies.patrol],
+        ];
+
+        this.platformArtPack.background.layers.forEach((url, index) => {
+            assets.push([this.getBackgroundLayerTextureKey(index), url]);
+        });
+
+        assets.forEach(([key, url]) => {
+            if (url && !this.textures.exists(key)) {
+                this.load.image(key, url);
+            }
+        });
     }
 
     private hasSkill(skillId: string) {
@@ -1034,6 +1064,14 @@ export default class PlatformGameScene extends Phaser.Scene {
         debugLog('[PlatformGameScene] 📦 campaignMapData:', campaignMapData);
         debugLog('[PlatformGameScene] 📦 mapData:', mapData);
 
+        if (this.createThemedBackgroundLayers(worldWidth, worldHeight)) {
+            const atmosphere = this.add.rectangle(worldWidth / 2, worldHeight / 2, worldWidth, worldHeight, 0x07131d, 0.05);
+            atmosphere.setScrollFactor(1);
+            atmosphere.setDepth(-95);
+            debugLog('[PlatformGameScene] 🎨 使用主题背景图层:', this.platformThemeId);
+            return;
+        }
+
         // 基础天空渐变
         const graphics = this.add.graphics();
         graphics.fillGradientStyle(
@@ -1153,17 +1191,7 @@ export default class PlatformGameScene extends Phaser.Scene {
 
                 debugLog('[PlatformGameScene] 🔥 创建移动平台:', startX, startY, '→', endX, endY, '速度:', platform.moveSpeed);
 
-                // 创建移动平台纹理（橙色，更醒目）
-                const textureKey = `moving_platform_${this.getCampaignId()}_${platform.width}_${platform.height || 20}`;
-                if (!this.textures.exists(textureKey)) {
-                    const graphics = this.add.graphics();
-                    graphics.fillStyle(visualTheme.movingPlatform, 1);
-                    graphics.fillRect(0, 0, platform.width, platform.height || 20);
-                    graphics.lineStyle(2, visualTheme.movingPlatformBorder, 1);
-                    graphics.strokeRect(0, 0, platform.width, platform.height || 20);
-                    graphics.generateTexture(textureKey, platform.width, platform.height || 20);
-                    graphics.destroy();
-                }
+                const textureKey = this.ensureDecoratedPlatformTexture('moving', platform.width, platform.height || 20);
 
                 movingPlatform.setTexture(textureKey);
                 movingPlatform.body!.setAllowGravity(false);
@@ -1346,25 +1374,17 @@ export default class PlatformGameScene extends Phaser.Scene {
 
                 debugLog('[PlatformGameScene] 🔥 创建消失平台:', platform.x, platform.y, '消失时间:', disappearTime);
             } else {
-                // 标准平台：按战役主题切换配色
                 const platformHeight = platform.height || 20;
-                let platformColor = visualTheme.platform;
-                let borderColor = visualTheme.platformBorder;
-                if (platform.type === 'ground') {
-                    platformColor = visualTheme.groundPlatform;
-                    borderColor = visualTheme.groundBorder;
-                }
-
-                const rect = this.add.rectangle(
+                const kind = platform.type === 'ground' ? 'ground' : 'platform';
+                const textureKey = this.ensureDecoratedPlatformTexture(kind, platform.width, platformHeight);
+                const sprite = this.platforms.create(
                     platform.x + platform.width / 2,
                     platform.y + platformHeight / 2,
-                    platform.width,
-                    platformHeight,
-                    platformColor
-                );
-                rect.setStrokeStyle(2, borderColor);
-                rect.setDepth(10);
-                this.platforms.add(rect);
+                    textureKey
+                ) as Phaser.Physics.Arcade.Image;
+                sprite.setDisplaySize(platform.width, platformHeight);
+                sprite.refreshBody();
+                sprite.setDepth(10);
             }
         });
 
@@ -2146,7 +2166,9 @@ export default class PlatformGameScene extends Phaser.Scene {
             switch (enemyData.type) {
                 case 'slime':
                 case 'basic':
-                    textureName = this.createSlimeTexture(campaignId);
+                    textureName = this.textures.exists(this.getPatrolEnemyTextureKey())
+                        ? this.getPatrolEnemyTextureKey()
+                        : this.createSlimeTexture(campaignId);
                     size = 32;
                     damage = 1;
                     break;
@@ -2395,7 +2417,7 @@ export default class PlatformGameScene extends Phaser.Scene {
 
             switch (item.type) {
                 case 'coin':
-                    textureName = this.createCoinTexture();
+                    textureName = this.textures.exists('platform-coin') ? 'platform-coin' : this.createCoinTexture();
                     break;
                 case 'gem':
                     textureName = this.createGemTexture();
@@ -2408,7 +2430,7 @@ export default class PlatformGameScene extends Phaser.Scene {
                     break;
                 case 'dash_star':
                     // 🔥 战役8：冲刺星星
-                    textureName = this.createDashStarTexture();
+                    textureName = this.textures.exists('platform-dash-star') ? 'platform-dash-star' : this.createDashStarTexture();
                     break;
                 case 'health_pack':
                     // 🔥 战役9：爱心血包
@@ -2420,7 +2442,7 @@ export default class PlatformGameScene extends Phaser.Scene {
             }
 
             collectible.setTexture(textureName);
-            collectible.setDisplaySize(20, 20);
+            collectible.setDisplaySize(item.type === 'coin' || item.type === 'dash_star' ? 24 : 20, item.type === 'coin' || item.type === 'dash_star' ? 24 : 20);
             (collectible as any).value = item.value;
             (collectible as any).itemType = item.type;
 
@@ -2476,35 +2498,30 @@ export default class PlatformGameScene extends Phaser.Scene {
         const goalPos = campaignMapData ? campaignMapData.goal : this.levelData.map.goalPosition;
         const { x, y } = goalPos;
 
-        // 🌿 春意夜晚：发光花朵终点
-        const flagGraphics = this.add.graphics();
+        const goalTextureKey = this.textures.exists('platform-goal-flag')
+            ? 'platform-goal-flag'
+            : (() => {
+                const flagGraphics = this.add.graphics();
+                flagGraphics.fillStyle(0x2D8A4E, 1);
+                flagGraphics.fillRect(18, 30, 4, 16);
+                flagGraphics.fillStyle(0x44AA66, 1);
+                flagGraphics.fillEllipse(14, 38, 10, 6);
+                flagGraphics.fillEllipse(26, 35, 10, 6);
+                flagGraphics.fillStyle(0xFF99BB, 1);
+                flagGraphics.fillEllipse(20, 14, 10, 8);
+                flagGraphics.fillEllipse(12, 20, 8, 10);
+                flagGraphics.fillEllipse(28, 20, 8, 10);
+                flagGraphics.fillEllipse(14, 28, 10, 8);
+                flagGraphics.fillEllipse(26, 28, 10, 8);
+                flagGraphics.fillStyle(0xFFDD44, 1);
+                flagGraphics.fillCircle(20, 22, 5);
+                flagGraphics.generateTexture('goalFlag', 40, 48);
+                flagGraphics.destroy();
+                return 'goalFlag';
+            })();
 
-        // 花茎（绿色）
-        flagGraphics.fillStyle(0x2D8A4E, 1);
-        flagGraphics.fillRect(18, 30, 4, 16);
-
-        // 叶子（绿色）
-        flagGraphics.fillStyle(0x44AA66, 1);
-        flagGraphics.fillEllipse(14, 38, 10, 6);
-        flagGraphics.fillEllipse(26, 35, 10, 6);
-
-        // 花瓣（淡粉色）
-        flagGraphics.fillStyle(0xFF99BB, 1);
-        flagGraphics.fillEllipse(20, 14, 10, 8);
-        flagGraphics.fillEllipse(12, 20, 8, 10);
-        flagGraphics.fillEllipse(28, 20, 8, 10);
-        flagGraphics.fillEllipse(14, 28, 10, 8);
-        flagGraphics.fillEllipse(26, 28, 10, 8);
-
-        // 花蕊（金色）
-        flagGraphics.fillStyle(0xFFDD44, 1);
-        flagGraphics.fillCircle(20, 22, 5);
-
-        flagGraphics.generateTexture('goalFlag', 40, 48);
-        flagGraphics.destroy();
-
-        this.goal = this.physics.add.sprite(x, y, 'goalFlag');
-        this.goal.setDisplaySize(30, 36);
+        this.goal = this.physics.add.sprite(x, y, goalTextureKey);
+        this.goal.setDisplaySize(goalTextureKey === 'platform-goal-flag' ? 40 : 30, goalTextureKey === 'platform-goal-flag' ? 48 : 36);
         (this.goal.body as Phaser.Physics.Arcade.Body).setAllowGravity(false);
 
         // 淡绿发光效果
@@ -2618,7 +2635,6 @@ export default class PlatformGameScene extends Phaser.Scene {
     private createAutoMovingPlatforms() {
         const campaignMapData = (this.levelData as any).campaignMapData;
         const autoPlatforms = campaignMapData?.autoMovingPlatforms || [];
-        const visualTheme = this.getCampaignVisualTheme();
 
         if (autoPlatforms.length === 0) {
             debugLog('[PlatformGameScene] 没有自动移动平台');
@@ -2628,20 +2644,7 @@ export default class PlatformGameScene extends Phaser.Scene {
         autoPlatforms.forEach((platformData: any) => {
             const platform = this.physics.add.sprite(platformData.startX, platformData.y, '');
 
-            // 性能优化：使用纹理缓存
-            const textureKey = `autoPlatform_${this.getCampaignId()}_${platformData.width}`;
-            if (!PlatformGameScene.textureCache.has(textureKey)) {
-                const graphics = this.add.graphics();
-                graphics.fillStyle(visualTheme.movingPlatform, 1);
-                graphics.fillRect(0, 0, platformData.width, 20);
-                graphics.lineStyle(2, visualTheme.movingPlatformBorder, 1);
-                graphics.strokeRect(0, 0, platformData.width, 20);
-                graphics.generateTexture(textureKey, platformData.width, 20);
-                graphics.destroy();
-
-                PlatformGameScene.textureCache.set(textureKey, true);
-                debugLog('[性能] 创建纹理缓存:', textureKey);
-            }
+            const textureKey = this.ensureDecoratedPlatformTexture('moving', platformData.width, 20);
 
             platform.setTexture(textureKey);
             platform.setDisplaySize(platformData.width, 20);
@@ -2695,68 +2698,48 @@ export default class PlatformGameScene extends Phaser.Scene {
         const groundY = worldHeight - 32;
         debugLog('[PlatformGameScene] 🎮 createPlayer - worldHeight:', worldHeight, 'groundY:', groundY);
 
-        // 🎊 新年主题：超萌新年福娃角色（小朋友喜欢的可爱设计）
-        const playerGraphics = this.add.graphics();
-        const centerX = 32;
-        const centerY = 32;
-        const radius = 26;
+        const playerTextureKey = this.textures.exists('platform-player') ? 'platform-player' : 'playerChar';
+        if (playerTextureKey === 'playerChar') {
+            const playerGraphics = this.add.graphics();
+            const centerX = 32;
+            const centerY = 32;
+            const radius = 26;
 
-        // 🎊 身体（红色圆润身体）- 像个小福娃
-        playerGraphics.fillGradientStyle(0xE8363B, 0xE8363B, 0xC41E3A, 0xC41E3A, 1);
-        playerGraphics.fillCircle(centerX, centerY + 2, radius);
-
-        // 🎊 金色虎头帽（更可爱的设计）
-        // 帽子主体
-        playerGraphics.fillStyle(0xFFD700, 1);
-        playerGraphics.fillEllipse(centerX, centerY - 18, 40, 18);
-        // 虎耳朵（圆润）
-        playerGraphics.fillCircle(centerX - 16, centerY - 24, 10);
-        playerGraphics.fillCircle(centerX + 16, centerY - 24, 10);
-        // 耳朵内部（橙色）
-        playerGraphics.fillStyle(0xFF8C00, 1);
-        playerGraphics.fillCircle(centerX - 16, centerY - 24, 5);
-        playerGraphics.fillCircle(centerX + 16, centerY - 24, 5);
-        // 帽子上的"王"字装饰
-        playerGraphics.fillStyle(0x8B0000, 1);
-        playerGraphics.fillRect(centerX - 6, centerY - 22, 12, 3);
-        playerGraphics.fillRect(centerX - 2, centerY - 22, 4, 10);
-
-        // 🎊 超大可爱眼睛（卡通风格）
-        // 眼白
-        playerGraphics.fillStyle(0xffffff, 1);
-        playerGraphics.fillEllipse(centerX - 10, centerY - 2, 12, 14);
-        playerGraphics.fillEllipse(centerX + 10, centerY - 2, 12, 14);
-        // 眼珠（大而圆）
-        playerGraphics.fillStyle(0x2D1B0E, 1);
-        playerGraphics.fillCircle(centerX - 8, centerY - 1, 5);
-        playerGraphics.fillCircle(centerX + 8, centerY - 1, 5);
-        // 眼睛高光（让眼睛更有神）
-        playerGraphics.fillStyle(0xffffff, 1);
-        playerGraphics.fillCircle(centerX - 10, centerY - 3, 2);
-        playerGraphics.fillCircle(centerX + 6, centerY - 3, 2);
-
-        // 🎊 粉嫩腮红（更大更明显）
-        playerGraphics.fillStyle(0xFFB6C1, 0.7);
-        playerGraphics.fillEllipse(centerX - 18, centerY + 6, 8, 5);
-        playerGraphics.fillEllipse(centerX + 18, centerY + 6, 8, 5);
-
-        // 🎊 可爱小嘴巴（微笑弧线）
-        playerGraphics.lineStyle(2, 0x8B0000, 1);
-        playerGraphics.beginPath();
-        playerGraphics.arc(centerX, centerY + 10, 8, 0.3, Math.PI - 0.3);
-        playerGraphics.strokePath();
-
-        // 🎊 小鼻子
-        playerGraphics.fillStyle(0xFFB6C1, 1);
-        playerGraphics.fillCircle(centerX, centerY + 5, 3);
-
-        // 🎊 金色发光边缘（闪闪发光）
-        playerGraphics.lineStyle(3, 0xFFD700, 0.9);
-        playerGraphics.strokeCircle(centerX, centerY + 2, radius + 3);
-
-        // 将图形转换为纹理（64x64）
-        playerGraphics.generateTexture('playerChar', 64, 64);
-        playerGraphics.destroy();
+            playerGraphics.fillGradientStyle(0xE8363B, 0xE8363B, 0xC41E3A, 0xC41E3A, 1);
+            playerGraphics.fillCircle(centerX, centerY + 2, radius);
+            playerGraphics.fillStyle(0xFFD700, 1);
+            playerGraphics.fillEllipse(centerX, centerY - 18, 40, 18);
+            playerGraphics.fillCircle(centerX - 16, centerY - 24, 10);
+            playerGraphics.fillCircle(centerX + 16, centerY - 24, 10);
+            playerGraphics.fillStyle(0xFF8C00, 1);
+            playerGraphics.fillCircle(centerX - 16, centerY - 24, 5);
+            playerGraphics.fillCircle(centerX + 16, centerY - 24, 5);
+            playerGraphics.fillStyle(0x8B0000, 1);
+            playerGraphics.fillRect(centerX - 6, centerY - 22, 12, 3);
+            playerGraphics.fillRect(centerX - 2, centerY - 22, 4, 10);
+            playerGraphics.fillStyle(0xffffff, 1);
+            playerGraphics.fillEllipse(centerX - 10, centerY - 2, 12, 14);
+            playerGraphics.fillEllipse(centerX + 10, centerY - 2, 12, 14);
+            playerGraphics.fillStyle(0x2D1B0E, 1);
+            playerGraphics.fillCircle(centerX - 8, centerY - 1, 5);
+            playerGraphics.fillCircle(centerX + 8, centerY - 1, 5);
+            playerGraphics.fillStyle(0xffffff, 1);
+            playerGraphics.fillCircle(centerX - 10, centerY - 3, 2);
+            playerGraphics.fillCircle(centerX + 6, centerY - 3, 2);
+            playerGraphics.fillStyle(0xFFB6C1, 0.7);
+            playerGraphics.fillEllipse(centerX - 18, centerY + 6, 8, 5);
+            playerGraphics.fillEllipse(centerX + 18, centerY + 6, 8, 5);
+            playerGraphics.lineStyle(2, 0x8B0000, 1);
+            playerGraphics.beginPath();
+            playerGraphics.arc(centerX, centerY + 10, 8, 0.3, Math.PI - 0.3);
+            playerGraphics.strokePath();
+            playerGraphics.fillStyle(0xFFB6C1, 1);
+            playerGraphics.fillCircle(centerX, centerY + 5, 3);
+            playerGraphics.lineStyle(3, 0xFFD700, 0.9);
+            playerGraphics.strokeCircle(centerX, centerY + 2, radius + 3);
+            playerGraphics.generateTexture('playerChar', 64, 64);
+            playerGraphics.destroy();
+        }
 
         // 创建玩家物理体
         // 使用campaignMapData的startPosition，如果没有则使用默认值
@@ -2777,12 +2760,12 @@ export default class PlatformGameScene extends Phaser.Scene {
             debugLog('[PlatformGameScene] 使用默认起始位置:', startX, startY);
         }
 
-        this.player = this.physics.add.sprite(startX, startY, 'playerChar');
+        this.player = this.physics.add.sprite(startX, startY, playerTextureKey);
         debugLog('🔥🔥🔥 [v21:22] 玩家创建后的实际位置:', this.player.x, this.player.y, '🔥🔥🔥');
 
         // 🔥 v2.1.12: 支持自定义玩家大小（用于特殊关卡）
         const playerScale = campaignMapData?.playerScale || 1.0;
-        const baseSize = 40;
+        const baseSize = this.platformArtPack.player.displaySize;
         const displaySize = baseSize * playerScale;
 
         // 🔥 显示大小（根据playerScale缩放）
@@ -2790,9 +2773,9 @@ export default class PlatformGameScene extends Phaser.Scene {
 
         // 🔥 碰撞体（比显示大15像素 * scale）
         const body = this.player.body as Phaser.Physics.Arcade.Body;
-        const collisionSize = (baseSize + 15) * playerScale;
+        const collisionSize = this.platformArtPack.player.collisionSize * playerScale;
         body.setSize(collisionSize, collisionSize);
-        body.setOffset((64 - collisionSize) / 2, (64 - collisionSize) / 2);
+        body.setOffset((this.player.width - collisionSize) / 2, (this.player.height - collisionSize) / 2);
 
         if (playerScale !== 1.0) {
             debugLog(`🔥 [v2.1.12] 玩家大小缩放: ${playerScale}x, 显示: ${displaySize}px, 碰撞: ${collisionSize}px`);
@@ -2849,20 +2832,24 @@ export default class PlatformGameScene extends Phaser.Scene {
         this.updateHPBar();
 
         // 分数
-        this.scoreText = this.add.text(20, 50, `分数: ${this.score}`, {
+        this.scoreText = this.add.text(20, 50, `分数 ${this.score}`, {
             fontSize: fontSize,
-            color: '#ffffff',
-            backgroundColor: '#000000aa',
-            padding: { x: 8, y: 4 }
-        }).setScrollFactor(0);
+            color: '#f8fafc',
+            backgroundColor: '#0b1120cc',
+            padding: { x: 12, y: 6 },
+            stroke: '#08111f',
+            strokeThickness: 2
+        }).setScrollFactor(0).setDepth(1800);
 
         // 目标
-        this.objectiveText = this.add.text(20, isMobile ? 75 : 80, '', {
+        this.objectiveText = this.add.text(20, isMobile ? 84 : 88, '', {
             fontSize: smallFontSize,
-            color: '#ffff00',
-            backgroundColor: '#000000aa',
-            padding: { x: 8, y: 4 }
-        }).setScrollFactor(0);
+            color: '#fde68a',
+            backgroundColor: '#0b1120cc',
+            padding: { x: 12, y: 8 },
+            stroke: '#08111f',
+            strokeThickness: 2
+        }).setScrollFactor(0).setDepth(1800);
         this.objectiveText.setLineSpacing(4);
         this.updateObjectiveDisplay();
 
@@ -4537,51 +4524,94 @@ export default class PlatformGameScene extends Phaser.Scene {
             ? (this.levelData as any).questions.length
             : 0;
         const clearanceRule = `玩法规则：${buildCampaignOverviewText(quizCount)}`;
-        const bg = this.add.rectangle(width / 2, height / 2, width - 100, 388, 0x000000, 0.92);
+        const cardWidth = Math.min(width - 120, 920);
+        const cardHeight = 360;
+        const introAccent = this.platformArtPack.specialPlatforms.movingFill;
+        const introAccentEdge = this.platformArtPack.specialPlatforms.movingEdge;
+        const bg = this.add.rectangle(width / 2, height / 2, cardWidth, cardHeight, 0x06111a, 0.94);
         bg.setScrollFactor(0);
         bg.setDepth(overlayDepth);
-        bg.setStrokeStyle(2, 0x334155, 0.95);
+        bg.setStrokeStyle(2, introAccentEdge, 0.38);
 
-        const title = this.add.text(width / 2, height / 2 - 80, this.levelData.title, {
+        const shimmer = this.add.rectangle(width / 2, height / 2 - 112, cardWidth - 24, 86, introAccent, 0.18);
+        shimmer.setScrollFactor(0);
+        shimmer.setDepth(overlayDepth + 1);
+
+        const modeLabel = this.add.text(width / 2, height / 2 - 138, 'Adventure Briefing', {
+            fontSize: '14px',
+            color: '#d9f99d',
+            fontStyle: 'bold',
+            letterSpacing: 4
+        }).setOrigin(0.5).setScrollFactor(0).setDepth(overlayDepth + 2);
+
+        const title = this.add.text(width / 2, height / 2 - 92, this.levelData.title, {
             fontSize: '32px',
             color: '#ffffff',
             fontStyle: 'bold'
-        }).setOrigin(0.5).setScrollFactor(0).setDepth(overlayDepth + 1);
+        }).setOrigin(0.5).setScrollFactor(0).setDepth(overlayDepth + 2);
 
-        const story = this.add.text(width / 2, height / 2 - 20, this.levelData.story || this.levelData.description || '', {
+        const story = this.add.text(width / 2, height / 2 - 18, this.levelData.story || this.levelData.description || '', {
             fontSize: '18px',
-            color: '#cccccc',
-            wordWrap: { width: width - 150 },
+            color: '#d4d4d8',
+            wordWrap: { width: cardWidth - 120 },
             align: 'center'
-        }).setOrigin(0.5).setScrollFactor(0).setDepth(overlayDepth + 1);
+        }).setOrigin(0.5).setScrollFactor(0).setDepth(overlayDepth + 2);
 
-        const ruleText = this.add.text(width / 2, height / 2 + 54, clearanceRule, {
+        const rulePlate = this.add.rectangle(width / 2, height / 2 + 86, cardWidth - 120, 56, 0x0b1d33, 0.92);
+        rulePlate.setScrollFactor(0);
+        rulePlate.setDepth(overlayDepth + 1);
+        rulePlate.setStrokeStyle(1, introAccentEdge, 0.28);
+
+        const ruleText = this.add.text(width / 2, height / 2 + 86, clearanceRule, {
             fontSize: '16px',
-            color: '#7dd3fc',
+            color: '#bae6fd',
             fontStyle: 'bold',
-            wordWrap: { width: width - 180 },
+            wordWrap: { width: cardWidth - 160 },
             align: 'center'
-        }).setOrigin(0.5).setScrollFactor(0).setDepth(overlayDepth + 1);
+        }).setOrigin(0.5).setScrollFactor(0).setDepth(overlayDepth + 2);
 
-        const startBtn = this.add.text(width / 2, height / 2 + 126, '开始挑战', {
+        const startBtnBg = this.add.rectangle(width / 2, height / 2 + 148, 210, 58, introAccent, 1);
+        startBtnBg.setScrollFactor(0);
+        startBtnBg.setDepth(overlayDepth + 1);
+        startBtnBg.setStrokeStyle(2, introAccentEdge, 0.5);
+        startBtnBg.setInteractive({ useHandCursor: true });
+
+        const startBtn = this.add.text(width / 2, height / 2 + 148, '开始挑战', {
             fontSize: '24px',
-            color: '#ffffff',
-            backgroundColor: '#00ff00',
-            padding: { x: 20, y: 10 }
-        }).setOrigin(0.5).setScrollFactor(0).setDepth(overlayDepth + 1).setInteractive();
+            color: '#041018',
+            fontStyle: 'bold'
+        }).setOrigin(0.5).setScrollFactor(0).setDepth(overlayDepth + 2);
 
-        startBtn.on('pointerdown', () => {
+        const closeIntro = () => {
             bg.destroy();
+            shimmer.destroy();
+            modeLabel.destroy();
             title.destroy();
             story.destroy();
+            rulePlate.destroy();
             ruleText.destroy();
+            startBtnBg.destroy();
             startBtn.destroy();
             this.isLevelIntroActive = false;
             this.physics.world.resume();
 
             // 🔥 相机跟随在update中自动处理
             debugLog('[PlatformGameScene] 🎮 点击开始挑战，相机将在update中跟随');
+        };
+
+        startBtnBg.on('pointerover', () => {
+            startBtnBg.setScale(1.04);
+            startBtn.setScale(1.02);
         });
+
+        startBtnBg.on('pointerout', () => {
+            startBtnBg.setScale(1);
+            startBtn.setScale(1);
+        });
+
+        startBtnBg.on('pointerdown', closeIntro);
+        startBtn.setInteractive({ useHandCursor: true });
+        startBtn.on('pointerdown', closeIntro);
     }
 
     update() {
@@ -10496,6 +10526,91 @@ export default class PlatformGameScene extends Phaser.Scene {
             campaign_16: '终门守卫',
         };
         return BOSS_NAMES[campaignId] || 'Boss';
+    }
+
+    private getBackgroundLayerTextureKey(index: number) {
+        return `platform-bg-${this.platformThemeId}-${index}`;
+    }
+
+    private getPatrolEnemyTextureKey() {
+        return `platform-enemy-patrol-${this.platformThemeId}`;
+    }
+
+    private getPlatformTextureKey(kind: 'ground' | 'platform' | 'moving', width: number, height: number) {
+        return `platform-${kind}-${this.platformThemeId}-${width}x${height}`;
+    }
+
+    private ensureDecoratedPlatformTexture(kind: 'ground' | 'platform' | 'moving', width: number, height: number) {
+        const textureKey = this.getPlatformTextureKey(kind, width, height);
+        if (this.textures.exists(textureKey)) {
+            return textureKey;
+        }
+
+        const palette = this.platformArtPack.specialPlatforms;
+        const fillColor = kind === 'ground'
+            ? palette.groundFill
+            : kind === 'moving'
+                ? palette.movingFill
+                : palette.platformFill;
+        const edgeColor = kind === 'ground'
+            ? palette.groundEdge
+            : kind === 'moving'
+                ? palette.movingEdge
+                : palette.platformEdge;
+
+        const graphics = this.add.graphics();
+        const radius = Math.min(10, Math.max(4, Math.floor(height / 2)));
+        graphics.fillStyle(fillColor, 1);
+        graphics.fillRoundedRect(0, 0, width, height, radius);
+
+        graphics.fillStyle(edgeColor, 1);
+        graphics.fillRoundedRect(0, 0, width, Math.max(6, Math.floor(height * 0.28)), radius);
+
+        graphics.fillStyle(0xffffff, 0.24);
+        graphics.fillRect(8, 4, Math.max(0, width - 16), Math.max(2, Math.floor(height * 0.08)));
+
+        graphics.fillStyle(this.darkenColor(fillColor, 0.75), 0.85);
+        graphics.fillRect(6, Math.max(0, height - 6), Math.max(0, width - 12), 3);
+
+        if (kind === 'moving') {
+            graphics.lineStyle(2, edgeColor, 1);
+            graphics.strokeRoundedRect(1, 1, width - 2, height - 2, radius);
+            const boltY = Math.max(6, Math.floor(height / 2));
+            graphics.fillStyle(0x1f2937, 0.9);
+            graphics.fillCircle(12, boltY, 2.5);
+            graphics.fillCircle(width - 12, boltY, 2.5);
+        } else {
+            graphics.fillStyle(edgeColor, 0.45);
+            for (let x = 10; x < width - 6; x += 14) {
+                graphics.fillCircle(x, Math.max(6, Math.floor(height * 0.22)), 1.8);
+            }
+        }
+
+        graphics.generateTexture(textureKey, width, height);
+        graphics.destroy();
+        return textureKey;
+    }
+
+    private createThemedBackgroundLayers(worldWidth: number, worldHeight: number) {
+        if (!this.platformArtPack.background.layers.length) {
+            return false;
+        }
+
+        const scrollFactors = [0.08, 0.28, 0.52];
+
+        this.platformArtPack.background.layers.forEach((_, index) => {
+            const key = this.getBackgroundLayerTextureKey(index);
+            if (!this.textures.exists(key)) {
+                return;
+            }
+
+            const layer = this.add.image(worldWidth / 2, worldHeight / 2, key);
+            layer.setDisplaySize(worldWidth, worldHeight);
+            layer.setDepth(-130 + index * 10);
+            layer.setScrollFactor(scrollFactors[index] ?? 1);
+        });
+
+        return true;
     }
 
     // 颜色加深函数

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="coinCore" cx=".5" cy=".4" r=".65">
+      <stop offset="0%" stop-color="#fff6a8"/>
+      <stop offset="55%" stop-color="#ffd65b"/>
+      <stop offset="100%" stop-color="#d48a14"/>
+    </radialGradient>
+  </defs>
+  <circle cx="32" cy="32" r="19" fill="url(#coinCore)"/>
+  <circle cx="32" cy="32" r="14" fill="#ffea7a" opacity=".7"/>
+  <path d="M32 6v8M32 50v8M6 32h8M50 32h8M14 14l6 6M44 44l6 6M50 14l-6 6M20 44l-6 6" stroke="#ffd24f" stroke-width="3" stroke-linecap="round"/>
+  <path d="M25 24h14l-4 7h6L28 43l3-9h-7z" fill="#d18b12"/>
+</svg>

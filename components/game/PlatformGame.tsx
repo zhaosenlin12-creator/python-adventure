@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState } from 'react';
 import Phaser from 'phaser';
@@ -15,7 +15,7 @@ import { useGameStore } from '@/store/gameStore';
 import { usePetStore } from '@/store/petStore';
 import { useAuthStore } from '@/store/authStore';
 import { useCoinStore } from '@/store/coinStore';
-import '@/lib/soundEffects';  // 初始化音效系统
+import '@/lib/soundEffects';  // 鍒濆鍖栭煶鏁堢郴缁?
 import { generateQuestionsForLevel, generateQuestionsForAgeGroup } from '@/lib/campaigns';
 import { MobileGameWrapper } from './MobileGameWrapper';
 import { AgeGroup } from '@/types/ageGroup';
@@ -26,6 +26,7 @@ import { showCoinRewardToast } from '@/components/ui/CoinRewardToast';
 import { addCoinsToServer } from '@/lib/api/coinAPI';
 import { shouldAutoGrantCampaignSkill } from '@/lib/skills';
 import type { CampaignQuestionMode } from '@/lib/gameplayText';
+import { getPlatformCampaignThemeId, getPlatformShellTheme } from '@/lib/platformArt';
 
 interface PlatformGameProps {
     onExit: () => void;
@@ -51,25 +52,25 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         setDevPlatformGame(null);
     };
     
-    // 战役系统状态
+    // 鎴樺焦绯荤粺鐘舵€?
     const [selectedCampaign, setSelectedCampaign] = useState<Campaign | null>(null);
     const [currentCampaignLevel, setCurrentCampaignLevel] = useState<CampaignLevel | null>(null);
     const [currentLevelIndex, setCurrentLevelIndex] = useState(0);
     const [showCampaignSelector, setShowCampaignSelector] = useState(true);
-    const [currentAgeGroup, setCurrentAgeGroup] = useState<AgeGroup | null>(null); // 当前年龄段
+    const [currentAgeGroup, setCurrentAgeGroup] = useState<AgeGroup | null>(null); // 褰撳墠骞撮緞娈?
     
-    // 题目系统状态
+    // 棰樼洰绯荤粺鐘舵€?
     const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
     const [questionIndex, setQuestionIndex] = useState(0);
     const [showQuestion, setShowQuestion] = useState(false);
     const [questionMode, setQuestionMode] = useState<CampaignQuestionMode>('challenge');
-    const [isLevelFailed, setIsLevelFailed] = useState(false); // 标记关卡是否失败
+    const [isLevelFailed, setIsLevelFailed] = useState(false); // 鏍囪鍏冲崱鏄惁澶辫触
     
-    // 复活系统状态
+    // 澶嶆椿绯荤粺鐘舵€?
     const [showReviveModal, setShowReviveModal] = useState(false);
     const [playerLives, setPlayerLives] = useState(3);
     
-    // 原有状态（保持兼容）
+    // 鍘熸湁鐘舵€侊紙淇濇寔鍏煎锛?
     const [currentLevel, setCurrentLevel] = useState<PlatformLevel | null>(null);
     const [showLevelSelect, setShowLevelSelect] = useState(false);
     const [showQuiz, setShowQuiz] = useState(false);
@@ -93,6 +94,16 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
     const { token } = useAuthStore();
     const { loadBalance } = useCoinStore();
     const allLevels = getAllPlatformLevels();
+    const activePlatformThemeId = getPlatformCampaignThemeId(
+        String(currentCampaignLevel?.id || selectedCampaign?.id || currentLevel?.id || '')
+    );
+    const activePlatformShellTheme = getPlatformShellTheme(activePlatformThemeId);
+    const activeStageTitle = selectedCampaign
+        ? selectedCampaign.name + ' · 第 ' + (currentLevelIndex + 1) + ' 关'
+        : currentLevel?.title || '平台冒险';
+    const activeStageSubtitle = currentCampaignLevel?.description
+        || currentLevel?.description
+        || '完成目标后答题过关，失败后可通过复活答题重新开始当前关卡。';
 
     const syncCoinsToServer = async (amount: number, source: string, description: string) => {
         if (!amount || !token) return;
@@ -153,15 +164,15 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
     };
 
     useEffect(() => {
-        // 监听关卡内答题触发事件
+        // 鐩戝惉鍏冲崱鍐呯瓟棰樿Е鍙戜簨浠?
         const handleShowQuestion = (event: any) => {
             const { question, onAnswer } = event.detail;
-            console.log('[PlatformGame] 收到答题触发事件:', question);
+            console.log('[PlatformGame] 鏀跺埌绛旈瑙﹀彂浜嬩欢:', question);
             
-            // 保存答题回调
+            // 淇濆瓨绛旈鍥炶皟
             (window as any).__questionCallback = onAnswer;
             
-            // 显示题目
+            // 鏄剧ず棰樼洰
             setQuestionMode('challenge');
             setCurrentQuestion(question);
             setShowQuestion(true);
@@ -169,46 +180,46 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         
         window.addEventListener('showQuestion', handleShowQuestion);
         
-        // 监听玩家死亡事件（统一使用复活系统）
+        // 鐩戝惉鐜╁姝讳骸浜嬩欢锛堢粺涓€浣跨敤澶嶆椿绯荤粺锛?
         const handlePlayerDeath = (event: any) => {
-            console.log('[PlatformGame] 玩家死亡，显示复活题目');
-            // 死亡时始终显示复活题目，答对才能重新开始
+            console.log('[PlatformGame] player died, showing revive quiz');
+            // 姝讳骸鏃跺缁堟樉绀哄娲婚鐩紝绛斿鎵嶈兘閲嶆柊寮€濮?
             setShowReviveModal(true);
         };
         
         window.addEventListener('playerDeath', handlePlayerDeath);
         
-        // 监听关卡完成事件
+        // 鐩戝惉鍏冲崱瀹屾垚浜嬩欢
         const handleLevelComplete = (event: any) => {
             const data = event.detail;
             
             if (currentCampaignLevel) {
-                // 战役模式
+                // 鎴樺焦妯″紡
                 if (data.success) {
-                    // 成功：销毁游戏实例，显示题目挑战
+                    // 鎴愬姛锛氶攢姣佹父鎴忓疄渚嬶紝鏄剧ず棰樼洰鎸戞垬
                     destroyPlatformGame();
                     
-                    setIsLevelFailed(false); // 重置失败标记
+                    setIsLevelFailed(false); // 閲嶇疆澶辫触鏍囪
                     if (currentCampaignLevel.questions.length > 0) {
                         setQuestionMode('clear');
                         setCurrentQuestion(currentCampaignLevel.questions[0]);
                         setQuestionIndex(0);
                         setShowQuestion(true);
                     } else {
-                        // 没有题目，直接完成关卡
+                        // 娌℃湁棰樼洰锛岀洿鎺ュ畬鎴愬叧鍗?
                         handleCampaignLevelComplete();
                     }
                 } else {
-                    // 失败：不销毁游戏实例，弹出题目，答对后重新开始
-                    console.log('[PlatformGame] 关卡失败，弹出重生题目（保留游戏实例）');
-                    setIsLevelFailed(true); // 标记为失败
+                    // 澶辫触锛氫笉閿€姣佹父鎴忓疄渚嬶紝寮瑰嚭棰樼洰锛岀瓟瀵瑰悗閲嶆柊寮€濮?
+                    console.log('[PlatformGame] level failed, opening retry question while keeping scene alive');
+                    setIsLevelFailed(true); // mark level as failed
                     if (currentCampaignLevel.questions.length > 0) {
                         setQuestionMode('retry');
                         setCurrentQuestion(currentCampaignLevel.questions[0]);
                         setQuestionIndex(0);
                         setShowQuestion(true);
                     } else {
-                        // 没有题目，销毁游戏实例并显示失败界面
+                        // 娌℃湁棰樼洰锛岄攢姣佹父鎴忓疄渚嬪苟鏄剧ず澶辫触鐣岄潰
                         destroyPlatformGame();
                         setLevelCompleteData({
                             success: false,
@@ -222,7 +233,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
                     }
                 }
             } else {
-                // 非战役模式：销毁游戏实例，设置关卡完成数据
+                // 闈炴垬褰规ā寮忥細閿€姣佹父鎴忓疄渚嬶紝璁剧疆鍏冲崱瀹屾垚鏁版嵁
                 destroyPlatformGame();
                 
                 setLevelCompleteData({
@@ -248,9 +259,9 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         };
     }, [currentCampaignLevel, playerLives]);
 
-    // 战役选择处理（支持指定关卡和年龄段）
+    // 鎴樺焦閫夋嫨澶勭悊锛堟敮鎸佹寚瀹氬叧鍗″拰骞撮緞娈碉級
     const handleSelectCampaign = (campaign: Campaign, levelIndex: number = 0, ageGroup?: AgeGroup) => {
-        console.log('[PlatformGame] 选择战役关卡:', campaign.name, '关卡索引:', levelIndex, '年龄段:', ageGroup);
+        console.log('[PlatformGame] 閫夋嫨鎴樺焦鍏冲崱:', campaign.name, '鍏冲崱绱㈠紩:', levelIndex, '骞撮緞娈?', ageGroup);
         
         setSelectedCampaign(campaign);
         setCurrentLevelIndex(levelIndex);
@@ -259,116 +270,117 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
             setCurrentAgeGroup(ageGroup);
         }
         
-        // 直接启动指定关卡
+        // 鐩存帴鍚姩鎸囧畾鍏冲崱
         const campaignLevel = campaign.levels[levelIndex];
         
-        // 🔥 根据年龄段生成题目
+        // 馃敟 鏍规嵁骞撮緞娈电敓鎴愰鐩?
         const levelWithRandomQuestions = buildRuntimeCampaignLevel(campaignLevel, levelIndex, ageGroup);
+        const runtimeAgeGroupLabel = ageGroup ? '(' + String(ageGroup) + ')' : '(default)';
         console.log(
             '[PlatformGame] runtime questions prepared:',
             levelWithRandomQuestions.questions?.length || 0,
-            ageGroup ? `(${ageGroup})` : '(default)',
+            runtimeAgeGroupLabel,
         );
         
         setCurrentCampaignLevel(levelWithRandomQuestions);
         setPlayerLives(getCampaignStartingLives());
         setQuestionMode('challenge');
         
-        // 重置题目状态
+        // reset question state
         setCurrentQuestion(null);
         setQuestionIndex(0);
         setShowQuestion(false);
         setIsLevelFailed(false);
         
-        // 传递带有正确题目的关卡数据和年龄段
+        // 浼犻€掑甫鏈夋纭鐩殑鍏冲崱鏁版嵁鍜屽勾榫勬
         startCampaignLevelWithIndex(levelWithRandomQuestions, levelIndex, ageGroup);
     };
 
-    // 题目回答正确
+    // 棰樼洰鍥炵瓟姝ｇ‘
     const handleQuestionCorrect = () => {
-        console.log('[PlatformGame] handleQuestionCorrect 被调用');
-        console.log('[PlatformGame] 当前题目索引:', questionIndex);
+        console.log('[PlatformGame] handleQuestionCorrect triggered');
+        console.log('[PlatformGame] 褰撳墠棰樼洰绱㈠紩:', questionIndex);
         
         setShowQuestion(false);
         
-        // 检查是否是关卡内答题触发点
+        // 妫€鏌ユ槸鍚︽槸鍏冲崱鍐呯瓟棰樿Е鍙戠偣
         const questionCallback = (window as any).__questionCallback;
         if (questionCallback) {
-            console.log('[PlatformGame] 调用关卡内答题回调（答对）');
+            console.log('[PlatformGame] resolving in-level question callback: correct');
             questionCallback(true, '');
             (window as any).__questionCallback = null;
             return;
         }
         
-        // 否则是关卡结束答题
+        // 鍚﹀垯鏄叧鍗＄粨鏉熺瓟棰?
         console.log('[PlatformGame] isLevelFailed:', isLevelFailed);
         console.log('[PlatformGame] currentCampaignLevel:', currentCampaignLevel);
         
         if (!currentCampaignLevel) {
-            console.log('[PlatformGame] 错误：currentCampaignLevel 为空！');
+            console.log('[PlatformGame] currentCampaignLevel is missing');
             return;
         }
         
-        // 检查是失败重生还是成功通关
+        // 妫€鏌ユ槸澶辫触閲嶇敓杩樻槸鎴愬姛閫氬叧
         if (isLevelFailed) {
-            // 失败后答对题目：重新开始当前关卡
-            console.log('[PlatformGame] 失败重生：答对题目，重新开始当前关卡');
-            setIsLevelFailed(false); // 重置失败标记
+            // 澶辫触鍚庣瓟瀵归鐩細閲嶆柊寮€濮嬪綋鍓嶅叧鍗?
+            console.log('[PlatformGame] retry path: restart current level after correct answer');
+            setIsLevelFailed(false); // 閲嶇疆澶辫触鏍囪
             setTimeout(() => {
                 startCampaignLevelWithIndex(currentCampaignLevel, currentLevelIndex, currentAgeGroup);
             }, 500);
         } else {
-            // 成功后答对题目：检查是否还有更多题目
+            // 鎴愬姛鍚庣瓟瀵归鐩細妫€鏌ユ槸鍚﹁繕鏈夋洿澶氶鐩?
             const nextQuestionIndex = questionIndex + 1;
-            console.log('[PlatformGame] 下一题索引:', nextQuestionIndex, '总题目数:', currentCampaignLevel.questions.length);
+            console.log('[PlatformGame] 涓嬩竴棰樼储寮?', nextQuestionIndex, '鎬婚鐩暟:', currentCampaignLevel.questions.length);
             
             if (nextQuestionIndex < currentCampaignLevel.questions.length) {
-                // 还有题目，显示下一题
-                console.log('[PlatformGame] 显示下一题');
+                // 杩樻湁棰樼洰锛屾樉绀轰笅涓€棰?
+                console.log('[PlatformGame] opening next question');
                 setQuestionIndex(nextQuestionIndex);
                 setCurrentQuestion(currentCampaignLevel.questions[nextQuestionIndex]);
                 setTimeout(() => {
                     setShowQuestion(true);
-                }, 500); // 延迟0.5秒显示下一题
+                }, 500); // 寤惰繜0.5绉掓樉绀轰笅涓€棰?
             } else {
-                // 所有题目答完，完成关卡
-                console.log('[PlatformGame] 所有题目答完，完成关卡');
+                // 鎵€鏈夐鐩瓟瀹岋紝瀹屾垚鍏冲崱
+                console.log('[PlatformGame] 鎵€鏈夐鐩瓟瀹岋紝瀹屾垚鍏冲崱');
                 handleCampaignLevelComplete();
             }
         }
     };
 
-    // 题目回答错误
+    // 棰樼洰鍥炵瓟閿欒
     const handleQuestionWrong = () => {
-        console.log('[PlatformGame] 答题错误');
+        console.log('[PlatformGame] 绛旈閿欒');
         setShowQuestion(false);
         
-        // 检查是否是关卡内答题触发点
+        // 妫€鏌ユ槸鍚︽槸鍏冲崱鍐呯瓟棰樿Е鍙戠偣
         const questionCallback = (window as any).__questionCallback;
         if (questionCallback) {
-            console.log('[PlatformGame] 调用关卡内答题回调（答错）');
+            console.log('[PlatformGame] resolving in-level question callback: wrong');
             questionCallback(false, '');
             (window as any).__questionCallback = null;
             return;
         }
         
-        // 否则是关卡结束答题，重新开始关卡
-        console.log('[PlatformGame] 关卡结束答题错误，重新开始关卡');
+        // 鍚﹀垯鏄叧鍗＄粨鏉熺瓟棰橈紝閲嶆柊寮€濮嬪叧鍗?
+        console.log('[PlatformGame] end-of-level answer was wrong, restarting level');
         if (currentCampaignLevel) {
-            // 延迟一下再重启，让用户看到错误提示
+            // 寤惰繜涓€涓嬪啀閲嶅惎锛岃鐢ㄦ埛鐪嬪埌閿欒鎻愮ず
             setTimeout(() => {
                 startCampaignLevelWithIndex(currentCampaignLevel, currentLevelIndex, currentAgeGroup);
             }, 500);
         }
     };
 
-    // 完成战役关卡
+    // 瀹屾垚鎴樺焦鍏冲崱
     const handleCampaignLevelComplete = async () => {
         if (!selectedCampaign || !currentCampaignLevel) return;
         
-        console.log('[PlatformGame] 完成关卡:', currentCampaignLevel.name, '当前索引:', currentLevelIndex, '年龄段:', currentAgeGroup);
+        console.log('[PlatformGame] 瀹屾垚鍏冲崱:', currentCampaignLevel.name, '褰撳墠绱㈠紩:', currentLevelIndex, '骞撮緞娈?', currentAgeGroup);
         
-        // 获取奖励金额
+        // 鑾峰彇濂栧姳閲戦
         const rewardValues = applyCampaignRewardBonuses(
             currentCampaignLevel.rewards.xp,
             currentCampaignLevel.rewards.coins,
@@ -376,31 +388,31 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         const coinsEarned = rewardValues.coins;
         const xpEarned = rewardValues.xp;
         
-        // 添加奖励
+        // 娣诲姞濂栧姳
         addXp(xpEarned);
         addCoins(coinsEarned);
         
-        // 🪙 显示金币奖励Toast
+        // 馃獧 鏄剧ず閲戝竵濂栧姳Toast
         if (coinsEarned > 0) {
-            showCoinRewardToast(coinsEarned, `完成关卡: ${currentCampaignLevel.name}`, 'reward');
-            syncCoinsToServer(coinsEarned, 'campaign_level_complete', `完成关卡: ${currentCampaignLevel.name}`);
+            showCoinRewardToast(coinsEarned, '完成关卡: ' + currentCampaignLevel.name, 'reward');
+            syncCoinsToServer(coinsEarned, 'campaign_level_complete', '完成关卡: ' + currentCampaignLevel.name);
         }
         
-        // 🍖 发放食物奖励
+        // 馃崠 鍙戞斁椋熺墿濂栧姳
         try {
-            // 根据关卡难度发放食物（默认中等难度）
+            // 鏍规嵁鍏冲崱闅惧害鍙戞斁椋熺墿锛堥粯璁や腑绛夐毦搴︼級
             const difficulty = 'medium';
             await grantLevelCompleteReward(difficulty, showFoodRewardToast);
-            console.log('[PlatformGame] 食物奖励发放成功');
+            console.log('[PlatformGame] 椋熺墿濂栧姳鍙戞斁鎴愬姛');
         } catch (error) {
-            console.error('[PlatformGame] 食物奖励发放失败:', error);
-            // 奖励失败不影响关卡完成
+            console.error('[PlatformGame] 椋熺墿濂栧姳鍙戞斁澶辫触:', error);
+            // 濂栧姳澶辫触涓嶅奖鍝嶅叧鍗″畬鎴?
         }
         
-        // 🐕 自动喂食宠物（已移除，改为手动喂食）
-        // 玩家需要使用获得的食物手动喂养宠物
+        // 馃悤 鑷姩鍠傞瀹犵墿锛堝凡绉婚櫎锛屾敼涓烘墜鍔ㄥ杺椋燂級
+        // 鐜╁闇€瑕佷娇鐢ㄨ幏寰楃殑椋熺墿鎵嬪姩鍠傚吇瀹犵墿
         
-        // 🔥 标记关卡完成（使用年龄段独立进度）
+        // 馃敟 鏍囪鍏冲崱瀹屾垚锛堜娇鐢ㄥ勾榫勬鐙珛杩涘害锛?
         unlockRewardSkills(currentCampaignLevel.rewards.skills ?? (currentCampaignLevel.rewards as any).skill);
 
         if (currentAgeGroup) {
@@ -410,20 +422,20 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         }
         
         const nextLevelIndex = currentLevelIndex + 1;
-        console.log('[PlatformGame] 下一关索引:', nextLevelIndex, '总关卡数:', selectedCampaign.levels.length);
+        console.log('[PlatformGame] 涓嬩竴鍏崇储寮?', nextLevelIndex, '鎬诲叧鍗℃暟:', selectedCampaign.levels.length);
         
         if (nextLevelIndex < selectedCampaign.levels.length) {
-            // 进入下一关
-            console.log('[PlatformGame] 进入下一关:', selectedCampaign.levels[nextLevelIndex].name, '年龄段:', currentAgeGroup);
+            // 杩涘叆涓嬩竴鍏?
+            console.log('[PlatformGame] 杩涘叆涓嬩竴鍏?', selectedCampaign.levels[nextLevelIndex].name, '骞撮緞娈?', currentAgeGroup);
             setCurrentLevelIndex(nextLevelIndex);
-            // 延迟启动下一关，确保状态更新和UI刷新
+            // 寤惰繜鍚姩涓嬩竴鍏筹紝纭繚鐘舵€佹洿鏂板拰UI鍒锋柊
             setTimeout(() => {
                 startCampaignLevelWithIndex(selectedCampaign.levels[nextLevelIndex], nextLevelIndex, currentAgeGroup);
             }, 100);
         } else {
-            // 战役完成
-            console.log('[PlatformGame] 战役完成!', '年龄段:', currentAgeGroup);
-            // 🔥 标记战役完成（使用年龄段独立进度）
+            // 鎴樺焦瀹屾垚
+            console.log('[PlatformGame] 鎴樺焦瀹屾垚!', '骞撮緞娈?', currentAgeGroup);
+            // 馃敟 鏍囪鎴樺焦瀹屾垚锛堜娇鐢ㄥ勾榫勬鐙珛杩涘害锛?
             const alreadyCompletedCampaign = currentAgeGroup
                 ? Boolean(ageGroupCampaignProgress[currentAgeGroup]?.completed.includes(selectedCampaign.id))
                 : completedCampaigns.includes(selectedCampaign.id);
@@ -440,13 +452,13 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
                 if (campaignRewardValues.coins > 0) {
                     showCoinRewardToast(
                         campaignRewardValues.coins,
-                        `完成战役: ${selectedCampaign.name}`,
+                        '完成战役: ' + selectedCampaign.name,
                         'reward',
                     );
                     syncCoinsToServer(
                         campaignRewardValues.coins,
                         'campaign_complete',
-                        `完成战役: ${selectedCampaign.name}`,
+                        '完成战役: ' + selectedCampaign.name,
                     );
                 }
             }
@@ -456,8 +468,8 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
             } else {
                 completeCampaign(selectedCampaign.id);
             }
-            // 🔥 延迟返回战役列表，确保状态更新完成
-            // 这样可以避免 CampaignSelector 在状态更新前渲染导致解锁状态不正确
+            // 馃敟 寤惰繜杩斿洖鎴樺焦鍒楄〃锛岀‘淇濈姸鎬佹洿鏂板畬鎴?
+            // 杩欐牱鍙互閬垮厤 CampaignSelector 鍦ㄧ姸鎬佹洿鏂板墠娓叉煋瀵艰嚧瑙ｉ攣鐘舵€佷笉姝ｇ‘
             setTimeout(() => {
                 setShowCampaignSelector(true);
                 setSelectedCampaign(null);
@@ -466,43 +478,43 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         }
     };
 
-    // 开始战役关卡（带索引和年龄段）
+    // 寮€濮嬫垬褰瑰叧鍗★紙甯︾储寮曞拰骞撮緞娈碉級
     const startCampaignLevelWithIndex = (campaignLevel: CampaignLevel, levelIndex: number, ageGroup?: AgeGroup | null) => {
-        // 使用传入的年龄段或当前状态
+        // 浣跨敤浼犲叆鐨勫勾榫勬鎴栧綋鍓嶇姸鎬?
         const activeAgeGroup = ageGroup || currentAgeGroup;
         
-        console.log('[PlatformGame] startCampaignLevelWithIndex 被调用');
+        console.log('[PlatformGame] startCampaignLevelWithIndex triggered');
         console.log('[PlatformGame] campaignLevel:', campaignLevel.name);
         console.log('[PlatformGame] levelIndex:', levelIndex);
         console.log('[PlatformGame] activeAgeGroup:', activeAgeGroup);
-        console.log('[PlatformGame] 传入的题目数量:', campaignLevel.questions?.length);
+        console.log('[PlatformGame] 浼犲叆鐨勯鐩暟閲?', campaignLevel.questions?.length);
         
-        // 先销毁现有游戏实例
+        // 鍏堥攢姣佺幇鏈夋父鎴忓疄渚?
         if (gameRef.current) {
-            console.log('[PlatformGame] 销毁现有游戏实例');
+            console.log('[PlatformGame] destroying previous Phaser instance');
             destroyPlatformGame();
         }
         
-        // 🔥 检查是否已经有年龄段题目（通过题目ID前缀判断）
+        // 馃敟 妫€鏌ユ槸鍚﹀凡缁忔湁骞撮緞娈甸鐩紙閫氳繃棰樼洰ID鍓嶇紑鍒ゆ柇锛?
         const levelWithRandomQuestions = buildRuntimeCampaignLevel(campaignLevel, levelIndex, activeAgeGroup);
+        const startLevelAgeGroupLabel = activeAgeGroup ? '(' + String(activeAgeGroup) + ')' : '(default)';
         console.log(
             '[PlatformGame] start level with runtime questions:',
             levelWithRandomQuestions.questions?.length || 0,
-            activeAgeGroup ? `(${activeAgeGroup})` : '(default)',
+            startLevelAgeGroupLabel,
         );
         
         setCurrentCampaignLevel(levelWithRandomQuestions);
-        setPlayerLives(getCampaignStartingLives()); // 重置生命数
-        
-        // 重置题目状态
+        setPlayerLives(getCampaignStartingLives()); // 閲嶇疆鐢熷懡鏁?        
+        // 閲嶇疆棰樼洰鐘舵€?
         setCurrentQuestion(null);
         setQuestionIndex(0);
         setShowQuestion(false);
         
-        // 如果战役关卡有自定义地图数据，使用它；否则使用默认关卡
+        // 濡傛灉鎴樺焦鍏冲崱鏈夎嚜瀹氫箟鍦板浘鏁版嵁锛屼娇鐢ㄥ畠锛涘惁鍒欎娇鐢ㄩ粯璁ゅ叧鍗?
         let levelData: any;
         if (campaignLevel.campaignMapData || campaignLevel.mapData) {
-            // 将战役地图数据转换为关卡数据格式
+            // 灏嗘垬褰瑰湴鍥炬暟鎹浆鎹负鍏冲崱鏁版嵁鏍煎紡
             levelData = {
                 id: campaignLevel.id,
                 title: campaignLevel.name,
@@ -512,18 +524,18 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
                 difficulty: 'medium',
                 objectives: campaignLevel.objectives?.length
                     ? campaignLevel.objectives
-                    : [{ type: 'reach' as const, description: '到达终点' }],
+                    : [{ type: 'reach' as const, description: '鍒拌揪缁堢偣' }],
                 rewards: { exp: campaignLevel.rewards.xp, coins: campaignLevel.rewards.coins },
                 campaignMapData: campaignLevel.campaignMapData || campaignLevel.mapData,
-                bossConfig: campaignLevel.bossConfig // 传递Boss配置
+                bossConfig: campaignLevel.bossConfig // 浼犻€払oss閰嶇疆
             };
         } else {
-            // 使用默认关卡数据
+            // 浣跨敤榛樿鍏冲崱鏁版嵁
             levelData = allLevels[levelIndex % allLevels.length];
         }
         
-        console.log('[PlatformGame] 使用的关卡数据:', levelData.title);
-        console.log('[PlatformGame] Boss配置:', levelData.bossConfig);
+        console.log('[PlatformGame] 浣跨敤鐨勫叧鍗℃暟鎹?', levelData.title);
+        console.log('[PlatformGame] Boss閰嶇疆:', levelData.bossConfig);
         setCurrentLevel(levelData as PlatformLevel);
         startLevel(levelData as PlatformLevel);
     };
@@ -534,17 +546,17 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         setShowLevelComplete(false);
         setShowQuiz(false);
 
-        // 等待DOM更新
+        // 绛夊緟DOM鏇存柊
         await new Promise(resolve => setTimeout(resolve, 100));
 
         if (!parentRef.current || gameRef.current) return;
 
-        // 动态加载Phaser和场景
+        // 鍔ㄦ€佸姞杞絇haser鍜屽満鏅?
         const Phaser = await import('phaser');
         const { default: PlatformGameScene } = await import('@/components/world/scenes/PlatformGameScene');
 
-        // 检测是否为移动设备
-        // 移动端使用自适应缩放
+        // 妫€娴嬫槸鍚︿负绉诲姩璁惧
+        // 绉诲姩绔娇鐢ㄨ嚜閫傚簲缂╂斁
         const config: Phaser.Types.Core.GameConfig = {
             type: Phaser.AUTO,
             width: isTouchDevice ? 800 : 960,
@@ -559,7 +571,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
             },
             scene: [PlatformGameScene],
             backgroundColor: '#1a1a2e',
-            // 🔥 修复移动端精灵抖动/虚像问题
+            // 馃敟 淇绉诲姩绔簿鐏垫姈鍔?铏氬儚闂
             pixelArt: true,
             roundPixels: true,
             render: {
@@ -576,7 +588,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         gameRef.current = new Phaser.Game(config);
         setDevPlatformGame(gameRef.current);
         
-        // 启动场景并传递关卡数据
+        // 鍚姩鍦烘櫙骞朵紶閫掑叧鍗℃暟鎹?
         gameRef.current.scene.start('PlatformGameScene', { level });
     };
 
@@ -590,19 +602,19 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
     const handleQuizCorrect = () => {
         if (!currentLevel) return;
 
-        // 给予奖励
+        // 缁欎簣濂栧姳
         addXp(currentLevel.rewards.exp);
         addCoins(currentLevel.rewards.coins);
         if (currentLevel.rewards.coins > 0) {
-            showCoinRewardToast(currentLevel.rewards.coins, `完成关卡: ${currentLevel.title}`, 'reward');
-            syncCoinsToServer(currentLevel.rewards.coins, 'level_complete', `完成关卡: ${currentLevel.title}`);
+            showCoinRewardToast(currentLevel.rewards.coins, '完成关卡: ' + currentLevel.title, 'reward');
+            syncCoinsToServer(currentLevel.rewards.coins, 'level_complete', '完成关卡: ' + currentLevel.title);
         }
 
         setShowQuiz(false);
         
-        // 显示完成界面
+        // 鏄剧ず瀹屾垚鐣岄潰
         setTimeout(() => {
-            alert(`恭喜通关！\n获得经验: ${currentLevel.rewards.exp}\n获得金币: ${currentLevel.rewards.coins}`);
+            alert('恭喜通关！\n获得经验: ' + currentLevel.rewards.exp + '\n获得金币: ' + currentLevel.rewards.coins);
             setShowLevelSelect(true);
             setCurrentLevel(null);
         }, 500);
@@ -610,7 +622,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
 
     const handleQuizWrong = () => {
         setShowQuiz(false);
-        alert('答题错误！重新挑战关卡');
+        alert('答题错误，重新挑战关卡！');
         restartLevel();
     };
 
@@ -620,7 +632,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         setCurrentLevel(null);
     };
 
-    // 显示战役选择器
+    // 鏄剧ず鎴樺焦閫夋嫨鍣?
     if (showCampaignSelector) {
         return (
             <CampaignSelector
@@ -632,86 +644,88 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
 
     if (showLevelSelect) {
         return (
-            <div className="fixed inset-0 bg-gradient-to-b from-sky-100 via-emerald-50 to-sky-100 z-50 overflow-auto">
-                {/* 春季主题头部 */}
-                <div className="sticky top-0 bg-slate-800 backdrop-blur-sm border-b border-slate-700 p-4 z-10">
-                    <div className="max-w-6xl mx-auto flex justify-between items-center">
-                        <h1 className="text-3xl font-bold text-blue-400 flex items-center gap-3">
-                            <span className="text-4xl">🌿</span>
-                            冒险闯关
-                        </h1>
+            <div className="fixed inset-0 z-50 overflow-auto bg-[radial-gradient(circle_at_top,#224b6d_0%,#111a30_40%,#060a12_100%)]">
+                <div className={`sticky top-0 z-10 border-b bg-gradient-to-r ${activePlatformShellTheme.chromeClassName} p-4 shadow-[0_18px_36px_rgba(0,0,0,0.26)] backdrop-blur-xl`}>
+                    <div className="mx-auto flex max-w-6xl items-center justify-between gap-4">
+                        <div className="min-w-0">
+                            <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/6 px-3 py-1 text-[11px] uppercase tracking-[0.28em] text-white/70">
+                                <Gamepad2 className="h-3.5 w-3.5" />
+                                <span>Free Play</span>
+                            </div>
+                            <h1 className="text-2xl font-bold text-white md:text-3xl">平台冒险关卡库</h1>
+                            <p className="mt-1 text-sm text-white/70">这个入口保留给单关调试和自由试玩，战役主流程仍从战役地图进入。</p>
+                        </div>
                         <button
                             onClick={onExit}
-                            className="bg-red-900/300 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-lg transition-colors"
+                            className="rounded-2xl border border-white/10 bg-slate-950/36 px-5 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-slate-950/60"
                         >
-                            ← 返回世界
+                            返回世界
                         </button>
                     </div>
                 </div>
 
-                {/* 关卡列表 */}
-                <div className="max-w-6xl mx-auto p-8">
-                    <div className="mb-8">
-                        <h2 className="text-2xl font-bold text-white mb-2">选择关卡</h2>
-                        <p className="text-slate-500">
-                            先完成目标，再答题过关；失败后答对 1 题可重开本关。
+                <div className="mx-auto max-w-6xl p-5 sm:p-8">
+                    <div className="mb-6 rounded-[28px] border border-white/10 bg-slate-950/68 p-5 shadow-[0_26px_60px_rgba(0,0,0,0.22)] backdrop-blur-xl">
+                        <h2 className="text-xl font-bold text-white sm:text-2xl">选择单关</h2>
+                        <p className="mt-2 text-sm leading-6 text-slate-200/78">
+                            完成目标后再答题过关；若挑战失败，可以通过复活答题回到当前关卡继续尝试。
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
                         {allLevels.map((level) => (
                             <div
                                 key={level.id}
-                                className="bg-slate-700/90 backdrop-blur-sm rounded-xl p-6 border border-slate-600 hover:border-emerald-400 shadow-sm transition-all cursor-pointer group"
+                                className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-slate-950/70 p-6 shadow-[0_18px_46px_rgba(0,0,0,0.2)] transition-all hover:-translate-y-1 hover:border-sky-200/22 hover:shadow-[0_24px_54px_rgba(45,107,158,0.18)]"
                                 onClick={() => startLevel(level)}
                             >
-                                {/* 关卡标题 */}
-                                <div className="flex items-center justify-between mb-4">
-                                    <h3 className="text-xl font-bold text-white">
-                                        关卡 {level.id}: {level.title}
-                                    </h3>
-                                    <span className={`px-3 py-1 rounded-full text-sm font-bold ${
-                                        level.difficulty === 'easy' ? 'bg-green-500' :
-                                        level.difficulty === 'medium' ? 'bg-yellow-500' :
-                                        'bg-red-900/300'
-                                    } text-white`}>
-                                        {level.difficulty === 'easy' ? '简单' :
-                                         level.difficulty === 'medium' ? '中等' : '困难'}
-                                    </span>
+                                <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-br from-white/10 via-sky-300/10 to-transparent" />
+                                <div className="relative">
+                                    <div className="mb-4 flex items-start justify-between gap-3">
+                                        <div>
+                                            <div className="text-xs uppercase tracking-[0.24em] text-white/48">Level {level.id}</div>
+                                            <h3 className="mt-1 text-xl font-bold text-white">{level.title}</h3>
+                                        </div>
+                                        <span className={`rounded-full px-3 py-1 text-xs font-bold ${
+                                            level.difficulty === 'easy'
+                                                ? 'bg-emerald-400/18 text-emerald-100'
+                                                : level.difficulty === 'medium'
+                                                    ? 'bg-amber-300/18 text-amber-50'
+                                                    : 'bg-rose-300/18 text-rose-100'
+                                        }`}>
+                                            {level.difficulty === 'easy' ? '简单' : level.difficulty === 'medium' ? '中等' : '困难'}
+                                        </span>
+                                    </div>
+
+                                    <p className="mb-5 text-sm leading-6 text-slate-200/78">{level.description}</p>
+
+                                    <div className="mb-5 rounded-[22px] border border-white/8 bg-black/16 p-4">
+                                        <p className="mb-2 text-sm font-semibold text-sky-100">本关目标</p>
+                                        <ul className="space-y-2">
+                                            {level.objectives.map((obj, idx) => (
+                                                <li key={idx} className="flex items-start gap-2 text-sm text-slate-200/78">
+                                                    <span className="mt-0.5 text-sky-200">•</span>
+                                                    <span>{obj.description}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+
+                                    <div className="flex items-center gap-4 text-sm">
+                                        <span className="text-sky-100">
+                                            <Star className="mr-1 inline h-4 w-4" />
+                                            {level.rewards.exp} EXP
+                                        </span>
+                                        <span className="text-amber-100">
+                                            <Coins className="mr-1 inline h-4 w-4" />
+                                            {level.rewards.coins} 金币
+                                        </span>
+                                    </div>
+
+                                    <button className="mt-5 w-full rounded-2xl border border-sky-200/16 bg-gradient-to-r from-sky-300 to-emerald-300 px-4 py-3 font-bold text-slate-950 transition-all group-hover:shadow-[0_18px_30px_rgba(52,211,153,0.18)]">
+                                        开始挑战
+                                    </button>
                                 </div>
-
-                                {/* 描述 */}
-                                <p className="text-slate-500 mb-4 text-sm">
-                                    {level.description}
-                                </p>
-
-                                {/* 目标 */}
-                                <div className="mb-4">
-                                    <p className="text-blue-400 text-sm font-bold mb-2">目标：</p>
-                                    <ul className="space-y-1">
-                                        {level.objectives.map((obj, idx) => (
-                                            <li key={idx} className="text-slate-500 text-sm flex items-center gap-2">
-                                                <span className="text-blue-400">▸</span>
-                                                {obj.description}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                {/* 奖励 */}
-                                <div className="flex items-center gap-4 text-sm">
-                                    <span className="text-blue-400">
-                                        <Star className="w-4 h-4 inline mr-1" />{level.rewards.exp} EXP
-                                    </span>
-                                    <span className="text-amber-500">
-                                        <Coins className="w-4 h-4 inline mr-1" />{level.rewards.coins} 金币
-                                    </span>
-                                </div>
-
-                                {/* 开始按钮 */}
-                                <button className="w-full mt-4 bg-blue-600 group-hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">
-                                    开始挑战 →
-                                </button>
                             </div>
                         ))}
                     </div>
@@ -722,48 +736,58 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
 
     return (
         <MobileGameWrapper showController={isTouchDevice}>
-            <div className="fixed inset-0 bg-gradient-to-b from-sky-100 to-emerald-50 z-40 flex flex-col">
-                {/* 春季主题游戏头部 - 移动端简化 */}
-                <div className="bg-slate-800 backdrop-blur-sm border-b border-slate-700 p-2 md:p-4 flex justify-between items-center">
-                    <div className="min-w-0 flex-1">
-                        <h2 className="text-sm md:text-xl font-bold truncate text-blue-400">
-                            🌿 {selectedCampaign ? `${selectedCampaign.name} - 第${currentLevelIndex + 1}关` : currentLevel?.title}
-                        </h2>
-                        <p className="text-xs md:text-sm text-slate-400 truncate hidden md:block">
-                            {currentCampaignLevel ? currentCampaignLevel.description : currentLevel?.description}
-                        </p>
-                    </div>
-                    <div className="flex gap-2 md:gap-4 flex-shrink-0">
-                        <button
-                            onClick={restartLevel}
-                            data-restart-button
-                            className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-1 px-2 md:py-2 md:px-4 rounded-lg transition-colors text-xs md:text-base"
-                        >
-                            🔄 <span className="hidden md:inline">重新开始</span>
-                        </button>
-                        <button
-                            onClick={() => {
-                                destroyPlatformGame();
-                                setShowCampaignSelector(true);
-                                setSelectedCampaign(null);
-                                setCurrentCampaignLevel(null);
-                                setCurrentLevel(null);
-                            }}
-                            className="bg-red-900/300 hover:bg-red-600 text-white font-bold py-1 px-2 md:py-2 md:px-4 rounded-lg transition-colors text-xs md:text-base"
-                        >
-                            ← <span className="hidden md:inline">返回战役选择</span>
-                        </button>
+            <div className={`fixed inset-0 z-40 flex flex-col bg-[radial-gradient(circle_at_top,#173c4d_0%,#0c1620_45%,#060911_100%)] ${activePlatformShellTheme.accentClassName}`}>
+                <div className={`border-b bg-gradient-to-r ${activePlatformShellTheme.chromeClassName} p-3 shadow-[0_14px_30px_rgba(6,10,18,0.35)] backdrop-blur-xl md:p-4`}>
+                    <div className="flex items-start justify-between gap-3">
+                        <div className="min-w-0 flex-1">
+                            <div className="mb-2 flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.24em] text-white/55">
+                                <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/6 px-2.5 py-1">
+                                    <Gamepad2 className="h-3.5 w-3.5" />
+                                    <span>Adventure Mode</span>
+                                </span>
+                                <span className="rounded-full border border-white/10 bg-white/6 px-2.5 py-1 text-white/72">
+                                    Lives {playerLives}
+                                </span>
+                            </div>
+                            <h2 className="truncate text-sm font-bold text-white md:text-xl">
+                                {activeStageTitle}
+                            </h2>
+                            <p className="mt-1 hidden truncate text-xs text-white/70 md:block md:text-sm">
+                                {activeStageSubtitle}
+                            </p>
+                        </div>
+                        <div className="flex shrink-0 gap-2 md:gap-3">
+                            <button
+                                onClick={restartLevel}
+                                data-restart-button
+                                className="inline-flex items-center gap-1.5 rounded-xl border border-amber-100/35 bg-amber-400/85 px-3 py-2 text-xs font-bold text-slate-950 shadow-[0_10px_20px_rgba(245,158,11,0.28)] transition-all hover:-translate-y-0.5 hover:bg-amber-300 md:px-4 md:text-sm"
+                            >
+                                <RotateCcw className="h-4 w-4" />
+                                <span className="hidden md:inline">重新开始</span>
+                                <span className="md:hidden">重开</span>
+                            </button>
+                            <button
+                                onClick={() => {
+                                    destroyPlatformGame();
+                                    setShowCampaignSelector(true);
+                                    setSelectedCampaign(null);
+                                    setCurrentCampaignLevel(null);
+                                    setCurrentLevel(null);
+                                }}
+                                className="rounded-xl border border-white/12 bg-slate-950/45 px-3 py-2 text-xs font-bold text-white shadow-[0_10px_20px_rgba(0,0,0,0.22)] transition-all hover:-translate-y-0.5 hover:bg-slate-900/80 md:px-4 md:text-sm"
+                            >
+                                <span className="hidden md:inline">返回战役选择</span>
+                                <span className="md:hidden">返回</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                {/* 游戏容器 - 移动端自适应 */}
-                <div className="flex-1 overflow-auto bg-gradient-to-br from-slate-800 to-slate-900 px-2 py-2 md:px-4 md:py-4">
-                    <div
-                        className="mx-auto flex min-h-full min-w-fit items-center justify-center"
-                    >
+                <div className="flex-1 overflow-auto px-2 py-2 md:px-4 md:py-4">
+                    <div className="mx-auto flex min-h-full min-w-fit items-center justify-center">
                         <div
                             ref={parentRef}
-                            className="rounded-2xl border border-slate-700/70 bg-slate-950/70 shadow-2xl"
+                            className={`rounded-[28px] border bg-slate-950/72 ${activePlatformShellTheme.panelClassName} shadow-[0_25px_60px_rgba(4,8,15,0.45)]`}
                             style={{
                                 width: isTouchDevice ? 'min(100%, 960px)' : 'min(98vw, 1680px)',
                                 aspectRatio: isTouchDevice ? '4 / 3' : '16 / 10',
@@ -775,71 +799,66 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
                     </div>
                 </div>
 
-            {/* 关卡完成模态框 */}
-            {showLevelComplete && levelCompleteData && (
-                <LevelCompleteModal
-                    isOpen={showLevelComplete}
-                    success={levelCompleteData.success}
-                    levelData={levelCompleteData}
-                    onClose={() => {
-                        setShowLevelComplete(false);
-                        setLevelCompleteData(null);
-                        setShowCampaignSelector(true);
-                        setSelectedCampaign(null);
-                        setCurrentCampaignLevel(null);
-                        setCurrentLevel(null);
-                    }}
-                    onNextLevel={() => {
-                        setShowLevelComplete(false);
-                        setLevelCompleteData(null);
-                        // 进入下一关逻辑
-                    }}
-                    onRetry={() => {
-                        setShowLevelComplete(false);
-                        setLevelCompleteData(null);
-                        restartLevel();
-                    }}
-                />
-            )}
+                {showLevelComplete && levelCompleteData && (
+                    <LevelCompleteModal
+                        isOpen={showLevelComplete}
+                        success={levelCompleteData.success}
+                        levelData={levelCompleteData}
+                        onClose={() => {
+                            setShowLevelComplete(false);
+                            setLevelCompleteData(null);
+                            setShowCampaignSelector(true);
+                            setSelectedCampaign(null);
+                            setCurrentCampaignLevel(null);
+                            setCurrentLevel(null);
+                        }}
+                        onNextLevel={() => {
+                            setShowLevelComplete(false);
+                            setLevelCompleteData(null);
+                        }}
+                        onRetry={() => {
+                            setShowLevelComplete(false);
+                            setLevelCompleteData(null);
+                            restartLevel();
+                        }}
+                    />
+                )}
 
-            {/* 题目挑战模态框 */}
-            {showQuestion && currentQuestion && currentCampaignLevel && (
-                <QuestionModal
-                    isOpen={showQuestion}
-                    question={currentQuestion}
-                    onCorrect={handleQuestionCorrect}
-                    onWrong={handleQuestionWrong}
-                    onClose={() => setShowQuestion(false)}
-                    currentIndex={questionIndex}
-                    totalQuestions={currentCampaignLevel.questions.length}
-                    timeLimit={60}
-                    isFailed={questionMode === 'retry'}
-                    mode={questionMode}
-                />
-            )}
+                {showQuestion && currentQuestion && currentCampaignLevel && (
+                    <QuestionModal
+                        isOpen={showQuestion}
+                        question={currentQuestion}
+                        onCorrect={handleQuestionCorrect}
+                        onWrong={handleQuestionWrong}
+                        onClose={() => setShowQuestion(false)}
+                        currentIndex={questionIndex}
+                        totalQuestions={currentCampaignLevel.questions.length}
+                        timeLimit={60}
+                        isFailed={questionMode === 'retry'}
+                        mode={questionMode}
+                    />
+                )}
 
-            {/* 答题模态框 */}
-            {showQuiz && currentLevel && (
-                <QuizModal
-                    isOpen={showQuiz}
-                    quiz={currentLevel.quiz}
-                    onCorrect={handleQuizCorrect}
-                    onWrong={handleQuizWrong}
-                    onClose={handleQuizClose}
-                />
-            )}
+                {showQuiz && currentLevel && (
+                    <QuizModal
+                        isOpen={showQuiz}
+                        quiz={currentLevel.quiz}
+                        onCorrect={handleQuizCorrect}
+                        onWrong={handleQuizWrong}
+                        onClose={handleQuizClose}
+                    />
+                )}
 
-            {/* 死亡答题模态框 */}
-            {showReviveModal && (
-                <DeathQuizModal
-                    isOpen={showReviveModal}
-                    onSuccess={() => {
-                        console.log('[PlatformGame] 答题正确，重新开始关卡');
-                        setShowReviveModal(false);
-                        restartLevel();
-                    }}
-                />
-            )}
+                {showReviveModal && (
+                    <DeathQuizModal
+                        isOpen={showReviveModal}
+                        onSuccess={() => {
+                            console.log('[PlatformGame] revive quiz passed, restarting level');
+                            setShowReviveModal(false);
+                            restartLevel();
+                        }}
+                    />
+                )}
             </div>
         </MobileGameWrapper>
     );

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="dashStar" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff0a6"/>
+      <stop offset="45%" stop-color="#ffd35c"/>
+      <stop offset="100%" stop-color="#ff8a53"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 8l6 12 14 2-10 10 2 14-12-6-12 6 2-14-10-10 14-2z" fill="url(#dashStar)"/>
+  <path d="M11 41c7-2 12 1 15 7-7 2-12-1-15-7z" fill="#7ccf6f"/>
+  <path d="M53 23c-7 2-12-1-15-7 7-2 12 1 15 7z" fill="#7ccf6f"/>
+  <circle cx="32" cy="28" r="4" fill="#fff7d7"/>
+</svg>

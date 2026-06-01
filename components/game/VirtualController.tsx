@@ -1,6 +1,15 @@
 'use client';
 
-import React, { useCallback, useRef, useEffect } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
+import {
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  ChevronUp,
+  Sparkles,
+  Swords,
+  Wind,
+} from 'lucide-react';
 import { touchInputManager } from '@/lib/input/TouchInputManager';
 
 interface VirtualControllerProps {
@@ -8,19 +17,12 @@ interface VirtualControllerProps {
   opacity?: number;
 }
 
-/**
- * 虚拟控制器组件
- * 左侧D-Pad方向键 + 右侧动作按钮
- */
-export default function VirtualController({ 
-  visible = true, 
-  opacity = 0.6 
+export default function VirtualController({
+  visible = true,
+  opacity = 0.6,
 }: VirtualControllerProps) {
   const dpadRef = useRef<HTMLDivElement>(null);
-  
-  // 注意：不再阻止默认触控行为，允许用户缩放和滑动页面
 
-  // 方向键处理
   const handleDirectionStart = useCallback((direction: 'left' | 'right' | 'up' | 'down') => {
     touchInputManager.setDirection(direction, true);
   }, []);
@@ -29,7 +31,6 @@ export default function VirtualController({
     touchInputManager.setDirection(direction, false);
   }, []);
 
-  // 动作按钮处理
   const handleActionStart = useCallback((action: 'jump' | 'attack' | 'interact' | 'dash') => {
     touchInputManager.setAction(action, true);
   }, []);
@@ -38,7 +39,6 @@ export default function VirtualController({
     touchInputManager.setAction(action, false);
   }, []);
 
-  // 清理所有输入
   useEffect(() => {
     return () => {
       touchInputManager.reset();
@@ -56,84 +56,75 @@ export default function VirtualController({
   };
 
   return (
-    <div 
-      className="fixed inset-0 pointer-events-none z-50"
-      style={{ touchAction: 'none' }}
-    >
-      {/* 左侧 D-Pad - 放在底部黑色区域 */}
-      <div 
-        ref={dpadRef}
-        className="absolute left-4 bottom-8 pointer-events-auto"
-        style={buttonStyle}
-      >
-        <div className="relative w-36 h-36">
-          {/* 上 */}
+    <div className="pointer-events-none fixed inset-0 z-50" style={{ touchAction: 'none' }}>
+      <div ref={dpadRef} className="pointer-events-auto absolute bottom-7 left-4" style={buttonStyle}>
+        <div className="relative h-40 w-40">
+          <div className="absolute inset-4 rounded-full border border-white/10 bg-slate-950/28 backdrop-blur-md" />
           <DPadButton
             direction="up"
-            className="absolute top-0 left-1/2 -translate-x-1/2"
+            className="absolute left-1/2 top-0 -translate-x-1/2"
             onStart={() => handleDirectionStart('up')}
             onEnd={() => handleDirectionEnd('up')}
           />
-          {/* 下 */}
           <DPadButton
             direction="down"
             className="absolute bottom-0 left-1/2 -translate-x-1/2"
             onStart={() => handleDirectionStart('down')}
             onEnd={() => handleDirectionEnd('down')}
           />
-          {/* 左 */}
           <DPadButton
             direction="left"
             className="absolute left-0 top-1/2 -translate-y-1/2"
             onStart={() => handleDirectionStart('left')}
             onEnd={() => handleDirectionEnd('left')}
           />
-          {/* 右 */}
           <DPadButton
             direction="right"
             className="absolute right-0 top-1/2 -translate-y-1/2"
             onStart={() => handleDirectionStart('right')}
             onEnd={() => handleDirectionEnd('right')}
           />
-          {/* 中心装饰 */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-gray-700 rounded-full border-2 border-gray-600" />
+          <div className="absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/14 bg-slate-900/88 shadow-[inset_0_2px_10px_rgba(0,0,0,0.42)]">
+            <div className="h-5 w-5 rounded-full bg-white/16" />
+          </div>
         </div>
       </div>
 
-      {/* 右侧动作按钮 - 放在底部黑色区域 */}
-      <div 
-        className="absolute right-4 bottom-4 pointer-events-auto"
-        style={buttonStyle}
-      >
-        <div className="relative w-40 h-40">
-          {/* 跳跃按钮 - 上方 */}
+      <div className="pointer-events-auto absolute bottom-5 right-4" style={buttonStyle}>
+        <div className="relative h-44 w-44">
+          <div className="absolute inset-4 rounded-full border border-white/10 bg-slate-950/28 backdrop-blur-md" />
           <ActionButton
             label="跳"
+            subLabel="Jump"
             color="green"
-            className="absolute top-0 left-1/2 -translate-x-1/2"
+            icon={<ChevronUp className="h-5 w-5" />}
+            className="absolute left-1/2 top-0 -translate-x-1/2"
             onStart={() => handleActionStart('jump')}
             onEnd={() => handleActionEnd('jump')}
           />
-          {/* 攻击按钮 - 右侧 */}
           <ActionButton
             label="攻"
+            subLabel="Hit"
             color="red"
+            icon={<Swords className="h-4.5 w-4.5" />}
             className="absolute right-0 top-1/2 -translate-y-1/2"
             onStart={() => handleActionStart('attack')}
             onEnd={() => handleActionEnd('attack')}
           />
-          {/* 使用/技能按钮 - 左侧 */}
           <ActionButton
-            label="用"
+            label="技"
+            subLabel="Use"
             color="yellow"
+            icon={<Sparkles className="h-4.5 w-4.5" />}
             className="absolute left-0 top-1/2 -translate-y-1/2"
             onStart={() => handleActionStart('interact')}
             onEnd={() => handleActionEnd('interact')}
           />
-          {/* 冲刺按钮 - 下方 */}
           <ActionButton
             label="冲"
+            subLabel="Dash"
             color="blue"
+            icon={<Wind className="h-4.5 w-4.5" />}
             className="absolute bottom-0 left-1/2 -translate-x-1/2"
             onStart={() => handleActionStart('dash')}
             onEnd={() => handleActionEnd('dash')}
@@ -144,8 +135,6 @@ export default function VirtualController({
   );
 }
 
-
-// D-Pad方向按钮组件
 interface DPadButtonProps {
   direction: 'up' | 'down' | 'left' | 'right';
   className?: string;
@@ -156,93 +145,111 @@ interface DPadButtonProps {
 function DPadButton({ direction, className, onStart, onEnd }: DPadButtonProps) {
   const [pressed, setPressed] = React.useState(false);
 
-  const handleTouchStart = useCallback((e: React.TouchEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
+  const handleTouchStart = useCallback((event: React.TouchEvent) => {
+    event.preventDefault();
+    event.stopPropagation();
     setPressed(true);
     onStart();
   }, [onStart]);
 
-  const handleTouchEnd = useCallback((e: React.TouchEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
+  const handleTouchEnd = useCallback((event: React.TouchEvent) => {
+    event.preventDefault();
+    event.stopPropagation();
     setPressed(false);
     onEnd();
   }, [onEnd]);
 
-  const arrows: Record<string, string> = {
-    up: '▲',
-    down: '▼',
-    left: '◀',
-    right: '▶',
+  const arrows = {
+    up: <ChevronUp className="h-6 w-6" />,
+    down: <ChevronDown className="h-6 w-6" />,
+    left: <ChevronLeft className="h-6 w-6" />,
+    right: <ChevronRight className="h-6 w-6" />,
   };
 
   return (
     <button
-      className={`w-12 h-12 rounded-lg flex items-center justify-center text-white text-xl font-bold transition-all duration-75 ${className}`}
+      className={`flex h-14 w-14 items-center justify-center rounded-2xl border text-white transition-all duration-75 ${className ?? ''}`}
       style={{
-        backgroundColor: pressed ? 'rgba(100, 100, 100, 0.9)' : 'rgba(60, 60, 60, 0.8)',
-        border: '2px solid rgba(150, 150, 150, 0.5)',
-        transform: pressed ? 'scale(0.95)' : 'scale(1)',
-        boxShadow: pressed ? 'inset 0 2px 4px rgba(0,0,0,0.5)' : '0 2px 4px rgba(0,0,0,0.3)',
+        background: pressed
+          ? 'linear-gradient(180deg, rgba(31,41,55,0.98), rgba(15,23,42,0.98))'
+          : 'linear-gradient(180deg, rgba(71,85,105,0.9), rgba(30,41,59,0.92))',
+        borderColor: pressed ? 'rgba(226,232,240,0.38)' : 'rgba(226,232,240,0.24)',
+        transform: pressed ? 'scale(0.94)' : 'scale(1)',
+        boxShadow: pressed
+          ? 'inset 0 4px 10px rgba(0,0,0,0.44)'
+          : '0 10px 22px rgba(15,23,42,0.3), inset 0 1px 0 rgba(255,255,255,0.12)',
         touchAction: 'none',
       }}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
       onTouchCancel={handleTouchEnd}
-      onContextMenu={(e) => e.preventDefault()}
+      onContextMenu={(event) => event.preventDefault()}
+      aria-label={`方向键 ${direction}`}
     >
       {arrows[direction]}
     </button>
   );
 }
 
-// 动作按钮组件
 interface ActionButtonProps {
   label: string;
+  subLabel: string;
   color: 'green' | 'red' | 'blue' | 'yellow';
+  icon: React.ReactNode;
   className?: string;
   onStart: () => void;
   onEnd: () => void;
 }
 
-function ActionButton({ label, color, className, onStart, onEnd }: ActionButtonProps) {
+function ActionButton({
+  label,
+  subLabel,
+  color,
+  icon,
+  className,
+  onStart,
+  onEnd,
+}: ActionButtonProps) {
   const [pressed, setPressed] = React.useState(false);
 
-  const handleTouchStart = useCallback((e: React.TouchEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
+  const handleTouchStart = useCallback((event: React.TouchEvent) => {
+    event.preventDefault();
+    event.stopPropagation();
     setPressed(true);
     onStart();
   }, [onStart]);
 
-  const handleTouchEnd = useCallback((e: React.TouchEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
+  const handleTouchEnd = useCallback((event: React.TouchEvent) => {
+    event.preventDefault();
+    event.stopPropagation();
     setPressed(false);
     onEnd();
   }, [onEnd]);
 
-  const colors: Record<string, { bg: string; border: string; pressedBg: string }> = {
+  const colors = {
     green: {
-      bg: 'rgba(34, 197, 94, 0.85)',
-      border: 'rgba(187, 247, 208, 0.75)',
-      pressedBg: 'rgba(22, 163, 74, 0.95)',
+      bg: 'linear-gradient(180deg, rgba(52,211,153,0.92), rgba(16,185,129,0.92))',
+      pressedBg: 'linear-gradient(180deg, rgba(5,150,105,0.96), rgba(4,120,87,0.96))',
+      border: 'rgba(209,250,229,0.72)',
+      glow: 'rgba(52,211,153,0.3)',
     },
     red: {
-      bg: 'rgba(248, 113, 113, 0.82)',
-      border: 'rgba(254, 202, 202, 0.72)',
-      pressedBg: 'rgba(220, 38, 38, 0.92)',
+      bg: 'linear-gradient(180deg, rgba(251,113,133,0.92), rgba(239,68,68,0.92))',
+      pressedBg: 'linear-gradient(180deg, rgba(225,29,72,0.96), rgba(190,24,93,0.96))',
+      border: 'rgba(254,205,211,0.72)',
+      glow: 'rgba(251,113,133,0.28)',
     },
     blue: {
-      bg: 'rgba(56, 189, 248, 0.82)',
-      border: 'rgba(186, 230, 253, 0.75)',
-      pressedBg: 'rgba(14, 165, 233, 0.94)',
+      bg: 'linear-gradient(180deg, rgba(96,165,250,0.92), rgba(34,197,246,0.92))',
+      pressedBg: 'linear-gradient(180deg, rgba(37,99,235,0.96), rgba(8,145,178,0.96))',
+      border: 'rgba(191,219,254,0.72)',
+      glow: 'rgba(96,165,250,0.28)',
     },
     yellow: {
-      bg: 'rgba(250, 204, 21, 0.82)',
-      border: 'rgba(254, 240, 138, 0.76)',
-      pressedBg: 'rgba(202, 138, 4, 0.94)',
+      bg: 'linear-gradient(180deg, rgba(250,204,21,0.92), rgba(245,158,11,0.92))',
+      pressedBg: 'linear-gradient(180deg, rgba(217,119,6,0.96), rgba(180,83,9,0.96))',
+      border: 'rgba(254,240,138,0.74)',
+      glow: 'rgba(250,204,21,0.28)',
     },
   };
 
@@ -250,25 +257,27 @@ function ActionButton({ label, color, className, onStart, onEnd }: ActionButtonP
 
   return (
     <button
-      className={`w-14 h-14 rounded-full flex items-center justify-center text-white text-lg font-bold transition-all duration-75 ${className}`}
+      className={`flex h-16 w-16 flex-col items-center justify-center rounded-full border text-white transition-all duration-75 ${className ?? ''}`}
       style={{
-        backgroundColor: pressed ? colorStyle.pressedBg : colorStyle.bg,
-        border: `3px solid ${colorStyle.border}`,
+        background: pressed ? colorStyle.pressedBg : colorStyle.bg,
+        borderColor: colorStyle.border,
         transform: pressed ? 'scale(0.9)' : 'scale(1)',
-        boxShadow: pressed 
-          ? 'inset 0 2px 6px rgba(0,0,0,0.55)' 
-          : '0 6px 12px rgba(0,0,0,0.28), inset 0 -2px 5px rgba(0,0,0,0.18), 0 0 14px rgba(255,255,255,0.08)',
+        boxShadow: pressed
+          ? 'inset 0 4px 10px rgba(0,0,0,0.48)'
+          : `0 14px 24px ${colorStyle.glow}, inset 0 -3px 8px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.18)`,
         touchAction: 'none',
       }}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
       onTouchCancel={handleTouchEnd}
-      onContextMenu={(e) => e.preventDefault()}
+      onContextMenu={(event) => event.preventDefault()}
+      aria-label={`${label} ${subLabel}`}
     >
-      {label}
+      <div className="mb-0.5">{icon}</div>
+      <div className="text-[10px] font-bold leading-none">{label}</div>
+      <div className="mt-0.5 text-[8px] uppercase tracking-[0.16em] text-white/75">{subLabel}</div>
     </button>
   );
 }
 
-// 导出子组件供自定义使用
 export { DPadButton, ActionButton };

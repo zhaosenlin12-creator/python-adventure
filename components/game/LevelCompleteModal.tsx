@@ -1,291 +1,317 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { Trophy, Star, Coins, Target, Clock, X, RotateCcw } from 'lucide-react';
+import { Clock, Coins, RotateCcw, Star, Swords, Target, Trophy, X } from 'lucide-react';
 import { playSound } from '@/lib/soundEffects';
 
 interface LevelCompleteModalProps {
-    isOpen: boolean;
-    onClose: () => void;
-    onNextLevel: () => void;
-    onRetry: () => void;
-    success: boolean;
-    levelData: {
-        title: string;
-        score: number;
-        stars?: number;              // 星级评价（1-3星）
-        timeElapsed?: number;
-        objectives: string[];
-        // 详细统计
-        questionsCorrect?: number;
-        questionsTotal?: number;
-        itemsCollected?: number;
-        itemsTotal?: number;
-        hpRemaining?: number;
-        hpTotal?: number;
-        enemiesDefeated?: number;
-        enemiesTotal?: number;
-        rewards: {
-            exp: number;
-            coins: number;
-            items?: string[];
-        };
+  isOpen: boolean;
+  onClose: () => void;
+  onNextLevel: () => void;
+  onRetry: () => void;
+  success: boolean;
+  levelData: {
+    title: string;
+    score: number;
+    stars?: number;
+    timeElapsed?: number;
+    objectives: string[];
+    questionsCorrect?: number;
+    questionsTotal?: number;
+    itemsCollected?: number;
+    itemsTotal?: number;
+    hpRemaining?: number;
+    hpTotal?: number;
+    enemiesDefeated?: number;
+    enemiesTotal?: number;
+    rewards: {
+      exp: number;
+      coins: number;
+      items?: string[];
     };
+  };
 }
 
+const formatTime = (timeElapsed?: number) => {
+  if (!timeElapsed) return null;
+  const minutes = Math.floor(timeElapsed / 60);
+  const seconds = (timeElapsed % 60).toString().padStart(2, '0');
+  return `${minutes}:${seconds}`;
+};
+
 export default function LevelCompleteModal({
-    isOpen,
-    onClose,
-    onNextLevel,
-    onRetry,
-    success,
-    levelData
+  isOpen,
+  onClose,
+  onNextLevel,
+  onRetry,
+  success,
+  levelData,
 }: LevelCompleteModalProps) {
-    const [showRewards, setShowRewards] = useState(false);
+  const [showRewards, setShowRewards] = useState(false);
 
-    useEffect(() => {
-        if (isOpen) {
-            // 播放音效
-            if (success) {
-                playSound('level_complete');
-                // 延迟显示奖励动画
-                const timer = setTimeout(() => {
-                    setShowRewards(true);
-                }, 800);
-                return () => clearTimeout(timer);
-            } else {
-                playSound('level_failed');
-                setShowRewards(false);
-            }
-        } else {
-            setShowRewards(false);
-        }
-    }, [isOpen, success]);
+  useEffect(() => {
+    if (isOpen) {
+      if (success) {
+        playSound('level_complete');
+        const timer = setTimeout(() => {
+          setShowRewards(true);
+        }, 800);
+        return () => clearTimeout(timer);
+      }
 
-    if (!isOpen) return null;
+      playSound('level_failed');
+      setShowRewards(false);
+      return undefined;
+    }
 
-    return (
-        <div className="fixed inset-0 bg-gradient-to-b from-[#0a0e27]/95 via-[#1a1e3e]/95 to-[#0a0e27]/95 flex items-center justify-center z-50 p-4 animate-fadeIn backdrop-blur-sm">
-            <div className={`bg-slate-800 rounded-2xl shadow-2xl max-w-lg w-full border-2 ${success ? 'border-blue-500/60' : 'border-rose-500/60'} animate-bounce-in relative`}>
-                
-                {/* 关闭按钮 */}
-                    <button
-                    onClick={onClose}
-                    className="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors z-10"
-                    aria-label="关闭"
-                >
-                    <X className="w-6 h-6" />
-                </button>
+    setShowRewards(false);
+    return undefined;
+  }, [isOpen, success]);
 
-                <div className="p-8 text-center">
-                    {/* 状态图标 */}
-                    <div className="mb-6 flex justify-center">
-                        <div className="relative">
-                            <div className={`absolute inset-0 ${success ? 'bg-amber-300' : 'bg-slate-300'} rounded-full blur-xl opacity-40 animate-pulse`}></div>
-                            {success ? (
-                                <Trophy className="w-20 h-20 text-yellow-400 relative animate-scale-in" strokeWidth={3} />
-                            ) : (
-                                <Target className="w-20 h-20 text-slate-400 relative animate-scale-in" strokeWidth={3} />
-                            )}
-                        </div>
-                    </div>
+  if (!isOpen) return null;
 
-                    {/* 标题 */}
-                    <h2 className={`text-4xl font-bold mb-2 ${success ? 'text-amber-500' : 'text-rose-500'}`}>
-                        {success ? '关卡完成！' : '任务失败'}
-                    </h2>
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[radial-gradient(circle_at_top,#264870_0%,rgba(12,18,34,0.96)_38%,rgba(5,7,13,0.98)_100%)] p-4 backdrop-blur-md">
+      <div
+        className={`relative w-full max-w-xl overflow-hidden rounded-[32px] border bg-slate-950/82 shadow-[0_40px_120px_rgba(0,0,0,0.44)] ${
+          success ? 'border-emerald-200/18' : 'border-rose-200/18'
+        }`}
+      >
+        <div
+          className={`absolute inset-x-0 top-0 h-44 ${
+            success
+              ? 'bg-gradient-to-b from-emerald-300/24 via-cyan-300/10 to-transparent'
+              : 'bg-gradient-to-b from-rose-300/22 via-orange-300/8 to-transparent'
+          }`}
+        />
+        <button
+          onClick={onClose}
+          className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/6 text-slate-200 transition-all hover:-translate-y-0.5 hover:bg-white/12 hover:text-white"
+          aria-label="关闭结算面板"
+        >
+          <X className="h-5 w-5" />
+        </button>
 
-                    {/* 关卡名称 */}
-                    <h3 className="text-xl text-slate-300 mb-6">{levelData.title}</h3>
+        <div className="relative p-6 text-center sm:p-8">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/6 px-3 py-1 text-[11px] uppercase tracking-[0.28em] text-white/70">
+            <Swords className="h-3.5 w-3.5" />
+            <span>{success ? 'Quest Clear' : 'Try Again'}</span>
+          </div>
 
-                    {/* 星级评价 */}
-                    {success && levelData.stars && (
-                        <div className="mb-6">
-                            <div className="flex items-center justify-center gap-2 mb-2">
-                                {[1, 2, 3].map((star) => (
-                                    <Star
-                                        key={star}
-                                        className={`w-12 h-12 ${
-                                            star <= (levelData.stars || 0)
-                                                ? 'text-yellow-400 fill-yellow-400 animate-bounce'
-                                                : 'text-gray-600'
-                                        }`}
-                                        style={{ animationDelay: `${star * 0.2}s` }}
-                                    />
-                                ))}
-                            </div>
-                            <div className="text-lg text-white/80">
-                                {levelData.stars === 3 && '🎉 完美通关！'}
-                                {levelData.stars === 2 && '👍 表现优秀！'}
-                                {levelData.stars === 1 && '✓ 通关成功！'}
-                            </div>
-                        </div>
-                    )}
-
-                    {/* 分数显示 */}
-                    <div className="bg-slate-700/60 rounded-xl p-5 mb-6 border border-slate-600">
-                        <div className="flex items-center justify-center gap-3 mb-2">
-                            <Trophy className="w-7 h-7 text-amber-500 animate-pulse" />
-                            <span className="text-3xl font-bold text-white">{levelData.score}</span>
-                            <span className="text-slate-400 text-lg">分</span>
-                        </div>
-                        {levelData.timeElapsed && (
-                            <div className="flex items-center justify-center gap-2 text-sm text-slate-400">
-                                <Clock className="w-4 h-4" />
-                                <span>用时 {Math.floor(levelData.timeElapsed / 60)}:{(levelData.timeElapsed % 60).toString().padStart(2, '0')}</span>
-                            </div>
-                        )}
-                    </div>
-
-                    {/* 详细统计 */}
-                    {success && (
-                        <div className="bg-slate-700/60 rounded-xl p-4 mb-6 border border-slate-600">
-                            <h4 className="text-slate-300 font-semibold mb-3 text-sm">关卡统计</h4>
-                            <div className="grid grid-cols-2 gap-3 text-sm">
-                                {levelData.questionsCorrect !== undefined && levelData.questionsTotal !== undefined && (
-                                    <div className="flex items-center justify-between bg-slate-600/40 rounded-lg p-2">
-                                        <span className="text-slate-400">答题正确率</span>
-                                        <span className={`font-bold ${
-                                            levelData.questionsCorrect === levelData.questionsTotal
-                                                ? 'text-green-400'
-                                                : 'text-yellow-400'
-                                        }`}>
-                                            {levelData.questionsCorrect}/{levelData.questionsTotal}
-                                        </span>
-                                    </div>
-                                )}
-                                {levelData.itemsCollected !== undefined && levelData.itemsTotal !== undefined && (
-                                    <div className="flex items-center justify-between bg-black/20 rounded p-2">
-                                        <span className="text-white/60">物品收集</span>
-                                        <span className={`font-bold ${
-                                            levelData.itemsCollected === levelData.itemsTotal
-                                                ? 'text-green-400'
-                                                : 'text-yellow-400'
-                                        }`}>
-                                            {levelData.itemsCollected}/{levelData.itemsTotal}
-                                        </span>
-                                    </div>
-                                )}
-                                {levelData.hpRemaining !== undefined && levelData.hpTotal !== undefined && (
-                                    <div className="flex items-center justify-between bg-black/20 rounded p-2">
-                                        <span className="text-white/60">剩余HP</span>
-                                        <span className={`font-bold ${
-                                            levelData.hpRemaining === levelData.hpTotal
-                                                ? 'text-green-400'
-                                                : levelData.hpRemaining > levelData.hpTotal * 0.5
-                                                ? 'text-yellow-400'
-                                                : 'text-red-400'
-                                        }`}>
-                                            {levelData.hpRemaining}/{levelData.hpTotal}
-                                        </span>
-                                    </div>
-                                )}
-                                {levelData.enemiesDefeated !== undefined && levelData.enemiesTotal !== undefined && (
-                                    <div className="flex items-center justify-between bg-black/20 rounded p-2">
-                                        <span className="text-white/60">击败敌人</span>
-                                        <span className={`font-bold ${
-                                            levelData.enemiesDefeated === levelData.enemiesTotal
-                                                ? 'text-green-400'
-                                                : 'text-yellow-400'
-                                        }`}>
-                                            {levelData.enemiesDefeated}/{levelData.enemiesTotal}
-                                        </span>
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-                    )}
-
-                    {/* 目标完成情况 */}
-                    {success && levelData.objectives.length > 0 && (
-                        <div className="bg-black/30 rounded-lg p-4 mb-6 border border-green-500/20">
-                            <h4 className="text-green-400 font-semibold mb-3 flex items-center justify-center gap-2">
-                                <span className="text-xl">✓</span>
-                                <span>目标完成</span>
-                            </h4>
-                            <div className="space-y-2">
-                                {levelData.objectives.map((objective, index) => (
-                                    <div key={index} className="text-sm text-white/80 flex items-center gap-2">
-                                        <span className="text-green-400">▸</span>
-                                        <span>{objective}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    )}
-
-                    {/* 奖励显示 */}
-                    {success && showRewards && (
-                        <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-lg p-4 mb-6 border border-yellow-400/30">
-                            <h4 className="text-yellow-300 font-bold mb-3 flex items-center justify-center gap-2">
-                                <Trophy className="w-5 h-5" />
-                                获得奖励
-                            </h4>
-                            <div className="grid grid-cols-2 gap-4">
-                                <div className="flex items-center justify-center gap-2">
-                                    <Star className="w-5 h-5 text-blue-300" />
-                                    <span className="text-white">+{levelData.rewards.exp} 经验</span>
-                                </div>
-                                <div className="flex items-center justify-center gap-2">
-                                    <Coins className="w-5 h-5 text-yellow-300" />
-                                    <span className="text-white">+{levelData.rewards.coins} 金币</span>
-                                </div>
-                            </div>
-                            {levelData.rewards.items && levelData.rewards.items.length > 0 && (
-                                <div className="mt-3 pt-3 border-t border-white/20">
-                                    <div className="text-sm text-white/80">
-                                        获得物品: {levelData.rewards.items.join(', ')}
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-                    )}
-
-                    {/* 失败提示 */}
-                    {!success && (
-                        <div className="bg-red-900/20 rounded-lg p-4 mb-6 border border-red-500/30">
-                            <p className="text-white/80 text-sm">
-                                💪 不要气馁，再试一次！
-                            </p>
-                        </div>
-                    )}
-
-                    {/* 按钮 */}
-                    <div className="flex gap-3">
-                        {success ? (
-                            <>
-                                <button
-                                    onClick={onNextLevel}
-                                    className="flex-1 py-3 bg-yellow-500 hover:bg-yellow-400 text-black font-bold rounded-lg transition-all transform hover:scale-105 shadow-lg"
-                                >
-                                    下一关 →
-                                </button>
-                                <button
-                                    onClick={onClose}
-                                    className="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-bold rounded-lg transition-colors"
-                                >
-                                    返回
-                                </button>
-                            </>
-                        ) : (
-                            <>
-                                <button
-                                    onClick={onRetry}
-                                    className="flex-1 py-3 bg-yellow-500 hover:bg-yellow-400 text-black font-bold rounded-lg transition-all transform hover:scale-105 shadow-lg"
-                                >
-                                    <RotateCcw className="w-5 h-5 inline mr-1" />重试
-                                </button>
-                                <button
-                                    onClick={onClose}
-                                    className="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-bold rounded-lg transition-colors"
-                                >
-                                    退出
-                                </button>
-                            </>
-                        )}
-                    </div>
-                </div>
+          <div className="mb-6 flex justify-center">
+            <div className="relative flex h-24 w-24 items-center justify-center rounded-full border border-white/10 bg-slate-900/76 shadow-[0_24px_46px_rgba(0,0,0,0.26)]">
+              <div
+                className={`absolute inset-0 rounded-full blur-2xl ${
+                  success ? 'bg-emerald-300/26' : 'bg-rose-300/22'
+                }`}
+              />
+              {success ? (
+                <Trophy className="relative h-12 w-12 text-yellow-300" strokeWidth={2.6} />
+              ) : (
+                <Target className="relative h-12 w-12 text-rose-200" strokeWidth={2.6} />
+              )}
             </div>
+          </div>
+
+          <h2 className={`text-3xl font-bold sm:text-4xl ${success ? 'text-emerald-100' : 'text-rose-100'}`}>
+            {success ? '关卡完成' : '任务失败'}
+          </h2>
+          <p className="mt-2 text-lg text-slate-200/82">{levelData.title}</p>
+
+          {success && levelData.stars ? (
+            <div className="mt-5">
+              <div className="flex items-center justify-center gap-2">
+                {[1, 2, 3].map((star) => (
+                  <Star
+                    key={star}
+                    className={`h-10 w-10 ${
+                      star <= (levelData.stars || 0)
+                        ? 'fill-yellow-300 text-yellow-300'
+                        : 'text-slate-600'
+                    }`}
+                  />
+                ))}
+              </div>
+              <p className="mt-2 text-sm text-slate-200/78">
+                {levelData.stars === 3 && '完美通关，动作和答题都很稳。'}
+                {levelData.stars === 2 && '表现不错，还能继续压缩失误。'}
+                {levelData.stars === 1 && '已经过关，下一次可以冲更高评价。'}
+              </p>
+            </div>
+          ) : null}
+
+          <div className="mt-6 rounded-[26px] border border-white/10 bg-slate-900/78 p-5">
+            <div className="flex items-center justify-center gap-3">
+              <Trophy className="h-6 w-6 text-yellow-300" />
+              <span className="text-4xl font-bold text-white">{levelData.score}</span>
+              <span className="text-slate-400">分</span>
+            </div>
+            {formatTime(levelData.timeElapsed) && (
+              <div className="mt-3 flex items-center justify-center gap-2 text-sm text-slate-300/80">
+                <Clock className="h-4 w-4" />
+                <span>用时 {formatTime(levelData.timeElapsed)}</span>
+              </div>
+            )}
+          </div>
+
+          {success && (
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              {levelData.questionsCorrect !== undefined && levelData.questionsTotal !== undefined && (
+                <StatCard
+                  label="答题进度"
+                  value={`${levelData.questionsCorrect}/${levelData.questionsTotal}`}
+                  tone={
+                    levelData.questionsCorrect === levelData.questionsTotal ? 'good' : 'warn'
+                  }
+                />
+              )}
+              {levelData.itemsCollected !== undefined && levelData.itemsTotal !== undefined && (
+                <StatCard
+                  label="收集物"
+                  value={`${levelData.itemsCollected}/${levelData.itemsTotal}`}
+                  tone={levelData.itemsCollected === levelData.itemsTotal ? 'good' : 'warn'}
+                />
+              )}
+              {levelData.hpRemaining !== undefined && levelData.hpTotal !== undefined && (
+                <StatCard
+                  label="剩余生命"
+                  value={`${levelData.hpRemaining}/${levelData.hpTotal}`}
+                  tone={
+                    levelData.hpRemaining === levelData.hpTotal
+                      ? 'good'
+                      : levelData.hpRemaining > levelData.hpTotal * 0.5
+                        ? 'warn'
+                        : 'danger'
+                  }
+                />
+              )}
+              {levelData.enemiesDefeated !== undefined && levelData.enemiesTotal !== undefined && (
+                <StatCard
+                  label="击败敌人"
+                  value={`${levelData.enemiesDefeated}/${levelData.enemiesTotal}`}
+                  tone={
+                    levelData.enemiesDefeated === levelData.enemiesTotal ? 'good' : 'warn'
+                  }
+                />
+              )}
+            </div>
+          )}
+
+          {success && levelData.objectives.length > 0 && (
+            <div className="mt-5 rounded-[24px] border border-emerald-200/14 bg-emerald-300/8 p-4 text-left">
+              <div className="mb-3 flex items-center justify-center gap-2 text-sm font-semibold text-emerald-100">
+                <CheckMark />
+                <span>目标完成</span>
+              </div>
+              <div className="space-y-2">
+                {levelData.objectives.map((objective, index) => (
+                  <div key={index} className="flex items-start gap-2 text-sm text-slate-100/84">
+                    <span className="mt-0.5 text-emerald-200">•</span>
+                    <span>{objective}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {success && showRewards && (
+            <div className="mt-5 rounded-[24px] border border-yellow-200/14 bg-gradient-to-r from-yellow-300/12 to-orange-300/10 p-5">
+              <div className="mb-4 flex items-center justify-center gap-2 text-sm font-semibold text-yellow-100">
+                <Trophy className="h-4 w-4" />
+                获得奖励
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <div className="flex items-center justify-center gap-2 rounded-2xl border border-white/8 bg-black/12 px-4 py-3 text-white">
+                  <Star className="h-5 w-5 text-sky-200" />
+                  <span>+{levelData.rewards.exp} 经验</span>
+                </div>
+                <div className="flex items-center justify-center gap-2 rounded-2xl border border-white/8 bg-black/12 px-4 py-3 text-white">
+                  <Coins className="h-5 w-5 text-yellow-200" />
+                  <span>+{levelData.rewards.coins} 金币</span>
+                </div>
+              </div>
+              {levelData.rewards.items && levelData.rewards.items.length > 0 && (
+                <div className="mt-4 rounded-2xl border border-white/8 bg-black/12 px-4 py-3 text-sm text-slate-100/84">
+                  获得物品：{levelData.rewards.items.join(', ')}
+                </div>
+              )}
+            </div>
+          )}
+
+          {!success && (
+            <div className="mt-5 rounded-[24px] border border-rose-200/14 bg-rose-300/8 px-4 py-4 text-sm text-rose-50/90">
+              这次没有通过，但关卡逻辑和题目不会变。调整一下节奏，再试一轮就行。
+            </div>
+          )}
+
+          <div className="mt-6 flex gap-3">
+            {success ? (
+              <>
+                <button
+                  onClick={onNextLevel}
+                  className="flex-1 rounded-2xl border border-emerald-200/18 bg-gradient-to-r from-emerald-300 to-cyan-300 px-5 py-3 font-bold text-slate-950 transition-all hover:-translate-y-0.5 hover:shadow-[0_18px_36px_rgba(52,211,153,0.24)]"
+                >
+                  下一关
+                </button>
+                <button
+                  onClick={onClose}
+                  className="rounded-2xl border border-white/10 bg-white/6 px-5 py-3 font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-white/12"
+                >
+                  返回
+                </button>
+              </>
+            ) : (
+              <>
+                <button
+                  onClick={onRetry}
+                  className="flex-1 rounded-2xl border border-amber-200/18 bg-gradient-to-r from-amber-300 to-orange-300 px-5 py-3 font-bold text-slate-950 transition-all hover:-translate-y-0.5 hover:shadow-[0_18px_36px_rgba(251,191,36,0.24)]"
+                >
+                  <RotateCcw className="mr-2 inline h-4.5 w-4.5" />
+                  重试
+                </button>
+                <button
+                  onClick={onClose}
+                  className="rounded-2xl border border-white/10 bg-white/6 px-5 py-3 font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-white/12"
+                >
+                  退出
+                </button>
+              </>
+            )}
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
+}
+
+function CheckMark() {
+  return (
+    <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-300/18 text-xs text-emerald-100">
+      ✓
+    </div>
+  );
+}
+
+function StatCard({
+  label,
+  value,
+  tone,
+}: {
+  label: string;
+  value: string;
+  tone: 'good' | 'warn' | 'danger';
+}) {
+  const toneClass =
+    tone === 'good'
+      ? 'border-emerald-200/12 bg-emerald-300/8 text-emerald-100'
+      : tone === 'warn'
+        ? 'border-amber-200/12 bg-amber-300/8 text-amber-100'
+        : 'border-rose-200/12 bg-rose-300/8 text-rose-100';
+
+  return (
+    <div className={`rounded-[22px] border px-4 py-3 text-left ${toneClass}`}>
+      <div className="text-xs uppercase tracking-[0.2em] text-white/58">{label}</div>
+      <div className="mt-1 text-lg font-bold">{value}</div>
+    </div>
+  );
 }

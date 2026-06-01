@@ -1,6 +1,16 @@
 "use client";
 
-import React, { useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
+import {
+  CheckCircle2,
+  ChevronLeft,
+  ChevronRight,
+  Lock,
+  MapPin,
+  Sparkles,
+  Swords,
+  Trophy,
+} from 'lucide-react';
 import { Campaign, CampaignLevel, getAllCampaigns } from '@/lib/campaigns';
 import { formatSkillRewardText } from '@/lib/skills';
 import { useGameStore } from '@/store/gameStore';
@@ -11,7 +21,6 @@ import { resolveCompatibleCampaignProgress } from '@/lib/campaignProgress';
 
 type CampaignIconSize = 'card' | 'hero';
 
-// 音效
 const playSound = (soundPath: string, volume = 0.5) => {
   try {
     const audio = new Audio(soundPath);
@@ -29,43 +38,99 @@ const getRewardSkillText = (rewards: CampaignLevel['rewards']) => {
   return rewardSkills.length > 0 ? formatSkillRewardText(rewardSkills) : '';
 };
 
+const CAMPAIGN_ACCENTS: Record<
+  string,
+  {
+    shell: string;
+    glow: string;
+    chip: string;
+  }
+> = {
+  campaign_11: {
+    shell: 'from-stone-500/28 via-orange-400/16 to-red-400/12',
+    glow: 'shadow-[0_26px_60px_rgba(190,110,72,0.20)]',
+    chip: 'bg-orange-400/16 text-orange-100 border-orange-200/18',
+  },
+  campaign_12: {
+    shell: 'from-emerald-400/28 via-cyan-300/14 to-sky-400/12',
+    glow: 'shadow-[0_26px_60px_rgba(72,190,167,0.22)]',
+    chip: 'bg-emerald-400/16 text-emerald-50 border-emerald-200/18',
+  },
+  campaign_13: {
+    shell: 'from-violet-400/28 via-fuchsia-300/16 to-sky-300/10',
+    glow: 'shadow-[0_26px_60px_rgba(144,110,242,0.22)]',
+    chip: 'bg-violet-400/16 text-violet-50 border-violet-200/18',
+  },
+  campaign_14: {
+    shell: 'from-amber-300/30 via-orange-300/18 to-emerald-300/12',
+    glow: 'shadow-[0_26px_60px_rgba(236,168,78,0.22)]',
+    chip: 'bg-amber-400/16 text-amber-50 border-amber-200/18',
+  },
+  campaign_15: {
+    shell: 'from-amber-400/26 via-stone-300/16 to-sky-200/10',
+    glow: 'shadow-[0_26px_60px_rgba(194,154,88,0.22)]',
+    chip: 'bg-stone-200/14 text-stone-50 border-stone-100/16',
+  },
+  campaign_16: {
+    shell: 'from-cyan-300/24 via-sky-200/16 to-slate-300/10',
+    glow: 'shadow-[0_26px_60px_rgba(105,181,209,0.22)]',
+    chip: 'bg-cyan-300/16 text-cyan-50 border-cyan-100/18',
+  },
+};
+
+const getCampaignAccent = (campaignId: string) =>
+  CAMPAIGN_ACCENTS[campaignId] ?? {
+    shell: 'from-slate-400/24 via-slate-300/14 to-white/6',
+    glow: 'shadow-[0_26px_60px_rgba(148,163,184,0.18)]',
+    chip: 'bg-slate-300/14 text-slate-50 border-slate-100/14',
+  };
+
+const getCampaignPreviewText = (campaignId: string) => {
+  switch (campaignId) {
+    case 'campaign_12':
+      return '瀑布山谷、蘑菇平台和轻快跳跃，先做成第一套样板场景。';
+    case 'campaign_13':
+      return '镜像机关和反向路径更强，适合做出层次丰富的像素冒险感。';
+    case 'campaign_14':
+      return '节拍机关和风元素适合做更鲜明的动作反馈与场景节奏。';
+    case 'campaign_15':
+      return '工坊区可以承接机械平台、齿轮、升降台和机关门。';
+    case 'campaign_16':
+      return '水坝和工业设施适合做终局关卡的压迫感与视觉纵深。';
+    default:
+      return '选择一张战役地图，进入更像冒险岛风格的平台挑战。';
+  }
+};
+
+const getLocationEmoji = () => '🗺️';
+
 interface CampaignSelectorProps {
   onSelectCampaign: (campaign: Campaign, levelIndex?: number, ageGroup?: AgeGroup) => void;
   onClose: () => void;
 }
 
 export default function CampaignSelector({ onSelectCampaign, onClose }: CampaignSelectorProps) {
-  const { 
-    completedCampaigns, 
-    completedCampaignLevels, 
-    selectedAgeGroup, 
+  const {
+    completedCampaigns,
+    completedCampaignLevels,
+    selectedAgeGroup,
     setSelectedAgeGroup,
-    ageGroupCampaignProgress 
+    ageGroupCampaignProgress,
   } = useGameStore();
   const [selectedCampaign, setSelectedCampaign] = useState<Campaign | null>(null);
-  // 🔥 只有在没有选择年龄段时才显示年龄选择器
-  // 使用 useRef 来追踪是否是首次进入（从大厅进入）
-  const [hasSelectedAgeThisSession, setHasSelectedAgeThisSession] = useState(false);
-  // 如果已经选择过年龄段（本次会话），则不显示选择器
   const [showAgeSelector, setShowAgeSelector] = useState(!selectedAgeGroup);
-  // 当前选择的年龄段（本地状态，用于选择后立即显示）
   const [currentAgeGroup, setCurrentAgeGroup] = useState<AgeGroup | null>(selectedAgeGroup);
-  
-  // 🔥 确保 currentAgeGroup 在 selectedAgeGroup 变化时同步更新
-  // 这样当用户完成战役返回时，能正确获取年龄段
-  React.useEffect(() => {
+
+  useEffect(() => {
     if (selectedAgeGroup && !currentAgeGroup) {
       setCurrentAgeGroup(selectedAgeGroup);
     }
   }, [selectedAgeGroup, currentAgeGroup]);
-  
+
   const allCampaigns = getAllCampaigns();
-  
-  // 🔥 使用年龄段独立进度
   const activeAgeGroup = currentAgeGroup || selectedAgeGroup;
   const ageProgress = activeAgeGroup ? ageGroupCampaignProgress[activeAgeGroup] : null;
-  
-  // 获取当前年龄段已完成的战役（优先用新的年龄段进度，兼容旧进度）
+
   const {
     completedCampaignIds: ageGroupCompletedCampaigns,
     completedLevelIds: ageGroupCompletedLevels,
@@ -75,67 +140,42 @@ export default function CampaignSelector({ onSelectCampaign, onClose }: Campaign
     completedCampaigns,
     completedCampaignLevels,
   });
-  
-  // 获取当前年龄段已完成的关卡
-  
-  // 处理年龄段选择
+
   const handleAgeGroupSelect = (ageGroup: AgeGroup) => {
     setCurrentAgeGroup(ageGroup);
     setSelectedAgeGroup(ageGroup);
     setShowAgeSelector(false);
-    setHasSelectedAgeThisSession(true);
     playSound('/sounds/button_click.wav', 0.4);
   };
 
-  // 如果需要选择年龄段
   if (showAgeSelector) {
     return (
-      <div className="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden" style={{ touchAction: 'pan-y', WebkitOverflowScrolling: 'touch' }}>
-        <AgeGroupSelector 
-          onSelect={handleAgeGroupSelect}
-          onBack={onClose}
-        />
+      <div
+        className="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden"
+        style={{ touchAction: 'pan-y', WebkitOverflowScrolling: 'touch' }}
+      >
+        <AgeGroupSelector onSelect={handleAgeGroupSelect} onBack={onClose} />
       </div>
     );
   }
 
-  const getLocationEmoji = (location: string) => {
-    const emojiMap: { [key: string]: string } = {
-      '古老背街道': '🏘️',
-      '长江中学': '🏫',
-      '实验小学': '🎓',
-      '十八中': '📚',
-      '六泉湖广场': '🏞️',
-      '乐奇享': '🎮',
-      '盛世天下': '🏢',
-      '猇亭古战场': '⚔️',
-      '体育中心': '🏟️',
-      '长江大桥': '🌉',
-      '高速收费站': '🛣️',
-      '宜昌东站': '🚄',
-      '猇亭工业园': '🏭',
-      '宜昌高新区': '🔬',
-      '兴发集团': '🏭',
-      '幻门试炼场': '🌀',
-      '坠门训练塔': '🧱',
-      '镜门回环馆': '🪞',
-      '节拍门阵馆': '🎼',
-      '单门机关工坊': '🛠️',
-      '终门总测场': '🚪'
-    };
-    return emojiMap[location] || '📍';
-  };
-
   const renderCampaignLocationIcon = (campaign: Campaign, size: CampaignIconSize = 'card') => {
     const iconSize = size === 'hero' ? 116 : 72;
     const stroke = size === 'hero' ? 3.5 : 3;
-    const containerClass = size === 'hero'
-      ? 'mx-auto sm:mx-0 flex h-28 w-28 items-center justify-center rounded-[30px] border border-white/10 bg-slate-950/28 shadow-[0_18px_40px_rgba(15,23,42,0.26),inset_0_1px_0_rgba(255,255,255,0.14)]'
-      : 'mx-auto flex h-20 w-20 items-center justify-center rounded-[24px] border border-white/10 bg-slate-950/28 shadow-[0_12px_26px_rgba(15,23,42,0.22),inset_0_1px_0_rgba(255,255,255,0.12)]';
+    const containerClass =
+      size === 'hero'
+        ? 'mx-auto sm:mx-0 flex h-28 w-28 items-center justify-center rounded-[30px] border border-white/10 bg-slate-950/28 shadow-[0_18px_40px_rgba(15,23,42,0.26),inset_0_1px_0_rgba(255,255,255,0.14)]'
+        : 'mx-auto flex h-20 w-20 items-center justify-center rounded-[24px] border border-white/10 bg-slate-950/28 shadow-[0_12px_26px_rgba(15,23,42,0.22),inset_0_1px_0_rgba(255,255,255,0.12)]';
 
     const renderDoorGlyph = (accent: string, fill: string) => (
       <svg viewBox="0 0 96 96" width={iconSize} height={iconSize} aria-hidden="true">
-        <path d="M48 8L71 22V54C71 70 61 82 48 88C35 82 25 70 25 54V22L48 8Z" fill={fill} stroke="#101828" strokeWidth={stroke} strokeLinejoin="round" />
+        <path
+          d="M48 8L71 22V54C71 70 61 82 48 88C35 82 25 70 25 54V22L48 8Z"
+          fill={fill}
+          stroke="#101828"
+          strokeWidth={stroke}
+          strokeLinejoin="round"
+        />
         <path d="M48 18V78" stroke={accent} strokeWidth={stroke} strokeLinecap="round" />
         <circle cx="48" cy="18" r="12" fill={accent} stroke="#101828" strokeWidth={stroke} />
         <path d="M39 56C43 51 53 51 57 56" stroke={accent} strokeWidth={stroke - 0.8} strokeLinecap="round" />
@@ -197,7 +237,7 @@ export default function CampaignSelector({ onSelectCampaign, onClose }: Campaign
 
     const fallback = (
       <span className={size === 'hero' ? 'text-6xl sm:text-7xl' : 'text-4xl sm:text-5xl'}>
-        {getLocationEmoji(campaign.location)}
+        {getLocationEmoji()}
       </span>
     );
 
@@ -228,39 +268,15 @@ export default function CampaignSelector({ onSelectCampaign, onClose }: Campaign
     return <div className={containerClass}>{iconNode}</div>;
   };
 
-  const getThemeColor = (theme: string) => {
-    const colorMap: { [key: string]: string } = {
-      '历史文化': 'from-amber-600 to-orange-700',
-      '校园学习': 'from-blue-600 to-indigo-700',
-      '科学探索': 'from-green-600 to-teal-700',
-      '现代科技': 'from-purple-600 to-pink-700',
-      '自然环境': 'from-emerald-600 to-green-700',
-      '娱乐休闲': 'from-pink-600 to-rose-700',
-      '商业中心': 'from-gray-600 to-slate-700',
-      '古代战争': 'from-red-600 to-crimson-700',
-      '体育运动': 'from-orange-600 to-yellow-700',
-      '交通枢纽': 'from-cyan-600 to-blue-700',
-      '逆向机关': 'from-violet-600 to-fuchsia-700',
-      '坍塌机关': 'from-stone-600 to-orange-700',
-      '传送镜像': 'from-sky-600 to-indigo-700',
-      '安全窗节奏': 'from-emerald-600 to-cyan-700',
-      '多室试炼': 'from-amber-600 to-red-700',
-      '终极混合': 'from-rose-600 to-orange-700'
-    };
-    return colorMap[theme] || 'from-gray-600 to-gray-700';
-  };
-
   const isCampaignUnlocked = (campaign: Campaign) => {
     if (!campaign.unlockRequirement) return true;
     return ageGroupCompletedCampaigns.includes(campaign.unlockRequirement);
   };
 
-  const isCampaignCompleted = (campaignId: string) => {
-    // 🔥 使用年龄段独立进度
-    return ageGroupCompletedCampaigns.includes(campaignId);
-  };
+  const isCampaignCompleted = (campaignId: string) => ageGroupCompletedCampaigns.includes(campaignId);
 
-  // 判断关卡是否解锁
+  const isLevelCompleted = (levelId: string): boolean => ageGroupCompletedLevels.includes(levelId);
+
   const isLevelUnlocked = (campaign: Campaign, levelIndex: number): boolean => {
     if (!isCampaignUnlocked(campaign)) return false;
     const currentLevel = campaign.levels[levelIndex];
@@ -273,62 +289,68 @@ export default function CampaignSelector({ onSelectCampaign, onClose }: Campaign
     return Boolean(previousLevel && isLevelCompleted(previousLevel.id));
   };
 
-  // 判断关卡是否完成
-  const isLevelCompleted = (levelId: string): boolean => {
-    // 🔥 使用年龄段独立进度
-    return ageGroupCompletedLevels.includes(levelId);
+  const getLevelStatusText = (campaign: Campaign, levelIndex: number): 'done' | 'ready' | 'locked' => {
+    const level = campaign.levels[levelIndex];
+    if (isLevelCompleted(level.id)) return 'done';
+    if (isLevelUnlocked(campaign, levelIndex)) return 'ready';
+    return 'locked';
   };
 
-  // 获取关卡状态图标
-  const getLevelStatusIcon = (campaign: Campaign, levelIndex: number): string => {
-    const level = campaign.levels[levelIndex];
-    if (isLevelCompleted(level.id)) return '✅';
-    if (isLevelUnlocked(campaign, levelIndex)) return '🔓';
-    return '🔒';
-  };
+  const totalCompletedCampaigns = allCampaigns.filter((campaign) => isCampaignCompleted(campaign.id)).length;
+  const totalCompletedLevels = ageGroupCompletedLevels.length;
 
   return (
-    <div className="fixed inset-0 bg-gradient-to-b from-[#0a0e27] via-[#1a1e3e] to-[#0a0e27] flex items-center justify-center z-50 p-2 sm:p-4">
-      <div className="bg-slate-800 backdrop-blur-md rounded-2xl p-3 sm:p-6 max-w-6xl w-full mx-2 sm:mx-4 border-2 border-slate-700 shadow-2xl max-h-[95vh] sm:max-h-[90vh] overflow-y-auto">
-        {/* 头部 - 移动端适配 */}
-        <div className="flex items-start sm:items-center justify-between mb-4 sm:mb-8 gap-2">
-          <div className="flex-1 min-w-0">
-            <h1 className="text-xl sm:text-4xl font-bold text-blue-400 mb-1 sm:mb-2">🗺️ 宜昌猇亭战役地图</h1>
-            <div className="flex items-center gap-2 flex-wrap">
-              <p className="text-slate-400 text-xs sm:text-lg">选择你的冒险之旅</p>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[radial-gradient(circle_at_top,#20507a_0%,#121a33_36%,#080d17_100%)] p-2 sm:p-4">
+      <div className="max-h-[95vh] w-full max-w-6xl overflow-y-auto rounded-[32px] border border-white/10 bg-slate-950/72 p-3 shadow-[0_28px_80px_rgba(0,0,0,0.46)] backdrop-blur-2xl sm:mx-4 sm:max-h-[92vh] sm:p-6">
+        <div className="mb-6 flex items-start justify-between gap-3">
+          <div className="min-w-0 flex-1">
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-sky-200/14 bg-sky-300/10 px-3 py-1 text-[11px] uppercase tracking-[0.28em] text-sky-100/70">
+              <Sparkles className="h-3.5 w-3.5" />
+              <span>Campaign Adventure</span>
+            </div>
+            <h1 className="text-2xl font-bold text-white sm:text-4xl">宜昌猇亭冒险战役</h1>
+            <div className="mt-2 flex flex-wrap items-center gap-2 text-xs sm:text-sm">
+              <span className="rounded-full border border-emerald-200/16 bg-emerald-300/10 px-3 py-1 text-emerald-100">
+                已完成 {totalCompletedCampaigns}/{allCampaigns.length} 张战役地图
+              </span>
+              <span className="rounded-full border border-slate-200/12 bg-white/6 px-3 py-1 text-slate-200">
+                已解锁关卡 {totalCompletedLevels}
+              </span>
               {selectedAgeGroup && (
                 <button
                   onClick={() => setShowAgeSelector(true)}
-                  className="px-3 py-2 min-h-[44px] bg-slate-700 text-blue-400 text-xs sm:text-sm rounded-full hover:bg-slate-600 transition-all flex items-center justify-center border border-slate-600"
+                  className="rounded-full border border-sky-200/16 bg-sky-400/12 px-3 py-1 text-sky-100 transition-colors hover:bg-sky-400/20"
                 >
-                  {AGE_GROUP_INFO[selectedAgeGroup].name} ▼
+                  {AGE_GROUP_INFO[selectedAgeGroup].name}
                 </button>
               )}
             </div>
           </div>
           <button
             onClick={onClose}
-            className="text-slate-400 hover:text-white active:text-slate-300 text-2xl sm:text-3xl font-bold p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
+            className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/6 text-2xl text-white/75 transition-all hover:-translate-y-0.5 hover:bg-white/12 hover:text-white"
+            aria-label="关闭战役选择"
           >
             ×
           </button>
         </div>
 
         {!selectedCampaign ? (
-          /* 战役网格 - 移动端滑动卡片 */
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6">
             {allCampaigns.map((campaign, index) => {
+              const accent = getCampaignAccent(campaign.id);
               const isUnlocked = isCampaignUnlocked(campaign);
               const isCompleted = isCampaignCompleted(campaign.id);
-              
+              const completedLevelCount = campaign.levels.filter((level) => isLevelCompleted(level.id)).length;
+
               return (
                 <div
                   key={campaign.id}
                   data-campaign-id={campaign.id}
-                  className={`relative rounded-2xl p-4 sm:p-6 border-2 transition-all cursor-pointer ${
+                  className={`group relative overflow-hidden rounded-[28px] border p-5 transition-all sm:p-6 ${
                     isUnlocked
-                      ? 'border-slate-600 hover:border-blue-500 active:border-blue-400 sm:hover:scale-105 active:scale-95 bg-slate-700/80 shadow-lg'
-                      : 'border-slate-700 opacity-50 cursor-not-allowed bg-slate-800/50'
+                      ? `cursor-pointer border-white/10 bg-slate-900/78 hover:-translate-y-1 hover:border-sky-200/26 ${accent.glow}`
+                      : 'cursor-not-allowed border-white/8 bg-slate-950/64 opacity-60'
                   }`}
                   onClick={() => {
                     if (isUnlocked) {
@@ -338,191 +360,241 @@ export default function CampaignSelector({ onSelectCampaign, onClose }: Campaign
                   }}
                   onMouseEnter={() => isUnlocked && playSound('/sounds/button_hover.wav', 0.2)}
                 >
-                  {/* 完成状态 */}
-                  {isCompleted && (
-                    <div className="absolute top-3 right-3 text-2xl">
-                      ✅
+                  <div className={`absolute inset-x-0 top-0 h-32 bg-gradient-to-br ${accent.shell} opacity-90`} />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.14),transparent_50%)]" />
+
+                  <div className="relative">
+                    <div className="mb-4 flex items-start justify-between">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white/12 bg-black/28 text-sm font-bold text-white">
+                        {index + 1}
+                      </div>
+                      <div className="flex items-center gap-2">
+                        {isCompleted && (
+                          <span className="inline-flex items-center gap-1 rounded-full border border-emerald-200/20 bg-emerald-300/14 px-3 py-1 text-xs font-semibold text-emerald-100">
+                            <CheckCircle2 className="h-3.5 w-3.5" />
+                            已通关
+                          </span>
+                        )}
+                        {!isUnlocked && (
+                          <span className="inline-flex items-center gap-1 rounded-full border border-amber-200/18 bg-amber-300/14 px-3 py-1 text-xs font-semibold text-amber-50">
+                            <Lock className="h-3.5 w-3.5" />
+                            未解锁
+                          </span>
+                        )}
+                      </div>
                     </div>
-                  )}
-                  
-                  {/* 锁定状态 */}
-                  {!isUnlocked && (
-                    <div className="absolute top-3 right-3 text-2xl">
-                      🔒
+
+                    <div className="mb-4 text-center">
+                      {renderCampaignLocationIcon(campaign, 'card')}
                     </div>
-                  )}
 
-                  {/* 战役编号 */}
-                  <div className="absolute top-3 left-3 bg-black bg-opacity-50 rounded-full w-8 h-8 flex items-center justify-center">
-                    <span className="text-white font-bold">{index + 1}</span>
-                  </div>
-
-                  {/* 地点图标 - 移动端适配 */}
-                  <div className="text-center mb-3 sm:mb-4">
-                    <div className="mb-1 sm:mb-2">{renderCampaignLocationIcon(campaign, 'card')}</div>
-                    <h3 className="text-base sm:text-xl font-bold text-white mb-1">{campaign.name}</h3>
-                    <p className="text-xs sm:text-sm text-slate-400">{campaign.location}</p>
-                  </div>
-
-                  {/* 描述 - 移动端隐藏 */}
-                  <p className="text-slate-400 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2 hidden sm:block">
-                    {campaign.description}
-                  </p>
-
-                  {/* 进度信息 */}
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-slate-400">
-                      {campaign.levels.length} 关卡
-                    </span>
-                    <span className="text-blue-400">
-                      +{campaign.rewards.xp} XP
-                    </span>
-                  </div>
-
-                  {/* 解锁条件 */}
-                  {!isUnlocked && campaign.unlockRequirement && (
-                    <div className="mt-3 text-xs text-slate-400 bg-slate-700 rounded-lg p-2">
-                      需要完成：{allCampaigns.find(c => c.id === campaign.unlockRequirement)?.name}
+                    <div className="space-y-2">
+                      <h3 className="text-lg font-bold text-white sm:text-xl">{campaign.name}</h3>
+                      <div className="flex items-center gap-2 text-sm text-slate-200/78">
+                        <MapPin className="h-4 w-4 text-sky-200/75" />
+                        <span>{campaign.location}</span>
+                      </div>
+                      <p className="line-clamp-2 text-sm leading-6 text-slate-200/76">{campaign.description}</p>
+                      <p className="line-clamp-2 text-xs leading-5 text-slate-400">{getCampaignPreviewText(campaign.id)}</p>
                     </div>
-                  )}
+
+                    <div className="mt-4 flex flex-wrap gap-2 text-xs">
+                      <span className={`rounded-full border px-3 py-1 ${accent.chip}`}>{campaign.theme}</span>
+                      <span className="rounded-full border border-white/10 bg-white/6 px-3 py-1 text-slate-100">
+                        {completedLevelCount}/{campaign.levels.length} 关
+                      </span>
+                      <span className="rounded-full border border-yellow-200/16 bg-yellow-300/12 px-3 py-1 text-yellow-50">
+                        +{campaign.rewards.xp} XP
+                      </span>
+                    </div>
+
+                    {!isUnlocked && campaign.unlockRequirement && (
+                      <div className="mt-4 rounded-2xl border border-white/8 bg-black/20 px-3 py-3 text-xs leading-5 text-slate-300">
+                        解锁条件：先完成
+                        {' '}
+                        {allCampaigns.find((item) => item.id === campaign.unlockRequirement)?.name}
+                      </div>
+                    )}
+
+                    <div className="mt-5 flex items-center justify-between border-t border-white/8 pt-4 text-sm">
+                      <span className="text-slate-300">进入战役地图</span>
+                      <span className="inline-flex items-center gap-1 text-sky-100">
+                        查看关卡
+                        <ChevronRight className="h-4 w-4" />
+                      </span>
+                    </div>
+                  </div>
                 </div>
               );
             })}
           </div>
         ) : (
-          /* 战役详情 */
-          <div className="space-y-4 sm:space-y-6">
+          <div className="space-y-5 sm:space-y-6">
             <button
               onClick={() => setSelectedCampaign(null)}
-              className="flex items-center text-blue-400 hover:text-blue-300 active:text-blue-200 mb-2 sm:mb-4 p-2 -ml-2 min-h-[44px]"
+              className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-white/10 bg-white/6 px-4 py-2 text-sm font-medium text-slate-100 transition-all hover:-translate-y-0.5 hover:bg-white/10"
             >
-              ← 返回战役列表
+              <ChevronLeft className="h-4 w-4" />
+              返回战役列表
             </button>
 
-            <div className="bg-gradient-to-r from-slate-700 to-slate-700 rounded-xl p-4 sm:p-8 border border-slate-600 shadow-lg">
-              {/* 移动端：垂直布局 / 桌面端：水平布局 */}
-              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6">
+            <div className={`relative overflow-hidden rounded-[30px] border border-white/10 bg-slate-900/78 p-5 sm:p-8 ${getCampaignAccent(selectedCampaign.id).glow}`}>
+              <div className={`absolute inset-x-0 top-0 h-40 bg-gradient-to-r ${getCampaignAccent(selectedCampaign.id).shell}`} />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.16),transparent_42%)]" />
+              <div className="relative flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-6">
                 {renderCampaignLocationIcon(selectedCampaign, 'hero')}
                 <div className="flex-1 text-center sm:text-left">
-                  <h2 className="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2">{selectedCampaign.name}</h2>
-                  <p className="text-lg sm:text-xl text-blue-400 mb-3 sm:mb-4">{selectedCampaign.location}</p>
-                  <p className="text-slate-300 text-sm sm:text-lg leading-relaxed mb-4 sm:mb-6">
-                    {selectedCampaign.story}
-                  </p>
-                  
-                  {/* 移动端：标签换行显示 */}
-                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-6 text-xs sm:text-sm">
-                    <span className="bg-blue-600 px-2 sm:px-3 py-1 rounded-full text-white">
+                  <div className="mb-3 flex flex-wrap items-center justify-center gap-2 sm:justify-start">
+                    <span className={`rounded-full border px-3 py-1 text-xs ${getCampaignAccent(selectedCampaign.id).chip}`}>
                       {selectedCampaign.theme}
                     </span>
-                    <span className="text-slate-400">
+                    <span className="rounded-full border border-white/10 bg-white/6 px-3 py-1 text-xs text-slate-100">
                       {selectedCampaign.levels.length} 个关卡
                     </span>
-                    <span className="text-blue-400">
+                    <span className="rounded-full border border-yellow-200/16 bg-yellow-300/12 px-3 py-1 text-xs text-yellow-50">
                       +{selectedCampaign.rewards.xp} XP
                     </span>
-                    {selectedCampaign.rewards.title && (
-                      <span className="text-purple-400">
-                        🏆 {selectedCampaign.rewards.title}
-                      </span>
-                    )}
                   </div>
+                  <h2 className="text-3xl font-bold text-white">{selectedCampaign.name}</h2>
+                  <p className="mt-2 inline-flex items-center gap-2 text-base text-sky-100/88">
+                    <MapPin className="h-4 w-4" />
+                    {selectedCampaign.location}
+                  </p>
+                  <p className="mt-4 text-sm leading-7 text-slate-100/82 sm:text-base">{selectedCampaign.story}</p>
 
-                  <div className="mt-4 rounded-xl border border-blue-500/25 bg-blue-500/10 px-3 py-3 text-xs sm:text-sm text-blue-100">
-                    规则：先完成目标，再按本关题数答题过关；失败后答对 1 题可重开本关。
+                  <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                    <div className="rounded-2xl border border-sky-200/12 bg-sky-300/8 p-4 text-left">
+                      <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-sky-100">
+                        <Swords className="h-4 w-4" />
+                        关卡规则
+                      </div>
+                      <p className="text-sm leading-6 text-slate-200/82">
+                        先完成平台目标，再回答每关题目过关；失败后答对 1 题即可重新开始当前关。
+                      </p>
+                    </div>
+                    <div className="rounded-2xl border border-amber-200/12 bg-amber-300/8 p-4 text-left">
+                      <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-amber-50">
+                        <Trophy className="h-4 w-4" />
+                        战役奖励
+                      </div>
+                      <p className="text-sm leading-6 text-slate-200/82">
+                        通关整张地图可拿到经验、金币与称号奖励，后续会逐步换成更完整的角色与场景包。
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* 关卡列表 */}
-            <div className="space-y-3 sm:space-y-4">
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">📋 关卡列表</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <h3 className="text-xl font-bold text-white sm:text-2xl">关卡列表</h3>
+                  <p className="mt-1 text-sm text-slate-300/78">先从已解锁关卡开始，战役进度会按年龄段独立记录。</p>
+                </div>
+                <div className="hidden rounded-full border border-white/10 bg-white/6 px-4 py-2 text-sm text-slate-200 sm:block">
+                  已完成 {selectedCampaign.levels.filter((level) => isLevelCompleted(level.id)).length}/{selectedCampaign.levels.length}
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 sm:gap-4">
                 {selectedCampaign.levels.map((level, index) => {
                   const unlocked = isLevelUnlocked(selectedCampaign, index);
                   const completed = isLevelCompleted(level.id);
-                  const statusIcon = getLevelStatusIcon(selectedCampaign, index);
-                  
+                  const status = getLevelStatusText(selectedCampaign, index);
+                  const rewardSkillText = getRewardSkillText(level.rewards);
+
                   return (
                     <div
                       key={level.id}
                       data-level-id={level.id}
-                      className={`relative bg-slate-700/80 rounded-xl p-3 sm:p-4 border-2 transition-all ${
+                      className={`group relative overflow-hidden rounded-[24px] border p-4 transition-all sm:p-5 ${
                         unlocked
-                          ? 'border-slate-600 hover:border-blue-500 active:border-blue-400 cursor-pointer sm:hover:scale-105 active:scale-95 shadow-md'
-                          : 'border-slate-700 opacity-50 cursor-not-allowed'
-                      } ${completed ? 'bg-blue-900/30' : ''}`}
+                          ? 'cursor-pointer border-white/10 bg-slate-900/76 hover:-translate-y-1 hover:border-sky-200/24 hover:shadow-[0_18px_46px_rgba(35,107,154,0.16)]'
+                          : 'cursor-not-allowed border-white/8 bg-slate-950/64 opacity-60'
+                      } ${completed ? 'ring-1 ring-emerald-200/18' : ''}`}
                       onClick={() => {
                         if (unlocked) {
                           playSound('/sounds/level_complete.wav', 0.5);
-                          // 🔥 使用 currentAgeGroup（本地状态）而不是 selectedAgeGroup（store状态）
-                          // 确保年龄段正确传递，避免异步更新问题
                           onSelectCampaign(selectedCampaign, index, currentAgeGroup || selectedAgeGroup || undefined);
                         }
                       }}
                       onMouseEnter={() => unlocked && playSound('/sounds/button_hover.wav', 0.2)}
                     >
-                      {/* 状态图标 */}
-                      <div className="absolute top-2 right-2 text-xl sm:text-2xl">
-                        {statusIcon}
-                      </div>
-
-                      <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-                        <div className={`rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-white font-bold text-sm sm:text-base ${
-                          completed ? 'bg-green-600' : unlocked ? 'bg-blue-600' : 'bg-gray-600'
-                        }`}>
-                          {index + 1}
+                      <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-br from-white/10 to-transparent" />
+                      <div className="relative">
+                        <div className="mb-4 flex items-start justify-between gap-3">
+                          <div className="flex items-center gap-3">
+                            <div
+                              className={`flex h-10 w-10 items-center justify-center rounded-2xl text-sm font-bold text-white ${
+                                completed
+                                  ? 'bg-emerald-500/90'
+                                  : unlocked
+                                    ? 'bg-sky-500/90'
+                                    : 'bg-slate-600/90'
+                              }`}
+                            >
+                              {index + 1}
+                            </div>
+                            <div>
+                              <h4 className="pr-6 text-base font-bold text-white sm:text-lg">{level.name}</h4>
+                              <p className="mt-1 text-xs text-slate-300/75">{level.questions.length} 道题目</p>
+                            </div>
+                          </div>
+                          <span
+                            className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-[11px] font-semibold ${
+                              status === 'done'
+                                ? 'border-emerald-200/18 bg-emerald-300/14 text-emerald-50'
+                                : status === 'ready'
+                                  ? 'border-sky-200/18 bg-sky-300/14 text-sky-50'
+                                  : 'border-amber-200/18 bg-amber-300/14 text-amber-50'
+                            }`}
+                          >
+                            {status === 'done' ? <CheckCircle2 className="h-3.5 w-3.5" /> : status === 'ready' ? <Sparkles className="h-3.5 w-3.5" /> : <Lock className="h-3.5 w-3.5" />}
+                            {status === 'done' ? '已完成' : status === 'ready' ? '可挑战' : '未解锁'}
+                          </span>
                         </div>
-                        <h4 className="text-white font-bold text-base sm:text-lg pr-8">{level.name}</h4>
-                      </div>
-                      
-                      <p className="text-slate-400 text-xs sm:text-sm mb-2 sm:mb-3 line-clamp-2">{level.description}</p>
-                      
-                      {/* 关卡故事 - 移动端隐藏 */}
-                      {level.story && (
-                        <p className="text-slate-500 text-xs mb-2 sm:mb-3 italic line-clamp-2 hidden sm:block">
-                          "{level.story}"
-                        </p>
-                      )}
-                      
-                      <div className="flex items-center justify-between text-xs">
-                        <span className="text-slate-400">
-                          {level.questions.length} 道题目
-                        </span>
-                        <span className="text-blue-400 font-bold">
-                          +{level.rewards.xp} XP
-                        </span>
-                      </div>
 
-                      <div className="mt-2 text-xs text-sky-300">
-                        规则：{buildCampaignRuleText(level.questions.length)}
-                      </div>
+                        <p className="line-clamp-2 text-sm leading-6 text-slate-200/82">{level.description}</p>
 
-                      {/* 技能奖励 */}
-                      {getRewardSkillText(level.rewards) && (
-                        <div className="mt-2 text-xs text-purple-400 bg-purple-900/30 rounded-lg px-2 py-1">
-                          🎁 奖励：{getRewardSkillText(level.rewards)}
+                        {level.story && (
+                          <p className="mt-3 line-clamp-2 rounded-2xl border border-white/6 bg-black/16 px-3 py-3 text-xs italic leading-5 text-slate-300/72">
+                            “{level.story}”
+                          </p>
+                        )}
+
+                        <div className="mt-4 space-y-2 text-xs">
+                          <div className="rounded-2xl border border-sky-200/10 bg-sky-400/8 px-3 py-2 text-sky-50/90">
+                            规则：{buildCampaignRuleText(level.questions.length)}
+                          </div>
+                          {rewardSkillText && (
+                            <div className="rounded-2xl border border-violet-200/12 bg-violet-400/10 px-3 py-2 text-violet-50/90">
+                              奖励技能：{rewardSkillText}
+                            </div>
+                          )}
+                          {!unlocked && (
+                            <div className="rounded-2xl border border-amber-200/12 bg-amber-300/10 px-3 py-2 text-amber-50/90">
+                              解锁提示：先完成第 {index} 关。
+                            </div>
+                          )}
                         </div>
-                      )}
 
-                      {/* 未解锁提示 */}
-                      {!unlocked && (
-                        <div className="mt-2 text-xs text-red-400 bg-red-900/30 rounded-lg px-2 py-1">
-                          🔒 完成关卡 {index} 后解锁
+                        <div className="mt-4 flex items-center justify-between border-t border-white/8 pt-4 text-sm">
+                          <span className="text-slate-200/82">+{level.rewards.xp} XP</span>
+                          <span className="inline-flex items-center gap-1 text-sky-100">
+                            {unlocked ? '开始冒险' : '等待解锁'}
+                            <ChevronRight className="h-4 w-4" />
+                          </span>
                         </div>
-                      )}
+                      </div>
                     </div>
                   );
                 })}
               </div>
             </div>
 
-            {/* 提示信息 - 移动端简化 */}
-            <div className="bg-slate-700 border border-slate-600 rounded-xl p-3 sm:p-4 mt-4 sm:mt-6">
-              <p className="text-blue-300 text-xs sm:text-sm">
-                💡 点击已解锁关卡开始，具体题数看各关规则。
-              </p>
+            <div className="rounded-[24px] border border-white/10 bg-white/6 px-4 py-4 text-sm text-slate-200/82">
+              点击已解锁关卡即可进入平台冒险。当前这轮升级只改前端视觉与素材表现，战役规则、题目和后端数据保持原样。
             </div>
           </div>
         )}
