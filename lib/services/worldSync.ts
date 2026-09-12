@@ -27,7 +27,7 @@ interface PlayerData {
 }
 
 interface WebSocketMessage {
-    type: 'player_join' | 'player_leave' | 'player_move' | 'players_list';
+    type: 'player_join' | 'player_leave' | 'player_move' | 'players_list' | 'pong';
     data: any;
 }
 
@@ -121,7 +121,7 @@ export class WorldSyncService {
                     resolve();
                 })
                 .catch((error) => {
-                    console.warn('[WorldSync] WebSocket failed, falling back to HTTP polling:', error);
+                    debugLog('[WorldSync] WebSocket failed, falling back to HTTP polling:', error);
                     this.startHttpPolling().then(resolve).catch(reject);
                 });
         });
@@ -256,7 +256,7 @@ export class WorldSyncService {
 
                 socket.onerror = (error) => {
                     clearTimeout(timeout);
-                    console.warn('[WorldSync] WebSocket error:', error);
+                    debugLog('[WorldSync] WebSocket error:', error);
                     this.isConnecting = false;
                     if (!opened) {
                         rejectOnce(new Error('WebSocket connection failed'));
@@ -334,6 +334,9 @@ export class WorldSyncService {
                     debugLog('[WorldSync] Filtered players (excluding self):', players);
                     this.onPlayersList(players);
                 }
+                break;
+
+            case 'pong':
                 break;
 
             default:

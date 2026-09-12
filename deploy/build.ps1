@@ -47,7 +47,8 @@ $stageDir = "deploy/frontend-dist"
 $runtimeDeployFiles = @(
     "post-upload-frontend.sh",
     "DEPLOY_SERVER_EXACT.md",
-    "ecosystem.config.js"
+    "ecosystem.config.js",
+    "nginx.conf"
 )
 
 Write-Host "[1/5] Install dependencies if needed..." -ForegroundColor Yellow

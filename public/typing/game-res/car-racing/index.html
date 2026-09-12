@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="description" content="一款通过打字加速并完成比赛的赛车游戏" />
+<title>打字赛车</title>
+<link rel="stylesheet" href="./css/index.css" />
+</head>
+<body>
+<div id="gameWrapper">
+<canvas id="gameCanvas" aria-label="打字赛车游戏画布"></canvas>
+<div id="hud" class="panel">
+<div class="row">
+<span class="label">速度</span>
+<span id="speedValue">0 km/h</span>
+</div>
+<div class="row">
+<span class="label">进度</span>
+<span id="progressValue">0%</span>
+</div>
+<div class="row">
+<span class="label">名次</span>
+<span id="rankValue">1 / 4</span>
+</div>
+<div class="row">
+<span class="label">连击</span>
+<span id="comboValue">x0</span>
+</div>
+</div>
+<div id="typingPanel" class="panel">
+<div class="typing-title">看汉字，输入拼音加速</div>
+<div id="typedWord" class="typed-word"></div>
+<div id="targetWord" class="target-word">准备</div>
+<div class="hint">正确输入拼音字母会加速。按 Enter 重新开始。</div>
+</div>
+<div id="resultMask" class="mask hidden">
+<div class="result-card">
+<div id="resultTitle" class="result-title">比赛结束</div>
+<div id="resultDesc" class="result-desc"></div>
+<button id="restartBtn" type="button">再来一局</button>
+</div>
+</div>
+</div>
+<script src="../pinyin-fighter/vendor/cnchar.min.js"></script>
+<script src="../pinyin-fighter/vendor/cnchar.poly.min.js"></script>
+<script type="module" src="./src/game.js"></script>
+</body>
+</html>

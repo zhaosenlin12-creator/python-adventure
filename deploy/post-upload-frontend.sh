@@ -7,6 +7,21 @@ OWNER_USER="${OWNER_USER:-game}"
 OWNER_GROUP="${OWNER_GROUP:-game}"
 PM2_PATH="/www/server/nodejs/v20.19.6/bin"
 PORT="${PORT:-3003}"
+NGINX_SITE_CONF="${NGINX_SITE_CONF:-/www/server/panel/vhost/nginx/game.codebn.cn.conf}"
+NGINX_BIN="${NGINX_BIN:-/www/server/nginx/sbin/nginx}"
+NGINX_TEMPLATE="$APP_DIR/deploy/nginx.conf"
+
+test_nginx_config() {
+    if [ -x "$NGINX_BIN" ]; then
+        "$NGINX_BIN" -t
+        return
+    fi
+    if command -v nginx >/dev/null 2>&1; then
+        nginx -t
+        return
+    fi
+    echo "WARN: nginx binary not found, skip syntax test"
+}
 
 run_as_owner() {
     local cmd="$1"
@@ -44,6 +59,24 @@ run_as_owner "cd '$APP_DIR' && if pm2 describe game >/dev/null 2>&1; then pm2 re
 run_as_owner "pm2 save"
 
 if [ "${EUID:-$(id -u)}" -eq 0 ]; then
+    nginx_backup=""
+    if [ -f "$NGINX_TEMPLATE" ]; then
+        mkdir -p "$(dirname "$NGINX_SITE_CONF")"
+        if [ -f "$NGINX_SITE_CONF" ]; then
+            nginx_backup="${NGINX_SITE_CONF}.bak.$(date +%Y%m%d%H%M%S)"
+            cp -f "$NGINX_SITE_CONF" "$nginx_backup"
+        fi
+        cp -f "$NGINX_TEMPLATE" "$NGINX_SITE_CONF"
+    fi
+
+    if ! test_nginx_config; then
+        if [ -n "$nginx_backup" ] && [ -f "$nginx_backup" ]; then
+            cp -f "$nginx_backup" "$NGINX_SITE_CONF"
+        fi
+        echo "ERROR: nginx configuration test failed"
+        exit 1
+    fi
+
     rm -f "$APP_DIR/deploy.sh" "$APP_DIR/deploy-secure-frontend.sh" "$APP_DIR/ecosystem.config.js" 2>/dev/null || true
 
     if [ -d /www/server/nginx/proxy_cache_dir ]; then

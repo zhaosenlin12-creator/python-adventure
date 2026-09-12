@@ -46,7 +46,7 @@ def init_redis() -> None:
     except Exception as e:
         _redis_available = False
         _redis_client = None
-        logger.warning("redis unavailable, falling back to memory cache: %s", e)
+        logger.info("redis unavailable; using process-local memory cache: %s", e)
 
 
 def _cleanup_memory_cache() -> None:

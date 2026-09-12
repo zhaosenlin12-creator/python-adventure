@@ -6,6 +6,7 @@
  */
 
 import { RefreshCw, AlertTriangle, Home } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 interface ErrorFallbackProps {
   error?: Error;
@@ -18,6 +19,7 @@ export default function ErrorFallback({
   resetError,
   componentName 
 }: ErrorFallbackProps) {
+  const router = useRouter();
   const handleRefresh = () => {
     if (resetError) {
       resetError();
@@ -27,7 +29,7 @@ export default function ErrorFallback({
   };
 
   const handleGoHome = () => {
-    window.location.href = '/';
+    router.push('/');
   };
 
   return (

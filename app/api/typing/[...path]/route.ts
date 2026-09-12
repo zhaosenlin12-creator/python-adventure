@@ -119,6 +119,17 @@ function userIdFrom(user: Record<string, unknown>, payload: Record<string, unkno
   return String(user.id || user.user_id || payload.user_id || "");
 }
 
+function redactSecrets(value: unknown): unknown {
+  if (Array.isArray(value)) return value.map(redactSecrets);
+  if (!value || typeof value !== "object") return value;
+  const output: Record<string, unknown> = {};
+  for (const [key, item] of Object.entries(value as Record<string, unknown>)) {
+    if (key === "token" || key === "owner_token" || key === "authorization") continue;
+    output[key] = redactSecrets(item);
+  }
+  return output;
+}
+
 function listScores(db: TypingDb, limit = 50, mode = "") {
   return [...db.scores]
     .filter((item) => !mode || item.mode === mode)
@@ -129,7 +140,8 @@ function listScores(db: TypingDb, limit = 50, mode = "") {
       if (accuracy) return accuracy;
       return Number(a.seconds || 999999) - Number(b.seconds || 999999);
     })
-    .slice(0, Math.max(1, Math.min(limit, 200)));
+    .slice(0, Math.max(1, Math.min(limit, 200)))
+    .map(publicScore);
 }
 
 function listHistory(db: TypingDb, limit = 80, token = "", userId = "", username = "") {
@@ -146,7 +158,13 @@ function listHistory(db: TypingDb, limit = 80, token = "", userId = "", username
       const bTime = new Date(String(b.created_at || b.date || 0)).getTime();
       return bTime - aTime;
     })
-    .slice(0, safeLimit);
+    .slice(0, safeLimit)
+    .map(publicScore);
+}
+
+function publicScore(item: Record<string, unknown>) {
+  const { token: _token, ...safe } = item;
+  return safe;
 }
 
 function clampNumber(value: unknown, min: number, max: number, fallback: number) {
@@ -378,13 +396,26 @@ export async function GET(request: NextRequest, context: { params: Promise<{ pat
     const session = token ? db.sessions[token] : null;
     return NextResponse.json({
       ok: true,
-      history: listHistory(
-        db,
-        Number(query.get("limit") || 80),
-        token,
-        query.get("user_id") || session?.user_id || "",
-        query.get("username") || session?.username || ""
-      ),
+      history: session ? listHistory(db, Number(query.get("limit") || 80), token, session.user_id, session.username) : [],
+    });
+  }
+
+  if (pathName === "/user/speed-test-rank") {
+    const token = query.get("token") || "";
+    const session = token ? db.sessions[token] : null;
+    if (!session) return NextResponse.json({ ok: true, user: null, rank: null, best_speed: 0, best_accuracy: 0, total: 0 });
+    const scores = db.scores.filter((item) => item.mode === "speed-test" && (session.user_id ? item.user_id === session.user_id : item.username === session.username));
+    const best = [...scores].sort((a, b) => Number(b.speed || 0) - Number(a.speed || 0) || Number(b.accuracy || 0) - Number(a.accuracy || 0))[0];
+    const rank = best ? db.scores.filter((item) => item.mode === "speed-test" && Number(item.speed || 0) > Number(best.speed || 0)).length + 1 : null;
+    return NextResponse.json({
+      ok: true,
+      user: { user_id: session.user_id, username: session.username },
+      rank,
+      best_speed: Number(best?.speed || 0),
+      best_accuracy: Number(best?.accuracy || 0),
+      best_title: String(best?.title || ""),
+      best_date: best?.created_at || null,
+      total: scores.length,
     });
   }
 
@@ -467,7 +498,51 @@ export async function POST(request: NextRequest, context: { params: Promise<{ pa
       };
       db.scores.push(record);
       db.scores = db.scores.slice(-1000);
-      return { score: record, rankings: listScores(db, 50), history: listHistory(db, 80, token, String(record.user_id || ""), String(record.username || "")) };
+      return {
+        score: publicScore(record),
+        rankings: listScores(db, 50),
+        history: listHistory(db, 80, token, String(record.user_id || ""), String(record.username || "")),
+      };
+    });
+    return NextResponse.json({ ok: true, ...result });
+  }
+
+  if (pathName === "/lesson/speed-test") {
+    const result = await mutateDb((db) => {
+      const token = String(payload.token || "");
+      const session = token ? db.sessions[token] : null;
+      const userId = String(session?.user_id || "");
+      const username = String(session?.username || "学习者");
+      let speed = Number(payload.speed || 0);
+      const chars = Number(payload.chars || 0);
+      const seconds = Number(payload.seconds || payload.duration_seconds || 0);
+      if (!(speed > 0) && chars > 0 && seconds > 0) speed = Number((chars / Math.max(seconds, 1) * 60).toFixed(2));
+      const record = {
+        id: db.scores.length + 1,
+        token,
+        user_id: userId,
+        username,
+        mode: "speed-test",
+        title: String(payload.title || "速度测试"),
+        speed,
+        accuracy: Number(payload.accuracy || 0),
+        chars,
+        seconds,
+        created_at: String(payload.date || now()),
+      };
+      db.scores.push(record);
+      db.scores = db.scores.slice(-1000);
+      const userScores = db.scores.filter((item) => item.mode === "speed-test" && (userId ? item.user_id === userId : item.username === username));
+      const best = [...userScores].sort((a, b) => Number(b.speed || 0) - Number(a.speed || 0) || Number(b.accuracy || 0) - Number(a.accuracy || 0))[0];
+      return {
+        score: publicScore(record),
+        extra: payload.wpm == null ? {} : { wpm: Number(payload.wpm) || 0 },
+        global_rank: db.scores.filter((item) => item.mode === "speed-test" && Number(item.speed || 0) > speed).length + 1,
+        personal_best_speed: Number(best?.speed || speed),
+        total_speed_tests: userScores.length,
+        rankings: listScores(db, 50, "speed-test"),
+        history: session ? listHistory(db, 20, token, userId, username) : [],
+      };
     });
     return NextResponse.json({ ok: true, ...result });
   }
@@ -496,13 +571,14 @@ export async function POST(request: NextRequest, context: { params: Promise<{ pa
         title: String(payload.title || "打字比赛"),
         lesson_id: String(payload.lessonId || ""),
         status: "waiting",
-        payload,
+        payload: redactSecrets(payload) as Record<string, unknown>,
         created_at: now(),
         updated_at: now(),
       };
       db.rooms.push(room);
       db.rooms = db.rooms.slice(-300);
-      return room;
+      const { owner_token: _ownerToken, ...safeRoom } = room;
+      return safeRoom;
     });
     return NextResponse.json({ ok: true, room });
   }

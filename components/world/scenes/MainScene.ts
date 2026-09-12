@@ -403,7 +403,7 @@ export class MainScene extends Phaser.Scene {
             if (typeof window !== 'undefined') {
                 // 🔥 直接导航到首页，避免history.back()导致的导航问题
                 // （如果用户之前访问过创意工坊，history.back()会返回到编辑器而不是首页）
-                window.location.href = '/';
+                window.location.assign(new URL('/', window.location.origin).href);
             }
         });
 

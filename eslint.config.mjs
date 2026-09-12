@@ -19,6 +19,8 @@ const eslintConfig = defineConfig([
     ".tmp-assets/**",
     "release/**",
     "kenney_pico-8-city/**",
+    // Ignore mirrored game-res assets from daziya.com (third-party, do not lint)
+    "public/typing/game-res/**",
     // Ignore archived snapshots/tests
     "_archive_20260128/**",
   ]),

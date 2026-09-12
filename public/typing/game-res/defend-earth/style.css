@@ -1,0 +1,201 @@
+/* Typing Game - Plane vs Monsters Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+#game-container {
+    position: relative;
+    box-shadow: 0 0 30px rgba(0, 100, 255, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.game-title {
+    font-family: 'Orbitron', sans-serif;
+    color: #4CAF50;
+    text-shadow: 0 0 10px rgba(76, 175, 80, 0.7);
+    margin-bottom: 10px;
+}
+
+.game-subtitle {
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    margin-top: 0;
+}
+
+.game-info {
+    position: absolute;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    z-index: 10;
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.game-info:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#score-display {
+    top: 10px;
+    left: 10px;
+    color: #4CAF50;
+}
+
+#level-display {
+    top: 10px;
+    right: 10px;
+    color: #2196F3;
+}
+
+#combo-display {
+    bottom: 10px;
+    left: 10px;
+    color: #FFC107;
+}
+
+#accuracy-display {
+    bottom: 10px;
+    right: 10px;
+    color: #FF5722;
+}
+
+#game-over, #start-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 36px;
+    text-align: center;
+    z-index: 20;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid #4CAF50;
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+}
+
+#level-up {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffff00;
+    font-size: 48px;
+    text-align: center;
+    z-index: 20;
+    text-shadow: 0 0 10px #ff9900, 0 0 20px #ff9900;
+    display: none;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.game-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.game-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.7);
+}
+
+.game-button:active {
+    transform: scale(0.95);
+}
+
+.score-popup {
+    position: absolute;
+    color: #ffff00;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 0 5px #ff9900;
+    z-index: 15;
+    pointer-events: none;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#difficulty-select {
+    margin-top: 20px;
+}
+
+#difficulty-select select {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    border: 1px solid #4CAF50;
+    font-family: 'Roboto', sans-serif;
+}
+
+.stat {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.stat-value {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 850px) {
+    #game-container {
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 750px) {
+    #game-container {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 650px) {
+    #game-container {
+        transform: scale(0.7);
+    }
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s;
+} 

@@ -5,11 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>乐启享打字训练中心</title>
     <meta name="description" content="乐启享打字练习、测速、游戏、比赛和排行榜系统。" />
-    <link rel="icon" href="./assets/lexq-logo.png" type="image/png" />
-    <link rel="stylesheet" href="./assets/styles.css" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/typing/assets/styles.css" />
+    <script>
+      // SPA path-to-hash redirect
+      (function(){
+        try {
+          var p = String(location.pathname || "");
+          var h = String(location.hash || "");
+          if (!p || p === "/" || h) return;
+          // Already at the SPA shell - no redirect needed.
+          if (/\/(?:typing\/?|typing\/index\.html?)$/i.test(p)) return;
+          // Anything under /typing/<tail> -> /typing/index.html#/tail
+          var m = p.match(/^\/typing\/(.+?)\/?$/);
+          if (m && m[1] && !/^index\.html?$/i.test(m[1])) {
+            location.replace("/typing/index.html#/" + m[1]);
+          }
+        } catch(e){}
+      })();
+    </script>
   </head>
   <body>
     <div id="app"></div>
-    <script src="./assets/app.js"></script>
+    <script src="/typing/assets/app.js"></script>
   </body>
 </html>

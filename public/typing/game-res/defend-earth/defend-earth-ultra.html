@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>保卫地球 - 打字练习游戏</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game-container">
+<div id="defeated-display" class="game-info left-bottom">击中: 0 / 10</div>
+<div id="level-display" class="game-info center-top">第 1 关</div>
+<div id="missed-display" class="game-info right-top">错过: 0 / 5</div>
+<div id="back-button" class="back-button" title="返回"></div>
+<div id="start-screen" class="fade-in">
+<h1 class="game-title">保卫地球</h1>
+<p>输入正确的字符以击毁怪兽</p>
+<div class="difficulty-select">
+<p>选择难度:</p>
+<div class="difficulty-buttons">
+<button id="easy-button" class="difficulty-button">简单</button>
+<button id="normal-button" class="difficulty-button selected">中等</button>
+<button id="hard-button" class="difficulty-button">困难</button>
+</div>
+</div>
+<div class="space-prompt pulse">按空格键开始</div>
+<div id="final-stats" style="display: none; margin-top: 20px;">
+<div id="result-message" class="result-message"></div>
+<div class="stat">准确率: <span id="final-accuracy" class="stat-value">100%</span></div>
+<div class="stat">击败怪兽: <span id="monsters-defeated" class="stat-value">0</span></div>
+<div class="stat">错过怪兽: <span id="monsters-missed" class="stat-value">0</span></div>
+<div class="game-buttons">
+<button id="restart-button" class="game-button">再来一次</button>
+<button id="next-level-button" class="game-button">下一关</button>
+</div>
+</div>
+</div>
+<div id="mission-result" class="mission-result">
+<div id="mission-result-text" class="mission-result-text"></div>
+</div>
+</div>
+<audio id="bgm" loop>
+<source src="bgm.mp3" type="audio/mp3">
+</audio>
+<audio id="shoot-sound">
+<source src="shoot.mp3" type="audio/mp3">
+</audio>
+<audio id="hit-sound">
+<source src="hit.mp3" type="audio/mp3">
+</audio>
+<audio id="miss-sound">
+<source src="miss.mp3" type="audio/mp3">
+</audio>
+<script src="/typing/game-res/pixi.min.js"></script>
+<script>const config ={width:window.innerWidth,height:window.innerHeight,backgroundColor:0x000000,monsterSpeed:1,monsterSpawnRate:2000,characters:'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',totalMonsters:10,monstersCreated:0,monstersDefeated:0,totalMonstersDefeated:0,monstersMissed:0,maxMissedMonsters:5,currentLevel:1,difficulty:'normal',imagePath:'./',soundEnabled:true
+};const sounds ={bgm:document.getElementById('bgm'),shoot:document.getElementById('shoot-sound'),hit:document.getElementById('hit-sound'),miss:document.getElementById('miss-sound')
+};function playSound(sound) {if (config.soundEnabled &&sound) {try {if (sound.id ==='bgm' &&!sound.paused) {console.log('背景音乐已经在播放中');return;}
+ if (sound.id !=='bgm') {sound.currentTime =0;}
+ let playPromise =sound.play();if (playPromise !==undefined) {playPromise.then(() =>{console.log(`音效播放成功: ${sound.id}`);}).catch(error =>{console.log(`音频播放失败: ${sound.id}`,error);if (error.name ==='NotAllowedError') {console.log("需要用户交互才能播放音频");}
+});}
+} catch (error) {console.error(`播放音效出错: ${sound.id}`,error);}
+}
+}
+ function stopSound(sound) {if (sound) {try {if (!sound.paused) {sound.pause();if (sound.id !=='bgm') {sound.currentTime =0;}
+console.log(`停止音效: ${sound.id}`);}
+} catch (error) {console.error(`停止音效出错: ${sound.id}`,error);}
+}
+}
+ const difficultySettings ={easy:{monsterSpeed:0.7,monsterSpawnRate:2500,speedIncreasePerLevel:0.2,characters:'abcdefghijklmnopqrstuvwxyz' 
+ },normal:{monsterSpeed:1,monsterSpawnRate:2000,speedIncreasePerLevel:0.3,characters:'abcdefghijklmnopqrstuvwxyz0123456789' 
+ },hard:{monsterSpeed:1.5,monsterSpawnRate:1500,speedIncreasePerLevel:0.4,characters:'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()' 
+ }
+};let score =0;let activeMonsters =[];let gameOver =false;let gameStarted =false;let monsterSpawnInterval;let pendingKeys =new Set();let combo =0;let maxCombo =0;let totalKeyPresses =0;let correctKeyPresses =0;let planeTailAnimationFrame =0;let planeTailAnimationInterval;let backgroundContainer;let backgroundSpeed =0.2;let planets =[];const app =new PIXI.Application({width:window.innerWidth,height:window.innerHeight,backgroundColor:config.backgroundColor,resolution:window.devicePixelRatio ||1,autoDensity:true,resizeTo:window,});document.getElementById('game-container').appendChild(app.view);window.addEventListener('resize',() =>{config.width =window.innerWidth;config.height =window.innerHeight;if (window.earth) {earth.x =config.width / 2;earth.y =config.height;earth.width =config.width;const aspectRatio =earthTexture.height / earthTexture.width;earth.height =Math.min(earth.width *aspectRatio,config.height *0.3);}
+if (window.plane) {plane.x =config.width / 2;if (window.earth) {const earthTop =window.earth.y - window.earth.height;plane.y =earthTop;}
+}
+});window.addEventListener('keydown',handleKeyDown);window.addEventListener('message',function(event) {let eventData;try {eventData =JSON.parse(event.data);} catch (e) {return;}
+if (!eventData ||eventData.eventName !=='hostKey') return;const k =eventData.data ||{};handleKeyDown({key:k.key,code:k.code,keyCode:k.keyCode,preventDefault:function() {},});});document.addEventListener('DOMContentLoaded',function() {document.getElementById('back-button').addEventListener('click',function() {window.history.back();});document.getElementById('easy-button').addEventListener('click',function() {setDifficulty('easy');});document.getElementById('normal-button').addEventListener('click',function() {setDifficulty('normal');});document.getElementById('hard-button').addEventListener('click',function() {setDifficulty('hard');});document.getElementById('restart-button').addEventListener('click',() =>{window.location.reload();});document.getElementById('next-level-button').addEventListener('click',nextLevel);for (let key in sounds) {if (sounds[key]) {sounds[key].load();}
+}
+ sounds.bgm.volume =0.5;sounds.shoot.volume =0.6;sounds.hit.volume =0.8;sounds.miss.volume =0.6;});let selectedDifficulty ='normal';function setDifficulty(difficulty) {document.querySelectorAll('.difficulty-button').forEach(button =>{button.classList.remove('selected');});document.getElementById(`${difficulty}-button`).classList.add('selected');selectedDifficulty =difficulty;}
+ const loader =PIXI.Assets;let planeTexture;let monsterTextures =[];let bulletTexture;let explosionTexture;let backgroundTexture;let earthTexture;let planeTail1Texture;let planeTail2Texture;let planetTextures =[];async function loadTextures() {try {console.log("开始加载纹理...");backgroundTexture =await PIXI.Assets.load(`${config.imagePath}zj_bj.png`);console.log("背景纹理加载成功");earthTexture =await PIXI.Assets.load(`${config.imagePath}zj_bj_diqiu.png`);console.log("地球纹理加载成功",earthTexture);planeTexture =await PIXI.Assets.load(`${config.imagePath}zj_bj_feiji.png`);planeTail1Texture =await PIXI.Assets.load(`${config.imagePath}plane_tail_1.png`);planeTail2Texture =await PIXI.Assets.load(`${config.imagePath}plane_tail_2.png`);for (let i =1;i <=4;i++) {const texture =await PIXI.Assets.load(`${config.imagePath}zj_bj_guaiwu_${i}.png`);monsterTextures.push(texture);console.log(`怪兽纹理 ${i} 加载成功`);}
+ for (let i =1;i <=5;i++) {const texture =await PIXI.Assets.load(`${config.imagePath}zj_bj_xingqiu_${i}.png`);planetTextures.push(texture);console.log(`星球纹理 ${i} 加载成功`);}
+ bulletTexture =await PIXI.Assets.load(`${config.imagePath}zj_tx_zidan_1.png`);explosionTexture =await PIXI.Assets.load(`${config.imagePath}tx_baozha_1.png`);console.log("所有纹理加载完成");preloadAudio();initializeGame();} catch (error) {console.error("Error loading textures:",error);alert("加载游戏资源时出错，请刷新页面重试。");}
+}
+ function preloadAudio() {console.log("开始预加载音频...");sounds.bgm =document.getElementById('bgm');sounds.shoot =document.getElementById('shoot-sound');sounds.hit =document.getElementById('hit-sound');sounds.miss =document.getElementById('miss-sound');for (let key in sounds) {if (!sounds[key]) {console.error(`音频元素 ${key} 不存在`);sounds[key] =document.createElement('audio');sounds[key].id =key;}
+}
+ if (sounds.bgm) sounds.bgm.volume =0.5;if (sounds.shoot) sounds.shoot.volume =0.6;if (sounds.hit) sounds.hit.volume =0.7;if (sounds.miss) sounds.miss.volume =0.6;for (let key in sounds) {if (sounds[key]) {sounds[key].addEventListener('error',(e) =>{console.error(`音频 ${key} 加载失败:`,e);});sounds[key].addEventListener('canplaythrough',() =>{console.log(`音频 ${key} 已加载完成`);},{once:true });console.log(`预加载音频: ${key}`);sounds[key].load();}
+}
+console.log("音频预加载完成");}
+ function initializeGame() {while(app.stage.children.length >0) {app.stage.removeChild(app.stage.children[0]);}
+ backgroundContainer =new PIXI.Container();app.stage.addChild(backgroundContainer);createBackground();createPlanets();const earthHeight =createEarth();createPlane(earthHeight);console.log("游戏初始化完成，舞台上的元素数量:",app.stage.children.length);}
+ function createBackground() {const background1 =new PIXI.Sprite(backgroundTexture);background1.width =config.width;background1.height =config.height;background1.y =0;const background2 =new PIXI.Sprite(backgroundTexture);background2.width =config.width;background2.height =config.height;background2.y =-config.height;backgroundContainer.addChild(background1);backgroundContainer.addChild(background2);app.ticker.add(updateBackground);console.log("背景已添加到舞台");}
+ function updateBackground() {if (gameOver ||!gameStarted) return;backgroundContainer.y +=backgroundSpeed;if (backgroundContainer.y >=config.height) {backgroundContainer.y =0;regeneratePlanets();}
+}
+ function createPlanets() {for (let planet of planets) {if (planet &&planet.parent) {planet.parent.removeChild(planet);}
+}
+planets =[];createPlanetsForScreen(0);createPlanetsForScreen(-config.height);}
+ function createPlanetsForScreen(screenY) {for (let i =0;i < 2;i++) {const randomIndex =Math.floor(Math.random() *planetTextures.length);const planet =new PIXI.Sprite(planetTextures[randomIndex]);const scale =Math.random() *0.5 + 0.2;planet.scale.set(scale);planet.x =Math.random() *(config.width - planet.width) + planet.width/2;const screenHeight =config.height;planet.y =screenY + Math.random() *screenHeight;planet.rotation =Math.random() *Math.PI *2;backgroundContainer.addChild(planet);planets.push(planet);}
+}
+ function regeneratePlanets() {const planetsToRemove =planets.filter(p =>p.y >config.height);for (let planet of planetsToRemove) {if (planet &&planet.parent) {planet.parent.removeChild(planet);planets.splice(planets.indexOf(planet),1);}
+}
+ createPlanetsForScreen(-config.height);}
+ function createEarth() {console.log("创建地球...",earthTexture);const earth =new PIXI.Sprite(earthTexture);earth.anchor.set(0.5,1);earth.width =config.width;const aspectRatio =earthTexture.height / earthTexture.width;earth.height =Math.min(earth.width *aspectRatio,config.height *0.3);earth.x =config.width / 2;earth.y =config.height;console.log("地球尺寸:",earth.width,"x",earth.height);console.log("地球位置:",earth.x,earth.y);app.stage.addChild(earth);console.log("地球已添加到舞台，当前舞台元素数量:",app.stage.children.length);window.earth =earth;return earth.height;}
+ function createPlane(earthHeight) {const planeContainer =new PIXI.Container();const plane =new PIXI.Sprite(planeTexture);plane.anchor.set(0.5,0.5);plane.width =60;plane.height =60;const planeTail =new PIXI.Sprite(planeTail1Texture);planeTail.anchor.set(0.5,0);planeTail.x =0;planeTail.y =plane.height / 2.5;planeTail.width =40;planeTail.height =40;planeContainer.addChild(planeTail);planeContainer.addChild(plane);planeContainer.x =config.width / 2;const earthTop =window.earth.y - window.earth.height / 2;planeContainer.y =earthTop;console.log("飞机位置:",planeContainer.x,planeContainer.y);app.stage.addChild(planeContainer);window.plane =planeContainer;window.planeSprite =plane;window.planeTail =planeTail;startPlaneTailAnimation();}
+ function startPlaneTailAnimation() {if (planeTailAnimationInterval) {clearInterval(planeTailAnimationInterval);}
+planeTailAnimationInterval =setInterval(() =>{planeTailAnimationFrame =(planeTailAnimationFrame + 1) % 2;window.planeTail.texture =planeTailAnimationFrame ===0 ?planeTail1Texture :planeTail2Texture;},150);}
+ class Monster {constructor(char,x) {this.container =new PIXI.Container();const randomTextureIndex =Math.floor(Math.random() *monsterTextures.length);const selectedTexture =monsterTextures[randomTextureIndex];this.sprite =new PIXI.Sprite(selectedTexture);this.sprite.anchor.set(0.5);this.sprite.width =50;this.sprite.height =50;this.textBox =new PIXI.Graphics();this.textBox.beginFill(0xFFFFFF);this.textBox.drawRoundedRect(-20,30,40,30,5);this.textBox.endFill();this.char =char;this.text =new PIXI.Text(char,{fontFamily:'Arial',fontSize:20,fill:0x000000,align:'center'
+});this.text.anchor.set(0.5);this.text.position.set(0,45);this.container.addChild(this.sprite);this.container.addChild(this.textBox);this.container.addChild(this.text);this.container.x =x;this.container.y =0;app.stage.addChild(this.container);activeMonsters.push(this);this.wobbleAmount =Math.random() *0.3 + 0.2;this.wobbleSpeed =Math.random() *0.02 + 0.01;this.wobbleOffset =Math.random() *Math.PI *2;this.originalX =x;}
+update() {this.container.x =this.originalX + Math.sin(app.ticker.lastTime *this.wobbleSpeed + this.wobbleOffset) *10 *this.wobbleAmount;this.container.y +=config.monsterSpeed;const earth =window.earth;const earthTop =earth ?earth.y - earth.height / 2 :config.height;if (this.container.y + 25 >earthTop) {config.monstersMissed++;this.remove();updateRemainingMonsters();if (config.monstersMissed >=config.maxMissedMonsters) {endGame(false);return;}
+ if (config.monstersCreated >=config.totalMonsters &&activeMonsters.length ===0) {endGame(true);}
+return;}
+ if (this.container.y >config.height) {this.remove();if (config.monstersCreated >=config.totalMonsters &&activeMonsters.length ===0) {endGame(true);}
+}
+}
+destroy() {this.createExplosion();this.remove();config.monstersDefeated++;config.totalMonstersDefeated++;updateRemainingMonsters();if (config.monstersCreated >=config.totalMonsters &&activeMonsters.length ===0) {endGame(true);}
+}
+createExplosion() {const explosion =new PIXI.Sprite(explosionTexture);explosion.anchor.set(0.5);explosion.x =this.container.x;explosion.y =this.container.y;explosion.width =70;explosion.height =70;explosion.alpha =1;app.stage.addChild(explosion);let frame =1;const explosionAnim =async () =>{if (frame <=8) {try {const nextTexture =await PIXI.Assets.load(`${config.imagePath}tx_baozha_${frame}.png`);explosion.texture =nextTexture;frame++;setTimeout(explosionAnim,50);} catch (error) {console.error("Error loading explosion texture:",error);app.stage.removeChild(explosion);}
+} else {app.stage.removeChild(explosion);}
+};explosionAnim();}
+showScorePopup(points) {const popup =document.createElement('div');popup.className ='score-popup';popup.textContent =`+${points}`;popup.style.left =`${this.container.x + app.view.offsetLeft}px`;popup.style.top =`${this.container.y + app.view.offsetTop}px`;document.body.appendChild(popup);let opacity =1;let posY =this.container.y;const animatePopup =() =>{opacity -=0.02;posY -=1;popup.style.opacity =opacity;popup.style.top =`${posY + app.view.offsetTop}px`;if (opacity >0) {requestAnimationFrame(animatePopup);} else {document.body.removeChild(popup);}
+};animatePopup();}
+ remove() {app.stage.removeChild(this.container);const index =activeMonsters.indexOf(this);if (index >-1) {activeMonsters.splice(index,1);}
+}
+}
+ class Bullet {constructor(x,y,targetX,targetY) {this.sprite =new PIXI.Sprite(bulletTexture);this.sprite.anchor.set(0.5);this.sprite.width =this.sprite.width / 2;this.sprite.height =this.sprite.height / 2;this.sprite.x =x;this.sprite.y =y;const dx =targetX - x;const dy =targetY - y;const distance =Math.sqrt(dx *dx + dy *dy);const bulletSpeed =15;this.vx =dx / distance *bulletSpeed;this.vy =dy / distance *bulletSpeed;this.trail =new PIXI.Graphics();app.stage.addChild(this.trail);this.trailPoints =[];app.stage.addChild(this.sprite);app.ticker.add(this.update,this);}
+update() {this.sprite.x +=this.vx;this.sprite.y +=this.vy;this.trailPoints.unshift({x:this.sprite.x,y:this.sprite.y});if (this.trailPoints.length >10) {this.trailPoints.pop();}
+this.trail.clear();this.trail.lineStyle(2,0xffff00,0.5);if (this.trailPoints.length >1) {this.trail.moveTo(this.trailPoints[0].x,this.trailPoints[0].y);for (let i =1;i < this.trailPoints.length;i++) {this.trail.lineTo(this.trailPoints[i].x,this.trailPoints[i].y);this.trail.alpha =1 - (i / this.trailPoints.length);}
+}
+ if (this.sprite.y < 0 ||this.sprite.y >config.height ||this.sprite.x < 0 ||this.sprite.x >config.width) {this.destroy();}
+ for (let monster of activeMonsters) {if (this.checkCollision(monster)) {playSound(sounds.hit);monster.destroy();this.destroy();break;}
+}
+}
+checkCollision(monster) {const dx =this.sprite.x - monster.container.x;const dy =this.sprite.y - monster.container.y;const distance =Math.sqrt(dx *dx + dy *dy);return distance < 30;}
+destroy() {app.ticker.remove(this.update,this);app.stage.removeChild(this.sprite);app.stage.removeChild(this.trail);}
+}
+ function spawnMonster() {if (gameOver ||!gameStarted) return;if (config.monstersCreated >=config.totalMonsters) {if (activeMonsters.length ===0) {gameOver =true;endGame(false);}
+return;}
+ const x =Math.random() *(config.width - 100) + 50;const charIndex =Math.floor(Math.random() *config.characters.length);const char =config.characters[charIndex];new Monster(char,x);config.monstersCreated++;updateRemainingMonsters();}
+ function updateRemainingMonsters() {document.getElementById('defeated-display').textContent =`击中: ${config.monstersDefeated} / ${config.totalMonsters}`;document.getElementById('level-display').textContent =`第 ${config.currentLevel} 关`;document.getElementById('missed-display').textContent =`错过: ${config.monstersMissed} / ${config.maxMissedMonsters}`;}
+ function codeToChar(code) {if (!code) return '';if (code.startsWith('Key')) return code.charAt(3).toLowerCase();if (code.startsWith('Digit')) return code.charAt(5);switch(code) {case 'Space':return ' ';case 'Semicolon':return ';';case 'Equal':return '=';case 'Comma':return ',';case 'Minus':return '-';case 'Period':return '.';case 'Slash':return '/';case 'Backquote':return '`';case 'BracketLeft':return '[';case 'BracketRight':return ']';case 'Backslash':return '\\';case 'Quote':return "'";default:return '';}
+}
+ function handleKeyDown(e) {const normalizeChar =(ch) =>{if (!ch) return '';let c =ch;const cp =c.codePointAt(0);if (cp >=0xFF01 &&cp <=0xFF5E) {c =String.fromCodePoint(cp - 0xFEE0);}
+if (c ==='；') c =';';if (c ==='：') c =':';return c.toLowerCase();};const getNormalizedKey =(evt) =>{if (!evt) return '';let k =evt.key;if (!k ||k ==='Unidentified' ||k ==='Process') {return codeToChar(evt.code);}
+if (k ==='Semicolon') return ';';if (k ==='Colon') return ':';if (k &&k.length ===1) return normalizeChar(k);return (k ||'').toLowerCase();};const normalizedKey =getNormalizedKey(e);const isSpaceKey =e.code ==='Space' ||e.key ===' ' ||e.key ==='Spacebar'
+||normalizedKey ===' ' ||e.keyCode ===32 ||e.which ===32;if (isSpaceKey) {e.preventDefault();}
+ if (isSpaceKey &&!gameStarted &&!gameOver) {unlockAudio();checkAudioStatus();startGame();return;}
+if (gameOver ||!gameStarted) return;const key =normalizedKey;totalKeyPresses++;let keyMatched =false;for (let monster of activeMonsters) {if (normalizeChar(monster.char) ===key &&!pendingKeys.has(key)) {keyMatched =true;pendingKeys.add(key);combo++;if (combo >maxCombo) {maxCombo =combo;}
+correctKeyPresses++;const targetX =monster.container.x;const animateStep =() =>{const dx =targetX - window.plane.x;if (Math.abs(dx) >5) {window.plane.x +=dx *0.1;requestAnimationFrame(animateStep);} else {window.plane.x =targetX;playSound(sounds.shoot);new Bullet(window.plane.x,window.plane.y - window.planeSprite.height / 2,monster.container.x,monster.container.y);pendingKeys.delete(key);}
+};animateStep();break;}
+}
+ const normalizedCharacters =Array.from(config.characters).map(ch =>normalizeChar(ch)).join('');if (!keyMatched &&normalizedCharacters.includes(key)) {combo =0;playSound(sounds.miss);window.planeSprite.tint =0xff0000;setTimeout(() =>{window.planeSprite.tint =0xffffff;},200);}
+}
+ function checkAudioStatus() {console.log("检查音频状态...");for (let key in sounds) {if (sounds[key]) {const readyState =sounds[key].readyState;console.log(`音频 ${key} 状态: ${readyState}`);if (readyState < 2) {console.log(`音频 ${key} 未加载完成，尝试重新加载`);sounds[key].load();}
+}
+}
+}
+ function unlockAudio() {console.log("尝试解锁音频...");const audioContext =new (window.AudioContext ||window.webkitAudioContext)();audioContext.resume().then(() =>{console.log("音频上下文已解锁");});}
+ function updateAccuracy() {const accuracy =totalKeyPresses >0 ?Math.round((correctKeyPresses / totalKeyPresses) *100) :100;}
+ function levelUp() {config.level++;config.monstersDefeated =0;config.monsterSpeed +=0.5;config.monsterSpawnRate =Math.max(500,config.monsterSpawnRate - 300);clearInterval(monsterSpawnInterval);monsterSpawnInterval =setInterval(spawnMonster,config.monsterSpawnRate);}
+ function endGame(isLevelComplete =false) {if (isLevelComplete &&config.monstersMissed < config.maxMissedMonsters) {nextLevel();return;}
+ gameOver =true;gameStarted =false;clearInterval(monsterSpawnInterval);clearInterval(planeTailAnimationInterval);stopSound(sounds.bgm);const resultMessage =`游戏结束！\n你到达了第${config.currentLevel}关\n总共击落${config.totalMonstersDefeated}个怪兽`;document.getElementById('result-message').textContent =resultMessage;document.getElementById('result-message').className ="result-message";const accuracy =totalKeyPresses >0 ?Math.round((correctKeyPresses / totalKeyPresses) *100) :100;document.getElementById('final-accuracy').textContent =`${accuracy}%`;document.getElementById('monsters-defeated').textContent =config.totalMonstersDefeated;document.getElementById('monsters-missed').textContent =config.monstersMissed;document.getElementById('start-screen').style.display ='block';document.querySelector('.game-title').style.display ='none';document.querySelector('#start-screen p').style.display ='none';document.querySelector('.difficulty-select').style.display ='none';document.querySelector('.space-prompt').style.display ='none';document.getElementById('final-stats').style.display ='block';const nextLevelButton =document.getElementById('next-level-button');if (nextLevelButton) {nextLevelButton.style.display ='none';}
+ for (let monster of [...activeMonsters]) {app.stage.removeChild(monster.container);}
+activeMonsters =[];initializeGame();}
+ function startGame() {config.difficulty =selectedDifficulty;config.monsterSpeed =difficultySettings[selectedDifficulty].monsterSpeed;config.monsterSpawnRate =difficultySettings[selectedDifficulty].monsterSpawnRate;config.characters =difficultySettings[selectedDifficulty].characters;document.getElementById('start-screen').style.display ='none';combo =0;maxCombo =0;totalKeyPresses =0;correctKeyPresses =0;gameOver =false;gameStarted =true;config.monstersCreated =0;config.monstersDefeated =0;config.totalMonstersDefeated =0;config.monstersMissed =0;config.currentLevel =1;updateRemainingMonsters();document.getElementById('final-stats').style.display ='none';document.getElementById('mission-result').style.display ='none';document.querySelector('.game-title').style.display ='block';document.querySelector('#start-screen p').style.display ='block';document.querySelector('.difficulty-select').style.display ='block';document.querySelector('.space-prompt').style.display ='block';for (let monster of [...activeMonsters]) {app.stage.removeChild(monster.container);}
+activeMonsters =[];spawnMonster();monsterSpawnInterval =setInterval(spawnMonster,config.monsterSpawnRate);startPlaneTailAnimation();if (sounds.bgm) {sounds.bgm.pause();sounds.bgm.currentTime =0;setTimeout(() =>{playSound(sounds.bgm);},100);}
+}
+ function restartGame() {console.log("Restart function called but no longer needed");}
+ function nextLevel() {config.currentLevel++;const difficultyConfig =difficultySettings[config.difficulty];config.monsterSpeed +=difficultyConfig.speedIncreasePerLevel;config.monsterSpawnRate =Math.max(500,config.monsterSpawnRate - 100);config.monstersCreated =0;config.monstersDefeated =0;for (let monster of [...activeMonsters]) {app.stage.removeChild(monster.container);}
+activeMonsters =[];updateRemainingMonsters();showLevelNotification();clearInterval(monsterSpawnInterval);monsterSpawnInterval =setInterval(spawnMonster,config.monsterSpawnRate);}
+ function showLevelNotification() {const notification =document.createElement('div');notification.className ='level-notification';notification.textContent =`第 ${config.currentLevel} 关`;document.body.appendChild(notification);setTimeout(() =>{notification.classList.add('fade-out');setTimeout(() =>{document.body.removeChild(notification);},500);},1500);}
+ app.ticker.add(() =>{if (gameOver ||!gameStarted) return;for (let monster of activeMonsters) {monster.update();}
+});loadTextures();</script>
+<style>*{margin:0;padding:0;box-sizing:border-box;}html,body{width:100%;height:100%;overflow:hidden;}body{display:flex;justify-content:center;align-items:center;background-color:#000;}#game-container{position:relative;width:100%;height:100%;display:flex;justify-content:center;align-items:center;}canvas{width:100% !important;height:100% !important;object-fit:contain;}.space-prompt{font-size:24px;color:#fff;margin-top:20px;text-shadow:0 0 10px #00ffff,0 0 20px #00ffff;}.difficulty-select{margin:20px 0;}.difficulty-select p{font-size:18px;color:#fff;margin-bottom:10px;}.difficulty-buttons{display:flex;justify-content:center;gap:15px;}.difficulty-button{padding:8px 15px;font-size:16px;background-color:rgba(0,100,150,0.5);color:white;border:1px solid #00ffff;border-radius:5px;cursor:pointer;transition:all 0.3s;}.difficulty-button:hover{background-color:rgba(0,150,200,0.7);transform:scale(1.05);}.difficulty-button.selected{background-color:rgba(0,200,255,0.7);border:2px solid #00ffff;box-shadow:0 0 10px rgba(0,255,255,0.5);transform:scale(1.05);}.game-info{position:absolute;font-size:18px;color:white;background-color:rgba(0,0,0,0.5);padding:5px 10px;border-radius:5px;z-index:10;}.left-bottom{bottom:10px;left:20px;}.right-bottom{bottom:10px;right:10px;}.pulse{animation:pulse 1.5s infinite;}@keyframes pulse{0%{opacity:0.6;transform:scale(1);}50%{opacity:1;transform:scale(1.05);}100%{opacity:0.6;transform:scale(1);}}.mission-result{position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.7);display:none;justify-content:center;align-items:center;z-index:100;}.mission-result-text{font-size:48px;font-weight:bold;padding:20px 40px;border-radius:10px;text-align:center;}.mission-success{color:#00ff00;text-shadow:0 0 10px #00ff00,0 0 20px #00ff00;background-color:rgba(0,50,0,0.7);border:2px solid #00ff00;}.mission-failure{color:#ff0000;text-shadow:0 0 10px #ff0000,0 0 20px #ff0000;background-color:rgba(50,0,0,0.7);border:2px solid #ff0000;}.result-message{font-size:24px;margin-bottom:20px;text-align:center;}.result-message.success{color:#00ff00;text-shadow:0 0 5px #00ff00;}.result-message.failure{color:#ff0000;text-shadow:0 0 5px #ff0000;}.game-buttons{display:flex;justify-content:center;gap:20px;margin-top:30px;}.game-button{padding:10px 20px;font-size:18px;background-color:rgba(0,150,200,0.7);color:white;border:2px solid #00ffff;border-radius:5px;cursor:pointer;transition:all 0.3s;text-shadow:0 0 5px #00ffff;box-shadow:0 0 10px rgba(0,255,255,0.5);}.game-button:hover{background-color:rgba(0,200,255,0.9);transform:scale(1.05);}.game-button:disabled{background-color:rgba(100,100,100,0.7);border-color:#888;color:#ccc;cursor:not-allowed;text-shadow:none;box-shadow:none;}#start-screen{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:white;z-index:1000;width:100%;padding:20px;}.game-title{font-size:48px;margin-bottom:20px;text-shadow:0 0 10px #00ffff,0 0 20px #00ffff;}.left-top{top:10px;left:20px;}.right-top{top:10px;right:20px;}.center-top{position:absolute;top:10px;left:50%;transform:translateX(-50%);font-size:24px;text-shadow:0 0 10px #00ffff;background-color:rgba(0,0,0,0.5);padding:8px 20px;text-align:center;min-width:120px;display:flex;justify-content:center;align-items:center;}.back-button{position:absolute;top:10px;left:10px;z-index:1000;width:40px;height:40px;background-color:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.3);border-radius:50%;display:flex;justify-content:center;align-items:center;cursor:pointer;transition:all 0.3s ease;}.back-button:hover{background-color:rgba(0,0,0,0.7);transform:scale(1.1);}.back-button::before{content:'';display:block;width:12px;height:12px;border-left:3px solid #fff;border-bottom:3px solid #fff;transform:rotate(45deg);margin-left:5px;}.level-notification{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background-color:rgba(0,255,255,0.2);color:#00ffff;padding:20px 40px;border-radius:10px;font-size:36px;font-weight:bold;text-shadow:0 0 10px #00ffff;border:2px solid #00ffff;box-shadow:0 0 20px rgba(0,255,255,0.5);z-index:1000;animation:fadeIn 0.5s ease-out;}.level-notification.fade-out{animation:fadeOut 0.5s ease-out;}@keyframes fadeIn{from{opacity:0;transform:translate(-50%,-50%) scale(0.8);}to{opacity:1;transform:translate(-50%,-50%) scale(1);}}@keyframes fadeOut{from{opacity:1;transform:translate(-50%,-50%) scale(1);}to{opacity:0;transform:translate(-50%,-50%) scale(1.2);}}</style>
+</body>
+</html>

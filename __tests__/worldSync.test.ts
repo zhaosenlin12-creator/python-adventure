@@ -138,4 +138,28 @@ describe('WorldSyncService', () => {
     expect(service.isConnected()).toBe(true);
     expect(global.fetch).toHaveBeenCalled();
   });
+
+  test('accepts heartbeat pong messages without treating them as unknown', async () => {
+    const service = new WorldSyncService(11, '开放世界');
+    const connectPromise = service.connect();
+    const socket = MockWebSocket.instances[0];
+    socket.open();
+    await connectPromise;
+
+    socket.onmessage?.({ data: JSON.stringify({ type: 'pong', data: {} }) } as MessageEvent);
+
+    expect(warnSpy).not.toHaveBeenCalled();
+  });
+
+  test('falls back quietly when the initial websocket connection fails', async () => {
+    const service = new WorldSyncService(12, '开放世界');
+    const connectPromise = service.connect();
+    const socket = MockWebSocket.instances[0];
+    socket.fail();
+
+    await connectPromise;
+
+    expect(warnSpy).not.toHaveBeenCalled();
+    expect(service.isConnected()).toBe(true);
+  });
 });

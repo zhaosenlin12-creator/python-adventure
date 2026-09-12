@@ -19,6 +19,24 @@ run_pm2_command() {
     fi
 }
 
+wait_for_http() {
+    local url="$1"
+    local attempts="${2:-15}"
+    local sleep_seconds="${3:-2}"
+    local i
+
+    for ((i=1; i<=attempts; i++)); do
+        if curl -fsS --max-time 5 "$url" >/dev/null; then
+            return 0
+        fi
+        echo "Waiting for $url ($i/$attempts)..."
+        sleep "$sleep_seconds"
+    done
+
+    echo "ERROR: health check failed for $url after $attempts attempts"
+    return 1
+}
+
 if [ "${1:-}" != "--as-game" ] && [ "${EUID:-$(id -u)}" -eq 0 ]; then
     mkdir -p /www/data/game-backend /www/backups/game-backend /www/wwwlogs
     chown -R "$OWNER_USER:$OWNER_GROUP" "$APP_DIR" /www/data/game-backend /www/backups/game-backend
@@ -75,9 +93,10 @@ run_pm2_command "cd '$APP_DIR' && pm2 delete game-backend 2>/dev/null || true"
 run_pm2_command "cd '$APP_DIR' && pm2 start /www/wwwroot/game-backend/run_prod.py --name game-backend --interpreter /www/wwwroot/game-backend/venv/bin/python --cwd /www/wwwroot/game-backend --max-memory-restart 400M"
 run_pm2_command "pm2 save"
 
-sleep 3
-curl --max-time 5 http://127.0.0.1:8000/health
-curl --max-time 5 http://127.0.0.1:8000/api/typing/health
+wait_for_http http://127.0.0.1:8000/health
+wait_for_http http://127.0.0.1:8000/api/typing/health
+curl -fsS --max-time 5 http://127.0.0.1:8000/health
+curl -fsS --max-time 5 http://127.0.0.1:8000/api/typing/health
 
 echo "========================================="
 echo "DONE: backend post-upload deploy finished"

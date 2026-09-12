@@ -33,12 +33,22 @@ function PixelBlock({ x, y, color, delay }: { x: number; y: number; color: strin
     );
 }
 
+const AUTH_PLATFORM_DECORATIONS = [
+    { left: "3%", bottom: "15%", width: 100, variant: "grass" as const, delay: 0.05 },
+    { left: "88%", bottom: "25%", width: 80, variant: "stone" as const, delay: 0.15 },
+    { left: "8%", bottom: "75%", width: 70, variant: "gold" as const, delay: 0.25 },
+    { left: "82%", bottom: "70%", width: 90, variant: "grass" as const, delay: 0.35 },
+    { left: "15%", bottom: "45%", width: 60, variant: "stone" as const, delay: 0.45 },
+    { left: "78%", bottom: "50%", width: 75, variant: "gold" as const, delay: 0.55 },
+] as const;
+
 // 游戏平台组件
-function GamePlatform({ left, bottom, width, variant }: { 
+function GamePlatform({ left, bottom, width, variant, delay }: {
     left: string; 
     bottom: string; 
     width: number;
     variant: 'grass' | 'stone' | 'gold';
+    delay: number;
 }) {
     const colors = {
         grass: 'from-green-600 via-green-500 to-green-600',
@@ -52,7 +62,7 @@ function GamePlatform({ left, bottom, width, variant }: {
             style={{ left, bottom, width }}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 0.5, x: 0 }}
-            transition={{ duration: 0.8, delay: Math.random() * 0.5 }}
+            transition={{ duration: 0.8, delay }}
         >
             {/* 平台顶部高光 */}
             <div className="absolute inset-x-0 top-0 h-1 bg-white/20 rounded-t-sm" />
@@ -103,12 +113,9 @@ export default function AuthModal() {
             {/* 游戏平台装饰 */}
             {showElements && (
                 <>
-                    <GamePlatform left="3%" bottom="15%" width={100} variant="grass" />
-                    <GamePlatform left="88%" bottom="25%" width={80} variant="stone" />
-                    <GamePlatform left="8%" bottom="75%" width={70} variant="gold" />
-                    <GamePlatform left="82%" bottom="70%" width={90} variant="grass" />
-                    <GamePlatform left="15%" bottom="45%" width={60} variant="stone" />
-                    <GamePlatform left="78%" bottom="50%" width={75} variant="gold" />
+                    {AUTH_PLATFORM_DECORATIONS.map((decoration) => (
+                        <GamePlatform key={`${decoration.left}-${decoration.bottom}`} {...decoration} />
+                    ))}
                 </>
             )}
             

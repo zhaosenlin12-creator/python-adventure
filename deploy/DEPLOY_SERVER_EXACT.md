@@ -20,6 +20,7 @@ Important:
 
 - Frontend code dir: `/www/wwwroot/game`
 - Backend code dir: `/www/wwwroot/game-backend`
+- Frontend nginx vhost: `/www/server/panel/vhost/nginx/game.codebn.cn.conf`
 - PM2 owner: `game`
 - Frontend PM2 app: `game`
 - Backend PM2 app: `game-backend`
@@ -100,8 +101,14 @@ Expected behavior:
 
 - the package already contains the built `.next` output
 - the script installs runtime dependencies on the server
+- the script installs `deploy/nginx.conf` to the BT nginx vhost path and runs `nginx -t`
 - the script restarts PM2 as user `game`
 - the script clears nginx proxy cache and reloads nginx when run as `root`
+
+Important:
+
+- run `deploy/post-upload-frontend.sh` from a `root` shell so nginx config install, syntax test, cache cleanup, and reload all happen
+- if the nginx syntax test fails, the script restores the previous vhost config backup and exits non-zero
 
 ## Health Checks
 
@@ -115,6 +122,14 @@ Frontend:
 
 ```bash
 curl -fsS http://127.0.0.1:3003
+```
+
+Public header spot-checks after frontend deploy:
+
+```bash
+curl -I https://game.codebn.cn/_next/static/
+curl -I https://game.codebn.cn/typing/data/catalog.json
+curl -I 'https://game.codebn.cn/api/typing/rankings?limit=10'
 ```
 
 ## Automatic DB Backups
