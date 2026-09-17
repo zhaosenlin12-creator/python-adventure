@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Virus Battle - Typing Game</title>
+<style>body{margin:0;padding:0;overflow:hidden;background-color:#000;display:flex;justify-content:center;align-items:center;height:100vh;font-family:Arial,sans-serif;}#game-container{position:relative;box-shadow:0 0 20px rgba(0,255,0,0.3);border-radius:5px;width:100vw;height:100vh;overflow:hidden;}#game-canvas{display:block;width:100%;height:100%;}#input-container{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);width:300px;text-align:center;z-index:100;}#word-input{padding:12px;font-size:20px;border-radius:5px;border:3px solid #4CAF50;width:100%;background-color:rgba(0,0,0,0.7);color:#fff;text-align:center;box-shadow:0 0 10px rgba(76,175,80,0.5);outline:none;}#word-input:focus{border-color:#8BC34A;box-shadow:0 0 15px rgba(139,195,74,0.8);}#game-over{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background-color:rgba(0,0,0,0.8);color:#fff;padding:20px;border-radius:10px;text-align:center;display:none;width:200px;z-index:200;}#score-display{position:absolute;top:20px;right:20px;color:#fff;font-size:24px;font-weight:bold;text-shadow:0 0 5px rgba(0,0,0,0.5);}#restart-button{background-color:#4CAF50;color:white;padding:12px 24px;border:none;border-radius:5px;font-size:18px;cursor:pointer;margin-top:20px;box-shadow:0 0 10px rgba(76,175,80,0.5);transition:all 0.2s ease;}#restart-button:hover{background-color:#45a049;transform:scale(1.05);}#debug-panel{position:absolute;top:20px;left:20px;background-color:rgba(0,0,0,0.7);color:#fff;padding:10px;border-radius:5px;font-size:12px;max-width:300px;max-height:200px;overflow:auto;z-index:100;}#toggle-debug{position:absolute;top:5px;left:5px;background-color:#333;color:#fff;border:none;border-radius:3px;padding:3px 6px;font-size:10px;cursor:pointer;z-index:100;}#instructions{position:absolute;top:60px;left:50%;transform:translateX(-50%);color:#fff;font-size:16px;text-align:center;text-shadow:0 0 5px rgba(0,0,0,0.5);z-index:50;}#typing-indicator{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:#fff;font-size:20px;text-align:center;text-shadow:0 0 5px rgba(0,0,0,0.5);z-index:100;background-color:rgba(0,0,0,0.5);padding:10px 20px;border-radius:5px;border:2px solid #4CAF50;}#start-screen{position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.8);display:flex;flex-direction:column;justify-content:center;align-items:center;z-index:300;}#start-screen h1{color:#4CAF50;font-size:48px;margin-bottom:20px;text-shadow:0 0 10px rgba(76,175,80,0.7);animation:pulse 1.5s infinite alternate;}#start-screen p{color:#fff;font-size:24px;margin-bottom:40px;text-shadow:0 0 5px rgba(255,255,255,0.5);}#difficulty-selector{background-color:rgba(0,0,0,0.5);}#difficulty-selector label{color:#fff;font-size:18px;margin-right:10px;}#difficulty-select{padding:8px 15px;border-radius:5px;background-color:rgba(0,0,0,0.7);color:#fff;border:1px solid #4CAF50;font-size:16px;cursor:pointer;}#difficulty-select:focus{outline:none;box-shadow:0 0 10px rgba(76,175,80,0.7);}#space-prompt{margin-top:50px;color:#fff;font-size:18px;text-shadow:0 0 8px rgba(255,255,255,0.7);animation:blink 1.2s infinite;}@keyframes pulse{0%{transform:scale(1);}100%{transform:scale(1.05);}}@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}#back-button{position:absolute;top:20px;left:20px;background:none;border:none;color:white;font-size:24px;cursor:pointer;z-index:1000;padding:10px;display:flex;align-items:center;transition:transform 0.2s ease;}#back-button:hover{transform:scale(1.1);}#back-button svg{width:24px;height:24px;fill:currentColor;}</style>
+</head>
+<body>
+<div id="game-container">
+<button id="back-button" onclick="window.history.back()">
+<svg viewBox="0 0 24 24">
+<path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+</svg>
+</button>
+<canvas id="game-canvas"></canvas>
+<div id="score-display">得分: <span id="score">0</span></div>
+<div id="game-over">
+<h2>游戏结束</h2>
+<p>你的得分: <span id="final-score">0</span></p>
+<p>达到的关卡: <span id="final-level">1</span></p>
+<button id="restart-button">重新开始</button>
+</div>
+<button id="toggle-debug" style="display: none;">Debug</button>
+<div id="debug-panel" style="display: none;">
+<h4>Debug Info</h4>
+<div id="debug-info">No viruses yet</div>
+<button id="spawn-virus">Spawn Virus</button>
+<button id="clear-viruses">Clear All Viruses</button>
+</div>
+<div id="start-screen">
+<h1>细菌大作战</h1>
+<p>输入单词消灭细菌，拯救细胞</p>
+<div id="difficulty-selector">
+<label for="difficulty-select">难度:</label>
+<select id="difficulty-select">
+<option value="easy">简单</option>
+<option value="normal" selected>普通</option>
+<option value="hard">困难</option>
+</select>
+</div>
+<div id="space-prompt">按空格键开始</div>
+</div>
+</div>
+<script src="/typing/game-res/pixi.min.js"></script>
+<script src="js/gsap.min.js"></script>
+<script src="js/game.js?103"></script>
+</body>
+</html>

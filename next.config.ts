@@ -9,6 +9,16 @@ const nextConfig: NextConfig = {
   // Needed after upgrading Next 16.2.x: QA scripts hit 127.0.0.1 in dev.
   allowedDevOrigins: ['127.0.0.1', 'localhost'],
   transpilePackages: ['phaser'],
+  async rewrites() {
+    return [
+      { source: "/typing", destination: "/typing/index.html" },
+      { source: "/typing/", destination: "/typing/index.html" },
+      { source: "/data/catalog.json", destination: "/typing/data/catalog.json" },
+      { source: "/data/asset-map.json", destination: "/typing/data/asset-map.json" },
+      { source: "/data/:path*", destination: "/typing/data/:path*" },
+      { source: "/assets/:path*", destination: "/typing/assets/:path*" },
+    ];
+  },
 };
 
 export default nextConfig;

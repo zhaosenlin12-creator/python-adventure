@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<title>打地鼠游戏</title>
+<style>*{box-sizing:border-box;}html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background-color:#000;}body{display:flex;justify-content:center;align-items:center;}#game-container{position:relative;transform-origin:center center;}canvas{display:block;}.back-button{position:absolute;top:160px;left:100px;width:40px;height:40px;cursor:pointer;z-index:1000;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform 0.2s ease;}.back-button:hover{transform:scale(1.1);}.back-button::before{content:'';display:block;width:12px;height:12px;border-left:3px solid #333;border-bottom:3px solid #333;transform:rotate(45deg);margin-left:5px;}</style>
+</head>
+<body>
+<div id="game-container">
+</div>
+<script src="/typing/game-res/pixi.min.js"></script>
+<script src="js/whac-a-mole-ultra.js"></script>
+<script>const GAME_WIDTH =800;const GAME_HEIGHT =600;const getViewportSize =() =>{const vw =document.documentElement.clientWidth ||window.innerWidth;const vh =document.documentElement.clientHeight ||window.innerHeight;return {vw,vh };};const scaleGameToFit =() =>{const container =document.getElementById('game-container');if (!container) return;const canvas =container.querySelector('canvas');if (canvas) {canvas.style.width =GAME_WIDTH + 'px';canvas.style.height =GAME_HEIGHT + 'px';}
+const {vw,vh } =getViewportSize();const scale =Math.min(vw / GAME_WIDTH,vh / GAME_HEIGHT);container.style.width =GAME_WIDTH + 'px';container.style.height =GAME_HEIGHT + 'px';container.style.transform ='scale(' + scale + ')';container.style.transformOrigin ='top left';container.style.position ='absolute';container.style.left =Math.floor((vw - GAME_WIDTH *scale) / 2) + 'px';container.style.top =Math.floor((vh - GAME_HEIGHT *scale) / 2) + 'px';};const observer =new MutationObserver(() =>{const canvas =document.querySelector('#game-container canvas');if (canvas) {scaleGameToFit();observer.disconnect();}
+});observer.observe(document.getElementById('game-container'),{childList:true });window.addEventListener('load',() =>{scaleGameToFit();setTimeout(scaleGameToFit,300);});window.addEventListener('resize',scaleGameToFit);window.addEventListener('orientationchange',() =>{setTimeout(scaleGameToFit,200);});</script>
+</body>
+</html>
