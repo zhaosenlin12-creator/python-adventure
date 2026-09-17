@@ -51,6 +51,26 @@
 <audio id="miss-sound">
 <source src="miss.mp3" type="audio/mp3">
 </audio>
+<script>
+/* typing-debug-gate */
+(function silenceGameConsole() {
+  try {
+    var allow = (typeof location !== "undefined") && /[?&]typingDebug=1/.test(location.search);
+    if (allow) return;
+    if (!window.__typingConsoleOriginal) {
+      window.__typingConsoleOriginal = {
+        log: console.log.bind(console),
+        info: console.info.bind(console),
+        debug: console.debug.bind(console)
+      };
+    }
+    var noop = function () {};
+    console.log = noop;
+    console.info = noop;
+    console.debug = noop;
+  } catch (e) { /* never break the game on the console shim */ }
+})();
+</script>
 <script src="/typing/game-res/pixi.min.js"></script>
 <script>const config ={width:window.innerWidth,height:window.innerHeight,backgroundColor:0x000000,monsterSpeed:1,monsterSpawnRate:2000,characters:'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',totalMonsters:10,monstersCreated:0,monstersDefeated:0,totalMonstersDefeated:0,monstersMissed:0,maxMissedMonsters:5,currentLevel:1,difficulty:'normal',imagePath:'./',soundEnabled:true
 };const sounds ={bgm:document.getElementById('bgm'),shoot:document.getElementById('shoot-sound'),hit:document.getElementById('hit-sound'),miss:document.getElementById('miss-sound')

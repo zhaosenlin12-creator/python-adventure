@@ -97,6 +97,10 @@ logging.basicConfig(
     level=log_level,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
 )
+# Explicitly pin the root level so this survives deployments where uvicorn has
+# already attached handlers (basicConfig becomes a no-op in that case and INFO
+# logs from app modules would otherwise leak into production stdout).
+logging.getLogger().setLevel(log_level)
 logger = logging.getLogger(__name__)
 logging.getLogger("uvicorn.access").setLevel(logging.WARNING if IS_PRODUCTION else logging.INFO)
 

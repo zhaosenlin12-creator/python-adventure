@@ -86,6 +86,10 @@ backend/uploads/
 backend/logs/
 backend_deploy_tmp/
 
+# Next.js dev-only generated files
+/AGENTS.md
+/CLAUDE.md
+.codex-*.log
 # Database files (never commit to avoid overwriting server data)
 *.db
 *.db-journal
