@@ -8,7 +8,7 @@ from urllib.parse import urlparse, urlunparse
 
 import httpx
 from fastapi import APIRouter, Depends, HTTPException, Query
-from fastapi.responses import Response
+from fastapi.responses import JSONResponse, Response
 from sqlalchemy import or_
 from sqlalchemy.orm import Session
 
@@ -32,6 +32,8 @@ WORD_AUDIO_DIR = DATA_DIR / "audio" / "words"
 LEARNER_NAME = "\u5b66\u4e60\u8005"
 PRACTICE_TITLE = "\u7ec3\u4e60"
 CONTEST_TITLE = "\u6253\u5b57\u6bd4\u8d5b"
+SPEED_TEST_MODE = "speed-test"
+SPEED_TEST_TITLE = "\u901f\u5ea6\u6d4b\u8bd5"
 
 _json_migration_checked = False
 
@@ -62,6 +64,10 @@ def _parse_datetime(value: Any) -> datetime:
         except ValueError:
             pass
     return _now_dt()
+
+
+def _json_response(payload: dict[str, Any], cache_control: str) -> JSONResponse:
+    return JSONResponse(content=payload, headers={"Cache-Control": cache_control})
 
 
 def _empty_db() -> dict[str, Any]:
@@ -116,6 +122,18 @@ def _json_dumps(value: Any) -> str:
     return json.dumps(value if value is not None else {}, ensure_ascii=False)
 
 
+def _redact_secrets(value: Any) -> Any:
+    if isinstance(value, list):
+        return [_redact_secrets(item) for item in value]
+    if not isinstance(value, dict):
+        return value
+    return {
+        key: _redact_secrets(item)
+        for key, item in value.items()
+        if key not in {"token", "owner_token", "authorization"}
+    }
+
+
 def _json_loads(value: str | None, fallback: Any = None) -> Any:
     if not value:
         return {} if fallback is None else fallback
@@ -126,9 +144,9 @@ def _json_loads(value: str | None, fallback: Any = None) -> Any:
 
 
 def _score_to_dict(score: TypingScore) -> dict[str, Any]:
+    # Session tokens are credentials, not leaderboard data. Never expose them in API payloads.
     return {
         "id": score.id,
-        "token": score.token or "",
         "user_id": score.user_id or "",
         "username": score.username or LEARNER_NAME,
         "mode": score.mode or "lesson",
@@ -145,12 +163,11 @@ def _score_to_dict(score: TypingScore) -> dict[str, Any]:
 def _room_to_dict(room: TypingContestRoom) -> dict[str, Any]:
     return {
         "id": room.id,
-        "owner_token": room.owner_token or "",
         "owner_name": room.owner_name or LEARNER_NAME,
         "title": room.title or CONTEST_TITLE,
         "lesson_id": room.lesson_id or "",
         "status": room.status or "waiting",
-        "payload": _json_loads(room.payload, {}),
+        "payload": _redact_secrets(_json_loads(room.payload, {})),
         "created_at": _iso(room.created_at),
         "updated_at": _iso(room.updated_at),
     }
@@ -555,7 +572,7 @@ def _user_id_from(payload: dict[str, Any], user: dict[str, Any]) -> str:
 
 @router.get("/health")
 async def health():
-    return {"ok": True, "time": _now(), "tts": _tts_configured()}
+    return _json_response({"ok": True, "time": _now(), "tts": _tts_configured()}, "no-store")
 
 
 @router.get("/me")
@@ -565,13 +582,16 @@ async def me(token: str = "", db: Session = Depends(get_db)):
     user = None
     if session:
         user = {"id": session.user_id or "", "username": session.username or "", "raw": _json_loads(session.raw_user, {})}
-    return {"ok": True, "user": user}
+    return _json_response({"ok": True, "user": user}, "private, no-store")
 
 
 @router.get("/rankings")
 async def rankings(limit: int = Query(50, ge=1, le=200), mode: str = "", db: Session = Depends(get_db)):
     _migrate_json_db_once(db)
-    return {"ok": True, "rankings": _list_scores_from_db(db, limit, mode)}
+    return _json_response(
+        {"ok": True, "rankings": _list_scores_from_db(db, limit, mode)},
+        "public, max-age=15, stale-while-revalidate=60",
+    )
 
 
 @router.get("/history")
@@ -583,19 +603,23 @@ async def history(
     db: Session = Depends(get_db),
 ):
     _migrate_json_db_once(db)
-    if token:
-        session = db.get(TypingSession, token)
-        if session:
-            user_id = user_id or (session.user_id or "")
-            username = username or (session.username or "")
-    return {"ok": True, "history": _list_history_from_db(db, token=token, user_id=user_id, username=username, limit=limit)}
-
-
+    session = db.get(TypingSession, token) if token else None
+    if session is None:
+        return _json_response({"ok": True, "history": []}, "private, no-store")
+    user_id = session.user_id or ""
+    username = session.username or ""
+    return _json_response(
+        {"ok": True, "history": _list_history_from_db(db, token=token, user_id=user_id, username=username, limit=limit)},
+        "private, no-store",
+    )
 @router.get("/settings")
 async def get_settings(token: str = "", db: Session = Depends(get_db)):
     _migrate_json_db_once(db)
     item = db.get(TypingSetting, token) if token else None
-    return {"ok": True, "settings": _json_loads(item.payload, {}) if item else None}
+    return _json_response(
+        {"ok": True, "settings": _json_loads(item.payload, {}) if item else None},
+        "private, no-store",
+    )
 
 
 @router.get("/word-audio")
@@ -684,7 +708,7 @@ async def create_contest_room(payload: dict[str, Any], db: Session = Depends(get
         title=str(payload.get("title") or CONTEST_TITLE)[:255],
         lesson_id=str(payload.get("lessonId") or ""),
         status="waiting",
-        payload=_json_dumps(payload),
+        payload=_json_dumps(_redact_secrets(payload)),
         created_at=_now_dt(),
         updated_at=_now_dt(),
     )
@@ -692,3 +716,118 @@ async def create_contest_room(payload: dict[str, Any], db: Session = Depends(get
     db.commit()
     db.refresh(room)
     return {"ok": True, "room": _room_to_dict(room)}
+
+@router.post("/lesson/speed-test")
+async def create_speed_test(payload: dict[str, Any], db: Session = Depends(get_db)):
+    _migrate_json_db_once(db)
+    token = str(payload.get("token") or "")
+    session = db.get(TypingSession, token) if token else None
+    user_id = str((session.user_id if session else "") or payload.get("user_id") or "")
+    username = str(payload.get("username") or (session.username if session else "") or LEARNER_NAME)[:100] or LEARNER_NAME
+    speed = _score_number(payload, "speed")
+    if speed <= 0:
+        chars = _score_int(payload, "chars")
+        seconds = _score_number(payload, "seconds") or _score_number(payload, "duration_seconds")
+        if chars > 0 and seconds > 0:
+            speed = round(chars / max(seconds, 1) * 60.0, 2)
+    score = TypingScore(
+        token=token,
+        user_id=user_id,
+        username=username,
+        mode=SPEED_TEST_MODE,
+        title=str(payload.get("title") or SPEED_TEST_TITLE)[:255],
+        speed=speed,
+        accuracy=_score_number(payload, "accuracy"),
+        chars=_score_int(payload, "chars"),
+        seconds=_score_number(payload, "seconds") or _score_number(payload, "duration_seconds"),
+        created_at=_parse_datetime(payload.get("date") or payload.get("created_at")),
+    )
+    db.add(score)
+    db.commit()
+    db.refresh(score)
+
+    global_rank = (
+        db.query(TypingScore)
+        .filter(TypingScore.mode == SPEED_TEST_MODE, TypingScore.speed > speed)
+        .count()
+        + 1
+    )
+
+    user_best_query = db.query(TypingScore).filter(TypingScore.mode == SPEED_TEST_MODE)
+    if user_id:
+        user_best_query = user_best_query.filter(TypingScore.user_id == user_id)
+    else:
+        user_best_query = user_best_query.filter(TypingScore.username == username)
+    user_best = user_best_query.order_by(TypingScore.speed.desc(), TypingScore.accuracy.desc()).first()
+    personal_best_speed = float(user_best.speed) if user_best else speed
+    total_speed_tests = user_best_query.count()
+
+    extra: dict[str, Any] = {}
+    wpm_raw = payload.get("wpm")
+    if wpm_raw is not None:
+        try:
+            extra["wpm"] = float(wpm_raw)
+        except (TypeError, ValueError):
+            pass
+
+    return {
+        "ok": True,
+        "score": _score_to_dict(score),
+        "extra": extra,
+        "global_rank": global_rank,
+        "personal_best_speed": personal_best_speed,
+        "total_speed_tests": total_speed_tests,
+        "rankings": _list_scores_from_db(db, 50, SPEED_TEST_MODE),
+        "history": _list_history_from_db(db, token=token, user_id=user_id, username=username, limit=20),
+    }
+
+
+@router.get("/user/speed-test-rank")
+async def user_speed_test_rank(
+    token: str = "",
+    user_id: str = "",
+    username: str = "",
+    db: Session = Depends(get_db),
+):
+    _migrate_json_db_once(db)
+    session = db.get(TypingSession, token) if token else None
+    if session is None:
+        return _json_response(
+            {"ok": True, "user": None, "rank": None, "best_speed": 0.0, "best_accuracy": 0.0, "total": 0},
+            "private, no-store",
+        )
+    user_id = session.user_id or ""
+    username = session.username or LEARNER_NAME
+
+    query = db.query(TypingScore).filter(TypingScore.mode == SPEED_TEST_MODE)
+    if user_id:
+        query = query.filter(TypingScore.user_id == user_id)
+    elif username and username != LEARNER_NAME:
+        query = query.filter(TypingScore.username == username)
+    best = query.order_by(TypingScore.speed.desc(), TypingScore.accuracy.desc()).first()
+    total = query.count()
+
+    rank = None
+    if best is not None:
+        rank_query = db.query(TypingScore).filter(
+            TypingScore.mode == SPEED_TEST_MODE,
+            TypingScore.speed > float(best.speed),
+        )
+        rank = rank_query.count() + 1
+
+    return _json_response(
+        {
+            "ok": True,
+            "user": {
+                "user_id": user_id,
+                "username": username or (best.username if best else LEARNER_NAME),
+            },
+            "rank": rank,
+            "best_speed": float(best.speed) if best else 0.0,
+            "best_accuracy": float(best.accuracy) if best else 0.0,
+            "best_title": best.title if best else "",
+            "best_date": _iso(best.created_at) if best else None,
+            "total": total,
+        },
+        "private, no-store",
+    )

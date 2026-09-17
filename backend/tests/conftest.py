@@ -18,3 +18,7 @@ os.environ["DATABASE_URL"] = f"sqlite:///{TEST_DB_PATH.as_posix()}"
 os.environ.setdefault("ENVIRONMENT", "test")
 os.environ.setdefault("SECRET_KEY", "test-secret-key-for-backend-suite-0123456789")
 _delete_sqlite_sidecars(TEST_DB_PATH)
+
+
+def pytest_sessionfinish(session, exitstatus) -> None:
+    _delete_sqlite_sidecars(TEST_DB_PATH)

@@ -1,16 +1,16 @@
 const SOUND_EXTENSIONS = ['mp3', 'ogg', 'wav', 'm4a'];
 
 const SOUND_DEFINITIONS = {
-    bgm: {names: ['fighter_bgm', 'bgm', 'music', 'background'], volume: 0.35, loop: true},
-    fire: {names: ['fire', 'shoot', 'shot', 'attack'], volume: 0.8},
-    hit: {names: ['hit', 'hurt', 'impact'], volume: 0.75},
-    explosion: {names: ['explosion', 'boom', 'destroy', 'die'], volume: 0.85},
-    error: {names: ['error', 'wrong', 'miss'], volume: 0.8},
-    shield: {names: ['shield', 'protect', 'clear'], volume: 0.85},
-    pause: {names: ['pause'], volume: 0.8},
-    resume: {names: ['resume', 'start'], volume: 0.8},
-    restart: {names: ['restart', 'reset'], volume: 0.85},
-    gameover: {names: ['gameover', 'lost', 'fail'], volume: 0.9},
+    bgm: {sources: ['../virus-battle/assets/bgm.ogg'], volume: 0.28, loop: true},
+    fire: {sources: ['../defend-earth/shoot.mp3'], volume: 0.65},
+    hit: {sources: ['../defend-earth/hit.mp3'], volume: 0.6},
+    explosion: {sources: ['../virus-battle/assets/explosion.flac'], volume: 0.75},
+    error: {sources: ['../whac-a-mole/assets/miss.mp3'], volume: 0.7},
+    shield: {sources: ['../whac-a-mole/assets/hit.mp3'], volume: 0.65},
+    pause: {sources: [], volume: 0.8},
+    resume: {sources: [], volume: 0.8},
+    restart: {sources: [], volume: 0.85},
+    gameover: {sources: ['../car-racing/sounds/lost.wav'], volume: 0.8},
 };
 
 const SoundSlots = {};
@@ -29,7 +29,7 @@ function generateSources (names) {
 
 function buildSoundSlot (definition) {
     return {
-        sources: generateSources(definition.names),
+        sources: definition.sources || generateSources(definition.names || []),
         sourceIndex: 0,
         audio: null,
         volume: definition.volume ?? 1,

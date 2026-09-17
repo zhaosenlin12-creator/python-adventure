@@ -120,12 +120,12 @@ function pause () {
     if (!Game.isStop) {
         if (!Game.isPause) {
             Game.isPause = true;
-            J.id('pause').child(0).attr('src', './images/start.png');
+            document.getElementById('pause')?.classList.add('is-paused');
             showInfo('暂停中');
             playSound('pause');
         } else {
             Game.isPause = false;
-            J.id('pause').child(0).attr('src', './images/pause.png');
+            document.getElementById('pause')?.classList.remove('is-paused');
             hideInfo();
             playSound('resume');
         }

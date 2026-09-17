@@ -14,30 +14,14 @@ export default function LoginForm({ onSwitchToRegister }: LoginFormProps) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showResetPanel, setShowResetPanel] = useState(false);
-  const [resetMessage, setResetMessage] = useState<string | null>(null);
-  const { login, resetPassword, isLoading, error, clearError } = useAuthStore();
+  const { login, isLoading, error, clearError } = useAuthStore();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     clearError();
-    setResetMessage(null);
 
     try {
       await login(username, password);
-    } catch {
-      // store handles request errors
-    }
-  };
-
-  const handleResetPassword = async () => {
-    clearError();
-    setResetMessage(null);
-
-    try {
-      const payload = await resetPassword(username);
-      setPassword(payload.default_password);
-      setResetMessage(payload.message);
-      setShowResetPanel(true);
     } catch {
       // store handles request errors
     }
@@ -106,7 +90,6 @@ export default function LoginForm({ onSwitchToRegister }: LoginFormProps) {
               type="button"
               onClick={() => {
                 clearError();
-                setResetMessage(null);
                 setShowResetPanel((value) => !value);
               }}
               className="inline-flex items-center gap-2 text-sm text-slate-300 transition hover:text-blue-300"
@@ -127,32 +110,13 @@ export default function LoginForm({ onSwitchToRegister }: LoginFormProps) {
                   <Sparkles className="h-4 w-4" />
                 </div>
                 <div className="flex-1">
-                  <div className="text-sm font-pixel text-white">学生账号快速重置</div>
+                  <div className="text-sm font-pixel text-white">学生账号密码帮助</div>
                   <p className="mt-1 text-xs leading-5 text-slate-400">
-                    输入用户名后即可一键把密码重置为 <span className="font-semibold text-blue-300">123456</span>。
-                    为防误触，同一用户名 30 秒内只能重置一次。
+                    为保护账号安全，系统不会在未验证身份时自动重置密码。
+                    请联系教师或管理员核验身份后处理。
                   </p>
-                  <button
-                    type="button"
-                    onClick={handleResetPassword}
-                    disabled={isLoading || !username.trim()}
-                    className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-sm font-pixel text-white transition hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-50"
-                  >
-                    <RefreshCcw className="h-4 w-4" />
-                    {isLoading ? '重置中...' : '重置为 123456'}
-                  </button>
                 </div>
               </div>
-            </motion.div>
-          )}
-
-          {resetMessage && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="rounded-xl border border-emerald-400/20 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-100"
-            >
-              {resetMessage}
             </motion.div>
           )}
 

@@ -45,10 +45,6 @@ class PasswordResetRequest(BaseModel):
         return normalized
 
 
-class PasswordResetResponse(BaseModel):
-    message: str
-    default_password: str
-
 class UserResponse(BaseModel):
     id: int
     username: str

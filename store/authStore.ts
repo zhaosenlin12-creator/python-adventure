@@ -18,11 +18,6 @@ interface User {
     coins: number; // 💰 金币余额
 }
 
-interface PasswordResetResponse {
-    message: string;
-    default_password: string;
-}
-
 async function readErrorMessage(response: Response, fallback: string): Promise<string> {
     try {
         const error = await response.json();
@@ -71,7 +66,6 @@ interface AuthState {
     // Actions
     login: (username: string, password: string) => Promise<void>;
     register: (username: string, email: string, password: string) => Promise<void>;
-    resetPassword: (username: string) => Promise<PasswordResetResponse>;
     logout: () => void;
     loadUserProfile: () => Promise<void>;
     clearError: () => void;
@@ -244,43 +238,6 @@ export const useAuthStore = create<AuthState>()(
                     console.error('[AuthStore] Error message:', error instanceof Error ? error.message : String(error));
                     set({
                         error: normalizeFriendlyAuthError(error, '注册失败，请稍后重试'),
-                        isLoading: false,
-                    });
-                    throw error;
-                }
-            },
-
-            resetPassword: async (username: string) => {
-                const normalizedUsername = username.trim();
-                if (!normalizedUsername) {
-                    const message = '请先输入用户名，再点击“忘记密码”里的重置按钮。';
-                    set({ error: message });
-                    throw new Error(message);
-                }
-
-                set({ isLoading: true, error: null });
-
-                try {
-                    const response = await fetch(`${getApiUrl()}/auth/reset-password`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({ username: normalizedUsername }),
-                    });
-
-                    if (!response.ok) {
-                        const errorMessage = await readErrorMessage(response, '重置密码失败');
-                        throw new Error(errorMessage);
-                    }
-
-                    const payload = (await response.json()) as PasswordResetResponse;
-                    set({ isLoading: false, error: null });
-                    return payload;
-                } catch (error: unknown) {
-                    const message = normalizeFriendlyAuthError(error, '重置密码失败，请稍后重试');
-                    set({
-                        error: message,
                         isLoading: false,
                     });
                     throw error;

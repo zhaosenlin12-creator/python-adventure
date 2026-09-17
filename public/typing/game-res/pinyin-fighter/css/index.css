@@ -140,6 +140,17 @@ body{
   width:70%;
   height:70%;
 }
+#pause.is-paused img{
+  display:none;
+}
+#pause.is-paused::before{
+  content:'▶';
+  display:block;
+  color:#fff;
+  font-size:24px;
+  line-height:38px;
+  transform:translateX(1px);
+}
 #helpPage{
   position: absolute;
   width: 100%;

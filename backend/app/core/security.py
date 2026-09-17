@@ -5,7 +5,8 @@ import threading
 from typing import Optional, Set
 
 import bcrypt as bcrypt_lib
-from jose import JWTError, jwt
+import jwt
+from jwt import InvalidTokenError
 from passlib.context import CryptContext
 
 from app.core.config import settings
@@ -117,6 +118,6 @@ def decode_access_token(token: str) -> Optional[dict]:
 
     try:
         return jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
-    except JWTError as e:
+    except InvalidTokenError as e:
         logger.warning("JWT decode failed: %s: %s", type(e).__name__, e)
         return None

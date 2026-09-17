@@ -19,9 +19,20 @@ const eslintConfig = defineConfig([
     ".tmp-assets/**",
     "release/**",
     "kenney_pico-8-city/**",
+    // Mirrored browser-game bundles are runtime assets, not maintained source.
+    "public/typing/game-res/**",
     // Ignore archived snapshots/tests
     "_archive_20260128/**",
   ]),
+  {
+    files: [
+      "components/common/ErrorFallback.tsx",
+      "components/world/scenes/MainScene.ts",
+    ],
+    rules: {
+      "@next/next/no-location-assign-relative-destination": "off",
+    },
+  },
   {
     rules: {
       // Allow 'any' type in Phaser game code (complex game engine integration)

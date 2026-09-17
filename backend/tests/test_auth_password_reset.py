@@ -3,9 +3,6 @@ from __future__ import annotations
 import time
 
 from fastapi.testclient import TestClient
-import pytest
-
-from app.api.v1.auth import _password_reset_cooldowns
 from app.main import app
 
 client = TestClient(app)
@@ -38,14 +35,7 @@ def login_user(username: str, password: str) -> dict:
     }
 
 
-@pytest.fixture(autouse=True)
-def clear_reset_cooldowns():
-    _password_reset_cooldowns.clear()
-    yield
-    _password_reset_cooldowns.clear()
-
-
-def test_reset_password_replaces_old_password_and_invalidates_old_token():
+def test_public_password_reset_is_disabled_and_preserves_credentials():
     user = register_user(unique_username("reset_user"))
 
     login_before = login_user(user["username"], user["password"])
@@ -62,38 +52,35 @@ def test_reset_password_replaces_old_password_and_invalidates_old_token():
         "/api/v1/auth/reset-password",
         json={"username": user["username"]},
     )
-    assert reset.status_code == 200, reset.text
-    assert reset.json()["default_password"] == "123456"
+    assert reset.status_code == 403, reset.text
+    assert "联系教师或管理员" in reset.json()["detail"]
 
     login_with_old_password = login_user(user["username"], user["password"])
-    assert login_with_old_password["status_code"] == 401, login_with_old_password["text"]
+    assert login_with_old_password["status_code"] == 200, login_with_old_password["text"]
 
     profile_with_old_token = client.get(
         "/api/v1/users/profile",
         headers={"Authorization": f"Bearer {old_token}"},
     )
-    assert profile_with_old_token.status_code == 401, profile_with_old_token.text
+    assert profile_with_old_token.status_code == 200, profile_with_old_token.text
 
-    login_with_new_password = login_user(user["username"], "123456")
-    assert login_with_new_password["status_code"] == 200, login_with_new_password["text"]
 
-    new_token = login_with_new_password["json"]["access_token"]
-    profile_with_new_token = client.get(
-        "/api/v1/users/profile",
-        headers={"Authorization": f"Bearer {new_token}"},
+def test_public_password_reset_does_not_reveal_account_existence():
+    existing_username = unique_username("existing_reset_user")
+    missing_username = unique_username("missing_reset_user")
+    register_user(existing_username)
+
+    existing_response = client.post(
+        "/api/v1/auth/reset-password",
+        json={"username": existing_username},
     )
-    assert profile_with_new_token.status_code == 200, profile_with_new_token.text
+    missing_response = client.post(
+        "/api/v1/auth/reset-password",
+        json={"username": missing_username},
+    )
 
-
-def test_reset_password_has_cooldown_and_rejects_unknown_user():
-    username = unique_username("cooldown_user")
-    register_user(username)
-
-    first_reset = client.post("/api/v1/auth/reset-password", json={"username": username})
-    assert first_reset.status_code == 200, first_reset.text
-
-    second_reset = client.post("/api/v1/auth/reset-password", json={"username": username})
-    assert second_reset.status_code == 429, second_reset.text
-
-    missing_user_reset = client.post("/api/v1/auth/reset-password", json={"username": unique_username("missing_user")})
-    assert missing_user_reset.status_code == 404, missing_user_reset.text
+    assert existing_response.status_code == 403, existing_response.text
+    assert missing_response.status_code == 403, missing_response.text
+    assert existing_response.json()["detail"] == missing_response.json()["detail"]
+    assert existing_response.json()["success"] is False
+    assert missing_response.json()["success"] is False

@@ -1,5 +1,4 @@
 import logging
-import time
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
@@ -13,7 +12,6 @@ from app.core.security import (
 from app.models.user import User
 from app.schemas.user import (
     PasswordResetRequest,
-    PasswordResetResponse,
     Token,
     TokenWithUser,
     UserLogin,
@@ -24,10 +22,6 @@ from app.api.dependencies import oauth2_scheme
 
 router = APIRouter()
 logger = logging.getLogger(__name__)
-
-DEFAULT_RESET_PASSWORD = "123456"
-PASSWORD_RESET_COOLDOWN_SECONDS = 30
-_password_reset_cooldowns: dict[str, float] = {}
 
 @router.post("/register", response_model=UserResponse, status_code=status.HTTP_201_CREATED)
 async def register(user_data: UserRegister, db: Session = Depends(get_db)):
@@ -159,44 +153,11 @@ async def logout(token: str = Depends(oauth2_scheme)):
     return {"message": "登出成功"}
 
 
-@router.post("/reset-password", response_model=PasswordResetResponse)
-async def reset_password(payload: PasswordResetRequest, db: Session = Depends(get_db)):
-    """按用户名将密码重置为学生默认密码。"""
-    normalized_username = payload.username.strip()
-    cooldown_key = normalized_username.lower()
-    now = time.monotonic()
-
-    expired_keys = [
-        key
-        for key, last_reset in _password_reset_cooldowns.items()
-        if now - last_reset >= PASSWORD_RESET_COOLDOWN_SECONDS
-    ]
-    for key in expired_keys:
-        _password_reset_cooldowns.pop(key, None)
-
-    last_reset = _password_reset_cooldowns.get(cooldown_key)
-    if last_reset is not None and now - last_reset < PASSWORD_RESET_COOLDOWN_SECONDS:
-        wait_seconds = max(1, int(PASSWORD_RESET_COOLDOWN_SECONDS - (now - last_reset)))
-        raise HTTPException(
-            status_code=status.HTTP_429_TOO_MANY_REQUESTS,
-            detail=f"刚刚已经重置过一次，请 {wait_seconds} 秒后再试",
-        )
-
-    user = db.query(User).filter(User.username == normalized_username).first()
-    if not user:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="未找到这个用户名，请检查后重试",
-        )
-
-    user.password_hash = get_password_hash(DEFAULT_RESET_PASSWORD)
-    db.add(user)
-    db.commit()
-
-    _password_reset_cooldowns[cooldown_key] = now
-
-    return PasswordResetResponse(
-        message="密码已重置为 123456，请登录后尽快修改。",
-        default_password=DEFAULT_RESET_PASSWORD,
+@router.post("/reset-password")
+async def reset_password(payload: PasswordResetRequest):
+    """Reject unauthenticated password resets without revealing account existence."""
+    raise HTTPException(
+        status_code=status.HTTP_403_FORBIDDEN,
+        detail="为保护账号安全，系统不支持公开自动重置密码，请联系教师或管理员处理。",
     )
 

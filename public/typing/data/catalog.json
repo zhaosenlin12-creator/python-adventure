@@ -38373,6 +38373,20 @@
   ],
   "games": [
     {
+      "id": "potato-zombies",
+      "title": "土豆枪大战僵尸",
+      "tags": [
+        "塔防",
+        "英文单词",
+        "闯关"
+      ],
+      "mode": "potato",
+      "image": "data/assets/daziya.com/game-potato-zombies.png",
+      "badge": "塔防",
+      "color": "lime",
+      "description": "僵尸从右侧向你走来，输入正确拼音或字符即可击退。"
+    },
+    {
       "id": "pinyin-fighter",
       "title": "拼音战机",
       "tags": [
@@ -38380,9 +38394,11 @@
         "汉字",
         "射击"
       ],
-      "originalUrl": "/game-res/pinyin-fighter/index.html",
       "mode": "fighter",
-      "image": "data/assets/www.daziya.com/assets_img_game-pinyin-fighter.e1edf0f2ab.png"
+      "originalUrl": "/game-res/pinyin-fighter/index.html",
+      "image": "data/assets/daziya.com/game-pinyin-fighter.jpg",
+      "badge": "空战",
+      "color": "sky"
     },
     {
       "id": "car-racing",
@@ -38392,9 +38408,11 @@
         "汉字拼音",
         "反应"
       ],
-      "originalUrl": "/game-res/car-racing/index.html",
       "mode": "racing",
-      "image": "data/assets/www.daziya.com/assets_img_game-car-racing.cae1c9ebda.png"
+      "originalUrl": "/game-res/car-racing/index.html",
+      "image": "data/assets/daziya.com/game-car-racing.jpg",
+      "badge": "竞速",
+      "color": "amber"
     },
     {
       "id": "virus-battle",
@@ -38404,9 +38422,11 @@
         "英文单词",
         "中级"
       ],
-      "originalUrl": "/game-res/virus-battle/index.html",
       "mode": "falling",
-      "image": "data/assets/www.daziya.com/assets_img_game-virus-battle.e601a991a5.png"
+      "originalUrl": "/game-res/virus-battle/index.html",
+      "image": "data/assets/daziya.com/game-virus-battle.png",
+      "badge": "闯关",
+      "color": "lime"
     },
     {
       "id": "whac-a-mole",
@@ -38415,9 +38435,11 @@
         "初级",
         "单个字符"
       ],
-      "originalUrl": "/game-res/whac-a-mole/ultra.html",
       "mode": "mole",
-      "image": "data/assets/www.daziya.com/assets_img_game-whac-a-mole.dd90db6a58.png"
+      "originalUrl": "/game-res/whac-a-mole/ultra.html",
+      "image": "data/assets/daziya.com/game-whac-a-mole.png",
+      "badge": "反应",
+      "color": "rose"
     },
     {
       "id": "defend-earth",
@@ -38427,9 +38449,11 @@
         "英文字符",
         "中级"
       ],
-      "originalUrl": "/game-res/defend-earth/defend-earth-ultra.html",
       "mode": "defense",
-      "image": "data/assets/www.daziya.com/assets_img_game-defend-earth.6c1d84fb3c.png"
+      "originalUrl": "/game-res/defend-earth/defend-earth-ultra.html",
+      "image": "data/assets/daziya.com/game-defend-earth.png",
+      "badge": "防守",
+      "color": "sky"
     },
     {
       "id": "typing-test",
@@ -38438,20 +38462,24 @@
         "英文文章",
         "练习"
       ],
-      "originalUrl": "/game-res/typing-test/index.html",
       "mode": "immersive",
-      "image": "data/assets/www.daziya.com/assets_img_game-typing-test.d5380b7d49.png"
+      "originalUrl": "/game-res/typing-test/index.html",
+      "image": "data/assets/daziya.com/game-typing-test.png",
+      "badge": "专注",
+      "color": "amber"
     },
     {
       "id": "duck-jump",
-      "title": "快乐过河",
+      "title": "鸭子过河",
       "tags": [
         "英文单词",
         "闯关"
       ],
-      "originalUrl": "/game-res/duck-jump-river/duck-jump-river-ultra.html",
       "mode": "jump",
-      "image": "data/assets/www.daziya.com/assets_img_game-duck-jump.aa61d550fa.png"
+      "originalUrl": "/game-res/duck-jump-river/duck-jump-river-ultra.html",
+      "image": "data/assets/daziya.com/game-duck-jump.png",
+      "badge": "跳跃",
+      "color": "lime"
     },
     {
       "id": "fishing-guru",
@@ -38461,9 +38489,11 @@
         "英文单词",
         "中级"
       ],
-      "originalUrl": "/game-res/fishing-guru/index.html",
       "mode": "fishing",
-      "image": "data/assets/www.daziya.com/assets_img_game-fishing-guru.34ba245e4d.png"
+      "originalUrl": "/game-res/fishing-guru/index.html",
+      "image": "data/assets/daziya.com/game-fishing-guru.png",
+      "badge": "收集",
+      "color": "rose"
     }
   ],
   "pages": [

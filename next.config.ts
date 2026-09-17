@@ -17,6 +17,7 @@ const nextConfig: NextConfig = {
       { source: "/data/asset-map.json", destination: "/typing/data/asset-map.json" },
       { source: "/data/:path*", destination: "/typing/data/:path*" },
       { source: "/assets/:path*", destination: "/typing/assets/:path*" },
+      { source: "/game-res/:path*", destination: "/typing/game-res/:path*" },
     ];
   },
 };
