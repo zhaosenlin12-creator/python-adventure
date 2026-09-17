@@ -17,19 +17,26 @@ $excludedDirectories = @("__pycache__", "venv", ".venv", ".hypothesis", ".pytest
 $dbArtifactPattern = '\.(db|sqlite|sqlite3)($|[.\-])'
 $runtimeDeployFiles = @(
     "backup-database.sh",
-    "compare-database-candidates.sh",
-    "DEPLOY_SERVER_EXACT.md",
     "database-safety-preflight.sh",
-    "migrate-production-database.sh",
+    "DEPLOY_SERVER_EXACT.md",
     "post-upload-backend.sh",
     "resolve-db-path.sh",
-    "restore-database.sh",
-    "restore-from-db-candidate.sh",
-    "server-disk-audit.sh",
-    "server-safe-cleanup.sh",
-    "update-backend.sh",
-    "PRODUCTION_DATABASE_SAFETY.md"
+    "restore-database.sh"
 )
+
+function Convert-ShellScriptsToLf {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Root
+    )
+
+    $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+    Get-ChildItem -LiteralPath $Root -Recurse -File -Filter "*.sh" | ForEach-Object {
+        $content = [System.IO.File]::ReadAllText($_.FullName)
+        $content = $content.Replace("`r`n", "`n").Replace("`r", "`n")
+        [System.IO.File]::WriteAllText($_.FullName, $content, $utf8NoBom)
+    }
+}
 
 Write-Host "Preparing backend package..." -ForegroundColor Yellow
 
@@ -56,6 +63,8 @@ foreach ($file in $runtimeDeployFiles) {
     Copy-Item -LiteralPath $source -Destination $stageDeployDir -Force
 }
 
+Convert-ShellScriptsToLf -Root $stageDir
+
 Get-ChildItem -Path $stageDir -Recurse -Directory -Force |
     Where-Object {
         $_.Name -in $excludedDirectories -or
@@ -76,6 +85,11 @@ Get-ChildItem -Path $stageDir -Recurse -File -Force |
 
 Compress-Archive -Path "$stageDir\*" -DestinationPath $zipFile -Force
 Remove-Item -LiteralPath $stageDir -Recurse -Force
+
+& powershell -NoProfile -ExecutionPolicy Bypass -File "scripts/verify-deploy-packages.ps1" -Packages $zipFile
+if ($LASTEXITCODE -ne 0) {
+    throw "Backend deployment package verification failed."
+}
 
 $zipSize = (Get-Item -LiteralPath $zipFile).Length / 1MB
 $zipHash = (Get-FileHash -LiteralPath $zipFile -Algorithm SHA256).Hash.ToLowerInvariant()
@@ -108,3 +122,4 @@ Write-Host "1. Upload $zipFile to /www/wwwroot/game-backend/ on the server." -Fo
 Write-Host "2. Extract directly into /www/wwwroot/game-backend/ without nesting another backend/ folder." -ForegroundColor White
 Write-Host "3. Run bash deploy/backup-database.sh and bash deploy/database-safety-preflight.sh before restart." -ForegroundColor White
 Write-Host ""
+

@@ -60,15 +60,6 @@ fi
 ./venv/bin/python -m pip install --upgrade pip setuptools wheel
 ./venv/bin/pip install -r requirements.txt
 
-DB_FILE="$(
-    if [ -x "deploy/resolve-db-path.sh" ]; then
-        bash deploy/resolve-db-path.sh
-    else
-        printf '%s\n' "/www/data/game-backend/code_adventure.db"
-    fi
-)"
-rm -f "${DB_FILE}-wal" "${DB_FILE}-shm"
-
 ./venv/bin/python -c "from app.main import app; print('BACKEND_CHECK_OK')"
 
 run_pm2_command "cd '$APP_DIR' && pm2 delete game-backend 2>/dev/null || true"

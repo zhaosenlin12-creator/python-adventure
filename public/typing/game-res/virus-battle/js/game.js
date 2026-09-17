@@ -1,4 +1,23 @@
 // Game constants
+/* typing-debug-gate */
+(function silenceGameConsole() {
+  try {
+    var allow = (typeof location !== "undefined") && /[?&]typingDebug=1/.test(location.search);
+    if (allow) return;
+    if (!window.__typingConsoleOriginal) {
+      window.__typingConsoleOriginal = {
+        log: console.log.bind(console),
+        info: console.info.bind(console),
+        debug: console.debug.bind(console)
+      };
+    }
+    var noop = function () {};
+    console.log = noop;
+    console.info = noop;
+    console.debug = noop;
+  } catch (e) { /* never break the game on the console shim */ }
+})();
+
 let GAME_WIDTH = window.innerWidth;
 let GAME_HEIGHT = window.innerHeight;
 const CELL_RADIUS = 40;

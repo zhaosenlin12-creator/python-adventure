@@ -1,6 +1,29 @@
 (function () {
   "use strict";
 
+  (function silenceGameConsole() {
+    try {
+      var allow = (typeof location !== "undefined") && /[?&]typingDebug=1/.test(location.search);
+      if (allow) return;
+      if (!window.__typingConsoleOriginal) {
+        window.__typingConsoleOriginal = {
+          log: console.log.bind(console),
+          info: console.info.bind(console),
+          debug: console.debug.bind(console),
+          warn: console.warn.bind(console),
+          error: console.error.bind(console)
+        };
+      }
+      var noop = function () {};
+      console.log = noop;
+      console.info = noop;
+      console.debug = noop;
+      // Keep console.warn and console.error so legitimate warnings still surface.
+    } catch (e) {
+      /* never break the SPA on the console shim */
+    }
+  })();
+
   const app = document.getElementById("app");
   const STORE = {
     settings: "lexiang.typing.settings",
@@ -2090,8 +2113,8 @@ ${renderSpeedTestLeaderboardPanel()}
       "",
       "      <section class=\"section-title\">",
       "        <div>",
-      "          <h2>" + safeTitle + "<span class=\"tiny game-mode-suffix\">线上原版 · 游戏窗</span></h2>",
-      "          <p>游戏在下方独立窗口中运行；本窗口的个人记录与全网排行榜仍同步显示。</p>",
+      "          <h2>" + safeTitle + "</h2>",
+      "          <p>游戏在下方独立窗口中运行；个人记录与全网排行榜仍同步显示。</p>",
       "        </div>",
       "        <div class=\"tag-row\">",
       "          <a class=\"ghost-button\" href=\"" + backHref + "\">返回游戏列表</a>",

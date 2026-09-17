@@ -50,6 +50,20 @@ $runtimeDeployFiles = @(
     "ecosystem.config.js"
 )
 
+function Convert-ShellScriptsToLf {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Root
+    )
+
+    $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+    Get-ChildItem -LiteralPath $Root -Recurse -File -Filter "*.sh" | ForEach-Object {
+        $content = [System.IO.File]::ReadAllText($_.FullName)
+        $content = $content.Replace("`r`n", "`n").Replace("`r", "`n")
+        [System.IO.File]::WriteAllText($_.FullName, $content, $utf8NoBom)
+    }
+}
+
 Write-Host "[1/5] Install dependencies if needed..." -ForegroundColor Yellow
 if (-not (Test-Path "node_modules")) {
     npm install
@@ -115,9 +129,16 @@ foreach ($file in $runtimeDeployFiles) {
     Copy-Item -LiteralPath $source -Destination $stageDeployDir -Force
 }
 
+Convert-ShellScriptsToLf -Root $stageDir
+
 Write-Host "[5/5] Create deployment zip..." -ForegroundColor Yellow
 Compress-Archive -Path "$stageDir\*" -DestinationPath $zipFile -Force
 Remove-TreeSafely -Path $stageDir
+
+& powershell -NoProfile -ExecutionPolicy Bypass -File "scripts/verify-deploy-packages.ps1" -Packages $zipFile
+if ($LASTEXITCODE -ne 0) {
+    throw "Frontend deployment package verification failed."
+}
 
 $zipSize = (Get-Item -LiteralPath $zipFile).Length / 1MB
 $zipHash = (Get-FileHash -LiteralPath $zipFile -Algorithm SHA256).Hash.ToLowerInvariant()
