@@ -1,0 +1,12 @@
+Use case: stylized-concept
+Asset type: premium 2D game decoration sprite
+Primary request: one cozy pet bed for a children's cartoon pet-home game, rounded oval cushion, small cloud pillow, stitched paw emblem and short wooden legs
+Scene/backdrop: isolated on a perfectly flat pale blue-white background #F7FBFF for background removal
+Subject: a single pet bed, front three-quarter view, centered, fully visible
+Style/medium: polished hand-painted 3D cartoon illustration, plush fabric and matte wood, tactile seams, premium cozy furniture
+Composition/framing: square 1:1, object fills 74 percent of canvas, clean silhouette, contained ground shadow
+Lighting/mood: warm afternoon light, calm and sleepy
+Color palette: dusty blue, cream, peach, sage, warm oak
+Materials/textures: quilted fabric, embroidered paw, soft piping, matte wood
+Constraints: no text, no logo, no watermark, no people, no pet, no border, no collage
+Avoid: glossy plastic, hard black outline, photorealism, excessive bloom, messy blanket

@@ -147,7 +147,7 @@ export default function PetMainPanel() {
           }}
         >
           <div
-            className={`pixel-panel p-2 transition-all ${isLoading ? 'opacity-60 cursor-not-allowed' : 'cursor-grab hover:border-game-accent'}`}
+            className={`rounded-[22px] border border-[#dec7a5] bg-[#fffaf0]/94 p-2 shadow-[0_14px_30px_rgba(91,59,35,0.18)] backdrop-blur-md transition-all ${isLoading ? 'cursor-not-allowed opacity-60' : 'cursor-grab hover:-translate-y-0.5 hover:border-[#caa977]'}`}
             onMouseDown={handleMouseDown}
             onClick={() => {
               if (!isDragging && !isLoading) {
@@ -163,7 +163,7 @@ export default function PetMainPanel() {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <div className="text-xs font-bold text-game-light">
+              <div className="text-xs font-bold text-[#6b5140]">
                 {isLoading ? '加载宠物中...' : '领取宠物蛋'}
               </div>
               {pets.length === 0 && !isLoading && (
@@ -191,7 +191,7 @@ export default function PetMainPanel() {
         {!isExpanded && (
           <div
             data-testid="pet-egg-panel-toggle"
-            className="pixel-panel p-2 cursor-grab active:cursor-grabbing hover:border-sky-400 transition-all"
+            className="cursor-grab rounded-[22px] border border-[#dec7a5] bg-[#fffaf0]/94 p-2 shadow-[0_14px_30px_rgba(91,59,35,0.18)] backdrop-blur-md transition-all active:cursor-grabbing hover:-translate-y-0.5 hover:border-[#8abfd1]"
             onMouseDown={handleMouseDown}
             onClick={(e) => {
               if (!isDragging) {
@@ -208,7 +208,7 @@ export default function PetMainPanel() {
                 />
               </div>
               {(currentPet.hatchProgress || 0) > 0 && (
-                <div className="bg-yellow-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#e8b95f] text-xs font-bold text-white">
                   {currentPet.hatchProgress}
                 </div>
               )}
@@ -218,12 +218,12 @@ export default function PetMainPanel() {
         
         {/* 灞曞紑鐘舵€?- 铔嬭鎯?*/}
         {isExpanded && (
-          <div data-testid="pet-egg-panel" className="pixel-panel p-4 w-72 border-2 border-slate-700">
-            <div className="flex justify-between items-center mb-3">
-              <h3 className="font-bold text-lg text-white">神秘的蛋</h3>
+          <div data-testid="pet-egg-panel" className="w-72 rounded-[26px] border border-[#dec7a5] bg-[linear-gradient(180deg,#fffaf0,#f4e6d2)] p-4 shadow-[0_24px_50px_rgba(91,59,35,0.22)]">
+            <div className="mb-3 flex items-center justify-between">
+              <h3 className="text-lg font-black text-[#5c4537]">神秘的蛋</h3>
               <button
                 onClick={() => setIsExpanded(false)}
-                className="text-slate-400 hover:text-white text-xl w-6 h-6 flex items-center justify-center"
+                className="flex h-8 w-8 items-center justify-center rounded-full border border-[#ead8bd] bg-[#fffaf0] text-xl text-[#a18b78] transition hover:bg-white hover:text-[#5c4537]"
               >
                 ×
               </button>
@@ -252,7 +252,7 @@ export default function PetMainPanel() {
         return {
           frame: 'rounded-xl border border-orange-300/50 bg-orange-500/10',
           glow: 'shadow-[0_0_14px_rgba(251,146,60,0.24)]',
-          badge: 'bg-orange-900 text-orange-100 border border-orange-400/50',
+          badge: 'bg-[#fff0d2] text-[#a35d32] border border-[#e4b57a]',
           icon: <Cpu className="w-3 h-3" />,
           label: '算力'
         };
@@ -261,7 +261,7 @@ export default function PetMainPanel() {
         return {
           frame: 'rounded-full border border-sky-300/50 bg-sky-500/10 border-dashed',
           glow: 'shadow-[0_0_14px_rgba(56,189,248,0.28)]',
-          badge: 'bg-sky-900 text-sky-100 border border-sky-400/50',
+          badge: 'bg-[#e9f3f8] text-[#5f7f91] border border-[#b8d3e0]',
           icon: <Zap className="w-3 h-3" />,
           label: '巡航'
         };
@@ -270,7 +270,7 @@ export default function PetMainPanel() {
         return {
           frame: 'rounded-full border border-rose-300/50 bg-rose-500/10',
           glow: 'shadow-[0_0_14px_rgba(244,63,94,0.24)]',
-          badge: 'bg-rose-900 text-rose-100 border border-rose-400/50',
+          badge: 'bg-[#fff0ec] text-[#a35d57] border border-[#e8b8b0]',
           icon: <Sparkles className="w-3 h-3" />,
           label: '灵感'
         };
@@ -360,7 +360,7 @@ export default function PetMainPanel() {
           {/* 鎶樺彔鐘舵€?- 缂╁皬鐗?*/}
           {!isExpanded && (
             <div
-              className="pixel-panel p-2 cursor-grab active:cursor-grabbing hover:border-game-accent transition-all"
+              className="cursor-grab rounded-[22px] border border-[#dec7a5] bg-[#fffaf0]/92 p-2 shadow-[0_14px_30px_rgba(91,59,35,0.18)] backdrop-blur-md transition-all active:cursor-grabbing hover:-translate-y-0.5 hover:border-[#caa977] hover:bg-white"
               onMouseDown={handleMouseDown}
               onClick={(e) => {
                 if (!isDragging) {
@@ -370,8 +370,8 @@ export default function PetMainPanel() {
             >
               <div className="flex items-center gap-2">
                 <div className="relative flex h-12 w-12 items-center justify-center">
-                  <div className="absolute inset-1.5 rounded-full bg-slate-200/8 blur-md" />
-                  <div className="absolute inset-x-2 bottom-1 h-2.5 rounded-full bg-slate-950/20 blur-md" />
+                  <div className="absolute inset-1.5 rounded-full bg-[#dff1e8] blur-md" />
+                  <div className="absolute inset-x-2 bottom-1 h-2.5 rounded-full bg-[#8b6b4a]/18 blur-md" />
                   {currentTechAccent && (
                     <div className={`absolute -bottom-1 -right-1 z-10 flex h-4 w-4 items-center justify-center rounded-full ${currentTechAccent.badge}`}>
                       {currentTechAccent.icon}
@@ -388,7 +388,7 @@ export default function PetMainPanel() {
                     <span className="text-xl">{petConfig.icon}</span>
                   )}
                 </div>
-                <div className="text-xs font-bold text-game-light">
+                <div className="text-xs font-bold text-[#6b5140]">
                   Lv.{currentPet.level}
                 </div>
               </div>
@@ -397,13 +397,17 @@ export default function PetMainPanel() {
           
           {/* 灞曞紑鐘舵€?*/}
           {isExpanded && (
-            <div className="pixel-panel w-80 border-2 border-slate-700 p-4 shadow-[0_26px_48px_rgba(15,23,42,0.36)]">
+            <div className="w-80 rounded-[28px] border border-[#dec7a5] bg-[linear-gradient(180deg,#fffaf0,#f4e6d2)] p-4 shadow-[0_26px_54px_rgba(91,59,35,0.22)] backdrop-blur-md">
               {/* 澶撮儴 */}
-              <div className="flex justify-between items-center mb-3">
-                <h3 className="font-bold text-lg text-white">我的伙伴</h3>
+              <div className="mb-3 flex items-center justify-between">
+                <div>
+                  <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#a27642]">伙伴口袋</div>
+                  <h3 className="text-lg font-black text-[#5c4537]">我的伙伴</h3>
+                </div>
                 <button
                   onClick={() => setIsExpanded(false)}
-                  className="text-slate-400 hover:text-white text-xl w-6 h-6 flex items-center justify-center"
+                  className="flex h-8 w-8 items-center justify-center rounded-full border border-[#e3cdb0] bg-[#fff8ec] text-xl text-[#8a6b57] transition hover:bg-white hover:text-[#5c4537]"
+                  aria-label="收起宠物面板"
                 >
                   ×
                 </button>
@@ -414,8 +418,8 @@ export default function PetMainPanel() {
                 {/* 澶村儚鍜屽熀鏈俊鎭?*/}
                 <div className="flex items-center gap-3">
                   <div className="relative flex h-20 w-20 items-center justify-center">
-                    <div className="absolute inset-3 rounded-full bg-slate-200/8 blur-xl" />
-                    <div className="absolute inset-x-3 bottom-2 h-4 rounded-full bg-slate-950/30 blur-lg" />
+                    <div className="absolute inset-3 rounded-full bg-[#dff1e8] blur-xl" />
+                    <div className="absolute inset-x-3 bottom-2 h-4 rounded-full bg-[#8b6b4a]/18 blur-lg" />
                     {currentTechAccent && (
                       <div className={`absolute -bottom-1 -right-1 z-10 px-1.5 py-0.5 text-[9px] rounded-full flex items-center gap-1 ${currentTechAccent.badge}`}>
                         {currentTechAccent.icon}
@@ -444,23 +448,24 @@ export default function PetMainPanel() {
                           onChange={(e) => setPetName(e.target.value)}
                           onBlur={handleSaveName}
                           onKeyDown={handleNameKeyDown}
-                          className="w-full px-2 py-1 bg-slate-700 border border-slate-600 text-white text-sm rounded"
+                          className="w-full rounded-xl border border-[#ead8bd] bg-white px-2 py-1 text-sm text-[#6b5140] outline-none focus:border-[#8abfd1]"
                           maxLength={12}
                           autoFocus
                         />
                       </div>
                     ) : (
                       <div className="flex items-center gap-2">
-                        <div className="font-bold text-base text-white">{currentPet.name}</div>
+                        <div className="text-base font-black text-[#5c4537]">{currentPet.name}</div>
                         <button
                           onClick={() => setIsEditingName(true)}
-                          className="text-gray-400 hover:text-game-accent transition-colors"
+                          className="text-[#a18b78] transition-colors hover:text-[#6f9eaa]"
+                          aria-label="编辑宠物名字"
                         >
                           <Edit2 className="w-3 h-3" />
                         </button>
                       </div>
                     )}
-                    <div className="text-xs text-slate-500">{petConfig.displayName}</div>
+                    <div className="text-xs text-[#927866]">{petConfig.displayName}</div>
                     <div className={`text-xs font-medium flex items-center gap-1 ${STATUS_COLORS[currentPet.status]}`}>
                       <StatusIcon 
                         status={currentPet.status} 
@@ -474,13 +479,13 @@ export default function PetMainPanel() {
                 
                 {/* 绛夌骇鍜岀粡楠?*/}
                 <div>
-                  <div className="flex justify-between text-xs mb-1 text-white">
+                  <div className="mb-1 flex justify-between text-xs text-[#6b5140]">
                     <span className="font-medium">Lv.{currentPet.level}</span>
-                    <span className="text-slate-400">{currentLevelExp}/100</span>
+                    <span className="text-[#927866]">{currentLevelExp}/100</span>
                   </div>
-                  <div className="w-full bg-slate-700 h-2 rounded-full">
+                  <div className="h-2 w-full rounded-full bg-[#e2d5c3]">
                     <div
-                      className="bg-blue-600 h-full transition-all rounded-full"
+                      className="h-full rounded-full bg-[linear-gradient(90deg,#78b892,#8abfd1,#e4c987)] transition-all"
                       style={{ width: `${expPercentage}%` }}
                     />
                   </div>
@@ -514,7 +519,7 @@ export default function PetMainPanel() {
                     <button
                       onClick={() => setShowFoodSelector(true)}
                       disabled={isLoading || currentPet.status === 'coma'}
-                      className="pixel-btn pixel-btn-success text-xs flex items-center justify-center gap-1 h-10"
+                      className="flex h-10 items-center justify-center gap-1 rounded-full bg-[#78b892] px-3 text-xs font-bold text-white shadow-[0_8px_18px_rgba(120,184,146,0.18)] transition hover:bg-[#65a47d] disabled:cursor-not-allowed disabled:bg-[#e6d9c8] disabled:text-[#a38b78]"
                     >
                       <Apple className="w-4 h-4" />
                       喂养
@@ -525,7 +530,7 @@ export default function PetMainPanel() {
                         setIsExpanded(false);
                         setShowPetHome(true);
                       }}
-                      className="pixel-btn bg-sky-700 text-white hover:bg-sky-600 text-xs flex items-center justify-center gap-1 h-10"
+                      className="flex h-10 items-center justify-center gap-1 rounded-full bg-[#78b7c5] px-3 text-xs font-bold text-white shadow-[0_8px_18px_rgba(120,183,197,0.18)] transition hover:bg-[#66a7b6]"
                     >
                       <Home className="w-4 h-4" />
                       小屋
@@ -533,10 +538,10 @@ export default function PetMainPanel() {
                     <button
                       onClick={handleEvolve}
                       disabled={!canEvolveNow || isLoading}
-                      className={`pixel-btn text-xs flex items-center justify-center gap-1 h-10 ${
+                      className={`flex h-10 items-center justify-center gap-1 rounded-full px-3 text-xs font-bold transition ${
                         canEvolveNow 
-                      ? 'bg-gradient-to-r from-amber-400 to-orange-400 text-white hover:from-amber-300 hover:to-orange-300 animate-pulse' 
-                          : 'bg-slate-700 text-slate-400 cursor-not-allowed'
+                      ? 'animate-pulse bg-gradient-to-r from-[#e9b961] to-[#e49b61] text-white shadow-[0_8px_18px_rgba(228,155,97,0.22)] hover:from-[#f0c671] hover:to-[#d9894c]'
+                          : 'cursor-not-allowed bg-[#e6d9c8] text-[#a38b78]'
                       }`}
                     >
                       <Sparkles className="w-4 h-4" />
@@ -545,25 +550,25 @@ export default function PetMainPanel() {
                     
                     <button
                       onClick={() => setShowPokedex(true)}
-                      className="pixel-btn bg-slate-700 text-white hover:bg-slate-600 text-xs flex items-center justify-center gap-1 h-10"
+                      className="flex h-10 items-center justify-center gap-1 rounded-full border border-[#ead8bd] bg-[#fffaf0] px-3 text-xs font-bold text-[#6b5140] transition hover:bg-white"
                     >
                       <BookOpen className="w-4 h-4" />
                       图鉴
                     </button>
                     <button
                       onClick={() => setShowGrowthGuide(true)}
-                      className="pixel-btn bg-slate-700 text-white hover:bg-slate-600 text-xs flex items-center justify-center gap-1 h-10 col-span-2"
+                      className="col-span-2 flex h-10 items-center justify-center gap-1 rounded-full border border-[#ead8bd] bg-[#fffaf0] px-3 text-xs font-bold text-[#6b5140] transition hover:bg-white"
                     >
                       成长说明
                     </button>
                   </div>
-                  <div className="text-[10px] text-slate-400 text-center">
+                  <div className="text-center text-[10px] leading-4 text-[#927866]">
                     进入小屋可以互动、喂养和观察宠物状态，持续提升亲密度与成长属性。
                   </div>
                   {pendingEggCount > 0 && (
                     <button
                       onClick={() => setShowPokedex(true)}
-                      className="w-full rounded-lg border border-amber-400/30 bg-amber-500/10 px-3 py-2 text-left text-xs text-amber-100 transition hover:bg-amber-500/15"
+                      className="w-full rounded-2xl border border-[#e4c987] bg-[#fff1c8] px-3 py-2 text-left text-xs leading-5 text-[#916a2d] transition hover:bg-[#ffebad]"
                     >
                       还有 {pendingEggCount} 枚宠物蛋在孵化中。现在首次通关新关卡会自动推进所有宠物蛋，无需设为跟随。可进入图鉴蛋仓统一查看进度。
                     </button>

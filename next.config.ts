@@ -9,6 +9,37 @@ const nextConfig: NextConfig = {
   // Needed after upgrading Next 16.2.x: QA scripts hit 127.0.0.1 in dev.
   allowedDevOrigins: ['127.0.0.1', 'localhost'],
   transpilePackages: ['phaser'],
+  async headers() {
+    return [
+      {
+        source: "/assets/bosses/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=3600, stale-while-revalidate=86400",
+          },
+        ],
+      },
+      {
+        source: "/assets/player/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=3600, stale-while-revalidate=86400",
+          },
+        ],
+      },
+      {
+        source: "/sounds/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=3600, stale-while-revalidate=86400",
+          },
+        ],
+      },
+    ];
+  },
   async rewrites() {
     return [
       { source: "/typing", destination: "/typing/index.html" },

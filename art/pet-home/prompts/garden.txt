@@ -1,0 +1,9 @@
+Use case: stylized-concept
+Asset type: polished game environment background
+Primary request: a premium whimsical pet garden for a children's cartoon care game
+Scene/backdrop: soft blue sky, layered rounded tree line, little wooden arbor, stepping-stone path, shallow sparkling pond, flower borders, friendly shrubs, a clearly readable 2 by 4 soil plot zone in the lower-left, open lawn in the center
+Style/medium: high-end 2.5D children's game illustration, rounded forms, tactile soil and leaf textures, soft painterly shading, inviting handcrafted detail
+Composition/framing: wide 16:9 establishing view, eye-level with a slight isometric feel, keep the lower-left farming zone and central lawn uncluttered for interactive overlays, decorative arbor and pond toward the right
+Lighting/mood: bright gentle daylight, soft atmospheric depth, tiny warm firefly glints without visual noise
+Color palette: sky blue, leaf green, moss, warm soil brown, peach, lavender, butter yellow, teal water
+Constraints: no characters, no text, no logos, no watermark, no UI, no excessive clutter, keep the soil plots clearly separated and visually usable

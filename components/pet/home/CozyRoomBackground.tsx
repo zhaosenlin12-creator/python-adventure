@@ -109,19 +109,19 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
         morning: 'bg-orange-50',
         day: 'bg-amber-50',
         dusk: 'bg-orange-100',
-        night: 'bg-slate-800'
+        night: 'bg-[#d9c7d0]'
       },
       floorColor: {
         morning: 'from-amber-100 to-orange-100',
         day: 'from-amber-200 to-orange-200',
         dusk: 'from-orange-200 to-amber-300',
-        night: 'from-slate-700 to-slate-800'
+        night: 'from-[#c49b8e] to-[#a9879c]'
       },
       lightOverlay: {
         morning: 'bg-blue-200/10',
         day: 'bg-yellow-200/5',
         dusk: 'bg-orange-500/20',
-        night: 'bg-blue-900/40'
+        night: 'bg-[#6e7caf]/14'
       }
     },
     garden: {
@@ -129,13 +129,13 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
         morning: 'from-sky-300 via-sky-200 to-orange-100',
         day: 'from-sky-400 via-sky-200 to-emerald-50',
         dusk: 'from-indigo-400 via-violet-300 to-orange-200',
-        night: 'from-slate-900 via-slate-800 to-slate-900'
+        night: 'from-[#7187bd] via-[#9cb6d2] to-[#e3b49c]'
       },
       lightOverlay: {
         morning: 'bg-amber-200/8',
         day: 'bg-emerald-200/6',
         dusk: 'bg-orange-500/16',
-        night: 'bg-slate-900/24',
+        night: 'bg-[#5c6ca0]/10',
       }
     }
   };
@@ -144,6 +144,18 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
   if (scene === 'living') {
     return (
       <div className={`relative w-full h-full overflow-hidden transition-colors duration-[2000ms] ${sceneConfig.living.wallColor[timeOfDay]}`}>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-0 opacity-100"
+          style={{
+            backgroundImage: "url('/assets/pet-home/living-room-bg.png')",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+          }}
+        >
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,248,235,0.06),rgba(255,219,180,0.08))]" />
+        </div>
+        <div className="pointer-events-none absolute inset-0 z-[1] opacity-[0.12]">
         {/* 1. 墙纸纹理 - 精致菱形格纹 */}
         <div className="absolute inset-0" style={{
           opacity: timeOfDay === 'night' ? 0.04 : 0.06,
@@ -508,6 +520,7 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
           <div className="absolute left-[31%] top-[43%] h-[24px] w-[32px] rounded-[16px] bg-rose-200/16" />
           <div className="absolute left-[55%] top-[42%] h-[18px] w-[18px] rounded-full bg-amber-100/20" />
         </div>
+        </div>
 
         {/* 7. 内容层 (家具、宠物等) */}
         <div className="relative z-10 w-full h-full">
@@ -532,6 +545,18 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
 
   return (
     <div className={`relative w-full h-full overflow-hidden transition-colors duration-[2000ms] bg-gradient-to-b ${sceneConfig.garden.skyColor[timeOfDay]}`}>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 opacity-100"
+        style={{
+          backgroundImage: "url('/assets/pet-home/garden-bg.png')",
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+        }}
+      >
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(224,242,254,0.04),rgba(22,101,52,0.06))]" />
+      </div>
+      <div className="pointer-events-none absolute inset-0 z-[1] opacity-[0.14]">
       <div
         className="absolute inset-x-0 top-0 h-[38%] pointer-events-none"
         style={{
@@ -1083,6 +1108,7 @@ export default function CozyRoomBackground({ scene, children }: CozyRoomBackgrou
           <div className="absolute right-[24px] bottom-[22px] h-[18px] w-[18px] rounded-full bg-amber-200/34" />
         </motion.div>
       </div>
+      </div>
 
       <div className="relative z-10 w-full h-full">
         {children}
@@ -1097,7 +1123,7 @@ function WindowView({ timeOfDay }: { timeOfDay: TimeOfDay }) {
     morning: 'bg-sky-200',
     day: 'bg-sky-400',
     dusk: 'bg-orange-300',
-    night: 'bg-slate-900'
+    night: 'bg-[#7187bd]'
   };
 
   return (

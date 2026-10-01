@@ -1,0 +1,12 @@
+Use case: stylized-concept
+Asset type: premium 2D game decoration sprite
+Primary request: one rounded little wooden side table for a children's cartoon pet-home game, warm oak top, soft curved legs, one tiny drawer with a paw-shaped handle
+Scene/backdrop: isolated on a perfectly flat pale blue-white background #F7FBFF for background removal
+Subject: a single small side table, front three-quarter view, centered, fully visible
+Style/medium: polished hand-painted 3D cartoon illustration, tactile matte wood, softened edges, premium storybook furniture
+Composition/framing: square 1:1, object fills 70 percent of canvas, clean silhouette, contained ground shadow
+Lighting/mood: warm afternoon studio light, cozy and welcoming
+Color palette: honey oak, cream, mint, blush peach, butter yellow
+Materials/textures: subtle painted wood grain, matte finish, soft bevels, tiny stitched paw detail
+Constraints: no text, no logo, no watermark, no people, no pet, no border, no collage, no extra furniture
+Avoid: glossy plastic, hard black outline, photorealism, metal-heavy design, excessive bloom

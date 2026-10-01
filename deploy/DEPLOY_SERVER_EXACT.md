@@ -89,6 +89,20 @@ export PATH=/www/server/nodejs/v20.19.6/bin:/usr/local/sbin:/usr/local/bin:/usr/
 /bin/bash deploy/post-upload-frontend.sh
 ```
 
+Do not run `npm install` manually as `game`: it may try to rewrite
+`package-lock.json` and fail with `EACCES` if the archive was extracted with
+root-owned files. The bundled script uses `npm ci --omit=dev` and does not
+rewrite the lock file. It also removes obsolete uncompressed battle BGM files
+left by older releases and reloads the Nginx cache configuration.
+
+If the archive was already extracted and the permission error is shown:
+
+```bash
+cd /www/wwwroot/game
+/bin/chown -R game:game /www/wwwroot/game
+su - game -s /bin/bash -c 'cd /www/wwwroot/game && /bin/bash deploy/post-upload-frontend.sh'
+```
+
 Verify:
 
 ```bash

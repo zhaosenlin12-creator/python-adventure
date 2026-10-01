@@ -1408,7 +1408,8 @@ export const campaign9: Campaign = {
       },
       
       bossConfig: {
-        type: 'dual',
+        visualTheme: 'default',
+          type: 'dual',
         requireBothDefeated: true,
         
         phase1Boss: {

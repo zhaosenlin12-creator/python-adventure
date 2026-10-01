@@ -12,9 +12,19 @@ export class BootScene extends Phaser.Scene {
     preload() {
         debugLog('BootScene: preload started');
         try {
+            // ====== 大厅基础资源 ======
+            // Boss 立绘只在 PlatformGameScene.preload() 中按战役加载。
+            // 开放大厅不需要这些资源，避免弱网环境等待整套战役素材导致主场景不启动。
+            // 玩家立绘是大厅实际使用的基础资源，失败时仍由 playerFallback 兜底。
+            // 资产路径：public/assets/player/player.png
+            // 优先使用资产文件覆盖后面的程序化 generateTexture('player', 32, 48)。
+            // 如果加载失败，下面的程序化备份仍会生效。
+            debugLog('BootScene: loading player portrait');
+            this.load.image('player', '/assets/player/player.png');
+
             const graphics = this.add.graphics();
 
-            debugLog('BootScene: generating player texture');
+            debugLog('BootScene: generating player texture (fallback)');
             // 1. Enhanced Player Texture (Cyberpunk Character)
             graphics.clear();
 
@@ -76,7 +86,9 @@ export class BootScene extends Phaser.Scene {
             graphics.fillStyle(0x00d9ff, 0.4);
             graphics.fillCircle(16, 26, 4);
 
-            graphics.generateTexture('player', 32, 48);
+            // 程序化备份放到 playerFallback\uff0c不写入 'player' key
+            // 'player' key 和 preload() 里 this.load.image('player', ...) 冲突\uff0c后者异步完成之后覆写\u3002移到 playerFallback 避免超速覆写\u3002
+            graphics.generateTexture('playerFallback', 32, 48);
 
             debugLog('BootScene: generating ground texture');
             // 2. Ground Texture
@@ -271,6 +283,15 @@ export class BootScene extends Phaser.Scene {
 
     create() {
         debugLog('BootScene: create started');
+        // 如果 PNG 加载失败 (网络异常等)\uff0c备份 fallback 克隆 'player' 终极
+        if (!this.textures.exists('player') && this.textures.exists('playerFallback')) {
+            try {
+                const srcImg = (this.textures.get('playerFallback').getSourceImage() as HTMLImageElement);
+                this.textures.addImage('player', srcImg);
+            } catch (e) {
+                console.warn('[BootScene] fallback copy failed:', e);
+            }
+        }
         this.scene.start('MainScene');
         debugLog('BootScene: started MainScene');
     }

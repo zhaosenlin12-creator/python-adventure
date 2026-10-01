@@ -5,7 +5,7 @@ import { useFoodStore } from '@/store/foodStore';
 import { useCoinStore } from '@/store/coinStore';
 import { useAuthStore } from '@/store/authStore';
 import { FoodIcon } from '@/components/ui/FoodIcon';
-import { RARITY_COLORS, RARITY_TEXT } from '@/types/food';
+import { RARITY_TEXT } from '@/types/food';
 import Toast, { ToastType } from '@/components/ui/Toast';
 import { apiRequest, ApiError } from '@/lib/utils/apiRequest';
 
@@ -138,42 +138,53 @@ export default function FoodShop({ isOpen, onClose }: FoodShopProps) {
         />
       )}
       
-      <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm">
-        <div className="pixel-panel w-full max-w-4xl max-h-[85vh] flex flex-col">
+      <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#49372d]/35 px-4 py-6 backdrop-blur-[5px]" role="presentation">
+        <div
+          className="flex max-h-[88vh] w-full max-w-4xl flex-col overflow-hidden rounded-[30px] border border-[#dec7a5] bg-[linear-gradient(180deg,#fffaf0,#f2e5d1)] shadow-[0_36px_90px_rgba(91,59,35,0.28)]"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="food-shop-title"
+        >
           {/* 头部 */}
-          <div className="flex justify-between items-center p-4 border-b border-slate-700">
+          <div className="flex items-start justify-between gap-4 border-b border-[#ead8bd] bg-[linear-gradient(135deg,#fffaf0,#f4e4c8)] p-5">
             <div>
-              <h2 className="text-xl font-bold text-white">
-                🍖 食物商店
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#e5c77e] bg-[#fff1c8] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#9a722f]">
+                🍎 日常补给
+              </div>
+              <h2 id="food-shop-title" className="mt-2 text-xl font-black text-[#5c4537]">
+                食物小铺
               </h2>
-              <p className="text-xs text-slate-500 mt-1">
-                用金币购买食物，喂养你的宠物！
+              <p className="mt-1 text-sm leading-6 text-[#8d7160]">
+                挑一份好吃的，把今天的能量和快乐都补回来。
               </p>
             </div>
             
-            <div className="flex items-center gap-4">
-              <div className="bg-slate-800 border border-slate-600 rounded-lg px-3 py-1 text-sm font-bold text-amber-300">
-                💰 {userCoins} 金币
+            <div className="flex items-center gap-3">
+              <div className="rounded-full border border-[#e3c997] bg-[#fff2cb] px-3 py-1.5 text-sm font-bold text-[#916a2d]">
+                余额 {userCoins} 金币
               </div>
               <button
+                type="button"
                 onClick={onClose}
-                className="text-slate-400 hover:text-white text-2xl"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#e3cdb0] bg-[#fff8ec] text-xl text-[#8a6b57] transition hover:bg-white hover:text-[#5c4537]"
+                aria-label="关闭食物商店"
               >
-                ×
+                <span aria-hidden="true">×</span>
               </button>
             </div>
           </div>
           
           {/* 稀有度筛选 */}
-          <div className="flex gap-2 p-3 border-b border-slate-700 overflow-x-auto">
+          <div className="flex gap-2 overflow-x-auto border-b border-[#ead8bd] bg-[#fff7e9] px-5 py-3">
             {['all', 'common', 'rare', 'epic', 'legendary'].map(rarity => (
               <button
                 key={rarity}
+                type="button"
                 onClick={() => setSelectedRarity(rarity)}
-                className={`pixel-btn text-xs px-3 py-1 whitespace-nowrap ${
+                className={`whitespace-nowrap rounded-full border px-3 py-1.5 text-xs font-semibold transition ${
                   selectedRarity === rarity
-                    ? 'bg-sky-600 text-white'
-                    : 'bg-slate-700 text-slate-200 border border-slate-600 hover:bg-slate-600'
+                    ? 'border-[#8bc7bc] bg-[#dff1e7] text-[#487b6c] shadow-sm'
+                    : 'border-[#e6d4bb] bg-white/70 text-[#866b58] hover:bg-white'
                 }`}
               >
                 {rarity === 'all' ? '全部' : RARITY_TEXT[rarity as keyof typeof RARITY_TEXT]}
@@ -182,16 +193,16 @@ export default function FoodShop({ isOpen, onClose }: FoodShopProps) {
           </div>
           
           {/* 食物列表 */}
-          <div className="flex-1 overflow-y-auto p-4">
+          <div className="pet-scrollbar-soft flex-1 overflow-y-auto bg-[#fffaf0] p-4 sm:p-5">
             {/* 加载骨架屏 */}
             {isLoading && (
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
                 {[1, 2, 3, 4, 5, 6].map(i => (
-                  <div key={i} className="pixel-panel p-3 animate-pulse">
-                    <div className="w-16 h-16 mx-auto mb-2 bg-slate-700 rounded" />
-                    <div className="h-4 bg-slate-700 rounded mb-2" />
-                    <div className="h-3 bg-slate-700 rounded mb-2 w-2/3 mx-auto" />
-                    <div className="h-8 bg-slate-700 rounded" />
+                  <div key={i} className="animate-pulse rounded-[24px] border border-[#ead8bd] bg-[#f7ead7] p-3">
+                    <div className="mx-auto mb-2 h-16 w-16 rounded-full bg-[#e5d4bc]" />
+                    <div className="mb-2 h-4 rounded bg-[#e5d4bc]" />
+                    <div className="mx-auto mb-2 h-3 w-2/3 rounded bg-[#e5d4bc]" />
+                    <div className="h-8 rounded-full bg-[#e5d4bc]" />
                   </div>
                 ))}
               </div>
@@ -199,18 +210,27 @@ export default function FoodShop({ isOpen, onClose }: FoodShopProps) {
             
             {!isLoading && (
               <>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
                   {filteredFoods.map(food => {
                     const canBuy = userCoins >= food.price;
-                    const rarityColor = RARITY_COLORS[food.rarity];
+                    const rarityTone = {
+                      common: 'text-[#7f8d86]',
+                      rare: 'text-[#5b94b0]',
+                      epic: 'text-[#9b74b4]',
+                      legendary: 'text-[#c38b3d]',
+                    }[food.rarity] ?? 'text-[#7f8d86]';
                     
                     return (
                       <div
                         key={food.id}
-                        className={`pixel-panel p-3 ${!canBuy ? 'opacity-50' : ''}`}
+                        className={`rounded-[24px] border p-3 shadow-[0_10px_22px_rgba(128,88,48,0.08)] transition ${
+                          canBuy
+                            ? 'border-[#e6d2b2] bg-white/75 hover:-translate-y-0.5 hover:border-[#caa977] hover:bg-white'
+                            : 'border-[#ead8bd] bg-[#f8efdf]'
+                        }`}
                       >
-                        <div className="text-center mb-2">
-                          <div className="mb-1 flex items-center justify-center">
+                        <div className="mb-2 text-center">
+                          <div className="mb-1 flex h-20 items-center justify-center rounded-[20px] bg-[linear-gradient(135deg,#fff8e8,#e7f2e8)]">
                             <FoodIcon 
                               foodId={food.id}
                               fallbackEmoji={food.icon}
@@ -218,37 +238,38 @@ export default function FoodShop({ isOpen, onClose }: FoodShopProps) {
                               className="transition-transform duration-200 hover:scale-110"
                             />
                           </div>
-                          <div className="font-bold text-sm text-game-light">
+                          <div className="text-sm font-black text-[#6b5140]">
                             {food.name}
                           </div>
-                          <div className={`text-xs ${rarityColor}`}>
+                          <div className={`text-xs font-semibold ${rarityTone}`}>
                             {RARITY_TEXT[food.rarity]}
                           </div>
                         </div>
                         
-                        <p className="text-xs text-slate-500 mb-2 text-center">
+                        <p className="mb-2 text-center text-xs leading-5 text-[#8d7160]">
                           {food.description}
                         </p>
                         
-                        <div className="text-xs text-center mb-2 space-y-1">
+                        <div className="mb-3 space-y-1 text-center text-xs">
                           {food.effects.hunger && (
-                            <div className="text-blue-400">🍖 饱食度 +{food.effects.hunger}</div>
+                            <div className="text-[#6c9abb]">🍖 饱食度 +{food.effects.hunger}</div>
                           )}
                           {food.effects.happiness && (
-                            <div className="text-emerald-400">😊 快乐值 +{food.effects.happiness}</div>
+                            <div className="text-[#65a585]">😊 快乐值 +{food.effects.happiness}</div>
                           )}
                         </div>
                         
                         <button
+                          type="button"
                           onClick={() => handlePurchase(food.id, food.price, food.name)}
                           disabled={!canBuy || purchasing === food.id}
-                        className={`w-full pixel-btn text-xs py-1 ${
+                        className={`w-full rounded-full px-3 py-2 text-xs font-bold transition ${
                           canBuy
-                            ? 'pixel-btn-success'
-                            : 'bg-slate-700 text-slate-400 cursor-not-allowed'
+                            ? 'bg-[#e49b61] text-white shadow-[0_8px_18px_rgba(228,155,97,0.2)] hover:bg-[#d9894c]'
+                            : 'cursor-not-allowed bg-[#eadfce] text-[#a18b78]'
                           }`}
                         >
-                          {purchasing === food.id ? '购买中...' : `💰 ${food.price} 金币`}
+                          {purchasing === food.id ? '正在准备...' : canBuy ? `${food.price} 金币` : `还差 ${food.price - userCoins} 金币`}
                         </button>
                       </div>
                     );
@@ -256,7 +277,7 @@ export default function FoodShop({ isOpen, onClose }: FoodShopProps) {
                 </div>
                 
                 {filteredFoods.length === 0 && (
-                  <div className="text-center text-slate-400 py-8">
+                  <div className="py-8 text-center text-[#927866]">
                     <p className="text-4xl mb-2">🍽️</p>
                     <p className="text-sm">没有找到食物</p>
                   </div>
@@ -266,8 +287,8 @@ export default function FoodShop({ isOpen, onClose }: FoodShopProps) {
           </div>
           
           {/* 底部提示 */}
-          <div className="bg-slate-800 border-t border-slate-700 p-3 text-xs text-slate-300">
-            <p className="font-bold mb-1">💡 如何获得金币？</p>
+          <div className="border-t border-[#ead8bd] bg-[#f5e8d6] p-4 text-xs text-[#866b58]">
+            <p className="mb-1 font-bold text-[#6b5140]">💡 如何获得金币？</p>
             <ul className="space-y-0.5 list-disc list-inside">
               <li>完成章节关卡和战役模式</li>
               <li>参与PVP对战获胜</li>

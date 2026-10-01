@@ -5,7 +5,7 @@
 import { create } from 'zustand';
 import { Decoration, PlacedDecoration, UserDecoration, DECORATIONS } from '@/types/decoration';
 import { getApiBaseUrl } from '@/lib/config/api';
-import { toFriendlyMessage, showFriendlyErrorToast } from '@/lib/utils/friendlyError';
+import { showFriendlyErrorToast } from '@/lib/utils/friendlyError';
 
 // 动态获取API基础URL，支持局域网访问
 function getApiBase(): string {
@@ -78,17 +78,28 @@ export const useDecorationStore = create<DecorationState>((set, get) => ({
         })
       ]);
       
-      if (!ownedResponse.ok) {
-        const errorText = await ownedResponse.text();
-        console.error('Failed to load owned decorations:', errorText);
-        // 🔒 不向用户泄露原始后端响应
-        throw new Error('装饰品数据加载失败');
+      const responsesUnauthorized = [ownedResponse, placedResponse].some(
+        (response) => response.status === 401 || response.status === 403,
+      );
+
+      if (responsesUnauthorized) {
+        // 装饰是可选数据：凭据过期时保留本地默认场景，不阻断小屋和心能角。
+        set({
+          ownedDecorations: [],
+          placedDecorations: [],
+          isLoading: false,
+          error: null,
+        });
+        return;
       }
-      
-      if (!placedResponse.ok) {
-        const errorText = await placedResponse.text();
-        console.error('Failed to load placed decorations:', errorText);
-        throw new Error('已放置装饰品加载失败');
+
+      if (!ownedResponse.ok || !placedResponse.ok) {
+        console.warn('[decoration] optional decoration data unavailable');
+        set({
+          isLoading: false,
+          error: null,
+        });
+        return;
       }
       
       const ownedData = await ownedResponse.json();
@@ -118,11 +129,10 @@ export const useDecorationStore = create<DecorationState>((set, get) => ({
         error: null
       });
     } catch (error) {
-      console.error('Failed to load decorations:', error);
-      showFriendlyErrorToast(error, '装饰品加载失败');
+      console.warn('[decoration] optional decoration load skipped', error);
       set({ 
         isLoading: false,
-        error: toFriendlyMessage(error, '装饰品加载失败')
+        error: null
       });
     }
   },

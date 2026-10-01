@@ -51,6 +51,9 @@ export class DashSkill {
 
     private createGhostTrail() {
         const ghost = this.scene.add.sprite(this.player.x, this.player.y, 'player');
+        ghost.setFlipX(this.player.flipX);
+        ghost.setDisplaySize(this.player.displayWidth, this.player.displayHeight);
+        ghost.setDepth(Math.max(0, this.player.depth - 1));
         ghost.setAlpha(0.5);
         ghost.setTint(0x00ffff); // Cyan tint for dash
 
@@ -69,6 +72,9 @@ export class DashSkill {
                 return;
             }
             const g = this.scene.add.sprite(this.player.x, this.player.y, 'player');
+            g.setFlipX(this.player.flipX);
+            g.setDisplaySize(this.player.displayWidth, this.player.displayHeight);
+            g.setDepth(Math.max(0, this.player.depth - 1));
             g.setAlpha(0.3);
             g.setTint(0x00ffff);
             this.scene.tweens.add({

@@ -1,0 +1,12 @@
+Use case: stylized-concept
+Asset type: premium 2D game decoration sprite
+Primary request: one compact multi-level cat tower for a children's cartoon pet-home game, rounded platforms, cozy tunnel, hanging pom-pom toy and paw-shaped details
+Scene/backdrop: isolated on a perfectly flat pale blue-white background #F7FBFF for background removal
+Subject: a single cat tower, front three-quarter view, centered, fully visible
+Style/medium: polished hand-painted 3D cartoon illustration, soft felt, rope and matte wood textures, premium friendly furniture design
+Composition/framing: square 1:1, object fills 78 percent of canvas, clean silhouette, contained ground shadow
+Lighting/mood: warm playful studio light, inviting and safe
+Color palette: warm oat, caramel, mint, dusty rose, cream
+Materials/textures: woven rope, felt pads, matte painted wood, plush tunnel fabric
+Constraints: no text, no logo, no watermark, no people, no pet, no border, no collage
+Avoid: glossy plastic, hard black outline, excessive clutter, photorealism, excessive bloom

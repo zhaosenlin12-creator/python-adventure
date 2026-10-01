@@ -83,7 +83,8 @@ export const level_7_5_config: CampaignLevel = {
   },
   // 双Boss配置
   bossConfig: {
-    type: 'dual',  // 双Boss模式
+    visualTheme: 'default',
+          type: 'dual',  // 双Boss模式
     hp: 400,  // 第一个Boss的HP
     // 第一阶段Boss
     phase1Boss: {

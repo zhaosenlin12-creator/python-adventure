@@ -1,0 +1,12 @@
+Use case: stylized-concept
+Asset type: premium 2D game decoration sprite
+Primary request: one short strand of five rounded fairy lights with tiny leaf-shaped clips for a children's cartoon pet-home game, arranged in a gentle arc
+Scene/backdrop: isolated on a perfectly flat pale blue-white background #F7FBFF for background removal
+Subject: a single decorative light strand, front view, centered, fully visible
+Style/medium: polished hand-painted 3D cartoon illustration, cotton cord, matte colored bulbs, soft warm glow, premium UI/game asset
+Composition/framing: square 1:1, object fills 78 percent of canvas, clean readable silhouette
+Lighting/mood: warm twinkling evening light, gentle and magical
+Color palette: butter yellow, blush pink, sky blue, mint, lavender, warm cream
+Materials/textures: cotton cord, frosted glass bulbs, tiny painted leaf clips
+Constraints: no text, no logo, no watermark, no people, no pet, no border, no collage
+Avoid: neon, hard black outline, harsh bloom, tangled wires, photorealism

@@ -1,0 +1,12 @@
+Use case: stylized-concept
+Asset type: premium 2D game decoration sprite
+Primary request: one rounded retro story television for a children's cartoon pet-home game, soft cream casing, mint side knobs, small blank screen with a tiny rainbow glow
+Scene/backdrop: isolated on a perfectly flat pale blue-white background #F7FBFF for background removal
+Subject: a single compact retro television, front three-quarter view, centered, fully visible
+Style/medium: polished hand-painted 3D cartoon illustration, matte enamel, soft bevels, playful premium furniture prop
+Composition/framing: square 1:1, object fills 70 percent of canvas, clean silhouette, short rounded feet, contained ground shadow
+Lighting/mood: cozy afternoon room light, gentle and nostalgic
+Color palette: cream, mint, coral peach, sky blue, warm brown, butter yellow
+Materials/textures: matte enamel, softly reflective blank glass, tiny fabric speaker grille
+Constraints: no text, no logo, no watermark, no people, no pet, no border, no collage, no channel symbols
+Avoid: glossy black screen, realistic electronics, hard black outline, dark mood, excessive bloom

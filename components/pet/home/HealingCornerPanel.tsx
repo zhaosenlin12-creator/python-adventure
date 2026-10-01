@@ -226,7 +226,6 @@ function HealingCompanionStage({
   onCompanionTap: () => void;
 }) {
   const visual = MOOD_VISUALS[mood];
-  const expression = activity === 'focus' ? '•ᴗ•' : activity === 'release' ? '˘ᴗ˘' : activity === 'courage' ? '＾ᴗ＾' : '•◡•';
 
   return (
     <div className="relative mt-3 overflow-hidden rounded-[26px] border border-white/10 bg-[radial-gradient(circle_at_28%_18%,rgba(255,255,255,0.18),transparent_34%),linear-gradient(135deg,rgba(14,165,233,0.16),rgba(16,185,129,0.1),rgba(168,85,247,0.1))] px-3 py-3 sm:mt-4 sm:px-4 sm:py-4">
@@ -272,19 +271,21 @@ function HealingCompanionStage({
             title="轻拍心能小云朵"
             aria-label="轻拍心能小云朵"
             key={`${mood}-${activity}`}
-            className="relative flex h-20 w-24 cursor-pointer items-center justify-center rounded-full border border-white/45 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(219,234,254,0.88))] shadow-[0_18px_45px_rgba(15,23,42,0.24)] outline-none transition focus-visible:ring-2 focus-visible:ring-amber-200/70 sm:h-24 sm:w-28"
+            className="relative flex h-24 w-28 cursor-pointer items-center justify-center rounded-full border border-white/30 bg-white/[0.06] shadow-[0_18px_45px_rgba(15,23,42,0.24)] outline-none transition focus-visible:ring-2 focus-visible:ring-amber-200/70 sm:h-28 sm:w-32"
             initial={{ scale: 0.92, rotate: -3, y: 8 }}
             animate={{ scale: [1, 1.02, 1], rotate: [-1.5, 1.5, -1.5], y: [0, -4, 0] }}
             whileHover={{ scale: 1.06, rotate: 2 }}
             whileTap={{ scale: 0.94, y: 4 }}
             transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
           >
-            <div className="absolute -left-2 top-8 h-9 w-9 rounded-full bg-white/88 shadow-[inset_0_-8px_16px_rgba(148,163,184,0.18)]" />
-            <div className="absolute -right-2 top-8 h-9 w-9 rounded-full bg-white/88 shadow-[inset_0_-8px_16px_rgba(148,163,184,0.18)]" />
-            <div className="absolute -top-3 left-8 h-8 w-8 rounded-full bg-white/92 shadow-[inset_0_-8px_16px_rgba(148,163,184,0.16)]" />
-            <div className={`absolute left-5 top-12 h-2.5 w-4 rounded-full ${visual.blush}`} />
-            <div className={`absolute right-5 top-12 h-2.5 w-4 rounded-full ${visual.blush}`} />
-            <div className="relative z-[1] text-lg font-black tracking-wide text-slate-700">{expression}</div>
+            <div className={`absolute inset-[-10%] rounded-full bg-gradient-to-br ${visual.glow} opacity-80 blur-xl`} />
+            <img
+              src="/assets/pet-home/healing-companion.png"
+              alt=""
+              aria-hidden="true"
+              draggable={false}
+              className="relative z-[1] h-[132%] w-[132%] object-contain drop-shadow-[0_16px_22px_rgba(15,23,42,0.22)]"
+            />
           </motion.button>
           <motion.div
             className="absolute -right-1 top-2 flex h-8 w-8 items-center justify-center rounded-full border border-white/50 bg-amber-200 text-xs font-black text-slate-800 shadow-[0_10px_24px_rgba(251,191,36,0.24)]"
@@ -293,6 +294,31 @@ function HealingCompanionStage({
           >
             {visual.sticker}
           </motion.div>
+
+          <AnimatePresence>
+            {sparkleBurst > 0 && (
+              <motion.div
+                key={`calm-ripple-${sparkleBurst}`}
+                className="pointer-events-none absolute inset-[-20%]"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                {[0, 1, 2].map((index) => (
+                  <motion.span
+                    key={index}
+                    className="absolute left-1/2 top-1/2 h-[82%] w-[82%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/55"
+                    animate={{
+                      scale: [0.12, 1.05 + index * 0.22],
+                      opacity: [0.72, 0],
+                      borderWidth: ['2px', '1px'],
+                    }}
+                    transition={{ duration: 0.86 + index * 0.12, ease: 'easeOut', delay: index * 0.08 }}
+                  />
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           <AnimatePresence>
             {sparkleBurst > 0 && (
@@ -515,17 +541,17 @@ function MoodConstellationPicker({
   onSelect: (mood: HealingMoodId) => void;
 }) {
   return (
-    <div className="mt-3 rounded-[24px] border border-white/10 bg-white/[0.035] p-3">
+    <div className="mt-3 rounded-[24px] border border-[#ead8bd] bg-[#fffaf0] p-3 shadow-[0_12px_24px_rgba(128,88,48,0.08)]">
       <div className="flex items-center justify-between gap-3">
-        <div className="flex items-center gap-2 text-xs font-semibold text-slate-100">
-          <Smile className="h-4 w-4 text-emerald-100" />
+        <div className="flex items-center gap-2 text-xs font-semibold text-[#6b5140]">
+          <Smile className="h-4 w-4 text-[#69a58e]" />
           心情星盘
         </div>
         <div className="flex items-center gap-1.5">
           {[0, 1, 2].map((index) => (
             <motion.span
               key={index}
-              className="h-1.5 w-1.5 rounded-full bg-emerald-200/70"
+              className="h-1.5 w-1.5 rounded-full bg-[#9acdb5]"
               animate={{ scale: [0.7, 1.25, 0.7], opacity: [0.35, 0.9, 0.35] }}
               transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut', delay: index * 0.18 }}
             />
@@ -533,7 +559,7 @@ function MoodConstellationPicker({
         </div>
       </div>
 
-      <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
+      <div className="pet-scrollbar-soft mt-3 flex gap-2 overflow-x-auto pb-1">
         {HEALING_MOOD_OPTIONS.map((item, index) => {
           const active = selectedMood === item.id;
           const visual = MOOD_VISUALS[item.id];
@@ -545,8 +571,8 @@ function MoodConstellationPicker({
               title={item.hint}
               className={`group relative flex h-[72px] min-w-[62px] flex-col items-center justify-center gap-1 overflow-hidden rounded-[20px] border transition ${
                 active
-                  ? 'border-emerald-200/60 bg-emerald-400/15 text-white shadow-[0_14px_30px_rgba(16,185,129,0.14)]'
-                  : 'border-white/10 bg-white/[0.04] text-slate-300 hover:border-white/18 hover:bg-white/[0.07]'
+                  ? 'border-[#8bc7b0] bg-[#e5f3e8] text-[#4b7b69] shadow-[0_14px_30px_rgba(88,164,130,0.14)]'
+                  : 'border-[#ead8bd] bg-white/70 text-[#8b715f] hover:border-[#cbaa7b] hover:bg-white'
               }`}
             >
               <motion.span
@@ -555,7 +581,7 @@ function MoodConstellationPicker({
                 transition={{ duration: 2 + index * 0.08, repeat: active ? Infinity : 0, ease: 'easeInOut' }}
               />
               <motion.span
-                className={`relative flex h-8 w-8 items-center justify-center rounded-full text-xs font-black text-slate-950 ${visual.blush}`}
+                className={`relative flex h-8 w-8 items-center justify-center rounded-full text-xs font-black text-[#6b5140] ${visual.blush}`}
                 animate={active ? { y: [0, -4, 0], rotate: [-5, 5, -5] } : { y: 0, rotate: 0 }}
                 transition={{ duration: 1.6, repeat: active ? Infinity : 0, ease: 'easeInOut' }}
               >
@@ -583,12 +609,12 @@ function SensoryMixer({
   const bars = [18, 28, 38, 24, 32];
 
   return (
-    <div className="mt-3 grid grid-cols-[1fr_auto] items-center gap-3 rounded-[22px] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.055),rgba(255,255,255,0.025))] px-3 py-3">
+    <div className="mt-3 grid grid-cols-[1fr_auto] items-center gap-3 rounded-[22px] border border-[#ead8bd] bg-[linear-gradient(135deg,#fffdf8,#f7ead7)] px-3 py-3">
       <div className="flex min-w-0 items-center gap-3">
         <motion.div
           key={pulse}
           className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border ${
-            soundEnabled ? 'border-amber-200/35 bg-amber-300/15 text-amber-100' : 'border-white/10 bg-white/[0.04] text-slate-400'
+            soundEnabled ? 'border-[#e4c987] bg-[#fff1c8] text-[#a1732f]' : 'border-[#ead8bd] bg-[#f3eadc] text-[#a18b78]'
           }`}
           animate={soundEnabled ? { scale: [1, 1.08, 1], rotate: [-4, 4, -4] } : { scale: 1, rotate: 0 }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
@@ -596,8 +622,8 @@ function SensoryMixer({
           <Music2 className="h-4.5 w-4.5" />
         </motion.div>
         <div className="min-w-0">
-          <div className="text-xs font-semibold text-slate-100">音色小调台</div>
-          <div className="mt-1 text-[11px] text-slate-400">{soundEnabled ? '轻音反馈已接入' : '当前静音，只保留动效反馈'}</div>
+          <div className="text-xs font-semibold text-[#6b5140]">音色小调台</div>
+          <div className="mt-1 text-[11px] text-[#927866]">{soundEnabled ? '轻音反馈已接入' : '当前静音，只保留动效反馈'}</div>
         </div>
       </div>
       <div className="flex h-10 items-end gap-1.5">
@@ -605,7 +631,7 @@ function SensoryMixer({
           <motion.span
             key={`${index}-${pulse}`}
             className={`w-2 rounded-full ${
-              index === activeIndex ? 'bg-amber-200 shadow-[0_0_14px_rgba(251,191,36,0.45)]' : 'bg-sky-200/50'
+              index === activeIndex ? 'bg-[#e6ad58] shadow-[0_0_14px_rgba(230,173,88,0.45)]' : 'bg-[#a8cbd3]'
             }`}
             animate={{
               height: soundEnabled ? [height * 0.55, height + (index === activeIndex ? 12 : 5), height * 0.7] : [12, 16, 12],
@@ -645,17 +671,17 @@ function HealingRitualTrack({
           <div
             key={step.label}
             className={`relative overflow-hidden rounded-[18px] border px-2 py-2 text-center ${
-              step.done ? 'border-white/16 bg-white/[0.07]' : 'border-white/8 bg-white/[0.025]'
+              step.done ? 'border-[#b8d9c1] bg-[#e7f4e9]' : 'border-[#ead8bd] bg-[#fffaf0]'
             }`}
           >
             <motion.div
-              className="mx-auto flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-slate-950/28"
+              className="mx-auto flex h-7 w-7 items-center justify-center rounded-full border border-[#ead8bd] bg-[#f7ead7]"
               animate={step.done ? { y: [0, -3, 0], scale: [1, 1.08, 1] } : { y: 0, scale: 1 }}
               transition={{ duration: 1.5, repeat: step.done ? Infinity : 0, ease: 'easeInOut', delay: index * 0.12 }}
             >
-              <Icon className={`h-3.5 w-3.5 ${step.done ? step.tone : 'text-slate-500'}`} />
+              <Icon className={`h-3.5 w-3.5 ${step.done ? step.tone : 'text-[#b09a86]'}`} />
             </motion.div>
-            <div className={`mt-1 text-[10px] font-semibold ${step.done ? 'text-slate-100' : 'text-slate-500'}`}>
+            <div className={`mt-1 text-[10px] font-semibold ${step.done ? 'text-[#5f7d6b]' : 'text-[#a18b78]'}`}>
               {step.label}
             </div>
           </div>
@@ -901,13 +927,13 @@ export default function HealingCornerPanel({
   ];
 
   const sensoryDeck = (
-    <div className="rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,rgba(15,23,42,0.78),rgba(15,23,42,0.52))] p-4 shadow-[0_22px_42px_rgba(2,6,23,0.2)]">
+    <div className="rounded-[28px] border border-[#ead8bd] bg-[linear-gradient(180deg,#fffaf0,#f5e8d6)] p-4 shadow-[0_22px_42px_rgba(128,88,48,0.1)]">
       <div className="flex items-center justify-between gap-3">
         <div>
-          <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-100/80">感官控制台</div>
-          <div className="mt-1 text-sm font-black text-white">声音、氛围、轻触反馈</div>
+          <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#a27642]">感官控制台</div>
+          <div className="mt-1 text-sm font-black text-[#6b5140]">声音、氛围、轻触反馈</div>
         </div>
-        <div className="rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-1 text-[10px] font-semibold text-slate-200">
+        <div className="rounded-full border border-[#ead8bd] bg-[#fffaf0] px-2.5 py-1 text-[10px] font-semibold text-[#866b58]">
           {soundEnabled ? '已启用' : '静音模式'}
         </div>
       </div>
@@ -920,14 +946,14 @@ export default function HealingCornerPanel({
           onClick={handleSoundToggle}
           className={`flex min-h-[88px] min-w-0 flex-col items-start justify-between rounded-[22px] border px-3 py-3 text-left transition ${
             soundEnabled
-              ? 'border-emerald-300/35 bg-emerald-500/14 text-emerald-50'
-              : 'border-white/10 bg-white/[0.04] text-slate-300 hover:bg-white/[0.07]'
+              ? 'border-[#acd5bd] bg-[#e7f4e9] text-[#4e8064]'
+              : 'border-[#ead8bd] bg-[#fffaf0] text-[#866b58] hover:bg-white'
           }`}
         >
           <Volume2 className="h-4 w-4" />
           <div>
             <div className="text-xs font-semibold">{soundEnabled ? '音效陪伴已开' : '打开音效陪伴'}</div>
-            <div className="mt-1 text-[11px] leading-5 text-slate-300/80">
+            <div className="mt-1 text-[11px] leading-5 text-[#927866]">
               {soundEnabled ? '保留轻柔反馈，和动效同步。' : '让呼吸、星铃、暖光更有触感。'}
             </div>
           </div>
@@ -942,14 +968,14 @@ export default function HealingCornerPanel({
           disabled={ambientEnabled}
           className={`flex min-h-[88px] min-w-0 flex-col items-start justify-between rounded-[22px] border px-3 py-3 text-left transition ${
             ambientEnabled
-              ? 'border-sky-300/28 bg-sky-500/12 text-sky-50'
-              : 'border-white/10 bg-white/[0.04] text-slate-200 hover:bg-white/[0.07]'
+              ? 'border-[#b8d3e0] bg-[#e9f3f8] text-[#567f96]'
+              : 'border-[#ead8bd] bg-[#fffaf0] text-[#866b58] hover:bg-white'
           }`}
         >
           <Cloud className="h-4 w-4" />
           <div>
             <div className="text-xs font-semibold">{ambientEnabled ? '环境声已开启' : '加一点环境氛围'}</div>
-            <div className="mt-1 text-[11px] leading-5 text-slate-300/80">
+            <div className="mt-1 text-[11px] leading-5 text-[#927866]">
               {ambientEnabled ? '空气感已经铺开了。' : '更像在一间安静的小屋里慢慢放松。'}
             </div>
           </div>
@@ -968,13 +994,13 @@ export default function HealingCornerPanel({
                 })
               }
               title={item.hint}
-              className="flex min-h-[88px] min-w-0 flex-col items-start justify-between rounded-[22px] border border-white/10 bg-white/[0.05] px-3 py-3 text-left transition hover:border-white/18 hover:bg-white/[0.08]"
+              className="flex min-h-[88px] min-w-0 flex-col items-start justify-between rounded-[22px] border border-[#ead8bd] bg-[#fffaf0] px-3 py-3 text-left transition hover:border-[#cbaa7b] hover:bg-white"
               whileTap={{ scale: 0.96 }}
             >
               <SensoryIcon className={`h-4 w-4 ${item.toneClass}`} />
               <div>
-                <div className="text-xs font-semibold text-white">{item.label}</div>
-                <div className="mt-1 text-[11px] leading-5 text-slate-300/80">{item.hint}</div>
+                <div className="text-xs font-semibold text-[#6b5140]">{item.label}</div>
+                <div className="mt-1 text-[11px] leading-5 text-[#927866]">{item.hint}</div>
               </div>
             </motion.button>
           );
@@ -984,25 +1010,25 @@ export default function HealingCornerPanel({
   );
 
   const progressDeck = (
-    <div className="rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.03))] p-4 shadow-[0_20px_38px_rgba(2,6,23,0.16)]">
+    <div className="rounded-[28px] border border-[#ead8bd] bg-[#fffaf0] p-4 shadow-[0_20px_38px_rgba(128,88,48,0.08)]">
       <div className="flex items-center justify-between gap-3">
         <div>
-          <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-100/80">舒压进程</div>
-          <div className="mt-1 text-sm font-black text-white">今天的放松节奏</div>
+          <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#6da286]">舒压进程</div>
+          <div className="mt-1 text-sm font-black text-[#6b5140]">今天的放松节奏</div>
         </div>
-        <div className="rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-1 text-[10px] font-semibold text-slate-100">
+        <div className="rounded-full border border-[#ead8bd] bg-[#f7ead7] px-2.5 py-1 text-[10px] font-semibold text-[#866b58]">
           完成 {completedActivityCount}/4
         </div>
       </div>
 
-      <div className="mt-3 rounded-[22px] border border-white/10 bg-slate-950/45 px-3 py-3">
+      <div className="mt-3 rounded-[22px] border border-[#ead8bd] bg-[#f7ead7] px-3 py-3">
         <div className="flex items-center justify-between gap-3">
           <div>
-            <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-100/80">心能同步</div>
-            <div className="mt-1 text-sm font-black text-white">{energyScore}%</div>
+            <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#6da286]">心能同步</div>
+            <div className="mt-1 text-sm font-black text-[#6b5140]">{energyScore}%</div>
           </div>
           <div className="min-w-0 flex-1">
-            <div className="h-2 overflow-hidden rounded-full bg-slate-800">
+            <div className="h-2 overflow-hidden rounded-full bg-[#e2d5c3]">
               <motion.div
                 className="h-full rounded-full bg-[linear-gradient(90deg,#34d399,#38bdf8,#a78bfa)]"
                 initial={false}
@@ -1010,7 +1036,7 @@ export default function HealingCornerPanel({
                 transition={{ duration: 0.35, ease: 'easeOut' }}
               />
             </div>
-            <div className="mt-1 text-[11px] leading-5 text-slate-400">
+            <div className="mt-1 text-[11px] leading-5 text-[#927866]">
               当前推荐：{ACTIVITY_META[activeActivity].label}
             </div>
           </div>
@@ -1027,13 +1053,13 @@ export default function HealingCornerPanel({
   );
 
   const activitySelectorDeck = (
-    <div className="rounded-[24px] border border-white/10 bg-[linear-gradient(180deg,rgba(14,165,233,0.08),rgba(15,23,42,0.22))] p-3 shadow-[0_20px_38px_rgba(2,6,23,0.16)] sm:rounded-[28px] sm:p-4">
+    <div className="rounded-[24px] border border-[#ead8bd] bg-[linear-gradient(180deg,#f2f8f5,#fffaf0)] p-3 shadow-[0_20px_38px_rgba(128,88,48,0.08)] sm:rounded-[28px] sm:p-4">
       <div className="flex items-center justify-between gap-3">
         <div>
-          <div className="text-[10px] font-semibold tracking-[0.16em] text-sky-100/80">玩法舱</div>
-          <div className="mt-1 text-sm font-black text-white">选一种方式</div>
+          <div className="text-[10px] font-semibold tracking-[0.16em] text-[#6f9eaa]">玩法舱</div>
+          <div className="mt-1 text-sm font-black text-[#6b5140]">选一种方式</div>
         </div>
-        <div className="hidden rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-1 text-[10px] font-semibold text-slate-100 sm:block">
+        <div className="hidden rounded-full border border-[#ead8bd] bg-[#fffaf0] px-2.5 py-1 text-[10px] font-semibold text-[#866b58] sm:block">
           5 种舒压玩法
         </div>
       </div>
@@ -1050,8 +1076,8 @@ export default function HealingCornerPanel({
               onClick={() => handleActivityChange(activity)}
               className={`group relative overflow-hidden rounded-[18px] border px-2 py-2 text-center transition sm:rounded-[24px] sm:px-3 sm:py-3 sm:text-left ${
                 activeActivity === activity
-                  ? 'border-sky-300/55 bg-sky-500/12 text-white shadow-[0_18px_32px_rgba(56,189,248,0.16)]'
-                  : 'border-white/10 bg-white/[0.03] text-slate-300 hover:border-white/16 hover:bg-white/[0.06]'
+                  ? 'border-[#8abfd1] bg-[#e6f3f7] text-[#4f7d8b] shadow-[0_18px_32px_rgba(83,153,174,0.14)]'
+                  : 'border-[#ead8bd] bg-[#fffaf0] text-[#866b58] hover:border-[#cbaa7b] hover:bg-white'
               }`}
             >
               <motion.div
@@ -1062,12 +1088,12 @@ export default function HealingCornerPanel({
               <motion.div
                 animate={activeActivity === activity ? { y: [0, -3, 0], rotate: [-4, 4, -4] } : { y: 0, rotate: 0 }}
                 transition={{ duration: 1.4, repeat: activeActivity === activity ? Infinity : 0, ease: 'easeInOut' }}
-                className="relative mx-auto flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/[0.05] sm:mx-0 sm:h-10 sm:w-10"
+                className="relative mx-auto flex h-8 w-8 items-center justify-center rounded-full border border-[#ead8bd] bg-[#f7ead7] sm:mx-0 sm:h-10 sm:w-10"
               >
                 <Icon className="h-4 w-4" />
               </motion.div>
               <div className="relative mt-2 text-[10px] font-semibold leading-4 sm:mt-3 sm:text-sm">{meta.label}</div>
-              <div className="relative mt-1 hidden text-[11px] leading-5 text-slate-400 sm:block">{meta.description}</div>
+              <div className="relative mt-1 hidden text-[11px] leading-5 text-[#927866] sm:block">{meta.description}</div>
             </button>
           );
         })}
@@ -1561,14 +1587,14 @@ export default function HealingCornerPanel({
   );
 
   const immersiveHealingDeck = (
-    <div className="overflow-hidden rounded-[30px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.025))] p-3 shadow-[0_26px_50px_rgba(2,6,23,0.24)] sm:p-4">
+    <div className="overflow-hidden rounded-[30px] border border-[#dec7a5] bg-[linear-gradient(180deg,#fffdf8,#f1e4d0)] p-3 shadow-[0_26px_50px_rgba(128,88,48,0.14)] sm:p-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="min-w-0">
-          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-300/18 bg-emerald-500/10 px-2.5 py-1 text-[10px] font-semibold tracking-[0.18em] text-emerald-100">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#a9d1c0] bg-[#e6f3ea] px-2.5 py-1 text-[10px] font-bold tracking-[0.18em] text-[#4f816d]">
             <ActivityIcon className="h-3.5 w-3.5" />
-            舒压游乐舱
+            舒压花园
           </div>
-          <div className="mt-2 text-base font-black text-white sm:text-lg">{ACTIVITY_META[activeActivity].label}</div>
+          <div className="mt-2 text-base font-black text-[#5c4537] sm:text-lg">{ACTIVITY_META[activeActivity].label}</div>
         </div>
         <div className="flex items-center gap-2">
           <button
@@ -1576,29 +1602,29 @@ export default function HealingCornerPanel({
             onClick={handleSoundToggle}
             className={`flex h-9 w-9 items-center justify-center rounded-full border transition ${
               soundEnabled
-                ? 'border-emerald-300/30 bg-emerald-400/12 text-emerald-50'
-                : 'border-white/10 bg-white/[0.04] text-slate-300'
+                ? 'border-[#a9d1c0] bg-[#e6f3ea] text-[#4f816d]'
+                : 'border-[#ead8bd] bg-[#f7ead7] text-[#a18b78]'
             }`}
             aria-label={soundEnabled ? '关闭心能角音效' : '开启心能角音效'}
             title={soundEnabled ? '关闭音效' : '开启音效'}
           >
             <Volume2 className="h-4 w-4" />
           </button>
-          <div className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 text-[10px] font-semibold text-slate-100">
+          <div className="rounded-full border border-[#e3c997] bg-[#fff2cb] px-3 py-1 text-[10px] font-bold text-[#916a2d]">
             {playScore}%
           </div>
         </div>
       </div>
 
-      <div className="relative mt-3 min-h-[420px] overflow-hidden rounded-[30px] border border-white/10 bg-[radial-gradient(circle_at_50%_18%,rgba(186,230,253,0.24),transparent_34%),linear-gradient(180deg,rgba(8,47,73,0.62),rgba(15,23,42,0.92))] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:min-h-[520px]">
+      <div className="relative mt-3 min-h-[420px] overflow-hidden rounded-[30px] border border-[#b8d8d2] bg-[radial-gradient(circle_at_50%_18%,rgba(255,255,255,0.9),transparent_34%),linear-gradient(180deg,#dff3ed,#c5e3d8_58%,#f7e6ca)] shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] sm:min-h-[520px]">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute inset-x-0 bottom-0 h-[34%] rounded-t-[50%] bg-[radial-gradient(ellipse_at_center,rgba(45,212,191,0.22),rgba(15,118,110,0.14)_48%,transparent_76%)]" />
-          <div className="absolute left-[10%] top-[12%] h-28 w-28 rounded-full bg-sky-200/18 blur-3xl" />
-          <div className="absolute right-[8%] top-[20%] h-32 w-32 rounded-full bg-emerald-200/14 blur-3xl" />
+          <div className="absolute inset-x-0 bottom-0 h-[34%] rounded-t-[50%] bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.58),rgba(113,180,151,0.18)_48%,transparent_76%)]" />
+          <div className="absolute left-[10%] top-[12%] h-28 w-28 rounded-full bg-white/50 blur-3xl" />
+          <div className="absolute right-[8%] top-[20%] h-32 w-32 rounded-full bg-[#fff0c8]/70 blur-3xl" />
           {[0, 1, 2, 3, 4].map((index) => (
             <motion.span
               key={`calm-ray-${index}`}
-              className="absolute h-[2px] rounded-full bg-white/18"
+              className="absolute h-[2px] rounded-full bg-white/60"
               style={{ left: `${12 + index * 17}%`, top: `${22 + (index % 2) * 13}%`, width: 80 + index * 18 }}
               animate={{ x: [0, 18, 0], opacity: [0.12, 0.34, 0.12] }}
               transition={{ duration: 4.2 + index * 0.35, repeat: Infinity, ease: 'easeInOut', delay: index * 0.15 }}
@@ -1614,7 +1640,7 @@ export default function HealingCornerPanel({
               type="button"
               onClick={() => handleCalmObjectTap(item.id)}
               disabled={cleared}
-              className={`absolute z-[2] flex items-center justify-center rounded-full border border-white/35 bg-gradient-to-br ${item.tint} text-[11px] font-bold text-white shadow-[0_18px_38px_rgba(14,165,233,0.18),inset_0_1px_0_rgba(255,255,255,0.42)] backdrop-blur-sm transition`}
+              className={`absolute z-[2] flex items-center justify-center rounded-full border border-white/80 bg-gradient-to-br ${item.tint} text-[11px] font-bold text-[#5f544c] shadow-[0_18px_38px_rgba(88,136,118,0.16),inset_0_1px_0_rgba(255,255,255,0.72)] backdrop-blur-sm transition`}
               style={{
                 left: item.left,
                 top: item.top,
@@ -1644,7 +1670,7 @@ export default function HealingCornerPanel({
         <motion.button
           type="button"
           onClick={handleCompanionTap}
-          className="absolute left-1/2 top-[46%] z-[4] flex h-40 w-40 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-[radial-gradient(circle_at_38%_28%,rgba(255,255,255,0.94),rgba(186,230,253,0.44)_34%,rgba(14,165,233,0.18)_64%,rgba(15,23,42,0.12))] shadow-[0_0_70px_rgba(125,211,252,0.26),inset_0_1px_0_rgba(255,255,255,0.48)] sm:h-52 sm:w-52"
+          className="absolute left-1/2 top-[46%] z-[4] flex h-40 w-40 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/80 bg-[radial-gradient(circle_at_38%_28%,rgba(255,255,255,0.98),rgba(204,239,229,0.7)_34%,rgba(135,198,182,0.2)_64%,rgba(255,244,215,0.18))] shadow-[0_0_70px_rgba(105,177,154,0.28),inset_0_1px_0_rgba(255,255,255,0.8)] sm:h-52 sm:w-52"
           animate={{ scale: activeActivity === 'breathe' ? breathingStep.scale : [1, 1.025, 1], y: [0, -5, 0] }}
           transition={{
             duration: activeActivity === 'breathe' ? breathingStep.durationMs / 1000 : 3.2,
@@ -1655,18 +1681,22 @@ export default function HealingCornerPanel({
           title="轻拍伙伴"
           aria-label="轻拍伙伴"
         >
-          <div className="relative flex h-[78%] w-[78%] items-center justify-center rounded-full bg-[linear-gradient(180deg,rgba(15,23,42,0.08),rgba(15,23,42,0.18))]">
+            <div className="relative flex h-[78%] w-[78%] items-center justify-center rounded-full bg-[linear-gradient(180deg,rgba(255,255,255,0.55),rgba(255,250,234,0.32))]">
             <motion.div
-              className="absolute inset-3 rounded-full border border-white/24"
+              className="absolute inset-3 rounded-full border border-white/70"
               animate={{ scale: [0.84, 1.08, 0.84], opacity: [0.28, 0.72, 0.28] }}
               transition={{ duration: 2.8, repeat: Infinity, ease: 'easeInOut' }}
             />
-            <div className="text-center">
-              <div className="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full border border-white/24 bg-white/18 text-white sm:h-14 sm:w-14">
-                <Heart className="h-6 w-6" />
-              </div>
-              <div className="text-sm font-black text-white sm:text-base">{petName}</div>
-              <div className="mt-1 text-[11px] font-semibold text-sky-50/80">
+            <motion.img
+              src="/assets/pet-home/healing-companion.png"
+              alt=""
+              aria-hidden="true"
+              draggable={false}
+              className="relative z-[1] h-[116%] w-[116%] object-contain drop-shadow-[0_20px_28px_rgba(14,165,233,0.24)]"
+            />
+            <div className="absolute bottom-4 left-1/2 z-[2] -translate-x-1/2 rounded-full border border-white/70 bg-white/80 px-3 py-1 text-center shadow-sm backdrop-blur-sm">
+              <div className="text-sm font-black text-[#5c4537] sm:text-base">{petName}</div>
+              <div className="mt-0.5 text-[10px] font-semibold text-[#6f8f8a]">
                 {activeActivity === 'breathe' ? breathingStep.label : '轻拍放松'}
               </div>
             </div>
@@ -1674,7 +1704,7 @@ export default function HealingCornerPanel({
         </motion.button>
 
         {activeActivity === 'release' && (
-          <div className="absolute inset-x-3 bottom-3 z-[5] rounded-[24px] border border-white/10 bg-slate-950/56 p-3 shadow-[0_18px_36px_rgba(2,6,23,0.28)] backdrop-blur-md sm:inset-x-5 sm:bottom-5">
+          <div className="absolute inset-x-3 bottom-3 z-[5] rounded-[24px] border border-[#ead8bd] bg-[#fffaf0]/92 p-3 shadow-[0_18px_36px_rgba(128,88,48,0.14)] backdrop-blur-md sm:inset-x-5 sm:bottom-5">
             {releaseBubbles.length > 0 ? (
               <>
                 <div className="grid grid-cols-3 gap-2">
@@ -1684,7 +1714,7 @@ export default function HealingCornerPanel({
                       type="button"
                       disabled={bubble.popped}
                       onClick={() => handleReleaseBubblePop(bubble.id)}
-                      className="flex h-14 items-center justify-center rounded-full border border-white/45 text-[11px] font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] sm:h-16"
+                      className="flex h-14 items-center justify-center rounded-full border border-white/80 text-[11px] font-semibold text-[#6b5140] shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] sm:h-16"
                       style={{
                         background: `radial-gradient(circle at 30% 26%, rgba(255,255,255,0.52), ${bubble.tint} 58%, rgba(14,165,233,0.32))`,
                       }}
@@ -1704,7 +1734,7 @@ export default function HealingCornerPanel({
                     </motion.button>
                   ))}
                 </div>
-                <div className="mt-2 flex items-center justify-between gap-2 text-[11px] text-slate-200">
+                <div className="mt-2 flex items-center justify-between gap-2 text-[11px] text-[#866b58]">
                   <span>释放 {releaseClearedCount}/{releaseBubbles.length}</span>
                   <button
                     type="button"
@@ -1713,7 +1743,7 @@ export default function HealingCornerPanel({
                       setReleaseBubbles([]);
                       setReleaseDone(false);
                     }}
-                    className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 font-semibold text-white"
+                    className="rounded-full border border-[#ead8bd] bg-[#f7ead7] px-3 py-1 font-semibold text-[#765b49]"
                   >
                     重来
                   </button>
@@ -1732,7 +1762,7 @@ export default function HealingCornerPanel({
                         setReleaseDone(false);
                         setReleaseBubbles(createReleaseBubbles(label));
                       }}
-                      className="rounded-full border border-white/10 bg-white/[0.07] px-3 py-2 text-xs font-semibold text-white transition hover:bg-white/[0.12]"
+                      className="rounded-full border border-[#ead8bd] bg-[#f7ead7] px-3 py-2 text-xs font-semibold text-[#765b49] transition hover:bg-white"
                     >
                       {label}
                     </button>
@@ -1743,14 +1773,14 @@ export default function HealingCornerPanel({
                     value={releaseText}
                     onChange={(event) => setReleaseText(event.target.value.slice(0, 24))}
                     placeholder="也可以写一句"
-                    className="min-w-0 flex-1 rounded-full border border-white/10 bg-slate-950/54 px-3 py-2 text-xs text-white outline-none focus:border-sky-300/45"
+                    className="min-w-0 flex-1 rounded-full border border-[#ead8bd] bg-white px-3 py-2 text-xs text-[#6b5140] outline-none placeholder:text-[#b09a86] focus:border-[#8abfd1]"
                   />
                   <button
                     type="button"
                     onClick={handleRelease}
                     disabled={!releaseText.trim()}
                     className={`rounded-full px-3 py-2 text-xs font-semibold transition ${
-                      releaseText.trim() ? 'bg-sky-500 text-white hover:bg-sky-400' : 'bg-slate-800 text-slate-500'
+                      releaseText.trim() ? 'bg-[#78b7c5] text-white hover:bg-[#66a7b6]' : 'bg-[#e6d9c8] text-[#a38b78]'
                     }`}
                   >
                     放走
@@ -1762,14 +1792,14 @@ export default function HealingCornerPanel({
         )}
 
         {activeActivity !== 'release' && (
-          <div className="absolute inset-x-3 bottom-3 z-[5] grid grid-cols-3 gap-1.5 rounded-[24px] border border-white/10 bg-slate-950/50 p-2 shadow-[0_18px_36px_rgba(2,6,23,0.26)] backdrop-blur-md sm:inset-x-5 sm:bottom-5 sm:gap-2 sm:p-3">
+          <div className="absolute inset-x-3 bottom-3 z-[5] grid grid-cols-3 gap-1.5 rounded-[24px] border border-[#ead8bd] bg-[#fffaf0]/90 p-2 shadow-[0_18px_36px_rgba(128,88,48,0.14)] backdrop-blur-md sm:inset-x-5 sm:bottom-5 sm:gap-2 sm:p-3">
             <button
               type="button"
               onClick={() => {
                 triggerSensoryFeedback('breathe', 'button_click', { volume: 0.16 });
                 setBreathingStepIndex((current) => (current + 1) % HEALING_BREATHING_STEPS.length);
               }}
-              className="min-w-0 rounded-[18px] border border-emerald-300/20 bg-emerald-400/10 px-1.5 py-3 text-[11px] font-semibold text-emerald-50 transition hover:bg-emerald-400/16 sm:px-2 sm:text-xs"
+              className="min-w-0 rounded-[18px] border border-[#acd5bd] bg-[#e7f4e9] px-1.5 py-3 text-[11px] font-semibold text-[#4e8064] transition hover:bg-[#d5ecdf] sm:px-2 sm:text-xs"
             >
               呼吸圈
             </button>
@@ -1784,7 +1814,7 @@ export default function HealingCornerPanel({
                   groundingDone ? 0 : Math.min(current + 1, HEALING_GROUNDING_STEPS.length),
                 );
               }}
-              className="min-w-0 rounded-[18px] border border-sky-300/20 bg-sky-400/10 px-1.5 py-3 text-[11px] font-semibold text-sky-50 transition hover:bg-sky-400/16 sm:px-2 sm:text-xs"
+              className="min-w-0 rounded-[18px] border border-[#b8d3e0] bg-[#e9f3f8] px-1.5 py-3 text-[11px] font-semibold text-[#567f96] transition hover:bg-[#dcecf4] sm:px-2 sm:text-xs"
             >
               落地感
             </button>
@@ -1794,34 +1824,34 @@ export default function HealingCornerPanel({
                 triggerSensoryFeedback('sparkle', 'collect_gem', { burst: true, volume: 0.2 });
                 setCourageIndex((current) => (current + 1) % COURAGE_CARDS.length);
               }}
-              className="min-w-0 rounded-[18px] border border-amber-300/20 bg-amber-300/10 px-1.5 py-3 text-[11px] font-semibold text-amber-50 transition hover:bg-amber-300/16 sm:px-2 sm:text-xs"
+              className="min-w-0 rounded-[18px] border border-[#e4c987] bg-[#fff1c8] px-1.5 py-3 text-[11px] font-semibold text-[#9a722f] transition hover:bg-[#ffebad] sm:px-2 sm:text-xs"
             >
               勇气卡
             </button>
           </div>
         )}
 
-        <div className="pointer-events-none absolute left-3 top-3 z-[6] rounded-full border border-white/10 bg-slate-950/42 px-3 py-1 text-[10px] font-semibold text-slate-100 backdrop-blur-md sm:left-5 sm:top-5">
+        <div className="pointer-events-none absolute left-3 top-3 z-[6] rounded-full border border-white/80 bg-white/75 px-3 py-1 text-[10px] font-semibold text-[#6b5140] shadow-sm backdrop-blur-md sm:left-5 sm:top-5">
           点亮 {calmClearedCount}/{CALM_PLAY_OBJECTS.length}
         </div>
       </div>
 
       <div className="mt-3 grid gap-2 sm:grid-cols-3">
-        <div className="rounded-[20px] border border-white/10 bg-white/[0.04] px-3 py-3">
-          <div className="text-[10px] font-semibold tracking-[0.16em] text-emerald-100/80">当前节奏</div>
-          <div className="mt-1 text-sm font-black text-white">{activeActivity === 'breathe' ? breathingStep.detail : moodOption.label}</div>
+        <div className="rounded-[20px] border border-[#ead8bd] bg-[#fffaf0] px-3 py-3">
+          <div className="text-[10px] font-semibold tracking-[0.16em] text-[#6da286]">当前节奏</div>
+          <div className="mt-1 text-sm font-black text-[#6b5140]">{activeActivity === 'breathe' ? breathingStep.detail : moodOption.label}</div>
         </div>
-        <div className="rounded-[20px] border border-white/10 bg-white/[0.04] px-3 py-3">
-          <div className="text-[10px] font-semibold tracking-[0.16em] text-sky-100/80">释放进度</div>
-          <div className="mt-1 text-sm font-black text-white">{releaseDone ? releaseTargetCount : releaseClearedCount}/{releaseTargetCount}</div>
+        <div className="rounded-[20px] border border-[#ead8bd] bg-[#fffaf0] px-3 py-3">
+          <div className="text-[10px] font-semibold tracking-[0.16em] text-[#6f9eaa]">释放进度</div>
+          <div className="mt-1 text-sm font-black text-[#6b5140]">{releaseDone ? releaseTargetCount : releaseClearedCount}/{releaseTargetCount}</div>
         </div>
         <button
           type="button"
           onClick={onOpenChat}
-          className="rounded-[20px] border border-sky-300/20 bg-sky-500/10 px-3 py-3 text-left transition hover:bg-sky-500/16"
+          className="rounded-[20px] border border-[#b8d3e0] bg-[#e9f3f8] px-3 py-3 text-left transition hover:bg-[#dcecf4]"
         >
-          <div className="text-[10px] font-semibold tracking-[0.16em] text-sky-100/80">需要帮助</div>
-          <div className="mt-1 flex items-center gap-2 text-sm font-black text-white">
+          <div className="text-[10px] font-semibold tracking-[0.16em] text-[#6f9eaa]">需要帮助</div>
+          <div className="mt-1 flex items-center gap-2 text-sm font-black text-[#5f7f91]">
             <MessageCircle className="h-4 w-4" />
             问小伴
           </div>
@@ -1841,7 +1871,7 @@ export default function HealingCornerPanel({
           exit={{ opacity: 0 }}
           transition={{ duration: 0.18, ease: 'easeOut' }}
           onClick={onClose}
-          className="absolute inset-0 z-[74] bg-[radial-gradient(circle_at_top,rgba(14,165,233,0.12),transparent_32%),linear-gradient(180deg,rgba(2,6,23,0.44),rgba(2,6,23,0.62))] backdrop-blur-[3px]"
+          className="absolute inset-0 z-[74] bg-[radial-gradient(circle_at_top,rgba(255,248,220,0.24),transparent_32%),linear-gradient(180deg,rgba(73,55,45,0.18),rgba(73,55,45,0.34))] backdrop-blur-[4px]"
           aria-label="关闭心能角遮罩"
         />
         <motion.div
@@ -1849,20 +1879,20 @@ export default function HealingCornerPanel({
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 24, scale: 0.98 }}
           transition={{ duration: 0.24, ease: 'easeOut' }}
-          className="absolute inset-x-3 bottom-3 top-16 z-[75] flex flex-col overflow-hidden rounded-[28px] border border-white/12 bg-slate-950/95 shadow-[0_28px_70px_rgba(2,6,23,0.42),inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl lg:left-1/2 lg:top-1/2 lg:h-[min(88vh,780px)] lg:w-[min(96vw,1120px)] lg:-translate-x-1/2 lg:-translate-y-1/2 lg:rounded-[32px]"
+          className="absolute inset-x-3 bottom-3 top-16 z-[75] flex flex-col overflow-hidden rounded-[28px] border border-[#dec7a5] bg-[#fffaf0] shadow-[0_28px_70px_rgba(91,59,35,0.28),inset_0_1px_0_rgba(255,255,255,0.8)] backdrop-blur-xl lg:left-1/2 lg:top-1/2 lg:h-[min(88vh,780px)] lg:w-[min(96vw,1120px)] lg:-translate-x-1/2 lg:-translate-y-1/2 lg:rounded-[32px]"
           style={{
             backgroundImage:
-              'radial-gradient(circle at top, rgba(110,231,183,0.14), transparent 28%), radial-gradient(circle at 82% 18%, rgba(125,211,252,0.12), transparent 24%), linear-gradient(180deg, rgba(15,23,42,0.96), rgba(2,6,23,0.985))',
+              'radial-gradient(circle at top, rgba(255,241,200,0.55), transparent 28%), radial-gradient(circle at 82% 18%, rgba(200,235,225,0.42), transparent 24%), linear-gradient(180deg, rgba(255,250,240,0.98), rgba(244,232,211,0.99))',
           }}
         >
-          <div className="relative overflow-hidden border-b border-white/10 bg-[linear-gradient(180deg,rgba(16,185,129,0.12),rgba(15,23,42,0))] px-3 py-3 sm:px-4 sm:py-4">
+          <div className="relative overflow-hidden border-b border-[#ead8bd] bg-[linear-gradient(180deg,rgba(230,245,233,0.88),rgba(255,250,240,0))] px-3 py-3 sm:px-4 sm:py-4">
             <div className="pointer-events-none absolute inset-0">
               <div className={`absolute -left-10 top-2 h-28 w-28 rounded-full bg-gradient-to-br ${headerMoodVisual.glow} opacity-80 blur-3xl`} />
-              <div className="absolute right-3 top-3 h-20 w-20 rounded-full border border-white/10 bg-white/[0.04] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]" />
+              <div className="absolute right-3 top-3 h-20 w-20 rounded-full border border-white/70 bg-white/35 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]" />
               {[0, 1, 2, 3].map((index) => (
                 <motion.span
                   key={`healing-header-spark-${index}`}
-                  className="absolute rounded-full bg-white/35 shadow-[0_0_14px_rgba(255,255,255,0.28)]"
+                  className="absolute rounded-full bg-white/75 shadow-[0_0_14px_rgba(255,255,255,0.7)]"
                   style={{
                     width: 7 + index * 2,
                     height: 7 + index * 2,
@@ -1877,36 +1907,36 @@ export default function HealingCornerPanel({
             <SoftPulseDots />
             <div className="relative flex items-start justify-between gap-4">
               <div className="min-w-0">
-                <div className="inline-flex items-center gap-2 rounded-full border border-emerald-300/18 bg-emerald-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-100">
+                <div className="inline-flex items-center gap-2 rounded-full border border-[#a9d1c0] bg-[#e6f3ea] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#4f816d]">
                   <Heart className="h-3.5 w-3.5" />
                   舒压星湾
                 </div>
-                <h3 className="mt-2 truncate text-base font-black text-white sm:text-lg">{petName} 陪你慢慢放轻</h3>
-                <p className="mt-1 hidden text-sm leading-6 text-slate-300 sm:block">{moodOption.hint}</p>
+                <h3 className="mt-2 truncate text-base font-black text-[#5c4537] sm:text-lg">{petName} 陪你慢慢放轻</h3>
+                <p className="mt-1 hidden text-sm leading-6 text-[#866b58] sm:block">{moodOption.hint}</p>
                 <div className="mt-2 hidden flex-wrap gap-2 sm:flex">
-                  <div className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-1 text-[10px] font-semibold text-slate-100">
-                    <Sparkles className="h-3.5 w-3.5 text-sky-200" />
+                  <div className="inline-flex items-center gap-1.5 rounded-full border border-[#ead8bd] bg-[#fffaf0] px-2.5 py-1 text-[10px] font-semibold text-[#866b58]">
+                    <Sparkles className="h-3.5 w-3.5 text-[#78a6b7]" />
                     {moodOption.label}
                   </div>
-                  <div className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-1 text-[10px] font-semibold text-slate-100">
-                    <Wand2 className="h-3.5 w-3.5 text-amber-100" />
+                  <div className="inline-flex items-center gap-1.5 rounded-full border border-[#ead8bd] bg-[#fffaf0] px-2.5 py-1 text-[10px] font-semibold text-[#866b58]">
+                    <Wand2 className="h-3.5 w-3.5 text-[#bc8d4b]" />
                     {ACTIVITY_META[activeActivity].label}
                   </div>
-                  <div className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-1 text-[10px] font-semibold text-slate-100">
-                    <Volume2 className={`h-3.5 w-3.5 ${soundEnabled ? 'text-emerald-100' : 'text-slate-400'}`} />
+                  <div className="inline-flex items-center gap-1.5 rounded-full border border-[#ead8bd] bg-[#fffaf0] px-2.5 py-1 text-[10px] font-semibold text-[#866b58]">
+                    <Volume2 className={`h-3.5 w-3.5 ${soundEnabled ? 'text-[#69a58e]' : 'text-[#a18b78]'}`} />
                     {soundEnabled ? '音感陪伴已开' : '静音陪伴中'}
                   </div>
                 </div>
               </div>
               <div className="relative z-[1] flex items-center gap-2">
-                <div className="hidden rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 text-[10px] font-semibold text-slate-100 sm:inline-flex">
-                  <Star className="mr-1.5 h-3.5 w-3.5 text-amber-100" />
+                <div className="hidden rounded-full border border-[#e3c997] bg-[#fff2cb] px-3 py-1 text-[10px] font-bold text-[#916a2d] sm:inline-flex">
+                  <Star className="mr-1.5 h-3.5 w-3.5 text-[#bc8d4b]" />
                   心能 {energyScore}%
                 </div>
               <button
                 type="button"
                 onClick={onClose}
-                className="relative z-[1] flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-300 transition hover:bg-white/[0.08] hover:text-white"
+                className="relative z-[1] flex h-9 w-9 items-center justify-center rounded-full border border-[#ead8bd] bg-[#fffaf0] text-[#8a6b57] transition hover:bg-white hover:text-[#5c4537]"
                 aria-label="关闭心能角"
               >
                 <X className="h-4 w-4" />
@@ -1915,7 +1945,7 @@ export default function HealingCornerPanel({
             </div>
           </div>
 
-          <div className="flex-1 overflow-y-auto overscroll-contain px-3 py-3 sm:px-4 sm:py-4 lg:px-5">
+          <div className="pet-scrollbar-soft flex-1 overflow-y-auto overscroll-contain px-3 py-3 sm:px-4 sm:py-4 lg:px-5">
             <div className="grid gap-3 lg:grid-cols-[minmax(0,1.05fr)_340px] lg:gap-4">
               <div className="space-y-3 lg:space-y-4">
                 {immersiveHealingDeck}
@@ -1933,16 +1963,16 @@ export default function HealingCornerPanel({
             </div>
           </div>
 
-          <div className="border-t border-white/10 px-3 py-3 sm:px-4">
+          <div className="border-t border-[#ead8bd] px-3 py-3 sm:px-4">
             <div className="grid gap-3 lg:grid-cols-[1fr_auto] lg:items-center">
-              <div className="hidden rounded-[22px] border border-white/10 bg-white/[0.035] px-3 py-3 sm:block">
+              <div className="hidden rounded-[22px] border border-[#ead8bd] bg-[#fffaf0] px-3 py-3 sm:block">
                 <div className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-sky-300/18 bg-sky-500/12 text-sky-100">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#b8d3e0] bg-[#e9f3f8] text-[#5f88a4]">
                     <MessageCircle className="h-4 w-4" />
                   </div>
                   <div>
-                    <div className="text-sm font-semibold text-white">想说说刚才的感受？</div>
-                    <div className="mt-1 text-[11px] leading-5 text-slate-400">
+                    <div className="text-sm font-semibold text-[#6b5140]">想说说刚才的感受？</div>
+                    <div className="mt-1 text-[11px] leading-5 text-[#927866]">
                       可以让 {petName} 陪你聊聊，也可以继续留在这里慢慢缓一会儿。
                     </div>
                   </div>
@@ -1951,7 +1981,7 @@ export default function HealingCornerPanel({
               <button
                 type="button"
                 onClick={onOpenChat}
-                className="flex w-full items-center justify-center gap-2 rounded-full border border-sky-300/24 bg-sky-500/10 px-4 py-3 text-sm font-semibold text-white transition hover:bg-sky-500/18 lg:w-auto"
+                className="flex w-full items-center justify-center gap-2 rounded-full border border-[#b8d3e0] bg-[#e9f3f8] px-4 py-3 text-sm font-semibold text-[#5f7f91] transition hover:bg-[#dcecf4] lg:w-auto"
               >
                 <MessageCircle className="h-4 w-4" />
                 和小伴聊聊

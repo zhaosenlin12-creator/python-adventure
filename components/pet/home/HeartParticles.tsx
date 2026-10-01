@@ -7,9 +7,13 @@ interface Particle {
   id: number;
   x: number;
   y: number;
-  emoji: string;
   size: number;
   duration: number;
+  kind: 'heart' | 'spark' | 'bubble';
+  color: string;
+  driftX: number;
+  rise: number;
+  rotate: number;
 }
 
 interface HeartParticlesProps {
@@ -22,7 +26,7 @@ interface HeartParticlesProps {
   trigger?: boolean;
 }
 
-const HEART_EMOJIS = ['❤️', '💖', '💕', '💗', '💓', '💝', '🩷', '🧡', '💛'];
+const PARTICLE_COLORS = ['#fb7185', '#f472b6', '#fbbf24', '#a7f3d0', '#7dd3fc'];
 
 /**
  * 💕 心形粒子效果组件
@@ -41,14 +45,19 @@ export default function HeartParticles({
   // 生成单个粒子
   const createParticle = useCallback((baseX: number, baseY: number) => {
     const id = idCounterRef.current++;
+    const kindRoll = Math.random();
     
     const particle: Particle = {
       id,
       x: baseX + (Math.random() - 0.5) * 20,
       y: baseY,
-      emoji: HEART_EMOJIS[Math.floor(Math.random() * HEART_EMOJIS.length)],
       size: 16 + Math.random() * 16,
-      duration: 2 + Math.random() * 1
+      duration: 2 + Math.random() * 1,
+      kind: kindRoll < 0.58 ? 'heart' : kindRoll < 0.82 ? 'spark' : 'bubble',
+      color: PARTICLE_COLORS[Math.floor(Math.random() * PARTICLE_COLORS.length)],
+      driftX: (Math.random() - 0.5) * 60,
+      rise: 50 + Math.random() * 50,
+      rotate: (Math.random() - 0.5) * 40,
     };
     
     setParticles(prev => [...prev, particle]);
@@ -94,13 +103,17 @@ export default function HeartParticles({
     <div className="absolute inset-0 pointer-events-none overflow-hidden z-50">
       <AnimatePresence>
         {particles.map(particle => (
-          <motion.div
+          <motion.svg
             key={particle.id}
-            className="absolute"
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            className="absolute overflow-visible"
             style={{
               left: `${particle.x}%`,
               top: `${particle.y}%`,
-              fontSize: particle.size
+              width: particle.size,
+              height: particle.size,
+              filter: `drop-shadow(0 0 8px ${particle.color}99)`,
             }}
             initial={{ 
               opacity: 1, 
@@ -110,9 +123,9 @@ export default function HeartParticles({
             animate={{ 
               opacity: [1, 1, 0],
               scale: [0, 1.2, 1],
-              y: -100 - Math.random() * 50,
-              x: (Math.random() - 0.5) * 60,
-              rotate: (Math.random() - 0.5) * 40
+              y: -100 - particle.rise,
+              x: particle.driftX,
+              rotate: particle.rotate
             }}
             exit={{ opacity: 0 }}
             transition={{ 
@@ -120,8 +133,25 @@ export default function HeartParticles({
               ease: 'easeOut'
             }}
           >
-            {particle.emoji}
-          </motion.div>
+            {particle.kind === 'heart' && (
+              <path
+                d="M12 20.5S4.5 15.7 3.3 10.3C2.1 4.8 8.5 2.7 12 7.2c3.5-4.5 9.9-2.4 8.7 3.1C19.5 15.7 12 20.5 12 20.5Z"
+                fill={particle.color}
+              />
+            )}
+            {particle.kind === 'spark' && (
+              <path
+                d="m12 2 1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2Z"
+                fill={particle.color}
+              />
+            )}
+            {particle.kind === 'bubble' && (
+              <>
+                <circle cx="11" cy="12" r="6.5" fill={`${particle.color}55`} stroke={particle.color} strokeWidth="1.4" />
+                <circle cx="8.5" cy="9.5" r="1.4" fill="white" opacity="0.8" />
+              </>
+            )}
+          </motion.svg>
         ))}
       </AnimatePresence>
     </div>

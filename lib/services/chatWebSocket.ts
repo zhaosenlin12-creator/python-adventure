@@ -24,6 +24,7 @@ export class ChatWebSocketClient {
   private heartbeatTimer: NodeJS.Timeout | null = null;
   private isConnecting = false;
   private isManualClose = false;
+  private hasLoggedConnectionFailure = false;
 
   constructor(config: ChatWebSocketConfig) {
     this.config = config;
@@ -43,7 +44,7 @@ export class ChatWebSocketClient {
       this.ws = new WebSocket(wsUrl);
       this.setupEventHandlers();
     } catch (error) {
-      console.error('[ChatWebSocket] Connection error:', error);
+      this.logConnectionFailure('[ChatWebSocket] Connection error:', error);
       this.isConnecting = false;
       this.scheduleReconnect();
     }
@@ -55,6 +56,7 @@ export class ChatWebSocketClient {
     this.ws.onopen = () => {
       this.isConnecting = false;
       this.reconnectAttempts = 0;
+      this.hasLoggedConnectionFailure = false;
       this.startHeartbeat();
       this.config.onConnect?.();
     };
@@ -70,11 +72,7 @@ export class ChatWebSocketClient {
     };
 
     this.ws.onerror = (error) => {
-      // 🔥 改进错误日志：WebSocket错误事件通常不包含详细信息
-      // 实际错误原因会在onclose事件中体现
-      if (process.env.NODE_ENV === 'development') {
-        console.warn('[ChatWebSocket] 连接错误（详情见onclose事件）');
-      }
+      this.logConnectionFailure('[ChatWebSocket] 连接失败，将自动重试');
       this.config.onError?.(error);
     };
 
@@ -101,7 +99,7 @@ export class ChatWebSocketClient {
 
   private scheduleReconnect(): void {
     if (this.reconnectAttempts >= this.maxReconnectAttempts) {
-      console.error('[ChatWebSocket] Max reconnect attempts reached');
+      this.logConnectionFailure('[ChatWebSocket] 已停止重连，请确认后端服务已启动');
       return;
     }
 
@@ -137,6 +135,18 @@ export class ChatWebSocketClient {
 
   private sendPing(): void {
     this.send({ type: 'ping' });
+  }
+
+  private logConnectionFailure(message: string, error?: unknown): void {
+    if (process.env.NODE_ENV === 'development') {
+      if (!this.hasLoggedConnectionFailure) {
+        console.debug(message, error ?? '');
+        this.hasLoggedConnectionFailure = true;
+      }
+      return;
+    }
+
+    console.warn(message, error ?? '');
   }
 
   send(data: any): void {

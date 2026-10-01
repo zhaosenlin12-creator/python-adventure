@@ -1,0 +1,12 @@
+Use case: stylized-concept
+Asset type: premium 2D game decoration sprite
+Primary request: one round cloud-shaped pet rug with a subtle paw and star weave motif for a children's cartoon pet-home game
+Scene/backdrop: isolated on a perfectly flat pale blue-white background #F7FBFF for background removal
+Subject: a single top-front three-quarter round rug, centered, fully visible
+Style/medium: polished hand-painted 3D cartoon illustration, soft woven fibers, gentle raised embroidery, warm handcrafted charm
+Composition/framing: square 1:1, object fills 72 percent of canvas, clean silhouette, a soft ground shadow contained inside the canvas
+Lighting/mood: warm diffused studio light, cozy and calm
+Color palette: oat cream, peach, mint, dusty lavender, warm sand
+Materials/textures: fluffy woven fabric, stitched edge, tactile fibers, subtle imperfect handmade variation
+Constraints: no text, no logo, no watermark, no people, no pet, no furniture, no border, no collage
+Avoid: glossy plastic, metallic shine, hard black outline, busy patterns, excessive bloom

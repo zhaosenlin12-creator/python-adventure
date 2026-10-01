@@ -273,41 +273,44 @@ export default function PetChatModal({ isOpen, onClose, petId, petName }: PetCha
   return (
     <>
       <div
-        className="fixed bottom-6 right-6 z-[9999] w-[92vw] max-w-sm h-[60vh] max-h-[420px] flex flex-col bg-slate-800 border-2 border-slate-700 rounded-2xl shadow-2xl backdrop-blur-md overflow-hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="pet-chat-title"
+        className="fixed bottom-6 right-6 z-[9999] flex h-[60vh] max-h-[420px] w-[92vw] max-w-sm flex-col overflow-hidden rounded-[26px] border border-[#dec7a5] bg-[linear-gradient(155deg,#fffaf0,#f4e6d2)] shadow-[0_28px_70px_rgba(91,59,35,0.24)] backdrop-blur-md"
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-3 py-2 border-b border-slate-700 bg-blue-900/30">
+        <div className="flex items-center justify-between border-b border-[#ead8bd] bg-[#e8f3f0] px-3 py-2.5">
           <div>
-            <h3 className="text-lg font-bold text-blue-400">🗨️ 和 {petName} 聊天</h3>
-            <p className="text-[10px] text-slate-500 mt-1">记忆仅保存在本地浏览器缓存</p>
+            <h3 id="pet-chat-title" className="text-lg font-black text-[#5f8d73]">🗨️ 和 {petName} 聊天</h3>
+            <p className="mt-1 text-[10px] text-[#927866]">记忆仅保存在本地浏览器缓存</p>
           </div>
           <div className="flex items-center gap-2">
             {fallbackMode && (
-              <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-900/30 text-amber-400 border border-amber-500/30">
+              <span className="rounded-full border border-[#e4c987] bg-[#fff1c8] px-2 py-0.5 text-[10px] text-[#916a2d]">
                 本地陪聊
               </span>
             )}
             <button
               onClick={() => setShowClearConfirm(true)}
-              className="pixel-btn bg-slate-700 text-slate-300 px-2 py-1 text-xs rounded-xl hover:bg-slate-600"
+              className="rounded-xl border border-[#ead8bd] bg-[#fffaf0] px-2 py-1 text-xs text-[#725645] transition hover:bg-white"
             >
               清除记忆
             </button>
-            <button onClick={onClose} className="text-slate-400 hover:text-white text-2xl">
+            <button onClick={onClose} className="text-2xl text-[#a18b78] transition hover:text-[#5c4537]" aria-label="关闭聊天">
               ×
             </button>
           </div>
         </div>
 
         {/* Messages */}
-        <div className="flex-1 overflow-y-auto p-3 space-y-3 bg-slate-800/60">
+        <div className="pet-scrollbar-soft flex-1 space-y-3 overflow-y-auto bg-[#f6ead8] p-3">
           {statusNote && (
-            <div className="text-[11px] text-amber-400 bg-amber-900/30 border border-amber-500/30 rounded-lg px-2 py-1">
+            <div className="rounded-lg border border-[#e4c987] bg-[#fff1c8] px-2 py-1 text-[11px] text-[#916a2d]">
               {statusNote}
             </div>
           )}
           {messages.length === 0 && (
-            <div className="text-center text-xs text-slate-400">开始和宠物聊聊天吧～</div>
+            <div className="text-center text-xs text-[#a18b78]">开始和宠物聊聊天吧～</div>
           )}
           {messages.map(msg => {
             const isUser = msg.role === 'user';
@@ -316,8 +319,8 @@ export default function PetChatModal({ isOpen, onClose, petId, petName }: PetCha
                 <div
                   className={`max-w-[80%] rounded-2xl px-3 py-2 text-sm border ${
                     isUser
-                      ? 'bg-blue-600 text-white border-blue-500'
-                      : 'bg-slate-700 text-white border-slate-600 shadow-sm'
+                      ? 'border-[#6faebc] bg-[#78b7c5] text-white'
+                      : 'border-[#ead8bd] bg-[#fffaf0] text-[#6b5140] shadow-sm'
                   }`}
                 >
                   {!isUser && msg.emotion && (
@@ -330,7 +333,7 @@ export default function PetChatModal({ isOpen, onClose, petId, petName }: PetCha
           })}
           {isSending && (
             <div className="flex justify-start">
-              <div className="bg-slate-700 text-slate-400 border border-slate-600 rounded-2xl px-3 py-2 text-sm shadow-sm">
+              <div className="rounded-2xl border border-[#ead8bd] bg-white/80 px-3 py-2 text-sm text-[#a18b78] shadow-sm">
                 正在思考中...
               </div>
             </div>
@@ -340,13 +343,13 @@ export default function PetChatModal({ isOpen, onClose, petId, petName }: PetCha
 
         {/* Suggestions */}
         {suggestions.length > 0 && (
-          <div className="px-3 py-2 border-t border-slate-700 bg-blue-900/30">
+          <div className="border-t border-[#ead8bd] bg-[#e8f3f0] px-3 py-2">
             <div className="flex flex-wrap gap-2">
               {suggestions.map((s, idx) => (
                 <button
                   key={`${s}-${idx}`}
                   onClick={() => handleSend(s)}
-                  className="pixel-btn bg-slate-700 text-blue-400 text-xs px-2 py-1 rounded-xl border border-slate-600 hover:bg-slate-600"
+                  className="rounded-xl border border-[#b8d3e0] bg-[#e9f3f8] px-2 py-1 text-xs text-[#5f7f91] transition hover:bg-white"
                 >
                   {s}
                 </button>
@@ -356,8 +359,8 @@ export default function PetChatModal({ isOpen, onClose, petId, petName }: PetCha
         )}
 
         {/* Input */}
-        <div className="p-3 border-t border-slate-700 bg-slate-800">
-          {error && <div className="text-xs text-red-500 mb-2">{error}</div>}
+        <div className="border-t border-[#ead8bd] bg-[#fffaf0] p-3">
+          {error && <div className="mb-2 rounded-lg bg-[#fff0ec] px-2 py-1 text-xs text-[#a35d57]">{error}</div>}
           <div className="flex gap-2">
             <input
               ref={inputRef}
@@ -370,22 +373,22 @@ export default function PetChatModal({ isOpen, onClose, petId, petName }: PetCha
                 }
               }}
               placeholder="和宠物说点什么..."
-              className="flex-1 px-3 py-2 bg-slate-700 border border-slate-600 rounded-xl text-white text-sm focus:outline-none focus:border-blue-400"
+              className="flex-1 rounded-xl border border-[#ead8bd] bg-white px-3 py-2 text-sm text-[#6b5140] outline-none placeholder:text-[#b09a86] focus:border-[#8abfd1]"
               maxLength={MAX_MESSAGE_LENGTH}
             />
             <button
               onClick={() => handleSend()}
               disabled={isSending || !inputValue.trim()}
-              className={`pixel-btn px-4 text-sm ${
+              className={`rounded-xl px-4 py-2 text-sm font-bold transition ${
                 isSending || !inputValue.trim()
-                  ? 'bg-slate-700 text-slate-500 cursor-not-allowed'
-                  : 'bg-blue-600 text-white hover:bg-blue-500'
+                  ? 'cursor-not-allowed bg-[#e6d9c8] text-[#a38b78]'
+                  : 'bg-[#78b7c5] text-white hover:bg-[#66a7b6]'
               }`}
             >
               发送
             </button>
           </div>
-          <div className="text-[10px] text-slate-400 mt-1 text-right">
+          <div className="mt-1 text-right text-[10px] text-[#a18b78]">
             {inputValue.length}/{MAX_MESSAGE_LENGTH}
           </div>
         </div>

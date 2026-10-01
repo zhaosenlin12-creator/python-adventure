@@ -7,21 +7,19 @@ import { DECORATIONS, PlacedDecoration } from '@/types/decoration';
 /**
  * 🌾 田地系统 — 2×4 农田格子
  *
- * 格子坐标与 CozyRoomBackground 中的田地土壤背景对齐：
- *   土壤背景: left 3%, bottom 8%, width 38%, height 16%
- *   → viewport top 76%–92%
+ * 格子坐标与 MiniMax 花园底图中的左侧 2×4 花圃对齐。
  */
 
 // ── 田地格子坐标（视口百分比） ──────────────────
 export const FARM_PLOTS = [
-  { id: 0, row: 0, col: 0, x: 8,  y: 80 },
-  { id: 1, row: 0, col: 1, x: 17, y: 80 },
-  { id: 2, row: 0, col: 2, x: 27, y: 80 },
-  { id: 3, row: 0, col: 3, x: 36, y: 80 },
-  { id: 4, row: 1, col: 0, x: 8,  y: 88 },
-  { id: 5, row: 1, col: 1, x: 17, y: 88 },
-  { id: 6, row: 1, col: 2, x: 27, y: 88 },
-  { id: 7, row: 1, col: 3, x: 36, y: 88 },
+  { id: 0, row: 0, col: 0, x: 7.8,  y: 43.5 },
+  { id: 1, row: 0, col: 1, x: 17.2, y: 45.5 },
+  { id: 2, row: 1, col: 0, x: 7.5,  y: 56.5 },
+  { id: 3, row: 1, col: 1, x: 17.0, y: 58.5 },
+  { id: 4, row: 2, col: 0, x: 7.2,  y: 70.0 },
+  { id: 5, row: 2, col: 1, x: 16.6, y: 72.0 },
+  { id: 6, row: 3, col: 0, x: 7.0,  y: 84.0 },
+  { id: 7, row: 3, col: 1, x: 16.4, y: 86.0 },
 ] as const;
 
 export type FarmPlot = (typeof FARM_PLOTS)[number];
@@ -95,8 +93,9 @@ export default function FarmGrid({ placedDecorations }: FarmGridProps) {
               left: `${plot.x}%`,
               top: `${plot.y}%`,
               transform: 'translate(-50%, -50%)',
-              width: '8%',
-              minWidth: '48px',
+              width: '6.2%',
+              minWidth: '42px',
+              maxWidth: '72px',
               aspectRatio: '1',
             }}
           >
@@ -106,8 +105,8 @@ export default function FarmGrid({ placedDecorations }: FarmGridProps) {
                   className="absolute inset-[6%] rounded-[18px] border border-emerald-900/25"
                   style={{
                     background:
-                      'linear-gradient(180deg, rgba(58,88,34,0.52) 0%, rgba(67,101,38,0.24) 32%, rgba(74,52,28,0.24) 100%)',
-                    boxShadow: 'inset 0 2px 8px rgba(14,116,48,0.18)',
+                      'linear-gradient(180deg, rgba(163,230,53,0.18) 0%, rgba(74,222,128,0.14) 38%, rgba(74,52,28,0.08) 100%)',
+                    boxShadow: '0 0 18px rgba(132,204,22,0.18), inset 0 2px 8px rgba(14,116,48,0.1)',
                   }}
                 />
                 <motion.div
@@ -127,8 +126,8 @@ export default function FarmGrid({ placedDecorations }: FarmGridProps) {
                 className="relative h-[78%] w-[78%] overflow-hidden rounded-[18px] border border-amber-900/18"
                 style={{
                   background:
-                    'linear-gradient(180deg, rgba(118,78,36,0.4) 0%, rgba(88,56,26,0.62) 100%)',
-                  boxShadow: 'inset 0 1px 6px rgba(255,226,168,0.08), 0 6px 10px rgba(15,23,42,0.08)',
+                    'linear-gradient(180deg, rgba(255,237,191,0.16) 0%, rgba(120,77,36,0.18) 42%, rgba(88,56,26,0.26) 100%)',
+                  boxShadow: 'inset 0 1px 6px rgba(255,226,168,0.12), 0 0 12px rgba(251,191,36,0.12)',
                 }}
               >
                 <div

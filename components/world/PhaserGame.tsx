@@ -2,14 +2,14 @@
 
 import { useEffect, useRef, useState } from 'react';
 import * as Phaser from 'phaser';
-import { useGameStore } from '@/store/gameStore';
 import { gameConfig } from '@/lib/game/config';
+import { installPhaserAudioGuard } from '@/lib/game/phaserAudioGuard';
+import { destroyPhaserGameSafely } from '@/lib/game/phaserLifecycle';
 
 export default function PhaserGame() {
   const gameRef = useRef<Phaser.Game | null>(null);
   const parentRef = useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const { skills } = useGameStore();
 
   useEffect(() => {
     if (typeof window === 'undefined' || gameRef.current || !parentRef.current) {
@@ -17,6 +17,7 @@ export default function PhaserGame() {
     }
 
     try {
+      installPhaserAudioGuard();
       const shouldExposeDebugHandle =
         typeof window !== 'undefined' &&
         Boolean((window as Window & { __enableWorldDebug?: boolean }).__enableWorldDebug);
@@ -30,12 +31,8 @@ export default function PhaserGame() {
         (window as Window & { __worldPhaserGame?: Phaser.Game | null }).__worldPhaserGame = gameRef.current;
       }
 
-      if (gameRef.current.scene.keys.MainScene) {
-        gameRef.current.scene.keys.MainScene.scene.restart({ skills });
-      }
-
       window.setTimeout(() => {
-        const canvas = document.querySelector('canvas');
+        const canvas = parentRef.current?.querySelector('canvas');
         if (canvas instanceof HTMLCanvasElement) {
           canvas.focus();
         }
@@ -48,8 +45,9 @@ export default function PhaserGame() {
     }
 
     return () => {
-      if (gameRef.current) {
-        gameRef.current.destroy(true);
+      const game = gameRef.current;
+      destroyPhaserGameSafely(game, parentRef.current);
+      if (game && gameRef.current === game) {
         gameRef.current = null;
       }
       if (
@@ -60,7 +58,7 @@ export default function PhaserGame() {
         (window as Window & { __worldPhaserGame?: Phaser.Game | null }).__worldPhaserGame = null;
       }
     };
-  }, [skills]);
+  }, []);
 
   return (
     <div className="relative h-screen w-full bg-black">

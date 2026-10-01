@@ -1,0 +1,12 @@
+Use case: stylized-concept
+Asset type: premium 2D game decoration sprite
+Primary request: one charming floor lamp for a children's cartoon pet-home game, rounded wooden stem, mushroom-shaped warm cream shade, tiny paw finial, friendly premium furniture design
+Scene/backdrop: isolated on a perfectly flat pale blue-white background #F7FBFF for background removal
+Subject: a single floor lamp, front three-quarter view, centered, fully visible
+Style/medium: polished hand-painted 3D cartoon illustration, matte painted wood and linen shade, gentle bevels, no plastic toy look
+Composition/framing: square 1:1, object fills 76 percent of canvas, clean silhouette, small warm light glow kept near the shade
+Lighting/mood: warm cozy lamp glow, soft studio fill, safe and inviting
+Color palette: honey wood, cream, butter yellow, mint accent, dusty rose
+Materials/textures: linen weave, matte wood grain, softly diffused light
+Constraints: no text, no logo, no watermark, no people, no pet, no border, no collage, no cut-off edges
+Avoid: neon, hard black outline, chrome, excessive bloom, glossy plastic

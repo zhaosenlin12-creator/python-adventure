@@ -42,6 +42,8 @@ export interface Decoration {
   baseSize?: number;
   /** 场景特定尺寸（px），优先于 baseSize */
   sceneSizes?: Partial<Record<DecorationScene, number>>;
+  /** 视觉素材宽高比，用于选择框/点击热区匹配非方形资产 */
+  visualAspect?: number;
   /** 布局锚点：地面贴边/靠墙/居中 */
   anchor?: 'floor' | 'wall' | 'center';
   /** 渲染提示：用于增强立体感、动态效果和空间表现 */
@@ -76,26 +78,26 @@ export const DEFAULT_DECORATION_SIZE_BY_TYPE: Record<DecorationType, number> = {
 };
 
 export const DECORATION_RENDER_LIBRARY: Record<string, DecorationRenderHints> = {
-  sofa_red: { tone: 'amber', motion: 'none', surface: 'cushion', shadow: 'grounded', iconScale: 1.08, iconOffsetY: 2 },
+  sofa_red: { tone: 'amber', motion: 'none', surface: 'cushion', shadow: 'grounded', iconScale: 1.0, iconOffsetY: 2 },
   table_wood: { tone: 'amber', motion: 'none', surface: 'wood', shadow: 'grounded', iconScale: 1.05 },
   bookshelf: { tone: 'amber', motion: 'none', backplate: 'gallery', shadow: 'soft', iconScale: 1.01, iconOffsetY: -2 },
   plant_small: { tone: 'emerald', motion: 'sway', surface: 'planter', accent: 'petals', shadow: 'grounded', iconScale: 1.08 },
-  plant_flower: { tone: 'rose', motion: 'sway', surface: 'planter', accent: 'petals', shadow: 'grounded', iconScale: 1.08 },
-  plant_tree: { tone: 'emerald', motion: 'sway', surface: 'meadow', accent: 'fireflies', shadow: 'grounded', iconScale: 1.12 },
+  plant_flower: { tone: 'rose', motion: 'sway', surface: 'planter', accent: 'petals', shadow: 'grounded', iconScale: 0.98 },
+  plant_tree: { tone: 'emerald', motion: 'sway', surface: 'meadow', accent: 'fireflies', shadow: 'grounded', iconScale: 0.96 },
   toy_ball: { tone: 'amber', motion: 'bob', surface: 'cushion', accent: 'sparkles', shadow: 'soft', iconScale: 1.18, iconOffsetY: 4 },
   toy_robot: { tone: 'sky', motion: 'bob', surface: 'wood', accent: 'sparkles', shadow: 'soft', iconScale: 1.08 },
-  toy_teddy: { tone: 'rose', motion: 'bob', surface: 'cushion', accent: 'sparkles', shadow: 'soft', iconScale: 1.08 },
-  lamp_floor: { tone: 'amber', motion: 'none', surface: 'spotlight', backplate: 'none', shadow: 'grounded', iconScale: 1.1, iconOffsetY: -4 },
-  rug_round: { tone: 'amber', motion: 'none', surface: 'cushion', shadow: 'wide', iconScale: 1.1, iconOffsetY: 8 },
+  toy_teddy: { tone: 'rose', motion: 'bob', surface: 'cushion', accent: 'sparkles', shadow: 'soft', iconScale: 0.96 },
+  lamp_floor: { tone: 'amber', motion: 'pulse', surface: 'spotlight', backplate: 'none', shadow: 'grounded', iconScale: 0.98, iconOffsetY: -4 },
+  rug_round: { tone: 'rose', motion: 'none', surface: 'cushion', shadow: 'wide', iconScale: 1.0, iconOffsetY: 8 },
   clock_wall: { tone: 'amber', motion: 'pulse', backplate: 'panel', shadow: 'soft', iconScale: 1.1 },
-  bed_cozy: { tone: 'rose', motion: 'none', surface: 'cushion', backplate: 'none', shadow: 'grounded', iconScale: 1.08, iconOffsetY: 3 },
-  fish_tank: { tone: 'sky', motion: 'pulse', surface: 'wood', accent: 'bubbles', backplate: 'halo', shadow: 'grounded', iconScale: 0.82, iconOffsetY: 4 },
+  bed_cozy: { tone: 'sky', motion: 'none', surface: 'cushion', backplate: 'none', shadow: 'grounded', iconScale: 0.98, iconOffsetY: 3 },
+  fish_tank: { tone: 'sky', motion: 'pulse', surface: 'wood', accent: 'bubbles', backplate: 'halo', shadow: 'grounded', iconScale: 1.02, iconOffsetY: 4 },
   cactus: { tone: 'emerald', motion: 'none', surface: 'planter', shadow: 'grounded', iconScale: 1.08 },
   flower_vase: { tone: 'rose', motion: 'sway', surface: 'wood', accent: 'petals', shadow: 'grounded', iconScale: 1.1 },
-  cat_tower: { tone: 'amber', motion: 'bob', surface: 'wood', accent: 'sparkles', shadow: 'grounded', iconScale: 1.1 },
+  cat_tower: { tone: 'amber', motion: 'bob', surface: 'wood', accent: 'sparkles', shadow: 'grounded', iconScale: 0.98 },
   music_box: { tone: 'violet', motion: 'float', surface: 'wood', accent: 'notes', backplate: 'halo', shadow: 'soft', iconScale: 1.08 },
   tv_retro: { tone: 'sky', motion: 'none', surface: 'wood', backplate: 'none', shadow: 'grounded', iconScale: 1.08 },
-  fairy_lights: { tone: 'amber', motion: 'twinkle', accent: 'sparkles', backplate: 'halo', shadow: 'soft', iconScale: 1.06, iconOffsetY: -2 },
+  fairy_lights: { tone: 'amber', motion: 'twinkle', accent: 'sparkles', backplate: 'halo', shadow: 'soft', iconScale: 0.96, iconOffsetY: -2 },
   picture_frame: { tone: 'emerald', motion: 'float', backplate: 'gallery', shadow: 'soft', iconScale: 0.98 },
 };
 
@@ -104,129 +106,138 @@ export const DECORATIONS: Record<string, Decoration> = {
   // 家具类
   sofa_red: {
     id: 'sofa_red',
-    name: '红色沙发',
+    name: '猫耳云朵沙发',
     type: 'furniture',
     rarity: 'common',
     icon: '🛋️',
     price: 100,
     unlockLevel: 1,
-    description: '舒适的红色沙发，宠物最爱',
+    description: '猫耳靠背和爪爪抱枕，柔软又亲切',
     effect: { comfort: 5 },
-    baseSize: 180,
+    baseSize: 188,
+    visualAspect: 1.36,
     anchor: 'floor'
   },
   
   table_wood: {
     id: 'table_wood',
-    name: '木质桌子',
+    name: '松果圆圆桌',
     type: 'furniture',
     rarity: 'common',
     icon: '🪑',
     price: 80,
     unlockLevel: 1,
-    description: '简约的木质桌子',
+    description: '圆圆桌脚和爪印抽屉，刚好放下小点心',
     effect: { comfort: 3 },
     baseSize: 160,
+    visualAspect: 1.07,
     anchor: 'floor'
   },
   
   bookshelf: {
     id: 'bookshelf',
-    name: '书架',
+    name: '童话小书架',
     type: 'furniture',
     rarity: 'rare',
     icon: '📚',
     price: 200,
     unlockLevel: 5,
-    description: '装满书的书架，增加智力',
+    description: '拱形小书架，摆满彩色故事书',
     effect: { comfort: 10 },
     baseSize: 190,
+    visualAspect: 0.74,
     anchor: 'wall'
   },
   
   // 植物类
   plant_small: {
     id: 'plant_small',
-    name: '小盆栽',
+    name: '嫩芽小盆栽',
     type: 'plant',
     rarity: 'common',
     icon: '🌱',
     price: 50,
     unlockLevel: 1,
-    description: '可爱的小盆栽',
+    description: '爪印陶盆里长出一颗软乎乎的小嫩芽',
     effect: { happiness: 3 },
     baseSize: 130,
+    visualAspect: 0.82,
     anchor: 'floor'
   },
   
   plant_flower: {
     id: 'plant_flower',
-    name: '花盆',
+    name: '爪印花花盆',
     type: 'plant',
     rarity: 'common',
     icon: '🌸',
     price: 60,
     unlockLevel: 1,
-    description: '美丽的花朵',
+    description: '圆润陶盆和奶油色花朵，让小屋更有生命力',
     effect: { happiness: 5 },
-    baseSize: 140,
+    baseSize: 146,
+    visualAspect: 0.86,
     anchor: 'floor'
   },
   
   plant_tree: {
     id: 'plant_tree',
-    name: '小树',
+    name: '童话小树',
     type: 'plant',
     rarity: 'rare',
     icon: '🌳',
     price: 150,
     unlockLevel: 3,
-    description: '茁壮成长的小树',
+    description: '木桶里长出的童话树，带一点萤火星光',
     effect: { happiness: 10 },
-    baseSize: 160,
+    baseSize: 168,
+    visualAspect: 0.81,
     anchor: 'floor'
   },
   
   // 玩具类
   toy_ball: {
     id: 'toy_ball',
-    name: '小球',
+    name: '星星玩具球',
     type: 'toy',
     rarity: 'common',
     icon: '⚽',
     price: 30,
     unlockLevel: 1,
-    description: '宠物最爱的玩具球',
+    description: '柔软拼布和星星爪印，滚起来刚刚好',
     effect: { happiness: 5 },
     baseSize: 100,
+    visualAspect: 0.95,
     anchor: 'floor'
   },
   
   toy_robot: {
     id: 'toy_robot',
-    name: '机器人玩具',
+    name: '圆圆陪伴机器人',
     type: 'toy',
     rarity: 'rare',
     icon: '🤖',
     price: 120,
     unlockLevel: 5,
-    description: '科技感十足的机器人',
+    description: '会陪宠物玩耍的圆滚滚小伙伴',
     effect: { happiness: 15 },
     baseSize: 120,
+    visualAspect: 0.81,
     anchor: 'floor'
   },
   
   toy_teddy: {
     id: 'toy_teddy',
-    name: '泰迪熊',
+    name: '暖心抱抱熊',
     type: 'toy',
     rarity: 'epic',
     icon: '🧸',
     price: 250,
     unlockLevel: 10,
-    description: '超级可爱的泰迪熊',
+    description: '手作绒毛与爱心刺绣，适合陪宠物午睡',
     effect: { happiness: 25 },
-    baseSize: 130,
+    baseSize: 136,
+    visualAspect: 0.89,
     anchor: 'floor'
   },
 
@@ -234,71 +245,76 @@ export const DECORATIONS: Record<string, Decoration> = {
 
   lamp_floor: {
     id: 'lamp_floor',
-    name: '落地灯',
+    name: '蘑菇暖光灯',
     type: 'furniture',
     rarity: 'common',
     icon: '💡',
     price: 90,
     unlockLevel: 2,
-    description: '暖色灯光点亮小屋',
+    description: '亚麻灯罩散出柔和暖光，夜晚也很安心',
     effect: { comfort: 4, happiness: 2 },
-    baseSize: 150,
+    baseSize: 166,
+    visualAspect: 0.61,
     anchor: 'floor'
   },
 
   rug_round: {
     id: 'rug_round',
-    name: '圆形地毯',
+    name: '云朵爪爪毯',
     type: 'furniture',
     rarity: 'common',
     icon: '🧶',
     price: 70,
     unlockLevel: 2,
-    description: '柔软温暖的圆形地毯',
+    description: '云朵形绒面和爪爪织纹，踩上去像棉花',
     effect: { comfort: 6 },
-    baseSize: 200,
+    baseSize: 188,
+    visualAspect: 1.09,
     anchor: 'floor'
   },
 
   clock_wall: {
     id: 'clock_wall',
-    name: '挂钟',
+    name: '童话挂钟',
     type: 'furniture',
     rarity: 'rare',
     icon: '🕰️',
     price: 120,
     unlockLevel: 4,
-    description: '复古圆形挂钟，追寻时光',
+    description: '星星刻度和叶子边框，让时间也变得温柔',
     effect: { comfort: 5 },
     baseSize: 120,
+    visualAspect: 0.98,
     anchor: 'wall'
   },
 
   bed_cozy: {
     id: 'bed_cozy',
-    name: '温馨小床',
+    name: '云朵宠物床',
     type: 'furniture',
     rarity: 'rare',
     icon: '🛏️',
     price: 180,
     unlockLevel: 6,
-    description: '蓝色被子和软柕子，宝贝的梦乡',
+    description: '软包靠垫和小云枕，给宠物一个安心角落',
     effect: { comfort: 15, happiness: 5 },
-    baseSize: 200,
+    baseSize: 170,
+    visualAspect: 2.29,
     anchor: 'floor'
   },
 
   fish_tank: {
     id: 'fish_tank',
-    name: '观赏鱼缸',
+    name: '圆角治愈鱼缸',
     type: 'nature',
     rarity: 'epic',
     icon: '🐠',
     price: 300,
     unlockLevel: 8,
-    description: '热带鱼在水草中游动，治愈力满分',
+    description: '圆角玻璃、柔和水光和小鱼泡泡，安静治愈',
     effect: { happiness: 20, comfort: 10 },
     baseSize: 148,
+    visualAspect: 1.36,
     anchor: 'floor'
   },
 
@@ -310,93 +326,100 @@ export const DECORATIONS: Record<string, Decoration> = {
     icon: '🌵',
     price: 55,
     unlockLevel: 1,
-    description: '顶上开着粉色小花的可爱仙人掌',
+    description: '没有尖刺的圆滚滚仙人掌，开着一朵小花',
     effect: { happiness: 3 },
     baseSize: 130,
+    visualAspect: 0.82,
     anchor: 'floor'
   },
 
   flower_vase: {
     id: 'flower_vase',
-    name: '花瓶花束',
+    name: '彩虹花束瓶',
     type: 'nature',
     rarity: 'rare',
     icon: '🌺',
     price: 140,
     unlockLevel: 3,
-    description: '紫色花瓶配五彩花束，美不胜收',
+    description: '奶油陶瓶插着五彩花朵，给小屋添一束好心情',
     effect: { happiness: 10, comfort: 3 },
     baseSize: 140,
+    visualAspect: 0.74,
     anchor: 'floor'
   },
 
   cat_tower: {
     id: 'cat_tower',
-    name: '猫爪架',
+    name: '奶油猫爪乐园',
     type: 'fun',
     rarity: 'epic',
     icon: '🐱',
     price: 280,
     unlockLevel: 7,
-    description: '多层猫爪架带洞穴和吴球，宠物的乐园',
+    description: '爬梯、洞穴和吊球组成的迷你活动乐园',
     effect: { happiness: 25, comfort: 8 },
-    baseSize: 180,
+    baseSize: 184,
+    visualAspect: 0.85,
     anchor: 'floor'
   },
 
   music_box: {
     id: 'music_box',
-    name: '音乐盒',
+    name: '星月音乐盒',
     type: 'fun',
     rarity: 'rare',
     icon: '🎵',
     price: 160,
     unlockLevel: 5,
-    description: '打开盒盖，流淌出柔和旋律',
+    description: '月亮和星星陪你播放一段轻柔旋律',
     effect: { happiness: 15, comfort: 5 },
     baseSize: 130,
+    visualAspect: 0.87,
     anchor: 'floor'
   },
 
   tv_retro: {
     id: 'tv_retro',
-    name: '复古电视机',
+    name: '圆角故事电视',
     type: 'fun',
     rarity: 'rare',
     icon: '📺',
     price: 200,
     unlockLevel: 6,
-    description: '带天线和旋钮的复古CRT电视',
+    description: '圆角小屏幕，适合播放宠物故事',
     effect: { happiness: 12, comfort: 6 },
     baseSize: 160,
+    visualAspect: 1.08,
     anchor: 'floor'
   },
 
   fairy_lights: {
     id: 'fairy_lights',
-    name: '彩色串灯',
+    name: '星叶小串灯',
     type: 'decor',
     rarity: 'rare',
     icon: '✨',
     price: 130,
     unlockLevel: 4,
-    description: '七彩灯泡营造梦幻氛围',
+    description: '星叶夹子和柔和彩灯，挂起来会微微闪烁',
     effect: { happiness: 10, comfort: 8 },
-    baseSize: 220,
+    baseSize: 178,
+    visualAspect: 2.9,
     anchor: 'wall'
   },
 
   picture_frame: {
     id: 'picture_frame',
-    name: '山水画框',
+    name: '森林画框',
     type: 'decor',
     rarity: 'epic',
     icon: '🖼️',
     price: 220,
     unlockLevel: 8,
-    description: '精美木框裱着山水绿意，挂在墙上赏心悦目',
+    description: '拱形木框装着一小片晴天森林',
     effect: { happiness: 8, comfort: 12 },
     baseSize: 160,
+    visualAspect: 0.76,
     anchor: 'wall'
   },
 };

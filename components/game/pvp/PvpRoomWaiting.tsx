@@ -58,7 +58,9 @@ export default function PvpRoomWaiting({ onClose, onStartBattle }: PvpRoomWaitin
                 document.body.appendChild(textArea);
                 textArea.select();
                 document.execCommand('copy');
-                document.body.removeChild(textArea);
+                if (textArea.parentNode === document.body) {
+                    document.body.removeChild(textArea);
+                }
             }
             setCopied(true);
             setTimeout(() => setCopied(false), 2000);

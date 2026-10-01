@@ -567,14 +567,14 @@ export default function GardenPlayPanel({
 
   return (
     <>
-      <div className={`pointer-events-none absolute z-[11] ${compact ? 'left-[4.4%] top-[69.6%] flex w-[118px] flex-col gap-1.5' : 'left-[3.2%] top-[72.2%] flex w-[36%] items-start justify-between'}`}>
-        <div className={`rounded-[22px] border border-cyan-200/22 bg-[linear-gradient(180deg,rgba(8,66,82,0.76),rgba(6,31,52,0.94))] px-3 text-[11px] text-cyan-50 shadow-[0_16px_30px_rgba(15,23,42,0.18)] backdrop-blur-md ${compact ? 'py-2 px-2.5' : 'py-2.5'}`}>
-          <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-amber-100/70">浇水提示</div>
-          <div className="mt-1 text-amber-50/92">缺水时点田块浇回去</div>
+      <div className={`pointer-events-none absolute z-[11] ${compact ? 'left-[4.4%] top-[58%] flex w-[118px] flex-col gap-1.5' : 'left-[3.2%] top-[20%] flex w-[132px] flex-col gap-2'}`}>
+        <div className={`rounded-[22px] border border-[#b8d3e0] bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(225,241,244,0.9))] px-3 text-[11px] text-[#5f7f91] shadow-[0_14px_28px_rgba(128,88,48,0.12)] backdrop-blur-md ${compact ? 'py-2 px-2.5' : 'py-2.5'}`}>
+          <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#a27642]">浇水提示</div>
+          <div className="mt-1 text-[#6d8b92]">缺水时点田块浇回去</div>
         </div>
-        <div className={`rounded-[22px] border border-emerald-200/20 bg-[linear-gradient(180deg,rgba(16,95,76,0.74),rgba(7,45,47,0.94))] px-3 text-[11px] text-emerald-50 shadow-[0_16px_30px_rgba(15,23,42,0.14)] backdrop-blur-md ${compact ? 'py-2 px-2.5' : 'mt-[6.4%] py-2.5'}`}>
-          <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-amber-100/70">丰收篮</div>
-          <div className="mt-1 text-amber-50/92">{harvestCount} 份小收获</div>
+        <div className={`rounded-[22px] border border-[#a9d1c0] bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(226,244,231,0.9))] px-3 text-[11px] text-[#4f816d] shadow-[0_14px_28px_rgba(128,88,48,0.1)] backdrop-blur-md ${compact ? 'py-2 px-2.5' : 'py-2.5'}`}>
+          <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#a27642]">丰收篮</div>
+          <div className="mt-1 text-[#5f8d73]">{harvestCount} 份小收获</div>
         </div>
       </div>
 
@@ -593,11 +593,11 @@ export default function GardenPlayPanel({
               type="button"
               onClick={() => handlePlotAction(index)}
               className={`group pointer-events-auto absolute flex -translate-x-1/2 -translate-y-1/2 items-center justify-center transition ${
-                compact ? 'h-[72px] w-[88px]' : 'h-[78px] w-[94px]'
+                compact ? 'h-[62px] w-[72px]' : 'h-[clamp(58px,5vw,78px)] w-[clamp(64px,5.8vw,90px)]'
               }`}
               style={{
                 left: `${plotAnchor.x}%`,
-                top: `${plotAnchor.y - 1.6}%`,
+                top: `${plotAnchor.y - 0.8}%`,
               }}
             >
               <motion.div
@@ -642,9 +642,9 @@ export default function GardenPlayPanel({
                   style={{
                     background:
                       isEmpty
-                        ? 'linear-gradient(180deg, rgba(120,84,44,0.92) 0%, rgba(87,56,26,0.98) 100%)'
-                        : 'linear-gradient(180deg, rgba(126,88,48,0.94) 0%, rgba(79,46,18,0.98) 100%)',
-                    boxShadow: '0 12px 20px rgba(15,23,42,0.18), inset 0 1px 0 rgba(255,241,214,0.1)',
+                        ? 'linear-gradient(180deg, rgba(255,247,221,0.24) 0%, rgba(120,84,44,0.22) 100%)'
+                        : 'linear-gradient(180deg, rgba(255,247,221,0.26) 0%, rgba(87,56,26,0.28) 100%)',
+                    boxShadow: `0 0 18px ${glowColor}${isReady ? '30' : '12'}, inset 0 1px 0 rgba(255,241,214,0.18)`,
                   }}
                 />
                 <div
@@ -653,13 +653,13 @@ export default function GardenPlayPanel({
                   }`}
                   style={{
                     background: isEmpty
-                      ? 'radial-gradient(ellipse at 50% 22%, rgba(169,117,64,0.94) 0%, rgba(120,77,36,0.96) 34%, rgba(74,44,19,0.98) 100%)'
+                      ? 'radial-gradient(ellipse at 50% 22%, rgba(255,237,191,0.26) 0%, rgba(120,77,36,0.22) 38%, rgba(74,44,19,0.34) 100%)'
                       : isDry
-                        ? 'radial-gradient(ellipse at 50% 24%, rgba(157,92,38,0.92) 0%, rgba(115,58,19,0.96) 36%, rgba(61,29,10,0.98) 100%)'
-                        : 'radial-gradient(ellipse at 50% 22%, rgba(142,96,52,0.92) 0%, rgba(99,61,29,0.96) 34%, rgba(60,34,14,0.98) 100%)',
+                        ? 'radial-gradient(ellipse at 50% 24%, rgba(251,191,36,0.24) 0%, rgba(115,58,19,0.32) 42%, rgba(61,29,10,0.38) 100%)'
+                        : 'radial-gradient(ellipse at 50% 22%, rgba(167,243,208,0.18) 0%, rgba(99,61,29,0.26) 42%, rgba(60,34,14,0.36) 100%)',
                     boxShadow: isEmpty
-                      ? 'inset 0 12px 16px rgba(255,213,153,0.05), inset 0 -10px 16px rgba(28,18,8,0.34)'
-                      : `inset 0 10px 16px rgba(255,214,164,0.05), inset 0 -12px 18px rgba(20,12,6,0.42), 0 0 16px ${glowColor}10`,
+                      ? 'inset 0 10px 14px rgba(255,213,153,0.08), inset 0 -8px 14px rgba(28,18,8,0.16)'
+                      : `inset 0 10px 16px rgba(255,214,164,0.08), inset 0 -10px 16px rgba(20,12,6,0.2), 0 0 18px ${glowColor}18`,
                   }}
                 >
                   <div
@@ -682,7 +682,7 @@ export default function GardenPlayPanel({
                 ) : (
                   <>
                     <motion.div
-                      className="absolute left-[34px] top-[32px] h-2.5 w-2.5 rounded-full bg-amber-200/72 shadow-[0_0_10px_rgba(253,224,71,0.25)]"
+                      className="absolute left-[38%] top-[42%] h-2.5 w-2.5 rounded-full bg-amber-200/72 shadow-[0_0_10px_rgba(253,224,71,0.25)]"
                       animate={{
                         y: shouldToneDownMotion ? [0, -1.5, 0] : [0, -3, 0],
                         opacity: shouldToneDownMotion ? [0.45, 0.66, 0.45] : [0.45, 0.8, 0.45],
@@ -693,9 +693,9 @@ export default function GardenPlayPanel({
                         ease: 'easeInOut',
                       }}
                     />
-                    <div className="absolute left-[28px] top-[42px] h-[2px] w-[18px] rounded-full bg-amber-100/16" />
-                    <div className="absolute left-[46px] top-[38px] h-[10px] w-[10px] rounded-full bg-amber-100/12" />
-                    <div className="absolute right-[24px] top-[28px] flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-white/[0.05] text-[10px] font-semibold text-amber-50/90">
+                    <div className="absolute left-[31%] top-[54%] h-[2px] w-[18px] rounded-full bg-amber-100/16" />
+                    <div className="absolute left-[52%] top-[48%] h-[10px] w-[10px] rounded-full bg-amber-100/12" />
+                    <div className="absolute right-[18%] top-[34%] flex h-7 w-7 items-center justify-center rounded-full border border-white/18 bg-white/[0.12] text-[10px] font-semibold text-amber-50/95 shadow-[0_0_14px_rgba(255,255,255,0.18)]">
                       +
                     </div>
                   </>
@@ -758,50 +758,57 @@ export default function GardenPlayPanel({
         <button
           type="button"
           onClick={() => setIsExpanded((value) => !value)}
-          className={`inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-950/78 font-semibold text-white shadow-[0_16px_34px_rgba(2,6,23,0.26)] backdrop-blur-md transition hover:bg-slate-900/86 ${compact ? 'px-2 py-1.5 text-[10px]' : 'px-2.5 py-1.5 text-[11px]'}`}
+          className={`inline-flex items-center gap-2 rounded-full border border-[#dec7a5] bg-[#fffaf0]/92 font-semibold text-[#6b5140] shadow-[0_16px_34px_rgba(128,88,48,0.16)] backdrop-blur-md transition hover:bg-white ${compact ? 'px-2 py-1.5 text-[10px]' : 'px-2.5 py-1.5 text-[11px]'}`}
           title="展开庭院面板"
         >
           <span>庭院手册</span>
-          <span className="rounded-full bg-emerald-500/12 px-2 py-0.5 text-xs text-emerald-100">{plantedCount}/{MAX_PLOTS}</span>
+          <span className="rounded-full bg-[#e6f3ea] px-2 py-0.5 text-xs text-[#4f816d]">{plantedCount}/{MAX_PLOTS}</span>
         </button>
 
         {isExpanded && (
-          <div className={`rounded-[24px] border border-white/10 bg-slate-950/74 p-3 shadow-[0_26px_60px_rgba(2,6,23,0.32)] backdrop-blur-md ${compact ? 'w-[min(84vw,272px)]' : 'w-[272px]'}`}>
+          <div className={`rounded-[24px] border border-[#dec7a5] bg-[#fffaf0]/96 p-3 shadow-[0_26px_60px_rgba(91,59,35,0.22)] backdrop-blur-md ${compact ? 'w-[min(84vw,272px)]' : 'w-[272px]'}`}>
             <div className="flex items-start justify-between gap-4">
               <div>
-                <div className="text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald-200">庭院日常</div>
-                <div className="mt-1 text-base font-black text-white">减压小农场</div>
-                <p className="mt-2 text-xs leading-5 text-slate-300">播种、浇水、等成熟，再轻轻收下今天的小丰收。</p>
+                <div className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#6da286]">庭院日常</div>
+                <div className="mt-1 text-base font-black text-[#6b5140]">减压小农场</div>
+                <p className="mt-2 text-xs leading-5 text-[#927866]">播种、浇水、等成熟，再轻轻收下今天的小丰收。</p>
               </div>
-              <div className="rounded-full border border-emerald-300/20 bg-emerald-500/10 px-3 py-1.5 text-right">
-                <div className="text-[10px] font-semibold text-emerald-50">{atmosphereLabel}</div>
+              <div
+                className="relative h-14 w-14 shrink-0 overflow-hidden rounded-[18px] border border-[#a9d1c0] bg-[#e6f3ea] bg-cover bg-center shadow-[0_10px_20px_rgba(88,164,130,0.16)]"
+                style={{ backgroundImage: "url('/assets/pet-home/garden-toolkit.png')" }}
+                aria-label="种植工具图"
+              >
+                <div className="absolute inset-0 bg-[#dcefe2]/20" />
+                <div className="absolute bottom-1 left-1/2 -translate-x-1/2 rounded-full bg-white/85 px-1.5 py-0.5 text-[9px] font-semibold text-[#4f816d]">
+                  {atmosphereLabel}
+                </div>
               </div>
             </div>
 
             <div className="mt-3 grid grid-cols-3 gap-1.5">
-              <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-2 py-2">
-                <div className="text-[11px] uppercase tracking-[0.18em] text-slate-400">已种</div>
-                <div className="mt-1 text-sm font-bold text-white">{plantedCount}</div>
+              <div className="rounded-2xl border border-[#ead8bd] bg-[#f7ead7] px-2 py-2">
+                <div className="text-[11px] uppercase tracking-[0.18em] text-[#a18b78]">已种</div>
+                <div className="mt-1 text-sm font-bold text-[#6b5140]">{plantedCount}</div>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-2 py-2">
-                <div className="text-[11px] uppercase tracking-[0.18em] text-slate-400">待照看</div>
-                <div className="mt-1 text-sm font-bold text-white">{needsCareCount}</div>
+              <div className="rounded-2xl border border-[#ead8bd] bg-[#f7ead7] px-2 py-2">
+                <div className="text-[11px] uppercase tracking-[0.18em] text-[#a18b78]">待照看</div>
+                <div className="mt-1 text-sm font-bold text-[#6b5140]">{needsCareCount}</div>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-2 py-2">
-                <div className="text-[11px] uppercase tracking-[0.18em] text-slate-400">可收</div>
-                <div className="mt-1 text-sm font-bold text-white">{readyCount}</div>
+              <div className="rounded-2xl border border-[#ead8bd] bg-[#f7ead7] px-2 py-2">
+                <div className="text-[11px] uppercase tracking-[0.18em] text-[#a18b78]">可收</div>
+                <div className="mt-1 text-sm font-bold text-[#6b5140]">{readyCount}</div>
               </div>
             </div>
 
-            <div className="mt-3 rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2.5">
+            <div className="mt-3 rounded-2xl border border-[#ead8bd] bg-[#fffaf0] px-3 py-2.5">
               <div className="flex items-center justify-between gap-3">
                 <div>
-                  <div className="text-xs font-semibold text-white">庭院活力</div>
-                  <div className="mt-1 text-[11px] text-slate-400">{gardenFocusLabel}</div>
+                  <div className="text-xs font-semibold text-[#6b5140]">庭院活力</div>
+                  <div className="mt-1 text-[11px] text-[#927866]">{gardenFocusLabel}</div>
                 </div>
-                <div className="text-right text-sm font-black text-emerald-100">{gardenVitalityScore}%</div>
+                <div className="text-right text-sm font-black text-[#5f8d73]">{gardenVitalityScore}%</div>
               </div>
-              <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-slate-800/80">
+              <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-[#e2d5c3]">
                 <motion.div
                   className="h-full rounded-full bg-[linear-gradient(90deg,#34d399,#a7f3d0,#fbbf24)]"
                   initial={false}
@@ -811,14 +818,14 @@ export default function GardenPlayPanel({
               </div>
             </div>
 
-            <div className="mt-3 rounded-2xl border border-cyan-300/15 bg-cyan-500/10 px-3 py-2 text-[11px] leading-5 text-cyan-50">
+            <div className="mt-3 rounded-2xl border border-[#b8d3e0] bg-[#e9f3f8] px-3 py-2 text-[11px] leading-5 text-[#5f7f91]">
               {gardenHint}
             </div>
 
-            <div className="mt-3 flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2.5">
+            <div className="mt-3 flex items-center justify-between gap-3 rounded-2xl border border-[#ead8bd] bg-[#fffaf0] px-3 py-2.5">
               <div>
-                <div className="text-sm font-semibold text-white">宠物巡园</div>
-                <div className="mt-1 text-xs leading-5 text-slate-400">
+                <div className="text-sm font-semibold text-[#6b5140]">宠物巡园</div>
+                <div className="mt-1 text-xs leading-5 text-[#927866]">
                   {canPatrol ? '可帮你照看 3 块田，优先救回缺水作物。' : `冷却中，还需 ${Math.ceil(patrolRemainingMs / 1000)} 秒。`}
                 </div>
               </div>
@@ -826,7 +833,7 @@ export default function GardenPlayPanel({
                 type="button"
                 onClick={handleCompanionPatrol}
                 disabled={!canPatrol}
-                className="rounded-full bg-emerald-600 px-3 py-2 text-xs font-semibold text-white transition hover:bg-emerald-500 disabled:cursor-not-allowed disabled:bg-slate-700 disabled:text-slate-300"
+                className="rounded-full bg-[#78b892] px-3 py-2 text-xs font-semibold text-white transition hover:bg-[#65a47d] disabled:cursor-not-allowed disabled:bg-[#e6d9c8] disabled:text-[#a38b78]"
               >
                 巡园一次
               </button>
@@ -847,14 +854,14 @@ export default function GardenPlayPanel({
                     className={`rounded-[20px] border bg-gradient-to-br px-2.5 py-2 text-left transition ${
                       selected
                         ? `${crop.cardClass} shadow-[0_0_0_1px_rgba(255,255,255,0.04)]`
-                        : 'border-white/10 from-white/[0.05] to-white/[0.02] hover:border-white/20'
+                        : 'border-[#ead8bd] from-[#fffaf0] to-[#f7ead7] hover:border-[#cbaa7b]'
                     }`}
                   >
                     <div className="flex items-center gap-3">
                       <CropSigil cropId={cropId} stage="ready" compact />
                       <div>
-                        <div className="font-semibold text-white">{crop.label}</div>
-                        <div className="text-xs text-slate-300">{crop.mood}</div>
+                        <div className="font-semibold text-[#6b5140]">{crop.label}</div>
+                        <div className="text-xs text-[#927866]">{crop.mood}</div>
                       </div>
                     </div>
                   </button>
@@ -862,16 +869,16 @@ export default function GardenPlayPanel({
               })}
             </div>
 
-            <div className="mt-3 rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2.5">
-              <div className="flex items-center justify-between text-[13px] text-slate-300">
+            <div className="mt-3 rounded-2xl border border-[#ead8bd] bg-[#fffaf0] px-3 py-2.5">
+              <div className="flex items-center justify-between text-[13px] text-[#866b58]">
                 <span>陪玩伙伴</span>
-                <span className="font-semibold text-white">{Math.max(1, companionCount)} 只</span>
+                <span className="font-semibold text-[#6b5140]">{Math.max(1, companionCount)} 只</span>
               </div>
               <div className="mt-2 grid grid-cols-4 gap-1.5">
                 {(Object.keys(CROPS) as CropId[]).map((cropId) => (
-                  <div key={cropId} className="rounded-2xl border border-white/8 bg-slate-950/28 px-2 py-2 text-center">
-                    <div className="text-[10px] text-slate-400">{CROPS[cropId].label}</div>
-                    <div className="mt-1 text-sm font-bold text-white">{gardenState.harvestLedger[cropId] ?? 0}</div>
+                  <div key={cropId} className="rounded-2xl border border-[#ead8bd] bg-[#f7ead7] px-2 py-2 text-center">
+                    <div className="text-[10px] text-[#a18b78]">{CROPS[cropId].label}</div>
+                    <div className="mt-1 text-sm font-bold text-[#6b5140]">{gardenState.harvestLedger[cropId] ?? 0}</div>
                   </div>
                 ))}
               </div>

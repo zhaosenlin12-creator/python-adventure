@@ -164,6 +164,10 @@ export default function PvpBattleRound({ opponent, isRealPlayer, roomId, playerI
     const effectsRef = useRef<Effect[]>([]);
     const powerUpsRef = useRef<PowerUp[]>([]);
     const petImageCacheRef = useRef<Record<string, HTMLImageElement>>({});
+    const duelImageCacheRef = useRef<Record<'blue' | 'coral', HTMLImageElement | null>>({
+        blue: null,
+        coral: null,
+    });
     const nextIdRef = useRef(1);
     const cameraRef = useRef({ x: 0, y: 0 });
     const wsRef = useRef<any>(null); // WebSocket 引用
@@ -219,6 +223,14 @@ export default function PvpBattleRound({ opponent, isRealPlayer, roomId, playerI
     }, [currentRoom?.guestPlayer, currentRoom?.hostPlayer, isHost, isRealPlayer]);
 
     useEffect(() => {
+        (['blue', 'coral'] as const).forEach((variant) => {
+            if (duelImageCacheRef.current[variant]) return;
+            const image = new Image();
+            image.decoding = 'async';
+            image.src = `/assets/arena/duel-${variant}.png`;
+            duelImageCacheRef.current[variant] = image;
+        });
+
         [localPetProfile, remotePetProfile].forEach((profile) => {
             if (!profile.petType) return;
             const normalizedType = migratePetType(profile.petType);
@@ -1179,8 +1191,52 @@ export default function PvpBattleRound({ opponent, isRealPlayer, roomId, playerI
             const petCacheKey = resolvedPetType ? `${resolvedPetType}-${petStage}` : '';
             const petImage = petCacheKey ? petImageCacheRef.current[petCacheKey] : null;
             const canDrawPet = Boolean(petImage && petImage.complete && petImage.naturalWidth > 0);
+            const duelVariant = idx === 0 ? 'blue' : 'coral';
+            const duelImage = duelImageCacheRef.current[duelVariant];
+            const canDrawDuel = Boolean(duelImage && duelImage.complete && duelImage.naturalWidth > 0);
 
-            if (canDrawPet && resolvedPetType && petImage) {
+            if (canDrawDuel && duelImage) {
+                const characterWidth = PLAYER_WIDTH * 2.15;
+                const characterHeight = PLAYER_HEIGHT * 1.9;
+                const characterX = centerX - characterWidth / 2;
+                const characterY = py + PLAYER_HEIGHT - characterHeight + 4;
+
+                ctx.save();
+                ctx.shadowColor = idx === 0 ? 'rgba(45, 212, 191, 0.34)' : 'rgba(251, 113, 133, 0.34)';
+                ctx.shadowBlur = 16;
+                if (!player.facingRight) {
+                    ctx.translate(centerX, 0);
+                    ctx.scale(-1, 1);
+                    ctx.drawImage(duelImage, -(characterWidth / 2), characterY, characterWidth, characterHeight);
+                } else {
+                    ctx.drawImage(duelImage, characterX, characterY, characterWidth, characterHeight);
+                }
+                ctx.restore();
+
+                if (canDrawPet && petImage) {
+                    const companionSize = 22;
+                    const companionX = player.facingRight
+                        ? px + PLAYER_WIDTH + 4
+                        : px - companionSize - 4;
+                    ctx.drawImage(petImage, companionX, py + PLAYER_HEIGHT - companionSize, companionSize, companionSize);
+                }
+
+                if (player.isAttacking) {
+                    ctx.fillStyle = idx === 0 ? 'rgba(59, 130, 246, 0.32)' : 'rgba(239, 68, 68, 0.32)';
+                    const attackX = player.facingRight ? px + PLAYER_WIDTH : px - ATTACK_RANGE;
+                    ctx.beginPath();
+                    ctx.ellipse(
+                        attackX + ATTACK_RANGE / 2,
+                        py + PLAYER_HEIGHT / 2,
+                        ATTACK_RANGE * 0.42,
+                        ATTACK_RANGE * 0.28,
+                        0,
+                        0,
+                        Math.PI * 2,
+                    );
+                    ctx.fill();
+                }
+            } else if (canDrawPet && resolvedPetType && petImage) {
                 const petScale = Math.max(0.9, Math.min(1.18, getPetVariantScale(resolvedPetType, 'world') * 0.86));
                 const petWidth = PLAYER_WIDTH * 1.9 * petScale;
                 const petHeight = PLAYER_HEIGHT * 1.82 * petScale;

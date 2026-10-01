@@ -83,8 +83,8 @@ function FeedEffectRow({
   colorClass: string;
 }) {
   return (
-    <div className="flex items-center justify-between rounded-2xl border border-white/8 bg-slate-950/42 px-3 py-2">
-      <div className="flex items-center gap-2 text-sm text-slate-300">
+    <div className="flex items-center justify-between rounded-2xl border border-[#ead8bd] bg-[#fffaf0] px-3 py-2">
+      <div className="flex items-center gap-2 text-sm text-[#765b49]">
         <span className={colorClass}>{icon}</span>
         <span>{label}</span>
       </div>
@@ -107,10 +107,10 @@ const FoodPreview = memo(function FoodPreview({
   const effects = food.food_type.effects;
 
   return (
-    <div className="border-t border-slate-700/90 px-5 py-5">
-      <div className="rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,rgba(15,23,42,0.92),rgba(2,6,23,0.86))] p-5 shadow-[0_18px_36px_rgba(2,6,23,0.22)]">
+    <div className="border-t border-[#ead8bd] px-5 py-5">
+      <div className="rounded-[28px] border border-[#e6d2b2] bg-[linear-gradient(180deg,#fffdf8,#f8eddb)] p-5 shadow-[0_18px_36px_rgba(128,88,48,0.14)]">
         <div className="flex items-start gap-4">
-          <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-[24px] border border-white/10 bg-white/[0.05]">
+          <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-[24px] border border-[#e9d8bc] bg-[#fff8e9] shadow-inner">
             <FoodIcon
               foodId={food.food_id}
               fallbackEmoji={food.food_type.icon}
@@ -121,10 +121,10 @@ const FoodPreview = memo(function FoodPreview({
           <div className="min-w-0 flex-1">
             <div className="flex items-center justify-between gap-3">
               <div>
-                <h3 className="text-lg font-black text-white">{food.food_type.name}</h3>
-                <p className="mt-1 text-sm leading-6 text-slate-400">{food.food_type.description}</p>
+                <h3 className="text-lg font-black text-[#5c4537]">{food.food_type.name}</h3>
+                <p className="mt-1 text-sm leading-6 text-[#8d7160]">{food.food_type.description}</p>
               </div>
-              <div className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-semibold text-slate-100">
+              <div className="rounded-full border border-[#e3c997] bg-[#fff2cb] px-3 py-1 text-xs font-bold text-[#916a2d]">
                 x{food.quantity}
               </div>
             </div>
@@ -174,7 +174,7 @@ const FoodPreview = memo(function FoodPreview({
           </div>
         </div>
 
-        <div className="mt-4 rounded-2xl border border-white/8 bg-white/[0.03] px-3 py-2 text-xs leading-5 text-slate-300">
+        <div className="mt-4 rounded-2xl border border-[#ead8bd] bg-[#fffaf0] px-3 py-2 text-xs leading-5 text-[#866a57]">
           喂养窗口会保持打开，方便连续补给。当前食物很多时，可以直接一键全部使用。
         </div>
 
@@ -185,8 +185,8 @@ const FoodPreview = memo(function FoodPreview({
             disabled={isUsing}
             className={`rounded-full px-4 py-2.5 text-sm font-semibold transition ${
               isUsing
-                ? 'bg-slate-800 text-slate-500'
-                : 'bg-sky-600 text-white hover:bg-sky-500'
+                ? 'bg-[#e6d9c8] text-[#a38b78]'
+                : 'bg-[#e49b61] text-white shadow-[0_8px_18px_rgba(228,155,97,0.22)] hover:bg-[#d9894c]'
             }`}
           >
             {isUsing ? '正在喂养...' : '使用 1 份'}
@@ -198,8 +198,8 @@ const FoodPreview = memo(function FoodPreview({
             disabled={isUsing || food.quantity <= 1}
             className={`rounded-full border px-4 py-2.5 text-sm font-semibold transition ${
               isUsing || food.quantity <= 1
-                ? 'border-white/10 bg-slate-900/60 text-slate-500'
-                : 'border-emerald-300/24 bg-emerald-500/10 text-white hover:bg-emerald-500/18'
+                ? 'border-[#e5d7c4] bg-[#f3eadc] text-[#a38b78]'
+                : 'border-[#a9d1c0] bg-[#e6f3ea] text-[#4f816d] hover:bg-[#d5ecdf]'
             }`}
           >
             {food.quantity <= 1 ? '库存只有 1 份' : `全部使用 x${food.quantity}`}
@@ -334,22 +334,26 @@ function FoodSelector({ isOpen, onClose, petId, petName }: FoodSelectorProps) {
 
   return (
     <div
-      className="fixed inset-0 z-[140] flex items-center justify-center bg-slate-950/82 px-4 py-6 backdrop-blur-sm"
+      className="fixed inset-0 z-[140] flex items-center justify-center bg-[#49372d]/35 px-4 py-6 backdrop-blur-[5px]"
       onClick={handleClose}
+      role="presentation"
     >
       <div
-        className="w-full max-w-3xl max-h-[88vh] overflow-y-auto rounded-[30px] border border-white/10 bg-[linear-gradient(180deg,rgba(15,23,42,0.98),rgba(2,6,23,0.98))] shadow-[0_36px_90px_rgba(2,6,23,0.58)]"
+        className="pet-scrollbar-soft w-full max-w-3xl max-h-[88vh] overflow-y-auto rounded-[30px] border border-[#dec7a5] bg-[linear-gradient(180deg,#fffaf0,#f2e5d1)] shadow-[0_36px_90px_rgba(91,59,35,0.28)]"
         onClick={(event) => event.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="food-selector-title"
       >
-        <div className="border-b border-white/10 px-5 py-4">
+        <div className="border-b border-[#ead8bd] bg-[linear-gradient(135deg,#fffaf0,#f4e4c8)] px-5 py-4">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-amber-300/18 bg-amber-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-100">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#e5c77e] bg-[#fff1c8] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#9a722f]">
                 <Apple className="h-3.5 w-3.5" />
-                Food Care
+                温柔喂养
               </div>
-              <h2 className="mt-2 text-xl font-black text-white">喂养 {petName || '当前伙伴'}</h2>
-              <p className="mt-1 text-sm leading-6 text-slate-400">
+              <h2 id="food-selector-title" className="mt-2 text-xl font-black text-[#5c4537]">喂养 {petName || '当前伙伴'}</h2>
+              <p className="mt-1 text-sm leading-6 text-[#8d7160]">
                 选择一种食物后，可以单次喂养，也可以一次性把当前库存全部用完。
               </p>
             </div>
@@ -357,7 +361,7 @@ function FoodSelector({ isOpen, onClose, petId, petName }: FoodSelectorProps) {
             <button
               type="button"
               onClick={handleClose}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-300 transition hover:bg-white/[0.08] hover:text-white"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-[#e3cdb0] bg-[#fff8ec] text-[#8a6b57] transition hover:bg-white hover:text-[#5c4537]"
               aria-label="关闭喂养窗口"
             >
               <X className="h-4.5 w-4.5" />
@@ -374,8 +378,8 @@ function FoodSelector({ isOpen, onClose, petId, petName }: FoodSelectorProps) {
           <div
             className={`mx-5 mt-4 rounded-2xl border px-4 py-3 text-sm ${
               feedbackTone === 'success'
-                ? 'border-emerald-300/18 bg-emerald-500/10 text-emerald-100'
-                : 'border-rose-300/18 bg-rose-500/10 text-rose-100'
+                ? 'border-[#acd5bd] bg-[#e7f4e9] text-[#4e8064]'
+                : 'border-[#efb7a7] bg-[#fff0eb] text-[#a4544d]'
             }`}
           >
             {feedbackMessage}
@@ -393,12 +397,12 @@ function FoodSelector({ isOpen, onClose, petId, petName }: FoodSelectorProps) {
 
         {inventory.length === 0 ? (
           <div className="px-5 pb-5 pt-2">
-            <div className="rounded-[28px] border border-white/10 bg-white/[0.03] px-5 py-8 text-center">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-white/10 bg-slate-950/50">
-                <Package2 className="h-7 w-7 text-slate-300" />
+            <div className="rounded-[28px] border border-[#e6d2b2] bg-[#fffaf0] px-5 py-8 text-center">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-[#ead8bd] bg-[#f7ead7]">
+                <Package2 className="h-7 w-7 text-[#a8876f]" />
               </div>
-              <h3 className="mt-4 text-lg font-black text-white">背包里还没有食物</h3>
-              <p className="mt-2 text-sm leading-6 text-slate-400">
+              <h3 className="mt-4 text-lg font-black text-[#5c4537]">背包里还没有食物</h3>
+              <p className="mt-2 text-sm leading-6 text-[#8d7160]">
                 先去食物补给里买一点，再回来继续照顾伙伴。
               </p>
             </div>

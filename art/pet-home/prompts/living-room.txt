@@ -1,0 +1,9 @@
+Use case: stylized-concept
+Asset type: polished game environment background
+Primary request: a premium cozy pet clubhouse living room for a children's cartoon care game
+Scene/backdrop: warm wood floor, cream plaster walls, soft arched window, low reading nook, woven rug, toy basket, cushions, gentle potted plants, small shelves with simple pet-safe objects
+Style/medium: high-end 2.5D children's game illustration, rounded forms, tactile materials, clean silhouettes, soft painterly shading, bright but calm color harmony
+Composition/framing: wide 16:9 establishing view, eye-level with a slight isometric feel, open central and lower-middle space for a pet avatar and interactive UI, furniture pushed toward the edges
+Lighting/mood: late morning sunlight, soft window rays, warm ambient bounce, welcoming and playful
+Color palette: honey wood, cream, peach, mint, sky blue, butter yellow, muted coral accents
+Constraints: no characters, no text, no logos, no watermark, no UI, no tiny unreadable details, keep the center and lower-middle visually calm for gameplay overlays

@@ -1,0 +1,12 @@
+Use case: stylized-concept
+Asset type: premium 2D game decoration sprite
+Primary request: one tiny storybook tree planter for a children's cartoon pet-home garden, round mossy canopy, warm wooden planter box, a few tiny firefly lights
+Scene/backdrop: isolated on a perfectly flat pale blue-white background #F7FBFF for background removal
+Subject: a single small decorative tree, front three-quarter view, centered, fully visible
+Style/medium: polished hand-painted 3D cartoon illustration, soft natural foliage, tactile wood and moss, premium game asset
+Composition/framing: square 1:1, object fills 76 percent of canvas, clean silhouette, contained ground shadow
+Lighting/mood: gentle garden morning light with a few warm firefly specks
+Color palette: moss green, sage, warm wood, cream, golden yellow
+Materials/textures: soft leaf clusters, painted wood grain, moss texture, subtle soil
+Constraints: no text, no logo, no watermark, no people, no pet, no border, no collage
+Avoid: photorealism, hard black outline, neon green, glossy plastic, excessive bloom

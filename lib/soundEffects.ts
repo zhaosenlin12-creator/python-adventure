@@ -65,10 +65,10 @@ export const SOUND_EFFECTS: { [key: string]: SoundEffect } = {
 
   // 🎵 背景音乐
   bgm_main: { id: 'bgm_main', name: '主界面BGM', path: '/sounds/bgm_main.mp3', volume: 0.3 },
-  bgm_battle: { id: 'bgm_battle', name: '战斗BGM', path: '/sounds/bgm_battle.wav', volume: 0.3 },
-  bgm_boss: { id: 'bgm_boss', name: 'Boss战BGM', path: '/sounds/bgm_boss.wav', volume: 0.35 },
+  bgm_battle: { id: 'bgm_battle', name: '战斗BGM', path: '/sounds/bgm_battle.mp3', volume: 0.3 },
+  bgm_boss: { id: 'bgm_boss', name: 'Boss战BGM', path: '/sounds/bgm_boss.mp3', volume: 0.35 },
   bgm_pvp: { id: 'bgm_pvp', name: 'PVP对战BGM', path: '/sounds/bgm_pvp.mp3', volume: 0.3 },
-  bgm_victory: { id: 'bgm_victory', name: '胜利BGM', path: '/sounds/bgm_victory.wav', volume: 0.4 }
+  bgm_victory: { id: 'bgm_victory', name: '胜利BGM', path: '/sounds/bgm_victory.mp3', volume: 0.4 }
 };
 
 // 音效管理器
@@ -77,26 +77,24 @@ class SoundManager {
   private enabled: boolean = true;
   private masterVolume: number = 1.0;
 
-  constructor() {
-    if (typeof window !== 'undefined') {
-      this.preloadSounds();
-    }
-  }
+  private getOrCreateAudio(effect: SoundEffect): HTMLAudioElement {
+    const existing = this.sounds.get(effect.id);
+    if (existing) return existing;
 
-  private preloadSounds() {
-    Object.values(SOUND_EFFECTS).forEach(effect => {
-      const audio = new Audio(effect.path);
-      audio.volume = effect.volume * this.masterVolume;
-      audio.preload = 'auto';
-      audio.addEventListener('error', () => {});
-      this.sounds.set(effect.id, audio);
-    });
+    const audio = new Audio();
+    audio.preload = 'none';
+    audio.volume = effect.volume * this.masterVolume;
+    audio.addEventListener('error', () => {});
+    audio.src = effect.path;
+    this.sounds.set(effect.id, audio);
+    return audio;
   }
 
   play(soundId: string) {
     if (!this.enabled) return;
-    const audio = this.sounds.get(soundId);
-    if (!audio) return;
+    const effect = SOUND_EFFECTS[soundId];
+    if (!effect) return;
+    const audio = this.getOrCreateAudio(effect);
     try {
       audio.currentTime = 0;
       audio.play().catch(() => {});

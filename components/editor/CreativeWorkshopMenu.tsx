@@ -22,6 +22,7 @@ import type { CommunityLevelDetail } from "@/types/community";
 import PlatformGameScene from "@/components/world/scenes/PlatformGameScene";
 import VirtualController from "@/components/game/VirtualController";
 import { useDeviceType } from "@/hooks/useDeviceType";
+import { destroyPhaserGameSafely } from "@/lib/game/phaserLifecycle";
 
 // 预设模板数据 - 元素类型使用后端白名单中的类型
 const LEVEL_TEMPLATES: LevelTemplate[] = [
@@ -614,6 +615,7 @@ export default function CreativeWorkshopMenu({
   useEffect(() => {
     if (!isPlayingCommunityLevel || !communityLevelData || !communityContainerRef.current) return;
     if (communityGameRef) return;  // Already initialized
+    let isActive = true;
     
     const initCommunityGame = async () => {
       try {
@@ -655,10 +657,17 @@ export default function CreativeWorkshopMenu({
         };
         
         const game = new Phaser.Game(config);
+        if (!isActive) {
+          destroyPhaserGameSafely(game, communityContainerRef.current);
+          return;
+        }
         setCommunityGameRef(game);
         
         // Add scene and start with level data after game is ready
         game.events.once("ready", () => {
+          if (!isActive) {
+            return;
+          }
           console.log("[CreativeWorkshopMenu] Game ready, starting scene with level:", gameLevel.name);
           game.scene.add("PlatformGameScene", CommunityGameScene, true, { level: gameLevel });
         });
@@ -673,7 +682,8 @@ export default function CreativeWorkshopMenu({
     initCommunityGame();
     
     return () => {
-      // Cleanup will be handled by handleExitCommunityLevel
+      isActive = false;
+      destroyPhaserGameSafely(communityGameRef, communityContainerRef.current);
     };
   }, [isPlayingCommunityLevel, communityLevelData, communityQuestions, communityGameRef]);
   
@@ -775,8 +785,10 @@ export default function CreativeWorkshopMenu({
     
     // Cleanup game
     if (communityGameRef) {
-      communityGameRef.destroy(true);
+      destroyPhaserGameSafely(communityGameRef, communityContainerRef.current);
       setCommunityGameRef(null);
+    } else {
+      destroyPhaserGameSafely(null, communityContainerRef.current);
     }
     
     // Reset state

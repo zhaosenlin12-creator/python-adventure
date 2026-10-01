@@ -50,28 +50,76 @@ const DECORATION_ICON_MAP: Record<string, string> = {
   music_box: '/icons/decorations/fun-musicbox.svg',
 };
 
+const DECORATION_ART_MAP: Record<string, string> = {
+  sofa_red: '/assets/pet-home/decorations/sofa_red.png',
+  table_wood: '/assets/pet-home/decorations/table_wood.png',
+  bookshelf: '/assets/pet-home/decorations/bookshelf.png',
+  rug_round: '/assets/pet-home/decorations/rug_round.png',
+  lamp_floor: '/assets/pet-home/decorations/lamp_floor.png',
+  plant_small: '/assets/pet-home/decorations/plant_small.png',
+  plant_flower: '/assets/pet-home/decorations/plant_flower.png',
+  plant_tree: '/assets/pet-home/decorations/plant_tree.png',
+  toy_ball: '/assets/pet-home/decorations/toy_ball.png',
+  toy_robot: '/assets/pet-home/decorations/toy_robot.png',
+  fish_tank: '/assets/pet-home/decorations/fish_tank.png',
+  cactus: '/assets/pet-home/decorations/cactus.png',
+  flower_vase: '/assets/pet-home/decorations/flower_vase.png',
+  cat_tower: '/assets/pet-home/decorations/cat_tower.png',
+  music_box: '/assets/pet-home/decorations/music_box.png',
+  tv_retro: '/assets/pet-home/decorations/tv_retro.png',
+  toy_teddy: '/assets/pet-home/decorations/toy_teddy.png',
+  fairy_lights: '/assets/pet-home/decorations/fairy_lights.png',
+  picture_frame: '/assets/pet-home/decorations/picture_frame.png',
+  clock_wall: '/assets/pet-home/decorations/clock_wall.png',
+  bed_cozy: '/assets/pet-home/decorations/bed_cozy.png',
+};
+
+const DECORATION_ART_ASPECT: Record<string, number> = {
+  sofa_red: 1.36,
+  table_wood: 1.07,
+  bookshelf: 0.74,
+  rug_round: 1.09,
+  lamp_floor: 0.61,
+  plant_small: 0.82,
+  plant_flower: 0.86,
+  plant_tree: 0.81,
+  toy_ball: 0.95,
+  toy_robot: 0.81,
+  fish_tank: 1.36,
+  cactus: 0.82,
+  flower_vase: 0.74,
+  cat_tower: 0.85,
+  music_box: 0.87,
+  tv_retro: 1.08,
+  toy_teddy: 0.89,
+  fairy_lights: 2.9,
+  picture_frame: 0.76,
+  clock_wall: 0.98,
+  bed_cozy: 2.29,
+};
+
 const DECORATION_FALLBACK_LABEL: Record<string, string> = {
   sofa_red: '沙发',
-  table_wood: '木桌',
-  bookshelf: '书架',
+  table_wood: '松果桌',
+  bookshelf: '小书架',
   lamp_floor: '落灯',
   rug_round: '地毯',
-  clock_wall: '挂钟',
+  clock_wall: '童话钟',
   bed_cozy: '小床',
-  tv_retro: '电视',
-  picture_frame: '画框',
+  tv_retro: '故事电视',
+  picture_frame: '森林画框',
   fairy_lights: '灯串',
-  plant_small: '绿植',
+  plant_small: '嫩芽盆栽',
   plant_flower: '花盆',
   plant_tree: '树苗',
-  cactus: '仙人掌',
-  flower_vase: '花瓶',
+  cactus: '开花仙人掌',
+  flower_vase: '彩虹花瓶',
   fish_tank: '鱼缸',
-  toy_ball: '玩球',
-  toy_robot: '机器人',
+  toy_ball: '星星球',
+  toy_robot: '陪伴机器人',
   toy_teddy: '抱偶',
   cat_tower: '猫架',
-  music_box: '音乐盒',
+  music_box: '星月音乐盒',
 };
 
 interface DecorationIconProps {
@@ -121,23 +169,29 @@ export const DecorationIcon = memo(function DecorationIcon({
     setHasError(false);
   }, [decorationId]);
 
-  const iconPath = DECORATION_ICON_MAP[decorationId];
+  const iconPath = DECORATION_ART_MAP[decorationId] || DECORATION_ICON_MAP[decorationId];
   if (useEmoji || hasError || !iconPath) {
     return <EmojiFallback decorationId={decorationId} size={size} className={className} />;
   }
+
+  const imageWidth = DECORATION_ART_MAP[decorationId]
+    ? Math.max(1, Math.round(size * (DECORATION_ART_ASPECT[decorationId] || 1)))
+    : size;
 
   return (
     <Image
       src={iconPath}
       alt={`${decorationId} decoration`}
-      width={size}
+      width={imageWidth}
       height={size}
       data-decoration-id={decorationId}
-      data-decoration-render="image"
-      className={`object-contain ${className}`}
+      data-decoration-render={DECORATION_ART_MAP[decorationId] ? 'ai-art' : 'image'}
+      className={`h-auto max-w-full object-contain ${className}`}
       style={{
+        width: 'auto',
+        height: 'auto',
         filter:
-          'drop-shadow(0 12px 14px rgba(15,23,42,0.18)) saturate(0.98) contrast(1.02)',
+          'drop-shadow(0 12px 14px rgba(15,23,42,0.16)) saturate(0.98) contrast(1.02)',
       }}
       draggable={false}
       onError={() => {
@@ -148,7 +202,11 @@ export const DecorationIcon = memo(function DecorationIcon({
 });
 
 export function getDecorationIconPath(decorationId: string): string | null {
-  return DECORATION_ICON_MAP[decorationId] || null;
+  return DECORATION_ART_MAP[decorationId] || DECORATION_ICON_MAP[decorationId] || null;
+}
+
+export function hasGeneratedDecorationArt(decorationId: string): boolean {
+  return Boolean(DECORATION_ART_MAP[decorationId]);
 }
 
 export function getDecorationEmoji(decorationId: string): string {

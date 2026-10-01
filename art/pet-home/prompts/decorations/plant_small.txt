@@ -1,0 +1,12 @@
+Use case: stylized-concept
+Asset type: premium 2D game decoration sprite
+Primary request: one tiny cheerful houseplant for a children's cartoon pet-home game, round ceramic pot with a paw imprint, three soft rounded leaves and one tiny sprout
+Scene/backdrop: isolated on a perfectly flat pale blue-white background #F7FBFF for background removal
+Subject: a single small potted plant, front three-quarter view, centered, fully visible
+Style/medium: polished hand-painted 3D cartoon illustration, natural leaves, handmade matte ceramic, clean premium game asset
+Composition/framing: square 1:1, object fills 66 percent of canvas, clean silhouette, tiny contained ground shadow
+Lighting/mood: fresh morning light, gentle and lively
+Color palette: sage green, cream, peach, butter yellow, warm terracotta
+Materials/textures: matte ceramic, subtle soil, soft leaf veins, slightly imperfect handmade finish
+Constraints: no text, no logo, no watermark, no people, no pet, no border, no collage
+Avoid: plastic shine, photorealism, hard black outline, thorns, excessive bloom

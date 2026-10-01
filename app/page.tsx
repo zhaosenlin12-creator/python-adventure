@@ -80,8 +80,6 @@ export default function Home() {
         // 只初始化一次音乐管理器
         if (!musicInitialized.current) {
             musicInitialized.current = true;
-            musicManager.initialize();
-
             // 启动背景音乐
             if (typeof window !== 'undefined') {
                 // 用户首次交互后启动音乐

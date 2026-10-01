@@ -8,6 +8,7 @@ import { PetFollower } from '../entities/PetFollower';
 import { PET_CONFIGS, Pet, PetMood, PetStatus } from '@/types/pet';
 import { migratePetType } from '@/lib/pet/migration';
 import { buildWorldControlsText } from '@/lib/gameplayText';
+import { getDashProfile } from '@/lib/game/dashProfile';
 
 // 生产环境禁用调试日志
 const DEBUG = process.env.NODE_ENV === 'development';
@@ -140,11 +141,11 @@ export class MainScene extends Phaser.Scene {
     }
 
     private getDashSpeed() {
-        return this.hasSkill('quantum_dash') ? 960 : 800;
+        return getDashProfile(this.hasSkill('quantum_dash')).speed;
     }
 
     private getDashDurationMs() {
-        return this.hasSkill('quantum_dash') ? 320 : 250;
+        return getDashProfile(this.hasSkill('quantum_dash')).durationMs;
     }
 
     private activateTimeSlow() {
@@ -279,6 +280,12 @@ export class MainScene extends Phaser.Scene {
         // 创建玩家
         const groundY = this.WORLD_HEIGHT - 32;
         this.player = this.physics.add.sprite(100, groundY - 100, 'player');
+        // 玩家立绘原始尺寸 657x983（0.668 长度比）：以高度 48px 为基准保留比例
+        // （与原来 32x48 程序化版本的可视高度一致）。
+        const __pNaturalW = 657, __pNaturalH = 983;
+        const __pDisplayH = 48;
+        const __pDisplayW = __pDisplayH * (__pNaturalW / __pNaturalH);
+        this.player.setDisplaySize(__pDisplayW, __pDisplayH);
         this.player.setBounce(0.1);
         this.player.setCollideWorldBounds(true);
         this.player.setData('velocityBeforeGlide', 0);
@@ -521,7 +528,7 @@ export class MainScene extends Phaser.Scene {
                 
                 // 重新启用Phaser的键盘输入系统（安全检查）
                 try {
-                    if (this.input && this.input.keyboard && this.scene && this.scene.isActive()) {
+                    if (this.input?.keyboard && this.scene?.isActive()) {
                         this.input.keyboard.enabled = true;
                         this.eKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
                         this.moveKeys = this.input.keyboard.addKeys({
@@ -1017,16 +1024,18 @@ export class MainScene extends Phaser.Scene {
         const touchJumpJustPressed = (touchState.up && !this.lastTouchState.up) || 
                                      (touchState.jump && !this.lastTouchState.jump);
         
-        // 水平移动（支持触控）
-        let moveSpeed = 250;
-        if (inputLeft) {
-            this.player.setVelocityX(-moveSpeed);
-            this.player.setFlipX(true);
-        } else if (inputRight) {
-            this.player.setVelocityX(moveSpeed);
-            this.player.setFlipX(false);
-        } else {
-            this.player.setVelocityX(0);
+        // 冲刺期间保持冲刺速度，避免下一帧普通移动逻辑覆盖冲刺速度。
+        if (!this.isDashing) {
+            const moveSpeed = 250;
+            if (inputLeft) {
+                this.player.setVelocityX(-moveSpeed);
+                this.player.setFlipX(true);
+            } else if (inputRight) {
+                this.player.setVelocityX(moveSpeed);
+                this.player.setFlipX(false);
+            } else {
+                this.player.setVelocityX(0);
+            }
         }
         
         // 冲刺技能（支持触控）
@@ -1173,13 +1182,15 @@ export class MainScene extends Phaser.Scene {
         // 创建多个虚影效果
         const createAfterImage = (delay: number) => {
             this.time.delayedCall(delay, () => {
-                if (this.isDashing) {
+                if (this.isDashing && this.player?.active) {
                     const afterImage = this.add.sprite(
                         this.player.x,
                         this.player.y,
                         'player'
                     );
                     afterImage.setFlipX(this.player.flipX);
+                    afterImage.setDisplaySize(this.player.displayWidth, this.player.displayHeight);
+                    afterImage.setDepth(Math.max(0, this.player.depth - 1));
                     afterImage.setAlpha(0.3);
                     afterImage.setTint(0x00ffff);
                     
@@ -1465,6 +1476,8 @@ export class MainScene extends Phaser.Scene {
             
             // 创建玩家精灵（使用与当前玩家相同的纹理）
             const sprite = this.add.sprite(0, 0, 'player');
+            // 保留 657:983 比例\uff0c高度与现有创建保持一致
+            sprite.setDisplaySize(32, 48);
             sprite.setTint(0x88ccff); // 浅蓝色区分其他玩家
             sprite.setAlpha(0.8);
             

@@ -7,6 +7,7 @@
 // 生产环境禁用调试日志
 const DEBUG = process.env.NODE_ENV === 'development';
 const debugLog = DEBUG ? console.log.bind(console) : () => {};
+const expectedOfflineLog = DEBUG ? console.debug.bind(console) : console.warn.bind(console);
 
 interface PlayerData {
     user_id: number;
@@ -27,7 +28,7 @@ interface PlayerData {
 }
 
 interface WebSocketMessage {
-    type: 'player_join' | 'player_leave' | 'player_move' | 'players_list';
+    type: 'player_join' | 'player_leave' | 'player_move' | 'players_list' | 'pong';
     data: any;
 }
 
@@ -73,6 +74,7 @@ export class WorldSyncService {
     private onConnected: (() => void) | null = null;
     private onDisconnected: (() => void) | null = null;
     private onModeChange: ((mode: WorldSyncMode) => void) | null = null;
+    private hasLoggedConnectionFailure = false;
 
     constructor(userId: number, mapArea: string = "开放世界") {
         this.userId = userId;
@@ -121,7 +123,7 @@ export class WorldSyncService {
                     resolve();
                 })
                 .catch((error) => {
-                    console.warn('[WorldSync] WebSocket failed, falling back to HTTP polling:', error);
+                    this.logConnectionFailure('[WorldSync] WebSocket unavailable, using HTTP polling fallback', error);
                     this.startHttpPolling().then(resolve).catch(reject);
                 });
         });
@@ -230,6 +232,7 @@ export class WorldSyncService {
                     this.clearReconnectTimer();
                     this.stopHttpPolling();
                     this.reconnectAttempts = 0;
+                    this.hasLoggedConnectionFailure = false;
                     this.setSyncMode('websocket');
                     
                     // 启动心跳
@@ -254,9 +257,9 @@ export class WorldSyncService {
                     }
                 };
 
-                socket.onerror = (error) => {
+                socket.onerror = () => {
                     clearTimeout(timeout);
-                    console.warn('[WorldSync] WebSocket error:', error);
+                    this.logConnectionFailure('[WorldSync] WebSocket connection failed');
                     this.isConnecting = false;
                     if (!opened) {
                         rejectOnce(new Error('WebSocket connection failed'));
@@ -290,11 +293,18 @@ export class WorldSyncService {
                 };
 
             } catch (error) {
-                console.error('[WorldSync] Failed to create WebSocket:', error);
+                this.logConnectionFailure('[WorldSync] Failed to create WebSocket', error);
                 this.isConnecting = false;
                 reject(error);
             }
         });
+    }
+
+    private logConnectionFailure(message: string, error?: unknown) {
+        if (!this.hasLoggedConnectionFailure) {
+            expectedOfflineLog(message, error ?? '');
+            this.hasLoggedConnectionFailure = true;
+        }
     }
 
     /**
@@ -334,6 +344,9 @@ export class WorldSyncService {
                     debugLog('[WorldSync] Filtered players (excluding self):', players);
                     this.onPlayersList(players);
                 }
+                break;
+
+            case 'pong':
                 break;
 
             default:
@@ -503,7 +516,7 @@ export class WorldSyncService {
         this.reconnectTimer = setTimeout(() => {
             this.reconnectTimer = null;
             this.tryWebSocketConnection().catch(error => {
-                console.error('[WorldSync] Reconnect failed:', error);
+                this.logConnectionFailure('[WorldSync] Reconnect failed', error);
                 this.attemptReconnect();
             });
         }, delay);

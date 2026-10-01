@@ -1,7 +1,9 @@
 ﻿import * as Phaser from 'phaser';
 import { touchInputManager, TouchInputState } from '@/lib/input/TouchInputManager';
+import { bossPortraitKey, getBossPortraitIdsForLevel, loadBossPortraitsForIds } from './bossPortraits';
 import { isMobileDevice } from '@/hooks/useDeviceType';
 import { buildCampaignOverviewText, buildPlatformControlsText } from '@/lib/gameplayText';
+import { getDashProfile } from '@/lib/game/dashProfile';
 
 // 生产环境禁用调试日志
 const DEBUG = process.env.NODE_ENV === 'development';
@@ -447,16 +449,15 @@ export default class PlatformGameScene extends Phaser.Scene {
     }
 
     private getDashCooldownSeconds() {
-        const baseCooldown = this.hasSkill('quantum_dash') ? 0.75 : 1;
-        return baseCooldown * this.getSkillCooldownMultiplier();
+        return getDashProfile(this.hasSkill('quantum_dash'), this.getSkillCooldownMultiplier()).cooldownSeconds;
     }
 
     private getDashSpeed() {
-        return this.hasSkill('quantum_dash') ? 680 : 500;
+        return getDashProfile(this.hasSkill('quantum_dash')).speed;
     }
 
     private getDashDurationMs() {
-        return this.hasSkill('quantum_dash') ? 280 : 200;
+        return getDashProfile(this.hasSkill('quantum_dash')).durationMs;
     }
 
     private getTimeSlowCooldownSeconds() {
@@ -485,6 +486,17 @@ export default class PlatformGameScene extends Phaser.Scene {
         if (this.hasSkill('time_shield')) return 3;
         if (this.hasSkill('science_master')) return 2;
         return 1;
+    }
+
+    preload() {
+        // PlatformGame.tsx 启 Phaser 时只把 PlatformGameScene 放进 scene 数组，
+        // 不会自动执行 BootScene.preload()。盖覆后面 createPlayer() 程序化 generateTexture('playerChar', 64, 64)
+        // 如果加载失败，程序化备份仍会生效。
+
+        // 只加载当前关卡可能用到的 Boss 立绘，未知主题仍由程序化贴图兜底。
+        loadBossPortraitsForIds(this, getBossPortraitIdsForLevel(this.levelData));
+
+        this.load.image('playerChar', '/assets/player/player.png');
     }
 
     create() {
@@ -2754,8 +2766,10 @@ export default class PlatformGameScene extends Phaser.Scene {
         playerGraphics.lineStyle(3, 0xFFD700, 0.9);
         playerGraphics.strokeCircle(centerX, centerY + 2, radius + 3);
 
-        // 将图形转换为纹理（64x64）
-        playerGraphics.generateTexture('playerChar', 64, 64);
+        // 将图形转换为纹理（64x64）作为备份，只在 PNG 加载失败时写入 'playerChar'
+        if (!this.textures.exists('playerChar')) {
+            playerGraphics.generateTexture('playerChar', 64, 64);
+        }
         playerGraphics.destroy();
 
         // 创建玩家物理体
@@ -2782,20 +2796,25 @@ export default class PlatformGameScene extends Phaser.Scene {
 
         // 🔥 v2.1.12: 支持自定义玩家大小（用于特殊关卡）
         const playerScale = campaignMapData?.playerScale || 1.0;
+        // 玩家立绘原始尺寸 657x983\uff080.668 长度比\uff09：以高度为基准保留立绘比例。
+        const PLAYER_NATURAL_W = 657;
+        const PLAYER_NATURAL_H = 983;
         const baseSize = 40;
-        const displaySize = baseSize * playerScale;
+        const aspectRatio = PLAYER_NATURAL_W / PLAYER_NATURAL_H;
+        const displayWidth = baseSize * aspectRatio * playerScale;
+        const displayHeight = baseSize * playerScale;
 
-        // 🔥 显示大小（根据playerScale缩放）
-        this.player.setDisplaySize(displaySize, displaySize);
+        // 🔥 显示大小（保留 657:983 比例）
+        this.player.setDisplaySize(displayWidth, displayHeight);
 
-        // 🔥 碰撞体（比显示大15像素 * scale）
+        // 🔥 碰撞体（以原始尺寸设置，覆盖全布局可视区域）
         const body = this.player.body as Phaser.Physics.Arcade.Body;
-        const collisionSize = (baseSize + 15) * playerScale;
-        body.setSize(collisionSize, collisionSize);
-        body.setOffset((64 - collisionSize) / 2, (64 - collisionSize) / 2);
+        body.setSize(PLAYER_NATURAL_W, PLAYER_NATURAL_H);
+        body.setOffset(0, 0);
 
         if (playerScale !== 1.0) {
-            debugLog(`🔥 [v2.1.12] 玩家大小缩放: ${playerScale}x, 显示: ${displaySize}px, 碰撞: ${collisionSize}px`);
+            const playerDebugInfo = '玩家大小缩放: ' + playerScale + 'x, 显示: ' + displayWidth.toFixed(1) + 'x' + displayHeight.toFixed(1) + 'px, 碰撞使用全源 657x983';
+            debugLog('🔥 [v2.1.12] ' + playerDebugInfo);
         }
 
         this.player.setBounce(0.1);
@@ -3615,10 +3634,11 @@ export default class PlatformGameScene extends Phaser.Scene {
             const survivingBoss = bossIndex === 1 ? this.dualBossState.boss2 : this.dualBossState.boss1;
             if (survivingBoss) {
                 survivingBoss.setTint(0xff0000);
+                const baseScale = this.getBossVisualScale(survivingBoss);
                 this.tweens.add({
                     targets: survivingBoss,
-                    scaleX: 1.2,
-                    scaleY: 1.2,
+                    scaleX: baseScale.x * 1.2,
+                    scaleY: baseScale.y * 1.2,
                     duration: 500,
                     yoyo: true,
                     repeat: 3
@@ -3771,10 +3791,11 @@ export default class PlatformGameScene extends Phaser.Scene {
             // 狂暴视觉效果
             aliveBosses.forEach(b => {
                 b.setTint(0xff0000);
+                const baseScale = this.getBossVisualScale(b);
                 this.tweens.add({
                     targets: b,
-                    scaleX: 1.15,
-                    scaleY: 1.15,
+                    scaleX: baseScale.x * 1.15,
+                    scaleY: baseScale.y * 1.15,
                     duration: 400,
                     yoyo: true,
                     repeat: 2
@@ -3831,10 +3852,11 @@ export default class PlatformGameScene extends Phaser.Scene {
         // Boss样式升级 - 阶段2
         if (this.bossEnemy) {
             // 体型增大10%
+            const baseScale = this.getBossVisualScale(this.bossEnemy);
             this.tweens.add({
                 targets: this.bossEnemy,
-                scaleX: 1.1,
-                scaleY: 1.1,
+                scaleX: baseScale.x * 1.1,
+                scaleY: baseScale.y * 1.1,
                 duration: 500,
                 ease: 'Back.easeOut'
             });
@@ -3897,10 +3919,11 @@ export default class PlatformGameScene extends Phaser.Scene {
         // Boss样式升级 - 阶段3（狂暴）
         if (this.bossEnemy) {
             // 体型再增大20%（总计1.5倍）
+            const baseScale = this.getBossVisualScale(this.bossEnemy);
             this.tweens.add({
                 targets: this.bossEnemy,
-                scaleX: 1.5,
-                scaleY: 1.5,
+                scaleX: baseScale.x * 1.5,
+                scaleY: baseScale.y * 1.5,
                 duration: 600,
                 ease: 'Back.easeOut'
             });
@@ -4305,7 +4328,11 @@ export default class PlatformGameScene extends Phaser.Scene {
 
         // 创建第二个Boss
         const boss2 = this.enemies.create(spawnPos.x, spawnPos.y, textureName);
-        boss2.setDisplaySize(this.secondBossConfig.size || 80, this.secondBossConfig.size || 80);
+        const boss2Size = (this.secondBossConfig.size || 80) * 0.8;  // 全源 secondBoss 也缩小 20%
+        boss2.setDisplaySize(boss2Size, boss2Size);
+        this.rememberBossVisualScale(boss2);
+        const boss2BaseScale = this.getBossVisualScale(boss2);
+        this.syncArcadeBodyToDisplay(boss2, boss2Size, boss2Size);
         (boss2 as any).damage = 3;
         (boss2 as any).enemyType = 'boss';
         (boss2 as any).isLaserGuard = true;  // 标记为激光守卫
@@ -4351,7 +4378,8 @@ export default class PlatformGameScene extends Phaser.Scene {
         this.tweens.add({
             targets: boss2,
             alpha: 1,
-            scale: 1,
+            scaleX: boss2BaseScale.x,
+            scaleY: boss2BaseScale.y,
             duration: 1000,
             ease: 'Back.easeOut'
         });
@@ -9151,6 +9179,8 @@ export default class PlatformGameScene extends Phaser.Scene {
         for (let i = 0; i < 5; i++) {
             this.time.delayedCall(i * 30, () => {
                 const afterimage = this.add.sprite(this.player.x, this.player.y, 'playerChar');
+                // 保留 657:983 比例，与玩家显示尺寸对齐
+                afterimage.setDisplaySize(this.player.displayWidth, this.player.displayHeight);
                 afterimage.setAlpha(0.6 - i * 0.1);
                 afterimage.setTint(0xFFD700);  // 🎊 金色残影
                 afterimage.setFlipX(this.player.flipX);
@@ -9244,7 +9274,7 @@ export default class PlatformGameScene extends Phaser.Scene {
         // 创建子弹精灵
         const bullet = this.bullets.create(bulletX, bulletY, '');
         bullet.setDisplaySize(16, 16);
-        bullet.setCircle(8); // 圆形碰撞体
+        this.syncArcadeCircleBodyToDisplay(bullet, 16);
 
         // 子弹外观（黄色火球）
         const bulletGraphics = this.add.circle(bulletX, bulletY, 8, 0xffff00, 1);
@@ -10057,12 +10087,57 @@ export default class PlatformGameScene extends Phaser.Scene {
                     : this.getBossSize(campaignId);
         enemy.setTexture(textureName);
         enemy.setDisplaySize(size, size);
+        this.rememberBossVisualScale(enemy);
+
+        this.syncArcadeBodyToDisplay(enemy, size, size);
 
         if (bossConfig?.tint) {
             enemy.setTint(bossConfig.tint);
         } else {
             enemy.clearTint();
         }
+    }
+
+    private rememberBossVisualScale(enemy: Phaser.Physics.Arcade.Sprite) {
+        const sprite = enemy as any;
+        sprite.bossBaseScaleX = enemy.scaleX;
+        sprite.bossBaseScaleY = enemy.scaleY;
+    }
+
+    private syncArcadeBodyToDisplay(
+        sprite: Phaser.Physics.Arcade.Sprite,
+        displayWidth: number,
+        displayHeight: number,
+    ) {
+        const body = sprite.body as Phaser.Physics.Arcade.Body | null;
+        if (!body) return;
+
+        const scaleX = Math.max(Math.abs(sprite.scaleX), Number.EPSILON);
+        const scaleY = Math.max(Math.abs(sprite.scaleY), Number.EPSILON);
+        body.setSize(displayWidth / scaleX, displayHeight / scaleY, true);
+        body.updateFromGameObject();
+    }
+
+    private syncArcadeCircleBodyToDisplay(
+        sprite: Phaser.Physics.Arcade.Sprite,
+        displayDiameter: number,
+    ) {
+        const body = sprite.body as Phaser.Physics.Arcade.Body | null;
+        if (!body) return;
+
+        const scale = Math.max(Math.min(Math.abs(sprite.scaleX), Math.abs(sprite.scaleY)), Number.EPSILON);
+        body.setCircle(displayDiameter / (2 * scale));
+        body.updateFromGameObject();
+    }
+
+    private getBossVisualScale(enemy: Phaser.Physics.Arcade.Sprite) {
+        const sprite = enemy as any;
+        const storedScaleX = Number(sprite.bossBaseScaleX);
+        const storedScaleY = Number(sprite.bossBaseScaleY);
+        return {
+            x: Number.isFinite(storedScaleX) && storedScaleX > 0 ? storedScaleX : enemy.scaleX || 1,
+            y: Number.isFinite(storedScaleY) && storedScaleY > 0 ? storedScaleY : enemy.scaleY || 1,
+        };
     }
 
     private getBossAppearance(campaignId: string, visualTheme: string) {
@@ -10120,6 +10195,20 @@ export default class PlatformGameScene extends Phaser.Scene {
         const textureName = `bossEnemy_${campaignId}_${visualTheme}`;
         if (this.textures.exists(textureName)) {
             return textureName;
+        }
+
+        // 创意工坊优先使用独立立绘；旧资源或未知主题仍回退到战役立绘
+        const portraitCampaignId = campaignId === 'custom' ? 'custom' : campaignId;
+        const portraitIds = [
+            visualTheme !== 'default' ? `${portraitCampaignId}_${visualTheme}` : `${portraitCampaignId}_default`,
+            portraitCampaignId === 'custom' ? 'custom_default' : portraitCampaignId,
+            campaignId === 'custom' ? 'campaign_3' : campaignId,
+        ];
+        for (const portraitId of [...new Set(portraitIds)]) {
+            const portraitKey = bossPortraitKey(portraitId);
+            if (this.textures.exists(portraitKey)) {
+                return portraitKey;
+            }
         }
 
         const appearance = this.getBossAppearance(campaignId, visualTheme);
@@ -10453,23 +10542,23 @@ export default class PlatformGameScene extends Phaser.Scene {
     // 获取Boss大小
     private getBossSize(campaignId: string): number {
         const BOSS_SIZES: Record<string, number> = {
-            custom: 64,  // 自定义关卡Boss默认大小
-            campaign_1: 60,
-            campaign_2: 70,
-            campaign_3: 80,
-            campaign_4: 75,
-            campaign_5: 65,
-            campaign_6: 90,
-            campaign_7: 70,
-            campaign_8: 65,
-            campaign_9: 100,
-            campaign_10: 85,
-            campaign_11: 80,
-            campaign_12: 82,
-            campaign_13: 84,
-            campaign_14: 86,
-            campaign_15: 88,
-            campaign_16: 92,
+            custom: 51,        // 64 * 0.8 四舍五入 - 绝對立绘缩小 20%
+            campaign_1: 48,    // 60 * 0.8
+            campaign_2: 56,    // 70 * 0.8
+            campaign_3: 64,    // 80 * 0.8
+            campaign_4: 60,    // 75 * 0.8
+            campaign_5: 52,    // 65 * 0.8
+            campaign_6: 72,    // 90 * 0.8
+            campaign_7: 56,    // 70 * 0.8
+            campaign_8: 52,    // 65 * 0.8
+            campaign_9: 80,    // 100 * 0.8
+            campaign_10: 68,   // 85 * 0.8
+            campaign_11: 64,   // 80 * 0.8
+            campaign_12: 66,   // 82 * 0.8 四舍五入
+            campaign_13: 67,   // 84 * 0.8 四舍五入
+            campaign_14: 69,   // 86 * 0.8 四舍五入
+            campaign_15: 70,   // 88 * 0.8 四舍五入
+            campaign_16: 74,   // 92 * 0.8 四舍五入
         };
         return BOSS_SIZES[campaignId] || 60;
     }
@@ -10869,7 +10958,7 @@ export default class PlatformGameScene extends Phaser.Scene {
 
         const bullet = this.bullets.create(turret.x, turret.y, '');
         bullet.setDisplaySize(14, 14);
-        bullet.setCircle(7);
+        this.syncArcadeCircleBodyToDisplay(bullet, 14);
 
         // 追踪弹外观（橙色发光）
         const bulletGraphics = this.add.circle(turret.x, turret.y, 7, 0xff6600, 1);
@@ -10931,7 +11020,7 @@ export default class PlatformGameScene extends Phaser.Scene {
 
         const bullet = this.bullets.create(turret.x, turret.y, '');
         bullet.setDisplaySize(16, 16);
-        bullet.setCircle(8);
+        this.syncArcadeCircleBodyToDisplay(bullet, 16);
 
         // 🎊 新年主题：烟花弹外观（红金配色）
         const bulletGraphics = this.add.circle(turret.x, turret.y, 8, 0xDC143C, 0.9);

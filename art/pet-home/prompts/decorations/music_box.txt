@@ -1,0 +1,12 @@
+Use case: stylized-concept
+Asset type: premium 2D game decoration sprite
+Primary request: one whimsical star-and-moon music box for a children's cartoon pet-home game, rounded wooden base, tiny crank, raised moon and stars, gentle storybook details
+Scene/backdrop: isolated on a perfectly flat pale blue-white background #F7FBFF for background removal
+Subject: a single small music box, front three-quarter view, centered, fully visible
+Style/medium: polished hand-painted 3D cartoon illustration, matte wood, painted ceramic accents, premium fairy-tale prop
+Composition/framing: square 1:1, object fills 66 percent of canvas, clean silhouette, contained ground shadow
+Lighting/mood: warm magical afternoon light, calm and curious
+Color palette: warm oak, cream, dusty blue, lavender, butter yellow, blush peach
+Materials/textures: painted wood grain, soft brass-like crank, matte ceramic moon and stars
+Constraints: no text, no logo, no watermark, no people, no pet, no border, no collage
+Avoid: metallic luxury styling, glossy plastic, hard black outline, horror mood, excessive bloom

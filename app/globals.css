@@ -164,6 +164,33 @@
   background: #7aa2f7;
 }
 
+.pet-scrollbar-soft {
+  scrollbar-color: #d6bc91 #fff5e4;
+  scrollbar-width: thin;
+}
+
+.pet-scrollbar-soft::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.pet-scrollbar-soft::-webkit-scrollbar-track {
+  background: #fff5e4;
+  border-left: 1px solid rgba(222, 199, 165, 0.72);
+  border-radius: 999px;
+}
+
+.pet-scrollbar-soft::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #e5c98f, #b9d6c6);
+  border: 2px solid #fff5e4;
+  border-radius: 999px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.pet-scrollbar-soft::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #d9b66e, #91c6ae);
+}
+
 /* Skill Unlock Notification Animations */
 @keyframes bounce-in {
   0% {

@@ -38,7 +38,8 @@ if [ "${EUID:-$(id -u)}" -eq 0 ]; then
     chown -R "$OWNER_USER:$OWNER_GROUP" "$APP_DIR"
 fi
 
-run_as_owner "cd '$APP_DIR' && npm install --no-audit --no-fund"
+run_as_owner "cd '$APP_DIR' && npm ci --omit=dev --no-audit --no-fund"
+run_as_owner "cd '$APP_DIR' && rm -f public/sounds/bgm_battle.wav public/sounds/bgm_boss.wav public/sounds/bgm_victory.wav"
 run_as_owner "cd '$APP_DIR' && rm -rf .next/cache .next/dev 2>/dev/null || true"
 run_as_owner "cd '$APP_DIR' && if pm2 describe game >/dev/null 2>&1; then pm2 restart game; else pm2 start \"npm start -- -p $PORT\" --name game --max-memory-restart 500M; fi"
 run_as_owner "pm2 save"

@@ -1,0 +1,12 @@
+Use case: stylized-concept
+Asset type: premium 2D game decoration sprite
+Primary request: one small rounded aquarium for a children's cartoon pet-home game, clear glass tank with two friendly tiny fish, rounded coral, green aquatic plants and a wooden base
+Scene/backdrop: isolated on a perfectly flat pale blue-white background #F7FBFF for background removal
+Subject: a single aquarium, front three-quarter view, centered, fully visible, no separate objects
+Style/medium: polished hand-painted 3D cartoon illustration, readable glass, soft caustics, matte wood base, tactile aquatic plants
+Composition/framing: square 1:1, object fills 70 percent of canvas, clean silhouette, contained soft shadow
+Lighting/mood: tranquil blue glow, warm gentle fill, soothing and playful
+Color palette: clear aqua, sky blue, coral peach, seafoam, warm wood
+Materials/textures: glass reflections, water ripples, smooth stones, matte wood, soft bubbles
+Constraints: no text, no logo, no watermark, no people, no pet, no border, no collage
+Avoid: photorealism, sharp edges, dark horror mood, excessive bloom, plastic toy shine

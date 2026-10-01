@@ -117,7 +117,8 @@ export const level_8_5_config: CampaignLevel = {
   
   // 🔥🔥🔥 双Boss配置 🔥🔥🔥
   bossConfig: {
-    type: 'dual',  // 双Boss模式
+    visualTheme: 'default',
+          type: 'dual',  // 双Boss模式
     
     // ===== 第一阶段Boss：分子怪博士 =====
     hp: 450,  // 第一个Boss血量

@@ -1,0 +1,12 @@
+Use case: stylized-concept
+Asset type: premium 2D game decoration sprite
+Primary request: one round storybook wall clock for a children's cartoon pet-home game, cream face, warm wooden rim, tiny leaf and star markers, friendly simple hands
+Scene/backdrop: isolated on a perfectly flat pale blue-white background #F7FBFF for background removal
+Subject: a single wall clock, front three-quarter view, centered, fully visible
+Style/medium: polished hand-painted 3D cartoon illustration, matte wood, softly painted face, premium fairy-tale wall decor
+Composition/framing: square 1:1, object fills 64 percent of canvas, clean silhouette, contained soft shadow
+Lighting/mood: warm morning window light, calm and reassuring
+Color palette: warm oak, cream, dusty blue, mint, butter yellow, coral peach
+Materials/textures: subtle wood grain, matte painted face, small raised stars and leaves
+Constraints: no text, no logo, no watermark, no people, no pet, no border, no collage, no readable numbers
+Avoid: metallic chrome, glossy plastic, dark gothic clock, hard black outline, excessive bloom

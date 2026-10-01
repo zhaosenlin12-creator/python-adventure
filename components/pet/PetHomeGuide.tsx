@@ -135,19 +135,19 @@ export default function PetHomeGuide({ onComplete }: PetHomeGuideProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-[10000] flex items-center justify-center bg-[radial-gradient(circle_at_top,rgba(251,191,36,0.18),transparent_34%),rgba(2,6,23,0.76)] px-4 backdrop-blur-sm"
+        className="fixed inset-0 z-[10000] flex items-center justify-center bg-[radial-gradient(circle_at_top,rgba(251,191,36,0.24),transparent_34%),rgba(91,59,35,0.28)] px-4 backdrop-blur-sm"
       >
         <motion.div
           initial={{ opacity: 0, y: 32, scale: 0.96 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 24, scale: 0.98 }}
           transition={{ duration: 0.24, ease: 'easeOut' }}
-          className="w-full max-w-xl overflow-hidden rounded-[30px] border border-amber-300/20 bg-[linear-gradient(155deg,rgba(15,23,42,0.98),rgba(2,6,23,0.96))] shadow-[0_34px_90px_rgba(2,6,23,0.5)]"
+          className="w-full max-w-xl overflow-hidden rounded-[30px] border border-[#dec7a5] bg-[linear-gradient(155deg,#fffaf0,#f4e6d2)] shadow-[0_34px_90px_rgba(91,59,35,0.24)]"
         >
-          <div className="border-b border-white/10 bg-[linear-gradient(135deg,rgba(251,191,36,0.94),rgba(249,115,22,0.92))] px-5 py-5 text-slate-950">
+          <div className="border-b border-[#ead8bd] bg-[linear-gradient(135deg,#ffe7a8,#f6b783)] px-5 py-5 text-[#5b4034]">
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-center gap-3">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-950/10 shadow-inner">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#fffaf0]/55 shadow-inner">
                   <motion.div
                     animate={{ rotate: [0, 8, -8, 0] }}
                     transition={{ duration: 0.6, repeat: Infinity, repeatDelay: 2.6 }}
@@ -156,7 +156,7 @@ export default function PetHomeGuide({ onComplete }: PetHomeGuideProps) {
                   </motion.div>
                 </div>
                 <div>
-                  <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-slate-900/70">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[#8d6f52]">
                     Pet Home Guide
                   </div>
                   <div className="mt-1 text-xl font-black">小屋新手引导</div>
@@ -164,7 +164,7 @@ export default function PetHomeGuide({ onComplete }: PetHomeGuideProps) {
               </div>
               <button
                 onClick={handleSkip}
-                className="rounded-full border border-slate-950/10 bg-slate-950/8 p-2 text-slate-900/70 transition hover:bg-slate-950/14 hover:text-slate-950"
+                className="rounded-full border border-[#8f694d]/20 bg-[#fffaf0]/35 p-2 text-[#765b49] transition hover:bg-[#fffaf0]/65 hover:text-[#5b4034]"
                 aria-label="关闭引导"
               >
                 <X className="h-5 w-5" />
@@ -178,12 +178,12 @@ export default function PetHomeGuide({ onComplete }: PetHomeGuideProps) {
                 <div
                   key={item.id}
                   className={`h-1.5 flex-1 rounded-full transition-colors ${
-                    index <= currentStep ? 'bg-amber-400' : 'bg-slate-700'
+                    index <= currentStep ? 'bg-[#e6ad58]' : 'bg-[#e2d5c3]'
                   }`}
                 />
               ))}
             </div>
-            <div className="mt-2 text-right text-xs text-slate-400">
+            <div className="mt-2 text-right text-xs text-[#927866]">
               第 {currentStep + 1} 步 / 共 {GUIDE_STEPS.length} 步
             </div>
           </div>
@@ -196,21 +196,21 @@ export default function PetHomeGuide({ onComplete }: PetHomeGuideProps) {
               exit={{ opacity: 0, x: -18 }}
               transition={{ duration: 0.2, ease: 'easeOut' }}
             >
-              <h3 className="text-2xl font-black text-white pixel-text-shadow">{step.title}</h3>
-              <p className="mt-4 text-[15px] leading-7 text-slate-300">{step.description}</p>
-              <div className="mt-5 rounded-[24px] border border-white/10 bg-white/[0.05] px-4 py-4">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.24em] text-amber-200">
+              <h3 className="text-2xl font-black text-[#5c4537]">{step.title}</h3>
+              <p className="mt-4 text-[15px] leading-7 text-[#7b6557]">{step.description}</p>
+              <div className="mt-5 rounded-[24px] border border-[#ead8bd] bg-[#fffaf0] px-4 py-4 shadow-[0_12px_24px_rgba(128,88,48,0.06)]">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#a27642]">
                   使用建议
                 </div>
-                <p className="mt-2 text-sm leading-6 text-slate-200">{step.tip}</p>
+                <p className="mt-2 text-sm leading-6 text-[#866b58]">{step.tip}</p>
               </div>
             </motion.div>
           </div>
 
-          <div className="flex items-center justify-between border-t border-white/10 bg-white/[0.03] px-5 py-4">
+          <div className="flex items-center justify-between border-t border-[#ead8bd] bg-[#f8eddd] px-5 py-4">
             <button
               onClick={handleSkip}
-              className="text-sm text-slate-400 transition hover:text-white"
+              className="text-sm text-[#9b8373] transition hover:text-[#5b4034]"
             >
               跳过引导
             </button>
@@ -219,7 +219,7 @@ export default function PetHomeGuide({ onComplete }: PetHomeGuideProps) {
               {currentStep > 0 && (
                 <button
                   onClick={handlePrev}
-                  className="flex items-center gap-1 rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/[0.1]"
+                  className="flex items-center gap-1 rounded-2xl border border-[#ead8bd] bg-[#fffaf0] px-4 py-2 text-sm font-semibold text-[#725645] transition hover:bg-white"
                 >
                   <ChevronLeft className="h-4 w-4" />
                   上一步
@@ -227,7 +227,7 @@ export default function PetHomeGuide({ onComplete }: PetHomeGuideProps) {
               )}
               <button
                 onClick={handleNext}
-                className="flex items-center gap-1 rounded-2xl bg-amber-500 px-4 py-2 text-sm font-bold text-slate-950 transition hover:bg-amber-400"
+                className="flex items-center gap-1 rounded-2xl bg-[#78b892] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#65a47d]"
               >
                 {currentStep < GUIDE_STEPS.length - 1 ? (
                   <>

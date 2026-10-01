@@ -35,6 +35,7 @@ import { Home, Settings, AlertCircle, HelpCircle, AlertTriangle, RefreshCw } fro
 import "@/lib/soundEffects";
 // 🔥 导入用户题库API
 import { getRandomQuestions } from "@/lib/api/userQuestions";
+import { destroyPhaserGameSafely } from "@/lib/game/phaserLifecycle";
 
 /**
  * Convert CustomLevelData to PlatformGameScene level format
@@ -300,6 +301,7 @@ export default function EditorPageContent() {
     type: string;
     warnings: string[];
   } | null>(null);  // Position validation warnings
+  const reinitializeTimerRef = useRef<number | null>(null);
 
   // 🔥 创意工坊测试模式状态
   const [showCustomQuiz, setShowCustomQuiz] = useState(false);  // 自定义题目答题弹窗
@@ -389,8 +391,12 @@ export default function EditorPageContent() {
 
     return () => {
       isMounted = false;
+      if (reinitializeTimerRef.current !== null) {
+        window.clearTimeout(reinitializeTimerRef.current);
+        reinitializeTimerRef.current = null;
+      }
       if (gameRef.current) {
-        gameRef.current.destroy(true);
+        destroyPhaserGameSafely(gameRef.current, containerRef.current);
         gameRef.current = null;
       }
     };
@@ -513,7 +519,7 @@ export default function EditorPageContent() {
       setIsEditing(false);
       // Destroy Phaser game when returning to menu
       if (gameRef.current) {
-        gameRef.current.destroy(true);
+        destroyPhaserGameSafely(gameRef.current, containerRef.current);
         gameRef.current = null;
       }
     }
@@ -687,11 +693,15 @@ export default function EditorPageContent() {
         console.log('[EditorPage] 🔄 重新初始化 Phaser 游戏实例');
 
         // 销毁当前游戏实例
-        gameRef.current.destroy(true);
+        destroyPhaserGameSafely(gameRef.current, containerRef.current);
         gameRef.current = null;
 
         // 延迟重新创建游戏实例
-        setTimeout(() => {
+        if (reinitializeTimerRef.current !== null) {
+          window.clearTimeout(reinitializeTimerRef.current);
+        }
+        reinitializeTimerRef.current = window.setTimeout(() => {
+          reinitializeTimerRef.current = null;
           if (!containerRef.current) {
             console.error('[EditorPage] Container ref is null, cannot reinitialize');
             return;

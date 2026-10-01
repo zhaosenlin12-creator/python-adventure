@@ -39,26 +39,26 @@ export interface FoodReward {
 
 // 食物稀有度颜色
 export const RARITY_COLORS: Record<FoodRarity, string> = {
-  common: 'text-gray-400',
-  rare: 'text-blue-400',
-  epic: 'text-purple-400',
-  legendary: 'text-yellow-400'
+  common: 'text-[#7f8d86]',
+  rare: 'text-[#5b94b0]',
+  epic: 'text-[#9b74b4]',
+  legendary: 'text-[#c38b3d]'
 };
 
 // 食物稀有度背景色
 export const RARITY_BG_COLORS: Record<FoodRarity, string> = {
-  common: 'bg-gray-700',
-  rare: 'bg-blue-900',
-  epic: 'bg-purple-900',
-  legendary: 'bg-yellow-900'
+  common: 'bg-[#f3eee5]',
+  rare: 'bg-[#e9f3f8]',
+  epic: 'bg-[#f6edf9]',
+  legendary: 'bg-[#fff4d8]'
 };
 
 // 食物稀有度边框色
 export const RARITY_BORDER_COLORS: Record<FoodRarity, string> = {
-  common: 'border-gray-600',
-  rare: 'border-blue-600',
-  epic: 'border-purple-600',
-  legendary: 'border-yellow-600'
+  common: 'border-[#d8cec0]',
+  rare: 'border-[#b8d3e0]',
+  epic: 'border-[#dec9e8]',
+  legendary: 'border-[#e4c987]'
 };
 
 // 食物稀有度文本

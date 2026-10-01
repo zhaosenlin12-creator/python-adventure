@@ -948,7 +948,8 @@ export const campaign8: Campaign = {
       
       // 🔥🔥🔥 双Boss配置 🔥🔥🔥
       bossConfig: {
-        type: 'dual',  // 双Boss模式
+        visualTheme: 'default',
+          type: 'dual',  // 双Boss模式
         
         // ===== 第一阶段Boss：分子怪博士 =====
         hp: 450,

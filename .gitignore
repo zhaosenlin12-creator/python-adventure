@@ -48,6 +48,8 @@ frontend-qa.err.log
 .tmp-system-update-qa/
 backend/backend-dev.log
 backend/backend-dev.log.*
+backend/*.log
+backend/*.db.bak
 backend/.tmp-*.log
 backend/.tmp-*.out.log
 backend/.tmp-*.err.log
@@ -75,6 +77,9 @@ public/assets/pets/Cooking with Cat/
 # local development
 stash.patch
 console.md
+-w
+apply_patches_*.txt
+next-dev*.log
 /.venv/
 .tmp/
 .git.opencode-backup/
@@ -125,3 +130,6 @@ tmp-br-host-before-fill.png
 # Local raw asset sources
 /kenney_pico-8-city/
 /kenney_pico-8-city.zip
+
+# AI image generation response metadata may contain temporary signed URLs.
+art/**/*.json

@@ -34,7 +34,7 @@ export const LASER_GUARD_CONFIG = {
   // 基础属性
   name: '⚡ 激光守卫',
   color: 0xff4500,
-  size: 80,
+  size: 64,  // 同步缩小 20% (80 → 64)
   
   // 持续激光
   laser: {

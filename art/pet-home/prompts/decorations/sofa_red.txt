@@ -1,0 +1,12 @@
+Use case: stylized-concept
+Asset type: premium 2D game decoration sprite
+Primary request: one cozy mint-and-peach pet sofa for a children's cartoon pet-home game, with rounded cat-ear backrest, soft stitched cushion, tiny paw-shaped pillow, friendly handcrafted charm
+Scene/backdrop: isolated on a perfectly flat pale blue-white background #F7FBFF for background removal
+Subject: a single three-quarter front sofa, centered, fully visible, no other objects
+Style/medium: polished hand-painted 3D cartoon illustration, warm fabric and wood textures, soft bevels, subtle ambient occlusion, not glossy plastic
+Composition/framing: square 1:1, object fills 78 percent of canvas, clean silhouette, ground shadow contained inside the canvas
+Lighting/mood: warm studio key light, gentle cool fill, welcoming and tactile
+Color palette: cream, mint, coral peach, dusty blue, warm brown
+Materials/textures: woven fabric, plush cushion, matte painted wood, visible soft seams
+Constraints: no text, no logo, no watermark, no people, no pet, no border, no collage, no cut-off edges
+Avoid: photorealism, metallic surfaces, excessive bloom, hard black outline, toy-store plastic shine

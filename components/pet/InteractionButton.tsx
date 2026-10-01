@@ -143,8 +143,8 @@ export default function InteractionButton({
   };
   const isCompact = size === 'small';
   const compactButtonClass = isChat
-    ? 'border-cyan-300/35 bg-[radial-gradient(circle_at_top,rgba(103,232,249,0.28),rgba(14,116,144,0.72))] text-white shadow-[0_16px_36px_rgba(6,182,212,0.28)]'
-    : 'border-white/10 bg-slate-950/76 text-white shadow-[0_16px_34px_rgba(2,6,23,0.22)]';
+    ? 'border-[#9acfd2] bg-[linear-gradient(145deg,#dff5f1,#b8e3df)] text-[#3f766f] shadow-[0_12px_26px_rgba(88,166,153,0.2)]'
+    : 'border-[#ead7bc] bg-[linear-gradient(145deg,#fffaf0,#f2e2ca)] text-[#6b5140] shadow-[0_12px_26px_rgba(128,88,48,0.14)]';
   
   return (
     <motion.button
@@ -160,17 +160,17 @@ export default function InteractionButton({
           : ''
       } ${
         hasError
-          ? 'border-red-500 bg-red-900/20'
+          ? 'border-[#dc8b7e] bg-[#fff0eb]'
           : ''
-      } ${isCompact ? compactButtonClass : isChat ? 'bg-gradient-to-br from-blue-600 via-teal-500 to-cyan-500 text-white ring-2 ring-blue-500/80 shadow-[0_0_18px_rgba(52,211,153,0.45)]' : 'bg-slate-800 border border-slate-700 shadow-sm'} ${
-        isCompact ? 'hover:border-white/20 hover:bg-slate-900/88' : ''
+      } ${isCompact ? compactButtonClass : isChat ? 'bg-gradient-to-br from-[#7fc9be] via-[#73b8c7] to-[#8faadd] text-white ring-2 ring-[#a4d7d1] shadow-[0_0_18px_rgba(96,177,166,0.3)]' : 'border border-[#ead7bc] bg-[#fffaf0] text-[#6b5140] shadow-[0_8px_18px_rgba(128,88,48,0.1)]'} ${
+        isCompact ? 'hover:border-[#c99e69] hover:bg-[#fffdf8]' : ''
       }`}
       // Framer Motion 动画配置
       whileHover={!isDisabled ? { 
         scale: isCompact ? 1.06 : 1.02,
         background: isChat
-          ? 'linear-gradient(135deg, rgba(34,211,238,0.95) 0%, rgba(59,130,246,0.95) 100%)'
-          : 'linear-gradient(135deg, rgba(71, 85, 105, 0.8) 0%, rgba(51, 65, 85, 0.9) 100%)',
+          ? 'linear-gradient(135deg, rgba(126,201,190,0.98) 0%, rgba(116,168,213,0.98) 100%)'
+          : 'linear-gradient(135deg, rgba(255,253,248,0.98) 0%, rgba(244,228,202,0.98) 100%)',
         transition: { duration: 0.2 }
       } : {}}
       whileTap={!isDisabled ? { 
@@ -196,7 +196,7 @@ export default function InteractionButton({
       {/* Chat Glow */}
       {isChat && !isDisabled && (
           <motion.span
-            className={`absolute inset-0 ${isCompact ? 'rounded-full' : 'rounded-2xl'} bg-cyan-400/10`}
+            className={`absolute inset-0 ${isCompact ? 'rounded-full' : 'rounded-2xl'} bg-white/20`}
             animate={{ opacity: [0.35, 0.7, 0.35] }}
             transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
           />
@@ -225,11 +225,11 @@ export default function InteractionButton({
         />
       ))}
       {!isDisabled && isCompact && (
-        <span className="absolute right-1.5 top-1.5 z-10 h-1.5 w-1.5 rounded-full bg-emerald-300/80 shadow-[0_0_8px_rgba(110,231,183,0.8)]" />
+        <span className="absolute right-1.5 top-1.5 z-10 h-1.5 w-1.5 rounded-full bg-[#74bfa5] shadow-[0_0_8px_rgba(110,191,165,0.65)]" />
       )}
 
       {onCooldown && isCompact && (
-        <span className="absolute inset-x-2 bottom-1.5 z-10 rounded-full bg-amber-300/24 px-1 py-0.5 text-center text-[9px] font-semibold text-amber-100">
+        <span className="absolute inset-x-2 bottom-1.5 z-10 rounded-full bg-[#fff0c9] px-1 py-0.5 text-center text-[9px] font-semibold text-[#9b742d]">
           {remaining}s
         </span>
       )}
@@ -277,7 +277,7 @@ export default function InteractionButton({
         
         {/* 小尺寸文字标签（可选） */}
         {isCompact && showLabel && (
-          <div className="mt-0.5 text-[9px] leading-none text-slate-200/90">
+          <div className="mt-0.5 text-[9px] leading-none text-[#765b49]">
             {config.name}
           </div>
         )}
@@ -285,7 +285,7 @@ export default function InteractionButton({
         {/* 文字信息 - 小尺寸时隐藏 */}
         {!isCompact && (
           <div className="flex-1">
-            <div className={`font-bold text-game-light mb-1 ${textSizes[size]}`}>
+            <div className={`mb-1 font-bold text-[#6b5140] ${textSizes[size]}`}>
               {config.name}
               {onCooldown && (
                 <span className="ml-2 text-xs text-amber-500">
@@ -298,7 +298,7 @@ export default function InteractionButton({
                 </span>
               )}
             </div>
-            <div className={`text-xs text-slate-500 mb-2 ${textSizes[size]}`}>
+            <div className={`mb-2 text-xs text-[#927866] ${textSizes[size]}`}>
               {isLoadingState ? '正在与宠物互动，请稍候...' : config.description}
             </div>
           
@@ -306,7 +306,7 @@ export default function InteractionButton({
             <div className="flex flex-wrap gap-2 text-xs">
               {config.effects.happiness && (
                 <motion.span 
-                  className="bg-slate-700/80 text-cyan-200 border border-slate-600 px-2 py-1 rounded-lg"
+                  className="rounded-lg border border-[#b8d8d2] bg-[#e7f4ef] px-2 py-1 text-[#4e897e]"
                   whileHover={{ scale: 1.1 }}
                 >
                   😊 +{config.effects.happiness}
@@ -314,7 +314,7 @@ export default function InteractionButton({
               )}
               {config.effects.intimacy && (
                 <motion.span 
-                  className="bg-slate-700/80 text-rose-200 border border-slate-600 px-2 py-1 rounded-lg"
+                  className="rounded-lg border border-[#efc3c4] bg-[#fff0ef] px-2 py-1 text-[#b36b76]"
                   whileHover={{ scale: 1.1 }}
                 >
                   ❤️ +{config.effects.intimacy}
@@ -322,7 +322,7 @@ export default function InteractionButton({
               )}
               {config.effects.exp && (
                 <motion.span 
-                  className="bg-slate-700/80 text-sky-200 border border-slate-600 px-2 py-1 rounded-lg"
+                  className="rounded-lg border border-[#c3d7e8] bg-[#edf5fb] px-2 py-1 text-[#5f88aa]"
                   whileHover={{ scale: 1.1 }}
                 >
                   ⭐ +{config.effects.exp} EXP
@@ -330,7 +330,7 @@ export default function InteractionButton({
               )}
               {config.effects.attributes?.intelligence && (
                 <motion.span 
-                  className="bg-slate-700/80 text-indigo-200 border border-slate-600 px-2 py-1 rounded-lg"
+                  className="rounded-lg border border-[#cfd2ed] bg-[#f1f1fb] px-2 py-1 text-[#7776a8]"
                   whileHover={{ scale: 1.1 }}
                 >
                   🧠 +{config.effects.attributes.intelligence}
@@ -338,7 +338,7 @@ export default function InteractionButton({
               )}
               {config.effects.attributes?.creativity && (
                 <motion.span 
-                  className="bg-slate-700/80 text-violet-200 border border-slate-600 px-2 py-1 rounded-lg"
+                  className="rounded-lg border border-[#dec9e8] bg-[#faf0fd] px-2 py-1 text-[#986da9]"
                   whileHover={{ scale: 1.1 }}
                 >
                   🎨 +{config.effects.attributes.creativity}
@@ -346,7 +346,7 @@ export default function InteractionButton({
               )}
               {config.effects.attributes?.persistence && (
                 <motion.span 
-                  className="bg-slate-700/80 text-amber-200 border border-slate-600 px-2 py-1 rounded-lg"
+                  className="rounded-lg border border-[#ecd8ab] bg-[#fff7df] px-2 py-1 text-[#a67b34]"
                   whileHover={{ scale: 1.1 }}
                 >
                   💪 +{config.effects.attributes.persistence}
@@ -354,7 +354,7 @@ export default function InteractionButton({
               )}
             </div>
           
-            <div className="text-xs text-slate-400 mt-2">
+            <div className="mt-2 text-xs text-[#a18773]">
               冷却: {config.cooldown}秒
             </div>
           </div>

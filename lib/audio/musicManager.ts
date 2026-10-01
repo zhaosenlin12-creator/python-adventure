@@ -6,11 +6,11 @@ export type BGMType = 'main' | 'battle' | 'boss' | 'pvp' | 'victory' | 'arena' |
 // BGM 配置 - 使用本地音效文件
 const BGM_CONFIG: Record<BGMType, { path: string; volume: number }> = {
     main: { path: '/sounds/bgm_main.mp3', volume: 0.15 },      // 主界面/开放世界
-    battle: { path: '/sounds/bgm_battle.wav', volume: 0.18 },  // 战役模式
-    boss: { path: '/sounds/bgm_boss.wav', volume: 0.20 },      // Boss战
+    battle: { path: '/sounds/bgm_battle.mp3', volume: 0.18 },  // 战役模式
+    boss: { path: '/sounds/bgm_boss.mp3', volume: 0.20 },      // Boss战
     pvp: { path: '/sounds/bgm_pvp.mp3', volume: 0.18 },        // PVP对战
-    victory: { path: '/sounds/bgm_victory.wav', volume: 0.25 }, // 胜利
-    arena: { path: '/sounds/bgm_battle.wav', volume: 0.18 },   // 竞技场
+    victory: { path: '/sounds/bgm_victory.mp3', volume: 0.25 }, // 胜利
+    arena: { path: '/sounds/bgm_battle.mp3', volume: 0.18 },   // 竞技场
     home: { path: '/sounds/home_bgm.mp3', volume: 0.20 }       // 宠物小屋
 };
 
@@ -39,10 +39,8 @@ class MusicManager {
             }
             
             this.audio = new Audio();
-            this.audio.src = BGM_CONFIG.main.path;
             this.audio.loop = true;
             this.audio.volume = BGM_CONFIG.main.volume;
-            this.audio.load();
             this.initialized = true;
             this.currentBGM = 'main';
         } catch (error) {
@@ -64,6 +62,11 @@ class MusicManager {
         }
 
         try {
+            if (!this.audio.src) {
+                const config = BGM_CONFIG[this.currentBGM];
+                this.audio.src = config.path;
+                this.audio.load();
+            }
             await this.audio.play();
             this.isPlaying = true;
         } catch {
@@ -114,6 +117,7 @@ class MusicManager {
         
         if (!this.audio) {
             this.audio = new Audio();
+            this.initialized = true;
         }
         
         this.audio.src = config.path;

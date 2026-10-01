@@ -347,7 +347,7 @@ export default function InteractionFeedback({
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <div className="h-6 w-6 rounded-full border-2 border-yellow-500 bg-yellow-300 shadow-lg" />
-            <div className="absolute -bottom-1 left-1/2 h-1 w-6 -translate-x-1/2 rounded-full bg-black/30 blur-sm" />
+            <div className="absolute -bottom-1 left-1/2 h-1 w-6 -translate-x-1/2 rounded-full bg-[#8b6b4a]/25 blur-sm" />
           </motion.div>
         )}
 
@@ -356,7 +356,7 @@ export default function InteractionFeedback({
             {BATH_BUBBLES.map((bubble, index) => (
               <motion.div
                 key={`bubble-${index}`}
-                className="absolute rounded-full border border-slate-600/70 bg-sky-200/20"
+                className="absolute rounded-full border border-[#9acbdc]/80 bg-[#e9f3f8]/55"
                 style={{
                   left: position.x + bubble.x,
                   top: position.y + bubble.y,
@@ -383,14 +383,14 @@ export default function InteractionFeedback({
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <div className="relative h-8 w-10">
-              <div className="absolute left-0 top-0 h-7 w-5 rounded-sm border border-slate-500/60 bg-slate-600/90" />
+              <div className="absolute left-0 top-0 h-7 w-5 rounded-sm border border-[#c9b395]/80 bg-[#fff0d2]" />
               <motion.div
-                className="absolute right-0 top-0 h-7 w-5 rounded-sm border border-slate-500/60 bg-slate-600/80"
+                className="absolute right-0 top-0 h-7 w-5 rounded-sm border border-[#c9b395]/80 bg-[#f7dfb9]"
                 animate={{ rotate: [0, -8, 0] }}
                 transition={{ duration: 0.6, repeat: Infinity, repeatDelay: 0.3 }}
                 style={{ transformOrigin: 'left center' }}
               />
-              <div className="absolute left-1/2 top-0 h-7 w-[2px] bg-slate-300/60" />
+              <div className="absolute left-1/2 top-0 h-7 w-[2px] bg-[#a18b78]/60" />
             </div>
           </motion.div>
         )}
@@ -456,8 +456,8 @@ export default function InteractionFeedback({
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            <div className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 bg-slate-900/70 shadow-lg">
-              <InteractionIcon type={interactionType} size={20} className="text-slate-100" />
+            <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[#ead8bd] bg-[#fffaf0]/92 shadow-[0_10px_22px_rgba(91,59,35,0.16)]">
+              <InteractionIcon type={interactionType} size={20} className="text-[#6b5140]" />
             </div>
           </motion.div>
         )}
@@ -482,8 +482,8 @@ export default function InteractionFeedback({
               style={{
                 color: config.color,
                 borderColor: config.glowColor,
-                background: 'rgba(15, 23, 42, 0.78)',
-                textShadow: `0 0 10px ${config.glowColor}, 0 1px 3px rgba(0,0,0,0.35)`,
+                background: 'rgba(255, 250, 240, 0.94)',
+                textShadow: `0 0 10px ${config.glowColor}, 0 1px 3px rgba(91,59,35,0.12)`,
               }}
             >
               {FEEDBACK_TEXT[interactionType] ?? '互动完成'}

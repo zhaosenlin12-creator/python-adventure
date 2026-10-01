@@ -793,6 +793,7 @@ export const advancedCampaigns: Campaign[] = [
         },
         // 🔥 双Boss配置
         bossConfig: {
+          visualTheme: 'default',
           type: 'dual',  // 双Boss模式标记
           // 第一阶段：美食大厨
           hp: 400,

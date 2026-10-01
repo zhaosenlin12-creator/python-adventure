@@ -43,7 +43,18 @@ const PvpBattleRoyaleSystem = dynamicPvp(() => import('@/components/game/pvp-br/
         </div>
     )
 });
-import PlatformGame from "@/components/game/PlatformGame";
+const PlatformGame = dynamicImport(() => import("@/components/game/PlatformGame"), {
+    ssr: false,
+    loading: () => (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/92">
+            <div className="rounded-2xl border border-cyan-300/20 bg-slate-900/95 px-7 py-6 text-center shadow-2xl">
+                <div className="mx-auto mb-4 h-10 w-10 animate-spin rounded-full border-2 border-cyan-300/20 border-t-cyan-300" />
+                <div className="text-lg font-semibold text-white">正在加载战役关卡...</div>
+                <div className="mt-2 text-sm text-slate-300">只加载当前关卡需要的资源</div>
+            </div>
+        </div>
+    )
+});
 import ResultModal from "@/components/game/ResultModal";
 import OnlinePlayersList from "@/components/world/OnlinePlayersList";
 import { useGameStore } from "@/store/gameStore";
@@ -165,8 +176,6 @@ export default function WorldPage() {
         
         // 初始化背景音乐
         if (typeof window !== 'undefined') {
-            musicManager.initialize();
-            
             // 用户首次交互后启动音乐
             const handleFirstInteraction = async () => {
                 try {

@@ -1,0 +1,12 @@
+Use case: stylized-concept
+Asset type: premium 2D game decoration sprite
+Primary request: one small handmade teddy bear toy for a children's cartoon pet-home game, seated pose, embroidered heart on its chest, soft rounded paws, friendly expression
+Scene/backdrop: isolated on a perfectly flat pale blue-white background #F7FBFF for background removal
+Subject: a single teddy bear toy, front three-quarter view, centered, fully visible
+Style/medium: polished hand-painted 3D cartoon illustration, plush fibers and stitched seams, sweet but premium, not plastic
+Composition/framing: square 1:1, object fills 66 percent of canvas, clean silhouette, contained soft shadow
+Lighting/mood: warm softbox light, comforting and playful
+Color palette: honey beige, cream, blush peach, mint, dusty blue
+Materials/textures: plush fabric, embroidered heart, subtle stitching and soft fibers
+Constraints: no text, no logo, no watermark, no people, no pet, no border, no collage
+Avoid: glossy plastic, hard black outline, creepy face, photorealism, excessive bloom

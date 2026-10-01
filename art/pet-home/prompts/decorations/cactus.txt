@@ -1,0 +1,12 @@
+Use case: stylized-concept
+Asset type: premium 2D game decoration sprite
+Primary request: one friendly rounded flowering cactus for a children's cartoon pet-home game, soft cloud-like cactus arms, tiny pink flower, scalloped ceramic pot
+Scene/backdrop: isolated on a perfectly flat pale blue-white background #F7FBFF for background removal
+Subject: a single small potted cactus, front three-quarter view, centered, fully visible
+Style/medium: polished hand-painted 3D cartoon illustration, soft rounded plant shapes, matte ceramic, premium fairy-tale garden prop
+Composition/framing: square 1:1, object fills 68 percent of canvas, clean silhouette, contained ground shadow
+Lighting/mood: sunny garden morning, warm and playful
+Color palette: sage green, mint, cream, blush pink, warm peach
+Materials/textures: soft matte plant surface with no sharp thorns, handmade ceramic, subtle soil
+Constraints: no text, no logo, no watermark, no people, no pet, no border, no collage
+Avoid: sharp spines, desert darkness, photorealism, plastic shine, hard black outline, excessive bloom

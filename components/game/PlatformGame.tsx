@@ -26,6 +26,8 @@ import { showCoinRewardToast } from '@/components/ui/CoinRewardToast';
 import { addCoinsToServer } from '@/lib/api/coinAPI';
 import { shouldAutoGrantCampaignSkill } from '@/lib/skills';
 import type { CampaignQuestionMode } from '@/lib/gameplayText';
+import { installPhaserAudioGuard } from '@/lib/game/phaserAudioGuard';
+import { destroyPhaserGameSafely } from '@/lib/game/phaserLifecycle';
 
 interface PlatformGameProps {
     onExit: () => void;
@@ -35,21 +37,30 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
     const BASE_CAMPAIGN_LIVES = 3;
     const gameRef = useRef<Phaser.Game | null>(null);
     const parentRef = useRef<HTMLDivElement>(null);
+    const startLevelRequestRef = useRef(0);
     const { isTouchDevice } = useDeviceType();
 
     const setDevPlatformGame = (game: Phaser.Game | null) => {
-        if (process.env.NODE_ENV === 'development' && typeof window !== 'undefined') {
+        if (
+            typeof window !== 'undefined' &&
+            (process.env.NODE_ENV === 'development' ||
+                Boolean((window as Window & { __enableWorldDebug?: boolean }).__enableWorldDebug))
+        ) {
             (window as Window & { __platformPhaserGame?: Phaser.Game | null }).__platformPhaserGame = game;
         }
     };
 
     const destroyPlatformGame = () => {
-        if (gameRef.current) {
-            gameRef.current.destroy(true);
-            gameRef.current = null;
-        }
+        destroyPhaserGameSafely(gameRef.current, parentRef.current);
+        gameRef.current = null;
         setDevPlatformGame(null);
     };
+
+    useEffect(() => {
+        return () => {
+            startLevelRequestRef.current += 1;
+        };
+    }, []);
     
     // 战役系统状态
     const [selectedCampaign, setSelectedCampaign] = useState<Campaign | null>(null);
@@ -480,6 +491,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         // 先销毁现有游戏实例
         if (gameRef.current) {
             console.log('[PlatformGame] 销毁现有游戏实例');
+            startLevelRequestRef.current += 1;
             destroyPlatformGame();
         }
         
@@ -529,6 +541,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
     };
 
     const startLevel = async (level: PlatformLevel) => {
+        const requestId = ++startLevelRequestRef.current;
         setCurrentLevel(level);
         setShowLevelSelect(false);
         setShowLevelComplete(false);
@@ -537,11 +550,26 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
         // 等待DOM更新
         await new Promise(resolve => setTimeout(resolve, 100));
 
-        if (!parentRef.current || gameRef.current) return;
+        if (
+            requestId !== startLevelRequestRef.current ||
+            !parentRef.current ||
+            gameRef.current
+        ) {
+            return;
+        }
 
         // 动态加载Phaser和场景
+        installPhaserAudioGuard();
         const Phaser = await import('phaser');
         const { default: PlatformGameScene } = await import('@/components/world/scenes/PlatformGameScene');
+
+        if (
+            requestId !== startLevelRequestRef.current ||
+            !parentRef.current ||
+            gameRef.current
+        ) {
+            return;
+        }
 
         // 检测是否为移动设备
         // 移动端使用自适应缩放
@@ -582,6 +610,7 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
 
     const restartLevel = () => {
         if (currentLevel) {
+            startLevelRequestRef.current += 1;
             destroyPlatformGame();
             startLevel(currentLevel);
         }

@@ -1,0 +1,12 @@
+Use case: stylized-concept
+Asset type: premium 2D game decoration sprite
+Primary request: one rounded wooden picture frame for a children's cartoon pet-home game, arched top, tiny leaf carvings, simple pastel meadow scene inside with no text
+Scene/backdrop: isolated on a perfectly flat pale blue-white background #F7FBFF for background removal
+Subject: a single wall picture frame, front view with a slight three-quarter angle, centered, fully visible
+Style/medium: polished hand-painted 3D cartoon illustration, matte wood, soft painted miniature landscape, premium storybook wall decor
+Composition/framing: square 1:1, object fills 72 percent of canvas, clean silhouette, contained soft shadow
+Lighting/mood: warm window light, peaceful and charming
+Color palette: warm oak, cream, sage, sky blue, blush pink, butter yellow
+Materials/textures: softly painted wood grain, raised leaf detail, paper texture inside frame
+Constraints: no text, no logo, no watermark, no people, no pet, no border, no collage, no readable lettering
+Avoid: photorealism, glossy plastic, hard black outline, busy illustration, excessive bloom

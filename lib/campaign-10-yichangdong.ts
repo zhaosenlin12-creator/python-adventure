@@ -882,6 +882,7 @@ export const campaign10: Campaign = {
         // 参考洛克人、空洞骑士、茶杯头的Boss设计
         // 核心机制：追逐→停下攻击→再追逐，Boss之间协同配合
         bossConfig: {
+          visualTheme: 'default',
           mode: 'triple_boss_arena',  // 三Boss竞技场模式
           requireAllDefeated: true,   // 需要击败所有Boss才能通关
           cooperativeAI: true,        // Boss之间协同配合

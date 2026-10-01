@@ -786,6 +786,7 @@ export const campaigns: Campaign[] = [
           goal: { x: 800, y: 290 }  // 终点在顶部中央
         },
         bossConfig: {
+          visualTheme: 'default',
           type: 'hybrid',  // 混合模式：先战斗后答题
           hp: 3,  // Boss血量3点
           phases: [
@@ -1094,6 +1095,7 @@ export const campaigns: Campaign[] = [
           goal: { x: 800, y: 250 }  // 终点在顶部传送点
         },
         bossConfig: {
+          visualTheme: 'default',
           type: 'hybrid',
           hp: 4,  // 战役2：HP=4
           phases: [
@@ -1423,6 +1425,7 @@ export const campaigns: Campaign[] = [
           goal: { x: 1000, y: 350 }  // 终点在最高点
         },
         bossConfig: {
+          visualTheme: 'default',
           type: 'hybrid',
           hp: 5,  // 战役3：HP=5
           phases: [
@@ -2099,6 +2102,7 @@ export const campaigns: Campaign[] = [
           goal: { x: 900, y: 290 }
         },
         bossConfig: {
+          visualTheme: 'default',
           type: 'hybrid',
           hp: 8,  // 战役4：HP=8（增加难度）
           phases: [
@@ -2702,6 +2706,7 @@ export const campaigns: Campaign[] = [
         description: '【时间操控Boss】击败能操控时间的守护者！',
         story: '古镇的时空裂缝核心，时空守护者现身了！他能加速自己、减速你、甚至倒流时间！你必须利用战役中学到的所有技能：在他变大时躲避，在他缩小时攻击，利用弹跳平台和重力翻转来对抗他的时间魔法！',
         bossConfig: {
+          visualTheme: 'default',
           type: 'hybrid',
           hp: 6,  // Boss血量6点（对应6个阶段）
           
@@ -3830,6 +3835,7 @@ export const campaigns: Campaign[] = [
           goal: { x: 800, y: 150 }  // 终点在Boss区上方
         },
         bossConfig: {
+          visualTheme: 'default',
           type: 'hybrid',
           hp: 8,  // Boss总血量8点
           phases: [

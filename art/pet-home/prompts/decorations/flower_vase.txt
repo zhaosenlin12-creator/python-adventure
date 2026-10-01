@@ -1,0 +1,12 @@
+Use case: stylized-concept
+Asset type: premium 2D game decoration sprite
+Primary request: one cheerful bouquet in a rounded ceramic vase for a children's cartoon pet-home game, five simple flowers with soft leaves, tiny paw imprint on the vase
+Scene/backdrop: isolated on a perfectly flat pale blue-white background #F7FBFF for background removal
+Subject: a single flower vase bouquet, front three-quarter view, centered, fully visible
+Style/medium: polished hand-painted 3D cartoon illustration, natural petals, handmade matte ceramic, premium cozy decoration
+Composition/framing: square 1:1, object fills 70 percent of canvas, clean silhouette, contained ground shadow
+Lighting/mood: fresh morning light, bright and tender
+Color palette: cream, blush pink, butter yellow, sky blue, mint, warm terracotta
+Materials/textures: soft petals, subtle leaf veins, matte ceramic, tiny handmade imperfections
+Constraints: no text, no logo, no watermark, no people, no pet, no border, no collage
+Avoid: photorealism, plastic shine, thorny stems, hard black outline, excessive bloom

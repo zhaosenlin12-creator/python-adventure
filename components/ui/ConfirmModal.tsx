@@ -32,10 +32,10 @@ export default function ConfirmModal({
 }: ConfirmModalProps) {
   
   const confirmColors = {
-    danger: 'bg-red-600 hover:bg-red-500 border-red-400',
-    success: 'bg-green-600 hover:bg-green-500 border-green-400',
-    warning: 'bg-yellow-600 hover:bg-yellow-500 border-yellow-400',
-    info: 'bg-blue-600 hover:bg-blue-500 border-blue-400'
+    danger: 'bg-[#e98e7f] hover:bg-[#dc776b] border-[#d98a7c]',
+    success: 'bg-[#78b892] hover:bg-[#65a47d] border-[#72a98a]',
+    warning: 'bg-[#e8b95f] hover:bg-[#dca84a] border-[#d5a650]',
+    info: 'bg-[#78b7c5] hover:bg-[#66a7b6] border-[#72aab8]'
   };
   
   const handleConfirm = () => {
@@ -53,6 +53,8 @@ export default function ConfirmModal({
       {isOpen && (
         <motion.div
           className="fixed inset-0 z-[10000] flex items-center justify-center"
+          role="dialog"
+          aria-modal="true"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -60,7 +62,7 @@ export default function ConfirmModal({
         >
           {/* 背景遮罩 */}
           <motion.div
-            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+            className="absolute inset-0 bg-[#5b4034]/28 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -69,14 +71,14 @@ export default function ConfirmModal({
           
           {/* 弹窗内容 */}
           <motion.div
-            className="relative bg-slate-800 backdrop-blur-md rounded-2xl border-2 border-slate-700 shadow-lg max-w-sm w-full mx-4 overflow-hidden"
+            className="relative mx-4 w-full max-w-sm overflow-hidden rounded-[26px] border border-[#dec7a5] bg-[linear-gradient(155deg,#fffaf0,#f4e6d2)] shadow-[0_28px_70px_rgba(91,59,35,0.24)] backdrop-blur-md"
             initial={{ scale: 0.8, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.8, opacity: 0, y: 20 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
           >
             {/* 顶部装饰条 */}
-            <div className="h-1.5 bg-gradient-to-r from-blue-500 via-teal-400 to-blue-400" />
+            <div className="h-1.5 bg-gradient-to-r from-[#e6ad58] via-[#78b892] to-[#78b7c5]" />
             
             {/* 内容区域 */}
             <div className="p-6">
@@ -98,13 +100,13 @@ export default function ConfirmModal({
                     {icon}
                   </motion.div>
                 )}
-                <h3 className="text-xl font-bold text-white">
+                <h3 className="text-xl font-black text-[#5c4537]">
                   {title}
                 </h3>
               </div>
               
               {/* 消息内容 */}
-              <p className="text-slate-300 mb-6 leading-relaxed">
+              <p className="mb-6 leading-relaxed text-[#866b58]">
                 {message}
               </p>
               
@@ -112,7 +114,7 @@ export default function ConfirmModal({
               <div className="flex gap-3">
                 <motion.button
                   onClick={handleCancel}
-                  className="flex-1 px-4 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-xl font-bold border-2 border-slate-300 transition-colors"
+                  className="flex-1 rounded-xl border border-[#ead8bd] bg-[#fffaf0] px-4 py-3 font-bold text-[#725645] transition-colors hover:bg-white"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -131,7 +133,7 @@ export default function ConfirmModal({
             </div>
             
             {/* 底部装饰 */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-300 to-transparent opacity-50" />
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#9acdb5] to-transparent opacity-70" />
           </motion.div>
         </motion.div>
       )}

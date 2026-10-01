@@ -16,10 +16,10 @@ interface FoodInventoryProps {
  * 🍖 骨架屏加载组件
  */
 const FoodItemSkeleton = memo(() => (
-  <div className="bg-slate-700 border-2 border-slate-600 p-3 text-center animate-pulse rounded-xl">
-    <div className="w-8 h-8 bg-slate-700 rounded mx-auto mb-2"></div>
-    <div className="h-3 bg-slate-700 rounded mb-1"></div>
-    <div className="h-4 bg-slate-700 rounded w-12 mx-auto"></div>
+  <div className="border-2 border-[#ead8bd] bg-[#f4e8d7] p-3 text-center animate-pulse rounded-2xl">
+    <div className="w-8 h-8 bg-[#e5d4bc] rounded-full mx-auto mb-2"></div>
+    <div className="h-3 bg-[#e5d4bc] rounded mb-1"></div>
+    <div className="h-4 bg-[#e5d4bc] rounded w-12 mx-auto"></div>
   </div>
 ));
 FoodItemSkeleton.displayName = 'FoodItemSkeleton';
@@ -39,10 +39,10 @@ const FoodItem = memo(({ item, isSelected, onSelect, isFocused }: FoodItemProps)
   const rarityBg = RARITY_BG_COLORS[item.food_type.rarity];
   const rarityBorder = RARITY_BORDER_COLORS[item.food_type.rarity];
   const highlightClass = isSelected
-    ? 'border-cyan-300/85 ring-2 ring-cyan-300/40 shadow-[0_18px_34px_rgba(34,211,238,0.2)] scale-[1.03]'
+    ? 'border-[#7fc8c4] ring-2 ring-[#9edbd1]/70 shadow-[0_18px_34px_rgba(98,178,163,0.2)] scale-[1.03]'
     : isFocused
-      ? 'border-sky-300/55 ring-2 ring-sky-300/25'
-      : `${rarityBorder} hover:border-slate-400/70 hover:-translate-y-0.5 hover:scale-[1.02]`;
+      ? 'border-[#8ab9d1] ring-2 ring-[#b7d3df]/70'
+      : `${rarityBorder} hover:border-[#c9a97f] hover:-translate-y-0.5 hover:scale-[1.02]`;
   
   const handleClick = useCallback(() => {
     onSelect(item.food_id);
@@ -61,7 +61,7 @@ const FoodItem = memo(({ item, isSelected, onSelect, isFocused }: FoodItemProps)
     >
       {/* 选中复选标记 */}
       {isSelected && (
-        <div className="absolute top-1 right-1 flex h-6 w-6 items-center justify-center rounded-full bg-cyan-400 text-slate-950 animate-scale-in">
+        <div className="absolute top-1 right-1 flex h-6 w-6 items-center justify-center rounded-full bg-[#72c7c3] text-white animate-scale-in">
           <svg 
             className="w-4 h-4" 
             fill="none" 
@@ -94,12 +94,12 @@ const FoodItem = memo(({ item, isSelected, onSelect, isFocused }: FoodItemProps)
       </div>
       
       {/* 数量 */}
-      <div className="text-sm font-bold text-game-light">
+      <div className="text-sm font-bold text-[#6b5140]">
         ×{item.quantity}
       </div>
       
       {/* 效果预览 */}
-      <div className="text-xs text-slate-500 mt-2 space-y-1">
+      <div className="text-xs text-[#8e7463] mt-2 space-y-1">
         {item.food_type.effects.hunger && (
           <div>🍖 +{item.food_type.effects.hunger}</div>
         )}
@@ -253,14 +253,14 @@ function FoodInventory({ onSelectFood, selectedFoodId }: FoodInventoryProps) {
   return (
     <div>
       {/* 键盘导航提示 */}
-      <div className="px-4 pt-4 pb-2 text-xs text-gray-400 flex items-center gap-2">
+      <div className="px-4 pt-4 pb-2 text-xs text-[#927866] flex items-center gap-2">
         <span>💡</span>
         <span>使用方向键导航，Enter/空格选择</span>
       </div>
       
-      <div 
+      <div
         ref={containerRef}
-        className="grid grid-cols-3 gap-3 p-4 max-h-[500px] overflow-y-auto"
+        className="pet-scrollbar-soft grid grid-cols-3 gap-3 p-4 max-h-[500px] overflow-y-auto"
       >
         {inventory.map((item, index) => (
           <FoodItem

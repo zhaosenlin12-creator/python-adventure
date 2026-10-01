@@ -1,0 +1,12 @@
+Use case: stylized-concept
+Asset type: premium 2D game decoration sprite
+Primary request: one friendly rounded companion robot toy for a children's cartoon pet-home game, soft body, tiny antenna, heart-shaped status light and short flexible arms
+Scene/backdrop: isolated on a perfectly flat pale blue-white background #F7FBFF for background removal
+Subject: a single small toy robot, front three-quarter view, centered, fully visible
+Style/medium: polished hand-painted 3D cartoon illustration, matte painted body, soft rubber details, cute premium game prop
+Composition/framing: square 1:1, object fills 66 percent of canvas, clean silhouette, contained ground shadow
+Lighting/mood: cheerful softbox light, friendly and safe
+Color palette: cream, mint, sky blue, coral peach, warm gray, butter yellow
+Materials/textures: matte enamel, soft rubber joints, tiny brushed metal accents kept minimal
+Constraints: no text, no logo, no watermark, no people, no pet, no border, no collage, no weapons
+Avoid: hard sci-fi, chrome, glossy plastic, scary face, hard black outline, excessive bloom

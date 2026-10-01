@@ -1,6 +1,6 @@
 'use client';
 
-import { memo } from 'react';
+import { memo, useState } from 'react';
 import Image from 'next/image';
 
 /**
@@ -13,25 +13,25 @@ export type FoodIconType = 'basic' | 'snack' | 'premium' | 'special';
  * 根据食物类型返回对应的SVG图标路径
  */
 const FOOD_ICON_MAP: Record<FoodIconType, string> = {
-  basic: '/icons/food/basic-food.svg',
-  snack: '/icons/food/snack.svg',
-  premium: '/icons/food/premium-food.svg',
-  special: '/icons/food/special-food.svg',
+  basic: '/assets/pet-home/food/apple.png',
+  snack: '/assets/pet-home/food/star_cookie.png',
+  premium: '/assets/pet-home/food/cake.png',
+  special: '/assets/pet-home/food/energy_drink.png',
 };
 
 // 每种食物对应的专属图标（用于消除重复）
 const FOOD_ITEM_ICON_MAP: Record<string, string> = {
-  apple: '/icons/food/items/apple.svg',
-  bread: '/icons/food/items/bread.svg',
-  fish: '/icons/food/items/fish.svg',
-  meat: '/icons/food/items/meat.svg',
-  milk: '/icons/food/items/milk.svg',
-  bone: '/icons/food/items/bone.svg',
-  cake: '/icons/food/items/cake.svg',
-  star_cookie: '/icons/food/items/star_cookie.svg',
-  energy_drink: '/icons/food/items/energy_drink.svg',
-  rainbow_candy: '/icons/food/items/rainbow_candy.svg',
-  mystery_box: '/icons/food/items/mystery_box.svg'
+  apple: '/assets/pet-home/food/apple.png',
+  bread: '/assets/pet-home/food/bread.png',
+  fish: '/assets/pet-home/food/fish.png',
+  meat: '/assets/pet-home/food/meat.png',
+  milk: '/assets/pet-home/food/milk.png',
+  bone: '/assets/pet-home/food/bone.png',
+  cake: '/assets/pet-home/food/cake.png',
+  star_cookie: '/assets/pet-home/food/star_cookie.png',
+  energy_drink: '/assets/pet-home/food/energy_drink.png',
+  rainbow_candy: '/assets/pet-home/food/rainbow_candy.png',
+  mystery_box: '/assets/pet-home/food/mystery_box.png'
 };
 
 /**
@@ -81,12 +81,26 @@ export const FoodIcon = memo(({
   useEmoji = false,
   fallbackEmoji
 }: FoodIconProps) => {
-  // 如果强制使用emoji
+  const [hasLoadError, setHasLoadError] = useState(false);
+
   if (useEmoji) {
     return (
       <span 
         className={`inline-block ${className}`}
         style={{ fontSize: `${size}px`, lineHeight: 1 }}
+      >
+        {fallbackEmoji || FOOD_EMOJI_FALLBACK[type] || '🍽️'}
+      </span>
+    );
+  }
+
+  if (hasLoadError) {
+    return (
+      <span
+        className={`inline-block ${className}`}
+        style={{ fontSize: `${size}px`, lineHeight: 1 }}
+        role="img"
+        aria-label={`${foodId || type} food`}
       >
         {fallbackEmoji || FOOD_EMOJI_FALLBACK[type] || '🍽️'}
       </span>
@@ -103,12 +117,8 @@ export const FoodIcon = memo(({
       height={size}
       className={className}
       onError={(e) => {
-        // 加载失败时替换为emoji
-        const target = e.target as HTMLImageElement;
-        const parent = target.parentElement;
-        if (parent) {
-          parent.innerHTML = `<span style="font-size: ${size}px; line-height: 1;">${fallbackEmoji || FOOD_EMOJI_FALLBACK[type] || '🍽️'}</span>`;
-        }
+        e.currentTarget.style.display = 'none';
+        setHasLoadError(true);
       }}
     />
   );
