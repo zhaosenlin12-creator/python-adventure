@@ -109,23 +109,36 @@ export async function getRandomQuestions(
   if (difficulty) {
     params.append('difficulty', difficulty.toString());
   }
-  
-  const response = await fetch(`${getApiUrl()}/random?${params}`, {
-    headers: {
-      'Authorization': `Bearer ${token}`,
-    },
-  });
-  
-  if (response.status === 401) {
-    throw new Error('LOGIN_EXPIRED');
+
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 8000);
+
+  try {
+    const response = await fetch(`${getApiUrl()}/random?${params}`, {
+      headers: {
+        'Authorization': `Bearer ${token}`,
+      },
+      signal: controller.signal,
+    });
+
+    if (response.status === 401) {
+      throw new Error('LOGIN_EXPIRED');
+    }
+
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({ detail: null }));
+      throw new Error(parseErrorDetail(error.detail, '获取题目失败'));
+    }
+
+    return response.json();
+  } catch (error) {
+    if (error instanceof Error && error.name === 'AbortError') {
+      throw new Error('题库请求超时，请稍后重试');
+    }
+    throw error;
+  } finally {
+    clearTimeout(timeoutId);
   }
-  
-  if (!response.ok) {
-    const error = await response.json().catch(() => ({ detail: null }));
-    throw new Error(parseErrorDetail(error.detail, '获取题目失败'));
-  }
-  
-  return response.json();
 }
 
 /**

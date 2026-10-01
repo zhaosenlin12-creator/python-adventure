@@ -4,6 +4,10 @@ import { bossPortraitKey, getBossPortraitIdsForLevel, loadBossPortraitsForIds } 
 import { isMobileDevice } from '@/hooks/useDeviceType';
 import { buildCampaignOverviewText, buildPlatformControlsText } from '@/lib/gameplayText';
 import { getDashProfile } from '@/lib/game/dashProfile';
+import {
+    getPlayerCollisionSize,
+    getPlayerVisualSize,
+} from '@/lib/game/playerHitbox';
 
 // 生产环境禁用调试日志
 const DEBUG = process.env.NODE_ENV === 'development';
@@ -2796,24 +2800,26 @@ export default class PlatformGameScene extends Phaser.Scene {
 
         // 🔥 v2.1.12: 支持自定义玩家大小（用于特殊关卡）
         const playerScale = campaignMapData?.playerScale || 1.0;
-        // 玩家立绘原始尺寸 657x983\uff080.668 长度比\uff09：以高度为基准保留立绘比例。
-        const PLAYER_NATURAL_W = 657;
-        const PLAYER_NATURAL_H = 983;
         const baseSize = 40;
-        const aspectRatio = PLAYER_NATURAL_W / PLAYER_NATURAL_H;
-        const displayWidth = baseSize * aspectRatio * playerScale;
-        const displayHeight = baseSize * playerScale;
+        const { width: displayWidth, height: displayHeight } = getPlayerVisualSize(
+            playerScale,
+            baseSize,
+        );
 
         // 🔥 显示大小（保留 657:983 比例）
         this.player.setDisplaySize(displayWidth, displayHeight);
 
-        // 🔥 碰撞体（以原始尺寸设置，覆盖全布局可视区域）
+        // 🔥 碰撞体保持旧版约 55×55 的游戏逻辑，但转换成当前纹理缩放后的
+        // source size，避免把 657×983 的原图像素误当作世界坐标。
         const body = this.player.body as Phaser.Physics.Arcade.Body;
-        body.setSize(PLAYER_NATURAL_W, PLAYER_NATURAL_H);
-        body.setOffset(0, 0);
+        const { width: collisionWidth, height: collisionHeight } = getPlayerCollisionSize(
+            playerScale,
+            baseSize,
+        );
+        this.syncArcadeBodyToDisplay(this.player, collisionWidth, collisionHeight);
 
         if (playerScale !== 1.0) {
-            const playerDebugInfo = '玩家大小缩放: ' + playerScale + 'x, 显示: ' + displayWidth.toFixed(1) + 'x' + displayHeight.toFixed(1) + 'px, 碰撞使用全源 657x983';
+            const playerDebugInfo = '玩家大小缩放: ' + playerScale + 'x, 显示: ' + displayWidth.toFixed(1) + 'x' + displayHeight.toFixed(1) + 'px, 碰撞: ' + collisionWidth.toFixed(1) + 'x' + collisionHeight.toFixed(1);
             debugLog('🔥 [v2.1.12] ' + playerDebugInfo);
         }
 

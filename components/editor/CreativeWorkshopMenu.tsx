@@ -8,7 +8,7 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useRouter } from "next/navigation";
-import * as Phaser from "phaser";
+import type { Game as PhaserGame, Types as PhaserTypes } from "phaser";
 import { useEditorStore } from "@/store/editorStore";
 import { useAuthStore } from "@/store/authStore";
 import { getApiBaseUrl } from "@/lib/config/api";
@@ -19,7 +19,6 @@ import { getCommunityLevel, recordPlay } from "@/lib/api/community";
 import { toFriendlyMessage } from "@/lib/utils/friendlyError";
 import { getRandomQuestions } from "@/lib/api/userQuestions";
 import type { CommunityLevelDetail } from "@/types/community";
-import PlatformGameScene from "@/components/world/scenes/PlatformGameScene";
 import VirtualController from "@/components/game/VirtualController";
 import { useDeviceType } from "@/hooks/useDeviceType";
 import { destroyPhaserGameSafely } from "@/lib/game/phaserLifecycle";
@@ -435,7 +434,8 @@ export default function CreativeWorkshopMenu({
   // Community level player state (Requirements: 3.1, 3.2, 3.3)
   const [isPlayingCommunityLevel, setIsPlayingCommunityLevel] = useState(false);
   const [communityLevelData, setCommunityLevelData] = useState<CommunityLevelDetail | null>(null);
-  const [communityGameRef, setCommunityGameRef] = useState<Phaser.Game | null>(null);
+  const [communityGameRef, setCommunityGameRef] = useState<PhaserGame | null>(null);
+  const communityGameInstanceRef = useRef<PhaserGame | null>(null);
   const communityContainerRef = useRef<HTMLDivElement>(null);
   const [communityQuestions, setCommunityQuestions] = useState<any[]>([]);
   const [showCommunityQuiz, setShowCommunityQuiz] = useState(false);
@@ -556,11 +556,15 @@ export default function CreativeWorkshopMenu({
       console.log("[CreativeWorkshopMenu] Loaded community level:", levelDetail.name);
       setCommunityLevelData(levelDetail);
       
-      // 2. Get player's own question bank (Requirements: 3.2)
+      // 2. Get player's own question bank (Requirements: 3.2). This is
+      // best-effort and must not block entering a playable community level.
       let userQuestions: any[] = [];
       if (token) {
         try {
-          userQuestions = await getRandomQuestions(token, 50);
+          userQuestions = await Promise.race([
+            getRandomQuestions(token, 50),
+            new Promise<any[]>((resolve) => setTimeout(() => resolve([]), 2500)),
+          ]);
           console.log("[CreativeWorkshopMenu] Loaded user questions:", userQuestions.length);
         } catch (err) {
           console.warn("[CreativeWorkshopMenu] Failed to load user questions:", err);
@@ -614,11 +618,18 @@ export default function CreativeWorkshopMenu({
   // Initialize Phaser game for community level
   useEffect(() => {
     if (!isPlayingCommunityLevel || !communityLevelData || !communityContainerRef.current) return;
-    if (communityGameRef) return;  // Already initialized
+    if (communityGameInstanceRef.current) return;  // Already initialized
     let isActive = true;
     
     const initCommunityGame = async () => {
       try {
+        // Phaser and the heavy platform scene are loaded only after the
+        // community level data is ready, keeping the workshop menu fast.
+        const [Phaser, { default: PlatformGameScene }] = await Promise.all([
+          import("phaser"),
+          import("@/components/world/scenes/PlatformGameScene"),
+        ]);
+
         // Convert community level to game format
         const gameLevel = convertCommunityLevelToGameLevel(communityLevelData, communityQuestions);
         console.log("[CreativeWorkshopMenu] Starting community level game:", gameLevel.name);
@@ -630,7 +641,7 @@ export default function CreativeWorkshopMenu({
           }
         }
         
-        const config: Phaser.Types.Core.GameConfig = {
+        const config: PhaserTypes.Core.GameConfig = {
           type: Phaser.AUTO,
           width: 960,
           height: 640,
@@ -661,16 +672,13 @@ export default function CreativeWorkshopMenu({
           destroyPhaserGameSafely(game, communityContainerRef.current);
           return;
         }
+        communityGameInstanceRef.current = game;
         setCommunityGameRef(game);
         
-        // Add scene and start with level data after game is ready
-        game.events.once("ready", () => {
-          if (!isActive) {
-            return;
-          }
-          console.log("[CreativeWorkshopMenu] Game ready, starting scene with level:", gameLevel.name);
-          game.scene.add("PlatformGameScene", CommunityGameScene, true, { level: gameLevel });
-        });
+        // SceneManager safely queues add() calls made before Phaser finishes
+        // booting. Waiting for the READY event here could miss the event on
+        // production builds and leave the community view with a blank canvas.
+        game.scene.add("PlatformGameScene", CommunityGameScene, true, { level: gameLevel });
         
       } catch (err) {
         console.error("[CreativeWorkshopMenu] Failed to initialize community game:", err);
@@ -683,9 +691,11 @@ export default function CreativeWorkshopMenu({
     
     return () => {
       isActive = false;
-      destroyPhaserGameSafely(communityGameRef, communityContainerRef.current);
+      const game = communityGameInstanceRef.current;
+      communityGameInstanceRef.current = null;
+      destroyPhaserGameSafely(game, communityContainerRef.current);
     };
-  }, [isPlayingCommunityLevel, communityLevelData, communityQuestions, communityGameRef]);
+  }, [isPlayingCommunityLevel, communityLevelData, communityQuestions]);
   
   // Listen for game events when playing community level
   useEffect(() => {
@@ -784,8 +794,10 @@ export default function CreativeWorkshopMenu({
     await recordCommunityPlayAndRewards('exit');
     
     // Cleanup game
-    if (communityGameRef) {
-      destroyPhaserGameSafely(communityGameRef, communityContainerRef.current);
+    const game = communityGameInstanceRef.current || communityGameRef;
+    if (game) {
+      communityGameInstanceRef.current = null;
+      destroyPhaserGameSafely(game, communityContainerRef.current);
       setCommunityGameRef(null);
     } else {
       destroyPhaserGameSafely(null, communityContainerRef.current);

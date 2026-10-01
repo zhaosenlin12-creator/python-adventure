@@ -10,12 +10,10 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import * as Phaser from "phaser";
+import type { Game as PhaserGame, Types as PhaserTypes } from "phaser";
 import { useEditorStore } from "@/store/editorStore";
 import { useAuthStore } from "@/store/authStore";
 import { useDeviceType } from "@/hooks/useDeviceType";
-import { LevelEditorScene } from "@/components/world/scenes/LevelEditorScene";
-import PlatformGameScene from "@/components/world/scenes/PlatformGameScene";
 import ElementPalette from "@/components/editor/ElementPalette";
 import PropertyPanel from "@/components/editor/PropertyPanel";
 import EditorToolbar from "@/components/editor/EditorToolbar";
@@ -267,7 +265,7 @@ export default function EditorPageContent() {
   const { isAuthenticated } = useAuthStore();
   const deviceInfo = useDeviceType();
   const isMobile = deviceInfo.type === "mobile" || deviceInfo.type === "tablet";
-  const gameRef = useRef<Phaser.Game | null>(null);
+  const gameRef = useRef<PhaserGame | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Editor state
@@ -337,8 +335,15 @@ export default function EditorPageContent() {
         if (!containerRef.current || !isMounted) return;
 
         const editorState = useEditorStore.getState();
+        const [Phaser, { LevelEditorScene }, { default: PlatformGameScene }] = await Promise.all([
+          import("phaser"),
+          import("@/components/world/scenes/LevelEditorScene"),
+          import("@/components/world/scenes/PlatformGameScene"),
+        ]);
 
-        const config: Phaser.Types.Core.GameConfig = {
+        if (!isMounted || !containerRef.current) return;
+
+        const config: PhaserTypes.Core.GameConfig = {
           type: Phaser.AUTO,
           width: 960,
           height: 640,
@@ -575,6 +580,9 @@ export default function EditorPageContent() {
     // Convert CustomLevelData to PlatformGameScene format
     // 🔥 v2.4.6: 传入云端用户题库，确保测试模式使用正确的题库
     const testLevel = convertToGameLevel(levelData, userQuestions);
+    const { default: PlatformGameScene } = await import(
+      "@/components/world/scenes/PlatformGameScene"
+    );
 
     // Switch to PlatformGameScene
     if (gameRef.current) {
@@ -700,7 +708,7 @@ export default function EditorPageContent() {
         if (reinitializeTimerRef.current !== null) {
           window.clearTimeout(reinitializeTimerRef.current);
         }
-        reinitializeTimerRef.current = window.setTimeout(() => {
+        reinitializeTimerRef.current = window.setTimeout(async () => {
           reinitializeTimerRef.current = null;
           if (!containerRef.current) {
             console.error('[EditorPage] Container ref is null, cannot reinitialize');
@@ -708,7 +716,17 @@ export default function EditorPageContent() {
           }
 
           try {
-            const config: Phaser.Types.Core.GameConfig = {
+            const [Phaser, { LevelEditorScene }, { default: PlatformGameScene }] = await Promise.all([
+              import("phaser"),
+              import("@/components/world/scenes/LevelEditorScene"),
+              import("@/components/world/scenes/PlatformGameScene"),
+            ]);
+
+            if (!containerRef.current) {
+              return;
+            }
+
+            const config: PhaserTypes.Core.GameConfig = {
               type: Phaser.AUTO,
               width: 960,
               height: 640,
