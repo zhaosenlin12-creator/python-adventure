@@ -1,7 +1,7 @@
 "use client";
 
 // 版本号 - 用于验证部署是否成功
-const BUILD_VERSION = "v20260406-stable6-r7";
+const BUILD_VERSION = "v20261002-collision-fix-r1";
 const DEBUG = process.env.NODE_ENV === 'development';
 const debugLog = DEBUG ? console.log.bind(console) : () => {};
 
@@ -172,6 +172,7 @@ export default function WorldPage() {
     useEffect(() => {
         // 输出版本号，用于验证部署
         debugLog(`%c🎮 Code Adventure ${BUILD_VERSION}`, 'color: #00ff00; font-size: 16px; font-weight: bold;');
+        document.documentElement.dataset.gameBuild = BUILD_VERSION;
         setMounted(true);
         
         // 初始化背景音乐
@@ -553,7 +554,7 @@ export default function WorldPage() {
 
     return (
         <OrientationLock requireLandscape={true}>
-        <div className="relative w-full h-screen">
+        <div className="relative w-full h-screen" data-build-version={BUILD_VERSION}>
             {/* 🔥 创意工坊加载提示 */}
             {isLoadingEditor && (
                 <div className="fixed inset-0 z-[100] bg-black/90 flex flex-col items-center justify-center">

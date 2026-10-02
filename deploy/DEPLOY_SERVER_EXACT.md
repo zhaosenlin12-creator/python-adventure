@@ -66,31 +66,41 @@ Expected:
 sqlite:////www/data/game-backend/code_adventure.db
 ```
 
-## Frontend (run the deploy script as root)
+## Frontend (deploy as `game`)
 
-Upload `deploy/game-deploy.zip` to `/www/wwwroot/game/`, then as root:
+Upload `deploy/game-deploy.zip` to `/www/wwwroot/game/`, then execute as the
+existing `game` user:
 
 ```bash
 cd /www/wwwroot/game
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/www/server/nodejs/v20.19.6/bin
 
+/bin/rm -rf .next
 /usr/bin/unzip -oq game-deploy.zip
 /bin/chmod +x deploy/*.sh
 /bin/bash deploy/post-upload-frontend.sh
 ```
 
-Run the bundled script as `root`, not as `game`. It changes ownership before
-installing dependencies, runs `npm ci --omit=dev` and PM2 as `game`, clears the
-Nginx proxy cache, and reloads Nginx. Running it as `game` is intentionally
-rejected because the app can restart successfully while the browser continues
-to receive a stale cached Next.js bundle.
+The script prints the release marker and verifies that the local app serves the
+same marker from `/build-info.json` after PM2 restarts. The expected marker for
+the current package is `v20261002-collision-fix-r1`. Do not run `npm install`
+manually: the bundled script uses `npm ci --omit=dev` and never rewrites
+`package-lock.json`.
 
 If the archive was already extracted and the permission error is shown:
 
 ```bash
 cd /www/wwwroot/game
-/bin/chown -R game:game /www/wwwroot/game
 /bin/bash deploy/post-upload-frontend.sh
+```
+
+If the script reports the expected local marker but the public site still shows
+the old build, the remaining problem is outside the app process: the Nginx
+proxy cache is serving an old HTML response. Ask the server administrator to
+purge `/www/server/nginx/proxy_cache_dir/` and reload Nginx, then verify:
+
+```bash
+curl -fsS "https://game.codebn.cn/build-info.json?release=v20261002-collision-fix-r1"
 ```
 
 Verify:

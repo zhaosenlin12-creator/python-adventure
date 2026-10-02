@@ -558,10 +558,12 @@ export default function PlatformGame({ onExit }: PlatformGameProps) {
             return;
         }
 
-        // 动态加载Phaser和场景
+        // 动态加载 Phaser 和场景
         installPhaserAudioGuard();
-        const Phaser = await import('phaser');
-        const { default: PlatformGameScene } = await import('@/components/world/scenes/PlatformGameScene');
+        const [{ default: Phaser }, { default: PlatformGameScene }] = await Promise.all([
+            import('phaser'),
+            import('@/components/world/scenes/PlatformGameScene'),
+        ]);
 
         if (
             requestId !== startLevelRequestRef.current ||

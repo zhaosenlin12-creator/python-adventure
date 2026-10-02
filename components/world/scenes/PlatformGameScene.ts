@@ -12,6 +12,8 @@ import {
 // 生产环境禁用调试日志
 const DEBUG = process.env.NODE_ENV === 'development';
 const debugLog = DEBUG ? console.log.bind(console) : () => { };
+const BOSS_PHASE_2_THRESHOLD = 0.66;
+const BOSS_PHASE_3_THRESHOLD = 0.33;
 
 export default class PlatformGameScene extends Phaser.Scene {
     // 性能优化：纹理缓存
@@ -3523,9 +3525,9 @@ export default class PlatformGameScene extends Phaser.Scene {
         debugLog(`[Boss] Boss受到${damage}伤害，剩余HP: ${this.bossHP}/${this.bossMaxHP}`);
 
         // 检查阶段转换
-        if (this.bossHP <= this.bossMaxHP * 0.66 && this.bossPhase === 1) {
+        if (this.bossHP <= this.bossMaxHP * BOSS_PHASE_2_THRESHOLD && this.bossPhase === 1) {
             this.enterBossPhase2();
-        } else if (this.bossHP <= this.bossMaxHP * 0.33 && this.bossPhase === 2) {
+        } else if (this.bossHP <= this.bossMaxHP * BOSS_PHASE_3_THRESHOLD && this.bossPhase === 2) {
             this.enterBossPhase3();
         } else if (this.bossHP <= 0) {
             this.bossDefeated();
@@ -3647,7 +3649,9 @@ export default class PlatformGameScene extends Phaser.Scene {
                     scaleY: baseScale.y * 1.2,
                     duration: 500,
                     yoyo: true,
-                    repeat: 3
+                    repeat: 3,
+                    onUpdate: () => this.syncBossBodyToVisual(survivingBoss),
+                    onComplete: () => this.syncBossBodyToVisual(survivingBoss),
                 });
             }
 
@@ -3804,7 +3808,9 @@ export default class PlatformGameScene extends Phaser.Scene {
                     scaleY: baseScale.y * 1.15,
                     duration: 400,
                     yoyo: true,
-                    repeat: 2
+                    repeat: 2,
+                    onUpdate: () => this.syncBossBodyToVisual(b),
+                    onComplete: () => this.syncBossBodyToVisual(b),
                 });
             });
         }
@@ -3864,7 +3870,17 @@ export default class PlatformGameScene extends Phaser.Scene {
                 scaleX: baseScale.x * 1.1,
                 scaleY: baseScale.y * 1.1,
                 duration: 500,
-                ease: 'Back.easeOut'
+                ease: 'Back.easeOut',
+                onUpdate: () => {
+                    if (this.bossEnemy) {
+                        this.syncBossBodyToVisual(this.bossEnemy);
+                    }
+                },
+                onComplete: () => {
+                    if (this.bossEnemy) {
+                        this.syncBossBodyToVisual(this.bossEnemy);
+                    }
+                },
             });
 
             // 橙色发光效果
@@ -3931,7 +3947,17 @@ export default class PlatformGameScene extends Phaser.Scene {
                 scaleX: baseScale.x * 1.5,
                 scaleY: baseScale.y * 1.5,
                 duration: 600,
-                ease: 'Back.easeOut'
+                ease: 'Back.easeOut',
+                onUpdate: () => {
+                    if (this.bossEnemy) {
+                        this.syncBossBodyToVisual(this.bossEnemy);
+                    }
+                },
+                onComplete: () => {
+                    if (this.bossEnemy) {
+                        this.syncBossBodyToVisual(this.bossEnemy);
+                    }
+                },
             });
 
             // 红色发光效果
@@ -4387,7 +4413,9 @@ export default class PlatformGameScene extends Phaser.Scene {
             scaleX: boss2BaseScale.x,
             scaleY: boss2BaseScale.y,
             duration: 1000,
-            ease: 'Back.easeOut'
+            ease: 'Back.easeOut',
+            onUpdate: () => this.syncBossBodyToVisual(boss2),
+            onComplete: () => this.syncBossBodyToVisual(boss2),
         });
 
         // 出场闪电特效
@@ -5918,9 +5946,9 @@ export default class PlatformGameScene extends Phaser.Scene {
                     }
 
                     let bossPhase = 1;
-                    if (bossHPPercent < 0.3) {
+                    if (bossHPPercent <= BOSS_PHASE_3_THRESHOLD) {
                         bossPhase = 3;  // 狂暴阶段
-                    } else if (bossHPPercent < 0.6) {
+                    } else if (bossHPPercent <= BOSS_PHASE_2_THRESHOLD) {
                         bossPhase = 2;  // 愤怒阶段
                     }
 
@@ -10108,6 +10136,23 @@ export default class PlatformGameScene extends Phaser.Scene {
         const sprite = enemy as any;
         sprite.bossBaseScaleX = enemy.scaleX;
         sprite.bossBaseScaleY = enemy.scaleY;
+        sprite.bossBaseDisplayWidth = enemy.displayWidth;
+        sprite.bossBaseDisplayHeight = enemy.displayHeight;
+    }
+
+    private syncBossBodyToVisual(enemy: Phaser.Physics.Arcade.Sprite) {
+        const sprite = enemy as any;
+        const baseScale = this.getBossVisualScale(enemy);
+        const baseDisplayWidth = Number(sprite.bossBaseDisplayWidth);
+        const baseDisplayHeight = Number(sprite.bossBaseDisplayHeight);
+        const scaleRatioX = Math.abs(enemy.scaleX) / Math.max(baseScale.x, Number.EPSILON);
+        const scaleRatioY = Math.abs(enemy.scaleY) / Math.max(baseScale.y, Number.EPSILON);
+
+        this.syncArcadeBodyToDisplay(
+            enemy,
+            (Number.isFinite(baseDisplayWidth) && baseDisplayWidth > 0 ? baseDisplayWidth : enemy.displayWidth) * scaleRatioX,
+            (Number.isFinite(baseDisplayHeight) && baseDisplayHeight > 0 ? baseDisplayHeight : enemy.displayHeight) * scaleRatioY,
+        );
     }
 
     private syncArcadeBodyToDisplay(

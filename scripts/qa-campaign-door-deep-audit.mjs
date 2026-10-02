@@ -72,6 +72,9 @@ function buildState(completedThrough, unlockedLevelIds = []) {
 
 async function seedState(page, completedThrough, unlockedLevelIds = []) {
   const { authState, gameState } = buildState(completedThrough, unlockedLevelIds);
+  await page.addInitScript(() => {
+    window.__enableWorldDebug = true;
+  });
   await page.addInitScript(({ authState, gameState }) => {
     window.localStorage.setItem('auth-storage', JSON.stringify(authState));
     window.localStorage.setItem('game-storage', JSON.stringify(gameState));

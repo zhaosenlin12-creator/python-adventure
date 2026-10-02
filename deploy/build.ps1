@@ -47,6 +47,7 @@ $stageDir = "deploy/frontend-dist"
 $runtimeDeployFiles = @(
     "post-upload-frontend.sh",
     "DEPLOY_SERVER_EXACT.md",
+    "FRONTEND_RELEASE.txt",
     "ecosystem.config.js"
 )
 
@@ -168,7 +169,8 @@ Write-Host "Included runtime deploy helpers: $($runtimeDeployFiles -join ', ')" 
 Write-Host ""
 Write-Host "Next steps:" -ForegroundColor Yellow
 Write-Host "1. Upload $zipFile to /www/wwwroot/game/ on the server." -ForegroundColor White
-Write-Host "2. Extract directly into /www/wwwroot/game/ without nesting another game/ folder." -ForegroundColor White
-Write-Host "3. Run: chmod +x deploy/*.sh" -ForegroundColor White
-Write-Host "4. Run: bash deploy/post-upload-frontend.sh" -ForegroundColor White
+Write-Host "2. As game, run: rm -rf /www/wwwroot/game/.next" -ForegroundColor White
+Write-Host "3. Extract directly into /www/wwwroot/game/ without nesting another game/ folder." -ForegroundColor White
+Write-Host "4. Run: chmod +x deploy/*.sh && bash deploy/post-upload-frontend.sh" -ForegroundColor White
+Write-Host "5. Expected release marker: v20261002-collision-fix-r1" -ForegroundColor White
 Write-Host ""
