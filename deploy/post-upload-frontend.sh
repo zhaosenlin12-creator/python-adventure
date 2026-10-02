@@ -8,14 +8,17 @@ OWNER_GROUP="${OWNER_GROUP:-game}"
 PM2_PATH="/www/server/nodejs/v20.19.6/bin"
 PORT="${PORT:-3003}"
 
+if [ "${EUID:-$(id -u)}" -ne 0 ]; then
+    echo "ERROR: run this deployment script as root."
+    echo "The script must clear Nginx proxy cache and reload Nginx after restarting the app."
+    echo "After fixing ownership, rerun:"
+    echo "  /bin/bash $APP_DIR/deploy/post-upload-frontend.sh"
+    exit 1
+fi
+
 run_as_owner() {
     local cmd="$1"
-    if [ "${EUID:-$(id -u)}" -eq 0 ]; then
-        su -s /bin/bash - "$OWNER_USER" -c "export PATH=$PM2_PATH:\$PATH && $cmd"
-    else
-        export PATH="$PM2_PATH:$PATH"
-        eval "$cmd"
-    fi
+    su -s /bin/bash - "$OWNER_USER" -c "export PATH=$PM2_PATH:\$PATH && $cmd"
 }
 
 cd "$APP_DIR"
@@ -33,10 +36,8 @@ if [ ! -f package.json ]; then
     exit 1
 fi
 
-if [ "${EUID:-$(id -u)}" -eq 0 ]; then
-    mkdir -p /www/wwwlogs /www/server/nginx/proxy_cache_dir
-    chown -R "$OWNER_USER:$OWNER_GROUP" "$APP_DIR"
-fi
+mkdir -p /www/wwwlogs /www/server/nginx/proxy_cache_dir
+chown -R "$OWNER_USER:$OWNER_GROUP" "$APP_DIR"
 
 run_as_owner "cd '$APP_DIR' && npm ci --omit=dev --no-audit --no-fund"
 run_as_owner "cd '$APP_DIR' && rm -f public/sounds/bgm_battle.wav public/sounds/bgm_boss.wav public/sounds/bgm_victory.wav"
@@ -44,20 +45,16 @@ run_as_owner "cd '$APP_DIR' && rm -rf .next/cache .next/dev 2>/dev/null || true"
 run_as_owner "cd '$APP_DIR' && if pm2 describe game >/dev/null 2>&1; then pm2 restart game; else pm2 start \"npm start -- -p $PORT\" --name game --max-memory-restart 500M; fi"
 run_as_owner "pm2 save"
 
-if [ "${EUID:-$(id -u)}" -eq 0 ]; then
-    rm -f "$APP_DIR/deploy.sh" "$APP_DIR/deploy-secure-frontend.sh" "$APP_DIR/ecosystem.config.js" 2>/dev/null || true
+rm -f "$APP_DIR/deploy.sh" "$APP_DIR/deploy-secure-frontend.sh" "$APP_DIR/ecosystem.config.js" 2>/dev/null || true
 
-    if [ -d /www/server/nginx/proxy_cache_dir ]; then
-        rm -rf /www/server/nginx/proxy_cache_dir/*
-    fi
+if [ -d /www/server/nginx/proxy_cache_dir ]; then
+    rm -rf /www/server/nginx/proxy_cache_dir/*
+fi
 
-    if command -v /etc/init.d/nginx >/dev/null 2>&1; then
-        /etc/init.d/nginx reload || true
-    elif command -v systemctl >/dev/null 2>&1; then
-        systemctl reload nginx || true
-    fi
-else
-    echo "INFO: not running as root, skip nginx cache cleanup and reload"
+if command -v /etc/init.d/nginx >/dev/null 2>&1; then
+    /etc/init.d/nginx reload || true
+elif command -v systemctl >/dev/null 2>&1; then
+    systemctl reload nginx || true
 fi
 
 sleep 3

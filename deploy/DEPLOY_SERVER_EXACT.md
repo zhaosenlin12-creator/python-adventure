@@ -66,7 +66,7 @@ Expected:
 sqlite:////www/data/game-backend/code_adventure.db
 ```
 
-## Frontend (extract as root, deploy as game)
+## Frontend (run the deploy script as root)
 
 Upload `deploy/game-deploy.zip` to `/www/wwwroot/game/`, then as root:
 
@@ -76,31 +76,21 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/www/se
 
 /usr/bin/unzip -oq game-deploy.zip
 /bin/chmod +x deploy/*.sh
-/bin/chown -R game:game /www/wwwroot/game
-su - game
-```
-
-Then as `game`:
-
-```bash
-cd /www/wwwroot/game
-export PATH=/www/server/nodejs/v20.19.6/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-
 /bin/bash deploy/post-upload-frontend.sh
 ```
 
-Do not run `npm install` manually as `game`: it may try to rewrite
-`package-lock.json` and fail with `EACCES` if the archive was extracted with
-root-owned files. The bundled script uses `npm ci --omit=dev` and does not
-rewrite the lock file. It also removes obsolete uncompressed battle BGM files
-left by older releases and reloads the Nginx cache configuration.
+Run the bundled script as `root`, not as `game`. It changes ownership before
+installing dependencies, runs `npm ci --omit=dev` and PM2 as `game`, clears the
+Nginx proxy cache, and reloads Nginx. Running it as `game` is intentionally
+rejected because the app can restart successfully while the browser continues
+to receive a stale cached Next.js bundle.
 
 If the archive was already extracted and the permission error is shown:
 
 ```bash
 cd /www/wwwroot/game
 /bin/chown -R game:game /www/wwwroot/game
-su - game -s /bin/bash -c 'cd /www/wwwroot/game && /bin/bash deploy/post-upload-frontend.sh'
+/bin/bash deploy/post-upload-frontend.sh
 ```
 
 Verify:
