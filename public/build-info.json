@@ -1,1 +1,1 @@
-{"release":"v20261002-collision-fix-r1","collision":"55x55","playerArtwork":"657x983-aspect-preserved"}
+{"release":"v20261003-collision-deploy-r2","collision":"30x42-bottom-aligned","playerArtwork":"657x983-aspect-preserved","runtimeSignature":"player-collision-bottom-aligned-v1","deploy":"pm2-clean-start-runtime-gated-permissions-gated"}

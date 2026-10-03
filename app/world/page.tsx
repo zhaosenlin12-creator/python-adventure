@@ -1,7 +1,7 @@
 "use client";
 
 // 版本号 - 用于验证部署是否成功
-const BUILD_VERSION = "v20261002-collision-fix-r1";
+const BUILD_VERSION = "v20261003-collision-deploy-r2";
 const DEBUG = process.env.NODE_ENV === 'development';
 const debugLog = DEBUG ? console.log.bind(console) : () => {};
 

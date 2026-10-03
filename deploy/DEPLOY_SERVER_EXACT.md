@@ -66,10 +66,12 @@ Expected:
 sqlite:////www/data/game-backend/code_adventure.db
 ```
 
-## Frontend (deploy as `game`)
+## Frontend (run the deployment script as `root`, app runs as `game`)
 
-Upload `deploy/game-deploy.zip` to `/www/wwwroot/game/`, then execute as the
-existing `game` user:
+Upload `deploy/game-deploy.zip` to `/www/wwwroot/game/`, then execute the
+replacement steps as `root`. Removing the old `.next` directory must happen
+before extraction; otherwise an old Next.js chunk can remain active even when
+`build-info.json` shows the new release marker.
 
 ```bash
 cd /www/wwwroot/game
@@ -81,16 +83,20 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/www/se
 /bin/bash deploy/post-upload-frontend.sh
 ```
 
-The script prints the release marker and verifies that the local app serves the
-same marker from `/build-info.json` after PM2 restarts. The expected marker for
-the current package is `v20261002-collision-fix-r1`. Do not run `npm install`
-manually: the bundled script uses `npm ci --omit=dev` and never rewrites
-`package-lock.json`.
+The script repairs ownership and `.next` read/execute permissions as root,
+starts the Next.js process through `game`, and verifies both the release marker
+and collision runtime signature through the active `/world` chunk graph. The
+expected marker for the current package is `v20261003-collision-deploy-r2`.
+Do not run `npm install` manually: the bundled script uses `npm ci --omit=dev`
+and never rewrites `package-lock.json`.
 
-If the archive was already extracted and the permission error is shown:
+If the archive was already extracted and the permission error is shown, run the
+same script as `root`; do not run it directly as `game`:
 
 ```bash
 cd /www/wwwroot/game
+/bin/chown -R game:game /www/wwwroot/game
+/bin/chmod -R u+rwX,go+rX /www/wwwroot/game/.next
 /bin/bash deploy/post-upload-frontend.sh
 ```
 
@@ -100,7 +106,7 @@ proxy cache is serving an old HTML response. Ask the server administrator to
 purge `/www/server/nginx/proxy_cache_dir/` and reload Nginx, then verify:
 
 ```bash
-curl -fsS "https://game.codebn.cn/build-info.json?release=v20261002-collision-fix-r1"
+curl -fsS "https://game.codebn.cn/build-info.json?release=v20261003-collision-deploy-r2"
 ```
 
 Verify:

@@ -5,6 +5,7 @@ import { isMobileDevice } from '@/hooks/useDeviceType';
 import { buildCampaignOverviewText, buildPlatformControlsText } from '@/lib/gameplayText';
 import { getDashProfile } from '@/lib/game/dashProfile';
 import {
+    PLAYER_COLLISION_RUNTIME_SIGNATURE,
     getPlayerCollisionSize,
     getPlayerVisualSize,
 } from '@/lib/game/playerHitbox';
@@ -2800,25 +2801,24 @@ export default class PlatformGameScene extends Phaser.Scene {
         this.player = this.physics.add.sprite(startX, startY, 'playerChar');
         debugLog('🔥🔥🔥 [v21:22] 玩家创建后的实际位置:', this.player.x, this.player.y, '🔥🔥🔥');
 
-        // 🔥 v2.1.12: 支持自定义玩家大小（用于特殊关卡）
         const playerScale = campaignMapData?.playerScale || 1.0;
-        const baseSize = 40;
         const { width: displayWidth, height: displayHeight } = getPlayerVisualSize(
             playerScale,
-            baseSize,
         );
 
-        // 🔥 显示大小（保留 657:983 比例）
         this.player.setDisplaySize(displayWidth, displayHeight);
 
-        // 🔥 碰撞体保持旧版约 55×55 的游戏逻辑，但转换成当前纹理缩放后的
-        // source size，避免把 657×983 的原图像素误当作世界坐标。
         const body = this.player.body as Phaser.Physics.Arcade.Body;
-        const { width: collisionWidth, height: collisionHeight } = getPlayerCollisionSize(
-            playerScale,
-            baseSize,
-        );
-        this.syncArcadeBodyToDisplay(this.player, collisionWidth, collisionHeight);
+        const {
+            width: collisionWidth,
+            height: collisionHeight,
+            bottomPadding,
+        } = getPlayerCollisionSize(playerScale);
+        this.syncArcadeBodyToDisplay(this.player, collisionWidth, collisionHeight, {
+            verticalAlignment: 'bottom',
+            bottomPadding,
+        });
+        this.player.setData('collisionRuntimeSignature', PLAYER_COLLISION_RUNTIME_SIGNATURE);
 
         if (playerScale !== 1.0) {
             const playerDebugInfo = '玩家大小缩放: ' + playerScale + 'x, 显示: ' + displayWidth.toFixed(1) + 'x' + displayHeight.toFixed(1) + 'px, 碰撞: ' + collisionWidth.toFixed(1) + 'x' + collisionHeight.toFixed(1);
@@ -10159,13 +10159,33 @@ export default class PlatformGameScene extends Phaser.Scene {
         sprite: Phaser.Physics.Arcade.Sprite,
         displayWidth: number,
         displayHeight: number,
+        options: {
+            verticalAlignment?: 'center' | 'bottom';
+            bottomPadding?: number;
+        } = {},
     ) {
         const body = sprite.body as Phaser.Physics.Arcade.Body | null;
         if (!body) return;
 
         const scaleX = Math.max(Math.abs(sprite.scaleX), Number.EPSILON);
         const scaleY = Math.max(Math.abs(sprite.scaleY), Number.EPSILON);
-        body.setSize(displayWidth / scaleX, displayHeight / scaleY, true);
+        const sourceWidth = displayWidth / scaleX;
+        const sourceHeight = displayHeight / scaleY;
+        const verticalAlignment = options.verticalAlignment ?? 'center';
+
+        body.setSize(sourceWidth, sourceHeight, verticalAlignment === 'center');
+
+        if (verticalAlignment === 'bottom') {
+            const frameWidth = sprite.frame?.realWidth ?? sprite.width;
+            const frameHeight = sprite.frame?.realHeight ?? sprite.height;
+            const sourceBottomPadding = (options.bottomPadding ?? 0) / scaleY;
+
+            body.setOffset(
+                (frameWidth - sourceWidth) / 2,
+                frameHeight - sourceHeight - sourceBottomPadding,
+            );
+        }
+
         body.updateFromGameObject();
     }
 

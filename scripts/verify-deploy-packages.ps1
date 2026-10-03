@@ -60,6 +60,30 @@ foreach ($package in $Packages) {
             if ($scriptText -match 'rm\s+-f\s+.*-wal.*-shm') {
                 throw "$package contains unsafe manual deletion of active SQLite WAL/SHM files"
             }
+
+            if ($scriptText -notmatch 'pm2 start npm --name game --max-memory-restart 512M') {
+                throw "$package does not enforce the expected 512M PM2 memory restart limit"
+            }
+        }
+
+        if ($package.EndsWith("game-deploy.zip", [System.StringComparison]::OrdinalIgnoreCase)) {
+            $runtimeSignatureEntry = $archive.Entries |
+                Where-Object { $_.FullName.Replace('\', '/') -eq "deploy/FRONTEND_RUNTIME_SIGNATURE.txt" } |
+                Select-Object -First 1
+            if ($null -eq $runtimeSignatureEntry) {
+                throw "$package is missing deploy/FRONTEND_RUNTIME_SIGNATURE.txt"
+            }
+
+            $runtimeSignatureReader = New-Object System.IO.StreamReader($runtimeSignatureEntry.Open())
+            try {
+                $runtimeSignature = $runtimeSignatureReader.ReadToEnd().Trim()
+            } finally {
+                $runtimeSignatureReader.Dispose()
+            }
+
+            if ($runtimeSignature -ne "player-collision-bottom-aligned-v1") {
+                throw "$package contains an unexpected frontend runtime signature: $runtimeSignature"
+            }
         }
     } finally {
         $archive.Dispose()
